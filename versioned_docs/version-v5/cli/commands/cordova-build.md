@@ -4,19 +4,19 @@ sidebar_label: 'cordova build'
 
 # ionic cordova build
 
-Use Cordova to build for Android and iOS platform targets
+使用 Cordova 构建 Android 和 iOS 平台目标
 
 ```shell
 ionic cordova build [options]
 ```
 
-Like running `cordova build` directly, `ionic cordova build` also builds web assets from `ionic build` and provides friendly checks for Android and iOS platforms.
+与直接运行 `cordova build` 类似，`ionic cordova build` 也会从 `ionic build` 构建 Web 资源，并为 Android 和 iOS 平台提供友好的检查。
 
-To pass additional options to the Cordova CLI, use the `--` separator after the Ionic CLI arguments.
+要向 Cordova CLI 传递额外选项，请在 Ionic CLI 参数后使用 `--` 分隔符。
 
-The Cordova CLI requires a separator for platform-specific arguments for Android [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#using-flags), so an additional separator is required for the Ionic CLI, but it is not required for iOS [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#using-flags). See the example commands for usage with separators. To avoid using flags, consider using `--buildConfig` with a **build.json** file.
+Cordova CLI 要求为 Android [构建](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#using-flags)的平台特定参数使用分隔符，因此 Ionic CLI 需要额外分隔符，但 iOS [构建](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#using-flags)不需要。请查看示例命令了解分隔符的使用方法。为避免使用标志，可考虑使用 `--buildConfig` 配合 **build.json** 文件。
 
-## Examples
+## 示例
 
 ```shell
 $ ionic cordova build android
@@ -33,7 +33,7 @@ $ ionic cordova build ios --prod --release -- --developmentTeam="ABCD" --codeSig
 $ ionic cordova build ios --prod --release --buildConfig=build.json
 ```
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -45,17 +45,17 @@ $ ionic cordova build ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <p>
-          The platform to build (e.g. <code>android</code>, <code>ios</code>)
+          要构建的平台（例如 <code>android</code>、<code>ios</code>）
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -71,9 +71,9 @@ $ ionic cordova build ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Do not invoke an Ionic build</p>
+        <p>不触发 Ionic 构建</p>
       </td>
     </tr>
   </tbody>
@@ -90,9 +90,9 @@ $ ionic cordova build ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Mark as a debug build</p>
+        <p>标记为调试构建</p>
       </td>
     </tr>
   </tbody>
@@ -109,9 +109,9 @@ $ ionic cordova build ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Mark as a release build</p>
+        <p>标记为发布构建</p>
       </td>
     </tr>
   </tbody>
@@ -128,9 +128,9 @@ $ ionic cordova build ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Deploy build to a device</p>
+        <p>将构建部署到设备</p>
       </td>
     </tr>
   </tbody>
@@ -147,9 +147,9 @@ $ ionic cordova build ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Deploy build to an emulator</p>
+        <p>将构建部署到模拟器</p>
       </td>
     </tr>
   </tbody>
@@ -166,17 +166,17 @@ $ ionic cordova build ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <p>
-          Flag to use the <code>production</code> configuration
+          使用 <code>production</code> 配置的标志
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -193,10 +193,10 @@ $ ionic cordova build ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>Use the specified build configuration</p>
+          <p>使用指定的构建配置</p>
         </div>
       </td>
     </tr>
@@ -215,15 +215,15 @@ $ ionic cordova build ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>Specify the configuration to use.</p>
+          <p>指定要使用的配置</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-c</code>
       </td>
@@ -242,10 +242,10 @@ $ ionic cordova build ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>Output source maps</p>
+          <p>输出源码映射</p>
         </div>
       </td>
     </tr>

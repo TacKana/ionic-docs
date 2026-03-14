@@ -46,9 +46,9 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
 export class ExampleComponent {
   constructor() {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 你可以在 app.component.ts 中注册应用中
+     * 需要使用的所有图标，之后便可以在应用的
+     * 任何地方通过名称来引用这些图标。
      */
     addIcons({ personCircle, personCircleOutline, sunny, sunnyOutline });
   }

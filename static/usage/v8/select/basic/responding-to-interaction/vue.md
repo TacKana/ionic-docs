@@ -4,14 +4,14 @@
     <ion-item>
       <ion-select
         aria-label="Fruit"
-        placeholder="Select fruit"
+        placeholder="选择水果"
         @ionChange="handleChange($event)"
         @ionCancel="handleCancel()"
         @ionDismiss="handleDismiss()"
       >
-        <ion-select-option value="apples">Apples</ion-select-option>
-        <ion-select-option value="oranges">Oranges</ion-select-option>
-        <ion-select-option value="bananas">Bananas</ion-select-option>
+        <ion-select-option value="apples">苹果</ion-select-option>
+        <ion-select-option value="oranges">橙子</ion-select-option>
+        <ion-select-option value="bananas">香蕉</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
@@ -21,15 +21,15 @@
   import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
 
   const handleChange = (event) => {
-    console.log('ionChange fired with value: ' + event.detail.value);
+    console.log('ionChange 事件触发，值为: ' + event.detail.value);
   };
 
   const handleCancel = () => {
-    console.log('ionCancel fired');
+    console.log('ionCancel 事件触发');
   };
 
   const handleDismiss = () => {
-    console.log('ionDismiss fired');
+    console.log('ionDismiss 事件触发');
   };
 </script>
 ```

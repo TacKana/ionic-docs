@@ -13,7 +13,7 @@ function Example() {
       newItems.push(`Item ${items.length + i}`);
     }
     setItems([...items, ...newItems]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // 禁用 react-hooks/exhaustive-deps 规则检查
   }, []);
 
   return (
@@ -22,7 +22,7 @@ function Example() {
         {items.map((item, index) => (
           <IonItem key={item}>
             <IonAvatar slot="start">
-              <img src={'https://picsum.photos/80/80?random=' + index} alt="avatar" />
+              <img src={'https://picsum.photos/80/80?random=' + index} alt="头像" />
             </IonAvatar>
             <IonLabel>{item}</IonLabel>
           </IonItem>

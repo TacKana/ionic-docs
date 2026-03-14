@@ -7,15 +7,15 @@ import './main.css';
 function Example() {
   return (
     <div className="wrapper">
-      <b>Click on a shape to see the ripple</b>
+      <b>点击图形查看涟漪效果</b>
 
       <div className="ion-activatable ripple-parent rounded-rectangle">
-        Bounded
+        有边界
         <IonRippleEffect></IonRippleEffect>
       </div>
 
       <div className="ion-activatable ripple-parent circle">
-        Unbounded
+        无边界
         <IonRippleEffect type="unbounded"></IonRippleEffect>
       </div>
     </div>

@@ -1,35 +1,35 @@
 ---
 title: 'Splash Screen Image Icon Generator | Generate Cordova Resources'
-description: 'Generate perfectly-sized icons and splash screens from PNG source images for your Cordova platforms. Automatically create icons with Ionic Cordova Resources.'
+description: '通过 PNG 源图片为 Cordova 平台生成尺寸完美的图标和启动画面。使用 Ionic Cordova Resources 自动创建图标。'
 sidebar_label: 'cordova resources'
 ---
 
 # ionic cordova resources
 
-Automatically create icon and splash screen resources
+自动创建图标和启动画面资源
 
 ```shell
 ionic cordova resources [options]
 ```
 
-Generate perfectly sized icons and splash screens from PNG source images for your Cordova platforms with this command.
+使用此命令可以从 PNG 源图片为 Cordova 平台生成尺寸完美的图标和启动画面。
 
-The source image for icons should ideally be at least **1024×1024px** and located at **resources/icon.png**. The source image for splash screens should ideally be at least **2732×2732px** and located at **resources/splash.png**. If you used `ionic start`, there should already be default Ionic resources in the **resources/** directory, which you can overwrite.
+图标源图片的理想尺寸至少为 **1024×1024px**，并位于 **resources/icon.png**。启动画面源图片的理想尺寸至少为 **2732×2732px**，并位于 **resources/splash.png**。如果您使用过 `ionic start`，**resources/** 目录中应该已有默认的 Ionic 资源，您可以覆盖它们。
 
-You can also generate platform-specific icons and splash screens by placing them in the respective **resources/&lt;platform&gt;/** directory. For example, to generate an icon for Android, place your image at **resources/android/icon.png**.
+您还可以通过将特定平台的图标和启动画面放入相应的 **resources/&lt;platform&gt;/** 目录来生成它们。例如，要为 Android 生成图标，请将图像放在 **resources/android/icon.png**。
 
-For best results, the splash screen's artwork should roughly fit within a square (**1200×1200px**) at the center of the image. You can use **[https://code.ionicframework.com/resources/splash.psd](https://code.ionicframework.com/resources/splash.psd)** as a template for your splash screen.
+为了获得最佳效果，启动画面的设计内容应大致位于图像中心的正方形区域（**1200×1200px**）内。您可以使用 **[https://code.ionicframework.com/resources/splash.psd](https://code.ionicframework.com/resources/splash.psd)** 作为启动画面的模板。
 
-`ionic cordova resources` will automatically update your **config.xml** to reflect the changes in the generated images, which Cordova then configures.
+`ionic cordova resources` 将自动更新您的 **config.xml** 以反映生成的图片中的更改，然后 Cordova 会据此进行配置。
 
-This command uses the `cordova-res` [utility](https://github.com/ionic-team/cordova-res) to generate resources locally.
+此命令使用 `cordova-res` [工具](https://github.com/ionic-team/cordova-res) 在本地生成资源。
 
-Cordova reference documentation:
+Cordova 参考文档：
 
-- Icons: **[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**
-- Splash Screens: **[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**
+- 图标：**[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**
+- 启动画面：**[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**
 
-## Examples
+## 示例
 
 ```shell
 $ ionic cordova resources
@@ -37,7 +37,7 @@ $ ionic cordova resources ios
 $ ionic cordova resources android
 ```
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -49,17 +49,17 @@ $ ionic cordova resources android
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <p>
-          The platform for which you would like to generate resources (<code>ios</code>, <code>android</code>)
+          您希望为其生成资源的平台（<code>ios</code>、<code>android</code>）
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -75,13 +75,13 @@ $ ionic cordova resources android
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Generate icon resources</p>
+        <p>生成图标资源</p>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-i</code>
       </td>
@@ -100,13 +100,13 @@ $ ionic cordova resources android
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Generate splash screen resources</p>
+        <p>生成启动画面资源</p>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-s</code>
       </td>

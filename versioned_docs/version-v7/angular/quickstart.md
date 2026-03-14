@@ -1,44 +1,44 @@
 ---
-title: Ionic Angular Quickstart
-sidebar_label: Quickstart
+title: Ionic Angular 快速入门
+sidebar_label: 快速入门
 ---
 
 <head>
-  <title>Ionic Angular Quickstart Using Ionic CLI: Angular Basics</title>
+  <title>使用 Ionic CLI 进行 Ionic Angular 快速入门：Angular 基础</title>
   <meta
     name="description"
-    content="Ionic Angular Quickstart covers the basics of Angular and Ionic, including any Ionic-specific features. Learn how to build Angular apps using the Ionic CLI."
+    content="Ionic Angular 快速入门涵盖 Angular 和 Ionic 的基础知识，包括任何 Ionic 特有的功能。学习如何使用 Ionic CLI 构建 Angular 应用。"
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-Welcome! This guide will walk you through the basics of Ionic Angular development. You'll learn how to set up your development environment, generate a simple project, explore the project structure, and understand how Ionic components work. This is perfect for getting familiar with Ionic Angular before building your first real app.
+欢迎！本指南将带你了解 Ionic Angular 开发的基础知识。你将学习如何设置开发环境、生成一个简单的项目、探索项目结构，并理解 Ionic 组件的工作原理。这对于在构建第一个真实应用之前熟悉 Ionic Angular 来说是完美的。
 
-If you're looking for a high-level overview of what Ionic Angular is and how it fits into the Angular ecosystem, see the [Ionic Angular Overview](overview).
+如果你需要了解 Ionic Angular 是什么以及它在 Angular 生态系统中的位置，请查看 [Ionic Angular 概览](overview)。
 
-## Prerequisites
+## 前提条件
 
-Before you begin, make sure you have Node.js and npm installed on your machine.
-You can check by running:
+开始之前，请确保你的机器上已安装 Node.js 和 npm。
+你可以通过运行以下命令来检查：
 
 ```shell
 node -v
 npm -v
 ```
 
-If you don't have Node.js and npm, [download Node.js here](https://nodejs.org/en/download) (which includes npm).
+如果你没有安装 Node.js 和 npm，请 [在此处下载 Node.js](https://nodejs.org/en/download)（它包含了 npm）。
 
-## Create a Project with the Ionic CLI
+## 使用 Ionic CLI 创建项目
 
-First, install the latest [Ionic CLI](../cli):
+首先，安装最新的 [Ionic CLI](../cli)：
 
 ```shell
 npm install -g @ionic/cli
 ```
 
-Then, run the following commands to create and run a new project:
+然后，运行以下命令来创建并运行一个新项目：
 
 ```shell
 ionic start myApp blank --type angular
@@ -47,15 +47,15 @@ cd myApp
 ionic serve
 ```
 
-At the first prompt, choose `Standalone`.
+在第一个提示处，选择 `Standalone`。
 
-After running `ionic serve`, your project will open in the browser.
+运行 `ionic serve` 后，你的项目将在浏览器中打开。
 
-![Screenshot of the Ionic Angular Home page](/img/guides/quickstart/home-page.png 'Ionic Angular Home Component')
+![Ionic Angular 主页截图](/img/guides/quickstart/home-page.png 'Ionic Angular 主页组件')
 
-## Explore the Project Structure
+## 探索项目结构
 
-Your new app's directory will look like this:
+你的新应用目录结构如下所示：
 
 ```shell
 └── src/
@@ -72,14 +72,14 @@ Your new app's directory will look like this:
 ```
 
 :::info
-All file paths in the examples below are relative to the project root directory.
+以下示例中的所有文件路径都是相对于项目根目录的。
 :::
 
-Let's walk through these files to understand the app's structure.
+让我们逐一查看这些文件，了解应用的结构。
 
-## View the App Component
+## 查看应用根组件
 
-The root of your app is defined in `app.component.ts`:
+应用的根定义在 `app.component.ts` 中：
 
 ```ts title="src/app/app.component.ts"
 import { Component } from '@angular/core';
@@ -95,7 +95,7 @@ export class AppComponent {
 }
 ```
 
-And its template in `app.component.html`:
+其模板在 `app.component.html` 中：
 
 ```html title="src/app/app.component.html"
 <ion-app>
@@ -103,11 +103,11 @@ And its template in `app.component.html`:
 </ion-app>
 ```
 
-This sets up the root of your application, using Ionic's `ion-app` and `ion-router-outlet` components. The router outlet is where your pages will be displayed.
+这设置了应用的根，使用了 Ionic 的 `ion-app` 和 `ion-router-outlet` 组件。路由出口是显示页面的地方。
 
-## View Routes
+## 查看路由定义
 
-Routes are defined in `app.routes.ts`:
+路由在 `app.routes.ts` 中定义：
 
 ```ts title="src/app/app.routes.ts"
 import { Routes } from '@angular/router';
@@ -125,11 +125,11 @@ export const routes: Routes = [
 ];
 ```
 
-When you visit the root URL (`/`), the `HomePage` component will be loaded.
+当你访问根 URL (`/`) 时，将会加载 `HomePage` 组件。
 
-## View the Home Page
+## 查看主页组件
 
-The Home page component, defined in `home.page.ts`, imports the Ionic components it uses:
+主页组件定义在 `home.page.ts` 中，并导入了它使用的 Ionic 组件：
 
 ```ts title="src/app/home/home.page.ts"
 import { Component } from '@angular/core';
@@ -146,7 +146,7 @@ export class HomePage {
 }
 ```
 
-And the template, in the `home.page.html` file, uses those components:
+模板文件 `home.page.html` 使用了这些组件：
 
 ```html title="src/app/home/home.page.html"
 <ion-header [translucent]="true">
@@ -163,55 +163,55 @@ And the template, in the `home.page.html` file, uses those components:
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
+    <strong>准备好创建应用了吗？</strong>
     <p>
-      Start with Ionic
-      <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a>
+      从 Ionic
+      <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI 组件</a> 开始
     </p>
   </div>
 </ion-content>
 ```
 
-This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+这创建了一个带有标题和可滚动内容区域的页面。第二个标题显示了一个 [可折叠大标题](/docs/api/title.md#collapsible-large-titles)，当位于内容顶部时显示，向下滚动时则会收起，在第一个标题中显示较小的标题。
 
-:::tip Learn More
-For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
+:::tip 了解更多
+有关 Ionic 布局组件的详细信息，请参阅 [Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md) 和 [Content](/docs/api/content.md) 文档。
 :::
 
-## Add an Ionic Component
+## 添加 Ionic 组件
 
-You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button.md) at the end of the `ion-content`:
+你可以使用更多 Ionic UI 组件来增强你的主页。例如，在 `ion-content` 的末尾添加一个 [Button](/docs/api/button.md)：
 
 ```html title="src/app/home/home.page.html"
 <ion-content>
-  <!-- existing content -->
+  <!-- 现有内容 -->
 
-  <ion-button>Navigate</ion-button>
+  <ion-button>导航</ion-button>
 </ion-content>
 ```
 
-Then, import the `IonButton` component in `home.page.ts`:
+然后，在 `home.page.ts` 中导入 `IonButton` 组件：
 
 ```ts title="src/app/home/home.page.ts"
 import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
-  // ...existing config...
+  // ...现有配置...
   imports: [IonButton, IonContent, IonHeader, IonTitle, IonToolbar],
 })
 ```
 
-## Add a New Page
+## 添加新页面
 
-To add a new page, generate it with the CLI:
+要添加新页面，请使用 CLI 生成：
 
 ```shell
 ionic generate page new
 ```
 
-A route will be automatically added to `app.routes.ts`.
+路由将自动添加到 `app.routes.ts`。
 
-In `new.page.html`, you can add a [Back Button](/docs/api/back-button.md) to the [Toolbar](/docs/api/toolbar.md):
+在 `new.page.html` 中，你可以向 [Toolbar](/docs/api/toolbar.md) 添加一个 [返回按钮](/docs/api/back-button.md)：
 
 ```html title="src/app/new/new.page.html"
 <ion-header [translucent]="true">
@@ -224,70 +224,70 @@ In `new.page.html`, you can add a [Back Button](/docs/api/back-button.md) to the
 </ion-header>
 ```
 
-And import `IonBackButton` and `IonButtons` in `new.page.ts`:
+并在 `new.page.ts` 中导入 `IonBackButton` 和 `IonButtons`：
 
 ```ts title="src/app/new/new.page.ts"
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
-  // ...existing config...
+  // ...现有配置...
   imports: [IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar],
 })
 ```
 
-The `ion-back-button` will automatically handle navigation back to the previous page, or to `/` if there is no history.
+`ion-back-button` 将自动处理导航回上一页，如果没有历史记录则导航到 `/`。
 
-## Navigate to the New Page
+## 导航到新页面
 
-To navigate to the new page, update the button in `home.page.html`:
+要导航到新页面，更新 `home.page.html` 中的按钮：
 
 ```html title="src/app/home/home.page.html"
-<ion-button [routerLink]="['/new']">Navigate</ion-button>
+<ion-button [routerLink]="['/new']">导航</ion-button>
 ```
 
-Then, import `RouterLink` in `home.page.ts`:
+然后，在 `home.page.ts` 中导入 `RouterLink`：
 
 ```ts title="src/app/home/home.page.ts"
 import { RouterLink } from '@angular/router';
 
 @Component({
-  // ...existing config...
+  // ...现有配置...
   imports: [IonButton, IonContent, IonHeader, IonTitle, IonToolbar, RouterLink],
 })
 ```
 
 :::info
-Navigating can also be performed using Angular's Router service. See the [Angular Navigation documentation](/docs/angular/navigation.md#navigating-to-different-routes) for more information.
+导航也可以使用 Angular 的 Router 服务来执行。更多信息请参阅 [Angular 导航文档](/docs/angular/navigation.md#navigating-to-different-routes)。
 :::
 
-## Add Icons to the New Page
+## 向新页面添加图标
 
-Ionic Angular comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `name` property on the `ion-icon` component. Add the following icons to `new.page.html`:
+Ionic Angular 预装了 [Ionicons](https://ionic.io/ionicons/)。你可以通过设置 `ion-icon` 组件的 `name` 属性来使用任何图标。将以下图标添加到 `new.page.html`：
 
 ```html title="src/app/new/new.page.html"
 <ion-content>
-  <!-- existing content -->
+  <!-- 现有内容 -->
 
   <ion-icon name="heart"></ion-icon>
   <ion-icon name="logo-ionic"></ion-icon>
 </ion-content>
 ```
 
-You'll also need to import and register these icons in `new.page.ts`:
+你还需要在 `new.page.ts` 中导入并注册这些图标：
 
 ```ts title="src/app/new/new.page.ts"
-// ...existing imports...
+// ...现有导入...
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { heart, logoIonic } from 'ionicons/icons';
 
 @Component({
-  // ...existing config...
+  // ...现有配置...
   imports: [IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar],
 })
 ```
 
-Then, update the constructor of the page to use `addIcons`:
+然后，更新页面的构造函数以使用 `addIcons`：
 
 ```ts title="src/app/new/new.page.ts"
 export class NewPage implements OnInit {
@@ -299,15 +299,15 @@ export class NewPage implements OnInit {
 }
 ```
 
-Alternatively, you can register icons in `app.component.ts` to use them throughout your app.
+或者，你可以在 `app.component.ts` 中注册图标，以便在整个应用中使用。
 
-For more information, see the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
+更多信息，请参阅 [Icon 文档](/docs/api/icon.md) 和 [Ionicons 文档](https://ionic.io/ionicons/)。
 
-## Call Component Methods
+## 调用组件方法
 
-Let's add a button that can scroll the content area to the bottom.
+让我们添加一个可以将内容区域滚动到底部的按钮。
 
-Update the `ion-content` in your `new.page.html` to include a button and some items after the existing icons:
+更新 `new.page.html` 中的 `ion-content`，在现有图标后添加一个按钮和一些条目：
 
 ```html title="src/app/new/new.page.html"
 <ion-content [fullscreen]="true" #content>
@@ -320,18 +320,18 @@ Update the `ion-content` in your `new.page.html` to include a button and some it
   <ion-icon name="heart"></ion-icon>
   <ion-icon name="logo-ionic"></ion-icon>
 
-  <ion-button (click)="scrollToBottom()">Scroll to Bottom</ion-button>
+  <ion-button (click)="scrollToBottom()">滚动到底部</ion-button>
 
-  <!-- Add lots of content to make scrolling possible -->
+  <!-- 添加大量内容以实现滚动 -->
   @for (item of items; track $index; let i = $index) {
   <ion-item>
-    <ion-label>Item {{ i + 1 }}</ion-label>
+    <ion-label>项目 {{ i + 1 }}</ion-label>
   </ion-item>
   }
 </ion-content>
 ```
 
-In the component, add the `ViewChild` import, the new component imports and define the `scrollToBottom` function:
+在组件中，添加 `ViewChild` 导入、新的组件导入，并定义 `scrollToBottom` 函数：
 
 ```ts title="src/app/new/new.page.ts"
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -351,7 +351,7 @@ import { addIcons } from 'ionicons';
 import { heart, logoIonic } from 'ionicons/icons';
 
 @Component({
-  // ...existing config...
+  // ...现有配置...
   imports: [
     IonBackButton,
     IonButton,
@@ -382,16 +382,16 @@ export class NewPage implements OnInit {
 }
 ```
 
-To call methods on Ionic components:
+要调用 Ionic 组件的方法：
 
-1. Create a `ViewChild` reference for the component
-2. Call the method directly on the component instance
+1.  为该组件创建一个 `ViewChild` 引用
+2.  直接在组件实例上调用方法
 
-You can find available methods for each component in the [Methods](/docs/api/content.md#methods) section of their API documentation.
+你可以在每个组件的 API 文档的 [方法](/docs/api/content.md#methods) 部分找到可用的方法。
 
-## Run on a Device
+## 在设备上运行
 
-Ionic's components work everywhere: on iOS, Android, and PWAs. To deploy to mobile, use [Capacitor](https://capacitorjs.com):
+Ionic 组件在任何地方都能工作：在 iOS、Android 和 PWA 上。要部署到移动设备，请使用 [Capacitor](https://capacitorjs.com)：
 
 ```shell
 ionic build
@@ -399,43 +399,43 @@ ionic cap add ios
 ionic cap add android
 ```
 
-Open the native projects in their IDEs:
+在各自的 IDE 中打开原生项目：
 
 ```shell
 ionic cap open ios
 ionic cap open android
 ```
 
-See [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-started/with-ionic) for more.
+更多信息，请参阅 [Capacitor 入门指南](https://capacitorjs.com/docs/getting-started/with-ionic)。
 
-## Explore More
+## 深入探索
 
-This guide covered the basics of creating an Ionic Angular app, adding navigation, and introducing Capacitor for native builds. To dive deeper, check out:
+本指南涵盖了创建 Ionic Angular 应用、添加导航以及介绍用于原生构建的 Capacitor 的基础知识。要深入学习，请查看：
 
 <DocsCards>
 
-<DocsCard header="Build Your First App" href="your-first-app" icon="/icons/component-content-icon.png">
-  <p>Build a real Photo Gallery app with Ionic Angular and native device features.</p>
+<DocsCard header="构建你的第一个应用" href="your-first-app" icon="/icons/component-content-icon.png">
+  <p>使用 Ionic Angular 和原生设备功能构建一个真实的照片库应用。</p>
 </DocsCard>
 
-<DocsCard header="Angular Documentation" href="https://angular.dev/overview" icon="/icons/logo-angular-icon.png">
-  <p>Learn more about Angular's core concepts, tools, and best practices from the official Angular documentation.</p>
+<DocsCard header="Angular 文档" href="https://angular.dev/overview" icon="/icons/logo-angular-icon.png">
+  <p>从官方 Angular 文档了解更多关于 Angular 核心概念、工具和最佳实践的信息。</p>
 </DocsCard>
 
-<DocsCard header="Navigation" href="navigation" icon="/icons/component-navigation-icon.png">
-  <p>Discover how to handle routing and navigation in Ionic Angular apps using the Angular Router.</p>
+<DocsCard header="导航" href="navigation" icon="/icons/component-navigation-icon.png">
+  <p>了解如何使用 Angular Router 处理 Ionic Angular 应用中的路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
-  <p>Explore Ionic's rich library of UI components for building beautiful apps.</p>
+<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+  <p>探索 Ionic 丰富的 UI 组件库，用于构建精美的应用。</p>
 </DocsCard>
 
-<DocsCard header="Theming" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
-  <p>Learn how to customize the look and feel of your app with Ionic's powerful theming system.</p>
+<DocsCard header="主题" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+  <p>学习如何使用 Ionic 强大的主题系统自定义应用的外观和感觉。</p>
 </DocsCard>
 
-<DocsCard header="Capacitor Documentation" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>Explore how to access native device features and deploy your app to iOS, Android, and the web with Capacitor.</p>
+<DocsCard header="Capacitor 文档" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
+  <p>探索如何使用 Capacitor 访问原生设备功能并将你的应用部署到 iOS、Android 和 Web。</p>
 </DocsCard>
 
 </DocsCards>

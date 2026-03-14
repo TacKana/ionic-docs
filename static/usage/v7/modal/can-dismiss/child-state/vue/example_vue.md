@@ -3,11 +3,11 @@
   <ion-page ref="page">
     <ion-header>
       <ion-toolbar>
-        <ion-title>App</ion-title>
+        <ion-title>应用</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-button id="open-modal" expand="block">Open</ion-button>
+      <ion-button id="open-modal" expand="block">打开</ion-button>
 
       <ion-modal
         ref="modal"
@@ -47,18 +47,18 @@
 
   const canDismiss = async () => {
     if (canDismissOverride) {
-      // Checks for the override flag to return early if we can dismiss the overlay immediately
+      // 检查覆盖标志，如果可以立即关闭弹层则提前返回
       return true;
     }
     const actionSheet = await actionSheetController.create({
-      header: 'Are you sure?',
+      header: '确定要关闭吗？',
       buttons: [
         {
-          text: 'Yes',
+          text: '是',
           role: 'confirm',
         },
         {
-          text: 'No',
+          text: '否',
           role: 'cancel',
         },
       ],
@@ -69,12 +69,12 @@
   };
 
   const willPresent = () => {
-    // Resets the override when the modal is presented
+    // 当模态框展示时重置覆盖标志
     canDismissOverride = false;
   };
 
   const dismissChanged = () => {
-    // Allows the modal to be dismissed based on the state of the checkbox
+    // 根据复选框的状态允许关闭模态框
     canDismissOverride = true;
   };
 

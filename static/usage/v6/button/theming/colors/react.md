@@ -5,16 +5,16 @@ import { IonButton } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton>Default</IonButton>
-      <IonButton color="primary">Primary</IonButton>
-      <IonButton color="secondary">Secondary</IonButton>
-      <IonButton color="tertiary">Tertiary</IonButton>
-      <IonButton color="success">Success</IonButton>
-      <IonButton color="warning">Warning</IonButton>
-      <IonButton color="danger">Danger</IonButton>
-      <IonButton color="light">Light</IonButton>
-      <IonButton color="medium">Medium</IonButton>
-      <IonButton color="dark">Dark</IonButton>
+      <IonButton>默认</IonButton>
+      <IonButton color="primary">主要</IonButton>
+      <IonButton color="secondary">次要</IonButton>
+      <IonButton color="tertiary">第三</IonButton>
+      <IonButton color="success">成功</IonButton>
+      <IonButton color="warning">警告</IonButton>
+      <IonButton color="danger">危险</IonButton>
+      <IonButton color="light">浅色</IonButton>
+      <IonButton color="medium">中等</IonButton>
+      <IonButton color="dark">深色</IonButton>
     </>
   );
 }

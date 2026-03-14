@@ -14,28 +14,28 @@ import Slots from '@ionic-internal/component-api/v5/refresher-content/slots.md';
 
 # ion-refresher-content
 
-The refresher content contains the text, icon and spinner to display during a pull-to-refresh. Ionic provides the pulling icon and refreshing spinner based on the platform. However, the default icon, spinner, and text can be customized based on the state of the refresher.
+`ion-refresher-content` 组件包含在下拉刷新时显示的文本、图标和旋转器。Ionic 会根据平台提供默认的下拉图标和刷新旋转器。然而，开发者可以根据刷新器的不同状态自定义默认的图标、旋转器和文本。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

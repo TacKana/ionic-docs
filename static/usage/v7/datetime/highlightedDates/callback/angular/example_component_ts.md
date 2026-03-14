@@ -13,6 +13,7 @@ export class ExampleComponent {
     const date = new Date(isoString);
     const utcDay = date.getUTCDate();
 
+    // 如果日期能被 5 整除，应用第一种样式
     if (utcDay % 5 === 0) {
       return {
         textColor: '#800080',
@@ -20,6 +21,7 @@ export class ExampleComponent {
       };
     }
 
+    // 如果日期能被 3 整除，应用第二种样式
     if (utcDay % 3 === 0) {
       return {
         textColor: 'var(--ion-color-secondary-contrast)',

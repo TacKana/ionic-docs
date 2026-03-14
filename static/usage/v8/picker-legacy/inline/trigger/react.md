@@ -5,7 +5,7 @@ import { IonButton, IonPickerLegacy } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton id="open-picker">Open</IonButton>
+      <IonButton id="open-picker">打开</IonButton>
       <IonPickerLegacy
         trigger="open-picker"
         columns={[
@@ -33,13 +33,13 @@ function Example() {
         ]}
         buttons={[
           {
-            text: 'Cancel',
+            text: '取消',
             role: 'cancel',
           },
           {
-            text: 'Confirm',
+            text: '确认',
             handler: (value) => {
-              console.log(`You selected: ${value.languages.value}`);
+              console.log(`您选择了: ${value.languages.value}`);
             },
           },
         ]}

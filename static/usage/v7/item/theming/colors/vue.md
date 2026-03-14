@@ -1,34 +1,34 @@
 ```html
 <template>
   <ion-item>
-    <ion-label>Default Item</ion-label>
+    <ion-label>默认项目</ion-label>
   </ion-item>
   <ion-item color="primary">
-    <ion-label>Primary Item</ion-label>
+    <ion-label>主色项目</ion-label>
   </ion-item>
   <ion-item color="secondary">
-    <ion-label>Secondary Item</ion-label>
+    <ion-label>辅色项目</ion-label>
   </ion-item>
   <ion-item color="tertiary">
-    <ion-label>Tertiary Item</ion-label>
+    <ion-label>第三色项目</ion-label>
   </ion-item>
   <ion-item color="success">
-    <ion-label>Success Item</ion-label>
+    <ion-label>成功状态项目</ion-label>
   </ion-item>
   <ion-item color="warning">
-    <ion-label>Warning Item</ion-label>
+    <ion-label>警告状态项目</ion-label>
   </ion-item>
   <ion-item color="danger">
-    <ion-label>Danger Item</ion-label>
+    <ion-label>危险状态项目</ion-label>
   </ion-item>
   <ion-item color="light">
-    <ion-label>Light Item</ion-label>
+    <ion-label>浅色项目</ion-label>
   </ion-item>
   <ion-item color="medium">
-    <ion-label>Medium Item</ion-label>
+    <ion-label>中等色项目</ion-label>
   </ion-item>
   <ion-item color="dark">
-    <ion-label>Dark Item</ion-label>
+    <ion-label>深色项目</ion-label>
   </ion-item>
 </template>
 

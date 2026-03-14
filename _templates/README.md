@@ -1,30 +1,30 @@
-# Hygen templates
+# Hygen 模板
 
-The templates in this directory are intended to be used with [hygen](https://www.hygen.io/) to generate boilerplate files. Check out [the root package.json](../package.json) to see if there are any custom commands to use them (e.g. `npm run playground:new`). You can also run e.g. `hygen playground new` to use a generator.
+此目录中的模板旨在与 [hygen](https://www.hygen.io/) 配合使用，以生成样板文件。请查看 [根目录下的 package.json](../package.json)，看是否有自定义命令来使用它们（例如 `npm run playground:new`）。你也可以运行例如 `hygen playground new` 来使用生成器。
 
-Some helpful docs links for updating/creating templates:
+以下是一些用于更新/创建模板的有用文档链接：
 
-- [enquirer](https://github.com/enquirer/enquirer#toggle-prompt) for building command line prompts
-- [inflection](https://www.hygen.io/docs/templates#helpers-and-inflections) and [change case](https://www.hygen.io/docs/templates#change-case-helpers) for e.g. changing the case of variables submitted via the prompts
+- [enquirer](https://github.com/enquirer/enquirer#toggle-prompt) 用于构建命令行提示
+- [inflection](https://www.hygen.io/docs/templates#helpers-and-inflections) 和 [change case](https://www.hygen.io/docs/templates#change-case-helpers) 用于例如转换通过提示提交的变量的大小写
 
-# New playground template
+# 新建 Playground 模板
 
-## Generation
+## 生成
 
-To create a new playground, run `npm run playground:new`. This will walk you through some prompts to decide what files for the generator to create for the playground, and what their paths should be.
+要创建一个新的 playground，请运行 `npm run playground:new`。这将引导你完成一些提示，以决定为 playground 创建哪些文件以及它们的路径应该是什么。
 
-The path defaults to `basic`. If there is already a basic playground, you'll want to input a different path for the playground.
+路径默认为 `basic`。如果已经存在一个 basic playground，你需要为 playground 输入一个不同的路径。
 
-The CSS option will add extra files if you need to include custom CSS in your playground.
+CSS 选项会在你需要为 playground 包含自定义 CSS 时添加额外的文件。
 
-If you need a component for multiple versions of Ionic Framework, you (currently) need to run the generator once for each version.
+如果你需要为多个版本的 Ionic Framework 创建组件，你（目前）需要为每个版本运行一次生成器。
 
-## Usage
+## 使用
 
-Once you've generated your playground, you need to add it to the main markdown file in the docs (e.g. [docs/api/button.md](../docs/api/button.md)) by doing something similar to the following example:
+生成 playground 后，你需要将其添加到文档中的主 markdown 文件（例如 [docs/api/button.md](../docs/api/button.md)），可以按照以下示例进行操作：
 
 ```
-## Feature
+## 功能
 
 import Feature from '@site/static/usage/v8/button/feature/index.md';
 

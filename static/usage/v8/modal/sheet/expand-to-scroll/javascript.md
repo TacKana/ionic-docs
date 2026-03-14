@@ -5,7 +5,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button>
+  <ion-button id="open-modal" expand="block">打开底部弹窗</ion-button>
 
   <ion-modal trigger="open-modal" initial-breakpoint="0.25" expand-to-scroll="false">
     <ion-content>
@@ -16,16 +16,16 @@
           </ion-avatar>
           <ion-label>
             <h2>Connor Smith</h2>
-            <p>Sales Rep</p>
+            <p>销售代表</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <ion-img alt="人物头像剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </ion-avatar>
           <ion-label>
             <h2>Jack Smith</h2>
-            <p>Product Designer</p>
+            <p>产品设计师</p>
           </ion-label>
         </ion-item>
         <ion-item>
@@ -34,16 +34,16 @@
           </ion-avatar>
           <ion-label>
             <h2>Daniel Smith</h2>
-            <p>Product Designer</p>
+            <p>产品设计师</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <ion-img alt="人物头像剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </ion-avatar>
           <ion-label>
             <h2>Claire Smith</h2>
-            <p>Graphic Designer</p>
+            <p>平面设计师</p>
           </ion-label>
         </ion-item>
         <ion-item>
@@ -52,43 +52,43 @@
           </ion-avatar>
           <ion-label>
             <h2>Kim Smith</h2>
-            <p>Software Engineer</p>
+            <p>软件工程师</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <ion-img alt="人物头像剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </ion-avatar>
           <ion-label>
             <h2>Alex Smith</h2>
-            <p>Software Engineer</p>
+            <p>软件工程师</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <ion-img alt="人物头像剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </ion-avatar>
           <ion-label>
             <h2>Eric Smith</h2>
-            <p>Product Manager</p>
+            <p>产品经理</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <ion-img alt="人物头像剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </ion-avatar>
           <ion-label>
             <h2>Grace Smith</h2>
-            <p>Product Manager</p>
+            <p>产品经理</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <ion-img alt="人物头像剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </ion-avatar>
           <ion-label>
             <h2>Henry Smith</h2>
-            <p>Product Owner</p>
+            <p>产品负责人</p>
           </ion-label>
         </ion-item>
         <ion-item>
@@ -97,7 +97,7 @@
           </ion-avatar>
           <ion-label>
             <h2>Greg Smith</h2>
-            <p>Director of Operations</p>
+            <p>运营总监</p>
           </ion-label>
         </ion-item>
         <ion-item>
@@ -106,25 +106,25 @@
           </ion-avatar>
           <ion-label>
             <h2>Zoey Smith</h2>
-            <p>CEO</p>
+            <p>首席执行官</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <ion-img alt="人物头像剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </ion-avatar>
           <ion-label>
             <h2>Oliver Smith</h2>
-            <p>COO</p>
+            <p>首席运营官</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-avatar slot="start">
-            <ion-img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <ion-img alt="人物头像剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </ion-avatar>
           <ion-label>
             <h2>Emma Smith</h2>
-            <p>CTO</p>
+            <p>首席技术官</p>
           </ion-label>
         </ion-item>
       </ion-list>

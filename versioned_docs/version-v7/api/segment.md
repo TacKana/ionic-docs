@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/segment/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/segment/slots.md';
 
 <head>
-  <title>ion-segment: API Documentation for Segmented Controls</title>
+  <title>ion-segment：分段控件 API 文档</title>
   <meta
     name="description"
-    content="ion-segments display a group of related buttons—sometimes known as segmented controls. View our Segment API Documentation to learn more about usage."
+    content="ion-segment 用于展示一组相关的按钮，有时也被称为分段控件。查看我们的 Segment API 文档以了解更多使用细节。"
   />
 </head>
 
@@ -21,63 +21,63 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Segments display a group of related buttons, sometimes known as segmented controls, in a horizontal row. They can be displayed inside of a toolbar or the main content.
+分段控件以水平行形式展示一组相关的按钮，有时也被称为分段控制器。它们可以显示在工具栏或主要内容区域中。
 
-Their functionality is similar to tabs, where selecting one will deselect all others. Segments are useful for toggling between different views inside of the content. Tabs should be used instead of a segment when clicking on a control should navigate between pages.
+它们的功能类似于标签页（tabs），选择其中一个会取消选择其他所有选项。分段控件适用于在内容区域内切换不同视图。当点击某个控件需要在页面间导航时，应使用标签页而非分段控件。
 
-## Basic Usage
+## 基本用法
 
-Segments consist of [segment buttons](./segment-button) with a `value` property on each button. Set the `value` property on the segment to match the value of a button to select that button. Segments can also be disabled to prevent users from interacting with them.
+分段控件由多个 [segment button](./segment-button)（分段按钮）组成，每个按钮都有一个 `value` 属性。将 segment 的 `value` 属性设置为与某个按钮的值相匹配，即可选中该按钮。分段控件也可以被禁用，以防止用户与其交互。
 
 import Basic from '@site/static/usage/v7/segment/basic/index.md';
 
 <Basic />
 
-## Scrollable Segments
+## 可滚动的分段控件
 
-Segments are not scrollable by default. Each segment button has a fixed width, and the width is determined by dividing the number of segment buttons by the screen width. This ensures that each segment button can be displayed on the screen without having to scroll. As a result, some segment buttons with longer labels may get cut off. To avoid this we recommend either using a shorter label or switching to a scrollable segment by setting the `scrollable` property to `true`. This will cause the segment to scroll horizontally, but will allow each segment button to have a variable width.
+分段控件默认不可滚动。每个分段按钮都有一个固定宽度，宽度由分段按钮数量除以屏幕宽度决定。这确保了每个分段按钮都能在屏幕上显示而无需滚动。因此，一些标签较长的分段按钮可能会被截断。为了避免这种情况，我们建议使用较短的标签，或者通过将 `scrollable` 属性设置为 `true` 来切换到可滚动的分段控件。这将使分段控件可以水平滚动，同时允许每个分段按钮具有可变宽度。
 
 import Scrollable from '@site/static/usage/v7/segment/scrollable/index.md';
 
 <Scrollable />
 
-## Segments in Toolbars
+## 工具栏中的分段控件
 
-<!-- Reuse the playground from the Toolbar directory -->
+<!-- 复用 Toolbar 目录中的示例 -->
 
 import Toolbar from '@site/static/usage/v7/toolbar/segments/index.md';
 
 <Toolbar />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v7/segment/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v7/segment/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Accessibility
+## 无障碍访问
 
-### Keyboard Interactions
+### 键盘交互
 
-The component has full keyboard support for navigating between and selecting `ion-segment-button` elements. By default, keyboard navigation will only focus `ion-segment-button` elements, but you can use the `selectOnFocus` property to ensure that they get selected on focus as well. The following table details what each key does:
+该组件支持完整的键盘导航，用于在 `ion-segment-button` 元素之间切换和选择。默认情况下，键盘导航仅会聚焦 `ion-segment-button` 元素，但您可以使用 `selectOnFocus` 属性来确保在聚焦时也选中它们。下表详细说明了每个按键的作用：
 
-| Key                                  | Description                                    |
-| ------------------------------------ | ---------------------------------------------- |
-| <kbd>ArrowRight</kbd>                | Focuses the next focusable element.            |
-| <kbd>ArrowLeft</kbd>                 | Focuses the previous focusable element.        |
-| <kbd>Home</kbd>                      | Focuses the first focusable element.           |
-| <kbd>End</kbd>                       | Focuses the last focusable element.            |
-| <kbd>Space</kbd> or <kbd>Enter</kbd> | Selects the element that is currently focused. |
+| 按键                                 | 描述                                     |
+| ------------------------------------ | ---------------------------------------- |
+| <kbd>ArrowRight</kbd>                | 聚焦下一个可聚焦元素。                   |
+| <kbd>ArrowLeft</kbd>                 | 聚焦上一个可聚焦元素。                   |
+| <kbd>Home</kbd>                      | 聚焦第一个可聚焦元素。                   |
+| <kbd>End</kbd>                       | 聚焦最后一个可聚焦元素。                 |
+| <kbd>Space</kbd> 或 <kbd>Enter</kbd> | 选中当前已聚焦的元素。                   |
 
-## Interfaces
+## 接口
 
 ### SegmentChangeEventDetail
 
@@ -89,7 +89,7 @@ interface SegmentChangeEventDetail {
 
 ### SegmentCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便在使用此组件发出的 Ionic 事件时获得更强的类型支持。
 
 ```typescript
 interface SegmentCustomEvent extends CustomEvent {
@@ -98,26 +98,26 @@ interface SegmentCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 影子部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

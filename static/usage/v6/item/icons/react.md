@@ -7,23 +7,23 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonLabel>Default Icon</IonLabel>
+        <IonLabel>默认图标</IonLabel>
         <IonIcon icon={informationCircle} slot="end"></IonIcon>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Large Icon</IonLabel>
+        <IonLabel>大号图标</IonLabel>
         <IonIcon icon={informationCircle} size="large" slot="end"></IonIcon>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Small Icon</IonLabel>
+        <IonLabel>小号图标</IonLabel>
         <IonIcon icon={informationCircle} size="small" slot="end"></IonIcon>
       </IonItem>
 
       <IonItem>
         <IonIcon icon={star} slot="start"></IonIcon>
-        <IonLabel>Default Icon</IonLabel>
+        <IonLabel>默认图标</IonLabel>
       </IonItem>
     </>
   );

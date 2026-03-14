@@ -20,42 +20,42 @@ import { caretDown, ellipse, warning } from 'ionicons/icons';
 })
 export class ExampleComponent {
   items = [
-    { label: 'Buy groceries', icon: 'warning', color: 'warning' },
-    { label: 'Call the bank', icon: 'warning', color: 'warning' },
-    { label: 'Finish project report', icon: 'ellipse', color: 'light' },
-    { label: 'Book flight tickets', icon: 'ellipse', color: 'light' },
-    { label: 'Read a book', icon: 'caret-down', color: 'secondary' },
+    { label: '买杂货', icon: 'warning', color: 'warning' },
+    { label: '给银行打电话', icon: 'warning', color: 'warning' },
+    { label: '完成项目报告', icon: 'ellipse', color: 'light' },
+    { label: '预订机票', icon: 'ellipse', color: 'light' },
+    { label: '阅读一本书', icon: 'caret-down', color: 'secondary' },
   ];
 
   @ViewChildren('icon', { read: ElementRef }) icons!: QueryList<ElementRef<HTMLIonIconElement>>;
 
   constructor() {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 应用中想要使用的任何图标
+     * 都可以在 app.component.ts 中注册，
+     * 然后在应用中的任何地方通过名称引用。
      */
     addIcons({ caretDown, ellipse, warning });
   }
 
   handleReorderStart() {
-    console.log('Reorder started');
+    console.log('开始重新排序');
 
-    // Hide the icons when the reorder starts
+    // 当重新排序开始时隐藏图标
     this.icons.forEach((icon) => {
       icon.nativeElement.style.opacity = '0';
     });
   }
 
   handleReorderEnd(event: ReorderEndCustomEvent) {
-    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+    console.log('从索引', event.detail.from, '拖拽到', event.detail.to);
 
-    // Show the icons again
+    // 再次显示图标
     this.icons.forEach((icon) => {
       icon.nativeElement.style.opacity = '1';
     });
 
-    // Finish the reorder and update the items data
+    // 完成重新排序并更新 items 数据
     this.items = event.detail.complete(this.items);
   }
 }

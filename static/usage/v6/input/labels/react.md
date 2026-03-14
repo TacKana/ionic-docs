@@ -6,23 +6,23 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonLabel>Default label</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonLabel>默认标签</IonLabel>
+        <IonInput placeholder="输入文本"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel position="fixed">Fixed label</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonLabel position="fixed">固定标签</IonLabel>
+        <IonInput placeholder="输入文本"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel position="stacked">Stacked label</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonLabel position="stacked">堆叠标签</IonLabel>
+        <IonInput placeholder="输入文本"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel position="floating">Floating label</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonLabel position="floating">浮动标签</IonLabel>
+        <IonInput placeholder="输入文本"></IonInput>
       </IonItem>
     </IonList>
   );

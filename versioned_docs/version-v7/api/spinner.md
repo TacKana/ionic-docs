@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/spinner/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/spinner/slots.md';
 
 <head>
-  <title>ion-spinner: Animated Spinner Icon Components and Properties</title>
+  <title>ion-spinner: 动画旋转加载图标组件与属性</title>
   <meta
     name="description"
-    content="The ion-spinner component provides a variety of animated SVG spinners. These icons indicate that the app is loading or performing another process to wait on."
+    content="ion-spinner 组件提供多种动画 SVG 加载图标。这些图标表示应用正在加载或执行其他需要等待的处理过程。"
   />
 </head>
 
@@ -21,47 +21,47 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-The Spinner component provides a variety of animated SVG spinners. Spinners are visual indicators that the app is loading content or performing another process that the user needs to wait on.
+Spinner 组件提供多种动画 SVG 加载图标。旋转加载图标是视觉指示器，用于表示应用正在加载内容或执行其他需要用户等待的处理过程。
 
-## Basic Usage
+## 基本用法
 
-The default spinner is based on the mode. When the mode is `ios` the spinner will be `"lines"`, and when the mode is `md` the spinner will be `"circular"`. If the `name` property is set, then that spinner will be used instead of the mode specific spinner.
+默认的旋转加载图标基于应用模式 (mode) 决定。当模式为 `ios` 时，加载图标为 `"lines"`；当模式为 `md` 时，加载图标为 `"circular"`。如果设置了 `name` 属性，则会使用该属性指定的加载图标，而非模式特定的加载图标。
 
 import Basic from '@site/static/usage/v7/spinner/basic/index.md';
 
 <Basic />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v7/spinner/theming/colors/index.md';
 
 <Colors />
 
-### Styling
+### 样式调整
 
-You may use custom CSS to style the spinner. For example, you can resize the spinner by setting the width and height.
+您可以使用自定义 CSS 来设置加载图标的样式。例如，可以通过设置宽度和高度来调整加载图标的大小。
 
 import Resizing from '@site/static/usage/v7/spinner/theming/resizing/index.md';
 
 <Resizing />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v7/spinner/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -69,10 +69,10 @@ import CSSProps from '@site/static/usage/v7/spinner/theming/css-properties/index
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

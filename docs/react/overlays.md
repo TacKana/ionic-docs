@@ -1,40 +1,40 @@
 ---
-sidebar_label: Overlays
+sidebar_label: 叠加层
 ---
 
-# Using Overlay Components in React
+# 在 React 中使用叠加层组件
 
-For Ionic React, there are two techniques you can use to display overlay components like modals, alerts, action sheets, etc. In this guide, we will go over both of them.
+对于 Ionic React，有两种技术可用于显示模态框（modal）、警告框（alert）、动作表（action sheet）等叠加层组件。本指南将详细介绍这两种方法。
 
-## Overlay Hooks
+## 叠加层钩子
 
-Starting in Ionic React 5.6, we introduced new React hooks you can use to control displaying and dismissing overlays. These hooks provide a programmatic way of controlling the overlays, as well as a way to use overlays outside of your Ionic Page without the need of a state management system.
+从 Ionic React 5.6 开始，我们引入了新的 React 钩子（hooks），可用于控制叠加层的显示和关闭。这些钩子提供了一种以编程方式控制叠加层的方法，同时也能让你在 Ionic 页面之外使用叠加层，而无需依赖状态管理系统。
 
-To use one of the overlay hooks, you import the hook for the overlay you want to use from `@ionic/react`. For example, if we want to use the Alert overlay, we import `useIonAlert`:
+要使用叠加层钩子，你需要从 `@ionic/react` 导入所需的钩子。例如，如果我们想使用警告框叠加层，就导入 `useIonAlert`：
 
 ```tsx
 import { useIonAlert } from '@ionic/react';
 ```
 
-The hooks return an array, where the first item in the array is the method to present the hook, and the second is the method to dismiss the hook:
+这些钩子返回一个数组，其中第一项是显示叠加层的方法，第二项是关闭叠加层的方法：
 
 ```tsx
 const [showAlert, hideAlert] = useIonAlert();
 ```
 
 :::note
-Overlays often dismiss themselves when the user is done interacting with them, so you might not need to use dismiss/hide method.
+叠加层通常会在用户完成交互后自动关闭，因此你可能不需要使用关闭/隐藏方法。
 :::
 
-To display the overlay, you use the present method, which we destructured to the name `showAlert`. The method takes in a set of parameters that vary depending on each overlay, but generally, they can either take in a simple set of common parameters or an object to specify additional options.
+要显示叠加层，你可以使用显示方法（这里我们将其解构为 `showAlert`）。该方法接收的参数因不同叠加层而异，但通常可以接受一组简单的通用参数，或者一个用于指定额外选项的对象。
 
 ```tsx
 showAlert('Hello!', [{ text: 'Ok' }]);
 ```
 
-For `useIonAlert`, the first parameter is the message to display, and the second is an array of `AlertButtons` to customize the buttons the alert will show.
+对于 `useIonAlert`，第一个参数是要显示的消息，第二个参数是 `AlertButtons` 数组，用于自定义警告框显示的按钮。
 
-Alternatively, you can pass in an AlertOptions config object to provide additional parameters, such as a CSS class to add to the markup, a header for the alert, and a callback that gets called when the alert is dismissed:
+或者，你也可以传入一个 AlertOptions 配置对象，以提供额外的参数，例如要添加到标记中的 CSS 类、警告框的标题以及警告框关闭时调用的回调函数：
 
 ```tsx
 showAlert({
@@ -46,7 +46,7 @@ showAlert({
 });
 ```
 
-Overlay hooks that display additional custom components as part of their markup, such as [modals](https://ionicframework.com/docs/api/modal) and [popovers](https://ionicframework.com/docs/api/popover), take in a couple of additional parameters when initializing their hooks. The first parameter is the component you want your overlay to display, and the second is an object of additional props you want to pass into the component when it gets constructed:
+那些在其标记中显示额外自定义组件的叠加层钩子，例如[模态框](https://ionicframework.com/docs/api/modal)和[弹出框](https://ionicframework.com/docs/api/popover)，在初始化钩子时会接收几个额外的参数。第一个参数是你希望叠加层显示的组件，第二个参数是一个对象，包含你想在组件构造时传递的额外属性：
 
 ```tsx
 const [present, dismiss] = useIonModal(({ name }) => <div>Hello {name}.</div>, {
@@ -54,19 +54,19 @@ const [present, dismiss] = useIonModal(({ name }) => <div>Hello {name}.</div>, {
 });
 ```
 
-## Overlay Components
+## 叠加层组件
 
-Overlays can also be displayed by using components from `@ionic/react`. The components take a `isOpen` prop that you provide to control if the overlay is currently being displayed or not. When `isOpen` switches from true to false (and vise versa), Ionic will open/close the overlay with the appropriate animation. You can also supply any other additional config options as props to the overlay:
+叠加层也可以通过使用 `@ionic/react` 中的组件来显示。这些组件接收一个 `isOpen` 属性，你可以通过它来控制叠加层当前是否显示。当 `isOpen` 从 true 变为 false（或相反）时，Ionic 会以适当的动画打开/关闭叠加层。你还可以向叠加层提供任何其他额外的配置选项作为属性：
 
 ```tsx
 <IonAlert isOpen={showAlert} message="Hello!" buttons={[{ text: 'Ok' }]} onDidDismiss={() => setShowAlert(false)} />
 ```
 
-Above, the `showAlert` boolean is a piece of state provided from your application.
+上面的 `showAlert` 布尔值是你应用程序中的一个状态变量。
 
-When the overlay is dismissed, it is important to tie into the `onDidDismiss` callback and set your state variable to indicate that the overlay is no longer presenting. Ionic React looks for changes to the `isOpen` prop to determine if the overlay should be displayed or not.
+当叠加层关闭时，务必在 `onDidDismiss` 回调中设置你的状态变量，以表明叠加层不再显示。Ionic React 会检测 `isOpen` 属性的变化，以确定是否应显示叠加层。
 
-For overlays that display custom components, such as [modals](https://ionicframework.com/docs/api/modal) and [popovers](https://ionicframework.com/docs/api/popover), you provide the component as a child to the overlay component:
+对于显示自定义组件的叠加层，例如[模态框](https://ionicframework.com/docs/api/modal)和[弹出框](https://ionicframework.com/docs/api/popover)，你需要将组件作为子元素传递给叠加层组件：
 
 ```tsx
 <IonModal isOpen={showModal}>
@@ -75,17 +75,17 @@ For overlays that display custom components, such as [modals](https://ionicframe
 ```
 
 :::note
-The Overlay Components are still a valid way of displaying overlays and are in no way a deprecated method. Use whichever method best fits your application.
+叠加层组件仍然是显示叠加层的有效方式，绝不是已弃用的方法。请选择最适合你应用程序的方式。
 :::
 
-## Docs for Overlays in Ionic
+## Ionic 叠加层文档
 
-For full docs and to see usage examples for both the hook and component approach, visit the docs page for each of the overlays in Ionic:
+要查看完整的文档以及钩子和组件两种使用方式的示例，请访问 Ionic 中每个叠加层的文档页面：
 
-- [Action Sheet](https://ionicframework.com/docs/api/action-sheet)
-- [Alert](https://ionicframework.com/docs/api/alert)
-- [Loading](https://ionicframework.com/docs/api/loading)
-- [Modal](https://ionicframework.com/docs/api/modal)
-- [Picker](https://ionicframework.com/docs/api/picker)
-- [Popover](https://ionicframework.com/docs/api/popover)
-- [Toast](https://ionicframework.com/docs/api/toast)
+- [动作表](https://ionicframework.com/docs/api/action-sheet)
+- [警告框](https://ionicframework.com/docs/api/alert)
+- [加载指示器](https://ionicframework.com/docs/api/loading)
+- [模态框](https://ionicframework.com/docs/api/modal)
+- [选择器](https://ionicframework.com/docs/api/picker)
+- [弹出框](https://ionicframework.com/docs/api/popover)
+- [轻提示](https://ionicframework.com/docs/api/toast)

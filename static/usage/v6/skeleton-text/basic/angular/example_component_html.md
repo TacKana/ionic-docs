@@ -1,6 +1,6 @@
 ```html
 <ion-list *ngIf="loaded">
-  <ion-list-header>Albums</ion-list-header>
+  <ion-list-header>专辑列表</ion-list-header>
   <ion-item>
     <ion-thumbnail slot="start">
       <ion-icon style="width: 100%; height: 100%" name="musical-notes"></ion-icon>
@@ -35,5 +35,5 @@
   </ion-item>
 </ion-list>
 
-<ion-button (click)="loaded = !loaded">Toggle</ion-button>
+<ion-button (click)="loaded = !loaded">切换状态</ion-button>
 ```

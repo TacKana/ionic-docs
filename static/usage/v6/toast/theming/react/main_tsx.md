@@ -11,19 +11,19 @@ function Example() {
     <IonButton
       onClick={() =>
         presentToast({
-          message: 'Hello Styled World!',
+          message: '你好，风格化世界！',
           duration: 3000,
           cssClass: 'custom-toast',
           buttons: [
             {
-              text: 'Dismiss',
+              text: '关闭',
               role: 'cancel',
             },
           ],
         })
       }
     >
-      Click Me
+      点击我
     </IonButton>
   );
 }

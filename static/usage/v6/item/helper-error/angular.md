@@ -1,8 +1,8 @@
 ```html
 <ion-item fill="solid">
-  <ion-label position="floating">Email</ion-label>
+  <ion-label position="floating">邮箱</ion-label>
   <ion-input type="email" ngModel email></ion-input>
-  <ion-note slot="helper">Enter a valid email</ion-note>
-  <ion-note slot="error">Invalid email</ion-note>
+  <ion-note slot="helper">请输入有效的邮箱地址</ion-note>
+  <ion-note slot="error">邮箱地址无效</ion-note>
 </ion-item>
 ```

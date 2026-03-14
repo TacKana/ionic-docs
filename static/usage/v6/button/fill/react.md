@@ -5,10 +5,10 @@ import { IonButton } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton>Default</IonButton>
-      <IonButton fill="clear">Clear</IonButton>
-      <IonButton fill="outline">Outline</IonButton>
-      <IonButton fill="solid">Solid</IonButton>
+      <IonButton>默认</IonButton>
+      <IonButton fill="clear">透明</IonButton>
+      <IonButton fill="outline">轮廓</IonButton>
+      <IonButton fill="solid">实心</IonButton>
     </>
   );
 }

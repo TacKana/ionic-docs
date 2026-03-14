@@ -11,22 +11,22 @@ function Example() {
     <IonButton
       onClick={() =>
         presentAlert({
-          header: 'Are you sure?',
+          header: '确认操作',
           cssClass: 'custom-alert',
           buttons: [
             {
-              text: 'No',
+              text: '取消',
               cssClass: 'alert-button-cancel',
             },
             {
-              text: 'Yes',
+              text: '确认',
               cssClass: 'alert-button-confirm',
             },
           ],
         })
       }
     >
-      Click Me
+      点击我
     </IonButton>
   );
 }

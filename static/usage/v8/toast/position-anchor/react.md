@@ -12,8 +12,8 @@ function Example() {
       </IonHeader>
 
       <IonContent className="ion-padding">
-        <IonButton id="headerAnchor">Anchor to Header</IonButton>
-        <IonButton id="footerAnchor">Anchor to Footer</IonButton>
+        <IonButton id="headerAnchor">定位到顶部栏</IonButton>
+        <IonButton id="footerAnchor">定位到底部栏</IonButton>
 
         <IonToast
           trigger="headerAnchor"

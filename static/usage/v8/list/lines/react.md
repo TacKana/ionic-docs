@@ -7,37 +7,37 @@ function Example() {
     <>
       <IonList lines="full">
         <IonItem>
-          <IonLabel>Full Lines</IonLabel>
+          <IonLabel>完整分隔线</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>Full Lines</IonLabel>
+          <IonLabel>完整分隔线</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>Full Lines</IonLabel>
+          <IonLabel>完整分隔线</IonLabel>
         </IonItem>
       </IonList>
 
       <IonList lines="inset">
         <IonItem>
-          <IonLabel>Inset Lines</IonLabel>
+          <IonLabel>内嵌分隔线</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>Inset Lines</IonLabel>
+          <IonLabel>内嵌分隔线</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>Inset Lines</IonLabel>
+          <IonLabel>内嵌分隔线</IonLabel>
         </IonItem>
       </IonList>
 
       <IonList lines="none">
         <IonItem>
-          <IonLabel>No Lines</IonLabel>
+          <IonLabel>无分隔线</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>No Lines</IonLabel>
+          <IonLabel>无分隔线</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>No Lines</IonLabel>
+          <IonLabel>无分隔线</IonLabel>
         </IonItem>
       </IonList>
     </>

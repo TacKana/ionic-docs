@@ -9,29 +9,29 @@ import TabItem from '@theme/TabItem';
 
 # Background Fetch
 
-iOS Background Fetch Implementation. See: https://developer.apple.com/reference/uikit/uiapplication#1657399
-iOS Background Fetch is basically an API which wakes up your app about every 15 minutes (during the user's prime-time hours) and provides your app exactly 30s of background running-time. This plugin will execute your provided callbackFn whenever a background-fetch event occurs. There is no way to increase the rate which a fetch-event occurs and this plugin sets the rate to the most frequent possible value of UIApplicationBackgroundFetchIntervalMinimum -- iOS determines the rate automatically based upon device usage and time-of-day (ie: fetch-rate is about ~15min during prime-time hours; less frequently when the user is presumed to be sleeping, at 3am for example).
-For more detail, please see https://github.com/transistorsoft/cordova-plugin-background-fetch
+iOS 后台获取功能的实现。详情请参阅：https://developer.apple.com/reference/uikit/uiapplication#1657399  
+iOS 后台获取本质上是一个 API，它大约每 15 分钟唤醒你的应用（在用户使用高峰期），并为你的应用提供 30 秒的后台运行时间。每当后台获取事件发生时，该插件都会执行你提供的回调函数 `callbackFn`。你无法提高后台获取事件的发生频率，本插件会将频率设置为可能的最小值 `UIApplicationBackgroundFetchIntervalMinimum` —— iOS 会根据设备使用情况和时间自动决定频率（例如：在高峰期，获取频率约为 15 分钟；而在凌晨 3 点用户可能休息时，频率会降低）。  
+更多详细信息，请参阅 https://github.com/transistorsoft/cordova-plugin-background-fetch
 
 <p>
   <a href="https://github.com/transistorsoft/cordova-plugin-background-fetch" target="_blank" rel="noopener" className="git-link">github.com/transistorsoft/cordova-plugin-background-fetch</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>在 Cordova 问题上卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果你正在开发重要项目，就经不起花费数小时进行故障排查。 Ionic 专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -57,21 +57,21 @@ For more detail, please see https://github.com/transistorsoft/cordova-plugin-bac
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版提供由 Ionic 团队完全支持并维护的插件。 &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，或如果你对此插件的企业版感兴趣，<a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">请联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - iOS
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -82,25 +82,24 @@ import { BackgroundFetch, BackgroundFetchConfig } from '@awesome-cordova-plugins
 constructor(private backgroundFetch: BackgroundFetch) {
 
   const config: BackgroundFetchConfig = {
-    stopOnTerminate: false, // Set true to cease background-fetch from operating after user "closes" the app. Defaults to true.
+    stopOnTerminate: false, // 设置为 true 以在用户“关闭”应用后停止后台获取功能。默认为 true。
   }
 
   backgroundFetch.configure(config)
      .then(() => {
-         console.log('Background Fetch initialized');
+         console.log('Background Fetch 已初始化');
 
          this.backgroundFetch.finish();
 
      })
-     .catch(e => console.log('Error initializing background fetch', e));
+     .catch(e => console.log('初始化后台获取时出错', e));
 
-  // Start the background-fetch API. Your callbackFn provided to #configure will be executed each time a background-fetch event occurs. NOTE the #configure method automatically calls #start. You do not have to call this method after you #configure the plugin
+  // 启动后台获取 API。你提供给 #configure 的回调函数将在每次后台获取事件发生时执行。注意：#configure 方法会自动调用 #start，所以在配置插件后无需再调用此方法
   backgroundFetch.start();
 
-  // Stop the background-fetch API from firing fetch events. Your callbackFn provided to #configure will no longer be executed.
+  // 停止后台获取 API 触发获取事件。你提供给 #configure 的回调函数将不再执行。
   backgroundFetch.stop();
 
 
 }
-
 ```

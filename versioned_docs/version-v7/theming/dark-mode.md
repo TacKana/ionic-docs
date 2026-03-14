@@ -1,138 +1,138 @@
 ---
-title: Dark Mode
+title: 深色模式
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
 <head>
-  <title>Dark Mode to Change Color Schemes and CSS Properties</title>
+  <title>深色模式：更改配色方案与CSS属性</title>
   <meta
     name="description"
-    content="Developers are adding dark mode CSS on native applications to support their user preferences. Read to learn more about dark color schemes for Ionic apps."
+    content="开发者正在为原生应用添加深色模式CSS以支持用户偏好。阅读本文了解如何为Ionic应用设置深色配色方案。"
   />
 </head>
 
-Ionic makes it easy to change the themes of your app, including supporting dark color schemes. Dark mode is a display setting that changes all of an app's views to a dark theme. It has system-wide support on iOS and Android, making it highly desirable for developers to add to their apps.
+Ionic让您能够轻松更改应用的主题，包括支持深色配色方案。深色模式是一种显示设置，可将应用的所有视图切换为深色主题。它在iOS和Android系统上得到全面支持，因此开发者非常希望将其添加到应用中。
 
-## Using Media Queries
+## 使用媒体查询
 
-The modern way to enable dark mode is by using the [CSS media query for the user's preferred color scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). This media query will hook into the system setting of the user's device and apply the theme if dark mode is enabled. Ionic Framework starters use this method to include the dark theme.
-
-```css
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode variables go here */
-  }
-}
-```
-
-The `prefers-color-scheme` media query is supported by [all modern browsers](https://caniuse.com/#feat=prefers-color-scheme). Users will not be able to benefit from having the dark theme applied using this media query in certain browsers, however, the dark theme can still be applied by using a [CSS class fallback](#css-class-fallback) if support for older browsers is needed.
-
-## CSS Class Fallback
-
-As a fallback method for devices that don't support the media query, the dark mode can be applied by styling a CSS selector and applying the class to the document body.
+启用深色模式的现代方法是使用[针对用户偏好配色方案的CSS媒体查询](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)。此媒体查询将关联到用户设备的系统设置，并在启用深色模式时应用主题。Ionic Framework入门项目使用此方法来包含深色主题。
 
 ```css
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Dark mode variables go here */
+    /* 深色模式变量放在这里 */
+  }
+}
+```
+
+所有现代浏览器都支持`prefers-color-scheme`媒体查询。在某些浏览器中，用户可能无法通过此媒体查询享受到深色主题带来的好处，但若需要支持旧版浏览器，仍可通过[CSS类回退方案](#css-class-fallback)应用深色主题。
+
+## CSS类回退方案
+
+对于不支持媒体查询的设备，可以通过为CSS选择器设置样式，并将类应用于文档body元素，作为回退方法应用深色模式。
+
+```css
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 深色模式变量放在这里 */
   }
 }
 
-/* Fallback for older browsers or manual mode */
+/* 针对旧版浏览器或手动模式的回退方案 */
 body.dark {
-  /* Dark mode variables go here */
+  /* 深色模式变量放在这里 */
 }
 ```
 
-With the variables targeting the `body.dark` selector, all that is needed now is to add the class to the `<body>` in the app. This can be done in a variety of ways depending on the framework your app is built with.
+变量以`body.dark`选择器为目标后，现在只需将类添加到应用的`<body>`元素中。根据构建应用所用的框架，可以通过多种方式实现。
 
-Notice that the variables should be in both places in this example. We can [use JavaScript](#combining-with-javascript) in order to avoid setting the variables in two places.
+请注意，在此示例中，变量应同时出现在两个位置。我们可以[结合使用JavaScript](#combining-with-javascript)来避免在两个位置设置变量。
 
-## Combining with JavaScript
+## 结合JavaScript使用
 
-In order to keep the CSS variables written once and avoid having to update them in multiple places, the `dark` class can be added when the value of the `prefers-color-scheme` media query is `dark`. Here's what the CSS would look like:
+为了保持CSS变量只写一次，并避免在多个位置更新它们，可以在`prefers-color-scheme`媒体查询的值为`dark`时添加`dark`类。CSS将如下所示：
 
 ```css
 body.dark {
-  /* Dark mode variables go here */
+  /* 深色模式变量放在这里 */
 }
 ```
 
-Notice that the variables above are only in the `body.dark` selector now, and the `prefers-color-scheme` media query has been removed.
+请注意，上面的变量现在只位于`body.dark`选择器中，并且已移除了`prefers-color-scheme`媒体查询。
 
-### Automatically Enable Dark Mode
+### 自动启用深色模式
 
-The `dark` class can be added to the `<body>` by checking if the document matches the media query using [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia). This will allow dark mode to still work based on the user's preference.
+可以通过使用[matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)检查文档是否匹配媒体查询，将`dark`类添加到`<body>`中。这将允许深色模式根据用户偏好继续工作。
 
 :::note
-The demo below prioritizes the site's theme over the system settings. If your system settings are set to something other than the site's theme when the demo loads, it will match the site's theme. Try changing the system preferences on your device between light & dark mode to see it change.
+以下演示优先考虑网站主题而非系统设置。如果加载演示时您的系统设置与网站主题不同，它将匹配网站主题。尝试在设备上将系统偏好设置为浅色和深色模式之间切换以查看变化。
 :::
 
 :::info
-Not sure how to change the system settings? Here's [how to enable dark mode on Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
+不确定如何更改系统设置？以下是[如何在Windows 11上启用深色模式](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe)和[如何在Mac上启用](https://support.apple.com/en-us/HT208976)的方法。
 :::
 
 import AutomaticDarkMode from '@site/static/usage/v7/theming/automatic-dark-mode/index.md';
 
 <AutomaticDarkMode />
 
-### Manually Toggle Dark Mode
+### 手动切换深色模式
 
-In addition to adding the `dark` class to the `<body>` when the media query changes, the class can be added by the app, such as when a user changes a toggle, to switch between the light and dark themes:
+除了在媒体查询更改时向`<body>`添加`dark`类外，应用也可以添加该类，例如当用户切换开关时，以在浅色和深色主题之间切换：
 
 import ManualDarkMode from '@site/static/usage/v7/theming/manual-dark-mode/index.md';
 
 <ManualDarkMode />
 
-## Adjusting System UI Components
+## 调整系统UI组件
 
-When developing a dark theme, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. See the <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">browser compatibility for color-scheme</a> for details on cross browser support.
+开发深色主题时，您可能会注意到某些系统UI组件未正确适应深色模式。要解决此问题，您需要指定`color-scheme`。有关跨浏览器支持的详细信息，请参阅<a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">color-scheme的浏览器兼容性</a>。
 
-While you may be mainly using Ionic components instead of only native components, `color-scheme` can also affect aspects of your application such as the scrollbar. In order to use `color-scheme` you will need to add the following HTML to the `head` of your application:
+虽然您可能主要使用Ionic组件而非仅使用原生组件，但`color-scheme`也会影响应用的某些方面，例如滚动条。要使用`color-scheme`，您需要在应用的`head`中添加以下HTML：
 
 ```html
 <meta name="color-scheme" content="light dark" />
 ```
 
-This allows the page to indicate which color scheme it is comfortable being rendered with. Alternatively, you can add the following CSS to do this on a per-element basis:
+这允许页面指示其适合以哪种配色方案渲染。或者，您可以添加以下CSS以在每个元素基础上实现：
 
 ```css
 color-scheme: light dark;
 ```
 
-| Default scrollbar                                                                                                                                      | Scrollbar with `color-scheme`                                                                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![A default light-themed scrollbar in an application interface.](/img/theming/color-scheme-light.png 'Default scrollbar appearance without dark mode') | ![A dark-themed scrollbar in an application interface, demonstrating the effect of the 'color-scheme' property.](/img/theming/color-scheme-dark.png "Scrollbar appearance with dark mode 'color-scheme' applied") |
+| 默认滚动条                                                                                                                                 | 应用`color-scheme`后的滚动条                                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![应用程序界面中默认的浅色主题滚动条。](/img/theming/color-scheme-light.png '未应用深色模式时的默认滚动条外观') | ![应用程序界面中的深色主题滚动条，展示了‘color-scheme’属性的效果。](/img/theming/color-scheme-dark.png "应用深色模式‘color-scheme’后的滚动条外观") |
 
-For more information regarding `color-scheme`, please see the [Web.dev guide on color schemes](https://web.dev/color-scheme/).
+有关`color-scheme`的更多信息，请参阅[Web.dev关于配色方案的指南](https://web.dev/color-scheme/)。
 
 :::note
-`color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, see [Keyboard Documentation](../developing/keyboard.md#dark-mode).
+`color-scheme`不适用于键盘。有关深色模式如何与键盘配合使用的详细信息，请参阅[键盘文档](../developing/keyboard.md#dark-mode)。
 :::
 
 :::note
-For developers looking to customize the theme color under the status bar in Safari on iOS 15 or the toolbar in Safari on macOS, see [`theme-color` Meta](./advanced.md#theme-color-meta).
+对于希望在iOS 15的Safari中自定义状态栏下的主题颜色或在macOS的Safari中自定义工具栏主题颜色的开发者，请参阅[`theme-color`元标签](./advanced.md#theme-color-meta)。
 :::
 
-## Ionic Dark Theme
+## Ionic深色主题
 
-Ionic has a recommended theme for variables to use in order to get a dark mode based on the device running the app. It can be broken down into the following parts:
+Ionic有一个推荐的主题变量集，用于根据运行应用的设备获取深色模式。它可以分为以下几个部分：
 
-1. Changing the default [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement the dark background in the `body.dark` selector.
-2. Setting variables for the dark theme on `ios` devices.
-3. Setting variables for the dark theme on `md` devices.
+1. 在`body.dark`选择器中更改所有[模式](platform-styles.md#ionic-modes)的默认[Ionic颜色](colors.md)，以适配深色背景。
+2. 为`ios`设备设置深色主题的变量。
+3. 为`md`设备设置深色主题的变量。
 
-The following code can be copied and pasted into an app's global CSS file to get Ionic's dark theme. We are [using the CSS media query](#using-media-queries) to enable dark mode. If older browser support is required, use the method described in the [combining with JavaScript](#combining-with-javascript) section.
+以下代码可以复制并粘贴到应用的全局CSS文件中，以获取Ionic的深色主题。我们[使用CSS媒体查询](#using-media-queries)来启用深色模式。如果需要支持旧版浏览器，请使用[结合JavaScript](#combining-with-javascript)部分中描述的方法。
 
 :::info
-For more information on the variables that are being changed, including other variables that can be added to further customize, see [Themes](themes.md).
+有关正在更改的变量的更多信息，包括可以添加以进一步自定义的其他变量，请参阅[主题](themes.md)。
 :::
 
 ```css
 @media (prefers-color-scheme: dark) {
   /*
-   * Dark Colors
+   * 深色配色
    * -------------------------------------------
    */
 
@@ -202,7 +202,7 @@ For more information on the variables that are being changed, including other va
   }
 
   /*
-   * iOS Dark Theme
+   * iOS深色主题
    * -------------------------------------------
    */
 
@@ -245,7 +245,7 @@ For more information on the variables that are being changed, including other va
   }
 
   /*
-   * Material Design Dark Theme
+   * Material Design深色主题
    * -------------------------------------------
    */
 

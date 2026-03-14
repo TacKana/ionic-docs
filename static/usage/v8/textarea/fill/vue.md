@@ -1,14 +1,14 @@
 ```html
 <template>
-  <ion-textarea label="Solid textarea" label-placement="floating" fill="solid" placeholder="Enter text"></ion-textarea>
+  <ion-textarea label="实心文本域" label-placement="floating" fill="solid" placeholder="请输入文本"></ion-textarea>
 
   <br />
 
   <ion-textarea
-    label="Outline textarea"
+    label="描边文本域"
     label-placement="floating"
     fill="outline"
-    placeholder="Enter text"
+    placeholder="请输入文本"
   ></ion-textarea>
 </template>
 

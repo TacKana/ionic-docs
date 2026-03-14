@@ -1,7 +1,7 @@
 ```html
 <template>
-  <ion-button id="present-alert">Click Me</ion-button>
-  <ion-alert trigger="present-alert" class="custom-alert" header="Are you sure?" :buttons="alertButtons"></ion-alert>
+  <ion-button id="present-alert">点击我</ion-button>
+  <ion-alert trigger="present-alert" class="custom-alert" header="确认操作？" :buttons="alertButtons"></ion-alert>
 </template>
 
 <script setup lang="ts">
@@ -9,11 +9,11 @@
 
   const alertButtons = [
     {
-      text: 'No',
+      text: '否',
       cssClass: 'alert-button-cancel',
     },
     {
-      text: 'Yes',
+      text: '是',
       cssClass: 'alert-button-confirm',
     },
   ];

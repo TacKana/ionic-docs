@@ -6,7 +6,7 @@ const SearchPage = () => (
   <IonPage>
     <IonHeader>
       <IonToolbar>
-        <IonTitle>Search</IonTitle>
+        <IonTitle>搜索</IonTitle>
       </IonToolbar>
     </IonHeader>
     <IonContent>
@@ -18,7 +18,7 @@ const SearchPage = () => (
           height: '100%',
         }}
       >
-        Search content
+        搜索内容
       </div>
     </IonContent>
   </IonPage>

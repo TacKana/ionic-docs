@@ -1,14 +1,14 @@
 ---
 title: Platform | Ionic Platform to Customize Apps to Fit Any Device
-description: Ionic Platform service can be used to get information about your current device. With this information you can completely customize your app to fit any device.
+description: Ionic Platform 服务可用于获取当前设备信息。通过这些信息，您可以完全自定义应用以适应任何设备。
 sidebar_label: Platform
 ---
 
 # Platform
 
-The Platform service can be used to get information about your current device. You can get all of the platforms associated with the device using the `platforms` method, including whether the app is being viewed from a tablet, if it's on a mobile device or browser, and the exact platform (iOS, Android, etc). You can also get the orientation of the device, if it uses right-to-left language direction, and much much more. With this information you can completely customize your app to fit any device.
+Platform 服务可用于获取当前设备信息。您可以使用 `platforms` 方法获取与设备关联的所有平台信息，包括应用是否在平板电脑上查看、是否在移动设备或浏览器上运行，以及具体的平台（iOS、Android 等）。您还可以获取设备的方向、是否使用从右到左的语言方向等等。通过这些信息，您可以完全自定义应用以适应任何设备。
 
-## Usage
+## 使用方法
 
 ```tsx
 import { Platform } from '@ionic/angular';
@@ -21,117 +21,117 @@ export class MyPage {
 }
 ```
 
-## Methods
+## 方法
 
 ### `is(platformName: Platforms) => boolean`
 
-Depending on the platform the user is on, `is(platformName)` will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: `mobile`, `ios`, `ipad`, and `tablet`. Additionally, if the app was running from Cordova then `cordova` would be true.
+根据用户所在的平台，`is(platformName)` 将返回 true 或 false。请注意，同一个应用可能对多个平台名称返回 true。例如，在 iPad 上运行的应用将对以下平台名称返回 true：`mobile`、`ios`、`ipad` 和 `tablet`。此外，如果应用是从 Cordova 运行的，则 `cordova` 将为 true。
 
-#### Parameters
+#### 参数
 
-| Name           | Type        | Description                                                                                                                                         |
-| -------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `platformName` | `Platforms` | Name of the platform. Available options are android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
+| 名称           | 类型        | 描述                                                                                                                                         |
+| -------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `platformName` | `Platforms` | 平台名称。可用选项包括：android、capacitor、cordova、desktop、electron、hybrid、ios、ipad、iphone、mobile、phablet、pwa、tablet |
 
-#### Platforms
+#### 平台列表
 
-Below is a table listing all the possible platform values along with corresponding descriptions.
+下表列出了所有可能的平台值及其对应的描述。
 
-| Platform Name | Description                              |
-| ------------- | ---------------------------------------- |
-| android       | a device running Android                 |
-| capacitor     | a device running Capacitor               |
-| cordova       | a device running Cordova                 |
-| desktop       | a desktop device                         |
-| electron      | a desktop device running Electron        |
-| hybrid        | a device running Capacitor or Cordova    |
-| ios           | a device running iOS                     |
-| ipad          | an iPad device                           |
-| iphone        | an iPhone device                         |
-| mobile        | a mobile device                          |
-| mobileweb     | a web browser running in a mobile device |
-| phablet       | a phablet device                         |
-| pwa           | a PWA app                                |
-| tablet        | a tablet device                          |
+| 平台名称    | 描述                              |
+| ----------- | --------------------------------- |
+| android     | 运行 Android 的设备               |
+| capacitor   | 运行 Capacitor 的设备             |
+| cordova     | 运行 Cordova 的设备               |
+| desktop     | 桌面设备                          |
+| electron    | 运行 Electron 的桌面设备          |
+| hybrid      | 运行 Capacitor 或 Cordova 的设备  |
+| ios         | 运行 iOS 的设备                   |
+| ipad        | iPad 设备                         |
+| iphone      | iPhone 设备                       |
+| mobile      | 移动设备                          |
+| mobileweb   | 在移动设备中运行的网页浏览器      |
+| phablet     | 平板手机设备                      |
+| pwa         | PWA 应用                          |
+| tablet      | 平板设备                          |
 
 ### `platforms() => string[]`
 
-Depending on what device you are on, `platforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return `mobile`, `ios`, and `iphone`.
+根据您所在的设备，`platforms` 可以返回多个值。每个可能的值都是一个平台层级。例如，在 iPhone 上，它将返回 `mobile`、`ios` 和 `iphone`。
 
 ### `ready() => Promise<string>`
 
-Returns a promise when the platform is ready and native functionality can be called. If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used.
+当平台准备就绪且可以调用原生功能时返回一个 Promise。如果应用在网页浏览器中运行，则 Promise 将在 DOM 准备就绪时解析。当应用在诸如 Cordova 的应用引擎中运行时，则 Promise 将在 Cordova 触发 `deviceready` 事件时解析。解析值是 `readySource`，它指明了所使用的平台。
 
-For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic.
+例如，当 Cordova 准备就绪时，解析的 ready source 是 `cordova`。默认的 ready source 值是 `dom`。`readySource` 非常有用，如果根据应用运行的平台需要运行不同的逻辑。例如，只有 Capacitor 和 Cordova 可以执行状态栏插件，因此网页不应运行状态栏插件逻辑。
 
 ### `isRTL() => boolean`
 
-Returns if this app is using right-to-left language direction or not. We recommend the app's `index.html` file already has the correct `dir` attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir)
+返回此应用是否使用从右到左的语言方向。我们建议应用的 `index.html` 文件已经设置了正确的 `dir` 属性值，例如 `<html dir="ltr">` 或 `<html dir="rtl">`。[W3C: HTML 中的结构化标记和从右到左文本](http://www.w3.org/International/questions/qa-html-dir)
 
 ### `isLandscape() => boolean`
 
-Returns `true` if the app is in landscape mode.
+如果应用处于横屏模式则返回 `true`。
 
 ### `isPortrait() => boolean`
 
-Returns `true` if the app is in portrait mode.
+如果应用处于竖屏模式则返回 `true`。
 
 ### `width() => number`
 
-Gets the width of the platform's viewport using `window.innerWidth`.
+使用 `window.innerWidth` 获取平台视口的宽度。
 
 ### `height() => number`
 
-Gets the height of the platform's viewport using `window.innerHeight`.
+使用 `window.innerHeight` 获取平台视口的高度。
 
 ### `url() => string`
 
-Get the current url.
+获取当前 URL。
 
 ### `testUserAgent(expression: string) => boolean`
 
-Returns `true` if the expression is included in the user agent string.
+如果表达式包含在用户代理字符串中则返回 `true`。
 
-### Parameters
+### 参数
 
-| Name       | Type   | Description                           |
-| ---------- | ------ | ------------------------------------- |
-| expression | string | The string to check in the user agent |
+| 名称       | 类型   | 描述                           |
+| ---------- | ------ | ------------------------------ |
+| expression | string | 要在用户代理中检查的字符串     |
 
-## Events
+## 事件
 
 ### `pause`
 
-The `pause` event emits when the native platform puts the application into the background, typically when the user switches to a different application. This event emits when a Cordova/Capacitor app is put into the background but doesn't fire in a standard web browser.
+当原生平台将应用程序置于后台时触发 `pause` 事件，通常发生在用户切换到另一个应用程序时。当 Cordova/Capacitor 应用被置于后台时，此事件会触发，但在标准网页浏览器中不会触发。
 
-#### Usage
+#### 用法
 
 ```tsx
 this.platform.pause.subscribe(async () => {
-  alert('Pause event detected');
+  alert('检测到 Pause 事件');
 });
 ```
 
 ### `resize`
 
-The `resize` event emits when the browser window has changed dimensions. This could be from a browser window being physically resized, or from a device changing orientation.
+当浏览器窗口尺寸发生变化时触发 `resize` 事件。这可能是由于浏览器窗口被物理调整大小，或者设备方向改变。
 
-#### Usage
+#### 用法
 
 ```tsx
 this.platform.resize.subscribe(async () => {
-  alert('Resize event detected');
+  alert('检测到 Resize 事件');
 });
 ```
 
 ### `resume`
 
-The `resume` event fires when the native platform pulls the application out from the background. This event emits when a Cordova/Capacitor app comes out from the background but doesn't fire in a standard web browser.
+当原生平台将应用程序从后台拉回前台时触发 `resume` 事件。当 Cordova/Capacitor 应用从后台返回时，此事件会触发，但在标准网页浏览器中不会触发。
 
-#### Usage
+#### 用法
 
 ```tsx
 this.platform.resume.subscribe(async () => {
-  alert('Resume event detected');
+  alert('检测到 Resume 事件');
 });
 ```

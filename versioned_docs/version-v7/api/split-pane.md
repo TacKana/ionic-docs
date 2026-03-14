@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/split-pane/custom-prop
 import Slots from '@ionic-internal/component-api/v7/split-pane/slots.md';
 
 <head>
-  <title>ion-split-pane: Split Plane for Menus and Multi-View Layouts</title>
+  <title>ion-split-pane: 用于菜单和多视图布局的拆分面板</title>
   <meta
     name="description"
-    content="ion-split-pane is useful when creating multi-view app layouts. It allows UI elements, like menus, to be displayed as the viewport width increases."
+    content="ion-split-pane 在创建多视图应用布局时非常有用。它允许在视口宽度增加时显示UI元素，例如菜单。"
   />
 </head>
 
@@ -21,58 +21,57 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-A split pane is useful when creating multi-view layouts. It allows UI elements, like menus, to be
-displayed as the viewport width increases.
+拆分面板在创建多视图布局时非常有用。它允许在视口宽度增加时显示UI元素，例如菜单。
 
-If the device's screen width is below a certain size, the split pane will collapse and the menu will be hidden. This is ideal for creating an app that will be served in a browser and deployed through the app store to phones and tablets.
+如果设备屏幕宽度低于特定尺寸，拆分面板将会折叠，菜单将被隐藏。这对于创建既可以通过浏览器访问，又能通过应用商店部署到手机和平板的应用程序来说非常理想。
 
-## Basic Usage
+## 基本用法
 
 :::note
-This demo sets the `when` property to `'xs'` so the split pane always shows up. Your Ionic application does not need this if you want the split pane to collapse on smaller viewports. See [Setting Breakpoints](#setting-breakpoints) for more information.
+此演示将 `when` 属性设置为 `'xs'`，因此拆分面板始终显示。如果您希望拆分面板在较小的视口上折叠，您的 Ionic 应用则不需要此设置。详细信息请参见 [设置断点](#设置断点)。
 :::
 
 import Basic from '@site/static/usage/v7/split-pane/basic/index.md';
 
 <Basic />
 
-## Setting Breakpoints
+## 设置断点
 
-By default, the split pane will expand when the screen is larger than 992px. To customize this, pass a breakpoint in the `when` property. The `when` property can accept a boolean value, any valid media query, or one of Ionic's predefined sizes.
+默认情况下，当屏幕宽度大于 992px 时，拆分面板会展开。要自定义此行为，可以在 `when` 属性中传递一个断点。`when` 属性可以接受布尔值、任何有效的媒体查询或 Ionic 预定义的尺寸之一。
 
 ```html
-<!-- can be "xs", "sm", "md", "lg", or "xl" -->
+<!-- 可以是 "xs"、"sm"、"md"、"lg" 或 "xl" -->
 <ion-split-pane when="md"></ion-split-pane>
 
-<!-- can be any valid media query https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries -->
+<!-- 可以是任何有效的媒体查询 https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries -->
 <ion-split-pane when="(min-width: 40px)"></ion-split-pane>
 ```
 
-| Size | Value                 | Description                                                           |
-| ---- | --------------------- | --------------------------------------------------------------------- |
-| `xs` | `(min-width: 0px)`    | Show the split-pane when the min-width is 0px (meaning, always)       |
-| `sm` | `(min-width: 576px)`  | Show the split-pane when the min-width is 576px                       |
-| `md` | `(min-width: 768px)`  | Show the split-pane when the min-width is 768px                       |
-| `lg` | `(min-width: 992px)`  | Show the split-pane when the min-width is 992px (default break point) |
-| `xl` | `(min-width: 1200px)` | Show the split-pane when the min-width is 1200px                      |
+| 尺寸 | 值                   | 描述                                                                   |
+| ---- | -------------------- | ---------------------------------------------------------------------- |
+| `xs` | `(min-width: 0px)`   | 当最小宽度为 0px 时显示拆分面板（即始终显示）                           |
+| `sm` | `(min-width: 576px)` | 当最小宽度为 576px 时显示拆分面板                                       |
+| `md` | `(min-width: 768px)` | 当最小宽度为 768px 时显示拆分面板                                       |
+| `lg` | `(min-width: 992px)` | 当最小宽度为 992px 时显示拆分面板（默认断点）                           |
+| `xl` | `(min-width: 1200px)`| 当最小宽度为 1200px 时显示拆分面板                                      |
 
-## Theming
+## 主题定制
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProperties from '@site/static/usage/v7/split-pane/theming/css-properties/index.md';
 
 <CSSProperties />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -80,10 +79,10 @@ import CSSProperties from '@site/static/usage/v7/split-pane/theming/css-properti
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

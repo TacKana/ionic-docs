@@ -4,24 +4,24 @@ sidebar_label: 'package deploy'
 
 # ionic package deploy
 
-Deploys a binary to a destination, such as an app store using Appflow
+将二进制文件部署到目标位置，例如使用 Appflow 发布到应用商店
 
 ```shell
 ionic package deploy [options]
 ```
 
-This command deploys a binary to a destination using Appflow. While running, the remote log is printed to the terminal.
+此命令使用 Appflow 将二进制文件部署到目标位置。运行过程中，远程日志会输出到终端。
 
-The command takes two parameters: the numeric ID of the package build that previously created the binary and the name of the destination where the binary is going to be deployed.
-Both can be retrieved from the [Dashboard](https://dashboard.ionicframework.com).
+该命令接收两个参数：之前创建此二进制文件的打包构建的数字 ID，以及二进制文件将要部署到的目标位置名称。
+两者都可以从 [Dashboard](https://dashboard.ionicframework.com) 获取。
 
-## Examples
+## 示例
 
 ```shell
-ionic package deploy 123456789 "My app store destination"
+ionic package deploy 123456789 "我的应用商店目标"
 ```
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -33,9 +33,9 @@ ionic package deploy 123456789 "My app store destination"
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>The build id of the desired successful package build</p>
+        <p>所需成功打包构建的构建 ID</p>
       </td>
     </tr>
   </tbody>
@@ -48,9 +48,9 @@ ionic package deploy 123456789 "My app store destination"
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>The destination to deploy the build artifact to the app store</p>
+        <p>将构建产物部署到应用商店的目标位置</p>
       </td>
     </tr>
   </tbody>

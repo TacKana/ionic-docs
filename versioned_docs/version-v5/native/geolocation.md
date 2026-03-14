@@ -1,6 +1,6 @@
 ---
 title: 'Geolocation | W3C Geolocator Application API Plugin'
-description: "This application plugin is based on W3C Geolocation API Specification and only executes on devices that don't already provide an implementation for location."
+description: "此应用插件基于 W3C 地理位置 API 规范，仅在尚未提供位置信息实现的设备上运行。"
 sidebar_label: 'Geolocation'
 ---
 
@@ -12,15 +12,15 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Geolocation
 
-This plugin provides information about the device's location, such as latitude and longitude. Common sources of location information include Global Positioning System (GPS) and location inferred from network signals such as IP address, RFID, WiFi and Bluetooth MAC addresses, and GSM/CDMA cell IDs.
+本插件提供设备的定位信息，如纬度和经度。常见的定位信息来源包括全球定位系统 (GPS)，以及从网络信号推断出的位置信息，例如 IP 地址、RFID、WiFi 和蓝牙 MAC 地址，以及 GSM/CDMA 蜂窝基站 ID。
 
-This API is based on the W3C Geolocation API Specification, and only executes on devices that don't already provide an implementation.
+此 API 基于 W3C 地理位置 API 规范，仅在没有原生实现的设备上执行。
 
-For iOS you have to add this configuration to your configuration.xml file
+对于 iOS 平台，你需要在 configuration.xml 文件中添加以下配置：
 
 ```xml
 <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
-   <string>We use your location for full functionality of certain app features.</string>
+   <string>我们需要使用您的位置信息来实现某些应用功能的完整体验。</string>
 </edit-config>
 ```
 
@@ -28,21 +28,21 @@ For iOS you have to add this configuration to your configuration.xml file
   <a href="https://github.com/apache/cordova-plugin-geolocation" target="_blank" rel="noopener" className="git-link">github.com/apache/cordova-plugin-geolocation</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="别再为插件问题浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果你正在开发一个重要的项目，无法承受数小时的问题排查。Ionic 专家为社区插件和高级插件提供专业的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -67,13 +67,13 @@ For iOS you have to add this configuration to your configuration.xml file
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic Enterprise 提供 Ionic 团队全面支持与维护的插件。&nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或如果你对本插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Amazon Fire OS
 - Android
@@ -81,11 +81,11 @@ For iOS you have to add this configuration to your configuration.xml file
 - iOS
 - Windows
 
-## Usage
+## 使用说明
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -102,12 +102,12 @@ this.geolocation.getCurrentPosition().then((resp) => {
  // resp.coords.latitude
  // resp.coords.longitude
 }).catch((error) => {
-  console.log('Error getting location', error);
+  console.log('获取位置时出错', error);
 });
 
 let watch = this.geolocation.watchPosition();
 watch.subscribe((data) => {
- // data can be a set of coordinates, or an error (if an error occurred).
+ // data 可以是一组坐标，或者一个错误对象（如果发生错误时）。
  // data.coords.latitude
  // data.coords.longitude
 });

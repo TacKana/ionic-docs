@@ -5,7 +5,7 @@ ion-action-sheet.my-custom-class {
   --button-background-selected: #e97223;
   --button-color: #000000;
   --color: #fff;
-  /* role: "destructive" button iOS styling override */
+  /* 针对 iOS 中 role 为 "destructive" 的按钮样式覆盖 */
   --ion-color-danger: #000000;
 }
 ```

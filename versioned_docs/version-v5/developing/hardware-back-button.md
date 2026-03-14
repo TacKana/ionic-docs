@@ -1,33 +1,33 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Hardware Back Button
+# 硬件返回按钮
 
-The hardware back button is found on most Android devices. In native applications it can be used to close modals, navigate to the previous view, exit an app, and more. By default in Ionic, when the back button is pressed, the current view will be popped off the navigation stack, and the previous view will be displayed. If no previous view exists in the navigation stack, nothing will happen. This guide will show how to customize the behavior of the hardware back button.
-
-:::note
-The hardware back button refers to the physical back button on an Android device and should not be confused with either the browser back button or `ion-back-button`. The information in this guide only applies to Android devices.
-:::
-
-## Hardware Back Button in Capacitor and Cordova
-
-When running in a Capacitor or Cordova application, Ionic Framework will emit an `ionBackButton` event when a user presses the hardware back button.
-
-When listening for the `ionBackButton` event, you can register a handler to be fired. This handler can perform actions such as quitting the app or opening a confirmation dialog. Each handler must be assigned a priority. By default, only one handler is fired per hardware back button press. The priority value is used to determine which callback should be called. This is useful because if you have a modal open, you likely would not want the modal to close _and_ the app to navigate backwards when pressing the hardware back button. Only running one handler at a time allows the modal to close but still requires another press of the hardware back button to navigate backwards.
-
-There are situations where you might want to have multiple handlers fired. Each handler callback passes in a function as a parameter that can be used to tell the framework to call the next handler.
-
-## Hardware Back Button in a Browser
-
-When running your app in a mobile browser or as a PWA, hardware back button customization will be limited. This is because Capacitor and Cordova expose additional features that are not exposed in a normal web browser. For example, closing overlays and menus via the hardware back button are functionalities that are currently not supported when running your app in a mobile browser. These are known limitations and do not currently have straightforward solutions.
-
-For complete hardware back button support, we recommend using Capacitor or Cordova.
+大多数 Android 设备都配备有硬件返回按钮。在原生应用中，它可用于关闭模态框、导航到上一个视图、退出应用等操作。在 Ionic 中，默认情况下，按下返回按钮时，当前视图将从导航栈中弹出，并显示上一个视图。如果导航栈中没有上一个视图，则不会发生任何操作。本指南将展示如何自定义硬件返回按钮的行为。
 
 :::note
-The `ionBackButton` event will not be emitted when running an app in a browser or as a PWA.
+硬件返回按钮指的是 Android 设备上的物理返回按钮，不应与浏览器返回按钮或 `ion-back-button` 混淆。本指南中的信息仅适用于 Android 设备。
 :::
 
-## Basic Usage
+## Capacitor 和 Cordova 中的硬件返回按钮
+
+在 Capacitor 或 Cordova 应用运行时，当用户按下硬件返回按钮时，Ionic Framework 会触发 `ionBackButton` 事件。
+
+监听 `ionBackButton` 事件时，你可以注册一个要执行的处理函数。该处理函数可以执行退出应用或打开确认对话框等操作。每个处理函数都必须分配一个优先级。默认情况下，每次按下硬件返回按钮时只会触发一个处理函数。优先级值用于确定应调用哪个回调函数。这非常有用，例如，如果你打开了一个模态框，你可能不希望按下硬件返回按钮时既关闭模态框又让应用向后导航。每次只运行一个处理函数允许模态框关闭，但仍需再次按下硬件返回按钮才能向后导航。
+
+在某些情况下，你可能希望触发多个处理函数。每个处理函数的回调都会接收一个函数作为参数，该函数可用于告诉框架调用下一个处理函数。
+
+## 浏览器中的硬件返回按钮
+
+在移动浏览器或 PWA 中运行应用时，硬件返回按钮的自定义功能将受到限制。这是因为 Capacitor 和 Cordova 提供了普通网络浏览器中未公开的额外功能。例如，通过硬件返回按钮关闭覆盖层和菜单等功能目前在移动浏览器中运行应用时不受支持。这些是已知的限制，目前没有直接的解决方案。
+
+要获得完整的硬件返回按钮支持，我们建议使用 Capacitor 或 Cordova。
+
+:::note
+在浏览器或 PWA 中运行应用时，不会触发 `ionBackButton` 事件。
+:::
+
+## 基本用法
 
 ````mdx-code-block
 <Tabs
@@ -95,13 +95,13 @@ export default {
 </Tabs>
 ````
 
-In this example, we are registering a handler to be called when the hardware back button is pressed. We have set the priority to be 10, and we have not indicated to the framework that we want the next handler to be called. As a result, any handlers with a priority less than 10 will not be called. A handler that has a priority greater than 10 will be called first.
+在这个例子中，我们注册了一个处理函数，在按下硬件返回按钮时被调用。我们将优先级设置为 10，并且没有指示框架调用下一个处理函数。因此，任何优先级小于 10 的处理函数都不会被调用。优先级大于 10 的处理函数将首先被调用。
 
-In the event that there are handlers with the same priority value, the handler that was registered _last_ will be called. See [Handlers with the Same Priorities](#handlers-with-the-same-priorities) for more information.
+如果存在优先级值相同的处理函数，则最后注册的处理函数将被调用。更多信息请参见[相同优先级的处理函数](#handlers-with-the-same-priorities)。
 
-## Calling Multiple Handlers
+## 调用多个处理函数
 
-Each hardware back button callback has a `processNextHandler` parameter. Calling this function allows you to continue calling hardware back button handlers.
+每个硬件返回按钮回调都有一个 `processNextHandler` 参数。调用此函数可以让你继续触发其他硬件返回按钮处理函数。
 
 ````mdx-code-block
 <Tabs
@@ -193,22 +193,22 @@ export default {
 </Tabs>
 ````
 
-This example shows how to indicate to Ionic Framework that you want the next handler to be fired. All callbacks are provided with a `processNextHandler` function as a parameter. Calling this will cause the next handler, if any exists, to be fired.
+这个例子展示了如何指示 Ionic Framework 触发下一个处理函数。所有回调都提供了一个 `processNextHandler` 函数作为参数。调用此函数将触发下一个处理函数（如果存在）。
 
-## Handlers with the Same Priorities
+## 相同优先级的处理函数
 
-Internally, Ionic Framework uses something similar to a priority queue to manage hardware back button handlers. The handler with the largest priority value will be called first. In the event that there are multiple handlers with the same priority value, the _last_ handler of the same priority added to this queue will be the first handler to be called.
+在内部，Ionic Framework 使用类似于优先级队列的机制来管理硬件返回按钮处理函数。优先级值最大的处理函数将首先被调用。如果存在多个优先级值相同的处理函数，则最后添加到队列中的相同优先级处理函数将首先被调用。
 
 ```javascript
 document.addEventListener('ionBackButton', (ev) => {
-  // Handler A
+  // 处理函数 A
   ev.detail.register(10, (processNextHandler) => {
     console.log('Handler A was called!');
 
     processNextHandler();
   });
 
-  // Handler B
+  // 处理函数 B
   ev.detail.register(10, (processNextHandler) => {
     console.log('Handler B was called!');
 
@@ -217,11 +217,11 @@ document.addEventListener('ionBackButton', (ev) => {
 });
 ```
 
-In the example above, both handlers A and B have a priority of 10. Since handler B was registered last, Ionic Framework will call handler B before it calls handler A.
+在上面的例子中，处理函数 A 和 B 的优先级都是 10。由于处理函数 B 最后注册，Ionic Framework 将在调用处理函数 A 之前先调用处理函数 B。
 
-## Exiting the App
+## 退出应用
 
-In some scenarios, it may be desirable to quit the app when pressing the hardware back button. This can be achieved through the use of the `ionBackButton` event combined with methods that Capacitor/Cordova provide.
+在某些情况下，可能希望在按下硬件返回按钮时退出应用。这可以通过结合使用 `ionBackButton` 事件和 Capacitor/Cordova 提供的方法来实现。
 
 ````mdx-code-block
 <Tabs
@@ -315,16 +315,16 @@ export default {
 </Tabs>
 ````
 
-This example shows the application exiting when the user presses the hardware back button and there is nothing left in the navigation stack. It is also possible to display a confirmation dialog before quitting the app.
+这个例子展示了当用户按下硬件返回按钮且导航栈中没有剩余内容时，应用将退出。也可以在退出应用前显示确认对话框。
 
-It is recommended to check whether or not the user is on the root page prior to exiting the application. Developers can use the `canGoBack` method on `IonRouterOutlet` in Ionic Angular and `IonRouter` in Ionic React and Ionic Vue.
+建议在退出应用之前检查用户是否处于根页面。开发者可以在 Ionic Angular 中使用 `IonRouterOutlet` 的 `canGoBack` 方法，在 Ionic React 和 Ionic Vue 中使用 `IonRouter` 的相应方法。
 
-## Internal Framework Handlers
+## 框架内部处理函数
 
-The table below lists all of the internal hardware back button event handlers that Ionic Framework uses. The `Propagates` column notes whether or not that particular handler tells Ionic Framework to call the next back button handler.
+下表列出了 Ionic Framework 使用的所有内部硬件返回按钮事件处理函数。“是否传播”列说明了该特定处理函数是否指示 Ionic Framework 调用下一个返回按钮处理函数。
 
-| Handler    | Priority | Propagates | Description                                                                                                                              |
-| ---------- | -------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Overlays   | 100      | No         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker`, and `ion-toast`. |
-| Menu       | 99       | No         | Applies to `ion-menu`.                                                                                                                   |
-| Navigation | 0        | Yes        | Applies to routing navigation (i.e. Angular Routing).                                                                                    |
+| 处理函数     | 优先级 | 是否传播 | 描述                                                                                                                               |
+| ------------ | ------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| 覆盖层       | 100    | 否       | 适用于覆盖层组件 `ion-action-sheet`、`ion-alert`、`ion-loading`、`ion-modal`、`ion-popover`、`ion-picker` 和 `ion-toast`。          |
+| 菜单         | 99     | 否       | 适用于 `ion-menu`。                                                                                                                |
+| 导航         | 0      | 是       | 适用于路由导航（例如 Angular Routing）。                                                                                           |

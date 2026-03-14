@@ -1,5 +1,5 @@
 ---
-title: "ion-radio"
+title: 单选按钮组件
 ---
 import Props from '@ionic-internal/component-api/v8/radio/props.md';
 import Events from '@ionic-internal/component-api/v8/radio/events.md';
@@ -9,8 +9,8 @@ import CustomProps from '@ionic-internal/component-api/v8/radio/custom-props.mdx
 import Slots from '@ionic-internal/component-api/v8/radio/slots.md';
 
 <head>
-  <title>ion-radio: Radio Component for iOS and Android</title>
-  <meta name="description" content="Radio components should be used inside of ion-radio-groups on iOS and Android devices. Read to learn more about radio property usage and installation." />
+  <title>ion-radio：适用于 iOS 和 Android 的单选组件</title>
+  <meta name="description" content="单选组件应配合 ion-radio-group 在 iOS 和 Android 设备上使用。阅读以了解更多关于单选属性用法和安装的信息。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,117 +18,117 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Radios should be used inside of a [radio group](./radio-group). Pressing a radio will check it and uncheck the previously selected radio, if there is one. They can also be checked programmatically by setting the value property of the parent radio group to the value of the radio.
+单选按钮应放置在 [radio group（单选组）](./radio-group) 内部使用。点击一个单选按钮会选中它，并取消选中之前被选中的那个（如果存在）。也可以通过编程方式，将父级单选组的值属性设置为该单选按钮的值来选中它。
 
-When radios are inside of a radio group, only one radio will be checked at any time. If more than one item should be selected, [checkboxes](./checkbox) should be used instead. Radios can be disabled within a group to prevent interaction with them.
+当单选按钮处于单选组内部时，任何时刻都只能有一个被选中。如果需要选中多个选项，则应使用 [复选框](./checkbox)。组内的单选按钮可以设置为禁用状态以防止交互。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v8/radio/basic/index.md';
 
 <Basic />
 
-## Label Placement
+## 标签位置
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control.  This property mirrors the flexbox `flex-direction` property.
+开发者可以使用 `labelPlacement` 属性来控制标签相对于控件的放置位置。此属性与 flexbox 的 `flex-direction` 属性功能对应。
 
 import LabelPlacement from '@site/static/usage/v8/radio/label-placement/index.md';
 
 <LabelPlacement />
 
-## Label Wrapping
+## 标签换行
 
-Regardless of label placement, long text will not wrap by default. If the width of the radio is constrained, overflowing text will be truncated with an ellipsis. You can enable text wrapping by adding the `ion-text-wrap` class to a wrapper around the radio text or styling the `label` shadow part using the `::part()` selector.
+无论标签位置如何，默认情况下长文本不会自动换行。如果单选按钮的宽度受到限制，溢出的文本将被截断并显示省略号。你可以通过在单选按钮文本的包装元素上添加 `ion-text-wrap` 类，或者使用 `::part()` 选择器为 `label` 阴影部件添加样式来启用文本换行。
 
 import LabelWrap from '@site/static/usage/v8/radio/label-wrap/index.md';
 
 <LabelWrap />
 
-## Object Value References
+## 对象值引用
 
-By default, the radio group uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
+默认情况下，单选组使用严格相等 (`===`) 来判断一个选项是否被选中。可以通过为 `compareWith` 属性提供属性名或函数来覆盖此行为。
 
 import UsingComparewith from '@site/static/usage/v8/radio/using-comparewith/index.md';
 
 <UsingComparewith />
 
-## Alignment
+## 对齐方式
 
-Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
+开发者可以使用 `alignment` 属性来控制标签和控件在交叉轴上的对齐方式。此属性与 flexbox 的 `align-items` 属性功能对应。
 
 :::note
-Stacked radios can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
+堆叠的单选按钮可以使用 `alignment` 属性进行对齐。当标签和控件需要水平居中对齐时，这很有用。
 :::
 
 import Alignment from '@site/static/usage/v8/radio/alignment/index.md';
 
 <Alignment />
 
-## Justification
+## 主轴对齐
 
-Developers can use the `justify` property to control how the label and control are packed on a line. This property mirrors the flexbox `justify-content` property.
+开发者可以使用 `justify` 属性来控制标签和控件在主轴上的排列方式。此属性与 flexbox 的 `justify-content` 属性功能对应。
 
 import Justify from '@site/static/usage/v8/radio/justify/index.md';
 
 <Justify />
 
 :::note
-`ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
+`ion-item` 仅在演示中用于强调 `justify` 的工作原理。`justify` 的正常工作并不需要它。
 :::
 
-## Deselecting Radios
+## 取消选中单选按钮
 
-By default, once a radio is selected it cannot be deselected; pressing it again will keep it selected. This behavior can be modified by using the `allowEmptySelection` property on the parent radio group, which enables the radios to be deselected.
+默认情况下，一旦单选按钮被选中就无法取消选择；再次点击它仍会保持选中状态。可以通过在父级单选组上使用 `allowEmptySelection` 属性来修改此行为，该属性允许单选按钮被取消选中。
 
 import EmptySelection from '@site/static/usage/v8/radio/empty-selection/index.md';
 
 <EmptySelection />
 
-## Helper & Error Text
+## 辅助与错误文本
 
-Helper and error text can be used inside of a radio group with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-radio-group`. This ensures errors are not shown before the user has a chance to enter data.
+可以在单选组内部使用 `helperText` 和 `errorText` 属性来显示辅助文本和错误文本。除非将 `ion-invalid` 和 `ion-touched` 类添加到 `ion-radio-group`，否则错误文本不会显示。这确保了在用户有机会输入数据之前不会显示错误。
 
-In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+在 Angular 中，这通过表单验证自动完成。在 JavaScript、React 和 Vue 中，需要根据你自己的验证逻辑手动添加这些类。
 
 import HelperError from '@site/static/usage/v8/radio/helper-error/index.md';
 
 <HelperError />
 
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v8/radio/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v8/radio/theming/css-properties/index.md';
 
 <CSSProps />
 
-### CSS Shadow Parts
+### CSS 阴影部件
 
 import CSSParts from '@site/static/usage/v8/radio/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

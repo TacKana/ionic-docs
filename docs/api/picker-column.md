@@ -1,5 +1,5 @@
 ---
-title: "ion-picker-column"
+title: 选择器中的独立列组件
 ---
 import Props from '@ionic-internal/component-api/v8/picker-column/props.md';
 import Events from '@ionic-internal/component-api/v8/picker-column/events.md';
@@ -9,30 +9,30 @@ import CustomProps from '@ionic-internal/component-api/v8/picker-column/custom-p
 import Slots from '@ionic-internal/component-api/v8/picker-column/slots.md';
 
 <head>
-  <title>ion-picker-column: Individual columns within a picker</title>
-  <meta name="description" content="An individual column within a picker." />
+  <title>ion-picker-column：选择器中的独立列</title>
+  <meta name="description" content="选择器中的独立列。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-An individual column within a picker. Visit the [`ion-picker`](./picker.md) documentation for more details.
+选择器中的独立列。更多详情请参阅 [`ion-picker`](./picker.md) 文档。
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

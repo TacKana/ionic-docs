@@ -1,7 +1,7 @@
 ```html
 <template>
-  <ion-toggle aria-label="Enable Notifications"></ion-toggle>
-  <ion-toggle :checked="true" aria-label="Enable Notifications"></ion-toggle>
+  <ion-toggle aria-label="启用通知"></ion-toggle>
+  <ion-toggle :checked="true" aria-label="启用通知"></ion-toggle>
 </template>
 
 <script setup lang="ts">
@@ -27,7 +27,7 @@
 
     background: #ddd;
 
-    /* Required for iOS handle to overflow the height of the track */
+    /* iOS 手柄需要超出轨道高度 */
     overflow: visible;
   }
 

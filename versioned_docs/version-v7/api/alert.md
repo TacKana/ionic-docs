@@ -13,10 +13,10 @@ import CustomProps from '@ionic-internal/component-api/v7/alert/custom-props.mdx
 import Slots from '@ionic-internal/component-api/v7/alert/slots.md';
 
 <head>
-  <title>ion-alert: Ionic Alert Buttons with Custom Message Prompts</title>
+  <title>ion-alert: 带自定义消息提示的 Ionic 警告框按钮</title>
   <meta
     name="description"
-    content="ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed."
+    content="ion-alert 对话框使用输入框展示或收集信息。自定义警告框消息会出现在应用内容上方，必须手动关闭。"
   />
 </head>
 
@@ -24,79 +24,79 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-An Alert is a dialog that presents users with information or collects information from the user using inputs. An alert appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. It can also optionally have a `header`, `subHeader` and `message`.
+警告框（Alert）是一种通过输入框向用户展示信息或从用户处收集信息的对话框。警告框会显示在应用内容的上方，用户必须手动关闭它才能继续与应用交互。它还可以选择性地包含 `header`、`subHeader` 和 `message`。
 
-## Inline Alerts (Recommended)
+## 内联警告框（推荐）
 
-`ion-alert` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Alert.
+通过在模板中直接编写 `ion-alert` 组件来使用它。这种方式可以减少你为呈现警告框而需要连接的处理程序数量。
 
 import Trigger from '@site/static/usage/v7/alert/presenting/trigger/index.md';
 
 <Trigger />
 
-### Using `isOpen`
+### 使用 `isOpen`
 
-The `isOpen` property on `ion-alert` allows developers to control the presentation state of the Alert from their application state. This means when `isOpen` is set to `true` the Alert will be presented, and when `isOpen` is set to `false` the Alert will be dismissed.
+`ion-alert` 的 `isOpen` 属性允许开发者通过应用状态来控制警告框的展示状态。这意味着当 `isOpen` 设置为 `true` 时，警告框会呈现；当 `isOpen` 设置为 `false` 时，警告框会关闭。
 
-`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Alert is dismissed. Developers should listen for the `ionAlertDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-alert` from being tightly coupled with the state of the application. With a one way data binding, the Alert only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Alert needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+`isOpen` 使用单向数据绑定，这意味着当警告框关闭时，它不会自动设置为 `false`。开发者应该监听 `ionAlertDidDismiss` 或 `didDismiss` 事件，并将 `isOpen` 设置为 `false`。这样做的原因是防止 `ion-alert` 的内部实现与应用状态紧密耦合。使用单向数据绑定，警告框只需要关注响应式变量提供的布尔值。而使用双向数据绑定，警告框需要同时关注布尔值以及响应式变量本身的存在。这可能导致非确定性行为，并使应用更难调试。
 
 import IsOpen from '@site/static/usage/v7/alert/presenting/isOpen/index.md';
 
 <IsOpen />
 
-## Controller Alerts
+## 控制器警告框
 
-The `alertController` can be used in situations where more control is needed over when the Alert is presented and dismissed.
+在需要更多控制警告框展示和关闭时机的情况下，可以使用 `alertController`。
 
 import Controller from '@site/static/usage/v7/alert/presenting/controller/index.md';
 
 <Controller />
 
-## Buttons
+## 按钮
 
-In the array of `buttons`, each button includes properties for its `text`, and optionally a `handler`. If a handler returns `false` then the alert will not automatically be dismissed when the button is clicked. All buttons will show up in the order they have been added to the `buttons` array from left to right. Note: The right most button (the last one in the array) is the main button.
+在 `buttons` 数组中，每个按钮都包含其 `text` 属性，以及可选的 `handler`。如果处理程序返回 `false`，那么点击按钮时警告框不会自动关闭。所有按钮将按照它们添加到 `buttons` 数组的顺序从左到右显示。注意：最右侧的按钮（数组中的最后一个）是主按钮。
 
-Optionally, a `role` property can be added to a button, such as `cancel`. If a `cancel` role is on one of the buttons, then if the alert is dismissed by tapping the backdrop, then it will fire the handler from the button with a cancel role.
+可以选择为按钮添加 `role` 属性，例如 `cancel`。如果某个按钮具有 `cancel` 角色，那么当通过点击背景遮罩关闭警告框时，将触发具有取消角色的按钮的处理程序。
 
 import Buttons from '@site/static/usage/v7/alert/buttons/index.md';
 
 <Buttons />
 
-## Inputs
+## 输入框
 
-Alerts can also include several different inputs whose data can be passed back to the app. Inputs can be used as a simple way to prompt users for information. Radios, checkboxes and text inputs are all accepted, but they cannot be mixed. For example, an alert could have all radio button inputs, or all checkbox inputs, but the same alert cannot mix radio and checkbox inputs. Do note however, different types of "text" inputs can be mixed, such as `url`, `email`, `text`, `textarea` etc. If you require a complex form UI which doesn't fit within the guidelines of an alert then we recommend building the form within a modal instead.
+警告框也可以包含多种不同的输入框，其数据可以传回应用。输入框可以作为提示用户信息的简单方式。支持单选框、复选框和文本输入框，但它们不能混合使用。例如，一个警告框可以包含所有单选框输入，或所有复选框输入，但同一个警告框不能混合单选框和复选框输入。但请注意，不同类型的"文本"输入框可以混合使用，例如 `url`、`email`、`text`、`textarea` 等。如果你需要复杂的表单 UI，不适合在警告框的规范内，我们建议在模态框（modal）内构建表单。
 
-### Text Inputs Example
+### 文本输入框示例
 
 import TextInputs from '@site/static/usage/v7/alert/inputs/text-inputs/index.md';
 
 <TextInputs />
 
-### Radio Example
+### 单选框示例
 
 import Radios from '@site/static/usage/v7/alert/inputs/radios/index.md';
 
 <Radios />
 
-## Customization
+## 自定义
 
-Alert uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
+警告框使用作用域封装（scoped encapsulation），这意味着它会在运行时通过为每个样式追加一个额外的类来自动限定其 CSS 范围。在 CSS 中覆盖作用域选择器需要具有[更高的特异性](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity)的选择器。
 
-We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces.
+我们建议在 `create` 方法中向 `cssClass` 传递一个自定义类，并使用该类为宿主和内部元素添加自定义样式。此属性也可以接受多个以空格分隔的类。
 
 ```css
-/* DOES NOT WORK - not specific enough */
+/* 不生效 - 特异性不够 */
 .alert-wrapper {
   background: #e5e5e5;
 }
 
-/* Works - pass "my-custom-class" in cssClass to increase specificity */
+/* 生效 - 在 cssClass 中传递 "my-custom-class" 以提高特异性 */
 .my-custom-class .alert-wrapper {
   background: #e5e5e5;
 }
 ```
 
-Any of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Alert without needing to target individual elements:
+任何已定义的 [CSS 自定义属性](#css-custom-properties) 都可以用于设置警告框的样式，而无需针对单个元素：
 
 ```css
 .my-custom-class {
@@ -109,24 +109,24 @@ import Customization from '@site/static/usage/v7/alert/customization/index.md';
 <Customization />
 
 :::note
-If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+如果你正在构建 Ionic Angular 应用，样式需要添加到全局样式表文件中。
 :::
 
-## Accessibility
+## 无障碍访问
 
-### Screen Readers
+### 屏幕阅读器
 
-Alerts set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the alert is being used in an app.
+警告框设置了 ARIA 属性以便于屏幕阅读器[访问](../reference/glossary#a11y)，但如果这些属性描述不够充分或与警告框在应用中的使用方式不一致，可以覆盖它们。
 
-#### Role
+#### 角色
 
-Ionic automatically sets the Alert's `role` to either [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) if there are any inputs or buttons included, or [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) if there are none.
+Ionic 会自动将警告框的 `role` 设置为 [`alertdialog`](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA/Roles/alertdialog_role)（如果包含任何输入框或按钮），或者设置为 [`alert`](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA/Roles/alert_role)（如果不包含任何输入框或按钮）。
 
-#### Alert Description
+#### 警告框描述
 
-If the `header` property is defined for the Alert, the `aria-labelledby` attribute will be automatically set to the header's ID. The `subHeader` element will be used as a fallback if `header` is not defined. Similarly, the `aria-describedby` attribute will be automatically set to the ID of the `message` element if that property is defined.
+如果为警告框定义了 `header` 属性，`aria-labelledby` 属性将自动设置为标题的 ID。如果未定义 `header`，则 `subHeader` 元素将作为备用。类似地，如果定义了 `message` 属性，`aria-describedby` 属性将自动设置为 `message` 元素的 ID。
 
-It is strongly recommended that your Alert have a `message`, as well as either a `header` or `subHeader`, in order to align with the ARIA spec. If you choose not to include a `header` or `subHeader`, an alternative is to provide a descriptive `aria-label` using the `htmlAttributes` property.
+强烈建议你的警告框包含 `message`，以及 `header` 或 `subHeader` 中的至少一个，以符合 ARIA 规范。如果你选择不包含 `header` 或 `subHeader`，另一种方法是使用 `htmlAttributes` 属性提供描述性的 `aria-label`。
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -134,7 +134,7 @@ It is strongly recommended that your Alert have a `message`, as well as either a
 
 ```javascript
 const alert = await this.alertController.create({
-  message: 'This is an alert with custom aria attributes.',
+  message: '这是一个带有自定义 ARIA 属性的警告框。',
   htmlAttributes: {
     'aria-label': 'alert dialog',
   },
@@ -147,7 +147,7 @@ const alert = await this.alertController.create({
 
 ```javascript
 const alert = await this.alertController.create({
-  message: 'This is an alert with custom aria attributes.',
+  message: '这是一个带有自定义 ARIA 属性的警告框。',
   htmlAttributes: {
     'aria-label': 'alert dialog',
   },
@@ -160,7 +160,7 @@ const alert = await this.alertController.create({
 
 ```javascript
 useIonAlert({
-  message: 'This is an alert with custom aria attributes.',
+  message: '这是一个带有自定义 ARIA 属性的警告框。',
   htmlAttributes: {
     'aria-label': 'alert dialog',
   },
@@ -173,7 +173,7 @@ useIonAlert({
 
 ```javascript
 const alert = await alertController.create({
-  message: 'This is an alert with custom aria attributes.',
+  message: '这是一个带有自定义 ARIA 属性的警告框。',
   htmlAttributes: {
     'aria-label': 'alert dialog',
   },
@@ -184,11 +184,11 @@ const alert = await alertController.create({
 
 </Tabs>
 
-All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of the Alert.
+所有 ARIA 属性都可以通过在警告框的 `htmlAttributes` 属性中定义自定义值来手动覆盖。
 
-#### Alert Buttons Description
+#### 警告框按钮描述
 
-Buttons containing text will be read by a screen reader. If a description other than the existing text is desired, a label can be set on the button by passing `aria-label` to the `htmlAttributes` property on the button.
+包含文本的按钮将被屏幕阅读器读取。如果需要不同于现有文本的描述，可以通过在按钮的 `htmlAttributes` 属性中传递 `aria-label` 来为按钮设置标签。
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -196,10 +196,10 @@ Buttons containing text will be read by a screen reader. If a description other 
 
 ```javascript
 const alert = await this.alertController.create({
-  header: 'Header',
+  header: '标题',
   buttons: [
     {
-      text: 'Exit',
+      text: '退出',
       htmlAttributes: {
         'aria-label': 'close',
       },
@@ -214,10 +214,10 @@ const alert = await this.alertController.create({
 
 ```javascript
 const alert = await this.alertController.create({
-  header: 'Header',
+  header: '标题',
   buttons: [
     {
-      text: 'Exit',
+      text: '退出',
       htmlAttributes: {
         'aria-label': 'close',
       },
@@ -232,10 +232,10 @@ const alert = await this.alertController.create({
 
 ```javascript
 useIonAlert({
-  header: 'Header',
+  header: '标题',
   buttons: [
     {
-      text: 'Exit',
+      text: '退出',
       htmlAttributes: {
         'aria-label': 'close',
       },
@@ -250,10 +250,10 @@ useIonAlert({
 
 ```javascript
 const alert = await alertController.create({
-  header: 'Header',
+  header: '标题',
   buttons: [
     {
-      text: 'Exit',
+      text: '退出',
       htmlAttributes: {
         'aria-label': 'close',
       },
@@ -266,7 +266,7 @@ const alert = await alertController.create({
 
 </Tabs>
 
-## Interfaces
+## 接口
 
 ### AlertButton
 
@@ -292,7 +292,7 @@ interface AlertInput {
   placeholder?: string;
   value?: any;
   /**
-   * The label text to display next to the input, if the input type is `radio` or `checkbox`.
+   * 如果输入类型是 `radio` 或 `checkbox`，则显示在输入框旁边的标签文本。
    */
   label?: string;
   checked?: boolean;
@@ -331,26 +331,26 @@ interface AlertOptions {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 影子部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

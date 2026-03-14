@@ -11,19 +11,19 @@ import Slots from '@ionic-internal/component-api/v6/infinite-scroll-content/slot
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-The `ion-infinite-scroll-content` component is the default child used by the `ion-infinite-scroll`. It displays an infinite scroll spinner that looks best based on the platform and changes the look depending on the infinite scroll's state. The default spinner can be changed and text can be added by setting the `loadingSpinner` and `loadingText` properties.
+`ion-infinite-scroll-content` 组件是 `ion-infinite-scroll` 默认使用的子组件。它根据平台显示一个外观最优化的无限滚动加载指示器，并会根据无限滚动状态的变化动态调整显示效果。默认的加载指示器可以通过设置 `loadingSpinner` 和 `loadingText` 属性来更改样式或添加文本。
 
-For more information as well as usage, see the [Infinite Scroll Documentation](./infinite-scroll.md#infinite-scroll-content).
+更多信息及使用示例，请参阅 [无限滚动文档](./infinite-scroll.md#infinite-scroll-content)。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -31,10 +31,10 @@ For more information as well as usage, see the [Infinite Scroll Documentation](.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

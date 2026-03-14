@@ -6,17 +6,17 @@
     --button-background-selected: #e97223;
     --button-color: #000000;
     --color: #fff;
-    /* role: "destructive" button iOS styling override */
+    /* 针对 iOS 上 role: "destructive" 按钮的样式覆盖 */
     --ion-color-danger: #000000;
   }
 </style>
 
-<ion-button id="open-action-sheet">Open</ion-button>
+<ion-button id="open-action-sheet">打开</ion-button>
 <ion-action-sheet
   trigger="open-action-sheet"
   class="my-custom-class"
-  header="Example header"
-  sub-header="Example subheader"
+  header="示例标题"
+  sub-header="示例副标题"
 ></ion-action-sheet>
 
 <script>
@@ -24,20 +24,20 @@
 
   actionSheet.buttons = [
     {
-      text: 'Delete',
+      text: '删除',
       role: 'destructive',
       data: {
         action: 'delete',
       },
     },
     {
-      text: 'Share',
+      text: '分享',
       data: {
         action: 'share',
       },
     },
     {
-      text: 'Cancel',
+      text: '取消',
       role: 'cancel',
       data: {
         action: 'cancel',

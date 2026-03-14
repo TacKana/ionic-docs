@@ -21,12 +21,12 @@
   const onInput = (event) => {
     const value = event.target!.value;
 
-    // Removes non alphanumeric characters
+    // 移除非字母数字字符
     const filteredValue = value.replace(/[^a-zA-Z0-9]+/g, '');
 
     /**
-     * Update both the state variable and
-     * the component to keep them in sync.
+     * 同时更新状态变量和组件，
+     * 以保持两者同步。
      */
     inputModel.value = filteredValue;
 

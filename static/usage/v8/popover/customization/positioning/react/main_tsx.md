@@ -7,24 +7,24 @@ import './main.css';
 function Example() {
   return (
     <div className="container">
-      <IonButton id="top-center">Side=Top, Alignment=Center</IonButton>
+      <IonButton id="top-center">侧边=顶部，对齐=居中</IonButton>
       <IonPopover trigger="top-center" side="top" alignment="center">
-        <IonContent class="ion-padding">Hello World!</IonContent>
+        <IonContent class="ion-padding">你好，世界！</IonContent>
       </IonPopover>
 
-      <IonButton id="bottom-start">Side=Bottom, Alignment=Start</IonButton>
+      <IonButton id="bottom-start">侧边=底部，对齐=起始</IonButton>
       <IonPopover trigger="bottom-start" side="bottom" alignment="start">
-        <IonContent class="ion-padding">Hello World!</IonContent>
+        <IonContent class="ion-padding">你好，世界！</IonContent>
       </IonPopover>
 
-      <IonButton id="left-start">Side=Left, Alignment=Start</IonButton>
+      <IonButton id="left-start">侧边=左侧，对齐=起始</IonButton>
       <IonPopover trigger="left-start" side="left" alignment="start">
-        <IonContent class="ion-padding">Hello World!</IonContent>
+        <IonContent class="ion-padding">你好，世界！</IonContent>
       </IonPopover>
 
-      <IonButton id="right-end">Side=Right, Alignment=End</IonButton>
+      <IonButton id="right-end">侧边=右侧，对齐=末尾</IonButton>
       <IonPopover trigger="right-end" side="right" alignment="end">
-        <IonContent class="ion-padding">Hello World!</IonContent>
+        <IonContent class="ion-padding">你好，世界！</IonContent>
       </IonPopover>
     </div>
   );

@@ -1,9 +1,9 @@
 ```html
 <template>
-  <ion-toggle>Default Toggle</ion-toggle><br /><br />
-  <ion-toggle :checked="true">Checked Toggle</ion-toggle><br /><br />
-  <ion-toggle :disabled="true">Disabled Toggle</ion-toggle><br /><br />
-  <ion-toggle :checked="true" :disabled="true">Disabled Checked Toggle</ion-toggle>
+  <ion-toggle>默认开关</ion-toggle><br /><br />
+  <ion-toggle :checked="true">选中状态开关</ion-toggle><br /><br />
+  <ion-toggle :disabled="true">禁用开关</ion-toggle><br /><br />
+  <ion-toggle :checked="true" :disabled="true">禁用且选中状态开关</ion-toggle>
 </template>
 
 <script setup lang="ts">

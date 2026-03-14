@@ -10,6 +10,7 @@ import { IonInput } from '@ionic/angular/standalone';
 })
 export class ExampleComponent {
   customCounterFormatter(inputLength: number, maxLength: number) {
+    // 返回剩余字符数
     return `${maxLength - inputLength} characters remaining`;
   }
 }

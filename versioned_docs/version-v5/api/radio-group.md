@@ -14,12 +14,9 @@ import Slots from '@ionic-internal/component-api/v5/radio-group/slots.md';
 
 # ion-radio-group
 
-A radio group is a group of [radio buttons](radio.md). It allows
-a user to select at most one radio button from a set. Checking one radio
-button that belongs to a radio group unchecks any previous checked
-radio button within the same group.
+单选按钮组（radio group）是一组[单选按钮](radio.md)的集合。它允许用户从一组选项中最多选择一个。当选中属于同一个单选按钮组中的某个按钮时，之前在该组内被选中的按钮会自动取消选中。
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -29,7 +26,7 @@ radio button within the same group.
 <ion-list>
   <ion-radio-group>
     <ion-list-header>
-      <ion-label> Auto Manufacturers </ion-label>
+      <ion-label> 汽车制造商 </ion-label>
     </ion-list-header>
 
     <ion-item>
@@ -68,7 +65,7 @@ radio button within the same group.
 <ion-list>
   <ion-radio-group>
     <ion-list-header>
-      <ion-label> Auto Manufacturers </ion-label>
+      <ion-label> 汽车制造商 </ion-label>
     </ion-list-header>
 
     <ion-item>
@@ -112,7 +109,7 @@ export const RadioGroupExample: React.FC = () => (
     <IonList>
       <IonRadioGroup>
         <IonListHeader>
-          <IonLabel>Auto Manufacturers</IonLabel>
+          <IonLabel>汽车制造商</IonLabel>
         </IonListHeader>
 
         <IonItem>
@@ -162,7 +159,7 @@ export class RadioGroupExample {
       <ion-list>
         <ion-radio-group>
           <ion-list-header>
-            <ion-label>Auto Manufacturers</ion-label>
+            <ion-label>汽车制造商</ion-label>
           </ion-list-header>
 
           <ion-item>
@@ -205,7 +202,7 @@ export class RadioGroupExample {
   <ion-list>
     <ion-radio-group>
       <ion-list-header>
-        <ion-label> Auto Manufacturers </ion-label>
+        <ion-label> 汽车制造商 </ion-label>
       </ion-list-header>
 
       <ion-item>
@@ -257,15 +254,15 @@ export class RadioGroupExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -273,10 +270,10 @@ export class RadioGroupExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

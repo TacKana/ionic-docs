@@ -1,38 +1,38 @@
 ```html
 <ion-item>
-  <ion-label>Default Input</ion-label>
-  <ion-input placeholder="Enter text"></ion-input>
+  <ion-label>默认输入框</ion-label>
+  <ion-input placeholder="输入文字"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label position="fixed">Fixed Input</ion-label>
-  <ion-input placeholder="Enter text"></ion-input>
+  <ion-label position="fixed">固定标签输入框</ion-label>
+  <ion-input placeholder="输入文字"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label position="stacked">Stacked Input</ion-label>
-  <ion-input placeholder="Enter text"></ion-input>
+  <ion-label position="stacked">层叠标签输入框</ion-label>
+  <ion-input placeholder="输入文字"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label position="floating">Floating Input</ion-label>
-  <ion-input placeholder="Enter text"></ion-input>
+  <ion-label position="floating">浮动标签输入框</ion-label>
+  <ion-input placeholder="输入文字"></ion-input>
 </ion-item>
 
 <ion-item fill="outline">
-  <ion-label position="floating">Floating Input: Outline (MD only)</ion-label>
-  <ion-input placeholder="Enter text"></ion-input>
+  <ion-label position="floating">浮动标签输入框：轮廓样式（仅MD）</ion-label>
+  <ion-input placeholder="输入文字"></ion-input>
 </ion-item>
 
 <ion-item fill="solid">
-  <ion-label position="floating">Floating Input: Solid (MD only)</ion-label>
-  <ion-input placeholder="Enter text"></ion-input>
+  <ion-label position="floating">浮动标签输入框：实心样式（仅MD）</ion-label>
+  <ion-input placeholder="输入文字"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label>Select</ion-label>
-  <ion-select placeholder="Make a Selection">
-    <ion-select-option value="">No Game Console</ion-select-option>
+  <ion-label>选择器</ion-label>
+  <ion-select placeholder="请选择">
+    <ion-select-option value="">无游戏主机</ion-select-option>
     <ion-select-option value="nes">NES</ion-select-option>
     <ion-select-option value="n64">Nintendo64</ion-select-option>
     <ion-select-option value="ps">PlayStation</ion-select-option>
@@ -43,17 +43,17 @@
 </ion-item>
 
 <ion-item>
-  <ion-label>Toggle</ion-label>
+  <ion-label>开关</ion-label>
   <ion-toggle slot="end"></ion-toggle>
 </ion-item>
 
 <ion-item>
-  <ion-label>Checkbox</ion-label>
+  <ion-label>复选框</ion-label>
   <ion-checkbox slot="end"></ion-checkbox>
 </ion-item>
 
 <ion-item>
-  <ion-label position="stacked">Range</ion-label>
+  <ion-label position="stacked">滑块</ion-label>
   <ion-range></ion-range>
 </ion-item>
 ```

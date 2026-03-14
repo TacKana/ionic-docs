@@ -1,6 +1,6 @@
 ---
-title: 'ion-router: Router Component to Coordinate URL Navigation'
-description: 'ion-router is a URL coordinator for navigation outlets of ionic: ion-nav and ion-tabs. Router components handle routing inside vanilla and Stencil JavaScript.'
+title: 'ion-router: 路由组件协调URL导航'
+description: 'ion-router是用于协调ionic导航出口（ion-nav和ion-tabs）的URL路由器。该路由组件处理原生JavaScript和Stencil项目中的路由功能。'
 sidebar_label: 'ion-router'
 ---
 
@@ -16,20 +16,20 @@ import Slots from '@ionic-internal/component-api/v5/router/slots.md';
 
 # ion-router
 
-The router is a component for handling routing inside vanilla and Stencil JavaScript projects.
+ion-router 是一个用于处理原生 JavaScript 和 Stencil 项目中路由功能的组件。
 
-> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
+> 注意：此组件仅适用于原生 JavaScript 和 Stencil 项目。对于 Angular 项目，请使用 [`ion-router-outlet`](router-outlet.md) 和 Angular 路由器。
 
-Apps should have a single `ion-router` component in the codebase.
-This component controls all interactions with the browser history and it aggregates updates through an event system.
+应用中只需在代码库中包含一个 `ion-router` 组件。
+该组件控制所有与浏览器历史记录的交互，并通过事件系统聚合更新。
 
-`ion-router` is just a URL coordinator for the navigation outlets of ionic: `ion-nav` and `ion-tabs`.
+`ion-router` 仅仅是 Ionic 导航出口（`ion-nav` 和 `ion-tabs`）的 URL 协调器。
 
-That means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav` and `ion-tabs` what and when to "show" based on the browser's URL.
+这意味着 `ion-router` 从不直接操作 DOM，它不显示组件或触发任何生命周期事件，它只是根据浏览器 URL 告诉 `ion-nav` 和 `ion-tabs` 要"显示"什么以及何时显示。
 
-In order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.
+为了配置组件（加载/选择）与 URL 之间的这种关系，`ion-router` 使用 JSX/HTML 声明式语法来定义路由树。
 
-## Usage
+## 使用方式
 
 ```html
 <ion-router>
@@ -57,15 +57,15 @@ In order to configure this relationship between components (to load/select) and 
 </ion-router>
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -73,10 +73,10 @@ In order to configure this relationship between components (to load/select) and 
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

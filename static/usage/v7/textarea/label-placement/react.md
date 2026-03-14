@@ -6,16 +6,16 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonTextarea label="Default label" placeholder="Enter text"></IonTextarea>
+        <IonTextarea label="默认标签" placeholder="输入文本"></IonTextarea>
       </IonItem>
       <IonItem>
-        <IonTextarea label="Fixed label" labelPlacement="fixed" placeholder="Enter text"></IonTextarea>
+        <IonTextarea label="固定标签" labelPlacement="fixed" placeholder="输入文本"></IonTextarea>
       </IonItem>
       <IonItem>
-        <IonTextarea label="Stacked label" labelPlacement="stacked" placeholder="Enter text"></IonTextarea>
+        <IonTextarea label="堆叠标签" labelPlacement="stacked" placeholder="输入文本"></IonTextarea>
       </IonItem>
       <IonItem>
-        <IonTextarea label="Floating label" labelPlacement="floating" placeholder="Enter text"></IonTextarea>
+        <IonTextarea label="浮动标签" labelPlacement="floating" placeholder="输入文本"></IonTextarea>
       </IonItem>
     </IonList>
   );

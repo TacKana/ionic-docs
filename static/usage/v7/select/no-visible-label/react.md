@@ -6,10 +6,10 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonSelect aria-label="Favorite Fruit" value="apple">
-          <IonSelectOption value="apple">Apple</IonSelectOption>
-          <IonSelectOption value="banana">Banana</IonSelectOption>
-          <IonSelectOption value="orange">Orange</IonSelectOption>
+        <IonSelect aria-label="最喜爱的水果" value="apple">
+          <IonSelectOption value="apple">苹果</IonSelectOption>
+          <IonSelectOption value="banana">香蕉</IonSelectOption>
+          <IonSelectOption value="orange">橙子</IonSelectOption>
         </IonSelect>
       </IonItem>
     </IonList>

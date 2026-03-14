@@ -9,10 +9,10 @@ import DocsCards from '@components/global/DocsCards';
 import NativeEnterpriseCard from '@components/page/native/NativeEnterpriseCard';
 
 <head>
-  <title>Native APIs: Open-Source Native Device Plugins and Integrations</title>
+  <title>原生 API：开源原生设备插件与集成方案</title>
   <meta
     name="description"
-    content="Build native-powered app experiences with Native APIs. Ionic's open-source plugins and integrations make it easy to add native device functionality to any app."
+    content="借助原生 API 构建具有原生能力的应用体验。Ionic 的开源插件和集成方案让您能够轻松为任何应用添加原生设备功能。"
   />
   <style>{`
     :root {
@@ -23,10 +23,10 @@ import NativeEnterpriseCard from '@components/page/native/NativeEnterpriseCard';
 
 <intro-end />
 
-Add native functionality to your app with Capacitor, a native runtime built by the Ionic team. Install the core packages and easily add them to your project. Capacitor has a wide range of capabilities that developers can use to access features like the device file system, camera, and native location services. All of this is powered by a unified TypeScript API that automatically handles platform differences.
+通过 Capacitor 为您的应用添加原生功能。Capacitor 是由 Ionic 团队构建的原生运行时环境，只需安装核心包即可轻松集成到项目中。Capacitor 提供了丰富的功能，开发者可以利用它访问设备文件系统、相机以及原生定位服务等特性。所有这些功能都由统一的 TypeScript API 驱动，能够自动处理平台间的差异。
 
-While the core features of Capacitor are free and open source, some enterprises might find themselves needing more features or custom third-party integrations. If you need such additional features, check out the [Ionic Enterprise SDK](https://ionic.io/enterprise-sdk).
+虽然 Capacitor 的核心功能是免费和开源的，但一些企业可能需要更多特性或定制化的第三方集成。如果您需要这些附加功能，请查看 [Ionic 企业版 SDK](https://ionic.io/enterprise-sdk)。
 
 <NativeEnterpriseCard />
 
-> Looking for older Cordova plugins? Visit their new home at [Awesome Cordova Plugins.](https://danielsogl.gitbook.io/awesome-cordova-plugins/)
+> 寻找旧版 Cordova 插件？请访问它们的新家：[Awesome Cordova Plugins](https://danielsogl.gitbook.io/awesome-cordova-plugins/)。

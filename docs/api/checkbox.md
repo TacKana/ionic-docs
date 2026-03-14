@@ -1,5 +1,5 @@
 ---
-title: "ion-checkbox"
+title: 复选框组件
 ---
 
 import Props from '@ionic-internal/component-api/v8/checkbox/props.md';
@@ -10,8 +10,8 @@ import CustomProps from '@ionic-internal/component-api/v8/checkbox/custom-props.
 import Slots from '@ionic-internal/component-api/v8/checkbox/slots.md';
 
 <head>
-  <title>ion-checkbox: Ionic App Checkbox to Select Multiple Options</title>
-  <meta name="description" content="ion-checkboxes allow selection of multiple options from a set and appear as checked (ticked) when activated. Learn about the checkbox component for Ionic apps." />
+  <title>ion-checkbox: Ionic 应用复选框，用于选择多个选项</title>
+  <meta name="description" content="ion-checkbox 允许从一组选项中选择多个选项，激活时显示为选中（打勾）状态。了解 Ionic 应用的复选框组件。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -19,37 +19,37 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Checkboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.
+复选框允许用户从一组选项中选择多个选项。激活时，它们会显示为选中（打勾）状态。点击复选框将切换 `checked` 属性。也可以通过编程方式设置 `checked` 属性来选中它们。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v8/checkbox/basic/index.md';
 
 <Basic />
 
-## Label Placement
+## 标签位置
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control. This property mirrors the flexbox `flex-direction` property.
+开发者可以使用 `labelPlacement` 属性来控制标签相对于控件的放置位置。该属性与 flexbox 的 `flex-direction` 属性类似。
 
 import LabelPlacement from '@site/static/usage/v8/checkbox/label-placement/index.md';
 
 <LabelPlacement />
 
-## Alignment
+## 对齐方式
 
-Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
+开发者可以使用 `alignment` 属性来控制标签和控件在交叉轴上的对齐方式。该属性与 flexbox 的 `align-items` 属性类似。
 
 :::note
-Stacked checkboxes can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
+可以使用 `alignment` 属性来对齐堆叠的复选框。当需要水平居中标签和控件时，这很有用。
 :::
 
 import Alignment from '@site/static/usage/v8/checkbox/alignment/index.md';
 
 <Alignment />
 
-## Justification
+## 内容分布
 
-Developers can use the `justify` property to control how the label and control are packed on a line. This property mirrors the flexbox `justify-content` property.
+开发者可以使用 `justify` 属性来控制标签和控件在行内的分布方式。该属性与 flexbox 的 `justify-content` 属性类似。
 
 import Justify from '@site/static/usage/v8/checkbox/justify/index.md';
 
@@ -57,42 +57,42 @@ import Justify from '@site/static/usage/v8/checkbox/justify/index.md';
 
 
 :::note
-`ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
+示例中仅使用 `ion-item` 来强调 `justify` 的工作原理。`justify` 正确运行并不需要它。
 :::
 
-## Indeterminate Checkboxes
+## 不确定状态复选框
 
 import Indeterminate from '@site/static/usage/v8/checkbox/indeterminate/index.md';
 
 <Indeterminate />
 
-## Links inside of Labels
+## 标签内的链接
 
-Checkbox labels can sometimes be accompanied with links. These links can provide more information related to the checkbox. However, clicking the link should not check the checkbox. To achieve this, we can use [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) to prevent the click event from bubbling. When using this approach, the rest of the label still remains clickable.
+复选框标签有时可能需要包含链接。这些链接可以提供与复选框相关的更多信息。然而，点击链接不应选中复选框。为此，我们可以使用 [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) 来阻止点击事件冒泡。采用这种方法时，标签的其余部分仍然保持可点击状态。
 
 import LabelLink from '@site/static/usage/v8/checkbox/label-link/index.md';
 
 <LabelLink />
 
-## Helper & Error Text
+## 辅助文本与错误文本
 
-Helper and error text can be used inside of a checkbox with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-checkbox`. This ensures errors are not shown before the user has a chance to enter data.
+可以通过 `helperText` 和 `errorText` 属性在复选框内部使用辅助文本和错误文本。除非将 `ion-invalid` 和 `ion-touched` 类添加到 `ion-checkbox` 上，否则错误文本不会显示。这确保了在用户有机会输入数据之前不会显示错误。
 
-In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+在 Angular 中，这通过表单验证自动完成。在 JavaScript、React 和 Vue 中，需要根据你自己的验证逻辑手动添加这些类。
 
 import HelperError from '@site/static/usage/v8/checkbox/helper-error/index.md';
 
 <HelperError />
 
-## Theming
+## 主题定制
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v8/checkbox/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Interfaces
+## 接口
 
 ### CheckboxChangeEventDetail
 
@@ -105,7 +105,7 @@ interface CheckboxChangeEventDetail<T = any> {
 
 ### CheckboxCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便对该组件发出的 Ionic 事件进行更严格的类型检查。
 
 ```typescript
 interface CheckboxCustomEvent<T = any> extends CustomEvent {
@@ -114,20 +114,20 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

@@ -6,14 +6,14 @@ import { trash } from 'ionicons/icons';
 function Example() {
   return (
     <>
-      <IonSearchbar showCancelButton="focus" placeholder="Show on Focus"></IonSearchbar>
-      <IonSearchbar showCancelButton="always" placeholder="Always Show"></IonSearchbar>
-      <IonSearchbar showCancelButton="never" placeholder="Never Show"></IonSearchbar>
+      <IonSearchbar showCancelButton="focus" placeholder="获得焦点时显示"></IonSearchbar>
+      <IonSearchbar showCancelButton="always" placeholder="始终显示"></IonSearchbar>
+      <IonSearchbar showCancelButton="never" placeholder="从不显示"></IonSearchbar>
       <IonSearchbar
         showCancelButton="always"
-        cancelButtonText="Custom Cancel"
+        cancelButtonText="自定义取消"
         cancelButtonIcon={trash}
-        placeholder="Custom Cancel Button"
+        placeholder="自定义取消按钮"
       ></IonSearchbar>
     </>
   );

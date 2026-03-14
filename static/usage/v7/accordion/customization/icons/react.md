@@ -8,26 +8,26 @@ function Example() {
     <IonAccordionGroup>
       <IonAccordion value="first" toggleIcon={caretDownCircle} toggleIconSlot="start">
         <IonItem slot="header" color="light">
-          <IonLabel>First Accordion</IonLabel>
+          <IonLabel>第一个手风琴</IonLabel>
         </IonItem>
         <div className="ion-padding" slot="content">
-          First Content
+          第一个内容
         </div>
       </IonAccordion>
       <IonAccordion value="second" toggleIcon={caretDownCircle} toggleIconSlot="start">
         <IonItem slot="header" color="light">
-          <IonLabel>Second Accordion</IonLabel>
+          <IonLabel>第二个手风琴</IonLabel>
         </IonItem>
         <div className="ion-padding" slot="content">
-          Second Content
+          第二个内容
         </div>
       </IonAccordion>
       <IonAccordion value="third" toggleIcon={caretDownCircle} toggleIconSlot="start">
         <IonItem slot="header" color="light">
-          <IonLabel>Third Accordion</IonLabel>
+          <IonLabel>第三个手风琴</IonLabel>
         </IonItem>
         <div className="ion-padding" slot="content">
-          Third Content
+          第三个内容
         </div>
       </IonAccordion>
     </IonAccordionGroup>

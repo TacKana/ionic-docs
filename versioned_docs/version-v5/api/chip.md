@@ -1,6 +1,6 @@
 ---
-title: 'ion-chip:  Name, Text, Icon and Avatar for Ionic Framework Apps'
-description: 'ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons.'
+title: 'ion-chip: Ionic 框架应用中的名称、文本、图标和头像组件'
+description: 'ion-chip 用于在小块区域中表示复杂实体，例如联系人信息。一个芯片可以包含多种不同元素，如姓名、头像、文本和图标。'
 sidebar_label: 'ion-chip'
 demoUrl: '/docs/demos/api/chip/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/chip/index.html'
@@ -18,9 +18,9 @@ import Slots from '@ionic-internal/component-api/v5/chip/slots.md';
 
 # ion-chip
 
-Chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.
+芯片用于在小块区域中表示复杂实体，例如联系人信息。一个芯片可以包含多种不同元素，如头像、文本和图标。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -28,39 +28,39 @@ Chips represent complex entities in small blocks, such as a contact. A chip can 
 
 ```html
 <ion-chip>
-  <ion-label>Default</ion-label>
+  <ion-label>默认</ion-label>
 </ion-chip>
 
 <ion-chip>
-  <ion-label color="secondary">Secondary Label</ion-label>
+  <ion-label color="secondary">次级标签</ion-label>
 </ion-chip>
 
 <ion-chip color="secondary">
-  <ion-label color="dark">Secondary w/ Dark label</ion-label>
+  <ion-label color="dark">次级背景深色标签</ion-label>
 </ion-chip>
 
 <ion-chip [disabled]="true">
-  <ion-label>Disabled Chip</ion-label>
+  <ion-label>禁用芯片</ion-label>
 </ion-chip>
 
 <ion-chip>
   <ion-icon name="pin"></ion-icon>
-  <ion-label>Default</ion-label>
+  <ion-label>默认</ion-label>
 </ion-chip>
 
 <ion-chip>
   <ion-icon name="heart" color="dark"></ion-icon>
-  <ion-label>Default</ion-label>
+  <ion-label>默认</ion-label>
 </ion-chip>
 
 <ion-chip>
-  <ion-label>Button Chip</ion-label>
+  <ion-label>按钮芯片</ion-label>
   <ion-icon name="close-circle"></ion-icon>
 </ion-chip>
 
 <ion-chip>
   <ion-icon name="pin" color="primary"></ion-icon>
-  <ion-label>Icon Chip</ion-label>
+  <ion-label>图标芯片</ion-label>
   <ion-icon name="close"></ion-icon>
 </ion-chip>
 
@@ -68,7 +68,7 @@ Chips represent complex entities in small blocks, such as a contact. A chip can 
   <ion-avatar>
     <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
   </ion-avatar>
-  <ion-label>Avatar Chip</ion-label>
+  <ion-label>头像芯片</ion-label>
   <ion-icon name="close-circle"></ion-icon>
 </ion-chip>
 ```
@@ -79,39 +79,39 @@ Chips represent complex entities in small blocks, such as a contact. A chip can 
 
 ```html
 <ion-chip>
-  <ion-label>Default</ion-label>
+  <ion-label>默认</ion-label>
 </ion-chip>
 
 <ion-chip>
-  <ion-label color="secondary">Secondary Label</ion-label>
+  <ion-label color="secondary">次级标签</ion-label>
 </ion-chip>
 
 <ion-chip color="secondary">
-  <ion-label color="dark">Secondary w/ Dark label</ion-label>
+  <ion-label color="dark">次级背景深色标签</ion-label>
 </ion-chip>
 
 <ion-chip disabled="true">
-  <ion-label>Disabled Chip</ion-label>
+  <ion-label>禁用芯片</ion-label>
 </ion-chip>
 
 <ion-chip>
   <ion-icon name="pin"></ion-icon>
-  <ion-label>Default</ion-label>
+  <ion-label>默认</ion-label>
 </ion-chip>
 
 <ion-chip>
   <ion-icon name="heart" color="dark"></ion-icon>
-  <ion-label>Default</ion-label>
+  <ion-label>默认</ion-label>
 </ion-chip>
 
 <ion-chip>
-  <ion-label>Button Chip</ion-label>
+  <ion-label>按钮芯片</ion-label>
   <ion-icon name="close-circle"></ion-icon>
 </ion-chip>
 
 <ion-chip>
   <ion-icon name="pin" color="primary"></ion-icon>
-  <ion-label>Icon Chip</ion-label>
+  <ion-label>图标芯片</ion-label>
   <ion-icon name="close"></ion-icon>
 </ion-chip>
 
@@ -119,7 +119,7 @@ Chips represent complex entities in small blocks, such as a contact. A chip can 
   <ion-avatar>
     <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
   </ion-avatar>
-  <ion-label>Avatar Chip</ion-label>
+  <ion-label>头像芯片</ion-label>
   <ion-icon name="close-circle"></ion-icon>
 </ion-chip>
 ```
@@ -153,39 +153,39 @@ export const ChipExamples: React.FC = () => {
       </IonHeader>
       <IonContent>
         <IonChip>
-          <IonLabel>Default</IonLabel>
+          <IonLabel>默认</IonLabel>
         </IonChip>
 
         <IonChip>
-          <IonLabel color="secondary">Secondary Label</IonLabel>
+          <IonLabel color="secondary">次级标签</IonLabel>
         </IonChip>
 
         <IonChip color="secondary">
-          <IonLabel color="dark">Secondary w/ Dark label</IonLabel>
+          <IonLabel color="dark">次级背景深色标签</IonLabel>
         </IonChip>
 
         <IonChip disabled={true}>
-          <IonLabel>Disabled Chip</IonLabel>
+          <IonLabel>禁用芯片</IonLabel>
         </IonChip>
 
         <IonChip>
           <IonIcon icon={pin} />
-          <IonLabel>Default</IonLabel>
+          <IonLabel>默认</IonLabel>
         </IonChip>
 
         <IonChip>
           <IonIcon icon={heart} color="dark" />
-          <IonLabel>Default</IonLabel>
+          <IonLabel>默认</IonLabel>
         </IonChip>
 
         <IonChip>
-          <IonLabel>Button Chip</IonLabel>
+          <IonLabel>按钮芯片</IonLabel>
           <IonIcon icon={closeCircle} />
         </IonChip>
 
         <IonChip>
           <IonIcon icon={pin} color="primary" />
-          <IonLabel>Icon Chip</IonLabel>
+          <IonLabel>图标芯片</IonLabel>
           <IonIcon icon={close} />
         </IonChip>
 
@@ -193,7 +193,7 @@ export const ChipExamples: React.FC = () => {
           <IonAvatar>
             <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
           </IonAvatar>
-          <IonLabel>Avatar Chip</IonLabel>
+          <IonLabel>头像芯片</IonLabel>
           <IonIcon icon={closeCircle} />
         </IonChip>
       </IonContent>
@@ -217,35 +217,35 @@ export class ChipExample {
   render() {
     return [
       <ion-chip>
-        <ion-label>Default</ion-label>
+        <ion-label>默认</ion-label>
       </ion-chip>,
 
       <ion-chip>
-        <ion-label color="secondary">Secondary Label</ion-label>
+        <ion-label color="secondary">次级标签</ion-label>
       </ion-chip>,
 
       <ion-chip color="secondary">
-        <ion-label color="dark">Secondary w/ Dark label</ion-label>
+        <ion-label color="dark">次级背景深色标签</ion-label>
       </ion-chip>,
 
       <ion-chip>
         <ion-icon name="pin"></ion-icon>
-        <ion-label>Default</ion-label>
+        <ion-label>默认</ion-label>
       </ion-chip>,
 
       <ion-chip>
         <ion-icon name="heart" color="dark"></ion-icon>
-        <ion-label>Default</ion-label>
+        <ion-label>默认</ion-label>
       </ion-chip>,
 
       <ion-chip>
-        <ion-label>Button Chip</ion-label>
+        <ion-label>按钮芯片</ion-label>
         <ion-icon name="close-circle"></ion-icon>
       </ion-chip>,
 
       <ion-chip>
         <ion-icon name="pin" color="primary"></ion-icon>
-        <ion-label>Icon Chip</ion-label>
+        <ion-label>图标芯片</ion-label>
         <ion-icon name="close"></ion-icon>
       </ion-chip>,
 
@@ -253,7 +253,7 @@ export class ChipExample {
         <ion-avatar>
           <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
         </ion-avatar>
-        <ion-label>Avatar Chip</ion-label>
+        <ion-label>头像芯片</ion-label>
         <ion-icon name="close-circle"></ion-icon>
       </ion-chip>,
     ];
@@ -268,39 +268,39 @@ export class ChipExample {
 ```html
 <template>
   <ion-chip>
-    <ion-label>Default</ion-label>
+    <ion-label>默认</ion-label>
   </ion-chip>
 
   <ion-chip>
-    <ion-label color="secondary">Secondary Label</ion-label>
+    <ion-label color="secondary">次级标签</ion-label>
   </ion-chip>
 
   <ion-chip color="secondary">
-    <ion-label color="dark">Secondary w/ Dark label</ion-label>
+    <ion-label color="dark">次级背景深色标签</ion-label>
   </ion-chip>
 
   <ion-chip :disabled="true">
-    <ion-label>Disabled Chip</ion-label>
+    <ion-label>禁用芯片</ion-label>
   </ion-chip>
 
   <ion-chip>
     <ion-icon :icon="pin"></ion-icon>
-    <ion-label>Default</ion-label>
+    <ion-label>默认</ion-label>
   </ion-chip>
 
   <ion-chip>
     <ion-icon :icon="heart" color="dark"></ion-icon>
-    <ion-label>Default</ion-label>
+    <ion-label>默认</ion-label>
   </ion-chip>
 
   <ion-chip>
-    <ion-label>Button Chip</ion-label>
+    <ion-label>按钮芯片</ion-label>
     <ion-icon :icon="closeCircle"></ion-icon>
   </ion-chip>
 
   <ion-chip>
     <ion-icon :icon="pin" color="primary"></ion-icon>
-    <ion-label>Icon Chip</ion-label>
+    <ion-label>图标芯片</ion-label>
     <ion-icon :icon="close"></ion-icon>
   </ion-chip>
 
@@ -308,7 +308,7 @@ export class ChipExample {
     <ion-avatar>
       <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
     </ion-avatar>
-    <ion-label>Avatar Chip</ion-label>
+    <ion-label>头像芯片</ion-label>
     <ion-icon :icon="closeCircle"></ion-icon>
   </ion-chip>
 </template>
@@ -332,15 +332,15 @@ export class ChipExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -348,10 +348,10 @@ export class ChipExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

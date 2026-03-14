@@ -1,20 +1,20 @@
 ---
-sidebar_label: Taking Photos
+sidebar_label: 拍摄照片
 ---
 
-# Taking Photos with the Camera
+# 使用相机拍摄照片
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitorjs.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+现在到了有趣的部分——使用 Capacitor 的[相机 API](https://capacitorjs.com/docs/apis/camera)为设备添加拍照功能。我们将首先构建网页版本，然后进行一些微调使其能在移动设备（iOS 和 Android）上运行。
 
-To do so, we will create a standalone composition function paired with Vue's Composition API to manage the photos for the gallery.
+为此，我们将创建一个独立的组合函数，配合 Vue 的组合式 API 来管理相册中的照片。
 
 :::note
-If you are not familiar with Vue's Composition API, [Why Composition API?](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) from the official Vue docs is a good resource to start with.
+如果你不熟悉 Vue 的组合式 API，官方 Vue 文档中的[为什么需要组合式 API？](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api)是一个很好的入门资源。
 :::
 
-Create a new file at `src/composables/usePhotoGallery.ts` and open it up.
+在 `src/composables/usePhotoGallery.ts` 创建新文件并打开。
 
-We will start by importing the various utilities we will use from Vue core and Capacitor:
+首先从 Vue 核心库和 Capacitor 导入我们将使用的各种工具：
 
 ```tsx
 import { ref, onMounted, watch } from 'vue';
@@ -23,7 +23,7 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 ```
 
-Next, create a function named usePhotoGallery:
+接下来，创建一个名为 usePhotoGallery 的函数：
 
 ```tsx
 export function usePhotoGallery() {
@@ -41,17 +41,17 @@ export function usePhotoGallery() {
 }
 ```
 
-Our `usePhotoGallery` function exposes a method called takePhoto, which in turn calls the Capacitor Camera API's `getPhoto` method.
+我们的 `usePhotoGallery` 函数公开了一个名为 takePhoto 的方法，该方法会调用 Capacitor 相机 API 的 `getPhoto` 方法。
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
+注意这里的魔法：没有任何平台特定代码（网页、iOS 或 Android）！Capacitor 相机插件为我们抽象了这些，只需一个方法调用——`getPhoto()`——就能打开设备相机并允许我们拍照。
 
-The last step we need to take is to use the new function from the Tab2 page. Go back to Tab2.vue and import it:
+最后一步是在 Tab2 页面中使用这个新函数。回到 Tab2.vue 并导入它：
 
 ```tsx
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 ```
 
-Next, within the default export, add a setup method, part of the [Composition API](https://v3.vuejs.org/guide/composition-api-setup.html#setup). Destructure the `takePhoto` function from `usePhotoGallery`, then return it:
+接下来，在默认导出中，添加一个属于[组合式 API](https://v3.vuejs.org/guide/composition-api-setup.html#setup)的 setup 方法。从 `usePhotoGallery` 中解构出 `takePhoto` 函数，然后返回它：
 
 ```tsx
 <script lang="ts">
@@ -78,17 +78,17 @@ export default  {
 </script>
 ```
 
-Save the file, and if you’re not already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+保存文件，如果尚未运行，请在浏览器中通过运行 `ionic serve` 重启开发服务器。在照片库标签页中，点击相机按钮。如果你的电脑有摄像头，会出现一个模态窗口。拍一张自拍照吧！
 
-![A photo gallery app displaying a webcam selfie.](/img/guides/first-app-cap-ng/camera-web.png 'Webcam Selfie in Photo Gallery')
+![显示网络摄像头自拍照的照片库应用。](/img/guides/first-app-cap-ng/camera-web.png '照片库中的网络摄像头自拍照')
 
-_(Your selfie is probably much better than mine)_
+_(你的自拍可能比我的好看多了)_
 
-After taking a photo, it disappears right away. We still need to display it within our app and save it for future access.
+拍照后，照片会立即消失。我们仍需在应用中显示它并保存以备将来访问。
 
-## Displaying Photos
+## 显示照片
 
-First we will create a new type to define our Photo, which will hold specific metadata. Add the following UserPhoto interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
+首先，我们将创建一个新类型来定义我们的 Photo，它将保存特定的元数据。将以下 UserPhoto 接口添加到 `usePhotoGallery.ts` 文件中，放在主函数之外的某个位置：
 
 ```tsx
 export interface UserPhoto {
@@ -97,13 +97,13 @@ export interface UserPhoto {
 }
 ```
 
-Back at the top of the function (right after referencing the Capacitor Camera plugin), define an array so we can store each photo captured with the Camera. Make it a reactive variable using Vue's [ref function](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref).
+回到函数的顶部（在引用 Capacitor 相机插件之后），定义一个数组以便存储使用相机拍摄的每张照片。使用 Vue 的[ref 函数](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref)使其成为响应式变量。
 
 ```tsx
 const photos = ref<UserPhoto[]>([]);
 ```
 
-When the camera is done taking a picture, the resulting `Photo` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` method, adding this code after the `Camera.getPhoto` line:
+当相机完成拍照后，从 Capacitor 返回的 `Photo` 将被添加到 `photos` 数组中。更新 `takePhoto` 方法，在 `Camera.getPhoto` 行之后添加以下代码：
 
 ```tsx
 const fileName = new Date().getTime() + '.jpeg';
@@ -115,7 +115,7 @@ const savedFileImage = {
 photos.value = [savedFileImage, ...photos.value];
 ```
 
-Next, update the return statement to include the photos array:
+接下来，更新 return 语句以包含 photos 数组：
 
 ```tsx
 return {
@@ -124,19 +124,19 @@ return {
 };
 ```
 
-Back in the Tab2 component, update the import statement to include the `UserPhoto` interface:
+回到 Tab2 组件中，更新导入语句以包含 `UserPhoto` 接口：
 
 ```tsx
 import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 ```
 
-Then, get access to the photos array:
+然后，获取对 photos 数组的访问权限：
 
 ```tsx
 const { photos, takePhoto } = usePhotoGallery();
 ```
 
-Last, add `photos` to `setup()` return:
+最后，将 `photos` 添加到 `setup()` 的返回中：
 
 ```tsx
 return {
@@ -148,7 +148,7 @@ return {
 };
 ```
 
-With the photo(s) stored into the main array we can now display the images on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as they are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) to the photo's path:
+随着照片被存储到主数组中，我们现在可以在屏幕上显示图像了。添加一个[网格组件](https://ionicframework.com/docs/api/grid)，这样每张照片在添加到相册时都能很好地显示，并遍历 Photos 数组中的每张照片，为每张照片添加一个 Image 组件（`<ion-img>`）。将 `src`（源）指向照片的路径：
 
 ```tsx
 <ion-content>
@@ -160,10 +160,10 @@ With the photo(s) stored into the main array we can now display the images on th
     </ion-row>
   </ion-grid>
 
-  <!-- <ion-fab> markup  -->
+  <!-- <ion-fab> 标记 -->
 </ion-content>
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+保存所有文件。在网页浏览器中，点击相机按钮并拍摄另一张照片。这次，照片会显示在照片库中！
 
-Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
+接下来，我们将添加对将照片保存到文件系统的支持，以便以后可以检索并在我们的应用中显示。

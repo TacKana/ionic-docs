@@ -10,13 +10,13 @@ function Example() {
         <IonAvatar>
           <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </IonAvatar>
-        <IonLabel>Avatar Chip</IonLabel>
+        <IonLabel>头像芯片</IonLabel>
         <IonIcon icon={closeCircle}></IonIcon>
       </IonChip>
 
       <IonChip>
         <IonIcon icon={pin} color="primary"></IonIcon>
-        <IonLabel>Icon Chip</IonLabel>
+        <IonLabel>图标芯片</IonLabel>
         <IonIcon icon={close}></IonIcon>
       </IonChip>
     </>

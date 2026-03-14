@@ -6,9 +6,9 @@ function Example() {
     <>
       <IonItem>
         <IonAvatar slot="start">
-          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <img alt="人物头像剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </IonAvatar>
-        <IonLabel>Item Avatar</IonLabel>
+        <IonLabel>带头像的列表项</IonLabel>
       </IonItem>
     </>
   );

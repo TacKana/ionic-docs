@@ -12,11 +12,11 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Search</ion-title>
+        <ion-title>搜索</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <div class="example-content">Search content</div>
+      <div class="example-content">搜索内容</div>
     </ion-content>
   </ion-page>
 </template>

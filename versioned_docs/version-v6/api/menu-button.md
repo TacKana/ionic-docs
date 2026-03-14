@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/menu-button/custom-pro
 import Slots from '@ionic-internal/component-api/v6/menu-button/slots.md';
 
 <head>
-  <title>Menu Button | ion-menu-button to Open an App Menu on A Page</title>
+  <title>菜单按钮 | ion-menu-button：在页面中打开应用菜单</title>
   <meta
     name="description"
-    content="Menu Button is component that automatically creates the icon and functionality to open a menu on an app page. Read to learn more about ion-menu-button."
+    content="菜单按钮组件会自动创建图标和功能，用于在应用页面中打开菜单。阅读以了解更多关于 ion-menu-button 的信息。"
   />
 </head>
 
@@ -21,19 +21,19 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-The Menu Button component contains an icon and automatically adds functionality to open a menu when clicked.
+菜单按钮组件包含一个图标，并在点击时自动添加打开菜单的功能。
 
-See the [menu](./menu) documentation for more information.
+更多信息请参阅 [menu](./menu) 文档。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -41,10 +41,10 @@ See the [menu](./menu) documentation for more information.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

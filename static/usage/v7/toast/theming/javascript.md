@@ -1,12 +1,12 @@
 ```html
-<ion-button id="open-toast">Open Toast</ion-button>
-<ion-toast trigger="open-toast" duration="3000" message="Hello Styled World!" class="custom-toast"></ion-toast>
+<ion-button id="open-toast">打开 Toast</ion-button>
+<ion-toast trigger="open-toast" duration="3000" message="你好，风格化世界！" class="custom-toast"></ion-toast>
 
 <script>
   const toast = document.querySelector('ion-toast');
   toast.buttons = [
     {
-      text: 'Dismiss',
+      text: '关闭',
       role: 'cancel',
     },
   ];

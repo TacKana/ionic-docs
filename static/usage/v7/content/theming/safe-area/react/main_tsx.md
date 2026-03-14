@@ -7,7 +7,7 @@ import './main.css';
 function Example() {
   return (
     <IonContent>
-      <span>Here's a small text description for the content. Nothing more, nothing less.</span>
+      <span>这是内容的简短文字描述，不多不少。</span>
     </IonContent>
   );
 }

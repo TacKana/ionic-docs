@@ -1,7 +1,7 @@
 ---
-title: 'Social Sharing | Cordova Social Sharing Plugin for Ionic Apps'
-description: 'Social sharing for Ionic apps allows you to share text, files, images, and links via social networks, SMS, and email—read to learn about this Cordova Plugin.'
-sidebar_label: 'Social Sharing'
+title: '社交分享 | Ionic 应用中的 Cordova 社交分享插件'
+description: 'Ionic 应用的社交分享功能允许您通过社交网络、短信和电子邮件分享文本、文件、图片和链接——阅读本文了解此 Cordova 插件。'
+sidebar_label: '社交分享'
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -10,31 +10,31 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-# Social Sharing
+# 社交分享
 
-Share text, files, images, and links via social networks, sms, and email.
+通过社交网络、短信和电子邮件分享文本、文件、图片和链接。
 
-For Browser usage check out the Web Share API docs: https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin#5-web-share-api
+有关浏览器使用的信息，请查看 Web Share API 文档：https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin#5-web-share-api
 
 <p>
   <a href="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin" target="_blank" rel="noopener" className="git-link">github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="别在插件问题上浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在构建一个严肃的项目，您无法承担花费数小时进行故障排除的代价。Ionic 专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -59,25 +59,25 @@ For Browser usage check out the Web Share API docs: https://github.com/EddyVerbr
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic Enterprise 提供了 Ionic 团队完全支持与维护的插件。 &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，或者如果您对这个插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
-- Browser
+- 浏览器
 - iOS
 - Windows
 - Windows Phone
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -88,17 +88,17 @@ constructor(private socialSharing: SocialSharing) { }
 
 ...
 
-// Check if sharing via email is supported
+// 检查是否支持通过电子邮件分享
 this.socialSharing.canShareViaEmail().then(() => {
-  // Sharing via email is possible
+  // 可以通过电子邮件分享
 }).catch(() => {
-  // Sharing via email is not possible
+  // 无法通过电子邮件分享
 });
 
-// Share via email
-this.socialSharing.shareViaEmail('Body', 'Subject', ['recipient@example.org']).then(() => {
-  // Success!
+// 通过电子邮件分享
+this.socialSharing.shareViaEmail('正文内容', '邮件主题', ['recipient@example.org']).then(() => {
+  // 成功！
 }).catch(() => {
-  // Error!
+  // 出错！
 });
 ```

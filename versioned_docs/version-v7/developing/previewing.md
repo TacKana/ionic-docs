@@ -3,86 +3,86 @@ title: Previewing
 ---
 
 <head>
-  <title>Previewing: To Run Ionic Apps Locally in A Web Browser</title>
+  <title>预览：在网页浏览器中本地运行 Ionic 应用</title>
   <meta
     name="description"
-    content="Previewing provides many different options to test native functionality based on needs. Use this feature to easily run your Ionic app locally in a web browser."
+    content="预览功能提供了多种不同的选项，可根据需求测试原生功能。使用此功能可以轻松地在本地网页浏览器中运行您的 Ionic 应用。"
   />
 </head>
 
-There are many different options to test native functionality depending on your target platforms and needs.
+根据目标平台和需求，有多种不同的选项可以测试原生功能。
 
-- Run locally in a web browser (using [Platform Detection](../core-concepts/cross-platform.md) for native functionality)
-- [Deploy to iOS](ios.md)
-- [Deploy to Android](android.md)
+- 在本地网页浏览器中运行（使用[平台检测](../core-concepts/cross-platform.md)来模拟原生功能）
+- [部署到 iOS](ios.md)
+- [部署到 Android](android.md)
 
-## Run Locally in a Web Browser
+## 在本地网页浏览器中运行
 
-One of the most powerful features of Ionic is that the majority of your app development can happen right in a browser on your desktop. With full access to traditional web development tools (Chrome/Safari/Firefox dev tools), you can write code then test/debug it quickly without having to recompile or deploy to a simulator or device.
+Ionic 最强大的功能之一是，您的大部分应用开发工作可以直接在桌面浏览器中进行。借助完整的传统网页开发工具（Chrome/Safari/Firefox 开发者工具），您可以编写代码，然后快速测试/调试，无需重新编译或部署到模拟器或设备。
 
-To do so, run `ionic serve` from the command line in the project's directory:
+为此，请在项目目录的命令行中运行 `ionic serve`：
 
 ```shell-session
 $ ionic serve
 > ng run app:serve --host=0.0.0.0 --port=8100
 
-[INFO] Development server running!
+[INFO] 开发服务器正在运行！
 
-       Local: http://localhost:8100
-       External: http://192.168.1.169:8100
+       本地地址：http://localhost:8100
+       外部地址：http://192.168.1.169:8100
 
-       Use Ctrl+C to quit this process
+       使用 Ctrl+C 退出此进程
 
-[INFO] Browser window opened to http://localhost:8100!
+[INFO] 浏览器窗口已打开至 http://localhost:8100！
 ```
 
-With `ionic serve` running, continue developing your app. As you save changes, the app reloads with those changes applied.
+当 `ionic serve` 运行时，您可以继续开发应用。当您保存更改时，应用将重新加载并应用这些更改。
 
 :::note
 
-If the external link isn't listed on the terminal, then run `ionic serve --external` to generate it.
+如果终端中没有列出外部链接，请运行 `ionic serve --external` 来生成它。
 
 :::
 
-When implementing native functionality, use [Platform Detection](../core-concepts/cross-platform.md).
-When you're ready to test on a real device, see here for [iOS](ios.md) and [Android](android.md).
+在实现原生功能时，请使用[平台检测](../core-concepts/cross-platform.md)。
+当您准备在真实设备上测试时，请参阅 [iOS](ios.md) 和 [Android](android.md) 的部署指南。
 
-## Simulating a Mobile Viewport
+## 模拟移动设备视口
 
-Each major browser vendor includes developer tools for mobile emulation. These tools offer the ability to change the emulated device type.
+每个主流浏览器厂商都提供了用于移动设备模拟的开发者工具。这些工具可以更改模拟的设备类型。
 
 ### Chrome
 
-Open your application at the local or remote address that it is being served from. For example, `http://localhost:4200`. Then, open the Chrome developer tools by pressing `Ctrl+Shift+I` on Windows/Linux or `Cmd+Opt+I` on Mac.
+在本地或远程地址打开您的应用程序。例如，`http://localhost:4200`。然后，在 Windows/Linux 上按 `Ctrl+Shift+I` 或在 Mac 上按 `Cmd+Opt+I` 打开 Chrome 开发者工具。
 
-<img src="/docs/img/developing/previewing/chrome-dev-tools.png" alt="Chrome Dev Tools" />
+<img src="/docs/img/developing/previewing/chrome-dev-tools.png" alt="Chrome 开发者工具" />
 
-From here you can select different device types from the dropdown, change the orientation of the device and throttle the network speed.
+在这里，您可以从下拉菜单中选择不同的设备类型，更改设备方向并限制网络速度。
 
-For additional features and information visit: https://developer.chrome.com/docs/devtools/device-mode/.
+有关更多功能和信息，请访问：https://developer.chrome.com/docs/devtools/device-mode/
 
 ### Safari
 
 :::note
 
-Prerequisites: Show Develop menu in menu bar option must be enabled in Safari Advanced options.
+前提条件：必须在 Safari 高级选项中启用“在菜单栏中显示‘开发’菜单”选项。
 
 :::
 
-Open your application at the local or remote address that it is being served from. For example, `http://localhost:4200`. Select the **Develop** menu in Safari and select **Enter Responsive Design Mode** . Alternatively you can use the keyboard shortcut `Cmd+Opt+R`.
+在本地或远程地址打开您的应用程序。例如，`http://localhost:4200`。在 Safari 中选择 **开发** 菜单，然后选择 **进入响应式设计模式**。或者，您可以使用键盘快捷键 `Cmd+Opt+R`。
 
-<img src="/docs/img/developing/previewing/safari-responsive-design-mode.png" alt="Safari Responsive Design Mode" />
+<img src="/docs/img/developing/previewing/safari-responsive-design-mode.png" alt="Safari 响应式设计模式" />
 
-From here you can select different device types to emulate as well as change the orientation of the device.
+在这里，您可以选择不同的设备类型进行模拟，并更改设备方向。
 
-For additional features and information visit: https://developer.apple.com/safari/tools/.
+有关更多功能和信息，请访问：https://developer.apple.com/safari/tools/
 
 ### Firefox
 
-Open your application at the local or remote address that it is being served from. For example, `http://localhost:4200`. Then, open the Firefox developer tools by pressing `Ctrl+Shift+M` on Windows/Linux or `Cmd+Opt+M` on Mac.
+在本地或远程地址打开您的应用程序。例如，`http://localhost:4200`。然后，在 Windows/Linux 上按 `Ctrl+Shift+M` 或在 Mac 上按 `Cmd+Opt+M` 打开 Firefox 开发者工具。
 
-<img src="/docs/img/developing/previewing/firefox-responsive-design-mode.png" alt="Firefox Responsive Design Mode" />
+<img src="/docs/img/developing/previewing/firefox-responsive-design-mode.png" alt="Firefox 响应式设计模式" />
 
-From here you can select different device types from the dropdown, change the orientation of the device and throttle the network speed.
+在这里，您可以从下拉菜单中选择不同的设备类型，更改设备方向并限制网络速度。
 
-For additional features and information visit: https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/.
+有关更多功能和信息，请访问：https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/

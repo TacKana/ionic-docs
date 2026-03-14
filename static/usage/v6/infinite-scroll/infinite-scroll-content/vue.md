@@ -11,7 +11,7 @@
     </ion-list>
     <ion-infinite-scroll>
       <ion-infinite-scroll-content
-        loading-text="Please wait..."
+        loading-text="请稍候..."
         loading-spinner="bubbles"
       ></ion-infinite-scroll-content>
     </ion-infinite-scroll>

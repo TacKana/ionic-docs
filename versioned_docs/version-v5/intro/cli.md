@@ -1,26 +1,26 @@
 ---
-sidebar_label: CLI Installation
+sidebar_label: CLI 安装
 ---
 
 import AppWizard from '@components/page/intro/AppWizard';
 
-# Installing Ionic
+# 安装 Ionic
 
-Ionic apps are created and developed primarily through the Ionic [command-line](../reference/glossary.md#cli) utility. The Ionic CLI is the preferred method of installation, as it offers a wide range of dev tools and help options along the way. It is also the main tool through which to run the app and connect it to other services, such as Appflow.
+Ionic 应用主要通过 Ionic [命令行](../reference/glossary.md#cli)工具来创建和开发。我们推荐使用 Ionic CLI 进行安装，因为它提供了一系列开发工具和帮助选项。它也是运行应用并连接其他服务（如 Appflow）的主要工具。
 
 <AppWizard />
 
-## Install the Ionic CLI
+## 安装 Ionic CLI
 
-Before proceeding, make sure your computer has [Node.js](../reference/glossary.md#node) installed. See [these instructions](environment.md) to set up an environment for Ionic.
+在继续之前，请确保您的计算机已安装 [Node.js](../reference/glossary.md#node)。请参阅[环境设置说明](environment.md)为 Ionic 配置环境。
 
-Install the Ionic CLI with npm:
+使用 npm 安装 Ionic CLI：
 
 ```shell
 npm install -g @ionic/cli
 ```
 
-If there was a previous installation of the Ionic CLI, it will need to be uninstalled due to a change in package name.
+如果之前安装过旧版 Ionic CLI，由于包名变更，需要先卸载旧版。
 
 ```shell
 $ npm uninstall -g ionic
@@ -29,29 +29,29 @@ $ npm install -g @ionic/cli
 ```
 
 :::note
-The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
-Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+`-g` 选项表示**全局安装**。全局安装包时，可能会出现 `EACCES` 权限错误。
+建议配置 npm 使其无需提升权限即可全局操作。更多信息请参阅[解决权限错误](../developing/tips.md#resolving-permission-errors)。
 :::
 
-## Start an App
+## 创建应用
 
-Create an Ionic app using one of the pre-made app templates, or a blank one to start fresh. The three most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter. Get started with the `ionic start` command:
+使用预置的应用模板或空白模板来创建 Ionic 应用。三种最常用的启动模板是 `blank`（空白）、`tabs`（标签页）和 `sidemenu`（侧边菜单）。通过 `ionic start` 命令开始创建：
 
 ```shell
 ionic start myApp tabs
 ```
 
-![Three thumbnail previews of Ionic app templates: blank, tabs, and side menu.](/img/installation/start-app-thumbnails.png 'Ionic App Starter Templates')
+![Ionic 应用模板缩略预览图：空白、标签页和侧边菜单。](/img/installation/start-app-thumbnails.png 'Ionic 应用启动模板')
 
-To learn more about starting Ionic apps, see the [Starting Guide](../developing/starting.md).
+要了解更多关于启动 Ionic 应用的信息，请参阅[启动指南](../developing/starting.md)。
 
-## Run the App
+## 运行应用
 
-The majority of Ionic app development can be spent right in the browser using the `ionic serve` command:
+大部分 Ionic 应用开发都可以直接在浏览器中使用 `ionic serve` 命令完成：
 
 ```shell
 $ cd myApp
 $ ionic serve
 ```
 
-There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, see the [Running an App Guide](../developing/previewing.md).
+还有其他多种运行应用的方式，建议从这种工作流开始。如需在设备和模拟器上开发测试应用，请参阅[运行应用指南](../developing/previewing.md)。

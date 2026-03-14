@@ -1,17 +1,17 @@
 ```html
-<ion-button id="present-alert">Click Me</ion-button>
-<ion-alert trigger="present-alert" class="custom-alert" header="Are you sure?"></ion-alert>
+<ion-button id="present-alert">点击我</ion-button>
+<ion-alert trigger="present-alert" class="custom-alert" header="确定吗？"></ion-alert>
 
 <script>
   const alert = document.querySelector('ion-alert');
 
   alert.buttons = [
     {
-      text: 'No',
+      text: '否',
       cssClass: 'alert-button-cancel',
     },
     {
-      text: 'Yes',
+      text: '是',
       cssClass: 'alert-button-confirm',
     },
   ];

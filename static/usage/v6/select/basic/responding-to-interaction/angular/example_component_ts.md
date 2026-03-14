@@ -17,7 +17,7 @@ export class ExampleComponent {
   }
 
   handleChange(e) {
-    this.pushLog('ionChange fired with value: ' + e.detail.value);
+    this.pushLog('ionChange 事件触发，值为: ' + e.detail.value);
   }
 }
 ```

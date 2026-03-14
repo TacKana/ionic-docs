@@ -1,5 +1,5 @@
 ---
-title: "ion-card-title"
+title: 卡片标题组件
 ---
 import Props from '@ionic-internal/component-api/v8/card-title/props.md';
 import Events from '@ionic-internal/component-api/v8/card-title/events.md';
@@ -11,32 +11,31 @@ import Slots from '@ionic-internal/component-api/v8/card-title/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <head>
-  <title>ion-card-title: Ionic App Card Title Component</title>
-  <meta name="description" content="ion-card-title is a child component of ion-card. Read to learn more about card title properties and how this component is used on Ionic Framework apps." />
+  <title>ion-card-title：Ionic 应用卡片标题组件</title>
+  <meta name="description" content="ion-card-title 是 ion-card 的子组件。阅读本文以了解更多关于卡片标题属性以及如何在 Ionic Framework 应用中使用该组件。" />
 </head>
 
 <EncapsulationPill type="shadow" />
 
 
-Card title is a child component of card that should be placed inside of a [card header](./card-header).
+卡片标题是卡片的子组件，应放置在[卡片头部](./card-header)内。
 
-See the [Card](./card) documentation for more information.
+更多信息请参阅[卡片](./card)文档。
 
-
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

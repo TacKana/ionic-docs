@@ -1,5 +1,5 @@
 ---
-title: "ion-tabs"
+title: 选项卡组件
 ---
 import Props from '@ionic-internal/component-api/v8/tabs/props.md';
 import Events from '@ionic-internal/component-api/v8/tabs/events.md';
@@ -9,58 +9,58 @@ import CustomProps from '@ionic-internal/component-api/v8/tabs/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v8/tabs/slots.md';
 
 <head>
-  <title>ion-tabs: Tab-Based Component for App Top-Level Navigation</title>
-  <meta name="description" content="Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps." />
+  <title>ion-tabs：用于应用顶级导航的标签页组件</title>
+  <meta name="description" content="Tabs 是实现基于标签页导航的顶级组件。ion-tabs 没有样式，作为路由出口使用，提供类似原生应用的导航体验。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Tabs are a top level navigation component to implement a tab-based navigation.
-The component is a container of individual [Tab](tab.md) components.
+Tabs 是实现标签页导航的顶级导航组件。
+该组件是各个 [Tab](tab.md) 组件的容器。
 
-The `ion-tabs` component does not have any styling and works as a router outlet in order to handle navigation. It does not provide any UI feedback or mechanism to switch between tabs. In order to do so, an `ion-tab-bar` should be provided as a direct child of `ion-tabs`.
+`ion-tabs` 组件本身没有任何样式，它作为路由出口处理导航。它不提供任何切换标签页的 UI 反馈或机制。为此，需要将 `ion-tab-bar` 作为 `ion-tabs` 的直接子组件提供。
 
-Both `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They don’t depend on each other to work, but they are usually used together in order to implement a tab-based navigation that behaves like a native app.
+`ion-tabs` 和 `ion-tab-bar` 都可以作为独立元素使用。它们不依赖彼此工作，但通常一起使用以实现类似原生应用的标签页导航。
 
-The `ion-tab-bar` needs a slot defined in order to be projected to the right place in an `ion-tabs` component.
+`ion-tab-bar` 需要定义一个插槽，以便投影到 `ion-tabs` 组件中的正确位置。
 
-## Basic Usage
+## 基础用法
 
-Tabs can be used to display different content without the need to change the URL. This is useful when the tabs are not used for navigation, but rather to display different content.
+标签页可用于显示不同内容而无需更改 URL。这在标签页不用于导航，而仅用于显示不同内容时非常有用。
 
 import Basic from '@site/static/usage/v8/tabs/basic/index.md';
 
 <Basic />
 
-## Usage with Router
+## 与路由器配合使用
 
-Tabs can be used with the Ionic router to implement tab-based navigation. The tab bar and active tab will automatically resolve based on the URL. This is the most common pattern for tabs navigation.
+标签页可与 Ionic 路由器配合使用，实现基于标签页的导航。标签栏和活动标签页将根据 URL 自动解析。这是标签页导航最常见的模式。
 
 import Router from '@site/static/usage/v8/tabs/router/index.md';
 
 <Router />
 
-:::tip Best Practices
+:::tip 最佳实践
 
-Ionic has guides on best practices for routing patterns with tabs. Check out the guides for [Angular](/angular/navigation#working-with-tabs), [React](/react/navigation#working-with-tabs), and [Vue](/vue/navigation#working-with-tabs) for additional information.
+Ionic 提供了关于标签页路由模式的最佳实践指南。请查看 [Angular](/angular/navigation#working-with-tabs)、[React](/react/navigation#working-with-tabs) 和 [Vue](/vue/navigation#working-with-tabs) 的指南以获取更多信息。
 
 :::
 
-## Programmatically Selecting Tabs
+## 以编程方式选择标签页
 
-Tabs can be selected programmatically using the `select` method. This is useful when tab changes need to be triggered from application logic, such as in response to a button click or after completing a form. The following example demonstrates using a button to call the `select` method to navigate to a different tab.
+可以使用 `select` 方法以编程方式选择标签页。当需要从应用逻辑（例如响应按钮点击或完成表单后）触发标签页切换时，这非常有用。以下示例演示了使用按钮调用 `select` 方法来导航到不同标签页。
 
 import SelectMethod from '@site/static/usage/v8/tabs/select-method/index.md';
 
 <SelectMethod />
 
-## Interfaces
+## 接口
 
 ### TabsCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但此接口可用于替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更强的类型定义。
 
 ```typescript
 interface TabsCustomEvent extends CustomEvent {
@@ -69,20 +69,20 @@ interface TabsCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow 部件
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

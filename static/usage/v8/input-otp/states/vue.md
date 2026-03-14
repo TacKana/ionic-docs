@@ -1,7 +1,7 @@
 ```html
 <template>
-  <ion-input-otp disabled value="1234"> Disabled </ion-input-otp>
-  <ion-input-otp readonly value="1234"> Readonly </ion-input-otp>
+  <ion-input-otp disabled value="1234"> 禁用状态 </ion-input-otp>
+  <ion-input-otp readonly value="1234"> 只读状态 </ion-input-otp>
 
   <ion-input-otp
     v-for="(input, index) in inputs"
@@ -26,6 +26,6 @@
     'ion-invalid': value.length < 4,
   });
 
-  const getValidationMessage = (value: string) => (value.length === 4 ? 'Valid' : 'Invalid');
+  const getValidationMessage = (value: string) => (value.length === 4 ? '验证通过' : '验证失败');
 </script>
 ```

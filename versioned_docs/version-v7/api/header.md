@@ -10,85 +10,85 @@ import CustomProps from '@ionic-internal/component-api/v7/header/custom-props.md
 import Slots from '@ionic-internal/component-api/v7/header/slots.md';
 
 <head>
-  <title>ion-header: Header Parent Component for Ionic Framework Apps</title>
+  <title>ion-header：Ionic 框架应用的头部父组件</title>
   <meta
     name="description"
-    content="Ion-header is a parent component that holds the toolbar. It's important to note that ion-header needs to be the one of the three root elements of a page."
+    content="ion-header 是用于包裹工具栏的父组件。需要注意的是，ion-header 必须是页面的三个根元素之一。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-Header is a root component of a page that aligns itself to the top of the page. It is recommended to be used as a wrapper for one or more [toolbars](./toolbar), but it can be used to wrap any element. When a toolbar is used inside of a header, the content will be adjusted so it is sized correctly, and the header will account for any device safe areas.
+Header（头部）是页面的一个根组件，它会自动对齐到页面顶部。通常建议用它来包裹一个或多个 [工具栏](./toolbar)，但也可以用它来包裹任何元素。当工具栏被用在头部内部时，内容会进行相应调整以确保尺寸正确，并且头部会考虑到任何设备的安全区域。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v7/header/basic/index.md';
 
 <Basic />
 
-## Translucent Header
+## 半透明头部
 
-Headers can match the transparency found in native iOS applications by setting the `translucent` property. In order to see the content scrolling behind the header, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
+通过设置 `translucent` 属性，可以使头部具有原生 iOS 应用程序的透明效果。为了能看到头部背后滚动的内容，需要在内容上设置 `fullscreen` 属性。此效果仅在模式为 `"ios"` 且设备支持 [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility) 时生效。
 
 import Translucent from '@site/static/usage/v7/header/translucent/index.md';
 
 <Translucent />
 
-## Condensed Header
+## 折叠式头部
 
-Ionic provides the functionality found in native iOS applications to show a large toolbar title and then collapse it to a small title when scrolling. This can be done by adding two headers, one above the content and one inside of the content, and then setting the `collapse` property to `"condense"` on the header inside of the content. This effect will only apply when the mode is "ios".
+Ionic 提供了原生 iOS 应用程序中的功能：显示一个大型工具栏标题，然后在滚动时将其折叠为小标题。这可以通过添加两个头部来实现：一个在内容上方，另一个在内容内部，然后将内容内部头部的 `collapse` 属性设置为 `"condense"`。此效果仅在模式为 `"ios"` 时生效。
 
 import Condense from '@site/static/usage/v7/header/condense/index.md';
 
 <Condense />
 
-## Fade Header
+## 淡入头部
 
-Many native iOS applications have a fade effect on the toolbar. This can be achieved by setting the `collapse` property on the header to `"fade"`. When the page is first loaded, the background and border on the header will be hidden. As the content is scrolled, the header will fade back in. This effect will only apply when the mode is "ios".
+许多原生 iOS 应用程序在工具栏上具有淡入效果。这可以通过将头部的 `collapse` 属性设置为 `"fade"` 来实现。当页面首次加载时，头部的背景和边框将被隐藏。随着内容滚动，头部会逐渐淡入显示。此效果仅在模式为 `"ios"` 时生效。
 
-This functionality can be combined with a [Condensed Header](#condensed-header) as well. The `collapse` property with a value set to `"fade"` should be on the header outside of the content.
+此功能也可以与 [折叠式头部](#condensed-header) 结合使用。应将 `collapse` 属性设置为 `"fade"` 的头部放置在内容外部。
 
 import Fade from '@site/static/usage/v7/header/fade/index.md';
 
 <Fade />
 
-### Usage with Virtual Scroll
+### 与虚拟滚动结合使用
 
-A fade header requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
+淡入头部需要一个滚动容器才能正常工作。当使用虚拟滚动方案时，需要提供一个自定义滚动目标。需要禁用内容的滚动，并将 `.ion-content-scroll-host` 类添加到负责滚动的元素上。
 
 import CustomScrollTarget from '@site/static/usage/v7/header/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
 
-## Borders
+## 边框
 
-In `"md"` mode, the header will have a `box-shadow` on the bottom. In `"ios"` mode, it will receive a `border` on the bottom. These can be removed by adding the `.ion-no-border` class to the header.
+在 `"md"` 模式下，头部底部会有一个 `box-shadow`。在 `"ios"` 模式下，头部底部会有一条 `border`。可以通过向头部添加 `.ion-no-border` 类来移除这些边框。
 
 import NoBorder from '@site/static/usage/v7/header/no-border/index.md';
 
 <NoBorder />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow 部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

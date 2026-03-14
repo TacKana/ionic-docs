@@ -1,9 +1,9 @@
 ```html
-<ion-textarea label="Default counter" label-placement="floating" counter="true" maxlength="20"></ion-textarea>
+<ion-textarea label="默认计数器" label-placement="floating" counter="true" maxlength="20"></ion-textarea>
 
 <ion-textarea
   id="custom-textarea"
-  label="Custom Counter Format"
+  label="自定义计数器格式"
   label-placement="floating"
   counter="true"
   maxlength="20"

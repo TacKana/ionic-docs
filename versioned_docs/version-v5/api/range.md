@@ -1,6 +1,6 @@
 ---
 title: 'Range Slider | ion-range: Slider Knob Controls with Labels'
-description: 'ion-range lets you select from a range of values by moving the slider. It accepts dual knobs but one controls the value and labels can be placed on either side.'
+description: 'ion-range 让您可以通过移动滑块从数值范围中进行选择。它支持双滑块模式，但默认使用单个滑块控制数值，标签可以放置在任意一侧。'
 sidebar_label: 'ion-range'
 demoUrl: '/docs/demos/api/range/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/range/index.html'
@@ -18,18 +18,13 @@ import Slots from '@ionic-internal/component-api/v5/range/slots.md';
 
 # ion-range
 
-The Range slider lets users select from a range of values by moving
-the slider knob. It can accept dual knobs, but by default one knob
-controls the value of the range.
+Range 滑块（Slider）组件让用户可以通过移动滑块旋钮从数值范围中进行选择。它支持双旋钮模式，但默认情况下单旋钮控制滑块的值。
 
-## Range Labels
+## 滑块标签
 
-Labels can be placed on either side of the range by adding the
-`slot="start"` or `slot="end"` to the element. The element doesn't have to
-be an `ion-label`, it can be added to any element to place it to the
-left or right of the range.
+通过为元素添加 `slot="start"` 或 `slot="end"` 属性，可以将标签放置在滑块的任意一侧。该元素不一定是 `ion-label`，可以添加到任意元素上以将其置于滑块的左侧或右侧。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -140,20 +135,20 @@ export const RangeExamples: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>IonRange Examples</IonTitle>
+          <IonTitle>IonRange 示例</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItemDivider>Default</IonItemDivider>
+          <IonItemDivider>默认</IonItemDivider>
           <IonItem>
             <IonRange pin={true} value={value} onIonChange={(e) => setValue(e.detail.value as number)} />
           </IonItem>
           <IonItem>
-            <IonLabel>Value: {value}</IonLabel>
+            <IonLabel>值: {value}</IonLabel>
           </IonItem>
 
-          <IonItemDivider>Min & Max</IonItemDivider>
+          <IonItemDivider>最小值与最大值</IonItemDivider>
           <IonItem>
             <IonRange min={-200} max={200} color="secondary">
               <IonLabel slot="start">-200</IonLabel>
@@ -161,25 +156,25 @@ export const RangeExamples: React.FC = () => {
             </IonRange>
           </IonItem>
 
-          <IonItemDivider>Icons</IonItemDivider>
+          <IonItemDivider>图标</IonItemDivider>
           <IonItem>
             <IonRange min={20} max={80} step={2}>
               <IonIcon size="small" slot="start" icon={sunny} />
               <IonIcon slot="end" icon={sunny} />
             </IonRange>
-          </IonItem>
+          </ion-item>
 
-          <IonItemDivider>With Snaps & Ticks</IonItemDivider>
+          <IonItemDivider>带吸附点与刻度</IonItemDivider>
           <IonItem>
             <IonRange min={1000} max={2000} step={100} snaps={true} color="secondary" />
           </IonItem>
 
-          <IonItemDivider>With Snaps & No Ticks</IonItemDivider>
+          <IonItemDivider>带吸附点但无刻度</IonItemDivider>
           <IonItem>
             <IonRange min={1000} max={2000} step={100} snaps={true} ticks={false} color="secondary" />
           </IonItem>
 
-          <IonItemDivider>Dual Knobs</IonItemDivider>
+          <IonItemDivider>双旋钮</IonItemDivider>
           <IonItem>
             <IonRange
               dualKnobs={true}
@@ -192,7 +187,7 @@ export const RangeExamples: React.FC = () => {
           </IonItem>
           <IonItem>
             <IonLabel>
-              Value: lower: {rangeValue.lower} upper: {rangeValue.upper}
+              值: 下限: {rangeValue.lower} 上限: {rangeValue.upper}
             </IonLabel>
           </IonItem>
         </IonList>
@@ -298,7 +293,7 @@ export class RangeExample {
   export default defineComponent({
     components: { IonItem, IonLabel, IonList, IonRange },
     mounted() {
-      // Sets initial value for dual-knob ion-range
+      // 为双旋钮 ion-range 设置初始值
       this.$refs.rangeDualKnobs.value = { lower: 24, upper: 42 };
     },
   });
@@ -309,15 +304,15 @@ export class RangeExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -325,10 +320,10 @@ export class RangeExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

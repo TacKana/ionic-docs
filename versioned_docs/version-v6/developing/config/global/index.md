@@ -43,7 +43,7 @@ import { IonicModule } from '@ionic/angular';
 </TabItem>
 <TabItem value="react">
 
-The `setupIonicReact` function must be called before rendering any Ionic components (including `IonApp`).
+必须在渲染任何 Ionic 组件（包括 `IonApp`）之前调用 `setupIonicReact` 函数。
 
 ```tsx title="App.tsx"
 import { setupIonicReact } from '@ionic/react';

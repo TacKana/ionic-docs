@@ -1,31 +1,31 @@
 ---
-sidebar_label: Loading Photos
+sidebar_label: 加载照片
 ---
 
-# Loading Photos from the Filesystem
+# 从文件系统加载照片
 
-We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
+我们已经实现了拍照和保存到文件系统的功能。现在还缺少最后一个功能：照片存储在文件系统中，但我们需要一种方法来保存每个文件的引用，以便它们可以重新显示在照片库中。
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](https://capacitorjs.com/docs/apis/preferences) to store our array of Photos in a key-value store.
+幸运的是，这很简单：我们将利用 Capacitor 的 [Preferences API](https://capacitorjs.com/docs/apis/preferences) 将照片数组存储在键值对存储中。
 
 ## Preferences API
 
-Begin by defining a constant variable that will act as the key for the store before the `usePhotoGallery` function definition in `src/hooks/usePhotoGallery.ts`:
+首先在 `src/hooks/usePhotoGallery.ts` 文件的 `usePhotoGallery` 函数定义之前，定义一个常量作为存储的键：
 
 ```tsx
 const PHOTO_STORAGE = 'photos';
 export function usePhotoGallery() {}
 ```
 
-Then, use the `Storage` class to get access to the get and set methods for reading and writing to device storage:
+然后，使用 `Storage` 类来获取读写设备存储的 get 和 set 方法：
 
-At the end of the `takePhoto` function, add a call to `Preferences.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+在 `takePhoto` 函数的末尾，添加对 `Preferences.set()` 的调用来保存照片数组。通过在这里添加，每次拍摄新照片时都会存储照片数组。这样，无论应用用户何时关闭或切换到其他应用，所有照片数据都会被保存。
 
 ```tsx
 Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
 ```
 
-With the photo array data saved, we will create a method that will retrieve the data when the hook loads. We will do so by using React's `useEffect` hook. Insert this above the `takePhoto` declaration. Here is the code, and we will break it down:
+保存好照片数组数据后，我们将创建一个方法，在钩子加载时检索数据。我们将使用 React 的 `useEffect` 钩子来实现。将其插入到 `takePhoto` 声明上方。以下是代码，我们将逐步解释：
 
 ```tsx
 useEffect(() => {
@@ -38,7 +38,7 @@ useEffect(() => {
         path: photo.filepath,
         directory: Directory.Data,
       });
-      // Web platform only: Load the photo as base64 data
+      // 仅限 Web 平台：将照片加载为 base64 数据
       photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
     setPhotos(photosInPreferences);
@@ -47,12 +47,12 @@ useEffect(() => {
 }, []);
 ```
 
-This seems a bit scary at first, so let's walk through it, first by looking at the second parameter we pass into the hook: the dependency array `[]`.
+一开始这可能看起来有点复杂，让我们一步步来分析。首先看我们传递给钩子的第二个参数：依赖数组 `[]`。
 
-The useEffect hook, by default, gets called each time a component renders, unless, we pass in a dependency array. In that case, it will only run when a dependency gets updated. In our case we only want it to be called once. By passing in an empty array, which will not be changed, we can prevent the hook from being called multiple times.
+默认情况下，`useEffect` 钩子会在每次组件渲染时被调用，除非我们传入一个依赖数组。在这种情况下，它只会在依赖项更新时运行。在我们的场景中，我们只希望它被调用一次。通过传入一个空数组（该数组不会被更改），我们可以防止钩子被多次调用。
 
-The first parameter to `useEffect` is the function that will be called by the effect. We pass in an anonymous arrow function, and inside of it we define another asynchronous method and then immediately call this. We have to call the async function from within the hook as the hook callback can't be asynchronous itself.
+`useEffect` 的第一个参数是效果将调用的函数。我们传入一个匿名箭头函数，并在其中定义了另一个异步方法，然后立即调用它。我们必须从钩子内部调用这个异步函数，因为钩子回调本身不能是异步的。
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src=”x” />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, because the Filesystem API stores them in base64 within [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood.
+在移动端（接下来会介绍！），我们可以直接将图像标签的源（`<img src=”x” />`）设置为文件系统中的每个照片文件，从而自动显示它们。然而在 Web 端，我们必须将每个图像从文件系统读取为 base64 格式，因为文件系统 API 在底层将它们以 base64 格式存储在 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) 中。
 
-That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+就是这样！我们已经在 Ionic 应用中构建了一个完整的照片库功能，可以在 Web 上运行。接下来，我们将把它转换成适用于 iOS 和 Android 的移动应用！

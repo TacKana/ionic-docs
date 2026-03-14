@@ -1,6 +1,6 @@
 ---
-title: 'Toggle | ion-toggle: Custom Toggle Button for Ionic Applications'
-description: 'Toggle changes the state of a single option. Use ion-toggle to create customizable toggle buttons that can be switched on or off for your applications.'
+title: 'Toggle | ion-toggle: Ionic 应用的自定义切换按钮'
+description: '切换按钮用于改变单个选项的状态。使用 ion-toggle 可为您的应用创建可自定义的切换按钮，支持开关操作。'
 sidebar_label: 'ion-toggle'
 demoUrl: '/docs/demos/api/toggle/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/toggle/index.html'
@@ -18,13 +18,13 @@ import Slots from '@ionic-internal/component-api/v5/toggle/slots.md';
 
 # ion-toggle
 
-Toggles change the state of a single option. Toggles can be switched on or off by pressing or swiping them. They can also be checked programmatically by setting the `checked` property.
+切换按钮用于改变单个选项的状态。通过点击或滑动可以开关切换按钮。也可以通过设置 `checked` 属性以编程方式选中。
 
-## Customization
+## 自定义样式
 
-### Customizing Background
+### 自定义背景
 
-The background of the toggle track and handle can be customized using CSS variables. There are also variables for setting the background differently when the toggle is checked.
+切换按钮的轨道和手柄背景可以使用 CSS 变量进行自定义。还有用于在切换按钮选中时设置不同背景的变量。
 
 ```css
 ion-toggle {
@@ -36,9 +36,9 @@ ion-toggle {
 }
 ```
 
-Because these variables set the `background` property, which is a shorthand, it can accept any value that the [background property](https://developer.mozilla.org/en-US/docs/Web/CSS/background) accepts.
+由于这些变量设置了 `background` 属性（这是一个简写属性），它可以接受 [background 属性](https://developer.mozilla.org/en-US/docs/Web/CSS/background) 接受的任何值。
 
-A more complex case may involve adding an image to the handle background.
+更复杂的情况可能涉及在手柄背景上添加图像。
 
 ```css
 ion-toggle {
@@ -46,7 +46,7 @@ ion-toggle {
 }
 ```
 
-Taking it a step further, we could use the `::before` or `::after` pseudo-elements to position text on top of the background.
+更进一步，我们可以使用 `::before` 或 `::after` 伪元素在背景上定位文本。
 
 ```css
 ion-toggle::before {
@@ -64,9 +64,9 @@ ion-toggle::before {
 }
 ```
 
-### Customizing Width
+### 自定义宽度
 
-Adjusting the width of the toggle **smaller** will result in a narrower track, with the handle remaining the default width. If desired, set `--handle-width` to make the handle narrower.
+将切换按钮的宽度调**小**会导致轨道变窄，而手柄保持默认宽度。如果需要，设置 `--handle-width` 可以使手柄变窄。
 
 ```css
 ion-toggle {
@@ -74,7 +74,7 @@ ion-toggle {
 }
 ```
 
-Adjusting the width of the toggle **larger** will result in a wider track, with the handle remaining the default width. If desired, set `--handle-width` to make the handle wider.
+将切换按钮的宽度调**大**会导致轨道变宽，而手柄保持默认宽度。如果需要，设置 `--handle-width` 可以使手柄变宽。
 
 ```css
 ion-toggle {
@@ -82,9 +82,9 @@ ion-toggle {
 }
 ```
 
-### Customizing Height
+### 自定义高度
 
-Adjusting the height of the toggle **smaller** than the default will result in the handle height auto-sizing itself to the track. In `ios` the handle is shorter than the track (`100% - 4px`) and in `md` the handle is taller than the track (`100% + 6px`).
+将切换按钮的高度调得比默认值**小**会导致手柄高度自动调整以适应轨道。在 `ios` 模式下，手柄比轨道短（`100% - 4px`），而在 `md` 模式下，手柄比轨道高（`100% + 6px`）。
 
 ```css
 ion-toggle {
@@ -92,9 +92,9 @@ ion-toggle {
 }
 ```
 
-> Note: this does not affect the handle width, width should be set using `--handle-width`.
+> 注意：这不会影响手柄宽度，宽度应使用 `--handle-width` 设置。
 
-Adjusting the height of the toggle **larger** will keep the handle in the center at the default height. This can be modified by setting `--handle-height` which can be set to any amount but will not exceed the `--handle-max-height`.
+将切换按钮的高度调**大**会使手柄保持在中心位置，保持默认高度。可以通过设置 `--handle-height` 来修改，它可以设置为任意值，但不会超过 `--handle-max-height`。
 
 ```css
 ion-toggle {
@@ -102,13 +102,13 @@ ion-toggle {
 }
 ```
 
-> Note: this does not affect the handle width, width should be set using `--handle-width`.
+> 注意：这不会影响手柄宽度，宽度应使用 `--handle-width` 设置。
 
-### Customizing Spacing
+### 自定义间距
 
-The spacing refers to the horizontal gap between the handle and the track. By default, the handle has `2px` of spacing around it in `ios` **only**. In `md` mode there is no default spacing.
+间距指的是手柄与轨道之间的水平间隙。默认情况下，在 `ios` 模式下，手柄周围有 `2px` 的间距。在 `md` 模式下没有默认间距。
 
-To remove the **horizontal** spacing, set `--handle-spacing` to `0px`.
+要移除**水平**间距，将 `--handle-spacing` 设置为 `0px`。
 
 ```css
 ion-toggle {
@@ -116,7 +116,7 @@ ion-toggle {
 }
 ```
 
-Due to the handle having a fixed height, to remove the spacing on the top and bottom, set the height to 100%.
+由于手柄有固定高度，要移除顶部和底部的间距，将高度设置为 100%。
 
 ```css
 ion-toggle {
@@ -125,9 +125,9 @@ ion-toggle {
 }
 ```
 
-### Customizing Border Radius
+### 自定义边框圆角
 
-The `--handle-border-radius` can be used to change the `border-radius` on the handle.
+`--handle-border-radius` 可用于更改手柄的 `border-radius`。
 
 ```css
 ion-toggle {
@@ -135,7 +135,7 @@ ion-toggle {
 }
 ```
 
-To target the `border-radius` only when the toggle is checked, target `.toggle-checked`:
+要仅在切换按钮选中时针对 `border-radius`，请选择 `.toggle-checked`：
 
 ```css
 ion-toggle.toggle-checked {
@@ -143,9 +143,9 @@ ion-toggle.toggle-checked {
 }
 ```
 
-### Customizing Box Shadow
+### 自定义盒阴影
 
-The `--handle-box-shadow` can be used to change the `box-shadow` on the handle.
+`--handle-box-shadow` 可用于更改手柄的 `box-shadow`。
 
 ```css
 ion-toggle {
@@ -153,7 +153,7 @@ ion-toggle {
 }
 ```
 
-To target the box shadow only when the toggle is checked, target `.toggle-checked`:
+要仅在切换按钮选中时针对盒阴影，请选择 `.toggle-checked`：
 
 ```css
 ion-toggle.toggle-checked {
@@ -161,11 +161,11 @@ ion-toggle.toggle-checked {
 }
 ```
 
-See the section on [customizing overflow](#customizing-overflow) to allow the `box-shadow` to overflow the toggle container.
+请参阅[自定义溢出](#自定义溢出)部分，以允许 `box-shadow` 溢出切换按钮容器。
 
-### Customizing Overflow
+### 自定义溢出
 
-Setting `overflow` on the toggle will be inherited by the toggle handle. By default, overflow is set to `hidden` in `ios` only. The `box-shadow` will still appear cut off due to the `contain` css property. Set `contain` to `none` in order to overflow the toggle container.
+在切换按钮上设置 `overflow` 将被切换按钮手柄继承。默认情况下，仅在 `ios` 模式下，溢出设置为 `hidden`。由于 `contain` CSS 属性，`box-shadow` 仍会显示被截断。将 `contain` 设置为 `none` 以允许溢出切换按钮容器。
 
 ```css
 ion-toggle {
@@ -177,30 +177,30 @@ ion-toggle {
 }
 ```
 
-## Usage
+## 使用示例
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- Default Toggle -->
+<!-- 默认切换按钮 -->
 <ion-toggle></ion-toggle>
 
-<!-- Disabled Toggle -->
+<!-- 禁用切换按钮 -->
 <ion-toggle disabled></ion-toggle>
 
-<!-- Checked Toggle -->
+<!-- 选中切换按钮 -->
 <ion-toggle checked></ion-toggle>
 
-<!-- Toggle Colors -->
+<!-- 切换按钮颜色 -->
 <ion-toggle color="primary"></ion-toggle>
 <ion-toggle color="secondary"></ion-toggle>
 <ion-toggle color="danger"></ion-toggle>
 <ion-toggle color="light"></ion-toggle>
 <ion-toggle color="dark"></ion-toggle>
 
-<!-- Toggles in a List -->
+<!-- 列表中的切换按钮 -->
 <ion-list>
   <ion-item>
     <ion-label>Pepperoni</ion-label>
@@ -224,23 +224,23 @@ ion-toggle {
 <TabItem value="javascript">
 
 ```html
-<!-- Default Toggle -->
+<!-- 默认切换按钮 -->
 <ion-toggle></ion-toggle>
 
-<!-- Disabled Toggle -->
+<!-- 禁用切换按钮 -->
 <ion-toggle disabled></ion-toggle>
 
-<!-- Checked Toggle -->
+<!-- 选中切换按钮 -->
 <ion-toggle checked></ion-toggle>
 
-<!-- Toggle Colors -->
+<!-- 切换按钮颜色 -->
 <ion-toggle color="primary"></ion-toggle>
 <ion-toggle color="secondary"></ion-toggle>
 <ion-toggle color="danger"></ion-toggle>
 <ion-toggle color="light"></ion-toggle>
 <ion-toggle color="dark"></ion-toggle>
 
-<!-- Toggles in a List -->
+<!-- 列表中的切换按钮 -->
 <ion-list>
   <ion-item>
     <ion-label>Pepperoni</ion-label>
@@ -284,28 +284,28 @@ export const ToggleExamples: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>ToggleExamples</IonTitle>
+          <IonTitle>切换按钮示例</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItemDivider>Default Toggle</IonItemDivider>
+          <IonItemDivider>默认切换按钮</IonItemDivider>
           <IonItem>
-            <IonLabel>Checked: {JSON.stringify(checked)}</IonLabel>
+            <IonLabel>选中状态: {JSON.stringify(checked)}</IonLabel>
             <IonToggle checked={checked} onIonChange={(e) => setChecked(e.detail.checked)} />
           </IonItem>
 
-          <IonItemDivider>Disabled Toggle</IonItemDivider>
+          <IonItemDivider>禁用切换按钮</IonItemDivider>
           <IonItem>
             <IonToggle disabled />
           </IonItem>
 
-          <IonItemDivider>Checked Toggle</IonItemDivider>
+          <IonItemDivider>选中切换按钮</IonItemDivider>
           <IonItem>
             <IonToggle checked />
           </IonItem>
 
-          <IonItemDivider>Toggle Colors</IonItemDivider>
+          <IonItemDivider>切换按钮颜色</IonItemDivider>
           <IonItem>
             <IonToggle color="primary" />
           </IonItem>
@@ -322,7 +322,7 @@ export const ToggleExamples: React.FC = () => {
             <IonToggle color="dark" />
           </IonItem>
 
-          <IonItemDivider>Toggles in a List</IonItemDivider>
+          <IonItemDivider>列表中的切换按钮</IonItemDivider>
           <IonItem>
             <IonLabel>Pepperoni</IonLabel>
             <IonToggle value="pepperoni" />
@@ -362,23 +362,23 @@ export class ToggleExample {
 
   render() {
     return [
-      // Default Toggle
+      // 默认切换按钮
       <ion-toggle></ion-toggle>,
 
-      // Disabled Toggle
+      // 禁用切换按钮
       <ion-toggle disabled></ion-toggle>,
 
-      // Checked Toggle
+      // 选中切换按钮
       <ion-toggle checked></ion-toggle>,
 
-      // Toggle Colors
+      // 切换按钮颜色
       <ion-toggle color="primary"></ion-toggle>,
       <ion-toggle color="secondary"></ion-toggle>,
       <ion-toggle color="danger"></ion-toggle>,
       <ion-toggle color="light"></ion-toggle>,
       <ion-toggle color="dark"></ion-toggle>,
 
-      // Toggles in a List
+      // 列表中的切换按钮
       <ion-list>
         <ion-item>
           <ion-label>Pepperoni</ion-label>
@@ -418,23 +418,23 @@ export class ToggleExample {
 
 ```html
 <template>
-  <!-- Default Toggle -->
+  <!-- 默认切换按钮 -->
   <ion-toggle></ion-toggle>
 
-  <!-- Disabled Toggle -->
+  <!-- 禁用切换按钮 -->
   <ion-toggle disabled></ion-toggle>
 
-  <!-- Checked Toggle -->
+  <!-- 选中切换按钮 -->
   <ion-toggle checked></ion-toggle>
 
-  <!-- Toggle Colors -->
+  <!-- 切换按钮颜色 -->
   <ion-toggle color="primary"></ion-toggle>
   <ion-toggle color="secondary"></ion-toggle>
   <ion-toggle color="danger"></ion-toggle>
   <ion-toggle color="light"></ion-toggle>
   <ion-toggle color="dark"></ion-toggle>
 
-  <!-- Toggles in a List -->
+  <!-- 列表中的切换按钮 -->
   <ion-list>
     <ion-item>
       <ion-label>Pepperoni</ion-label>
@@ -488,15 +488,15 @@ export class ToggleExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -504,10 +504,10 @@ export class ToggleExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

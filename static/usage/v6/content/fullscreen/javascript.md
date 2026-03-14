@@ -5,63 +5,13 @@
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true" class="ion-padding">
-  <h1>Scroll the content and notice that the text goes behind the header and footer.</h1>
+  <h1>滚动内容区，注意文字会滑到页眉和页脚后面。</h1>
 
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum in
-    risus. Sed nec convallis sapien, id tincidunt enim. Mauris ornare eleifend nunc id mattis. Fusce augue diam,
-    sagittis nec posuere at, consectetur tempor lectus. Nulla at lectus eget mauris iaculis malesuada mollis sed neque.
-    Curabitur et risus tristique, malesuada mauris finibus, elementum massa. Proin lacinia mauris quis ligula blandit
-    ullamcorper. Donec ut posuere lorem. In volutpat magna vitae tellus posuere pulvinar. Nam varius ligula justo, nec
-    placerat lacus pharetra ac. Aenean massa orci, tristique in nisl ut, aliquet consectetur libero. Etiam luctus
-    placerat vulputate. Aliquam ipsum massa, porttitor at mollis ut, pretium sit amet mi. In neque mauris, placerat et
-    neque vel, tempor interdum dolor. Suspendisse gravida malesuada tellus, vel dapibus nisl dignissim vel. Cras ut
-    nulla sit amet erat malesuada euismod vel a nulla.
+    洛雷姆·伊普森（Lorem ipsum）坐落在阿梅特（amet）上，致力于增强精英的生存能力。埃涅安（Aenean）让泰勒库斯（tellus）从毛里斯的奥克托（auctor）那里获得尊严，并在风险中发酵。塞德·内克·康瓦利斯·萨皮恩（Sed nec convallis sapien），身份证上的滕蒂特·恩尼姆（tincidunt enim）。毛里斯·奥纳雷·埃利芬德（Mauris ornare eleifend）在床上装饰着床垫。富斯·奥格·迪亚姆（Fusce augue diam）坐在阿特（at）的位置上，康塞克特图尔·坦普斯·莱克图斯（consectetur tempor lectus）的座位。娜拉坐在莱克图斯·埃格特（lectus eget）上，毛里斯·伊阿库里斯·马勒苏阿达（iaculis malesuada）的座位上，莫利斯·塞德·内奎（mollis sed neque）的座位上。库拉比图尔和里苏斯·特里斯蒂克（risus tristique）的座位，马勒苏阿达·毛里斯·菲尼布斯（malesuada mauris finibus）的座位，元素质量的座位。普罗因·拉西尼亚·毛里斯（Proin lacinia mauris）坐在利古拉·布兰迪特·乌尔拉科尔佩尔（ligula blandit ullamcorper）的座位上。多内克·乌特·波苏尔（Donec ut posuere）坐在洛雷姆（lorem）的座位上。在沃尔特帕特·马格纳（volutpat magna）的座位上，泰勒库斯·波苏尔（tellus posuere）坐在普尔维纳尔（pulvinar）的座位上。纳姆·瓦里乌斯·利古拉（Nam varius ligula）坐在尤斯托（justo）的座位上，内克·普拉塞拉特·拉库斯·法拉特拉（nec placerat lacus pharetra）的座位上。埃涅安·马萨（Aenean massa）坐在奥奇（orci）的座位上，特里斯蒂克·因·尼西尔·乌特（tristique in nisl ut）的座位上，阿利奎特·康塞克特图尔·利伯罗（aliquet consectetur libero）的座位上。埃蒂亚姆·卢克图斯（Etiam luctus）坐在普拉塞拉特·乌尔普塔特（placerat vulputate）的座位上。阿利夸姆·伊普森·马萨（Aliquam ipsum massa），波尔蒂托尔·阿特·莫利斯·乌特（porttitor at mollis ut）的座位，普雷蒂乌姆·西特·阿梅特·米（pretium sit amet mi）的座位。在尼奎·毛里斯（neque mauris）的座位上，普拉塞拉特和尼奎·维尔（neque vel）的座位，坦普尔·因特杜姆·多洛尔（tempor interdum dolor）的座位。苏斯彭迪塞·格拉维达·马勒苏阿达·泰勒库斯（Suspendisse gravida malesuada tellus）的座位，维尔·达皮布斯·尼西尔·迪格尼西姆（vel dapibus nisl dignissim vel）的座位。克拉斯·乌特·努拉（Cras ut nulla）坐在阿梅特·埃拉特·马勒苏阿达·尤斯莫德（amet erat malesuada euismod）的座位上，维尔·阿·努拉（vel a nulla）的座位。
   </p>
   <p>
-    Phasellus sit amet iaculis odio, eget feugiat erat. Etiam sit amet turpis sit amet massa viverra maximus. Aenean
-    venenatis porttitor pharetra. Fusce vulputate urna purus, vel efficitur mauris auctor non. Etiam libero odio,
-    sodales in velit a, faucibus venenatis erat. Ut convallis sit amet urna in ultrices. Cras neque est, vehicula sed
-    lorem ac, placerat commodo elit. Praesent turpis metus, elementum eget iaculis ac, elementum in odio. Nunc et elit
-    faucibus, condimentum mauris consequat, ornare dolor. Sed ac lectus a est blandit tempor. Etiam lobortis tristique
-    maximus.
+    费勒斯（Phasellus）坐在阿梅特·伊阿库里斯（amet iaculis）的座位上，埃格特·费吉亚特·埃拉特（eget feugiat erat）的座位。埃蒂亚姆（Etiam）坐在阿梅特·图尔皮斯（amet turpis）的座位上，阿梅特·马萨·维韦拉·马西穆斯（amet massa viverra maximus）的座位。埃涅安·维南蒂斯·波尔蒂托尔·法拉特拉（Aenean venenatis porttitor pharetra）的座位。富斯·乌尔普塔特·乌尔纳·普鲁斯（Fusce vulputate urna purus）的座位，维尔·埃菲西图尔·毛里斯·奥克托·农（vel efficitur mauris auctor non）的座位。埃蒂亚姆·利伯罗·奥迪奥（Etiam libero odio）的座位，索达莱斯·因·维利特·阿（sodales in velit a）的座位，福西布斯·维南蒂斯·埃拉特（faucibus venenatis erat）的座位。乌特·康瓦利斯（Ut convallis）坐在阿梅特·乌尔纳·因·乌尔特里斯（amet urna in ultrices）的座位上。克拉斯·尼奎·埃斯特（Cras neque est），维希库拉·塞德·洛雷姆·阿奇（vehicula sed lorem ac）的座位，普拉塞拉特·科莫多·埃利特（placerat commodo elit）的座位。普拉森特·图尔皮斯·梅图斯（Praesent turpis metus），元素·埃格特·伊阿库里斯·阿奇（elementum eget iaculis ac）的座位，元素·因·奥迪奥（elementum in odio）的座位。努恩克和埃利特·福西布斯（Nunc et elit faucibus）的座位，康迪门图姆·毛里斯·康塞卡特（condimentum mauris consequat）的座位，奥纳雷·多洛尔（ornare dolor）的座位。塞德·阿奇·莱克图斯·阿（Sed ac lectus a）坐在埃斯特·布兰迪特·坦普尔（est blandit tempor）的座位上。埃蒂亚姆·洛博蒂斯·特里斯蒂克·马西穆斯（Etiam lobortis tristique maximus）的座位。
   </p>
   <p>
-    Quisque tempus porttitor massa, vel condimentum risus finibus a. Aliquam viverra maximus odio, id ornare justo
-    tristique ac. Mauris euismod arcu eget neque sagittis rutrum. Ut vehicula porta lacus nec lobortis. Vestibulum et
-    elit ultrices, lacinia metus in, lobortis est. Vivamus nisi justo, venenatis sit amet arcu ac, congue faucibus
-    justo. Duis volutpat posuere enim, vel sagittis elit dictum et. Sed et congue mauris. Nam venenatis venenatis risus,
-    ac condimentum neque sagittis sed. In eget nulla ultricies urna sollicitudin posuere. Aenean sagittis congue mauris.
-    Proin nec libero mi. In hac habitasse platea dictumst. Praesent nunc nulla, dictum id molestie sed, pretium vitae
-    turpis.
-  </p>
-  <p>
-    Pellentesque vitae dapibus lacus. Nullam suscipit ornare risus quis ullamcorper. Nullam feugiat, sapien et sodales
-    fermentum, risus ligula semper risus, id efficitur ligula augue id diam. Suspendisse lobortis est sit amet quam
-    facilisis, ut vestibulum nunc dignissim. Donec at vestibulum magna. Maecenas maximus pretium metus. Phasellus congue
-    sapien vel odio imperdiet, nec mollis odio euismod. Sed vel eros ut sapien accumsan condimentum vehicula vitae
-    lectus. Donec sed efficitur lorem. Aenean tristique mi libero, eleifend tincidunt libero finibus at. Mauris
-    condimentum fermentum rutrum.
-  </p>
-  <p>
-    Nulla tristique ultricies suscipit. Donec non ornare elit. Vivamus id pretium mauris, nec sagittis leo. Fusce mattis
-    eget est id sollicitudin. Suspendisse dictum sem magna, in imperdiet metus suscipit et. Suspendisse enim enim,
-    venenatis et orci eu, suscipit congue lacus. Praesent vel ligula non eros tempor interdum. Proin justo orci,
-    ultricies vitae diam sed, semper consectetur ligula. Aenean finibus ante velit, nec efficitur libero cursus cursus.
-    Duis mi nunc, imperdiet sed condimentum vel, porttitor ut lacus. Quisque dui ipsum, vehicula sed vestibulum id,
-    semper vel libero. Suspendisse tincidunt mollis condimentum. Nulla facilisi. Etiam neque nisl, egestas nec iaculis
-    sed, tristique faucibus sem. Sed mollis dui quis ligula cursus rutrum.
-  </p>
-</ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-title> Footer </ion-title>
-  </ion-toolbar>
-</ion-footer>
-
-<style>
-  ion-toolbar {
-    --opacity: 0.5;
-  }
-</style>
-```
+    奎斯克·坦普斯·波尔蒂托尔·马萨（Quisque tempus porttitor massa）的座位，维尔·康迪门图姆·里苏斯·菲尼布斯·阿（vel condimentum risus finibus a）的座位。阿利夸姆·维韦拉·马西穆斯·奥迪奥（Aliquam viverra maximus odio）的座位，身份证上的奥纳雷·尤斯托·特里斯蒂克·阿奇（ornare justo tristique ac）的座位。毛里斯·尤斯莫德·阿库·埃格特·尼奎·萨吉蒂斯·鲁特鲁姆（Mauris euismod arcu eget neque sagittis rutrum）的座位。乌特·维希库拉·波尔塔·拉库斯·内克·洛博蒂斯（Ut vehicula porta lacus nec lobortis）的座位。韦斯蒂布卢姆和埃利特·乌尔特里斯（Vestibulum et elit ultrices）的座位，拉西尼亚·梅图斯·因（lacinia metus in）的座位，洛博蒂斯·埃斯特（lobortis est）的座位。维瓦穆斯·尼西·尤斯托（Vivamus nisi justo），维南蒂斯·西特·阿梅特·阿库·阿奇（venenatis sit amet arcu ac）的座位，贡格·福西布斯·尤斯托（congue faucibus justo）的座位。杜伊斯·沃尔特帕特·波苏尔·恩尼姆（Duis volutpat posuere enim）的座位，维尔·萨吉蒂斯·埃利特·迪克图姆和（vel sagittis elit dictum et）的座位。塞德和贡格·毛里斯（Sed et congue mauris）的座位。纳姆·维南蒂斯·维南蒂斯·里苏斯（Nam venenatis venenatis risus）的座位，阿奇·康迪门图姆·尼奎·萨吉蒂斯·塞德（ac condimentum neque sagittis sed）的座位。在埃格特·努拉·乌尔特里西斯·乌尔纳·索利西图丁·波苏尔（eget nulla ultricies urna sollicitudin posuere）的座位上。埃涅安·萨吉蒂斯·贡格·毛里斯（Aenean sagittis congue mauris）的座位。普罗因·内克·利伯罗·米（Proin nec libero mi）的座位。在哈克·哈比塔塞·普拉特·迪克图姆斯特（hac habitasse platea dictumst）的座位上。普拉森特·努恩克·努拉（Praesent nunc nulla），迪克图姆·身份证上的莫莱斯蒂

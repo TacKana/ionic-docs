@@ -5,43 +5,38 @@ const fetch = require('node-fetch');
 const VERSIONS_JSON = require('./versions.json');
 
 /**
- * Old versions of the Ionic Docs are archived so
- * that we do not need to re-build it every time we deploy.
- * Building a large number of docs sites at once can cause
- * out of memory issues, so archiving old docs sites
- * allow us to keep memory usage and build times low.
+ * Ionic 文档的旧版本会被归档，
+ * 这样我们就不需要在每次部署时重新构建它们。
+ * 一次性构建大量文档站点可能会导致内存不足问题，
+ * 因此归档旧文档站点可以让我们保持较低的内存使用率和构建时间。
  *
- * Note that this file is only for versions of the Ionic Docs
- * that are built with Docusaurus. The
- * Ionic v3 and v4 docs are built with other tools, so those
- * versions are not included here.
+ * 注意：此文件仅适用于使用 Docusaurus 构建的 Ionic 文档版本。
+ * Ionic v3 和 v4 文档是使用其他工具构建的，因此这些版本不包含在此处。
  *
- * Note that the urls specified in this file should
- * NOT have a trailing slash otherwise users will
- * briefly get a 404 Page Not Found error before
- * the documentation website loads.
+ * 注意：此文件中指定的 URL 不应有尾部斜杠，
+ * 否则用户在文档网站加载之前会短暂遇到 404 页面未找到错误。
  */
 const ARCHIVED_VERSIONS_JSON = require('./versionsArchived.json');
 
 /**
- * This returns an array where each entry is an array
- * containing the version name at index 0 and
- * the archive url at index 1.
+ * 此函数返回一个数组，其中每个条目是一个数组，
+ * 索引 0 处为版本名称，索引 1 处为归档 URL。
  */
 const ArchivedVersionsDropdownItems = Object.entries(ARCHIVED_VERSIONS_JSON).splice(0, 5);
 
-const BASE_URL = '/docs';
+const BASE_URL = '';
 
 module.exports = {
-  title: 'Ionic Framework',
+  title: 'Ionic 官方中文文档',
   tagline:
-    'Ionic is the app platform for web developers. Build amazing mobile and web apps with one shared code base and open web standards',
-  url: 'https://ionicframework.com',
+    'Ionic 是面向Web开发者的应用平台。借助一个共享代码库和开放的Web标准，构建出色的移动应用和Web应用。',
+  url: 'https://ionic.xuxo.top',
   baseUrl: `${BASE_URL}/`,
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'ja'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
     localeConfigs: {
+      'zh-Hans': { label: '简体中文' },
       en: { label: 'English' },
       ja: { label: '日本語' },
     },
@@ -56,17 +51,14 @@ module.exports = {
       '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       {
-        // Will be passed to @docusaurus/plugin-content-docs (false to disable).
+        // 将传递给 @docusaurus/plugin-content-docs（设为 false 以禁用）。
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-            if (locale != 'en') {
-              return 'https://crowdin.com/project/ionic-docs';
-            }
+          editUrl: ({ versionDocsDirPath, docPath }) => {
             let match;
             if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-              return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
+              return `https://github.com/TacKana/ionic-docs/tree/main/docs/api/${match[1]}.md`;
             }
             if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
               return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
@@ -77,7 +69,7 @@ module.exports = {
             if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
               return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
             }
-            return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+            return `https://github.com/TacKana/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
           },
           exclude: ['README.md'],
           lastVersion: 'current',
@@ -88,11 +80,11 @@ module.exports = {
             },
           },
         },
-        // Will be passed to @docusaurus/plugin-google-tag-manager.
+        // 将传递给 @docusaurus/plugin-google-tag-manager。
         googleTagManager: {
           containerId: 'GTM-TKMGCBC',
         },
-        // Will be passed to @docusaurus/theme-classic.
+        // 将传递给 @docusaurus/theme-classic。
         theme: {
           customCss: [
             require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
@@ -149,7 +141,7 @@ module.exports = {
     navbar: {
       hideOnScroll: true,
       logo: {
-        alt: 'Site Logo',
+        alt: '站点徽标',
         src: `/logos/ionic-text-docs-dark.svg`,
         srcDark: `/logos/ionic-text-docs-light.svg`,
         href: '/',
@@ -161,13 +153,13 @@ module.exports = {
         {
           type: 'doc',
           docId: 'index',
-          label: 'Guide',
+          label: '指南',
           position: 'left',
         },
         {
           type: 'doc',
           docId: 'components',
-          label: 'Components',
+          label: '组件',
           position: 'left',
         },
         {
@@ -179,13 +171,13 @@ module.exports = {
         {
           type: 'doc',
           docId: 'native',
-          label: 'Native',
+          label: '原生',
           position: 'left',
         },
         {
           type: 'doc',
           docId: 'updating/8-0',
-          label: 'Ionic v8.0.0 Upgrade Guide',
+          label: 'Ionic v8.0.0 升级指南',
           position: 'left',
           className: 'cta',
         },
@@ -196,21 +188,19 @@ module.exports = {
             ...ArchivedVersionsDropdownItems.map(([versionName, versionUrl]) => ({
               label: versionName,
               /**
-               * Use "to" instead of "href" so the
-               * external URL icon does not show up.
+               * 使用 "to" 而不是 "href"，这样外部 URL 图标就不会显示。
                */
               to: versionUrl,
               /**
-               * Just like the version docs in this project,
-               * we want to archived versions to open in the
-               * same tab.
+               * 就像本项目中的版本文档一样，
+               * 我们希望归档版本也在同一个标签页中打开。
                */
               target: '_self',
             })),
             { to: 'https://ionicframework.com/docs/v4/components', label: 'v4', target: '_blank' },
             { to: 'https://ionicframework.com/docs/v3/', label: 'v3', target: '_blank' },
           ],
-          // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+          // dropdownItemsAfter: [{to: '/versions', label: '所有版本'}],
           dropdownActiveClassDisabled: true,
         },
         {
@@ -218,30 +208,30 @@ module.exports = {
           position: 'right',
         },
         {
-          label: 'Community',
+          label: '社区',
           position: 'right',
           items: [
             {
               href: 'https://ionicframework.com/community',
-              label: 'Community Hub',
+              label: '社区中心',
               target: '_blank',
               rel: null,
             },
             {
               href: 'https://forum.ionicframework.com/',
-              label: 'Forum',
+              label: '论坛',
               target: '_blank',
               rel: null,
             },
             {
               href: 'https://www.meetup.com/topics/ionic-framework/',
-              label: 'Meetups',
+              label: '聚会',
               target: '_blank',
               rel: null,
             },
             {
               href: 'https://blog.ionicframework.com/',
-              label: 'Blog',
+              label: '博客',
               target: '_blank',
               rel: null,
             },
@@ -255,24 +245,24 @@ module.exports = {
           className: 'navbar__link--community',
         },
         {
-          label: 'Support',
+          label: '支持',
           position: 'right',
           items: [
             {
               href: 'https://ionicframework.com/support',
-              label: 'Help Center',
+              label: '帮助中心',
               target: '_blank',
               rel: null,
             },
             {
               href: 'https://ionic.zendesk.com/',
-              label: 'Customer Support',
+              label: '客户支持',
               target: '_blank',
               rel: null,
             },
             {
               href: 'https://ionicframework.com/advisory',
-              label: 'Enterprise Advisory',
+              label: '企业咨询',
               target: '_blank',
               rel: null,
             },
@@ -291,7 +281,7 @@ module.exports = {
           dropdownItemsAfter: [
             {
               href: 'https://ionicframework.com/translate',
-              label: 'Translate',
+              label: '翻译',
               target: '_blank',
               rel: null,
             },
@@ -316,15 +306,15 @@ module.exports = {
           href: 'https://github.com/ionic-team/ionic-framework',
           position: 'right',
           className: 'icon-link icon-link-mask icon-link-github',
-          'aria-label': 'GitHub repository',
+          'aria-label': 'GitHub 仓库',
           target: '_blank',
         },
       ],
     },
     prism: {
       theme: { plain: {}, styles: [] },
-      // Prism provides a [default list of languages](https://github.com/FormidableLabs/prism-react-renderer/blob/e1c83a468b05df7f452b3ad7e4ae5ab874574d4e/packages/generate-prism-languages/index.ts#L9-L26).
-      // A list of [additional languages](https://prismjs.com/#supported-languages) that are supported can be found at their website.
+      // Prism 提供了[默认语言列表](https://github.com/FormidableLabs/prism-react-renderer/blob/e1c83a468b05df7f452b3ad7e4ae5ab874574d4e/packages/generate-prism-languages/index.ts#L9-L26)。
+      // 在其网站上可以找到支持的[其他语言列表](https://prismjs.com/#supported-languages)。
       additionalLanguages: ['shell-session', 'http', 'diff', 'json'],
     },
     algolia: {
@@ -335,7 +325,7 @@ module.exports = {
     },
   },
   plugins: [
-    // Allows usage of Sass/SCSS in the CSS preprocessor.
+    // 允许在 CSS 预处理器中使用 Sass/SCSS。
     'docusaurus-plugin-sass',
     [
       'docusaurus-plugin-module-alias',

@@ -6,7 +6,7 @@ const HomePage = () => (
   <IonPage>
     <IonHeader>
       <IonToolbar>
-        <IonTitle>Listen now</IonTitle>
+        <IonTitle>即刻收听</IonTitle>
       </IonToolbar>
     </IonHeader>
     <IonContent>
@@ -18,7 +18,7 @@ const HomePage = () => (
           height: '100%',
         }}
       >
-        Listen now content
+        即刻收听内容
       </div>
     </IonContent>
   </IonPage>

@@ -1,20 +1,20 @@
 ---
-sidebar_label: Saving Photos
+sidebar_label: 保存照片
 ---
 
-# Saving Photos to the Filesystem
+# 将照片保存到文件系统
 
-We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be lost.
+目前我们已经能够拍摄多张照片，并在应用的第二个标签页中显示照片画廊。但这些照片目前并未永久存储，因此当应用关闭时，它们将会丢失。
 
-## Filesystem API
+## 文件系统 API
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` hook (`src/hooks/usePhotoGallery.ts`), and get access to the `writeFile` method from the `Filesystem` class:
+幸运的是，只需几个步骤即可将它们保存到文件系统。首先打开 `usePhotoGallery` 钩子（`src/hooks/usePhotoGallery.ts`），并从 `Filesystem` 类中获取 `writeFile` 方法的访问权限：
 
 :::note
-We will use the `writeFile` method initially, but we will use the others coming up shortly, so we'll go ahead and import them now.
+我们将先使用 `writeFile` 方法，但很快也会用到其他方法，所以现在一并导入它们。
 :::
 
-Next, create a couple of new functions in `usePhotoGallery`:
+接下来，在 `usePhotoGallery` 中创建两个新函数：
 
 ```tsx
 export function usePhotoGallery() {
@@ -26,8 +26,7 @@ export function usePhotoGallery() {
       directory: Directory.Data,
     });
 
-    // Use webPath to display the new image instead of base64 since it's
-    // already loaded into memory
+    // 使用 webPath 来显示新图像而非 base64，因为它已经加载到内存中
     return {
       filepath: fileName,
       webviewPath: photo.webPath,
@@ -54,14 +53,14 @@ export async function base64FromPath(path: string): Promise<string> {
 ```
 
 :::note
-The base64FromPath method is a helper util that downloads a file from the supplied path and returns a base64 representation of that file.
+base64FromPath 方法是一个辅助工具，它从提供的路径下载文件并返回该文件的 base64 表示。
 :::
 
-We pass in the `photo` object, which represents the newly captured device photo, as well as the fileName, which will provide a path for the file to be stored to.
+我们传入 `photo` 对象（代表新捕获的设备照片）以及 `fileName`（为文件存储提供路径）。
 
-Next we use the Capacitor [Filesystem API](https://capacitorjs.com/docs/apis/filesystem) to save the photo to the filesystem. We start by converting the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function.
+接着，我们使用 Capacitor 的 [Filesystem API](https://capacitorjs.com/docs/apis/filesystem) 将照片保存到文件系统。首先将照片转换为 base64 格式，然后将数据传递给 Filesystem 的 `writeFile` 函数。
 
-Last, call `savePicture` and pass in the photo object and filename directly underneath the call to `setPhotos` in the `takePhoto` method. Here is the full method:
+最后，在 `takePhoto` 方法中调用 `setPhotos` 的位置下方，直接调用 `savePicture` 并传入照片对象和文件名。以下是完整方法：
 
 ```tsx
 const takePhoto = async () => {
@@ -78,4 +77,4 @@ const takePhoto = async () => {
 };
 ```
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
+完成！现在每次拍摄新照片时，它都会自动保存到文件系统中。

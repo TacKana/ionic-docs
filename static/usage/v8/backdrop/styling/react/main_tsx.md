@@ -11,21 +11,19 @@ function Example() {
       <div className="ion-page">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Backdrop</IonTitle>
+            <IonTitle>背景遮罩层</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, cum aspernatur cupiditate nesciunt totam
-            perspiciatis delectus soluta laboriosam, ullam impedit porro eaque laborum optio natus sed nostrum,
-            provident expedita vero!
+            这段示例文本用于展示背景遮罩层效果。此处填充内容以演示遮罩层如何覆盖下方界面元素，同时保持前景内容的可交互性。
           </p>
         </IonContent>
       </div>
       <div id="box">
         <IonCheckbox color="light"></IonCheckbox>
         <IonButton class="ion-margin-start" color="light">
-          Clickable
+          可点击按钮
         </IonButton>
       </div>
     </>

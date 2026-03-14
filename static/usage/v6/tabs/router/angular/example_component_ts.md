@@ -15,9 +15,9 @@ import { playCircle, library, radio, search } from 'ionicons/icons';
 export class ExampleComponent {
   constructor(public environmentInjector: EnvironmentInjector) {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 您希望在应用中使用的任何图标
+     * 都可以在 app.component.ts 中注册，
+     * 然后在整个应用中通过名称引用。
      */
     addIcons({ playCircle, library, radio, search });
   }

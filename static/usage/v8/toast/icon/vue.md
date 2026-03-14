@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button id="open-toast">Open Toast</ion-button>
+  <ion-button id="open-toast">打开提示框</ion-button>
   <ion-toast trigger="open-toast" message="Hello World!" :duration="3000" :icon="globe"></ion-toast>
 </template>
 

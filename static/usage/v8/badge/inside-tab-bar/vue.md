@@ -3,18 +3,18 @@
   <ion-tab-bar color="light">
     <ion-tab-button tab="1">
       <ion-icon :icon="heart" />
-      <ion-label>Favorites</ion-label>
+      <ion-label>收藏夹</ion-label>
       <ion-badge color="danger"></ion-badge>
     </ion-tab-button>
 
     <ion-tab-button tab="2">
       <ion-icon :icon="musicalNote" />
-      <ion-label>Music</ion-label>
+      <ion-label>音乐</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="3">
       <ion-icon :icon="calendar" />
-      <ion-label>Calendar</ion-label>
+      <ion-label>日历</ion-label>
       <ion-badge color="danger">47</ion-badge>
     </ion-tab-button>
   </ion-tab-bar>

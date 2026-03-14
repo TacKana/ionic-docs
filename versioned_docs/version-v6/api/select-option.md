@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/select-option/custom-p
 import Slots from '@ionic-internal/component-api/v6/select-option/slots.md';
 
 <head>
-  <title>Select Option | What Is An Option Select on Ionic Framework Apps</title>
+  <title>选择选项 | Ionic 框架应用中的选项选择是什么</title>
   <meta
     name="description"
-    content="What is an option select? Select Options are child element components of a Select—each option defined is passed and displayed in the Select dialog."
+    content="什么是选项选择？选择选项是 Select 组件的子元素组件，每个定义的选项都会被传递并显示在选择对话框中。"
   />
 </head>
 
@@ -21,19 +21,19 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Select Options are components that are child elements of a Select. Each option defined is passed and displayed in the Select dialog.
+选择选项是 Select 组件的子元素组件。每个定义的选项都会被传递并显示在选择对话框中。
 
-For usage examples, see the [Select](./select) documentation.
+有关使用示例，请参阅 [Select](./select) 文档。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -41,10 +41,10 @@ For usage examples, see the [Select](./select) documentation.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

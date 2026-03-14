@@ -1,16 +1,16 @@
 ---
-sidebar_label: 'enterprise register'
+sidebar_label: '企业版注册'
 ---
 
-# ionic enterprise register
+# Ionic 企业版注册
 
-Register your Product Key with this app
+将您的产品密钥注册到此应用
 
 ```shell
 ionic enterprise register [options]
 ```
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -27,9 +27,9 @@ ionic enterprise register [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>The Ionic App ID</p>
+        <p>Ionic 应用 ID</p>
       </td>
     </tr>
   </tbody>
@@ -47,9 +47,9 @@ ionic enterprise register [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>The Product Key</p>
+        <p>产品密钥</p>
       </td>
     </tr>
   </tbody>

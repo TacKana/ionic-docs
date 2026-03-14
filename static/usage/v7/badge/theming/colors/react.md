@@ -5,27 +5,27 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonLabel>Followers</IonLabel>
+        <IonLabel>关注者</IonLabel>
         <IonBadge color="primary">22k</IonBadge>
       </IonItem>
       <IonItem>
-        <IonLabel>Likes</IonLabel>
+        <IonLabel>喜欢</IonLabel>
         <IonBadge color="secondary">118k</IonBadge>
       </IonItem>
       <IonItem>
-        <IonLabel>Stars</IonLabel>
+        <IonLabel>收藏</IonLabel>
         <IonBadge color="tertiary">34k</IonBadge>
       </IonItem>
       <IonItem>
-        <IonLabel>Completed</IonLabel>
+        <IonLabel>已完成</IonLabel>
         <IonBadge color="success">80</IonBadge>
       </IonItem>
       <IonItem>
-        <IonLabel>Warnings</IonLabel>
+        <IonLabel>警告</IonLabel>
         <IonBadge color="warning">70</IonBadge>
       </IonItem>
       <IonItem>
-        <IonLabel>Notifications</IonLabel>
+        <IonLabel>通知</IonLabel>
         <IonBadge color="danger">1000</IonBadge>
       </IonItem>
     </IonList>

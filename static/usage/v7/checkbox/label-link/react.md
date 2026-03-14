@@ -6,9 +6,9 @@ function Example() {
   const ref = useRef<HTMLAnchorElement>(null);
 
   /**
-   * IonCheckbox will be listening for the native click event here so we need
-   * to call stopPropagation when the native click event instead of when the
-   * synthetic click event fires.
+   * IonCheckbox 会在此处监听原生点击事件，因此我们需要
+   * 在原生点击事件触发时调用 stopPropagation，而不是在
+   * 合成点击事件触发时调用。
    */
   useEffect(() => {
     ref.current?.addEventListener('click', (event) => {
@@ -18,9 +18,9 @@ function Example() {
 
   return (
     <IonCheckbox>
-      I agree to the{' '}
+      我同意{' '}
       <a href="#" ref={ref}>
-        terms and conditions
+        条款和条件
       </a>
     </IonCheckbox>
   );

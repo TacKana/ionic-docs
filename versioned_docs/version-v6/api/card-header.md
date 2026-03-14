@@ -13,30 +13,30 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Card header is a child component of card that should be placed before the card content. It can contain a [card title](./card-title) and a [card subtitle](./card-subtitle).
+卡片头部是卡片的子组件，应放置在卡片内容之前。它可以包含一个[卡片标题](./card-title)和一个[卡片副标题](./card-subtitle)。
 
-See the [Card](./card) documentation for more information.
+更多信息请参阅[卡片](./card)文档。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 影子部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

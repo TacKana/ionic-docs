@@ -15,172 +15,172 @@ import TabItem from '@theme/TabItem';
 <TabItem value="javascript">
 
 ```html
-<!-- Basic -->
+<!-- 基础用法 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label>Checkbox Label</ion-label>
+  <ion-label>复选框标签</ion-label>
   <ion-checkbox></ion-checkbox>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-checkbox>Checkbox Label</ion-checkbox>
+  <ion-checkbox>复选框标签</ion-checkbox>
 </ion-item>
 
-<!-- Fixed Labels -->
+<!-- 固定标签 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label position="fixed">Checkbox Label</ion-label>
+  <ion-label position="fixed">复选框标签</ion-label>
   <ion-checkbox></ion-checkbox>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-checkbox label-placement="fixed">Checkbox Label</ion-checkbox>
+  <ion-checkbox label-placement="fixed">复选框标签</ion-checkbox>
 </ion-item>
 
-<!-- Checkbox at the start of line, Label at the end of line -->
+<!-- 复选框在行首，标签在行尾 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label slot="end">Checkbox Label</ion-label>
+  <ion-label slot="end">复选框标签</ion-label>
   <ion-checkbox></ion-checkbox>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-checkbox label-placement="end">Checkbox Label</ion-checkbox>
+  <ion-checkbox label-placement="end">复选框标签</ion-checkbox>
 </ion-item>
 ```
 </TabItem>
 <TabItem value="angular">
 
 ```html
-<!-- Basic -->
+<!-- 基础用法 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label>Checkbox Label</ion-label>
+  <ion-label>复选框标签</ion-label>
   <ion-checkbox></ion-checkbox>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-checkbox>Checkbox Label</ion-checkbox>
+  <ion-checkbox>复选框标签</ion-checkbox>
 </ion-item>
 
-<!-- Fixed Labels -->
+<!-- 固定标签 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label position="fixed">Checkbox Label</ion-label>
+  <ion-label position="fixed">复选框标签</ion-label>
   <ion-checkbox></ion-checkbox>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-checkbox labelPlacement="fixed">Checkbox Label</ion-checkbox>
+  <ion-checkbox labelPlacement="fixed">复选框标签</ion-checkbox>
 </ion-item>
 
-<!-- Checkbox at the start of line, Label at the end of line -->
+<!-- 复选框在行首，标签在行尾 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label slot="end">Checkbox Label</ion-label>
+  <ion-label slot="end">复选框标签</ion-label>
   <ion-checkbox></ion-checkbox>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-checkbox labelPlacement="end">Checkbox Label</ion-checkbox>
+  <ion-checkbox labelPlacement="end">复选框标签</ion-checkbox>
 </ion-item>
 ```
 </TabItem>
 <TabItem value="react">
 
 ```tsx
-{/* Basic */}
+{/* 基础用法 */}
 
-{/* Before */}
+{/* 之前 */}
 <IonItem>
-  <IonLabel>Checkbox Label</IonLabel>
+  <IonLabel>复选框标签</IonLabel>
   <IonCheckbox></IonCheckbox>
 </IonItem>
 
-{/* After */}
+{/* 之后 */}
 <IonItem>
-  <IonCheckbox>Checkbox Label</IonCheckbox>
+  <IonCheckbox>复选框标签</IonCheckbox>
 </IonItem>
 
-{/* Fixed Labels */}
+{/* 固定标签 */}
 
-{/* Before */}
+{/* 之前 */}
 <IonItem>
-  <IonLabel position="fixed">Checkbox Label</IonLabel>
+  <IonLabel position="fixed">复选框标签</IonLabel>
   <IonCheckbox></IonCheckbox>
 </IonItem>
 
-{/* After */}
+{/* 之后 */}
 <IonItem>
-  <IonCheckbox labelPlacement="fixed">Checkbox Label</IonCheckbox>
+  <IonCheckbox labelPlacement="fixed">复选框标签</IonCheckbox>
 </IonItem>
 
-{/* Checkbox at the start of line, Label at the end of line */}
+{/* 复选框在行首，标签在行尾 */}
 
-{/* Before */}
+{/* 之前 */}
 <IonItem>
-  <IonLabel slot="end">Checkbox Label</IonLabel>
+  <IonLabel slot="end">复选框标签</IonLabel>
   <IonCheckbox></IonCheckbox>
 </IonItem>
 
-{/* After */}
+{/* 之后 */}
 <IonItem>
-  <IonCheckbox labelPlacement="end">Checkbox Label</IonCheckbox>
+  <IonCheckbox labelPlacement="end">复选框标签</IonCheckbox>
 </IonItem>
 ```
 </TabItem>
 <TabItem value="vue">
 
 ```html
-<!-- Basic -->
+<!-- 基础用法 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label>Checkbox Label</ion-label>
+  <ion-label>复选框标签</ion-label>
   <ion-checkbox></ion-checkbox>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-checkbox>Checkbox Label</ion-checkbox>
+  <ion-checkbox>复选框标签</ion-checkbox>
 </ion-item>
 
-<!-- Fixed Labels -->
+<!-- 固定标签 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label position="fixed">Checkbox Label</ion-label>
+  <ion-label position="fixed">复选框标签</ion-label>
   <ion-checkbox></ion-checkbox>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-checkbox label-placement="fixed">Checkbox Label</ion-checkbox>
+  <ion-checkbox label-placement="fixed">复选框标签</ion-checkbox>
 </ion-item>
 
-<!-- Checkbox at the start of line, Label at the end of line -->
+<!-- 复选框在行首，标签在行尾 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label slot="end">Checkbox Label</ion-label>
+  <ion-label slot="end">复选框标签</ion-label>
   <ion-checkbox></ion-checkbox>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-checkbox label-placement="end">Checkbox Label</ion-checkbox>
+  <ion-checkbox label-placement="end">复选框标签</ion-checkbox>
 </ion-item>
 ```
 </TabItem>

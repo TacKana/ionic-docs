@@ -1,22 +1,22 @@
 ---
-sidebar_label: Loading Photos
+sidebar_label: 加载照片
 ---
 
-# Loading Photos from the Filesystem
+# 从文件系统加载照片
 
-We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
+我们已经实现了拍照和保存到文件系统的功能。现在还缺少最后一项功能：照片虽然存储在文件系统中，但我们需要一种方法来保存每个文件的引用，以便它们能在照片库中再次显示。
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](https://capacitorjs.com/docs/apis/preferences) to store our array of Photos in a key-value store.
+幸运的是，这很简单：我们将利用 Capacitor 的 [Preferences API](https://capacitorjs.com/docs/apis/preferences) 将照片数组存储在键值对存储中。
 
 ## Preferences API
 
-Begin by defining a constant variable that will act as the key for the store at the top of the `usePhotoGallery` function in `src/composables/usePhotoGallery.ts`:
+首先，在 `src/composables/usePhotoGallery.ts` 文件的 `usePhotoGallery` 函数顶部定义一个常量，作为存储的键名：
 
 ```tsx
 const PHOTO_STORAGE = 'photos';
 ```
 
-Next, add a `cachePhotos` function that saves the Photos array as JSON to preferences:
+接下来，添加一个 `cachePhotos` 函数，将照片数组以 JSON 格式保存到偏好设置中：
 
 ```tsx
 const cachePhotos = () => {
@@ -27,13 +27,13 @@ const cachePhotos = () => {
 };
 ```
 
-Next, use the Vue [watch function](https://v3.vuejs.org/guide/composition-api-introduction.html#reacting-to-changes-with-watch) to watch the `photos` array. Whenever the array is modified (in this case, taking or deleting photos), trigger the `cachePhotos` function. Not only do we get to reuse code, but it also doesn’t matter when the app user closes or switches to a different app - photo data is always saved.
+然后，使用 Vue 的 [watch 函数](https://v3.vuejs.org/guide/composition-api-introduction.html#reacting-to-changes-with-watch) 来监听 `photos` 数组。每当数组被修改时（例如拍照或删除照片），就触发 `cachePhotos` 函数。这样不仅能重用代码，而且无论应用用户何时关闭或切换到其他应用，照片数据都能得到保存。
 
 ```tsx
 watch(photos, cachePhotos);
 ```
 
-Now that the photo array data is saved, create a function to retrieve the data when Tab2 loads. First, retrieve photo data from Preferences, then each photo's data into base64 format:
+现在照片数组数据已经可以保存了，接下来创建一个函数，在 Tab2 加载时检索数据。首先从 Preferences 中获取照片数据，然后将每张照片的数据转换为 base64 格式：
 
 ```tsx
 const loadSaved = async () => {
@@ -52,18 +52,18 @@ const loadSaved = async () => {
 };
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, because the Filesystem API stores them in base64 within [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood.
+在移动端（即将实现！），我们可以直接将图片标签的来源 `<img src="x" />` 设置为文件系统中的每张照片文件，从而自动显示它们。然而在 Web 端，我们必须将每张图片从文件系统读取为 base64 格式，因为文件系统 API 在底层将图片以 base64 格式存储在 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) 中。
 
-Finally, we need a way to call the `loadSaved` function when the Photo Gallery page is loaded. To do so, use the Vue [mounted lifecycle hook](https://v3.vuejs.org/guide/composition-api-introduction.html#lifecycle-hook-registration-inside-setup). First, import `onMounted` from Vue:
+最后，我们需要一种方式在照片库页面加载时调用 `loadSaved` 函数。为此，可以使用 Vue 的 [mounted 生命周期钩子](https://v3.vuejs.org/guide/composition-api-introduction.html#lifecycle-hook-registration-inside-setup)。首先从 Vue 中导入 `onMounted`：
 
 ```tsx
 import { ref, onMounted, watch } from 'vue';
 ```
 
-Then, within the `usePhotoGallery` function, add the `onMounted` function and call `loadSaved`:
+然后，在 `usePhotoGallery` 函数中添加 `onMounted` 函数并调用 `loadSaved`：
 
 ```tsx
 onMounted(loadSaved);
 ```
 
-That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+大功告成！我们已经在 Ionic 应用中构建了一个完整的照片库功能，并且可以在 Web 端运行。接下来，我们将把它改造成适用于 iOS 和 Android 的移动应用！

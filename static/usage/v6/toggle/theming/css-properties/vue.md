@@ -34,7 +34,7 @@
     --handle-border-radius: 4px;
     --handle-box-shadow: none;
 
-    /* Required for iOS handle to overflow the height of the track */
+    /* 在 iOS 上，让手柄能够溢出轨道的高度 */
     overflow: visible;
     contain: none;
   }

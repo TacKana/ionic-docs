@@ -12,11 +12,11 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Library</ion-title>
+        <ion-title>媒体库</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <div class="example-content">Library content</div>
+      <div class="example-content">媒体库内容</div>
     </ion-content>
   </ion-page>
 </template>

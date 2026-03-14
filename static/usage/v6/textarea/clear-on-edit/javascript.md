@@ -1,6 +1,6 @@
 ```html
 <ion-textarea
-  placeholder="Enter text, leave the textarea, come back, and type to clear"
+  placeholder="输入文本，离开文本域，返回后输入即可清空"
   clear-on-edit="true"
 ></ion-textarea>
 ```

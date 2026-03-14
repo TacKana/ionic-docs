@@ -5,7 +5,7 @@ import { IonNote } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonNote>Default Note</IonNote>
+      <IonNote>默认备注</IonNote>
     </>
   );
 }

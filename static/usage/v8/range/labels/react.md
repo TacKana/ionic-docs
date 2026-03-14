@@ -4,19 +4,19 @@ import { IonRange } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonRange labelPlacement="start" label="Label at the Start"></IonRange>
+      <IonRange labelPlacement="start" label="起始位置标签"></IonRange>
 
       <br />
 
-      <IonRange labelPlacement="end" label="Label at the End"></IonRange>
+      <IonRange labelPlacement="end" label="结束位置标签"></IonRange>
 
       <br />
 
-      <IonRange labelPlacement="fixed" label="Fixed Width Label"></IonRange>
+      <IonRange labelPlacement="fixed" label="固定宽度标签"></IonRange>
 
       <br />
 
-      <IonRange labelPlacement="stacked" label="Stacked Label"></IonRange>
+      <IonRange labelPlacement="stacked" label="堆叠标签"></IonRange>
     </>
   );
 }

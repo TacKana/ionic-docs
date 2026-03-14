@@ -11,15 +11,15 @@
   }
 </style>
 
-<ion-button id="open-modal">Open modal</ion-button>
+<ion-button id="open-modal">打开模态框</ion-button>
 
 <ion-modal trigger="open-modal" is-open="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button onclick="modal.dismiss(null, 'cancel')">Cancel</ion-button>
+      <ion-button onclick="modal.dismiss(null, 'cancel')">取消</ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button onclick="modal.dismiss(currentValue, 'confirm')">Done</ion-button>
+      <ion-button onclick="modal.dismiss(currentValue, 'confirm')">完成</ion-button>
     </ion-buttons>
   </ion-toolbar>
   <ion-picker>

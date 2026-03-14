@@ -1,18 +1,18 @@
 import DocsButton from '@components/page/native/DocsButton';
 
-# Creating a Photo Gallery with Device Storage
+# 使用设备存储创建照片画廊
 
-Last time, we successfully added the Camera plugin to the Tab2 page of our Tabs app. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+在上一次教程中，我们成功将相机插件添加到 Tabs 应用的 Tab2 页面。目前，每次拍摄新照片时都会替换之前的照片。如果我们想要同时显示多张照片呢？让我们来创建一个照片画廊。您可以按照[GitHub上的完整代码](https://github.com/ionic-team/photo-gallery-tutorial-ionic4)进行操作。
 
-## Creating a Dedicated Photo Service
+## 创建专用的照片服务
 
-From a terminal window, navigate to your Ionic project and run:
+在终端窗口中，导航到您的 Ionic 项目并运行：
 
 ```shell
 ionic g service services/Photo
 ```
 
-This creates a PhotoService class in a dedicated "services" folder:
+这会在专用的 "services" 文件夹中创建一个 PhotoService 类：
 
 ```Javascript
 import { Injectable } from '@angular/core';
@@ -25,7 +25,7 @@ export class PhotoService {
 }
 ```
 
-Within this file, add a Photo class. The “data” property represents the base64 image data of a captured photo:
+在此文件中，添加一个 Photo 类。"data" 属性表示拍摄照片的 base64 图像数据：
 
 ```Javascript
 class Photo {
@@ -33,7 +33,7 @@ class Photo {
 }
 ```
 
-Then, create a Photos array to represent our photo gallery:
+然后，创建一个 Photos 数组来表示我们的照片画廊：
 
 ```Javascript
 export class PhotoService {
@@ -44,34 +44,34 @@ export class PhotoService {
 }
 ```
 
-Back in `tab2.page.ts`, import PhotoService:
+回到 `tab2.page.ts`，导入 PhotoService：
 
 ```Javascript
 import { PhotoService } from '../services/photo.service';
 ```
 
-Add it to the Constructor:
+将其添加到构造函数中：
 
 ```Javascript
 constructor(private camera: Camera, public photoService: PhotoService) {  }
 ```
 
-Next, move all code pertaining to the Camera plugin to the PhotoService class. This includes the takePicture method, the Camera and CameraOptions imports, and the Tab2Page page constructor.
+接下来，将与 Camera 插件相关的所有代码移到 PhotoService 类中。这包括 takePicture 方法、Camera 和 CameraOptions 的导入，以及 Tab2Page 页面的构造函数。
 
-Continuing on, we need to convert currentImage variable references to the new photos array. Start by adding the captured photo data into the photos array:
+继续，我们需要将 currentImage 变量的引用转换为新的 photos 数组。首先将捕获的照片数据添加到 photos 数组中：
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
-    // Add new photo to gallery
+    // 将新照片添加到画廊
     this.photos.unshift({
         data: 'data:image/jpeg;base64,' + imageData
     }); }, (err) => {
-    // Handle error
+    // 处理错误
     console.log("Camera issue: " + err);
 });
 ```
 
-In `tab2.page.ts`, remove the currentImage variable and the reference to Camera in the constructor, leaving only PhotoService:
+在 `tab2.page.ts` 中，移除 currentImage 变量和构造函数中对 Camera 的引用，只保留 PhotoService：
 
 ```Javascript
 export class Tab2Page {
@@ -79,7 +79,7 @@ export class Tab2Page {
 }
 ```
 
-Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an ion-grid component, which provides a great way to arrange elements on a page. In this case, we’ll use it to display 2 photos per row.
+接下来，在 `tab2.page.html` 中，移除 currentImage 的 img 标签。在其位置使用 ion-grid 组件，这是在页面上排列元素的绝佳方式。在这里，我们将使用它每行显示 2 张照片。
 
 ```html
 <ion-grid>
@@ -91,9 +91,9 @@ Next, in `tab2.page.html`, remove the currentImage img tag. In its place, use an
 </ion-grid>
 ```
 
-Here, we loop through each photo in the PhotoServices photos array, adding a new column for each. Since an ion-row consists of 12 “blocks” of space, and we’re setting the size to 6 (`size="6"`), only 2 photos are displayed per row.
+这里，我们遍历 PhotoService 的 photos 数组中的每张照片，为每张照片添加一个新列。由于一个 ion-row 由 12 个"块"的空间组成，并且我们将大小设置为 6（`size="6"`），因此每行只显示 2 张照片。
 
-Last, update the Fab button to call the PhotoService’s `takePicture` method:
+最后，更新 Fab 按钮以调用 PhotoService 的 `takePicture` 方法：
 
 ```Html
 <ion-fab-button (click)="photoService.takePicture()">
@@ -101,25 +101,25 @@ Last, update the Fab button to call the PhotoService’s `takePicture` method:
 </ion-fab-button>
 ```
 
-Excellent! We now have a basic photo gallery working.
+太棒了！我们现在有了一个基本的工作照片画廊。
 
-## Saving photos to the device
+## 将照片保存到设备
 
-Having a working photo gallery is pretty cool, but you’ll likely notice that when the app is closed, the photos are lost forever. That’s no good, so let’s add the [Ionic Storage plugin](https://ionicframework.com/docs/storage/), as easy way to store key/value pairs and JSON objects. When running in a native app context, Storage will prioritize using SQLite, one of the most stable and widely used file-based databases. When running on the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
+拥有一个可工作的照片画廊非常酷，但您可能会注意到，当应用关闭时，照片会永久丢失。这不太好，所以让我们添加 [Ionic Storage 插件](https://ionicframework.com/docs/storage/)，这是一种存储键值对和 JSON 对象的简便方法。在原生应用环境中运行时，Storage 会优先使用 SQLite，这是最稳定且广泛使用的基于文件的数据库之一。在 Web 或渐进式 Web 应用上运行时，Storage 将尝试按顺序使用 IndexedDB、WebSQL 和本地存储。
 
-The Storage plugin works perfectly for our base64 image data. To begin, add the SQLite plugin for native:
+Storage 插件非常适合我们的 base64 图像数据。首先，为原生应用添加 SQLite 插件：
 
 ```shell
 ionic cordova plugin add cordova-sqlite-storage
 ```
 
-Next, add the JavaScript library for the web:
+接下来，为 Web 添加 JavaScript 库：
 
 ```shell
 npm install --save @ionic/storage
 ```
 
-Last, import the Storage module and add it to the imports list in `app.module.ts`:
+最后，导入 Storage 模块并将其添加到 `app.module.ts` 的导入列表中：
 
 ```Javascript
 import { IonicStorageModule } from '@ionic/storage';
@@ -141,36 +141,36 @@ import { IonicStorageModule } from '@ionic/storage';
 export class AppModule {}
 ```
 
-It’s now ready to be used in our PhotoService class. Import it:
+现在它已准备好在我们的 PhotoService 类中使用。导入它：
 
 ```Javascript
 import { Storage } from '@ionic/storage-angular';
 ```
 
-Then inject it via the constructor:
+然后通过构造函数注入：
 
 ```Javascript
 constructor(private camera: Camera, private storage: Storage) { }
 ```
 
-To add the capability to save photos, there’s only a couple steps left. Update the `takePicture()` method to save the entire photos array after each photo is taken using the storage.set method:
+要添加保存照片的功能，只需几个步骤。更新 `takePicture()` 方法，在每次拍摄照片后使用 storage.set 方法保存整个 photos 数组：
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
-  // Add new photo to gallery
+  // 将新照片添加到画廊
   this.photos.unshift({
     data: 'data:image/jpeg;base64,' + imageData
   });
 
-  // Save all photos for later viewing
+  // 保存所有照片以供后续查看
   this.storage.set('photos', this.photos);
 }, (err) => {
-  // Handle error
+  // 处理错误
   console.log("Camera issue: " + err);
 });
 ```
 
-We still need to load the saved photos when the app is first opened. This is simple enough - retrieve the “photos” key then assign its value to the photos array:
+我们仍然需要在应用首次打开时加载已保存的照片。这很简单 —— 检索 "photos" 键，然后将其值分配给 photos 数组：
 
 ```Javascript
 loadSaved() {
@@ -180,7 +180,7 @@ loadSaved() {
 }
 ```
 
-Over in the Tab2 page, call the loadSaved method once it begins loading:
+在 Tab2 页面中，一旦开始加载就调用 loadSaved 方法：
 
 ```Javascript
 ngOnInit() {
@@ -188,13 +188,13 @@ ngOnInit() {
 }
 ```
 
-Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the Tab2 page. Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
+太好了！现在照片已保存到您的设备。为了证明它们确实被保存了，强制关闭 DevApp，重新打开它，然后打开 Tab2 页面。或者，摇动您的设备让控制菜单弹出，然后点击"退出预览"。之后，重新加载此应用以查看照片。
 
-Next up, we’ll look at how to apply a custom theme to an Ionic app.
+接下来，我们将了解如何为 Ionic 应用应用自定义主题。
 
 <div style={{ textAlign: 'right' }}>
   <DocsButton href="theming">
-    Continue{' '}
+    继续{' '}
     <svg viewBox="0 0 512 512">
       <path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path>
     </svg>

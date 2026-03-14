@@ -1,3 +1,3 @@
 ```html
-<ion-checkbox indeterminate="true">Indeterminate checkbox</ion-checkbox>
+<ion-checkbox indeterminate="true">未定状态复选框</ion-checkbox>
 ```

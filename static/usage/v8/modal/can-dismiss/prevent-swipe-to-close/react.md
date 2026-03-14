@@ -24,26 +24,25 @@ function Example() {
     <IonPage ref={page}>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>App</IonTitle>
+          <IonTitle>应用</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          Open
+          打开
         </IonButton>
         <IonModal ref={modal} trigger="open-modal" canDismiss={canDismiss} presentingElement={presentingElement!}>
           <IonHeader>
             <IonToolbar>
-              <IonTitle>Modal</IonTitle>
+              <IonTitle>模态框</IonTitle>
               <IonButtons slot="end">
-                <IonButton onClick={() => dismiss()}>Close</IonButton>
+                <IonButton onClick={() => dismiss()}>关闭</IonButton>
               </IonButtons>
             </IonToolbar>
           </IonHeader>
           <IonContent className="ion-padding">
             <p>
-              To close this modal, please use the "Close" button provided. Note that swiping the modal will not dismiss
-              it.
+              要关闭此模态框，请使用提供的“关闭”按钮。请注意，滑动模态框不会将其关闭。
             </p>
           </IonContent>
         </IonModal>

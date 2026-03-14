@@ -42,7 +42,7 @@
   });
 
   radioGroupEl.addEventListener('ionChange', () => {
-    console.log('Current value:', JSON.stringify(radioGroupEl.value));
+    console.log('当前选中的值:', JSON.stringify(radioGroupEl.value));
   });
 </script>
 ```

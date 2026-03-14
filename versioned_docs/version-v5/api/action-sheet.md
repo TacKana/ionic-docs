@@ -16,31 +16,31 @@ import Slots from '@ionic-internal/component-api/v5/action-sheet/slots.md';
 
 # ion-action-sheet
 
-An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. Destructive options are made obvious in `ios` mode. There are multiple ways to dismiss the action sheet, including tapping the backdrop or hitting the escape key on desktop.
+操作表（Action Sheet）是一种显示一组选项的对话框。它会出现在应用程序内容的上方，用户必须手动关闭它才能继续与应用进行交互。在 `ios` 模式下，具有破坏性（destructive）的选项会以醒目的方式呈现。关闭操作表有多种方式，包括点击背景遮罩或在桌面端按下 Esc 键。
 
-## Buttons
+## 按钮
 
-A button's `role` property can either be `destructive` or `cancel`. Buttons without a role property will have the default look for the platform. Buttons with the `cancel` role will always load as the bottom button, no matter where they are in the array. All other buttons will be displayed in the order they have been added to the `buttons` array. Note: We recommend that `destructive` buttons are always the first button in the array, making them the top button. Additionally, if the action sheet is dismissed by tapping the backdrop, then it will fire the handler from the button with the cancel role.
+按钮的 `role` 属性可以是 `destructive`（破坏性）或 `cancel`（取消）。没有设置 `role` 属性的按钮将采用该平台的默认外观。带有 `cancel` 角色的按钮始终会作为底部按钮显示，无论它们在数组中的位置如何。所有其他按钮将按照它们被添加到 `buttons` 数组中的顺序显示。注意：我们建议将 `destructive` 按钮始终放在数组的第一个位置，使其成为顶部按钮。此外，如果通过点击背景遮罩来关闭操作表，则会触发具有 `cancel` 角色的按钮的处理函数。
 
-## Customization
+## 自定义样式
 
-Action Sheet uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
+操作表使用作用域封装（scoped encapsulation），这意味着它会在运行时通过为每个样式追加一个额外的类来自动限定其 CSS 的作用域。要覆盖 CSS 中的作用域选择器，需要使用具有[更高特异性](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)的选择器。
 
-We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.
+我们建议在 `create` 方法中向 `cssClass` 传递一个自定义类，并使用该类为宿主元素和内部元素添加自定义样式。此属性也可以接受多个以空格分隔的类。查看[用法](#用法)部分，了解如何使用 `cssClass` 传递类的示例。
 
 ```css
-/* DOES NOT WORK - not specific enough */
+/* 不生效 - 选择器不够具体 */
 .action-sheet-group {
   background: #e5e5e5;
 }
 
-/* Works - pass "my-custom-class" in cssClass to increase specificity */
+/* 生效 - 在 cssClass 中传递 "my-custom-class" 以提高特异性 */
 .my-custom-class .action-sheet-group {
   background: #e5e5e5;
 }
 ```
 
-Any of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Action Sheet without needing to target individual elements:
+任何已定义的 [CSS 自定义属性](#css-自定义属性) 都可以用于设置操作表的样式，而无需针对单个元素：
 
 ```css
 .my-custom-class {
@@ -48,9 +48,9 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 }
 ```
 
-> If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
+> 如果你正在构建一个 Ionic Angular 应用，样式需要添加到全局样式表文件中。阅读下方 Angular 部分中的[样式放置](#样式放置)以获取更多信息。
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -120,9 +120,9 @@ export class ActionSheetExample {
 }
 ```
 
-### Style Placement
+### 样式放置
 
-In Angular, the CSS of a specific page is scoped only to elements of that page. Even though the Action Sheet can be presented from within a page, the `ion-action-sheet` element is appended outside of the current page. This means that any custom styles need to go in a global stylesheet file. In an Ionic Angular starter this can be the `src/global.scss` file or you can register a new global style file by [adding to the `styles` build option in `angular.json`](https://angular.io/guide/workspace-config#style-script-config).
+在 Angular 中，特定页面的 CSS 仅作用于该页面的元素。尽管操作表可以从页面内部呈现，但 `ion-action-sheet` 元素会被附加到当前页面之外。这意味着任何自定义样式都需要放在全局样式表文件中。在 Ionic Angular 初始项目中，这可以是 `src/global.scss` 文件，或者你也可以[在 `angular.json` 的 `styles` 构建选项中添加](https://angular.io/guide/workspace-config#style-script-config)一个新的全局样式文件。
 
 </TabItem>
 
@@ -186,7 +186,7 @@ async function presentActionSheet() {
 <TabItem value="react">
 
 ```tsx
-/* Using with useIonActionSheet Hook */
+/* 使用 useIonActionSheet 钩子 */
 
 import React from 'react';
 import { IonButton, IonContent, IonPage, useIonActionSheet } from '@ionic/react';
@@ -206,10 +206,10 @@ const ActionSheetExample: React.FC = () => {
             })
           }
         >
-          Show ActionSheet
+          显示操作表
         </IonButton>
         <IonButton expand="block" onClick={() => present([{ text: 'Ok' }, { text: 'Cancel' }], 'Action Sheet')}>
-          Show ActionSheet using params
+          使用参数显示操作表
         </IonButton>
         <IonButton
           expand="block"
@@ -218,7 +218,7 @@ const ActionSheetExample: React.FC = () => {
             setTimeout(dismiss, 3000);
           }}
         >
-          Show ActionSheet, hide after 3 seconds
+          显示操作表，3 秒后自动关闭
         </IonButton>
       </IonContent>
     </IonPage>
@@ -227,7 +227,7 @@ const ActionSheetExample: React.FC = () => {
 ```
 
 ```tsx
-/* Using with IonActionSheet Component */
+/* 使用 IonActionSheet 组件 */
 
 import React, { useState } from 'react';
 import { IonActionSheet, IonContent, IonButton } from '@ionic/react';
@@ -239,7 +239,7 @@ export const ActionSheetExample: React.FC = () => {
   return (
     <IonContent>
       <IonButton onClick={() => setShowActionSheet(true)} expand="block">
-        Show Action Sheet
+        显示操作表
       </IonButton>
       <IonActionSheet
         isOpen={showActionSheet}
@@ -357,7 +357,7 @@ export class ActionSheetExample {
   render() {
     return [
       <ion-content>
-        <ion-button onClick={() => this.presentActionSheet()}>Present Action Sheet</ion-button>
+        <ion-button onClick={() => this.presentActionSheet()}>显示操作表</ion-button>
       </ion-content>,
     ];
   }
@@ -370,7 +370,7 @@ export class ActionSheetExample {
 
 ```html
 <template>
-  <ion-button @click="presentActionSheet">Show Action Sheet</ion-button>
+  <ion-button @click="presentActionSheet">显示操作表</ion-button>
 </template>
 
 <script>
@@ -435,11 +435,11 @@ export class ActionSheetExample {
 </script>
 ```
 
-Developers can also use this component directly in their template:
+开发者也可以在模板中直接使用此组件：
 
 ```html
 <template>
-  <ion-button @click="setOpen(true)">Show Action Sheet</ion-button>
+  <ion-button @click="setOpen(true)">显示操作表</ion-button>
   <ion-action-sheet
     :is-open="isOpenRef"
     header="Albums"
@@ -510,26 +510,26 @@ Developers can also use this component directly in their template:
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

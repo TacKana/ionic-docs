@@ -5,21 +5,21 @@ import { IonButton, IonToast } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton id="open-toast">Open Toast</IonButton>
+      <IonButton id="open-toast">打开 Toast</IonButton>
       <IonToast
         trigger="open-toast"
-        message="Hello World!"
+        message="你好，世界！"
         duration={3000}
         buttons={[
           {
-            text: 'More Info',
+            text: '更多信息',
             role: 'info',
             handler: () => {
               console.log('More Info clicked');
             },
           },
           {
-            text: 'Dismiss',
+            text: '关闭',
             role: 'cancel',
             handler: () => {
               console.log('Dismiss clicked');

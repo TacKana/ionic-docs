@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/segment-button/custom-
 import Slots from '@ionic-internal/component-api/v6/segment-button/slots.md';
 
 <head>
-  <title>ion-segment-button | Segment Button Icon and Segment Value</title>
+  <title>ion-segment-button | 分段按钮图标与分段值</title>
   <meta
     name="description"
-    content="ion-segment-buttons are groups of related buttons inside of a Segment. Learn to use segment button icons and check their values on Ionic Framework Apps."
+    content="ion-segment-button 是 Segment（分段控件）内的一组相关按钮。了解如何在 Ionic 框架应用中使用分段按钮图标并检查其值。"
   />
 </head>
 
@@ -21,23 +21,23 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Segment buttons are groups of related buttons inside of a [segment](segment.md). They are displayed in a horizontal row. A segment button can be selected by default by setting the `value` of the segment to the `value` of the segment button. Only one segment button can be selected at a time.
+分段按钮（Segment buttons）是 [Segment（分段控件）](segment.md) 内的一组相关按钮。它们以水平行形式显示。默认情况下，可以通过将 Segment 的 `value` 设置为分段按钮的 `value` 来选中该按钮。每次只能选中一个分段按钮。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v6/segment-button/basic/index.md';
 
 <Basic />
 
-## Layout
+## 布局
 
-The `layout` property is set to `"icon-top"` by default. When a segment button has both an icon and a label, it will display the icon on top of the label. This behavior can be changed by setting the `layout` property to `"icon-bottom"`, `"icon-start"`, or `"icon-end"` which will show the icon below the label, to the start of the label (left in LTR and right in RTL) or to the end of the label (right in LTR and left in RTL), respectively.
+`layout` 属性默认为 `"icon-top"`。当一个分段按钮同时具有图标和标签时，它会将图标显示在标签上方。可以通过将 `layout` 属性设置为 `"icon-bottom"`、`"icon-start"` 或 `"icon-end"` 来改变这种行为，分别将图标显示在标签下方、标签起始位置（在 LTR 中为左侧，在 RTL 中为右侧）或标签结束位置（在 LTR 中为右侧，在 RTL 中为左侧）。
 
 import Layout from '@site/static/usage/v6/segment-button/layout/index.md';
 
 <Layout />
 
-## Theming
+## 主题定制
 
 ### CSS Shadow Parts
 
@@ -45,21 +45,21 @@ import CSSParts from '@site/static/usage/v6/segment-button/theming/css-shadow-pa
 
 <CSSParts />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v6/segment-button/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -67,10 +67,10 @@ import CSSProps from '@site/static/usage/v6/segment-button/theming/css-propertie
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

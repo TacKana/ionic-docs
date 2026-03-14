@@ -1,5 +1,5 @@
 ---
-title: "ion-tab-bar"
+title: 支持 CSS 自定义属性的标签栏组件
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -12,8 +12,8 @@ import CustomProps from '@ionic-internal/component-api/v8/tab-bar/custom-props.m
 import Slots from '@ionic-internal/component-api/v8/tab-bar/slots.md';
 
 <head>
-  <title>ion-tab-bar: Tab Bar Component with CSS Custom Properties</title>
-  <meta name="description" content="The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties." />
+  <title>ion-tab-bar：支持 CSS 自定义属性的标签栏组件</title>
+  <meta name="description" content="标签栏组件包含一组标签按钮，必须放置在标签组件内部以实现通信。了解更多关于其用法和 CSS 自定义属性的信息。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -21,12 +21,12 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-The tab bar is a UI component that contains a set of [tab buttons](tab-button.md). A tab bar must be provided inside of [tabs](tabs.md) to communicate with each [tab](tab.md).
+标签栏是一个包含一组[标签按钮](tab-button.md)的 UI 组件。必须将其放置在[标签组件](tabs.md)内部，以便与各个[标签页](tab.md)进行通信。
 
 
 
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -34,7 +34,7 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 
 ```html
 <ion-tabs>
-  <!-- Tab bar -->
+  <!-- 标签栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="account">
       <ion-icon name="person"></ion-icon>
@@ -56,12 +56,12 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 
 ```html
 <ion-tabs>
-  <!-- Tab views -->
+  <!-- 标签视图 -->
   <ion-tab tab="account"></ion-tab>
   <ion-tab tab="contact"></ion-tab>
   <ion-tab tab="settings"></ion-tab>
 
-  <!-- Tab bar -->
+  <!-- 标签栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="account">
       <ion-icon name="person"></ion-icon>
@@ -89,7 +89,7 @@ import { call, person, settings } from 'ionicons/icons';
 export const TabBarExample: React.FC = () => (
   <IonContent>
     <IonTabs>
-      {/*-- Tab bar --*/}
+      {/*-- 标签栏 --*/}
       <IonTabBar slot="bottom">
         <IonTabButton tab="account">
           <IonIcon icon={person} />
@@ -115,7 +115,7 @@ export const TabBarExample: React.FC = () => (
 ```html
 <template>
   <ion-tabs>
-    <!-- Tab bar -->
+    <!-- 标签栏 -->
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="account">
         <ion-icon :icon="person"></ion-icon>
@@ -140,32 +140,32 @@ import { call, person, settings } from 'ionicons/icons';
 
 </Tabs>
 
-## Badges in Tab Buttons
+## 标签按钮中的徽章
 
-Badges can be added inside a tab button, often used to indicate notifications or highlight additional items associated with the element.
+可以在标签按钮内添加徽章，通常用于指示通知或高亮显示与该元素相关的附加项目。
 
 :::info
-Empty badges are only available for `md` mode.
+空徽章仅适用于 `md` 模式。
 :::
 
 import InsideTabBar from '@site/static/usage/v8/badge/inside-tab-bar/index.md';
 
 <InsideTabBar />
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

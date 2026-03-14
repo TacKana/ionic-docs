@@ -1,5 +1,5 @@
 ```html
-<b>Stacked for xs breakpoint, equal width for sm and up</b>
+<b>在 xs 断点下垂直堆叠，在 sm 及以上断点下等宽排列</b>
 <ion-grid>
   <ion-row>
     <ion-col size="12" size-sm="3">1</ion-col>
@@ -9,7 +9,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Equal width until md breakpoint, last column takes full width for md and up</b>
+<b>在 md 断点前等宽排列，md 及以上断点时最后一列占满整行</b>
 <ion-grid>
   <ion-row>
     <ion-col size-md="6">1</ion-col>
@@ -18,7 +18,7 @@
   </ion-row>
 </ion-grid>
 
-<b>2 per row until md breakpoint, 3 per row for md, equal width for lg and up</b>
+<b>md 断点前每行 2 列，md 断点时每行 3 列，lg 及以上断点时等宽排列</b>
 <ion-grid>
   <ion-row>
     <ion-col size="6" size-md="4" size-lg="2">1</ion-col>

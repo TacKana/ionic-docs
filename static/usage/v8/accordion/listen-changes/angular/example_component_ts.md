@@ -16,7 +16,7 @@ export class ExampleComponent {
     const selectedValue = event.detail.value;
 
     console.log(
-      `Expanded: ${selectedValue === undefined ? 'None' : event.detail.value} | Collapsed: ${collapsedItems.join(', ')}`
+      `已展开: ${selectedValue === undefined ? '无' : event.detail.value} | 已折叠: ${collapsedItems.join(', ')}`
     );
   };
 }

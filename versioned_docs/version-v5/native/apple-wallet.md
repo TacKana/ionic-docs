@@ -10,27 +10,27 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Apple Wallet
 
-A Cordova plugin that enables users from Add Payment Cards to their Apple Wallet.
+一个 Cordova 插件，使用户能够将支付卡添加到他们的 Apple Wallet。
 
 <p>
   <a href="https://github.com/tomavic/cordova-apple-wallet" target="_blank" rel="noopener" className="git-link">/github.com/tomavic/cordova-apple-wallet</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>被 Cordova 问题困住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果你正在开发一个重要的项目，你无法承受花费数小时进行故障排查。Ionic 的专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -38,7 +38,7 @@ A Cordova plugin that enables users from Add Payment Cards to their Apple Wallet
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: 'Enterprise' },
+    { value: 'Enterprise', label: '企业版' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -54,21 +54,21 @@ A Cordova plugin that enables users from Add Payment Cards to their Apple Wallet
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版提供 Ionic 团队全面支持与维护的插件。 &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或如果你对本插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - iOS
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -82,50 +82,50 @@ constructor(private appleWallet: AppleWallet) { }
 ...
 
 
-// Simple call to determine if the current device supports Apple Pay and has a supported card installed.
+// 一个简单的调用来判断当前设备是否支持 Apple Pay 并已安装支持的卡片。
 this.appleWallet.isAvailable()
  .then((res: boolean) => {
-   // Expect res to be boolean
+   // 期望 res 是布尔值
   })
  .catch((err) => {
-   // Catch {{err}} here
+   // 在这里捕获 {{err}}
  });
 
 ...
 
 
-// Simple call to check Card Eligibility
+// 一个简单的调用来检查卡片资格
 this.appleWallet.checkCardEligibility(primaryAccountIdentifier: string)
  .then((res: boolean) => {
-   // Expect res to be boolean
+   // 期望 res 是布尔值
   })
  .catch((err) => {
-   // Catch {{err}} here
+   // 在这里捕获 {{err}}
  });
 
 
 ...
 
 
-// Simple call to checkCardEligibilityBySuffix
+// 一个简单的调用来通过卡号后缀检查卡片资格
 this.appleWallet.checkCardEligibilityBySuffix(cardSuffix: string)
  .then((res: boolean) => {
-   // Expect res to be boolean
+   // 期望 res 是布尔值
   })
  .catch((err) => {
-   // Catch {{err}} here
+   // 在这里捕获 {{err}}
  });
 
 
 ...
 
-// Simple call to check out if there is any paired Watches so that you can toggle visibility of 'Add to Watch' button
+// 一个简单的调用来检查是否有配对的 Apple Watch，以便你可以切换“添加到手表”按钮的可见性
 this.appleWallet.checkPairedDevices()
  .then((res: WatchExistData) => {
-   // object contains boolean flags showing paired devices
+   // 该对象包含表示配对设备存在的布尔标志
   })
  .catch((err) => {
-   // Catch {{err}} here
+   // 在这里捕获 {{err}}
  });
 
 
@@ -133,29 +133,29 @@ this.appleWallet.checkPairedDevices()
 
 
 
-// Simple call to check paired devices with a card by its suffix
+// 一个简单的调用，通过卡号后缀检查已配对的设备
 this.appleWallet.checkPairedDevicesBySuffix(cardSuffix: string)
  .then((res: PairedDevicesFlags) => {
-   // object contains boolean values that ensure that card is already exists in wallet or paired-watch
+   // 该对象包含布尔值，用于确认卡片是否已存在于钱包或配对手表中
   })
  .catch((err) => {
-   // Catch {{err}} here
+   // 在这里捕获 {{err}}
  });
 
 
 ...
 
 
-// Simple call with the configuration data needed to instantiate a new PKAddPaymentPassViewController object.
-// This method provides the data needed to create a request to add your payment pass (credit/debit card). After a successful callback, pass the certificate chain to your issuer server-side using our callback delegate method `AppleWallet.completeAddPaymentPass`. The issuer server-side should returns an encrypted JSON payload containing the encrypted card data, which is required to be get the final response
+// 一个简单的调用，提供初始化新的 PKAddPaymentPassViewController 对象所需的配置数据。
+// 此方法提供添加支付通行证（信用卡/借记卡）请求所需的数据。在成功回调后，使用我们的回调委托方法 `AppleWallet.completeAddPaymentPass` 将证书链传递给你的发卡机构服务器端。发卡机构服务器端应返回一个加密的 JSON 负载，其中包含加密的卡片数据，这是获取最终响应所必需的
 
 this.appleWallet.startAddPaymentPass(data: cardData)
  .then((res: SignatureCertificatesData) => {
-   // User proceed and successfully asked to add card to his wallet
-   // Use the callback response JSON payload to complete addition process
+   // 用户已继续并成功请求将卡片添加到他的钱包
+   // 使用回调响应 JSON 负载来完成添加过程
   })
  .catch((err) => {
-   // Catch {{err}} here
+   // 在这里捕获 {{err}}
  });
 
 
@@ -164,12 +164,12 @@ this.appleWallet.startAddPaymentPass(data: cardData)
 
 this.appleWallet.completeAddPaymentPass(data: encryptedCardData)
  .then((res: string) => {
-   // Expect res to be string either 'success' or 'error'
+   // 期望 res 是字符串，要么是 'success'，要么是 'error'
   })
  .catch((err) => {
-   // Catch {{err}} here
-   // Error and can not add the card, or something wrong happend
-   // PKAddPaymentPassViewController will be dismissed
+   // 在这里捕获 {{err}}
+   // 无法添加卡片或发生错误
+   // PKAddPaymentPassViewController 将被关闭
  });
 
 ```

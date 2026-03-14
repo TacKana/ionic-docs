@@ -16,59 +16,55 @@ import Slots from '@ionic-internal/component-api/v5/refresher/slots.md';
 
 # ion-refresher
 
-The refresher provides pull-to-refresh functionality on a content component.
-The pull-to-refresh pattern lets a user pull down on a list of data using touch
-in order to retrieve more data.
+刷新器（refresher）为内容组件提供下拉刷新功能。下拉刷新模式允许用户通过触摸手势下拉数据列表以获取更多数据。
 
-Data should be modified during the refresher's output events. Once the async
-operation has completed and the refreshing should end, call `complete()` on the
-refresher.
+数据应在刷新器的输出事件中进行修改。一旦异步操作完成且刷新应结束时，调用刷新器上的 `complete()` 方法。
 
-## Native Refreshers
+## 原生刷新器
 
-Both iOS and Android platforms provide refreshers that take advantage of properties exposed by their respective devices that give pull to refresh a fluid, native-like feel.
+iOS 和 Android 平台都提供了利用其各自设备特性的刷新器，使得下拉刷新具有流畅的原生体验。
 
-Certain properties such as `pullMin` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. See [Refresher Properties](#properties) for more information.
+某些属性（如 `pullMin` 和 `snapbackDuration`）不兼容，因为原生刷新器大多基于滚动实现。更多信息请参阅[刷新器属性](#properties)。
 
-### iOS Usage
+### iOS 使用说明
 
-Using the iOS native `ion-refresher` requires setting the `pullingIcon` property on `ion-refresher-content` to the value of one of the available spinners. See the [Spinner Documentation](spinner.md#properties) for accepted values. The `pullingIcon` defaults to the `lines` spinner on iOS. The spinner tick marks will be progressively shown as the user pulls down on the page.
+使用 iOS 原生 `ion-refresher` 需要将 `ion-refresher-content` 上的 `pullingIcon` 属性设置为可用旋转器（spinner）之一的值。可接受的值请参阅[旋转器文档](spinner.md#properties)。在 iOS 上，`pullingIcon` 默认使用 `lines` 旋转器。当用户下拉页面时，旋转器的刻度标记会逐步显示。
 
-The iOS native `ion-refresher` relies on rubber band scrolling in order to work properly and is only compatible with iOS devices as a result. We provide a fallback refresher for apps running in iOS mode on devices that do not support rubber band scrolling.
+iOS 原生 `ion-refresher` 依赖于橡皮筋滚动（rubber band scrolling）才能正常工作，因此仅与 iOS 设备兼容。对于在不支持橡皮筋滚动的设备上以 iOS 模式运行的应用程序，我们提供了一个备用刷新器。
 
-### Android Usage
+### Android 使用说明
 
-Using the MD native `ion-refresher` requires setting the `pullingIcon` property on `ion-refresher-content` to the value of one of the available spinners. See the [ion-spinner Documentation](spinner.md#properties) for accepted values. `pullingIcon` defaults to the `circular` spinner on MD.
+使用 MD 原生 `ion-refresher` 需要将 `ion-refresher-content` 上的 `pullingIcon` 属性设置为可用旋转器之一的值。可接受的值请参阅 [ion-spinner 文档](spinner.md#properties)。在 MD 上，`pullingIcon` 默认使用 `circular` 旋转器。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- Default Refresher -->
+<!-- 默认刷新器 -->
 <ion-content>
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 </ion-content>
 
-<!-- Custom Refresher Properties -->
+<!-- 自定义刷新器属性 -->
 <ion-content>
   <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 </ion-content>
 
-<!-- Custom Refresher Content -->
+<!-- 自定义刷新器内容 -->
 <ion-content>
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
       pullingIcon="chevron-down-circle-outline"
-      pullingText="Pull to refresh"
+      pullingText="下拉刷新"
       refreshingSpinner="circles"
-      refreshingText="Refreshing..."
+      refreshingText="刷新中..."
     >
     </ion-refresher-content>
   </ion-refresher>
@@ -87,10 +83,10 @@ export class RefresherExample {
   constructor() {}
 
   doRefresh(event) {
-    console.log('Begin async operation');
+    console.log('开始异步操作');
 
     setTimeout(() => {
-      console.log('Async operation has ended');
+      console.log('异步操作已结束');
       event.target.complete();
     }, 2000);
   }
@@ -102,28 +98,28 @@ export class RefresherExample {
 <TabItem value="javascript">
 
 ```html
-<!-- Default Refresher -->
+<!-- 默认刷新器 -->
 <ion-content>
   <ion-refresher slot="fixed">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 </ion-content>
 
-<!-- Custom Refresher Properties -->
+<!-- 自定义刷新器属性 -->
 <ion-content>
   <ion-refresher slot="fixed" pull-factor="0.5" pull-min="100" pull-max="200">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 </ion-content>
 
-<!-- Custom Refresher Content -->
+<!-- 自定义刷新器内容 -->
 <ion-content>
   <ion-refresher slot="fixed">
     <ion-refresher-content
       pulling-icon="chevron-down-circle-outline"
-      pulling-text="Pull to refresh"
+      pulling-text="下拉刷新"
       refreshing-spinner="circles"
-      refreshing-text="Refreshing..."
+      refreshing-text="刷新中..."
     >
     </ion-refresher-content>
   </ion-refresher>
@@ -141,38 +137,38 @@ import { RefresherEventDetail } from '@ionic/core';
 import { chevronDownCircleOutline } from 'ionicons/icons';
 
 function doRefresh(event: CustomEvent<RefresherEventDetail>) {
-  console.log('Begin async operation');
+  console.log('开始异步操作');
 
   setTimeout(() => {
-    console.log('Async operation has ended');
+    console.log('异步操作已结束');
     event.detail.complete();
   }, 2000);
 }
 
 export const RefresherExample: React.FC = () => (
   <IonContent>
-    {/*-- Default Refresher --*/}
+    {/*-- 默认刷新器 --*/}
     <IonContent>
       <IonRefresher slot="fixed" onIonRefresh={doRefresh}>
         <IonRefresherContent></IonRefresherContent>
       </IonRefresher>
     </IonContent>
 
-    {/*-- Custom Refresher Properties --*/}
+    {/*-- 自定义刷新器属性 --*/}
     <IonContent>
       <IonRefresher slot="fixed" onIonRefresh={doRefresh} pullFactor={0.5} pullMin={100} pullMax={200}>
         <IonRefresherContent></IonRefresherContent>
       </IonRefresher>
     </IonContent>
 
-    {/*-- Custom Refresher Content --*/}
+    {/*-- 自定义刷新器内容 --*/}
     <IonContent>
       <IonRefresher slot="fixed" onIonRefresh={doRefresh}>
         <IonRefresherContent
           pullingIcon={chevronDownCircleOutline}
-          pullingText="Pull to refresh"
+          pullingText="下拉刷新"
           refreshingSpinner="circles"
-          refreshingText="Refreshing..."
+          refreshingText="刷新中..."
         ></IonRefresherContent>
       </IonRefresher>
     </IonContent>
@@ -193,38 +189,38 @@ import { Component, h } from '@stencil/core';
 })
 export class RefresherExample {
   doRefresh(ev: any) {
-    console.log('Begin async operation');
+    console.log('开始异步操作');
 
     setTimeout(() => {
-      console.log('Async operation has ended');
+      console.log('异步操作已结束');
       ev.target.complete();
     }, 2000);
   }
 
   render() {
     return [
-      // Default Refresher
+      // 默认刷新器
       <ion-content>
         <ion-refresher slot="fixed" onIonRefresh={(ev) => this.doRefresh(ev)}>
           <ion-refresher-content></ion-refresher-content>
         </ion-refresher>
       </ion-content>,
 
-      // Custom Refresher Properties
+      // 自定义刷新器属性
       <ion-content>
         <ion-refresher slot="fixed" pullFactor={0.5} pullMin={100} pullMax={200}>
           <ion-refresher-content></ion-refresher-content>
         </ion-refresher>
       </ion-content>,
 
-      // Custom Refresher Content
+      // 自定义刷新器内容
       <ion-content>
         <ion-refresher slot="fixed" onIonRefresh={(ev) => this.doRefresh(ev)}>
           <ion-refresher-content
             pullingIcon="chevron-down-circle-outline"
-            pullingText="Pull to refresh"
+            pullingText="下拉刷新"
             refreshingSpinner="circles"
-            refreshingText="Refreshing..."
+            refreshingText="刷新中..."
           ></ion-refresher-content>
         </ion-refresher>
       </ion-content>,
@@ -239,28 +235,28 @@ export class RefresherExample {
 
 ```html
 <template>
-  <!-- Default Refresher -->
+  <!-- 默认刷新器 -->
   <ion-content>
     <ion-refresher slot="fixed" @ionRefresh="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
   </ion-content>
 
-  <!-- Custom Refresher Properties -->
+  <!-- 自定义刷新器属性 -->
   <ion-content>
     <ion-refresher slot="fixed" pull-factor="0.5" pull-min="100" pull-max="200">
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
   </ion-content>
 
-  <!-- Custom Refresher Content -->
+  <!-- 自定义刷新器内容 -->
   <ion-content>
     <ion-refresher slot="fixed" @ionRefresh="doRefresh($event)">
       <ion-refresher-content
         :pulling-icon="chevronDownCircleOutline"
-        pulling-text="Pull to refresh"
+        pulling-text="下拉刷新"
         refreshing-spinner="circles"
-        refreshing-text="Refreshing..."
+        refreshing-text="刷新中..."
       >
       </ion-refresher-content>
     </ion-refresher>
@@ -276,10 +272,10 @@ export class RefresherExample {
     components: { IonContent, IonRefresher, IonRefresherContent },
     setup() {
       const doRefresh = (event: CustomEvent) => {
-        console.log('Begin async operation');
+        console.log('开始异步操作');
 
         setTimeout(() => {
-          console.log('Async operation has ended');
+          console.log('异步操作已结束');
           event.target.complete();
         }, 2000);
       };
@@ -293,15 +289,15 @@ export class RefresherExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -309,10 +305,10 @@ export class RefresherExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

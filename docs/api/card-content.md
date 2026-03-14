@@ -1,5 +1,5 @@
 ---
-title: "ion-card-content"
+title: 卡片内容组件
 ---
 import Props from '@ionic-internal/component-api/v8/card-content/props.md';
 import Events from '@ionic-internal/component-api/v8/card-content/events.md';
@@ -11,25 +11,24 @@ import Slots from '@ionic-internal/component-api/v8/card-content/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-Card content is a child component of card that adds padding around its contents. It is recommended that any text content for a card should be placed inside of card content.
+卡片内容区域是 Card 组件的子组件，用于在其内容周围添加内边距。建议将卡片的所有文本内容都放置在卡片内容区域内。
 
-See the [Card](./card) documentation for more information.
+更多信息请参阅 [Card](./card) 文档。
 
-
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

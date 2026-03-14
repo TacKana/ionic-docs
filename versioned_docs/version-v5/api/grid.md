@@ -1,6 +1,6 @@
 ---
-title: 'Ion-Grid: Display Grids to Build Mobile-First Custom App Layout'
-description: 'Ion-Grid is a mobile-first flexbox system to build custom application display layouts with a 12 column layout and different breakpoints based on screen size.'
+title: 'Ion-Grid：使用网格构建移动优先的自定义应用布局'
+description: 'Ion-Grid 是一个移动优先的 flexbox 系统，用于通过 12 列布局和基于屏幕尺寸的不同断点来构建自定义的应用程序显示布局。'
 sidebar_label: 'ion-grid'
 demoUrl: '/docs/demos/api/grid/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/grid/index.html'
@@ -18,13 +18,13 @@ import Slots from '@ionic-internal/component-api/v5/grid/slots.md';
 
 # ion-grid
 
-The grid is a powerful mobile-first flexbox system for building custom layouts.
+网格是一个强大的、移动优先的 flexbox 系统，用于构建自定义布局。
 
-It is composed of three units — a grid, [row(s)](row.md) and [column(s)](col.md). Columns will expand to fill the row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
+它由三个单元组成——网格、[行](row.md)和[列](col.md)。列将扩展以填充行，并将调整大小以适应额外的列。它基于一个 12 列的布局，并根据屏幕尺寸提供不同的断点。可以使用 CSS 自定义列数。
 
-See the [Responsive Grid documentation](../layout/grid.md) for more information.
+更多信息请参阅[响应式网格文档](../layout/grid.md)。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -653,26 +653,26 @@ export class GridExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

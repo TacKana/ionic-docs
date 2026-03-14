@@ -6,11 +6,11 @@ function Example() {
   return (
     <>
       <IonContent className="ion-padding">
-        <h1>Content</h1>
+        <h1>内容</h1>
       </IonContent>
       <IonFooter>
         <IonToolbar>
-          <IonTitle>Footer</IonTitle>
+          <IonTitle>页脚</IonTitle>
         </IonToolbar>
       </IonFooter>
     </>

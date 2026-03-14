@@ -1,73 +1,73 @@
 ---
-title: iOS App Store Deployment
+title: iOS App Store 部署
 sidebar_label: iOS App Store
 ---
 
 <head>
-  <title>Publish to iOS App Store: Apple App Store Deployment for Ionic</title>
+  <title>发布到 iOS App Store：Ionic 应用的苹果应用商店部署指南</title>
   <meta
     name="description"
-    content="Review the requirements to publish an Ionic app to the Apple iOS App Store. Learn to generate a release build and other necessary steps for deployment."
+    content="了解将 Ionic 应用发布到苹果 iOS App Store 的要求。学习如何生成发布版本构建以及部署所需的其他步骤。"
   />
 </head>
 
-## Requirements
+## 必要条件
 
-Submitting an App to the iOS App store requires a few things:
+向 iOS App Store 提交应用需要满足以下几点要求：
 
 - Xcode
-- A Paid Apple Developers account
-- A valid provisioning profile
-- App Development and Distribution certificates
+- 付费的 Apple 开发者账户
+- 有效的配置文件
+- 应用开发和分发证书
 
-To enroll in the Apple Developer Program, follow the instructions [listed here](https://developer.apple.com/programs/).
+要注册 Apple 开发者计划，请按照 [此处列出的说明](https://developer.apple.com/programs/) 进行操作。
 
-## Generating a release build
+## 生成发布版本构建
 
-If the iOS platform is not already added, be sure to add it:
+如果尚未添加 iOS 平台，请务必先添加：
 
 ```shell
 ionic cordova platform add ios
 ```
 
-With the platform added, run the build command with the `--prod` flag:
+添加平台后，使用 `--prod` 标志运行构建命令：
 
 ```shell
 ionic cordova build ios --prod
 ```
 
-This will generate the minified code for the web portion of an app and copy it over the iOS code base.
+这将为应用的网页部分生成最小化代码，并将其复制到 iOS 代码库中。
 
-From here, open the `.xcworkspace` file in `./platforms/ios/` to start Xcode.
+接下来，打开 `./platforms/ios/` 目录下的 `.xcworkspace` 文件以启动 Xcode。
 
-## Generating Signing Certs
+## 生成签名证书
 
-Generating certificates for iOS is a bit of an involved process, so be sure to check [Apple's official documentation](https://help.apple.com/xcode/mac/current/#/dev3a05256b8) on what certificates are and how to generate them.
+为 iOS 生成证书是一个较为复杂的过程，请务必查阅 [苹果官方文档](https://help.apple.com/xcode/mac/current/#/dev3a05256b8) 了解证书是什么以及如何生成它们。
 
-To create the certificates and profiles needed, visit [Apple's member center](https://developer.apple.com/membercenter) and follow the links described in Apple's documentation.
+要创建所需的证书和配置文件，请访问 [苹果会员中心](https://developer.apple.com/membercenter) 并按照苹果文档中描述的链接进行操作。
 
-There are two types of certificates that matter here, Development, and Distribution. Development Certificates are just that, meant for development time. They are meant to sign an app and deploy it to devices that the certificate has access to.
+这里涉及两种重要的证书类型：开发证书和分发证书。开发证书如其名，专用于开发阶段。它们用于对应用进行签名，并将其部署到证书有权访问的设备上。
 
-Distribution certs are meant for distributing an app to the store. When an app is signed with a Distribution cert, it can be installed on any device.
+分发证书则用于向应用商店分发应用。当应用使用分发证书签名后，可以安装在任何设备上。
 
-## Signing the App in Xcode
+## 在 Xcode 中为应用签名
 
-After generating the correct certificates, there are options to either have Xcode automatically manage certificates or manually manage them. It's suggested to let Xcode automatically manage certificates. This will make sure that the correct Development and Distribution certs are used, based on the build type selected.
+生成正确的证书后，可以选择让 Xcode 自动管理证书或手动管理。建议让 Xcode 自动管理证书。这将确保根据所选的构建类型使用正确的开发和分发证书。
 
-With this option selected, select `Archive` from the `Product > Archive` menu. This will build a version of the app that is ready for distribution in the app stores. After archive has been created, Xcode Organizer is opened.
+选择此选项后，从 `Product > Archive` 菜单中选择 `Archive`。这将构建一个准备在应用商店分发的应用版本。归档创建完成后，Xcode Organizer 将自动打开。
 
-Xcode Organizer displays a list with builds of the current app. Pick the last build and click 'Upload to App Store'.
-There should be a place to select the team followed by some more information on the app and an 'Upload' button to click.
+Xcode Organizer 会显示当前应用的构建列表。选择最新的构建，然后点击“Upload to App Store”。
+随后会出现选择团队的位置，接着是有关应用的更多信息，最后点击“Upload”按钮即可。
 
-If the upload is successful the app should be listed under 'Activities' on [iTunes Connect](https://itunesconnect.apple.com) or listed under 'Apps' on [App Store Connect](https://appstoreconnect.apple.com/). From there, the app can be published to TestFlight, or it can be sent to Apple for approval for the App Store.
+如果上传成功，该应用应会列在 [iTunes Connect](https://itunesconnect.apple.com) 的“Activities”下，或出现在 [App Store Connect](https://appstoreconnect.apple.com/) 的“Apps”列表中。之后，您可以将应用发布到 TestFlight，或提交给苹果以申请上架 App Store。
 
-## Updating an app
+## 更新应用
 
-As an app grows, it will need to be updated with new features and fixes.
-An app can be updated by either submitting a new version to Apple, or by using a live update service like Appflow's <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">live update feature</a>.
+随着应用的发展，需要更新新功能和修复错误。
+您可以通过向苹果提交新版本，或使用 Appflow 的<a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">实时更新功能</a>等实时更新服务来更新应用。
 
-With <strong>Live Updates</strong>, app changes can be pushed in realtime directly to users from the Appflow dashboard, without waiting for App Store approvals.
+借助<strong>实时更新</strong>，您可以直接从 Appflow 仪表板实时将应用变更推送给用户，无需等待 App Store 的审核。
 
 :::note
-In order for the iOS App Store to accept the updated build, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the same instructions above.
+为了让 iOS App Store 接受更新后的构建，需要编辑 config.xml 文件以递增版本号，然后按照上述相同的说明重新构建发布版本的应用。
 :::

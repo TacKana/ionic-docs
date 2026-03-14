@@ -1,3 +1,3 @@
 ```html
-<ion-datetime [showDefaultButtons]="true" doneText="All set" cancelText="Never mind"> </ion-datetime>
+<ion-datetime [showDefaultButtons]="true" doneText="完成" cancelText="取消"> </ion-datetime>
 ```

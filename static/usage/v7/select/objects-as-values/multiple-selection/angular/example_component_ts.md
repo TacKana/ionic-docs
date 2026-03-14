@@ -47,7 +47,7 @@ export class ExampleComponent {
 
   handleChange(event: Event) {
     const target = event.target as HTMLIonSelectElement;
-    console.log('Current value:', JSON.stringify(target.value));
+    console.log('当前值：', JSON.stringify(target.value));
   }
 }
 ```

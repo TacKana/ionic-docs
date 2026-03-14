@@ -1,5 +1,5 @@
 ```html
-<ion-button onclick="presentAlert()">Click Me</ion-button>
+<ion-button onclick="presentAlert()">点击我</ion-button>
 <p id="handlerResult"></p>
 <p id="roleResult"></p>
 
@@ -9,20 +9,20 @@
 
   async function presentAlert() {
     const alert = document.createElement('ion-alert');
-    alert.header = 'Alert!';
+    alert.header = '警告!';
     alert.buttons = [
       {
-        text: 'Cancel',
+        text: '取消',
         role: 'cancel',
         handler: () => {
-          handlerOutput.innerText = 'Alert canceled';
+          handlerOutput.innerText = '警告已取消';
         },
       },
       {
-        text: 'OK',
+        text: '确认',
         role: 'confirm',
         handler: () => {
-          handlerOutput.innerText = 'Alert confirmed';
+          handlerOutput.innerText = '警告已确认';
         },
       },
     ];
@@ -31,7 +31,7 @@
     await alert.present();
 
     const { role } = await alert.onDidDismiss();
-    roleOutput.innerText = `Dismissed with role: ${role}`;
+    roleOutput.innerText = `以角色: ${role} 关闭`;
   }
 </script>
 ```

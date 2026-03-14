@@ -2,16 +2,16 @@
 <template>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>卡片标题</ion-card-title>
+      <ion-card-subtitle>卡片副标题</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+      这里是卡片内容的一段简短描述，不多也不少。
     </ion-card-content>
 
-    <ion-button fill="clear">Action 1</ion-button>
-    <ion-button fill="clear">Action 2</ion-button>
+    <ion-button fill="clear">操作一</ion-button>
+    <ion-button fill="clear">操作二</ion-button>
   </ion-card>
 </template>
 
@@ -25,7 +25,7 @@
 </script>
 
 <style scoped>
-  /* iOS places the subtitle above the title */
+  /* iOS 系统将副标题显示在标题上方 */
   ion-card-header.ios {
     display: flex;
     flex-flow: column-reverse;

@@ -5,11 +5,11 @@ import { IonInput } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonInput label="Solid input" labelPlacement="floating" fill="solid" placeholder="Enter text"></IonInput>
+      <IonInput label="实心输入框" labelPlacement="floating" fill="solid" placeholder="请输入文本"></IonInput>
 
       <br />
 
-      <IonInput label="Outline input" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
+      <IonInput label="描边输入框" labelPlacement="floating" fill="outline" placeholder="请输入文本"></IonInput>
     </>
   );
 }

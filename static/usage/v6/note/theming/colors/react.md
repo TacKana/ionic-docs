@@ -5,16 +5,16 @@ import { IonNote } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonNote>Default Note</IonNote>
-      <IonNote color="primary">Primary Note</IonNote>
-      <IonNote color="secondary">Secondary Note</IonNote>
-      <IonNote color="tertiary">Tertiary Note</IonNote>
-      <IonNote color="success">Success Note</IonNote>
-      <IonNote color="warning">Warning Note</IonNote>
-      <IonNote color="danger">Danger Note</IonNote>
-      <IonNote color="light">Light Note</IonNote>
-      <IonNote color="medium">Medium Note</IonNote>
-      <IonNote color="dark">Dark Note</IonNote>
+      <IonNote>默认注释</IonNote>
+      <IonNote color="primary">主要注释</IonNote>
+      <IonNote color="secondary">次要注释</IonNote>
+      <IonNote color="tertiary">第三级注释</IonNote>
+      <IonNote color="success">成功注释</IonNote>
+      <IonNote color="warning">警告注释</IonNote>
+      <IonNote color="danger">危险注释</IonNote>
+      <IonNote color="light">浅色注释</IonNote>
+      <IonNote color="medium">中等注释</IonNote>
+      <IonNote color="dark">深色注释</IonNote>
     </>
   );
 }

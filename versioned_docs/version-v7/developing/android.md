@@ -4,35 +4,35 @@ sidebar_label: Developing for Android
 ---
 
 <head>
-  <title>Android App Development Guide: Build Ionic Apps in Android Studio</title>
+  <title>Android 应用开发指南：在 Android Studio 中构建 Ionic 应用</title>
   <meta
     name="description"
-    content="This development guide covers how to run and debug Ionic apps on Android emulators and devices. Learn how to install Android Studio to get started building."
+    content="本开发指南涵盖如何在 Android 模拟器和设备上运行与调试 Ionic 应用。了解如何安装 Android Studio 以开始构建应用。"
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-:::info Looking for the legacy Android guide?
+:::info 查找旧版 Android 指南？
 
-The Developing for Android guide has officially migrated to the [Capacitor documentation for Android](https://capacitorjs.com/docs/android). If you need to access the legacy documentation, you can find it under the [legacy developing for Android guide](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android).
+Android 开发指南已正式迁移至 [Capacitor Android 文档](https://capacitorjs.com/docs/android)。如需访问旧版文档，请查阅 [旧版 Android 开发指南](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android)。
 
 :::
 
 <DocsCards>
   <DocsCard
-    header="Developing for Android with Capacitor (Recommended)"
+    header="使用 Capacitor 进行 Android 开发（推荐）"
     href="https://capacitorjs.com/docs/android"
     icon="/icons/capacitor-logo.svg"
   >
-    <p>Learn the fundamentals you need to know to start building Android apps with Ionic Framework and Capacitor.</p>
+    <p>学习使用 Ionic Framework 和 Capacitor 构建 Android 应用所需掌握的基础知识。</p>
   </DocsCard>
   <DocsCard
-    header="Developing for Android with Cordova (Legacy)"
+    header="使用 Cordova 进行 Android 开发（旧版）"
     href="https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android"
     icon="/icons/native-cordova-bot.png"
   >
-    <p>Learn the fundamentals you need to know to start building Android apps with Ionic Framework and Cordova.</p>
+    <p>学习使用 Ionic Framework 和 Cordova 构建 Android 应用所需掌握的基础知识。</p>
   </DocsCard>
 </DocsCards>

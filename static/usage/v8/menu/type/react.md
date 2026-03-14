@@ -23,23 +23,23 @@ function Example() {
       <IonMenu type={menuType} contentId="main-content">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Menu Content</IonTitle>
+            <IonTitle>菜单内容</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
           <IonMenuToggle>
-            <IonButton>Click to close the menu</IonButton>
+            <IonButton>点击关闭菜单</IonButton>
           </IonMenuToggle>
         </IonContent>
       </IonMenu>
       <IonPage id="main-content">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Menu</IonTitle>
+            <IonTitle>菜单</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
-          <h2>Select an overlay type:</h2>
+          <h2>选择一种菜单类型：</h2>
           <IonRadioGroup
             value={menuType}
             onIonChange={(event: RadioGroupCustomEvent) => {
@@ -63,7 +63,7 @@ function Example() {
             </IonItem>
           </IonRadioGroup> <br />
           <IonMenuToggle>
-            <IonButton>Click to open the menu</IonButton>
+            <IonButton>点击打开菜单</IonButton>
           </IonMenuToggle>
         </IonContent>
       </IonPage>

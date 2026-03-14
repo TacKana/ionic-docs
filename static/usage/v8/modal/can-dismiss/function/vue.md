@@ -3,23 +3,23 @@
   <ion-page ref="page">
     <ion-header>
       <ion-toolbar>
-        <ion-title>App</ion-title>
+        <ion-title>应用</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-button id="open-modal" expand="block">Open</ion-button>
+      <ion-button id="open-modal" expand="block">打开</ion-button>
 
       <ion-modal ref="modal" trigger="open-modal" :can-dismiss="canDismiss" :presenting-element="presentingElement">
         <ion-header>
           <ion-toolbar>
-            <ion-title>Modal</ion-title>
+            <ion-title>模态框</ion-title>
             <ion-buttons slot="end">
-              <ion-button @click="dismiss()">Close</ion-button>
+              <ion-button @click="dismiss()">关闭</ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
         <ion-content class="ion-padding">
-          <p>You will be prompted when closing this modal.</p>
+          <p>关闭此模态框时，系统会提示您进行确认。</p>
         </ion-content>
       </ion-modal>
     </ion-content>
@@ -50,14 +50,14 @@
 
   const canDismiss = async () => {
     const actionSheet = await actionSheetController.create({
-      header: 'Are you sure?',
+      header: '确定要关闭吗？',
       buttons: [
         {
-          text: 'Yes',
+          text: '是',
           role: 'confirm',
         },
         {
-          text: 'No',
+          text: '否',
           role: 'cancel',
         },
       ],

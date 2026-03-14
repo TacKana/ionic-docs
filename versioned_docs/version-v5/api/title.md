@@ -1,6 +1,6 @@
 ---
-title: 'ion-title: Ionic Framework App Title Component for Toolbars'
-description: 'ion-title is a component that sets the title of the toolbar. Read to learn more about title and collapsible title components and usage for Ionic Framework Apps.'
+title: 'ion-title：Ionic Framework 应用标题组件，用于工具栏'
+description: 'ion-title 是一个用于设置工具栏标题的组件。阅读本文，了解更多关于 Ionic Framework 应用的标题和可折叠标题组件及其用法的信息。'
 sidebar_label: 'ion-title'
 ---
 
@@ -16,49 +16,49 @@ import Slots from '@ionic-internal/component-api/v5/title/slots.md';
 
 # ion-title
 
-`ion-title` is a component that sets the title of the `Toolbar`.
+`ion-title` 是一个用于设置 `Toolbar`（工具栏）标题的组件。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- Default title -->
+<!-- 默认标题 -->
 <ion-toolbar>
-  <ion-title>Default Title</ion-title>
+  <ion-title>默认标题</ion-title>
 </ion-toolbar>
 
-<!-- Small title above a default title -->
+<!-- 在默认标题上方的小标题 -->
 <ion-toolbar>
-  <ion-title size="small">Small Title above a Default Title</ion-title>
+  <ion-title size="small">默认标题上方的小标题</ion-title>
 </ion-toolbar>
 <ion-toolbar>
-  <ion-title>Default Title</ion-title>
+  <ion-title>默认标题</ion-title>
 </ion-toolbar>
 
-<!-- Large title -->
+<!-- 大标题 -->
 <ion-toolbar>
-  <ion-title size="large">Large Title</ion-title>
+  <ion-title size="large">大标题</ion-title>
 </ion-toolbar>
 ```
 
-### Collapsible Large Titles
+### 可折叠大标题
 
-Ionic provides a way to create the collapsible titles that exist on stock iOS apps. Getting this setup requires configuring your `ion-title`, `ion-header`, and (optionally) `ion-buttons` elements.
+Ionic 提供了一种方法来创建 iOS 原生应用中存在的可折叠标题。要实现此效果，需要配置您的 `ion-title`、`ion-header` 以及（可选的）`ion-buttons` 元素。
 
 ```html
 <ion-header translucent="true">
   <ion-toolbar>
-    <ion-title>Settings</ion-title>
+    <ion-title>设置</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Settings</ion-title>
+      <ion-title size="large">设置</ion-title>
     </ion-toolbar>
     <ion-toolbar>
       <ion-searchbar></ion-searchbar>
@@ -69,15 +69,15 @@ Ionic provides a way to create the collapsible titles that exist on stock iOS ap
 </ion-content>
 ```
 
-In the example above, notice there are two `ion-header` elements. The first `ion-header` represents the "collapsed" state of your collapsible header, and the second `ion-header` represents the "expanded" state of your collapsible header. Notice that the second `ion-header` must have `collapse="condense"` and must exist within `ion-content`. Additionally, in order to get the large title styling, `ion-title` must have `size="large"`.
+在上面的例子中，请注意有两个 `ion-header` 元素。第一个 `ion-header` 代表可折叠标题头的“折叠”状态，第二个 `ion-header` 代表可折叠标题头的“展开”状态。注意，第二个 `ion-header` 必须设置 `collapse="condense"`，并且必须位于 `ion-content` 内部。此外，为了获得大标题样式，`ion-title` 必须设置 `size="large"`。
 
 ```html
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons collapse="true" slot="end">
-      <ion-button>Click Me</ion-button>
+      <ion-button>点击我</ion-button>
     </ion-buttons>
-    <ion-title>Settings</ion-title>
+    <ion-title>设置</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -85,9 +85,9 @@ In the example above, notice there are two `ion-header` elements. The first `ion
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-buttons collapse="true" slot="end">
-        <ion-button>Click Me</ion-button>
+        <ion-button>点击我</ion-button>
       </ion-buttons>
-      <ion-title size="large">Settings</ion-title>
+      <ion-title size="large">设置</ion-title>
     </ion-toolbar>
     <ion-toolbar>
       <ion-searchbar></ion-searchbar>
@@ -98,21 +98,21 @@ In the example above, notice there are two `ion-header` elements. The first `ion
 </ion-content>
 ```
 
-In this example, notice that we have added two sets of `ion-buttons` both with `collapse` set to `true`. When the secondary header collapses, the buttons in the secondary header will hide, and the buttons in the primary header will show. This is useful for ensuring that your header buttons always appear next to an `ion-title` element.
+在这个例子中，注意我们添加了两组 `ion-buttons`，并且都设置了 `collapse="true"`。当次级标题头折叠时，次级标题头中的按钮将隐藏，而主标题头中的按钮将显示。这对于确保您的标题按钮始终显示在 `ion-title` 元素旁边非常有用。
 
-`ion-buttons` elements that do not have `collapse` set will always be visible, regardless of collapsed state. When using the large title and `ion-buttons` elements inside of `ion-content`, the `ion-buttons` elements should always be placed in the `end` slot.
+没有设置 `collapse` 属性的 `ion-buttons` 元素将始终可见，无论折叠状态如何。当在 `ion-content` 内部使用大标题和 `ion-buttons` 元素时，`ion-buttons` 元素应始终放置在 `end` 插槽中。
 
-> When using collapsible large titles, it is required that `fullscreen` is set to `true` on `ion-content` and `translucent` is set to `true` on the main `ion-header`.
+> 使用可折叠大标题时，需要在 `ion-content` 上设置 `fullscreen="true"`，并在主 `ion-header` 上设置 `translucent="true"`。
 
-### Styling Collapsible Large Titles
+### 设置可折叠大标题的样式
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`.
+可折叠大标题应与内容的其余部分无缝衔接。这意味着包含可折叠大标题的 `ion-toolbar` 的背景颜色应始终与 `ion-content` 的背景颜色匹配。
 
-By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
+默认情况下，包含标准标题的 `ion-toolbar` 通过 `opacity: 0` 隐藏，并在您通过滚动折叠大标题时逐渐显示。因此，您在标准标题后面看到的背景颜色实际上是 `ion-content` 的背景颜色。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable on `ion-toolbar`. This will give the effect of the header changing color as you collapse the large title.
+您可以通过在 `ion-toolbar` 上设置 `--background` CSS 变量来更改包含标准标题的工具栏的背景颜色。这将产生标题头在您折叠大标题时改变颜色的效果。
 
-When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+在设置大标题的文本颜色时，您应该全局地针对大标题设置样式，而不是在特定页面或标签的上下文中设置，否则其样式在导航动画期间将不会应用。
 
 ```css
 ion-title.large-title {
@@ -126,40 +126,40 @@ ion-title.large-title {
 <TabItem value="javascript">
 
 ```html
-<!-- Default title -->
+<!-- 默认标题 -->
 <ion-toolbar>
-  <ion-title>Default Title</ion-title>
+  <ion-title>默认标题</ion-title>
 </ion-toolbar>
 
-<!-- Small title above a default title -->
+<!-- 在默认标题上方的小标题 -->
 <ion-toolbar>
-  <ion-title size="small">Small Title above a Default Title</ion-title>
+  <ion-title size="small">默认标题上方的小标题</ion-title>
 </ion-toolbar>
 <ion-toolbar>
-  <ion-title>Default Title</ion-title>
+  <ion-title>默认标题</ion-title>
 </ion-toolbar>
 
-<!-- Large title -->
+<!-- 大标题 -->
 <ion-toolbar>
-  <ion-title size="large">Large Title</ion-title>
+  <ion-title size="large">大标题</ion-title>
 </ion-toolbar>
 ```
 
-### Collapsible Large Titles
+### 可折叠大标题
 
-Ionic provides a way to create the collapsible titles that exist on stock iOS apps. Getting this setup requires configuring your `ion-title`, `ion-header`, and (optionally) `ion-buttons` elements.
+Ionic 提供了一种方法来创建 iOS 原生应用中存在的可折叠标题。要实现此效果，需要配置您的 `ion-title`、`ion-header` 以及（可选的）`ion-buttons` 元素。
 
 ```html
 <ion-header translucent="true">
   <ion-toolbar>
-    <ion-title>Settings</ion-title>
+    <ion-title>设置</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Settings</ion-title>
+      <ion-title size="large">设置</ion-title>
     </ion-toolbar>
     <ion-toolbar>
       <ion-searchbar></ion-searchbar>
@@ -170,15 +170,15 @@ Ionic provides a way to create the collapsible titles that exist on stock iOS ap
 </ion-content>
 ```
 
-In the example above, notice there are two `ion-header` elements. The first `ion-header` represents the "collapsed" state of your collapsible header, and the second `ion-header` represents the "expanded" state of your collapsible header. Notice that the second `ion-header` must have `collapse="condense"` and must exist within `ion-content`. Additionally, in order to get the large title styling, `ion-title` must have `size="large"`.
+在上面的例子中，请注意有两个 `ion-header` 元素。第一个 `ion-header` 代表可折叠标题头的“折叠”状态，第二个 `ion-header` 代表可折叠标题头的“展开”状态。注意，第二个 `ion-header` 必须设置 `collapse="condense"`，并且必须位于 `ion-content` 内部。此外，为了获得大标题样式，`ion-title` 必须设置 `size="large"`。
 
 ```html
 <ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons collapse="true" slot="end">
-      <ion-button>Click Me</ion-button>
+      <ion-button>点击我</ion-button>
     </ion-buttons>
-    <ion-title>Settings</ion-title>
+    <ion-title>设置</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -186,9 +186,9 @@ In the example above, notice there are two `ion-header` elements. The first `ion
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-buttons collapse="true" slot="end">
-        <ion-button>Click Me</ion-button>
+        <ion-button>点击我</ion-button>
       </ion-buttons>
-      <ion-title size="large">Settings</ion-title>
+      <ion-title size="large">设置</ion-title>
     </ion-toolbar>
     <ion-toolbar>
       <ion-searchbar></ion-searchbar>
@@ -199,21 +199,21 @@ In the example above, notice there are two `ion-header` elements. The first `ion
 </ion-content>
 ```
 
-In this example, notice that we have added two sets of `ion-buttons` both with `collapse` set to `true`. When the secondary header collapses, the buttons in the secondary header will hide, and the buttons in the primary header will show. This is useful for ensuring that your header buttons always appear next to an `ion-title` element.
+在这个例子中，注意我们添加了两组 `ion-buttons`，并且都设置了 `collapse="true"`。当次级标题头折叠时，次级标题头中的按钮将隐藏，而主标题头中的按钮将显示。这对于确保您的标题按钮始终显示在 `ion-title` 元素旁边非常有用。
 
-`ion-buttons` elements that do not have `collapse` set will always be visible, regardless of collapsed state. When using the large title and `ion-buttons` elements inside of `ion-content`, the `ion-buttons` elements should always be placed in the `end` slot.
+没有设置 `collapse` 属性的 `ion-buttons` 元素将始终可见，无论折叠状态如何。当在 `ion-content` 内部使用大标题和 `ion-buttons` 元素时，`ion-buttons` 元素应始终放置在 `end` 插槽中。
 
-> When using collapsible large titles, it is required that `fullscreen` is set to `true` on `ion-content` and `translucent` is set to `true` on the main `ion-header`.
+> 使用可折叠大标题时，需要在 `ion-content` 上设置 `fullscreen="true"`，并在主 `ion-header` 上设置 `translucent="true"`。
 
-### Styling Collapsible Large Titles
+### 设置可折叠大标题的样式
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`.
+可折叠大标题应与内容的其余部分无缝衔接。这意味着包含可折叠大标题的 `ion-toolbar` 的背景颜色应始终与 `ion-content` 的背景颜色匹配。
 
-By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
+默认情况下，包含标准标题的 `ion-toolbar` 通过 `opacity: 0` 隐藏，并在您通过滚动折叠大标题时逐渐显示。因此，您在标准标题后面看到的背景颜色实际上是 `ion-content` 的背景颜色。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable on `ion-toolbar`. This will give the effect of the header changing color as you collapse the large title.
+您可以通过在 `ion-toolbar` 上设置 `--background` CSS 变量来更改包含标准标题的工具栏的背景颜色。这将产生标题头在您折叠大标题时改变颜色的效果。
 
-When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+在设置大标题的文本颜色时，您应该全局地针对大标题设置样式，而不是在特定页面或标签的上下文中设置，否则其样式在导航动画期间将不会应用。
 
 ```css
 ion-title.large-title {
@@ -234,29 +234,29 @@ import {
 } from '@ionic/react';
 
 export const ToolbarExample: React.FC = () => (
-  {/*-- Default title --*/}
+  {/*-- 默认标题 --*/}
   <IonToolbar>
-    <IonTitle>Default Title</IonTitle>
+    <IonTitle>默认标题</IonTitle>
   </IonToolbar>
 
-  {/*-- Small title --*/}
+  {/*-- 小标题 --*/}
   <IonToolbar>
-    <IonTitle size="small">Small Title above a Default Title</IonTitle>
+    <IonTitle size="small">默认标题上方的小标题</IonTitle>
   </IonToolbar>
   <IonToolbar>
-    <IonTitle>Default Title</IonTitle>
+    <IonTitle>默认标题</IonTitle>
   </IonToolbar>
 
-  {/*-- Large title --*/}
+  {/*-- 大标题 --*/}
   <IonToolbar>
-    <IonTitle size="large">Large Title</IonTitle>
+    <IonTitle size="large">大标题</IonTitle>
   </IonToolbar>
 );
 ```
 
-### Collapsible Large Titles
+### 可折叠大标题
 
-Ionic provides a way to create the collapsible titles that exist on stock iOS apps. Getting this setup requires configuring your `IonTitle`, `IonHeader`, and (optionally) `IonButtons` elements.
+Ionic 提供了一种方法来创建 iOS 原生应用中存在的可折叠标题。要实现此效果，需要配置您的 `IonTitle`、`IonHeader` 以及（可选的）`IonButtons` 元素。
 
 ```tsx
 import React from 'react';
@@ -266,14 +266,14 @@ export const LargeTitleExample: React.FC = () => (
   <>
     <IonHeader translucent="true">
       <IonToolbar>
-        <IonTitle>Settings</IonTitle>
+        <IonTitle>设置</IonTitle>
       </IonToolbar>
     </IonHeader>
 
     <IonContent fullscreen="true">
       <IonHeader collapse="condense">
         <IonToolbar>
-          <IonTitle size="large">Settings</IonTitle>
+          <IonTitle size="large">设置</IonTitle>
         </IonToolbar>
         <IonToolbar>
           <IonSearchbar></IonSearchbar>
@@ -285,7 +285,7 @@ export const LargeTitleExample: React.FC = () => (
 );
 ```
 
-In the example above, notice there are two `IonHeader` elements. The first `IonHeader` represents the "collapsed" state of your collapsible header, and the second `IonHeader` represents the "expanded" state of your collapsible header. Notice that the second `IonHeader` must have `collapse="condense"` and must exist within `IonContent`. Additionally, in order to get the large title styling, `IonTitle` must have `size="large"`.
+在上面的例子中，请注意有两个 `IonHeader` 元素。第一个 `IonHeader` 代表可折叠标题头的“折叠”状态，第二个 `IonHeader` 代表可折叠标题头的“展开”状态。注意，第二个 `IonHeader` 必须设置 `collapse="condense"`，并且必须位于 `IonContent` 内部。此外，为了获得大标题样式，`IonTitle` 必须设置 `size="large"`。
 
 ```tsx
 import React from 'react';
@@ -296,9 +296,9 @@ export const LargeTitleExample: React.FC = () => (
     <IonHeader translucent="true">
       <IonToolbar>
         <IonButtons collapse="true" slot="end">
-          <IonButton>Click Me</IonButton>
+          <IonButton>点击我</IonButton>
         </IonButtons>
-        <IonTitle>Settings</IonTitle>
+        <IonTitle>设置</IonTitle>
       </IonToolbar>
     </IonHeader>
 
@@ -306,9 +306,9 @@ export const LargeTitleExample: React.FC = () => (
       <IonHeader collapse="condense">
         <IonToolbar>
           <IonButtons collapse="true" slot="end">
-            <IonButton>Click Me</IonButton>
+            <IonButton>点击我</IonButton>
           </IonButtons>
-          <IonTitle size="large">Settings</IonTitle>
+          <IonTitle size="large">设置</IonTitle>
         </IonToolbar>
         <IonToolbar>
           <IonSearchbar></IonSearchbar>
@@ -320,21 +320,21 @@ export const LargeTitleExample: React.FC = () => (
 );
 ```
 
-In this example, notice that we have added two sets of `IonButtons` both with `collapse` set to `true`. When the secondary header collapses, the buttons in the secondary header will hide, and the buttons in the primary header will show. This is useful for ensuring that your header buttons always appear next to an `IonTitle` element.
+在这个例子中，注意我们添加了两组 `IonButtons`，并且都设置了 `collapse="true"`。当次级标题头折叠时，次级标题头中的按钮将隐藏，而主标题头中的按钮将显示。这对于确保您的标题按钮始终显示在 `IonTitle` 元素旁边非常有用。
 
-`IonButtons` elements that do not have `collapse` set will always be visible, regardless of collapsed state. When using the large title and `ion-buttons` elements inside of `ion-content`, the `ion-buttons` elements should always be placed in the `end` slot.
+没有设置 `collapse` 属性的 `IonButtons` 元素将始终可见，无论折叠状态如何。当在 `IonContent` 内部使用大标题和 `ion-buttons` 元素时，`ion-buttons` 元素应始终放置在 `end` 插槽中。
 
-> When using collapsible large titles, it is required that `fullscreen` is set to `true` on `IonContent` and `translucent="true"` be set on the main `IonHeader`.
+> 使用可折叠大标题时，需要在 `IonContent` 上设置 `fullscreen="true"`，并在主 `IonHeader` 上设置 `translucent="true"`。
 
-### Styling Collapsible Large Titles
+### 设置可折叠大标题的样式
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `IonToolbar` that contains the collapsible large title should always match the background color of `IonContent`.
+可折叠大标题应与内容的其余部分无缝衔接。这意味着包含可折叠大标题的 `IonToolbar` 的背景颜色应始终与 `IonContent` 的背景颜色匹配。
 
-By default, the `IonToolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `IonContent`.
+默认情况下，包含标准标题的 `IonToolbar` 通过 `opacity: 0` 隐藏，并在您通过滚动折叠大标题时逐渐显示。因此，您在标准标题后面看到的背景颜色实际上是 `IonContent` 的背景颜色。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable on `IonToolbar`. This will give the effect of the header changing color as you collapse the large title.
+您可以通过在 `IonToolbar` 上设置 `--background` CSS 变量来更改包含标准标题的工具栏的背景颜色。这将产生标题头在您折叠大标题时改变颜色的效果。
 
-When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+在设置大标题的文本颜色时，您应该全局地针对大标题设置样式，而不是在特定页面或标签的上下文中设置，否则其样式在导航动画期间将不会应用。
 
 ```css
 ion-title.large-title {
@@ -357,31 +357,31 @@ import { Component, h } from '@stencil/core';
 export class TitleExample {
   render() {
     return [
-      // Default title
+      // 默认标题
       <ion-toolbar>
-        <ion-title>Default Title</ion-title>
+        <ion-title>默认标题</ion-title>
       </ion-toolbar>,
 
-      // Small title above a default title
+      // 在默认标题上方的小标题
       <ion-toolbar>
-        <ion-title size="small">Small Title above a Default Title</ion-title>
+        <ion-title size="small">默认标题上方的小标题</ion-title>
       </ion-toolbar>,
       <ion-toolbar>
-        <ion-title>Default Title</ion-title>
+        <ion-title>默认标题</ion-title>
       </ion-toolbar>,
 
-      // Large title
+      // 大标题
       <ion-toolbar>
-        <ion-title size="large">Large Title</ion-title>
+        <ion-title size="large">大标题</ion-title>
       </ion-toolbar>,
     ];
   }
 }
 ```
 
-### Collapsible Large Titles
+### 可折叠大标题
 
-Ionic provides a way to create the collapsible titles that exist on stock iOS apps. Getting this setup requires configuring your `ion-title`, `ion-header`, and (optionally) `ion-buttons` elements.
+Ionic 提供了一种方法来创建 iOS 原生应用中存在的可折叠标题。要实现此效果，需要配置您的 `ion-title`、`ion-header` 以及（可选的）`ion-buttons` 元素。
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -395,14 +395,14 @@ export class TitleExample {
     return [
       <ion-header translucent={true}>
         <ion-toolbar>
-          <ion-title>Settings</ion-title>
+          <ion-title>设置</ion-title>
         </ion-toolbar>
       </ion-header>,
 
       <ion-content fullscreen={true}>
         <ion-header collapse="condense">
           <ion-toolbar>
-            <ion-title size="large">Settings</ion-title>
+            <ion-title size="large">设置</ion-title>
           </ion-toolbar>
           <ion-toolbar>
             <ion-searchbar></ion-searchbar>
@@ -415,7 +415,7 @@ export class TitleExample {
 }
 ```
 
-In the example above, notice there are two `ion-header` elements. The first `ion-header` represents the "collapsed" state of your collapsible header, and the second `ion-header` represents the "expanded" state of your collapsible header. Notice that the second `ion-header` must have `collapse="condense"` and must exist within `ion-content`. Additionally, in order to get the large title styling, `ion-title` must have `size="large"`.
+在上面的例子中，请注意有两个 `ion-header` 元素。第一个 `ion-header` 代表可折叠标题头的“折叠”状态，第二个 `ion-header` 代表可折叠标题头的“展开”状态。注意，第二个 `ion-header` 必须设置 `collapse="condense"`，并且必须位于 `ion-content` 内部。此外，为了获得大标题样式，`ion-title` 必须设置 `size="large"`。
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -430,9 +430,9 @@ export class TitleExample {
       <ion-header translucent={true}>
         <ion-toolbar>
           <ion-buttons collapse={true} slot="end">
-            <ion-button>Click Me</ion-button>
+            <ion-button>点击我</ion-button>
           </ion-buttons>
-          <ion-title>Settings</ion-title>
+          <ion-title>设置</ion-title>
         </ion-toolbar>
       </ion-header>,
 
@@ -440,9 +440,9 @@ export class TitleExample {
         <ion-header collapse="condense">
           <ion-toolbar>
             <ion-buttons collapse={true} slot="end">
-              <ion-button>Click Me</ion-button>
+              <ion-button>点击我</ion-button>
             </ion-buttons>
-            <ion-title size="large">Settings</ion-title>
+            <ion-title size="large">设置</ion-title>
           </ion-toolbar>
           <ion-toolbar>
             <ion-searchbar></ion-searchbar>
@@ -455,23 +455,23 @@ export class TitleExample {
 }
 ```
 
-In this example, notice that we have added two sets of `ion-buttons` both with `collapse` set to `true`. When the secondary header collapses, the buttons in the secondary header will hide, and the buttons in the primary header will show. This is useful for ensuring that your header buttons always appear next to an `ion-title` element.
+在这个例子中，注意我们添加了两组 `ion-buttons`，并且都设置了 `collapse={true}`。当次级标题头折叠时，次级标题头中的按钮将隐藏，而主标题头中的按钮将显示。这对于确保您的标题按钮始终显示在 `ion-title` 元素旁边非常有用。
 
-`ion-buttons` elements that do not have `collapse` set will always be visible, regardless of collapsed state. When using the large title and `ion-buttons` elements inside of `ion-content`, the `ion-buttons` elements should always be placed in the `end` slot.
+没有设置 `collapse` 属性的 `ion-buttons` 元素将始终可见，无论折叠状态如何。当在 `ion-content` 内部使用大标题和 `ion-buttons` 元素时，`ion-buttons` 元素应始终放置在 `end` 插槽中。
 
-When styling the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+在设置大标题的样式时，您应该全局地针对大标题设置样式，而不是在特定页面或标签的上下文中设置，否则其样式在导航动画期间将不会应用。
 
-> When using collapsible large titles, it is required that `fullscreen` is set to `true` on `ion-content` and `translucent` is set to `true` on the main `ion-header`.
+> 使用可折叠大标题时，需要在 `ion-content` 上设置 `fullscreen={true}`，并在主 `ion-header` 上设置 `translucent={true}`。
 
-### Styling Collapsible Large Titles
+### 设置可折叠大标题的样式
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`.
+可折叠大标题应与内容的其余部分无缝衔接。这意味着包含可折叠大标题的 `ion-toolbar` 的背景颜色应始终与 `ion-content` 的背景颜色匹配。
 
-By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
+默认情况下，包含标准标题的 `ion-toolbar` 通过 `opacity: 0` 隐藏，并在您通过滚动折叠大标题时逐渐显示。因此，您在标准标题后面看到的背景颜色实际上是 `ion-content` 的背景颜色。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable on `ion-toolbar`. This will give the effect of the header changing color as you collapse the large title.
+您可以通过在 `ion-toolbar` 上设置 `--background` CSS 变量来更改包含标准标题的工具栏的背景颜色。这将产生标题头在您折叠大标题时改变颜色的效果。
 
-When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+在设置大标题的文本颜色时，您应该全局地针对大标题设置样式，而不是在特定页面或标签的上下文中设置，否则其样式在导航动画期间将不会应用。
 
 ```css
 ion-title.large-title {
@@ -486,22 +486,22 @@ ion-title.large-title {
 
 ```html
 <template>
-  <!-- Default title -->
+  <!-- 默认标题 -->
   <ion-toolbar>
-    <ion-title>Default Title</ion-title>
+    <ion-title>默认标题</ion-title>
   </ion-toolbar>
 
-  <!-- Small title -->
+  <!-- 小标题 -->
   <ion-toolbar>
-    <ion-title size="small">Small Title above a Default Title</ion-title>
+    <ion-title size="small">默认标题上方的小标题</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-title>Default Title</ion-title>
+    <ion-title>默认标题</ion-title>
   </ion-toolbar>
 
-  <!-- Large title -->
+  <!-- 大标题 -->
   <ion-toolbar>
-    <ion-title size="large">Large Title</ion-title>
+    <ion-title size="large">大标题</ion-title>
   </ion-toolbar>
 </template>
 
@@ -515,22 +515,22 @@ ion-title.large-title {
 </script>
 ```
 
-### Collapsible Large Titles
+### 可折叠大标题
 
-Ionic provides a way to create the collapsible titles that exist on stock iOS apps. Getting this setup requires configuring your `ion-title`, `ion-header`, and (optionally) `ion-buttons` elements.
+Ionic 提供了一种方法来创建 iOS 原生应用中存在的可折叠标题。要实现此效果，需要配置您的 `ion-title`、`ion-header` 以及（可选的）`ion-buttons` 元素。
 
 ```html
 <template>
   <ion-header :translucent="true">
     <ion-toolbar>
-      <ion-title>Settings</ion-title>
+      <ion-title>设置</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content :fullscreen="true">
     <ion-header collapse="condense">
       <ion-toolbar>
-        <ion-title size="large">Settings</ion-title>
+        <ion-title size="large">设置</ion-title>
       </ion-toolbar>
       <ion-toolbar>
         <ion-searchbar></ion-searchbar>
@@ -557,16 +557,16 @@ Ionic provides a way to create the collapsible titles that exist on stock iOS ap
 </script>
 ```
 
-In the example above, notice there are two `ion-header` elements. The first `ion-header` represents the "collapsed" state of your collapsible header, and the second `ion-header` represents the "expanded" state of your collapsible header. Notice that the second `ion-header` must have `collapse="condense"` and must exist within `ion-content`. Additionally, in order to get the large title styling, `ion-title` must have `size="large"`.
+在上面的例子中，请注意有两个 `ion-header` 元素。第一个 `ion-header` 代表可折叠标题头的“折叠”状态，第二个 `ion-header` 代表可折叠标题头的“展开”状态。注意，第二个 `ion-header` 必须设置 `collapse="condense"`，并且必须位于 `ion-content` 内部。此外，为了获得大标题样式，`ion-title` 必须设置 `size="large"`。
 
 ```html
 <template>
   <ion-header :translucent="true">
     <ion-toolbar>
       <ion-buttons :collapse="true" slot="end">
-        <ion-button>Click Me</ion-button>
+        <ion-button>点击我</ion-button>
       </ion-buttons>
-      <ion-title>Settings</ion-title>
+      <ion-title>设置</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -574,9 +574,9 @@ In the example above, notice there are two `ion-header` elements. The first `ion
     <ion-header collapse="condense">
       <ion-toolbar>
         <ion-buttons :collapse="true" slot="end">
-          <ion-button>Click Me</ion-button>
+          <ion-button>点击我</ion-button>
         </ion-buttons>
-        <ion-title size="large">Settings</ion-title>
+        <ion-title size="large">设置</ion-title>
       </ion-toolbar>
       <ion-toolbar>
         <ion-searchbar></ion-searchbar>
@@ -605,21 +605,21 @@ In the example above, notice there are two `ion-header` elements. The first `ion
 </script>
 ```
 
-In this example, notice that we have added two sets of `ion-buttons` both with `collapse` set to `true`. When the secondary header collapses, the buttons in the secondary header will hide, and the buttons in the primary header will show. This is useful for ensuring that your header buttons always appear next to an `ion-title` element.
+在这个例子中，注意我们添加了两组 `ion-buttons`，并且都设置了 `:collapse="true"`。当次级标题头折叠时，次级标题头中的按钮将隐藏，而主标题头中的按钮将显示。这对于确保您的标题按钮始终显示在 `ion-title` 元素旁边非常有用。
 
-`ion-buttons` elements that do not have `collapse` set will always be visible, regardless of collapsed state. When using the large title and `ion-buttons` elements inside of `ion-content`, the `ion-buttons` elements should always be placed in the `end` slot.
+没有设置 `collapse` 属性的 `ion-buttons` 元素将始终可见，无论折叠状态如何。当在 `ion-content` 内部使用大标题和 `ion-buttons` 元素时，`ion-buttons` 元素应始终放置在 `end` 插槽中。
 
-> When using collapsible large titles, it is required that `fullscreen` is set to `true` on `ion-content` and `translucent` is set to `true` on the main `ion-header`.
+> 使用可折叠大标题时，需要在 `ion-content` 上设置 `fullscreen="true"`，并在主 `ion-header` 上设置 `translucent="true"`。
 
-### Styling Collapsible Large Titles
+### 设置可折叠大标题的样式
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`.
+可折叠大标题应与内容的其余部分无缝衔接。这意味着包含可折叠大标题的 `ion-toolbar` 的背景颜色应始终与 `ion-content` 的背景颜色匹配。
 
-By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
+默认情况下，包含标准标题的 `ion-toolbar` 通过 `opacity: 0` 隐藏，并在您通过滚动折叠大标题时逐渐显示。因此，您在标准标题后面看到的背景颜色实际上是 `ion-content` 的背景颜色。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable on `ion-toolbar`. This will give the effect of the header changing color as you collapse the large title.
+您可以通过在 `ion-toolbar` 上设置 `--background` CSS 变量来更改包含标准标题的工具栏的背景颜色。这将产生标题头在您折叠大标题时改变颜色的效果。
 
-When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+在设置大标题的文本颜色时，您应该全局地针对大标题设置样式，而不是在特定页面或标签的上下文中设置，否则其样式在导航动画期间将不会应用。
 
 ```css
 ion-title.large-title {
@@ -632,26 +632,26 @@ ion-title.large-title {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

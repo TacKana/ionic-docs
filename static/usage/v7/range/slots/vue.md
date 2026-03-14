@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-range aria-label="Temperature">
+  <ion-range aria-label="温度">
     <ion-icon slot="start" :icon="snowOutline"></ion-icon>
     <ion-icon slot="end" :icon="sunnyOutline"></ion-icon>
   </ion-range>

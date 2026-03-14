@@ -1,62 +1,62 @@
 ---
-title: Testing
+title: 测试
 ---
 
 <head>
-  <title>Angular Unit and End-to-End Testing for Ionic App Components</title>
+  <title>Ionic应用组件的Angular单元测试与端到端测试</title>
   <meta
     name="description"
-    content="Angular apps created using Ionic are automatically set up for unit and end-to-end testing. Read to learn more about testing tools for Ionic components."
+    content="使用Ionic CLI创建的Angular应用会自动配置好单元测试和端到端测试环境。阅读本文以了解更多关于Ionic组件测试工具的信息。"
   />
 </head>
 
-When an `@ionic/angular` application is generated using the Ionic CLI, it is automatically set up for unit testing and end-to-end testing of the application. This is the same setup that is used by the Angular CLI. Refer to the <a href="https://angular.io/guide/testing" target="_blank">Angular Testing Guide</a> for detailed information on testing Angular applications.
+当使用 Ionic CLI 生成 `@ionic/angular` 应用时，该应用会自动配置好单元测试和端到端测试环境。其配置与 Angular CLI 使用的配置相同。有关测试 Angular 应用的详细信息，请参阅 <a href="https://angular.io/guide/testing" target="_blank">Angular 测试指南</a>。
 
-## Testing Principles
+## 测试原则
 
-When testing an application, it is best to keep in mind that testing can show if defects are present in a system. However, it is impossible to prove that any non-trivial system is completely free of defects. For this reason, the goal of testing is not to verify that the code is correct but to find problems within the code. This is a subtle but important distinction.
+测试应用时，最好牢记：测试可以揭示系统中是否存在缺陷。然而，要证明任何非平凡的系统完全不存在缺陷是不可能的。因此，测试的目的不是为了验证代码的正确性，而是为了发现代码中的问题。这是一个微妙但重要的区别。
 
-If we set out to prove that the code is correct, we are more likely to stick to the happy path through the code. If we set out to find problems, we are more likely to more fully exercise the code and find the bugs that are lurking there.
+如果我们旨在证明代码是正确的，我们更可能只走代码中的“快乐路径”。如果我们旨在发现问题，我们则更可能全面地执行代码，并找出其中潜藏的缺陷。
 
-It is also best to begin testing an application from the very start. This allows defects to be found early in the process when they are easier to fix. This also allows code to be refactored with confidence as new features are added to the system.
+同样，最好从一开始就对应用进行测试。这使得缺陷能够在开发早期被发现，此时修复缺陷也更为容易。同时，这也使得在系统添加新功能时，能够有信心地进行代码重构。
 
-## Unit Testing
+## 单元测试
 
-Unit tests exercise a single unit of code (component, page, service, pipe, etc) in isolation from the rest of the system. Isolation is achieved through the injection of mock objects in place of the code's dependencies. The mock objects allow the test to have fine-grained control of the outputs of the dependencies. The mocks also allow the test to determine which dependencies have been called and what has been passed to them.
+单元测试在隔离环境中执行代码的单一单元（组件、页面、服务、管道等）。隔离是通过注入模拟对象来替代代码的依赖项实现的。模拟对象允许测试对依赖项的输出进行精细控制。模拟对象还允许测试确定哪些依赖项已被调用以及向它们传递了什么。
 
-Well-written unit tests are structured such that the unit of code and the features it contains are described via `describe()` callbacks. The requirements for the unit of code and its features are tested via `it()` callbacks. When the descriptions for the `describe()` and `it()` callbacks are read, they make sense as a phrase. When the descriptions for nested `describe()`s and a final `it()` are concatenated together, they form a sentence that fully describes the test case.
+编写良好的单元测试结构清晰，通过 `describe()` 回调函数来描述代码单元及其包含的功能。代码单元及其功能的需求通过 `it()` 回调函数进行测试。当阅读 `describe()` 和 `it()` 回调函数的描述时，它们应该能组成一个有意义的短语。当嵌套的 `describe()` 和最终的 `it()` 的描述连接在一起时，它们就形成了一个完整描述测试用例的句子。
 
-Since unit tests exercise the code in isolation, they are fast, robust, and allow for a high degree of code coverage.
+由于单元测试在隔离环境中执行代码，因此它们快速、健壮，并且可以实现高度的代码覆盖率。
 
-### Using Mocks
+### 使用模拟对象
 
-Unit tests exercise a code module in isolation. To facilitate this, we recommend using Jasmine (https://jasmine.github.io/). Jasmine creates mock objects (which Jasmine calls "spies") to take the place of dependencies while testing. When a mock object is used, the test can control the values returned by calls to that dependency, making the current test independent of changes made to the dependency. This also makes the test setup easier, allowing the test to only be concerned with the code within the module under test.
+单元测试在隔离环境中测试代码模块。为此，我们建议使用 Jasmine (https://jasmine.github.io/)。Jasmine 创建模拟对象（Jasmine 称之为 "spies"）来在测试时替代依赖项。当使用模拟对象时，测试可以控制对该依赖项调用的返回值，使当前测试不受对依赖项所做的更改的影响。这也使得测试设置更容易，允许测试只关注被测模块内部的代码。
 
-Using mocks also allows the test to query the mock to determine if it was called and how it was called via the `toHaveBeenCalled*` set of functions. Tests should be as specific as possible with these functions, favoring calls to `toHaveBeenCalledTimes` over calls to `toHaveBeenCalled` when testing that a method has been called. That is `expect(mock.foo).toHaveBeenCalledTimes(1)` is better than `expect(mock.foo).toHaveBeenCalled()`. The opposite advice should be followed when testing that something has not been called (`expect(mock.foo).not.toHaveBeenCalled()`).
+使用模拟对象还允许测试查询模拟对象，通过 `toHaveBeenCalled*` 函数集来确定它是否被调用以及如何被调用。在使用这些函数时，测试应尽可能具体，在测试方法已被调用时，优先使用 `toHaveBeenCalledTimes` 而不是 `toHaveBeenCalled`。即 `expect(mock.foo).toHaveBeenCalledTimes(1)` 优于 `expect(mock.foo).toHaveBeenCalled()`。在测试某物未被调用时，则应遵循相反的建议（`expect(mock.foo).not.toHaveBeenCalled()`）。
 
-There are two common ways to create mock objects in Jasmine. Mock objects can be constructed from scratch using `jasmine.createSpy` and `jasmine.createSpyObj` or spies can be installed onto existing objects using `spyOn()` and `spyOnProperty()`.
+在 Jasmine 中有两种常见的方法来创建模拟对象。可以从头开始使用 `jasmine.createSpy` 和 `jasmine.createSpyObj` 构建模拟对象，也可以使用 `spyOn()` 和 `spyOnProperty()` 在现有对象上安装 spies。
 
-#### Using `jasmine.createSpy` and `jasmine.createSpyObj`
+#### 使用 `jasmine.createSpy` 和 `jasmine.createSpyObj`
 
-`jasmine.createSpyObj` creates a full mock object from scratch with a set of mock methods defined on creation. This is useful in that it is very simple. Nothing needs to be constructed or injected into the test. The disadvantage of using this function is that it allows the creation of objects that may not match the real objects.
+`jasmine.createSpyObj` 从头开始创建一个完整的模拟对象，并在创建时定义一组模拟方法。这样做的好处是非常简单。无需在测试中构建或注入任何东西。使用此函数的缺点是它允许创建可能与真实对象不匹配的对象。
 
-`jasmine.createSpy` is similar but it creates a stand-alone mock function.
+`jasmine.createSpy` 类似，但它创建一个独立的模拟函数。
 
-#### Using `spyOn()` and `spyOnProperty()`
+#### 使用 `spyOn()` 和 `spyOnProperty()`
 
-`spyOn()` installs the spy on an existing object. The advantage of using this technique is that if an attempt is made to spy on a method that does not exist on the object, an exception is raised. This prevents the test from mocking methods that do not exist. The disadvantage is that the test needs a fully formed object to begin with, which may increase the amount of test setup required.
+`spyOn()` 将 spy 安装到现有对象上。使用此技术的优点是，如果试图监视对象上不存在的方法，则会引发异常。这可以防止测试模拟不存在的方法。缺点是测试需要从一个完全形成的对象开始，这可能会增加所需的测试设置量。
 
-`spyOnProperty()` is similar with the difference being that it spies on a property and not a method.
+`spyOnProperty()` 类似，区别在于它监视的是属性而非方法。
 
-### General Testing Structure
+### 通用测试结构
 
-Unit tests are contained in `spec` files with one `spec` file per entity (component, page, service, pipe, etc.). The `spec` files live side-by-side with and are named after the source that they are testing. For example, if the project has a service called WeatherService, the code for it is in a file named `weather.service.ts` with the tests in a file named `weather.service.spec.ts`. Both of those files are in the same folder.
+单元测试包含在 `spec` 文件中，每个实体（组件、页面、服务、管道等）对应一个 `spec` 文件。`spec` 文件与其测试的源代码位于同一目录下，并以源代码的名称命名。例如，如果项目有一个名为 WeatherService 的服务，其代码位于 `weather.service.ts` 文件中，而测试代码位于 `weather.service.spec.ts` 文件中。这两个文件位于同一个文件夹中。
 
-The `spec` files themselves contain a single `describe` call that defines that overall test. Nested within it are other `describe` calls that define major areas of functionality. Each `describe` call can contain setup and teardown code (generally handled via `beforeEach` and `afterEach` calls), more `describe` calls forming a hierarchical breakdown of functionality, and `it` calls which define individual test cases.
+`spec` 文件本身包含一个 `describe` 调用来定义整体测试。在其内部嵌套了其他 `describe` 调用来定义主要的功能区域。每个 `describe` 调用可以包含设置和清理代码（通常通过 `beforeEach` 和 `afterEach` 调用处理）、更多的 `describe` 调用以形成功能的层次分解，以及定义各个测试用例的 `it` 调用。
 
-The `describe` and `it` calls also contain a descriptive text label. In well-formed tests, the `describe` and `it` calls combine with their labels to perform proper phrases and the full label for each test case, formed by combining the `describe` and `it` labels, creates a full sentence.
+`describe` 和 `it` 调用还包含一个描述性的文本标签。在结构良好的测试中，`describe` 和 `it` 调用与其标签组合起来形成恰当的短语，而每个测试用例的完整标签（由 `describe` 和 `it` 标签组合而成）则形成一个完整的句子。
 
-For example:
+例如：
 
 ```tsx
 describe('Calculation', () => {
@@ -72,13 +72,13 @@ describe('Calculation', () => {
 });
 ```
 
-The outer `describe` call states that the `Calculation` service is being tested, the inner `describe` calls state exactly what functionality is being tested, and the `it` calls state what the test cases are. When run the full label for each test case is a sentence that makes sense (Calculation divide cowardly refuses to divide by zero).
+外层的 `describe` 调用表明正在测试 `Calculation` 服务，内层的 `describe` 调用确切地说明了正在测试什么功能，而 `it` 调用则说明了测试用例是什么。运行时，每个测试用例的完整标签是一个有意义的句子（Calculation divide cowardly refuses to divide by zero）。
 
-### Pages and Components
+### 页面和组件
 
-Pages are just Angular components. Thus, pages and components are both tested using <a href="https://angular.io/guide/testing#component-test-basics">Angular's Component Testing</a> guidelines.
+页面就是 Angular 组件。因此，页面和组件都使用 <a href="https://angular.io/guide/testing#component-test-basics">Angular 的组件测试</a>指南进行测试。
 
-Since pages and components contain both TypeScript code and HTML template markup it is possible to perform both component class testing and component DOM testing. When a page is created, the template test that is generated looks like this:
+由于页面和组件同时包含 TypeScript 代码和 HTML 模板标记，因此可以执行组件类测试和组件 DOM 测试。创建页面时，生成的模板测试如下所示：
 
 ```tsx
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -107,17 +107,17 @@ describe('TabsPage', () => {
 });
 ```
 
-When doing component class testing, the component object is accessed using the component object defined via `component = fixture.componentInstance;`. This is an instance of the component class. When doing DOM testing, the `fixture.nativeElement` property is used. This is the actual `HTMLElement` for the component, which allows the test to use standard HTML API methods such as `HTMLElement.querySelector` in order to examine the DOM.
+在进行组件类测试时，通过 `component = fixture.componentInstance;` 定义的组件对象来访问组件。这是组件类的一个实例。在进行 DOM 测试时，使用 `fixture.nativeElement` 属性。这是组件的实际 `HTMLElement`，允许测试使用标准的 HTML API 方法，如 `HTMLElement.querySelector` 来检查 DOM。
 
-## Services
+## 服务
 
-Services often fall into one of two broad categories: utility services that perform calculations and other operations, and data services that perform primarily HTTP operations and data manipulation.
+服务通常可分为两大类：执行计算和其他操作的实用服务，以及主要执行 HTTP 操作和数据操作的数据服务。
 
-### Basic Service Testing
+### 基础服务测试
 
-The suggested way to test most services is to instantiate the service and manually inject mocks for any dependency the service has. This way, the code can be tested in isolation.
+测试大多数服务的建议方法是实例化服务，并手动为服务所依赖的任何依赖项注入模拟对象。这样，代码就可以在隔离环境中进行测试。
 
-Let's say that there is a service with a method that takes an array of timecards and calculates net pay. Let's also assume that the tax calculations are handled via another service that the current service depends on. This payroll service could be tested as such:
+假设有一个服务，其方法接受一个工时记录数组并计算净工资。再假设税务计算由当前服务所依赖的另一个服务处理。这个工资单服务可以这样测试：
 
 ```tsx
 import { PayrollService } from './payroll.service';
@@ -142,9 +142,9 @@ describe('PayrollService', () => {
 });
 ```
 
-This allows the test to control the values returned by the various tax calculations via mock setup such as `taxServiceSpy.federalIncomeTax.and.returnValue(73.24)`. This allows the "net pay" tests to be independent of the tax calculation logic. When the tax codes change, only the tax service related code and tests need to change. The tests for the net pay can continue to operate as they are since these tests do not care how the tax is calculated, just that the value is applied properly.
+这允许测试通过模拟设置（例如 `taxServiceSpy.federalIncomeTax.and.returnValue(73.24)`）来控制各种税务计算返回的值。这使得“净工资”测试独立于税务计算逻辑。当税法发生变化时，只需要更改与税务服务相关的代码和测试。净工资的测试可以继续按原样运行，因为这些测试不关心税款是如何计算的，只关心数值是否被正确应用。
 
-The scaffolding that is used when a service is generated via `ionic g service name` uses Angular's testing utilities and sets up a testing module. Doing so is not strictly necessary. That code may be left in, however, allowing the service to be built manually or injected as such:
+通过 `ionic g service name` 生成服务时使用的脚手架会使用 Angular 的测试工具并设置一个测试模块。这样做并非严格必要。然而，可以保留这些代码，以便手动构建服务或像这样注入服务：
 
 ```tsx
 import { TestBed, inject } from '@angular/core/testing';
@@ -178,11 +178,11 @@ describe('PayrolService', () => {
 });
 ```
 
-#### Testing HTTP Data Services
+#### 测试 HTTP 数据服务
 
-Most services that perform HTTP operations will use Angular's HttpClient service in order to perform those operations. For such tests, it is suggested to use Angular's `HttpClientTestingModule`. For detailed documentation of this module, please see Angular's <a href="https://angular.io/guide/http#testing-http-requests" target="_blank">Angular's Testing HTTP requests</a> guide.
+大多数执行 HTTP 操作的服务会使用 Angular 的 HttpClient 服务来执行这些操作。对于此类测试，建议使用 Angular 的 `HttpClientTestingModule`。有关此模块的详细文档，请参阅 Angular 的 <a href="https://angular.io/guide/http#testing-http-requests" target="_blank">测试 HTTP 请求</a>指南。
 
-This basic setup for such a test looks like this:
+此类测试的基本设置如下所示：
 
 ```tsx
 import { HttpBackend, HttpClient } from '@angular/common/http';
@@ -229,11 +229,11 @@ describe('IssTrackingDataService', () => {
 });
 ```
 
-### Pipes
+### 管道
 
-A pipe is like a service with a specifically defined interface. It is a class that contains one public method, `transform`, which manipulates the input value (and other optional arguments) in order to create the output that is rendered on the page. To test a pipe: instantiate the pipe, call the transform method, and verify the results.
+管道类似于具有特定接口的服务。它是一个包含一个公共方法 `transform` 的类，该方法处理输入值（以及其他可选参数），以创建在页面上渲染的输出。测试管道：实例化管道，调用 transform 方法，并验证结果。
 
-As a simple example, let's look at a pipe that takes a `Person` object and formats the name. For the sake of simplicity, let's say a `Person` consists of an `id`, `firstName`, `lastName`, and `middleInitial`. The requirements for the pipe are to print the name as "Last, First M." handling situations where a first name, last name, or middle initial do not exist. Such a test might look like this:
+举个简单的例子，我们来看一个接受 `Person` 对象并格式化名称的管道。为简单起见，假设一个 `Person` 包含 `id`、`firstName`、`lastName` 和 `middleInitial`。管道的要求是将姓名打印为"Last, First M."，并处理名字、姓氏或中间名缩写不存在的情况。这样的测试可能如下所示：
 
 ```tsx
 import { NamePipe } from './name.pipe';
@@ -279,34 +279,34 @@ describe('NamePipe', () => {
 });
 ```
 
-It is also beneficial to exercise the pipe via DOM testing in the components and pages that utilize the pipe.
+在使用了该管道的组件和页面中通过 DOM 测试来检验管道也是有益的。
 
-## End-to-end Testing
+## 端到端测试
 
-End-to-end testing is used to verify that an application works as a whole and often includes a connection to live data. Whereas unit tests focus on code units in isolation and thus allow for low-level testing of the application logic, end-to-end tests focus on various user stories or usage scenarios, providing high-level testing of the overall flow of data through the application. Whereas unit tests try to uncover problems with an application's logic, end-to-end tests try to uncover problems that occur when those individual units are used together. End-to-end tests uncover problems with the overall architecture of the application.
+端到端测试用于验证应用程序作为一个整体是否工作，通常包含与实时数据的连接。单元测试侧重于隔离的代码单元，从而允许对应用逻辑进行低级别测试，而端到端测试则侧重于各种用户故事或使用场景，提供对数据在整个应用中流动流程的高级测试。单元测试试图发现应用逻辑中的问题，而端到端测试试图发现这些独立单元一起使用时出现的问题。端到端测试能够揭示应用整体架构中的问题。
 
-Since end-to-end tests exercise user stories and cover the application as a whole rather than individual code modules, end-to-end tests exist in their own application in the project apart from the code for the main application itself. Most end-to-end tests operate by automating common user interactions with the application and examining the DOM to determine the results of those interactions.
+由于端到端测试执行用户故事并覆盖整个应用而非单个代码模块，因此端到端测试存在于项目中独立于主应用代码的自己的应用程序中。大多数端到端测试通过自动化常见的用户与应用交互、检查 DOM 来确定这些交互的结果来进行操作。
 
-### Test Structure
+### 测试结构
 
-When an `@ionic/angular` application is generated, a default end-to-end test application is generated in the `e2e` folder. This application uses <a href="">Protractor</a> to control the browser and <a href="">Jasmine</a> to structure and execute the tests. The application initially consists of four files:
+当生成一个 `@ionic/angular` 应用时，会在 `e2e` 文件夹中生成一个默认的端到端测试应用。此应用使用 <a href="">Protractor</a> 来控制浏览器，并使用 <a href="">Jasmine</a> 来构建和执行测试。该应用最初由四个文件组成：
 
-- `protractor.conf.js` - the Protractor configuration file
-- `tsconfig.e2e.json` - specific TypeScript configuration for the testing application
-- `src/app.po.ts` - a page object containing methods that navigate the application, query elements in the DOM, and manipulate elements on the page
-- `src/app.e2e-spec.ts` - a testing script
+- `protractor.conf.js` - Protractor 配置文件
+- `tsconfig.e2e.json` - 针对测试应用的特定 TypeScript 配置
+- `src/app.po.ts` - 一个页面对象，包含导航应用、查询 DOM 元素以及操作页面上元素的方法
+- `src/app.e2e-spec.ts` - 一个测试脚本
 
-#### Page Objects
+#### 页面对象
 
-End-to-end tests operate by automating common user interactions with the application, waiting for the application to respond, and examining the DOM to determine the results of the interaction. This involves a lot of DOM manipulation and examination. If this were all done manually, the tests would be very brittle and difficult to read and maintain.
+端到端测试通过自动化常见的用户与应用交互、等待应用响应以及检查 DOM 以确定交互结果来操作。这涉及到大量的 DOM 操作和检查。如果所有这些都手动完成，测试将非常脆弱且难以阅读和维护。
 
-Page objects encapsulate the HTML for a single page in a TypeScript class, providing an API that the test scripts use to interact with the application. The encapsulation of the DOM manipulation logic in page objects makes the tests more readable and far easier to reason about, lowering the maintenance costs of the test. Creating well-crafted page objects is the key to creating high quality and maintainable end-to-end tests.
+页面对象将单个页面的 HTML 封装在一个 TypeScript 类中，为测试脚本提供了一个与应用交互的 API。将 DOM 操作逻辑封装在页面对象中使得测试更具可读性，更容易理解，从而降低了测试的维护成本。创建精心设计的页面对象是创建高质量和可维护的端到端测试的关键。
 
-##### Base Page Object
+##### 基础页面对象
 
-A lot of tests rely on actions such as waiting for a page to be visible, entering text into an input, and clicking a button. The methods used to do this remain consistent with only the CSS selectors used to get the appropriate DOM element changing. Therefore it makes sense to abstract this logic into a base class that can be used by the other page objects.
+许多测试依赖于诸如等待页面可见、在输入框中输入文本以及点击按钮等操作。执行这些操作的方法保持一致，只有用于获取相应 DOM 元素的 CSS 选择器会发生变化。因此，将此逻辑抽象到一个可以被其他页面对象使用的基础类中是有意义的。
 
-Here is an example that implements a few basic methods that all page objects will need to support.
+以下是一个示例，实现了一些所有页面对象都需要支持的基本方法。
 
 ```tsx
 import { browser, by, element, ExpectedConditions } from 'protractor';
@@ -368,11 +368,11 @@ export class PageObjectBase {
 }
 ```
 
-##### Per-Page Abstractions
+##### 每页抽象
 
-Each page in the application will have its own page object class that abstracts the elements on that page. If a base page object class is used, creating the page object involves mostly creating custom methods for elements that are specific to that page. Often, these custom elements take advantage of methods in the base class in order to perform the work that is required.
+应用中的每个页面都会有自己的页面对象类，用于抽象该页面上的元素。如果使用了基础页面对象类，创建页面对象主要涉及为该页面特有的元素创建自定义方法。通常，这些自定义元素会利用基类中的方法来执行所需的工作。
 
-Here is an example page object for a simple but typical login page. Notice that many of the methods, such as `enterEMail()`, call methods in the base class that perform the bulk of the work.
+以下是一个简单但典型的登录页面的页面对象示例。注意，许多方法（如 `enterEMail()`）都调用了基类中执行大部分工作的方法。
 
 ```tsx
 import { browser, by, element, ExpectedConditions } from 'protractor';
@@ -405,13 +405,13 @@ export class LoginPage extends PageObjectBase {
 }
 ```
 
-#### Testing Scripts
+#### 测试脚本
 
-Similar to unit tests, end-to-end test scripts consist of nested `describe()` and `it()` functions. In the case of end-to-end tests, the `describe()` functions generally denote specific scenarios with the `it()` functions denoting specific behaviors that should be exhibited by the application as actions are performed within that scenario.
+与单元测试类似，端到端测试脚本由嵌套的 `describe()` 和 `it()` 函数组成。在端到端测试中，`describe()` 函数通常表示特定的场景，而 `it()` 函数表示在该场景中执行操作时应用应展现的特定行为。
 
-Also similar to unit tests, the labels used in the `describe()` and `it()` functions should make sense both with the "describe" or "it" and when concatenated together to form the complete test case.
+与单元测试类似，`describe()` 和 `it()` 函数中使用的标签应分别与 "describe" 或 "it" 结合后有明确意义，并且当连接在一起形成完整测试用例时也应如此。
 
-Here is a sample end-to-end test script that exercises some typical login scenarios.
+以下是一个示例端到端测试脚本，它执行了一些典型的登录场景。
 
 ```tsx
 import { AppPage } from '../page-objects/pages/app.po';
@@ -499,17 +499,17 @@ describe('Login', () => {
 });
 ```
 
-### Configuration
+### 配置
 
-The default configuration uses the same `environment.ts` file that is used for development. In order to provide better control over the data used by the end-to-end tests, it is often useful to create a specific environment for testing and use that environment for the tests. This section shows one possible way to create this configuration.
+默认配置使用与开发相同的 `environment.ts` 文件。为了更好地控制端到端测试使用的数据，通常可以为测试创建一个特定的环境并在测试中使用该环境。本节展示了创建此配置的一种可能方法。
 
-#### Testing Environment
+#### 测试环境
 
-Setting up a testing environment involves creating a new environment file that uses a dedicated testing backend, updating the `angular.json` file to use that environment, and modifying the `e2e` script in the `package.json` to specify the `test` environment.
+设置测试环境包括创建一个新的环境文件，该文件使用专用的测试后端，更新 `angular.json` 文件以使用该环境，并修改 `package.json` 中的 `e2e` 脚本以指定 `test` 环境。
 
-##### Create the `environment.e2e.ts` File
+##### 创建 `environment.e2e.ts` 文件
 
-The Angular `environment.ts` and `environment.prod.ts` files are often used to store information such as the base URL for the application's backend data services. Create an `environment.e2e.ts` that provides the same information, only connecting to backend services that are dedicated to testing rather than the development or production backend services. Here is an example:
+Angular 的 `environment.ts` 和 `environment.prod.ts` 文件通常用于存储信息，例如应用后端数据服务的基础 URL。创建一个 `environment.e2e.ts` 文件，提供相同的信息，但连接到专用于测试的后端服务，而不是开发或生产后端服务。以下是一个示例：
 
 ```tsx
 export const environment = {
@@ -519,11 +519,11 @@ export const environment = {
 };
 ```
 
-##### Modify the `angular.json` File
+##### 修改 `angular.json` 文件
 
-The `angular.json` file needs to be modified to use this file. This is a layered process. Follow the XPaths listed below to add the configuration that is required.
+需要修改 `angular.json` 文件以使用此文件。这是一个分层过程。按照下面列出的 XPath 添加所需的配置。
 
-Add a configuration at `/projects/app/architect/build/configurations` called `test` that does the file replacement:
+在 `/projects/app/architect/build/configurations` 下添加一个名为 `test` 的配置，用于执行文件替换：
 
 ```json
 "test": {
@@ -536,7 +536,7 @@ Add a configuration at `/projects/app/architect/build/configurations` called `te
 }
 ```
 
-Add a configuration at `/projects/app/architect/serve/configurations` called `test` that points the browser target at the `test` build configuration that was defined above.
+在 `/projects/app/architect/serve/configurations` 下添加一个名为 `test` 的配置，将其 browser target 指向上面定义的 `test` 构建配置。
 
 ```json
 "test": {
@@ -544,7 +544,7 @@ Add a configuration at `/projects/app/architect/serve/configurations` called `te
 }
 ```
 
-Add a configuration at `/projects/app-e2e/architect/e2e/configurations` called `test` that does points the dev server target at the `test` serve configuration defined above.
+在 `/projects/app-e2e/architect/e2e/configurations` 下添加一个名为 `test` 的配置，将其 dev server target 指向上面定义的 `test` serve 配置。
 
 ```json
 "test": {
@@ -552,9 +552,9 @@ Add a configuration at `/projects/app-e2e/architect/e2e/configurations` called `
 }
 ```
 
-##### Modify the `package.json` File
+##### 修改 `package.json` 文件
 
-Modify the `package.json` file so that `npm run e2e` uses the `test` configuration.
+修改 `package.json` 文件，以便 `npm run e2e` 使用 `test` 配置。
 
 ```json
 "scripts": {
@@ -568,14 +568,14 @@ Modify the `package.json` file so that `npm run e2e` uses the `test` configurati
 },
 ```
 
-#### Test Cleanup
+#### 测试清理
 
-If the end-to-end tests modify data in any way it is helpful to reset the data to a known state once the test completes. One way to do that is to:
+如果端到端测试以任何方式修改了数据，那么在测试完成后将数据重置为已知状态会很有帮助。一种方法是：
 
-1. Create an endpoint that performs the cleanup.
-1. Add a `onCleanUp()` function to the `config` object exported by the `protractor.conf.js` file.
+1. 创建一个执行清理的端点。
+2. 在 `protractor.conf.js` 文件导出的 `config` 对象中添加一个 `onCleanUp()` 函数。
 
-Here is an example:
+以下是一个示例：
 
 ```javascript
 onCleanUp() {

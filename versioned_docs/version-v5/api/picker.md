@@ -16,17 +16,17 @@ import Slots from '@ionic-internal/component-api/v5/picker/slots.md';
 
 # ion-picker
 
-A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.
+选择器（Picker）是一种对话框，显示一排按钮和下方的若干列。它出现在应用程序内容的上方，且位于视口（viewport）的底部。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -34,10 +34,10 @@ A Picker is a dialog that displays a row of buttons and columns underneath. It a
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

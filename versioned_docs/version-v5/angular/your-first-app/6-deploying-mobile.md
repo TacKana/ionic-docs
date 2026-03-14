@@ -1,107 +1,107 @@
 ---
-sidebar_label: Deploying Mobile
+sidebar_label: 移动端部署
 ---
 
-# Deploying to iOS and Android
+# 部署到 iOS 和 Android
 
-Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device! Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-ng).
+由于我们在项目创建之初就添加了 Capacitor，现在只需几个步骤就能将照片库应用部署到设备上！你可以在这里找到此应用的完整源代码 [here](https://github.com/ionic-team/photo-gallery-capacitor-ng)。
 
-## Capacitor Setup
+## Capacitor 配置
 
-Capacitor is Ionic’s official app runtime that makes it easy to deploy web apps to native platforms like iOS, Android, and more. If you’ve used Cordova in the past, consider reading more about the differences [here](https://capacitorjs.com/docs/cordova#differences-between-capacitor-and-cordova).
+Capacitor 是 Ionic 官方的应用运行时环境，能够轻松将网页应用部署到 iOS、Android 等原生平台。如果你过去使用过 Cordova，建议阅读 [这里](https://capacitorjs.com/docs/cordova#differences-between-capacitor-and-cordova) 了解更多差异说明。
 
-If you’re still running `ionic serve` in the terminal, cancel it. Complete a fresh build of your Ionic project, fixing any errors that it reports:
+如果终端仍在运行 `ionic serve`，请先停止。然后重新构建 Ionic 项目，修复所有报告的错误：
 
 ```shell
 ionic build
 ```
 
-Next, create both the iOS and Android projects:
+接下来，同时创建 iOS 和 Android 项目：
 
 ```shell
 $ ionic cap add ios
 $ ionic cap add android
 ```
 
-Both android and ios folders at the root of the project are created. These are entirely standalone native projects that should be considered part of your Ionic app (i.e., check them into source control, edit them using their native tooling, etc.).
+项目根目录将生成 android 和 ios 文件夹。这些都是完全独立的原生项目，应视为 Ionic 应用的一部分（即需要纳入版本控制系统，使用原生开发工具进行编辑等）。
 
-Every time you perform a build (e.g. `ionic build`) that updates your web directory (default: `www`), you'll need to copy those changes into your native projects:
+每次执行构建命令（如 `ionic build`）并更新 web 目录（默认：`www`）后，都需要将这些变更复制到原生项目中：
 
 ```shell
 ionic cap copy
 ```
 
-Note: After making updates to the native portion of the code (such as adding a new plugin), use the `sync` command:
+注意：修改代码的原生部分（如添加新插件）后，请使用 `sync` 命令：
 
 ```shell
 ionic cap sync
 ```
 
-## iOS Deployment
+## iOS 部署
 
 :::note
-To build an iOS app, you’ll need a Mac computer.
+构建 iOS 应用需要 macOS 系统。
 :::
 
-Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac IDE), with dependencies managed by [CocoaPods](https://cocoapods.org/). Before running this app on an iOS device, there's a couple of steps to complete.
+Capacitor iOS 应用通过 Xcode（苹果的 iOS/macOS 集成开发环境）进行配置管理，依赖项由 [CocoaPods](https://cocoapods.org/) 管理。在 iOS 设备上运行应用前，需要完成几个步骤。
 
-First, run the Capacitor `open` command, which opens the native iOS project in Xcode:
+首先运行 Capacitor 的 `open` 命令，在 Xcode 中打开原生 iOS 项目：
 
 ```shell
 ionic cap open ios
 ```
 
-In order for some native plugins to work, user permissions must be configured. In our photo gallery app, this includes the Camera plugin: iOS displays a modal dialog automatically after the first time that `Camera.getPhoto()` is called, prompting the user to allow the app to use the Camera. The permission that drives this is labeled “Privacy - Camera Usage.” To set it, the `Info.plist` file must be modified ([more details here](https://capacitorjs.com/docs/ios/configuration)). To access it, click "Info," then expand "Custom iOS Target Properties."
+某些原生插件需要配置用户权限才能正常工作。在我们的照片库应用中，这包括 Camera 插件：当首次调用 `Camera.getPhoto()` 时，iOS 会自动显示模态对话框，提示用户允许应用使用相机。对应的权限标签是“隐私 - 相机使用说明”。要设置此权限，需要修改 `Info.plist` 文件（[详情参见](https://capacitorjs.com/docs/ios/configuration)）。点击“Info”，然后展开“Custom iOS Target Properties”进行访问。
 
-![The Info.plist file in Xcode showing the NSCameraUsageDescription key added for camera access.](/img/guides/first-app-cap-ng/xcode-info-plist.png 'Xcode Info.plist Configuration')
+![Xcode 中的 Info.plist 文件，显示为相机访问添加的 NSCameraUsageDescription 键。](/img/guides/first-app-cap-ng/xcode-info-plist.png 'Xcode Info.plist 配置')
 
-Each setting in `Info.plist` has a low-level parameter name and a high-level name. By default, the property list editor shows the high-level names, but it's often useful to switch to showing the raw, low-level names. To do this, right-click anywhere in the property list editor and toggle "Raw Keys/Values."
+`Info.plist` 中的每个设置都包含底层参数名和高级名称。默认情况下属性列表编辑器显示高级名称，但切换到显示原始底层名称通常更有用。右键单击属性列表编辑器任意位置，切换“Raw Keys/Values”即可。
 
-Add the `NSCameraUsageDescription` Key and set the Value to something that describes why the app needs to use the camera, such as "To Take Photos." The Value field is displayed to the app user when the permission prompt opens.
+添加 `NSCameraUsageDescription` 键，并将值设置为描述应用需要使用相机的原因，例如“用于拍摄照片”。当权限提示出现时，该值字段将显示给应用用户。
 
-Follow the same process to add the other two Keys required of the Camera plugin: `NSPhotoLibraryAddUsageDescription` and `NSPhotoLibraryUsageDescription`.
+按照相同流程添加 Camera 插件所需的另外两个键：`NSPhotoLibraryAddUsageDescription` 和 `NSPhotoLibraryUsageDescription`。
 
-Next, click on `App` in the Project Navigator on the left-hand side, then within the `Signing & Capabilities` section, select your Development Team.
+接下来单击左侧项目导航器中的 `App`，在 `Signing & Capabilities` 部分选择你的开发团队。
 
-![The Xcode interface displaying the Signing and Capabilities tab for an iOS app project.](/img/guides/first-app-cap-ng/xcode-signing.png 'Xcode Signing & Capabilities')
+![Xcode 界面显示 iOS 应用项目的签名与能力设置选项卡。](/img/guides/first-app-cap-ng/xcode-signing.png 'Xcode 签名与能力设置')
 
-With permissions in place and Development Team selected, we are ready to try out the app on a real device! Connect an iOS device to your Mac computer, select it (`App -> Matthew’s iPhone` for me) then click the "Build" button to build, install, and launch the app on your device:
+配置好权限并选择开发团队后，就可以在真机上测试应用了！将 iOS 设备连接到 Mac 电脑，选择该设备（例如我的是 `App -> Matthew’s iPhone`），然后单击“Build”按钮在设备上构建、安装并启动应用：
 
-![Xcode toolbar highlighting the Build button used to compile and run an iOS app.](/img/guides/first-app-cap-ng/xcode-build-button.png 'Xcode Build Button')
+![Xcode 工具栏高亮显示用于编译和运行 iOS 应用的构建按钮。](/img/guides/first-app-cap-ng/xcode-build-button.png 'Xcode 构建按钮')
 
-Upon tapping the Camera button on the Photo Gallery tab, the permission prompt will display. Tap OK, then take a picture with the Camera. Afterward, the photo shows in the app!
+点击照片库标签页的相机按钮时，权限提示将显示。点击确定后即可使用相机拍摄照片，随后照片会显示在应用中！
 
-![Two iPhones side by side, one showing the camera permission prompt and the other displaying a photo taken with the app.](/img/guides/first-app-cap-ng/ios-permissions-photo.png 'iOS Camera Permission Prompt and Photo Result')
+![并排展示的两部 iPhone，一部显示相机权限提示，另一部显示应用拍摄的照片。](/img/guides/first-app-cap-ng/ios-permissions-photo.png 'iOS 相机权限提示与照片效果')
 
-## Android Deployment
+## Android 部署
 
-Capacitor Android apps are configured and managed through Android Studio. Before running this app on an Android device, there's a couple of steps to complete.
+Capacitor Android 应用通过 Android Studio 进行配置管理。在 Android 设备上运行应用前，需要完成几个步骤。
 
-First, run the Capacitor `open` command, which opens the native Android project in Android Studio:
+首先运行 Capacitor 的 `open` 命令，在 Android Studio 中打开原生 Android 项目：
 
 ```shell
 ionic cap open android
 ```
 
-Similar to iOS, we must enable the correct permissions to use the Camera. Configure these in the `AndroidManifest.xml` file. Android Studio will likely open this file automatically, but in case it doesn't, locate it under `android/app/src/main/`.
+与 iOS 类似，我们必须启用正确的权限才能使用相机。在 `AndroidManifest.xml` 文件中配置这些权限。Android Studio 可能会自动打开该文件，若未自动打开，可在 `android/app/src/main/` 目录下找到它。
 
-![Android Studio editor showing the AndroidManifest.xml file with camera permissions.](/img/guides/first-app-cap-ng/android-manifest.png 'Android Manifest Permissions')
+![Android Studio 编辑器显示包含相机权限的 AndroidManifest.xml 文件。](/img/guides/first-app-cap-ng/android-manifest.png 'Android 清单权限配置')
 
-Scroll to the `Permissions` section and ensure these entries are included:
+滚动到 `Permissions` 部分，确保包含以下条目：
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-Save the file. With permissions in place, we are ready to try out the app on a real device! Connect an Android device to your computer. Within Android Studio, click the "Run" button, select the attached Android device, then click OK to build, install, and launch the app on your device.
+保存文件。配置好权限后，就可以在真机上测试应用了！将 Android 设备连接到电脑。在 Android Studio 中点击“Run”按钮，选择已连接的 Android 设备，然后单击确定在设备上构建、安装并启动应用。
 
-![The Android Studio interface with arrows pointing to the Run button and the connected device.](/img/guides/first-app-cap-ng/android-device.png 'Android Studio Run Configuration')
+![Android Studio 界面，箭头指向运行按钮和已连接设备。](/img/guides/first-app-cap-ng/android-device.png 'Android Studio 运行配置')
 
-Once again, upon tapping the Camera button on the Photo Gallery tab, the permission prompt should be displayed. Tap OK, then take a picture with the Camera. Afterward, the photo should appear in the app.
+再次点击照片库标签页的相机按钮时，应显示权限提示。点击确定后即可使用相机拍摄照片，随后照片应出现在应用中。
 
-![Two Android phones side by side, one showing the camera permission prompt and the other displaying a photo taken with the app.](/img/guides/first-app-cap-ng/android-permissions-photo.png 'Android Permissions and Photo Capture')
+![并排展示的两部 Android 手机，一部显示相机权限提示，另一部显示应用拍摄的照片。](/img/guides/first-app-cap-ng/android-permissions-photo.png 'Android 权限配置与照片拍摄')
 
-Our Photo Gallery app has just been deployed to Android and iOS devices. 🎉
+我们的照片库应用已成功部署到 Android 和 iOS 设备。🎉
 
-In the final portion of this tutorial, we’ll use the Ionic CLI’s Live Reload functionality to quickly implement photo deletion - thus completing our Photo Gallery feature.
+在本教程的最后部分，我们将使用 Ionic CLI 的实时重载功能快速实现照片删除功能——从而完成照片库特性的全部开发。

@@ -6,13 +6,13 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonToggle>Receive Push Notifications</IonToggle>
+        <IonToggle>接收推送通知</IonToggle>
       </IonItem>
       <IonItem>
-        <IonToggle>Receive Emails</IonToggle>
+        <IonToggle>接收邮件</IonToggle>
       </IonItem>
       <IonItem>
-        <IonToggle>Receive Text Messages</IonToggle>
+        <IonToggle>接收短信</IonToggle>
       </IonItem>
     </IonList>
   );

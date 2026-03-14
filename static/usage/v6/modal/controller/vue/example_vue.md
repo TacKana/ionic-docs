@@ -3,11 +3,11 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Controller Modal</ion-title>
+        <ion-title>控制器模态框</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-button expand="block" @click="openModal">Open Modal</ion-button>
+      <ion-button expand="block" @click="openModal">打开模态框</ion-button>
       <p>{{ message }}</p>
     </ion-content>
   </ion-page>
@@ -21,7 +21,7 @@
     components: { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle },
     data() {
       return {
-        message: 'This modal example uses the modalController to present and dismiss modals.',
+        message: '这个模态框示例使用 modalController 来展示和关闭模态框。',
       };
     },
     methods: {
@@ -34,7 +34,7 @@
         const { data, role } = await modal.onWillDismiss();
 
         if (role === 'confirm') {
-          this.message = `Hello, ${data}!`;
+          this.message = `你好，${data}!`;
         }
       },
     },

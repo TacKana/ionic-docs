@@ -4,24 +4,24 @@ sidebar_label: Progressive Web Apps
 ---
 
 <head>
-  <title>Create Progressive Web Apps (PWA) in React - Ionic Framework</title>
+  <title>使用 React 创建渐进式 Web 应用 (PWA) - Ionic Framework</title>
   <meta
     name="description"
-    content="Create progressive web apps in React with Ionic. Read our React PWA documentation for information on how to make React PWAs."
+    content="使用 Ionic 在 React 中创建渐进式 Web 应用。阅读我们的 React PWA 文档，了解如何制作 React PWA。"
   />
 </head>
 
-## Making your React app a PWA with Vite
+## 使用 Vite 将你的 React 应用转换为 PWA
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, we recommend using the [Vite PWA Plugin](https://vite-pwa-org.netlify.app/) instead.
+渐进式 Web 应用（PWA）的两个主要要求是 <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> 和 <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web 应用清单</a>。虽然可以手动将这两项添加到应用中，但我们建议使用 [Vite PWA 插件](https://vite-pwa-org.netlify.app/) 来实现。
 
-To get started, install the `vite-plugin-pwa` package:
+首先，安装 `vite-plugin-pwa` 包：
 
 ```shell
 npm install -D vite-plugin-pwa
 ```
 
-Next, update your `vite.config.js` or `vite.config.ts` file and add `vite-plugin-pwa`:
+接下来，更新你的 `vite.config.js` 或 `vite.config.ts` 文件并添加 `vite-plugin-pwa`：
 
 ```javascript
 import { defineConfig } from 'vite';
@@ -33,21 +33,21 @@ export default defineConfig({
 });
 ```
 
-This minimal configuration allows your application to generate the Web Application Manifest and Service Worker on build.
+这个最小的配置允许你的应用在构建时生成 Web 应用清单和 Service Worker。
 
-For more information on configuring the Vite PWA Plugin, see the [Vite PWA "Getting Started" Guide](https://vite-pwa-org.netlify.app/guide/).
+有关配置 Vite PWA 插件的更多信息，请参阅 [Vite PWA "入门"指南](https://vite-pwa-org.netlify.app/guide/)。
 
-See the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployment/) for information on how to deploy your PWA.
+有关如何部署 PWA 的信息，请参阅 [Vite PWA "部署"指南](https://vite-pwa-org.netlify.app/deployment/)。
 
-## Making your React app a PWA with Create React App
+## 使用 Create React App 将你的 React 应用转换为 PWA
 
 :::note
-As of Ionic CLI v7, Ionic React starter apps ship with Vite instead of Create React App. See [Making your React app a PWA with Vite](#making-your-react-app-a-pwa-with-vite) for Vite instructions.
+自 Ionic CLI v7 起，Ionic React 初始项目已改用 Vite 而非 Create React App。Vite 相关说明请参阅 [使用 Vite 将你的 React 应用转换为 PWA](#making-your-react-app-a-pwa-with-vite)。
 :::
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, a base project from Create React App (CRA) and the Ionic CLI provides this already.
+渐进式 Web 应用（PWA）的两个主要要求是 <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> 和 <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web 应用清单</a>。虽然可以手动将这两项添加到应用中，但 Create React App (CRA) 和 Ionic CLI 提供的基础项目已经包含了这些。
 
-In the `index.ts` for your app, there is a call to a `serviceWorker.unregister()` function. The base that CRA provides has service workers as an opt-in feature, so it must be enabled. To enable, call `serviceWorker.register()`.
+在你的应用的 `index.ts` 中，有一个对 `serviceWorker.unregister()` 函数的调用。CRA 提供的基础功能中 Service Worker 是可选功能，因此需要手动启用。要启用，请调用 `serviceWorker.register()`。
 
 ```ts
 import React from 'react';
@@ -63,79 +63,79 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://cra.link/PWA
+// 如果你希望应用离线工作并加载更快，可以将下面的
+// unregister() 改为 register()。请注意这会有一些注意事项。
+// 关于 Service Worker 的更多信息：https://cra.link/PWA
 serviceWorkerRegistration.register();
 ```
 
-Once this package has been added, run `ionic build` and the `build` directory will be ready to deploy as a PWA.
+添加此包后，运行 `ionic build`，`build` 目录将准备好作为 PWA 部署。
 
 :::note
-By default, react apps package comes with the Ionic logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+默认情况下，React 应用包使用 Ionic 徽标作为应用图标。请务必更新清单以使用正确的应用名称并替换图标。
 :::
 
 :::note
-Features like Service Workers and many JavaScript APIs (such as geolocation) require the app to be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
+Service Worker 和许多 JavaScript API（例如地理位置）等功能要求应用在安全上下文中托管。通过托管服务部署应用时，请注意需要 HTTPS 才能充分利用 Service Worker。
 :::
 
-### Service Worker configuration
+### Service Worker 配置
 
-By default, CRA/React Scripts come with a preconfigured Service Worker setup based on [Workbox's Webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). This utilizes a cache-first strategy, meaning that your app will load from a cache, even if the network returns a newer version of the app.
+默认情况下，CRA/React Scripts 带有基于 [Workbox 的 Webpack 插件](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) 预配置的 Service Worker 设置。这采用了缓存优先策略，意味着你的应用将从缓存加载，即使网络返回了应用的新版本。
 
-Because of the nature of CRA/React Scripts, the configuration for this is internal to React Scripts, meaning that it cannot be customized without ejecting from React Scripts. Currently, the Ionic CLI does not support an ejected React App, so if this action is taken, you'll need to use npm/yarn scripts instead of the Ionic CLI.
+由于 CRA/React Scripts 的性质，此配置是 React Scripts 内部的，这意味着如果不从 React Scripts 中弹出，就无法自定义。目前，Ionic CLI 不支持弹出的 React 应用，因此如果采取此操作，你需要使用 npm/yarn 脚本而不是 Ionic CLI。
 
-### Deploying
+### 部署
 
 #### Firebase
 
-Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
+Firebase 托管为渐进式 Web 应用提供了诸多优势，包括借助 CDN 实现的快速响应时间、默认启用的 HTTPS 以及对 [HTTP2 推送](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html) 的支持。
 
-First, if not already available, [create the project](https://console.firebase.google.com) in Firebase.
+首先，如果尚未创建，请在 Firebase 中 [创建项目](https://console.firebase.google.com)。
 
-Next, in a Terminal, install the Firebase CLI:
+接下来，在终端中安装 Firebase CLI：
 
 ```shell
 npm install -g firebase-tools
 ```
 
 :::note
-If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+如果你是首次使用 firebase-tools，请使用 `firebase login` 命令登录你的 Google 账户。
 :::
 
-With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
+安装 Firebase CLI 后，在你的 Ionic 项目目录中运行 `firebase init`。CLI 会提示：
 
-**"Which Firebase CLI features do you want to set up for this folder?"** Choose "Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys".
+**"Which Firebase CLI features do you want to set up for this folder?"** 选择 "Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys"。
 
-Create a new Firebase project or select an existing one.
+创建一个新的 Firebase 项目或选择一个现有项目。
 
-**"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
+**"Select a default Firebase project for this directory:"** 选择你在 Firebase 网站上创建的项目。
 
-**"What do you want to use as your public directory?"** Enter "build".
+**"What do you want to use as your public directory?"** 输入 "build"。
 
 :::note
-Answering this next question will ensure that routing, hard reload, and deep linking work in the app:
+回答下一个问题将确保应用中的路由、硬重载和深度链接正常工作：
 :::
 
-**Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
+**"Configure as a single-page app (rewrite all urls to /index.html)?"** 输入 "Yes"。
 
-**"File build/index.html already exists. Overwrite?"** Enter "No".
+**"File build/index.html already exists. Overwrite?"** 输入 "No"。
 
-**Set up automatic builds and deploys with Github?** Enter "Yes".
+**"Set up automatic builds and deploys with Github?"** 输入 "Yes"。
 
-**For which GitHub repository would you like to set up a Github Workflow?** Enter your project name.
+**"For which GitHub repository would you like to set up a Github Workflow?"** 输入你的项目名称。
 
-**Set up the workflow to run a build script before every deploy?** Enter "Yes".
+**"Set up the workflow to run a build script before every deploy?"** 输入 "Yes"。
 
-**What script should be run before every deploy?** Enter `npm ci && npm run build`.
+**"What script should be run before every deploy?"** 输入 `npm ci && npm run build`。
 
-**Set up automatic deployment to your sites live channel when a PR is merged?** Enter "Yes".
+**"Set up automatic deployment to your sites live channel when a PR is merged?"** 输入 "Yes"。
 
-**What is the name of the get hooked branch associated with your sites live channel?** Enter your project's main branch name.
+**"What is the name of the get hooked branch associated with your sites live channel?"** 输入你项目的主分支名称。
 
-A `firebase.json` config file is generated, configuring the app for deployment.
+此时会生成一个 `firebase.json` 配置文件，用于配置应用的部署。
 
-The last thing needed is to make sure caching headers are being set correctly. To do this, add a `headers` snippet to the `firebase.json` file. The complete `firebase.json` looks like:
+最后需要确保正确设置缓存头。为此，向 `firebase.json` 文件添加一个 `headers` 片段。完整的 `firebase.json` 如下所示：
 
 ```json
 {
@@ -163,18 +163,18 @@ The last thing needed is to make sure caching headers are being set correctly. T
 }
 ```
 
-For more information about the `firebase.json` properties, see the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
+有关 `firebase.json` 属性的更多信息，请参阅 [Firebase 文档](https://firebase.google.com/docs/hosting/full-config#section-firebase-json)。
 
-Next, build an optimized version of the app by running:
+接下来，通过运行以下命令构建应用的优化版本：
 
 ```shell
 ionic build --prod
 ```
 
-Last, deploy the app by running:
+最后，通过运行以下命令部署应用：
 
 ```shell
 firebase deploy
 ```
 
-After this completes, the app will be live.
+完成后，应用将上线。

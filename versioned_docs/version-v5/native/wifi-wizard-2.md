@@ -2,38 +2,14 @@
 sidebar_label: 'WifiWizard2'
 ---
 
-import DocsCard from '@components/global/DocsCard';
-import DocsButton from '@components/page/native/DocsButton';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
-
 # WifiWizard2
 
-WifiWizard2 enables Wifi management for both Android and iOS applications within Cordova/Phonegap projects.
+WifiWizard2 能够在 Cordova/Phonegap 项目中为 Android 和 iOS 应用提供 Wifi 管理功能。
 
-This project is a fork of the WifiWizard plugin with fixes and updates, as well as patches taken from the Cordova Network Manager plugin.
+本项目是 WifiWizard 插件的一个分支，包含了修复、更新以及从 Cordova Network Manager 插件中提取的补丁。
 
-<p>
-  <a href="https://github.com/tripflex/WifiWizard2" target="_blank" rel="noopener" className="git-link">github.com/tripflex/WifiWizard2</a>
-</p>
+## 安装
 
-<h2>Stuck on a Cordova issue?</h2>
-<DocsCard
-  className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
-  href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
->
-  <div>
-    <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
-  </div>
-</DocsCard>
-
-<h2 id="installation">
-  <a href="#installation">Installation</a>
-</h2>
 <Tabs
   groupId="runtime"
   defaultValue="Capacitor"
@@ -44,100 +20,103 @@ This project is a fork of the WifiWizard plugin with fixes and updates, as well 
   ]}
 >
   <TabItem value="Capacitor">
-    <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-wifiwizard2 {'\n'}$ npm install @awesome-cordova-plugins/wifi-wizard-2 {'\n'}$ ionic
-      cap sync
-    </CodeBlock>
+
+```shell
+$ npm install cordova-plugin-wifiwizard2
+$ npm install @awesome-cordova-plugins/wifi-wizard-2
+$ ionic cap sync
+```
+
   </TabItem>
   <TabItem value="Cordova">
-    <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-wifiwizard2 {'\n'}$ npm install @awesome-cordova-plugins/wifi-wizard-2{' '}
-      {'\n'}
-    </CodeBlock>
+
+```shell
+$ ionic cordova plugin add cordova-plugin-wifiwizard2
+$ npm install @awesome-cordova-plugins/wifi-wizard-2
+```
+
   </TabItem>
   <TabItem value="Enterprise">
-    <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
-    </blockquote>
+
+> Ionic Enterprise 提供由 Ionic 团队全面支持和维护的插件。[了解更多](https://ionic.io/docs/premier-plugins) 或如果您对此插件的企业版感兴趣，[联系我们](https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine)。
+
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - iOS
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
-````tsx
+```tsx
 import { WifiWizard2 } from '@awesome-cordova-plugins/wifi-wizard-2/ngx';
 
-
 constructor(private wifiWizard2: WifiWizard2) { }
+```
 
+# 全局函数
+这些函数适用于 Android 和 iOS 应用。
+```tsx
+this.wifiWizard2.getConnectedSSID()
+```
 
-# Global Functions
- These are functions that can be used by both Android and iOS applications
- ```tsx
- this.wifiWizard2.getConnectedSSID()
-````
-
-- Returns connected network SSID (only if connected) in success callback, otherwise fail callback will be called (if not connected or unable to retrieve)
-- This does **NOT** return the BSSID if unable to obtain SSID (like original WifiWizard did)
+- 返回当前连接的网络 SSID（仅当已连接时）。成功时回调返回 SSID，失败时回调被调用（如果未连接或无法获取）。
+- 注意：如果无法获取 SSID，此方法**不会**像原版 WifiWizard 那样返回 BSSID。
 
 ```tsx
 this.wifiWizard2.getConnectedBSSID();
 ```
 
-- Same as above, except BSSID (mac) is returned
+- 功能同上，但返回的是 BSSID（MAC地址）。
 
 ```tsx
 this.wifiWizard2.timeout(delay);
 ```
 
-- `delay` should be time in milliseconds to delay
-- Helper async timeout delay, `delay` is optional, default is 2000ms = 2 seconds
-- This method always returns a resolved promise after the delay, it will never reject or throw an error
+- `delay`：延迟时间，单位为毫秒。
+- 这是一个辅助性的异步延迟函数，`delay` 是可选的，默认为 2000 毫秒（2秒）。
+- 此方法在延迟后总是返回一个已解决的 Promise，它永远不会拒绝或抛出错误。
 
-**Example inside async function**
+**在异步函数中使用示例**
 
 ```tsx
 async function example() {
-  await this.wifiWizard2.timeout(4000);
-  // do something after 4 seconds
+  await this.wifiWifiWizard2.timeout(4000);
+  // 等待 4 秒后执行某些操作
 }
 ```
 
-**Example inside standard non-async function**
+**在标准非异步函数中使用示例**
 
 ```tsx
 function example(){
-   this.wifiWizard2.timeout(4000).then( function(){
-       // do something after waiting 4 seconds
+   this.wifiWifiWizard2.timeout(4000).then( function(){
+       // 等待 4 秒后执行某些操作
    }):
 }
 ```
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `TIMEOUT_WAITING_FOR_SCAN` on timeout waiting for scan 10 seconds +
-- `SCAN_FAILED` if unable to start scan
+- `TIMEOUT_WAITING_FOR_SCAN`：等待扫描超时（超过 10 秒+）。
+- `SCAN_FAILED`：无法启动扫描。
 
-# iOS Functions
+# iOS 函数
 
-For functionality, you need to note the following:
+关于功能，请注意以下几点：
 
-- Connect/Disconnect only works for iOS11+
-- Can't run in the simulator so you need to attach an actual device when building with xCode
-- Will ensure 'HotspotConfiguration' and 'NetworkExtensions' capabilities are added to your xCode project
-- To connect to open network omit `ssidPassword` or call with `false`
+- 连接/断开功能仅适用于 iOS 11+。
+- 无法在模拟器中运行，因此在用 xCode 构建时，需要连接真实设备。
+- 确保将 'HotspotConfiguration' 和 'NetworkExtensions' 功能添加到您的 xCode 项目中。
+- 要连接到开放网络，请省略 `ssidPassword` 参数或传入 `false`。
 
 ```tsx
 this.wifiWizard2.iOSConnectNetwork(ssid, ssidPassword);
@@ -147,96 +126,96 @@ this.wifiWizard2.iOSConnectNetwork(ssid, ssidPassword);
 this.wifiWizard2.iOSDisconnectNetwork(ssid);
 ```
 
-# Android Functions
+# Android 函数
 
-- **WifiWizard2** _will automagically try to enable WiFi if it's disabled when calling any android related methods that require WiFi to be enabled_
+- **WifiWizard2** 在调用任何需要启用 WiFi 的 Android 相关方法时，如果 WiFi 被禁用，它会自动尝试启用 WiFi。
 
-## Connect vs Enable
+## Connect 与 Enable
 
-When writing Android Java code, there is no `connect` methods, you basically either `enable` or `disable` a network. In the original versions of WifiWizard the `connect` method would basically just call `enable` in Android.
-I have changed the way this works in WifiWizard2 version 3.0.0+, converting it to a helper method to eliminate having to call `formatWifiConfig` then `add` and then `enable` ... the `connect` method will now automatically call `formatWifiConfig`, then call `add` to either add or update the network configuration, and then call `enable`.
-If the connect method is unable to update existing network configuration (added by user or other apps), but there is a valid network ID, it will still attempt to enable that network ID.
+在编写 Android Java 代码时，并没有直接的 `connect` 方法，你基本上是对网络执行 `enable` 或 `disable` 操作。在原始版本的 WifiWizard 中，`connect` 方法基本上只是在 Android 中调用 `enable`。
+在 WifiWizard2 3.0.0+ 版本中，我改变了这种方式，将其转换为一个辅助方法，以消除依次调用 `formatWifiConfig`、`add` 和 `enable` 的繁琐步骤... `connect` 方法现在会自动调用 `formatWifiConfig`，然后调用 `add` 来添加或更新网络配置，最后调用 `enable`。
+如果 `connect` 方法无法更新现有的网络配置（由用户或其他应用添加），但存在一个有效的网络 ID，它仍会尝试启用该网络 ID。
 
 ```tsx
 this.wifiWizard2.connect(ssid, bindAll, password, algorithm, isHiddenSSID);
 ```
 
-- `ssid` should be the SSID to connect to _required_
-- `bindAll` should be set to `true` to tell Android to route all connections from your Android app, through the wifi connection (default is `false`) _optional_
-- See `WifiWizard2.enable` for more details regarding `bindAll` feature
-- `algorithm` and `password` is not required if connecting to an open network
-- Currently `WPA` and `WEP` are only supported algorithms
-- For `WPA2` just pass `WPA` as the algorithm
-- Set `isHiddenSSID` to `true` if the network you're connecting to is hidden
-- These arguments are the same as for `formatWifiConfig`
-- This method essentially calls `formatWifiConfig` then `add` then `enable`
-- If unable to update network configuration (was added by user or other app), but a valid network ID exists, this method will still attempt to enable the network
-- Promise will not be returned until method has verified that connection to WiFi was in completed state (waits up to 60 seconds)
+- `ssid`：要连接的 SSID，*必需*。
+- `bindAll`：设置为 `true` 以告诉 Android 将您 Android 应用的所有连接都通过此 WiFi 连接进行路由（默认为 `false`），*可选*。
+- 关于 `bindAll` 功能的更多细节，请参阅 `WifiWizard2.enable` 方法。
+- 如果连接的是开放网络，则不需要 `algorithm` 和 `password` 参数。
+- 目前仅支持 `WPA` 和 `WEP` 算法。
+- 对于 `WPA2`，只需将 `WPA` 作为算法传入即可。
+- 如果您要连接的网络是隐藏网络，请将 `isHiddenSSID` 设置为 `true`。
+- 这些参数与 `formatWifiConfig` 的参数相同。
+- 此方法本质上依次调用 `formatWifiConfig`、`add` 和 `enable`。
+- 如果无法更新网络配置（由用户或其他应用添加），但存在有效的网络 ID，此方法仍会尝试启用该网络。
+- Promise 将在此方法验证连接到 WiFi 已完成状态后才会返回（最多等待 60 秒）。
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `CONNECT_FAILED_TIMEOUT` unable to verify connection, timed out after 60 seconds
-- `INVALID_NETWORK_ID_TO_CONNECT` Unable to connect based on generated wifi config
-- `INTERPUT_EXCEPT_WHILE_CONNECTING` Interrupt exception while waiting for connection
+- `CONNECT_FAILED_TIMEOUT`：无法验证连接，60 秒后超时。
+- `INVALID_NETWORK_ID_TO_CONNECT`：无法基于生成的 wifi 配置进行连接。
+- `INTERPUT_EXCEPT_WHILE_CONNECTING`：在等待连接时发生中断异常。
 
-## Disconnect vs Disable
+## Disconnect 与 Disable
 
-Same as above for Connect vs Enable, except in this situation, `disconnect` will first disable the network, and then attempt to remove it (if SSID is passed)
+与上面的 Connect 和 Enable 类似，但在这种情况下，`disconnect` 会首先禁用网络，然后尝试移除它（如果传入了 SSID）。
 
 ```tsx
 this.wifiWizard2.disconnect(ssid);
 ```
 
-- `ssid` can either be an SSID (string) or a network ID (integer)
-- `ssid` is **OPTIONAL** .. if not passed, will disconnect current WiFi (almost all Android versions now will just automatically reconnect to last wifi after disconnecting)
-- If `ssid` is provided, this method will first attempt to `disable` and then `remove` the network
-- If you do not want to remove network configuration, use `disable` instead
+- `ssid` 可以是 SSID（字符串）或网络 ID（整数）。
+- `ssid` 是**可选的**...如果不传，将断开当前的 WiFi 连接（现在几乎所有 Android 版本在断开连接后都会自动重新连接到上一个 WiFi）。
+- 如果提供了 `ssid`，此方法将首先尝试 `disable` 网络，然后尝试 `remove` 网络配置。
+- 如果您不想移除网络配置，请改用 `disable` 方法。
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `DISCONNECT_NET_REMOVE_ERROR` Android returned error when removing wifi configuration
-- `DISCONNECT_NET_DISABLE_ERROR` Unable to connect based on generated wifi config
-- `DISCONNECT_NET_ID_NOT_FOUND` Unable to determine network ID to disconnect/remove (from passed SSID)
-- `ERROR_DISCONNECT` - Android error disconnecting wifi (only when SSID is not passed)
+- `DISCONNECT_NET_REMOVE_ERROR`：Android 在移除 wifi 配置时返回错误。
+- `DISCONNECT_NET_DISABLE_ERROR`：无法基于生成的 wifi 配置进行连接。
+- `DISCONNECT_NET_ID_NOT_FOUND`：无法根据传入的 SSID 确定要断开/移除的网络 ID。
+- `ERROR_DISCONNECT`：Android 断开 wifi 时出错（仅在未传入 SSID 时）。
 
 ```tsx
 this.wifiWizard2.formatWifiConfig(ssid, password, algorithm, isHiddenSSID);
 ```
 
-- `algorithm` and `password` is not required if connecting to an open network
-- Currently `WPA` and `WEP` are only supported algorithms
-- For `WPA2` just pass `WPA` as the algorithm
-- Set `isHiddenSSID` to `true` if the network you're connecting to is hidden
+- 如果连接的是开放网络，则不需要 `algorithm` 和 `password` 参数。
+- 目前仅支持 `WPA` 和 `WEP` 算法。
+- 对于 `WPA2`，只需将 `WPA` 作为算法传入即可。
+- 如果您要连接的网络是隐藏网络，请将 `isHiddenSSID` 设置为 `true`。
 
 ```tsx
 this.wifiWizard2.formatWPAConfig(ssid, password, isHiddenSSID);
 ```
 
-- This is just a helper method that calls `WifiWizard2.formatWifiConfig( ssid, password, 'WPA', isHiddenSSID );`
+- 这是一个辅助方法，它调用 `WifiWizard2.formatWifiConfig( ssid, password, 'WPA', isHiddenSSID );`
 
 ```tsx
 this.wifiWizard2.add(wifi);
 ```
 
-- `wifi` must be an object formatted by `formatWifiConfig`, this **must** be done before calling `enable`
+- `wifi` 必须是一个由 `formatWifiConfig` 格式化后的对象，在调用 `enable` **之前**，必须先执行此步骤。
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `AUTH_TYPE_NOT_SUPPORTED` - Invalid auth type specified
-- `ERROR_ADDING_NETWORK` - Android returned `-1` specifying error adding network
-- `ERROR_UPDATING_NETWORK` - Same as above, except an existing network ID was found, and unable to update it
+- `AUTH_TYPE_NOT_SUPPORTED`：指定的认证类型无效。
+- `ERROR_ADDING_NETWORK`：Android 返回 `-1`，表示添加网络时出错。
+- `ERROR_UPDATING_NETWORK`：与上面类似，但找到了一个现有的网络 ID，并且无法更新它。
 
 ```tsx
 this.wifiWizard2.remove(ssid);
 ```
 
-- `ssid` can either be an SSID (string) or a network ID (integer)
-- Please note, most newer versions of Android will only allow wifi to be removed if created by your application
+- `ssid` 可以是 SSID（字符串）或网络 ID（整数）。
+- 请注意，较新版本的 Android 通常只允许移除由您的应用程序创建的 wifi 配置。
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `UNABLE_TO_REMOVE` Android returned failure in removing network
-- `REMOVE_NETWORK_NOT_FOUND` Unable to determine network ID from passed SSID
+- `UNABLE_TO_REMOVE`：Android 返回移除网络失败。
+- `REMOVE_NETWORK_NOT_FOUND`：无法根据传入的 SSID 确定网络 ID。
 
 ```tsx
 this.wifiWizard2.listNetworks();
@@ -246,34 +225,34 @@ this.wifiWizard2.listNetworks();
 this.wifiWizard2.scan([options]);
 ```
 
-- Same as calling `startScan` and then `getScanResults`, except this method will only resolve the promise after the scan completes and returns the results.
+- 功能与依次调用 `startScan` 然后 `getScanResults` 相同，但此方法会在扫描完成并返回结果后才 resolve promise。
 
 ```tsx
 this.wifiWizard2.startScan();
 ```
 
-- It is recommended to just use the `scan` method instead of `startScan`
+- 建议直接使用 `scan` 方法而不是 `startScan`。
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `STARTSCAN_FAILED` Android returned failure in starting scan
+- `STARTSCAN_FAILED`：Android 返回启动扫描失败。
 
 ```tsx
 this.wifiWizard2.getScanResults([options]);
 ```
 
-- `getScanResults` should only be called after calling `startScan` (it is recommended to use `scan` instead as this starts the scan, then returns the results)
-- `[options]` is optional, if you do not want to specify, just pass `success` callback as first parameter, and `fail` callback as second parameter
-- Retrieves a list of the available networks as an array of objects and passes them to the function listHandler. The format of the array is:
+- `getScanResults` 应在调用 `startScan` 之后调用（建议使用 `scan`，因为它会自动启动扫描并返回结果）。
+- `[options]` 是可选的。如果您不想指定选项，可以直接将成功回调作为第一个参数，失败回调作为第二个参数。
+- 获取可用网络列表，该列表是一个对象数组，并传递给 listHandler 函数。数组的格式如下：
 
 ```tsx
 networks = [
-{   "level": signal_level, // raw RSSI value
-       "SSID": ssid, // SSID as string, with escaped double quotes: "\"ssid name\""
-       "BSSID": bssid // MAC address of WiFi router as string
-       "frequency": frequency of the access point channel in MHz
-       "capabilities": capabilities // Describes the authentication, key management, and encryption schemes supported by the access point.
-       "timestamp": timestamp // timestamp of when the scan was completed
+{   "level": signal_level, // 原始 RSSI 值
+       "SSID": ssid, // 字符串形式的 SSID，带有转义的双引号: "\"ssid name\""
+       "BSSID": bssid // WiFi 路由器的 MAC 地址，字符串形式
+       "frequency": 接入点信道的频率，单位 MHz
+       "capabilities": capabilities // 描述接入点支持的身份验证、密钥管理和加密方案。
+       "timestamp": timestamp // 扫描完成时的时间戳
        "channelWidth":
        "centerFreq0":
        "centerFreq1":
@@ -281,94 +260,94 @@ networks = [
 ]
 ```
 
-- `channelWidth` `centerFreq0` and `centerFreq1` are only supported on API > 23 (Marshmallow), any older API will return null for these values
+- `channelWidth`、`centerFreq0` 和 `centerFreq1` 仅在 API > 23 (Android 6.0) 上支持，更旧的 API 将对这些值返回 null。
 
-An options object may be passed. Currently, the only supported option is `numLevels`, and it has the following behavior:
+可以传入一个选项对象。目前，唯一支持的选项是 `numLevels`，其行为如下：
 
-- if `(n == true || n &lt; 2)`, `*.getScanResults({numLevels: n})` will return data as before, split in 5 levels;
-- if `(n > 1)`, `*.getScanResults({numLevels: n})` will calculate the signal level, split in n levels;
-- if `(n == false)`, `*.getScanResults({numLevels: n})` will use the raw signal level;
+- 如果 `(n == true || n < 2)`，`*.getScanResults({numLevels: n})` 将像以前一样返回数据，分为 5 个级别；
+- 如果 `(n > 1)`，`*.getScanResults({numLevels: n})` 将计算信号电平，分为 n 个级别；
+- 如果 `(n == false)`，`*.getScanResults({numLevels: n})` 将使用原始信号电平；
 
 ```tsx
 this.wifiWizard2.isWifiEnabled();
 ```
 
-- Returns boolean value of whether Wifi is enabled or not
+- 返回布尔值，表示 WiFi 是否已启用。
 
 ```tsx
 this.wifiWizard2.setWifiEnabled(enabled);
 ```
 
-- Pass `true` for `enabled` parameter to set Wifi enabled
-- You do not need to call this function to set WiFi enabled to call other methods that require wifi enabled. This plugin will automagically enable WiFi if a method is called that requires WiFi to be enabled.
+- 传入 `true` 作为 `enabled` 参数以启用 WiFi。
+- 您无需在调用需要启用 WiFi 的其他方法之前调用此函数来启用 WiFi。如果调用的方法需要启用 WiFi，此插件会自动启用 WiFi。
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `ERROR_SETWIFIENABLED` wifi state does not match call (enable or disable)
+- `ERROR_SETWIFIENABLED`：WiFi 状态与调用（启用或禁用）不匹配。
 
 ```tsx
 this.wifiWizard2.getConnectedNetworkID();
 ```
 
-- Returns currently connected network ID in success callback (only if connected), otherwise fail callback will be called
+- 返回当前连接的网络 ID（仅当已连接时），成功时回调返回 ID，否则失败回调被调用。
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `GET_CONNECTED_NET_ID_ERROR` Unable to determine currently connected network ID (may not be connected)
+- `GET_CONNECTED_NET_ID_ERROR`：无法确定当前连接的网络 ID（可能未连接）。
 
-## New to 3.1.1+
+## 3.1.1+ 版本新功能
 
 ```tsx
 this.wifiWizard2.resetBindAll();
 ```
 
-- Disable bindAll to WiFi network without disconnecting from WiFi
+- 在不断开 WiFi 连接的情况下，禁用对 WiFi 网络的 bindAll。
 
 ```tsx
 this.wifiWizard2.setBindAll();
 ```
 
-- Enable bindAll to WiFi network without disconnecting from WiFi
+- 在不断开 WiFi 连接的情况下，启用对 WiFi 网络的 bindAll。
 
 ```tsx
 this.wifiWizard2.canConnectToInternet();
 ```
 
-- Returns boolean, true or false, if device is able to connect to https://www.google.com via HTTP connection (since ping is unreliable)
-- Unknown errors will still be thrown like all other async functions
-- If you called `connect` or `enable` and passed `true` for `bindAll`, your application will force the ping through wifi connection.
-- If you did not pass `true` (or passed `false`) for `bindAll`, and the wifi does not have internet connection, Android Lollipop+ (API 21+) will use cell connection to ping (due to Android using cell connection when wifi does not have internet) [More Details](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)
+- 返回布尔值（true 或 false），表示设备是否能够通过 HTTP 连接（因为 ping 不可靠）连接到 https://www.google.com。
+- 与其他异步函数一样，未知错误仍会被抛出。
+- 如果您在调用 `connect` 或 `enable` 时为 `bindAll` 传入了 `true`，您的应用将强制通过 wifi 连接进行 ping 操作。
+- 如果您没有为 `bindAll` 传入 `true`（或传入了 `false`），并且该 wifi 没有互联网连接，那么 Android 5.0+ (API 21+) 将使用蜂窝网络连接进行 ping 操作（因为当 wifi 没有互联网时，Android 会使用蜂窝网络连接）。[更多细节](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)
 
 ```tsx
 this.wifiWizard2.canConnectToRouter();
 ```
 
-- As `canPingWifiRouter` is notoriously unreliable, this method uses HTTP connection to test if able to connect to router (as most routers should have web server running on port 80)
-- Unknown errors will still be thrown like all other async functions
-- This is useful for testing to make sure that your Android app is able to connect to the private network after connecting to WiFi
-- This was added for testing the `bindAll` feature to support issues with Android Lollipop+ (API 21+) not routing calls through WiFi if WiFi does not have internet connection [See Android Blog](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)
-- Attempts to connect router IP HTTP server on port 80 (example: `http://192.168.0.1/` where `192.168.0.1` is the automatically detected IP address)
+- 由于 `canPingWifiRouter` 非常不可靠，此方法使用 HTTP 连接来测试是否能够连接到路由器（因为大多数路由器应该在 80 端口上运行 web 服务器）。
+- 与其他异步函数一样，未知错误仍会被抛出。
+- 这对于测试您的 Android 应用在连接到 WiFi 后是否能够连接到私有网络非常有用。
+- 添加此功能是为了测试 `bindAll` 特性，以解决 Android 5.0+ (API 21+) 在 WiFi 没有互联网连接时不通过 WiFi 路由调用的问题。[查看 Android 博客](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)
+- 尝试连接路由器 IP 上的 HTTP 服务器（端口 80）（例如：`http://192.168.0.1/`，其中 `192.168.0.1` 是自动检测到的 IP 地址）。
 
-## New to 3.0.0+
+## 3.0.0+ 版本新功能
 
 ```tsx
 this.wifiWizard2.isConnectedToInternet();
 ```
 
-- Returns boolean, true or false, if device is able to ping 8.8.8.8
-- Unknown errors will still be thrown like all other async functions
-- If you called `connect` or `enable` and passed `true` for `bindAll`, your application will force the ping through wifi connection.
-- If you did not pass `true` (or passed `false`) for `bindAll`, and the wifi does not have internet connection, Android Lollipop+ (API 21+) will use cell connection to ping (due to Android using cell connection when wifi does not have internet) [More Details](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)
+- 返回布尔值（true 或 false），表示设备是否能够 ping 通 8.8.8.8。
+- 与其他异步函数一样，未知错误仍会被抛出。
+- 如果您在调用 `connect` 或 `enable` 时为 `bindAll` 传入了 `true`，您的应用将强制通过 wifi 连接进行 ping 操作。
+- 如果您没有为 `bindAll` 传入 `true`（或传入了 `false`），并且该 wifi 没有互联网连接，那么 Android 5.0+ (API 21+) 将使用蜂窝网络连接进行 ping 操作（因为当 wifi 没有互联网时，Android 会使用蜂窝网络连接）。[更多细节](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)
 
 ```tsx
 this.wifiWizard2.canPingWifiRouter();
 ```
 
-- Returns boolean, true or false, if device is able to ping the connected WiFi router IP (obtained from DHCP info)
-- Version 3.1.1+ uses HTTP connection to test if able to connect to router (as ping previous did not work)
-- Unknown errors will still be thrown like all other async functions
-- This is useful for testing to make sure that your Android app is able to connect to the private network after connecting to WiFi
-- This was added for testing the `bindAll` feature to support issues with Android Lollipop+ (API 21+) not routing calls through WiFi if WiFi does not have internet connection [See Android Blog](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)
+- 返回布尔值（true 或 false），表示设备是否能够 ping 通已连接的 WiFi 路由器 IP（从 DHCP 信息获取）。
+- 3.1.1+ 版本使用 HTTP 连接来测试是否能够连接到路由器（因为之前的 ping 方法不起作用）。
+- 与其他异步函数一样，未知错误仍会被抛出。
+- 这对于测试您的 Android 应用在连接到 WiFi 后是否能够连接到私有网络非常有用。
+- 添加此功能是为了测试 `bindAll` 特性，以解决 Android 5.0+ (API 21+) 在 WiFi 没有互联网连接时不通过 WiFi 路由调用的问题。[查看 Android 博客](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)
 
 ```tsx
 this.wifiWizard2.enableWifi();
@@ -382,134 +361,135 @@ this.wifiWizard2.disableWifi();
 this.wifiWizard2.getWifiIP();
 ```
 
-- Returns IPv4 address of currently connected WiFi, or rejects promise if IP not found or wifi not connected
+- 返回当前连接的 WiFi 的 IPv4 地址，如果未找到 IP 或 WiFi 未连接，则 reject promise。
 
 ```tsx
 this.wifiWizard2.getWifiRouterIP();
 ```
 
-- Returns IPv4 WiFi router IP from currently connected WiFi, or rejects promise if unable to determine, or wifi not connected
+- 返回当前连接的 WiFi 的 IPv4 路由器 IP，如果无法确定或 WiFi 未连接，则 reject promise。
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `NO_VALID_IP_IDENTIFIED` if unable to determine a valid IP (ip returned from device is `0.0.0.0`)
+- `NO_VALID_IP_IDENTIFIED`：如果无法确定有效的 IP（设备返回的 IP 是 `0.0.0.0`）。
 
 ```tsx
 this.wifiWizard2.getWifiIPInfo();
 ```
 
-- Returns a JSON object with IPv4 address and subnet `{"ip": "192.168.1.2", "subnet": "255.255.255.0" }` or rejected promise if not found or not connected
-  **Thrown Errors**
+- 返回一个包含 IPv4 地址和子网掩码的 JSON 对象 `{"ip": "192.168.1.2", "subnet": "255.255.255.0" }`，如果未找到或未连接，则 reject promise。
 
-- `NO_VALID_IP_IDENTIFIED` if unable to determine a valid IP (ip returned from device is `0.0.0.0`)
+**可能抛出的错误**
+
+- `NO_VALID_IP_IDENTIFIED`：如果无法确定有效的 IP（设备返回的 IP 是 `0.0.0.0`）。
 
 ```tsx
 this.wifiWizard2.reconnect();
 ```
 
-- Reconnect to the currently active access point, **if we are currently disconnected.**
+- 重新连接到当前活动的接入点，**前提是我们当前处于断开状态。**
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `ERROR_RECONNECT` Android returned error when reconnecting
+- `ERROR_RECONNECT`：Android 在重新连接时返回错误。
 
 ```tsx
 this.wifiWizard2.reassociate();
 ```
 
-- Reconnect to the currently active access point, **even if we are already connected.**
+- 重新连接到当前活动的接入点，**即使我们已经连接了。**
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `ERROR_REASSOCIATE` Android returned error when reassociating
+- `ERROR_REASSOCIATE`：Android 在重新关联时返回错误。
 
 ```tsx
 this.wifiWizard2.getSSIDNetworkID(ssid);
 ```
 
-- Get Android Network ID from passed SSID
+- 根据传入的 SSID 获取 Android 网络 ID。
 
 ```tsx
 this.wifiWizard2.disable(ssid);
 ```
 
-- `ssid` can either be an SSID (string) or a network ID (integer)
-- Disable the passed SSID network
-- Please note that most newer versions of Android will only allow you to disable networks created by your application
+- `ssid` 可以是 SSID（字符串）或网络 ID（整数）。
+- 禁用传入的 SSID 网络。
+- 请注意，较新版本的 Android 通常只允许禁用由您的应用程序创建的网络。
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `UNABLE_TO_DISABLE` Android returned failure in disabling network
-- `DISABLE_NETWORK_NOT_FOUND` Unable to determine network ID from passed SSID to disable
+- `UNABLE_TO_DISABLE`：Android 返回禁用网络失败。
+- `DISABLE_NETWORK_NOT_FOUND`：无法根据传入的 SSID 确定要禁用的网络 ID。
 
 ```tsx
 this.wifiWizard2.requestPermission();
 ```
 
-- Request `ACCESS_FINE_LOCATION` permission
-- This Android permission is required to run `scan`, `startStart` and `getScanResults`
-- You can request permission by running this function manually, or WifiWizard2 will automatically request permission when one of the functions above is called
+- 请求 `ACCESS_FINE_LOCATION` 权限。
+- 此 Android 权限是运行 `scan`、`startScan` 和 `getScanResults` 所必需的。
+- 您可以手动运行此函数来请求权限，或者当上述函数之一被调用时，WifiWizard2 会自动请求权限。
 
-**Thrown Errors**
+**可能抛出的错误**
 
-- `PERMISSION_DENIED` user denied permission on device
+- `PERMISSION_DENIED`：用户在设备上拒绝了权限。
 
 ```tsx
 this.wifiWizard2.enable(ssid, bindAll, waitForConnection);
 ```
 
-- `ssid` can either be an SSID (string) or a network ID (integer)
-- `bindAll` should be set to `true` to tell Android to route all connections from your Android app, through the wifi connection
-- Android Lollipop+ (API 21+) will not route connections to the WiFi device if it does not have internet connection. Passing `true` to `bindAll` will force Android to route connections from your Android app through Wifi, regardless of internet connection.
-- If you are having problems connecting to a local IP through WiFi because it does not have internet, try enabling `bindAll` and this should fix the problem.
-- During my testing, some versions of Android (5.0 - 7.1.2) would still route connections through WiFi without internet, but it was random that some versions would and would not work.
-- Testing Android Oreo+ (8.0.0+) if wifi does not have internet, 100% of the time it would NOT route connections through WiFi, so you _must_ enable this for Oreo or newer to route connections from your application through wifi without internet.
-- When `bindAll` is enabled, _ALL_ connections from your app will be routed through WiFi, until you call `disconnect` or `disable`
-- See the Google Android Blog for [More Details](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)
-- This feature _ONLY_ works for Android Lollipop+ (API 21+), if device is running API older than 21, `bindall` will be ignored (as API older than 21 does this by default)
-- Enable the passed SSID network
-- You **MUST** call `WifiWizard2.add(wifi)` before calling `enable` as the wifi configuration must exist before you can enable it (or previously used `connect` without calling `disconnect`)
-- This method does NOT wait or verify connection to wifi network, pass `true` to `waitForConnection` to only return promise once connection is verified in COMPLETED state to specific `ssid`
+- `ssid` 可以是 SSID（字符串）或网络 ID（整数）。
+- `bindAll`：设置为 `true` 以告诉 Android 将您 Android 应用的所有连接都通过此 WiFi 连接进行路由。
+- Android 5.0+ (API 21+) 如果 WiFi 设备没有互联网连接，将不会将连接路由到该 WiFi 设备。为 `bindAll` 传入 `true` 将强制 Android 将您 Android 应用的连接通过 Wifi 进行路由，无论其是否有互联网连接。
+- 如果您因为 WiFi 没有互联网而无法通过 WiFi 连接到本地 IP，请尝试启用 `bindAll`，这应该可以解决问题。
+- 在我的测试中，某些版本的 Android（5.0 - 7.1.2）仍然会在 WiFi 没有互联网的情况下通过 WiFi 路由连接，但哪些版本能工作、哪些不能是随机的。
+- 测试 Android 8.0+ 发现，如果 wifi 没有互联网，100% 的情况下不会通过 WiFi 路由连接，因此对于 Android 8.0 或更高版本，您**必须**启用此选项，才能在没有互联网的情况下通过 wifi 路由您应用的连接。
+- 当启用 `bindAll` 时，您应用中的**所有**连接都将通过 WiFi 进行路由，直到您调用 `disconnect` 或 `disable`。
+- 有关[更多细节](https://android-developers.googleblog.com/2016/07/connecting-your-app-to-wi-fi-device.html)，请参阅 Google Android 博客。
+- 此功能**仅**适用于 Android 5.0+ (API 21+)，如果设备运行的 API 低于 21，`bindAll` 将被忽略（因为低于 21 的 API 默认就是这样做的）。
+- 启用传入的 SSID 网络。
+- 在调用 `enable` 之前，您**必须**先调用 `WifiWizard2.add(wifi)`，因为 wifi 配置必须先存在，然后才能启用它（或者之前使用过 `connect` 且未调用 `disconnect`）。
+- 此方法**不会**等待或验证是否连接到了 wifi 网络。传入 `true` 给 `waitForConnection` 可以让 promise 仅在确认连接到特定 `ssid` 的 COMPLETED 状态后才返回。
 
-**Thrown Errors**
+**可能抛出的错误**
 
-`UNABLE_TO_ENABLE` - Android returned `-1` signifying failure enabling
+- `UNABLE_TO_ENABLE`：Android 返回 `-1` 表示启用失败。
 
-# Installation
+# 安装
 
-## Master
+## 主分支
 
-Run `cordova plugin add https://github.com/tripflex/wifiwizard2`
+运行 `cordova plugin add https://github.com/tripflex/wifiwizard2`
 
-To install from the master branch (latest on GitHub)
+从主分支（GitHub 上的最新代码）安装。
 
-To install a specific branch (add `#tag` replacing `tag` with tag from this repo, example:
+要安装特定分支（添加 `#标签名`，用此仓库的标签名替换 `标签名`，例如：
 `cordova plugin add https://github.com/tripflex/wifiwizard2#v3.1.1`
 
-Find available tags here:
+可用的标签在此处查找：
 https://github.com/tripflex/WifiWizard2/tags
 
-If you are wanting to have the latest and greatest stable version, then run the 'Releases' command below.
+如果您想使用最新最稳定的版本，请运行下面的 'Releases' 命令。
 
-## Releases
+## 发布版本
 
-Run `cordova plugin add cordova-plugin-wifiwizard2`
+运行 `cordova plugin add cordova-plugin-wifiwizard2`
 
 ## Meteor
 
-To install and use this plugin in a Meteor project, you have to specify the exact version from NPM repository:
+要在 Meteor 项目中安装并使用此插件，您必须指定 NPM 仓库中的确切版本：
 [https://www.npmjs.com/package/cordova-plugin-wifiwizard2](https://www.npmjs.com/package/cordova-plugin-wifiwizard2)
 
-As of April 4th 2019, the latest version is 3.1.1:
+截至 2019 年 4 月 4 日，最新版本是 3.1.1：
 
 `meteor add cordova:cordova-plugin-wifiwizard2@3.1.1`
 
-# Errors/Rejections
+# 错误/拒绝
 
-Methods now return formatted string errors as detailed below, instead of returning generic error messages. This allows you to check yourself what specific error was returned, and customize the error message.
-In an upcoming release I may add easy ways to override generic messages, or set your own, but for now, errors returned can be found below each method/function.
+方法现在会返回如下格式化的字符串错误，而不是返回通用的错误消息。这允许您自己检查返回的具体错误，并自定义错误消息。
+在未来的版本中，我可能会添加简单的方法来覆盖通用消息，或设置您自己的消息，但目前，每个方法/函数下方都可以找到返回的错误。
 
-## Generic **Thrown Errors**
+## 通用的**可能抛出的错误**
 
 `WIFI_NOT_ENABLED`
 

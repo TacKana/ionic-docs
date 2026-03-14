@@ -15,8 +15,8 @@ function PageTwo() {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <h1>Page Two</h1>
-        <p>Use the back button to navigate to the previous page.</p>
+        <h1>页面二</h1>
+        <p>使用后退按钮返回上一页。</p>
       </IonContent>
     </>
   );

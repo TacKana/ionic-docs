@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Native Page Transitions'
+sidebar_label: '原生页面过渡'
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -8,29 +8,29 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-# Native Page Transitions
+# 原生页面过渡
 
-The Native Page Transitions plugin uses native hardware acceleration to animate your transitions between views. You have complete control over the type of transition, the duration, and direction.
+原生页面过渡插件利用硬件加速，为视图之间的切换提供流畅的动画效果。你可以完全控制过渡类型、持续时间和方向。
 
 <p>
   <a href="https://github.com/Telerik-Verified-Plugins/NativePageTransitions" target="_blank" rel="noopener" className="git-link">github.com/Telerik-Verified-Plugins/NativePageTransitions</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果你正在开发一个严肃的项目，就负担不起数小时的问题排查时间。Ionic 专家为社区插件和高级插件提供专业的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -38,7 +38,7 @@ The Native Page Transitions plugin uses native hardware acceleration to animate 
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: 'Enterprise' },
+    { value: 'Enterprise', label: '企业版' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -55,23 +55,23 @@ The Native Page Transitions plugin uses native hardware acceleration to animate 
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版包含由 Ionic 团队提供全面支持和维护的插件。&nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或者如果你对该插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - iOS
 - Windows Phone 8
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件](../native-community.md#react)
 
 ### Angular
 
@@ -83,7 +83,7 @@ constructor(private nativePageTransitions: NativePageTransitions) { }
 ...
 
 
-// example of adding a transition when a page/modal closes
+// 页面/模态框关闭时添加过渡效果的示例
 ionViewWillLeave() {
 
  let options: NativeTransitionOptions = {
@@ -104,7 +104,7 @@ ionViewWillLeave() {
 }
 
 
-// example of adding a transition when pushing a new page
+// 推入新页面时添加过渡效果的示例
 openPage(page: any) {
 
   this.nativePageTransitions.slide(options);

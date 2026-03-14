@@ -2,11 +2,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="cancelChanges()">Cancel</ion-button>
+      <ion-button (click)="cancelChanges()">取消</ion-button>
     </ion-buttons>
     <ion-title>{{ title }}</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="confirmChanges()">Done</ion-button>
+      <ion-button (click)="confirmChanges()">完成</ion-button>
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar>

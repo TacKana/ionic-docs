@@ -2,63 +2,51 @@
 <template>
   <ion-content :scroll-y="false">
     <div class="ion-content-scroll-host ion-padding">
-      <h1>Animal Facts</h1>
+      <h1>动物趣闻</h1>
 
-      <h2>Rhinoceros</h2>
+      <h2>犀牛</h2>
       <img
         alt="rhino standing near grass"
         src="https://images.unsplash.com/flagged/photo-1556983257-71fddc36bc75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80"
       />
       <p>
-        The rhinoceros gets its name from one of its most notable features: its horns. The word rhinoceros come from the
-        Greek words rhino meaning “nose” and ceros meaning “horn.” The number of horns that a rhino has varies on the
-        species. The two African species (the black rhino and the white rhino) and the Sumatran rhino have two horns,
-        while the Javan rhino and one-horned rhino have one horn.
+        犀牛因其最显著的特征之一——角而得名。Rhinoceros一词源于希腊语，rhino意为“鼻子”，ceros意为“角”。不同种类的犀牛拥有的角数量各异：两种非洲犀牛（黑犀牛和白犀牛）以及苏门答腊犀牛有两个角，而爪哇犀牛和印度犀牛则只有一个角。
       </p>
 
-      <h2>Sea Turtle</h2>
+      <h2>海龟</h2>
       <img
         alt="brown sea turtle in water"
         src="https://images.unsplash.com/photo-1573551089778-46a7abc39d9f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
       />
       <p>
-        Sea turtles are characterized by a large, streamlined shell and non-retractile head and limbs. Unlike other
-        turtles, sea turtles cannot pull their limbs and head inside their shells. Their limbs are flippers that are
-        adapted for swimming, so they are vulnerable while on land.
+        海龟的特征是拥有流线型的大龟壳，且头部和四肢无法缩回壳内。与其他龟类不同，海龟不能将四肢和头缩进壳中。它们的四肢是适应游泳的鳍状肢，因此在陆地上时非常脆弱。
       </p>
 
-      <h2>Giraffe</h2>
+      <h2>长颈鹿</h2>
       <img
         alt="giraffe sticking its tongue out"
         src="https://images.unsplash.com/photo-1577114995803-d8ce0e2b4aa9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1746&q=80"
       />
       <p>
-        Giraffes are known for their long, tall appearance. They have a small hump on their back like a camel and have a
-        spotted pattern similar to that of a leopard. Because of the combination of these features, some people called
-        the giraffe a “camel-leopard.” That’s where the giraffe’s species name “camelopardalis” comes from.
+        长颈鹿以其高挑修长的外形而闻名。它们背部有一个类似骆驼的小驼峰，身上的斑纹则与豹子相似。由于这些特征的结合，有些人曾称长颈鹿为“骆驼豹”。这正是长颈鹿学名“camelopardalis”的由来。
       </p>
 
-      <h2>Elephant</h2>
+      <h2>大象</h2>
       <img
         alt="two grey elephants on grass plains during sunset"
         src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1754&q=80"
       />
       <p>
-        Elephants are the largest existing land animal, with massive bodies, large ears, and long trunks. Elephants’
-        long trunks are multifunctional. They are used to pick up objects, trumpet warnings, greet other elephants, or
-        suck up water for drinking or bathing.
+        大象是现存最大的陆地动物，拥有庞大的身躯、大耳朵和长长的象鼻。大象的长鼻功能多样，可用于拾取物品、发出警告声、问候其他大象，或吸水饮用和洗澡。
       </p>
 
-      <h2>Dolphin</h2>
+      <h2>海豚</h2>
       <img
         alt="black and white dolphin in water"
         src="https://images.unsplash.com/photo-1607153333879-c174d265f1d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80"
       />
       <p>
-        Dolphins range in color depending on the species, from white, pearl, and pink to darker shades of brown, gray,
-        blue, and black. They have smooth skin, flippers, and a dorsal fin. They have a long, slender snout with about
-        100 teeth and a streamlined body. They have a single blowhole on top of their head, which has a flap that opens
-        to reveal a pair of nostrils. The dolphin uses these nostrils for breathing when it surfaces.
+        海豚的颜色因种类而异，从白色、珍珠色、粉色到深褐色、灰色、蓝色和黑色不等。它们皮肤光滑，有鳍状肢和背鳍，拥有细长的吻部，约有100颗牙齿，身体呈流线型。头顶有一个喷气孔，孔盖打开时会露出一对鼻孔。海豚浮出水面时通过这些鼻孔进行呼吸。
       </p>
     </div>
   </ion-content>

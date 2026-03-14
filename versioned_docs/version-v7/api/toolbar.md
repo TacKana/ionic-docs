@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/toolbar/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/toolbar/slots.md';
 
 <head>
-  <title>ion-toolbar: Customize App Menu Toolbar Buttons and Icons</title>
+  <title>ion-toolbar：自定义应用菜单工具栏按钮与图标</title>
   <meta
     name="description"
-    content="Ion-toolbar component lets you customize toolbar buttons on your app menu. Add fixed toolbars above or below content or use full screen to scroll with content."
+    content="ion-toolbar 组件可让您自定义应用菜单的工具栏按钮。在内容上方或下方添加固定工具栏，或使用全屏模式随内容滚动。"
   />
 </head>
 
@@ -21,79 +21,79 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Toolbars are generally positioned above or below content and provide content and actions for the current screen. When placed within the [content](./content), toolbars will scroll with the content.
+工具栏通常位于内容的上方或下方，并为当前屏幕提供内容和操作。当工具栏放置在[内容区域](./content)内时，它会随内容一起滚动。
 
-Toolbars can contain several different components including titles, buttons, icons, back buttons, menu buttons, searchbars, segments, progress bars, and more.
+工具栏可以包含多种不同的组件，包括标题、按钮、图标、返回按钮、菜单按钮、搜索栏、分段控件、进度条等。
 
-## Basic Usage
+## 基本用法
 
-It is recommended to put a toolbar inside of a [header](./header) or [footer](./footer) for proper positioning. When a toolbar is placed in a header it will appear fixed at the top of the content. When it is placed in a footer it will appear fixed at the bottom. Fullscreen content will scroll behind a toolbar in a header or footer. A [title](./title) component can be used to display text inside of the toolbar.
+建议将工具栏放在[页眉](./header)或[页脚](./footer)中以获得正确的位置。当工具栏放在页眉中时，它会固定在内容区域的顶部。当放在页脚中时，它会固定在底部。全屏内容会在页眉或页脚中的工具栏后面滚动。可以使用[标题](./title)组件在工具栏内显示文本。
 
 import Basic from '@site/static/usage/v7/toolbar/basic/index.md';
 
 <Basic />
 
-## Buttons in Toolbars
+## 工具栏中的按钮
 
-Buttons placed in a toolbar should be placed inside of the [buttons](./buttons) component. The buttons component can be positioned inside of the toolbar using a named [slot](#slots). The `"primary"` and `"secondary"` slots behave differently in `ios` and `md` mode.
+放置在工具栏中的按钮应放在[按钮](./buttons)组件内。按钮组件可以通过指定的[插槽](#slots)在工具栏内定位。`"primary"` 和 `"secondary"` 插槽在 `ios` 和 `md` 模式下的行为不同。
 
-The buttons component can wrap a standard [button](./button), [back button](./back-button), [menu button](./menu-button), or several of any of them. A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on back button and menu button in this example are for display purposes; see their respective documentation for proper usage.
+按钮组件可以包裹一个标准的[按钮](./button)、[返回按钮](./back-button)、[菜单按钮](./menu-button)，或其中任意多个。工具栏中的按钮默认样式为透明，但可以通过按钮上的 [`fill`](./button#fill) 属性来更改。本例中返回按钮和菜单按钮上包含的属性仅用于展示目的；请参阅它们各自的文档以了解正确用法。
 
 import Buttons from '@site/static/usage/v7/toolbar/buttons/index.md';
 
 <Buttons />
 
-## Searchbars in Toolbars
+## 工具栏中的搜索栏
 
-A [searchbar](./searchbar) can be placed inside of a toolbar to search through the content. It should be the only child component of the toolbar, and will take up the full width and height.
+可以将[搜索栏](./searchbar)放在工具栏内以搜索内容。它应该是工具栏的唯一子组件，并且会占据整个宽度和高度。
 
 import Searchbars from '@site/static/usage/v7/toolbar/searchbars/index.md';
 
 <Searchbars />
 
-## Segments in Toolbars
+## 工具栏中的分段控件
 
-[Segments](./segment) are generally used in toolbars to toggle between two different content views on the same page. They can be placed in a toolbar with other components, such as buttons, but should not be placed alongside a title.
+[分段控件](./segment)通常用于工具栏中，以在同一页面上切换两种不同的内容视图。它们可以与其他组件（如按钮）一起放在工具栏中，但不应与标题并列放置。
 
 import Segments from '@site/static/usage/v7/toolbar/segments/index.md';
 
 <Segments />
 
-## Progress Bars in Toolbars
+## 工具栏中的进度条
 
-A [progress bar](./progress-bar) is used as a loading indicator to show an ongoing process in an app. Progress bars can be placed with any other components inside of a toolbar as they will align with the bottom of the toolbar.
+[进度条](./progress-bar)用作加载指示器，显示应用中的进行中的过程。进度条可以与工具栏内的任何其他组件一起放置，因为它们会与工具栏底部对齐。
 
 import ProgressBars from '@site/static/usage/v7/toolbar/progress-bars/index.md';
 
 <ProgressBars />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v7/toolbar/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v7/toolbar/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Borders
+## 边框
 
-In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and the `<ion-footer>` will receive a box-shadow on the top. In `ios` mode, the `<ion-header>` will receive a border on the bottom, and the `<ion-footer>` will receive a border on the top.
+在 `md` 模式下，`<ion-header>` 底部会有一个阴影，而 `<ion-footer>` 顶部会有一个阴影。在 `ios` 模式下，`<ion-header>` 底部会有一条边框，而 `<ion-footer>` 顶部会有一条边框。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -101,10 +101,10 @@ In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and th
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

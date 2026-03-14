@@ -1,72 +1,70 @@
 ---
-sidebar_label: What are PWAs?
-title: Progressive Web Apps
+sidebar_label: 什么是渐进式 Web 应用？
+title: 渐进式 Web 应用程序
 ---
 
 <head>
-  <title>Progressive Web Applications: What is a PWA - Ionic Documentation</title>
+  <title>渐进式 Web 应用程序：什么是 PWA - Ionic 文档</title>
   <meta
     name="description"
-    content="What is a PWA? A Progressive Web Application uses modern web capabilities to deliver an app-like experience. Read our core concept documentation to learn more."
+    content="什么是 PWA？渐进式 Web 应用程序利用现代网络能力提供类应用体验。阅读我们的核心概念文档了解更多。"
   />
 </head>
 
-<!-- TOC goes here -->
+<!-- 此处为目录 -->
 
-### The web...but better
+### 更出色的网络体验
 
-A Progressive Web App (PWA) is a web app that uses modern web capabilities to deliver an app-like experience to users.
-These apps meet certain requirements (see below), are deployed to servers, accessible through URLs, and indexed by search engines.
+渐进式 Web 应用（PWA）是利用现代网络能力为用户提供类应用体验的 Web 应用。这些应用满足特定要求（见下文），部署到服务器，可通过 URL 访问，并能被搜索引擎索引。
 
-This can work in conjunction with [Capacitor](https://capacitorjs.com) to provide a multiple deploy targets for all your users.
-You can deploy your app as a PWA as well as Native app and take advantage of both channels.
+这可以与 [Capacitor](https://capacitorjs.com) 结合使用，为所有用户提供多平台部署方案。您可以将应用部署为 PWA 和原生应用，同时利用两种渠道的优势。
 
-Ionic allows you to ship your app to not only the app store, but also deploy to the mobile web as a PWA.
+Ionic 不仅能让您将应用发布到应用商店，还能作为 PWA 部署到移动网络。
 
-### What is required
+### 核心要求
 
-To be considered a Progressive Web App, your app must be:
+要被视为渐进式 Web 应用，您的应用必须满足以下条件：
 
-- Progressive - Work for every user, regardless of browser choice, because they are built with progressive enhancement as a core tenet.
+- 渐进增强 - 适用于所有用户，无论选择何种浏览器，因为渐进增强是其核心原则。
 
-- Responsive - Fit any form factor, desktop, mobile, tablet, or whatever is next.
+- 响应式设计 - 适配任何屏幕尺寸：桌面端、移动端、平板或未来设备。
 
-- Connectivity independent - Enhanced with service workers to work offline or on low quality networks.
+- 连接无关性 - 通过 Service Worker 实现离线运行或在低质量网络中工作。
 
-- App-like - Use the app-shell model to provide app-style navigation and interactions.
+- 类应用体验 - 采用应用壳（app-shell）模式，提供应用风格的导航与交互。
 
-- Fresh - Always up-to-date thanks to the service worker update process.
+- 持续更新 - 借助 Service Worker 更新机制始终保持最新状态。
 
-- Safe - Served via HTTPS to prevent snooping and ensure content has not been tampered with.
+- 安全可靠 - 通过 HTTPS 提供服务，防止窃听并确保内容未被篡改。
 
-- Discoverable - Are identifiable as “applications” thanks to W3C manifests and service worker registration scope allowing search engines to find them.
+- 易于发现 - 凭借 W3C 清单和 Service Worker 注册范围，可被识别为“应用程序”，便于搜索引擎收录。
 
-- Re-engageable - Make re-engagement easy through features like push notifications.
+- 可重新互动 - 通过推送通知等功能简化用户重新互动流程。
 
-- Installable - Allow users to “keep” apps they find most useful on their home screen without the hassle of an app store.
+- 可安装性 - 允许用户将最常用的应用“保留”在主屏幕，无需经过应用商店的繁琐流程。
 
-- Linkable - Easily share via URL and not require complex installation.
+- 可链接分享 - 可通过 URL 轻松分享，无需复杂安装过程。
 
 <!-- cspell:disable -->
 
 <em>
   <a href="https://addyosmani.com/blog/getting-started-with-progressive-web-apps/" target="_blank">
-    Addy Osmani: Progressive web apps
+    Addy Osmani：渐进式 Web 应用
   </a>
 </em>
 
 <!-- cspell:enable -->
 
-There is a lot here, but it boils down to a few points for Ionic apps.
+虽然要求很多，但对于 Ionic 应用而言可归纳为几个关键点：
 
-#### Offline Support
+#### 离线支持
 
-Apps should be able to work offline. Whether that be displaying a proper "offline" message or caching app data for display purpose.
+应用应能在离线状态下运行。无论是显示恰当的“离线”提示信息，还是缓存应用数据以供显示。
 
-#### <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">Web App Manifest</a>
+#### <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">Web 应用清单</a>
 
-An app manifest file should describe the resources your app will need. This includes your app's displayed name, icons, as well as splash screen. If you link to the manifest file in your index.html, browsers will detect that and load the resources for you.
+应用清单文件应描述应用所需的资源，包括显示名称、图标以及启动画面。如果在 index.html 中链接清单文件，浏览器会自动检测并加载这些资源。
 
 #### <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank">Service Worker</a>
 
-Service worker could be mentioned in Offline Support, but it really deserves its own section. Service worker provides a programmatic way to cache app resources. Be it JavaScript files or JSON data from a HTTP request. The programmatic API allows developers to decide how to handle caching and provides a much more flexible experience than other options.
+Service Worker 本可归入离线支持部分，但其重要性值得单独说明。它提供了以编程方式缓存应用资源的能力，无论是 JavaScript 文件还是 HTTP 请求的 JSON 数据。这种编程式 API 让开发者能够自主决定缓存策略，相比其他方案提供了更灵活的体验。

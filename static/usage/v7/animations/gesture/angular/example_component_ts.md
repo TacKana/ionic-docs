@@ -18,9 +18,9 @@ export class ExampleComponent {
   private initialStep = 0;
 
   /**
-   * The track is 344px wide.
-   * The card is 100px wide.
-   * We want 16px of margin on each end of the track.
+   * 轨道宽度为 344px。
+   * 卡片宽度为 100px。
+   * 我们希望在轨道的两端各有 16px 的边距。
    */
   private readonly MAX_TRANSLATE = 344 - 100 - 32;
 

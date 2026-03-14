@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="openPopover">Click Me</ion-button>
+  <ion-button @click="openPopover">点击我</ion-button>
 </template>
 
 <script setup lang="ts">

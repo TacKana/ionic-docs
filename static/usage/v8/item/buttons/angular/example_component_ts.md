@@ -14,9 +14,9 @@ import { home, navigate, star } from 'ionicons/icons';
 export class ExampleComponent {
   constructor() {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 应用中需要使用的所有图标
+     * 都可以在 app.component.ts 中注册，
+     * 之后便可以在应用的任何位置通过名称引用。
      */
     addIcons({ home, navigate, star });
   }

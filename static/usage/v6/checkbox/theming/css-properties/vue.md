@@ -2,7 +2,7 @@
 <template>
   <ion-item>
     <ion-checkbox slot="start"></ion-checkbox>
-    <ion-label>Themed checkbox</ion-label>
+    <ion-label>主题化复选框</ion-label>
   </ion-item>
 </template>
 

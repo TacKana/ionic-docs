@@ -10,35 +10,35 @@ import CustomProps from '@ionic-internal/component-api/v7/route-redirect/custom-
 import Slots from '@ionic-internal/component-api/v7/route-redirect/slots.md';
 
 <head>
-  <title>ion-route-redirect: Redirect 'from' a URL 'to' Another URL</title>
+  <title>ion-route-redirect：将 URL 从某个路径重定向到另一个路径</title>
   <meta
     name="description"
-    content="ion-route-redirect is used with as a direct child of an ion-router and redirects 'from' a URL 'to' another URL. Read to learn about the route redirect plugin."
+    content="ion-route-redirect 用作 ion-router 的直接子组件，可将 URL 从某个路径重定向到另一个路径。了解路由重定向插件的使用方法。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-A route redirect can only be used with an `ion-router` as a direct child of it.
+路由重定向组件只能作为 `ion-router` 的直接子组件使用。
 
 :::note
-Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
+注意：此组件仅适用于原生 JavaScript 和 Stencil 项目。对于 Angular 项目，请使用 [`ion-router-outlet`](router-outlet.md) 和 Angular 路由器。
 :::
 
-The route redirect has two configurable properties:
+路由重定向包含两个可配置属性：
 
 - `from`
 - `to`
 
-It redirects "from" a URL "to" another URL. When the defined `ion-route-redirect` rule matches, the router will redirect from the path specified in the `from` property to the path in the `to` property. In order for a redirect to occur the `from` path needs to be an exact match to the navigated URL.
+它用于将 URL 从 "from" 路径重定向到 "to" 路径。当定义的 `ion-route-redirect` 规则匹配时，路由器会将 `from` 属性指定的路径重定向到 `to` 属性的路径。重定向发生时，`from` 路径必须与导航的 URL 完全匹配。
 
-## Multiple Route Redirects
+## 多个路由重定向
 
-An arbitrary number of redirect routes can be defined inside an `ion-router`, but only one can match.
+可以在 `ion-router` 内定义任意数量的重定向路由，但只会匹配其中一个。
 
-A route redirect will never call another redirect after its own redirect, since this could lead to infinite loops.
+一个路由重定向在自身重定向后，永远不会调用另一个重定向，因为这可能导致无限循环。
 
-Take the following two redirects:
+请看以下两个重定向：
 
 ```html
 <ion-router>
@@ -47,25 +47,25 @@ Take the following two redirects:
 </ion-router>
 ```
 
-If the user navigates to `/admin` the router will redirect to `/login` and stop there. It will never evaluate more than one redirect.
+如果用户导航到 `/admin`，路由器将重定向到 `/login` 并在此停止。它不会评估多个重定向。
 
-## Usage
+## 使用方法
 
 ```html
-<!-- Redirects when the user navigates to `/admin` but
-will NOT redirect if the user navigates to `/admin/posts` -->
+<!-- 当用户导航到 `/admin` 时重定向，
+但如果用户导航到 `/admin/posts` 则不会重定向 -->
 <ion-route-redirect from="/admin" to="/login"></ion-route-redirect>
 
-<!-- By adding the wilcard character (*), the redirect will match
-any subpath of admin -->
+<!-- 通过添加通配符 (*)，重定向将匹配
+admin 的任何子路径 -->
 <ion-route-redirect from="/admin/*" to="/login"></ion-route-redirect>
 ```
 
-### Route Redirects as Guards
+### 路由重定向作为守卫
 
-Redirection routes can work as guards to prevent users from navigating to certain areas of an application based on a given condition, such as if the user is authenticated or not.
+重定向路由可以作为守卫，根据特定条件（例如用户是否已认证）防止用户导航到应用程序的某些区域。
 
-A route redirect can be added and removed dynamically to redirect (or guard) some routes from being accessed. In the following example, all urls `*` will be redirected to the `/login` url if `isLoggedIn` is `false`.
+可以动态添加和移除路由重定向，以重定向（或守卫）某些路由，防止被访问。在以下示例中，如果 `isLoggedIn` 为 `false`，则所有 URL `*` 都将重定向到 `/login`。
 
 ```tsx
 const isLoggedIn = false;
@@ -80,7 +80,7 @@ if (!isLoggedIn) {
 }
 ```
 
-Alternatively, the value of `to` can be modified based on a condition. In the following example, the route redirect will check if the user is logged in and redirect to the `/login` url if not.
+或者，可以根据条件修改 `to` 的值。在以下示例中，路由重定向将检查用户是否已登录，如果未登录则重定向到 `/login`。
 
 ```html
 <ion-route-redirect id="tutorialRedirect" from="*"></ion-route-redirect>
@@ -93,15 +93,15 @@ const routeRedirect = document.querySelector('#tutorialRedirect');
 routeRedirect.setAttribute('to', isLoggedIn ? undefined : '/login');
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -109,10 +109,10 @@ routeRedirect.setAttribute('to', isLoggedIn ? undefined : '/login');
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

@@ -4,25 +4,25 @@ sidebar_label: 'config get'
 
 # ionic config get
 
-Print config values
+打印配置值
 
 ```shell
 ionic config get [options]
 ```
 
-This command reads and prints configuration values from the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.
+该命令从项目的 **./ionic.config.json** 文件中读取并打印配置值。您也可以通过 `--global` 选项操作全局 CLI 配置（**~/.ionic/config.json**）。
 
-For nested properties, separate nest levels with dots. For example, the property name `integrations.cordova` will look in the **integrations** object for the **cordova** property.
+对于嵌套属性，请使用点号分隔层级。例如，属性名称 `integrations.cordova` 将在 **integrations** 对象中查找 **cordova** 属性。
 
-Without a `property` argument, this command prints out the entire config.
+如果没有提供 `property` 参数，此命令将打印整个配置文件。
 
-For multi-app projects, this command is scoped to the current project by default. To operate at the root of the project configuration file instead, use the `--root` option.
+对于多应用项目，此命令默认作用于当前项目范围。若要在项目配置文件的根级别操作，请使用 `--root` 选项。
 
-If you are using this command programmatically, you can use the `--json` option.
+如果您以编程方式使用此命令，可以配合 `--json` 选项使用。
 
-This command will sanitize config output for known sensitive fields (disabled when using `--json`).
+此命令会对已知的敏感字段进行输出脱敏处理（使用 `--json` 选项时会禁用该功能）。
 
-## Examples
+## 示例
 
 ```shell
 $ ionic config get
@@ -31,7 +31,7 @@ $ ionic config get --global user.email
 $ ionic config get -g npmClient
 ```
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -43,15 +43,15 @@ $ ionic config get -g npmClient
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>The property name you wish to get</p>
+        <p>需要获取的属性名称</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -67,13 +67,13 @@ $ ionic config get -g npmClient
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Use global CLI config</p>
+        <p>使用全局 CLI 配置</p>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-g</code>
       </td>
@@ -81,7 +81,7 @@ $ ionic config get -g npmClient
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -97,10 +97,10 @@ $ ionic config get -g npmClient
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Output config values in JSON</p>
+          <p>以 JSON 格式输出配置值</p>
         </div>
       </td>
     </tr>
@@ -118,11 +118,11 @@ $ ionic config get -g npmClient
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
           <p>
-            Operate on root of <strong>./ionic.config.json</strong>
+            在 <strong>./ionic.config.json</strong> 的根级别操作
           </p>
         </div>
       </td>

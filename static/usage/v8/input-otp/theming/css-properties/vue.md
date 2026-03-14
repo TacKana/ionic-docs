@@ -1,8 +1,8 @@
 ```html
 <template>
-  <ion-input-otp class="custom" separators="all"> Didn't get a code? <a href="#">Resend the code</a> </ion-input-otp>
+  <ion-input-otp class="custom" separators="all"> 没有收到验证码？ <a href="#">重新发送验证码</a> </ion-input-otp>
   <ion-input-otp fill="solid" class="custom" separators="all">
-    Didn't get a code? <a href="#">Resend the code</a>
+    没有收到验证码？ <a href="#">重新发送验证码</a>
   </ion-input-otp>
 </template>
 

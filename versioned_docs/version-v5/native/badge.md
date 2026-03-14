@@ -10,31 +10,31 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Badge
 
-The essential purpose of badge numbers is to enable an application to inform its users that it has something for them — for example, unread messages — when the application isn’t running in the foreground.
+角标数字的核心作用是让应用能够通知用户某些待处理事项——例如未读消息——即使应用未在前台运行。
 
-Requires Cordova plugin: cordova-plugin-badge. For more info, please see the [Badge plugin docs](https://github.com/katzer/cordova-plugin-badge).
+需要 Cordova 插件：cordova-plugin-badge。更多信息，请参阅 [Badge 插件文档](https://github.com/katzer/cordova-plugin-badge)。
 
-Android Note: Badges have historically only been a feature implemented by third party launchers and not visible unless one of those launchers was being used (E.G. Samsung or Nova Launcher) and if enabled by the user. As of Android 8 (Oreo), [notification badges](https://developer.android.com/training/notify-user/badges) were introduced officially to reflect unread notifications. This plugin is unlikely to work as expected on devices running Android 8 or newer. Please see the [local notifications plugin docs](https://github.com/katzer/cordova-plugin-local-notifications) for more information on badge use with notifications.
+Android 注意：历史上，角标功能通常由第三方启动器实现，只有在使用这些启动器（例如三星或 Nova 启动器）且用户启用了该功能时才会显示。从 Android 8 (Oreo) 开始，官方引入了[通知角标](https://developer.android.com/training/notify-user/badges)来反映未读通知。此插件在运行 Android 8 或更新版本的设备上可能无法按预期工作。有关在通知中使用角标的更多信息，请参阅[本地通知插件文档](https://github.com/katzer/cordova-plugin-local-notifications)。
 
 <p>
   <a href="https://github.com/katzer/cordova-plugin-badge" target="_blank" rel="noopener" className="git-link">github.com/katzer/cordova-plugin-badge</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="别在插件问题上浪费宝贵时间"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在构建一个严肃的项目，就承担不起耗费数小时进行故障排查的代价。Ionic 专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -57,24 +57,24 @@ Android Note: Badges have historically only been a feature implemented by third 
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic Enterprise 提供由 Ionic 团队完全支持与维护的插件。&nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，或者如果您对此插件的企业版感兴趣，<a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">请联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - Browser
 - iOS
 - Windows
 
-## Usage
+## 使用
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解在 React 中使用 Ionic Native 组件的更多信息](../native-community.md#react)
 
 ### Angular
 

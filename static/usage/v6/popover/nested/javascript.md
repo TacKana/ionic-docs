@@ -1,16 +1,16 @@
 ```html
-<ion-button id="popover-button">Open Menu</ion-button>
+<ion-button id="popover-button">打开菜单</ion-button>
 <ion-popover trigger="popover-button" dismiss-on-select="true">
   <ion-content>
     <ion-list>
-      <ion-item button="true" detail="false">Option 1</ion-item>
-      <ion-item button="true" detail="false">Option 2</ion-item>
-      <ion-item button="true" id="nested-trigger">More options...</ion-item>
+      <ion-item button="true" detail="false">选项一</ion-item>
+      <ion-item button="true" detail="false">选项二</ion-item>
+      <ion-item button="true" id="nested-trigger">更多选项...</ion-item>
 
       <ion-popover trigger="nested-trigger" dismiss-on-select="true" side="end">
         <ion-content>
           <ion-list>
-            <ion-item button="true" detail="false">Nested option</ion-item>
+            <ion-item button="true" detail="false">嵌套选项</ion-item>
           </ion-list>
         </ion-content>
       </ion-popover>

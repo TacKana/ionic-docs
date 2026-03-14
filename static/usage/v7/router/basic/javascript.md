@@ -12,13 +12,13 @@
       this.innerHTML = `
     <ion-header>
       <ion-toolbar>
-        <ion-title>Page One</ion-title>
+        <ion-title>页面一</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      This is the content for page 1.
+      这是页面一的内容。
       <ion-router-link href="#/page-two">
-        <ion-button>Go to Page 2</ion-button>
+        <ion-button>前往页面二</ion-button>
       </ion-router-link>
     </ion-content>`;
     }
@@ -32,11 +32,11 @@
         <ion-buttons slot="start">
           <ion-back-button default-href="/"></ion-back-button>
         </ion-buttons>
-        <ion-title>Page Two</ion-title>
+        <ion-title>页面二</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      This is the content for page 2.
+      这是页面二的内容。
     </ion-content>`;
     }
   }

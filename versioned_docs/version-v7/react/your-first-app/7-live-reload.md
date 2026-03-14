@@ -1,27 +1,27 @@
 ---
-title: Rapid App Development with Live Reload
+title: 使用 Live Reload 进行快速应用开发
 sidebar_label: Live Reload
 ---
 
 <head>
-  <title>Rapid App Development with Live Reload with React | Ionic Capacitor Camera</title>
+  <title>使用 Ionic Capacitor Camera 和 React 进行 Live Reload 快速应用开发</title>
   <meta
     name="description"
-    content="Use the Ionic CLI’s Live Reload functionality to boost your productivity when building Ionic apps. Learn how you can utilize rapid app development."
+    content="使用 Ionic CLI 的 Live Reload 功能，在构建 Ionic 应用时提升您的开发效率。学习如何利用快速应用开发工具。"
   />
 </head>
 
-So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
+到目前为止，我们已经看到了开发一个能在所有平台上运行的跨平台应用是多么简单。开发体验相当快速，但如果我告诉您有一种方法可以更快呢？
 
-We can use the Ionic CLI’s [Live Reload functionality](../../cli/livereload.md) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
+我们可以使用 Ionic CLI 的 [Live Reload 功能](../../cli/livereload.md) 来提升构建 Ionic 应用时的开发效率。当激活时，Live Reload 会在检测到应用中的更改时重新加载浏览器和/或 WebView。
 
 ## Live Reload
 
-Remember `ionic serve`? That was Live Reload working in the browser, allowing us to iterate quickly.
+还记得 `ionic serve` 吗？那就是 Live Reload 在浏览器中运行，让我们能够快速迭代。
 
-We can also use it when developing on iOS and Android devices. This is particularly useful when writing code that interacts with native plugins - we must run it on a device to verify that it works. Therefore, being able to quickly write, build, test, and deploy code is crucial to keeping up our development speed.
+我们也可以在 iOS 和 Android 设备上进行开发时使用它。这在编写与原生插件交互的代码时特别有用——我们必须将其运行在设备上以验证其是否正常工作。因此，能够快速编写、构建、测试和部署代码对于保持我们的开发速度至关重要。
 
-Let’s use Live Reload to implement photo deletion, the missing piece of our Photo Gallery feature. Select your platform of choice (iOS or Android) and connect a device to your computer. Next, run either command in a terminal, based on your chosen platform:
+让我们使用 Live Reload 来实现照片删除功能，这是我们的照片库功能中缺失的一环。选择您偏好的平台（iOS 或 Android），并将设备连接到您的计算机。接下来，根据您选择的平台，在终端中运行以下命令之一：
 
 ```shell
 ionic cap run ios -l --external
@@ -29,13 +29,13 @@ ionic cap run ios -l --external
 ionic cap run android -l --external
 ```
 
-The Live Reload server will start up, and the native IDE of choice will open if not opened already. Within the IDE, click the Play button to launch the app onto your device.
+Live Reload 服务器将启动，如果尚未打开，相应的原生 IDE 也会打开。在 IDE 中，点击播放按钮以在您的设备上启动应用。
 
-## Deleting Photos
+## 删除照片
 
-With Live Reload running and the app open on your device, let’s implement photo deletion functionality.
+在 Live Reload 正在运行且应用已在您的设备上打开的情况下，让我们来实现照片删除功能。
 
-In `usePhotoGallery.ts`, add the `deletePhoto()` method. The selected photo is removed from the `photos` array first. Then, we delete the actual photo file itself using the Filesystem API.
+在 `usePhotoGallery.ts` 中，添加 `deletePhoto()` 方法。首先从 `photos` 数组中移除选定的照片。然后，我们使用文件系统 API 删除实际的图片文件。
 
 ```ts
 import { useState, useEffect } from 'react';
@@ -47,17 +47,17 @@ import { isPlatform } from '@ionic/react';
 import { Capacitor } from '@capacitor/core';
 
 export function usePhotoGallery() {
-  // ...existing code...
+  // ...现有代码...
 
-  // CHANGE: Add `deletePhoto()` method
+  // 更改：添加 `deletePhoto()` 方法
   const deletePhoto = async (photo: UserPhoto) => {
-    // Remove this photo from the Photos reference data array
+    // 从 Photos 引用数据数组中移除此照片
     const newPhotos = photos.filter((p) => p.filepath !== photo.filepath);
 
-    // Update photos array cache by overwriting the existing photo array
+    // 通过覆盖现有照片数组来更新照片数组缓存
     Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
 
-    // Delete photo file from filesystem
+    // 从文件系统中删除照片文件
     const filename = photo.filepath.slice(photo.filepath.lastIndexOf('/') + 1);
     await Filesystem.deleteFile({
       path: filename,
@@ -70,7 +70,7 @@ export function usePhotoGallery() {
   return {
     photos,
     addNewToGallery,
-    // CHANGE: Add `deletePhoto()` to the return statement
+    // 更改：在返回语句中添加 `deletePhoto()`
     deletePhoto,
   };
 }
@@ -81,14 +81,14 @@ export interface UserPhoto {
 }
 ```
 
-Next, in `Tab2.tsx`, implement the `IonActionSheet` component. We're adding two options: "Delete", which calls `usePhotoGallery.deletePhoto()`, and "Cancel". The cancel button will automatically close the action sheet when assigned the "cancel" role.
+接下来，在 `Tab2.tsx` 中，实现 `IonActionSheet` 组件。我们添加两个选项："Delete"（删除），调用 `usePhotoGallery.deletePhoto()`；和 "Cancel"（取消）。当指定为 "cancel" 角色时，取消按钮将自动关闭操作表。
 
 ```tsx
-// CHANGE: Add import
+// 更改：添加导入
 import { useState } from 'react';
-// CHANGE: Update import
+// 更改：更新导入
 import { camera, trash, close } from 'ionicons/icons';
-// CHANGE: Update import
+// 更改：更新导入
 import {
   IonContent,
   IonHeader,
@@ -104,15 +104,15 @@ import {
   IonImg,
   IonActionSheet,
 } from '@ionic/react';
-// CHANGE: Add import
+// 更改：添加导入
 import type { UserPhoto } from '../hooks/usePhotoGallery';
 import { usePhotoGallery } from '../hooks/usePhotoGallery';
 import './Tab2.css';
 
 const Tab2: React.FC = () => {
-  // CHANGE: Add `deletePhoto()` method
+  // 更改：添加 `deletePhoto()` 方法
   const { photos, addNewToGallery, deletePhoto } = usePhotoGallery();
-  // CHANGE: Add state for the photo to delete
+  // 更改：添加待删除照片的状态
   const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
 
   return (
@@ -145,7 +145,7 @@ const Tab2: React.FC = () => {
           </IonFabButton>
         </IonFab>
 
-        {/* CHANGE: Add action sheet for deleting photos */}
+        {/* 更改：添加用于删除照片的操作表 */}
         <IonActionSheet
           isOpen={!!photoToDelete}
           buttons={[
@@ -165,7 +165,7 @@ const Tab2: React.FC = () => {
               icon: close,
               role: 'cancel',
               handler: () => {
-                // Nothing to do, action sheet is automatically closed
+                // 无需执行任何操作，操作表会自动关闭
               },
             },
           ]}
@@ -179,14 +179,14 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-Add a click handler to the `<IonImg>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](../../api/action-sheet.md) dialog with the option to either delete the selected photo or cancel (close) the dialog.
+向 `<IonImg>` 元素添加一个点击处理程序。当应用用户点击我们图库中的照片时，我们会显示一个 [操作表](../../api/action-sheet.md) 对话框，提供删除选定照片或取消（关闭）对话框的选项。
 
 ```tsx
 <IonGrid>
   <IonRow>
     {photos.map((photo) => (
       <IonCol size="6" key={photo.filepath}>
-        {/* CHANGE: Add a click event listener to each image. */}
+        {/* 更改：为每张图片添加点击事件监听器。 */}
         <IonImg src={photo.webviewPath} onClick={() => setPhotoToDelete(photo)} />
       </IonCol>
     ))}
@@ -194,12 +194,12 @@ Add a click handler to the `<IonImg>` element. When the app user taps on a photo
 </IonGrid>
 ```
 
-Remember that removing the photo from the `photos` array triggers the `setPhotos` method for us automatically.
+请记住，从 `photos` 数组中移除照片会自动为我们触发 `setPhotos` 方法。
 
-Tap on a photo again and choose the “Delete” option. The photo is deleted! Implemented much faster using Live Reload. 💪
+再次点击一张照片并选择“删除”选项。照片被删除了！使用 Live Reload 实现得更快了。💪
 
 :::note
-Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/tutorial-photo-gallery-react).
+请记住，您可以在此处找到此应用的完整源代码 [here](https://github.com/ionic-team/tutorial-photo-gallery-react)。
 :::
 
-In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.
+在本教程的最后部分，我们将引导您了解 Appflow 产品的基础知识，该产品用于构建应用并将其部署到用户设备上。

@@ -13,12 +13,12 @@ function Example() {
           className="always-flip"
           toggleIcon={caretDownSharp}
           interface="popover"
-          label="Icon flips on both modes"
-          placeholder="Select fruit"
+          label="图标在两种模式下都会翻转"
+          placeholder="选择水果"
         >
-          <IonSelectOption value="apples">Apples</IonSelectOption>
-          <IonSelectOption value="oranges">Oranges</IonSelectOption>
-          <IonSelectOption value="bananas">Bananas</IonSelectOption>
+          <IonSelectOption value="apples">苹果</IonSelectOption>
+          <IonSelectOption value="oranges">橙子</IonSelectOption>
+          <IonSelectOption value="bananas">香蕉</IonSelectOption>
         </IonSelect>
       </IonItem>
       <IonItem>
@@ -26,12 +26,12 @@ function Example() {
           className="never-flip"
           toggleIcon={caretDownSharp}
           interface="popover"
-          label="Icon never flips"
-          placeholder="Select fruit"
+          label="图标从不翻转"
+          placeholder="选择水果"
         >
-          <IonSelectOption value="apples">Apples</IonSelectOption>
-          <IonSelectOption value="oranges">Oranges</IonSelectOption>
-          <IonSelectOption value="bananas">Bananas</IonSelectOption>
+          <IonSelectOption value="apples">苹果</IonSelectOption>
+          <IonSelectOption value="oranges">橙子</IonSelectOption>
+          <IonSelectOption value="bananas">香蕉</IonSelectOption>
         </IonSelect>
       </IonItem>
     </IonList>

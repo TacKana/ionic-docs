@@ -7,16 +7,16 @@ function Example() {
     <>
       <IonItem>
         <IonAvatar slot="start">
-          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <img alt="人物头像剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </IonAvatar>
-        <IonLabel>Avatar Item</IonLabel>
+        <IonLabel>头像列表项</IonLabel>
       </IonItem>
 
       <IonItem>
         <IonThumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          <img alt="山脉剪影" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
         </IonThumbnail>
-        <IonLabel>Thumbnail Item</IonLabel>
+        <IonLabel>缩略图列表项</IonLabel>
       </IonItem>
     </>
   );

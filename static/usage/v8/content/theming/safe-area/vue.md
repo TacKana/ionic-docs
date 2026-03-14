@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-content>
-    <span>Here's a small text description for the content. Nothing more, nothing less.</span>
+    <span>这里是一段关于内容的简短文字描述，不多不少。</span>
   </ion-content>
 </template>
 
@@ -12,8 +12,8 @@
 <style>
   :root {
     /**
-     * Setting the variables for DEMO purposes only.
-     * Values will be set automatically when building an iOS or Android app.
+     * 以下变量仅为演示目的而设置。
+     * 构建 iOS 或 Android 应用时，这些值将自动设置。
      */
     --ion-safe-area-top: 20px;
     --ion-safe-area-bottom: 20px;

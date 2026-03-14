@@ -15,25 +15,25 @@ export class ExampleComponent {
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Example header',
-      subHeader: 'Example subheader',
+      header: '示例标题',
+      subHeader: '示例副标题',
       cssClass: 'my-custom-class',
       buttons: [
         {
-          text: 'Delete',
+          text: '删除',
           role: 'destructive',
           data: {
             action: 'delete',
           },
         },
         {
-          text: 'Share',
+          text: '分享',
           data: {
             action: 'share',
           },
         },
         {
-          text: 'Cancel',
+          text: '取消',
           role: 'cancel',
           data: {
             action: 'cancel',

@@ -10,30 +10,30 @@ import CustomProps from '@ionic-internal/component-api/v6/nav-link/custom-props.
 import Slots from '@ionic-internal/component-api/v6/nav-link/slots.md';
 
 <head>
-  <title>ion-nav-link: The Element for Navigation to a Specified Component</title>
+  <title>ion-nav-link：用于导航到指定组件的元素</title>
   <meta
     name="description"
-    content="Navigation links navigate to specified components. It is the element form of calling the push(), pop(), and setRoot() methods. Read for more on ion-nav-link."
+    content="导航链接用于导航到指定的组件。它是调用 push()、pop() 和 setRoot() 方法的元素形式。点击了解更多关于 ion-nav-link 的信息。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-A navigation link is used to navigate to a specified component. The component can be navigated to by going `forward`, `back` or as a `root` component.
+导航链接用于导航到指定的组件。可以通过 `forward`、`back` 或作为 `root` 组件的方式进行导航。
 
-It is the element form of calling the `push()`, `pop()`, and `setRoot()` methods on the navigation controller.
+它是以元素形式调用导航控制器上的 `push()`、`pop()` 和 `setRoot()` 方法。
 
-See the [nav](./nav#using-navlink) documentation for more information.
+更多信息请参阅 [nav](./nav#using-navlink) 文档。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -41,10 +41,10 @@ See the [nav](./nav#using-navlink) documentation for more information.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

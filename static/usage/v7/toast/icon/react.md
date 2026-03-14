@@ -6,8 +6,8 @@ import { globe } from 'ionicons/icons';
 function Example() {
   return (
     <>
-      <IonButton id="open-toast">Open Toast</IonButton>
-      <IonToast trigger="open-toast" message="Hello World!" duration={3000} icon={globe}></IonToast>
+      <IonButton id="open-toast">打开提示</IonButton>
+      <IonToast trigger="open-toast" message="你好，世界！" duration={3000} icon={globe}></IonToast>
     </>
   );
 }

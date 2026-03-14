@@ -1,27 +1,27 @@
 ---
-title: Migration Guide
-sidebar_label: Migration
+title: 迁移指南
+sidebar_label: 迁移
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>App Migration Guide: Documentation to Migrate Ionic 4.x to 5.x</title>
+  <title>应用迁移指南：从 Ionic 4.x 迁移到 5.x 的文档</title>
   <meta
     name="description"
-    content="The Ionic Migration Guide provides documentation for how to migrate an app from 4.x to 5.x. Read to learn more about what updates this process requires."
+    content="Ionic 迁移指南提供了如何将应用从 4.x 版本迁移到 5.x 版本的文档。阅读本文以了解更多关于此过程所需的更新信息。"
   />
 </head>
 
-## Migrating from Ionic 5.x to Ionic 6.x
+## 从 Ionic 5.x 迁移到 Ionic 6.x
 
-Please see the [Ionic 6 Migration Guide](/docs/updating/6-0).
+请参阅 [Ionic 6 迁移指南](/docs/updating/6-0)。
 
-## Migrating from Ionic 4.x to Ionic 5.x
+## 从 Ionic 4.x 迁移到 Ionic 5.x
 
-Please see the [Ionic 5 Migration Guide](/docs/updating/5-0).
+请参阅 [Ionic 5 迁移指南](/docs/updating/5-0)。
 
-## Migrating to Ionic 4.0
+## 迁移到 Ionic 4.0
 
-Please see the [Ionic 4 Migration Guide](/docs/updating/4-0).
+请参阅 [Ionic 4 迁移指南](/docs/updating/4-0)。

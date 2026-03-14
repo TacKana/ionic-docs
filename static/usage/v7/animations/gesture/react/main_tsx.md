@@ -15,9 +15,9 @@ function Example() {
   useEffect(() => {
     if (animation.current === null) {
       /**
-       * The track is 344px wide.
-       * The card is 100px wide.
-       * We want 16px of margin on each end of the track.
+       * 轨道宽度为 344px
+       * 卡片宽度为 100px
+       * 轨道两端需要保留 16px 的边距
        */
       const MAX_TRANSLATE = 344 - 100 - 32;
 
@@ -79,11 +79,11 @@ function Example() {
       <div className="container">
         <div className="track">
           <IonCard id="card" button={true} ref={cardEl}>
-            <IonCardContent>Card</IonCardContent>
+            <IonCardContent>卡片</IonCardContent>
           </IonCard>
         </div>
 
-        <p>Drag the square along the track.</p>
+        <p>沿轨道拖拽方块</p>
       </div>
     </>
   );

@@ -6,26 +6,22 @@
 
   const date = new Date();
 
-  // Set the value of the datetime to 2 days
-  // before the current day
+  // 将日期选择器的值设置为当前日期的前两天
   let dayChange = -2;
 
-  // If the day we are going to set the value to
-  // is in the previous month then set the day 2 days
-  // later instead so it remains in the same month
+  // 如果计算出的日期在上个月，则将日期改为两天后，以确保仍处在同一个月内
   if (date.getDate() + dayChange <= 0) {
     dayChange = -dayChange;
   }
 
-  // Set the value of the datetime to the day
-  // calculated above
+  // 将日期选择器的值设置为上述计算出的日期
   date.setDate(date.getDate() + dayChange);
   datetime.value = date.toISOString();
 </script>
 
 <style>
   /*
-  * Custom Datetime Day Parts
+  * 自定义日期时间选择器的日期部分样式
   * -------------------------------------------
   */
 
@@ -43,7 +39,7 @@
   }
 
   /*
-  * Custom Material Design Datetime Day Parts
+  * 自定义 Material Design 日期时间选择器的日期部分样式
   * -------------------------------------------
   */
 
@@ -59,7 +55,7 @@
   }
 
   /*
-  * Custom iOS Datetime Day Parts
+  * 自定义 iOS 日期时间选择器的日期部分样式
   * -------------------------------------------
   */
 

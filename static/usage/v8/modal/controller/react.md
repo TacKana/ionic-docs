@@ -22,20 +22,20 @@ const ModalExample = ({ dismiss }: { dismiss: (data?: string | null | undefined 
         <IonToolbar>
           <IonButtons slot="start">
             <IonButton color="medium" onClick={() => dismiss(null, 'cancel')}>
-              Cancel
+              取消
             </IonButton>
           </IonButtons>
-          <IonTitle>Welcome</IonTitle>
+          <IonTitle>欢迎</IonTitle>
           <IonButtons slot="end">
             <IonButton onClick={() => dismiss(inputRef.current?.value, 'confirm')} strong={true}>
-              Confirm
+              确认
             </IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonItem>
-          <IonInput ref={inputRef} labelPlacement="stacked" label="Enter your name" placeholder="Your name" />
+          <IonInput ref={inputRef} labelPlacement="stacked" label="请输入您的姓名" placeholder="您的姓名" />
         </IonItem>
       </IonContent>
     </IonPage>
@@ -46,13 +46,13 @@ function Example() {
   const [present, dismiss] = useIonModal(ModalExample, {
     dismiss: (data: string, role: string) => dismiss(data, role),
   });
-  const [message, setMessage] = useState('This modal example uses the modalController to present and dismiss modals.');
+  const [message, setMessage] = useState('此模态框示例使用 modalController 来显示和关闭模态框。');
 
   function openModal() {
     present({
       onWillDismiss: (event: CustomEvent<OverlayEventDetail>) => {
         if (event.detail.role === 'confirm') {
-          setMessage(`Hello, ${event.detail.data}!`);
+          setMessage(`您好，${event.detail.data}！`);
         }
       },
     });
@@ -62,12 +62,12 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Controller Modal</IonTitle>
+          <IonTitle>控制器模态框</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton expand="block" onClick={() => openModal()}>
-          Open
+          打开
         </IonButton>
         <p>{message}</p>
       </IonContent>

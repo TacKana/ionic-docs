@@ -1,24 +1,24 @@
-# Virtual Scroll
+# 虚拟滚动
 
-:::warning Looking for `ion-virtual-scroll`?
+:::warning 正在寻找 `ion-virtual-scroll`？
 
-`ion-virtual-scroll` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Virtuoso package detailed below.
+`ion-virtual-scroll` 已在 v6.0.0 中被弃用，并在 v7.0.0 中被移除。我们建议使用下面介绍的 Virtuoso 包。
 
 :::
 
-One virtual scrolling solution to consider for your Ionic React app is [Virtuoso](https://virtuoso.dev/). This guide will go over how to install `Virtuoso` into your Ionic React application and use it with other Ionic components.
+对于 Ionic React 应用程序，一个值得考虑的虚拟滚动解决方案是 [Virtuoso](https://virtuoso.dev/)。本指南将介绍如何在你的 Ionic React 应用程序中安装 `Virtuoso`，并与其他 Ionic 组件一起使用。
 
-## Installation
+## 安装
 
-To setup the virtual scroller, first install `react-virtuoso`:
+要设置虚拟滚动器，首先安装 `react-virtuoso`：
 
 ```shell
 npm install react-virtuoso
 ```
 
-## Usage
+## 使用方法
 
-There are a few components that Virtuoso includes, but this example will use the `Virtuoso` component. This component should be added inside of your `IonContent` component:
+Virtuoso 包含几个组件，但本示例将使用 `Virtuoso` 组件。该组件应添加到你的 `IonContent` 组件内部：
 
 ```tsx
 import React from 'react';
@@ -49,28 +49,28 @@ const Home: React.FC = () => (
 export default Home;
 ```
 
-After adding the `Virtuoso` component to our page, we need to define the size of the virtual scroll container. In this case, we want the container to take up the full height of the screen which we can do by adding `style={{ height: '100%' }}`.
+将 `Virtuoso` 组件添加到我们的页面后，我们需要定义虚拟滚动容器的大小。在这种情况下，我们希望容器占据屏幕的整个高度，可以通过添加 `style={{ height: '100%' }}` 来实现。
 
-Next, we want to define the total number of items to render via the `totalCount` property.
+接下来，我们希望通过 `totalCount` 属性定义要渲染的项目总数。
 
-From there, we can use the `itemContent` property to pass a function that will be called to render each item in our virtual scroll content.
+然后，我们可以使用 `itemContent` 属性传递一个函数，该函数将被调用来渲染虚拟滚动内容中的每个项目。
 
-An important thing to note here is the `div` that wraps our `IonItem` component. When lazy loading Ionic components, there may be a few frames where the component is loaded but the styles have not loaded in. When this happens, the component's dimension will be `0`, and Virtuoso may throw an error. This is because Virtuoso needs distinct positions for each item it renders, and it cannot determine that when a component's dimension is `0`.
+这里需要注意的一个重要点是包装 `IonItem` 组件的 `div`。当惰性加载 Ionic 组件时，可能会出现组件已加载但样式尚未加载的情况。发生这种情况时，组件的尺寸将为 `0`，Virtuoso 可能会抛出错误。这是因为 Virtuoso 需要为其渲染的每个项目提供明确的定位，而当组件尺寸为 `0` 时，它无法确定这一点。
 
-## Usage with Ionic Components
+## 与 Ionic 组件一起使用
 
-Ionic Framework requires that features such as collapsible large titles, `ion-infinite-scroll`, `ion-refresher`, and `ion-reorder-group` be used within an `ion-content`. To use these experiences with virtual scrolling, you must add the `.ion-content-scroll-host` class to the virtual scroll viewport.
+Ionic Framework 要求某些功能（如可折叠大标题、`ion-infinite-scroll`、`ion-refresher` 和 `ion-reorder-group`）必须在 `ion-content` 内使用。要在虚拟滚动中使用这些功能，你必须将 `.ion-content-scroll-host` 类添加到虚拟滚动视口。
 
-For example:
+例如：
 
 ```tsx
 <IonPage>
   <IonContent scrollY={false}>
-    <Virtuoso className="ion-content-scroll-host">{/* Your existing content and configurations */}</Virtuoso>
+    <Virtuoso className="ion-content-scroll-host">{/* 你的现有内容和配置 */}</Virtuoso>
   </IonContent>
 </IonPage>
 ```
 
-## Further Reading
+## 进一步阅读
 
-This guide only covers a small portion of what `Virtuoso` is capable of. For more details, please see the [Virtuoso documentation](https://virtuoso.dev/).
+本指南仅涵盖了 `Virtuoso` 功能的一小部分。更多详细信息，请参阅 [Virtuoso 文档](https://virtuoso.dev/)。

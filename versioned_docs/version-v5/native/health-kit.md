@@ -10,28 +10,27 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Health Kit
 
-The HealthKit plugin allows you to read data from and write data to the iOS 8+ HealthKit framework.
-Any data saved shows up in the iOS Health app and is available for other iOS apps.
+HealthKit 插件允许你读取和写入 iOS 8+ 的 HealthKit 框架数据。任何保存的数据都会显示在 iOS 健康应用中，并可供其他 iOS 应用使用。
 
 <p>
   <a href="https://github.com/Telerik-Verified-Plugins/HealthKit" target="_blank" rel="noopener" className="git-link">github.com/Telerik-Verified-Plugins/HealthKit</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果你正在开发一个严肃的项目，你无法承受花费数小时进行故障排查。Ionic 的专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -56,21 +55,21 @@ Any data saved shows up in the iOS Health app and is available for other iOS app
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic Enterprise 提供来自 Ionic 团队全面支持与维护的插件。 &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或如果您对此插件的企业版本感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - iOS
 
-## Usage
+## 用法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 

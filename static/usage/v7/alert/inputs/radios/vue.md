@@ -1,9 +1,9 @@
 ```html
 <template>
-  <ion-button id="present-alert">Click Me</ion-button>
+  <ion-button id="present-alert">点击我</ion-button>
   <ion-alert
     trigger="present-alert"
-    header="Select your favorite color"
+    header="选择你最喜欢的颜色"
     :buttons="alertButtons"
     :inputs="alertInputs"
   ></ion-alert>
@@ -12,20 +12,20 @@
 <script setup lang="ts">
   import { IonAlert, IonButton } from '@ionic/vue';
 
-  const alertButtons = ['OK'];
+  const alertButtons = ['确认'];
   const alertInputs = [
     {
-      label: 'Red',
+      label: '红色',
       type: 'radio',
       value: 'red',
     },
     {
-      label: 'Blue',
+      label: '蓝色',
       type: 'radio',
       value: 'blue',
     },
     {
-      label: 'Green',
+      label: '绿色',
       type: 'radio',
       value: 'green',
     },

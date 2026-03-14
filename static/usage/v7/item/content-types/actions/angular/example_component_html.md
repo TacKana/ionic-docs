@@ -1,7 +1,7 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Example</ion-title>
+    <ion-title>示例</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content color="light">

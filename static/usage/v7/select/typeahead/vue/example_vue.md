@@ -3,7 +3,7 @@
   <ion-content color="light">
     <ion-list :inset="true">
       <ion-item :button="true" :detail="false" id="select-fruits">
-        <ion-label>Favorite Fruits</ion-label>
+        <ion-label>喜爱的水果</ion-label>
         <div slot="end" id="selected-fruits">{{ selectedFruitsText }}</div>
       </ion-item>
     </ion-list>
@@ -12,7 +12,7 @@
   <ion-modal trigger="select-fruits" ref="modal">
     <app-typeahead
       class="ion-page"
-      title="Favorite Fruits"
+      title="喜爱的水果"
       :items="fruits"
       :selectedItems="selectedFruits"
       @selection-change="fruitSelectionChanged($event)"
@@ -55,7 +55,7 @@
     { text: 'Strawberry', value: 'strawberry' },
   ];
   const modal = ref();
-  const selectedFruitsText = ref('0 Items');
+  const selectedFruitsText = ref('0 项');
   const selectedFruits = ref([]);
 
   const formatData = (data: string[]) => {
@@ -64,7 +64,7 @@
       return fruit.text;
     }
 
-    return `${data.length} items`;
+    return `${data.length} 项`;
   };
 
   const fruitSelectionChanged = (fruits: string[]) => {

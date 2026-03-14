@@ -1,37 +1,37 @@
 ```html
 <ion-list lines="full">
   <ion-item>
-    <ion-label>Full Lines</ion-label>
+    <ion-label>全部分隔线</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>Full Lines</ion-label>
+    <ion-label>全部分隔线</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>Full Lines</ion-label>
+    <ion-label>全部分隔线</ion-label>
   </ion-item>
 </ion-list>
 
 <ion-list lines="inset">
   <ion-item>
-    <ion-label>Inset Lines</ion-label>
+    <ion-label>内嵌分隔线</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>Inset Lines</ion-label>
+    <ion-label>内嵌分隔线</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>Inset Lines</ion-label>
+    <ion-label>内嵌分隔线</ion-label>
   </ion-item>
 </ion-list>
 
 <ion-list lines="none">
   <ion-item>
-    <ion-label>No Lines</ion-label>
+    <ion-label>无分隔线</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>No Lines</ion-label>
+    <ion-label>无分隔线</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>No Lines</ion-label>
+    <ion-label>无分隔线</ion-label>
   </ion-item>
 </ion-list>
 ```

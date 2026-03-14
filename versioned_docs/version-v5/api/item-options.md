@@ -14,25 +14,25 @@ import Slots from '@ionic-internal/component-api/v5/item-options/slots.md';
 
 # ion-item-options
 
-The option buttons for an `ion-item-sliding`. These buttons can be placed either on the [start or end side](#side-description).
-You can combine the `ionSwipe` event plus the `expandable` directive to create a full swipe action for the item.
+`ion-item-sliding` 组件的选项按钮。这些按钮可以放置在[起始侧或结束侧](#side-description)。
+你可以结合 `ionSwipe` 事件和 `expandable` 指令，为列表项创建完整的滑动操作。
 
-## Side Description
+## 侧边描述
 
-| Side    | Position                                                        | Swipe Direction                                                   |
-| ------- | --------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `start` | To the `left` of the content in LTR, and to the `right` in RTL. | From `left` to `right` in LTR, and from `right` to `left` in RTL. |
-| `end`   | To the `right` of the content in LTR, and to the `left` in RTL. | From `right` to `left` in LTR, and from `left` to `right` in RTL. |
+| 侧边    | 位置                                                                       | 滑动方向                                                                       |
+| ------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| `start` | 在 LTR（从左到右）布局中位于内容的`左侧`；在 RTL（从右到左）布局中位于内容的`右侧`。 | 在 LTR 布局中，从`左`向`右`滑动；在 RTL 布局中，从`右`向`左`滑动。             |
+| `end`   | 在 LTR 布局中位于内容的`右侧`；在 RTL 布局中位于内容的`左侧`。             | 在 LTR 布局中，从`右`向`左`滑动；在 RTL 布局中，从`左`向`右`滑动。             |
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -40,10 +40,10 @@ You can combine the `ionSwipe` event plus the `expandable` directive to create a
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

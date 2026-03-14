@@ -13,10 +13,10 @@ import CustomProps from '@ionic-internal/component-api/v7/action-sheet/custom-pr
 import Slots from '@ionic-internal/component-api/v7/action-sheet/slots.md';
 
 <head>
-  <title>ion-action-sheet: Action Sheet Dialog for iOS and Android</title>
+  <title>ion-action-sheet：适用于 iOS 和 Android 的操作表对话框</title>
   <meta
     name="description"
-    content="Action Sheets are dialogs that display a set of options above app content and must be manually dismissed. Read to learn about use on iOS and Android devices."
+    content="操作表（Action Sheet）是在应用内容上方显示一组选项的对话框，需要手动关闭。了解其在 iOS 和 Android 设备上的使用方法。"
   />
 </head>
 
@@ -24,63 +24,63 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. Destructive options are made obvious in `ios` mode. There are multiple ways to dismiss the action sheet, including tapping the backdrop or hitting the escape key on desktop.
+操作表（Action Sheet）是一种显示一组选项的对话框。它出现在应用内容的上方，用户必须手动关闭它才能继续与应用交互。在 `ios` 模式下，破坏性选项会以明显的方式呈现。有多种方式可以关闭操作表，包括点击背景或在桌面上按下 Esc 键。
 
-## Inline Action Sheets (Recommended)
+## 内联操作表（推荐）
 
-`ion-action-sheet` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Action Sheet.
+直接在模板中编写 `ion-action-sheet` 组件即可使用内联操作表。这减少了呈现操作表时需要连接的处理程序数量。
 
 import Trigger from '@site/static/usage/v7/action-sheet/inline/trigger/index.md';
 
 <Trigger />
 
-### Using `isOpen`
+### 使用 `isOpen` 属性
 
-The `isOpen` property on `ion-action-sheet` allows developers to control the presentation state of the Action Sheet from their application state. This means when `isOpen` is set to `true` the Action Sheet will be presented, and when `isOpen` is set to `false` the Action Sheet will be dismissed.
+`ion-action-sheet` 上的 `isOpen` 属性允许开发者通过应用程序状态控制操作表的呈现状态。这意味着当 `isOpen` 设置为 `true` 时，操作表将呈现；当 `isOpen` 设置为 `false` 时，操作表将被关闭。
 
-`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Action Sheet is dismissed. Developers should listen for the `ionActionSheetDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-action-sheet` from being tightly coupled with the state of the application. With a one way data binding, the Action Sheet only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Action Sheet needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+`isOpen` 使用单向数据绑定，这意味着当操作表关闭时，它不会自动设置为 `false`。开发者应监听 `ionActionSheetDidDismiss` 或 `didDismiss` 事件，并将 `isOpen` 设置为 `false`。这样做的原因是防止 `ion-action-sheet` 的内部逻辑与应用程序状态紧密耦合。使用单向数据绑定，操作表只需关注响应式变量提供的布尔值。而使用双向数据绑定，操作表需要同时关注布尔值以及响应式变量本身的存在。这可能导致不确定的行为，并使应用程序更难以调试。
 
 import IsOpen from '@site/static/usage/v7/action-sheet/inline/isOpen/index.md';
 
 <IsOpen />
 
-## Controller Action Sheets
+## 控制器操作表
 
-The `actionSheetController` can be used in situations where more control is needed over when the Action Sheet is presented and dismissed.
+在需要对操作表的呈现和关闭时机进行更多控制的情况下，可以使用 `actionSheetController`。
 
 import Controller from '@site/static/usage/v7/action-sheet/controller/index.md';
 
 <Controller />
 
-## Buttons
+## 按钮
 
-A button's `role` property can either be `destructive` or `cancel`. Buttons without a role property will have the default look for the platform. Buttons with the `cancel` role will always load as the bottom button, no matter where they are in the array. All other buttons will be displayed in the order they have been added to the `buttons` array. Note: We recommend that `destructive` buttons are always the first button in the array, making them the top button. Additionally, if the action sheet is dismissed by tapping the backdrop, then it will fire the handler from the button with the cancel role.
+按钮的 `role` 属性可以是 `destructive` 或 `cancel`。没有 `role` 属性的按钮将默认采用平台的样式。具有 `cancel` 角色的按钮将始终显示为底部按钮，无论它们在数组中的位置如何。所有其他按钮将按照它们添加到 `buttons` 数组中的顺序显示。注意：我们建议将 `destructive` 按钮始终放在数组的第一个位置，使其成为顶部按钮。此外，如果通过点击背景关闭操作表，则会触发具有 `cancel` 角色的按钮的处理程序。
 
-A button can also be passed data via the `data` property on `ActionSheetButton`. This will populate the `data` field in the return value of the `onDidDismiss` method.
+还可以通过 `ActionSheetButton` 上的 `data` 属性向按钮传递数据。这将填充 `onDidDismiss` 方法返回值的 `data` 字段。
 
-## Collecting Role Information on Dismiss
+## 关闭时收集角色信息
 
-When the `didDismiss` event is fired, the `data` and `role` fields of the event detail can be used to gather information about how the Action Sheet was dismissed.
+当触发 `didDismiss` 事件时，可以使用事件详情中的 `data` 和 `role` 字段来收集有关操作表关闭方式的信息。
 
 import RoleInfo from '@site/static/usage/v7/action-sheet/role-info-on-dismiss/index.md';
 
 <RoleInfo />
 
-## Theming
+## 主题
 
-Action Sheet uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
+操作表使用作用域封装（scoped encapsulation），这意味着它会在运行时通过为每个样式附加一个额外的类来自动限定其 CSS 的作用域。在 CSS 中覆盖作用域选择器需要[更高的特异性](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)选择器。
 
-### Styling
+### 样式设置
 
-We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces.
+我们建议在 `create` 方法中向 `cssClass` 传递一个自定义类，并使用该类为主机和内部元素添加自定义样式。此属性还可以接受多个以空格分隔的类。
 
 ```css
-/* DOES NOT WORK - not specific enough */
+/* 不起作用 - 特异性不足 */
 .action-sheet-group {
   background: #e5e5e5;
 }
 
-/* Works - pass "my-custom-class" in cssClass to increase specificity */
+/* 有效 - 在 cssClass 中传递 "my-custom-class" 以提高特异性 */
 .my-custom-class .action-sheet-group {
   background: #e5e5e5;
 }
@@ -90,27 +90,27 @@ import Styling from '@site/static/usage/v7/action-sheet/theming/styling/index.md
 
 <Styling />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
-Any of the defined [CSS Custom Properties](#css-custom-properties-1) can be used to style the Action Sheet without needing to target individual elements.
+可以使用任何已定义的 [CSS 自定义属性](#css-custom-properties-1) 来设置操作表的样式，而无需针对单个元素。
 
 import CssCustomProperties from '@site/static/usage/v7/action-sheet/theming/css-properties/index.md';
 
 <CssCustomProperties />
 
-## Accessibility
+## 可访问性
 
-### Screen Readers
+### 屏幕阅读器
 
-Action Sheets set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the action sheet is being used in an app.
+操作表设置了 aria 属性，以便对屏幕阅读器具有[可访问性](../reference/glossary#a11y)，但如果这些属性描述不够充分或与操作表在应用中的使用方式不一致，可以覆盖这些属性。
 
-#### Role
+#### 角色（Role）
 
-Action Sheets are given a `role` of [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role). In order to align with the ARIA spec, either the `aria-label` or `aria-labelledby` attribute must be set.
+操作表被赋予 [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) 的 `role`。为了符合 ARIA 规范，必须设置 `aria-label` 或 `aria-labelledby` 属性。
 
-#### Action Sheet Description
+#### 操作表描述
 
-It is strongly recommended that every Action Sheet have the `header` property defined, as Ionic will automatically set `aria-labelledby` to point to the header element. However, if you choose not to include a `header`, an alternative is to use the `htmlAttributes` property to provide a descriptive `aria-label` or set a custom `aria-labelledby` value.
+强烈建议为每个操作表定义 `header` 属性，因为 Ionic 会自动将 `aria-labelledby` 指向标题元素。但是，如果选择不包含 `header`，另一种方法是使用 `htmlAttributes` 属性提供描述性的 `aria-label` 或设置自定义的 `aria-labelledby` 值。
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -119,7 +119,7 @@ It is strongly recommended that every Action Sheet have the `header` property de
 ```javascript
 const actionSheet = await this.actionSheetController.create({
   htmlAttributes: {
-    'aria-label': 'action sheet dialog',
+    'aria-label': '操作表对话框',
   },
 });
 ```
@@ -131,7 +131,7 @@ const actionSheet = await this.actionSheetController.create({
 ```javascript
 const actionSheet = await this.actionSheetController.create({
   htmlAttributes: {
-    'aria-label': 'action sheet dialog',
+    'aria-label': '操作表对话框',
   },
 });
 ```
@@ -143,7 +143,7 @@ const actionSheet = await this.actionSheetController.create({
 ```javascript
 useIonActionSheet({
   htmlAttributes: {
-    'aria-label': 'action sheet dialog',
+    'aria-label': '操作表对话框',
   },
 });
 ```
@@ -155,7 +155,7 @@ useIonActionSheet({
 ```javascript
 const actionSheet = await actionSheetController.create({
   htmlAttributes: {
-    'aria-label': 'action sheet dialog',
+    'aria-label': '操作表对话框',
   },
 });
 ```
@@ -164,9 +164,9 @@ const actionSheet = await actionSheetController.create({
 
 </Tabs>
 
-#### Action Sheet Buttons Description
+#### 操作表按钮描述
 
-Buttons containing text will be read by a screen reader. If a button contains only an icon, or a description other than the existing text is desired, a label should be assigned to the button by passing `aria-label` to the `htmlAttributes` property on the button.
+包含文本的按钮将被屏幕阅读器读取。如果按钮仅包含图标，或者需要除现有文本之外的其他描述，应通过向按钮的 `htmlAttributes` 属性传递 `aria-label` 来为按钮分配标签。
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -174,12 +174,12 @@ Buttons containing text will be read by a screen reader. If a button contains on
 
 ```javascript
 const actionSheet = await this.actionSheetController.create({
-  header: 'Header',
+  header: '标题',
   buttons: [
     {
       icon: 'close',
       htmlAttributes: {
-        'aria-label': 'close',
+        'aria-label': '关闭',
       },
     },
   ],
@@ -192,12 +192,12 @@ const actionSheet = await this.actionSheetController.create({
 
 ```javascript
 const actionSheet = await this.actionSheetController.create({
-  header: 'Header',
+  header: '标题',
   buttons: [
     {
       icon: 'close',
       htmlAttributes: {
-        'aria-label': 'close',
+        'aria-label': '关闭',
       },
     },
   ],
@@ -210,12 +210,12 @@ const actionSheet = await this.actionSheetController.create({
 
 ```javascript
 useIonActionSheet({
-  header: 'Header',
+  header: '标题',
   buttons: [
     {
       icon: 'close',
       htmlAttributes: {
-        'aria-label': 'close',
+        'aria-label': '关闭',
       },
     },
   ],
@@ -228,12 +228,12 @@ useIonActionSheet({
 
 ```javascript
 const actionSheet = await actionSheetController.create({
-  header: 'Header',
+  header: '标题',
   buttons: [
     {
       icon: 'close',
       htmlAttributes: {
-        'aria-label': 'close',
+        'aria-label': '关闭',
       },
     },
   ],
@@ -244,7 +244,7 @@ const actionSheet = await actionSheetController.create({
 
 </Tabs>
 
-## Interfaces
+## 接口
 
 ### ActionSheetButton
 
@@ -282,15 +282,15 @@ interface ActionSheetOptions {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -298,10 +298,10 @@ interface ActionSheetOptions {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

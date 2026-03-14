@@ -1,7 +1,7 @@
 ```html
 <template>
-  <ion-button @click="presentBaselineToast()">Open Baseline Layout Toast</ion-button>
-  <ion-button @click="presentStackedToast()">Click Stacked Layout Toast</ion-button>
+  <ion-button @click="presentBaselineToast()">打开基线布局提示</ion-button>
+  <ion-button @click="presentStackedToast()">打开堆叠布局提示</ion-button>
 </template>
 
 <script lang="ts">
@@ -21,7 +21,7 @@
       const presentBaselineToast = async () => {
         await presentToast({
           duration: 3000,
-          message: 'This is a toast with a long message and a button that appears on the same line.',
+          message: '这是一个包含长消息和按钮的提示，按钮与消息显示在同一行。',
           buttons: [{ text: 'Action With Long Text' }],
         });
       };
@@ -29,7 +29,7 @@
       const presentStackedToast = async () => {
         await presentToast({
           duration: 3000,
-          message: 'This is a toast with a long message and a button that appears on the next line.',
+          message: '这是一个包含长消息和按钮的提示，按钮显示在下一行。',
           buttons: [{ text: 'Action With Long Text' }],
           layout: 'stacked',
         });

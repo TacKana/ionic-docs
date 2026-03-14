@@ -3,17 +3,17 @@
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-button color="medium" @click="cancel">Cancel</ion-button>
+        <ion-button color="medium" @click="cancel">取消</ion-button>
       </ion-buttons>
-      <ion-title>Modal</ion-title>
+      <ion-title>模态框</ion-title>
       <ion-buttons slot="end">
-        <ion-button @click="confirm" :strong="true">Confirm</ion-button>
+        <ion-button @click="confirm" :strong="true">确定</ion-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
     <ion-item>
-      <ion-input label-placement="stacked" label="Enter your name" v-model="name" placeholder="Your name"></ion-input>
+      <ion-input label-placement="stacked" label="请输入您的姓名" v-model="name" placeholder="您的姓名"></ion-input>
     </ion-item>
   </ion-content>
 </template>

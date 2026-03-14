@@ -7,7 +7,7 @@
   import { IonRange } from '@ionic/vue';
 
   const onIonChange = ({ detail }) => {
-    console.log('ionChange emitted value: ' + detail.value);
+    console.log('ionChange 事件触发，值为：' + detail.value);
   };
 </script>
 ```

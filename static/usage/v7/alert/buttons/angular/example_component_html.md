@@ -1,8 +1,8 @@
 ```html
-<ion-button id="present-alert">Click Me</ion-button>
+<ion-button id="present-alert">点击我</ion-button>
 <ion-alert
   trigger="present-alert"
-  header="Alert!"
+  header="警告!"
   [buttons]="alertButtons"
   (didDismiss)="setResult($event)"
 ></ion-alert>

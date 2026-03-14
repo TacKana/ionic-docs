@@ -1,5 +1,5 @@
 ---
-title: "ion-radio-group"
+title: 单选按钮组组件
 ---
 import Props from '@ionic-internal/component-api/v8/radio-group/props.md';
 import Events from '@ionic-internal/component-api/v8/radio-group/events.md';
@@ -9,17 +9,15 @@ import CustomProps from '@ionic-internal/component-api/v8/radio-group/custom-pro
 import Slots from '@ionic-internal/component-api/v8/radio-group/slots.md';
 
 <head>
-  <title>ion-radio-group: Radio Button Group Usage for Ionic Apps</title>
-  <meta name="description" content="A radio group is a group of radio buttons. Radio groups allow a user to select at most one radio button from a set. Learn more about ion-radio-group usage." />
+  <title>ion-radio-group：Ionic 应用的单选按钮组使用指南</title>
+  <meta name="description" content="单选按钮组是包含一组单选按钮的容器。它允许用户从一组选项中选择最多一个。详细了解 ion-radio-group 的使用方法。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
+单选按钮组是用于容纳一组[单选按钮](./radio)的容器。它允许用户从一组选项中选择最多一个。选中属于同一单选按钮组中的某个按钮时，之前在该组内选中的任何其他按钮都会自动取消选中。关于单选按钮组的具体用法示例，请参阅[单选按钮](./radio)文档。
 
-A radio group is a container for a group of [radios](./radio). It allows a user to select at most one radio button from a set. Checking one radio button that belongs to a radio group unchecks any previous checked radio button within the same group. For example usage of the radio group, see the [radio](./radio) documentation.
-
-
-## Interfaces
+## 接口
 
 ### RadioGroupChangeEventDetail
 
@@ -31,7 +29,7 @@ interface RadioGroupChangeEventDetail<T = any> {
 
 ### RadioGroupCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不强制使用，但可以用此接口替代 `CustomEvent` 接口，以便在使用该组件发出的 Ionic 事件时获得更强的类型支持。
 
 ```typescript
 interface RadioGroupCustomEvent<T = any> extends CustomEvent {
@@ -40,21 +38,20 @@ interface RadioGroupCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

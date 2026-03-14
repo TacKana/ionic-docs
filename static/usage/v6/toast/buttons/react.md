@@ -12,29 +12,29 @@ function Example() {
       <IonButton
         onClick={() => {
           presentToast({
-            message: 'Hello World!',
+            message: '你好，世界！',
             duration: 3000,
-            onDidDismiss: (e: CustomEvent) => setRoleMessage(`Dismissed with role: ${e.detail.role}`),
+            onDidDismiss: (e: CustomEvent) => setRoleMessage(`已关闭，操作角色为：${e.detail.role}`),
             buttons: [
               {
-                text: 'More Info',
+                text: '更多信息',
                 role: 'info',
                 handler: () => {
-                  setHandlerMessage('More Info clicked');
+                  setHandlerMessage('已点击“更多信息”');
                 },
               },
               {
-                text: 'Dismiss',
+                text: '关闭',
                 role: 'cancel',
                 handler: () => {
-                  setHandlerMessage('Dismiss clicked');
+                  setHandlerMessage('已点击“关闭”');
                 },
               },
             ],
           });
         }}
       >
-        Click Me
+        点击我
       </IonButton>
       <p>{handlerMessage}</p>
       <p>{roleMessage}</p>

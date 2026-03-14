@@ -1,32 +1,32 @@
 ---
-title: Taking Photos with the Camera
-sidebar_label: Taking Photos
+title: 使用相机拍照
+sidebar_label: 拍照功能
 ---
 
 <head>
-  <title>Take Photos with Camera API for iOS, Android & Web with React | Ionic Capacitor Camera</title>
+  <title>使用 React 为 iOS、Android 和 Web 实现相机拍照功能 | Ionic Capacitor 相机 API</title>
   <meta
     name="description"
-    content="Add the ability to take photos with your device's camera using the Ionic Capacitor Camera API for mobile iOS, Android, and the web. Learn how here."
+    content="使用 Ionic Capacitor 相机 API 为移动端 iOS、Android 和 Web 应用添加设备相机拍照功能。立即了解如何实现。"
   />
 </head>
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](../../native/camera.md). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+现在进入有趣的部分 - 使用 Capacitor [相机 API](../../native/camera.md) 添加设备相机拍照功能。我们将首先构建 Web 版本，然后进行一些小的调整以使其在移动端（iOS 和 Android）上工作。
 
-## Photo Gallery Hook
+## 照片图库钩子
 
-We will create a [custom React hook](https://react.dev/learn/reusing-logic-with-custom-hooks#extracting-your-own-custom-hook-from-a-component) to manage the photos for the gallery.
+我们将创建一个[自定义 React 钩子](https://react.dev/learn/reusing-logic-with-custom-hooks#extracting-your-own-custom-hook-from-a-component)来管理图库中的照片。
 
-Create a new file at `src/hooks/usePhotoGallery.ts` and open it up.
+在 `src/hooks/usePhotoGallery.ts` 创建新文件并打开。
 
-Next, define a new method, `usePhotoGallery()`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera.
+接下来，定义一个新的方法 `usePhotoGallery()`，它将包含拍摄设备照片并保存到文件系统的核心逻辑。让我们从打开设备相机开始。
 
 ```ts
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 export function usePhotoGallery() {
   const addNewToGallery = async () => {
-    // Take a photo
+    // 拍照
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -40,37 +40,37 @@ export function usePhotoGallery() {
 }
 ```
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `Camera.getPhoto()` - that will open up the device's camera and allow us to take photos.
+注意这里的奇妙之处：没有特定平台的代码（Web、iOS 或 Android）！Capacitor 相机插件为我们抽象了这些，只留下一个方法调用 - `Camera.getPhoto()` - 它将打开设备相机并允许我们拍照。
 
-Next, in `Tab2.tsx`, import the `usePhotoGallery()` method and destructure it to call its `addNewToGallery()` method.
+接下来，在 `Tab2.tsx` 中导入 `usePhotoGallery()` 方法，并通过解构来调用其 `addNewToGallery()` 方法。
 
 ```tsx
 import { camera } from 'ionicons/icons';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton, IonIcon } from '@ionic/react';
-// CHANGE: Add `usePhotoGallery` import
+// 变更：添加 `usePhotoGallery` 导入
 import { usePhotoGallery } from '../hooks/usePhotoGallery';
 import './Tab2.css';
 
 const Tab2: React.FC = () => {
-  // CHANGE: Destructure `addNewToGallery()` from `usePhotoGallery()`
+  // 变更：从 `usePhotoGallery()` 解构出 `addNewToGallery()`
   const { addNewToGallery } = usePhotoGallery();
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Photo Gallery</IonTitle>
+          <IonTitle>照片图库</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Photo Gallery</IonTitle>
+            <IonTitle size="large">照片图库</IonTitle>
           </IonToolbar>
         </IonHeader>
 
         <IonFab vertical="bottom" horizontal="center" slot="fixed">
-          {/* CHANGE: Add a click event listener to the floating action button */}
+          {/* 变更：为浮动操作按钮添加点击事件监听器 */}
           <IonFabButton onClick={() => addNewToGallery()}>
             <IonIcon icon={camera}></IonIcon>
           </IonFabButton>
@@ -83,63 +83,63 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-If it's not running already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+如果尚未运行，通过运行 `ionic serve` 在浏览器中重启开发服务器。在照片图库标签页中，点击相机按钮。如果您的计算机有摄像头，将出现一个模态窗口。拍张自拍吧！
 
-![A photo gallery app displaying a webcam selfie.](/img/guides/first-app-cap-ng/camera-web.png 'Webcam Selfie in Photo Gallery')
+![显示网络摄像头自拍的照片图库应用](/img/guides/first-app-cap-ng/camera-web.png '照片图库中的网络摄像头自拍')
 
-_(Your selfie is probably much better than mine)_
+_(您的自拍可能比我的好看多了)_
 
-After taking a photo, it disappears right away. We need to display it within our app and save it for future access.
+拍照后，照片立即消失了。我们需要在应用中显示它并保存以供将来访问。
 
-## Displaying Photos
+## 显示照片
 
-To define the data structure for our photo metadata, create a new interface named `UserPhoto`. Add this interface at the very bottom of the `usePhotoGallery.ts` file, immediately after the `usePhotoGallery()` method definition.
+要为照片元数据定义数据结构，创建一个名为 `UserPhoto` 的新接口。将此接口添加到 `usePhotoGallery.ts` 文件的最底部，紧接在 `usePhotoGallery()` 方法定义之后。
 
 ```ts
 export function usePhotoGallery() {
-  // ...existing code...
+  // ...现有代码...
 }
 
-// CHANGE: Add the `UserPhoto` interface
+// 变更：添加 `UserPhoto` 接口
 export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
 }
 ```
 
-Above the `addNewToGallery()` method, define an array of `UserPhoto`, which will contain a reference to each photo captured with the Camera. Make it a state variable using React's [useState hook](https://react.dev/reference/react/useState).
+在 `addNewToGallery()` 方法上方，定义一个 `UserPhoto` 数组，它将包含对使用相机拍摄的每张照片的引用。使用 React 的 [useState 钩子](https://react.dev/reference/react/useState)将其设为状态变量。
 
 ```ts
-// CHANGE: Add import
+// 变更：添加导入
 import { useState } from 'react';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 export function usePhotoGallery() {
-  // CHANGE: Add the `photos` array
+  // 变更：添加 `photos` 数组
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
-  // ...existing code...
+  // ...现有代码...
 }
 ```
 
-Over in the `addNewToGallery()` method, add the newly captured photo to the beginning of the `photos` array. Then, update the `usePhotoGallery()` return statement with the `photos` array.
+在 `addNewToGallery()` 方法中，将新拍摄的照片添加到 `photos` 数组的开头。然后，在 `usePhotoGallery()` 的返回语句中更新 `photos` 数组。
 
 ```ts
 export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
-  // CHANGE: Update `addNewToGallery()` method
+  // 变更：更新 `addNewToGallery()` 方法
   const addNewToGallery = async () => {
-    // Take a photo
+    // 拍照
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
     });
 
-    // CHANGE: Create the `fileName` with current timestamp
+    // 变更：使用当前时间戳创建 `fileName`
     const fileName = Date.now() + '.jpeg';
-    // CHANGE: Create `savedImageFile` matching `UserPhoto` interface
+    // 变更：创建符合 `UserPhoto` 接口的 `savedImageFile`
     const savedImageFile = [
       {
         filepath: fileName,
@@ -148,19 +148,19 @@ export function usePhotoGallery() {
       ...photos,
     ];
 
-    // CHANGE: Update the `photos` array with the new photo
+    // 变更：用新照片更新 `photos` 数组
     setPhotos(savedImageFile);
   };
 
   return {
     addNewToGallery,
-    // CHANGE: Update return statement to include `photos` array
+    // 变更：更新返回语句以包含 `photos` 数组
     photos,
   };
 }
 ```
 
-`usePhotoGallery.ts` should now look like this:
+现在 `usePhotoGallery.ts` 应该看起来像这样：
 
 ```ts
 import { useState } from 'react';
@@ -170,7 +170,7 @@ export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
   const addNewToGallery = async () => {
-    // Take a photo
+    // 拍照
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -201,11 +201,11 @@ export interface UserPhoto {
 }
 ```
 
-Next, switch to `Tab2.tsx` to display the images. We'll add a [Grid component](../../api/grid.md) to ensure the photos display neatly as they're added to the gallery. Inside the grid, loop through each photo in the `UserPhoto`'s `photos` array. For each item, add an [Image component](../../api/img.md) and set its `src` property to the photo's path.
+接下来，切换到 `Tab2.tsx` 来显示图像。我们将添加一个[网格组件](../../api/grid.md)来确保照片添加到图库时能整齐显示。在网格内部，遍历 `UserPhoto` 的 `photos` 数组中的每张照片。对于每个项目，添加一个[图像组件](../../api/img.md)并将其 `src` 属性设置为照片的路径。
 
 ```tsx
 import { camera } from 'ionicons/icons';
-// CHANGE: Update import
+// 变更：更新导入
 import {
   IonContent,
   IonHeader,
@@ -223,27 +223,27 @@ import {
 import { usePhotoGallery } from '../hooks/usePhotoGallery';
 
 const Tab2: React.FC = () => {
-  // CHANGE: Add `photos` array to destructure from `usePhotoGallery()`
+  // 变更：从 `usePhotoGallery()` 解构出 `photos` 数组
   const { photos, addNewToGallery } = usePhotoGallery();
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Photo Gallery</IonTitle>
+          <IonTitle>照片图库</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Photo Gallery</IonTitle>
+            <IonTitle size="large">照片图库</IonTitle>
           </IonToolbar>
         </IonHeader>
 
-        {/* CHANGE: Add a grid component to display the photos */}
+        {/* 变更：添加网格组件来显示照片 */}
         <IonGrid>
           <IonRow>
-            {/* CHANGE: Create a new column and image component for each photo */}
+            {/* 变更：为每张照片创建新列和图像组件 */}
             {photos.map((photo) => (
               <IonCol size="6" key={photo.filepath}>
                 <IonImg src={photo.webviewPath} />
@@ -265,6 +265,6 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-Within the web browser, click the camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+在 Web 浏览器中，点击相机按钮并拍摄另一张照片。这次，照片会显示在照片图库中！
 
-Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
+接下来，我们将添加将照片保存到文件系统的支持，以便它们可以在以后被检索并在我们的应用中显示。

@@ -1,19 +1,19 @@
 ```html
 <ion-card id="card-a">
-  <ion-card-content>Card 1</ion-card-content>
+  <ion-card-content>卡片 1</ion-card-content>
 </ion-card>
 
 <ion-card id="card-b">
-  <ion-card-content>Card 2</ion-card-content>
+  <ion-card-content>卡片 2</ion-card-content>
 </ion-card>
 
 <ion-card id="card-c">
-  <ion-card-content>Card 3</ion-card-content>
+  <ion-card-content>卡片 3</ion-card-content>
 </ion-card>
 
-<ion-button onclick="animation.play()">Play</ion-button>
-<ion-button onclick="animation.pause()">Pause</ion-button>
-<ion-button onclick="animation.stop()">Stop</ion-button>
+<ion-button onclick="animation.play()">播放</ion-button>
+<ion-button onclick="animation.pause()">暂停</ion-button>
+<ion-button onclick="animation.stop()">停止</ion-button>
 
 <script>
   const cardA = createAnimation()

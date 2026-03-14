@@ -10,62 +10,62 @@ import CustomProps from '@ionic-internal/component-api/v7/refresher/custom-props
 import Slots from '@ionic-internal/component-api/v7/refresher/slots.md';
 
 <head>
-  <title>ion-refresher: Pull-to-Refresh Page Content on Ionic Apps</title>
+  <title>ion-refresher：Ionic 应用中的下拉刷新页面内容组件</title>
   <meta
     name="description"
-    content="ion-refresher provides pull-to-refresh functionality on content components. Learn how this lets users pull down on a page using touch to retrieve more data."
+    content="ion-refresher 为内容组件提供下拉刷新功能。了解如何让用户通过触摸下拉页面来获取更多数据。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-Refresher provides pull-to-refresh functionality on a content component. The pull-to-refresh pattern lets a user pull down on a list of data in order to retrieve more data.
+Refresher（刷新器）为内容组件提供下拉刷新功能。下拉刷新模式允许用户下拉数据列表以获取更多数据。
 
-Data should be modified during the refresher's output events. Once the async operation has completed and the refreshing should end, `complete()` needs to be called on the refresher.
+数据应在刷新器的输出事件期间进行修改。一旦异步操作完成且刷新应结束时，需要在刷新器上调用 `complete()` 方法。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v7/refresher/basic/index.md';
 
 <Basic />
 
-## Pull Properties
+## 下拉属性
 
-The refresher has several properties for customizing the pull gesture. Set the `pullFactor` to change the speed of the pull, the `pullMin` property to change the minimum distance the user must pull down, and the `pullMax` property to change the maximum distance the user must pull down before the refresher enters the `refreshing` state.
+刷新器具有多个用于自定义下拉手势的属性。设置 `pullFactor` 可更改下拉速度，`pullMin` 属性可更改用户必须下拉的最小距离，`pullMax` 属性可更改用户必须下拉的最大距离（之后刷新器将进入 `refreshing` 状态）。
 
-These properties do not apply when the [native refresher](#native-refreshers) is enabled.
+启用[原生刷新器](#原生刷新器)时，这些属性不适用。
 
 import PullProperties from '@site/static/usage/v7/refresher/pull-properties/index.md';
 
 <PullProperties />
 
-## Custom Refresher Content
+## 自定义刷新器内容
 
-The default icon, spinner, and text can be customized on the [refresher content](./refresher-content) based on whether the state of the refresher is `pulling` or `refreshing`.
+默认图标、旋转器和文本可以根据刷新器状态是 `pulling` 还是 `refreshing`，在[刷新器内容](./refresher-content)上进行自定义。
 
-Setting `pullingIcon` will disable the [native refresher](#native-refreshers).
+设置 `pullingIcon` 将禁用[原生刷新器](#原生刷新器)。
 
 import CustomContent from '@site/static/usage/v7/refresher/custom-content/index.md';
 
 <CustomContent />
 
-## Native Refreshers
+## 原生刷新器
 
-Both iOS and Android platforms provide refreshers that use properties exposed by their respective devices in order to give pull-to-refresh a fluid, native-like feel.
+iOS 和 Android 平台都提供了刷新器，它们利用各自设备暴露的属性，使下拉刷新具有流畅、类似原生的感觉。
 
-The iOS and Material Design native refreshers are enabled by default in Ionic. However, the native iOS refresher relies on rubber band scrolling in order to work properly and is only compatible with iOS devices as a result. We provide a fallback refresher for apps running in iOS mode on devices that do not support rubber band scrolling.
+在 Ionic 中，iOS 和 Material Design 的原生刷新器默认启用。然而，iOS 原生刷新器依赖橡皮筋滚动才能正常工作，因此仅兼容 iOS 设备。我们为在不支持橡皮筋滚动的设备上以 iOS 模式运行的应用程序提供了备用刷新器。
 
-The native refresher uses a `circular` spinner for Material Design, while iOS uses the `lines` spinner. On iOS, the tick marks will progressively show as the page is pulled down.
+原生刷新器在 Material Design 中使用 `circular` 旋转器，而 iOS 使用 `lines` 旋转器。在 iOS 上，随着页面的下拉，刻度标记会逐步显示。
 
-Certain refresher properties such as the [Pull Properties](#pull-properties), `closeDuration` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. See [Properties](#properties) for more information on unsupported properties.
+某些刷新器属性，如[下拉属性](#下拉属性)、`closeDuration` 和 `snapbackDuration` 不兼容，因为原生刷新器大多基于滚动。有关不受支持属性的更多信息，请参阅[属性](#属性)。
 
-The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content) to any icon or spinner. See the [Ionicons](https://ionic.io/ionicons) and [Spinner](./spinner) documentation for accepted values.
+可以通过将[刷新器内容](#自定义刷新器内容)的 `pullingIcon` 设置为任何图标或旋转器来禁用原生刷新器。有关可接受的值，请参阅 [Ionicons](https://ionic.io/ionicons) 和 [Spinner](./spinner) 文档。
 
-## Usage with Virtual Scroll
+## 与虚拟滚动结合使用
 
-Refresher requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
+刷新器需要滚动容器才能正常工作。使用虚拟滚动解决方案时，您需要禁用 `ion-content` 上的滚动，并通过 `.ion-content-scroll-host` 类目标指示哪个元素容器负责滚动容器。
 
-Developers should apply the following CSS to the scrollable container. This CSS adds a "rubber band" scrolling effect on iOS which allows the native iOS refresher to work properly:
+开发者应将以下 CSS 应用于可滚动容器。此 CSS 在 iOS 上添加了“橡皮筋”滚动效果，使原生 iOS 刷新器能够正常工作：
 
 ```css
 .ion-content-scroll-host::before,
@@ -91,15 +91,15 @@ import CustomScrollTarget from '@site/static/usage/v7/refresher/custom-scroll-ta
 
 <CustomScrollTarget />
 
-## Advanced Usage
+## 高级用法
 
-While the refresher can be used with any type of content, a common use case in native apps is to display a list of data that gets updated on refresh. In the below example, the app generates a list of data and then appends data to the top of the list when the refresh is completed. In a real app, the data would be received and updated after sending a request via a network or database call.
+虽然刷新器可以与任何类型的内容一起使用，但在原生应用中一个常见的用例是显示在刷新时更新的数据列表。在下面的示例中，应用程序生成一个数据列表，然后在刷新完成时将数据追加到列表顶部。在实际应用中，数据将通过网络或数据库调用发送请求后接收和更新。
 
 import Advanced from '@site/static/usage/v7/refresher/advanced/index.md';
 
 <Advanced />
 
-## Interfaces
+## 接口
 
 ### RefresherEventDetail
 
@@ -111,7 +111,7 @@ interface RefresherEventDetail {
 
 ### RefresherCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但此接口可用于替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更强类型检查。
 
 ```typescript
 interface RefresherCustomEvent extends CustomEvent {
@@ -120,15 +120,15 @@ interface RefresherCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -136,10 +136,10 @@ interface RefresherCustomEvent extends CustomEvent {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

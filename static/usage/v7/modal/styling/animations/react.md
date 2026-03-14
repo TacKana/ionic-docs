@@ -53,12 +53,12 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>App</IonTitle>
+          <IonTitle>应用</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          Open Modal
+          打开模态框
         </IonButton>
         <IonModal
           id="example-modal"
@@ -69,9 +69,9 @@ function Example() {
         >
           <IonContent>
             <IonToolbar>
-              <IonTitle>Modal</IonTitle>
+              <IonTitle>模态框</IonTitle>
               <IonButtons slot="end">
-                <IonButton onClick={() => dismiss()}>Close</IonButton>
+                <IonButton onClick={() => dismiss()}>关闭</IonButton>
               </IonButtons>
             </IonToolbar>
             <IonList>
@@ -80,8 +80,8 @@ function Example() {
                   <IonImg src="https://i.pravatar.cc/300?u=b" />
                 </IonAvatar>
                 <IonLabel>
-                  <h2>Connor Smith</h2>
-                  <p>Sales Rep</p>
+                  <h2>康纳·史密斯</h2>
+                  <p>销售代表</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -89,8 +89,8 @@ function Example() {
                   <IonImg src="https://i.pravatar.cc/300?u=a" />
                 </IonAvatar>
                 <IonLabel>
-                  <h2>Daniel Smith</h2>
-                  <p>Product Designer</p>
+                  <h2>丹尼尔·史密斯</h2>
+                  <p>产品设计师</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -98,8 +98,8 @@ function Example() {
                   <IonImg src="https://i.pravatar.cc/300?u=d" />
                 </IonAvatar>
                 <IonLabel>
-                  <h2>Greg Smith</h2>
-                  <p>Director of Operations</p>
+                  <h2>格雷格·史密斯</h2>
+                  <p>运营总监</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -107,8 +107,8 @@ function Example() {
                   <IonImg src="https://i.pravatar.cc/300?u=e" />
                 </IonAvatar>
                 <IonLabel>
-                  <h2>Zoey Smith</h2>
-                  <p>CEO</p>
+                  <h2>佐伊·史密斯</h2>
+                  <p>首席执行官</p>
                 </IonLabel>
               </IonItem>
             </IonList>

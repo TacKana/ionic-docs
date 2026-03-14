@@ -7,37 +7,37 @@ function Example() {
     <>
       <IonList>
         <IonListHeader>
-          <IonLabel>Default</IonLabel>
+          <IonLabel>默认</IonLabel>
         </IonListHeader>
         <IonItem>
-          <IonLabel>Item</IonLabel>
+          <IonLabel>项目</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>Item</IonLabel>
+          <IonLabel>项目</IonLabel>
         </IonItem>
       </IonList>
 
       <IonList>
         <IonListHeader lines="inset">
-          <IonLabel>Inset</IonLabel>
+          <IonLabel>嵌入</IonLabel>
         </IonListHeader>
         <IonItem>
-          <IonLabel>Item</IonLabel>
+          <IonLabel>项目</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>Item</IonLabel>
+          <IonLabel>项目</IonLabel>
         </IonItem>
       </IonList>
 
       <IonList>
         <IonListHeader lines="full">
-          <IonLabel>Full</IonLabel>
+          <IonLabel>完整</IonLabel>
         </IonListHeader>
         <IonItem>
-          <IonLabel>Item</IonLabel>
+          <IonLabel>项目</IonLabel>
         </IonItem>
         <IonItem>
-          <IonLabel>Item</IonLabel>
+          <IonLabel>项目</IonLabel>
         </IonItem>
       </IonList>
     </>

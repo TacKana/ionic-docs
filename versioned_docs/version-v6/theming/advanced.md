@@ -6,123 +6,123 @@ sidebar_label: Advanced
 import CodeColor from '@components/page/theming/CodeColor';
 
 <head>
-  <title>Advanced Theming: Quickly Customize App Colors using CSS | Ionic</title>
+  <title>高级主题定制：使用 CSS 快速自定义应用颜色 | Ionic</title>
   <meta
     name="description"
-    content="CSS-based theming enables apps to customize colors quickly by loading a CSS file or changing CSS property values. Read to learn about Ionic Advanced Theming."
+    content="基于 CSS 的主题定制功能让应用能够通过加载 CSS 文件或修改 CSS 属性值来快速自定义颜色。阅读本文了解 Ionic 高级主题定制。"
   />
 </head>
 
-CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
+基于 CSS 的主题定制功能让应用能够通过加载 CSS 文件或修改少量 CSS 属性值来快速自定义颜色。
 
-## `theme-color` Meta
+## `theme-color` 元标签
 
-The `theme-color` value for a meta tag indicates a color that browsers can use to customize the display of a page or of the surrounding interface. This kind of meta tag can also accept media queries which allow developers to set the theme color for both light and dark modes.
+`theme-color` 元标签的值为浏览器提供了一种颜色，用于自定义页面或周围界面的显示效果。这种元标签还可以接受媒体查询，允许开发者为浅色和深色模式分别设置主题颜色。
 
-The `content` value for the `theme-color` meta must contain a valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">CSS Color</a> and cannot contain CSS Variables.
+`theme-color` 元标签的 `content` 值必须包含有效的 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">CSS 颜色</a>，且不能包含 CSS 变量。
 
 :::note
-The `theme-color` meta controls the interface theme when running in a web browser or as a PWA and has no effect when an app is deployed using Capacitor or Cordova. If you are looking to customize the area under the status bar, we recommend using the [Capacitor Status Bar Plugin](https://capacitorjs.com/docs/apis/status-bar).
+`theme-color` 元标签控制在网页浏览器或 PWA 中运行时的界面主题，当应用通过 Capacitor 或 Cordova 部署时无效。如果你需要自定义状态栏下方的区域，我们推荐使用 [Capacitor 状态栏插件](https://capacitorjs.com/docs/apis/status-bar)。
 :::
 
-The example below demonstrates how to use `theme-color` to style the browser interface on iOS 15.
+以下示例演示了如何使用 `theme-color` 在 iOS 15 上自定义浏览器界面样式。
 
 ```html
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#3880ff" />
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a" />
 ```
 
-| Light Mode                                                                                                         | Dark Mode                                                                                                       |
+| 浅色模式                                                                                                           | 深色模式                                                                                                         |
 | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| ![The light mode theme color in a browser interface.](/img/theming/theme-color-light.png 'Light Mode Theme Color') | ![The dark mode theme color in a browser interface.](/img/theming/theme-color-dark.png 'Dark Mode Theme Color') |
+| ![浅色模式下浏览器界面的主题颜色。](/img/theming/theme-color-light.png '浅色模式主题颜色') | ![深色模式下浏览器界面的主题颜色。](/img/theming/theme-color-dark.png '深色模式主题颜色') |
 
-The `theme-color` meta can also be used to customize the toolbar in Safari on macOS Monterey or newer.
+`theme-color` 元标签也可用于自定义 macOS Monterey 或更新版本上 Safari 的工具栏样式。
 
-Safari on iOS 15 and macOS will automatically determine an appropriate theme color to use, but adding this meta tag is useful if you need more control over the theme.
+iOS 15 和 macOS 上的 Safari 会自动确定合适的主题颜色，但如果你需要更精确的控制，添加此元标签会很有用。
 
-There is a small subset of colors that browsers will not use as they interfere with the browser interface. For example, setting `content="red"` will not work in Safari on macOS because that color interferes with the red close button in the toolbar. If you run into this situation, try altering your color selection slightly.
+有一小部分颜色浏览器不会使用，因为它们会干扰浏览器界面。例如，在 macOS 的 Safari 中设置 `content="red"` 是无效的，因为该颜色与工具栏中的红色关闭按钮冲突。如果你遇到这种情况，可以尝试稍微调整颜色选择。
 
 :::note
-Browsers will prefer the `theme-color` meta over `theme` in `manifest.json` if both are present.
+如果同时存在 `theme-color` 元标签和 `manifest.json` 中的 `theme`，浏览器会优先使用 `theme-color` 元标签。
 :::
 
-For more information, see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" target="_blank" rel="noopener noreferrer">MDN theme-color documentation</a>.
+更多信息，请参阅 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" target="_blank" rel="noopener noreferrer">MDN theme-color 文档</a>。
 
-## Global Variables
+## 全局变量
 
-While the application and stepped variables in the themes section are useful for changing the colors of an application, often times there is a need for variables that are used in multiple components. The following variables are shared across components to change global padding settings and more.
+虽然主题章节中的应用变量和阶梯变量有助于改变应用颜色，但经常需要一些在多个组件中使用的变量。以下变量在组件间共享，用于更改全局内边距设置等。
 
-### Application Variables
+### 应用变量
 
-| Name                      | Description                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------ |
-| `--ion-font-family`       | Font family of the app                                                                     |
-| `--ion-statusbar-padding` | Statusbar padding top of the app                                                           |
-| `--ion-safe-area-top`     | Adjust the safe area inset top of the app                                                  |
-| `--ion-safe-area-right`   | Adjust the safe area inset right of the app                                                |
-| `--ion-safe-area-bottom`  | Adjust the safe area inset bottom of the app                                               |
-| `--ion-safe-area-left`    | Adjust the safe area inset left of the app                                                 |
-| `--ion-margin`            | Adjust the margin of the [Margin attributes](../layout/css-utilities.md#element-margin)    |
-| `--ion-padding`           | Adjust the padding of the [Padding attributes](../layout/css-utilities.md#element-padding) |
+| 名称                       | 描述                                                                               |
+| -------------------------- | ---------------------------------------------------------------------------------- |
+| `--ion-font-family`        | 应用的字体家族                                                                     |
+| `--ion-statusbar-padding`  | 应用的状态栏顶部内边距                                                             |
+| `--ion-safe-area-top`      | 调整应用的安全区域顶部内边距                                                       |
+| `--ion-safe-area-right`    | 调整应用的安全区域右侧内边距                                                       |
+| `--ion-safe-area-bottom`   | 调整应用的安全区域底部内边距                                                       |
+| `--ion-safe-area-left`     | 调整应用的安全区域左侧内边距                                                       |
+| `--ion-margin`             | 调整[外边距属性](../layout/css-utilities.md#element-margin)的边距值              |
+| `--ion-padding`            | 调整[内边距属性](../layout/css-utilities.md#element-padding)的内边距值           |
 
-### Grid Variables
+### 网格变量
 
-| Name                           | Description                                    |
-| ------------------------------ | ---------------------------------------------- |
-| `--ion-grid-columns`           | Number of columns in the grid                  |
-| `--ion-grid-padding-xs`        | Padding of the grid for xs breakpoints         |
-| `--ion-grid-padding-sm`        | Padding of the grid for sm breakpoints         |
-| `--ion-grid-padding-md`        | Padding of the grid for md breakpoints         |
-| `--ion-grid-padding-lg`        | Padding of the grid for lg breakpoints         |
-| `--ion-grid-padding-xl`        | Padding of the grid for xl breakpoints         |
-| `--ion-grid-column-padding-xs` | Padding of the grid columns for xs breakpoints |
-| `--ion-grid-column-padding-sm` | Padding of the grid columns for sm breakpoints |
-| `--ion-grid-column-padding-md` | Padding of the grid columns for md breakpoints |
-| `--ion-grid-column-padding-lg` | Padding of the grid columns for lg breakpoints |
-| `--ion-grid-column-padding-xl` | Padding of the grid columns for xl breakpoints |
+| 名称                              | 描述                                     |
+| --------------------------------- | ---------------------------------------- |
+| `--ion-grid-columns`              | 网格的列数                               |
+| `--ion-grid-padding-xs`           | 在 xs 断点下网格的内边距                 |
+| `--ion-grid-padding-sm`           | 在 sm 断点下网格的内边距                 |
+| `--ion-grid-padding-md`           | 在 md 断点下网格的内边距                 |
+| `--ion-grid-padding-lg`           | 在 lg 断点下网格的内边距                 |
+| `--ion-grid-padding-xl`           | 在 xl 断点下网格的内边距                 |
+| `--ion-grid-column-padding-xs`    | 在 xs 断点下网格列的内边距               |
+| `--ion-grid-column-padding-sm`    | 在 sm 断点下网格列的内边距               |
+| `--ion-grid-column-padding-md`    | 在 md 断点下网格列的内边距               |
+| `--ion-grid-column-padding-lg`    | 在 lg 断点下网格列的内边距               |
+| `--ion-grid-column-padding-xl`    | 在 xl 断点下网格列的内边距               |
 
-## Known Limitations with Variables
+## 变量的已知限制
 
-### The Alpha Problem
+### 透明度问题
 
-There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">browser support</a> for alpha use of a hex color. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">`rgba()`</a> function only accepts a value in `R, G, B, A` (Red, Green, Blue, Alpha) format. The following code shows examples of correct and incorrect values passed to `rgba()`.
+目前浏览器对十六进制颜色的透明度使用还没有完整的 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">支持</a>。<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">`rgba()`</a> 函数只接受 `R, G, B, A`（红、绿、蓝、透明度）格式的值。以下代码展示了传递给 `rgba()` 的正确和错误值的示例。
 
 ```css
-/* These examples use the same color: blueviolet. */
+/* 这些示例使用相同的颜色：蓝紫色。 */
 .broken {
   --violet: #8a2be2;
 
   /* rgba(#8a2be2, .5) */
-  color: rgba(var(--violet), 0.5); /* ERROR! Doesn't support hex. */
+  color: rgba(var(--violet), 0.5); /* 错误！不支持十六进制。 */
 }
 
 .working {
   --violet-rgb: 138, 43, 226;
 
   /* rgba(138, 43, 226, .5) */
-  color: rgba(var(--violet-rgb), 0.5); /* WORKS! */
+  color: rgba(var(--violet-rgb), 0.5); /* 有效！ */
 }
 ```
 
 :::note
-See the [CSS Variables](css-variables.md) section for more information on how to get and set CSS variables.
+更多关于如何获取和设置 CSS 变量的信息，请参阅 [CSS 变量](css-variables.md) 章节。
 :::
 
-Ionic uses colors with an opacity (alpha) in several components. In order for this to work, those properties must be provided in RGB format. When changing any of the properties that have a variation ending in `-rgb`, it is important they are also provided in a comma separated format **without parentheses**. Below are some examples for changing text and background color.
+Ionic 在多个组件中使用了带有透明度（alpha）的颜色。为了使此功能正常工作，这些属性必须以 RGB 格式提供。当更改任何以 `-rgb` 结尾的属性时，重要的是它们也必须以逗号分隔的格式提供，**且不带括号**。以下是一些更改文本和背景颜色的示例。
 
 ```css
 :root {
-  /* These examples use the same color: sienna. */
+  /* 这些示例使用相同的颜色：赭色。 */
   --ion-text-color: #a0522d;
   --ion-text-color-rgb: 160, 82, 45;
 
-  /* These examples use the same color: lightsteelblue. */
+  /* 这些示例使用相同的颜色：浅钢蓝色。 */
   --ion-background-color: #b0c4de;
   --ion-background-color-rgb: 176, 196, 222;
 }
 ```
 
-Note that the RGB formatted colors are the exact same color as the hex properties, but can now be used with `rgba()`. For example, `--ion-text-color-rgb` can now be used in the following way
+请注意，RGB 格式的颜色与十六进制属性完全相同，但现在可以与 `rgba()` 一起使用。例如，现在可以按以下方式使用 `--ion-text-color-rgb`：
 
 ```css
 body {
@@ -130,9 +130,9 @@ body {
 }
 ```
 
-### Variables in Media Queries
+### 媒体查询中的变量
 
-CSS variables in [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) are not currently supported, but there are open drafts to add [custom media queries](https://drafts.csswg.org/mediaqueries-5/#custom-mq) and [custom environment variables](https://drafts.csswg.org/css-env-1/) that would solve this problem! However, with the current state of support, the following will **not** work:
+目前 [媒体查询](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) 中的 CSS 变量尚不支持，但已有开放草案来添加 [自定义媒体查询](https://drafts.csswg.org/mediaqueries-5/#custom-mq) 和 [自定义环境变量](https://drafts.csswg.org/css-env-1/)，这将解决此问题！然而，在当前的支持状态下，以下代码将**无法**工作：
 
 ```css
 :root {
@@ -140,31 +140,31 @@ CSS variables in [media queries](https://developer.mozilla.org/en-US/docs/Web/CS
 }
 
 @media (min-width: var(--breakpoint)) {
-  /* Doesn't work :( */
+  /* 无法工作 :( */
 }
 ```
 
-### Modifying CSS Color Variables
+### 修改 CSS 颜色变量
 
-While it is possible to easily alter a color in Sass using its built-in functions, it is currently not as easy to modify colors set in CSS Variables. This can be accomplished in CSS by splitting the [RGB](https://developer.mozilla.org/en-US/docs/Glossary/RGB) or [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) channels and modifying each value, but it is complex and has missing functionality.
+虽然在 Sass 中使用内置函数可以轻松修改颜色，但目前修改 CSS 变量中设置的颜色并不容易。在 CSS 中可以通过拆分 [RGB](https://developer.mozilla.org/en-US/docs/Glossary/RGB) 或 [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) 通道并修改每个值来实现，但这很复杂且功能不全。
 
-What exactly does this mean? Basically, using a CSS preprocessor, such as Sass, allows us to use functions to manipulate a single color. For example, we can create the following colors in Sass:
+这具体意味着什么？基本上，使用 CSS 预处理器（如 Sass）允许我们使用函数来操作单个颜色。例如，我们可以在 Sass 中创建以下颜色：
 
 ```scss
-// Background color, shade, and tint
+// 背景颜色、暗色调和亮色调
 $background: #3880ff;
 $background-shade: mix(#000, $background, 12%);
 $background-tint: mix(#fff, $background, 10%);
 
-// Text color, darker and lighter
+// 文本颜色、更深色和更浅色
 $text: #444;
 $text-darker: darken($text, 15);
 $text-lighter: lighten($text, 15);
 ```
 
-After running through the Sass compiler, the colors will have the following values:
+经过 Sass 编译器处理后，颜色将具有以下值：
 
-| Variable            | Value                                          |
+| 变量                | 值                                          |
 | ------------------- | ---------------------------------------------- |
 | `$background`       | <CodeColor color="#3880ff">#3880ff</CodeColor> |
 | `$background-shade` | <CodeColor color="#3171e0">#3171e0</CodeColor> |
@@ -173,8 +173,8 @@ After running through the Sass compiler, the colors will have the following valu
 | `$text-darker`      | <CodeColor color="#1e1e1e">#1e1e1e</CodeColor> |
 | `$text-lighter`     | <CodeColor color="#6a6a6a">#6a6a6a</CodeColor> |
 
-However, because CSS variables can be set at runtime and are more dynamic, it is not currently possible to manipulate them using a simple function.
+然而，由于 CSS 变量可以在运行时设置且更具动态性，目前无法使用简单函数来操作它们。
 
-This is normally not a problem, but when an application needs to have dynamic theming it presents issues. In Ionic, this is the reason that there are [variations to each color](colors.md#layered-colors), and it is also why [stepped colors](themes.md#stepped-colors) are necessary for theming.
+这通常不是问题，但当应用需要动态主题时就会带来困扰。在 Ionic 中，这就是为什么每个颜色都有[变体](colors.md#layered-colors)，以及为什么主题定制需要[阶梯颜色](themes.md#stepped-colors)的原因。
 
-There are drafts and issues discussing [color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187) that would make this possible.
+目前有草案和议题正在讨论[颜色修改提案](https://github.com/w3c/csswg-drafts/issues/3187)，这将使这一功能成为可能。

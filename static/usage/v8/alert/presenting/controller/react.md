@@ -9,14 +9,14 @@ function Example() {
     <IonButton
       onClick={() =>
         presentAlert({
-          header: 'A Short Title Is Best',
-          subHeader: 'A Sub Header Is Optional',
-          message: 'A message should be a short, complete sentence.',
-          buttons: ['Action'],
+          header: '简短标题最佳',
+          subHeader: '副标题可选',
+          message: '提示信息应为简短、完整的句子。',
+          buttons: ['操作'],
         })
       }
     >
-      Click Me
+      点击我
     </IonButton>
   );
 }

@@ -5,9 +5,9 @@ import { IonButton } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton>Default</IonButton>
+      <IonButton>默认</IonButton>
       <IonButton className="ion-text-wrap" style={{ maxWidth: '400px' }}>
-        This is the button that never ends it just goes on and on and on and on and on and on and on and on my friends
+        这是一个永无止境的按钮，它只是不停地继续、继续、继续、继续、继续、继续、继续、继续下去，我的朋友们
       </IonButton>
     </>
   );

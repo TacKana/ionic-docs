@@ -9,16 +9,16 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Inline Toast</IonTitle>
+          <IonTitle>内联 Toast</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton expand="block" onClick={() => setIsOpen(true)}>
-          Open
+          打开
         </IonButton>
         <IonToast
           isOpen={isOpen}
-          message="This toast will close in 5 seconds"
+          message="此 toast 将在 5 秒后关闭"
           onDidDismiss={() => setIsOpen(false)}
           duration={5000}
         ></IonToast>

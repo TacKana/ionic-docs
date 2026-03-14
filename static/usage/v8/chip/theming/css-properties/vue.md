@@ -7,7 +7,7 @@
 </style>
 
 <template>
-  <ion-chip>Default</ion-chip>
+  <ion-chip>默认样式</ion-chip>
 </template>
 
 <script setup lang="ts">

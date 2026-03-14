@@ -1,41 +1,41 @@
 ```html
 <template>
-  <ion-label>Icons at Start</ion-label>
+  <ion-label>图标在起始位置</ion-label>
   <ion-breadcrumbs>
     <ion-breadcrumb href="#home">
       <ion-icon slot="start" :icon="home"></ion-icon>
-      Home
+      主页
     </ion-breadcrumb>
     <ion-breadcrumb href="#electronics">
       <ion-icon slot="start" :icon="flash"></ion-icon>
-      Electronics
+      电子产品
     </ion-breadcrumb>
     <ion-breadcrumb href="#cameras">
       <ion-icon slot="start" :icon="camera"></ion-icon>
-      Cameras
+      相机
     </ion-breadcrumb>
     <ion-breadcrumb href="#film">
       <ion-icon slot="start" :icon="film"></ion-icon>
-      Film
+      胶片
     </ion-breadcrumb>
   </ion-breadcrumbs>
 
-  <ion-label class="ion-margin-top">Icons at End</ion-label>
+  <ion-label class="ion-margin-top">图标在结束位置</ion-label>
   <ion-breadcrumbs>
     <ion-breadcrumb href="#home">
-      Home
+      主页
       <ion-icon slot="end" :icon="home"></ion-icon>
     </ion-breadcrumb>
     <ion-breadcrumb href="#electronics">
-      Electronics
+      电子产品
       <ion-icon slot="end" :icon="flash"></ion-icon>
     </ion-breadcrumb>
     <ion-breadcrumb href="#cameras">
-      Cameras
+      相机
       <ion-icon slot="end" :icon="camera"></ion-icon>
     </ion-breadcrumb>
     <ion-breadcrumb href="#film">
-      Film
+      胶片
       <ion-icon slot="end" :icon="film"></ion-icon>
     </ion-breadcrumb>
   </ion-breadcrumbs>

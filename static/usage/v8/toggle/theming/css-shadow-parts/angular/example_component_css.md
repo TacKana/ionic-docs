@@ -17,7 +17,7 @@ ion-toggle.toggle-checked::part(track) {
 
   background: #ddd;
 
-  /* Required for iOS handle to overflow the height of the track */
+  /* 对于 iOS 设备，确保滑动手柄可以超出轨道的显示区域 */
   overflow: visible;
 }
 

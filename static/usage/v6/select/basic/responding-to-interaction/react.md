@@ -14,14 +14,14 @@ function Example() {
       <IonList>
         <IonItem>
           <IonSelect
-            placeholder="Select fruit"
-            onIonChange={(e) => pushLog(`ionChange fired with value: ${e.detail.value}`)}
-            onIonCancel={() => pushLog('ionCancel fired')}
-            onIonDismiss={() => pushLog('ionDismiss fired')}
+            placeholder="选择水果"
+            onIonChange={(e) => pushLog(`ionChange 事件触发，值为: ${e.detail.value}`)}
+            onIonCancel={() => pushLog('ionCancel 事件触发')}
+            onIonDismiss={() => pushLog('ionDismiss 事件触发')}
           >
-            <IonSelectOption value="apples">Apples</IonSelectOption>
-            <IonSelectOption value="oranges">Oranges</IonSelectOption>
-            <IonSelectOption value="bananas">Bananas</IonSelectOption>
+            <IonSelectOption value="apples">苹果</IonSelectOption>
+            <IonSelectOption value="oranges">橙子</IonSelectOption>
+            <IonSelectOption value="bananas">香蕉</IonSelectOption>
           </IonSelect>
         </IonItem>
       </IonList>

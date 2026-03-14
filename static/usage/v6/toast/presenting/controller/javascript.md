@@ -1,7 +1,7 @@
 ```html
-<ion-button expand="block" onclick="presentToast('top')">Present Toast At the Top</ion-button>
-<ion-button expand="block" onclick="presentToast('middle')">Present Toast At the Middle</ion-button>
-<ion-button expand="block" onclick="presentToast('bottom')">Present Toast At the Bottom</ion-button>
+<ion-button expand="block" onclick="presentToast('top')">在顶部显示提示</ion-button>
+<ion-button expand="block" onclick="presentToast('middle')">在中间显示提示</ion-button>
+<ion-button expand="block" onclick="presentToast('bottom')">在底部显示提示</ion-button>
 
 <script>
   async function presentToast(position) {

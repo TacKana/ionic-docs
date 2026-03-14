@@ -1,5 +1,5 @@
 ```html
-<b>Columns aligned at the top</b>
+<b>顶部对齐的列</b>
 <ion-grid>
   <ion-row class="ion-align-items-start">
     <ion-col> 1 </ion-col>
@@ -14,7 +14,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Columns aligned at the center</b>
+<b>居中对齐的列</b>
 <ion-grid>
   <ion-row class="ion-align-items-center">
     <ion-col> 1 </ion-col>
@@ -29,7 +29,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Columns aligned at the bottom</b>
+<b>底部对齐的列</b>
 <ion-grid>
   <ion-row class="ion-align-items-end">
     <ion-col> 1 </ion-col>

@@ -6,24 +6,24 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonInput label="Default Input" placeholder="Enter text"></IonInput>
+        <IonInput label="默认输入框" placeholder="输入文本"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonInput label="Fixed Input" label-placement="fixed" placeholder="Enter text"></IonInput>
+        <IonInput label="固定标签输入框" label-placement="fixed" placeholder="输入文本"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonInput label="Stacked Input" label-placement="stacked" placeholder="Enter text"></IonInput>
+        <IonInput label="堆叠标签输入框" label-placement="stacked" placeholder="输入文本"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonInput label="Floating Input" label-placement="floating" placeholder="Enter text"></IonInput>
+        <IonInput label="浮动标签输入框" label-placement="floating" placeholder="输入文本"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonSelect label="Select" placeholder="Make a Selection">
-          <IonSelectOption value="">No Game Console</IonSelectOption>
+        <IonSelect label="选择框" placeholder="请选择">
+          <IonSelectOption value="">无游戏机</IonSelectOption>
           <IonSelectOption value="nes">NES</IonSelectOption>
           <IonSelectOption value="n64">Nintendo64</IonSelectOption>
           <IonSelectOption value="ps">PlayStation</IonSelectOption>
@@ -34,16 +34,16 @@ function Example() {
       </IonItem>
 
       <IonItem>
-        <IonToggle>Toggle</IonToggle>
+        <IonToggle>切换开关</IonToggle>
       </IonItem>
 
       <IonItem>
-        <IonCheckbox>Checkbox</IonCheckbox>
+        <IonCheckbox>复选框</IonCheckbox>
       </IonItem>
 
       <IonItem>
         <IonRange label-placement="start">
-          <div slot="label">Range</div>
+          <div slot="label">滑动条</div>
         </IonRange>
       </IonItem>
     </>

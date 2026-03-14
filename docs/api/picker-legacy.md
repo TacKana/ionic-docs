@@ -1,5 +1,5 @@
 ---
-title: "ion-picker-legacy"
+title: 选择器组件（已弃用）
 ---
 import Props from '@ionic-internal/component-api/v8/picker-legacy/props.md';
 import Events from '@ionic-internal/component-api/v8/picker-legacy/events.md';
@@ -9,57 +9,57 @@ import CustomProps from '@ionic-internal/component-api/v8/picker-legacy/custom-p
 import Slots from '@ionic-internal/component-api/v8/picker-legacy/slots.md';
 
 <head>
-  <title>ion-picker-legacy: A Dialog That Displays Buttons and Columns</title>
-  <meta name="description" content="A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker-legacy appears on top of the app's content, and at the bottom of the viewport." />
+  <title>ion-picker-legacy：显示按钮和列的选择器对话框</title>
+  <meta name="description" content="选择器是一种对话框，显示一行按钮和下方的多列选项。ion-picker-legacy 会出现在应用内容的上方，并位于视口的底部。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-:::warning Deprecation Notice
+:::warning 弃用提示
 
-`ion-picker-legacy` is deprecated and will be removed in the next major release. Migrate to [`ion-picker`](./picker.md) as soon as possible.
+`ion-picker-legacy` 已弃用，并将在下一个主要版本中移除。请尽快迁移至 [`ion-picker`](./picker.md)。
 
 :::
 
-A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.
+选择器（Picker）是一种对话框，它显示一行按钮以及下方的多列选项。该组件会悬浮在应用内容之上，并位于视口的底部。
 
-## Inline Pickers (Recommended)
+## 内联选择器（推荐）
 
-`ion-picker-legacy` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Picker.
+通过在模板中直接编写组件，即可使用 `ion-picker-legacy`。这种方式可以减少呈现选择器时需要连接的处理程序数量。
 
 import Trigger from '@site/static/usage/v8/picker-legacy/inline/trigger/index.md';
 
 <Trigger />
 
-### Using `isOpen`
+### 使用 `isOpen` 属性
 
-The `isOpen` property on `ion-picker-legacy` allows developers to control the presentation state of the Picker from their application state. This means when `isOpen` is set to `true` the Picker will be presented, and when `isOpen` is set to `false` the Picker will be dismissed.
+`ion-picker-legacy` 上的 `isOpen` 属性允许开发者通过应用状态来控制选择器的呈现状态。这意味着当 `isOpen` 设置为 `true` 时，选择器将被呈现；当 `isOpen` 设置为 `false` 时，选择器将被关闭。
 
-`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Picker is dismissed. Developers should listen for the `ionPickerDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-picker` from being tightly coupled with the state of the application. With a one way data binding, the Picker only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Picker needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+`isOpen` 采用单向数据绑定方式，这意味着选择器关闭时，该值不会自动设置为 `false`。开发者应监听 `ionPickerDidDismiss` 或 `didDismiss` 事件，并将 `isOpen` 设置为 `false`。这样做是为了避免 `ion-picker` 的内部逻辑与应用状态紧密耦合。通过单向数据绑定，选择器只需关注响应式变量提供的布尔值。而如果采用双向数据绑定，选择器不仅需要关注布尔值，还需要考虑响应式变量本身的存在性，这可能导致不确定的行为，并使应用更难调试。
 
 import IsOpen from '@site/static/usage/v8/picker-legacy/inline/isOpen/index.md';
 
 <IsOpen />
 
-## Controller Pickers
+## 控制器选择器
 
-The `pickerController` can be used in situations where more control is needed over when the Picker is presented and dismissed.
+当需要对选择器的呈现和关闭时机进行更精细的控制时，可以使用 `pickerController`。
 
 import Controller from '@site/static/usage/v8/picker-legacy/controller/index.md';
 
 <Controller />
 
-## Multiple Columns
+## 多列选择器
 
-The `columns` property can be used to display a Picker with multiple columns of different options.
+通过 `columns` 属性，可以显示包含多列不同选项的选择器。
 
 import MultipleColumn from '@site/static/usage/v8/picker-legacy/multiple-column/index.md';
 
 <MultipleColumn />
 
-## Interfaces
+## 接口
 
 ### PickerButton
 
@@ -79,7 +79,7 @@ interface PickerColumn {
   name: string;
   align?: string;
   /**
-   * Changing this value allows the initial value of a picker column to be set.
+   * 修改此值可设置选择器列的初始值。
    */
   selectedIndex?: number;
   prevSelected?: number;
@@ -105,7 +105,7 @@ interface PickerColumnOption {
   transform?: string;
   selected?: boolean;
   /**
-   * The optional text to assign as the aria-label on the picker column option.
+   * 可选的文本，将作为 aria-label 分配给选择器列选项。
    */
   ariaLabel?: string;
 }
@@ -132,20 +132,20 @@ interface PickerOptions {
 }
 ```
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

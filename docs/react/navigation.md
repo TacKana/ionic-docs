@@ -1,27 +1,27 @@
 ---
-title: React Navigation
-sidebar_label: Navigation/Routing
+title: React 导航
+sidebar_label: 导航与路由
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
-  <title>React Navigation: Router Link Redirect to Navigate to Another Page</title>
+  <title>React 导航：使用路由链接重定向到其他页面</title>
   <meta
     name="description"
-    content="The React Navigation guide covers routing in an app built with Ionic and React. Learn to define a redirect path for router links to navigate to another page."
+    content="本 React 导航指南涵盖了使用 Ionic 和 React 构建的应用中的路由。学习如何定义重定向路径，通过路由链接导航到其他页面。"
   />
 </head>
 
-This guide covers how routing works in an app built with Ionic and React.
+本指南将介绍在基于 Ionic 和 React 构建的应用中，路由是如何工作的。
 
-`IonReactRouter` uses the popular [React Router](https://github.com/remix-run/react-router) library under the hood. With Ionic and React Router, you can create multi-page apps with rich page transitions.
+`IonReactRouter` 底层使用了流行的 [React Router](https://github.com/remix-run/react-router) 库。借助 Ionic 和 React Router，你可以创建具有丰富页面转场效果的多页面应用。
 
-Everything you know about routing using React Router carries over into Ionic React. Let's take a look at the basics of an Ionic React app and how routing works with it.
+你在 React Router 中学到的所有路由知识都可以直接应用于 Ionic React。让我们先来了解一下 Ionic React 应用的基础知识以及路由是如何与之协同工作的。
 
-## Routing in Ionic React
+## Ionic React 中的路由
 
-Here is a sample `App` component that defines a single route to the "/dashboard" URL. When you visit "/dashboard", the route renders the `DashboardPage` component.
+下面是一个简单的 `App` 组件示例，它定义了一条指向 "/dashboard" URL 的路由。当访问 "/dashboard" 时，该路由会渲染 `DashboardPage` 组件。
 
 **App.tsx**
 
@@ -38,11 +38,11 @@ const App: React.FC = () => (
 );
 ```
 
-Directly after the `Route`, we define our default `Redirect`, which, when a user visits the root URL of the app ("/"), it redirects them to the "/dashboard" URL.
+在 `Route` 之后，我们定义了一个默认的 `Redirect`。当用户访问应用的根 URL ("/") 时，它会将用户重定向到 "/dashboard" URL。
 
-The redirect also has the `exact` prop set, which means the URL has to match the `from` prop (or the `path` prop if `exact` was used on a `Route`) precisely for this route to be a match. Without it, this redirect would render for every route, since every route begins with "/".
+这个重定向还设置了 `exact` 属性，这意味着 URL 必须与 `from` 属性（或者如果 `Route` 上使用了 `exact`，则是 `path` 属性）精确匹配，该路由才会生效。如果没有 `exact`，由于所有路由都以 "/" 开头，这个重定向将会为每个路由渲染。
 
-You can also programmatically redirect from a Route's render method based on a condition, like checking if a user is authed or not:
+你也可以根据条件（例如检查用户是否已认证）在 Route 的 render 方法中进行编程式重定向：
 
 ```tsx
 <Route
@@ -56,11 +56,11 @@ You can also programmatically redirect from a Route's render method based on a c
 
 ## IonReactRouter
 
-The `IonReactRouter` component wraps the traditional [`BrowserRouter`](https://v5.reactrouter.com/web/api/BrowserRouter) component from React Router, and sets the app up for routing. Therefore, use `IonReactRouter` in place of `BrowserRouter`. You can pass in any props to `IonReactRouter` and they will be passed down to the underlying `BrowserRouter`.
+`IonReactRouter` 组件是对 React Router 中传统的 [`BrowserRouter`](https://v5.reactrouter.com/web/api/BrowserRouter) 组件的封装，它为应用设置了路由环境。因此，请使用 `IonReactRouter` 来替代 `BrowserRouter`。你可以向 `IonReactRouter` 传递任何属性，这些属性都将被传递给底层的 `BrowserRouter`。
 
-## Nested Routes
+## 嵌套路由
 
-Inside the Dashboard page, we define more routes related to this specific section of the app:
+在 Dashboard 页面内部，我们可以为应用的这一特定部分定义更多相关的路由：
 
 **DashboardPage.tsx**
 
@@ -77,9 +77,9 @@ const DashboardPage: React.FC = () => {
 };
 ```
 
-Here, there are a couple more routes defined to point to pages from within the dashboard portion of the app. Note, that we need to define the whole route in the path, and we can't leave off "/dashboard" even though we arrived to this page from that URL. React Router requires full paths, and relative paths are not supported.
+这里，我们定义了另外几个路由，用于指向 Dashboard 区域内的不同页面。注意，我们需要在路径中定义完整的路由，即使我们已经从该 URL 进入了此页面，也不能省略 "/dashboard" 部分。React Router 要求使用完整路径，不支持相对路径。
 
-However, we can use the [`match`](https://v5.reactrouter.com/web/api/match) objects `url` property to provide the URL that was matched to render a component, which helps when working with nested routes:
+不过，我们可以利用 [`match`](https://v5.reactrouter.com/web/api/match) 对象的 `url` 属性来获取用于渲染组件的匹配 URL，这在处理嵌套路由时会很有帮助：
 
 ```tsx
 const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
@@ -94,23 +94,23 @@ const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
 };
 ```
 
-Here, `match.url` contains the value of "/dashboard", since that was the URL used to render the `DashboardPage`.
+在这里，`match.url` 的值是 "/dashboard"，因为正是这个 URL 被用来渲染 `DashboardPage`。
 
-These routes are grouped in an `IonRouterOutlet`, let's discuss that next.
+这些路由被分组在一个 `IonRouterOutlet` 中，接下来我们就来讨论它。
 
 ## IonRouterOutlet
 
-The `IonRouterOutlet` component provides a container for Routes that render Ionic "pages". When a page is in an `IonRouterOutlet`, the container controls the transition animation between the pages as well as controls when a page is created and destroyed, which helps maintain the state between the views when switching back and forth between them.
+`IonRouterOutlet` 组件为渲染 Ionic "页面" 的路由提供了一个容器。当一个页面位于 `IonRouterOutlet` 内时，该容器不仅会控制页面之间的转场动画，还会管理页面的创建和销毁时机。这有助于在视图间来回切换时，保持之前页面的状态。
 
-The `DashboardPage` above shows a users list page and a details page. When navigating between the two pages, the `IonRouterOutlet` provides the appropriate platform page transition and keeps the state of the previous page intact so that when a user navigates back to the list page, it appears in the same state as when it left.
+上面的 `DashboardPage` 展示了一个用户列表页和一个详情页。当在这两个页面之间导航时，`IonRouterOutlet` 会提供适合平台的页面转场效果，并保留前一个页面的状态。这样，当用户返回列表页时，它会保持与离开时相同的状态。
 
-An `IonRouterOutlet` should only contain `Route`s or `Redirect`s. Any other component should be rendered either as a result of a `Route` or outside of the `IonRouterOutlet`.
+一个 `IonRouterOutlet` 应该只包含 `Route` 或 `Redirect`。任何其他组件都应该作为 `Route` 渲染的结果来呈现，或者放在 `IonRouterOutlet` 之外。
 
-## Fallback Route
+## 默认路由（404 处理）
 
-A common routing use case is to provide a "fallback" route to be rendered in the event the location navigated to does not match any of the routes defined.
+一个常见的路由需求是提供一个“默认”或“后备”路由，以便在用户导航到未定义的路由时呈现。
 
-We can define a fallback route by placing a `Route` component without a `path` property as the last route defined within an `IonRouterOutlet`.
+我们可以通过将不带 `path` 属性的 `Route` 组件作为 `IonRouterOutlet` 中的最后一个路由来实现。
 
 **DashboardPage.tsx**
 
@@ -126,9 +126,9 @@ const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
 };
 ```
 
-Here, we see that in the event a location does not match the first two `Route`s the `IonRouterOutlet` will redirect the Ionic React app to the `match.url` path.
+如上所示，如果访问的路径与前两个 `Route` 都不匹配，`IonRouterOutlet` 会将 Ionic React 应用重定向到 `match.url` 路径。
 
-You can alternatively supply a component to render instead of providing a redirect.
+你也可以提供一个要渲染的组件，而不是进行重定向。
 
 ```tsx
 const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
@@ -144,9 +144,9 @@ const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
 
 ## IonPage
 
-The `IonPage` component wraps each view in an Ionic React app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
+`IonPage` 组件包裹着 Ionic React 应用中的每个视图，确保页面转场和堆栈导航能正常工作。任何通过路由导航到的视图都必须包含一个 `IonPage` 组件。
 
-`IonPage` is also required for proper styling. It provides a flex container that ensures page content, such as `IonContent`, is properly sized and does not overlap other UI elements like `IonTabBar`.
+`IonPage` 对于正确的样式也是必需的。它提供了一个 Flex 容器，确保页面内容（如 `IonContent`）能够正确调整大小，并且不会与其他 UI 元素（如 `IonTabBar`）重叠。
 
 ```tsx
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -157,19 +157,19 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Home</IonTitle>
+          <IonTitle>首页</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">Hello World</IonContent>
+      <IonContent className="ion-padding">你好，世界</IonContent>
     </IonPage>
   );
 };
 export default Home;
 ```
 
-## Navigation
+## 导航
 
-There are several options available when routing to different views in an Ionic React app. Here, the `UsersListPage` uses `IonItem`'s `routerLink` prop to specify the route to go to when the item is tapped/clicked:
+在 Ionic React 应用中，有多种方式可以导航到不同的视图。这里，`UsersListPage` 使用 `IonItem` 的 `routerLink` 属性来指定点击项目时要跳转的路由：
 
 **UsersListPage.tsx**
 
@@ -179,16 +179,16 @@ const UsersListPage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Users</IonTitle>
+          <IonTitle>用户</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonList>
           <IonItem routerLink="/dashboard/users/1">
-            <IonLabel>User 1</IonLabel>
+            <IonLabel>用户 1</IonLabel>
           </IonItem>
           <IonItem routerLink="/dashboard/users/2">
-            <IonLabel>User 2</IonLabel>
+            <IonLabel>用户 2</IonLabel>
           </IonItem>
         </IonList>
       </IonContent>
@@ -197,19 +197,19 @@ const UsersListPage: React.FC = () => {
 };
 ```
 
-Other components that have the `routerLink` prop are `IonButton`, `IonCard`, `IonRouterLink`, `IonFabButton`, and `IonItemOption`.
+其他支持 `routerLink` 属性的组件还包括 `IonButton`、`IonCard`、`IonRouterLink`、`IonFabButton` 和 `IonItemOption`。
 
-Each of these components also have a `routerDirection` prop to explicitly set the type of page transition to use (`"forward"`, `"back"`, or `"root"`).
+这些组件也都有一个 `routerDirection` 属性，用于明确设置页面转场的类型（可选值为 `"forward"`、`"back"` 或 `"root"`）。
 
-Outside of these components that have the `routerLink` prop, you can also use React Routers [`Link`](https://v5.reactrouter.com/web/api/Link) component to navigate between views:
+除了这些带有 `routerLink` 属性的组件，你也可以使用 React Router 的 [`Link`](https://v5.reactrouter.com/web/api/Link) 组件在视图间导航：
 
 ```html
-<Link to="/dashboard/users/1">User 1</Link>
+<Link to="/dashboard/users/1">用户 1</Link>
 ```
 
-We recommend using one of the above methods whenever possible for routing. The advantage to these approaches is that they both render an anchor (`<a>`)tag, which is suitable for overall app accessibility.
+只要情况允许，我们推荐优先使用上述方法进行路由。这样做的好处是它们都会渲染成一个锚点（`<a>`）标签，这对于提升应用的整体可访问性非常有利。
 
-A programmatic option for navigation is using the [`history`](https://v5.reactrouter.com/web/api/history) prop that React Router provides to the components it renders via routes.
+编程式导航的选项是使用 React Router 通过路由传递给组件的 [`history`](https://v5.reactrouter.com/web/api/history) 属性。
 
 ```tsx
 <IonButton
@@ -218,29 +218,29 @@ A programmatic option for navigation is using the [`history`](https://v5.reactro
     history.push('/dashboard/users/1');
   }}
 >
-  Go to User 1
+  前往用户 1
 </IonButton>
 ```
 
 :::note
-`history` is a prop.
+`history` 是一个属性 (prop)。
 :::
 
-### Navigating using `history.go`
+### 使用 `history.go` 进行导航
 
-React Router uses the `history` package which has a [history.go](https://github.com/remix-run/history/blob/dev/docs/api-reference.md#history.go) method that allows developers to move forward or backward through the application history. Let's take a look at an example.
+React Router 使用了 `history` 包，它提供了一个 [history.go](https://github.com/remix-run/history/blob/dev/docs/api-reference.md#history.go) 方法，允许开发者在应用历史记录中向前或向后移动。让我们看一个例子。
 
-Say you have the following application history:
+假设你有以下应用历史记录：
 
 `/pageA` --> `/pageB` --> `/pageC`
 
-If you were to call `router.go(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `router.go(2)`, you would be brought to `/pageC`.
+如果你在 `/pageC` 上调用 `router.go(-2)`，你会被带回到 `/pageA`。如果你之后再调用 `router.go(2)`，你又会回到 `/pageC`。
 
-Using `history.go()` in Ionic React is not supported at the moment. Interested in seeing support for this get added to Ionic React? [Let us know on GitHub](https://github.com/ionic-team/ionic-framework/issues/23775)!
+在 Ionic React 中，目前不支持使用 `history.go()`。您希望在 Ionic React 中添加对此功能的支持吗？[请在 GitHub 上告诉我们](https://github.com/ionic-team/ionic-framework/issues/23775)！
 
-## URL Parameters
+## URL 参数
 
-The second route defined in the Dashboard Page has a URL parameter defined (the ":id" portion in the path). URL parameters are dynamic portions of the `path`, and when the user navigates to a URL such as "/dashboard/users/1", the "1" is saved to a parameter named "id", which can be accessed in the component the route renders. Let's see how that's done.
+在 Dashboard 页面中定义的第二个路由包含一个 URL 参数（路径中的 ":id" 部分）。URL 参数是 `path` 中的动态部分，当用户导航到类似 "/dashboard/users/1" 的 URL 时，"1" 这个值会被保存到一个名为 "id" 的参数中，并且可以在该路由渲染的组件内访问到。让我们看看具体如何操作。
 
 **UserDetailPage.tsx**
 
@@ -255,26 +255,26 @@ const UserDetailPage: React.FC<UserDetailPageProps> = ({ match }) => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>User Detail</IonTitle>
+          <IonTitle>用户详情</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>User {match.params.id}</IonContent>
+      <IonContent>用户 {match.params.id}</IonContent>
     </IonPage>
   );
 };
 ```
 
-The [`match`](https://v5.reactrouter.com/web/api/match) prop contains information about the matched route, including the URL params. We obtain the `id` param here and display it on the screen.
+[`match`](https://v5.reactrouter.com/web/api/match) 属性包含了匹配路由的相关信息，包括 URL 参数。我们从中获取 `id` 参数并显示在屏幕上。
 
-Note how we use a TypeScript interface to strongly type the props object. The interface gives us type safety and code completion inside of the component.
+注意我们是如何使用 TypeScript 接口来为 props 对象提供强类型的。这个接口在组件内部为我们提供了类型安全和代码补全功能。
 
-## Linear Routing versus Non-Linear Routing
+## 线性路由 vs 非线性路由
 
-### Linear Routing
+### 线性路由
 
-If you have built a web app that uses routing, you likely have used linear routing before. Linear routing means that you can move forward or backward through the application history by pushing and popping pages.
+如果你开发过使用路由的 Web 应用，你可能之前使用过线性路由。线性路由意味着你可以通过推入（push）和弹出（pop）页面在应用历史记录中前进或后退。
 
-The following is an example of linear routing in a mobile app:
+以下是移动应用中线性路由的一个示例：
 
 <video
   style={{
@@ -286,21 +286,21 @@ The following is an example of linear routing in a mobile app:
   controls
 ></video>
 
-The application history in this example has the following path:
+此示例中的应用历史记录具有以下路径：
 
-`Accessibility` --> `VoiceOver` --> `Speech`
+`辅助功能` --> `旁白` --> `语音`
 
-When we press the back button, we follow that same routing path except in reverse. Linear routing is helpful in that it allows for simple and predictable routing behaviors.
+当我们按下返回按钮时，我们会沿着相同的路由路径反向返回。线性路由有助于实现简单且可预测的路由行为。
 
-The downside of linear routing is that it does not allow for complex user experiences such as tab views. This is where non-linear routing comes into play.
+线性路由的缺点是无法支持复杂的用户交互，例如标签视图。这就引出了非线性路由的概念。
 
-### Non-Linear Routing
+### 非线性路由
 
-Non-linear routing is a concept that may be new to many web developers learning to build mobile apps with Ionic.
+非线性路由对于许多学习使用 Ionic 构建移动应用的 Web 开发者来说可能是一个新概念。
 
-Non-linear routing means that the view that the user should go back to is not necessarily the previous view that was displayed on the screen.
+非线性路由意味着用户应该返回的视图不一定是屏幕上先前显示的视图。
 
-The following is an example of non-linear routing:
+以下是非线性路由的示例：
 
 <video
   style={{
@@ -312,33 +312,33 @@ The following is an example of non-linear routing:
   controls
 ></video>
 
-In the example above, we start on the `Originals` tab. Tapping a card brings us to the `Ted Lasso` view within the `Originals` tab.
+在上面的例子中，我们从“原创”标签页开始。点击一个卡片会将我们带到该标签页内的《泰德·拉索》视图。
 
-From here, we switch to the `Search` tab. Then, we tap the `Originals` tab again and are brought back to the `Ted Lasso` view. At this point, we have started using non-linear routing.
+从这里，我们切换到“搜索”标签页。然后，我们再次点击“原创”标签页，又被带回到《泰德·拉索》视图。此时，我们就已经开始使用非线性路由了。
 
-Why is this non-linear routing? The previous view we were on was the `Search` view. However, pressing the back button on the `Ted Lasso` view should bring us back to the root `Originals` view. This happens because each tab in a mobile app is treated as its own stack. The [Working with Tabs](#working-with-tabs) sections goes over this in more detail.
+为什么这是非线性路由？我们之前的视图是“搜索”视图。然而，在《泰德·拉索》视图按下返回按钮应该会带我们回到“原创”标签页的根视图。这是因为在移动应用中，每个标签页都被视为自己的独立堆栈。[标签页的使用](#working-with-tabs)部分会更详细地讨论这一点。
 
-If tapping the back button simply called `history.go(-1)` from the `Ted Lasso` view, we would be brought back to the `Search` view which is not correct.
+如果在《泰德·拉索》视图按下返回按钮只是简单地调用 `history.go(-1)`，我们将会被带回到“搜索”视图，这显然是不正确的。
 
-Non-linear routing allows for sophisticated user flows that linear routing cannot handle. However, certain linear routing APIs such as `history.go()` cannot be used in this non-linear environment. This means that `history.go()` should not be used when using tabs or nested outlets.
+非线性路由可以实现线性路由无法处理的复杂用户流程。然而，某些线性路由的 API（如 `history.go()`）在这种非线性环境下无法使用。这意味着在使用标签页或嵌套的 `IonRouterOutlet` 时，不应该使用 `history.go()`。
 
-### Which one should I choose?
+### 我应该选择哪一种？
 
-We recommend keeping your application as simple as possible until you need to add non-linear routing. Non-linear routing is very powerful, but it also adds a considerable amount of complexity to mobile applications.
+我们建议在确实需要添加非线性路由之前，尽量保持应用的简单性。非线性路由非常强大，但它也会给移动应用带来相当大的复杂性。
 
-The two most common uses of non-linear routing is with tabs and nested `IonRouterOutlets`. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
+非线性路由最常见的两种用途是配合标签页和嵌套的 `IonRouterOutlet` 使用。我们建议只有当你的应用确实需要用到标签页或嵌套路由出口时，才考虑使用非线性路由。
 
-For more on tabs, please see [Working with Tabs](#working-with-tabs).
+更多关于标签页的信息，请参阅 [标签页的使用](#working-with-tabs)。
 
-For more on nested router outlets, please see [Nested Routes](#nested-routes).
+更多关于嵌套路由出口的信息，请参阅 [嵌套路由](#nested-routes)。
 
-## Shared URLs versus Nested Routes
+## 共享 URL 与嵌套路由
 
-A common point of confusion when setting up routing is deciding between shared URLs or nested routes. This part of the guide will explain both and help you decide which one to use.
+在设置路由时，一个常见的困惑点是决定使用共享 URL 还是嵌套路由。本指南的这一部分将解释这两种方式，并帮助你决定使用哪一种。
 
-### Shared URLs
+### 共享 URL
 
-Shared URLs is a route configuration where routes have pieces of the URL in common. The following is an example of a shared URL configuration:
+共享 URL 是一种路由配置，其中不同的路由共享 URL 的某一部分。以下是一个共享 URL 配置的示例：
 
 ```tsx
 const App: React.FC = () => (
@@ -357,11 +357,11 @@ const App: React.FC = () => (
 );
 ```
 
-The above routes are considered "shared" because they reuse the `dashboard` piece of the URL.
+上面的路由被认为是“共享”的，因为它们重用了 URL 中的 `dashboard` 部分。
 
-### Nested Routes
+### 嵌套路由
 
-Nested Routes is a route configuration where routes are listed as children of other routes. The following is an example of a nested route configuration:
+嵌套路由是一种将路由列为其他路由子级的路由配置。以下是一个嵌套路由配置的示例：
 
 ```tsx
 const App: React.FC = () => (
@@ -388,19 +388,19 @@ const DashboardRouterOutlet: React.FC = () => (
 );
 ```
 
-The above routes are nested because they are in the `children` array of the parent route. Notice that the parent route renders the `DashboardRouterOutlet` component. When you nest routes, you need to render another instance of `IonRouterOutlet`.
+上面的路由是嵌套的，因为它们位于父路由的 `children` 数组中。注意，父路由渲染了 `DashboardRouterOutlet` 组件。当你使用嵌套路由时，你需要渲染另一个 `IonRouterOutlet` 实例。
 
-### Which one should I choose?
+### 我应该选择哪一种？
 
-Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
+当你想从页面 A 过渡到页面 B，同时保留这两个页面在 URL 中的关联时，共享 URL 非常有用。在我们之前的例子中，`/dashboard` 页面上的按钮可以过渡到 `/dashboard/stats` 页面。两个页面之间的关联通过 a) 页面转场和 b) URL 得以保留。
 
-Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `IonTabBar` and `IonTabs` components rendered in the first `IonRouterOutlet`. The `IonTabs` component renders another `IonRouterOutlet` which is responsible for rendering the contents of each tab.
+当你想要在出口 A 中渲染内容，同时在嵌套的出口 B 中渲染子内容时，应该使用嵌套路由。你最常遇到的用例是标签页。当你加载一个 Ionic 标签页启动应用时，你会看到 `IonTabBar` 和 `IonTabs` 组件在第一个 `IonRouterOutlet` 中渲染。`IonTabs` 组件会渲染另一个 `IonRouterOutlet`，它负责渲染每个标签页的内容。
 
-There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
+在移动应用中，很少有其他场景适合使用嵌套路由。如果拿不准，就使用共享 URL 的路由配置。我们强烈建议不要在标签页以外的上下文中使用嵌套路由，因为它可能会很快让你的应用导航变得混乱。
 
-## Working with Tabs
+## 标签页的使用
 
-When working with tabs, Ionic needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's look at what the routing setup for this looks like:
+当使用标签页时，Ionic 需要知道哪个视图属于哪个标签页。`IonTabs` 组件在这里就派上了用场，让我们先来看看对应的路由设置：
 
 ```tsx
 <IonApp>
@@ -415,9 +415,9 @@ When working with tabs, Ionic needs a way to know which view belongs to which ta
 </IonApp>
 ```
 
-Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route object inside of this component. In this example, we call the path `tabs`, but this can be customized.
+在这里，`/tabs` 路径会加载一个 `Tabs` 组件。我们在该组件内部将每个标签页作为一个路由对象提供。在这个例子中，我们将路径命名为 `tabs`，但这是可以自定义的。
 
-Let's start by taking a look at our `Tabs` component:
+我们先来看看 `Tabs` 组件：
 
 ```tsx
 import { Redirect, Route } from 'react-router-dom';
@@ -448,15 +448,15 @@ const Tabs: React.FC = () => (
     <IonTabBar slot="bottom">
       <IonTabButton tab="tab1" href="/tabs/tab1">
         <IonIcon icon={triangle} />
-        <IonLabel>Tab 1</IonLabel>
+        <IonLabel>标签 1</IonLabel>
       </IonTabButton>
       <IonTabButton tab="tab2" href="/tabs/tab2">
         <IonIcon icon={ellipse} />
-        <IonLabel>Tab 2</IonLabel>
+        <IonLabel>标签 2</IonLabel>
       </IonTabButton>
       <IonTabButton tab="tab3" href="/tabs/tab3">
         <IonIcon icon={square} />
-        <IonLabel>Tab 3</IonLabel>
+        <IonLabel>标签 3</IonLabel>
       </IonTabButton>
     </IonTabBar>
   </IonTabs>
@@ -465,23 +465,23 @@ const Tabs: React.FC = () => (
 export default Tabs;
 ```
 
-If you have worked with Ionic Framework before, this should feel familiar. We create an `IonTabs` component and provide an `IonTabBar`. The `IonTabBar` provides `IonTabButton` components, each with a `tab` property that is associated with its corresponding tab in the router config. We also provide an `IonRouterOutlet` to give `IonTabs` an outlet to render the different tab views in.
+如果你之前使用过 Ionic Framework，应该会感到熟悉。我们创建了一个 `IonTabs` 组件并提供了一个 `IonTabBar`。`IonTabBar` 包含多个 `IonTabButton` 组件，每个按钮的 `tab` 属性与路由配置中对应的标签页相关联。我们还提供了一个 `IonRouterOutlet`，为 `IonTabs` 提供一个出口来渲染不同的标签页视图。
 
 :::tip
-`IonTabs` renders an `IonPage` for you, so you do not need to add `IonPage` manually here.
+`IonTabs` 会为你渲染一个 `IonPage`，所以你无需在此手动添加 `IonPage`。
 :::
 
-### How Tabs in Ionic Work
+### Ionic 中标签页的工作原理
 
-Each tab in Ionic is treated as an individual navigation stack. This means if you have three tabs in your application, each tab has its own navigation stack. Within each stack you can navigate forwards (push a view) and backwards (pop a view).
+Ionic 中的每个标签页都被视为一个独立的导航堆栈。这意味着如果你的应用有三个标签页，那么每个标签页都有自己的导航堆栈。在每个堆栈内，你可以向前导航（推入视图）和向后导航（弹出视图）。
 
-This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manage tabs as one single history stack.
+理解这一行为很重要，因为它不同于其他基于 Web 的 UI 库中常见的大多数标签页实现。其他库通常将标签页作为一个单一的历史堆栈来管理。
 
-Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
+由于 Ionic 专注于帮助开发者构建移动应用，其标签页的设计理念是尽可能贴近原生移动应用的标签页行为。因此，Ionic 标签页的某些行为可能与你见过的其他 UI 库的标签页实现有所不同。请继续阅读以了解更多关于这些差异的信息。
 
-### Child Routes within Tabs
+### 标签页内的子路由
 
-When adding additional routes to tabs you should write them as sibling routes with the parent tab as the path prefix. The example below defines the `/tabs/tab1/view` route as a sibling of the `/tabs/tab1` route. Since this new route has the `tab1` prefix, it will be rendered inside of the `Tabs` component, and Tab 1 will still be selected in the `IonTabBar`.
+当向标签页添加更多路由时，你应该将它们写成兄弟路由，并以父标签页的路径作为前缀。下面的示例将 `/tabs/tab1/view` 路由定义为 `/tabs/tab1` 路由的兄弟路由。由于这个新路由带有 `tab1` 前缀，它将在 `Tabs` 组件内渲染，并且 `IonTabBar` 中的“标签 1”仍将处于选中状态。
 
 ```tsx
 <IonTabs>
@@ -506,35 +506,35 @@ When adding additional routes to tabs you should write them as sibling routes wi
   <IonTabBar slot="bottom">
     <IonTabButton tab="tab1" href="/tabs/tab1">
       <IonIcon icon={triangle} />
-      <IonLabel>Tab 1</IonLabel>
+      <IonLabel>标签 1</IonLabel>
     </IonTabButton>
     <IonTabButton tab="tab2" href="/tabs/tab2">
       <IonIcon icon={ellipse} />
-      <IonLabel>Tab 2</IonLabel>
+      <IonLabel>标签 2</IonLabel>
     </IonTabButton>
     <IonTabButton tab="tab3" href="/tabs/tab3">
       <IonIcon icon={square} />
-      <IonLabel>Tab 3</IonLabel>
+      <IonLabel>标签 3</IonLabel>
     </IonTabButton>
   </IonTabBar>
 </IonTabs>
 ```
 
-### Switching Between Tabs
+### 在标签页之间切换
 
-Since each tab is its own navigation stack, it is important to note that these navigation stacks should never interact. This means that there should never be a button in Tab 1 that routes a user to Tab 2. In other words, tabs should only be changed by the user tapping a tab button in the tab bar.
+由于每个标签页都有自己的导航堆栈，重要的是要注意这些导航堆栈之间永远不应该有交互。这意味着标签页 1 中不应该有任何按钮能将用户导航到标签页 2。换句话说，标签页的切换只能由用户点击标签栏中的标签按钮来完成。
 
-A good example of this in practice is the iOS App Store and Google Play Store mobile applications. These apps both provide tabbed interfaces, but neither one ever routes the user across tabs. For example, the "Games" tab in the iOS App Store app never directs users to the "Search" tab and vice versa.
+iOS App Store 和 Google Play Store 移动应用就是很好的实践例子。这两个应用都提供了标签式界面，但它们都不会让用户在标签页之间进行路由跳转。例如，iOS App Store 应用中的“游戏”标签页永远不会将用户引导至“搜索”标签页，反之亦然。
 
-Let's take a look at a couple common mistakes that are made with tabs.
+让我们来看一些在使用标签页时常犯的错误。
 
-**A Settings Tab That Multiple Tabs Reference**
+**多个标签页引用的设置标签页**
 
-A common practice is to create a Settings view as its own tab. This is great if developers need to present several nested settings menus. However, other tabs should never try to route to the Settings tab. As we mentioned above, the only way that the Settings tab should be activated is by a user tapping the appropriate tab button.
+一种常见的做法是将“设置”视图作为一个独立的标签页。如果开发者需要呈现多个嵌套的设置菜单，这很好。但是，其他标签页永远不应该尝试路由到“设置”标签页。正如我们上面提到的，激活“设置”标签页的唯一方式应该是用户点击相应的标签按钮。
 
-If you find that your tabs need to reference the Settings tab, we recommend making the Settings view a modal by using `ion-modal`. This is a practice found in the iOS App Store app. With this approach, any tab can present the modal without breaking the mobile tabs pattern of each tab being its own stack.
+如果你发现你的多个标签页都需要引用“设置”中的内容，我们建议使用 `ion-modal` 将“设置”视图作为一个模态框。这是 iOS App Store 应用中的做法。通过这种方法，任何标签页都可以弹出这个模态框，而不会破坏“每个标签页都是独立堆栈”的移动标签页模式。
 
-The example below shows how the iOS App Store app handles presenting an "Account" view from multiple tabs. By presenting the "Account" view in a modal, the app can work within the mobile tabs best practices to show the same view across multiple tabs.
+下面的示例展示了 iOS App Store 应用如何处理从多个标签页呈现“账户”视图。通过在模态框中呈现“账户”视图，该应用可以在遵循移动标签页最佳实践的前提下，在多个标签页中展示相同的视图。
 
 <video
   style={{
@@ -546,29 +546,29 @@ The example below shows how the iOS App Store app handles presenting an "Account
   controls
 ></video>
 
-**Reusing Views Across Tabs**
+**在标签页间复用视图**
 
-Another common practice is to present the same view in multiple tabs. Developers often try to do this by having the view contained in a single tab, with other tabs routing to that tab. As we mentioned above, this breaks the mobile tabs pattern and should be avoided.
+另一种常见的做法是在多个标签页中呈现相同的视图。开发者常常试图通过将视图放在单个标签页中，然后让其他标签页路由到那个标签页来实现这一点。正如我们上面提到的，这破坏了移动标签页的模式，应该避免。
 
-Instead, we recommend having routes in each tab that reference the same component. This is a practice done in popular apps like Spotify. For example, you can access an album or podcast from the "Home", "Search", and "Your Library" tabs. When accessing the album or podcast, users stay within that tab. The app does this by creating routes per tab and sharing a common component in the codebase.
+相反，我们建议在每个标签页中创建引用相同组件的路由。这是像 Spotify 这样的流行应用中的做法。例如，你可以从“主页”、“搜索”和“你的资料库”标签页访问同一个专辑或播客。当访问该专辑或播客时，用户会停留在他们当前所在的标签页内。应用通过为每个标签页创建路由，并在代码库中共享一个公共组件来实现这一点。
 
-The example below shows how the Spotify app reuses the same album component to show content in multiple tabs. Notice that each screenshot shows the same album but from a different tab.
+下面的例子展示了 Spotify 应用如何复用同一个专辑组件在多个标签页中展示内容。注意，每个截图都显示的是同一个专辑，但来自不同的标签页。
 
-|                      Home Tab                       |                      Search Tab                       |
-| :-------------------------------------------------: | :---------------------------------------------------: |
+|                      主页标签页                       |                       搜索标签页                        |
+| :---------------------------------------------------: | :-----------------------------------------------------: |
 | <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |
 
-## Live Example
+## 在线示例
 
-If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-react-routing?file=src/index.tsx) of the topics above on StackBlitz.
+如果你想亲手实践上述概念和代码，请在 StackBlitz 上查看我们的[在线示例](https://stackblitz.com/edit/ionic-react-routing?file=src/index.tsx)。
 
-### IonRouterOutlet in a Tabs View
+### 标签页视图中的 IonRouterOutlet
 
-When working in a tabs view, Ionic React needs a way to determine what views belong to which tabs. We accomplish this by taking advantage of the fact that the paths provided to a `Route` are regular expressions.
+在标签页视图中工作时，Ionic React 需要一种方法来确定哪些视图属于哪个标签页。我们通过利用提供给 `Route` 的路径是正则表达式这一特性来实现这一点。
 
-While the syntax looks a bit strange, it is reasonably straightforward once you understand it.
+虽然语法看起来有点奇怪，但一旦你理解了它，就会觉得相当简单直接。
 
-For example, the routes for a view with two tabs (sessions and speakers) can be set up as such:
+例如，一个具有两个标签页（例如，会议场次和演讲者）的视图的路由可以这样设置：
 
 ```tsx
 <IonRouterOutlet>
@@ -578,31 +578,31 @@ For example, the routes for a view with two tabs (sessions and speakers) can be 
 </IonRouterOutlet>
 ```
 
-If the navigated URL were "/sessions", it would match the first route and add a URL parameter named "tab" with the value of "sessions" to the resulting `match` object passed into `SessionsPage`.
+如果导航的 URL 是 "/sessions"，它将匹配第一个路由，并向传递给 `SessionsPage` 的 `match` 对象中添加一个名为 "tab" 且值为 "sessions" 的 URL 参数。
 
-When a user navigates to a session detail page ("/sessions/1" for instance), the second route adds a URL parameter named "tab" with a value of "sessions". When `IonRouterOutlet` sees that both pages are in the same "sessions" tab, it provides an animated page transition to the new view. If a user navigates to a new tab ("speakers" in this case), `IonRouterOutlet` knows not to provide the animation.
+当用户导航到会议详情页面（例如 "/sessions/1"）时，第二个路由会添加一个名为 "tab" 且值为 "sessions" 的 URL 参数。当 `IonRouterOutlet` 发现两个页面都在同一个 "sessions" 标签页内时，它会在导航到新视图时提供一个带动画的页面转场。如果用户导航到一个新的标签页（例如 "speakers"），`IonRouterOutlet` 知道不提供动画。
 
-### Switches in IonRouterOutlet
+### IonRouterOutlet 中的 Switches
 
-Since `IonRouterOutlet` takes over the job in determining which routes get rendered, using a `Switch` from React Router has no effect when used inside of an `IonRouterOutlet`. Switches still function as expected when used outside an `IonRouterOutlet`.
+由于 `IonRouterOutlet` 接管了决定渲染哪个路由的工作，在 `IonRouterOutlet` 内部使用 React Router 的 `Switch` 组件将不会产生任何效果。但是，在 `IonRouterOutlet` 外部使用 `Switch` 仍然会按预期工作。
 
-## Utilities
+## 工具函数
 
 ### useIonRouter
 
-The `useIonRouter` hook can be used for more direct control over routing in Ionic React. It allows you to pass additional metadata to Ionic, such as a custom animation, before calling React Router.
+`useIonRouter` 钩子可用于更直接地控制 Ionic React 中的路由。它允许你在调用 React Router 之前，向 Ionic 传递额外的元数据，例如自定义动画。
 
-The `useIonRouter` hook returns a `UseIonRouterResult` which has several convenience methods for routing:
+`useIonRouter` 钩子返回一个 `UseIonRouterResult` 对象，其中包含几个便捷的路由方法：
 
 ```typescript
 type UseIonRouterResult = {
   /**
-   * Navigates to a new pathname
-   * @param pathname - The path to navigate to
-   * @param routerDirection - Optional - The RouterDirection to use for transition purposes, defaults to 'forward'
-   * @param routeAction - Optional - The RouteAction to use for history purposes, defaults to 'push'
-   * @param routerOptions - Optional - Any additional parameters to pass to the router
-   * @param animationBuilder - Optional - A custom transition animation to use
+   * 导航到一个新的路径名
+   * @param pathname - 要导航到的路径
+   * @param routerDirection - 可选 - 用于转场效果的 RouterDirection，默认为 'forward'
+   * @param routeAction - 可选 - 用于历史记录的 RouteAction，默认为 'push'
+   * @param routerOptions - 可选 - 传递给路由器的任何额外参数
+   * @param animationBuilder - 可选 - 自定义的转场动画
    */
   push(
     pathname: string,
@@ -612,22 +612,22 @@ type UseIonRouterResult = {
     animationBuilder?: AnimationBuilder
   ): void;
   /**
-   * Navigates backwards in history, using the IonRouter to determine history
-   * @param animationBuilder - Optional - A custom transition animation to use
+   * 在历史记录中向后导航，由 IonRouter 决定历史记录
+   * @param animationBuilder - 可选 - 自定义的转场动画
    */
   goBack(animationBuilder?: AnimationBuilder): void;
   /**
-   * Determines if there are any additional routes in the the Router's history. However, routing is not prevented if the browser's history has more entries. Returns true if more entries exist, false if not.
+   * 判断路由器的历史记录中是否还有更多路由。但是，如果浏览器的历史记录有更多条目，导航不会被阻止。如果有更多条目返回 true，否则返回 false。
    */
   canGoBack(): boolean;
   /**
-   * Information about the current route.
+   * 关于当前路由的信息。
    */
   routeInfo: RouteInfo;
 };
 ```
 
-The following example shows how to use `useIonRouter`:
+以下示例展示了如何使用 `useIonRouter`：
 
 ```tsx
 import { useIonRouter } from '@ionic/react';
@@ -638,19 +638,19 @@ const MyComponent: React.FC = () => {
     router.push('/my-page', 'root', 'replace');
   };
 
-  ...
+  // ...
 }
 
 ```
 
-## More Information
+## 更多信息
 
-For more info on routing in React using the React Router implementation that Ionic uses under the hood, check out their docs at [https://v5.reactrouter.com/web](https://v5.reactrouter.com/web).
+想了解关于 Ionic 底层使用的 React Router 在 React 中进行路由的更多信息，请查阅他们的文档：[https://v5.reactrouter.com/web](https://v5.reactrouter.com/web)
 
-## From the Community
+## 社区资源
 
 <!-- cspell:disable -->
 
-[Ionic 4 and React: Navigation](https://alligator.io/ionic/ionic-4-react-navigation) - Paul Halliday
+[Ionic 4 与 React：导航](https://alligator.io/ionic/ionic-4-react-navigation) - Paul Halliday 著
 
 <!-- cspell:enable -->

@@ -13,10 +13,10 @@ export class ExampleComponent {
 
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'A Short Title Is Best',
-      subHeader: 'A Sub Header Is Optional',
-      message: 'A message should be a short, complete sentence.',
-      buttons: ['Action'],
+      header: '标题宜简短',
+      subHeader: '子标题为可选',
+      message: '消息应为简短、完整的句子。',
+      buttons: ['操作'],
     });
 
     await alert.present();

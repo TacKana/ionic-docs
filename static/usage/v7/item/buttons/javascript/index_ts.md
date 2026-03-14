@@ -24,9 +24,9 @@ import '@ionic/core/css/display.css';
 import './theme/variables.css';
 
 /**
- * On Ionicons 7.2+ these icons
- * get mapped to a kebab-case key.
- * Alternatively, developers can do:
+ * 在 Ionicons 7.2+ 版本中，这些图标
+ * 会被映射为短横线命名格式的键名。
+ * 开发者也可以这样使用：
  * addIcons({ 'home': home, 'navigate': navigate, 'star': star });
  */
 addIcons({ home, navigate, star });

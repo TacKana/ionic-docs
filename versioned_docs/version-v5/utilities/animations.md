@@ -1,18 +1,20 @@
+```mdx-code-block
 import Codepen from '@components/global/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+```
 
-# Animations
+# 动画
 
-## Overview
+## 概述
 
-Ionic Animations is a tool that enables developers to create complex animations in a platform-agnostic manner, without requiring a specific framework or an Ionic app.
+Ionic Animations 是一个工具，它使开发者能够以不限定特定平台的方式创建复杂的动画，且无需特定的框架或 Ionic 应用。
 
-Creating efficient animations can be challenging, as developers are limited by the available libraries and hardware resources of the device. Moreover, many animation libraries use a JavaScript-driven approach, which can reduce the scalability of animations and use up CPU time.
+创建高效的动画可能具有挑战性，因为开发者受到可用库和设备硬件资源的限制。此外，许多动画库使用 JavaScript 驱动的方法，这可能会降低动画的可扩展性并占用 CPU 时间。
 
-Ionic Animations, on the other hand, uses the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API), which offloads all the computation and running of animations to the browser. This approach allows the browser to optimize the animations and ensure their smooth execution. In cases where Web Animations are not supported, Ionic Animations will fall back to [CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), which should have a negligible difference in performance.
+相比之下，Ionic Animations 使用 [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API)，它将动画的所有计算和运行工作卸载给浏览器。这种方法允许浏览器优化动画并确保其流畅执行。在不支持 Web Animations 的情况下，Ionic Animations 将回退到 [CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)，其性能差异可以忽略不计。
 
-## Installation
+## 安装
 
 ````mdx-code-block
 <Tabs
@@ -28,7 +30,7 @@ Ionic Animations, on the other hand, uses the [Web Animations API](https://devel
 }>
 <TabItem value="javascript">
 
-Developers using Ionic Core and JavaScript should install the latest version of `@ionic/core`.
+使用 Ionic Core 和 JavaScript 的开发者应安装最新版本的 `@ionic/core`。
 
 ```javascript
 import { createAnimation } from 'https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/esm/index.mjs';
@@ -45,7 +47,7 @@ const animation = createAnimation()
 </TabItem>
 <TabItem value="typescript">
 
-Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
+使用 Ionic Core 和 TypeScript 的开发者应安装最新版本的 `@ionic/core`。
 
 ```tsx
 import { createAnimation, Animation } from '@ionic/core';
@@ -61,7 +63,7 @@ const animation: Animation = createAnimation('')
 </TabItem>
 <TabItem value="angular">
 
-Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+使用 Angular 的开发者应安装最新版本的 `@ionic/angular`。可以通过 `AnimationController` 依赖注入来创建动画。
 
 ```tsx
 
@@ -80,7 +82,7 @@ constructor(private animationCtrl: AnimationController) {
 </TabItem>
 <TabItem value="react">
 
-Developers using React should install the latest version of `@ionic/react`. React wrappers are in beta. Please report any issues on GitHub!
+使用 React 的开发者应安装最新版本的 `@ionic/react`。React 包装器目前处于测试阶段。请在 GitHub 上报告任何问题！
 
 ```tsx
 
@@ -103,7 +105,7 @@ import { CreateAnimation, Animation } from '@ionic/react';
 </TabItem>
 <TabItem value="vue">
 
-Developers using Ionic Vue should install the latest version of `@ionic/vue`.
+使用 Ionic Vue 的开发者应安装最新版本的 `@ionic/vue`。
 
 ```javascript
 import { createAnimation } from '@ionic/vue';
@@ -126,9 +128,9 @@ const animation = createAnimation()
 </Tabs>
 ````
 
-## Basic Animations
+## 基础动画
 
-### Usage
+### 用法
 
 ````mdx-code-block
 <Tabs
@@ -201,19 +203,19 @@ createAnimation()
 </Tabs>
 ````
 
-In the example above, an animation that changes the opacity on the `.square` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
+在上面的例子中，创建了一个动画，它改变 `.square` 元素的不透明度，并使其沿 X 轴从左向右移动。该动画将无限次运行，每次迭代持续 1500 毫秒。
 
-By default, all Ionic Animations are paused until the `play` method is called.
+默认情况下，所有 Ionic Animations 都处于暂停状态，直到调用 `play` 方法。
 
 <Codepen user="ionic" slug="bGbMojP" />
 
-## Keyframe Animations
+## 关键帧动画
 
-Ionic Animations allows you to control the intermediate steps in an animation using keyframes. Any valid CSS property can be used here, and you can even use CSS Variables as values.
+Ionic Animations 允许您使用关键帧控制动画的中间步骤。这里可以使用任何有效的 CSS 属性，甚至可以使用 CSS 变量作为值。
 
-Hyphenated CSS properties should be written using camel case when writing keyframes. For example, `border-radius` should be written as `borderRadius`. This also applies to the `fromTo()`, `from(),` and `to()` methods.
+在编写关键帧时，带连字符的 CSS 属性应使用驼峰式写法。例如，`border-radius` 应写为 `borderRadius`。这也适用于 `fromTo()`、`from()` 和 `to()` 方法。
 
-### Usage
+### 用法
 
 ````mdx-code-block
 <Tabs
@@ -296,17 +298,17 @@ createAnimation()
 </Tabs>
 ````
 
-In the example above, the `.square` element will transition from a red background color, to a background color defined by the `--background` variable, and then transition on to a green background color.
+在上面的例子中，`.square` 元素将从红色背景色过渡到由 `--background` 变量定义的背景色，然后过渡到绿色背景色。
 
-Each keyframe object contains an `offset` property. `offset` is a value between 0 and 1 that defines the keyframe step. Offset values must go in ascending order and cannot repeat.
+每个关键帧对象都包含一个 `offset` 属性。`offset` 是一个介于 0 和 1 之间的值，用于定义关键帧步骤。偏移值必须按升序排列且不能重复。
 
 <Codepen user="ionic" slug="YzKLEzR" />
 
-## Grouped Animations
+## 分组动画
 
-Multiple elements can be animated at the same time and controlled via a single parent animation object. Child animations inherit properties such as duration, easing, and iterations unless otherwise specified. A parent animation's `onFinish` callback will not be called until all child animations have completed.
+多个元素可以同时进行动画，并通过一个单一的父动画对象进行控制。除非另有指定，子动画会继承持续时间、缓动和迭代次数等属性。父动画的 `onFinish` 回调要等到所有子动画完成后才会被调用。
 
-### Usage
+### 用法
 
 ````mdx-code-block
 <Tabs
@@ -505,17 +507,17 @@ const parent = createAnimation()
 </Tabs>
 ````
 
-This example shows 3 child animations controlled by a single parent animation. Animations `squareA` and `squareB` inherit the parent animation's duration of 2000ms, but animation `squareC` has a duration of 5000ms since it was explicitly set.
+此示例展示了由单个父动画控制的 3 个子动画。动画 `squareA` 和 `squareB` 继承了父动画的 2000 毫秒持续时间，但动画 `squareC` 由于显式设置了 5000 毫秒的持续时间。
 
 <!-- cspell:disable-next-line -->
 
 <Codepen user="ionic" slug="oNvdogM" height="460" />
 
-## Before and After Hooks
+## 前后钩子
 
-Ionic Animations provides hooks that let you alter an element before an animation runs and after an animation completes. These hooks can be used to perform DOM reads and writes as well as add or remove classes and inline styles.
+Ionic Animations 提供了钩子，允许您在动画运行前和完成后更改元素。这些钩子可用于执行 DOM 读取和写入，以及添加或移除类和内联样式。
 
-### Usage
+### 用法
 
 ````mdx-code-block
 <Tabs
@@ -622,19 +624,19 @@ createAnimation()
 </Tabs>
 ````
 
-In this example, an inline opacity of 0.2 is set on the `.square` element prior to the animation starting. Once the animation finishes, the background color of the element is set to `rgba(0, 255, 0, 0.5)`, and the inline opacity is cleared.
+在此示例中，在动画开始之前，为 `.square` 元素设置了 0.2 的内联不透明度。动画完成后，元素的背景色被设置为 `rgba(0, 255, 0, 0.5)`，并且内联不透明度被清除。
 
-See [Methods](#methods) for a complete list of hooks.
+有关钩子的完整列表，请参阅[方法](#methods)部分。
 
 <!-- cspell:disable-next-line -->
 
 <Codepen user="ionic" slug="BaBxmwo" />
 
-## Chained Animations
+## 链式动画
 
-Animations can be chained to run one after the other. The `play` method returns a Promise that resolves when the animation has completed.
+动画可以链接起来一个接一个地运行。`play` 方法返回一个 Promise，该 Promise 在动画完成时解析。
 
-### Usage
+### 用法
 
 ````mdx-code-block
 <Tabs
@@ -842,11 +844,11 @@ await squareC.play();
 
 <Codepen user="ionic" slug="MWgGrwX" height="460" />
 
-## Gesture Animations
+## 手势动画
 
-Ionic Animations gives developers the ability to create powerful gesture-based animations by integrating seamlessly with [Ionic Gestures](gestures.md).
+Ionic Animations 通过与 [Ionic Gestures](gestures.md) 无缝集成，使开发者能够创建强大的基于手势的动画。
 
-### Usage
+### 用法
 
 ````mdx-code-block
 <Tabs
@@ -1160,15 +1162,15 @@ const getStep = (ev): {
 </Tabs>
 ````
 
-In this example we are creating a track along which we can drag the `.square` element. Our `animation` object will take care of moving the `.square` element either left or right, and our `gesture` object will instruct the `animation` object which direction to move in.
+在这个例子中，我们创建了一个轨迹，可以沿着它拖动 `.square` 元素。我们的 `animation` 对象将负责向左或向右移动 `.square` 元素，而我们的 `gesture` 对象将指示 `animation` 对象朝哪个方向移动。
 
 <Codepen user="ionic" slug="jONxzRL" />
 
-## Preference-Based Animations
+## 基于偏好的动画
 
-Developers can also tailor their animations to user preferences such as `prefers-reduced-motion` and `prefers-color-scheme` using CSS Variables.
+开发者还可以使用 CSS 变量根据用户偏好（如 `prefers-reduced-motion` 和 `prefers-color-scheme`）定制他们的动画。
 
-### Usage
+### 用法
 
 ```css
 .square {
@@ -1261,17 +1263,17 @@ createAnimation()
 </Tabs>
 ````
 
-This method works in all supported browsers when creating animations for the first time. Most browsers are also capable of dynamically updating keyframe animations as the CSS Variables change.
+在首次创建动画时，此方法在所有支持的浏览器中均有效。大多数浏览器还能够在 CSS 变量更改时动态更新关键帧动画。
 
-Safari does not currently support dynamically updating keyframe animations. For developers who need this kind of support in Safari, they can use [MediaQueryList.addListener()](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener).
+Safari 目前不支持动态更新关键帧动画。对于在 Safari 中需要这种支持的开发者，可以使用 [MediaQueryList.addListener()](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener)。
 
 <Codepen user="ionic" slug="JjjYVKj" />
 
-## Overriding Ionic Component Animations
+## 覆盖 Ionic 组件动画
 
-Certain Ionic components allow developers to provide custom animations. All animations are provided as either properties on the component or are set via a global config.
+某些 Ionic 组件允许开发者提供自定义动画。所有动画都可以作为组件的属性提供，或者通过全局配置进行设置。
 
-### Modals
+### 模态框
 
 ````mdx-code-block
 <Tabs
@@ -1292,11 +1294,11 @@ customElements.define('modal-page', class extends HTMLElement {
     this.innerHTML = `
       <ion-header>
         <ion-toolbar>
-          <ion-title>Modal Header</ion-title>
+          <ion-title>模态框头部</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
-        Modal Content
+        模态框内容
       </ion-content>
     `;
   }
@@ -1326,13 +1328,13 @@ function presentModal() {
     return enterAnimation(baseEl).direction('reverse');
   }
 
-  // create the modal with the `modal-page` component
+  // 创建带有 `modal-page` 组件的模态框
   const modalElement = document.createElement('ion-modal');
   modalElement.component = 'modal-page';
   modalElement.enterAnimation = enterAnimation;
   modalElement.leaveAnimation = leaveAnimation;
 
-  // present the modal
+  // 显示模态框
   document.body.appendChild(modalElement);
   return modalElement.present();
 }
@@ -1423,10 +1425,10 @@ export const ModalExample: React.FC = () => {
   return (
     <IonContent>
       <IonModal isOpen={showModal} enterAnimation={enterAnimation} leaveAnimation={leaveAnimation}>
-        <p>This is modal content</p>
-        <IonButton onClick={() => setShowModal(false)}>Close Modal</IonButton>
+        <p>这是模态框内容</p>
+        <IonButton onClick={() => setShowModal(false)}>关闭模态框</IonButton>
       </IonModal>
-      <IonButton onClick={() => setShowModal(true)}>Show Modal</IonButton>
+      <IonButton onClick={() => setShowModal(true)}>显示模态框</IonButton>
     </IonContent>
   );
 };
@@ -1444,10 +1446,10 @@ export const ModalExample: React.FC = () => {
         :leave-animation="leaveAnimation"
         @didDismiss="setModalOpen(false)"
       >
-        Modal content goes here.
+        模态框内容放在这里。
       </ion-modal>
 
-      <ion-button @click="setModalOpen(true)">Show Modal</ion-button>
+      <ion-button @click="setModalOpen(true)">显示模态框</ion-button>
     </ion-content>
   </ion-page>
 </template>
@@ -1498,24 +1500,24 @@ export default defineComponent({
 
 <Codepen user="ionic" slug="ExapZBZ" />
 
-## Performance Considerations
+## 性能考虑
 
-CSS and Web Animations are usually handled on the compositor thread. This is different than the main thread where layout, painting, styling, and your JavaScript is executed. It is recommended that you prefer using properties that can be handled on the compositor thread for optimal animation performance.
+CSS 和 Web Animations 通常在合成器线程上处理。这与执行布局、绘制、样式设置和 JavaScript 的主线程不同。为了获得最佳的动画性能，建议优先使用可以在合成器线程上处理的属性。
 
-Animating properties such as `height` and `width` cause additional layouts and paints which can cause jank and degrade animation performance. On the other hand, animating properties such as `transform` and `opacity` are highly optimizable by the browser and typically do not cause much jank.
+对 `height` 和 `width` 等属性进行动画处理会导致额外的布局和绘制，这可能会引起卡顿并降低动画性能。另一方面，对 `transform` 和 `opacity` 等属性进行动画处理，浏览器可以高度优化，通常不会引起太多卡顿。
 
-For information on which CSS properties cause layouts or paints to occur, see [CSS Triggers](https://csstriggers.com/).
+有关哪些 CSS 属性会导致布局或绘制发生的信息，请参阅 [CSS Triggers](https://csstriggers.com/)。
 
-## Debugging
+## 调试
 
-For debugging animations in Chrome, there is a great blog post about inspecting animations using the Chrome DevTools: https://developers.google.com/web/tools/chrome-devtools/inspect-styles/animations.
+关于在 Chrome 中调试动画，有一篇很好的博客文章介绍了如何使用 Chrome DevTools 检查动画：https://developers.google.com/web/tools/chrome-devtools/inspect-styles/animations。
 
-It is also recommended to assign unique identifiers to your animations. These identifiers will show up in the Animations inspector in Chrome and should make it easier to debug:
+还建议为您的动画分配唯一的标识符。这些标识符将显示在 Chrome 的动画检查器中，并使调试更容易：
 
 ```javascript
 /**
- * The animation for the .square element should
- * show "my-animation-identifier" in Chrome DevTools.
+ * 对于 .square 元素的动画应在 Chrome DevTools 中显示
+ * "my-animation-identifier"。
  */
 const animation = createAnimation('my-animation-identifier')
   .addElement(document.querySelector('.square'))
@@ -1525,9 +1527,9 @@ const animation = createAnimation('my-animation-identifier')
 
 ## API
 
-This section provides a list of all the methods and properties available on the `Animation` class.
+本节提供了 `Animation` 类上可用的所有方法和属性的列表。
 
-### Interfaces
+### 接口
 
 #### AnimationDirection
 
@@ -1549,7 +1551,7 @@ type AnimationBuilder = (baseEl: any, opts?: any) => Animation;
 
 :::note
 
-`opts` are additional options that are specific to the custom animation. For example, the sheet modal enter animation includes information for the current breakpoint.
+`opts` 是特定于自定义动画的附加选项。例如，表单模态框进入动画包含了当前断点的信息。
 
 :::
 
@@ -1558,7 +1560,7 @@ type AnimationBuilder = (baseEl: any, opts?: any) => Animation;
 ```tsx
 interface AnimationCallbackOptions {
   /**
-   * If true, the associated callback will only be fired once.
+   * 如果为 true，则关联的回调只会被触发一次。
    */
   oneTimeCallback: boolean;
 }
@@ -1569,55 +1571,54 @@ interface AnimationCallbackOptions {
 ```tsx
 interface AnimationPlayOptions {
   /**
-   * If true, the animation will play synchronously.
-   * This is the equivalent of running the animation
-   * with a duration of 0ms.
+   * 如果为 true，动画将同步播放。
+   * 这相当于以 0 毫秒的持续时间运行动画。
    */
   sync: boolean;
 }
 ```
 
-### Properties
+### 属性
 
-| Name                           | Description                                       |
-| ------------------------------ | ------------------------------------------------- |
-| `childAnimations: Animation[]` | All child animations of a given parent animation. |
-| `elements: HTMLElement[]`      | All elements attached to an animation.            |
-| `parentAnimation?: Animation`  | The parent animation of a given animation object. |
+| 名称                           | 描述                                       |
+| ------------------------------ | ------------------------------------------ |
+| `childAnimations: Animation[]` | 给定父动画的所有子动画。                     |
+| `elements: HTMLElement[]`      | 附加到动画的所有元素。                       |
+| `parentAnimation?: Animation`  | 给定动画对象的父动画。                       |
 
-### Methods
+### 方法
 
-| Name                                                                                                                 | Description                                                                                                                                                                             |
-| -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `addAnimation(animationToAdd: Animation \| Animation[]): Animation`                                                  | Group one or more animations together to be controlled by a parent animation.                                                                                                           |
-| `addElement(el: Element \| Element[] \| Node \| Node[] \| NodeList): Animation`                                      | Add one or more elements to the animation.                                                                                                                                              |
-| `afterAddClass(className: string \| string[]): Animation`                                                            | Add a class or array of classes to be added to all elements in an animation after the animation ends.                                                                                   |
-| `afterAddRead(readFn: (): void): Animation`                                                                          | Add a function that performs a DOM read to be run after the animation ends.                                                                                                             |
-| `afterAddWrite(writeFn: (): void): Animation`                                                                        | Add a function that performs a DOM write to be run after the animation ends.                                                                                                            |
-| `afterClearStyles(propertyNames: string[]): Animation`                                                               | Add an array of property names to be cleared from the inline styles on all elements in an animation after the animation ends.                                                           |
-| `afterRemoveClass(className: string \| string[]): Animation`                                                         | Add a class or an array of classes to be removed from all elements in an animation after the animation ends.                                                                            |
-| `afterStyles(styles: { [property: string]: any }): Animation`                                                        | Add an object of styles to be applied to all elements in an animation after the animation ends.                                                                                         |
-| `beforeAddClass(className: string \| string[]): Animation`                                                           | Add a class or array of classes to be added to all elements in an animation before the animation starts.                                                                                |
-| `beforeAddRead(readFn: (): void): Animation`                                                                         | Add a function that performs a DOM read to be run before the animation starts.                                                                                                          |
-| `beforeAddWrite(writeFn: (): void): Animation`                                                                       | Add a function that performs a DOM write to be run before the animation starts.                                                                                                         |
-| `beforeClearStyles(propertyNames: string[]): Animation`                                                              | Add an array of property names to be cleared from the inline styles on all elements in an animation before the animation starts.                                                        |
-| `beforeRemoveClass(className: string \| string[]): Animation`                                                        | Add a class or an array of classes to be removed from all elements in an animation before the animation starts.                                                                         |
-| `beforeStyles(styles: { [property: string]: any }): Animation`                                                       | Add an object of styles to be applied to all elements in an animation before the animation starts.                                                                                      |
-| `direction(direction?: AnimationDirection): Animation`                                                               | Set the direction the animation should play in.                                                                                                                                         |
-| `delay(delay?: number): Animation`                                                                                   | Set the delay for the start of the animation in milliseconds.                                                                                                                           |
-| `destroy(clearStyleSheets?: boolean): Animation`                                                                     | Destroy the animation and clear all elements, child animations, and keyframes.                                                                                                          |
-| `duration(duration?: number): Animation`                                                                             | Set the duration of the animation in milliseconds.                                                                                                                                      |
-| `easing(easing?: string): Animation`                                                                                 | Set the easing of the animation in milliseconds. See [Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value) for a list of accepted easing values. |
-| `from(property: string, value: any): Animation`                                                                      | Set the start styles of the animation.                                                                                                                                                  |
-| `fromTo(property: string, fromValue: any, toValue: any): Animation`                                                  | Set the start and end styles of the animation.                                                                                                                                          |
-| `fill(fill?: AnimationFill): Animation`                                                                              | Set how the animation applies styles to its elements before and after the animation's execution.                                                                                        |
-| `iterations(iterations: number): Animation`                                                                          | Set the number of times the animation cycle should be played before stopping.                                                                                                           |
-| `keyframes(keyframes: any[]): Animation`                                                                             | Set the keyframes for an animation.                                                                                                                                                     |
-| `onFinish(callback: (didComplete: boolean, animation: Animation): void, opts?: AnimationCallbackOptions): Animation` | Add a callback to be run upon the animation ending.                                                                                                                                     |
-| `pause(): Animation`                                                                                                 | Pause the animation.                                                                                                                                                                    |
-| `play(opts?: AnimationPlayOptions): Promise<void>`                                                                   | Play the animation.                                                                                                                                                                     |
-| `progressEnd(playTo?: 0 \| 1, step: number, dur?: number): Animation`                                                | Stop seeking through an animation.                                                                                                                                                      |
-| `progressStart(forceLinearEasing?: boolean, step?: number): Animation`                                               | Begin seeking through an animation.                                                                                                                                                     |
-| `progressStep(step: number): Animation`                                                                              | Seek through an animation.                                                                                                                                                              |
-| `stop(): Animation`                                                                                                  | Stop the animation and reset all elements to their initial state.                                                                                                                       |
-| `to(property: string, value: any): Animation`                                                                        | Set the end styles of the animation.                                                                                                                                                    |
+| 名称                                                                                                                 | 描述                                                                                                                                                                             |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `addAnimation(animationToAdd: Animation \| Animation[]): Animation`                                                  | 将一个或多个动画分组在一起，由父动画控制。                                                                                                                                         |
+| `addElement(el: Element \| Element[] \| Node \| Node[] \| NodeList): Animation`                                      | 向动画添加一个或多个元素。                                                                                                                                                         |
+| `afterAddClass(className: string \| string[]): Animation`                                                            | 添加一个类或类数组，在动画结束后将其添加到动画中的所有元素。                                                                                                                         |
+| `afterAddRead(readFn: (): void): Animation`                                                                          | 添加一个执行 DOM 读取的函数，在动画结束后运行。                                                                                                                                     |
+| `afterAddWrite(writeFn: (): void): Animation`                                                                        | 添加一个执行 DOM 写入的函数，在动画结束后运行。                                                                                                                                     |
+| `afterClearStyles(propertyNames: string[]): Animation`                                                               | 添加一个属性名数组，在动画结束后从动画中所有元素的内联样式中清除这些属性。                                                                                                             |
+| `afterRemoveClass(className: string \| string[]): Animation`                                                         | 添加一个类或类数组，在动画结束后将其从动画中的所有元素中移除。                                                                                                                         |
+| `afterStyles(styles: { [property: string]: any }): Animation`                                                        | 添加一个样式对象，在动画结束后将其应用于动画中的所有元素。                                                                                                                           |
+| `beforeAddClass(className: string \| string[]): Animation`                                                           | 添加一个类或类数组，在动画开始前将其添加到动画中的所有元素。                                                                                                                           |
+| `beforeAddRead(readFn: (): void): Animation`                                                                         | 添加一个执行 DOM 读取的函数，在动画开始前运行。                                                                                                                                       |
+| `beforeAddWrite(writeFn: (): void): Animation`                                                                       | 添加一个执行 DOM 写入的函数，在动画开始前运行。                                                                                                                                       |
+| `beforeClearStyles(propertyNames: string[]): Animation`                                                              | 添加一个属性名数组，在动画开始前从动画中所有元素的内联样式中清除这些属性。                                                                                                             |
+| `beforeRemoveClass(className: string \| string[]): Animation`                                                        | 添加一个类或类数组，在动画开始前将其从动画中的所有元素中移除。                                                                                                                           |
+| `beforeStyles(styles: { [property: string]: any }): Animation`                                                       | 添加一个样式对象，在动画开始前将其应用于动画中的所有元素。                                                                                                                             |
+| `direction(direction?: AnimationDirection): Animation`                                                               | 设置动画播放的方向。                                                                                                                                                               |
+| `delay(delay?: number): Animation`                                                                                   | 设置动画开始的延迟时间（毫秒）。                                                                                                                                                     |
+| `destroy(clearStyleSheets?: boolean): Animation`                                                                     | 销毁动画并清除所有元素、子动画和关键帧。                                                                                                                                           |
+| `duration(duration?: number): Animation`                                                                             | 设置动画的持续时间（毫秒）。                                                                                                                                                         |
+| `easing(easing?: string): Animation`                                                                                 | 设置动画的缓动函数（毫秒）。有关接受的缓动值列表，请参阅 [Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value)。                                  |
+| `from(property: string, value: any): Animation`                                                                      | 设置动画的开始样式。                                                                                                                                                               |
+| `fromTo(property: string, fromValue: any, toValue: any): Animation`                                                  | 设置动画的开始和结束样式。                                                                                                                                                         |
+| `fill(fill?: AnimationFill): Animation`                                                                              | 设置动画在动画执行前后如何将样式应用于其元素。                                                                                                                                         |
+| `iterations(iterations: number): Animation`                                                                          | 设置动画循环在停止前应播放的次数。                                                                                                                                                 |
+| `keyframes(keyframes: any[]): Animation`                                                                             | 设置动画的关键帧。                                                                                                                                                                 |
+| `onFinish(callback: (didComplete: boolean, animation: Animation): void, opts?: AnimationCallbackOptions): Animation` | 添加一个在动画结束时运行的回调。                                                                                                                                                   |
+| `pause(): Animation`                                                                                                 | 暂停动画。                                                                                                                                                                         |
+| `play(opts?: AnimationPlayOptions): Promise<void>`                                                                   | 播放动画。                                                                                                                                                                         |
+| `progressEnd(playTo?: 0 \| 1, step: number, dur?: number): Animation`                                                | 停止通过动画进行搜索。                                                                                                                                                             |
+| `progressStart(forceLinearEasing?: boolean, step?: number): Animation`                                               | 开始通过动画进行搜索。                                                                                                                                                             |
+| `progressStep(step: number): Animation`                                                                              | 通过动画进行搜索。                                                                                                                                                                 |
+| `stop(): Animation`                                                                                                  | 停止动画并将所有元素重置为其初始状态。                                                                                                                                             |
+| `to(property: string, value: any): Animation`                                                                        | 设置动画的结束样式。                                                                                                                                                               |

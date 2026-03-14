@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 <TabItem value="angular">
 
 :::note
-Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
+由于配置在运行时设置，你将无法访问平台依赖注入。不过，你可以直接使用提供者所依赖的底层函数。
 
-See the [Angular Platform Documentation](../angular/platform) for the types of platforms you can detect.
+有关可检测的平台类型，请参阅 [Angular 平台文档](../angular/platform)。
 :::
 
 ```ts title="app.module.ts"
@@ -36,7 +36,7 @@ import { isPlatform, IonicModule } from '@ionic/angular';
 <TabItem value="react">
 
 :::note
-See the [React Platform Documentation](../react/platform) for the types of platforms you can detect.
+有关可检测的平台类型，请参阅 [React 平台文档](../react/platform)。
 :::
 
 ```tsx title="App.tsx"
@@ -51,7 +51,7 @@ setupIonicReact({
 <TabItem value="vue">
 
 :::note
-See the [Vue Platform Documentation](../vue/platform) for the types of platforms you can detect.
+有关可检测的平台类型，请参阅 [Vue 平台文档](../vue/platform)。
 :::
 
 ```ts title="main.ts"

@@ -1,11 +1,11 @@
 ```html
 <template>
   <ion-card ref="cardEl">
-    <ion-card-content>Card</ion-card-content>
+    <ion-card-content>卡片</ion-card-content>
   </ion-card>
-  <ion-button @click="play()">Play</ion-button>
-  <ion-button @click="pause()">Pause</ion-button>
-  <ion-button @click="stop()">Stop</ion-button>
+  <ion-button @click="play()">播放</ion-button>
+  <ion-button @click="pause()">暂停</ion-button>
+  <ion-button @click="stop()">停止</ion-button>
 </template>
 
 <script setup lang="ts">

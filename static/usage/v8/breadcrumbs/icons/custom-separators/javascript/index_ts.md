@@ -4,15 +4,15 @@ import { defineCustomElements } from '@ionic/core/loader';
 import { addIcons } from 'ionicons';
 import { arrowForwardCircle } from 'ionicons/icons';
 
-/* Core CSS required for Ionic components to work properly */
+/* Ionic 组件正常运行所需的核心 CSS */
 import '@ionic/core/css/core.css';
 
-/* Basic CSS for apps built with Ionic */
+/* 为基于 Ionic 构建的应用提供的基础 CSS */
 import '@ionic/core/css/normalize.css';
 import '@ionic/core/css/structure.css';
 import '@ionic/core/css/typography.css';
 
-/* Optional CSS utils that can be commented out */
+/* 可选的 CSS 工具类，可按需注释掉 */
 import '@ionic/core/css/padding.css';
 import '@ionic/core/css/float-elements.css';
 import '@ionic/core/css/text-alignment.css';
@@ -21,9 +21,9 @@ import '@ionic/core/css/flex-utils.css';
 import '@ionic/core/css/display.css';
 
 /**
- * Ionic Dark Palette
+ * Ionic 深色调色板
  * -----------------------------------------------------
- * For more information, please see:
+ * 更多信息请参阅：
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
@@ -31,13 +31,13 @@ import '@ionic/core/css/display.css';
 // import '@ionic/core/css/palettes/dark.class.css';
 import '@ionic/core/css/palettes/dark.system.css';
 
-/* Theme variables */
+/* 主题变量 */
 import './theme/variables.css';
 
 /**
- * On Ionicons 7.2+ this icon
- * gets mapped to a "arrow-forward-circle" key.
- * Alternatively, developers can do:
+ * 在 Ionicons 7.2+ 版本中，此图标
+ * 会被映射到 "arrow-forward-circle" 键。
+ * 或者，开发者也可以这样使用：
  * addIcons({ 'arrow-forward-circle': arrowForwardCircle });
  */
 addIcons({ arrowForwardCircle });

@@ -6,34 +6,34 @@ function Example() {
   return (
     <>
       <IonItemDivider>
-        <IonLabel>Default</IonLabel>
+        <IonLabel>默认</IonLabel>
       </IonItemDivider>
       <IonItemDivider color="primary">
-        <IonLabel>Primary</IonLabel>
+        <IonLabel>主色</IonLabel>
       </IonItemDivider>
       <IonItemDivider color="secondary">
-        <IonLabel>Secondary</IonLabel>
+        <IonLabel>次要色</IonLabel>
       </IonItemDivider>
       <IonItemDivider color="tertiary">
-        <IonLabel>Tertiary</IonLabel>
+        <IonLabel>第三色</IonLabel>
       </IonItemDivider>
       <IonItemDivider color="success">
-        <IonLabel>Success</IonLabel>
+        <IonLabel>成功</IonLabel>
       </IonItemDivider>
       <IonItemDivider color="warning">
-        <IonLabel>Warning</IonLabel>
+        <IonLabel>警告</IonLabel>
       </IonItemDivider>
       <IonItemDivider color="danger">
-        <IonLabel>Danger</IonLabel>
+        <IonLabel>危险</IonLabel>
       </IonItemDivider>
       <IonItemDivider color="light">
-        <IonLabel>Light</IonLabel>
+        <IonLabel>浅色</IonLabel>
       </IonItemDivider>
       <IonItemDivider color="medium">
-        <IonLabel>Medium</IonLabel>
+        <IonLabel>中性色</IonLabel>
       </IonItemDivider>
       <IonItemDivider color="dark">
-        <IonLabel>Dark</IonLabel>
+        <IonLabel>深色</IonLabel>
       </IonItemDivider>
     </>
   );

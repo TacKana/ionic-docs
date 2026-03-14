@@ -2,7 +2,7 @@
 <template>
   <ion-list>
     <ion-item>
-      <ion-label>Alphanumeric Characters</ion-label>
+      <ion-label>字母数字字符</ion-label>
       <ion-input :value="inputModel" @ionInput="onInput($event)" ref="ionInputEl"></ion-input>
     </ion-item>
   </ion-list>
@@ -20,12 +20,12 @@
       const onInput = (ev) => {
         const value = ev.target!.value;
 
-        // Removes non alphanumeric characters
+        // 移除非字母数字字符
         const filteredValue = value.replace(/[^a-zA-Z0-9]+/g, '');
 
         /**
-         * Update both the state variable and
-         * the component to keep them in sync.
+         * 同时更新状态变量和组件
+         * 以保持它们同步。
          */
         inputModel.value = filteredValue;
 

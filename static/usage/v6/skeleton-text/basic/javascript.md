@@ -1,6 +1,6 @@
 ```html
 <ion-list></ion-list><br />
-<ion-button onclick="toggle()">Toggle</ion-button>
+<ion-button onclick="toggle()">切换</ion-button>
 
 <script>
   const list = document.querySelector('ion-list');
@@ -41,7 +41,7 @@
 
   function setContent() {
     list.innerHTML = `
-      <ion-list-header>Albums</ion-list-header>
+      <ion-list-header>专辑</ion-list-header>
       <ion-item>
         <ion-thumbnail slot="start">
           <ion-icon style="width: 100%; height: 100%" name="musical-notes"></ion-icon>

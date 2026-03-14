@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/nav/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/nav/slots.md';
 
 <head>
-  <title>ion-nav: Nav View Component for Ionic Framework Apps</title>
+  <title>ion-nav: Ionic 框架应用的导航视图组件</title>
   <meta
     name="description"
-    content="ion-nav is a standalone for loading arbitrary, and pushing new, components on to the stack. Loading Nav view, and pushing others, won't affect overall routers."
+    content="ion-nav 是一个独立的组件，用于加载任意组件并将新组件推入堆栈。加载导航视图和推入其他组件不会影响整体路由系统。"
   />
 </head>
 
@@ -21,29 +21,29 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Nav is a standalone component for loading arbitrary components and pushing new components on to the stack.
+Nav 是一个独立的组件，用于加载任意组件并将新组件推入堆栈。
 
-Unlike Router Outlet, Nav is not tied to a particular router. This means that if we load a Nav component, and push other components to the stack, they will not affect the app's overall router. For example, you should not push a new component to `ion-nav` and expect the URL to update. This fits use cases where you could have a modal, which needs its own sub-navigation, without making it tied to the apps URL.
+与 Router Outlet 不同，Nav 不绑定到特定的路由器。这意味着如果我们加载一个 Nav 组件，并将其他组件推入堆栈，它们不会影响应用的整体路由。例如，你不应该向 `ion-nav` 推入一个新组件并期望 URL 会更新。这适用于某些场景，比如需要一个模态框（modal）来拥有自己的子导航，而不必将其与应用 URL 绑定。
 
 :::note
-`ion-nav` is not meant to be used for routing. Instead, see the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation), or [`ion-router`](./router) for vanilla JavaScript projects.
+`ion-nav` 不应用于路由。如需实现路由功能，请参考 [Angular](../angular/navigation)、[React](../react/navigation) 和 [Vue](../vue/navigation) 的路由指南，或适用于纯 JavaScript 项目的 [`ion-router`](./router)。
 :::
 
-## Using NavLink
+## 使用 NavLink
 
-NavLink is a simplified API when interacting with Nav. Developers can customize the component, pass along component properties, modify the direction of the route animation or define a custom animation when navigating.
+NavLink 是一种与 Nav 交互的简化 API。开发者可以自定义组件、传递组件属性、修改路由动画方向或在导航时定义自定义动画。
 
 import NavLinkExample from '@site/static/usage/v7/nav/nav-link/index.md';
 
 <NavLinkExample />
 
-## Navigation within a Modal
+## 模态框内的导航
 
-Modal can use Nav to offer a linear navigation that is independent of the URL.
+Modal 可以使用 Nav 来提供独立于 URL 的线性导航。
 
 :::note
 
-The example below uses a reference to Nav and the public method APIs to push and pop views. It is recommended to use NavLink in implementations that do not require this level of granular access and control.
+下面的示例使用了对 Nav 的引用以及公共方法 API 来推入和弹出视图。对于不需要这种细粒度访问和控制的实现，建议使用 NavLink。
 
 :::
 
@@ -51,11 +51,11 @@ import ModalNavigationExample from '@site/static/usage/v7/nav/modal-navigation/i
 
 <ModalNavigationExample />
 
-## Interfaces
+## 接口
 
 ### NavCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但此接口可用于替代 `CustomEvent` 接口，以便在此组件发出的 Ionic 事件中获得更强的类型支持。
 
 ```typescript
 interface NavCustomEvent extends CustomEvent {
@@ -63,15 +63,15 @@ interface NavCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -79,10 +79,10 @@ interface NavCustomEvent extends CustomEvent {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

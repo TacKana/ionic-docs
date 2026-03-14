@@ -13,37 +13,37 @@ import CustomProps from '@ionic-internal/component-api/v6/route/custom-props.mdx
 import Slots from '@ionic-internal/component-api/v6/route/slots.md';
 
 <head>
-  <title>ion-route: API Route Component for Ionic Framework Apps</title>
+  <title>ion-route: Ionic 框架应用的路由组件 API</title>
   <meta
     name="description"
-    content="The ion-route component takes a component and renders it when the Browser URL matches the URL property. Learn more about the API route component for Ionic Apps."
+    content="ion-route 组件接收一个组件，并在浏览器 URL 与 url 属性匹配时渲染该组件。了解更多关于 Ionic 应用 API 路由组件的信息。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-The route component takes a component and renders it when the Browser URL matches the url property.
+路由组件接收一个组件，并在浏览器 URL 与 url 属性匹配时渲染该组件。
 
 :::note
-Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
+注意：该组件应仅用于原生 JavaScript 和 Stencil 项目。对于 Angular 项目，请使用 [`ion-router-outlet`](router-outlet.md) 和 Angular 路由器。
 :::
 
-## Navigation Hooks
+## 导航钩子
 
-Navigation hooks can be used to perform tasks or act as navigation guards. Hooks are used by providing functions to the `beforeEnter` and `beforeLeave` properties on each `ion-route`. Returning `true` allows navigation to proceed, while returning `false` causes it to be cancelled. Returning an object of type `NavigationHookOptions` allows you to redirect navigation to another page.
+导航钩子可用于执行任务或作为导航守卫。通过为每个 `ion-route` 的 `beforeEnter` 和 `beforeLeave` 属性提供函数来使用钩子。返回 `true` 允许导航继续，而返回 `false` 则取消导航。返回 `NavigationHookOptions` 类型的对象允许你将导航重定向到另一个页面。
 
-## Interfaces
+## 接口
 
 ```typescript
 interface NavigationHookOptions {
   /**
-   * A valid path to redirect navigation to.
+   * 用于重定向导航的有效路径。
    */
   redirect: string;
 }
 ```
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="javascript" values={[{ value: 'javascript', label: 'Javascript' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -66,17 +66,17 @@ const newMessagePage = document.querySelector('ion-route[url="/dashboard"]');
 newMessagePage.beforeLeave = hasUnsavedDataGuard;
 
 const isLoggedInGuard = async () => {
-  const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
+  const isLoggedIn = await UserData.isLoggedIn(); // 请替换为实际的登录验证
 
   if (isLoggedIn) {
     return true;
   } else {
-    return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
+    return { redirect: '/login' }; // 如果用户未登录，将被重定向到 /login 页面
   }
 };
 
 const hasUnsavedDataGuard = async () => {
-  const hasUnsavedData = await checkData(); // Replace this with actual validation
+  const hasUnsavedData = await checkData(); // 请替换为实际的验证逻辑
 
   if (hasUnsavedData) {
     return await confirmDiscardChanges();
@@ -87,15 +87,15 @@ const hasUnsavedDataGuard = async () => {
 
 const confirmDiscardChanges = async () => {
   const alert = document.createElement('ion-alert');
-  alert.header = 'Discard Unsaved Changes?';
-  alert.message = 'Are you sure you want to leave? Any unsaved changed will be lost.';
+  alert.header = '放弃未保存的更改？';
+  alert.message = '确定要离开吗？所有未保存的更改将会丢失。';
   alert.buttons = [
     {
-      text: 'Cancel',
+      text: '取消',
       role: 'Cancel',
     },
     {
-      text: 'Discard',
+      text: '放弃',
       role: 'destructive',
     },
   ];
@@ -136,17 +136,17 @@ export class RouterExample {
 }
 
 const isLoggedInGuard = async () => {
-  const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
+  const isLoggedIn = await UserData.isLoggedIn(); // 请替换为实际的登录验证
 
   if (isLoggedIn) {
     return true;
   } else {
-    return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
+    return { redirect: '/login' }; // 如果用户未登录，将被重定向到 /login 页面
   }
 };
 
 const hasUnsavedDataGuard = async () => {
-  const hasUnsavedData = await checkData(); // Replace this with actual validation
+  const hasUnsavedData = await checkData(); // 请替换为实际的验证逻辑
 
   if (hasUnsavedData) {
     return await confirmDiscardChanges();
@@ -157,15 +157,15 @@ const hasUnsavedDataGuard = async () => {
 
 const confirmDiscardChanges = async () => {
   const alert = await alertController.create({
-    header: 'Discard Unsaved Changes?',
-    message: 'Are you sure you want to leave? Any unsaved changed will be lost.',
+    header: '放弃未保存的更改？',
+    message: '确定要离开吗？所有未保存的更改将会丢失。',
     buttons: [
       {
-        text: 'Cancel',
+        text: '取消',
         role: 'Cancel',
       },
       {
-        text: 'Discard',
+        text: '放弃',
         role: 'destructive',
       },
     ],
@@ -197,17 +197,17 @@ const confirmDiscardChanges = async () => {
   import { alertController } from '@ionic/vue';
 
   const isLoggedInGuard = async () => {
-    const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
+    const isLoggedIn = await UserData.isLoggedIn(); // 请替换为实际的登录验证
 
     if (isLoggedIn) {
       return true;
     } else {
-      return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
+      return { redirect: '/login' }; // 如果用户未登录，将被重定向到 /login 页面
     }
   };
 
   const hasUnsavedDataGuard = async () => {
-    const hasUnsavedData = await checkData(); // Replace this with actual validation
+    const hasUnsavedData = await checkData(); // 请替换为实际的验证逻辑
 
     if (hasUnsavedData) {
       return await confirmDiscardChanges();
@@ -218,15 +218,15 @@ const confirmDiscardChanges = async () => {
 
   const confirmDiscardChanges = async () => {
     const alert = await alertController.create({
-      header: 'Discard Unsaved Changes?',
-      message: 'Are you sure you want to leave? Any unsaved changed will be lost.',
+      header: '放弃未保存的更改？',
+      message: '确定要离开吗？所有未保存的更改将会丢失。',
       buttons: [
         {
-          text: 'Cancel',
+          text: '取消',
           role: 'Cancel',
         },
         {
-          text: 'Discard',
+          text: '放弃',
           role: 'destructive',
         },
       ],
@@ -245,15 +245,15 @@ const confirmDiscardChanges = async () => {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -261,10 +261,10 @@ const confirmDiscardChanges = async () => {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

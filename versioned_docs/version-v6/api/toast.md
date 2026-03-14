@@ -13,10 +13,10 @@ import CustomProps from '@ionic-internal/component-api/v6/toast/custom-props.mdx
 import Slots from '@ionic-internal/component-api/v6/toast/slots.md';
 
 <head>
-  <title>ion-toast Component: A Dismissible App Notification Alert</title>
+  <title>ion-toast 组件：可关闭的应用通知提示</title>
   <meta
     name="description"
-    content="ion-toast component is an app notification displaying system messages or feedback. Toast alerts appear above content and are dismissed to resume interaction."
+    content="ion-toast 组件是一种应用通知，用于显示系统消息或反馈。Toast 提示信息会出现在内容上方，关闭后可继续与应用交互。"
   />
 </head>
 
@@ -24,23 +24,23 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.
+Toast 是现代应用中常用的轻量通知。它可用于提供操作反馈或显示系统消息。Toast 会显示在应用内容的上方，可由应用关闭以恢复用户与应用间的交互。
 
-## Presenting
+## 展示方式
 
-### Positioning
+### 定位
 
-Toasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.
+Toast 可以定位在视口的顶部、底部或中间。创建时可以通过参数指定位置。可选值包括 `top`、`bottom` 和 `middle`。若未指定位置，Toast 将默认显示在视口底部。
 
-### Controller
+### 控制器
 
 import ControllerExample from '@site/static/usage/v6/toast/presenting/controller/index.md';
 
 <ControllerExample />
 
-### Inline
+### 内联方式
 
-When using Ionic with React or Vue, `ion-toast` can also be placed directly in the template through use of the `isOpen` property. Note that `isOpen` must be set to `false` manually when the toast is dismissed; it will not be updated automatically.
+在 Ionic 与 React 或 Vue 结合使用时，也可通过 `isOpen` 属性将 `ion-toast` 直接放置在模板中。请注意，当 Toast 关闭时，需要手动将 `isOpen` 设置为 `false`；它不会自动更新。
 
 <Tabs defaultValue="react" values={[{ value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 <TabItem value="react">
@@ -54,8 +54,8 @@ function Example() {
 
   return (
     <>
-      <IonButton onClick={() => setShowToast(true)}>Show Toast</IonButton>
-      <IonToast isOpen={showToast} onDidDismiss={() => setShowToast(false)} message="Hello World!" duration={1500} />
+      <IonButton onClick={() => setShowToast(true)}>显示 Toast</IonButton>
+      <IonToast isOpen={showToast} onDidDismiss={() => setShowToast(false)} message="你好世界！" duration={1500} />
     </>
   );
 }
@@ -66,8 +66,8 @@ function Example() {
 
 ```html
 <template>
-  <ion-button @click="setOpen(true)">Show Toast</ion-button>
-  <ion-toast :is-open="isOpenRef" @didDismiss="setOpen(false)" message="Hello World!" :duration="1500"></ion-toast>
+  <ion-button @click="setOpen(true)">显示 Toast</ion-button>
+  <ion-toast :is-open="isOpenRef" @didDismiss="setOpen(false)" message="你好世界！" :duration="1500"></ion-toast>
 </template>
 
 <script lang="ts">
@@ -89,43 +89,43 @@ function Example() {
 </TabItem>
 </Tabs>
 
-## Dismissing
+## 关闭方式
 
-Toasts are intended to be subtle notifications and should not interrupt the user. As a result, user interaction should not be required to dismiss the toast.
+Toast 旨在提供轻量通知，不应打断用户操作。因此，关闭 Toast 不应要求用户交互。
 
-The toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. If a button with a role of `"cancel"` is added, then that button will dismiss the toast. To dismiss the toast after creation, call the `dismiss()` method on the instance.
+可通过在 Toast 选项的 `duration` 参数中传递显示的毫秒数，使 Toast 在特定时间后自动关闭。如果添加了 `role` 为 `"cancel"` 的按钮，则该按钮将关闭 Toast。若要在创建后关闭 Toast，可调用实例上的 `dismiss()` 方法。
 
-Pressing the hardware back button does not dismiss toasts since they are not supposed to interrupt the user.
+由于 Toast 不应打断用户，按下硬件返回键不会关闭 Toast。
 
-The following example demonstrates how to use the `buttons` property to add a button that automatically dismisses the toast when clicked, as well as how to collect the `role` of the dismiss event.
+以下示例演示了如何使用 `buttons` 属性添加一个点击后自动关闭 Toast 的按钮，以及如何收集关闭事件的 `role`。
 
 import ButtonsPlayground from '@site/static/usage/v6/toast/buttons/index.md';
 
 <ButtonsPlayground />
 
-## Layout
+## 布局
 
-Button containers within the toast can be displayed either on the same line as the message or stacked on separate lines using the `layout` property. The stacked layout should be used with buttons that have long text values. Additionally, buttons in a stacked toast layout can use a `side` value of either `start` or `end`, but not both.
+Toast 内的按钮容器可以使用 `layout` 属性选择与消息显示在同一行，或分别显示在多行（堆叠布局）。当按钮文本较长时，应使用堆叠布局。此外，堆叠布局中的按钮可以使用 `side` 值为 `start` 或 `end`，但不能同时使用两者。
 
 import StackedPlayground from '@site/static/usage/v6/toast/layout/index.md';
 
 <StackedPlayground />
 
-## Icons
+## 图标
 
-An icon can be added next to the content inside of the toast. In general, icons in toasts should be used to add additional style or context, not to grab the user's attention or elevate the priority of the toast. If you wish to convey a higher priority message to the user or guarantee a response, we recommend using an [Alert](alert.md) instead.
+可以在 Toast 内容旁添加图标。通常，Toast 中的图标应用于增加样式或提供额外上下文，而非用于吸引用户注意或提升 Toast 的优先级。若需向用户传达更高优先级的消息或确保获得响应，建议改用 [Alert](alert.md)。
 
 import IconPlayground from '@site/static/usage/v6/toast/icon/index.md';
 
 <IconPlayground />
 
-## Theming
+## 主题定制
 
 import ThemingPlayground from '@site/static/usage/v6/toast/theming/index.md';
 
 <ThemingPlayground />
 
-## Interfaces
+## 接口
 
 ### ToastButton
 
@@ -165,39 +165,39 @@ interface ToastOptions {
 }
 ```
 
-## Accessibility
+## 无障碍访问
 
-### Focus Management
+### 焦点管理
 
-Toasts are intended to be subtle notifications and are not intended to interrupt the user. User interaction should not be required to dismiss the toast. As a result, focus is not automatically moved to a toast when one is presented.
+Toast 旨在提供轻量通知，不应打断用户操作。关闭 Toast 不应要求用户交互。因此，当 Toast 显示时，焦点不会自动移至 Toast。
 
-### Screen Readers
+### 屏幕阅读器
 
-`ion-toast` has `aria-live="polite"` and `aria-atomic="true"` set by default.
+`ion-toast` 默认设置了 `aria-live="polite"` 和 `aria-atomic="true"`。
 
-`aria-live` causes screen readers to announce the content of the toast when it is updated. However, since the attribute is set to `'polite'`, screen readers generally do not interrupt the current task. Developers can customize this behavior by using the `htmlAttributes` property to set `aria-live` to `'assertive'`. This will cause screen readers to immediately notify the user when a toast is updated, potentially interrupting any previous updates.
+`aria-live` 属性使屏幕阅读器在 Toast 内容更新时播报其内容。但由于该属性设置为 `'polite'`，屏幕阅读器通常不会打断当前任务。开发者可以通过 `htmlAttributes` 属性将 `aria-live` 设置为 `'assertive'` 来自定义此行为。这将导致屏幕阅读器在 Toast 更新时立即通知用户，可能中断之前的播报。
 
-`aria-atomic="true"` is set to ensure that the entire toast is announced as a single unit. This is useful when dynamically updating the content of the toast as it prevents screen readers from announcing only the content that has changed.
+设置 `aria-atomic="true"` 可确保整个 Toast 作为一个完整单元播报。这在动态更新 Toast 内容时很有用，因为它可以防止屏幕阅读器仅播报已更改的部分内容。
 
-### Tips
+### 使用建议
 
-While this is not a complete list, here are some guidelines to follow when using toasts.
+以下是一些使用 Toast 时应遵循的准则（非完整列表）：
 
-- Do not require user interaction to dismiss toasts. For example, having a "Dismiss" button in the toast is fine, but the toast should also automatically dismiss on its own after a timeout period. If you need user interaction for a notification, consider using [ion-alert](./alert) instead.
+- 不要要求用户交互来关闭 Toast。例如，Toast 中包含“关闭”按钮是可以的，但 Toast 也应在超时后自动关闭。如果通知需要用户交互，请考虑改用 [ion-alert](./alert)。
 
-- Avoid opening multiple toasts in quick succession. If `aria-live` is set to `'assertive'`, screen readers may interrupt the reading of the current task to announce the new toast, causing the context of the previous toast to be lost.
+- 避免快速连续打开多个 Toast。如果 `aria-live` 设置为 `'assertive'`，屏幕阅读器可能会中断当前任务的播报来宣告新的 Toast，导致前一个 Toast 的上下文丢失。
 
-- For toasts with long messages, consider adjusting the `duration` property to allow users enough time to read the content of the toast.
+- 对于包含较长消息的 Toast，请考虑调整 `duration` 属性，为用户留出足够的阅读时间。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -205,10 +205,10 @@ While this is not a complete list, here are some guidelines to follow when using
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

@@ -18,7 +18,7 @@ function Example() {
 
   return (
     <>
-      <IonButton id="open-modal">Open modal</IonButton>
+      <IonButton id="open-modal">打开模态框</IonButton>
       <IonModal
         ref={modal}
         trigger="open-modal"
@@ -27,10 +27,10 @@ function Example() {
       >
         <IonToolbar>
           <IonButtons>
-            <IonButton onClick={() => modal.current!.dismiss(null, 'cancel')}>Cancel</IonButton>
+            <IonButton onClick={() => modal.current!.dismiss(null, 'cancel')}>取消</IonButton>
           </IonButtons>
           <IonButtons slot="end">
-            <IonButton onClick={() => modal.current!.dismiss(value, 'confirm')}>Done</IonButton>
+            <IonButton onClick={() => modal.current!.dismiss(value, 'confirm')}>确定</IonButton>
           </IonButtons>
         </IonToolbar>
         <IonPicker>

@@ -6,10 +6,10 @@ import './main.css';
 
 function Example() {
   return (
-    <IonSelect aria-label="Fruit" placeholder="Select fruit">
-      <IonSelectOption value="apples">Apples</IonSelectOption>
-      <IonSelectOption value="oranges">Oranges</IonSelectOption>
-      <IonSelectOption value="bananas">Bananas</IonSelectOption>
+    <IonSelect aria-label="Fruit" placeholder="选择水果">
+      <IonSelectOption value="apples">苹果</IonSelectOption>
+      <IonSelectOption value="oranges">橙子</IonSelectOption>
+      <IonSelectOption value="bananas">香蕉</IonSelectOption>
     </IonSelect>
   );
 }

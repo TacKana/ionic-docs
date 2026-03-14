@@ -5,20 +5,20 @@ import { IonAlert, IonButton } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton id="present-alert">Click Me</IonButton>
+      <IonButton id="present-alert">点击我</IonButton>
       <IonAlert
-        header="Alert!"
+        header="警告！"
         trigger="present-alert"
         buttons={[
           {
-            text: 'Cancel',
+            text: '取消',
             role: 'cancel',
             handler: () => {
               console.log('Alert canceled');
             },
           },
           {
-            text: 'OK',
+            text: '确认',
             role: 'confirm',
             handler: () => {
               console.log('Alert confirmed');

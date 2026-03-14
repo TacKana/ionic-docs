@@ -1,11 +1,11 @@
 ```html
 <ion-breadcrumbs [maxItems]="4" (ionCollapsedClick)="presentPopover($event)">
-  <ion-breadcrumb href="#home">Home</ion-breadcrumb>
-  <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>
-  <ion-breadcrumb href="#photography">Photography</ion-breadcrumb>
-  <ion-breadcrumb href="#cameras">Cameras</ion-breadcrumb>
-  <ion-breadcrumb href="#film">Film</ion-breadcrumb>
-  <ion-breadcrumb href="#35mm">35 mm</ion-breadcrumb>
+  <ion-breadcrumb href="#home">首页</ion-breadcrumb>
+  <ion-breadcrumb href="#electronics">电子产品</ion-breadcrumb>
+  <ion-breadcrumb href="#photography">摄影器材</ion-breadcrumb>
+  <ion-breadcrumb href="#cameras">相机</ion-breadcrumb>
+  <ion-breadcrumb href="#film">胶片</ion-breadcrumb>
+  <ion-breadcrumb href="#35mm">35毫米</ion-breadcrumb>
 </ion-breadcrumbs>
 <ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
   <ng-template>

@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/popover/custom-props.m
 import Slots from '@ionic-internal/component-api/v6/popover/slots.md';
 
 <head>
-  <title>ion-popover: iOS / Android Popover UI Component & CSS Properties</title>
+  <title>ion-popover: iOS / Android 弹出层 UI 组件与 CSS 属性</title>
   <meta
     name="description"
-    content="ion-popover is a dialog that appears on top of the current page. Learn about the popover UI component and CSS custom properties for iOS and Android devices."
+    content="ion-popover 是出现在当前页面顶部的对话框。了解适用于 iOS 和 Android 设备的弹出层 UI 组件和 CSS 自定义属性。"
   />
 </head>
 
@@ -21,25 +21,25 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-A Popover is a dialog that appears on top of the current page. It can be used for anything, but generally it is used for overflow actions that don't fit in the navigation bar.
+Popover（弹出层）是一个显示在当前页面顶部的对话框。它可以用于任何场景，但通常用于容纳导航栏中放不下的溢出操作。
 
-There are two ways to use `ion-popover`: inline or via the `popoverController`. Each method comes with different considerations, so be sure to use the approach that best fits your use case.
+使用 `ion-popover` 有两种方式：内联方式或通过 `popoverController`。每种方法都有不同的注意事项，因此请确保选择最适合你使用场景的方式。
 
-## Inline Popovers
+## 内联弹出层
 
-`ion-popover` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the popover.
+`ion-popover` 可以直接在模板中编写组件来使用。这减少了为显示弹出层而需要连接的处理程序数量。
 
-When using `ion-popover` with Angular, React, or Vue, the component you pass in will be destroyed when the popover is dismissed. As this functionality is provided by the JavaScript framework, using `ion-popover` without a JavaScript framework will not destroy the component you passed in. If this is a needed functionality, we recommend using the `popoverController` instead.
+当在 Angular、React 或 Vue 中使用 `ion-popover` 时，传入的组件会在弹出层关闭时被销毁。由于此功能由 JavaScript 框架提供，在没有 JavaScript 框架的情况下使用 `ion-popover` 将不会销毁你传入的组件。如果需要此功能，我们建议改用 `popoverController`。
 
-### When to use
+### 何时使用
 
-Using a popover inline is useful when you do not want to explicitly wire up click events to open the popover. For example, you can use the `trigger` property to designate a button that should present the popover when clicked. You can also use the `trigger-action` property to customize whether the popover should be presented when the trigger is left clicked, right clicked, or hovered over.
+当你不想显式连接点击事件来打开弹出层时，使用内联弹出层很有用。例如，你可以使用 `trigger` 属性指定一个按钮，当点击该按钮时应显示弹出层。你还可以使用 `trigger-action` 属性自定义弹出层是应在触发器被左键点击、右键点击还是悬停时显示。
 
-If you need fine grained control over when the popover is presented and dismissed, we recommend you use the `popoverController`.
+如果你需要对弹出层的显示和关闭进行精细控制，我们建议使用 `popoverController`。
 
 ### Angular
 
-Since the component you passed in needs to be created when the popover is presented and destroyed when the popover is dismissed, we are unable to project the content using `<ng-content>` internally. Instead, we use `<ng-container>` which expects an `<ng-template>` to be passed in. As a result, when passing in your component you will need to wrap it in an `<ng-template>`:
+由于传入的组件需要在弹出层显示时创建，并在弹出层关闭时销毁，我们无法在内部使用 `<ng-content>` 来投影内容。相反，我们使用 `<ng-container>`，它期望传入一个 `<ng-template>`。因此，当传入你的组件时，你需要将其包装在 `<ng-template>` 中：
 
 ```html
 <ion-popover [isOpen]="isPopoverOpen">
@@ -49,109 +49,109 @@ Since the component you passed in needs to be created when the popover is presen
 </ion-popover>
 ```
 
-### Triggers
+### 触发器
 
-A trigger for an inline `ion-popover` is the element that will open a popover when interacted with. The interaction behavior can be customized by setting the `trigger-action` property. Note that `trigger-action="context-menu"` will prevent your system's default context menu from opening.
+内联 `ion-popover` 的触发器是当与之交互时会打开弹出层的元素。可以通过设置 `trigger-action` 属性来自定义交互行为。请注意，`trigger-action="context-menu"` 将阻止系统默认的上下文菜单打开。
 
 :::note
-Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
+当使用 `popoverController` 时，触发器不适用，因为 `ion-popover` 不是提前创建的。
 :::
 
 import InlineTrigger from '@site/static/usage/v6/popover/presenting/inline-trigger/index.md';
 
 <InlineTrigger />
 
-### isOpen Property
+### isOpen 属性
 
-Inline popovers can also be opened by setting the `isOpen` property to `true`. This method can be used if you need finer grained control over the popover than with a trigger.
+内联弹出层也可以通过将 `isOpen` 属性设置为 `true` 来打开。如果你需要比触发器更精细地控制弹出层，可以使用此方法。
 
-`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the popover is dismissed. Developers should listen for the `ionPopoverDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-popover` from being tightly coupled with the state of the application. With a one way data binding, the popover only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the popover needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+`isOpen` 使用单向数据绑定，这意味着当弹出层关闭时，它不会自动设置为 `false`。开发者应监听 `ionPopoverDidDismiss` 或 `didDismiss` 事件，并将 `isOpen` 设置为 `false`。这样做的原因是防止 `ion-popover` 的内部实现与应用程序状态紧密耦合。使用单向数据绑定，弹出层只需要关心响应式变量提供的布尔值。而使用双向数据绑定，弹出层需要同时关心布尔值以及响应式变量本身的存在。这可能导致不确定的行为，并使应用程序更难调试。
 
 import IsOpenTrigger from '@site/static/usage/v6/popover/presenting/inline-isopen/index.md';
 
 <IsOpenTrigger />
 
-## Controller Popovers
+## 控制器弹出层
 
-`ion-popover` can also be presented programmatically by using the `popoverController` imported from Ionic Framework. This allows you to have complete control over when a popover is presented above and beyond the customization that inline popovers give you.
+`ion-popover` 也可以通过使用从 Ionic Framework 导入的 `popoverController` 以编程方式显示。这使你可以完全控制弹出层的显示时机，其定制程度超出了内联弹出层所提供的功能。
 
-### When to use
+### 何时使用
 
-We typically recommend that you write your popovers inline as it streamlines the amount of code in your application. You should only use the `popoverController` for complex use cases where writing a popover inline is impractical. When using a controller, your popover is not created ahead of time, so properties such as `trigger` and `trigger-action` are not applicable here. In addition, nested popovers are not compatible with the controller approach because the popover is automatically added to the root of your application when the `create` method is called.
+我们通常建议你以内联方式编写弹出层，因为这可以简化应用程序中的代码量。只有当内联编写弹出层不切实际的复杂使用场景时，才应使用 `popoverController`。使用控制器时，你的弹出层不会提前创建，因此 `trigger` 和 `trigger-action` 等属性在此不适用。此外，嵌套弹出层与控制器方法不兼容，因为当调用 `create` 方法时，弹出层会自动添加到应用程序的根目录。
 
 ### React
 
-Instead of a controller, React has a hook called `useIonPopover` which behaves in a similar fashion. Note that `useIonPopover` requires being a descendant of `<IonApp>`. If you need to use a popover outside of an `<IonApp>`, consider using an inline popover instead.
+与控制器不同，React 有一个名为 `useIonPopover` 的钩子，其行为方式类似。请注意，`useIonPopover` 要求必须是 `<IonApp>` 的后代。如果你需要在 `<IonApp>` 之外使用弹出层，请考虑改用内联弹出层。
 
-### Usage
+### 使用方式
 
 import ControllerExample from '@site/static/usage/v6/popover/presenting/controller/index.md';
 
 <ControllerExample />
 
-## Styling
+## 样式设置
 
-Popovers are presented at the root of your application so they overlay your entire app. This behavior applies to both inline popovers and popovers presented from a controller. As a result, custom popover styles can not be scoped to a particular component as they will not apply to the popover. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
+弹出层显示在应用程序的根目录，因此它们会覆盖整个应用程序。此行为适用于内联弹出层和通过控制器显示的弹出层。因此，自定义弹出层样式不能限定在特定组件的作用域内，因为它们不会应用于弹出层。相反，样式必须全局应用。对于大多数开发者来说，将自定义样式放在 `global.css` 中就足够了。
 
 :::note
-If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+如果你正在构建 Ionic Angular 应用程序，样式需要添加到全局样式表文件中。
 :::
 
 import Styling from '@site/static/usage/v6/popover/customization/styling/index.md';
 
 <Styling />
 
-## Positioning
+## 定位
 
-### Reference
+### 参考点
 
-When presenting a popover, Ionic Framework needs a reference point to present the popover relative to. With `reference="event"`, the popover will be presented relative to the x-y coordinates of the pointer event that was dispatched on your trigger element. With `reference="trigger"`, the popover will be presented relative to the bounding box of your trigger element.
+显示弹出层时，Ionic Framework 需要一个参考点来相对于它显示弹出层。使用 `reference="event"` 时，弹出层将相对于触发器元素上分发的指针事件的 x-y 坐标显示。使用 `reference="trigger"` 时，弹出层将相对于触发器元素的边界框显示。
 
-### Side
+### 边
 
-Regardless of what you choose for your reference point, you can position a popover to the `top`, `right`, `left`, or `bottom` of your reference point by using the `side` property. You can also use the `start` or `end` values if you would like the side to switch based on LTR or RTL modes.
+无论你为参考点选择什么，都可以使用 `side` 属性将弹出层定位在参考点的 `top`（顶部）、`right`（右侧）、`left`（左侧）或 `bottom`（底部）。如果你希望边根据 LTR 或 RTL 模式切换，也可以使用 `start` 或 `end` 值。
 
-### Alignment
+### 对齐
 
-The `alignment` property allows you to line up an edge of your popover with a corresponding edge on your trigger element. The exact edge that is used depends on the value of the `side` property.
+`alignment` 属性允许你将弹出层的一条边与触发器元素上的对应边对齐。使用的确切边取决于 `side` 属性的值。
 
-### Side and Alignment Demo
+### 边和对齐演示
 
 import Positioning from '@site/static/usage/v6/popover/customization/positioning/index.md';
 
 <Positioning />
 
-### Offsets
+### 偏移量
 
-If you need finer grained control over the positioning of your popover you can use the `--offset-x` and `--offset-y` CSS Variables. For example, `--offset-x: 10px` will move your popover content to the right by `10px`.
+如果你需要对弹出层的位置进行更精细的控制，可以使用 `--offset-x` 和 `--offset-y` CSS 变量。例如，`--offset-x: 10px` 会将你的弹出层内容向右移动 `10px`。
 
-## Sizing
+## 尺寸调整
 
-When making dropdown menus, you may want to have the width of the popover match the width of the trigger element. Doing this without knowing the trigger width ahead of time is tricky. You can set the `size` property to `'cover'` and Ionic Framework will ensure that the width of the popover matches the width of your trigger element.
+在制作下拉菜单时，你可能希望弹出层的宽度与触发器元素的宽度匹配。在不提前知道触发器宽度的情况下做到这一点很棘手。你可以将 `size` 属性设置为 `'cover'`，Ionic Framework 将确保弹出层的宽度与触发器元素的宽度匹配。
 
-If you are using the `popoverController`, you must provide an event via the `event` option and Ionic Framework will use `event.target` as the reference element. See the [controller demo](#controller-popovers) for an example of this pattern.
+如果你使用 `popoverController`，则必须通过 `event` 选项提供一个事件，Ionic Framework 将使用 `event.target` 作为参考元素。有关此模式的示例，请参见 [控制器演示](#controller-popovers)。
 
 import Sizing from '@site/static/usage/v6/popover/customization/sizing/index.md';
 
 <Sizing />
 
-## Nested Popovers
+## 嵌套弹出层
 
-When using `ion-popover` inline, you can nested popovers to create nested dropdown menus. When doing this, only the backdrop on the first popover will appear so that the screen does not get progressively darker as you open more popovers.
+当内联使用 `ion-popover` 时，你可以嵌套弹出层以创建嵌套的下拉菜单。这样做时，只有第一个弹出层上的背景会出现，这样当你打开更多弹出层时，屏幕不会逐渐变暗。
 
-You can use the `dismissOnSelect` property to automatically close the popover when the popover content has been clicked. This behavior does not apply when clicking a trigger element for another popover.
+你可以使用 `dismissOnSelect` 属性在点击弹出层内容时自动关闭弹出层。此行为不适用于点击另一个弹出层的触发器元素。
 
 :::note
-Nested popovers cannot be created when using the `popoverController` because the popover is automatically added to the root of your application when the `create` method is called.
+当使用 `popoverController` 时，无法创建嵌套弹出层，因为调用 `create` 方法时，弹出层会自动添加到应用程序的根目录。
 :::
 
 import NestedPopover from '@site/static/usage/v6/popover/nested/index.md';
 
 <NestedPopover />
 
-## Interfaces
+## 接口
 
-Below you will find all of the options available to you when using the `popoverController`. These options should be supplied when calling `popoverController.create()`.
+下面你将找到使用 `popoverController` 时可用的所有选项。这些选项应在调用 `popoverController.create()` 时提供。
 
 ```typescript
 interface PopoverOptions {
@@ -181,9 +181,9 @@ interface PopoverOptions {
 }
 ```
 
-## Types
+## 类型
 
-Below you will find all of the custom types for `ion-popover`:
+下面你将找到 `ion-popover` 的所有自定义类型：
 
 ```typescript
 type PopoverSize = 'cover' | 'auto';
@@ -193,59 +193,59 @@ type PositionSide = 'top' | 'right' | 'bottom' | 'left' | 'start' | 'end';
 type PositionAlign = 'start' | 'center' | 'end';
 ```
 
-## Accessibility
+## 无障碍访问
 
-### Keyboard Navigation
+### 键盘导航
 
-`ion-popover` has basic keyboard support for navigating between focusable elements inside of the popover. The following table details what each key does:
+`ion-popover` 具有基本的键盘支持，用于在弹出层内的可聚焦元素之间导航。下表详细说明了每个键的功能：
 
-| Key                | Function                                       |
-| ------------------ | ---------------------------------------------- |
-| `Tab`              | Moves focus to the next focusable element.     |
-| `Shift` + `Tab`    | Moves focus to the previous focusable element. |
-| `Esc`              | Closes the popover.                            |
-| `Space` or `Enter` | Clicks the focusable element.                  |
+| 键                   | 功能                                         |
+| -------------------- | -------------------------------------------- |
+| `Tab`                | 将焦点移动到下一个可聚焦元素。               |
+| `Shift` + `Tab`      | 将焦点移动到上一个可聚焦元素。               |
+| `Esc`                | 关闭弹出层。                                 |
+| `Space` 或 `Enter`   | 点击可聚焦元素。                             |
 
-`ion-popover` has full arrow key support for navigating between `ion-item` elements with the `button` property. The most common use case for this is as a dropdown menu in a desktop-focused application. In addition to the basic keyboard support, the following table details arrow key support for dropdown menus:
+`ion-popover` 具有完整的箭头键支持，用于在具有 `button` 属性的 `ion-item` 元素之间导航。这最常见的用例是面向桌面应用程序中的下拉菜单。除了基本的键盘支持外，下表详细说明了用于下拉菜单的箭头键支持：
 
-| Key                                | Function                                                                                  |
-| ---------------------------------- | ----------------------------------------------------------------------------------------- |
-| `ArrowUp`                          | Moves focus to the previous focusable element.                                            |
-| `ArrowDown`                        | Moves focus to the next focusable element.                                                |
-| `Home`                             | Moves focus to the first focusable element.                                               |
-| `End`                              | Moves focus to the last focusable element.                                                |
-| `ArrowLeft`                        | When used in a child popover, closes the popover and returns focus to the parent popover. |
-| `Space`, `Enter`, and `ArrowRight` | When focusing a trigger element, opens the associated popover.                            |
+| 键                                 | 功能                                                                      |
+| ---------------------------------- | ------------------------------------------------------------------------- |
+| `ArrowUp`                          | 将焦点移动到上一个可聚焦元素。                                            |
+| `ArrowDown`                        | 将焦点移动到下一个可聚焦元素。                                            |
+| `Home`                             | 将焦点移动到第一个可聚焦元素。                                            |
+| `End`                              | 将焦点移动到最后一个可聚焦元素。                                          |
+| `ArrowLeft`                        | 在子弹出层中使用时，关闭弹出层并将焦点返回到父弹出层。                    |
+| `Space`、`Enter` 和 `ArrowRight`   | 当聚焦在触发器元素上时，打开关联的弹出层。                                |
 
-## Performance
+## 性能
 
-### Mounting Inner Contents
+### 挂载内部内容
 
-The content of an inline `ion-popover` is unmounted when closed. If this content is expensive to render, developers can use the `keepContentsMounted` property to mount the content as soon as the popover is mounted. This can help optimize the responsiveness of your application as the inner contents will have already been mounted when the popover opens.
+内联 `ion-popover` 的内容在关闭时会被卸载。如果此内容渲染成本很高，开发者可以使用 `keepContentsMounted` 属性在弹出层挂载时立即挂载内容。这有助于优化应用程序的响应性，因为内部内容在弹出层打开时已经挂载完毕。
 
 import Mount from '@site/static/usage/v6/popover/performance/mount/index.md';
 
 <Mount />
 
-Developers should keep the following in mind when using `keepContentsMounted`:
+开发人员在使用 `keepContentsMounted` 时应牢记以下几点：
 
-- This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
+- 此功能应作为处理现有性能问题的最后手段。在使用此功能之前，请尝试识别并解决性能瓶颈。此外，不要使用它来预测性能问题。
 
-- This feature is only needed when using a JavaScript Framework. Developers not using a framework can pass the contents to be rendered into the popover, and the contents will be rendered automatically.
+- 此功能仅在需要使用 JavaScript 框架时才需要。不使用框架的开发者可以将要渲染的内容传递给弹出层，内容将自动渲染。
 
-- This feature only works with inline popovers. Popovers created with the `popoverController` are not created ahead of time, so the inner contents are not created either.
+- 此功能仅适用于内联弹出层。使用 `popoverController` 创建的弹出层不会提前创建，因此内部内容也不会创建。
 
-- Any JavaScript Framework lifecycle hooks on the inner component will run as soon as the popover is mounted, not when the popover is presented.
+- 内部组件上的任何 JavaScript 框架生命周期钩子都将在弹出层挂载时立即运行，而不是在弹出层显示时运行。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -253,10 +253,10 @@ Developers should keep the following in mind when using `keepContentsMounted`:
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

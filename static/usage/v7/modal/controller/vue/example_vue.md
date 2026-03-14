@@ -3,11 +3,11 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Controller Modal</ion-title>
+        <ion-title>控制器模态框</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-button expand="block" @click="openModal">Open Modal</ion-button>
+      <ion-button expand="block" @click="openModal">打开模态框</ion-button>
       <p>{{ message }}</p>
     </ion-content>
   </ion-page>
@@ -18,7 +18,7 @@
   import Modal from './Modal.vue';
   import { ref } from 'vue';
 
-  const message = ref('This modal example uses the modalController to present and dismiss modals.');
+  const message = ref('此模态框示例使用 modalController 来呈现和关闭模态框。');
 
   const openModal = async () => {
     const modal = await modalController.create({
@@ -30,7 +30,7 @@
     const { data, role } = await modal.onWillDismiss();
 
     if (role === 'confirm') {
-      message.value = `Hello, ${data}!`;
+      message.value = `你好，${data}！`;
     }
   };
 </script>

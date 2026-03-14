@@ -16,10 +16,10 @@
 <template>
   <ion-card ref="card">
     <ion-card-header>
-      <ion-card-subtitle>Pan the Screen</ion-card-subtitle>
+      <ion-card-subtitle>平移屏幕</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <p ref="debug">Gesture information will display after interaction.</p>
+      <p ref="debug">交互后此处将显示手势信息。</p>
     </ion-card-content>
   </ion-card>
 </template>
@@ -53,10 +53,10 @@
 
     if (debug.value) {
       debug.value.innerHTML = `
-      <div>Type: ${type}</div>
-      <div>Current X: ${currentX}</div>
-      <div>Delta X: ${deltaX}</div>
-      <div>Velocity X: ${velocityX}</div>`;
+      <div>类型: ${type}</div>
+      <div>当前 X 坐标: ${currentX}</div>
+      <div>X 轴偏移量: ${deltaX}</div>
+      <div>X 轴速度: ${velocityX}</div>`;
     }
   };
 

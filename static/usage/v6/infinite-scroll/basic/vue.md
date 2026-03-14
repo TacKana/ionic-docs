@@ -42,8 +42,10 @@
       IonLabel,
     },
     setup() {
+      // 初始化响应式列表
       const items = reactive([]);
 
+      // 生成新数据项的函数
       const generateItems = () => {
         const count = items.length + 1;
         for (let i = 0; i < 50; i++) {
@@ -51,11 +53,13 @@
         }
       };
 
+      // 无限滚动事件处理
       const ionInfinite = (ev: InfiniteScrollCustomEvent) => {
         generateItems();
         setTimeout(() => ev.target.complete(), 500);
       };
 
+      // 首次加载数据
       generateItems();
 
       return { ionInfinite, items };

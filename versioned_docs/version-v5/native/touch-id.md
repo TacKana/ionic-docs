@@ -10,29 +10,29 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Touch ID
 
-Scan the fingerprint of a user with the TouchID sensor.
+通过 TouchID 传感器扫描用户的指纹。
 
-Requires Cordova plugin: `cordova-plugin-touch-id`. For more info, please see the [TouchID plugin docs](https://github.com/EddyVerbruggen/cordova-plugin-touch-id).
+需要 Cordova 插件：`cordova-plugin-touch-id`。更多信息请参阅 [TouchID 插件文档](https://github.com/EddyVerbruggen/cordova-plugin-touch-id)。
 
 <p>
   <a href="https://github.com/EddyVerbruggen/cordova-plugin-touch-id" target="_blank" l="noopener" className="git-link">github.com/EddyVerbruggen/cordova-plugin-touch-id</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在构建一个严肃的项目，您不能承受花费数小时进行故障排查。Ionic 专家为社区插件和高级插件提供优质咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -55,21 +55,21 @@ Requires Cordova plugin: `cordova-plugin-touch-id`. For more info, please see th
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic Enterprise 提供由 Ionic 团队全面支持和维护的插件。 &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或如果您对该插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持平台
 
 - iOS
 
-## Usage
+## 使用
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -82,26 +82,26 @@ constructor(private touchId: TouchID) { }
 
 this.touchId.isAvailable()
   .then(
-    res => console.log('TouchID is available!'),
-    err => console.error('TouchID is not available', err)
+    res => console.log('TouchID 可用！'),
+    err => console.error('TouchID 不可用', err)
   );
 
-this.touchId.verifyFingerprint('Scan your fingerprint please')
+this.touchId.verifyFingerprint('请扫描您的指纹')
   .then(
-    res => console.log('Ok', res),
-    err => console.error('Error', err)
+    res => console.log('成功', res),
+    err => console.error('错误', err)
   );
 ```
 
-### Error Codes
+### 错误代码
 
-The plugin will reject for various reasons. Your app will most likely need to respond to the cases differently.
+插件会因为各种原因拒绝请求。您的应用很可能需要对不同情况做出不同响应。
 
-Here is a list of some of the error codes:
+以下是一些错误代码列表：
 
-- `-1` - Fingerprint scan failed more than 3 times
-- `-2` or `-128` - User tapped the 'Cancel' button
-- `-3` - User tapped the 'Enter Passcode' or 'Enter Password' button
-- `-4` - The scan was cancelled by the system (Home button for example)
-- `-6` - TouchID is not Available
-- `-8` - TouchID is locked out from too many tries
+- `-1` - 指纹扫描失败超过 3 次
+- `-2` 或 `-128` - 用户点击了“取消”按钮
+- `-3` - 用户点击了“输入密码”或“输入口令”按钮
+- `-4` - 扫描被系统取消（例如按下 Home 键）
+- `-6` - TouchID 不可用
+- `-8` - TouchID 因尝试次数过多被锁定

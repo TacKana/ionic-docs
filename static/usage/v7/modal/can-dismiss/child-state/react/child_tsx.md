@@ -29,9 +29,9 @@ function Child({ dismissChange, dismiss }: ChildProps) {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Modal</IonTitle>
+          <IonTitle>模态框</IonTitle>
           <IonButtons slot="end">
-            <IonButton onClick={() => dismiss()}>Close</IonButton>
+            <IonButton onClick={() => dismiss()}>关闭</IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
@@ -39,10 +39,10 @@ function Child({ dismissChange, dismiss }: ChildProps) {
         <IonList>
           <IonItem>
             <IonCheckbox onIonChange={checkboxChanged}>
-              Override Dismiss
+              覆盖关闭行为
               <br />
               <IonNote className="ion-text-wrap">
-                Toggle the checkbox to allow immediately dismissing the modal without a prompt.
+                切换此复选框以允许直接关闭模态框，无需确认提示。
               </IonNote>
             </IonCheckbox>
           </IonItem>

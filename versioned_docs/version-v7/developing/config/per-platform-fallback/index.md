@@ -6,7 +6,7 @@ import TabItem from '@theme/TabItem';
   defaultValue="angular"
   values={[
     { value: 'angular', label: 'Angular' },
-    { value: 'angular-standalone', label: 'Angular (Standalone)' },
+    { value: 'angular-standalone', label: 'Angular (独立项目)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]}

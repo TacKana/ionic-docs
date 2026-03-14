@@ -16,13 +16,13 @@ function Example() {
     <IonDatetime ref={datetime}>
       <IonButtons slot="buttons">
         <IonButton color="danger" onClick={reset}>
-          Reset
+          重置
         </IonButton>
         <IonButton color="primary" onClick={cancel}>
-          Never mind
+          取消
         </IonButton>
         <IonButton color="primary" onClick={confirm}>
-          All Set
+          确认
         </IonButton>
       </IonButtons>
     </IonDatetime>

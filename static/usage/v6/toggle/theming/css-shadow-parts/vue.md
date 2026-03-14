@@ -25,7 +25,7 @@
     --handle-max-height: auto;
     --handle-spacing: 6px;
 
-    /* Required for iOS handle to overflow the height of the track */
+    /* 确保 iOS 设备上的手柄可以超出轨道高度 */
     overflow: visible;
     contain: none;
   }

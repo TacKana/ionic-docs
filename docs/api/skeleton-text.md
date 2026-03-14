@@ -1,5 +1,5 @@
 ---
-title: "ion-skeleton-text"
+title: 文本骨架加载占位符组件
 ---
 import Props from '@ionic-internal/component-api/v8/skeleton-text/props.md';
 import Events from '@ionic-internal/component-api/v8/skeleton-text/events.md';
@@ -9,46 +9,44 @@ import CustomProps from '@ionic-internal/component-api/v8/skeleton-text/custom-p
 import Slots from '@ionic-internal/component-api/v8/skeleton-text/slots.md';
 
 <head>
-  <title>ion-skeleton-text: Skeleton Loading Placeholder for Text</title>
-  <meta name="description" content="ion-skeleton-text is a component for rendering placeholder content. The element will render a gray block at the specified width as a loading text framework." />
+  <title>ion-skeleton-text: 文本骨架加载占位符</title>
+  <meta name="description" content="ion-skeleton-text 是一个用于渲染占位内容的组件。该元素将以指定宽度渲染一个灰色块，作为文本加载的框架。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+骨架文本组件用于渲染占位内容。该元素将以指定宽度渲染一个灰色块。
 
-
-Skeleton Text is a component for rendering placeholder content. The element will render a gray block at the specified width.
-
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v8/skeleton-text/basic/index.md';
 
 <Basic />
 
-## Theming
+## 主题定制
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v8/skeleton-text/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

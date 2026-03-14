@@ -4,7 +4,7 @@ import { IonTextarea } from '@ionic/react';
 function Example() {
   return (
     <IonTextarea
-      placeholder="Enter text, leave the textarea, come back, and type to clear"
+      placeholder="输入文本，离开文本区域，返回后再键入以清除内容"
       clearOnEdit={true}
     ></IonTextarea>
   );

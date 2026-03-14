@@ -3,23 +3,23 @@ import DocsCards from '@components/global/DocsCards';
 
 import DeveloperExperts from '@components/page/intro/next/DeveloperExperts';
 
-# Next Steps
+# 下一步
 
-## Build Your First App
+## 构建你的第一个应用
 
-Pick the JavaScript framework you plan to use while building your Ionic app:
+选择你计划在构建 Ionic 应用时使用的 JavaScript 框架：
 
 <DocsCards>
-  <DocsCard header="Start with Angular" href="../angular/your-first-app" icon="/icons/logo-angular-icon.png">
-    <p>A complete guide to get you up to speed with the basics of building Ionic apps with Angular.</p>
+  <DocsCard header="从 Angular 开始" href="../angular/your-first-app" icon="/icons/logo-angular-icon.png">
+    <p>一份完整指南，帮助你快速掌握使用 Angular 构建 Ionic 应用的基础知识。</p>
   </DocsCard>
 
-<DocsCard header="Start with React" href="../react/your-first-app" icon="/icons/logo-react-icon.png">
-  <p>A complete guide to get you up to speed with the basics of building Ionic apps with React.</p>
+<DocsCard header="从 React 开始" href="../react/your-first-app" icon="/icons/logo-react-icon.png">
+  <p>一份完整指南，帮助你快速掌握使用 React 构建 Ionic 应用的基础知识。</p>
 </DocsCard>
 
-  <DocsCard header="Start with Vue" href="../vue/your-first-app" icon="/icons/logo-vue-icon.png">
-    <p>A complete guide to get you up to speed with the basics of building Ionic apps with Vue.</p>
+  <DocsCard header="从 Vue 开始" href="../vue/your-first-app" icon="/icons/logo-vue-icon.png">
+    <p>一份完整指南，帮助你快速掌握使用 Vue 构建 Ionic 应用的基础知识。</p>
   </DocsCard>
 </DocsCards>
 

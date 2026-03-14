@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/label/custom-props.mdx
 import Slots from '@ionic-internal/component-api/v6/label/slots.md';
 
 <head>
-  <title>Item Label Color and Properties for Applications | ion-label</title>
+  <title>项目标签颜色与应用属性 | ion-label</title>
   <meta
     name="description"
-    content="Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label."
+    content="Label 是一个包装元素，可与其他 Ionic 组件结合使用。通过 ion-label 轻松设计项目标签颜色和其他属性。"
   />
 </head>
 
@@ -21,54 +21,54 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-Label is a wrapper element that can be used in combination with `ion-item`, `ion-input`, `ion-toggle`, and more. The position of the label inside of an item can be inline, fixed, stacked, or floating.
+Label 是一个包装元素，可与 `ion-item`、`ion-input`、`ion-toggle` 等组件结合使用。标签在项目内的位置可以是内联（inline）、固定（fixed）、堆叠（stacked）或浮动（floating）。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v6/label/basic/index.md';
 
 <Basic />
 
-## Item Labels
+## 项目标签
 
 import Item from '@site/static/usage/v6/label/item/index.md';
 
 <Item />
 
-## Input Labels
+## 输入框标签
 
 import Input from '@site/static/usage/v6/label/input/index.md';
 
 <Input />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v6/label/theming/colors/index.md';
 
 <Colors />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 影子部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

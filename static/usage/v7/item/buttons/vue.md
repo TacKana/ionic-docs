@@ -2,19 +2,19 @@
 <template>
   <ion-item>
     <ion-button slot="start"> Start </ion-button>
-    <ion-label>Default Buttons</ion-label>
+    <ion-label>默认按钮</ion-label>
     <ion-button slot="end"> End </ion-button>
   </ion-item>
 
   <ion-item>
     <ion-button slot="start">
-      Start
+      开始
       <ion-icon :icon="home" slot="end"></ion-icon>
     </ion-button>
-    <ion-label>Buttons with Icons</ion-label>
+    <ion-label>带图标的按钮</ion-label>
     <ion-button slot="end">
       <ion-icon :icon="star" slot="end"></ion-icon>
-      End
+      结束
     </ion-button>
   </ion-item>
 
@@ -22,14 +22,14 @@
     <ion-button slot="start">
       <ion-icon slot="icon-only" :icon="navigate"></ion-icon>
     </ion-button>
-    <ion-label>Icon only Buttons</ion-label>
+    <ion-label>仅图标按钮</ion-label>
     <ion-button slot="end">
       <ion-icon slot="icon-only" :icon="star"></ion-icon>
     </ion-button>
   </ion-item>
 
   <ion-item>
-    <ion-label>Button Sizes</ion-label>
+    <ion-label>按钮尺寸</ion-label>
     <ion-button slot="end" size="small"> Small </ion-button>
     <ion-button slot="end" size="default"> Default </ion-button>
     <ion-button slot="end" size="large"> Large </ion-button>

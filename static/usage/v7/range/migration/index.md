@@ -15,59 +15,59 @@ import TabItem from '@theme/TabItem';
 <TabItem value="javascript">
 
 ```html
-<!-- Basic -->
+<!-- 基础用法 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label>Notifications</ion-label>
+  <ion-label>通知</ion-label>
   <ion-range></ion-range>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-range label="Notifications"></ion-range>
+  <ion-range label="通知"></ion-range>
 </ion-item>
 
-<!-- Fixed Labels -->
+<!-- 固定标签 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label position="fixed">Notifications</ion-label>
+  <ion-label position="fixed">通知</ion-label>
   <ion-range></ion-range>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-range label-placement="fixed" label="Notifications"></ion-range>
+  <ion-range label-placement="fixed" label="通知"></ion-range>
 </ion-item>
 
-<!-- Range at the start of line, Label at the end of line -->
+<!-- 范围在行首，标签在行尾 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label slot="end">Notifications</ion-label>
+  <ion-label slot="end">通知</ion-label>
   <ion-range></ion-range>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-range label-placement="end" label="Notifications"></ion-range>
+  <ion-range label-placement="end" label="通知"></ion-range>
 </ion-item>
 
-<!-- Custom HTML label -->
+<!-- 自定义 HTML 标签 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
   <ion-label>
-    <div class="custom-label">Notifications</div>
+    <div class="custom-label">通知</div>
   </ion-label>
   <ion-range></ion-range>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
   <ion-range>
-    <div slot="label" class="custom-label">Notifications</div>
+    <div slot="label" class="custom-label">通知</div>
   </ion-range>
 </ion-item>
 ```
@@ -75,59 +75,59 @@ import TabItem from '@theme/TabItem';
 <TabItem value="angular">
 
 ```html
-<!-- Basic -->
+<!-- 基础用法 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label>Notifications</ion-label>
+  <ion-label>通知</ion-label>
   <ion-range></ion-range>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-range label="Notifications"></ion-range>
+  <ion-range label="通知"></ion-range>
 </ion-item>
 
-<!-- Fixed Labels -->
+<!-- 固定标签 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label position="fixed">Notifications</ion-label>
+  <ion-label position="fixed">通知</ion-label>
   <ion-range></ion-range>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-range labelPlacement="fixed" label="Notifications"></ion-range>
+  <ion-range labelPlacement="fixed" label="通知"></ion-range>
 </ion-item>
 
-<!-- Range at the start of line, Label at the end of line -->
+<!-- 范围在行首，标签在行尾 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label slot="end">Notifications</ion-label>
+  <ion-label slot="end">通知</ion-label>
   <ion-range></ion-range>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-range labelPlacement="end" label="Notifications"></ion-range>
+  <ion-range labelPlacement="end" label="通知"></ion-range>
 </ion-item>
 
-<!-- Custom HTML label -->
+<!-- 自定义 HTML 标签 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
   <ion-label>
-    <div class="custom-label">Notifications</div>
+    <div class="custom-label">通知</div>
   </ion-label>
   <ion-range></ion-range>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
   <ion-range>
-    <div slot="label" class="custom-label">Notifications</div>
+    <div slot="label" class="custom-label">通知</div>
   </ion-range>
 </ion-item>
 ```
@@ -135,59 +135,59 @@ import TabItem from '@theme/TabItem';
 <TabItem value="react">
 
 ```tsx
-{/* Basic */}
+{/* 基础用法 */}
 
-{/* Before */}
+{/* 之前 */}
 <IonItem>
-  <IonLabel>Notifications</IonLabel>
+  <IonLabel>通知</IonLabel>
   <IonRange></IonRange>
 </IonItem>
 
-{/* After */}
+{/* 之后 */}
 <IonItem>
-  <IonRange label="Notifications"></IonRange>
+  <IonRange label="通知"></IonRange>
 </IonItem>
 
-{/* Fixed Labels */}
+{/* 固定标签 */}
 
-{/* Before */}
+{/* 之前 */}
 <IonItem>
-  <IonLabel position="fixed">Notifications</IonLabel>
+  <IonLabel position="fixed">通知</IonLabel>
   <IonRange></IonRange>
 </IonItem>
 
-{/* After */}
+{/* 之后 */}
 <IonItem>
-  <IonRange labelPlacement="fixed" label="Notifications"></IonRange>
+  <IonRange labelPlacement="fixed" label="通知"></IonRange>
 </IonItem>
 
-{/* Range at the start of line, Label at the end of line */}
+{/* 范围在行首，标签在行尾 */}
 
-{/* Before */}
+{/* 之前 */}
 <IonItem>
-  <IonLabel slot="end">Notifications</IonLabel>
+  <IonLabel slot="end">通知</IonLabel>
   <IonRange></IonRange>
 </IonItem>
 
-{/* After */}
+{/* 之后 */}
 <IonItem>
-  <IonRange labelPlacement="end" label="Notifications"></IonRange>
+  <IonRange labelPlacement="end" label="通知"></IonRange>
 </IonItem>
 
-{/* Custom HTML label */}
+{/* 自定义 HTML 标签 */}
 
-{/* Before */}
+{/* 之前 */}
 <IonItem>
   <IonLabel>
-    <div className="custom-label">Notifications</div>
+    <div className="custom-label">通知</div>
   </IonLabel>
   <IonRange></IonRange>
 </IonItem>
 
-<!-- After -->
+{/* 之后 */}
 <IonItem>
   <IonRange>
-    <div slot="label" className="custom-label">Notifications</div>
+    <div slot="label" className="custom-label">通知</div>
   </IonRange>
 </IonItem>
 ```
@@ -195,59 +195,59 @@ import TabItem from '@theme/TabItem';
 <TabItem value="vue">
 
 ```html
-<!-- Basic -->
+<!-- 基础用法 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label>Notifications</ion-label>
+  <ion-label>通知</ion-label>
   <ion-range></ion-range>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-range label="Notifications"></ion-range>
+  <ion-range label="通知"></ion-range>
 </ion-item>
 
-<!-- Fixed Labels -->
+<!-- 固定标签 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label position="fixed">Notifications</ion-label>
+  <ion-label position="fixed">通知</ion-label>
   <ion-range></ion-range>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-range label-placement="fixed" label="Notifications"></ion-range>
+  <ion-range label-placement="fixed" label="通知"></ion-range>
 </ion-item>
 
-<!-- Range at the start of line, Label at the end of line -->
+<!-- 范围在行首，标签在行尾 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
-  <ion-label slot="end">Notifications</ion-label>
+  <ion-label slot="end">通知</ion-label>
   <ion-range></ion-range>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
-  <ion-range label-placement="end" label="Notifications"></ion-range>
+  <ion-range label-placement="end" label="通知"></ion-range>
 </ion-item>
 
-<!-- Custom HTML label -->
+<!-- 自定义 HTML 标签 -->
 
-<!-- Before -->
+<!-- 之前 -->
 <ion-item>
   <ion-label>
-    <div class="custom-label">Notifications</div>
+    <div class="custom-label">通知</div>
   </ion-label>
   <ion-range></ion-range>
 </ion-item>
 
-<!-- After -->
+<!-- 之后 -->
 <ion-item>
   <ion-range>
-    <div slot="label" class="custom-label">Notifications</div>
+    <div slot="label" class="custom-label">通知</div>
   </ion-range>
 </ion-item>
 ```

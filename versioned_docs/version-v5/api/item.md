@@ -16,203 +16,203 @@ import Slots from '@ionic-internal/component-api/v5/item/slots.md';
 
 # ion-item
 
-Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Generally they are placed in a list with other items. Items can be swiped, deleted, reordered, edited, and more.
+项目（Items）是包含文本、图标、头像、图片、输入框以及任何其他原生或自定义元素的元素。通常，它们与其他项目一起放置在列表中。项目可以被滑动、删除、重新排序、编辑等等。
 
-## Clickable Items
+## 可点击项目
 
-An item is considered "clickable" if it has an `href` or `button` property set. Clickable items have a few visual differences that indicate they can be interacted with. For example, a clickable item receives the ripple effect upon activation in `md` mode, has a highlight when activated in `ios` mode, and has a [detail arrow](#detail-arrows) by default in `ios` mode.
+如果一个项目设置了 `href` 或 `button` 属性，则它被视为"可点击"。可点击项目具有一些视觉差异，表明它们可以交互。例如，在 `md` 模式下，可点击项目在被激活时会呈现涟漪效果；在 `ios` 模式下，激活时有高亮效果，并且默认会显示一个[详情箭头](#detail-arrows)。
 
-## Detail Arrows
+## 详情箭头
 
-By default [clickable items](#clickable-items) will display a right arrow icon on `ios` mode. To hide the right arrow icon on clickable elements, set the `detail` property to `false`. To show the right arrow icon on an item that doesn't display it naturally, set the `detail` property to `true`.
+默认情况下，[可点击项目](#clickable-items)在 `ios` 模式下会显示一个右箭头图标。要在可点击元素上隐藏右箭头图标，请将 `detail` 属性设置为 `false`。要在默认不显示箭头的项目上显示右箭头图标，请将 `detail` 属性设置为 `true`。
 
 <!--
 
-TODO add this functionality back as a css variable
+TODO 将此功能恢复为 CSS 变量
 
-This feature is not enabled by default on clickable items for the `md` mode, but it can be enabled by setting the following CSS variable:
+此功能在 `md` 模式下默认不对可点击项目启用，但可以通过设置以下 CSS 变量来启用：
 
 ```css
 --item-detail-push-show: true;
 ```
 
-See the [theming documentation](../theming/css-variables.md) for more information.
+更多信息请参阅[主题文档](../theming/css-variables.md)。
 
 -->
 
-## Item Placement
+## 项目内容放置
 
-Item uses named [slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) in order to position content. This logic makes it possible to write a complex item with simple, understandable markup without having to worry about styling and positioning the elements.
+项目使用命名的[插槽 (slots)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) 来定位内容。这种逻辑使得编写复杂的项目时，可以使用简单、易于理解的标记，而无需担心元素的样式和定位问题。
 
-The below chart details the item slots and where it will place the element inside of the item:
+下表详细说明了项目插槽以及元素在项目中的放置位置：
 
-| Slot    | Description                                                                |
-| ------- | -------------------------------------------------------------------------- |
-| `start` | Placed to the left of all other content in LTR, and to the `right` in RTL. |
-| `end`   | Placed to the right of all other content in LTR, and to the `left` in RTL. |
-| none    | Placed inside of the input wrapper.                                        |
+| 插槽名  | 描述                                                                         |
+| ------- | ---------------------------------------------------------------------------- |
+| `start` | 在 LTR（从左到右）布局中，放置在所有其他内容的左侧；在 RTL（从右到左）布局中，放置在右侧。 |
+| `end`   | 在 LTR（从左到右）布局中，放置在所有其他内容的右侧；在 RTL（从右到左）布局中，放置在左侧。 |
+| 无      | 放置在输入包装器内部。                                                         |
 
-### Text Alignment
+### 文本对齐
 
-Items left align text and add an ellipsis when the text is wider than the item. See the [CSS Utilities Documentation](../layout/css-utilities.md) for classes that can be added to `<ion-item>` to transform the text.
+项目默认左对齐文本，并在文本宽度超过项目宽度时添加省略号。有关可以添加到 `<ion-item>` 以转换文本的类，请参阅 [CSS 实用工具文档](../layout/css-utilities.md)。
 
-## Input Highlight
+## 输入框高亮
 
-### Highlight Height
+### 高亮高度
 
-Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`. For more information on setting CSS properties, see the [theming documentation](../theming/css-variables.md).
+包含输入框的项目在输入框获得焦点、验证通过或验证失败时，会用不同的颜色高亮其底部边框。默认情况下，`md` 项目的高亮高度设置为 `2px`，而 `ios` 没有高亮（技术上高度设置为 `0`）。可以使用 `--highlight-height` CSS 属性更改高度。要关闭高亮，请将此变量设置为 `0`。有关设置 CSS 属性的更多信息，请参阅[主题文档](../theming/css-variables.md)。
 
-### Highlight Color
+### 高亮颜色
 
-The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. See the [CSS Custom Properties](#css-custom-properties) section below for the highlight color variables.
+高亮颜色根据项目状态而变化，但默认情况下所有状态都使用 Ionic 颜色。当聚焦时，输入框高亮将使用 `primary` 颜色。如果输入有效，它将使用 `success` 颜色，无效输入将使用 `danger` 颜色。有关高亮颜色的变量，请参阅下面的 [CSS 自定义属性](#css-custom-properties)部分。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- Default Item -->
+<!-- 默认项目 -->
 <ion-item>
-  <ion-label> Item </ion-label>
+  <ion-label> 项目 </ion-label>
 </ion-item>
 
-<!-- Item as a Button -->
+<!-- 作为按钮的项目 -->
 <ion-item button (click)="buttonClick()">
-  <ion-label> Button Item </ion-label>
+  <ion-label> 按钮项目 </ion-label>
 </ion-item>
 
-<!-- Item as an Anchor -->
+<!-- 作为链接的项目 -->
 <ion-item href="https://www.ionicframework.com">
-  <ion-label> Anchor Item </ion-label>
+  <ion-label> 链接项目 </ion-label>
 </ion-item>
 
 <ion-item color="secondary">
-  <ion-label> Secondary Color Item </ion-label>
+  <ion-label> 次要颜色项目 </ion-label>
 </ion-item>
 ```
 
-### Detail Arrows
+### 详情箭头
 
 ```html
 <ion-item detail>
-  <ion-label> Standard Item with Detail Arrow </ion-label>
+  <ion-label> 带详情箭头的标准项目 </ion-label>
 </ion-item>
 
 <ion-item button (click)="buttonClick()" detail>
-  <ion-label> Button Item with Detail Arrow </ion-label>
+  <ion-label> 带详情箭头的按钮项目 </ion-label>
 </ion-item>
 
 <ion-item detail="false" href="https://www.ionicframework.com">
-  <ion-label> Anchor Item with no Detail Arrow </ion-label>
+  <ion-label> 不带详情箭头的链接项目 </ion-label>
 </ion-item>
 ```
 
-### List Items
+### 列表项目
 
 ```html
 <ion-list>
   <ion-item>
-    <ion-label> Item </ion-label>
+    <ion-label> 项目 </ion-label>
   </ion-item>
 
   <ion-item lines="none">
-    <ion-label> No Lines Item </ion-label>
+    <ion-label> 无线条项目 </ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label class="ion-text-wrap">
-      Multiline text that should wrap when it is too long to fit on one line in the item.
+      当文本太长无法在一行内显示时，应该换行的多行文本。
     </ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label class="ion-text-wrap">
       <ion-text color="primary">
-        <h3>H3 Primary Title</h3>
+        <h3>H3 主要标题</h3>
       </ion-text>
-      <p>Paragraph line 1</p>
+      <p>段落第1行</p>
       <ion-text color="secondary">
-        <p>Paragraph line 2 secondary</p>
+        <p>段落第2行 次要颜色</p>
       </ion-text>
     </ion-label>
   </ion-item>
 
   <ion-item lines="full">
-    <ion-label> Item with Full Lines </ion-label>
+    <ion-label> 带全宽线条的项目 </ion-label>
   </ion-item>
 </ion-list>
 ```
 
-### Item Lines
+### 项目线条
 
 ```html
-<!-- Item Inset Lines -->
+<!-- 内嵌线条项目 -->
 <ion-item lines="inset">
-  <ion-label>Item Lines Inset</ion-label>
+  <ion-label>内嵌线条项目</ion-label>
 </ion-item>
 
-<!-- Item Full Lines -->
+<!-- 全宽线条项目 -->
 <ion-item lines="full">
-  <ion-label>Item Lines Full</ion-label>
+  <ion-label>全宽线条项目</ion-label>
 </ion-item>
 
-<!-- Item None Lines -->
+<!-- 无线条项目 -->
 <ion-item lines="none">
-  <ion-label>Item Lines None</ion-label>
+  <ion-label>无线条项目</ion-label>
 </ion-item>
 
-<!-- List Full Lines -->
+<!-- 全宽线条列表 -->
 <ion-list lines="full">
   <ion-item>
-    <ion-label>Full Lines Item 1</ion-label>
+    <ion-label>全宽线条项目 1</ion-label>
   </ion-item>
 
   <ion-item>
-    <ion-label>Full Lines Item 2</ion-label>
+    <ion-label>全宽线条项目 2</ion-label>
   </ion-item>
 </ion-list>
 
-<!-- List Inset Lines -->
+<!-- 内嵌线条列表 -->
 <ion-list lines="inset">
   <ion-item>
-    <ion-label>Inset Lines Item 1</ion-label>
+    <ion-label>内嵌线条项目 1</ion-label>
   </ion-item>
 
   <ion-item>
-    <ion-label>Inset Lines Item 2</ion-label>
+    <ion-label>内嵌线条项目 2</ion-label>
   </ion-item>
 </ion-list>
 
-<!-- List No Lines -->
+<!-- 无线条列表 -->
 <ion-list lines="none">
   <ion-item>
-    <ion-label>No lines Item 1</ion-label>
+    <ion-label>无线条项目 1</ion-label>
   </ion-item>
 
   <ion-item>
-    <ion-label>No lines Item 2</ion-label>
+    <ion-label>无线条项目 2</ion-label>
   </ion-item>
 
   <ion-item>
-    <ion-label>No lines Item 3</ion-label>
+    <ion-label>无线条项目 3</ion-label>
   </ion-item>
 </ion-list>
 ```
 
-### Media Items
+### 媒体项目
 
 ```html
 <ion-item button (click)="testClick()">
   <ion-avatar slot="start">
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-avatar>
-  <ion-label> Avatar Start, Button Item </ion-label>
+  <ion-label> 头像在开始位置，按钮项目 </ion-label>
 </ion-item>
 
 <ion-item href="#">
-  <ion-label> Thumbnail End, Anchor Item </ion-label>
+  <ion-label> 缩略图在结束位置，链接项目 </ion-label>
   <ion-thumbnail slot="end">
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-thumbnail>
@@ -223,10 +223,10 @@ The highlight color changes based on the item state, but all of the states use I
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-thumbnail>
   <ion-label>
-    <h2>H2 Title Text</h2>
-    <p>Button on right</p>
+    <h2>H2 标题文本</h2>
+    <p>按钮在右侧</p>
   </ion-label>
-  <ion-button fill="outline" slot="end">View</ion-button>
+  <ion-button fill="outline" slot="end">查看</ion-button>
 </ion-item>
 
 <ion-item button (click)="testClick()">
@@ -234,31 +234,31 @@ The highlight color changes based on the item state, but all of the states use I
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-thumbnail>
   <ion-label>
-    <h3>H3 Title Text</h3>
-    <p>Icon on right</p>
+    <h3>H3 标题文本</h3>
+    <p>图标在右侧</p>
   </ion-label>
   <ion-icon name="close-circle" slot="end"></ion-icon>
 </ion-item>
 ```
 
-### Buttons in Items
+### 项目中的按钮
 
 ```html
 <ion-item>
-  <ion-button slot="start"> Start </ion-button>
-  <ion-label>Button Start/End</ion-label>
-  <ion-button slot="end"> End </ion-button>
+  <ion-button slot="start"> 开始 </ion-button>
+  <ion-label>按钮开始/结束</ion-label>
+  <ion-button slot="end"> 结束 </ion-button>
 </ion-item>
 
 <ion-item>
   <ion-button slot="start">
-    Start Icon
+    开始图标
     <ion-icon name="home" slot="end"></ion-icon>
   </ion-button>
-  <ion-label>Buttons with Icons</ion-label>
+  <ion-label>带图标的按钮</ion-label>
   <ion-button slot="end">
     <ion-icon name="star" slot="end"></ion-icon>
-    End Icon
+    结束图标
   </ion-button>
 </ion-item>
 
@@ -266,55 +266,55 @@ The highlight color changes based on the item state, but all of the states use I
   <ion-button slot="start">
     <ion-icon slot="icon-only" name="navigate"></ion-icon>
   </ion-button>
-  <ion-label>Icon only Buttons</ion-label>
+  <ion-label>仅图标按钮</ion-label>
   <ion-button slot="end">
     <ion-icon slot="icon-only" name="star"></ion-icon>
   </ion-button>
 </ion-item>
 ```
 
-### Icons in Items
+### 项目中的图标
 
 ```html
 <ion-item>
-  <ion-label> Icon End </ion-label>
+  <ion-label> 图标在结束位置 </ion-label>
   <ion-icon name="information-circle" slot="end"></ion-icon>
 </ion-item>
 
 <ion-item>
-  <ion-label> Large Icon End </ion-label>
+  <ion-label> 大图标在结束位置 </ion-label>
   <ion-icon name="information-circle" size="large" slot="end"></ion-icon>
 </ion-item>
 
 <ion-item>
-  <ion-label> Small Icon End </ion-label>
+  <ion-label> 小图标在结束位置 </ion-label>
   <ion-icon name="information-circle" size="small" slot="end"></ion-icon>
 </ion-item>
 
 <ion-item>
   <ion-icon name="star" slot="start"></ion-icon>
-  <ion-label> Icon Start </ion-label>
+  <ion-label> 图标在开始位置 </ion-label>
 </ion-item>
 
 <ion-item>
-  <ion-label> Two Icons End </ion-label>
+  <ion-label> 两个图标在结束位置 </ion-label>
   <ion-icon name="checkmark-circle" slot="end"></ion-icon>
   <ion-icon name="shuffle" slot="end"></ion-icon>
 </ion-item>
 ```
 
-### Item Inputs
+### 项目中的输入组件
 
 ```html
 <ion-item>
-  <ion-label position="floating">Datetime</ion-label>
+  <ion-label position="floating">日期时间</ion-label>
   <ion-datetime></ion-datetime>
 </ion-item>
 
 <ion-item>
-  <ion-label position="floating">Select</ion-label>
+  <ion-label position="floating">选择框</ion-label>
   <ion-select>
-    <ion-select-option value="">No Game Console</ion-select-option>
+    <ion-select-option value="">无游戏主机</ion-select-option>
     <ion-select-option value="nes">NES</ion-select-option>
     <ion-select-option value="n64" selected>Nintendo64</ion-select-option>
     <ion-select-option value="ps">PlayStation</ion-select-option>
@@ -325,27 +325,27 @@ The highlight color changes based on the item state, but all of the states use I
 </ion-item>
 
 <ion-item>
-  <ion-label>Toggle</ion-label>
+  <ion-label>切换开关</ion-label>
   <ion-toggle slot="end"></ion-toggle>
 </ion-item>
 
 <ion-item>
-  <ion-label position="floating">Floating Input</ion-label>
+  <ion-label position="floating">浮动标签输入框</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label>Input (placeholder)</ion-label>
-  <ion-input placeholder="Placeholder"></ion-input>
+  <ion-label>输入框（占位符）</ion-label>
+  <ion-input placeholder="占位符"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label>Checkbox</ion-label>
+  <ion-label>复选框</ion-label>
   <ion-checkbox slot="start"></ion-checkbox>
 </ion-item>
 
 <ion-item>
-  <ion-label>Range</ion-label>
+  <ion-label>范围滑块</ion-label>
   <ion-range></ion-range>
 </ion-item>
 ```
@@ -355,146 +355,146 @@ The highlight color changes based on the item state, but all of the states use I
 <TabItem value="javascript">
 
 ```html
-<!-- Default Item -->
+<!-- 默认项目 -->
 <ion-item>
-  <ion-label> Item </ion-label>
+  <ion-label> 项目 </ion-label>
 </ion-item>
 
-<!-- Item as a Button -->
+<!-- 作为按钮的项目 -->
 <ion-item button onclick="buttonClick()">
-  <ion-label> Button Item </ion-label>
+  <ion-label> 按钮项目 </ion-label>
 </ion-item>
 
-<!-- Item as an Anchor -->
+<!-- 作为链接的项目 -->
 <ion-item href="https://www.ionicframework.com">
-  <ion-label> Anchor Item </ion-label>
+  <ion-label> 链接项目 </ion-label>
 </ion-item>
 
 <ion-item color="secondary">
-  <ion-label> Secondary Color Item </ion-label>
+  <ion-label> 次要颜色项目 </ion-label>
 </ion-item>
 ```
 
-### Detail Arrows
+### 详情箭头
 
 ```html
 <ion-item detail>
-  <ion-label> Standard Item with Detail Arrow </ion-label>
+  <ion-label> 带详情箭头的标准项目 </ion-label>
 </ion-item>
 
 <ion-item button onclick="buttonClick()" detail>
-  <ion-label> Button Item with Detail Arrow </ion-label>
+  <ion-label> 带详情箭头的按钮项目 </ion-label>
 </ion-item>
 
 <ion-item detail="false" href="https://www.ionicframework.com">
-  <ion-label> Anchor Item with no Detail Arrow </ion-label>
+  <ion-label> 不带详情箭头的链接项目 </ion-label>
 </ion-item>
 ```
 
-### List Items
+### 列表项目
 
 ```html
 <ion-list>
   <ion-item>
-    <ion-label> Item </ion-label>
+    <ion-label> 项目 </ion-label>
   </ion-item>
 
   <ion-item lines="none">
-    <ion-label> No Lines Item </ion-label>
+    <ion-label> 无线条项目 </ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label class="ion-text-wrap">
-      Multiline text that should wrap when it is too long to fit on one line in the item.
+      当文本太长无法在一行内显示时，应该换行的多行文本。
     </ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label class="ion-text-wrap">
       <ion-text color="primary">
-        <h3>H3 Primary Title</h3>
+        <h3>H3 主要标题</h3>
       </ion-text>
-      <p>Paragraph line 1</p>
+      <p>段落第1行</p>
       <ion-text color="secondary">
-        <p>Paragraph line 2 secondary</p>
+        <p>段落第2行 次要颜色</p>
       </ion-text>
     </ion-label>
   </ion-item>
 
   <ion-item lines="full">
-    <ion-label> Item with Full Lines </ion-label>
+    <ion-label> 带全宽线条的项目 </ion-label>
   </ion-item>
 </ion-list>
 ```
 
-### Item Lines
+### 项目线条
 
 ```html
-<!-- Item Inset Lines -->
+<!-- 内嵌线条项目 -->
 <ion-item lines="inset">
-  <ion-label>Item Lines Inset</ion-label>
+  <ion-label>内嵌线条项目</ion-label>
 </ion-item>
 
-<!-- Item Full Lines -->
+<!-- 全宽线条项目 -->
 <ion-item lines="full">
-  <ion-label>Item Lines Full</ion-label>
+  <ion-label>全宽线条项目</ion-label>
 </ion-item>
 
-<!-- Item None Lines -->
+<!-- 无线条项目 -->
 <ion-item lines="none">
-  <ion-label>Item Lines None</ion-label>
+  <ion-label>无线条项目</ion-label>
 </ion-item>
 
-<!-- List Full Lines -->
+<!-- 全宽线条列表 -->
 <ion-list lines="full">
   <ion-item>
-    <ion-label>Full Lines Item 1</ion-label>
+    <ion-label>全宽线条项目 1</ion-label>
   </ion-item>
 
   <ion-item>
-    <ion-label>Full Lines Item 2</ion-label>
+    <ion-label>全宽线条项目 2</ion-label>
   </ion-item>
 </ion-list>
 
-<!-- List Inset Lines -->
+<!-- 内嵌线条列表 -->
 <ion-list lines="inset">
   <ion-item>
-    <ion-label>Inset Lines Item 1</ion-label>
+    <ion-label>内嵌线条项目 1</ion-label>
   </ion-item>
 
   <ion-item>
-    <ion-label>Inset Lines Item 2</ion-label>
+    <ion-label>内嵌线条项目 2</ion-label>
   </ion-item>
 </ion-list>
 
-<!-- List No Lines -->
+<!-- 无线条列表 -->
 <ion-list lines="none">
   <ion-item>
-    <ion-label>No lines Item 1</ion-label>
+    <ion-label>无线条项目 1</ion-label>
   </ion-item>
 
   <ion-item>
-    <ion-label>No lines Item 2</ion-label>
+    <ion-label>无线条项目 2</ion-label>
   </ion-item>
 
   <ion-item>
-    <ion-label>No lines Item 3</ion-label>
+    <ion-label>无线条项目 3</ion-label>
   </ion-item>
 </ion-list>
 ```
 
-### Media Items
+### 媒体项目
 
 ```html
 <ion-item button onclick="testClick()">
   <ion-avatar slot="start">
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-avatar>
-  <ion-label> Avatar Start, Button Item </ion-label>
+  <ion-label> 头像在开始位置，按钮项目 </ion-label>
 </ion-item>
 
 <ion-item href="#">
-  <ion-label> Thumbnail End, Anchor Item </ion-label>
+  <ion-label> 缩略图在结束位置，链接项目 </ion-label>
   <ion-thumbnail slot="end">
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-thumbnail>
@@ -505,10 +505,10 @@ The highlight color changes based on the item state, but all of the states use I
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-thumbnail>
   <ion-label>
-    <h2>H2 Title Text</h2>
-    <p>Button on right</p>
+    <h2>H2 标题文本</h2>
+    <p>按钮在右侧</p>
   </ion-label>
-  <ion-button fill="outline" slot="end">View</ion-button>
+  <ion-button fill="outline" slot="end">查看</ion-button>
 </ion-item>
 
 <ion-item button onclick="testClick()">
@@ -516,31 +516,31 @@ The highlight color changes based on the item state, but all of the states use I
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-thumbnail>
   <ion-label>
-    <h3>H3 Title Text</h3>
-    <p>Icon on right</p>
+    <h3>H3 标题文本</h3>
+    <p>图标在右侧</p>
   </ion-label>
   <ion-icon name="close-circle" slot="end"></ion-icon>
 </ion-item>
 ```
 
-### Buttons in Items
+### 项目中的按钮
 
 ```html
 <ion-item>
-  <ion-button slot="start"> Start </ion-button>
-  <ion-label>Button Start/End</ion-label>
-  <ion-button slot="end"> End </ion-button>
+  <ion-button slot="start"> 开始 </ion-button>
+  <ion-label>按钮开始/结束</ion-label>
+  <ion-button slot="end"> 结束 </ion-button>
 </ion-item>
 
 <ion-item>
   <ion-button slot="start">
-    Start Icon
+    开始图标
     <ion-icon name="home" slot="end"></ion-icon>
   </ion-button>
-  <ion-label>Buttons with Icons</ion-label>
+  <ion-label>带图标的按钮</ion-label>
   <ion-button slot="end">
     <ion-icon name="star" slot="end"></ion-icon>
-    End Icon
+    结束图标
   </ion-button>
 </ion-item>
 
@@ -548,55 +548,55 @@ The highlight color changes based on the item state, but all of the states use I
   <ion-button slot="start">
     <ion-icon slot="icon-only" name="navigate"></ion-icon>
   </ion-button>
-  <ion-label>Icon only Buttons</ion-label>
+  <ion-label>仅图标按钮</ion-label>
   <ion-button slot="end">
     <ion-icon slot="icon-only" name="star"></ion-icon>
   </ion-button>
 </ion-item>
 ```
 
-### Icons in Items
+### 项目中的图标
 
 ```html
 <ion-item>
-  <ion-label> Icon End </ion-label>
+  <ion-label> 图标在结束位置 </ion-label>
   <ion-icon name="information-circle" slot="end"></ion-icon>
 </ion-item>
 
 <ion-item>
-  <ion-label> Large Icon End </ion-label>
+  <ion-label> 大图标在结束位置 </ion-label>
   <ion-icon name="information-circle" size="large" slot="end"></ion-icon>
 </ion-item>
 
 <ion-item>
-  <ion-label> Small Icon End </ion-label>
+  <ion-label> 小图标在结束位置 </ion-label>
   <ion-icon name="information-circle" size="small" slot="end"></ion-icon>
 </ion-item>
 
 <ion-item>
   <ion-icon name="star" slot="start"></ion-icon>
-  <ion-label> Icon Start </ion-label>
+  <ion-label> 图标在开始位置 </ion-label>
 </ion-item>
 
 <ion-item>
-  <ion-label> Two Icons End </ion-label>
+  <ion-label> 两个图标在结束位置 </ion-label>
   <ion-icon name="checkmark-circle" slot="end"></ion-icon>
   <ion-icon name="shuffle" slot="end"></ion-icon>
 </ion-item>
 ```
 
-### Item Inputs
+### 项目中的输入组件
 
 ```html
 <ion-item>
-  <ion-label position="floating">Datetime</ion-label>
+  <ion-label position="floating">日期时间</ion-label>
   <ion-datetime></ion-datetime>
 </ion-item>
 
 <ion-item>
-  <ion-label position="floating">Select</ion-label>
+  <ion-label position="floating">选择框</ion-label>
   <ion-select>
-    <ion-select-option value="">No Game Console</ion-select-option>
+    <ion-select-option value="">无游戏主机</ion-select-option>
     <ion-select-option value="nes">NES</ion-select-option>
     <ion-select-option value="n64" selected>Nintendo64</ion-select-option>
     <ion-select-option value="ps">PlayStation</ion-select-option>
@@ -607,27 +607,27 @@ The highlight color changes based on the item state, but all of the states use I
 </ion-item>
 
 <ion-item>
-  <ion-label>Toggle</ion-label>
+  <ion-label>切换开关</ion-label>
   <ion-toggle slot="end"></ion-toggle>
 </ion-item>
 
 <ion-item>
-  <ion-label position="floating">Floating Input</ion-label>
+  <ion-label position="floating">浮动标签输入框</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label>Input (placeholder)</ion-label>
-  <ion-input placeholder="Placeholder"></ion-input>
+  <ion-label>输入框（占位符）</ion-label>
+  <ion-input placeholder="占位符"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label>Checkbox</ion-label>
+  <ion-label>复选框</ion-label>
   <ion-checkbox slot="start"></ion-checkbox>
 </ion-item>
 
 <ion-item>
-  <ion-label>Range</ion-label>
+  <ion-label>范围滑块</ion-label>
   <ion-range></ion-range>
 </ion-item>
 ```
@@ -650,140 +650,139 @@ export const ItemExamples: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        {/*-- Default Item --*/}
+        {/*-- 默认项目 --*/}
         <IonItem>
           <IonLabel>
-            Item
+            项目
           </IonLabel>
         </IonItem>
 
-        {/*-- Item as a Button --*/}
+        {/*-- 作为按钮的项目 --*/}
         <IonItem button onClick={() => { }}>
           <IonLabel>
-            Button Item
+            按钮项目
           </IonLabel>
         </IonItem>
 
-        {/*-- Item as an Anchor --*/}
+        {/*-- 作为链接的项目 --*/}
         <IonItem href="https://www.ionicframework.com">
           <IonLabel>
-            Anchor Item
+            链接项目
           </IonLabel>
         </IonItem>
 
         <IonItem color="secondary">
           <IonLabel>
-            Secondary Color Item
+            次要颜色项目
           </IonLabel>
         </IonItem>
 
-        {/*-- Detail Arrows --*/}
+        {/*-- 详情箭头 --*/}
         <IonItem detail>
           <IonLabel>
-            Standard Item with Detail Arrow
+            带详情箭头的标准项目
           </IonLabel>
         </IonItem>
 
         <IonItem button onClick={() => { }} detail>
           <IonLabel>
-            Button Item with Detail Arrow
+            带详情箭头的按钮项目
           </IonLabel>
         </IonItem>
 
         <IonItem detail={false} href="https://www.ionicframework.com">
           <IonLabel>
-            Anchor Item with no Detail Arrow
+            不带详情箭头的链接项目
           </IonLabel>
         </IonItem>
 
         <IonList>
           <IonItem>
             <IonLabel>
-              Item
+              项目
             </IonLabel>
           </IonItem>
 
           <IonItem lines="none">
             <IonLabel>
-              No Lines Item
+              无线条项目
             </IonLabel>
           </IonItem>
 
           <IonItem>
             <IonLabel className="ion-text-wrap">
-              Multiline text that should wrap when it is too long
-              to fit on one line in the item.
+              当文本太长无法在一行内显示时，应该换行的多行文本。
             </IonLabel>
           </IonItem>
 
           <IonItem>
             <IonLabel className="ion-text-wrap">
               <IonText color="primary">
-                <h3>H3 Primary Title</h3>
+                <h3>H3 主要标题</h3>
               </IonText>
-              <p>Paragraph line 1</p>
+              <p>段落第1行</p>
               <IonText color="secondary">
-                <p>Paragraph line 2 secondary</p>
+                <p>段落第2行 次要颜色</p>
               </IonText>
             </IonLabel>
           </IonItem>
 
           <IonItem lines="full">
             <IonLabel>
-              Item with Full Lines
+              带全宽线条的项目
             </IonLabel>
           </IonItem>
         </IonList>
 
-        {/*-- Item Inset Lines --*/}
+        {/*-- 内嵌线条项目 --*/}
         <IonItem lines="inset">
-          <IonLabel>Item Lines Inset</IonLabel>
+          <IonLabel>内嵌线条项目</IonLabel>
         </IonItem>
 
-        {/*-- Item Full Lines --*/}
+        {/*-- 全宽线条项目 --*/}
         <IonItem lines="full">
-          <IonLabel>Item Lines Full</IonLabel>
+          <IonLabel>全宽线条项目</IonLabel>
         </IonItem>
 
-        {/*-- Item None Lines --*/}
+        {/*-- 无线条项目 --*/}
         <IonItem lines="none">
-          <IonLabel>Item Lines None</IonLabel>
+          <IonLabel>无线条项目</IonLabel>
         </IonItem>
 
-        {/*-- List Full Lines --*/}
+        {/*-- 全宽线条列表 --*/}
         <IonList lines="full">
           <IonItem>
-            <IonLabel>Full Lines Item 1</IonLabel>
+            <IonLabel>全宽线条项目 1</IonLabel>
           </IonItem>
 
           <IonItem>
-            <IonLabel>Full Lines Item 2</IonLabel>
+            <IonLabel>全宽线条项目 2</IonLabel>
           </IonItem>
         </IonList>
 
-        {/*-- List Inset Lines --*/}
+        {/*-- 内嵌线条列表 --*/}
         <IonList lines="inset">
           <IonItem>
-            <IonLabel>Inset Lines Item 1</IonLabel>
+            <IonLabel>内嵌线条项目 1</IonLabel>
           </IonItem>
 
           <IonItem>
-            <IonLabel>Inset Lines Item 2</IonLabel>
+            <IonLabel>内嵌线条项目 2</IonLabel>
           </IonItem>
         </IonList>
 
-        {/*-- List No Lines --*/}
+        {/*-- 无线条列表 --*/}
         <IonList lines="none">
           <IonItem>
-            <IonLabel>No lines Item 1</IonLabel>
+            <IonLabel>无线条项目 1</IonLabel>
           </IonItem>
 
           <IonItem>
-            <IonLabel>No lines Item 2</IonLabel>
+            <IonLabel>无线条项目 2</IonLabel>
           </IonItem>
 
           <IonItem>
-            <IonLabel>No lines Item 3</IonLabel>
+            <IonLabel>无线条项目 3</IonLabel>
           </IonItem>
         </IonList>
 
@@ -792,13 +791,13 @@ export const ItemExamples: React.FC = () => {
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
           </IonAvatar>
           <IonLabel>
-            Avatar Start, Button Item
+            头像在开始位置，按钮项目
           </IonLabel>
         </IonItem>
 
         <IonItem href="#">
           <IonLabel>
-            Thumbnail End, Anchor Item
+            缩略图在结束位置，链接项目
           </IonLabel>
           <IonThumbnail slot="end">
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
@@ -810,10 +809,10 @@ export const ItemExamples: React.FC = () => {
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
           </IonThumbnail>
           <IonLabel>
-            <h2>H2 Title Text</h2>
-            <p>Button on right</p>
+            <h2>H2 标题文本</h2>
+            <p>按钮在右侧</p>
           </IonLabel>
-          <IonButton fill="outline" slot="end">View</IonButton>
+          <IonButton fill="outline" slot="end">查看</IonButton>
         </IonItem>
 
         <IonItem button onClick={() => { }}>
@@ -821,32 +820,32 @@ export const ItemExamples: React.FC = () => {
             <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
           </IonThumbnail>
           <IonLabel>
-            <h3>H3 Title Text</h3>
-            <p>Icon on right</p>
+            <h3>H3 标题文本</h3>
+            <p>图标在右侧</p>
           </IonLabel>
           <IonIcon icon={closeCircle} slot="end" />
         </IonItem>
 
-        {/*-- Buttons in Items --*/}
+        {/*-- 项目中的按钮 --*/}
         <IonItem>
           <IonButton slot="start">
-            Start
+            开始
           </IonButton>
-          <IonLabel>Button Start/End</IonLabel>
+          <IonLabel>按钮开始/结束</IonLabel>
           <IonButton slot="end">
-            End
+            结束
           </IonButton>
         </IonItem>
 
         <IonItem>
           <IonButton slot="start">
-            Start Icon
+            开始图标
             <IonIcon icon={home} slot="end" />>
           </IonButton>
-          <IonLabel>Buttons with Icons</IonLabel>
+          <IonLabel>带图标的按钮</IonLabel>
           <IonButton slot="end">
             <IonIcon icon={star} slot="end" />
-            End Icon
+            结束图标
           </IonButton>
         </IonItem>
 
@@ -854,7 +853,7 @@ export const ItemExamples: React.FC = () => {
           <IonButton slot="start">
             <IonIcon slot="icon-only" icon={navigate} />
           </IonButton>
-          <IonLabel>Icon only Buttons</IonLabel>
+          <IonLabel>仅图标按钮</IonLabel>
           <IonButton slot="end">
             <IonIcon slot="icon-only" icon={star} />
           </IonButton>
@@ -862,21 +861,21 @@ export const ItemExamples: React.FC = () => {
 
         <IonItem>
           <IonLabel>
-            Icon End
+            图标在结束位置
           </IonLabel>
           <IonIcon icon={informationCircle} slot="end" />
         </IonItem>
 
         <IonItem>
           <IonLabel>
-            Large Icon End
+            大图标在结束位置
           </IonLabel>
           <IonIcon icon={informationCircle} size="large" slot="end" />
         </IonItem>
 
         <IonItem>
           <IonLabel>
-            Small Icon End
+            小图标在结束位置
           </IonLabel>
           <IonIcon icon={informationCircle} size="small" slot="end" />
         </IonItem>
@@ -884,27 +883,27 @@ export const ItemExamples: React.FC = () => {
         <IonItem>
           <IonIcon icon={star} slot="start" />
           <IonLabel>
-            Icon Start
+            图标在开始位置
           </IonLabel>
         </IonItem>
 
         <IonItem>
           <IonLabel>
-            Two Icons End
+            两个图标在结束位置
           </IonLabel>
           <IonIcon icon={checkmarkCircle} slot="end" />
           <IonIcon icon={shuffle} slot="end" />
         </IonItem>
 
         <IonItem>
-          <IonLabel position="floating">Datetime</IonLabel>
+          <IonLabel position="floating">日期时间</IonLabel>
           <IonDatetime></IonDatetime>
         </IonItem>
 
         <IonItem>
-          <IonLabel position="floating">Select</IonLabel>
+          <IonLabel position="floating">选择框</IonLabel>
           <IonSelect>
-            <IonSelectOption value="">No Game Console</IonSelectOption>
+            <IonSelectOption value="">无游戏主机</IonSelectOption>
             <IonSelectOption value="nes">NES</IonSelectOption>
             <IonSelectOption value="n64">Nintendo64</IonSelectOption>
             <IonSelectOption value="ps">PlayStation</IonSelectOption>
@@ -915,27 +914,27 @@ export const ItemExamples: React.FC = () => {
         </IonItem>
 
         <IonItem>
-          <IonLabel>Toggle</IonLabel>
+          <IonLabel>切换开关</IonLabel>
           <IonToggle slot="end"></IonToggle>
         </IonItem>
 
         <IonItem>
-          <IonLabel position="floating">Floating Input</IonLabel>
+          <IonLabel position="floating">浮动标签输入框</IonLabel>
           <IonInput></IonInput>
         </IonItem>
 
         <IonItem>
-          <IonLabel>Input (placeholder)</IonLabel>
-          <IonInput placeholder="Placeholder"></IonInput>
+          <IonLabel>输入框（占位符）</IonLabel>
+          <IonInput placeholder="占位符"></IonInput>
         </IonItem>
 
         <IonItem>
-          <IonLabel>Checkbox</IonLabel>
+          <IonLabel>复选框</IonLabel>
           <IonCheckbox slot="start" />
         </IonItem>
 
         <IonItem>
-          <IonLabel>Range</IonLabel>
+          <IonLabel>范围滑块</IonLabel>
           <IonRange></IonRange>
         </IonItem>
       </IonContent>
@@ -962,30 +961,30 @@ export class ItemExample {
 
   render() {
     return [
-      // Default Item
+      // 默认项目
       <ion-item>
-        <ion-label>Item</ion-label>
+        <ion-label>项目</ion-label>
       </ion-item>,
 
-      // Item as a Button
+      // 作为按钮的项目
       <ion-item button onClick={() => this.buttonClick()}>
-        <ion-label>Button Item</ion-label>
+        <ion-label>按钮项目</ion-label>
       </ion-item>,
 
-      // Item as an Anchor
+      // 作为链接的项目
       <ion-item href="https://www.ionicframework.com">
-        <ion-label>Anchor Item</ion-label>
+        <ion-label>链接项目</ion-label>
       </ion-item>,
 
       <ion-item color="secondary">
-        <ion-label>Secondary Color Item</ion-label>
+        <ion-label>次要颜色项目</ion-label>
       </ion-item>,
     ];
   }
 }
 ```
 
-### Detail Arrows
+### 详情箭头
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -1002,22 +1001,22 @@ export class ItemExample {
   render() {
     return [
       <ion-item detail>
-        <ion-label>Standard Item with Detail Arrow</ion-label>
+        <ion-label>带详情箭头的标准项目</ion-label>
       </ion-item>,
 
       <ion-item button onClick={() => this.buttonClick()} detail>
-        <ion-label>Button Item with Detail Arrow</ion-label>
+        <ion-label>带详情箭头的按钮项目</ion-label>
       </ion-item>,
 
       <ion-item detail={false} href="https://www.ionicframework.com">
-        <ion-label>Anchor Item with no Detail Arrow</ion-label>
+        <ion-label>不带详情箭头的链接项目</ion-label>
       </ion-item>,
     ];
   }
 }
 ```
 
-### List Items
+### 列表项目
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -1031,28 +1030,28 @@ export class ItemExample {
     return [
       <ion-list>
         <ion-item>
-          <ion-label>Item</ion-label>
+          <ion-label>项目</ion-label>
         </ion-item>
         <ion-item lines="none">
-          <ion-label>No Lines Item</ion-label>
+          <ion-label>无线条项目</ion-label>
         </ion-item>,<ion-item>
           <ion-label class="ion-text-wrap">
-            Multiline text that should wrap when it is too long to fit on one line in the item.
+            当文本太长无法在一行内显示时，应该换行的多行文本。
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-label class="ion-text-wrap">
             <ion-text color="primary">
-              <h3>H3 Primary Title</h3>
+              <h3>H3 主要标题</h3>
             </ion-text>
-            <p>Paragraph line 1</p>
+            <p>段落第1行</p>
             <ion-text color="secondary">
-              <p>Paragraph line 2 secondary</p>
+              <p>段落第2行 次要颜色</p>
             </ion-text>
           </ion-label>
         </ion-item>
         <ion-item lines="full">
-          <ion-label>Item with Full Lines</ion-label>
+          <ion-label>带全宽线条的项目</ion-label>
         </ion-item>
       </ion-list>,
     ];
@@ -1060,7 +1059,7 @@ export class ItemExample {
 }
 ```
 
-### Item Lines
+### 项目线条
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -1072,55 +1071,55 @@ import { Component, h } from '@stencil/core';
 export class ItemExample {
   render() {
     return [
-      // Item Inset Lines
+      // 内嵌线条项目
       <ion-item lines="inset">
-        <ion-label>Item Lines Inset</ion-label>
+        <ion-label>内嵌线条项目</ion-label>
       </ion-item>,
 
-      // Item Full Lines
+      // 全宽线条项目
       <ion-item lines="full">
-        <ion-label>Item Lines Full</ion-label>
+        <ion-label>全宽线条项目</ion-label>
       </ion-item>,
 
-      // Item None Lines
+      // 无线条项目
       <ion-item lines="none">
-        <ion-label>Item Lines None</ion-label>
+        <ion-label>无线条项目</ion-label>
       </ion-item>,
 
-      // List Full Lines
+      // 全宽线条列表
       <ion-list lines="full">
         <ion-item>
-          <ion-label>Full Lines Item 1</ion-label>
+          <ion-label>全宽线条项目 1</ion-label>
         </ion-item>
 
         <ion-item>
-          <ion-label>Full Lines Item 2</ion-label>
+          <ion-label>全宽线条项目 2</ion-label>
         </ion-item>
       </ion-list>,
 
-      // List Inset Lines
+      // 内嵌线条列表
       <ion-list lines="inset">
         <ion-item>
-          <ion-label>Inset Lines Item 1</ion-label>
+          <ion-label>内嵌线条项目 1</ion-label>
         </ion-item>
 
         <ion-item>
-          <ion-label>Inset Lines Item 2</ion-label>
+          <ion-label>内嵌线条项目 2</ion-label>
         </ion-item>
       </ion-list>,
 
-      // List No Lines
+      // 无线条列表
       <ion-list lines="none">
         <ion-item>
-          <ion-label>No lines Item 1</ion-label>
+          <ion-label>无线条项目 1</ion-label>
         </ion-item>
 
         <ion-item>
-          <ion-label>No lines Item 2</ion-label>
+          <ion-label>无线条项目 2</ion-label>
         </ion-item>
 
         <ion-item>
-          <ion-label>No lines Item 3</ion-label>
+          <ion-label>无线条项目 3</ion-label>
         </ion-item>
       </ion-list>,
     ];
@@ -1128,7 +1127,7 @@ export class ItemExample {
 }
 ```
 
-### Media Items
+### 媒体项目
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -1148,11 +1147,11 @@ export class ItemExample {
         <ion-avatar slot="start">
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
         </ion-avatar>
-        <ion-label>Avatar Start, Button Item</ion-label>
+        <ion-label>头像在开始位置，按钮项目</ion-label>
       </ion-item>,
 
       <ion-item href="#">
-        <ion-label>Thumbnail End, Anchor Item</ion-label>
+        <ion-label>缩略图在结束位置，链接项目</ion-label>
         <ion-thumbnail slot="end">
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
         </ion-thumbnail>
@@ -1163,11 +1162,11 @@ export class ItemExample {
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
         </ion-thumbnail>
         <ion-label>
-          <h2>H2 Title Text</h2>
-          <p>Button on right</p>
+          <h2>H2 标题文本</h2>
+          <p>按钮在右侧</p>
         </ion-label>
         <ion-button fill="outline" slot="end">
-          View
+          查看
         </ion-button>
       </ion-item>,
 
@@ -1176,8 +1175,8 @@ export class ItemExample {
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
         </ion-thumbnail>
         <ion-label>
-          <h3>H3 Title Text</h3>
-          <p>Icon on right</p>
+          <h3>H3 标题文本</h3>
+          <p>图标在右侧</p>
         </ion-label>
         <ion-icon name="close-circle" slot="end"></ion-icon>
       </ion-item>,
@@ -1186,7 +1185,7 @@ export class ItemExample {
 }
 ```
 
-### Buttons in Items
+### 项目中的按钮
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -1199,20 +1198,20 @@ export class ItemExample {
   render() {
     return [
       <ion-item>
-        <ion-button slot="start">Start</ion-button>
-        <ion-label>Button Start/End</ion-label>
-        <ion-button slot="end">End</ion-button>
+        <ion-button slot="start">开始</ion-button>
+        <ion-label>按钮开始/结束</ion-label>
+        <ion-button slot="end">结束</ion-button>
       </ion-item>,
 
       <ion-item>
         <ion-button slot="start">
-          Start Icon
+          开始图标
           <ion-icon name="home" slot="end"></ion-icon>
         </ion-button>
-        <ion-label>Buttons with Icons</ion-label>
+        <ion-label>带图标的按钮</ion-label>
         <ion-button slot="end">
           <ion-icon name="star" slot="end"></ion-icon>
-          End Icon
+          结束图标
         </ion-button>
       </ion-item>,
 
@@ -1220,7 +1219,7 @@ export class ItemExample {
         <ion-button slot="start">
           <ion-icon slot="icon-only" name="navigate"></ion-icon>
         </ion-button>
-        <ion-label>Icon only Buttons</ion-label>
+        <ion-label>仅图标按钮</ion-label>
         <ion-button slot="end">
           <ion-icon slot="icon-only" name="star"></ion-icon>
         </ion-button>
@@ -1230,7 +1229,7 @@ export class ItemExample {
 }
 ```
 
-### Icons in Items
+### 项目中的图标
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -1243,27 +1242,27 @@ export class ItemExample {
   render() {
     return [
       <ion-item>
-        <ion-label>Icon End</ion-label>
+        <ion-label>图标在结束位置</ion-label>
         <ion-icon name="information-circle" slot="end"></ion-icon>
       </ion-item>,
 
       <ion-item>
-        <ion-label>Large Icon End</ion-label>
+        <ion-label>大图标在结束位置</ion-label>
         <ion-icon name="information-circle" size="large" slot="end"></ion-icon>
       </ion-item>,
 
       <ion-item>
-        <ion-label>Small Icon End</ion-label>
+        <ion-label>小图标在结束位置</ion-label>
         <ion-icon name="information-circle" size="small" slot="end"></ion-icon>
       </ion-item>,
 
       <ion-item>
         <ion-icon name="star" slot="start"></ion-icon>
-        <ion-label>Icon Start</ion-label>
+        <ion-label>图标在开始位置</ion-label>
       </ion-item>,
 
       <ion-item>
-        <ion-label>Two Icons End</ion-label>
+        <ion-label>两个图标在结束位置</ion-label>
         <ion-icon name="checkmark-circle" slot="end"></ion-icon>
         <ion-icon name="shuffle" slot="end"></ion-icon>
       </ion-item>,
@@ -1272,7 +1271,7 @@ export class ItemExample {
 }
 ```
 
-### Item Inputs
+### 项目中的输入组件
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -1285,14 +1284,14 @@ export class ItemExample {
   render() {
     return [
       <ion-item>
-        <ion-label position="floating">Datetime</ion-label>
+        <ion-label position="floating">日期时间</ion-label>
         <ion-datetime></ion-datetime>
       </ion-item>,
 
       <ion-item>
-        <ion-label position="floating">Select</ion-label>
+        <ion-label position="floating">选择框</ion-label>
         <ion-select>
-          <ion-select-option value="">No Game Console</ion-select-option>
+          <ion-select-option value="">无游戏主机</ion-select-option>
           <ion-select-option value="nes">NES</ion-select-option>
           <ion-select-option value="n64" selected>
             Nintendo64
@@ -1305,27 +1304,27 @@ export class ItemExample {
       </ion-item>,
 
       <ion-item>
-        <ion-label>Toggle</ion-label>
+        <ion-label>切换开关</ion-label>
         <ion-toggle slot="end"></ion-toggle>
       </ion-item>,
 
       <ion-item>
-        <ion-label position="floating">Floating Input</ion-label>
+        <ion-label position="floating">浮动标签输入框</ion-label>
         <ion-input></ion-input>
       </ion-item>,
 
       <ion-item>
-        <ion-label>Input (placeholder)</ion-label>
-        <ion-input placeholder="Placeholder"></ion-input>
+        <ion-label>输入框（占位符）</ion-label>
+        <ion-input placeholder="占位符"></ion-input>
       </ion-item>,
 
       <ion-item>
-        <ion-label>Checkbox</ion-label>
+        <ion-label>复选框</ion-label>
         <ion-checkbox slot="start"></ion-checkbox>
       </ion-item>,
 
       <ion-item>
-        <ion-label>Range</ion-label>
+        <ion-label>范围滑块</ion-label>
         <ion-range></ion-range>
       </ion-item>,
     ];
@@ -1339,142 +1338,142 @@ export class ItemExample {
 
 ```html
 <template>
-  <!-- Default Item -->
+  <!-- 默认项目 -->
   <ion-item>
-    <ion-label> Item </ion-label>
+    <ion-label> 项目 </ion-label>
   </ion-item>
 
-  <!-- Item as a Button -->
+  <!-- 作为按钮的项目 -->
   <ion-item button @click="buttonClick()">
-    <ion-label> Button Item </ion-label>
+    <ion-label> 按钮项目 </ion-label>
   </ion-item>
 
-  <!-- Item as an Anchor -->
+  <!-- 作为链接的项目 -->
   <ion-item href="https://www.ionicframework.com">
-    <ion-label> Anchor Item </ion-label>
+    <ion-label> 链接项目 </ion-label>
   </ion-item>
 
   <ion-item color="secondary">
-    <ion-label> Secondary Color Item </ion-label>
+    <ion-label> 次要颜色项目 </ion-label>
   </ion-item>
 </template>
 ```
 
-### Detail Arrows
+### 详情箭头
 
 ```html
 <template>
   <ion-item detail>
-    <ion-label> Standard Item with Detail Arrow </ion-label>
+    <ion-label> 带详情箭头的标准项目 </ion-label>
   </ion-item>
 
   <ion-item button @click="buttonClick()" detail>
-    <ion-label> Button Item with Detail Arrow </ion-label>
+    <ion-label> 带详情箭头的按钮项目 </ion-label>
   </ion-item>
 
   <ion-item detail="false" href="https://www.ionicframework.com">
-    <ion-label> Anchor Item with no Detail Arrow </ion-label>
+    <ion-label> 不带详情箭头的链接项目 </ion-label>
   </ion-item>
 </template>
 ```
 
-### List Items
+### 列表项目
 
 ```html
 <template>
   <ion-list>
     <ion-item>
-      <ion-label> Item </ion-label>
+      <ion-label> 项目 </ion-label>
     </ion-item>
 
     <ion-item lines="none">
-      <ion-label> No Lines Item </ion-label>
+      <ion-label> 无线条项目 </ion-label>
     </ion-item>
 
     <ion-item>
       <ion-label class="ion-text-wrap">
-        Multiline text that should wrap when it is too long to fit on one line in the item.
+        当文本太长无法在一行内显示时，应该换行的多行文本。
       </ion-label>
     </ion-item>
 
     <ion-item>
       <ion-label class="ion-text-wrap">
         <ion-text color="primary">
-          <h3>H3 Primary Title</h3>
+          <h3>H3 主要标题</h3>
         </ion-text>
-        <p>Paragraph line 1</p>
+        <p>段落第1行</p>
         <ion-text color="secondary">
-          <p>Paragraph line 2 secondary</p>
+          <p>段落第2行 次要颜色</p>
         </ion-text>
       </ion-label>
     </ion-item>
 
     <ion-item lines="full">
-      <ion-label> Item with Full Lines </ion-label>
+      <ion-label> 带全宽线条的项目 </ion-label>
     </ion-item>
   </ion-list>
 </template>
 ```
 
-### Item Lines
+### 项目线条
 
 ```html
 <template>
-  <!-- Item Inset Lines -->
+  <!-- 内嵌线条项目 -->
   <ion-item lines="inset">
-    <ion-label>Item Lines Inset</ion-label>
+    <ion-label>内嵌线条项目</ion-label>
   </ion-item>
 
-  <!-- Item Full Lines -->
+  <!-- 全宽线条项目 -->
   <ion-item lines="full">
-    <ion-label>Item Lines Full</ion-label>
+    <ion-label>全宽线条项目</ion-label>
   </ion-item>
 
-  <!-- Item None Lines -->
+  <!-- 无线条项目 -->
   <ion-item lines="none">
-    <ion-label>Item Lines None</ion-label>
+    <ion-label>无线条项目</ion-label>
   </ion-item>
 
-  <!-- List Full Lines -->
+  <!-- 全宽线条列表 -->
   <ion-list lines="full">
     <ion-item>
-      <ion-label>Full Lines Item 1</ion-label>
+      <ion-label>全宽线条项目 1</ion-label>
     </ion-item>
 
     <ion-item>
-      <ion-label>Full Lines Item 2</ion-label>
+      <ion-label>全宽线条项目 2</ion-label>
     </ion-item>
   </ion-list>
 
-  <!-- List Inset Lines -->
+  <!-- 内嵌线条列表 -->
   <ion-list lines="inset">
     <ion-item>
-      <ion-label>Inset Lines Item 1</ion-label>
+      <ion-label>内嵌线条项目 1</ion-label>
     </ion-item>
 
     <ion-item>
-      <ion-label>Inset Lines Item 2</ion-label>
+      <ion-label>内嵌线条项目 2</ion-label>
     </ion-item>
   </ion-list>
 
-  <!-- List No Lines -->
+  <!-- 无线条列表 -->
   <ion-list lines="none">
     <ion-item>
-      <ion-label>No lines Item 1</ion-label>
+      <ion-label>无线条项目 1</ion-label>
     </ion-item>
 
     <ion-item>
-      <ion-label>No lines Item 2</ion-label>
+      <ion-label>无线条项目 2</ion-label>
     </ion-item>
 
     <ion-item>
-      <ion-label>No lines Item 3</ion-label>
+      <ion-label>无线条项目 3</ion-label>
     </ion-item>
   </ion-list>
 </template>
 ```
 
-### Media Items
+### 媒体项目
 
 ```html
 <template>
@@ -1482,11 +1481,11 @@ export class ItemExample {
     <ion-avatar slot="start">
       <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
     </ion-avatar>
-    <ion-label> Avatar Start, Button Item </ion-label>
+    <ion-label> 头像在开始位置，按钮项目 </ion-label>
   </ion-item>
 
   <ion-item href="#">
-    <ion-label> Thumbnail End, Anchor Item </ion-label>
+    <ion-label> 缩略图在结束位置，链接项目 </ion-label>
     <ion-thumbnail slot="end">
       <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
     </ion-thumbnail>
@@ -1497,10 +1496,10 @@ export class ItemExample {
       <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
     </ion-thumbnail>
     <ion-label>
-      <h2>H2 Title Text</h2>
-      <p>Button on right</p>
+      <h2>H2 标题文本</h2>
+      <p>按钮在右侧</p>
     </ion-label>
-    <ion-button fill="outline" slot="end">View</ion-button>
+    <ion-button fill="outline" slot="end">查看</ion-button>
   </ion-item>
 
   <ion-item button @click="testClick()">
@@ -1508,33 +1507,33 @@ export class ItemExample {
       <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
     </ion-thumbnail>
     <ion-label>
-      <h3>H3 Title Text</h3>
-      <p>Icon on right</p>
+      <h3>H3 标题文本</h3>
+      <p>图标在右侧</p>
     </ion-label>
     <ion-icon :icon="closeCircle" slot="end"></ion-icon>
   </ion-item>
 </template>
 ```
 
-### Buttons in Items
+### 项目中的按钮
 
 ```html
 <template>
   <ion-item>
-    <ion-button slot="start"> Start </ion-button>
-    <ion-label>Button Start/End</ion-label>
-    <ion-button slot="end"> End </ion-button>
+    <ion-button slot="start"> 开始 </ion-button>
+    <ion-label>按钮开始/结束</ion-label>
+    <ion-button slot="end"> 结束 </ion-button>
   </ion-item>
 
   <ion-item>
     <ion-button slot="start">
-      Start Icon
+      开始图标
       <ion-icon :icon="home" slot="end"></ion-icon>
     </ion-button>
-    <ion-label>Buttons with Icons</ion-label>
+    <ion-label>带图标的按钮</ion-label>
     <ion-button slot="end">
       <ion-icon :icon="star" slot="end"></ion-icon>
-      End Icon
+      结束图标
     </ion-button>
   </ion-item>
 
@@ -1542,7 +1541,7 @@ export class ItemExample {
     <ion-button slot="start">
       <ion-icon slot="icon-only" :icon="navigate"></ion-icon>
     </ion-button>
-    <ion-label>Icon only Buttons</ion-label>
+    <ion-label>仅图标按钮</ion-label>
     <ion-button slot="end">
       <ion-icon slot="icon-only" :icon="star"></ion-icon>
     </ion-button>
@@ -1550,51 +1549,51 @@ export class ItemExample {
 </template>
 ```
 
-### Icons in Items
+### 项目中的图标
 
 ```html
 <template>
   <ion-item>
-    <ion-label> Icon End </ion-label>
+    <ion-label> 图标在结束位置 </ion-label>
     <ion-icon :icon="informationCircle" slot="end"></ion-icon>
   </ion-item>
 
   <ion-item>
-    <ion-label> Large Icon End </ion-label>
+    <ion-label> 大图标在结束位置 </ion-label>
     <ion-icon :icon="informationCircle" size="large" slot="end"></ion-icon>
   </ion-item>
 
   <ion-item>
-    <ion-label> Small Icon End </ion-label>
+    <ion-label> 小图标在结束位置 </ion-label>
     <ion-icon :icon="informationCircle" size="small" slot="end"></ion-icon>
   </ion-item>
 
   <ion-item>
     <ion-icon :icon="star" slot="start"></ion-icon>
-    <ion-label> Icon Start </ion-label>
+    <ion-label> 图标在开始位置 </ion-label>
   </ion-item>
 
   <ion-item>
-    <ion-label> Two Icons End </ion-label>
+    <ion-label> 两个图标在结束位置 </ion-label>
     <ion-icon :icon="checkmarkCircle" slot="end"></ion-icon>
     <ion-icon :icon="shuffle" slot="end"></ion-icon>
   </ion-item>
 </template>
 ```
 
-### Item Inputs
+### 项目中的输入组件
 
 ```html
 <template>
   <ion-item>
-    <ion-label position="floating">Datetime</ion-label>
+    <ion-label position="floating">日期时间</ion-label>
     <ion-datetime></ion-datetime>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Select</ion-label>
+    <ion-label position="floating">选择框</ion-label>
     <ion-select>
-      <ion-select-option value="">No Game Console</ion-select-option>
+      <ion-select-option value="">无游戏主机</ion-select-option>
       <ion-select-option value="nes">NES</ion-select-option>
       <ion-select-option value="n64" selected>Nintendo64</ion-select-option>
       <ion-select-option value="ps">PlayStation</ion-select-option>
@@ -1605,27 +1604,27 @@ export class ItemExample {
   </ion-item>
 
   <ion-item>
-    <ion-label>Toggle</ion-label>
+    <ion-label>切换开关</ion-label>
     <ion-toggle slot="end"></ion-toggle>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Floating Input</ion-label>
+    <ion-label position="floating">浮动标签输入框</ion-label>
     <ion-input></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label>Input (placeholder)</ion-label>
-    <ion-input placeholder="Placeholder"></ion-input>
+    <ion-label>输入框（占位符）</ion-label>
+    <ion-input placeholder="占位符"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label>Checkbox</ion-label>
+    <ion-label>复选框</ion-label>
     <ion-checkbox slot="start"></ion-checkbox>
   </ion-item>
 
   <ion-item>
-    <ion-label>Range</ion-label>
+    <ion-label>范围滑块</ion-label>
     <ion-range></ion-range>
   </ion-item>
 </template>
@@ -1686,26 +1685,26 @@ export class ItemExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

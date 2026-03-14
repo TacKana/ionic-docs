@@ -1,7 +1,7 @@
 ---
 title: 'PhoneGap Plugin for Push Notifications With Cordova and Ionic'
-description: 'Register and receive push notifications on your Ionic apps using the Cordova plugin: phonegap-plugin-push. Read for how to install on supported platforms.'
-sidebar_label: 'Push'
+description: '使用 Cordova 插件 phonegap-plugin-push 在 Ionic 应用中注册并接收推送通知。阅读本文了解如何在支持的平台上安装。'
+sidebar_label: '推送'
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -10,33 +10,33 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-# Push
+# 推送
 
-Register and receive push notifications.
+注册并接收推送通知。
 
-Requires Cordova plugin: `phonegap-plugin-push`. For more info, please see the [Push plugin docs](https://github.com/phonegap/phonegap-plugin-push).
+需要 Cordova 插件：`phonegap-plugin-push`。更多信息请查看 [推送插件文档](https://github.com/phonegap/phonegap-plugin-push)。
 
-For TypeScript users, see the [Push plugin docs about using TypeScript for custom notifications](https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/TYPESCRIPT.md).
+TypeScript 用户请参考 [推送插件关于使用 TypeScript 处理自定义通知的文档](https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/TYPESCRIPT.md)。
 
 <p>
   <a href="https://github.com/phonegap/phonegap-plugin-push" target="_blank" rel="noopener" className="git-link">github.com/phonegap/phonegap-plugin-push</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>被 Cordova 问题困扰？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在构建一个重要的项目，您承担不起花费数小时进行故障排除的代价。Ionic 专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -44,7 +44,7 @@ For TypeScript users, see the [Push plugin docs about using TypeScript for custo
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: 'Enterprise' },
+    { value: 'Enterprise', label: '企业版' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -59,24 +59,24 @@ For TypeScript users, see the [Push plugin docs about using TypeScript for custo
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版包含由 Ionic 团队提供全面支持与维护的插件。 &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，或者如果您对插件的企业版本感兴趣，请 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
-- Browser
+- 浏览器
 - iOS
 - Windows
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -88,37 +88,37 @@ constructor(private push: Push) { }
 ...
 
 
-// to check if we have permission
+// 检查是否拥有权限
 this.push.hasPermission()
   .then((res: any) => {
 
     if (res.isEnabled) {
-      console.log('We have permission to send push notifications');
+      console.log('我们拥有发送推送通知的权限');
     } else {
-      console.log('We do not have permission to send push notifications');
+      console.log('我们没有发送推送通知的权限');
     }
 
   });
 
-// Create a channel (Android O and above). You'll need to provide the id, description and importance properties.
+// 创建一个通道（适用于 Android O 及以上版本）。您需要提供 id、description 和 importance 属性。
 this.push.createChannel({
  id: "testchannel1",
- description: "My first test channel",
- // The importance property goes from 1 = Lowest, 2 = Low, 3 = Normal, 4 = High and 5 = Highest.
+ description: "我的第一个测试通道",
+ // importance 属性范围：1 = 最低，2 = 低，3 = 正常，4 = 高，5 = 最高。
  importance: 3,
- //badge is used to if badge appears on the app icon see https://developer.android.com/reference/android/app/NotificationChannel.html#setShowBadge(boolean).
- //false = no badge on app icon.
- //true = badge on app icon
+ // badge 用于控制是否在应用图标上显示角标，参见 https://developer.android.com/reference/android/app/NotificationChannel.html#setShowBadge(boolean)。
+ // false = 应用图标上不显示角标。
+ // true = 应用图标上显示角标。
  badge: false
-}).then(() => console.log('Channel created'));
+}).then(() => console.log('通道已创建'));
 
-// Delete a channel (Android O and above)
-this.push.deleteChannel('testchannel1').then(() => console.log('Channel deleted'));
+// 删除一个通道（适用于 Android O 及以上版本）
+this.push.deleteChannel('testchannel1').then(() => console.log('通道已删除'));
 
-// Return a list of currently configured channels
-this.push.listChannels().then((channels) => console.log('List of channels', channels))
+// 返回当前已配置通道的列表
+this.push.listChannels().then((channels) => console.log('通道列表', channels))
 
-// to initialize push notifications
+// 初始化推送通知
 
 const options: PushOptions = {
    android: {},
@@ -136,11 +136,11 @@ const options: PushOptions = {
 const pushObject: PushObject = this.push.init(options);
 
 
-pushObject.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));
+pushObject.on('notification').subscribe((notification: any) => console.log('收到通知', notification));
 
-pushObject.on('registration').subscribe((registration: any) => console.log('Device registered', registration));
+pushObject.on('registration').subscribe((registration: any) => console.log('设备已注册', registration));
 
-pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));
+pushObject.on('error').subscribe(error => console.error('推送插件错误', error));
 
 
 ```

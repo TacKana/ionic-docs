@@ -1,5 +1,5 @@
 ---
-title: "ion-breadcrumb"
+title: 面包屑组件
 ---
 import Props from '@ionic-internal/component-api/v8/breadcrumb/props.md';
 import Events from '@ionic-internal/component-api/v8/breadcrumb/events.md';
@@ -13,11 +13,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-A Breadcrumb is a single navigation item that is a child of the Breadcrumbs component. A breadcrumb can link elsewhere in an app or it can be plain text. Each breadcrumb has a separator between it and the next breadcrumb and can optionally contain an icon.
+面包屑（Breadcrumb）是面包屑导航（Breadcrumbs）组件中的单个导航项。一个面包屑可以链接到应用内的其他位置，也可以是纯文本。每个面包屑与其后一个面包屑之间都有一个分隔符，并且可以选择性地包含图标。
 
-See the [Breadcrumbs](./breadcrumbs) documentation for more information.
+更多信息请参阅 [Breadcrumbs](./breadcrumbs) 文档。
 
-## Interfaces
+## 接口
 
 ### BreadcrumbCollapsedClickEventDetail
 
@@ -29,7 +29,7 @@ interface BreadcrumbCollapsedClickEventDetail {
 
 ### BreadcrumbCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing .
+虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以获得更强的类型定义。
 
 ```typescript
 interface BreadcrumbCustomEvent extends CustomEvent {
@@ -41,20 +41,20 @@ interface BreadcrumbCustomEvent extends CustomEvent {
 
 
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

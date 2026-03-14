@@ -9,23 +9,23 @@ function Example() {
     <IonButton
       onClick={() =>
         present({
-          header: 'Actions',
+          header: '操作选项',
           buttons: [
             {
-              text: 'Delete',
+              text: '删除',
               role: 'destructive',
               data: {
                 action: 'delete',
               },
             },
             {
-              text: 'Share',
+              text: '分享',
               data: {
                 action: 'share',
               },
             },
             {
-              text: 'Cancel',
+              text: '取消',
               role: 'cancel',
               data: {
                 action: 'cancel',
@@ -35,7 +35,7 @@ function Example() {
         })
       }
     >
-      Open
+      打开
     </IonButton>
   );
 }

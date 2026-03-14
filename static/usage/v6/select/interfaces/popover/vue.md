@@ -2,10 +2,10 @@
 <template>
   <ion-list>
     <ion-item>
-      <ion-select interface="popover" placeholder="Select fruit">
-        <IonSelectOption value="apples">Apples</IonSelectOption>
-        <IonSelectOption value="oranges">Oranges</IonSelectOption>
-        <IonSelectOption value="bananas">Bananas</IonSelectOption>
+      <ion-select interface="popover" placeholder="选择水果">
+        <IonSelectOption value="apples">苹果</IonSelectOption>
+        <IonSelectOption value="oranges">橙子</IonSelectOption>
+        <IonSelectOption value="bananas">香蕉</IonSelectOption>
       </ion-select>
     </ion-item>
   </ion-list>

@@ -5,8 +5,8 @@ import { IonInputOtp } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonInputOtp> Numbers only </IonInputOtp>
-      <IonInputOtp type="text"> Letters and numbers </IonInputOtp>
+      <IonInputOtp> 仅限数字 </IonInputOtp>
+      <IonInputOtp type="text"> 字母和数字 </IonInputOtp>
     </>
   );
 }

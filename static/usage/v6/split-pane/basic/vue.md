@@ -4,19 +4,19 @@
     <ion-menu content-id="main">
       <ion-header>
         <ion-toolbar color="tertiary">
-          <ion-title>Menu</ion-title>
+          <ion-title>菜单</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding"> Menu Content </ion-content>
+      <ion-content class="ion-padding"> 菜单内容 </ion-content>
     </ion-menu>
 
     <div class="ion-page" id="main">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Main View</ion-title>
+          <ion-title>主视图</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding"> Main View Content </ion-content>
+      <ion-content class="ion-padding"> 主视图内容 </ion-content>
     </div>
   </ion-split-pane>
 </template>

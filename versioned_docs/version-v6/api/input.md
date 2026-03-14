@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/input/custom-props.mdx
 import Slots from '@ionic-internal/component-api/v6/input/slots.md';
 
 <head>
-  <title>ion-input: Custom Input Value Type Styling and CSS Properties</title>
+  <title>ion-input：自定义输入值类型样式与CSS属性</title>
   <meta
     name="description"
-    content="ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It works on desktops and integrates with mobile keyboards."
+    content="ion-input 是 HTML input 元素的封装，提供自定义值类型样式和功能。它可在桌面设备上使用，并能与移动设备键盘集成。"
   />
 </head>
 
@@ -21,93 +21,93 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-The input component is a wrapper to the HTML input element with custom styling and additional functionality. It accepts most of the same properties as the HTML input, but works great on desktop devices and integrates with the keyboard on mobile devices.
+输入组件是对 HTML input 元素的封装，具有自定义样式和附加功能。它接受与 HTML input 大部分相同的属性，在桌面设备上表现优异，并能与移动设备键盘无缝集成。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v6/input/basic/index.md';
 
 <Basic />
 
-## Types
+## 类型
 
-The input component is meant for text type inputs only, such as `"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, and `"url"`. It supports all standard text input events including `keyup`, `keydown`, `keypress`, and more. The default `type` is `"text"`.
+输入组件仅适用于文本类型的输入，例如 `"text"`、`"password"`、`"email"`、`"number"`、`"search"`、`"tel"` 和 `"url"`。它支持所有标准文本输入事件，包括 `keyup`、`keydown`、`keypress` 等。默认 `type` 为 `"text"`。
 
 import Types from '@site/static/usage/v6/input/types/index.md';
 
 <Types />
 
-## Label Positioning
+## 标签定位
 
-Labels will take up the width of their content by default. This positioning can be changed to be a fixed width, stacked, or floating label.
+默认情况下，标签将占据其内容的宽度。可以更改标签的定位方式，例如固定宽度、堆叠式或浮动式标签。
 
 import Labels from '@site/static/usage/v6/input/labels/index.md';
 
 <Labels />
 
-## Clear Options
+## 清除选项
 
-Inputs offer two options for clearing the input based on how you interact with it. The first way is by adding the `clearInput` property which will show a clear button when the input has a `value`. The second way is the `clearOnEdit` property which will clear the input after it has been blurred and then typed in again. Inputs with a `type` set to `"password"` will have `clearOnEdit` enabled by default.
+输入组件提供了两种清除输入内容的方式，具体取决于你与它的交互方式。第一种是添加 `clearInput` 属性，当输入框有 `value` 时会显示清除按钮。第二种是 `clearOnEdit` 属性，它会在输入框失焦后再次输入时清除内容。对于 `type` 设置为 `"password"` 的输入框，默认启用 `clearOnEdit` 属性。
 
 import Clear from '@site/static/usage/v6/input/clear/index.md';
 
 <Clear />
 
-## Filled Inputs
+## 填充式输入
 
-Material Design offers filled styles for an input when it is inside of an item. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
+当输入框位于 item 内部时，Material Design 提供了填充式样式。可以通过将 item 的 `fill` 属性设置为 `"solid"` 或 `"outline"` 来应用这些样式。
 
 import Fill from '@site/static/usage/v6/input/fill/index.md';
 
 <Fill />
 
-## Helper & Error Text
+## 辅助文本与错误文本
 
-Helper & error text can be used inside of an item with an input by slotting a note in the `"helper"` and `"error"` slots. The error slot will not be displayed unless the `ion-invalid` class is added to the `ion-item`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+可以通过在 `"helper"` 和 `"error"` 插槽中添加备注，在带有输入框的 item 内部使用辅助文本和错误文本。除非将 `ion-invalid` 类添加到 `ion-item` 上，否则错误插槽不会显示。在 Angular 中，这会通过表单验证自动完成。在 JavaScript、React 和 Vue 中，需要根据你自己的验证逻辑手动添加此类。
 
-<!-- Reuse the playground from the Item directory -->
+<!-- 复用 Item 目录中的示例 -->
 
 import HelperError from '@site/static/usage/v6/item/helper-error/index.md';
 
 <HelperError />
 
-## Item Counter
+## 字符计数器
 
-The item counter is helper text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
+字符计数器是显示在输入框下方的辅助文本，用于通知用户已输入的字符数占输入框可接受总字符数的比例。添加计数器时，默认行为是将显示的值格式化为 `inputLength` / `maxLength`。可以通过向 `counterFormatter` 属性传递一个格式化函数来自定义此行为。
 
-<!-- Reuse the playground from the Item directory -->
+<!-- 复用 Item 目录中的示例 -->
 
 import Counter from '@site/static/usage/v6/item/counter/index.md';
 
 <Counter />
 
-## Filtering User Input
+## 过滤用户输入
 
-Developers can use the `ionInput` event to update the input value in response to user input such as a keypress. This is useful for filtering out invalid or unwanted characters.
+开发者可以使用 `ionInput` 事件来响应用户输入（例如按键）更新输入值。这对于过滤无效或不需要的字符非常有用。
 
-When storing the value in a state variable, we recommend updating both the state variable and the `ion-input` component value. This ensures that the state variable and the `ion-input` component value remain in sync.
+当在状态变量中存储值时，我们建议同时更新状态变量和 `ion-input` 组件的值。这可以确保状态变量和 `ion-input` 组件值保持同步。
 
 import FilteringData from '@site/static/usage/v6/input/filtering/index.md';
 
 <FilteringData />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v6/input/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
-Input uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector. Targeting the `ion-input` for customization will not work; therefore we recommend adding a class and customizing it that way.
+输入组件使用作用域封装，这意味着它会在运行时通过为每个样式追加一个额外的类来自动限定其 CSS 的作用域。覆盖 CSS 中的作用域选择器需要[更高特异性](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)的选择器。直接以 `ion-input` 为目标进行自定义是无效的，因此我们建议添加一个类并通过该类进行自定义。
 
 import CSSProps from '@site/static/usage/v6/input/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Interfaces
+## 接口
 
 ### InputChangeEventDetail
 
@@ -119,7 +119,7 @@ interface InputChangeEventDetail {
 
 ### InputCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然并非必需，但此接口可用于替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更严格的类型检查。
 
 ```typescript
 interface InputCustomEvent extends CustomEvent {
@@ -128,15 +128,15 @@ interface InputCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -144,10 +144,10 @@ interface InputCustomEvent extends CustomEvent {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

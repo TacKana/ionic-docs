@@ -11,15 +11,15 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>App</IonTitle>
+          <IonTitle>应用</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          Open Sheet Modal
+          打开底部模态框
         </IonButton>
         <IonModal ref={modal} trigger="open-modal" initialBreakpoint={1} breakpoints={[0, 1]}>
-          <div className="block">Block of Content</div>
+          <div className="block">内容区域</div>
         </IonModal>
       </IonContent>
     </IonPage>

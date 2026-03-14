@@ -1,34 +1,34 @@
 ---
-title: Migrating from ion-slides to Swiper.js
+title: 从 ion-slides 迁移到 Swiper.js
 ---
 
 <head>
-  <title>Set Up Swiper.js for Angular Slides [Example] | Ionic</title>
+  <title>如何在 Angular 幻灯片中设置 Swiper.js [示例] | Ionic</title>
   <meta
     name="description"
-    content="Read this guide to learn how to get Swiper.js for Angular set up in your Ionic Framework application for a modern touch slider component."
+    content="阅读本指南，了解如何在 Ionic Framework 应用中设置 Swiper.js，以实现现代化的触摸滑块组件。"
   />
 </head>
 
-We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `ion-slides` component, but we now recommend that developers use Swiper directly.
+如果您需要一个现代化的触摸滑块组件，我们推荐使用 <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a>。它为我们之前的 `ion-slides` 组件提供支持，但现在我们建议开发者直接使用 Swiper。
 
-Swiper 9 introduced <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as a replacement for its Angular component, so this guide will go over how to get Swiper Element set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to Swiper Element.
+Swiper 9 引入了 <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> 作为其 Angular 组件的替代品，因此本指南将介绍如何在您的 Ionic Framework 应用中设置 Swiper Element。同时也会涵盖从 `ion-slides` 迁移到 Swiper Element 所需的所有信息。
 
-## Getting Started
+## 开始使用
 
-First, update to the latest version of Ionic:
+首先，更新到最新版本的 Ionic：
 
 ```shell
 npm install @ionic/angular@latest
 ```
 
-Once that is done, install the Swiper dependency in your project:
+完成后，在项目中安装 Swiper 依赖：
 
 ```shell
 npm install swiper@latest
 ```
 
-Next, we need to add the `CUSTOM_ELEMENTS_SCHEMA`, which tells Angular that we will be using custom elements. This can be done in either `app.module.ts`, or the module file for the component where you will be using Swiper.
+接下来，我们需要添加 `CUSTOM_ELEMENTS_SCHEMA`，它告诉 Angular 我们将使用自定义元素。这可以在 `app.module.ts` 或您将使用 Swiper 的组件模块文件中完成。
 
 ```typescript
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -39,7 +39,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 ...
 ```
 
-Finally, we need to call Swiper's `register` function to globally register Swiper's custom elements. This should only be done once, so place it in `app.component.ts`.
+最后，我们需要调用 Swiper 的 `register` 函数来全局注册 Swiper 的自定义元素。这应该只执行一次，因此请将其放在 `app.component.ts` 中。
 
 ```typescript
 import { register } from 'swiper/element/bundle';
@@ -52,34 +52,34 @@ register();
 ...
 ```
 
-From there, we just have to replace `ion-slides` elements with `swiper-container` and `ion-slide` elements with `swiper-slide`. Note that these custom elements do not need to be imported, as calling `register` tells Angular about them on its own.
+之后，我们只需要将 `ion-slides` 元素替换为 `swiper-container`，将 `ion-slide` 元素替换为 `swiper-slide`。请注意，这些自定义元素不需要单独导入，因为调用 `register` 会自动告诉 Angular 它们的存在。
 
 ```html
 <swiper-container>
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
+  <swiper-slide>幻灯片 1</swiper-slide>
+  <swiper-slide>幻灯片 2</swiper-slide>
+  <swiper-slide>幻灯片 3</swiper-slide>
 </swiper-container>
 ```
 
-## Bundled vs. Core Versions
+## 捆绑版与核心版
 
-By default, make sure you import the `register` function from `swiper/element/bundle`. This uses the bundled version of Swiper, which automatically includes all modules and stylesheets needed to run Swiper's various features.
+默认情况下，请确保从 `swiper/element/bundle` 导入 `register` 函数。这会使用 Swiper 的捆绑版本，该版本自动包含运行 Swiper 各种功能所需的所有模块和样式表。
 
-If you would like to use the Core version instead, which does not include additional modules automatically, see <a href="https://swiperjs.com/element#core-version-and-modules" target="_blank" rel="noopener noreferrer">https://swiperjs.com/element#core-version-and-modules</a>. The rest of this migration guide will assume you are using the bundled version.
+如果您想使用核心版（它不会自动包含额外模块），请参阅 <a href="https://swiperjs.com/element#core-version-and-modules" target="_blank" rel="noopener noreferrer">https://swiperjs.com/element#core-version-and-modules</a>。本迁移指南的其余部分将假定您使用的是捆绑版本。
 
-## Swiping with Style
+## 样式迁移
 
-To migrate over your CSS, first update your selectors to target the new custom elements instead:
+要迁移您的 CSS，首先将选择器更新为针对新的自定义元素：
 
-| ion-slides Selector | Swiper Selector    |
+| ion-slides 选择器 | Swiper 选择器    |
 | ------------------- | ------------------ |
 | `ion-slides`        | `swiper-container` |
 | `ion-slide`         | `swiper-slide`     |
 
-If you were using the CSS custom properties found on `ion-slides`, below is a list of corresponding properties used in Swiper.
+如果您之前使用了 `ion-slides` 中的 CSS 自定义属性，以下是 Swiper 中使用的对应属性列表。
 
-| `ion-slides` CSS property          | `swiper-container` CSS property             |
+| `ion-slides` CSS 属性          | `swiper-container` CSS 属性             |
 | ---------------------------------- | ------------------------------------------- |
 | `--bullet-background`              | `--swiper-pagination-bullet-inactive-color` |
 | `--bullet-background-active`       | `--swiper-pagination-color`                 |
@@ -88,11 +88,11 @@ If you were using the CSS custom properties found on `ion-slides`, below is a li
 | `--scroll-bar-background`          | `--swiper-scrollbar-bg-color`               |
 | `--scroll-bar-background-active`   | `--swiper-scrollbar-drag-bg-color`          |
 
-For additional custom CSS, because Swiper Element uses Shadow DOM encapsulation, styles will need to be injected into the Shadow DOM scope. See <a href="https://swiperjs.com/element#injecting-styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/element#injecting-styles</a> for instructions.
+对于额外的自定义 CSS，由于 Swiper Element 使用 Shadow DOM 封装，样式需要注入到 Shadow DOM 作用域中。请参阅 <a href="https://swiperjs.com/element#injecting-styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/element#injecting-styles</a> 了解操作说明。
 
-### Additional `ion-slides` Styles
+### 额外的 `ion-slides` 样式
 
-The `ion-slides` component had additional styling that helped create a native look and feel. These styles are **not** required to use Swiper.js with Ionic, but if you would like to maintain the look of `ion-slides` as closely as possible, add the following CSS to your `global.scss`:
+`ion-slides` 组件具有额外的样式，有助于创建原生外观和感觉。这些样式 **并非** 在 Ionic 中使用 Swiper.js 所必需的，但如果您希望尽可能保持 `ion-slides` 的外观，请将以下 CSS 添加到您的 `global.scss` 中：
 
 ```css
 swiper-container {
@@ -129,13 +129,13 @@ swiper-slide img {
 }
 ```
 
-## The IonicSlides Module
+## IonicSlides 模块
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly. However, using this module is **not** required to use Swiper.js in Ionic.
+在 `ion-slides` 中，Ionic 会自动定制数十个 Swiper 属性。这使得在移动设备上滑动时体验更加流畅。我们建议使用 `IonicSlides` 模块来确保这些属性在直接使用 Swiper 时也能被设置。但是，在 Ionic 中使用 Swiper.js **并不** 强制要求使用此模块。
 
-It is recommended to review the [properties](https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/slides/IonicSlides.ts) set by `IonicSlides` and determine which ones you would like to customize.
+建议您查看 `IonicSlides` 设置的 [属性](https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/slides/IonicSlides.ts)，并决定要自定义哪些属性。
 
-We can install the `IonicSlides` module by importing it from `@ionic/angular` and passing it to the `modules` property of `swiper-container` as an array:
+我们可以通过从 `@ionic/angular` 导入 `IonicSlides`，并将其作为数组传递给 `swiper-container` 的 `modules` 属性来安装该模块：
 
 ```typescript
 // home.page.ts
@@ -156,73 +156,73 @@ export class HomePage {
 <swiper-container [modules]="swiperModules"> ... </swiper-container>
 ```
 
-:::note
-If you are using the Core version of Swiper and have installed additional modules, ensure that `IonicSlides` is the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
+:::注意
+如果您使用 Swiper 的核心版本并安装了额外的模块，请确保 `IonicSlides` 是数组中的最后一个模块。这将使其能够自动定制诸如 Pagination、Scrollbar、Zoom 等模块的设置。
 :::
 
-## Properties
+## 属性
 
-Swiper options should be provided as individual properties directly on the `<swiper-container>` component.
+Swiper 选项应作为单独的属性直接设置在 `<swiper-container>` 组件上。
 
-Let's say in an app with `ion-slides` we had the `slidesPerView` and `loop` options set:
+假设在一个使用 `ion-slides` 的应用中，我们设置了 `slidesPerView` 和 `loop` 选项：
 
 ```html
 <ion-slides [options]="{ slidesPerView: 3, loop: true }">
-  <ion-slide>Slide 1</ion-slide>
-  <ion-slide>Slide 3</ion-slide>
-  <ion-slide>Slide 3</ion-slide>
+  <ion-slide>幻灯片 1</ion-slide>
+  <ion-slide>幻灯片 3</ion-slide>
+  <ion-slide>幻灯片 3</ion-slide>
 </ion-slides>
 ```
 
-To set these options as properties directly on `<swiper-container>` we would do the following:
+要将这些选项直接作为属性设置在 `<swiper-container>` 上，我们可以这样做：
 
 ```html
 <swiper-container [slidesPerView]="3" [loop]="true">
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
+  <swiper-slide>幻灯片 1</swiper-slide>
+  <swiper-slide>幻灯片 2</swiper-slide>
+  <swiper-slide>幻灯片 3</swiper-slide>
 </swiper-container>
 ```
 
-Below is a full list of property changes when going from `ion-slides` to Swiper Element:
+以下是从 `ion-slides` 迁移到 Swiper Element 时的属性变更完整列表：
 
-| Name    | Notes                                                                                                                                   |
+| 名称    | 说明                                                                                                                                   |
 | ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| options | Set each option as a property directly on the `<swiper-container>` component.                                                           |
-| mode    | For different styles based upon the mode, you can target the slides with `.ios swiper-container` or `.md swiper-container` in your CSS. |
-| pager   | Use the `pagination` property instead.                                                                                                  |
+| options | 将每个选项直接作为 `<swiper-container>` 组件的属性设置。                                                                                |
+| mode    | 要根据模式应用不同样式，您可以在 CSS 中使用 `.ios swiper-container` 或 `.md swiper-container` 来定位幻灯片。                            |
+| pager   | 使用 `pagination` 属性代替。                                                                                                            |
 
-:::note
-All properties available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#parameters" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#parameters</a>.
+:::注意
+Swiper Element 中所有可用的属性可以在 <a href="https://swiperjs.com/swiper-api#parameters" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#parameters</a> 找到。
 :::
 
-## Events
+## 事件
 
-Since the `swiper-container` component is not provided by Ionic Framework, event names will not have an `ionSlide` prefix to them. Additionally, all event names should be lowercase instead of camelCase.
+由于 `swiper-container` 组件不是由 Ionic Framework 提供的，事件名称不会带有 `ionSlide` 前缀。此外，所有事件名称应为小写，而不是驼峰式命名。
 
-Let's say in an app with `ion-slides` we used the `ionSlideDidChange` event:
+假设在一个使用 `ion-slides` 的应用中，我们使用了 `ionSlideDidChange` 事件：
 
 ```html
 <ion-slides (ionSlideDidChange)="onSlideChange()">
-  <ion-slide>Slide 1</ion-slide>
-  <ion-slide>Slide 3</ion-slide>
-  <ion-slide>Slide 3</ion-slide>
+  <ion-slide>幻灯片 1</ion-slide>
+  <ion-slide>幻灯片 3</ion-slide>
+  <ion-slide>幻灯片 3</ion-slide>
 </ion-slides>
 ```
 
-To migrate, we would change the name of the event to `slidechange`:
+要迁移，我们需要将事件名称改为 `slidechange`：
 
 ```html
 <swiper-container (slidechange)="onSlideChange()">
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
+  <swiper-slide>幻灯片 1</swiper-slide>
+  <swiper-slide>幻灯片 2</swiper-slide>
+  <swiper-slide>幻灯片 3</swiper-slide>
 </swiper-container>
 ```
 
-Below is a full list of event name changes when going from `ion-slides` to Swiper Angular:
+以下是从 `ion-slides` 迁移到 Swiper Angular 时的事件名称变更完整列表：
 
-| ion-slides Event          | Swiper Event                 |
+| ion-slides 事件          | Swiper 事件                 |
 | ------------------------- | ---------------------------- |
 | `ionSlideWillChange`      | `slidechangetransitionstart` |
 | `ionSlideDidChange`       | `slidechangetransitionend`   |
@@ -241,21 +241,21 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 | `ionSlideTransitionEnd`   | `transitionend`              |
 | `ionSlidesDidLoad`        | `init`                       |
 
-:::note
-All events available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a>.
+:::注意
+Swiper Element 中所有可用的事件可以在 <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a> 找到。
 :::
 
-## Methods
+## 方法
 
-Most methods have been removed in favor of directly accessing the properties of the Swiper instance. To access the Swiper instance, first get a reference to the `<swiper-container>` element (such as through `ViewChild`), then access its `swiper` prop:
+大多数方法已被移除，改为直接访问 Swiper 实例的属性。要访问 Swiper 实例，首先获取对 `<swiper-container>` 元素的引用（例如通过 `ViewChild`），然后访问其 `swiper` 属性：
 
 ```html
 <!-- slides.component.html -->
 
 <swiper-container #swiper>
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
+  <swiper-slide>幻灯片 1</swiper-slide>
+  <swiper-slide>幻灯片 2</swiper-slide>
+  <swiper-slide>幻灯片 3</swiper-slide>
 </swiper-container>
 ```
 
@@ -277,56 +277,56 @@ export class SlidesExample {
 }
 ```
 
-Below is a full list of method changes when going from `ion-slides` to Swiper Element:
+以下是从 `ion-slides` 迁移到 Swiper Element 时的方法变更完整列表：
 
-| ion-slides Method    | Notes                                                                                |
+| ion-slides 方法    | 说明                                                                                |
 | -------------------- | ------------------------------------------------------------------------------------ |
-| `getActiveIndex()`   | Use the `activeIndex` property instead.                                              |
-| `getPreviousIndex()` | Use the `previousIndex` property instead.                                            |
-| `getSwiper()`        | Get a reference to the Swiper instance using the `swiper` prop. See example above.   |
-| `isBeginning()`      | Use the `isBeginning` property instead.                                              |
-| `isEnd()`            | Use the `isEnd` property instead.                                                    |
-| `length()`           | Use the `slides` property instead. (i.e swiper.slides.length)                        |
-| `lockSwipeToNext()`  | Use the `allowSlidesNext` property instead.                                          |
-| `lockSwipeToPrev()`  | Use the `allowSlidePrev` property instead.                                           |
-| `lockSwipes()`       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
-| `startAutoplay()`    | Use the `autoplay` property instead.                                                 |
-| `stopAutoplay()`     | Use the `autoplay` property instead.                                                 |
+| `getActiveIndex()`   | 改用 `activeIndex` 属性。                                                            |
+| `getPreviousIndex()` | 改用 `previousIndex` 属性。                                                          |
+| `getSwiper()`        | 使用 `swiper` 属性获取 Swiper 实例的引用。参见上面的示例。                           |
+| `isBeginning()`      | 改用 `isBeginning` 属性。                                                            |
+| `isEnd()`            | 改用 `isEnd` 属性。                                                                  |
+| `length()`           | 改用 `slides` 属性。（例如 swiper.slides.length）                                    |
+| `lockSwipeToNext()`  | 改用 `allowSlidesNext` 属性。                                                        |
+| `lockSwipeToPrev()`  | 改用 `allowSlidePrev` 属性。                                                         |
+| `lockSwipes()`       | 改用 `allowSlideNext`、`allowSlidePrev` 和 `allowTouchMove` 属性。                   |
+| `startAutoplay()`    | 改用 `autoplay` 属性。                                                               |
+| `stopAutoplay()`     | 改用 `autoplay` 属性。                                                               |
 
-:::note
-All methods and properties available on the Swiper instance can be found at <a href="https://swiperjs.com/swiper-api#methods-and-properties" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#methods-and-properties</a>.
+:::注意
+Swiper 实例上所有可用的方法和属性可以在 <a href="https://swiperjs.com/swiper-api#methods-and-properties" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#methods-and-properties</a> 找到。
 :::
 
-## Effects
+## 效果
 
-Effects such as Cube or Fade can be used in Swiper Element with no additional imports, as long as you are using the bundled version of Swiper. For example, the below code will cause the slides to have a flip transition effect:
+只要您使用的是 Swiper 的捆绑版本，Cube 或 Fade 等效果都可以在 Swiper Element 中使用，无需额外导入。例如，以下代码将使幻灯片具有翻转过渡效果：
 
 ```html
 <swiper-container effect="flip"> ... </swiper-container>
 ```
 
-:::note
-For more information on effects in Swiper, please see <a href="https://swiperjs.com/swiper-api#fade-effect" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#fade-effect</a>.
+:::注意
+有关 Swiper 中效果的更多信息，请参阅 <a href="https://swiperjs.com/swiper-api#fade-effect" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#fade-effect</a>。
 :::
 
-## Wrap Up
+## 总结
 
-Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element documentation</a> and then referencing <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">the Swiper API docs</a>.
+现在您已经安装了 Swiper，有一整套新的 Swiper 功能可供您使用。我们建议从 <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element 文档</a> 开始，然后参考 <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">Swiper API 文档</a>。
 
-## FAQ
+## 常见问题
 
-### Where can I find an example of this migration?
+### 哪里可以找到这个迁移的示例？
 
-You can find a sample app with `ion-slides` and the equivalent Swiper usage at https://github.com/ionic-team/slides-migration-samples.
+您可以在 https://github.com/ionic-team/slides-migration-samples 找到一个包含 `ion-slides` 和等效 Swiper 用法的示例应用。
 
-### Where can I get help with this migration?
+### 迁移过程中遇到问题怎么办？
 
-If you are running into issues with the migration, please create a post on the [Ionic Forum](https://forum.ionicframework.com/).
+如果您在迁移过程中遇到问题，请在 [Ionic 论坛](https://forum.ionicframework.com/) 上发帖。
 
-### Where do I file bug reports?
+### 在哪里提交错误报告？
 
-Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to see if your issue can be resolved by the community.
+在创建问题之前，请考虑在 <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper 讨论板</a> 或 <a href="https://forum.ionicframework.com" target="_blank">Ionic 论坛</a> 上发帖，看看您的问题是否可以通过社区解决。
 
-If you are running into problems with the Swiper library, new bugs should be filed on the Swiper repo: <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">https://github.com/nolimits4web/swiper/issues</a>
+如果您遇到 Swiper 库的问题，新的错误报告应在 Swiper 仓库提交：<a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">https://github.com/nolimits4web/swiper/issues</a>
 
-If you are running into problems with the `IonicSlides` module, new bugs should be filed on the Ionic Framework repo: <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">https://github.com/ionic-team/ionic-framework/issues</a>
+如果您遇到 `IonicSlides` 模块的问题，新的错误报告应在 Ionic Framework 仓库提交：<a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">https://github.com/ionic-team/ionic-framework/issues</a>

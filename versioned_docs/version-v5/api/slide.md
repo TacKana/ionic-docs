@@ -14,21 +14,19 @@ import Slots from '@ionic-internal/component-api/v5/slide/slots.md';
 
 # ion-slide
 
-The Slide component is a child component of [Slides](slides.md). The template
-should be written as `ion-slide`. Any slide content should be written
-in this component and it should be used in conjunction with [Slides](slides.md).
+Slide 组件是 [Slides](slides.md) 的子组件。模板中应使用 `ion-slide` 来编写。所有幻灯片内容都应写在此组件内，并且需要与 [Slides](slides.md) 配合使用。
 
-See the [Slides API Docs](slides.md) for more usage information.
+更多使用信息，请参阅 [Slides API 文档](slides.md)。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -36,10 +34,10 @@ See the [Slides API Docs](slides.md) for more usage information.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

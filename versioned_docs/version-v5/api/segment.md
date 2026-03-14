@@ -16,52 +16,52 @@ import Slots from '@ionic-internal/component-api/v5/segment/slots.md';
 
 # ion-segment
 
-Segments display a group of related buttons, sometimes known as segmented controls, in a horizontal row. They can be displayed inside of a toolbar or the main content.
+分段选择器在一行中显示一组相关的按钮，有时也被称为分段控件。它们可以显示在工具栏中或主内容中。
 
-Their functionality is similar to tabs, where selecting one will deselect all others. Segments are useful for toggling between different views inside of the content. Tabs should be used instead of a segment when clicking on a control should navigate between pages.
+其功能类似于选项卡，选择一个会取消选择所有其他选项。分段选择器用于在内容中切换不同视图。当点击控件需要在页面间导航时，应使用选项卡而不是分段选择器。
 
-## Scrollable Segments
+## 可滚动分段选择器
 
-Segments are not scrollable by default. Each segment button has a fixed width, and the width is determined by dividing the number of segment buttons by the screen width. This ensures that each segment button can be displayed on the screen without having to scroll. As a result, some segment buttons with longer labels may get cut off. To avoid this we recommend either using a shorter label or switching to a scrollable segment by setting the `scrollable` property to `true`. This will cause the segment to scroll horizontally, but will allow each segment button to have a variable width.
+分段选择器默认不可滚动。每个分段按钮具有固定宽度，该宽度由分段按钮数量除以屏幕宽度决定。这确保了每个分段按钮无需滚动即可显示在屏幕上。因此，一些标签较长的分段按钮可能会被截断。为避免这种情况，我们建议使用较短的标签，或者通过将 `scrollable` 属性设置为 `true` 来切换到可滚动的分段选择器。这将使分段选择器水平滚动，但允许每个分段按钮具有可变宽度。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- Default Segment -->
+<!-- 默认分段选择器 -->
 <ion-segment (ionChange)="segmentChanged($event)">
   <ion-segment-button value="friends">
-    <ion-label>Friends</ion-label>
+    <ion-label>朋友</ion-label>
   </ion-segment-button>
   <ion-segment-button value="enemies">
-    <ion-label>Enemies</ion-label>
+    <ion-label>敌人</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Disabled Segment -->
+<!-- 禁用状态的分段选择器 -->
 <ion-segment (ionChange)="segmentChanged($event)" disabled value="sunny">
   <ion-segment-button value="sunny">
-    <ion-label>Sunny</ion-label>
+    <ion-label>晴朗</ion-label>
   </ion-segment-button>
   <ion-segment-button value="rainy">
-    <ion-label>Rainy</ion-label>
+    <ion-label>雨天</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Segment with anchors -->
+<!-- 带锚点的分段选择器 -->
 <ion-segment (ionChange)="segmentChanged($event)">
   <ion-segment-button value="dogs">
-    <ion-label>Dogs</ion-label>
+    <ion-label>狗</ion-label>
   </ion-segment-button>
   <ion-segment-button value="cats">
-    <ion-label>Cats</ion-label>
+    <ion-label>猫</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Scrollable Segment -->
+<!-- 可滚动的分段选择器 -->
 <ion-segment scrollable value="heart">
   <ion-segment-button value="home">
     <ion-icon name="home"></ion-icon>
@@ -86,20 +86,20 @@ Segments are not scrollable by default. Each segment button has a fixed width, a
   </ion-segment-button>
 </ion-segment>
 
-<!-- Segment with secondary color -->
+<!-- 次要颜色的分段选择器 -->
 <ion-segment (ionChange)="segmentChanged($event)" color="secondary">
   <ion-segment-button value="standard">
-    <ion-label>Standard</ion-label>
+    <ion-label>标准</ion-label>
   </ion-segment-button>
   <ion-segment-button value="hybrid">
-    <ion-label>Hybrid</ion-label>
+    <ion-label>混合</ion-label>
   </ion-segment-button>
   <ion-segment-button value="sat">
-    <ion-label>Satellite</ion-label>
+    <ion-label>卫星</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Segment in a toolbar -->
+<!-- 在工具栏中的分段选择器 -->
 <ion-toolbar>
   <ion-segment (ionChange)="segmentChanged($event)">
     <ion-segment-button value="camera">
@@ -111,7 +111,7 @@ Segments are not scrollable by default. Each segment button has a fixed width, a
   </ion-segment>
 </ion-toolbar>
 
-<!-- Segment with default selection -->
+<!-- 带默认选中的分段选择器 -->
 <ion-segment (ionChange)="segmentChanged($event)" value="javascript">
   <ion-segment-button value="python">
     <ion-label>Python</ion-label>
@@ -132,7 +132,7 @@ import { Component } from '@angular/core';
 })
 export class SegmentExample {
   segmentChanged(ev: any) {
-    console.log('Segment changed', ev);
+    console.log('分段选择器已更改', ev);
   }
 }
 ```
@@ -142,37 +142,37 @@ export class SegmentExample {
 <TabItem value="javascript">
 
 ```html
-<!-- Default Segment -->
+<!-- 默认分段选择器 -->
 <ion-segment>
   <ion-segment-button value="friends">
-    <ion-label>Friends</ion-label>
+    <ion-label>朋友</ion-label>
   </ion-segment-button>
   <ion-segment-button value="enemies">
-    <ion-label>Enemies</ion-label>
+    <ion-label>敌人</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Disabled Segment -->
+<!-- 禁用状态的分段选择器 -->
 <ion-segment disabled value="sunny">
   <ion-segment-button value="sunny">
-    <ion-label>Sunny</ion-label>
+    <ion-label>晴朗</ion-label>
   </ion-segment-button>
   <ion-segment-button value="rainy">
-    <ion-label>Rainy</ion-label>
+    <ion-label>雨天</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Segment with anchors -->
+<!-- 带锚点的分段选择器 -->
 <ion-segment>
   <ion-segment-button value="dogs">
-    <ion-label>Dogs</ion-label>
+    <ion-label>狗</ion-label>
   </ion-segment-button>
   <ion-segment-button value="cats">
-    <ion-label>Cats</ion-label>
+    <ion-label>猫</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Scrollable Segment -->
+<!-- 可滚动的分段选择器 -->
 <ion-segment scrollable value="heart">
   <ion-segment-button value="home">
     <ion-icon name="home"></ion-icon>
@@ -197,20 +197,20 @@ export class SegmentExample {
   </ion-segment-button>
 </ion-segment>
 
-<!-- Segment with secondary color -->
+<!-- 次要颜色的分段选择器 -->
 <ion-segment color="secondary">
   <ion-segment-button value="standard">
-    <ion-label>Standard</ion-label>
+    <ion-label>标准</ion-label>
   </ion-segment-button>
   <ion-segment-button value="hybrid">
-    <ion-label>Hybrid</ion-label>
+    <ion-label>混合</ion-label>
   </ion-segment-button>
   <ion-segment-button value="sat">
-    <ion-label>Satellite</ion-label>
+    <ion-label>卫星</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Segment in a toolbar -->
+<!-- 在工具栏中的分段选择器 -->
 <ion-toolbar>
   <ion-segment>
     <ion-segment-button value="camera">
@@ -222,7 +222,7 @@ export class SegmentExample {
   </ion-segment>
 </ion-toolbar>
 
-<!-- Segment with default selection -->
+<!-- 带默认选中的分段选择器 -->
 <ion-segment value="javascript">
   <ion-segment-button value="python">
     <ion-label>Python</ion-label>
@@ -234,11 +234,11 @@ export class SegmentExample {
 ```
 
 ```javascript
-// Listen for ionChange on all segments
+// 监听所有分段选择器的 ionChange 事件
 const segments = document.querySelectorAll('ion-segment');
 for (let i = 0; i < segments.length; i++) {
   segments[i].addEventListener('ionChange', (ev) => {
-    console.log('Segment changed', ev);
+    console.log('分段选择器已更改', ev);
   });
 }
 ```
@@ -267,41 +267,41 @@ export const SegmentExamples: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>SegmentExamples</IonTitle>
+          <IonTitle>分段选择器示例</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        {/*-- Default Segment --*/}
-        <IonSegment onIonChange={(e) => console.log('Segment selected', e.detail.value)}>
+        {/*-- 默认分段选择器 --*/}
+        <IonSegment onIonChange={(e) => console.log('选中的分段', e.detail.value)}>
           <IonSegmentButton value="friends">
-            <IonLabel>Friends</IonLabel>
+            <IonLabel>朋友</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="enemies">
-            <IonLabel>Enemies</IonLabel>
+            <IonLabel>敌人</IonLabel>
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Disabled Segment --*/}
-        <IonSegment onIonChange={(e) => console.log('Segment selected', e.detail.value)} disabled value="sunny">
+        {/*-- 禁用状态的分段选择器 --*/}
+        <IonSegment onIonChange={(e) => console.log('选中的分段', e.detail.value)} disabled value="sunny">
           <IonSegmentButton value="sunny">
-            <IonLabel>Sunny</IonLabel>
+            <IonLabel>晴朗</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="rainy">
-            <IonLabel>Rainy</IonLabel>
+            <IonLabel>雨天</IonLabel>
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Segment with anchors --*/}
-        <IonSegment onIonChange={(e) => console.log('Segment selected', e.detail.value)}>
+        {/*-- 带锚点的分段选择器 --*/}
+        <IonSegment onIonChange={(e) => console.log('选中的分段', e.detail.value)}>
           <IonSegmentButton value="dogs">
-            <IonLabel>Dogs</IonLabel>
+            <IonLabel>狗</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="cats">
-            <IonLabel>Cats</IonLabel>
+            <IonLabel>猫</IonLabel>
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Scrollable Segment --*/}
+        {/*-- 可滚动的分段选择器 --*/}
         <IonSegment scrollable value="heart">
           <IonSegmentButton value="home">
             <IonIcon icon={home} />
@@ -326,22 +326,22 @@ export const SegmentExamples: React.FC = () => {
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Segment with secondary color --*/}
-        <IonSegment onIonChange={(e) => console.log('Segment selected', e.detail.value)} color="secondary">
+        {/*-- 次要颜色的分段选择器 --*/}
+        <IonSegment onIonChange={(e) => console.log('选中的分段', e.detail.value)} color="secondary">
           <IonSegmentButton value="standard">
-            <IonLabel>Standard</IonLabel>
+            <IonLabel>标准</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="hybrid">
-            <IonLabel>Hybrid</IonLabel>
+            <IonLabel>混合</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="sat">
-            <IonLabel>Satellite</IonLabel>
+            <IonLabel>卫星</IonLabel>
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Segment in a toolbar --*/}
+        {/*-- 在工具栏中的分段选择器 --*/}
         <IonToolbar>
-          <IonSegment onIonChange={(e) => console.log('Segment selected', e.detail.value)}>
+          <IonSegment onIonChange={(e) => console.log('选中的分段', e.detail.value)}>
             <IonSegmentButton value="camera">
               <IonIcon icon={camera} />
             </IonSegmentButton>
@@ -351,8 +351,8 @@ export const SegmentExamples: React.FC = () => {
           </IonSegment>
         </IonToolbar>
 
-        {/*-- Segment with default selection --*/}
-        <IonSegment onIonChange={(e) => console.log('Segment selected', e.detail.value)} value="javascript">
+        {/*-- 带默认选中的分段选择器 --*/}
+        <IonSegment onIonChange={(e) => console.log('选中的分段', e.detail.value)} value="javascript">
           <IonSegmentButton value="python">
             <IonLabel>Python</IonLabel>
           </IonSegmentButton>
@@ -379,42 +379,42 @@ import { Component, h } from '@stencil/core';
 })
 export class SegmentExample {
   segmentChanged(ev: any) {
-    console.log('Segment changed', ev);
+    console.log('分段选择器已更改', ev);
   }
 
   render() {
     return [
-      // Default Segment
+      // 默认分段选择器
       <ion-segment onIonChange={(ev) => this.segmentChanged(ev)}>
         <ion-segment-button value="friends">
-          <ion-label>Friends</ion-label>
+          <ion-label>朋友</ion-label>
         </ion-segment-button>
         <ion-segment-button value="enemies">
-          <ion-label>Enemies</ion-label>
+          <ion-label>敌人</ion-label>
         </ion-segment-button>
       </ion-segment>,
 
-      // Disabled Segment
+      // 禁用状态的分段选择器
       <ion-segment onIonChange={(ev) => this.segmentChanged(ev)} disabled={true} value="sunny">
         <ion-segment-button value="sunny">
-          <ion-label>Sunny</ion-label>
+          <ion-label>晴朗</ion-label>
         </ion-segment-button>
         <ion-segment-button value="rainy">
-          <ion-label>Rainy</ion-label>
+          <ion-label>雨天</ion-label>
         </ion-segment-button>
       </ion-segment>,
 
-      // Segment with anchors
+      // 带锚点的分段选择器
       <ion-segment onIonChange={(ev) => this.segmentChanged(ev)}>
         <ion-segment-button value="dogs">
-          <ion-label>Dogs</ion-label>
+          <ion-label>狗</ion-label>
         </ion-segment-button>
         <ion-segment-button value="cats">
-          <ion-label>Cats</ion-label>
+          <ion-label>猫</ion-label>
         </ion-segment-button>
       </ion-segment>,
 
-      // Scrollable Segment
+      // 可滚动的分段选择器
       <ion-segment scrollable value="heart">
         <ion-segment-button value="home">
           <ion-icon name="home"></ion-icon>
@@ -439,20 +439,20 @@ export class SegmentExample {
         </ion-segment-button>
       </ion-segment>,
 
-      // Segment with secondary color
+      // 次要颜色的分段选择器
       <ion-segment onIonChange={(ev) => this.segmentChanged(ev)} color="secondary">
         <ion-segment-button value="standard">
-          <ion-label>Standard</ion-label>
+          <ion-label>标准</ion-label>
         </ion-segment-button>
         <ion-segment-button value="hybrid">
-          <ion-label>Hybrid</ion-label>
+          <ion-label>混合</ion-label>
         </ion-segment-button>
         <ion-segment-button value="sat">
-          <ion-label>Satellite</ion-label>
+          <ion-label>卫星</ion-label>
         </ion-segment-button>
       </ion-segment>,
 
-      // Segment in a toolbar
+      // 在工具栏中的分段选择器
       <ion-toolbar>
         <ion-segment onIonChange={(ev) => this.segmentChanged(ev)}>
           <ion-segment-button value="camera">
@@ -464,7 +464,7 @@ export class SegmentExample {
         </ion-segment>
       </ion-toolbar>,
 
-      // Segment with default selection
+      // 带默认选中的分段选择器
       <ion-segment onIonChange={(ev) => this.segmentChanged(ev)} value="javascript">
         <ion-segment-button value="python">
           <ion-label>Python</ion-label>
@@ -484,37 +484,37 @@ export class SegmentExample {
 
 ```html
 <template>
-  <!-- Default Segment -->
+  <!-- 默认分段选择器 -->
   <ion-segment @ionChange="segmentChanged($event)">
     <ion-segment-button value="friends">
-      <ion-label>Friends</ion-label>
+      <ion-label>朋友</ion-label>
     </ion-segment-button>
     <ion-segment-button value="enemies">
-      <ion-label>Enemies</ion-label>
+      <ion-label>敌人</ion-label>
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Disabled Segment -->
+  <!-- 禁用状态的分段选择器 -->
   <ion-segment @ionChange="segmentChanged($event)" disabled value="sunny">
     <ion-segment-button value="sunny">
-      <ion-label>Sunny</ion-label>
+      <ion-label>晴朗</ion-label>
     </ion-segment-button>
     <ion-segment-button value="rainy">
-      <ion-label>Rainy</ion-label>
+      <ion-label>雨天</ion-label>
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Segment with anchors -->
+  <!-- 带锚点的分段选择器 -->
   <ion-segment @ionChange="segmentChanged($event)">
     <ion-segment-button value="dogs">
-      <ion-label>Dogs</ion-label>
+      <ion-label>狗</ion-label>
     </ion-segment-button>
     <ion-segment-button value="cats">
-      <ion-label>Cats</ion-label>
+      <ion-label>猫</ion-label>
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Scrollable Segment -->
+  <!-- 可滚动的分段选择器 -->
   <ion-segment scrollable value="heart">
     <ion-segment-button value="home">
       <ion-icon name="home"></ion-icon>
@@ -539,20 +539,20 @@ export class SegmentExample {
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Segment with secondary color -->
+  <!-- 次要颜色的分段选择器 -->
   <ion-segment @ionChange="segmentChanged($event)" color="secondary">
     <ion-segment-button value="standard">
-      <ion-label>Standard</ion-label>
+      <ion-label>标准</ion-label>
     </ion-segment-button>
     <ion-segment-button value="hybrid">
-      <ion-label>Hybrid</ion-label>
+      <ion-label>混合</ion-label>
     </ion-segment-button>
     <ion-segment-button value="sat">
-      <ion-label>Satellite</ion-label>
+      <ion-label>卫星</ion-label>
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Segment in a toolbar -->
+  <!-- 在工具栏中的分段选择器 -->
   <ion-toolbar>
     <ion-segment @ionChange="segmentChanged($event)">
       <ion-segment-button value="camera">
@@ -564,7 +564,7 @@ export class SegmentExample {
     </ion-segment>
   </ion-toolbar>
 
-  <!-- Segment with default selection -->
+  <!-- 带默认选中的分段选择器 -->
   <ion-segment @ionChange="segmentChanged($event)" value="javascript">
     <ion-segment-button value="python">
       <ion-label>Python</ion-label>
@@ -583,7 +583,7 @@ export class SegmentExample {
     components: { IonSegment, IonSegmentButton, IonToolbar },
     methods: {
       segmentChanged(ev: CustomEvent) {
-        console.log('Segment changed', ev);
+        console.log('分段选择器已更改', ev);
       },
     },
   });
@@ -594,26 +594,26 @@ export class SegmentExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

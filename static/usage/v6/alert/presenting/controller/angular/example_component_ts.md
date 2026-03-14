@@ -13,10 +13,10 @@ export class ExampleComponent {
 
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Alert',
-      subHeader: 'Important message',
-      message: 'This is an alert!',
-      buttons: ['OK'],
+      header: '警告',
+      subHeader: '重要消息',
+      message: '这是一个警告提示！',
+      buttons: ['确定'],
     });
 
     await alert.present();

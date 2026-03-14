@@ -37,10 +37,10 @@ export class ExampleComponent {
   private onMove(detail: GestureDetail) {
     const { type, currentX, deltaX, velocityX } = detail;
     this.debug.nativeElement.innerHTML = `
-      <div>Type: ${type}</div>
-      <div>Current X: ${currentX}</div>
-      <div>Delta X: ${deltaX}</div>
-      <div>Velocity X: ${velocityX}</div>`;
+      <div>类型: ${type}</div>
+      <div>当前 X 坐标: ${currentX}</div>
+      <div>X 轴偏移量: ${deltaX}</div>
+      <div>X 轴速度: ${velocityX}</div>`;
   }
 
   private onEnd() {

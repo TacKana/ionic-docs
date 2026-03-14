@@ -5,7 +5,7 @@ import { IonChip } from '@ionic/react';
 import './main.css';
 
 function Example() {
-  return <IonChip>Default</IonChip>;
+  return <IonChip>默认</IonChip>;
 }
 export default Example;
 ```

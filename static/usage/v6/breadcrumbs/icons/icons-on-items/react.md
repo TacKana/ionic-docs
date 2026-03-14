@@ -6,42 +6,42 @@ import { camera, film, flash, home } from 'ionicons/icons';
 function Example() {
   return (
     <>
-      <IonLabel>Icons at Start</IonLabel>
+      <IonLabel>图标在起始位置</IonLabel>
       <IonBreadcrumbs>
         <IonBreadcrumb href="#home">
           <IonIcon slot="start" icon={home}></IonIcon>
-          Home
+          首页
         </IonBreadcrumb>
         <IonBreadcrumb href="#electronics">
           <IonIcon slot="start" icon={flash}></IonIcon>
-          Electronics
+          电子产品
         </IonBreadcrumb>
         <IonBreadcrumb href="#cameras">
           <IonIcon slot="start" icon={camera}></IonIcon>
-          Cameras
+          相机
         </IonBreadcrumb>
         <IonBreadcrumb href="#film">
           <IonIcon slot="start" icon={film}></IonIcon>
-          Film
+          胶卷
         </IonBreadcrumb>
       </IonBreadcrumbs>
 
-      <IonLabel class="ion-margin-top">Icons at End</IonLabel>
+      <IonLabel class="ion-margin-top">图标在结束位置</IonLabel>
       <IonBreadcrumbs>
         <IonBreadcrumb href="#home">
-          Home
+          首页
           <IonIcon slot="end" icon={home}></IonIcon>
         </IonBreadcrumb>
         <IonBreadcrumb href="#electronics">
-          Electronics
+          电子产品
           <IonIcon slot="end" icon={flash}></IonIcon>
         </IonBreadcrumb>
         <IonBreadcrumb href="#cameras">
-          Cameras
+          相机
           <IonIcon slot="end" icon={camera}></IonIcon>
         </IonBreadcrumb>
         <IonBreadcrumb href="#film">
-          Film
+          胶卷
           <IonIcon slot="end" icon={film}></IonIcon>
         </IonBreadcrumb>
       </IonBreadcrumbs>

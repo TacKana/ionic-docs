@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/buttons/custom-props.m
 import Slots from '@ionic-internal/component-api/v6/buttons/slots.md';
 
 <head>
-  <title>ion-buttons: Toolbar Element with Named Slots for Buttons</title>
+  <title>ion-buttons：带有命名插槽的工具栏按钮容器</title>
   <meta
     name="description"
-    content="The Buttons component is a container element. Buttons placed in a toolbar should be inside the ion-buttons element and can be positioned using named slots."
+    content="Buttons 组件是一个容器元素。放置在工具栏中的按钮应位于 ion-buttons 元素内，并可通过命名插槽进行定位。"
   />
 </head>
 
@@ -21,62 +21,62 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-The Buttons component is a container element. It should be used inside of a [toolbar](./toolbar) and can contain several types of buttons, including standard [buttons](./button), [menu buttons](./menu-button), and [back buttons](./back-button).
+Buttons 组件是一个容器元素，应放置在 [toolbar](./toolbar) 内部，可以包含多种类型的按钮，包括标准 [button](./button)、[menu button](./menu-button) 和 [back button](./back-button)。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v6/buttons/basic/index.md';
 
 <Basic />
 
-## Buttons Placement
+## 按钮放置位置
 
-Buttons can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
+可以使用命名插槽将按钮定位在工具栏内。下表描述了每个插槽的作用。
 
-| Slot        | Description                                                                                             |
+| Slot        | 描述                                                                                              |
 | ----------- | ------------------------------------------------------------------------------------------------------- |
-| `start`     | Positions to the `left` of the content in LTR, and to the `right` in RTL.                               |
-| `end`       | Positions to the `right` of the content in LTR, and to the `left` in RTL.                               |
-| `secondary` | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode. |
-| `primary`   | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.     |
+| `start`     | 在 LTR 语言环境中定位在内容`左侧`，在 RTL 语言环境中定位在内容`右侧`。                               |
+| `end`       | 在 LTR 语言环境中定位在内容`右侧`，在 RTL 语言环境中定位在内容`左侧`。                               |
+| `secondary` | 在 `ios` 模式下定位在内容`左侧`，在 `md` 模式下直接定位在内容`右侧`。 |
+| `primary`   | 在 `ios` 模式下定位在内容`右侧`，在 `md` 模式下定位在内容最`右侧`。     |
 
 import Placement from '@site/static/usage/v6/buttons/placement/index.md';
 
 <Placement />
 
-## Types of Buttons
+## 按钮类型
 
-A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on [back button](./back-button) and [menu button](./menu-button) in this example are for display purposes; see their respective documentation for proper usage.
+工具栏中的按钮默认样式为透明（clear），但可以通过按钮上的 [`fill`](./button#fill) 属性来更改。本例中 [back button](./back-button) 和 [menu button](./menu-button) 上包含的属性仅用于展示目的；请参阅它们各自的文档以了解正确用法。
 
 import Types from '@site/static/usage/v6/buttons/types/index.md';
 
 <Types />
 
-## Collapsible Buttons
+## 可折叠按钮
 
-The `collapse` property can be set on the buttons to collapse them when the header collapses. This is typically used with [collapsible large titles](./title#collapsible-large-titles).
+可以在按钮上设置 `collapse` 属性，以便在标题折叠时折叠按钮。这通常与 [可折叠大标题](./title#collapsible-large-titles) 一起使用。
 
 :::info
 
-This feature is only available for iOS.
+此功能仅适用于 iOS。
 
 :::
 
-<!-- Reuse the playground from the Title directory -->
+<!-- 复用 Title 目录中的示例 -->
 
 import CollapsibleLargeTitleButtons from '@site/static/usage/v6/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -84,10 +84,10 @@ import CollapsibleLargeTitleButtons from '@site/static/usage/v6/title/collapsibl
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

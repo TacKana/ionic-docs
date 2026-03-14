@@ -10,17 +10,17 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Firebase Dynamic Links
 
-Cordova plugin for Firebase Dynamic Links
+适用于 Firebase Dynamic Links 的 Cordova 插件
 
-Variables APP_DOMAIN and APP_PATH specify web URL where your app will start an activity to handle the link. They also used to setup support for App Indexing.
-Go to firebase console and export google-services.json and GoogleService-Info.plist. Put those files into the root of your cordova app folder.
+变量 APP_DOMAIN 和 APP_PATH 指定了您的应用将启动活动来处理链接的网页 URL。它们也用于设置应用索引支持。
+前往 Firebase 控制台，导出 google-services.json 和 GoogleService-Info.plist 文件。将这些文件放入 Cordova 应用文件夹的根目录。
 
-Preferences:
+配置项：
 
-Preferences GoogleIOSClientId and GoogleAndroidClientId are used to setup dynamic links when you have an app for several platforms.
-You can find values at your GoogleService-Info.plist (key ANDROID_CLIENT_ID) and google-services.json (key client[0].oauth_client[0].client_id).
+当您拥有适用于多个平台的应用时，会使用 GoogleIOSClientId 和 GoogleAndroidClientId 这些配置项来设置动态链接。
+您可以在 GoogleService-Info.plist 文件（键 ANDROID_CLIENT_ID）和 google-services.json 文件（键 client[0].oauth_client[0].client_id）中找到对应的值。
 
-config.xml:
+config.xml：
 
 ```xml
 <platform name="ios">
@@ -35,21 +35,21 @@ config.xml:
   <a href="https://github.com/chemerisuk/cordova-plugin-firebase-dynamiclinks" target="_blank" rel="noopener" className="git-link">github.com/chemerisuk/cordova-plugin-firebase-dynamiclinks</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>在 Cordova 问题上卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵的时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在构建一个严肃的项目，您无法承受花费数小时进行故障排除的代价。Ionic 的专家团队为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -57,7 +57,7 @@ config.xml:
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: 'Enterprise' },
+    { value: 'Enterprise', label: '企业版' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -74,22 +74,22 @@ config.xml:
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版提供 Ionic 团队全面支持与维护的插件。&nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，或者如果您对该插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - iOS
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -100,7 +100,7 @@ import { FirebaseDynamicLinks } from '@awesome-cordova-plugins/firebase-dynamic-
 constructor(private firebaseDynamicLinks: FirebaseDynamicLinks) { }
 
 ...
-// Handle the logic here after opening the app with the Dynamic link
+// 在通过动态链接打开应用后，在此处处理逻辑
 this.firebaseDynamicLinks.onDynamicLink()
   .subscribe((res: any) => console.log(res), (error:any) => console.log(error));
 ```

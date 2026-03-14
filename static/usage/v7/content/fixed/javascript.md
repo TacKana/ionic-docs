@@ -1,54 +1,24 @@
 ```html
 <ion-content class="ion-padding">
-  <h1>Scroll the content and notice that the fixed button does not scroll.</h1>
+  <h1>滚动内容时，请注意固定按钮不会随之滚动。</h1>
 
-  <ion-button>Normal Button</ion-button>
-  <ion-button slot="fixed">Fixed Button</ion-button>
+  <ion-button>普通按钮</ion-button>
+  <ion-button slot="fixed">固定按钮</ion-button>
 
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum in
-    risus. Sed nec convallis sapien, id tincidunt enim. Mauris ornare eleifend nunc id mattis. Fusce augue diam,
-    sagittis nec posuere at, consectetur tempor lectus. Nulla at lectus eget mauris iaculis malesuada mollis sed neque.
-    Curabitur et risus tristique, malesuada mauris finibus, elementum massa. Proin lacinia mauris quis ligula blandit
-    ullamcorper. Donec ut posuere lorem. In volutpat magna vitae tellus posuere pulvinar. Nam varius ligula justo, nec
-    placerat lacus pharetra ac. Aenean massa orci, tristique in nisl ut, aliquet consectetur libero. Etiam luctus
-    placerat vulputate. Aliquam ipsum massa, porttitor at mollis ut, pretium sit amet mi. In neque mauris, placerat et
-    neque vel, tempor interdum dolor. Suspendisse gravida malesuada tellus, vel dapibus nisl dignissim vel. Cras ut
-    nulla sit amet erat malesuada euismod vel a nulla.
+    这里是一段示例文本，用于演示内容的滚动效果。当您向下滚动时，可以看到普通按钮会随着内容移动，而固定按钮始终停留在屏幕上的同一位置。固定按钮通过 CSS 定位实现，通常用于提供快速访问的常用操作，例如返回顶部或提交表单。
   </p>
   <p>
-    Phasellus sit amet iaculis odio, eget feugiat erat. Etiam sit amet turpis sit amet massa viverra maximus. Aenean
-    venenatis porttitor pharetra. Fusce vulputate urna purus, vel efficitur mauris auctor non. Etiam libero odio,
-    sodales in velit a, faucibus venenatis erat. Ut convallis sit amet urna in ultrices. Cras neque est, vehicula sed
-    lorem ac, placerat commodo elit. Praesent turpis metus, elementum eget iaculis ac, elementum in odio. Nunc et elit
-    faucibus, condimentum mauris consequat, ornare dolor. Sed ac lectus a est blandit tempor. Etiam lobortis tristique
-    maximus.
+    继续滚动可以查看更多内容。固定按钮的位置可以通过样式进行调整，例如本例中将其设置在屏幕右侧垂直居中的位置。这种设计模式在移动端应用中非常常见，能够提升用户的操作效率。
   </p>
   <p>
-    Quisque tempus porttitor massa, vel condimentum risus finibus a. Aliquam viverra maximus odio, id ornare justo
-    tristique ac. Mauris euismod arcu eget neque sagittis rutrum. Ut vehicula porta lacus nec lobortis. Vestibulum et
-    elit ultrices, lacinia metus in, lobortis est. Vivamus nisi justo, venenatis sit amet arcu ac, congue faucibus
-    justo. Duis volutpat posuere enim, vel sagittis elit dictum et. Sed et congue mauris. Nam venenatis venenatis risus,
-    ac condimentum neque sagittis sed. In eget nulla ultricies urna sollicitudin posuere. Aenean sagittis congue mauris.
-    Proin nec libero mi. In hac habitasse platea dictumst. Praesent nunc nulla, dictum id molestie sed, pretium vitae
-    turpis.
+    请注意，固定按钮的样式是通过内联样式表定义的，其中指定了 `top: 50%` 和 `right: 20px`，这确保了按钮在垂直方向上居中，距离右侧边缘 20 像素。您可以根据实际需求调整这些值。
   </p>
   <p>
-    Pellentesque vitae dapibus lacus. Nullam suscipit ornare risus quis ullamcorper. Nullam feugiat, sapien et sodales
-    fermentum, risus ligula semper risus, id efficitur ligula augue id diam. Suspendisse lobortis est sit amet quam
-    facilisis, ut vestibulum nunc dignissim. Donec at vestibulum magna. Maecenas maximus pretium metus. Phasellus congue
-    sapien vel odio imperdiet, nec mollis odio euismod. Sed vel eros ut sapien accumsan condimentum vehicula vitae
-    lectus. Donec sed efficitur lorem. Aenean tristique mi libero, eleifend tincidunt libero finibus at. Mauris
-    condimentum fermentum rutrum.
+    此外，固定按钮使用了 `slot="fixed"` 属性，这是 Ionic 框架中用于定义固定位置元素的特殊插槽。与普通按钮不同，固定按钮不会受到父容器滚动的影响。
   </p>
   <p>
-    Nulla tristique ultricies suscipit. Donec non ornare elit. Vivamus id pretium mauris, nec sagittis leo. Fusce mattis
-    eget est id sollicitudin. Suspendisse dictum sem magna, in imperdiet metus suscipit et. Suspendisse enim enim,
-    venenatis et orci eu, suscipit congue lacus. Praesent vel ligula non eros tempor interdum. Proin justo orci,
-    ultricies vitae diam sed, semper consectetur ligula. Aenean finibus ante velit, nec efficitur libero cursus cursus.
-    Duis mi nunc, imperdiet sed condimentum vel, porttitor ut lacus. Quisque dui ipsum, vehicula sed vestibulum id,
-    semper vel libero. Suspendisse tincidunt mollis condimentum. Nulla facilisi. Etiam neque nisl, egestas nec iaculis
-    sed, tristique faucibus sem. Sed mollis dui quis ligula cursus rutrum.
+    最后，这个示例展示了如何在 Ionic 应用中实现固定位置的 UI 元素。您可以将此模式应用于其他需要始终可见的组件，如悬浮操作按钮（FAB）或固定导航栏。
   </p>
 </ion-content>
 

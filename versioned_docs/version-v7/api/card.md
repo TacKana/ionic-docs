@@ -12,68 +12,64 @@ import Slots from '@ionic-internal/component-api/v7/card/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <head>
-  <title>ion-card: Card UI Components for Ionic Framework API</title>
+  <title>ion-card: Ionic Framework 卡片UI组件API</title>
   <meta
     name="description"
-    content="ion-card UI components are entry points to more detailed information. Cards can be single components or made up of some header, title, subtitle, and content."
+    content="ion-card UI组件是通往更详细信息的入口。卡片可以是单个组件，也可以由页眉、标题、副标题和内容组成。"
   />
 </head>
 
 <EncapsulationPill type="shadow" />
 
-Cards are containers that display content such as text, images, buttons, and lists.
-A card can be a single component, but is often made up of a header, title, subtitle,
-and content. Cards are broken up into several components to accommodate this structure:
-[card header](./card-header), [card title](./card-title), [card subtitle](./card-subtitle),
-and [card content](./card-content).
+卡片是用于展示文本、图像、按钮和列表等内容的容器。卡片可以是一个独立的组件，但通常由页眉、标题、副标题和内容组成。为适应这种结构，卡片被拆分为多个组件：[card header](./card-header)、[card title](./card-title)、[card subtitle](./card-subtitle) 和 [card content](./card-content)。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v7/card/basic/index.md';
 
 <Basic />
 
-## Media Cards
+## 媒体卡片
 
 import Media from '@site/static/usage/v7/card/media/index.md';
 
 <Media />
 
-## Card Buttons
+## 卡片按钮
 
 import Buttons from '@site/static/usage/v7/card/buttons/index.md';
 
 <Buttons />
 
-## List Card
+## 列表卡片
 
 import List from '@site/static/usage/v7/card/list/index.md';
 
 <List />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v7/card/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS自定义属性
 
 import CSSProps from '@site/static/usage/v7/card/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -81,10 +77,10 @@ import CSSProps from '@site/static/usage/v7/card/theming/css-properties/index.md
 
 <Parts />
 
-## CSS Custom Properties
+## CSS自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

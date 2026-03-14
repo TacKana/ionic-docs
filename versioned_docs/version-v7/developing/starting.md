@@ -1,48 +1,47 @@
 ---
-title: Starting an App
-sidebar_label: Starting
+title: 启动应用
+sidebar_label: 启动应用
 ---
 
 <head>
-  <title>Starting an App: How to Guide | Ionic Documentation</title>
+  <title>启动应用：操作指南 | Ionic 文档</title>
   <meta
     name="description"
-    content="Starting a new Ionic app is incredibly simple. Learn how to run the ionic start command from the command line and let the CLI handle the rest."
+    content="启动新的 Ionic 应用非常简单。了解如何从命令行运行 ionic start 命令，让 CLI 处理后续所有工作。"
   />
 </head>
 
-Starting a new Ionic app is incredibly simple. From the command line, run the `ionic start` command and the CLI will handle the rest.
+启动新的 Ionic 应用非常简单。只需在命令行中运行 `ionic start` 命令，CLI 就会处理后续所有工作。
 
 ```shell-session
 $ ionic start
 
-Every great app needs a name! 😍
+每个优秀的应用都需要一个名字！😍
 
-Please enter the full name of your app. You can change this at any time.
-To bypass this prompt next time, supply name,
-the first argument to ionic start.
+请输入应用的完整名称。您可以随时修改此项设置。
+下次若要跳过此提示，请在 ionic start 后直接提供名称作为第一个参数。
 
-? Project name: █
+? 项目名称：█
 ```
 
-The Ionic CLI will display prompts asking for the new project's name and which template to use. These details can be provided as command arguments:
+Ionic CLI 会显示提示，询问新项目的名称以及要使用的模板。这些信息也可以通过命令行参数直接提供：
 
 ```shell-session
 $ ionic start myApp tabs
 ```
 
-Here, `myApp` is the name of the project, `tabs` is the starter template, and the project type is `angular`.
+这里，`myApp` 是项目名称，`tabs` 是启动模板，项目类型为 `angular`。
 
-`tabs` is not the only project template available. Between all project types, there are three templates available:
+`tabs` 并不是唯一可用的项目模板。在所有项目类型中，目前提供三种模板：
 
-- `tabs`: A tabs based layout
-- `sidemenu`: A sidemenu based layout
-- `blank`: An empty project with a single page
+- `tabs`：基于标签页的布局
+- `sidemenu`：基于侧边菜单的布局
+- `blank`：仅包含单页的空白项目
 
-See all available templates with the following command:
+可通过以下命令查看所有可用模板：
 
 ```shell-session
 $ ionic start --list
 ```
 
-These templates provide a great starting point for any app and include all the best practices for making a code base scale.
+这些模板为任何应用提供了极佳的起点，并包含了构建可扩展代码库的所有最佳实践。

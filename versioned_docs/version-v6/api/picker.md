@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/picker/custom-props.md
 import Slots from '@ionic-internal/component-api/v6/picker/slots.md';
 
 <head>
-  <title>Picker | Display Buttons and Columns for ion-picker on Ionic Apps</title>
+  <title>选择器 | 在 Ionic 应用中使用 ion-picker 显示按钮和列</title>
   <meta
     name="description"
-    content="A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker appears on top of the app's content, and at the bottom of the viewport."
+    content="选择器是一种对话框，显示一行按钮和其下方的多列选项。Ion-picker 出现在应用内容的上方，以及视口的底部。"
   />
 </head>
 
@@ -21,25 +21,25 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.
+选择器是一种对话框，显示一行按钮和其下方的多列选项。它会出现在应用内容的上方，以及视口的底部。
 
-## Single Column
+## 单列
 
-Display a list of options in a single, scrollable column.
+在单个可滚动的列中显示选项列表。
 
 import SingleColumn from '@site/static/usage/v6/picker/single-column/index.md';
 
 <SingleColumn />
 
-## Multiple Columns
+## 多列
 
-Display multiple columns of different options.
+显示多个不同选项的列。
 
 import MultipleColumn from '@site/static/usage/v6/picker/multiple-column/index.md';
 
 <MultipleColumn />
 
-## Interfaces
+## 接口
 
 ### PickerButton
 
@@ -105,26 +105,26 @@ interface PickerOptions {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow 部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

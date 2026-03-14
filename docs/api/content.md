@@ -1,5 +1,5 @@
 ---
-title: "ion-content"
+title: 内容组件
 ---
 import Props from '@ionic-internal/component-api/v8/content/props.md';
 import Events from '@ionic-internal/component-api/v8/content/events.md';
@@ -9,8 +9,8 @@ import CustomProps from '@ionic-internal/component-api/v8/content/custom-props.m
 import Slots from '@ionic-internal/component-api/v8/content/slots.md';
 
 <head>
-  <title>ion-content: Scrollable Component for Ionic App Content</title>
-  <meta name="description" content="ion-content provides an easy to use content area with useful methods to control the scrollable area. Learn more about this CSS component for Ionic apps." />
+  <title>ion-content: Ionic 应用内容的可滚动组件</title>
+  <meta name="description" content="ion-content 提供了一个易于使用的内容区域，包含控制可滚动区域的有用方法。了解更多关于 Ionic 应用的这个 CSS 组件。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,68 +18,67 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-The content component provides an easy to use content area with some useful methods
-to control the scrollable area. There should only be one content in a single
-view.
+内容组件提供一个易于使用的内容区域，并包含一些控制可滚动区域的有用方法。
+在单个视图中应该只有一个内容组件。
 
-Content, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](/docs/layout/css-utilities) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties).
+内容组件与许多其他 Ionic 组件一样，可以通过 [CSS 实用工具](/docs/layout/css-utilities) 中提供的全局样式进行自定义，或使用 CSS 和可用的 [CSS 自定义属性](#css-custom-properties) 单独设置样式，从而修改其内边距、外边距等属性。
 
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v8/content/basic/index.md';
 
 <Basic />
 
 
-## Header & Footer
+## 页眉和页脚
 
-Content can be the only top-level component in a page, or it can be used alongside a [header](./header), [footer](./footer), or both. When used with a header or footer, it will adjust its size to fill the remaining height.
+内容组件可以是页面中唯一的顶级组件，也可以与 [页眉](./header)、[页脚](./footer) 或两者一起使用。当与页眉或页脚一起使用时，它会调整自身大小以填充剩余高度。
 
 import HeaderFooter from '@site/static/usage/v8/content/header-footer/index.md';
 
 <HeaderFooter />
 
 
-## Fullscreen Content
+## 全屏内容
 
-By default, content fills the space between a [header](./header) and [footer](./footer) but does not go behind them. In certain cases, it may be desired to have the content scroll behind the header and footer, such as when the `translucent` property is set on either of them, or `opacity` is set on the toolbar. This can be achieved by setting the `fullscreen` property on the content to `true`.
+默认情况下，内容会填充 [页眉](./header) 和 [页脚](./footer) 之间的空间，但不会延伸到它们后面。在某些情况下，可能需要让内容在页眉和页脚后面滚动，例如当其中任何一个设置了 `translucent` 属性，或在工具栏上设置了 `opacity` 时。这可以通过将内容的 `fullscreen` 属性设置为 `true` 来实现。
 
 import Fullscreen from '@site/static/usage/v8/content/fullscreen/index.md';
 
 <Fullscreen />
 
 
-## Fixed Content
+## 固定内容
 
-To place elements outside of the scrollable area, assign them to the `fixed` slot. Doing so will [absolutely position](https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute_positioning) the element to the top left of the content. In order to change the position of the element, it can be styled using the [top, right, bottom, and left](https://developer.mozilla.org/en-US/docs/Web/CSS/position) CSS properties.
+要将元素放置在可滚动区域之外，请将它们分配给 `fixed` 插槽。这样做会将元素 [绝对定位](https://developer.mozilla.org/zh-CN/docs/Web/CSS/position#absolute_positioning) 到内容的左上角。要更改元素的位置，可以使用 [top、right、bottom 和 left](https://developer.mozilla.org/zh-CN/docs/Web/CSS/position) CSS 属性进行样式设置。
 
-The `fixedSlotPlacement` property is used to determine if content in the `fixed` slot is placed before or after the main content in the DOM. When set to `before`, fixed slot content will be placed before the main content and will therefore receive keyboard focus before the main content receives keyboard focus. This can be useful when the main content contains an infinitely-scrolling list, preventing a [FAB](./fab) or other fixed content from being reachable by pressing the tab key.
+`fixedSlotPlacement` 属性用于确定 `fixed` 插槽中的内容在 DOM 中是放置在主内容之前还是之后。当设置为 `before` 时，固定插槽内容将放置在主内容之前，因此会在主内容之前获得键盘焦点。当主内容包含无限滚动列表时，这很有用，可以防止通过按 Tab 键到达 [浮动操作按钮](./fab) 或其他固定内容。
 
 import Fixed from '@site/static/usage/v8/content/fixed/index.md';
 
 <Fixed />
 
-## Scroll Methods
+## 滚动方法
 
-Content provides [methods](#methods) that can be called to scroll the content to the bottom, top, or to a specific point. They can be passed a `duration` in order to smoothly transition instead of instantly changing the position.
+内容组件提供了可调用的 [方法](#methods)，用于将内容滚动到底部、顶部或特定位置。可以传入一个 `duration` 参数，以实现平滑过渡，而不是立即改变位置。
 
 import ScrollMethods from '@site/static/usage/v8/content/scroll-methods/index.md';
 
 <ScrollMethods />
 
-## Scroll Events
+## 滚动事件
 
-Scroll events are disabled by default for content due to performance. However, they can be enabled by setting `scrollEvents` to `true`. This is necessary before listening to any of the scroll [events](#events).
+出于性能考虑，内容组件的滚动事件默认是禁用的。但可以通过将 `scrollEvents` 设置为 `true` 来启用。在监听任何滚动 [事件](#events) 之前，这是必要的步骤。
 
 import ScrollEvents from '@site/static/usage/v8/content/scroll-events/index.md';
 
 <ScrollEvents />
 
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v8/content/theming/colors/index.md';
 
@@ -91,17 +90,17 @@ import CSSParts from '@site/static/usage/v8/content/theming/css-shadow-parts/ind
 
 <CSSParts />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v8/content/theming/css-properties/index.md';
 
 <CSSProps />
 
-### Safe Area Padding
+### 安全区域内边距
 
-The content component will not automatically apply padding to any of its sides to account for the [safe area](/docs/theming/advanced#safe-area-padding). This is because the content component is often used in conjunction with other components that apply their own padding, such as [headers](./header) and [footers](./footer). However, if the content component is being used on its own, it may be desired to apply padding to the safe area. This can be done through CSS by using the `--ion-safe-area-(dir)` variables described in [Application Variables](../theming/advanced.md#application-variables).
+内容组件不会自动向任何一侧应用内边距以考虑 [安全区域](/docs/theming/advanced#safe-area-padding)。这是因为内容组件通常与其他应用了自己内边距的组件（如 [页眉](./header) 和 [页脚](./footer)）一起使用。但是，如果单独使用内容组件，可能需要对安全区域应用内边距。这可以通过 CSS 使用 [应用变量](../theming/advanced.md#application-variables) 中描述的 `--ion-safe-area-(dir)` 变量来实现。
 
-The most common use case for this is to apply padding to the top of the content to account for the status bar. This can be done by setting the `padding-top` property to the value of the `--ion-safe-area-top` variable.
+最常见的用例是为状态栏向内容顶部应用内边距。这可以通过将 `padding-top` 属性设置为 `--ion-safe-area-top` 变量的值来实现。
 
 ```css
 ion-content::part(scroll) {
@@ -109,7 +108,7 @@ ion-content::part(scroll) {
 }
 ```
 
-Another common use case is to apply padding to the left side of the content to account for the notch when the device is in landscape mode and the notch is on the left side. This can be done by setting the `padding-left` property to the value of the `--ion-safe-area-left` variable.
+另一个常见用例是在设备处于横屏模式且刘海在左侧时，为内容左侧应用内边距以考虑刘海。这可以通过将 `padding-left` 属性设置为 `--ion-safe-area-left` 变量的值来实现。
 
 ```css
 ion-content::part(scroll) {
@@ -121,7 +120,7 @@ import SafeArea from '@site/static/usage/v8/content/theming/safe-area/index.md';
 
 <SafeArea />
 
-## Interfaces
+## 接口
 
 ### ScrollBaseDetail
 
@@ -142,7 +141,7 @@ interface ScrollDetail extends GestureDetail, ScrollBaseDetail {
 
 ### ScrollBaseCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing on the `ionScrollStart` and `ionScrollEnd` events.
+虽然不是必需的，但此接口可以替代 `CustomEvent` 接口，用于在 `ionScrollStart` 和 `ionScrollEnd` 事件上提供更强的类型检查。
 
 ```typescript
 interface ScrollBaseCustomEvent extends CustomEvent {
@@ -153,7 +152,7 @@ interface ScrollBaseCustomEvent extends CustomEvent {
 
 ### ScrollCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing on the `ionScroll` event.
+虽然不是必需的，但此接口可以替代 `CustomEvent` 接口，用于在 `ionScroll` 事件上提供更强的类型检查。
 
 ```typescript
 interface ScrollCustomEvent extends ScrollBaseCustomEvent {
@@ -162,20 +161,20 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 ```
 
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

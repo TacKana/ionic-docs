@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/row/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/row/slots.md';
 
 <head>
-  <title>ion-row: Horizontal Row Components of the Grid System</title>
+  <title>ion-row: 网格系统的水平行组件</title>
   <meta
     name="description"
-    content="Rows are horizontal components of the grid system and contain varying numbers of columns. Read our ion-row API Docs for more information on alignment and usage."
+    content="行是网格系统的水平组件，包含数量不等的列。如需了解更多对齐和使用信息，请参阅我们的 ion-row API 文档。"
   />
 </head>
 
@@ -21,24 +21,23 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Rows are horizontal components of the [grid](./grid) system and contain varying numbers of
-[columns](./col). They ensure the columns are positioned properly.
+行是[网格系统](./grid)的水平组件，包含数量不等的[列](./col)。行确保列能够正确定位。
 
-See the [grid](./grid) documentation for more information.
+更多信息请参阅[网格系统](./grid)文档。
 
-## Row Alignment
+## 行对齐
 
-By default, columns will stretch to fill the entire height of the row and wrap when necessary. Rows are [flex containers](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container), so there are several [CSS classes](/docs/layout/css-utilities#flex-container-properties) that can be applied to a row to customize this behavior.
+默认情况下，列会拉伸以填满行的整个高度，并在必要时自动换行。行是[弹性容器](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container)，因此可以将多个[CSS类](/docs/layout/css-utilities#flex-container-properties)应用于行来自定义此行为。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -46,10 +45,10 @@ By default, columns will stretch to fill the entire height of the row and wrap w
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

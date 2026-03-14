@@ -7,7 +7,7 @@ function Example() {
     <>
       <IonRadioGroup value="start">
         <IonRadio value="start" labelPlacement="start">
-          Label at the Start
+          标签位于起始位置
         </IonRadio>
       </IonRadioGroup>
 
@@ -15,7 +15,7 @@ function Example() {
 
       <IonRadioGroup value="end">
         <IonRadio value="end" labelPlacement="end">
-          Label at the End
+          标签位于结束位置
         </IonRadio>
       </IonRadioGroup>
 
@@ -23,7 +23,7 @@ function Example() {
 
       <IonRadioGroup value="fixed">
         <IonRadio value="fixed" labelPlacement="fixed">
-          Fixed Width Label
+          固定宽度标签
         </IonRadio>
       </IonRadioGroup>
 
@@ -31,7 +31,7 @@ function Example() {
 
       <IonRadioGroup value="stacked">
         <IonRadio value="stacked" labelPlacement="stacked">
-          Stacked Label
+          堆叠标签
         </IonRadio>
       </IonRadioGroup>
     </>

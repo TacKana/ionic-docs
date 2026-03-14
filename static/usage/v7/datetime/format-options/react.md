@@ -11,7 +11,7 @@ function Example() {
         date: { day: '2-digit', month: 'long' },
       }}
     >
-      <span slot="title">Select Date</span>
+      <span slot="title">选择日期</span>
     </IonDatetime>
   );
 }

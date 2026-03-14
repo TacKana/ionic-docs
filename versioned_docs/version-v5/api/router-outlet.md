@@ -14,47 +14,47 @@ import Slots from '@ionic-internal/component-api/v5/router-outlet/slots.md';
 
 # ion-router-outlet
 
-Router outlet is a component used in routing within an Angular or Vue app. It behaves in a similar way to Angular's built-in router outlet component and Vue's router view component, but contains the logic for providing a stacked navigation, and animating views in and out.
+路由出口（router outlet）是一个用于 Angular 或 Vue 应用内部路由的组件。它的行为类似于 Angular 内置的路由出口组件和 Vue 的路由视图组件，但包含了提供堆叠导航以及动画化视图进出效果的逻辑。
 
-> Note: this component should only be used with Angular and Vue projects. For vanilla or Stencil JavaScript projects, use [`ion-router`](router.md) and [`ion-route`](route.md).
+> 注意：此组件应仅用于 Angular 和 Vue 项目。对于原生 JavaScript 或 Stencil 项目，请使用 [`ion-router`](router.md) 和 [`ion-route`](route.md)。
 
-Although router outlet has methods for navigating around, it's recommended to use the navigation methods in your framework's router.
+虽然路由出口提供了导航相关的方法，但建议使用你所选框架的路由器中的导航方法。
 
-## Life Cycle Hooks
+## 生命周期钩子
 
-Routes rendered in a Router Outlet have access to specific Ionic events that are wired up to animations
+在路由出口中渲染的路由可以访问与动画绑定的特定 Ionic 事件。
 
-| Event Name         | Trigger                                                            |
-| ------------------ | ------------------------------------------------------------------ |
-| `ionViewWillEnter` | Fired when the component routing to is about to animate into view. |
-| `ionViewDidEnter`  | Fired when the component routing to has finished animating.        |
-| `ionViewWillLeave` | Fired when the component routing from is about to animate.         |
-| `ionViewDidLeave`  | Fired when the component routing to has finished animating.        |
+| 事件名称             | 触发时机                                                              |
+| -------------------- | --------------------------------------------------------------------- |
+| `ionViewWillEnter`   | 当即将要动画进入视图的路由组件触发。                                  |
+| `ionViewDidEnter`    | 当路由到的组件动画完成时触发。                                        |
+| `ionViewWillLeave`   | 当即将要动画离开的路由组件触发。                                      |
+| `ionViewDidLeave`    | 当路由离开的组件动画完成时触发。                                      |
 
-These event tie into Ionic's animation system and can be used to coordinate parts of your app when a Components is done with its animation. These events are not a replacement for your framework's own event system, but an addition.
+这些事件与 Ionic 的动画系统紧密集成，可用于在组件完成其动画时协调应用的各个部分。这些事件并非要替代框架自身的事件系统，而是作为补充。
 
-For handling Router Guards, the older `ionViewCanEnter` and `ionViewCanLeave` have been replaced with their framework specific equivalent. For Angular, there are [Router Guards](https://angular.io/guide/router#milestone-5-route-guards).
+对于处理路由守卫（Router Guards），旧的 `ionViewCanEnter` 和 `ionViewCanLeave` 已被替换为相应框架的等效功能。对于 Angular，有[路由守卫](https://angular.io/guide/router#milestone-5-route-guards)。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow 部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

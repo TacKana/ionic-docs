@@ -1,5 +1,5 @@
 ```html
-<div>Before Collapse = 2</div>
+<div>折叠前显示 2 项</div>
 <ion-breadcrumbs max-items="4" items-before-collapse="2">
   <ion-breadcrumb href="#home">Home</ion-breadcrumb>
   <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>
@@ -9,7 +9,7 @@
   <ion-breadcrumb href="#35mm">35 mm</ion-breadcrumb>
 </ion-breadcrumbs>
 
-<div class="ion-margin-top">Before Collapse = 0</div>
+<div class="ion-margin-top">折叠前显示 0 项</div>
 <ion-breadcrumbs max-items="4" items-before-collapse="0">
   <ion-breadcrumb href="#home">Home</ion-breadcrumb>
   <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>
@@ -19,7 +19,7 @@
   <ion-breadcrumb href="#35mm">35 mm</ion-breadcrumb>
 </ion-breadcrumbs>
 
-<div class="ion-margin-top">After Collapse = 2</div>
+<div class="ion-margin-top">折叠后显示 2 项</div>
 <ion-breadcrumbs max-items="4" items-after-collapse="2">
   <ion-breadcrumb href="#home">Home</ion-breadcrumb>
   <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>
@@ -29,7 +29,7 @@
   <ion-breadcrumb href="#35mm">35 mm</ion-breadcrumb>
 </ion-breadcrumbs>
 
-<div class="ion-margin-top">Before Collapse = 2, After Collapse = 2</div>
+<div class="ion-margin-top">折叠前显示 2 项，折叠后显示 2 项</div>
 <ion-breadcrumbs max-items="4" items-before-collapse="2" items-after-collapse="2">
   <ion-breadcrumb href="#home">Home</ion-breadcrumb>
   <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>

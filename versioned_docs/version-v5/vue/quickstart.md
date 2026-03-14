@@ -1,63 +1,63 @@
 ---
-sidebar_label: Quickstart
+sidebar_label: 快速入门
 ---
 
-# Ionic Vue Quickstart
+# Ionic Vue 快速入门
 
-## What is Ionic Framework?
+## 什么是 Ionic Framework？
 
-First off, if you're new here, welcome! Ionic Framework is a free and open source component library for building apps that run on iOS, Android, Electron, and the Web. Write your app once using familiar technologies (HTML, CSS, JavaScript) and deploy to any platform.
+首先，如果你是新用户，欢迎！Ionic Framework 是一个免费开源的组件库，用于构建运行在 iOS、Android、Electron 和 Web 上的应用程序。使用你熟悉的技术（HTML、CSS、JavaScript）一次编写应用，并部署到任何平台。
 
-Along with the UI components, Ionic Framework also provides a command line tool for creating new apps, as well as deploying to the various platforms we support.
+除了 UI 组件，Ionic Framework 还提供了一个命令行工具，用于创建新应用，以及部署到我们支持的各种平台。
 
-In this guide, we will go over the basics of both Vue and Ionic Framework, including any Ionic Framework specific features. If you are familiar with Vue, enjoy the guide and learn something new about Ionic Framework. If you are not familiar with either, no worries! This guide will cover the basics and provide enough information to get an app up and running.
+在本指南中，我们将介绍 Vue 和 Ionic Framework 的基础知识，包括所有 Ionic Framework 特有的功能。如果你熟悉 Vue，请享受本指南并了解一些关于 Ionic Framework 的新知识。如果你对两者都不熟悉，也不用担心！本指南将涵盖基础知识，并提供足够的信息来启动并运行一个应用。
 
-## Creating a project with the Ionic CLI
+## 使用 Ionic CLI 创建项目
 
-To begin, let's install the latest version of the Ionic CLI.
+首先，让我们安装最新版本的 Ionic CLI。
 
 ```shell
 npm install -g @ionic/cli@latest
 ```
 
-From here, the global command `ionic` will allow for the creation of a Vue project with Ionic Framework and any other dependencies. To create a new project, run the following command:
+安装后，全局命令 `ionic` 将允许使用 Ionic Framework 和任何其他依赖项创建一个 Vue 项目。要创建一个新项目，请运行以下命令：
 
 ```shell
 ionic start myApp blank --type vue
 cd myApp
 ```
 
-From here, we run `ionic serve` and have our project running in the browser.
+然后，我们运行 `ionic serve` 让我们的项目在浏览器中运行。
 
-## Build your way with TypeScript or JavaScript
+## 使用 TypeScript 或 JavaScript 构建
 
-We love TypeScript at Ionic, and have believed for quite some time now that it’s a great tool for building scalable apps. That said, we know how much the Vue community values simplicity – in their tooling, languages, and more. In fact, it’s likely what drew you to Vue in the first place. Start simple – then scale up as needed.
+我们在 Ionic 热爱 TypeScript，并且长期以来一直相信它是构建可扩展应用程序的绝佳工具。也就是说，我们知道 Vue 社区多么重视简单性——无论是工具、语言还是其他方面。事实上，这很可能正是 Vue 最初吸引你的原因。从简单开始——然后根据需要扩展。
 
-So, if you’d prefer to use JavaScript instead of TypeScript, you can. After generating an Ionic Vue app, follow these steps:
+所以，如果你更喜欢使用 JavaScript 而不是 TypeScript，也是可以的。生成 Ionic Vue 应用后，请按照以下步骤操作：
 
-1. Remove TypeScript dependencies:
+1.  移除 TypeScript 依赖：
 
 ```shell
 npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript
 ```
 
-2. Change all `.ts` files to `.js`. In a blank Ionic Vue app, this should only be `src/router/index.ts` and `src/main.ts`. If you're using tests, also change the extension of files in the `tests` directory.
+2.  将所有 `.ts` 文件更改为 `.js`。在一个空白的 Ionic Vue 应用中，这应该只是 `src/router/index.ts` 和 `src/main.ts`。如果你使用了测试，也要更改 `tests` 目录中文件的扩展名。
 
-3. In `index.html`, change the imported `<script>` file from `/src/main.ts` to `/src/main.js`.
+3.  在 `index.html` 中，将导入的 `<script>` 文件从 `/src/main.ts` 更改为 `/src/main.js`。
 
-4. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: ‘off’, `from `.eslintrc.js`.
+4.  从 `.eslintrc.js` 中移除 `@vue/typescript/recommended` 和 `@typescript-eslint/no-explicit-any: ‘off’`。
 
-5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `src/router/index.js`.
+5.  从 `src/router/index.js` 中移除 `Array<RouteRecordRaw>` 和 `RouteRecordRaw` 的导入。
 
-6. Delete the `src/shims-vue.d.ts` file if it exists. This is only needed when using the Vue CLI.
+6.  如果存在 `src/shims-vue.d.ts` 文件，请将其删除。这仅在使用 Vue CLI 时需要。
 
-7. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
+7.  从任何包含 `lang="ts"` 的 Vue 组件的 `script` 标签中移除它。在一个空白的 Ionic Vue 应用中，这应该只是 `src/App.vue` 和 `src/views/HomePage.vue`。
 
-8. Delete the `tsconfig.json` file.
+8.  删除 `tsconfig.json` 文件。
 
-## A look at a Vue Component
+## 初探 Vue 组件
 
-The base of our app will be in the `src` directory, and the main entry point will be our `main.ts` file. If we open our project in a code editor and open `main.ts`, we should see the following:
+我们应用的基础在 `src` 目录中，主要入口点是 `main.ts` 文件。如果我们在代码编辑器中打开项目并打开 `main.ts`，我们应该会看到以下内容：
 
 ```ts
 import { createApp } from 'vue';
@@ -73,13 +73,13 @@ router.isReady().then(() => {
 });
 ```
 
-So what is going on here? The first four lines are pulling in some dependencies. The `createApp` function lets us initialize our Vue application, while `IonicVue` is a plugin that allows us to use Ionic Framework in a Vue environment.
+那么这里发生了什么？前四行引入了一些依赖。`createApp` 函数让我们初始化 Vue 应用程序，而 `IonicVue` 是一个插件，允许我们在 Vue 环境中使用 Ionic Framework。
 
-The third import is the root component for our app, simply named `App`. This is our first Vue component and will be used in the bootstrapping process for our Vue app.
+第三个导入是我们应用的根组件，简单地命名为 `App`。这是我们的第一个 Vue 组件，将用于 Vue 应用的启动过程。
 
-The fourth import gets our routing configuration. We will look at this more in depth later.
+第四个导入获取我们的路由配置。稍后我们将更深入地探讨这个问题。
 
-If we open `App.vue` we should see the following:
+如果我们打开 `App.vue`，应该会看到以下内容：
 
 ```html
 <template>
@@ -102,15 +102,15 @@ If we open `App.vue` we should see the following:
 </script>
 ```
 
-Let's break it down, starting with the first group of imports.
+让我们分解一下，从第一组导入开始。
 
 ```tsx
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
 ```
 
-To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`. You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your App](#optimizing-your-app).
+要在 Vue 中使用一个组件，必须先导入它。所以对于 Ionic Framework 来说，这意味着任何时候我们想使用一个按钮或卡片，它都必须被添加到我们的导入中。就我们的 `App` 组件而言，我们正在使用 `IonApp` 和 `IonRouterOutlet`。如果你发现自己重复导入相同的组件，也可以全局注册组件。但这会带来性能上的权衡，我们在[优化你的应用](#优化你的构建)中会讲到。
 
-From there, let's look at the template.
+接着，让我们看看模板。
 
 ```html
 <template>
@@ -120,9 +120,9 @@ From there, let's look at the template.
 </template>
 ```
 
-All Vue components must have a `<template>`. Inside of there, we place our `IonApp` and `IonRouterOutlet` components.
+所有 Vue 组件都必须有一个 `<template>`。在里面，我们放置了 `IonApp` 和 `IonRouterOutlet` 组件。
 
-Finally, let's look at the component definition:
+最后，让我们看看组件定义：
 
 ```tsx
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
@@ -137,13 +137,13 @@ export default defineComponent({
 });
 ```
 
-Vue 3 offers a new `defineComponent` function when creating components for improved tooling support, and we are going to use that here. We first define the name of the component, and then we supply the components that we will use in our template.
+Vue 3 提供了一个新的 `defineComponent` 函数，用于创建组件以改进工具支持，我们将在这里使用它。我们首先定义组件的名称，然后提供我们将在模板中使用的组件。
 
-There are several arguments you can supply here such as `methods`, `setup` and more. This is explained as part of Vue's [Composition API Documentation](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api).
+你可以在这里提供多个参数，例如 `methods`、`setup` 等。这将在 Vue 的 [组合式 API 文档](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) 中作为一部分进行解释。
 
-## Initializing the router
+## 初始化路由
 
-Ionic Vue uses the [vue-router](https://router.vuejs.org/) dependency, so if you are already familiar with Vue Router, you will be able to apply what you know to navigation in Ionic Vue. Let's take a look at the router configuration we mentioned before. In `router/index.ts`, you should see something similar to the following:
+Ionic Vue 使用 [vue-router](https://router.vuejs.org/) 依赖，所以如果你已经熟悉 Vue Router，你将能够把你对导航的了解应用到 Ionic Vue 中。让我们看看我们之前提到的路由配置。在 `router/index.ts` 中，你应该会看到类似于以下内容：
 
 ```tsx
 import { createRouter, createWebHistory } from '@ionic/vue-router';
@@ -171,14 +171,14 @@ export default router;
 ```
 
 :::note
-This example is using the Ionic Vue Blank starter application, so your actual routes may look a bit different.
+此示例使用的是 Ionic Vue 空白启动器应用，因此你实际的路由可能略有不同。
 :::
 
-The setup here is the same as if you were using `vue-router` directly, but instead you need to import dependencies such as `createRouter` and `createWebHistory` from the `@ionic/vue-router` package.
+这里的设置与你直接使用 `vue-router` 相同，但你需要从 `@ionic/vue-router` 包中导入诸如 `createRouter` 和 `createWebHistory` 之类的依赖。
 
-After importing our dependencies, we can declare our routes in the `routes` array. From there, we can create a router instance and provide it with our routes and the type of history we want to use.
+导入依赖后，我们可以在 `routes` 数组中声明我们的路由。然后，我们可以创建一个路由实例，并向其提供我们的路由和我们想要使用的历史记录类型。
 
-With Ionic Vue, lazy loading works right out of the box. Instead of importing our `Home` component, we could also do:
+使用 Ionic Vue，懒加载是开箱即用的。我们可以不导入 `Home` 组件，而是这样做：
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -194,39 +194,39 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-Now, you might be wondering: Why do we use `@` when describing the path to our components? The `@` symbol is a shortcut we can use to describe paths relative to the `src` directory. This is useful if we are trying to reference a component while in a file several folders deep. Instead of doing `'../../../views/Home.vue'`, we could simply do `'@/views/Home.vue'`.
+现在，你可能想知道：为什么我们在描述组件路径时使用 `@`？`@` 符号是一个快捷方式，用于描述相对于 `src` 目录的路径。如果我们试图在嵌套几层深的文件中引用一个组件，这将非常有用。我们可以简单地使用 `'@/views/Home.vue'`，而不是使用 `'../../../views/Home.vue'`。
 
-## A component with style
+## 一个带有样式的组件
 
-Now the `App` component does not really have a lot to modify here. It is a basic example of a container component. With the router logic set, all it is responsible for is to render a component that matches the given URL route. Since we already have one component/router setup, let's go ahead and modify our `Home` component.
+现在 `App` 组件确实没有太多可以修改的地方。它是一个容器组件的基本示例。有了路由逻辑，它只负责渲染与给定 URL 路由匹配的组件。既然我们已经设置好了一个组件/路由，让我们继续修改我们的 `Home` 组件。
 
-Currently, the `Home` component looks like so:
+目前，`Home` 组件看起来像这样：
 
-![Screenshot of the Ionic Vue Home page showing the message "Ready to create an app? Start with Ionic UI Components"](/img/guides/quickstart/home-page.png 'Ionic Vue Home Component')
+![显示消息"准备好创建应用了吗？从 Ionic UI 组件开始"的 Ionic Vue 主页截图](/img/guides/quickstart/home-page.png 'Ionic Vue 主页组件')
 
 ```html
 <template>
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Blank</ion-title>
+        <ion-title>空白</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
+          <ion-title size="large">空白</ion-title>
         </ion-toolbar>
       </ion-header>
 
       <div id="container">
-        <strong>Ready to create an app?</strong>
+        <strong>准备好创建应用了吗？</strong>
         <p>
-          Start with Ionic
+          从 Ionic
           <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"
-            >UI Components</a
-          >
+            >UI 组件</a
+          >开始
         </p>
       </div>
     </ion-content>
@@ -280,24 +280,24 @@ Currently, the `Home` component looks like so:
 </style>
 ```
 
-Much like the `App` component we started with, we have some imports for specific Ionic Framework components, an import from Vue, the Vue component, and styles to go along with our component.
+与我们开始的 `App` 组件非常相似，我们有一些特定 Ionic Framework 组件的导入，一个来自 Vue 的导入，Vue 组件，以及伴随组件的样式。
 
-For our styles, notice that we have specified our styles to be `scoped`. This means that the styles we write here will only apply to this component. This is useful for preventing styles from leaking out of a component and affecting other parts of your application. We strongly recommend using `scoped` styles for Ionic Vue applications.
+对于我们的样式，请注意我们指定了样式为 `scoped`。这意味着我们在这里编写的样式仅适用于此组件。这对于防止样式从组件中泄露并影响应用程序的其他部分非常有用。我们强烈建议在 Ionic Vue 应用中使用 `scoped` 样式。
 
-`IonPage` is the base component for all pages (a component with a route/URL), and includes some common building blocks of a full-screen component, like header, title, and content components.
+`IonPage` 是所有页面（具有路由/URL 的组件）的基础组件，并包含全屏组件的一些常见构建块，如页眉、标题和内容组件。
 
 :::note
-When creating your own pages, do not forget to have `IonPage` be the root component for them. Having `IonPage` be the root component is important because it helps ensure transitions work properly as well as provides the base CSS the Ionic Framework components rely on.
+创建自己的页面时，不要忘记将 `IonPage` 作为它们的根组件。让 `IonPage` 成为根组件很重要，因为它有助于确保过渡正常工作，并提供 Ionic Framework 组件所依赖的基础 CSS。
 :::
 
-`IonHeader` is a component meant to exist at the top of the page. It does not do much by itself, aside from handling some flexbox-based layout. It is meant to hold components, like `IonToolbar` or `IonSearchbar`.
+`IonHeader` 是一个旨在位于页面顶部的组件。除了处理一些基于 flexbox 的布局外，它本身作用不大。它旨在容纳诸如 `IonToolbar` 或 `IonSearchbar` 之类的组件。
 
-`IonContent` is, as its name suggests, the main content area for our page. It is responsible for providing a scrollable content that users will interact with, plus any scroll events that could be used in an app.
+`IonContent`，顾名思义，是我们页面的主要内容区域。它负责提供用户将与之交互的可滚动内容，以及可能在应用中使用的任何滚动事件。
 
-Our current content is relatively simple, but does not contain anything that could be used in a real app, so let's change that.
+我们当前的内容相对简单，但不包含任何可以在真实应用中使用的东西，所以让我们改变一下。
 
 :::note
-For brevity, we are excluding repeating parts of our component, like the function declaration or import statements from other components.
+为简洁起见，我们将省略组件的重复部分，例如函数声明或其他组件的导入语句。
 :::
 
 ```html
@@ -309,10 +309,10 @@ For brevity, we are excluding repeating parts of our component, like the functio
         <ion-item>
           <ion-checkbox slot="start"></ion-checkbox>
           <ion-label>
-            <h1>Create Idea</h1>
-            <ion-note>Run Idea By Brandy</ion-note>
+            <h1>创建想法</h1>
+            <ion-note>向 Brandy 提出想法</ion-note>
           </ion-label>
-          <ion-badge color="success" slot="end"> 5 Days </ion-badge>
+          <ion-badge color="success" slot="end"> 5 天 </ion-badge>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -320,22 +320,22 @@ For brevity, we are excluding repeating parts of our component, like the functio
 </template>
 ```
 
-Here in our `IonContent`, we are adding an `IonList` and a much more involved `IonItem` component. Let's look at `IonItem` as it is the centerpiece here.
+在我们的 `IonContent` 中，我们添加了一个 `IonList` 和一个更复杂的 `IonItem` 组件。让我们看看 `IonItem`，因为它是这里的核心。
 
 ```html
 <ion-item>
   <ion-checkbox slot="start"></ion-checkbox>
   <ion-label>
-    <h1>Create Idea</h1>
-    <ion-note>Run Idea By Brandy</ion-note>
+    <h1>创建想法</h1>
+    <ion-note>向 Brandy 提出想法</ion-note>
   </ion-label>
-  <ion-badge color="success" slot="end"> 5 Days </ion-badge>
+  <ion-badge color="success" slot="end"> 5 天 </ion-badge>
 </ion-item>
 ```
 
-Looking at our code, we have a special attribute called slot. This is key for letting the `IonItem` know where to place the `IonCheckbox` when it renders. This is not a Vue API, but a web standards API. Additionally, this is different from the slots API you may recall from Vue 2.
+查看我们的代码，我们有一个名为 slot 的特殊属性。这是让 `IonItem` 知道在渲染时将 `IonCheckbox` 放在哪里的关键。这不是 Vue API，而是一个 Web 标准 API。此外，这与你可能记得的 Vue 2 中的插槽 API 不同。
 
-Let's look at another component from Ionic Framework, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we will need three components: a FAB, a FAB Button, and an Icon.
+让我们看看 Ionic Framework 的另一个组件，FAB。浮动操作按钮是一种很好的方式，可以提供从应用其余部分提升出来的主要操作。对于这个 FAB，我们需要三个组件：一个 FAB，一个 FAB 按钮和一个图标。
 
 ```html
 <template>
@@ -369,9 +369,9 @@ Let's look at another component from Ionic Framework, FAB. Floating Action Butto
 </script>
 ```
 
-On our main `IonFab`, we are setting its positioning with the vertical and horizontal attributes. We are also setting the render location to "fixed" with the slot attribute. This will tell `IonFab` to render outside of the scrollable content in `IonContent`.
+在我们的主 `IonFab` 上，我们通过 vertical 和 horizontal 属性设置其位置。我们还通过 slot 属性将渲染位置设置为 "fixed"。这将告诉 `IonFab` 在 `IonContent` 的可滚动内容之外进行渲染。
 
-Now let's wire up a click handler to this. When clicking the FAB button, we want to navigate to a new page (which we will create in a moment). To do this, we will need to get access to Vue Router's navigation API. This can be done by importing `useRouter` from the `vue-router` package.
+现在让我们为此连接一个点击处理器。当点击 FAB 按钮时，我们想导航到一个新页面（我们马上会创建）。为此，我们需要访问 Vue Router 的导航 API。这可以通过从 `vue-router` 包中导入 `useRouter` 来实现。
 
 ```html
 <template>
@@ -416,15 +416,15 @@ Now let's wire up a click handler to this. When clicking the FAB button, we want
 </script>
 ```
 
-In our component file, we are importing the `useRouter` function. When called, this function injects the router dependency into the component. It gives us access to the history API from Vue Router, allowing us to push a new route onto the navigation stack. On our `IonFabButton`, we can add a click handler, and just call `router.push` and pass in the new route. In this case, we will navigate to `new`.
+在我们的组件文件中，我们导入了 `useRouter` 函数。调用时，此函数将路由依赖项注入到组件中。它使我们能够访问 Vue Router 的历史 API，允许我们将新路由推送到导航堆栈上。在我们的 `IonFabButton` 上，我们可以添加一个点击处理器，然后调用 `router.push` 并传入新路由。在这种情况下，我们将导航到 `new`。
 
 ```html
 <ion-fab-button @click="() => router.push('/new')"> ... </ion-fab-button>
 ```
 
-## Creating a new Route
+## 创建新路由
 
-Now that we have the pieces in place to navigate in our app, we need to create a new component and add the new route to our router declaration. Let's open our `router/index.ts` file and add the new route.
+现在我们已经具备了在应用中导航的条件，我们需要创建一个新组件并将新路由添加到我们的路由声明中。让我们打开 `router/index.ts` 文件并添加新路由。
 
 ```tsx
 import { createRouter, createWebHistory } from '@ionic/vue-router';
@@ -457,9 +457,9 @@ const router = createRouter({
 export default router;
 ```
 
-With our router now having an entry for the route `/new`, we will create the component needed, `NewItem`. This will exist in `views/NewItem.vue`.
+现在我们的路由器有了路由 `/new` 的条目，我们将创建所需的组件 `NewItem`。它将存在于 `views/NewItem.vue` 中。
 
-Let's fill the `NewItem.vue` file with some placeholder content for the moment.
+让我们先用一些占位内容填充 `NewItem.vue` 文件。
 
 ```html
 <template>
@@ -469,7 +469,7 @@ Let's fill the `NewItem.vue` file with some placeholder content for the moment.
         <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>New Item</ion-title>
+        <ion-title>新项目</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content></ion-content>
@@ -496,29 +496,29 @@ Let's fill the `NewItem.vue` file with some placeholder content for the moment.
 ```
 
 :::note
-Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](navigation.md#ionpage) for more information.
+每个视图必须包含一个 `IonPage` 组件。没有它，页面过渡将无法正常工作。有关更多信息，请参阅 [IonPage 文档](navigation.md#ionpage)。
 :::
 
-The content here should look similar to the `Home` component. What is different here is the `IonBackButton` component. This is used to navigate back to the previous route. Seems easy enough, right? Ok, but what if we reload the page?
+这里的内容应该看起来与 `Home` 组件相似。不同之处在于 `IonBackButton` 组件。它用于导航回上一个路由。看起来很简单，对吧？好的，但是如果我们重新加载页面呢？
 
-In this case, the in-memory history is lost, so the back button disappears. To address this, we can set the `default-href` attribute value to the URL we want to navigate to if there is no history.
+在这种情况下，内存中的历史记录丢失了，所以后退按钮会消失。为了解决这个问题，我们可以设置 `default-href` 属性值，指定在没有历史记录时要导航到的 URL。
 
 ```html
 <ion-back-button default-href="/home"></ion-back-button>
 ```
 
-Now, If there is no app history present, we will be able to navigate back to our home route.
+现在，如果没有应用历史记录，我们将能够导航回我们的主页路由。
 
-## Calling Methods on Components
+## 调用组件上的方法
 
-In order to call a method on any of the Ionic Vue components, you will first need to get a reference to the component instance. Next, you will need to access the underlying Web Component using `$el` and call the method.
+为了调用任何 Ionic Vue 组件的方法，你首先需要获取对组件实例的引用。接下来，你需要使用 `$el` 访问底层的 Web 组件并调用该方法。
 
-In other framework integrations such as Ionic React, this is not needed as any `ref` you provide is automatically forwarded to the underlying Web Component instance. We are unable to do the same thing here due to limitations in how Vue manages refs.
+在其他框架集成中，如 Ionic React，不需要这样做，因为你提供的任何 `ref` 都会自动转发到底层的 Web 组件实例。由于 Vue 管理 ref 的方式存在限制，我们在这里无法做同样的事情。
 
 ```html
 <template>
   <ion-content ref="content">
-    <ion-button @click="scrollToBottom">Scroll to Bottom</ion-button>
+    <ion-button @click="scrollToBottom">滚动到底部</ion-button>
 
     ...
   </ion-content>
@@ -542,13 +542,13 @@ In other framework integrations such as Ionic React, this is not needed as any `
 </script>
 ```
 
-## Adding Icons
+## 添加图标
 
-Ionic Vue comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. There are a couple options developers have for using them in their application.
+Ionic Vue 预装了 [Ionicons](https://ionic.io/ionicons/)。开发人员有几种选项可以在他们的应用程序中使用它们。
 
-### Dynamic Imports
+### 动态导入
 
-Dynamic Imports is the recommended approach to using Ionicons. This involves importing the icon of your choice from the `ionicons` package and passing it to your template:
+动态导入是使用 Ionicons 的推荐方法。这涉及从 `ionicons` 包中导入你选择的图标，并将其传递给你的模板：
 
 ```html
 <template>
@@ -577,13 +577,13 @@ Dynamic Imports is the recommended approach to using Ionicons. This involves imp
 </script>
 ```
 
-Let's break down what we are doing here. First, we are importing the `heart` icon from `ionicons/icons`. This will load the appropriate SVG data for our icon.
+让我们分解一下我们在这里做什么。首先，我们从 `ionicons/icons` 导入 `heart` 图标。这将为我们的图标加载适当的 SVG 数据。
 
-Next, we pass the `heart` data to our template in the `setup` method.
+接下来，我们在 `setup` 方法中将 `heart` 数据传递给我们的模板。
 
-Finally, we pass the icon data into the `ion-icon` component via the `icon` property.
+最后，我们通过 `icon` 属性将图标数据传递到 `ion-icon` 组件中。
 
-Developers also have the option of setting different icons based upon the mode:
+开发人员还可以选择根据模式设置不同的图标：
 
 ```html
 <template>
@@ -612,13 +612,13 @@ Developers also have the option of setting different icons based upon the mode:
 </script>
 ```
 
-Note that any icon names that are hyphenated should be written in camel case when importing.
+请注意，任何带连字符的图标名称在导入时应使用驼峰式写法。
 
-### Global Imports
+### 全局导入
 
-The other option is to import specific icons globally. This is not typically recommended as it will force icons to be loaded every time your application starts and can increase your application's initial chunk size.
+另一种选择是全局导入特定的图标。通常不推荐这样做，因为它会强制图标在每次应用程序启动时加载，并可能增加应用程序的初始块大小。
 
-That being said, there may be use cases when it makes sense to load specific icons globally:
+话虽如此，在某些用例下，全局加载特定图标可能是有意义的：
 
 **main.ts**
 
@@ -656,27 +656,27 @@ addIcons({
 </script>
 ```
 
-In `main.ts`, the `addIcons` function lets us register icons globally and give it a string as a key. We then reference the icon by that key in our `Home` component.
+在 `main.ts` 中，`addIcons` 函数让我们全局注册图标，并为其指定一个字符串作为键。然后我们在 `Home` 组件中通过该键引用图标。
 
-## Optimizing Your Build
+## 优化你的构建
 
-Vue gives you several tools to fine tune your application. This section will cover the options that are most relevant to Ionic Framework.
+Vue 提供了几个工具来微调你的应用程序。本节将介绍与 Ionic Framework 最相关的选项。
 
-### Local Component Registration (Recommended)
+### 局部组件注册（推荐）
 
-By default, Ionic Framework components are registered locally. With local registration, these components are imported and provided to each Vue component you want to use them in. This is the recommended approach as it allows lazy loading and treeshaking to work properly with Ionic Framework components.
+默认情况下，Ionic Framework 组件是局部注册的。使用局部注册时，这些组件会被导入并提供给你想要使用它们的每个 Vue 组件。这是推荐的方法，因为它允许懒加载和摇树优化与 Ionic Framework 组件正常工作。
 
-The one downside to this approach is that it may be tedious to re-import your Ionic Framework components multiple times. However, we feel that the performance benefits you receive in exchange are worth it.
+这种方法的一个缺点是，多次重新导入 Ionic Framework 组件可能会很繁琐。但是，我们觉得你因此获得的性能优势是值得的。
 
-Also note that locally registered components are not available in subcomponents. You will need to re-import the Ionic Framework components you would like to use in your subcomponent.
+还要注意，局部注册的组件在子组件中不可用。你需要在子组件中重新导入你想使用的 Ionic Framework 组件。
 
-Let's take a look at how local component registration works:
+让我们看看局部组件注册是如何工作的：
 
 ```html
 <template>
   <ion-page>
     <ion-content>
-      <Subcomponent></Subcomponent>
+      <子组件></子组件>
     </ion-content>
   </ion-page>
 </template>
@@ -684,27 +684,27 @@ Let's take a look at how local component registration works:
 <script lang="ts">
   import { defineComponent } from 'vue';
   import { IonContent, IonPage } from '@ionic/vue';
-  import Subcomponent from '@/components/Subcomponent.vue';
+  import 子组件 from '@/components/Subcomponent.vue';
 
   export default defineComponent({
-    components: { IonContent, IonPage, Subcomponent },
+    components: { IonContent, IonPage, 子组件 },
   });
 </script>
 ```
 
-In the example above, we are using the `IonPage` and `IonContent` components. To use them, we first import them from `@ionic/vue`. Then, we provide them to our Vue component in the `components` option. From there, we can use the components in our template.
+在上面的例子中，我们使用了 `IonPage` 和 `IonContent` 组件。要使用它们，我们首先从 `@ionic/vue` 导入它们。然后，我们在 `components` 选项中将它们提供给我们的 Vue 组件。之后，我们就可以在模板中使用这些组件了。
 
-Note that since we are registering these components locally, neither `IonPage` nor `IonContent` will be available in `Subcomponent` unless we register them there as well.
+请注意，由于我们是局部注册这些组件，`IonPage` 和 `IonContent` 在 `子组件` 中将不可用，除非我们也在那里注册它们。
 
-For more information, see the <a href="https://v3.vuejs.org/guide/component-registration.html#local-registration" target="_blank" rel="noopener noreferrer">Local Registration Vue Documentation</a>.
+有关更多信息，请参阅 <a href="https://v3.vuejs.org/guide/component-registration.html#local-registration" target="_blank" rel="noopener noreferrer">局部注册 Vue 文档</a>。
 
-### Global Component Registration
+### 全局组件注册
 
-The other option for registering components is to use global registration. Global registration involves importing the components you want to use in `main.ts` and calling the `component` method on your Vue app instance.
+注册组件的另一种选择是使用全局注册。全局注册涉及在 `main.ts` 中导入你想使用的组件，并在你的 Vue 应用实例上调用 `component` 方法。
 
-While this makes it easier to add Ionic Framework components to your Vue app, global registration often is not ideal. To quote the Vue documentation: "If you're using a build system like Webpack, globally registering all components means that even if you stop using a component, it could still be included in your final build. This unnecessarily increases the amount of JavaScript your users have to download".
+虽然这使得将 Ionic Framework 组件添加到 Vue 应用变得更容易，但全局注册通常并不理想。引用 Vue 文档的话："如果你正在使用像 Webpack 这样的构建系统，全局注册所有组件意味着即使你停止使用某个组件，它仍然可能被包含在你的最终构建中。这不必要地增加了用户必须下载的 JavaScript 的数量"。
 
-Let's take a look at how global component registration works:
+让我们看看全局组件注册是如何工作的：
 
 **main.ts**
 
@@ -723,30 +723,30 @@ app.component('ion-page', IonPage);
 <template>
   <ion-page>
     <ion-content>
-      <Subcomponent></Subcomponent>
+      <子组件></子组件>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import Subcomponent from '@/components/Subcomponent.vue';
+  import 子组件 from '@/components/Subcomponent.vue';
 
   export default defineComponent({
-    components: { Subcomponent },
+    components: { 子组件 },
   });
 </script>
 ```
 
-In the example above, we are using the `IonPage` and `IonContent` components. To use them, we first import them from `@ionic/vue` in `main.ts`. From there, we call the `component` method on our app instance and pass it the tag name as well as the component definition. After we do that, we can use the components in the rest of our application without having to import them into each Vue component.
+在上面的例子中，我们使用了 `IonPage` 和 `IonContent` 组件。要使用它们，我们首先在 `main.ts` 中从 `@ionic/vue` 导入它们。然后，我们在应用实例上调用 `component` 方法，并将标签名和组件定义传递给它。完成此操作后，我们可以在应用程序的其余部分使用这些组件，而无需将它们导入每个 Vue 组件。
 
-For more information, see the <a href="https://v3.vuejs.org/guide/component-registration.html#global-registration" target="_blank" rel="noopener noreferrer">Global Registration Vue Documentation</a>.
+有关更多信息，请参阅 <a href="https://v3.vuejs.org/guide/component-registration.html#global-registration" target="_blank" rel="noopener noreferrer">全局注册 Vue 文档</a>。
 
-### Prefetching Application JavaScript
+### 预取应用程序 JavaScript
 
-By default, the Vue CLI will automatically generate prefetch hints for the JavaScript in your application. Prefetching utilizes the browser idle time to download documents that the user might visit in the near future. When the user visits a page that requires the prefetched document, it can be served quickly from the browser's cache.
+默认情况下，Vue CLI 会自动为你的应用程序中的 JavaScript 生成预取提示。预取利用浏览器空闲时间下载用户可能在不久的将来访问的文档。当用户访问需要预取文档的页面时，可以从浏览器缓存中快速提供该文档。
 
-Prefetching consumes bandwidth, so if you have a large app, you may want to disable it. You can do this by modifying or creating your `vue.config.js` file:
+预取会消耗带宽，所以如果你的应用很大，你可能希望禁用它。你可以通过修改或创建 `vue.config.js` 文件来实现：
 
 **vue.config.js**
 
@@ -758,19 +758,19 @@ module.exports = {
 };
 ```
 
-The configuration above will prevent all files from being prefetched and, instead, will be loaded when they are needed. You can also select certain chunks to prefetch. Check out the <a href="https://cli.vuejs.org/guide/html-and-static-assets.html#prefetch" target="_blank" rel="noopener noreferrer">Vue CLI Docs on Prefetching</a> for more examples.
+上面的配置将阻止所有文件被预取，而是在需要时才加载。你也可以选择预取特定的代码块。查看 <a href="https://cli.vuejs.org/guide/html-and-static-assets.html#prefetch" target="_blank" rel="noopener noreferrer">关于预取的 Vue CLI 文档</a> 获取更多示例。
 
-## Build a Native App
+## 构建原生应用
 
-We now have the basics of an Ionic Vue app down, including some UI components and navigation. The great thing about Ionic Framework’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile, desktop, and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitorjs.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
+我们现在已经掌握了 Ionic Vue 应用的基础知识，包括一些 UI 组件和导航。Ionic Framework 组件的伟大之处在于它们可以在任何地方运行，包括 iOS、Android 和 PWA。为了部署到移动设备、桌面等平台，我们使用 Ionic 的跨平台应用运行时 [Capacitor](https://capacitorjs.com)。它提供了一套一致的、以 Web 为中心的 API，使应用能够尽可能接近 Web 标准，同时在支持它们的平台上访问丰富的原生设备功能。
 
-Adding native functionality is easy. First, add Capacitor to your project:
+添加原生功能很容易。首先，将 Capacitor 添加到你的项目中：
 
 ```shell
 ionic integrations enable capacitor
 ```
 
-Next, build the project, then add your platform of choice:
+接下来，构建项目，然后添加你选择的平台：
 
 ```shell
 ionic build
@@ -778,28 +778,28 @@ ionic cap add ios
 ionic cap add android
 ```
 
-We use the standard native IDEs (Xcode and Android Studio) to open, build, and run the iOS and Android projects:
+我们使用标准的原生 IDE（Xcode 和 Android Studio）来打开、构建和运行 iOS 和 Android 项目：
 
 ```shell
 ionic cap open ios
 ionic cap open android
 ```
 
-Additional details can be found [here](https://capacitorjs.com/docs/getting-started/with-ionic).
+其他详细信息可以在[这里](https://capacitorjs.com/docs/getting-started/with-ionic)找到。
 
-Next, check out [all the APIs](https://capacitorjs.com/docs/apis) that are available. There is some great features, including the [Camera API](https://capacitorjs.com/docs/apis/camera). We can implement photo capture functionality in just a few lines of code:
+接下来，查看所有可用的 [API](https://capacitorjs.com/docs/apis)。有一些很棒的功能，包括[相机 API](https://capacitorjs.com/docs/apis/camera)。我们只需几行代码就可以实现拍照功能：
 
 ```html
 <template>
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Ionic Blank</ion-title>
+        <ion-title>Ionic 空白</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
       <img :src="photo" />
-      <ion-button @click="takePhoto()">Take Photo</ion-button>
+      <ion-button @click="takePhoto()">拍照</ion-button>
     </ion-content>
   </ion-page>
 </template>
@@ -840,10 +840,10 @@ Next, check out [all the APIs](https://capacitorjs.com/docs/apis) that are avail
 </script>
 ```
 
-## Where to go from here
+## 下一步去哪里
 
-This guide covered the basics of creating an Ionic Vue app, adding some basic navigation, and introducing Capacitor as a way of building native apps. To dive deeper into building complete Ionic Framework apps with Vue and Capacitor, follow our [First App guide](your-first-app.md).
+本指南涵盖了创建 Ionic Vue 应用、添加一些基本导航以及介绍 Capacitor 作为构建原生应用的方法的基础知识。要更深入地了解使用 Vue 和 Capacitor 构建完整的 Ionic Framework 应用，请遵循我们的[第一个应用指南](your-first-app.md)。
 
-For a more detailed look at Ionic Frameworks’s components, check out the [component API pages](https://ionicframework.com/docs/components). For more details on Vue, review the [Vue Docs](https://v3.vuejs.org/). To keep building native features, see the [Capacitor docs](https://capacitorjs.com/docs/).
+要更详细地了解 Ionic Framework 的组件，请查看[组件 API 页面](https://ionicframework.com/docs/components)。有关 Vue 的更多详细信息，请查阅 [Vue 文档](https://v3.vuejs.org/)。要继续构建原生功能，请参阅 [Capacitor 文档](https://capacitorjs.com/docs/)。
 
-Happy app building! 🎉
+祝你应用构建愉快！🎉

@@ -7,10 +7,10 @@ import './main.css';
 function Example() {
   return (
     <IonBreadcrumbs>
-      <IonBreadcrumb href="#home">Home</IonBreadcrumb>
-      <IonBreadcrumb href="#electronics">Electronics</IonBreadcrumb>
-      <IonBreadcrumb href="#cameras">Cameras</IonBreadcrumb>
-      <IonBreadcrumb href="#film">Film</IonBreadcrumb>
+      <IonBreadcrumb href="#home">首页</IonBreadcrumb>
+      <IonBreadcrumb href="#electronics">电子产品</IonBreadcrumb>
+      <IonBreadcrumb href="#cameras">相机</IonBreadcrumb>
+      <IonBreadcrumb href="#film">胶片</IonBreadcrumb>
     </IonBreadcrumbs>
   );
 }

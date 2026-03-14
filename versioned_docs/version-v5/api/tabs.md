@@ -1,6 +1,6 @@
 ---
-title: 'Ion-Tabs: Tab-Based Component for App Top-Level Navigation'
-description: 'Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps.'
+title: 'Ion-Tabs：用于应用顶层导航的标签页组件'
+description: '标签页是实现标签导航的顶层组件。Ion-tabs 没有样式，作为路由出口工作，提供类似原生应用的导航体验。'
 sidebar_label: 'ion-tabs'
 demoUrl: '/docs/demos/api/tabs/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/tabs/index.html'
@@ -18,16 +18,15 @@ import Slots from '@ionic-internal/component-api/v5/tabs/slots.md';
 
 # ion-tabs
 
-Tabs are a top level navigation component to implement a tab-based navigation.
-The component is a container of individual [Tab](tab.md) components.
+标签页是实现标签导航的顶层导航组件。该组件是独立 [Tab](tab.md) 组件的容器。
 
-The `ion-tabs` component does not have any styling and works as a router outlet in order to handle navigation. It does not provide any UI feedback or mechanism to switch between tabs. In order to do so, an `ion-tab-bar` should be provided as a direct child of `ion-tabs`.
+`ion-tabs` 组件没有任何样式，作为路由出口来处理导航。它不提供任何用户界面反馈或切换标签的机制。为此，应提供一个 `ion-tab-bar` 作为 `ion-tabs` 的直接子元素。
 
-Both `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They don’t depend on each other to work, but they are usually used together in order to implement a tab-based navigation that behaves like a native app.
+`ion-tabs` 和 `ion-tab-bar` 都可以作为独立元素使用。它们不依赖彼此工作，但通常一起使用，以实现类似原生应用的标签导航体验。
 
-The `ion-tab-bar` needs a slot defined in order to be projected to the right place in an `ion-tabs` component.
+`ion-tab-bar` 需要定义一个插槽，以便在 `ion-tabs` 组件中投影到正确的位置。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -38,38 +37,38 @@ The `ion-tab-bar` needs a slot defined in order to be projected to the right pla
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="schedule">
       <ion-icon name="calendar"></ion-icon>
-      <ion-label>Schedule</ion-label>
+      <ion-label>日程</ion-label>
       <ion-badge>6</ion-badge>
     </ion-tab-button>
 
     <ion-tab-button tab="speakers">
       <ion-icon name="person-circle"></ion-icon>
-      <ion-label>Speakers</ion-label>
+      <ion-label>演讲者</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="map">
       <ion-icon name="map"></ion-icon>
-      <ion-label>Map</ion-label>
+      <ion-label>地图</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="about">
       <ion-icon name="information-circle"></ion-icon>
-      <ion-label>About</ion-label>
+      <ion-label>关于</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
 ```
 
-### Router integration
+### 路由集成
 
-When used with Angular's router the `tab` property of the `ion-tab-button` should be a reference to the route path.
+与 Angular 路由器一起使用时，`ion-tab-button` 的 `tab` 属性应引用路由路径。
 
 ```html
 <ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="schedule">
       <ion-icon name="calendar"></ion-icon>
-      <ion-label>Schedule</ion-label>
+      <ion-label>日程</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
@@ -128,31 +127,31 @@ const routes: Routes = [
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="tab-schedule">
       <ion-icon name="calendar"></ion-icon>
-      <ion-label>Schedule</ion-label>
+      <ion-label>日程</ion-label>
       <ion-badge>6</ion-badge>
     </ion-tab-button>
 
     <ion-tab-button tab="tab-speaker">
       <ion-icon name="person-circle"></ion-icon>
-      <ion-label>Speakers</ion-label>
+      <ion-label>演讲者</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab-map">
       <ion-icon name="map"></ion-icon>
-      <ion-label>Map</ion-label>
+      <ion-label>地图</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab-about">
       <ion-icon name="information-circle"></ion-icon>
-      <ion-label>About</ion-label>
+      <ion-label>关于</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
 ```
 
-### Activating Tabs
+### 激活标签页
 
-Each `ion-tab-button` will activate one of the tabs when pressed. In order to link the `ion-tab-button` to the `ion-tab` container, a matching `tab` property should be set on each component.
+每个 `ion-tab-button` 被按下时会激活一个标签页。为了将 `ion-tab-button` 链接到 `ion-tab` 容器，应在每个组件上设置匹配的 `tab` 属性。
 
 ```html
 <ion-tab tab="settings"> ... </ion-tab>
@@ -160,21 +159,21 @@ Each `ion-tab-button` will activate one of the tabs when pressed. In order to li
 <ion-tab-button tab="settings"> ... </ion-tab-button>
 ```
 
-The `ion-tab-button` and `ion-tab` above are linked by the common `tab` property.
+上面的 `ion-tab-button` 和 `ion-tab` 通过共同的 `tab` 属性链接在一起。
 
-The `tab` property identifies each tab, and it has to be unique within the `ion-tabs`. It's important to always set the `tab` property on the `ion-tab` and `ion-tab-button`, even if one component is not used.
+`tab` 属性标识每个标签页，在 `ion-tabs` 内部必须是唯一的。即使某个组件未被使用，也务必在 `ion-tab` 和 `ion-tab-button` 上设置 `tab` 属性。
 
-### Router integration
+### 路由集成
 
-When used with Ionic's router (`ion-router`) the `tab` property of the `ion-tab` matches the `component` property of an `ion-route`.
+与 Ionic 的路由器（`ion-router`）一起使用时，`ion-tab` 的 `tab` 属性应与 `ion-route` 的 `component` 属性匹配。
 
-The following route within the scope of an `ion-tabs` outlet:
+在 `ion-tabs` 出口作用域内的以下路由：
 
 ```html
 <ion-route url="/settings-page" component="settings"></ion-route>
 ```
 
-will match the following tab:
+将匹配以下标签页：
 
 ```html
 <ion-tab tab="settings" component="settings-component"></ion-tab>
@@ -194,23 +193,23 @@ export const TabsExample: React.FC = () => (
     <IonTabBar slot="bottom">
       <IonTabButton tab="schedule">
         <IonIcon icon={calendar} />
-        <IonLabel>Schedule</IonLabel>
+        <IonLabel>日程</IonLabel>
         <IonBadge>6</IonBadge>
       </IonTabButton>
 
       <IonTabButton tab="speakers">
         <IonIcon icon={personCircle} />
-        <IonLabel>Speakers</IonLabel>
+        <IonLabel>演讲者</IonLabel>
       </IonTabButton>
 
       <IonTabButton tab="map">
         <IonIcon icon={map} />
-        <IonLabel>Map</IonLabel>
+        <IonLabel>地图</IonLabel>
       </IonTabButton>
 
       <IonTabButton tab="about">
         <IonIcon icon={informationCircle} />
-        <IonLabel>About</IonLabel>
+        <IonLabel>关于</IonLabel>
       </IonTabButton>
     </IonTabBar>
   </IonTabs>
@@ -251,23 +250,23 @@ export class TabsExample {
         <ion-tab-bar slot="bottom">
           <ion-tab-button tab="tab-schedule">
             <ion-icon name="calendar"></ion-icon>
-            <ion-label>Schedule</ion-label>
+            <ion-label>日程</ion-label>
             <ion-badge>6</ion-badge>
           </ion-tab-button>
 
           <ion-tab-button tab="tab-speaker">
             <ion-icon name="person-circle"></ion-icon>
-            <ion-label>Speakers</ion-label>
+            <ion-label>演讲者</ion-label>
           </ion-tab-button>
 
           <ion-tab-button tab="tab-map">
             <ion-icon name="map"></ion-icon>
-            <ion-label>Map</ion-label>
+            <ion-label>地图</ion-label>
           </ion-tab-button>
 
           <ion-tab-button tab="tab-about">
             <ion-icon name="information-circle"></ion-icon>
-            <ion-label>About</ion-label>
+            <ion-label>关于</ion-label>
           </ion-tab-button>
         </ion-tab-bar>
       </ion-tabs>,
@@ -276,9 +275,9 @@ export class TabsExample {
 }
 ```
 
-### Activating Tabs
+### 激活标签页
 
-Each `ion-tab-button` will activate one of the tabs when pressed. In order to link the `ion-tab-button` to the `ion-tab` container, a matching `tab` property should be set on each component.
+每个 `ion-tab-button` 被按下时会激活一个标签页。为了将 `ion-tab-button` 链接到 `ion-tab` 容器，应在每个组件上设置匹配的 `tab` 属性。
 
 ```jsx
 <ion-tab tab="settings">
@@ -290,21 +289,21 @@ Each `ion-tab-button` will activate one of the tabs when pressed. In order to li
 </ion-tab-button>
 ```
 
-The `ion-tab-button` and `ion-tab` above are linked by the common `tab` property.
+上面的 `ion-tab-button` 和 `ion-tab` 通过共同的 `tab` 属性链接在一起。
 
-The `tab` property identifies each tab, and it has to be unique within the `ion-tabs`. It's important to always set the `tab` property on the `ion-tab` and `ion-tab-button`, even if one component is not used.
+`tab` 属性标识每个标签页，在 `ion-tabs` 内部必须是唯一的。即使某个组件未被使用，也务必在 `ion-tab` 和 `ion-tab-button` 上设置 `tab` 属性。
 
-### Router integration
+### 路由集成
 
-When used with Ionic's router (`ion-router`) the `tab` property of the `ion-tab` matches the `component` property of an `ion-route`.
+与 Ionic 的路由器（`ion-router`）一起使用时，`ion-tab` 的 `tab` 属性应与 `ion-route` 的 `component` 属性匹配。
 
-The following route within the scope of an `ion-tabs` outlet:
+在 `ion-tabs` 出口作用域内的以下路由：
 
 ```tsx
 <ion-route url="/settings-page" component="settings"></ion-route>
 ```
 
-will match the following tab:
+将匹配以下标签页：
 
 ```tsx
 <ion-tab tab="settings" component="settings-component"></ion-tab>
@@ -323,13 +322,13 @@ will match the following tab:
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="schedule" href="/tabs/schedule">
           <ion-icon :icon="calendar"></ion-icon>
-          <ion-label>Schedule</ion-label>
+          <ion-label>日程</ion-label>
           <ion-badge>6</ion-badge>
         </ion-tab-button>
 
         <ion-tab-button tab="speakers" href="/tabs/speakers">
           <ion-icon :icon="personCircle"></ion-icon>
-          <ion-label>Speakers</ion-label>
+          <ion-label>演讲者</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
@@ -352,10 +351,10 @@ will match the following tab:
     },
     setup() {
       const beforeTabChange = () => {
-        // do something before tab change
+        // 标签页切换前执行操作
       };
       const afterTabChange = () => {
-        // do something after tab change
+        // 标签页切换后执行操作
       };
       return {
         calendar,
@@ -375,11 +374,11 @@ will match the following tab:
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Schedule</ion-title>
+        <ion-title>日程</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="ion-padding">Schedule Tab</ion-content>
+    <ion-content class="ion-padding">日程标签页</ion-content>
   </ion-page>
 </template>
 
@@ -400,11 +399,11 @@ will match the following tab:
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Speakers</ion-title>
+        <ion-title>演讲者</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="ion-padding">Speakers Tab</ion-content>
+    <ion-content class="ion-padding">演讲者标签页</ion-content>
   </ion-page>
 </template>
 
@@ -422,26 +421,26 @@ will match the following tab:
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 影子部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

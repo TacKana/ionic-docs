@@ -18,7 +18,7 @@
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
-        <p>You will be prompted when closing this modal.</p>
+        <p>关闭此模态框时，您将收到提示。</p>
       </ion-content>
     </ion-modal>
   </ion-content>
@@ -37,7 +37,7 @@
   async function promptClose() {
     const actionSheet = document.createElement('ion-action-sheet');
 
-    actionSheet.header = 'Are you sure?';
+    actionSheet.header = '确定要关闭吗？';
     actionSheet.buttons = [
       {
         text: 'Yes',

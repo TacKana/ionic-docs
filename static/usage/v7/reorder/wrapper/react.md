@@ -4,47 +4,45 @@ import { IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, ItemReorderEve
 
 function Example() {
   function handleReorder(event: CustomEvent<ItemReorderEventDetail>) {
-    // The `from` and `to` properties contain the index of the item
-    // when the drag started and ended, respectively
-    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+    // `from` 和 `to` 属性分别记录了拖拽开始和结束时项目的索引位置
+    console.log('拖拽从索引', event.detail.from, '到', event.detail.to);
 
-    // Finish the reorder and position the item in the DOM based on
-    // where the gesture ended. This method can also be called directly
-    // by the reorder group
+    // 完成重新排序，根据手势结束的位置在 DOM 中定位项目。
+    // 此方法也可以由重新排序组直接调用。
     event.detail.complete();
   }
 
   return (
     <IonList>
-      {/* The reorder gesture is disabled by default, enable it to drag and drop items */}
+      {/* 重新排序手势默认是禁用的，启用后即可拖放项目 */}
       <IonReorderGroup disabled={false} onIonItemReorder={handleReorder}>
         <IonReorder>
           <IonItem>
-            <IonLabel>Item 1</IonLabel>
+            <IonLabel>项目 1</IonLabel>
           </IonItem>
         </IonReorder>
 
         <IonReorder>
           <IonItem>
-            <IonLabel>Item 2</IonLabel>
+            <IonLabel>项目 2</IonLabel>
           </IonItem>
         </IonReorder>
 
         <IonReorder>
           <IonItem>
-            <IonLabel>Item 3</IonLabel>
+            <IonLabel>项目 3</IonLabel>
           </IonItem>
         </IonReorder>
 
         <IonReorder>
           <IonItem>
-            <IonLabel>Item 4</IonLabel>
+            <IonLabel>项目 4</IonLabel>
           </IonItem>
         </IonReorder>
 
         <IonReorder>
           <IonItem>
-            <IonLabel>Item 5</IonLabel>
+            <IonLabel>项目 5</IonLabel>
           </IonItem>
         </IonReorder>
       </IonReorderGroup>

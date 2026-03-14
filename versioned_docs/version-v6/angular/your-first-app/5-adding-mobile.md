@@ -2,15 +2,15 @@
 strip_number_prefixes: false
 ---
 
-# Adding Mobile
+# 添加移动端支持
 
-Our photo gallery app won’t be complete until it runs on iOS, Android, and the web - all using one codebase. All it takes is some small logic changes to support mobile platforms, installing some native tooling, then running the app on a device. Let’s go!
+我们的照片画廊应用需要能够在 iOS、Android 和 Web 上运行——所有这些都使用同一套代码库——才算真正完成。只需要做一些小的逻辑调整来支持移动平台，安装一些原生工具，然后在设备上运行应用即可。让我们开始吧！
 
-## Import Platform API
+## 导入 Platform API
 
-Let’s start with making some small code changes - then our app will “just work” when we deploy it to a device.
+让我们先从一些小的代码修改开始——这样当我们把应用部署到设备上时，它就能“正常运行”了。
 
-Import the Ionic [Platform API](https://ionicframework.com/docs/angular/platform) into `photo.service.ts`, which is used to retrieve information about the current device. In this case, it’s useful for selecting which code to execute based on the platform the app is running on (web or mobile):
+将 Ionic 的 [Platform API](https://ionicframework.com/docs/angular/platform) 导入到 `photo.service.ts` 中，这个 API 用于获取当前设备的信息。在这种情况下，它对于根据应用运行平台（Web 或移动端）选择执行哪些代码非常有用：
 
 ```tsx
 import { Platform } from '@ionic/angular';
@@ -24,19 +24,19 @@ export class PhotoService {
     this.platform = platform;
   }
 
-  // other code
+  // 其他代码
 }
 ```
 
-## Platform-specific Logic
+## 平台特定逻辑
 
-First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the Filesystem `readFile()` method. Otherwise, use the same logic as before when running the app on the web:
+首先，我们将更新照片保存功能以支持移动端。在 `readAsBase64()` 函数中，检查应用运行在哪个平台上。如果是“混合”平台（Capacitor 或 Cordova，两种原生运行时），则使用 Filesystem 的 `readFile()` 方法将照片文件读取为 base64 格式。否则，当应用在 Web 上运行时，使用与之前相同的逻辑：
 
 ```tsx
 private async readAsBase64(photo: Photo) {
-  // "hybrid" will detect Cordova or Capacitor
+  // "hybrid" 将检测到 Cordova 或 Capacitor
   if (this.platform.is('hybrid')) {
-    // Read the file into base64 format
+    // 将文件读取为 base64 格式
     const file = await Filesystem.readFile({
       path: photo.path
     });
@@ -44,7 +44,7 @@ private async readAsBase64(photo: Photo) {
     return file.data;
   }
   else {
-    // Fetch the photo, read as a blob, then convert to base64 format
+    // 获取照片，读取为 blob，然后转换为 base64 格式
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
 
@@ -53,15 +53,15 @@ private async readAsBase64(photo: Photo) {
 }
 ```
 
-Next, update the `savePicture()` method. When running on mobile, set `filepath` to the result of the `writeFile()` operation - `savedFile.uri`. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc()` method ([details here](https://ionicframework.com/docs/core-concepts/webview#file-protocol)).
+接下来，更新 `savePicture()` 方法。当在移动端运行时，将 `filepath` 设置为 `writeFile()` 操作的结果——`savedFile.uri`。设置 `webviewPath` 时，使用特殊的 `Capacitor.convertFileSrc()` 方法（[详情在此](https://ionicframework.com/docs/core-concepts/webview#file-protocol)）。
 
 ```tsx
-// Save picture to file on device
+// 将图片保存到设备文件中
 private async savePicture(photo: Photo) {
-  // Convert photo to base64 format, required by Filesystem API to save
+  // 将照片转换为 base64 格式，这是 Filesystem API 保存所必需的
   const base64Data = await this.readAsBase64(photo);
 
-  // Write the file to the data directory
+  // 将文件写入数据目录
   const fileName = Date.now() + '.jpeg';
   const savedFile = await Filesystem.writeFile({
     path: fileName,
@@ -70,16 +70,15 @@ private async savePicture(photo: Photo) {
   });
 
   if (this.platform.is('hybrid')) {
-    // Display the new image by rewriting the 'file://' path to HTTP
-    // Details: https://ionicframework.com/docs/building/webview#file-protocol
+    // 通过将 'file://' 路径重写为 HTTP 来显示新图像
+    // 详情：https://ionicframework.com/docs/building/webview#file-protocol
     return {
       filepath: savedFile.uri,
       webviewPath: Capacitor.convertFileSrc(savedFile.uri),
     };
   }
   else {
-    // Use webPath to display the new image instead of base64 since it's
-    // already loaded into memory
+    // 使用 webPath 来显示新图像，而不是 base64，因为它已经加载到内存中
     return {
       filepath: fileName,
       webviewPath: photo.webPath
@@ -88,30 +87,30 @@ private async savePicture(photo: Photo) {
 }
 ```
 
-Next, head back over to the `loadSaved()` function we implemented for the web earlier. On mobile, we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. Thus, only the web requires reading each image from the Filesystem into base64 format. Update this function to add an _if statement_ around the Filesystem code:
+接下来，回到我们之前为 Web 实现的 `loadSaved()` 函数。在移动端，我们可以直接将图片标签 `<img src="x" />` 的源设置为 Filesystem 中的每个照片文件，从而自动显示它们。因此，只有 Web 需要将每个图像从 Filesystem 读取为 base64 格式。更新这个函数，在 Filesystem 代码周围添加一个 _if 语句_：
 
 ```tsx
 public async loadSaved() {
-  // Retrieve cached photo array data
+  // 检索缓存的照片数组数据
   const photoList = await Preferences.get({ key: this.PHOTO_STORAGE });
   this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
 
-  // Easiest way to detect when running on the web:
-  // “when the platform is NOT hybrid, do this”
+  // 检测是否在 Web 上运行的最简单方法：
+  // “当平台不是混合平台时，执行此操作”
   if (!this.platform.is('hybrid')) {
-    // Display the photo by reading into base64 format
+    // 通过读取为 base64 格式来显示照片
     for (let photo of this.photos) {
-      // Read each saved photo's data from the Filesystem
+      // 从 Filesystem 读取每个已保存照片的数据
       const readFile = await Filesystem.readFile({
           path: photo.filepath,
           directory: Directory.Data
       });
 
-      // Web platform only: Load the photo as base64 data
+      // 仅 Web 平台：将照片加载为 base64 数据
       photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 }
 ```
 
-Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. Next up, the part you’ve been waiting for - deploying the app to a device.
+现在，我们的照片画廊应用已经拥有了一个可以在 Web、Android 和 iOS 上运行的统一代码库。接下来，就是您一直期待的环节——将应用部署到设备上。

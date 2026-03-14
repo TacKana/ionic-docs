@@ -1,21 +1,21 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Example</ion-title>
+    <ion-title>示例</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-button id="open-modal" expand="block">Open Modal</ion-button>
+  <ion-button id="open-modal" expand="block">打开模态框</ion-button>
   <ion-modal trigger="open-modal">
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-button id="close">Close</ion-button>
+          <ion-button id="close">关闭</ion-button>
         </ion-buttons>
-        <ion-title>Modal</ion-title>
+        <ion-title>模态框</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding"> This content was mounted as soon as the modal was created. </ion-content>
+    <ion-content class="ion-padding"> 这段内容在模态框创建时就已加载。 </ion-content>
   </ion-modal>
 </ion-content>
 

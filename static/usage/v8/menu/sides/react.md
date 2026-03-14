@@ -7,21 +7,21 @@ function Example() {
       <IonMenu side="end" contentId="main-content">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Menu Content</IonTitle>
+            <IonTitle>菜单内容</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent className="ion-padding">This is the menu content.</IonContent>
+        <IonContent className="ion-padding">这里是菜单内容。</IonContent>
       </IonMenu>
       <IonPage id="main-content">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Menu</IonTitle>
+            <IonTitle>菜单</IonTitle>
             <IonButtons slot="end">
               <IonMenuButton></IonMenuButton>
             </IonButtons>
           </IonToolbar>
         </IonHeader>
-        <IonContent className="ion-padding">Tap the button in the toolbar to open the menu.</IonContent>
+        <IonContent className="ion-padding">点击工具栏中的按钮以打开菜单。</IonContent>
       </IonPage>
     </>
   );

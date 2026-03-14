@@ -7,42 +7,42 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonLabel>Default Item Lines</IonLabel>
+        <IonLabel>默认项目分隔线</IonLabel>
       </IonItem>
 
       <IonItem lines="inset">
-        <IonLabel>Item Lines Inset</IonLabel>
+        <IonLabel>内嵌分隔线项目</IonLabel>
       </IonItem>
 
       <IonItem lines="full">
-        <IonLabel>Item Lines Full</IonLabel>
+        <IonLabel>完整分隔线项目</IonLabel>
       </IonItem>
 
       <IonItem lines="none">
-        <IonLabel>Item Lines None</IonLabel>
+        <IonLabel>无分隔线项目</IonLabel>
       </IonItem>
 
       <IonItem>
         <IonIcon icon={star} slot="start"></IonIcon>
-        <IonLabel>Default Item Lines</IonLabel>
+        <IonLabel>默认项目分隔线</IonLabel>
         <IonIcon icon={informationCircle} slot="end"></IonIcon>
       </IonItem>
 
       <IonItem lines="inset">
         <IonIcon icon={star} slot="start"></IonIcon>
-        <IonLabel>Item Lines Inset</IonLabel>
+        <IonLabel>内嵌分隔线项目</IonLabel>
         <IonIcon icon={informationCircle} slot="end"></IonIcon>
       </IonItem>
 
       <IonItem lines="full">
         <IonIcon icon={star} slot="start"></IonIcon>
-        <IonLabel>Item Lines Full</IonLabel>
+        <IonLabel>完整分隔线项目</IonLabel>
         <IonIcon icon={informationCircle} slot="end"></IonIcon>
       </IonItem>
 
       <IonItem lines="none">
         <IonIcon icon={star} slot="start"></IonIcon>
-        <IonLabel>Item Lines None</IonLabel>
+        <IonLabel>无分隔线项目</IonLabel>
         <IonIcon icon={informationCircle} slot="end"></IonIcon>
       </IonItem>
     </>

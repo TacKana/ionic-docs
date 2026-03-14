@@ -1,5 +1,5 @@
 ---
-title: "ion-picker"
+title: 选择器组件
 ---
 import Props from '@ionic-internal/component-api/v8/picker/props.md';
 import Events from '@ionic-internal/component-api/v8/picker/events.md';
@@ -9,91 +9,91 @@ import CustomProps from '@ionic-internal/component-api/v8/picker/custom-props.md
 import Slots from '@ionic-internal/component-api/v8/picker/slots.md';
 
 <head>
-  <title>ion-picker: Display a list of options in columns</title>
-  <meta name="description" content="A Picker displays one or more columns with options for users to choose from." />
+  <title>ion-picker：以列的形式展示选项列表</title>
+  <meta name="description" content="选择器会显示一列或多列选项供用户选择。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-A Picker displays one or more columns with options for users to choose from.
+选择器会显示一列或多列选项供用户选择。
 
 import Basic from '@site/static/usage/v8/picker/basic/index.md';
 
 <Basic />
 
-## Prefix & Suffix Content
+## 前缀与后缀内容
 
-Use the `prefix` and `suffix` slots to add additional content to the picker.
+使用 `prefix` 和 `suffix` 插槽可以为选择器添加额外的内容。
 
 import PrefixSuffix from '@site/static/usage/v8/picker/prefix-suffix/index.md';
 
 <PrefixSuffix />
 
-## Theming
+## 主题定制
 
-### CSS Variables
+### CSS 变量
 
-The picker highlight and fade can be customized using CSS variables on `ion-picker`. Developers can customize the individual appearance of `ion-picker-column-options` by targeting them directly and using host level styling.
+选择器的高亮和淡出效果可以通过在 `ion-picker` 上使用 CSS 变量进行自定义。开发者可以通过直接定位 `ion-picker-column-options` 并使用宿主级别的样式来自定义其外观。
 
 import CSSProps from '@site/static/usage/v8/picker/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Picker in Modal
+## 模态框中的选择器
 
-Pickers can be displayed inside of overlays, such as `ion-modal` to create a picker experience with confirmation or cancellation buttons.
+选择器可以显示在覆盖层（如 `ion-modal`）内部，以创建带有确认或取消按钮的选择器体验。
 
 import ModalExample from '@site/static/usage/v8/picker/modal/index.md';
 
 <ModalExample />
 
-## Accessibility
+## 无障碍访问
 
-### Screen Readers
+### 屏幕阅读器
 
-Picker supports navigation using a screen reader by implementing the [`slider` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role) on each [Picker Column](./picker-column). The following gestures can be used to navigate the Picker.
+选择器通过在每个[选择器列](./picker-column)上实现 [`slider` 角色](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA/Roles/slider_role)来支持屏幕阅读器导航。可以使用以下手势来浏览选择器。
 
-| Gesture | Function |
+| 手势 | 功能 |
 | - | - |
-| Swipe Left | Move focus to the previous Picker Column. |
-| Swipe Right | Move focus to the next Picker Column. |
-| Swipe Up | Select the next option in the Picker Column. |
-| Swipe Down | Select the previous option in the Picker Column. |
-| Double Tap and Slide Up/Down | Adjust the selected option in the Picker Column. Can be used as an alternative to swiping up and down. |
+| 向左滑动 | 将焦点移至上一个选择器列。 |
+| 向右滑动 | 将焦点移至下一个选择器列。 |
+| 向上滑动 | 在选择器列中选择下一个选项。 |
+| 向下滑动 | 在选择器列中选择上一个选项。 |
+| 双击并向上/向下滑动 | 调整选择器列中的选定选项。可作为向上/向下滑动的替代方案。 |
 
 :::caution
-The Swipe Up and Swipe Down gestures rely on the correct key events being synthesized as noted on the [`slider` documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role). [Chromium-based browsers do not synthesize keyboard events correctly](https://issues.chromium.org/issues/40816094), but the "Double Tap and Slide Up/Down" gesture can be used as an alternative until this has been implemented in Chromium-based browsers.
+向上滑动和向下滑动手势依赖于正确的键盘事件合成，如 [`slider` 文档](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA/Roles/slider_role)所述。[基于 Chromium 的浏览器未能正确合成键盘事件](https://issues.chromium.org/issues/40816094)，但在基于 Chromium 的浏览器实现此功能之前，可以使用“双击并向上/向下滑动”手势作为替代方案。
 :::
 
-### Keyboard Interactions
+### 键盘交互
 
-Each [Picker Column](./picker-column) can be navigated using the keyboard when focused.
+每个[选择器列](./picker-column)在获得焦点时都可以使用键盘进行导航。
 
-| Key                  | Description                          |
+| 按键                  | 描述                          |
 | -------------------- | ------------------------------------ |
-| <kbd>ArrowUp</kbd>   | Scroll to the previous option.       |
-| <kbd>ArrowDown</kbd> | Scroll to the next option.           |
-| <kbd>PageUp</kbd>    | Scroll up by more than one option.   |
-| <kbd>PageDown</kbd>  | Scroll down by more than one option. |
-| <kbd>Home</kbd>      | Scroll to the first option.          |
-| <kbd>End</kbd>       | Scroll to the last option.           |
+| <kbd>ArrowUp</kbd>   | 向上滚动至上一个选项。       |
+| <kbd>ArrowDown</kbd> | 向下滚动至下一个选项。           |
+| <kbd>PageUp</kbd>    | 向上滚动多个选项。   |
+| <kbd>PageDown</kbd>  | 向下滚动多个选项。 |
+| <kbd>Home</kbd>      | 滚动至第一个选项。          |
+| <kbd>End</kbd>       | 滚动至最后一个选项。           |
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

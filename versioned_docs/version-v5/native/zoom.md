@@ -10,27 +10,27 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Zoom
 
-A Cordova plugin to use Zoom Video Conferencing services on Cordova applications.
+一款 Cordova 插件，用于在 Cordova 应用程序中使用 Zoom 视频会议服务。
 
 <p>
   <a href="https://github.com/zoom/zoom-sdk-ionic" target="_blank" rel="noopener" className="git-link">github.com/zoom/zoom-sdk-ionic</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在构建一个重要的项目，您无法承担耗费数小时进行故障排除的代价。Ionic 的专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -53,22 +53,22 @@ A Cordova plugin to use Zoom Video Conferencing services on Cordova applications
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic Enterprise 提供由 Ionic 团队完全支持与维护的插件。 &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或如果您对本插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - iOS
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -80,27 +80,27 @@ constructor(private zoomService: Zoom) { }
 
 ...
 
-// Initialize Zoom SDK, need to be called when app fired up.
+// 初始化 Zoom SDK，需要在应用启动时调用。
 this.zoomService.initialize(API_KEY, API_SECRET)
   .then((success: any) => console.log(success))
   .catch((error: any) => console.log(error));
 
-// Log user in with Zoom username and password.
+// 使用 Zoom 用户名和密码登录用户。
 this.zoomService.login(userName, password)
   .then((success: any) => console.log(success))
   .catch((error: any) => console.log(error));
 
-// Log user out.
+// 注销用户。
 this.zoomService.logout()
   .then((success: boolean) => console.log(success))
   .catch((error: any) => console.log(error));
 
-// Check whether user is logged in.
+// 检查用户是否已登录。
 this.zoomService.isLoggedIn()
   .then((success: boolean) => console.log(success))
   .catch((error: any) => console.log(error));
 
-// meeting options (Only available for Android)
+// 会议选项（仅适用于 Android）
 let options = {
 "no_driving_mode":true,
 "no_invite":true,
@@ -116,27 +116,27 @@ let options = {
 "no_meeting_error_message":true
 };
 
-// Join meeting.
+// 加入会议。
 this.zoomService.joinMeeting(meetingNumber, meetingPassword, displayName, options)
   .then((success: any) => console.log(success))
   .catch((error: any) => console.log(error));
 
-// Start an existing meeting for non-login user.
+// 为非登录用户启动一个现有会议。
 this.zoomService.startMeetingWithZAK(meetingNumber, displayName, zoomToken, zoomAccessToken, userId, options)
   .then((success: any) => console.log(success))
   .catch((error: any) => console.log(error));
 
-// Start an existing meeting for logged in user.
+// 为已登录用户启动一个现有会议。
 this.zoomService.startMeeting(meetingNumber, vanityId, options)
   .then((success: any) => console.log(success))
   .catch((error: any) => console.log(error));
 
-// Start an instant meeting for logged in user.
+// 为已登录用户启动一个即时会议。
 this.zoomService.startInstantMeeting()
   .then((success: anu) => console.log(success))
   .catch((error: any) => console.log(error));
 
-// Set language.
+// 设置语言。
 this.zoomService.setLanguage("en-US")
   .then((success: any) => console.log(success))
   .catch((error: any) => console.log(error));

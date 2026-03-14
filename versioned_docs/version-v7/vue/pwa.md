@@ -1,27 +1,27 @@
 ---
-title: Progressive Web Apps in Vue
-sidebar_label: Progressive Web Apps
+title: Vue 中的渐进式网络应用
+sidebar_label: 渐进式网络应用
 ---
 
 <head>
-  <title>Vue PWA | Add Progressive Web Apps to Vue.js Projects | Ionic</title>
+  <title>Vue PWA | 为 Vue.js 项目添加渐进式网络应用 | Ionic</title>
   <meta
     name="description"
-    content="Run the 'vue add' command to install the progressive web app plugin. Learn more about how to add PWA to your existing Vue project."
+    content="运行 'vue add' 命令以安装渐进式网络应用插件。了解如何将 PWA 添加到现有 Vue 项目的更多信息。"
   />
 </head>
 
-## Making your Vue app a PWA with Vite
+## 使用 Vite 将 Vue 应用转换为 PWA
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, we recommend using the [Vite PWA Plugin](https://vite-pwa-org.netlify.app/) instead.
+PWA 的两个主要要求是 <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> 和 <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web 应用清单</a>。虽然可以手动将这两者添加到应用中，但我们建议使用 [Vite PWA 插件](https://vite-pwa-org.netlify.app/)。
 
-To get started, install the `vite-plugin-pwa` package:
+首先，安装 `vite-plugin-pwa` 包：
 
 ```shell
 npm install -D vite-plugin-pwa
 ```
 
-Next, update your `vite.config.js` or `vite.config.ts` file and add `vite-plugin-pwa`:
+接下来，更新你的 `vite.config.js` 或 `vite.config.ts` 文件并添加 `vite-plugin-pwa`：
 
 ```javascript
 import { defineConfig } from 'vite';
@@ -33,43 +33,43 @@ export default defineConfig({
 });
 ```
 
-This minimal configuration allows your application to generate the Web Application Manifest and Service Worker on build.
+这个最小配置允许你的应用在构建时生成 Web 应用清单和 Service Worker。
 
-For more information on configuring the Vite PWA Plugin, see the [Vite PWA "Getting Started" Guide](https://vite-pwa-org.netlify.app/guide/).
+有关配置 Vite PWA 插件的更多信息，请参阅 [Vite PWA "入门"指南](https://vite-pwa-org.netlify.app/guide/)。
 
-See the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployment/) for information on how to deploy your PWA.
+有关如何部署 PWA 的信息，请参阅 [Vite PWA "部署"指南](https://vite-pwa-org.netlify.app/deployment/)。
 
-## Making your Vue app a PWA with Vue CLI
+## 使用 Vue CLI 将 Vue 应用转换为 PWA
 
 :::note
-As of Ionic CLI v7, Ionic Vue starter apps ship with Vite instead of Vue CLI. See [Making your Vue app a PWA with Vite](#making-your-vue-app-a-pwa-with-vite) for Vite instructions.
+从 Ionic CLI v7 开始，Ionic Vue 起始项目使用 Vite 替代了 Vue CLI。Vite 的使用说明请参见 [使用 Vite 将 Vue 应用转换为 PWA](#making-your-vue-app-a-pwa-with-vite)。
 :::
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, the Vue CLI has some utilities for adding this for you.
+PWA 的两个主要要求是 <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> 和 <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web 应用清单</a>。虽然可以手动将这两者添加到应用中，但 Vue CLI 提供了一些工具来为你添加这些功能。
 
-For existing projects, you can run the `vue add` command to install the PWA plugin for Vue.
+对于现有项目，你可以运行 `vue add` 命令来安装 Vue 的 PWA 插件。
 
 ```shell
 vue add pwa
 ```
 
 :::note
-If you have changes already in place, be sure to commit them in Git.
+如果你已经进行了更改，请确保在 Git 中提交它们。
 :::
 
-Once this is completed, Vue's CLI will have created a new `registerServiceWorker.ts` file and imported it into our `main.ts`.
+完成此操作后，Vue 的 CLI 将创建一个新的 `registerServiceWorker.ts` 文件并将其导入到我们的 `main.ts` 中。
 
 ```tsx
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-// Added by the CLI
+// 由 CLI 添加
 import './registerServiceWorker';
 
 createApp(App).use(router).mount('#app');
 ```
 
-The `registerServiceWorker.ts` file will point to a service worker that the CLI will create at build time. Inside of here we can customize the experience users will have when the service worker detects an update, change in network connectivity, or receives an error.
+`registerServiceWorker.ts` 文件将指向一个 Service Worker，该 Service Worker 将在构建时由 CLI 创建。在这里，我们可以自定义当 Service Worker 检测到更新、网络连接变化或接收到错误时用户的体验。
 
 ```tsx
 import { register } from 'register-service-worker';
@@ -78,38 +78,38 @@ if (process.env.NODE_ENV === 'production') {
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready() {
       console.log(
-        'App is being served from cache by a service worker.\n' + 'For more details, visit https://goo.gl/AFskqB'
+        '应用正由 Service Worker 从缓存中提供服务。\n' + '更多详情，请访问 https://goo.gl/AFskqB'
       );
     },
     registered() {
-      console.log('Service worker has been registered.');
+      console.log('Service Worker 已注册。');
     },
     cached() {
-      console.log('Content has been cached for offline use.');
+      console.log('内容已缓存以供离线使用。');
     },
     updatefound() {
-      console.log('New content is downloading.');
+      console.log('正在下载新内容。');
     },
     updated() {
-      console.log('New content is available; please refresh.');
+      console.log('有新内容可用；请刷新。');
     },
     offline() {
-      console.log('No internet connection found. App is running in offline mode.');
+      console.log('未找到互联网连接。应用正在离线模式下运行。');
     },
     error(error) {
-      console.error('Error during service worker registration:', error);
+      console.error('Service Worker 注册期间发生错误：', error);
     },
   });
 }
 ```
 
-The service worker that is generated is based on [Workbox's webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin), and by default is setup to use `GenerateSW()`. Meaning that at build time, Workbox will automatically generate a service worker cache for all the files it processes.
+生成的 Service Worker 基于 [Workbox 的 webpack 插件](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin)，默认设置为使用 `GenerateSW()`。这意味着在构建时，Workbox 将自动为它处理的所有文件生成一个 Service Worker 缓存。
 
-If you want to configure this and change the default behavior, checkout the [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) on GitHub.
+如果你想配置此行为并更改默认设置，请在 GitHub 上查看 [PWA 插件文档](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration)。
 
-### Manifest
+### 清单
 
-In addition to the service worker, the Vue PWA plugin also is responsible for creating a manifest file for your app as well. By default, the CLI will generate a manifest that contains the following entries.
+除了 Service Worker 之外，Vue PWA 插件还负责为你的应用创建清单文件。默认情况下，CLI 将生成一个包含以下条目的清单。
 
 ```json
 {
@@ -146,61 +146,61 @@ In addition to the service worker, the Vue PWA plugin also is responsible for cr
 }
 ```
 
-Be sure to update the icons in `public/img/icons` to match your own brand. If you wanted to customize the theme color or name, be sure to read the [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) on GitHub.
+请确保更新 `public/img/icons` 中的图标以匹配你自己的品牌。如果你想自定义主题颜色或名称，请务必阅读 GitHub 上的 [PWA 插件文档](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration)。
 
-### Deploying
+### 部署
 
-You can use various hosts like Firebase, Vercel, Netlify, or even Azure Static Web Apps. All will have similar setup processes that need to be completed. For this guide, Firebase will be used as the hosting example. In addition to this guide, the [Vue CLI docs](https://cli.vuejs.org/guide/deployment.html) also have a guide on how to deploy to various providers.
+你可以使用各种托管服务，如 Firebase、Vercel、Netlify，甚至 Azure 静态 Web 应用。所有这些都有类似的需要完成的设置过程。本指南将使用 Firebase 作为托管示例。除了本指南外，[Vue CLI 文档](https://cli.vuejs.org/guide/deployment.html) 也提供了如何部署到各种提供商的指南。
 
 #### Firebase
 
-Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
+Firebase 托管为渐进式网络应用提供了许多好处，包括得益于 CDN 的快速响应时间、默认启用的 HTTPS 以及对 [HTTP2 推送](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html) 的支持。
 
-First, if not already available, [create the project](https://console.firebase.google.com) in Firebase.
+首先，如果尚未创建，请在 Firebase 中[创建项目](https://console.firebase.google.com)。
 
-Next, in a Terminal, install the Firebase CLI:
+接下来，在终端中安装 Firebase CLI：
 
 ```shell
 npm install -g firebase-tools
 ```
 
 :::note
-If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+如果你是第一次使用 firebase-tools，请使用 `firebase login` 命令登录到你的 Google 账户。
 :::
 
-With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
+安装 Firebase CLI 后，在你的 Ionic 项目中运行 `firebase init`。CLI 会提示：
 
-**"Which Firebase CLI features do you want to set up for this folder?"** Choose "Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys".
+**"你希望为此文件夹设置哪些 Firebase CLI 功能？"** 选择 "Hosting: 配置 Firebase 托管的文件，并（可选）设置 GitHub Action 部署"。
 
-Create a new Firebase project or select an existing one.
+创建新的 Firebase 项目或选择现有项目。
 
-**"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
+**"为此目录选择一个默认的 Firebase 项目："** 选择你在 Firebase 网站上创建的项目。
 
-**"What do you want to use as your public directory?"** Enter "dist".
+**"你希望使用哪个目录作为公共目录？"** 输入 "dist"。
 
 :::note
-Answering this next question will ensure that routing, hard reload, and deep linking work in the app:
+回答下一个问题将确保应用中的路由、硬刷新和深度链接正常工作：
 :::
 
-**Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
+**"配置为单页应用（将所有 URL 重写到 /index.html）？"** 输入 "是"。
 
-**"File build/index.html already exists. Overwrite?"** Enter "No".
+**"文件 build/index.html 已存在。是否覆盖？"** 输入 "否"。
 
-**Set up automatic builds and deploys with Github?** Enter "Yes".
+**"是否设置与 GitHub 的自动构建和部署？"** 输入 "是"。
 
-**For which GitHub repository would you like to set up a Github Workflow?** Enter your project name.
+**"你希望为哪个 GitHub 仓库设置 GitHub 工作流？"** 输入你的项目名称。
 
-**Set up the workflow to run a build script before every deploy?** Enter "Yes".
+**"是否设置工作流在每次部署前运行构建脚本？"** 输入 "是"。
 
-**What script should be run before every deploy?** Enter `npm ci && npm run build`.
+**"每次部署前应运行什么脚本？"** 输入 `npm ci && npm run build`。
 
-**Set up automatic deployment to your sites live channel when a PR is merged?** Enter "Yes".
+**"当 PR 合并时，是否设置自动部署到站点的实时频道？"** 输入 "是"。
 
-**What is the name of the get hooked branch associated with your sites live channel?** Enter your project's main branch name.
+**"与站点实时频道关联的 Git 分支名称是什么？"** 输入你的项目的主分支名称。
 
-A `firebase.json` config file is generated, configuring the app for deployment.
+会生成一个 `firebase.json` 配置文件，用于配置应用的部署。
 
-The last thing needed is to make sure caching headers are being set correctly. To do this, add a `headers` snippet to the `firebase.json` file. The complete `firebase.json` looks like:
+最后需要确保缓存头设置正确。为此，在 `firebase.json` 文件中添加一个 `headers` 片段。完整的 `firebase.json` 如下所示：
 
 ```json
 {
@@ -246,18 +246,18 @@ The last thing needed is to make sure caching headers are being set correctly. T
 }
 ```
 
-For more information about the `firebase.json` properties, see the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
+有关 `firebase.json` 属性的更多信息，请参阅 [Firebase 文档](https://firebase.google.com/docs/hosting/full-config#section-firebase-json)。
 
-Next, build an optimized version of the app by running:
+接下来，通过运行以下命令构建应用的优化版本：
 
 ```shell
 ionic build
 ```
 
-Last, deploy the app by running:
+最后，通过运行以下命令部署应用：
 
 ```shell
 firebase deploy
 ```
 
-After this completes, the app will be live.
+完成后，应用将上线。

@@ -26,20 +26,18 @@
   <div class="ion-page">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Backdrop</ion-title>
+        <ion-title>背景遮罩层</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, cum aspernatur cupiditate nesciunt totam
-        perspiciatis delectus soluta laboriosam, ullam impedit porro eaque laborum optio natus sed nostrum, provident
-        expedita vero!
+        这是一段占位文本，用于展示当背景遮罩层出现时，页面内容的显示效果。您可以看到遮罩层覆盖了主要内容区域，同时页面顶部的工具栏和标题仍保持可见。
       </p>
     </ion-content>
   </div>
   <div id="box">
     <ion-checkbox color="light"></ion-checkbox>
-    <ion-button class="ion-margin-start" color="light">Clickable</ion-button>
+    <ion-button class="ion-margin-start" color="light">可点击按钮</ion-button>
   </div>
 </template>
 <script lang="ts">

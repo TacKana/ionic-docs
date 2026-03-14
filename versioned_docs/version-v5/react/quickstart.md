@@ -1,37 +1,37 @@
 ---
-sidebar_label: Quickstart
+sidebar_label: 快速入门
 ---
 
-# Intro Ionic React Quickstart
+# Ionic React 快速入门指南
 
-## What is Ionic Framework?
+## 什么是 Ionic 框架？
 
-First off, if you're new here, welcome! Ionic is a free and open source component library for building apps that run on iOS, Android, Electron, and the Web. You write your app once using familiar technologies (HTML, CSS, JavaScript) and deploy to any platform.
+首先，如果你是第一次接触 Ionic，欢迎！Ionic 是一个免费开源的组件库，用于构建能在 iOS、Android、Electron 和 Web 上运行的应用程序。你只需使用熟悉的技术（HTML、CSS、JavaScript）编写一次应用，即可部署到任何平台。
 
-Along with the UI components, Ionic also provides a command line tool for creating new apps, as well as deploying to the various platforms we support.
+除了 UI 组件，Ionic 还提供了用于创建新应用以及部署到我们所支持的各种平台的命令行工具。
 
-In this guide, we'll go over the basics of both React and Ionic, including any Ionic specific features. If you're familiar with React, enjoy the guide and learn something new about Ionic. If you're not familiar with either, no worries! This guide will cover the basics and provide enough information to get an app up and running.
+在本指南中，我们将介绍 React 和 Ionic 的基础知识，包括所有 Ionic 特有的功能。如果你熟悉 React，可以愉快阅读本指南并了解 Ionic 的新特性。如果你对两者都不熟悉，也无需担心！本指南将涵盖基础知识，并提供足够的信息来搭建和运行一个应用。
 
-## Creating a project with the Ionic CLI
+## 使用 Ionic CLI 创建项目
 
-To begin, let's install the latest version of the Ionic CLI.
+首先，让我们安装最新版本的 Ionic CLI。
 
 ```shell
 npm install -g @ionic/cli
 ```
 
-From here, the global command `ionic` will allow for the creation of a React project with Ionic and any other dependencies. To create a new project, run the following command:
+安装完成后，全局命令 `ionic` 将允许创建一个包含 Ionic 和其他依赖项的 React 项目。要创建一个新项目，请运行以下命令：
 
 ```shell
 ionic start myApp blank --type=react
 cd myApp
 ```
 
-From here, we run `ionic serve` and have our project running in the browser.
+接下来，运行 `ionic serve`，我们的项目就会在浏览器中运行。
 
-## A look at a React Component
+## 初探 React 组件
 
-The base of our app will be in the `src` directory, and the main entry point will be our `index.tsx`. If we open our project in a code editor and open `src/index.tsx`, we should see the following:
+我们应用的基础位于 `src` 目录，主要入口点是 `index.tsx`。如果我们在代码编辑器中打开项目并查看 `src/index.tsx`，应该会看到以下内容：
 
 ```tsx
 import React from 'react';
@@ -41,13 +41,13 @@ import App from './App';
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-So what's going on here? Well, the first three lines are pulling in some dependencies. The first being React itself. This allows us to write components in an HTML-like syntax called JSX. We'll talk about JSX a bit later on.
+这里发生了什么？前两行是引入一些依赖项。第一行是 React 本身，这允许我们使用一种类似 HTML 的语法（称为 JSX）来编写组件。稍后我们会讨论 JSX。
 
-The second import is for ReactDOM. The `ReactDOM.render` method is the browser/DOM specific way of taking our components and rendering it to a specified DOM node.
+第二个导入是 ReactDOM，`ReactDOM.render` 方法是浏览器/DOM 特有的方式，用于将我们的组件渲染到指定的 DOM 节点。
 
-The last import is the root component for our app, simply named `App`. This is our first React component and will be used in the bootstrapping process for our React app.
+最后一个导入是我们应用的根组件，简单命名为 `App`。这是我们的第一个 React 组件，将用于 React 应用的启动过程。
 
-If we open `App.tsx`, we should see the following.
+如果打开 `App.tsx`，应该会看到以下内容。
 
 ```tsx
 import React from 'react';
@@ -56,7 +56,7 @@ import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 
-/* Core CSS required for Ionic components to work properly */
+/* 导入 Ionic 组件正常工作所需的核心 CSS */
 import '@ionic/react/css/core.css';
 
 const App: React.FC = () => (
@@ -71,7 +71,7 @@ const App: React.FC = () => (
 );
 ```
 
-At first glance, it may look like a lot is going on, so let's break it down, starting with the first group of imports.
+乍一看可能有点复杂，让我们来分解一下，从第一组导入开始。
 
 ```tsx
 import React from 'react';
@@ -81,19 +81,19 @@ import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 ```
 
-Similar to `index.tsx`, we first must import React to use JSX.
+与 `index.tsx` 类似，我们必须首先导入 React 才能使用 JSX。
 
-The next import is from `react-router-dom`. We're importing Route, which is how we’ll match the app’s URL with the components we want to render
+下一个导入来自 `react-router-dom`，我们导入了 Route 组件，用于将应用的 URL 与我们要渲染的组件匹配。
 
-Following ReactRouter, we next have our first imports for Ionic. To use a component in React, you must first import it. So for Ionic, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our App component, we're only using `IonApp`, `IonRouterOutlet`, and `IonReactRouter`.
+在 ReactRouter 之后，我们首次导入了 Ionic 组件。要在 React 中使用一个组件，必须先导入它。对于 Ionic 来说，这意味着每当我们想使用按钮或卡片时，都必须将其添加到导入中。在我们的 App 组件中，我们只使用了 `IonApp`、`IonRouterOutlet` 和 `IonReactRouter`。
 
-`IonReactRouter` is a component that wraps ReactRouter’s BrowserRouter component. It more or less behaves the same as BrowserRouter with a few differences. We have a deeper guide that goes over these differences in our [React Navigation Docs](navigation.md).
+`IonReactRouter` 是一个包装了 ReactRouter 的 BrowserRouter 组件的组件。它的行为与 BrowserRouter 大致相同，但有一些区别。我们在 [React 导航文档](navigation.md) 中有更深入的指南来介绍这些差异。
 
-The last important import is the `Home` component import. This is a component that we will be able to navigate to in our app. We'll look at the navigation part a bit later.
+最后一个重要的导入是 `Home` 组件，这是我们应用中将要导航到的组件。稍后我们会看看导航部分。
 
-The CSS import is pulling in the utility styles from Ionic for things like padding, typography, etc.
+CSS 导入引入了 Ionic 的实用样式，用于处理内边距、排版等。
 
-After reviewing all of the imports, we now get to our first look at a React Component:
+回顾完所有导入后，我们首次看到了一个 React 组件：
 
 ```tsx
 const App: React.FC = () => (
@@ -108,19 +108,19 @@ const App: React.FC = () => (
 );
 ```
 
-This React component sets up the initial routing for our app, as well as include some core Ionic components for animations and layout (IonRouterOutlet and IonApp). One thing that stands out is that in React, to do data-binding, the value is passed in curly braces (`{}`). So in the `Route` component, we can set the value of `component` to the `Home` component from earlier. This is how React will know that that value is not a string, but a reference to a component.
+这个 React 组件设置了我们应用的初始路由，并包含了一些用于动画和布局的核心 Ionic 组件（IonRouterOutlet 和 IonApp）。一个值得注意的地方是，在 React 中，要进行数据绑定，值需要用花括号（`{}`）包裹。所以在 `Route` 组件中，我们可以将 `component` 的值设置为之前导入的 `Home` 组件。这样 React 就知道这个值不是字符串，而是对组件的引用。
 
 :::note
-What's important to note here is that these are all standard React DOM libraries, meaning there's no custom integration layer or transpilation step.
+这里需要注意的是，这些都是标准的 React DOM 库，意味着没有自定义的集成层或转译步骤。
 :::
 
-## A component with style
+## 带有样式的组件
 
-Now the `App` does not really have a lot to modify here. It's a basic example of a container component. With the Router logic set, all it's responsible for is to render a component that matches the given URL route. Since we already have one component/router setup, let's go ahead and modify our `Home` component.
+现在 `App` 组件其实没有太多需要修改的地方。它只是一个容器组件的基本示例。设置了路由逻辑后，它的全部职责就是渲染与给定 URL 路由匹配的组件。既然我们已经有了一个组件/路由设置，让我们继续修改 `Home` 组件。
 
-Currently, the `Home` component looks like so:
+目前，`Home` 组件看起来像这样：
 
-![Screenshot of the Ionic React Home page showing the message "Ready to create an app? Start with Ionic UI Components"](/img/guides/quickstart/home-page.png 'Ionic React Home Component')
+![Ionic React 首页截图，显示消息“准备好创建应用了吗？从 Ionic UI 组件开始”](/img/guides/quickstart/home-page.png 'Ionic React 首页组件')
 
 ```tsx
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -149,22 +149,22 @@ const Home: React.FC = () => {
 };
 ```
 
-Much like the `App` component we started with, we have some imports for specific Ionic components, an import for React, and then our React component itself.
+就像我们开始时看到的 `App` 组件一样，我们有一些特定 Ionic 组件的导入、一个 React 导入，以及 React 组件本身。
 
-`IonPage` is the base component for all pages (a component with a route/URL), and includes some common building blocks of a full-screen component, like header, title, and content components.
+`IonPage` 是所有页面（具有路由/URL 的组件）的基础组件，并包含一些全屏组件的常见构建块，如页眉、标题和内容组件。
 
 :::note
-When creating your own pages, don't forget to have `IonPage` be the root component for them. Having `IonPage` be the root component is important because it helps ensure transitions work properly as well as provides the base CSS the Ionic components rely on.
+创建自己的页面时，不要忘记让 `IonPage` 成为根组件。让 `IonPage` 作为根组件很重要，因为它有助于确保过渡效果正常工作，并提供 Ionic 组件依赖的基础 CSS。
 :::
 
-`IonHeader` is a bit self explanatory. It's a component that is meant to exist at the top of the page. `IonHeader` itself doesn't do much by itself, aside from handling some flexbox-based layout. It's meant to hold other components, like `IonToolbar` or `IonSearchbar`.
+`IonHeader` 有点顾名思义。它是一个设计用于位于页面顶部的组件。`IonHeader` 本身除了处理一些基于 flexbox 的布局外，并没有太多功能。它旨在容纳其他组件，如 `IonToolbar` 或 `IonSearchbar`。
 
-`IonContent` is, as its name suggests, the main content area for our page. It's responsible for providing the scrollable content that users will interact with, plus any scroll events that could be used in an app.
+`IonContent` 顾名思义，是我们页面的主要内容区域。它负责提供用户将与之交互的可滚动内容，以及应用中可能使用的任何滚动事件。
 
-Our current content is relatively simple but does not contain anything that could be used in a real app, so let's change that.
+我们当前的内容相对简单，但不包含任何可在实际应用中使用的功能，所以让我们来改变它。
 
 :::note
-For brevity, we're excluding repeating part of our component, like the function declaration or import statements for other components.
+为简洁起见，我们省略了组件的重复部分，如函数声明或其他组件的导入语句。
 :::
 
 ```tsx
@@ -187,7 +187,7 @@ For brevity, we're excluding repeating part of our component, like the function 
 </IonPage>
 ```
 
-Here in our `IonContent`, we're adding an `IonList` and a much more involved `IonItem` component. Let's look at `IonItem`, as it's the centerpiece here.
+在我们的 `IonContent` 中，我们添加了一个 `IonList` 和一个更复杂的 `IonItem` 组件。让我们看看 `IonItem`，因为它是这里的核心。
 
 ```tsx
 <IonItem>
@@ -202,11 +202,11 @@ Here in our `IonContent`, we're adding an `IonList` and a much more involved `Io
 </IonItem>
 ```
 
-Item is important as it clearly shows the mix of React concepts and Web Component concepts. The first clear example of a React concept is self-closing tags for React Components in `IonCheckbox`. This is just a simpler way of writing components that do not contain any child content.
+Item 很重要，因为它清晰地展示了 React 概念和 Web 组件概念的混合。第一个明显的 React 概念例子是 `IonCheckbox` 中 React 组件的自闭合标签。这只是编写不包含任何子内容的组件的一种更简单的方式。
 
-From the Web Components side, we have a special attribute called `slot`. This is key for letting the `IonItem` know where to place the `IonCheckbox` when it renders. This is not a React API, but a web standards API.
+从 Web 组件方面看，我们有一个特殊的属性叫做 `slot`。这是让 `IonItem` 知道在渲染时将 `IonCheckbox` 放置在何处的关键。这不是 React API，而是 Web 标准的 API。
 
-Let's look at another component from Ionic, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we'll need three components: a FAB, a FAB Button, and an Icon.
+让我们看看 Ionic 的另一个组件：FAB（浮动操作按钮）。FAB 是一种很好的方式，可以提供一个从应用其余部分提升出来的主要操作。对于这个 FAB，我们需要三个组件：一个 FAB、一个 FAB 按钮和一个图标。
 
 ```tsx
 import { add } from ‘ionicons/icons’;
@@ -226,9 +226,9 @@ import { add } from ‘ionicons/icons’;
 </IonContent>
 ```
 
-On our main `IonFab`, we're setting its positioning with the vertical and horizontal attributes. We're also setting the render location to "fixed" with the slot attribute. This will tell `IonFab` to render outside of the scrollable content in `IonContent`.
+在我们的主 `IonFab` 上，我们通过 `vertical` 和 `horizontal` 属性设置其定位。我们还通过 `slot` 属性将渲染位置设置为 "fixed"。这将告诉 `IonFab` 在 `IonContent` 的可滚动内容之外渲染。
 
-Now let's wire up a click handler to this. What we want to do is when we click the button, we'll navigate to a new page (which we'll create in a moment). To do this, we'll need to get access to React Router's navigation API. Thankfully since this is rendered in a Router/Route context, we have access to React Routers APIs via Props passed to our Home component.
+现在让我们为它连接一个点击处理程序。我们想要做的是，当我们点击按钮时，导航到一个新页面（我们稍后会创建）。为此，我们需要访问 React Router 的导航 API。幸运的是，由于这是在 Router/Route 上下文中渲染的，我们可以通过传递给 Home 组件的 Props 访问 React Router 的 API。
 
 ```tsx
 import { add } from 'ionicons/icons';
@@ -251,15 +251,15 @@ const Home: React.FC<RouteComponentProps> = (props) => {
 export default Home;
 ```
 
-In our component declaration, we're passing in `props` which is of type `RouteComponentProps` (imported from `react-router`). This `props` object gives us access to the history API from React Router, allowing us to push a new route onto the navigation stack. On our `IonFabButton`, we can add a click handler, and just call `props.history.push` and pass in the new route. In this case, we'll navigate to `new`.
+在我们的组件声明中，我们传入了 `props`，其类型为 `RouteComponentProps`（从 `react-router` 导入）。这个 `props` 对象让我们可以访问 React Router 的 history API，允许我们将新路由推入导航栈。在我们的 `IonFabButton` 上，我们可以添加一个点击处理程序，只需调用 `props.history.push` 并传入新路由。在这个例子中，我们将导航到 `new`。
 
 ```tsx
 <IonFabButton onClick={() => props.history.push('/new')} >
 ```
 
-## Creating a new Route
+## 创建新路由
 
-Now that we have the pieces in place to navigate in our app, we need to create a new component and add the new route to our router declaration. Let's open our `App.tsx` file and add the new route.
+既然我们已经有了在应用中导航的组件，我们需要创建一个新组件并将新路由添加到我们的路由器声明中。让我们打开 `App.tsx` 文件并添加新路由。
 
 ```tsx
 ...
@@ -284,9 +284,9 @@ const App: React.FC = () => {
 export default App;
 ```
 
-With our router now having an entry for the route `/new`, we'll create the component needed, `NewItem`. This will exist in `src/pages/NewItem.tsx`
+现在我们的路由器有了 `/new` 路由的条目，我们将创建所需的组件 `NewItem`。它将位于 `src/pages/NewItem.tsx`。
 
-Let's fill the `NewItem.tsx` with some placeholder content for the moment.
+让我们暂时用一些占位符内容填充 `NewItem.tsx`。
 
 ```tsx
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -311,12 +311,12 @@ export default NewItem;
 ```
 
 :::note
-Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](navigation.md#ionpage) for more information.
+每个视图必须包含一个 `IonPage` 组件。没有它，页面过渡将无法正常工作。更多信息请参阅 [IonPage 文档](navigation.md#ionpage)。
 :::
 
-The content here is pretty straight forward and should look similar to the `Home` component. What is new is the `IonBackButton` component. This is used to navigate back to the previous route. Pretty straight forward? Ok, but what if we reload the page?
+这里的内容非常直接，应该看起来与 `Home` 组件类似。新的是 `IonBackButton` 组件，用于导航回上一个路由。很简单对吧？但是，如果我们重新加载页面呢？
 
-Well, in this case, the in-memory history is lost, so the back button disappears. To address this, we can set the `defaultHref` attribute value to the URL we want to navigate to if there is no history.
+在这种情况下，内存中的历史记录会丢失，所以后退按钮会消失。为了解决这个问题，我们可以设置 `defaultHref` 属性值，指定在没有历史记录时要导航到的 URL。
 
 ```tsx
 return (
@@ -334,19 +334,19 @@ return (
 );
 ```
 
-Here, when we reload, if there is no app history present, we'll be able to navigate back to our home route.
+这样，当我们重新加载时，如果应用历史记录不存在，我们将能够导航回首页路由。
 
-## Build a Native App
+## 构建原生应用
 
-We now have the basics of an Ionic React app down, including some UI components and navigation. The great thing about Ionic’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile, desktop, and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitorjs.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
+现在我们已经掌握了 Ionic React 应用的基础知识，包括一些 UI 组件和导航。Ionic 组件的一大优点是它们可以在任何地方工作，包括 iOS、Android 和 PWA。要部署到移动设备、桌面及其他平台，我们使用 Ionic 的跨平台应用运行时 [Capacitor](https://capacitorjs.com)。它提供了一套一致的、以 Web 为中心的 API，使应用尽可能接近 Web 标准，同时在支持的平台上访问丰富的原生设备功能。
 
-Adding native functionality is easy. First, add Capacitor to your project:
+添加原生功能很容易。首先，将 Capacitor 添加到你的项目中：
 
 ```shell
 ionic integrations enable capacitor
 ```
 
-Next, build the project, then add your platform of choice:
+接下来，构建项目，然后添加你选择的平台：
 
 ```shell
 ionic build
@@ -354,16 +354,16 @@ ionic cap add ios
 ionic cap add android
 ```
 
-We use the standard native IDEs (Xcode and Android Studio) to open, build, and run the iOS and Android projects:
+我们使用标准的原生 IDE（Xcode 和 Android Studio）来打开、构建和运行 iOS 和 Android 项目：
 
 ```shell
 ionic cap open ios
 ionic cap open android
 ```
 
-Additional details can be found [here](https://capacitorjs.com/docs/getting-started/with-ionic).
+更多详细信息可以在 [这里](https://capacitorjs.com/docs/getting-started/with-ionic) 找到。
 
-Next, check out [all the APIs](https://capacitorjs.com/docs/apis) that are available. There’s some great stuff, including the [Camera API](https://capacitorjs.com/docs/apis/camera). We can implement photo capture functionality in just a few lines of code:
+接下来，查看 [所有可用的 API](https://capacitorjs.com/docs/apis)。其中有一些很棒的功能，包括 [相机 API](https://capacitorjs.com/docs/apis/camera)。我们可以用几行代码实现照片拍摄功能：
 
 ```tsx
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
@@ -399,10 +399,10 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-## Where to go from here
+## 下一步去哪里
 
-This guide covered the basics of creating an Ionic React app, adding some basic navigation, and introducing Capacitor as a way of building native apps. To dive deeper into building complete Ionic apps with React and Capacitor, follow our [First App guide](your-first-app.md).
+本指南涵盖了创建 Ionic React 应用的基础知识，添加了一些基本导航，并介绍了 Capacitor 作为构建原生应用的方式。要深入了解如何使用 React 和 Capacitor 构建完整的 Ionic 应用，请遵循我们的 [第一个应用指南](your-first-app.md)。
 
-For a more detailed look at Ionic’s components, check out the [component API pages](https://ionicframework.com/docs/components). For more details on React, review the [React Docs](https://reactjs.org/). To keep building native features, see the [Capacitor docs](https://capacitorjs.com/docs/).
+要更详细地了解 Ionic 的组件，请查看 [组件 API 页面](https://ionicframework.com/docs/components)。有关 React 的更多详细信息，请查阅 [React 文档](https://reactjs.org/)。要继续构建原生功能，请参阅 [Capacitor 文档](https://capacitorjs.com/docs/)。
 
-Happy app building! 🎉
+祝应用开发愉快！🎉

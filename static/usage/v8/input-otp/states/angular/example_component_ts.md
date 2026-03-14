@@ -55,9 +55,9 @@ export class ExampleComponent implements OnInit {
     if (!control) return '';
 
     if (control.valid && control.value) {
-      return 'Valid';
+      return '有效';
     } else if (control.invalid && control.touched) {
-      return 'Invalid';
+      return '无效';
     }
     return '';
   }

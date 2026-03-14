@@ -5,18 +5,18 @@ import { IonSelect, IonSelectOption } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonSelect label="Solid select" labelPlacement="floating" fill="solid">
-        <IonSelectOption value="apple">Apple</IonSelectOption>
-        <IonSelectOption value="banana">Banana</IonSelectOption>
-        <IonSelectOption value="orange">Orange</IonSelectOption>
+      <IonSelect label="实心选择框" labelPlacement="floating" fill="solid">
+        <IonSelectOption value="apple">苹果</IonSelectOption>
+        <IonSelectOption value="banana">香蕉</IonSelectOption>
+        <IonSelectOption value="orange">橙子</IonSelectOption>
       </IonSelect>
 
       <br />
 
-      <IonSelect label="Outline select" labelPlacement="floating" fill="outline">
-        <IonSelectOption value="apple">Apple</IonSelectOption>
-        <IonSelectOption value="banana">Banana</IonSelectOption>
-        <IonSelectOption value="orange">Orange</IonSelectOption>
+      <IonSelect label="轮廓选择框" labelPlacement="floating" fill="outline">
+        <IonSelectOption value="apple">苹果</IonSelectOption>
+        <IonSelectOption value="banana">香蕉</IonSelectOption>
+        <IonSelectOption value="orange">橙子</IonSelectOption>
       </IonSelect>
     </>
   );

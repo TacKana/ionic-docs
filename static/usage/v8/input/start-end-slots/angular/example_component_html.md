@@ -3,7 +3,7 @@
   <ion-item>
     <ion-input labelPlacement="stacked" label="Email" placeholder="email@domain.com">
       <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
-      <ion-button fill="clear" slot="end" aria-label="Show/hide">
+      <ion-button fill="clear" slot="end" aria-label="显示/隐藏">
         <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
       </ion-button>
     </ion-input>

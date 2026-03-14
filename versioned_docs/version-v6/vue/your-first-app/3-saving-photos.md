@@ -1,16 +1,16 @@
 ---
-sidebar_label: Saving Photos
+sidebar_label: 保存照片
 ---
 
-# Saving Photos to the Filesystem
+# 将照片保存到文件系统
 
-We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be lost.
+目前我们已经能够拍摄多张照片，并在应用的第二个标签页的相册中展示它们。然而，这些照片目前并未被永久保存，因此当应用关闭时，照片就会丢失。
 
-## Filesystem API
+## 文件系统 API
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` function (`src/composables/usePhotoGallery.ts`), and get access to the `writeFile` method from the `Filesystem` class:
+幸运的是，将它们保存到文件系统只需要几个步骤。首先打开 `usePhotoGallery` 函数（位于 `src/composables/usePhotoGallery.ts`），并从 `Filesystem` 类中获取 `writeFile` 方法的访问权限：
 
-Next, create a couple of new functions. The Filesystem API requires that files written to disk are passed in as base64 data, so this helper function will be used in a moment to assist with that:
+接下来，创建几个新函数。文件系统 API 要求写入磁盘的文件必须以 base64 数据格式传递，所以这个辅助函数稍后会用来协助完成这个转换：
 
 ```tsx
 const convertBlobToBase64 = (blob: Blob) =>
@@ -24,15 +24,15 @@ const convertBlobToBase64 = (blob: Blob) =>
   });
 ```
 
-Next, add a function to save the photo to the filesystem. We pass in the `photo` object, which represents the newly captured device photo, as well as the fileName, which will provide a path for the file to be stored to.
+接下来，添加一个将照片保存到文件系统的函数。我们传入 `photo` 对象（代表新拍摄的设备照片）以及 `fileName`（为文件存储提供路径）。
 
-Next we use the Capacitor [Filesystem API](https://capacitorjs.com/docs/apis/filesystem) to save the photo to the filesystem. We start by converting the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function:
+然后我们使用 Capacitor 的 [Filesystem API](https://capacitorjs.com/docs/apis/filesystem) 将照片保存到文件系统。首先将照片转换为 base64 格式，然后将数据传递给 Filesystem 的 `writeFile` 函数：
 
 ```tsx
 const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
   let base64Data: string;
 
-  // Fetch the photo, read as a blob, then convert to base64 format
+  // 获取照片，读取为 blob，然后转换为 base64 格式
   const response = await fetch(photo.webPath!);
   const blob = await response.blob();
   base64Data = (await convertBlobToBase64(blob)) as string;
@@ -43,8 +43,7 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
     directory: Directory.Data,
   });
 
-  // Use webPath to display the new image instead of base64 since it's
-  // already loaded into memory
+  // 使用 webPath 来显示新图片而非 base64 数据，因为它已加载到内存中
   return {
     filepath: fileName,
     webviewPath: photo.webPath,
@@ -52,7 +51,7 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
 };
 ```
 
-Last, update the `takePhoto` function to call `savePicture`. Once the photo has been saved, insert it into the front of reactive `photos` array:
+最后，更新 `takePhoto` 函数以调用 `savePicture`。照片保存后，将其插入到响应式 `photos` 数组的前端：
 
 ```tsx
 const takePhoto = async () => {
@@ -69,4 +68,4 @@ const takePhoto = async () => {
 };
 ```
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
+搞定！现在每次拍摄新照片时，它都会自动保存到文件系统中。

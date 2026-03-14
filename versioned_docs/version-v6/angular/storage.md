@@ -1,32 +1,32 @@
 ---
-title: Data Storage
-sidebar_label: Storage
+title: 数据存储
+sidebar_label: 存储
 ---
 
 <head>
-  <title>Angular App Data Storage Options - Ionic Documentation</title>
+  <title>Angular 应用数据存储方案 - Ionic 文档</title>
   <meta
     name="description"
-    content="A variety of options are available for storing data within Ionic apps made using Angular. Read our documentation for Ionic Secure Storage and @ionic/storage."
+    content="使用 Angular 构建的 Ionic 应用有多种数据存储方案可供选择。请查阅 Ionic Secure Storage 和 @ionic/storage 的文档了解更多信息。"
   />
 </head>
 
-There are variety of options available for storing data within an Ionic app.
+Ionic 应用提供了多种数据存储方案。
 
-Here are two official Ionic options:
+以下是 Ionic 官方提供的两种方案：
 
-## Ionic Secure Storage
+## Ionic 安全存储
 
-For teams building mission-critical apps or requiring encryption support, [Ionic Secure Storage](https://ionic.io/docs/secure-storage) is an official premium solution from the Ionic team that provides a cross-platform data storage system that works on iOS and Android.
+对于构建关键任务型应用或需要加密支持的团队，[Ionic Secure Storage](https://ionic.io/docs/secure-storage) 是 Ionic 团队提供的官方高级解决方案，提供跨平台数据存储系统，支持 iOS 和 Android。
 
-It makes it easy to build high performance, offline-ready Ionic apps across iOS, Android, and the web.
+它能帮助您轻松构建跨 iOS、Android 和 Web 平台的高性能、支持离线使用的 Ionic 应用。
 
-[Learn more](https://ionic.io/products/secure-storage)
+[了解更多](https://ionic.io/products/secure-storage)
 
 ## @ionic/storage
 
-For developers not requiring encryption nor relational data support, [@ionic/storage](https://github.com/ionic-team/ionic-storage) is an open source key/value API for building apps that work across storage engines on multiple platforms.
+对于不需要加密或关系型数据支持的开发者，[@ionic/storage](https://github.com/ionic-team/ionic-storage) 是一个开源键值对 API，可用于构建跨多个平台存储引擎的应用。
 
-Additionally, Ionic Secure Storage has a driver that works with the key/value API in `@ionic/storage` while providing encryption and SQLite support.
+此外，Ionic Secure Storage 提供了一个驱动程序，可与 `@ionic/storage` 中的键值对 API 协同工作，同时提供加密和 SQLite 支持。
 
-Learn more about [@ionic/storage](https://github.com/ionic-team/ionic-storage)
+了解更多关于 [@ionic/storage](https://github.com/ionic-team/ionic-storage) 的信息

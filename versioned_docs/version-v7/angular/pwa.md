@@ -1,40 +1,40 @@
 ---
-title: Progressive Web Apps in Angular
-sidebar_label: Progressive Web Apps
+title: 在 Angular 中构建渐进式 Web 应用
+sidebar_label: 渐进式 Web 应用
 ---
 
 <head>
-  <title>Make Progressive Web Apps (PWA) in Angular - Ionic Tutorial</title>
+  <title>在 Angular 中构建渐进式 Web 应用 (PWA) - Ionic 教程</title>
   <meta
     name="description"
-    content="When Making an Angular app a Progressive Web App, the two main requirements are a Service Worker and a Web Manifest. Read to learn more in Ionic's PWA tutorial."
+    content="将 Angular 应用转变为渐进式 Web 应用，需要满足两个主要条件：Service Worker 和 Web Manifest。阅读 Ionic 的 PWA 教程以了解更多信息。"
   />
 </head>
 
-## Making your Angular app a PWA
+## 将 Angular 应用转变为 PWA
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
+PWA 的两个主要要求是 <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> 和 <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>。虽然可以手动将这两者添加到应用中，但 Angular 团队提供了一个 `@angular/pwa` 包来自动完成此过程。
 
-The `@angular/pwa` package will automatically add a service worker and an app manifest to the app.
-To add this package to the app, run:
+`@angular/pwa` 包会自动向应用添加 Service Worker 和应用清单。
+要将此包添加到应用中，请运行：
 
 ```shell
 ng add @angular/pwa
 ```
 
-Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
+添加此包后，运行 `ionic build --prod`，`www` 目录即可部署为 PWA。
 
 :::note
-By default, the `@angular/pwa` package comes with the Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+默认情况下，`@angular/pwa` 包使用 Angular 徽标作为应用图标。请务必更新清单以使用正确的应用名称，并替换图标。
 :::
 
 :::note
-Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
+Service Workers 和许多 JavaScript API（例如地理位置）等功能要求应用在安全上下文中托管。通过托管服务部署应用时，请注意要充分利用 Service Workers 的功能，需要 HTTPS 支持。
 :::
 
-## Service Worker configuration
+## 配置 Service Worker
 
-After `@angular/pwa` has been added, a new `ngsw-config.json` file will be created at the root of the project. This file is responsible for configuring how Angular's service worker mechanism will handle caching assets. By default, the following will be provided:
+添加 `@angular/pwa` 后，会在项目根目录创建一个新的 `ngsw-config.json` 文件。该文件负责配置 Angular 的 Service Worker 机制如何处理缓存资源。默认配置如下：
 
 ```json
 {
@@ -60,59 +60,59 @@ After `@angular/pwa` has been added, a new `ngsw-config.json` file will be creat
 }
 ```
 
-There are two sections in here, one for app specific resources (JS, CSS, HTML) and assets the app will load on demand. Depending on your app, these options can be customized. For a more detailed guide, read [the official guide from the Angular Team.](https://angular.io/guide/service-worker-config)
+配置中包含两个部分：应用特定资源（JS、CSS、HTML）和应用按需加载的资源。根据应用需求，可以自定义这些选项。更详细的指南，请阅读 [Angular 团队的官方指南](https://angular.io/guide/service-worker-config)
 
-## Deploying
+## 部署
 
 ### Firebase
 
-Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
+Firebase 托管为渐进式 Web 应用提供了诸多优势，包括借助 CDN 实现快速响应时间、默认启用 HTTPS，以及支持 [HTTP2 推送](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html)。
 
-First, if not already available, [create the project](https://console.firebase.google.com) in Firebase.
+首先，如果尚未创建 Firebase 项目，请在 [Firebase 控制台](https://console.firebase.google.com) 创建项目。
 
-Next, in a Terminal, install the Firebase CLI:
+接下来，在终端中安装 Firebase CLI：
 
 ```shell
 npm install -g firebase-tools
 ```
 
 :::note
-If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+如果是首次使用 firebase-tools，请使用 `firebase login` 命令登录您的 Google 账户。
 :::
 
-With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
+安装 Firebase CLI 后，在您的 Ionic 项目中运行 `firebase init`。CLI 会提示以下问题：
 
-**"Which Firebase CLI features do you want to set up for this folder?"** Choose "Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys".
+**"Which Firebase CLI features do you want to set up for this folder?"** 选择 "Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys"。
 
-Create a new Firebase project or select an existing one.
+创建一个新的 Firebase 项目或选择现有项目。
 
-**"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
+**"Select a default Firebase project for this directory:"** 选择您在 Firebase 网站上创建的项目。
 
-**"What do you want to use as your public directory?"** Enter "www".
+**"What do you want to use as your public directory?"** 输入 "www"。
 
 :::note
-Answering this next question will ensure that routing, hard reload, and deep linking work in the app:
+正确回答下一个问题将确保应用中的路由、强制刷新和深层链接正常工作：
 :::
 
-**Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
+**"Configure as a single-page app (rewrite all urls to /index.html)?"** 输入 "Yes"。
 
-**"File build/index.html already exists. Overwrite?"** Enter "No".
+**"File build/index.html already exists. Overwrite?"** 输入 "No"。
 
-**Set up automatic builds and deploys with Github?** Enter "Yes".
+**"Set up automatic builds and deploys with Github?"** 输入 "Yes"。
 
-**For which GitHub repository would you like to set up a Github Workflow?** Enter your project name.
+**"For which GitHub repository would you like to set up a Github Workflow?"** 输入您的项目名称。
 
-**Set up the workflow to run a build script before every deploy?** Enter "Yes".
+**"Set up the workflow to run a build script before every deploy?"** 输入 "Yes"。
 
-**What script should be run before every deploy?** Enter `npm ci && npm run build`.
+**"What script should be run before every deploy?"** 输入 `npm ci && npm run build`。
 
-**Set up automatic deployment to your sites live channel when a PR is merged?** Enter "Yes".
+**"Set up automatic deployment to your sites live channel when a PR is merged?"** 输入 "Yes"。
 
-**What is the name of the get hooked branch associated with your sites live channel?** Enter your project's main branch name.
+**"What is the name of the get hooked branch associated with your sites live channel?"** 输入您项目的主分支名称。
 
-A `firebase.json` config file is generated, configuring the app for deployment.
+系统会生成一个 `firebase.json` 配置文件，用于配置应用部署。
 
-The last thing needed is to make sure caching headers are being set correctly. To do this, add a `headers` snippet to the `firebase.json` file. The complete `firebase.json` looks like:
+最后需要确保正确设置缓存头。为此，在 `firebase.json` 文件中添加一个 `headers` 片段。完整的 `firebase.json` 文件如下：
 
 ```json
 {
@@ -149,18 +149,18 @@ The last thing needed is to make sure caching headers are being set correctly. T
 }
 ```
 
-For more information about the `firebase.json` properties, see the [Firebase documentation](https://firebase.google.com/docs/hosting/full-config#section-firebase-json).
+有关 `firebase.json` 属性的更多信息，请参阅 [Firebase 文档](https://firebase.google.com/docs/hosting/full-config#section-firebase-json)。
 
-Next, build an optimized version of the app by running:
+接下来，运行以下命令构建应用的优化版本：
 
 ```shell
 ionic build --prod
 ```
 
-Last, deploy the app by running:
+最后，运行以下命令部署应用：
 
 ```shell
 firebase deploy
 ```
 
-After this completes, the app will be live.
+完成后，应用即可上线。

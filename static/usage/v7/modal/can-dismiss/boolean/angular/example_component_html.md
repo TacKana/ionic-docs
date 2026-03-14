@@ -6,22 +6,22 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-button id="open-modal" expand="block">Open</ion-button>
+    <ion-button id="open-modal" expand="block">打开</ion-button>
     <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="presentingElement">
       <ng-template>
         <ion-header>
           <ion-toolbar>
-            <ion-title>Modal</ion-title>
+            <ion-title>模态框</ion-title>
             <ion-buttons slot="end">
-              <ion-button (click)="modal.dismiss()">Close</ion-button>
+              <ion-button (click)="modal.dismiss()">关闭</ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
         <ion-content>
-          <p class="ion-padding-horizontal">You must accept the terms and conditions to close this modal.</p>
+          <p class="ion-padding-horizontal">您必须接受条款和条件才能关闭此模态框。</p>
           <ion-item>
             <ion-checkbox id="terms" (ionChange)="onTermsChanged($event)" [checked]="canDismiss">
-              <div class="ion-text-wrap">Do you accept the terms and conditions?</div>
+              <div class="ion-text-wrap">您是否接受条款和条件？</div>
             </ion-checkbox>
           </ion-item>
         </ion-content>

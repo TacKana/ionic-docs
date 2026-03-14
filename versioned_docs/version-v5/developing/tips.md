@@ -1,61 +1,61 @@
-# Development Tips
+# 开发技巧
 
-## Resolving Permission Errors
+## 解决权限错误
 
-`EACCES` permission errors can occur when packages are installed globally. If this is the case, npm may need to be set up to operate without elevated permissions.
+当全局安装软件包时，可能会出现 `EACCES` 权限错误。这种情况下，可能需要配置 npm 使其无需提升权限即可运行。
 
 :::note
-Using `sudo` with npm is **not recommended** because it can lead to further complications.
+**不推荐** 与 npm 一起使用 `sudo`，因为这可能导致进一步的问题。
 :::
 
-This guide offers two options for resolving permission issues. See the [npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) for full documentation and additional options.
+本指南提供两种解决权限问题的方案。完整文档和其他选项请参阅 [npm 文档](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)。
 
-### Option 1
+### 方案一
 
-The best way to avoid permission issues is to reinstall NodeJS and npm using a node version manager.
+避免权限问题的最佳方法是使用 Node 版本管理器重新安装 NodeJS 和 npm。
 
-This guide will document [nvm](https://github.com/nvm-sh/nvm) installation and usage. See the [nvm docs](https://github.com/nvm-sh/nvm#installation-and-update) for full documentation. See the [npm docs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm) for additional options and instructions for Windows.
+本指南将介绍 [nvm](https://github.com/nvm-sh/nvm) 的安装和使用。完整文档请参阅 [nvm 文档](https://github.com/nvm-sh/nvm#installation-and-update)。其他选项和 Windows 操作说明请参阅 [npm 文档](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm)。
 
-1. Install nvm.
+1. 安装 nvm。
 
    ```shell
    $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
    ```
 
-1. New terminals will now use nvm. To verify, open a new terminal and run the following. If something prints, the installation was successful.
+1. 新终端现在将使用 nvm。要验证安装是否成功，请打开新终端并运行以下命令。如果打印出内容，则表示安装成功。
 
    ```shell
    $ command -v nvm
    ```
 
-1. To download and install the latest LTS release of NodeJS, run:
+1. 要下载并安装最新的 NodeJS LTS 版本，请运行：
 
    ```shell
    $ nvm install --lts
    ```
 
-1. Set the newly installed NodeJS as the default environment:
+1. 将新安装的 NodeJS 设置为默认环境：
 
    ```shell
    $ nvm alias default lts/*
    ```
 
-1. New terminals will now use the nvm-controlled NodeJS. To verify:
+1. 新终端现在将使用 nvm 控制的 NodeJS。验证方法：
 
    ```shell
-   $ node -v  # will print the version installed above
-   $ which npm  # will print a path somewhere within the ~/.nvm folder
+   $ node -v  # 将打印上面安装的版本
+   $ which npm  # 将打印位于 ~/.nvm 文件夹内的路径
    ```
 
-Global packages will now be installed in the `~/.nvm` directory, so permission errors should no longer occur as long as `npm` is used _without_ `sudo`.
+现在全局软件包将安装在 `~/.nvm` 目录中，因此只要 **不** 与 `sudo` 一起使用 `npm`，就不应再出现权限错误。
 
-### Option 2
+### 方案二
 
 <small>
-  <em>Does not apply to Windows</em>
+  <em>不适用于 Windows</em>
 </small>
 
-Change the owner of npm's directories to the current user:
+将 npm 目录的所有者更改为当前用户：
 
 ```shell
 $ sudo chown -R $(whoami) /usr/local/{lib/node_modules,bin,share}
@@ -63,81 +63,81 @@ $ sudo chown -R $(whoami) /usr/lib/node_modules
 $ sudo chown -R $(whoami) ~/.npm ~/.npmrc
 ```
 
-Since these global directories are no longer owned by `root`, packages can be installed globally _without_ `sudo`.
+由于这些全局目录不再由 `root` 拥有，因此可以在 **不** 使用 `sudo` 的情况下全局安装软件包。
 
-## Updating Dependencies
+## 更新依赖项
 
-To update an [npm](https://www.npmjs.com/) dependency, run the following, where `<package-name>` is the package to update:
+要更新 [npm](https://www.npmjs.com/) 依赖项，请运行以下命令，其中 `<package-name>` 是要更新的软件包：
 
 ```shell
 npm install <package-name>@<version|latest> --save
 ```
 
-For example, to update the `@ionic/angular` package to the release tagged `latest`, run:
+例如，要将 `@ionic/angular` 软件包更新到标记为 `latest` 的版本，请运行：
 
 ```shell
 npm install @ionic/angular@latest --save
 ```
 
-It is recommended that packages get updated through the CLI since npm will now read package versions from the `package-lock.json` first.
+建议通过 CLI 更新软件包，因为 npm 现在会首先从 `package-lock.json` 读取软件包版本。
 
-## Code Editors
+## 代码编辑器
 
-There are a lot of code editors to choose from. Here are some of our favorites:
+有许多代码编辑器可供选择。以下是我们最喜欢的一些：
 
-- [Visual Studio Code](https://code.visualstudio.com): a popular and free text editor made by Microsoft
-- [Atom](https://atom.io): a hackable text editor made by GitHub
-- [WebStorm](https://www.jetbrains.com/webstorm/): a powerful non-free editor by JetBrains
+- [Visual Studio Code](https://code.visualstudio.com)：由 Microsoft 开发的流行免费文本编辑器
+- [Atom](https://atom.io)：由 GitHub 开发的可定制文本编辑器
+- [WebStorm](https://www.jetbrains.com/webstorm/)：由 JetBrains 开发的功能强大的付费编辑器
 
-## Using a Debugger
+## 使用调试器
 
-The `debugger` keyword can be used to debug an app. When most browsers encounters a `debugger` statement, running of JavaScript is stopped, and the browser will load its debugger. This can be used to set "breakpoints" in the app.
+`debugger` 关键字可用于调试应用程序。当大多数浏览器遇到 `debugger` 语句时，JavaScript 的运行会停止，浏览器将加载其调试器。这可用于在应用程序中设置“断点”。
 
-For example, if a function is not returning the correct value, the debugger can be used to step through the code and inspect variables.
+例如，如果函数未返回正确的值，可以使用调试器逐步执行代码并检查变量。
 
 ```javascript
 function myBrokenFunction() {
   debugger;
-  // do other stuff
+  // 其他操作
 }
 ```
 
-When an app runs, it will pause at this function. From there, the developer tools can be used to run pieces of JavaScript, line by line, and inspect where exactly the function breaks.
+当应用程序运行时，它将在该函数处暂停。然后，可以使用开发者工具逐行运行 JavaScript 代码片段，并精确检查函数在哪里出现问题。
 
-## Changing Mode
+## 切换模式
 
-By default, when an app is viewed in the browser, Ionic will apply the `md` mode. However, since Ionic components adapt according to their platform, it is helpful to be able to view what the app will look like on iOS. To do this, add `?ionic:mode=ios` to the URL where the app is being served. For example, if the app is served on port `8100`, the url would be: `http://localhost:8100/?ionic:mode=ios`.
+默认情况下，在浏览器中查看应用程序时，Ionic 将应用 `md` 模式。但是，由于 Ionic 组件会根据其平台进行调整，因此能够查看应用程序在 iOS 上的外观非常有帮助。为此，请将 `?ionic:mode=ios` 添加到提供应用程序服务的 URL 中。例如，如果应用程序在端口 `8100` 上提供服务，则 URL 应为：`http://localhost:8100/?ionic:mode=ios`。
 
 :::note
-This will not change which platform the browser sees being used. The platform is determined by device detection and inspecting the user-agent. To change the platform, the user-agent must be changed. To do this, open up Chrome DevTools with <kbd>Ctrl+Shift+I</kbd>(<kbd>Cmd+Option+I</kbd> on Mac), and then toggle device mode on with <kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac).
+这不会改变浏览器检测到的平台。平台由设备检测和用户代理检查决定。要更改平台，必须更改用户代理。为此，请使用 <kbd>Ctrl+Shift+I</kbd>（Mac 上为 <kbd>Cmd+Option+I</kbd>）打开 Chrome DevTools，然后使用 <kbd>Ctrl+Shift+M</kbd>（Mac 上为 <kbd>Cmd+Option+M</kbd>）打开设备模式。
 :::
 
-![Chrome DevTools showing the device mode with iPhone X selected.](/img/faq/tips/change-device-platform.png 'Chrome DevTools Device Mode')
+![Chrome DevTools 显示设备模式，已选择 iPhone X](/img/faq/tips/change-device-platform.png 'Chrome DevTools 设备模式')
 
-Selecting devices from the device dropdown will change the user-agent, as well as the dimensions of the viewport.
+从设备下拉菜单中选择设备将更改用户代理以及视口尺寸。
 
-## Using the iOS Simulator
+## 使用 iOS 模拟器
 
-The iOS simulator enables testing and debugging of an app before it reaches an actual device.
+iOS 模拟器能够在应用程序实际部署到设备之前进行测试和调试。
 
-Before it can be used, [Xcode](https://developer.apple.com/xcode/download/), Apple's IDE, must be installed.
+在使用之前，必须先安装 [Xcode](https://developer.apple.com/xcode/download/)（Apple 的集成开发环境）。
 
-The [Ionic CLI](../cli.md) can then be used to run the app in the current directory on the simulator:
+然后，可以使用 [Ionic CLI](../cli.md) 在当前目录的模拟器上运行应用程序：
 
 ```shell
 ionic cordova emulate ios -lc
 ```
 
-Passing in the `-lc` flag will enable livereload and log console output to a terminal.
+传入 `-lc` 标志将启用实时重新加载并将控制台输出记录到终端。
 
-Xcode can also be used to launch the emulator and debug an app.
+Xcode 也可用于启动模拟器和调试应用程序。
 
-Open up Xcode and open `../path-to-app/platforms/ios/myApp.xcodeproj`.
+打开 Xcode 并打开 `../path-to-app/platforms/ios/myApp.xcodeproj`。
 
-After the app loads, console output and device logs will be printed inside of Xcode's output window.
+应用程序加载后，控制台输出和设备日志将打印在 Xcode 的输出窗口中。
 
-## Using the Genymotion Android Emulator
+## 使用 Genymotion Android 模拟器
 
-While the Android SDK comes with a stock emulator, it can be slow and unresponsive at times.
+虽然 Android SDK 附带了标准模拟器，但它有时可能运行缓慢且响应迟钝。
 
-[Genymotion](https://www.genymotion.com) is an alternate emulator that is faster, and still allows access to native functionality like GPS and camera.
+[Genymotion](https://www.genymotion.com) 是一个替代模拟器，速度更快，并且仍然允许访问 GPS 和摄像头等原生功能。

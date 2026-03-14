@@ -9,10 +9,10 @@ import DocsCards from '@components/global/DocsCards';
 import NativeEnterpriseCard from '@components/page/native/NativeEnterpriseCard';
 
 <head>
-  <title>Native APIs - Build Open-Source Native Application Experiences</title>
+  <title>Native APIs - 构建开源原生应用体验</title>
   <meta
     name="description"
-    content="Build native application experiences with open-source Native APIs. Easily add native device functionality to any Ionic app with Capacitor or Cordova."
+    content="使用开源 Native API 构建原生应用体验。通过 Capacitor 或 Cordova，轻松为任何 Ionic 应用添加原生设备功能。"
   />
   <style>{`
     :root {
@@ -21,29 +21,29 @@ import NativeEnterpriseCard from '@components/page/native/NativeEnterpriseCard';
   `}</style>
 </head>
 
-Build native-powered app experiences with a collection of open source and premium plugins and integrations that make it easy to add native device functionality to any Ionic app with Capacitor or Cordova.
+借助一系列开源和高级插件与集成，构建原生驱动的应用体验。通过 Capacitor 或 Cordova，轻松为任何 Ionic 应用添加原生设备功能。
 
 <intro-end />
 
 :::note
 
-[Read about the changes](https://ionicframework.com/blog/a-new-chapter-for-ionic-native/) coming to the Ionic Native project.
+[了解 Ionic Native 项目](https://ionicframework.com/blog/a-new-chapter-for-ionic-native/)即将到来的变化。
 
 :::
 
 <DocsCards>
-  <DocsCard header="Capacitor plugins" img="/img/native/capacitor@2x.png" href="https://capacitorjs.com/docs/plugins">
+  <DocsCard header="Capacitor 插件" img="/img/native/capacitor@2x.png" href="https://capacitorjs.com/docs/plugins">
     <!-- prettier-ignore -->
-    <p>A modern, open source native runtime built and maintained by the Ionic team and the Capacitor community. Our recommended native solution.</p>
+    <p>由 Ionic 团队和 Capacitor 社区构建和维护的现代化开源原生运行时。我们推荐的原生解决方案。</p>
   </DocsCard>
-  <DocsCard header="Cordova plugins" img="/img/native/cordova@2x.png" href="/native/community">
+  <DocsCard header="Cordova 插件" img="/img/native/cordova@2x.png" href="/native/community">
     <!-- prettier-ignore -->
-    <p>A collection of free Cordova plugins, built and maintained by the community, with TypeScript wrappers and a consistent API and naming convention.</p>
+    <p>由社区构建和维护的免费 Cordova 插件集合，提供 TypeScript 封装、一致的 API 和命名规范。</p>
   </DocsCard>
 </DocsCards>
 
 <NativeEnterpriseCard />
 
 :::note
-These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](https://ionicframework.com/docs/v3/native/).
+本文档适用于使用 Ionic Framework 4.0.0 及以上版本构建的应用。对于较旧的 Ionic v3 项目，请[参阅此处](https://ionicframework.com/docs/v3/native/)。
 :::

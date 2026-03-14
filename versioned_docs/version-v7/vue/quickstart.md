@@ -1,44 +1,44 @@
 ---
-title: Ionic Vue Quickstart
-sidebar_label: Quickstart
+title: Ionic Vue 快速入门
+sidebar_label: 快速入门
 ---
 
 <head>
-  <title>Ionic Vue Quickstart Using Ionic CLI: Vue Basics</title>
+  <title>使用 Ionic CLI 进行 Ionic Vue 快速入门：Vue 基础</title>
   <meta
     name="description"
-    content="Ionic Vue Quickstart covers the basics of Vue and Ionic, including any Ionic-specific features. Learn how to build Vue apps using the Ionic CLI."
+    content="Ionic Vue 快速入门涵盖 Vue 和 Ionic 的基础知识，包括任何 Ionic 特有的功能。学习如何使用 Ionic CLI 构建 Vue 应用。"
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-Welcome! This guide will walk you through the basics of Ionic Vue development. You'll learn how to set up your development environment, generate a simple project, explore the project structure, and understand how Ionic components work. This is perfect for getting familiar with Ionic Vue before building your first real app.
+欢迎！本指南将引导您了解 Ionic Vue 开发的基础知识。您将学习如何设置开发环境、生成一个简单的项目、探索项目结构，并理解 Ionic 组件的工作原理。这是在构建您的第一个真实应用之前熟悉 Ionic Vue 的绝佳方式。
 
-If you're looking for a high-level overview of what Ionic Vue is and how it fits into the Vue ecosystem, see the [Ionic Vue Overview](overview).
+如果您想了解 Ionic Vue 是什么以及它如何融入 Vue 生态系统的高层次概述，请参阅 [Ionic Vue 概述](overview)。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have Node.js and npm installed on your machine.
-You can check by running:
+在开始之前，请确保您的计算机上已安装 Node.js 和 npm。
+您可以通过运行以下命令来检查：
 
 ```shell
 node -v
 npm -v
 ```
 
-If you don't have Node.js and npm, [download Node.js here](https://nodejs.org/en/download) (which includes npm).
+如果您没有安装 Node.js 和 npm，请[在此处下载 Node.js](https://nodejs.org/en/download)（其中包含 npm）。
 
-## Create a Project with the Ionic CLI
+## 使用 Ionic CLI 创建项目
 
-First, install the latest [Ionic CLI](../cli):
+首先，安装最新版本的 [Ionic CLI](../cli)：
 
 ```shell
 npm install -g @ionic/cli
 ```
 
-Then, run the following commands to create and run a new project:
+然后，运行以下命令来创建并运行一个新项目：
 
 ```shell
 ionic start myApp blank --type vue
@@ -47,13 +47,13 @@ cd myApp
 ionic serve
 ```
 
-After running `ionic serve`, your project will open in the browser.
+运行 `ionic serve` 后，您的项目将在浏览器中打开。
 
-![Screenshot of the Ionic Vue Home page](/img/guides/quickstart/home-page.png 'Ionic Vue Home Component')
+![Ionic Vue 首页截图](/img/guides/quickstart/home-page.png 'Ionic Vue 首页组件')
 
-## Explore the Project Structure
+## 探索项目结构
 
-Your new app's directory will look like this:
+您新应用目录将如下所示：
 
 ```shell
 └── src/
@@ -66,14 +66,14 @@ Your new app's directory will look like this:
 ```
 
 :::info
-All file paths in the examples below are relative to the project root directory.
+以下示例中的所有文件路径均相对于项目根目录。
 :::
 
-Let's walk through these files to understand the app's structure.
+让我们逐一查看这些文件，以了解应用的结构。
 
-## View the App Component
+## 查看应用组件
 
-The root of your app is defined in `App.vue`:
+应用的根定义在 `App.vue` 中：
 
 ```vue title="src/App.vue"
 <template>
@@ -87,11 +87,11 @@ import { IonApp, IonRouterOutlet } from '@ionic/vue';
 </script>
 ```
 
-This sets up the root of your application, using Ionic's `ion-app` and `ion-router-outlet` components. The router outlet is where your pages will be displayed.
+这设置了应用的根，使用了 Ionic 的 `ion-app` 和 `ion-router-outlet` 组件。路由出口是您的页面将显示的地方。
 
-## View Routes
+## 查看路由
 
-Routes are defined in `router/index.ts`:
+路由定义在 `router/index.ts` 中：
 
 ```ts title="src/router/index.ts"
 import { createRouter, createWebHistory } from '@ionic/vue-router';
@@ -118,35 +118,36 @@ const router = createRouter({
 export default router;
 ```
 
-When you visit the root URL (`/`), the `HomePage` component will be loaded.
+当您访问根 URL (`/`) 时，将加载 `HomePage` 组件。
 
-## View the Home Page
+## 查看首页
 
-The Home page component, defined in `HomePage.vue`, imports the Ionic components and defines the page template:
+首页组件定义在 `HomePage.vue` 中，它导入了 Ionic 组件并定义了页面模板：
 
 ```vue title="src/views/HomePage.vue"
 <template>
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <ion-title>Blank</ion-title>
+        <ion-title>空白</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
+          <ion-title size="large">空白</ion-title>
         </ion-toolbar>
       </ion-header>
 
       <div id="container">
-        <strong>Ready to create an app?</strong>
+        <strong>准备好创建应用了吗？</strong>
         <p>
-          Start with Ionic
+          从 Ionic
           <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"
-            >UI Components</a
+            >UI 组件</a
           >
+          开始
         </p>
       </div>
     </ion-content>
@@ -160,25 +161,25 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 <!-- ...styles... -->
 ```
 
-This creates a page with a header and scrollable content area. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+这将创建一个带有标题和可滚动内容区域的页面。第二个标题显示一个[可折叠大标题](/docs/api/title.md#collapsible-large-titles)，当位于内容顶部时显示，然后当向下滚动时收起，以在第一个标题中显示较小的标题。
 
-:::tip Learn More
-For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
+:::tip 了解更多
+有关 Ionic 布局组件的详细信息，请参阅 [Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md) 和 [Content](/docs/api/content.md) 文档。
 :::
 
-## Add an Ionic Component
+## 添加 Ionic 组件
 
-You can enhance your Home page with more Ionic UI components. For example, add a [Button](/docs/api/button.md) at the end of the `ion-content`:
+您可以使用更多的 Ionic UI 组件来增强您的首页。例如，在 `ion-content` 的末尾添加一个[按钮](/docs/api/button.md)：
 
 ```vue title="src/views/HomePage.vue"
 <ion-content>
-  <!-- existing content -->
+  <!-- 现有内容 -->
 
-  <ion-button>Navigate</ion-button>
+  <ion-button>导航</ion-button>
 </ion-content>
 ```
 
-Then, import the `IonButton` component in the `<script>` tag:
+然后，在 `<script>` 标签中导入 `IonButton` 组件：
 
 ```vue title="src/views/HomePage.vue"
 <script setup lang="ts">
@@ -186,9 +187,9 @@ import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from 
 </script>
 ```
 
-## Add a New Page
+## 添加新页面
 
-Create a new page at `NewPage.vue`:
+在 `NewPage.vue` 创建一个新页面：
 
 ```vue title="src/views/NewPage.vue"
 <template>
@@ -198,14 +199,14 @@ Create a new page at `NewPage.vue`:
         <ion-buttons slot="start">
           <ion-back-button default-href="/"></ion-back-button>
         </ion-buttons>
-        <ion-title>New</ion-title>
+        <ion-title>新页面</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">New</ion-title>
+          <ion-title size="large">新页面</ion-title>
         </ion-toolbar>
       </ion-header>
     </ion-content>
@@ -217,21 +218,21 @@ import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, Io
 </script>
 ```
 
-This creates a page with a [Back Button](/docs/api/back-button.md) in the [Toolbar](/docs/api/toolbar.md). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
+这将创建一个在[工具栏](/docs/api/toolbar.md)中带有[返回按钮](/docs/api/back-button.md)的页面。返回按钮将自动处理导航回上一页，如果没有历史记录，则导航回 `/`。
 
 :::warning
-When creating your own pages, always use `ion-page` as the root component. This is essential for proper transitions between pages, base CSS styling that Ionic components depend on, and consistent layout behavior across your app.
+创建自己的页面时，请始终使用 `ion-page` 作为根组件。这对于页面之间的正确过渡、Ionic 组件依赖的基础 CSS 样式以及整个应用中一致的布局行为至关重要。
 :::
 
-## Navigate to the New Page
+## 导航到新页面
 
-To navigate to the new page, create a route for it by first importing it at the top of `router/index.ts` after the `HomePage` import:
+要导航到新页面，请先在其路由中创建路由，在 `HomePage` 导入之后，在 `router/index.ts` 的顶部导入它：
 
 ```ts title="src/router/index.ts"
 import NewPage from '../views/NewPage.vue';
 ```
 
-Then, add its route in the `routes` array:
+然后，在 `routes` 数组中添加其路由：
 
 ```ts title="src/router/index.ts"
 const routes: Array<RouteRecordRaw> = [
@@ -252,21 +253,21 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-Once that is done, update the button in `HomePage.vue`:
+完成此操作后，更新 `HomePage.vue` 中的按钮：
 
 ```vue title="src/views/HomePage.vue"
-<ion-button router-link="/new">Navigate</ion-button>
+<ion-button router-link="/new">导航</ion-button>
 ```
 
 :::info
-Navigating can also be performed programmatically using Vue Router, and routes can be lazy loaded for better performance. See the [Vue Navigation documentation](/docs/vue/navigation.md) for more information.
+也可以使用 Vue Router 以编程方式执行导航，并且可以延迟加载路由以获得更好的性能。有关更多信息，请参阅 [Vue 导航文档](/docs/vue/navigation.md)。
 :::
 
-## Add Icons to the New Page
+## 向新页面添加图标
 
-Ionic Vue comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `icon` property of the `ion-icon` component.
+Ionic Vue 预装了 [Ionicons](https://ionic.io/ionicons/)。您可以通过设置 `ion-icon` 组件的 `icon` 属性来使用任何图标。
 
-Update the imports in `NewPage.vue` to import `IonIcon` and the `heart` and `logoIonic` icons:
+更新 `NewPage.vue` 中的导入，以导入 `IonIcon` 以及 `heart` 和 `logoIonic` 图标：
 
 ```vue title="src/views/NewPage.vue"
 <script setup lang="ts">
@@ -275,35 +276,35 @@ import { heart, logoIonic } from 'ionicons/icons';
 </script>
 ```
 
-Then, include them inside of the `ion-content`:
+然后，将它们包含在 `ion-content` 内部：
 
 ```vue title="src/views/NewPage.vue"
 <ion-icon :icon="heart"></ion-icon>
 <ion-icon :icon="logoIonic"></ion-icon>
 ```
 
-Note that we are passing the imported SVG reference, **not** the icon name as a string.
+请注意，我们传递的是导入的 SVG 引用，**而不是**字符串形式的图标名称。
 
-For more information, see the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
+有关更多信息，请参阅[图标文档](/docs/api/icon.md)和 [Ionicons 文档](https://ionic.io/ionicons/)。
 
-## Call Component Methods
+## 调用组件方法
 
-Let's add a button that can scroll the content area to the bottom.
+让我们添加一个可以将内容区域滚动到底部的按钮。
 
-Update `NewPage.vue` to include a ref on `ion-content` and a button and some items after the existing icons:
+更新 `NewPage.vue`，在 `ion-content` 上添加一个 ref，并在现有图标之后添加一个按钮和一些项目：
 
 ```vue title="src/views/NewPage.vue"
 <ion-content ref="content">
-  <ion-button @click="scrollToBottom">Scroll to Bottom</ion-button>
+  <ion-button @click="scrollToBottom">滚动到底部</ion-button>
 
-  <!-- Add lots of content to make scrolling possible -->
+  <!-- 添加大量内容以使滚动成为可能 -->
   <ion-item v-for="i in 50" :key="i">
-    <ion-label>Item {{ i }}</ion-label>
+    <ion-label>项目 {{ i }}</ion-label>
   </ion-item>
 </ion-content>
 ```
 
-In the script section, add the new component imports and define the `scrollToBottom` function:
+在脚本部分，添加新的组件导入并定义 `scrollToBottom` 函数：
 
 ```vue title="src/views/NewPage.vue"
 <script setup lang="ts">
@@ -331,19 +332,19 @@ const scrollToBottom = () => {
 </script>
 ```
 
-To call methods on Ionic components:
+要在 Ionic 组件上调用方法：
 
-1. Create a `ref` for the component
-2. Access the underlying Web Component via `$el`
-3. Call the method on the Web Component
+1. 为组件创建一个 `ref`
+2. 通过 `$el` 访问底层的 Web 组件
+3. 在 Web 组件上调用方法
 
-This pattern is necessary because Ionic components are built as Web Components. The `$el` property gives you access to the actual Web Component instance where the methods are defined.
+这种模式是必要的，因为 Ionic 组件是作为 Web 组件构建的。`$el` 属性使您能够访问定义方法的实际 Web 组件实例。
 
-You can find available methods for each component in the [Methods](/docs/api/content.md#methods) section of their API documentation.
+您可以在每个组件的 API 文档的[方法](/docs/api/content.md#methods)部分找到可用的方法。
 
-## Run on a Device
+## 在设备上运行
 
-Ionic's components work everywhere: on iOS, Android, and PWAs. To deploy to mobile, use [Capacitor](https://capacitorjs.com):
+Ionic 的组件在各处都能工作：在 iOS、Android 和 PWA 上。要部署到移动设备，请使用 [Capacitor](https://capacitorjs.com)：
 
 ```shell
 ionic build
@@ -351,69 +352,69 @@ ionic cap add ios
 ionic cap add android
 ```
 
-Open the native projects in their IDEs:
+在它们的 IDE 中打开原生项目：
 
 ```shell
 ionic cap open ios
 ionic cap open android
 ```
 
-See [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-started/with-ionic) for more.
+更多信息请参阅 [Capacitor 入门指南](https://capacitorjs.com/docs/getting-started/with-ionic)。
 
-## Build with TypeScript or JavaScript
+## 使用 TypeScript 或 JavaScript 构建
 
-Ionic Vue projects are created with TypeScript by default, but you can easily convert to JavaScript if you prefer. After generating a blank Ionic Vue app, follow these steps:
+Ionic Vue 项目默认使用 TypeScript 创建，但如果您愿意，可以轻松转换为 JavaScript。生成一个空白的 Ionic Vue 应用后，请按照以下步骤操作：
 
-1. Remove the TypeScript dependencies:
+1. 移除 TypeScript 依赖项：
 
 ```shell
 npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript vue-tsc
 ```
 
-2. Change the extension of all `.ts` files to `.js`. In a blank Ionic Vue app, this will be the `src/router/index.ts`, `src/main.ts`, and files in the `tests` directory.
+2. 将所有 `.ts` 文件的扩展名更改为 `.js`。在一个空白的 Ionic Vue 应用中，这将是 `src/router/index.ts`、`src/main.ts` 和 `tests` 目录中的文件。
 
-3. In `index.html`, change the imported `<script>` file from `/src/main.ts` to `/src/main.js`.
+3. 在 `index.html` 中，将导入的 `<script>` 文件从 `/src/main.ts` 更改为 `/src/main.js`。
 
-4. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: 'off'` from `.eslintrc.js`.
+4. 从 `.eslintrc.js` 中移除 `@vue/typescript/recommended` 和 `@typescript-eslint/no-explicit-any: 'off'`。
 
-5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `src/router/index.js`.
+5. 从 `src/router/index.js` 中移除 `Array<RouteRecordRaw>` 和 `RouteRecordRaw` 的导入。
 
-6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
+6. 从任何拥有它们的 Vue 组件的 `script` 标签中移除 `lang="ts"`。在一个空白的 Ionic Vue 应用中，这应该只是 `src/App.vue` 和 `src/views/HomePage.vue`。
 
-7. Delete `tsconfig.json` and `vite-env.d.ts`.
+7. 删除 `tsconfig.json` 和 `vite-env.d.ts`。
 
-8. In package.json, change the build script from `"build": "vue-tsc && vite build"` to `"build": "vite build"`.
+8. 在 package.json 中，将构建脚本从 `"build": "vue-tsc && vite build"` 更改为 `"build": "vite build"`。
 
-9. Install terser `npm i -D terser`.
+9. 安装 terser `npm i -D terser`。
 
-## Explore More
+## 进一步探索
 
-This guide covered the basics of creating an Ionic Vue app, adding navigation, and introducing Capacitor for native builds. To dive deeper, check out:
+本指南涵盖了创建 Ionic Vue 应用、添加导航以及介绍用于原生构建的 Capacitor 的基础知识。要深入了解，请查看：
 
 <DocsCards>
 
-<DocsCard header="Build Your First App" href="your-first-app" icon="/icons/component-content-icon.png">
-  <p>Build a real Photo Gallery app with Ionic Vue and native device features.</p>
+<DocsCard header="构建您的第一个应用" href="your-first-app" icon="/icons/component-content-icon.png">
+  <p>使用 Ionic Vue 和原生设备功能构建一个真实的相册应用。</p>
 </DocsCard>
 
-<DocsCard header="Vue Documentation" href="https://vuejs.org/guide/introduction.html" icon="/icons/logo-vue-icon.png">
-  <p>Learn more about Vue's core concepts, tools, and best practices from the official Vue documentation.</p>
+<DocsCard header="Vue 文档" href="https://vuejs.org/guide/introduction.html" icon="/icons/logo-vue-icon.png">
+  <p>从官方 Vue 文档中了解更多关于 Vue 的核心概念、工具和最佳实践。</p>
 </DocsCard>
 
-<DocsCard header="Navigation" href="navigation" icon="/icons/component-navigation-icon.png">
-  <p>Discover how to handle routing and navigation in Ionic Vue apps using the Vue Router.</p>
+<DocsCard header="导航" href="navigation" icon="/icons/component-navigation-icon.png">
+  <p>了解如何使用 Vue Router 处理 Ionic Vue 应用中的路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
-  <p>Explore Ionic's rich library of UI components for building beautiful apps.</p>
+<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+  <p>探索 Ionic 丰富的 UI 组件库，用于构建精美的应用。</p>
 </DocsCard>
 
-<DocsCard header="Theming" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
-  <p>Learn how to customize the look and feel of your app with Ionic's powerful theming system.</p>
+<DocsCard header="主题" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+  <p>学习如何使用 Ionic 强大的主题系统来定制应用的外观和感觉。</p>
 </DocsCard>
 
-<DocsCard header="Capacitor Documentation" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>Explore how to access native device features and deploy your app to iOS, Android, and the web with Capacitor.</p>
+<DocsCard header="Capacitor 文档" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
+  <p>探索如何使用 Capacitor 访问原生设备功能，并将您的应用部署到 iOS、Android 和 Web 端。</p>
 </DocsCard>
 
 </DocsCards>

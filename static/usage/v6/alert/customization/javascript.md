@@ -1,18 +1,18 @@
 ```html
-<ion-button onclick="presentAlert()">Click Me</ion-button>
+<ion-button onclick="presentAlert()">点击我</ion-button>
 
 <script>
   async function presentAlert() {
     const alert = document.createElement('ion-alert');
-    alert.header = 'Are you sure?';
+    alert.header = '确定吗？';
     alert.cssClass = 'custom-alert';
     alert.buttons = [
       {
-        text: 'No',
+        text: '否',
         cssClass: 'alert-button-cancel',
       },
       {
-        text: 'Yes',
+        text: '是',
         cssClass: 'alert-button-confirm',
       },
     ];

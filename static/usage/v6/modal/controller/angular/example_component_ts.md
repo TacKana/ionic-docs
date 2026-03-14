@@ -11,7 +11,7 @@ import { ModalExampleComponent } from './modal-example.component';
   standalone: true,
 })
 export class ExampleComponent {
-  message = 'This modal example uses the modalController to present and dismiss modals.';
+  message = '这个模态框示例使用 modalController 来展示和关闭模态框。';
 
   constructor(private modalCtrl: ModalController) {}
 

@@ -1,6 +1,6 @@
 ---
-title: 'Infinite Scroller | ion-infinite-scroll Action Component'
-description: 'The ion-infinite-scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page.'
+title: '无限滚动 | ion-infinite-scroll 操作组件'
+description: 'ion-infinite-scroll 组件会在用户滚动到距离页面底部或顶部指定距离时，触发一个待执行的操作。'
 sidebar_label: 'ion-infinite-scroll'
 demoUrl: '/docs/demos/api/infinite-scroll/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/infinite-scroll/index.html'
@@ -18,19 +18,19 @@ import Slots from '@ionic-internal/component-api/v5/infinite-scroll/slots.md';
 
 # ion-infinite-scroll
 
-The Infinite Scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page.
+无限滚动组件会在用户滚动到距离页面底部或顶部指定距离时，触发一个待执行的操作。
 
-The expression assigned to the `ionInfinite` event is called when the user reaches that defined distance. When this expression has finished any and all tasks, it should call the `complete()` method on the infinite scroll instance.
+当用户到达定义的距离时，分配给 `ionInfinite` 事件的表达式将被调用。当该表达式完成所有任务后，应在无限滚动实例上调用 `complete()` 方法。
 
-## Infinite Scroll Content
+## 无限滚动内容
 
-The `ion-infinite-scroll` component has the infinite scroll logic. It requires a child component in order to display content. Ionic uses its `ion-infinite-scroll-content` component by default. This component displays the infinite scroll and changes the look depending on the infinite scroll's state. It displays a spinner that looks best based on the platform the user is on. However, the default spinner can be changed and text can be added by setting properties on the `ion-infinite-scroll-content` component.
+`ion-infinite-scroll` 组件包含无限滚动的逻辑。它需要一个子组件来显示内容。Ionic 默认使用其 `ion-infinite-scroll-content` 组件。该组件根据无限滚动的状态显示并改变外观。它显示一个基于用户所在平台效果最佳的加载指示器。但是，可以通过设置 `ion-infinite-scroll-content` 组件的属性来更改默认的加载指示器并添加文本。
 
-## Custom Content
+## 自定义内容
 
-Separating the `ion-infinite-scroll` and `ion-infinite-scroll-content` components allows developers to create their own content components, if desired. This content can contain anything, from an SVG element to elements with unique CSS animations.
+将 `ion-infinite-scroll` 和 `ion-infinite-scroll-content` 组件分离，允许开发者根据需要创建自己的内容组件。这些内容可以包含任何元素，从 SVG 元素到具有独特 CSS 动画的元素都可以。
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
 
@@ -38,12 +38,12 @@ Separating the `ion-infinite-scroll` and `ion-infinite-scroll-content` component
 
 ```html
 <ion-content>
-  <ion-button (click)="toggleInfiniteScroll()" expand="block"> Toggle Infinite Scroll </ion-button>
+  <ion-button (click)="toggleInfiniteScroll()" expand="block"> 切换无限滚动 </ion-button>
 
   <ion-list></ion-list>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载更多数据...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
@@ -65,11 +65,11 @@ export class InfiniteScrollExample {
 
   loadData(event) {
     setTimeout(() => {
-      console.log('Done');
+      console.log('完成');
       event.target.complete();
 
-      // App logic to determine if all data is loaded
-      // and disable the infinite scroll
+      // 应用逻辑判断所有数据是否已加载完毕
+      // 并禁用无限滚动
       if (data.length == 1000) {
         event.target.disabled = true;
       }
@@ -88,12 +88,12 @@ export class InfiniteScrollExample {
 
 ```html
 <ion-content>
-  <ion-button onClick="toggleInfiniteScroll()" expand="block"> Toggle Infinite Scroll </ion-button>
+  <ion-button onClick="toggleInfiniteScroll()" expand="block"> 切换无限滚动 </ion-button>
 
   <ion-list></ion-list>
 
   <ion-infinite-scroll threshold="100px" id="infinite-scroll">
-    <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data...">
+    <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="正在加载更多数据...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
@@ -104,11 +104,11 @@ const infiniteScroll = document.getElementById('infinite-scroll');
 
 infiniteScroll.addEventListener('ionInfinite', function (event) {
   setTimeout(function () {
-    console.log('Done');
+    console.log('完成');
     event.target.complete();
 
-    // App logic to determine if all data is loaded
-    // and disable the infinite scroll
+    // 应用逻辑判断所有数据是否已加载完毕
+    // 并禁用无限滚动
     if (data.length == 1000) {
       event.target.disabled = true;
     }
@@ -145,11 +145,11 @@ export class InfiniteScrollExample {
     const min = max - 20;
 
     for (var i = min; i < max; i++) {
-      this.data.push('Item ' + i);
+      this.data.push('项目 ' + i);
     }
 
-    // Stencil does not re-render when pushing to an array
-    // so create a new copy of the array
+    // Stencil 在向数组推送数据时不会重新渲染
+    // 所以需要创建数组的新副本
     // https://stenciljs.com/docs/reactive-data#handling-arrays-and-objects
     this.data = [...this.data];
   }
@@ -157,11 +157,11 @@ export class InfiniteScrollExample {
   loadData(ev) {
     setTimeout(() => {
       this.pushData();
-      console.log('Loaded data');
+      console.log('数据已加载');
       ev.target.complete();
 
-      // App logic to determine if all data is loaded
-      // and disable the infinite scroll
+      // 应用逻辑判断所有数据是否已加载完毕
+      // 并禁用无限滚动
       if (this.data.length == 1000) {
         ev.target.disabled = true;
       }
@@ -176,7 +176,7 @@ export class InfiniteScrollExample {
     return [
       <ion-content>
         <ion-button onClick={() => this.toggleInfiniteScroll()} expand="block">
-          Toggle Infinite Scroll
+          切换无限滚动
         </ion-button>
 
         <ion-list>
@@ -190,7 +190,7 @@ export class InfiniteScrollExample {
         <ion-infinite-scroll ref={(el) => (this.infiniteScroll = el)} onIonInfinite={(ev) => this.loadData(ev)}>
           <ion-infinite-scroll-content
             loadingSpinner="bubbles"
-            loadingText="Loading more data..."
+            loadingText="正在加载更多数据..."
           ></ion-infinite-scroll-content>
         </ion-infinite-scroll>
       </ion-content>,
@@ -207,7 +207,7 @@ export class InfiniteScrollExample {
 <template>
   <ion-page>
     <ion-content class="ion-padding">
-      <ion-button @click="toggleInfiniteScroll" expand="block"> Toggle Infinite Scroll </ion-button>
+      <ion-button @click="toggleInfiniteScroll" expand="block"> 切换无限滚动 </ion-button>
 
       <ion-list>
         <ion-item v-for="item in items" :key="item">
@@ -221,7 +221,7 @@ export class InfiniteScrollExample {
         id="infinite-scroll"
         :disabled="isDisabled"
       >
-        <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data...">
+        <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="正在加载更多数据...">
         </ion-infinite-scroll-content>
       </ion-infinite-scroll>
     </ion-content>
@@ -269,11 +269,11 @@ export class InfiniteScrollExample {
       const loadData = (ev: CustomEvent) => {
         setTimeout(() => {
           pushData();
-          console.log('Loaded data');
+          console.log('数据已加载');
           ev.target.complete();
 
-          // App logic to determine if all data is loaded
-          // and disable the infinite scroll
+          // 应用逻辑判断所有数据是否已加载完毕
+          // 并禁用无限滚动
           if (items.value.length == 1000) {
             ev.target.disabled = true;
           }
@@ -297,15 +297,15 @@ export class InfiniteScrollExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -313,10 +313,10 @@ export class InfiniteScrollExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

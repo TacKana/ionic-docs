@@ -1,24 +1,23 @@
-# Versioning
+# 版本管理
 
-<!-- TOC goes here -->
+<!-- TOC 放在此处 -->
 
-Ionic Framework follows the <a href="https://semver.org/" target="_blank">Semantic Versioning (SemVer)</a> convention: <code>major.minor.patch.</code> Incompatible API changes increment the <code>major</code> version, adding backwards-compatible functionality increments the <code>minor</code> version, and backwards-compatible bug fixes increment the <code>patch</code> version.
+Ionic 框架遵循 <a href="https://semver.org/" target="_blank">语义化版本控制 (SemVer)</a> 规范：<code>主版本.次版本.修订版本</code>。不兼容的 API 变更会增加 <code>主版本</code> 号，添加向后兼容的功能会增加 <code>次版本</code> 号，向后兼容的 bug 修复会增加 <code>修订版本</code> 号。
 
-## Release Schedule
+## 发布计划
 
-### Major Release
+### 主版本发布
 
-A major release will be published when there is a breaking change introduced in the API. Major releases will occur roughly every **6 months** and may contain breaking changes. Several release candidates will be published prior to a major release in order to get feedback before the final release. An outline of what is changing and why will be included with the release candidates.
+当 API 引入破坏性变更时，将发布主版本。主版本大约每 **6 个月** 发布一次，可能包含破坏性变更。在主版本正式发布之前，会发布多个候选版本以收集反馈。候选版本将附带变更内容及原因的概述说明。
 
-### Minor Release
+### 次版本发布
 
-A minor release will be published when a new feature is added or API changes that are non-breaking are introduced. We will heavily test any changes so that we are confident with the release, but with new code comes the potential for new issues. We are scheduled to release a minor version **every 4 weeks**, if any features or API changes were made.
+当添加新功能或引入非破坏性的 API 变更时，将发布次版本。我们会充分测试所有变更以确保发布质量，但新代码难免会带来潜在问题。如果期间有功能或 API 变更，我们计划 **每 4 周** 发布一个次版本。
 
-### Patch Release
+### 修订版本发布
 
-A patch release will be published when bug fixes were included, but the API has not changed and no breaking changes were introduced. We are scheduled to release a new patch version **every week**, but there may be times where we need to release sooner or later than scheduled. To ensure patch releases can fix existing code without introducing new issues from the new features, patch releases will always be published prior to a minor release.
+当包含 bug 修复但 API 未变更且未引入破坏性变更时，将发布修订版本。我们计划 **每周** 发布新的修订版本，但有时可能需要提前或延后发布。为确保修订版本能修复现有代码而不引入新功能带来的问题，修订版本总是在次版本发布之前发布。
 
-## Changelog
+## 更新日志
 
-To see a list of all notable changes to Ionic please refer to the <a href="https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md" target="_blank">changelog</a>. This contains an ordered
-list of all bug fixes and new features under each release.
+要查看 Ionic 所有重要变更的列表，请参阅 <a href="https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md" target="_blank">更新日志</a>。该日志包含按版本排序的所有 bug 修复和新功能清单。

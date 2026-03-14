@@ -10,34 +10,34 @@ import CodeBlock from '@theme/CodeBlock';
 
 # PushapePush
 
-Register and receive push notifications.
-This plugin extends functionalities of Push native plugin in order to use it with Pushape service.
+注册并接收推送通知。
+此插件扩展了原生推送插件的功能，以便与 Pushape 服务配合使用。
 
-Pushape service: @link https://glue-labs.com/pushape-invio-notifiche-push-ios-android-api-sdk
+Pushape 服务：@link https://glue-labs.com/pushape-invio-notifiche-push-ios-android-api-sdk
 
-Requires Cordova plugin: `pushape-cordova-push`. For more info, please see the [Pushape plugin docs](https://github.com/gluelabs/pushape-cordova-push).
+需要 Cordova 插件：`pushape-cordova-push`。更多信息请参阅 [Pushape 插件文档](https://github.com/gluelabs/pushape-cordova-push)。
 
-For TypeScript users, see the [Pushape plugin docs about using TypeScript for custom notifications](https://github.com/gluelabs/pushape-cordova-push/blob/master/docs/PUSHAPE_TYPESCRIPT.md).
+对于 TypeScript 用户，请参阅 [关于在自定义通知中使用 TypeScript 的 Pushape 插件文档](https://github.com/gluelabs/pushape-cordova-push/blob/master/docs/PUSHAPE_TYPESCRIPT.md)。
 
 <p>
   <a href="https://github.com/gluelabs/pushape-cordova-push" target="_blank" rel="noopener" className="git-link">github.com/gluelabs/pushape-cordova-push</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在构建一个严肃的项目，您无法承受花费数小时进行故障排除。Ionic 专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -45,7 +45,7 @@ For TypeScript users, see the [Pushape plugin docs about using TypeScript for cu
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: 'Enterprise' },
+    { value: 'Enterprise', label: '企业版' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -61,23 +61,23 @@ For TypeScript users, see the [Pushape plugin docs about using TypeScript for cu
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版包含 Ionic 团队提供全面支持与维护的插件。&nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，或者如果您对此插件的企业版感兴趣，<a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">请联系我们</a>。
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
-- Browser
+- 浏览器
 - iOS
 
-## Usage
+## 使用说明
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 

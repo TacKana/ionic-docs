@@ -7,22 +7,22 @@ function Example() {
     <IonList>
       <IonRadioGroup value="strawberries">
         <IonItem>
-          <IonLabel>Grapes</IonLabel>
+          <IonLabel>葡萄</IonLabel>
           <IonRadio slot="end" value="grapes"></IonRadio>
         </IonItem>
 
         <IonItem>
-          <IonLabel>Strawberries</IonLabel>
+          <IonLabel>草莓</IonLabel>
           <IonRadio slot="end" value="strawberries"></IonRadio>
         </IonItem>
 
         <IonItem>
-          <IonLabel>Pineapple</IonLabel>
+          <IonLabel>菠萝</IonLabel>
           <IonRadio slot="end" value="pineapple"></IonRadio>
         </IonItem>
 
         <IonItem>
-          <IonLabel>Cherries (Disabled)</IonLabel>
+          <IonLabel>樱桃（已禁用）</IonLabel>
           <IonRadio slot="end" value="cherries" disabled={true}></IonRadio>
         </IonItem>
       </IonRadioGroup>

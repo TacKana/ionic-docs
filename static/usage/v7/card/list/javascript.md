@@ -1,37 +1,37 @@
 ```html
 <ion-card>
   <ion-card-header>
-    <ion-card-title>Card Title</ion-card-title>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    <ion-card-title>卡片标题</ion-card-title>
+    <ion-card-subtitle>卡片副标题</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
     <ion-list>
       <ion-item>
         <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          <img alt="山峦剪影" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
         </ion-thumbnail>
-        <ion-label>Item</ion-label>
+        <ion-label>项目</ion-label>
       </ion-item>
 
       <ion-item>
         <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          <img alt="山峦剪影" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
         </ion-thumbnail>
-        <ion-label>Item</ion-label>
+        <ion-label>项目</ion-label>
       </ion-item>
 
       <ion-item>
         <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          <img alt="山峦剪影" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
         </ion-thumbnail>
-        <ion-label>Item</ion-label>
+        <ion-label>项目</ion-label>
       </ion-item>
 
       <ion-item lines="none">
         <ion-thumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          <img alt="山峦剪影" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
         </ion-thumbnail>
-        <ion-label>Item</ion-label>
+        <ion-label>项目</ion-label>
       </ion-item>
     </ion-list>
   </ion-card-content>

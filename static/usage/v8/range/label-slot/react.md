@@ -5,7 +5,7 @@ function Example() {
   return (
     <IonRange>
       <div slot="label">
-        Label with <IonText color="primary">custom HTML</IonText>
+        标签包含 <IonText color="primary">自定义 HTML</IonText>
       </div>
     </IonRange>
   );

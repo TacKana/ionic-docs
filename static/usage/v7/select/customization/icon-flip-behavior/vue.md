@@ -6,8 +6,8 @@
         class="always-flip"
         :toggle-icon="caretDownSharp"
         interface="popover"
-        label="Icon flips on both modes"
-        placeholder="Select fruit"
+        label="图标在两种模式下均会翻转"
+        placeholder="选择水果"
       >
         <ion-select-option value="apples">Apples</ion-select-option>
         <ion-select-option value="oranges">Oranges</ion-select-option>
@@ -19,8 +19,8 @@
         class="never-flip"
         :toggle-icon="caretDownSharp"
         interface="popover"
-        label="Icon never flips"
-        placeholder="Select fruit"
+        label="图标永不翻转"
+        placeholder="选择水果"
       >
         <ion-select-option value="apples">Apples</ion-select-option>
         <ion-select-option value="oranges">Oranges</ion-select-option>

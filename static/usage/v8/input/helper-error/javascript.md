@@ -4,8 +4,8 @@
   fill="solid"
   label="Email"
   label-placement="floating"
-  helper-text="Enter a valid email"
-  error-text="Invalid email"
+  helper-text="请输入有效的电子邮件地址"
+  error-text="电子邮件地址无效"
 ></ion-input>
 
 <script>

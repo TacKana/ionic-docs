@@ -16,28 +16,28 @@ import Slots from '@ionic-internal/component-api/v5/backdrop/slots.md';
 
 # ion-backdrop
 
-Backdrops are full screen components that overlay other components. They are useful behind components that transition in on top of other content and can be used to dismiss that component.
+背景幕（Backdrop）是全屏组件，用于覆盖在其他组件之上。它们通常位于从其他内容上方滑入的组件后方，可用于关闭该组件。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- Default backdrop -->
+<!-- 默认背景幕 -->
 <ion-backdrop></ion-backdrop>
 
-<!-- Backdrop that is not tappable -->
+<!-- 不可点击的背景幕 -->
 <ion-backdrop tappable="false"></ion-backdrop>
 
-<!-- Backdrop that is not visible -->
+<!-- 不可见的背景幕 -->
 <ion-backdrop visible="false"></ion-backdrop>
 
-<!-- Backdrop with propagation -->
+<!-- 允许事件传播的背景幕 -->
 <ion-backdrop stopPropagation="false"></ion-backdrop>
 
-<!-- Backdrop that sets dynamic properties -->
+<!-- 动态设置属性的背景幕 -->
 <ion-backdrop [tappable]="enableBackdropDismiss" [visible]="showBackdrop" [stopPropagation]="shouldPropagate">
 </ion-backdrop>
 ```
@@ -62,19 +62,19 @@ export class BackdropExample {
 <TabItem value="javascript">
 
 ```html
-<!-- Default backdrop -->
+<!-- 默认背景幕 -->
 <ion-backdrop></ion-backdrop>
 
-<!-- Backdrop that is not tappable -->
+<!-- 不可点击的背景幕 -->
 <ion-backdrop tappable="false"></ion-backdrop>
 
-<!-- Backdrop that is not visible -->
+<!-- 不可见的背景幕 -->
 <ion-backdrop visible="false"></ion-backdrop>
 
-<!-- Backdrop with propagation -->
+<!-- 允许事件传播的背景幕 -->
 <ion-backdrop stop-propagation="false"></ion-backdrop>
 
-<!-- Backdrop that sets dynamic properties -->
+<!-- 动态设置属性的背景幕 -->
 <ion-backdrop id="customBackdrop"></ion-backdrop>
 ```
 
@@ -95,16 +95,16 @@ import { IonBackdrop, IonContent } from '@ionic/react';
 
 export const BackdropExample: React.FC = () => (
   <IonContent>
-    {/*-- Default backdrop --*/}
+    {/*-- 默认背景幕 --*/}
     <IonBackdrop />
 
-    {/*-- Backdrop that is not tappable --*/}
+    {/*-- 不可点击的背景幕 --*/}
     <IonBackdrop tappable={false} />
 
-    {/*-- Backdrop that is not visible --*/}
+    {/*-- 不可见的背景幕 --*/}
     <IonBackdrop visible={false} />
 
-    {/*-- Backdrop with propagation --*/}
+    {/*-- 允许事件传播的背景幕 --*/}
     <IonBackdrop stopPropagation={false} />
 
     <IonBackdrop tappable={true} visible={true} stopPropagation={true} />
@@ -130,19 +130,19 @@ export class BackdropExample {
     const shouldPropagate = false;
 
     return [
-      // Default backdrop
+      // 默认背景幕
       <ion-backdrop></ion-backdrop>,
 
-      // Backdrop that is not tappable
+      // 不可点击的背景幕
       <ion-backdrop tappable={false}></ion-backdrop>,
 
-      // Backdrop that is not visible
+      // 不可见的背景幕
       <ion-backdrop visible={false}></ion-backdrop>,
 
-      // Backdrop with propagation
+      // 允许事件传播的背景幕
       <ion-backdrop stopPropagation={false}></ion-backdrop>,
 
-      // Backdrop that sets dynamic properties
+      // 动态设置属性的背景幕
       <ion-backdrop
         tappable={enableBackdropDismiss}
         visible={showBackdrop}
@@ -159,19 +159,19 @@ export class BackdropExample {
 
 ```html
 <template>
-  <!-- Default backdrop -->
+  <!-- 默认背景幕 -->
   <ion-backdrop></ion-backdrop>
 
-  <!-- Backdrop that is not tappable -->
+  <!-- 不可点击的背景幕 -->
   <ion-backdrop tappable="false"></ion-backdrop>
 
-  <!-- Backdrop that is not visible -->
+  <!-- 不可见的背景幕 -->
   <ion-backdrop visible="false"></ion-backdrop>
 
-  <!-- Backdrop with propagation -->
+  <!-- 允许事件传播的背景幕 -->
   <ion-backdrop stop-propagation="false"></ion-backdrop>
 
-  <!-- Backdrop that sets dynamic properties -->
+  <!-- 动态设置属性的背景幕 -->
   <ion-backdrop :tappable="enableBackdropDismiss" :visible="showBackdrop" :stop-propagation="shouldPropagate">
   </ion-backdrop>
 </template>
@@ -197,15 +197,15 @@ export class BackdropExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -213,10 +213,10 @@ export class BackdropExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

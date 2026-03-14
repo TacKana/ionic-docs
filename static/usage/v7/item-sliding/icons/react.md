@@ -14,7 +14,7 @@ function Example() {
         </IonItemOptions>
 
         <IonItem>
-          <IonLabel>Sliding Item with Icons Only</IonLabel>
+          <IonLabel>仅带图标的滑动项</IonLabel>
         </IonItem>
 
         <IonItemOptions side="end">
@@ -31,22 +31,22 @@ function Example() {
         <IonItemOptions side="start">
           <IonItemOption color="success">
             <IonIcon slot="start" icon={archive}></IonIcon>
-            Archive
+            归档
           </IonItemOption>
         </IonItemOptions>
 
         <IonItem>
-          <IonLabel>Sliding Item with Start Icons</IonLabel>
+          <IonLabel>带左侧图标的滑动项</IonLabel>
         </IonItem>
 
         <IonItemOptions side="end">
           <IonItemOption>
             <IonIcon slot="start" icon={heart}></IonIcon>
-            Favorite
+            收藏
           </IonItemOption>
           <IonItemOption color="danger">
             <IonIcon slot="start" icon={trash}></IonIcon>
-            Delete
+            删除
           </IonItemOption>
         </IonItemOptions>
       </IonItemSliding>
@@ -55,22 +55,22 @@ function Example() {
         <IonItemOptions side="start">
           <IonItemOption color="success">
             <IonIcon slot="end" icon={archive}></IonIcon>
-            Archive
+            归档
           </IonItemOption>
         </IonItemOptions>
 
         <IonItem>
-          <IonLabel>Sliding Item with End Icons</IonLabel>
+          <IonLabel>带右侧图标的滑动项</IonLabel>
         </IonItem>
 
         <IonItemOptions>
           <IonItemOption>
             <IonIcon slot="end" icon={heart}></IonIcon>
-            Favorite
+            收藏
           </IonItemOption>
           <IonItemOption color="danger">
             <IonIcon slot="end" icon={trash}></IonIcon>
-            Delete
+            删除
           </IonItemOption>
         </IonItemOptions>
       </IonItemSliding>
@@ -79,22 +79,22 @@ function Example() {
         <IonItemOptions side="start">
           <IonItemOption color="success">
             <IonIcon slot="top" icon={archive}></IonIcon>
-            Archive
+            归档
           </IonItemOption>
         </IonItemOptions>
 
         <IonItem>
-          <IonLabel>Sliding Item with Top Icons</IonLabel>
+          <IonLabel>带顶部图标的滑动项</IonLabel>
         </IonItem>
 
         <IonItemOptions>
           <IonItemOption>
             <IonIcon slot="top" icon={heart}></IonIcon>
-            Favorite
+            收藏
           </IonItemOption>
           <IonItemOption color="danger">
             <IonIcon slot="top" icon={trash}></IonIcon>
-            Delete
+            删除
           </IonItemOption>
         </IonItemOptions>
       </IonItemSliding>
@@ -103,22 +103,22 @@ function Example() {
         <IonItemOptions side="start">
           <IonItemOption color="success">
             <IonIcon slot="bottom" icon={archive}></IonIcon>
-            Archive
+            归档
           </IonItemOption>
         </IonItemOptions>
 
         <IonItem>
-          <IonLabel>Sliding Item with Bottom Icons</IonLabel>
+          <IonLabel>带底部图标的滑动项</IonLabel>
         </IonItem>
 
         <IonItemOptions>
           <IonItemOption>
             <IonIcon slot="bottom" icon={heart}></IonIcon>
-            Favorite
+            收藏
           </IonItemOption>
           <IonItemOption color="danger">
             <IonIcon slot="bottom" icon={trash}></IonIcon>
-            Delete
+            删除
           </IonItemOption>
         </IonItemOptions>
       </IonItemSliding>

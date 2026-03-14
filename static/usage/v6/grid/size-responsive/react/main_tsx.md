@@ -7,7 +7,7 @@ import './main.css';
 function Example() {
   return (
     <>
-      <b>Stacked for xs breakpoint, equal width for sm and up</b>
+      <b>在 xs 断点处堆叠排列，sm 及以上等宽布局</b>
       <IonGrid>
         <IonRow>
           <IonCol size="12" size-sm="3">
@@ -25,7 +25,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>Equal width until md breakpoint, last column takes full width for md and up</b>
+      <b>md 断点前等宽布局，md 及以上最后一列占满宽度</b>
       <IonGrid>
         <IonRow>
           <IonCol size-md="6">1</IonCol>
@@ -34,7 +34,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>2 per row until md breakpoint, 3 per row for md, equal width for lg and up</b>
+      <b>md 断点前每行 2 列，md 时每行 3 列，lg 及以上等宽布局</b>
       <IonGrid>
         <IonRow>
           <IonCol size="6" size-md="4" size-lg="2">

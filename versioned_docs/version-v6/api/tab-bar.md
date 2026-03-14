@@ -13,10 +13,10 @@ import CustomProps from '@ionic-internal/component-api/v6/tab-bar/custom-props.m
 import Slots from '@ionic-internal/component-api/v6/tab-bar/slots.md';
 
 <head>
-  <title>ion-tab-bar with CSS Custom Properties for Tab Bar Components</title>
+  <title>ion-tab-bar：标签栏组件的 CSS 自定义属性</title>
   <meta
     name="description"
-    content="The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties."
+    content="标签栏组件包含一组标签按钮，必须在标签页内部提供标签栏以实现通信。阅读更多关于使用方式和 CSS 自定义属性的信息。"
   />
 </head>
 
@@ -24,9 +24,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-The tab bar is a UI component that contains a set of [tab buttons](tab-button.md). A tab bar must be provided inside of [tabs](tabs.md) to communicate with each [tab](tab.md).
+标签栏是一个包含一组[标签按钮](tab-button.md)的 UI 组件。必须在[标签页](tabs.md)内部提供标签栏，以便与每个[标签页](tab.md)进行通信。
 
-## Usage
+## 使用方式
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -34,7 +34,7 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 
 ```html
 <ion-tabs>
-  <!-- Tab bar -->
+  <!-- 标签栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="account">
       <ion-icon name="person"></ion-icon>
@@ -55,12 +55,12 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 
 ```html
 <ion-tabs>
-  <!-- Tab views -->
+  <!-- 标签页视图 -->
   <ion-tab tab="account"></ion-tab>
   <ion-tab tab="contact"></ion-tab>
   <ion-tab tab="settings"></ion-tab>
 
-  <!-- Tab bar -->
+  <!-- 标签栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="account">
       <ion-icon name="person"></ion-icon>
@@ -87,7 +87,7 @@ import { call, person, settings } from 'ionicons/icons';
 export const TabBarExample: React.FC = () => (
   <IonContent>
     <IonTabs>
-      {/*-- Tab bar --*/}
+      {/*-- 标签栏 --*/}
       <IonTabBar slot="bottom">
         <IonTabButton tab="account">
           <IonIcon icon={person} />
@@ -111,7 +111,7 @@ export const TabBarExample: React.FC = () => (
 ```html
 <template>
   <ion-tabs>
-    <!-- Tab bar -->
+    <!-- 标签栏 -->
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="account">
         <ion-icon :icon="person"></ion-icon>
@@ -144,15 +144,15 @@ export const TabBarExample: React.FC = () => (
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -160,10 +160,10 @@ export const TabBarExample: React.FC = () => (
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

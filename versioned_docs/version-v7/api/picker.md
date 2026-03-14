@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/picker/custom-props.md
 import Slots from '@ionic-internal/component-api/v7/picker/slots.md';
 
 <head>
-  <title>ion-picker: A Dialog That Displays Buttons and Columns</title>
+  <title>ion-picker：显示按钮和列的对话框组件</title>
   <meta
     name="description"
-    content="A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker appears on top of the app's content, and at the bottom of the viewport."
+    content="选择器（Picker）是一种对话框，显示一行按钮和下方的列。ion-picker 会出现在应用内容的上方和视口的底部。"
   />
 </head>
 
@@ -21,43 +21,43 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.
+选择器（Picker）是一种对话框，显示一行按钮和下方的列。它会出现在应用内容的上方和视口的底部。
 
-## Inline Pickers (Recommended)
+## 内联选择器（推荐）
 
-`ion-picker` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Picker.
+通过直接在模板中编写组件，可以使用 `ion-picker`。这减少了展示选择器时需要连接的处理程序数量。
 
 import Trigger from '@site/static/usage/v7/picker/inline/trigger/index.md';
 
 <Trigger />
 
-### Using `isOpen`
+### 使用 `isOpen` 属性
 
-The `isOpen` property on `ion-picker` allows developers to control the presentation state of the Picker from their application state. This means when `isOpen` is set to `true` the Picker will be presented, and when `isOpen` is set to `false` the Picker will be dismissed.
+`ion-picker` 上的 `isOpen` 属性允许开发者通过应用状态来控制选择器的呈现状态。这意味着当 `isOpen` 设为 `true` 时，选择器将显示；当 `isOpen` 设为 `false` 时，选择器将关闭。
 
-`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Picker is dismissed. Developers should listen for the `ionPickerDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-picker` from being tightly coupled with the state of the application. With a one way data binding, the Picker only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Picker needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+`isOpen` 使用单向数据绑定，这意味着当选择器关闭时，它不会自动设置为 `false`。开发者应该监听 `ionPickerDidDismiss` 或 `didDismiss` 事件，并将 `isOpen` 设置为 `false`。这样做的原因是防止 `ion-picker` 的内部逻辑与应用程序状态紧密耦合。使用单向数据绑定，选择器只需关注响应式变量提供的布尔值。而使用双向数据绑定，选择器需要同时关注布尔值以及响应式变量本身的存在。这可能导致不确定的行为，并使应用程序更难调试。
 
 import IsOpen from '@site/static/usage/v7/picker/inline/isOpen/index.md';
 
 <IsOpen />
 
-## Controller Pickers
+## 控制器选择器
 
-The `pickerController` can be used in situations where more control is needed over when the Picker is presented and dismissed.
+在需要更多控制选择器显示和关闭时机的情况下，可以使用 `pickerController`。
 
 import Controller from '@site/static/usage/v7/picker/controller/index.md';
 
 <Controller />
 
-## Multiple Columns
+## 多列选择
 
-The `columns` property can be used to display a Picker with multiple columns of different options.
+`columns` 属性可用于显示包含多列不同选项的选择器。
 
 import MultipleColumn from '@site/static/usage/v7/picker/multiple-column/index.md';
 
 <MultipleColumn />
 
-## Interfaces
+## 接口
 
 ### PickerButton
 
@@ -77,7 +77,7 @@ interface PickerColumn {
   name: string;
   align?: string;
   /**
-   * Changing this value allows the initial value of a picker column to be set.
+   * 更改此值可以设置选择器列的初始值。
    */
   selectedIndex?: number;
   prevSelected?: number;
@@ -103,7 +103,7 @@ interface PickerColumnOption {
   transform?: string;
   selected?: boolean;
   /**
-   * The optional text to assign as the aria-label on the picker column option.
+   * 可选的文本，用作选择器列选项的 aria-label。
    */
   ariaLabel?: string;
 }
@@ -130,15 +130,15 @@ interface PickerOptions {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -146,10 +146,10 @@ interface PickerOptions {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

@@ -10,25 +10,25 @@ import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/angular/sta
 })
 export class ExampleComponent {
   customAlertOptions = {
-    header: 'Pizza Toppings',
-    subHeader: 'Select your favorite topping',
-    message: 'Choose only one',
+    header: '披萨配料',
+    subHeader: '选择你最喜欢的配料',
+    message: '只能选择一种',
     translucent: true,
   };
 
   customPopoverOptions = {
-    header: 'Hair Color',
-    subHeader: 'Select your hair color',
-    message: 'Only select your dominant hair color',
+    header: '发色',
+    subHeader: '选择你的发色',
+    message: '仅选择你的主要发色',
   };
 
   customActionSheetOptions = {
-    header: 'Colors',
-    subHeader: 'Select your favorite color',
+    header: '颜色',
+    subHeader: '选择你最喜欢的颜色',
   };
 
   customModalOptions = {
-    header: 'Favorite Candy',
+    header: '最爱的糖果',
     breakpoints: [0, 0.5],
     initialBreakpoint: 0.5,
   };

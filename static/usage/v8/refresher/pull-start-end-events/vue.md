@@ -2,7 +2,7 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title>Pull to Refresh</ion-title>
+      <ion-title>下拉刷新</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -17,7 +17,7 @@
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
 
-    <p>Pull this content down to trigger the refresh.</p>
+    <p>向下拉动此内容以触发刷新。</p>
 
     <ion-list lines="full">
       <ion-item v-for="item in items" :key="item.label">
@@ -46,26 +46,26 @@ import {
 } from '@ionic/vue';
 
 const items = ref([
-  { label: 'Finalize Q1 budget proposal', checked: false, disabled: false },
-  { label: 'Review design mockups', checked: true, disabled: false },
-  { label: 'Sync with engineering on API docs', checked: true, disabled: false },
-  { label: 'Approve PTO requests for March', checked: false, disabled: false },
-  { label: 'Draft monthly newsletter', checked: false, disabled: false },
+  { label: '敲定第一季度预算提案', checked: false, disabled: false },
+  { label: '审阅设计稿', checked: true, disabled: false },
+  { label: '与工程团队同步 API 文档', checked: true, disabled: false },
+  { label: '批准三月份的休假申请', checked: false, disabled: false },
+  { label: '起草月度通讯', checked: false, disabled: false },
 ]);
 
 const handlePullStart = () => {
-  console.log('Pull started');
+  console.log('开始下拉');
 
-  // Disable the checkboxes when the pull starts
+  // 下拉开始时禁用复选框
   items.value.forEach((item) => {
     item.disabled = true;
   });
 };
 
 const handlePullEnd = (event: RefresherPullEndCustomEvent) => {
-  console.log('Pull ended with reason: "' + event.detail.reason + '"');
+  console.log('下拉结束，原因："' + event.detail.reason + '"');
 
-  // Enable the checkboxes when the pull ends
+  // 下拉结束时启用复选框
   items.value.forEach((item) => {
     item.disabled = false;
   });
@@ -73,9 +73,9 @@ const handlePullEnd = (event: RefresherPullEndCustomEvent) => {
 
 const handleRefresh = (event: RefresherCustomEvent) => {
   setTimeout(() => {
-    // Any calls to load data go here
+    // 加载数据的调用写在这里
     event.target.complete();
-    console.log('Refresh completed');
+    console.log('刷新完成');
   }, 2000);
 };
 </script>

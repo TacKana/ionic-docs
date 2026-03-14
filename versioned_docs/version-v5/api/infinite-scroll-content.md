@@ -14,13 +14,13 @@ import Slots from '@ionic-internal/component-api/v5/infinite-scroll-content/slot
 
 # ion-infinite-scroll-content
 
-The `ion-infinite-scroll-content` component is the default child used by the `ion-infinite-scroll`. It displays an infinite scroll spinner that looks best based on the platform and changes the look depending on the infinite scroll's state. The default spinner can be changed and text can be added by setting the `loadingSpinner` and `loadingText` properties.
+`ion-infinite-scroll-content` 组件是 `ion-infinite-scroll` 默认使用的子组件。它会根据当前平台显示一个视觉效果最佳的无限滚动加载指示器，其外观会随着无限滚动状态的变化而改变。通过设置 `loadingSpinner` 和 `loadingText` 属性，可以更换默认的加载指示器并添加自定义文本。
 
 ## React
 
-The `ion-infinite-scroll-content` component is not supported in React.
+`ion-infinite-scroll-content` 组件在 React 中不受支持。
 
-## Usage
+## 使用方式
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
 
@@ -29,7 +29,7 @@ The `ion-infinite-scroll-content` component is not supported in React.
 ```html
 <ion-content>
   <ion-infinite-scroll>
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data…">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载更多数据…">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
@@ -42,7 +42,7 @@ The `ion-infinite-scroll-content` component is not supported in React.
 ```html
 <ion-content>
   <ion-infinite-scroll>
-    <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data…">
+    <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="加载更多数据…">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
@@ -66,7 +66,7 @@ export class InfiniteScrollContentExample {
         <ion-infinite-scroll>
           <ion-infinite-scroll-content
             loadingSpinner="bubbles"
-            loadingText="Loading more data..."
+            loadingText="加载更多数据..."
           ></ion-infinite-scroll-content>
         </ion-infinite-scroll>
       </ion-content>,
@@ -86,7 +86,7 @@ export class InfiniteScrollContentExample {
       <ion-infinite-scroll>
         <ion-infinite-scroll-content
           loading-spinner="bubbles"
-          loading-text="Loading more data…">
+          loading-text="加载更多数据…">
         </ion-infinite-scroll-content>
       </ion-infinite-scroll>
     </ion-content>
@@ -116,26 +116,26 @@ export default defineComponent({
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 影子部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

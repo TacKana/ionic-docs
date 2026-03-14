@@ -1,12 +1,12 @@
 ```html
-<ion-label>Default</ion-label>
-<ion-label color="primary">Primary</ion-label>
-<ion-label color="secondary">Secondary</ion-label>
-<ion-label color="tertiary">Tertiary</ion-label>
-<ion-label color="success">Success</ion-label>
-<ion-label color="warning">Warning</ion-label>
-<ion-label color="danger">Danger</ion-label>
-<ion-label color="light">Light</ion-label>
-<ion-label color="medium">Medium</ion-label>
-<ion-label color="dark">Dark</ion-label>
+<ion-label>默认</ion-label>
+<ion-label color="primary">主要</ion-label>
+<ion-label color="secondary">次要</ion-label>
+<ion-label color="tertiary">第三色</ion-label>
+<ion-label color="success">成功</ion-label>
+<ion-label color="warning">警告</ion-label>
+<ion-label color="danger">危险</ion-label>
+<ion-label color="light">浅色</ion-label>
+<ion-label color="medium">中色</ion-label>
+<ion-label color="dark">深色</ion-label>
 ```

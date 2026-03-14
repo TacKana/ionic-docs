@@ -16,35 +16,35 @@ import Slots from '@ionic-internal/component-api/v5/note/slots.md';
 
 # ion-note
 
-Notes are text elements generally used as subtitles that provide more information. Notes are styled to appear grey by default. Notes can be used in an item as metadata text.
+注释（note）通常是作为副标题使用的文本元素，用于提供更多信息。注释默认样式显示为灰色。注释可以在项目（item）中用作元数据文本。
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- Default Note -->
-<ion-note>Default Note</ion-note>
+<!-- 默认注释 -->
+<ion-note>默认注释</ion-note>
 
-<!-- Note Colors -->
-<ion-note color="primary">Primary Note</ion-note>
-<ion-note color="secondary">Secondary Note</ion-note>
-<ion-note color="danger">Danger Note</ion-note>
-<ion-note color="light">Light Note</ion-note>
-<ion-note color="dark">Dark Note</ion-note>
+<!-- 注释颜色 -->
+<ion-note color="primary">主要注释</ion-note>
+<ion-note color="secondary">次要注释</ion-note>
+<ion-note color="danger">危险注释</ion-note>
+<ion-note color="light">浅色注释</ion-note>
+<ion-note color="dark">深色注释</ion-note>
 
-<!-- Notes in a List -->
+<!-- 列表中的注释 -->
 <ion-list>
   <ion-item>
-    <ion-label>Note (End)</ion-label>
-    <ion-note slot="end">On</ion-note>
+    <ion-label>注释（末尾）</ion-label>
+    <ion-note slot="end">开启</ion-note>
   </ion-item>
 
   <ion-item>
-    <ion-note slot="start">Off</ion-note>
-    <ion-label>Note (Start)</ion-label>
+    <ion-note slot="start">关闭</ion-note>
+    <ion-label>注释（起始）</ion-label>
   </ion-item>
 </ion-list>
 ```
@@ -54,26 +54,26 @@ Notes are text elements generally used as subtitles that provide more informatio
 <TabItem value="javascript">
 
 ```html
-<!-- Default Note -->
-<ion-note>Default Note</ion-note>
+<!-- 默认注释 -->
+<ion-note>默认注释</ion-note>
 
-<!-- Note Colors -->
-<ion-note color="primary">Primary Note</ion-note>
-<ion-note color="secondary">Secondary Note</ion-note>
-<ion-note color="danger">Danger Note</ion-note>
-<ion-note color="light">Light Note</ion-note>
-<ion-note color="dark">Dark Note</ion-note>
+<!-- 注释颜色 -->
+<ion-note color="primary">主要注释</ion-note>
+<ion-note color="secondary">次要注释</ion-note>
+<ion-note color="danger">危险注释</ion-note>
+<ion-note color="light">浅色注释</ion-note>
+<ion-note color="dark">深色注释</ion-note>
 
-<!-- Notes in a List -->
+<!-- 列表中的注释 -->
 <ion-list>
   <ion-item>
-    <ion-label>Note (End)</ion-label>
-    <ion-note slot="end">On</ion-note>
+    <ion-label>注释（末尾）</ion-label>
+    <ion-note slot="end">开启</ion-note>
   </ion-item>
 
   <ion-item>
-    <ion-note slot="start">Off</ion-note>
-    <ion-label>Note (Start)</ion-label>
+    <ion-note slot="start">关闭</ion-note>
+    <ion-label>注释（起始）</ion-label>
   </ion-item>
 </ion-list>
 ```
@@ -88,32 +88,32 @@ import { IonNote, IonList, IonItem, IonLabel, IonContent } from '@ionic/react';
 
 export const NoteExample: React.FC = () => (
   <IonContent>
-    {/*-- Default Note --*/}
-    <IonNote>Default Note</IonNote>
+    {/*-- 默认注释 --*/}
+    <IonNote>默认注释</IonNote>
     <br />
 
-    {/*-- Note Colors --*/}
-    <IonNote color="primary">Primary Note</IonNote>
+    {/*-- 注释颜色 --*/}
+    <IonNote color="primary">主要注释</IonNote>
     <br />
-    <IonNote color="secondary">Secondary Note</IonNote>
+    <IonNote color="secondary">次要注释</IonNote>
     <br />
-    <IonNote color="danger">Danger Note</IonNote>
+    <IonNote color="danger">危险注释</IonNote>
     <br />
-    <IonNote color="light">Light Note</IonNote>
+    <IonNote color="light">浅色注释</IonNote>
     <br />
-    <IonNote color="dark">Dark Note</IonNote>
+    <IonNote color="dark">深色注释</IonNote>
     <br />
 
-    {/*-- Notes in a List --*/}
+    {/*-- 列表中的注释 --*/}
     <IonList>
       <IonItem>
-        <IonLabel>Note (End)</IonLabel>
-        <IonNote slot="end">On</IonNote>
+        <IonLabel>注释（末尾）</IonLabel>
+        <IonNote slot="end">开启</IonNote>
       </IonItem>
 
       <IonItem>
-        <IonNote slot="start">Off</IonNote>
-        <IonLabel>Note (Start)</IonLabel>
+        <IonNote slot="start">关闭</IonNote>
+        <IonLabel>注释（起始）</IonLabel>
       </IonItem>
     </IonList>
   </IonContent>
@@ -134,26 +134,26 @@ import { Component, h } from '@stencil/core';
 export class NoteExample {
   render() {
     return [
-      // Default Note
-      <ion-note>Default Note</ion-note>,
+      // 默认注释
+      <ion-note>默认注释</ion-note>,
 
-      // Note Colors
-      <ion-note color="primary">Primary Note</ion-note>,
-      <ion-note color="secondary">Secondary Note</ion-note>,
-      <ion-note color="danger">Danger Note</ion-note>,
-      <ion-note color="light">Light Note</ion-note>,
-      <ion-note color="dark">Dark Note</ion-note>,
+      // 注释颜色
+      <ion-note color="primary">主要注释</ion-note>,
+      <ion-note color="secondary">次要注释</ion-note>,
+      <ion-note color="danger">危险注释</ion-note>,
+      <ion-note color="light">浅色注释</ion-note>,
+      <ion-note color="dark">深色注释</ion-note>,
 
-      // Notes in a List
+      // 列表中的注释
       <ion-list>
         <ion-item>
-          <ion-label>Note (End)</ion-label>
-          <ion-note slot="end">On</ion-note>
+          <ion-label>注释（末尾）</ion-label>
+          <ion-note slot="end">开启</ion-note>
         </ion-item>
 
         <ion-item>
-          <ion-note slot="start">Off</ion-note>
-          <ion-label>Note (Start)</ion-label>
+          <ion-note slot="start">关闭</ion-note>
+          <ion-label>注释（起始）</ion-label>
         </ion-item>
       </ion-list>,
     ];
@@ -167,26 +167,26 @@ export class NoteExample {
 
 ```html
 <template>
-  <!-- Default Note -->
-  <ion-note>Default Note</ion-note>
+  <!-- 默认注释 -->
+  <ion-note>默认注释</ion-note>
 
-  <!-- Note Colors -->
-  <ion-note color="primary">Primary Note</ion-note>
-  <ion-note color="secondary">Secondary Note</ion-note>
-  <ion-note color="danger">Danger Note</ion-note>
-  <ion-note color="light">Light Note</ion-note>
-  <ion-note color="dark">Dark Note</ion-note>
+  <!-- 注释颜色 -->
+  <ion-note color="primary">主要注释</ion-note>
+  <ion-note color="secondary">次要注释</ion-note>
+  <ion-note color="danger">危险注释</ion-note>
+  <ion-note color="light">浅色注释</ion-note>
+  <ion-note color="dark">深色注释</ion-note>
 
-  <!-- Notes in a List -->
+  <!-- 列表中的注释 -->
   <ion-list>
     <ion-item>
-      <ion-label>Note (End)</ion-label>
-      <ion-note slot="end">On</ion-note>
+      <ion-label>注释（末尾）</ion-label>
+      <ion-note slot="end">开启</ion-note>
     </ion-item>
 
     <ion-item>
-      <ion-note slot="start">Off</ion-note>
-      <ion-label>Note (Start)</ion-label>
+      <ion-note slot="start">关闭</ion-note>
+      <ion-label>注释（起始）</ion-label>
     </ion-item>
   </ion-list>
 </template>
@@ -205,15 +205,15 @@ export class NoteExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -221,10 +221,10 @@ export class NoteExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

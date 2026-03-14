@@ -2,20 +2,20 @@
 <ion-menu side="end" content-id="main-content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu Content</ion-title>
+      <ion-title>菜单内容</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding">This is the menu content.</ion-content>
+  <ion-content class="ion-padding">这里是菜单内容。</ion-content>
 </ion-menu>
 <div class="ion-page" id="main-content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title>菜单</ion-title>
       <ion-buttons slot="end">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding"> Tap the button in the toolbar to open the menu. </ion-content>
+  <ion-content class="ion-padding">点击工具栏中的按钮以打开菜单。</ion-content>
 </div>
 ```

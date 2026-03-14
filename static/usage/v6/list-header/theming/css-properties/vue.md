@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-list-header>
-    <ion-label>Custom List Header</ion-label>
+    <ion-label>自定义列表头</ion-label>
   </ion-list-header>
 </template>
 

@@ -6,52 +6,52 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonLabel>Default</IonLabel>
+        <IonLabel>默认</IonLabel>
         <IonSpinner></IonSpinner>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Dots</IonLabel>
+        <IonLabel>圆点</IonLabel>
         <IonSpinner name="dots"></IonSpinner>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Lines</IonLabel>
+        <IonLabel>线条</IonLabel>
         <IonSpinner name="lines"></IonSpinner>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Lines Small</IonLabel>
+        <IonLabel>小线条</IonLabel>
         <IonSpinner name="lines-small"></IonSpinner>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Lines Sharp</IonLabel>
+        <IonLabel>锐利线条</IonLabel>
         <IonSpinner name="lines-sharp"></IonSpinner>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Lines Sharp Small</IonLabel>
+        <IonLabel>锐利小线条</IonLabel>
         <IonSpinner name="lines-sharp-small"></IonSpinner>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Bubbles</IonLabel>
+        <IonLabel>气泡</IonLabel>
         <IonSpinner name="bubbles"></IonSpinner>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Circles</IonLabel>
+        <IonLabel>圆圈</IonLabel>
         <IonSpinner name="circles"></IonSpinner>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Circular</IonLabel>
+        <IonLabel>环形</IonLabel>
         <IonSpinner name="circular"></IonSpinner>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Crescent</IonLabel>
+        <IonLabel>新月形</IonLabel>
         <IonSpinner name="crescent"></IonSpinner>
       </IonItem>
     </>

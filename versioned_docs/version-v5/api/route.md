@@ -14,26 +14,26 @@ import Slots from '@ionic-internal/component-api/v5/route/slots.md';
 
 # ion-route
 
-The route component takes a component and renders it when the Browser URL matches the url property.
+路由组件会接收一个组件，并在浏览器 URL 与 url 属性匹配时渲染该组件。
 
-> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
+> 注意：此组件仅适用于原生 JavaScript 和 Stencil 项目。对于 Angular 项目，请使用 [`ion-router-outlet`](router-outlet.md) 和 Angular 路由器。
 
-## Navigation Hooks
+## 导航钩子
 
-Navigation hooks can be used to perform tasks or act as navigation guards. Hooks are used by providing functions to the `beforeEnter` and `beforeLeave` properties on each `ion-route`. Returning `true` allows navigation to proceed, while returning `false` causes it to be cancelled. Returning an object of type `NavigationHookOptions` allows you to redirect navigation to another page.
+导航钩子可用于执行任务或充当导航守卫。通过为每个 `ion-route` 的 `beforeEnter` 和 `beforeLeave` 属性提供函数来使用钩子。返回 `true` 允许导航继续进行，返回 `false` 则取消导航。返回 `NavigationHookOptions` 类型的对象可以将导航重定向到另一个页面。
 
-## Interfaces
+## 接口
 
 ```tsx
 interface NavigationHookOptions {
   /**
-   * A valid path to redirect navigation to.
+   * 用于重定向导航的有效路径。
    */
   redirect: string;
 }
 ```
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="javascript" values={[{ value: 'javascript', label: 'JAVASCRIPT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
 
@@ -56,17 +56,17 @@ const newMessagePage = document.querySelector('ion-route[url="/dashboard"]');
 newMessagePage.beforeLeave = hasUnsavedDataGuard;
 
 const isLoggedInGuard = async () => {
-  const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
+  const isLoggedIn = await UserData.isLoggedIn(); // 请将此替换为实际的登录验证逻辑
 
   if (isLoggedIn) {
     return true;
   } else {
-    return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
+    return { redirect: '/login' }; // 如果用户未登录，他们将被重定向到 /login 页面
   }
 };
 
 const hasUnsavedDataGuard = async () => {
-  const hasUnsavedData = await checkData(); // Replace this with actual validation
+  const hasUnsavedData = await checkData(); // 请将此替换为实际的验证逻辑
 
   if (hasUnsavedData) {
     return await confirmDiscardChanges();
@@ -126,17 +126,17 @@ export class RouterExample {
 }
 
 const isLoggedInGuard = async () => {
-  const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
+  const isLoggedIn = await UserData.isLoggedIn(); // 请将此替换为实际的登录验证逻辑
 
   if (isLoggedIn) {
     return true;
   } else {
-    return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
+    return { redirect: '/login' }; // 如果用户未登录，他们将被重定向到 /login 页面
   }
 };
 
 const hasUnsavedDataGuard = async () => {
-  const hasUnsavedData = await checkData(); // Replace this with actual validation
+  const hasUnsavedData = await checkData(); // 请将此替换为实际的验证逻辑
 
   if (hasUnsavedData) {
     return await confirmDiscardChanges();
@@ -187,17 +187,17 @@ const confirmDiscardChanges = async () => {
   import { routeController } from '@ionic/vue';
 
   const isLoggedInGuard = async () => {
-    const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
+    const isLoggedIn = await UserData.isLoggedIn(); // 请将此替换为实际的登录验证逻辑
 
     if (isLoggedIn) {
       return true;
     } else {
-      return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
+      return { redirect: '/login' }; // 如果用户未登录，他们将被重定向到 /login 页面
     }
   };
 
   const hasUnsavedDataGuard = async () => {
-    const hasUnsavedData = await checkData(); // Replace this with actual validation
+    const hasUnsavedData = await checkData(); // 请将此替换为实际的验证逻辑
 
     if (hasUnsavedData) {
       return await confirmDiscardChanges();
@@ -235,15 +235,15 @@ const confirmDiscardChanges = async () => {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -251,10 +251,10 @@ const confirmDiscardChanges = async () => {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

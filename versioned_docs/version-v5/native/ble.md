@@ -10,39 +10,39 @@ import CodeBlock from '@theme/CodeBlock';
 
 # BLE
 
-This plugin enables communication between a phone and Bluetooth Low Energy (BLE) peripherals.
+此插件实现了手机与低功耗蓝牙（BLE）外设之间的通信。
 
-The plugin provides a simple JavaScript API for iOS and Android.
+该插件为 iOS 和 Android 提供了简洁的 JavaScript API。
 
-- Scan for peripherals
-- Connect to a peripheral
-- Read the value of a characteristic
-- Write new value to a characteristic
-- Get notified when characteristic's value changes
+- 扫描外设
+- 连接外设
+- 读取特征值
+- 向特征写入新值
+- 当特征值变化时获取通知
 
-Advertising information is returned when scanning for peripherals. Service, characteristic, and property info is returned when connecting to a peripheral. All access is via service and characteristic UUIDs. The plugin manages handles internally.
+扫描外设时会返回广播信息。连接外设时会返回服务、特征和属性信息。所有访问都通过服务和特征的 UUID 进行。插件在内部管理句柄。
 
-Simultaneous connections to multiple peripherals are supported.
+支持同时连接多个外设。
 
 <p>
   <a href="https://github.com/don/cordova-plugin-ble-central" target="_blank" rel="noopener" className="git-link">github.com/don/</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="别在插件问题上浪费宝贵时间"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在进行一个严肃的项目，您无法承担数小时故障排查的代价。Ionic 专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -50,7 +50,7 @@ Simultaneous connections to multiple peripherals are supported.
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: 'Enterprise' },
+    { value: 'Enterprise', label: '企业版' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -65,22 +65,22 @@ Simultaneous connections to multiple peripherals are supported.
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版提供 Ionic 团队全面支持与维护的插件。&nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，如果您对该插件的企业版感兴趣，请 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - iOS
 
-## Usage
+## 用法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -92,9 +92,9 @@ constructor(private ble: BLE) { }
 
 ```
 
-## Peripheral Data
+## 外设数据
 
-Peripheral Data is passed to the success callback when scanning and connecting. Limited data is passed when scanning.
+扫描和连接时，外设数据会传递给成功回调函数。扫描时传递的数据有限。
 
 ```tsx
   {
@@ -105,7 +105,7 @@ Peripheral Data is passed to the success callback when scanning and connecting. 
   }
 ```
 
-After connecting, the peripheral object also includes service, characteristic and descriptor information.
+连接后，外设对象还会包含服务、特征和描述符信息。
 
 ```tsx
   {
@@ -159,11 +159,11 @@ After connecting, the peripheral object also includes service, characteristic an
   }
 ```
 
-## Advertising Data
+## 广播数据
 
-Bluetooth advertising data is returned in when scanning for devices. The format varies depending on your platform. On Android advertising data will be the raw advertising bytes. iOS does not allow access to raw advertising data, so a dictionary of data is returned.
+扫描设备时会返回蓝牙广播数据。其格式因平台而异。在 Android 上，广播数据是原始的广播字节。iOS 不允许访问原始广播数据，因此会返回一个数据字典。
 
-The advertising information for both Android and iOS appears to be a combination of advertising data and scan response data.
+Android 和 iOS 的广播信息似乎是广播数据和扫描响应数据的组合。
 
 ### Android
 
@@ -176,11 +176,11 @@ The advertising information for both Android and iOS appears to be a combination
  }
 ```
 
-Convert the advertising info to a Uint8Array for processing. `var adData = new Uint8Array(peripheral.advertising)`
+将广播信息转换为 Uint8Array 进行处理：`var adData = new Uint8Array(peripheral.advertising)`
 
 ### iOS
 
-Note that iOS uses the string value of the constants for the [Advertisement Data Retrieval Keys](https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManagerDelegate_Protocol/index.html#//apple_ref/doc/constant_group/Advertisement_Data_Retrieval_Keys). This will likely change in the future.
+请注意，iOS 使用 [Advertisement Data Retrieval Keys](https://developer.apple.com/library/ios/documentation/CoreBluetooth/Reference/CBCentralManagerDelegate_Protocol/index.html#//apple_ref/doc/constant_group/Advertisement_Data_Retrieval_Keys) 常量的字符串值。这在未来可能会改变。
 
 ```tsx
   {
@@ -190,13 +190,13 @@ Note that iOS uses the string value of the constants for the [Advertisement Data
           'kCBAdvDataChannel': 37,
           'kCBAdvDataServiceData': {
               'FED8': {
-                  'byteLength': 7 // data not shown
+                  'byteLength': 7 // 数据未显示
               }
           },
           'kCBAdvDataLocalName': 'demo',
           'kCBAdvDataServiceUUIDs': ['FED8'],
           'kCBAdvDataManufacturerData': {
-              'byteLength': 7  // data not shown
+              'byteLength': 7  // 数据未显示
           },
           'kCBAdvDataTxPowerLevel': 32,
           'kCBAdvDataIsConnectable': true
@@ -205,14 +205,14 @@ Note that iOS uses the string value of the constants for the [Advertisement Data
   }
 ```
 
-## Typed Arrays
+## 类型化数组
 
-This plugin uses typed Arrays or ArrayBuffers for sending and receiving data.
+此插件使用类型化数组或 ArrayBuffer 来发送和接收数据。
 
-This means that you need convert your data to ArrayBuffers before sending and from ArrayBuffers when receiving.
+这意味着您需要在发送前将数据转换为 ArrayBuffer，在接收时从 ArrayBuffer 转换回来。
 
 ```tsx
-  // ASCII only
+  // 仅限 ASCII
   function stringToBytes(string) {
      var array = new Uint8Array(string.length);
      for (var i = 0, l = string.length; i &lt; l; i++) {
@@ -221,14 +221,14 @@ This means that you need convert your data to ArrayBuffers before sending and fr
       return array.buffer;
   }
 
-  // ASCII only
+  // 仅限 ASCII
   function bytesToString(buffer) {
       return String.fromCharCode.apply(null, new Uint8Array(buffer));
   }
 ```
 
-You can read more about typed arrays in these articles on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) and [HTML5 Rocks](http://www.html5rocks.com/en/tutorials/webgl/typed_arrays/).
+您可以在 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) 和 [HTML5 Rocks](http://www.html5rocks.com/en/tutorials/webgl/typed_arrays/) 的文章中了解更多关于类型化数组的信息。
 
-## UUIDs
+## UUID
 
-UUIDs are always strings and not numbers. Some 16-bit UUIDs, such as '2220' look like integers, but they're not. (The integer 2220 is 0x8AC in hex.) This isn't a problem with 128 bit UUIDs since they look like strings 82b9e6e1-593a-456f-be9b-9215160ebcac. All 16-bit UUIDs should also be passed to methods as strings.
+UUID 始终是字符串，而不是数字。一些 16 位 UUID，例如 '2220' 看起来像整数，但它们不是（整数 2220 的十六进制是 0x8AC）。对于 128 位 UUID 这不是问题，因为它们看起来像字符串 82b9e6e1-593a-456f-be9b-9215160ebcac。所有 16 位 UUID 也应该作为字符串传递给方法。

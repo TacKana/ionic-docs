@@ -5,63 +5,19 @@
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true" class="ion-padding">
-  <h1>Scroll the content and notice that the text goes behind the header and footer.</h1>
+  <h1>滚动内容时，注意文字会滑入页眉和页脚后方。</h1>
 
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum in
-    risus. Sed nec convallis sapien, id tincidunt enim. Mauris ornare eleifend nunc id mattis. Fusce augue diam,
-    sagittis nec posuere at, consectetur tempor lectus. Nulla at lectus eget mauris iaculis malesuada mollis sed neque.
-    Curabitur et risus tristique, malesuada mauris finibus, elementum massa. Proin lacinia mauris quis ligula blandit
-    ullamcorper. Donec ut posuere lorem. In volutpat magna vitae tellus posuere pulvinar. Nam varius ligula justo, nec
-    placerat lacus pharetra ac. Aenean massa orci, tristique in nisl ut, aliquet consectetur libero. Etiam luctus
-    placerat vulputate. Aliquam ipsum massa, porttitor at mollis ut, pretium sit amet mi. In neque mauris, placerat et
-    neque vel, tempor interdum dolor. Suspendisse gravida malesuada tellus, vel dapibus nisl dignissim vel. Cras ut
-    nulla sit amet erat malesuada euismod vel a nulla.
+    洛伦姆·伊普苏姆坐在阿梅特，康塞克特图尔·阿迪皮辛格·埃利特。阿内安·塞德·特卢斯·内克·毛里斯·奥克托尔·迪格尼西姆·费门图姆·因里斯斯。塞德·内克·康瓦利斯·萨皮恩，伊德·廷西登特·恩尼姆。毛里斯·奥纳雷·埃勒芬德·努恩克·伊德·马蒂斯。富斯凯·奥格·迪亚姆，萨吉蒂斯·内克·波苏尔·阿特，康塞克特图尔·特姆波尔·勒克图斯。努拉·阿特·勒克图斯·埃吉特·毛里斯·伊阿库利斯·马勒苏阿达·莫利斯·塞德·内奎。库拉比图尔·埃特·里斯斯·特里斯特奎，马勒苏阿达·毛里斯·菲尼布斯，埃勒门图姆·马萨。普罗因·拉西尼亚·毛里斯·奎斯·利古拉·布兰迪特乌尔拉克佩尔。多内克·乌特·波苏尔·洛雷姆。因·沃尔图特帕特·马格纳·维塔·特卢斯·波苏尔·普尔维纳尔。纳姆·瓦里乌斯·利古拉·尤斯托，内克·普拉塞拉特·拉库斯·帕雷特拉·阿克。阿内安·马萨·奥西，特里斯特奎·因·尼斯尔·乌特，阿利奎特·康塞克特图尔·利贝罗。埃蒂亚姆·卢克图斯普拉塞拉特·沃尔普塔特。阿利奎姆·伊普苏姆·马萨，波蒂托尔·阿特·莫利斯·乌特，普雷蒂乌姆·西特·阿梅特·米。因·内奎·毛里斯，普拉塞拉特·埃特·内奎·维尔，特姆波尔·因特杜姆·多洛尔。苏斯彭迪塞·格拉维达·马勒苏阿达·特卢斯，维尔·达皮布斯·尼斯尔·迪格尼西姆·维尔。克拉斯·乌特努拉·西特·阿梅特·埃拉特·马勒苏阿达·埃斯莫德·维尔·阿·努拉。
   </p>
   <p>
-    Phasellus sit amet iaculis odio, eget feugiat erat. Etiam sit amet turpis sit amet massa viverra maximus. Aenean
-    venenatis porttitor pharetra. Fusce vulputate urna purus, vel efficitur mauris auctor non. Etiam libero odio,
-    sodales in velit a, faucibus venenatis erat. Ut convallis sit amet urna in ultrices. Cras neque est, vehicula sed
-    lorem ac, placerat commodo elit. Praesent turpis metus, elementum eget iaculis ac, elementum in odio. Nunc et elit
-    faucibus, condimentum mauris consequat, ornare dolor. Sed ac lectus a est blandit tempor. Etiam lobortis tristique
-    maximus.
+    法塞卢斯·西特·阿梅特·伊阿库利斯·奥迪奥，埃吉特·弗吉亚特·埃拉特。埃蒂亚姆·西特·阿梅特·图皮斯·西特·阿梅特·马萨·维维拉·马克西姆斯。阿内安维南蒂斯·波蒂托尔·帕雷特拉。富斯凯·沃尔普塔特·乌尔纳·普鲁斯，维尔·埃菲西图尔·毛里斯·奥克托尔·农。埃蒂亚姆·利贝罗·奥迪奥，索达勒斯·因·维利特·阿，法库布斯·维南蒂斯·埃拉特。乌特·康瓦利斯·西特·阿梅特·乌尔纳·因·乌尔特里塞斯。克拉斯·内奎·埃斯特，维希库拉·塞德·洛雷姆·阿克，普拉塞拉特·科莫多·埃利特。普拉森特·图皮斯·梅图斯，埃勒门图姆·埃吉特·伊阿库利斯·阿克，埃勒门图姆·因·奥迪奥。努恩克·埃特·埃利特法库布斯，康迪门图姆·毛里斯·康塞奎特，奥纳雷·多洛尔。塞德·阿克·勒克图斯·阿·埃斯特·布兰迪特·特姆波尔。埃蒂亚姆·洛波蒂斯·特里斯特奎马克西姆斯。
   </p>
   <p>
-    Quisque tempus porttitor massa, vel condimentum risus finibus a. Aliquam viverra maximus odio, id ornare justo
-    tristique ac. Mauris euismod arcu eget neque sagittis rutrum. Ut vehicula porta lacus nec lobortis. Vestibulum et
-    elit ultrices, lacinia metus in, lobortis est. Vivamus nisi justo, venenatis sit amet arcu ac, congue faucibus
-    justo. Duis volutpat posuere enim, vel sagittis elit dictum et. Sed et congue mauris. Nam venenatis venenatis risus,
-    ac condimentum neque sagittis sed. In eget nulla ultricies urna sollicitudin posuere. Aenean sagittis congue mauris.
-    Proin nec libero mi. In hac habitasse platea dictumst. Praesent nunc nulla, dictum id molestie sed, pretium vitae
-    turpis.
+    奎斯克·滕普斯·波蒂托尔·马萨，维尔·康迪门图姆·里斯斯·菲尼布斯·阿。阿利奎姆·维维拉·马克西姆斯·奥迪奥，伊德·奥纳雷·尤斯托特里斯特奎·阿克。毛里斯·埃斯莫德·阿尔库·埃吉特·内奎·萨吉蒂斯·鲁特鲁姆。乌特·维希库拉·波塔·拉库斯·内克·洛波蒂斯。维斯蒂布卢姆·埃特·埃利特·乌尔特里塞斯，拉西尼亚·梅图斯·因，洛波蒂斯·埃斯特。维瓦穆斯·尼西·尤斯托，维南蒂斯·西特·阿梅特·阿尔库·阿克，康格·法库布斯尤斯托。杜伊斯·沃尔图特帕特·波苏尔·恩尼姆，维尔·萨吉蒂斯·埃利特·迪克图姆·埃特。塞德·埃特·康格·毛里斯。纳姆·维南蒂斯·维南蒂斯·里斯斯，阿克·康迪门图姆·内奎·萨吉蒂斯·塞德。因·埃吉特·努拉·乌尔特里塞斯·乌尔纳·索利西图丁·波苏尔。阿内安·萨吉蒂斯·康格·毛里斯。普罗因·内克·利贝罗·米。因·哈克·哈比塔塞·普拉塔·迪克图姆斯特。普拉森特·努恩克·努拉，迪克图姆·伊德·莫莱斯蒂·塞德，普雷蒂乌姆·维塔图皮斯。
   </p>
   <p>
-    Pellentesque vitae dapibus lacus. Nullam suscipit ornare risus quis ullamcorper. Nullam feugiat, sapien et sodales
-    fermentum, risus ligula semper risus, id efficitur ligula augue id diam. Suspendisse lobortis est sit amet quam
-    facilisis, ut vestibulum nunc dignissim. Donec at vestibulum magna. Maecenas maximus pretium metus. Phasellus congue
-    sapien vel odio imperdiet, nec mollis odio euismod. Sed vel eros ut sapien accumsan condimentum vehicula vitae
-    lectus. Donec sed efficitur lorem. Aenean tristique mi libero, eleifend tincidunt libero finibus at. Mauris
-    condimentum fermentum rutrum.
+    佩伦特斯克·维塔·达皮布斯·拉库斯。努拉姆·苏斯西皮特·奥纳雷·里斯斯·奎斯·乌尔拉克佩尔。努拉姆·弗吉亚特，萨皮恩·埃特·索达勒斯·费门图姆，里斯斯·利古拉·森佩尔·里斯斯，伊德·埃菲西图尔·利古拉·奥格·伊德·迪亚姆。苏斯彭迪塞·洛波蒂斯·埃斯特·西特·阿梅特·奎姆·法西利西斯，乌特·维斯蒂布卢姆·努恩克·迪格尼西姆。多内克·阿特·维斯蒂布卢姆·马格纳。麦肯纳斯·马克西姆斯·普雷蒂乌姆·梅图斯。法塞卢斯·康格萨皮恩·维尔·奥迪奥·因佩尔迪特，内克·莫利斯·奥迪奥·埃斯莫德。塞德·维尔·埃罗斯·乌特·萨皮恩·阿克苏姆桑·康迪门图姆·维希库拉·维塔勒克图斯。多内克·塞德·埃菲西图尔·洛雷姆。阿内安·特里斯特奎·米·利贝罗，埃勒芬德·廷西登特·利贝罗·菲尼布斯·阿特。毛里斯康迪门图姆·费门图姆·鲁特鲁姆。
   </p>
   <p>
-    Nulla tristique ultricies suscipit. Donec non ornare elit. Vivamus id pretium mauris, nec sagittis leo. Fusce mattis
-    eget est id sollicitudin. Suspendisse dictum sem magna, in imperdiet metus suscipit et. Suspendisse enim enim,
-    venenatis et orci eu, suscipit congue lacus. Praesent vel ligula non eros tempor interdum. Proin justo orci,
-    ultricies vitae diam sed, semper consectetur ligula. Aenean finibus ante velit, nec efficitur libero cursus cursus.
-    Duis mi nunc, imperdiet sed condimentum vel, porttitor ut lacus. Quisque dui ipsum, vehicula sed vestibulum id,
-    semper vel libero. Suspendisse tincidunt mollis condimentum. Nulla facilisi. Etiam neque nisl, egestas nec iaculis
-    sed, tristique faucibus sem. Sed mollis dui quis ligula cursus rutrum.
-  </p>
-</ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-title> Footer </ion-title>
-  </ion-toolbar>
-</ion-footer>
-
-<style>
-  ion-toolbar {
-    --opacity: 0.5;
-  }
-</style>
-```
+    努拉·特里斯特奎·乌尔特里塞斯·苏斯西皮特。多内克·农·奥纳雷·埃利特。维瓦穆斯·伊德·普雷蒂乌姆·毛里斯，内克·萨吉蒂斯·莱奥。富斯凯·马蒂斯埃吉特·埃斯特·伊德·索利西图丁。苏斯彭迪塞·迪克图姆·森·马格纳，因·因佩尔迪特·梅图斯·苏斯西皮特·埃特。苏斯彭迪塞·恩尼姆·恩尼姆，维南蒂斯·埃特·奥西·埃乌，苏斯西皮特·康格·拉库斯。普拉森特·维尔·利古拉·农·埃罗斯·特姆波尔·因特杜姆。普罗因·尤斯托·奥西，乌尔特里塞斯·维塔·迪亚姆·塞德，森佩尔·康塞克特图尔·利古拉。阿内安·菲尼布斯·安特·维利特，内克·埃菲西图尔·利贝罗·库尔苏斯·库尔苏斯。杜伊斯·米·努恩克，因佩尔迪特·塞德·康迪门图姆·维尔，波蒂托尔·乌特·拉库斯。奎斯克·杜伊·伊普苏姆，维希库拉·塞德·维斯蒂布卢姆·伊德，森佩尔·维尔·利贝罗。苏斯彭迪塞·廷西登特·莫利斯·康迪门图姆。努拉·法西利西斯。埃蒂亚姆·内奎·尼斯尔，埃格斯塔斯·内克·伊阿库利斯·塞德，特里斯特奎·法库布斯·森。塞德·莫利斯·杜伊·奎斯·利

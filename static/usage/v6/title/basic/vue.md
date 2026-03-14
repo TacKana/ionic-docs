@@ -2,7 +2,7 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title>Title</ion-title>
+      <ion-title>标题</ion-title>
     </ion-toolbar>
   </ion-header>
 </template>

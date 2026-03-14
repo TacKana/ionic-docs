@@ -16,12 +16,12 @@ function Example() {
   return (
     <>
       <IonBreadcrumbs maxItems={4} onIonCollapsedClick={openPopover}>
-        <IonBreadcrumb href="#home">Home</IonBreadcrumb>
-        <IonBreadcrumb href="#electronics">Electronics</IonBreadcrumb>
-        <IonBreadcrumb href="#photography">Photography</IonBreadcrumb>
-        <IonBreadcrumb href="#cameras">Cameras</IonBreadcrumb>
-        <IonBreadcrumb href="#film">Film</IonBreadcrumb>
-        <IonBreadcrumb href="#35mm">35 mm</IonBreadcrumb>
+        <IonBreadcrumb href="#home">首页</IonBreadcrumb>
+        <IonBreadcrumb href="#electronics">电子产品</IonBreadcrumb>
+        <IonBreadcrumb href="#photography">摄影器材</IonBreadcrumb>
+        <IonBreadcrumb href="#cameras">相机</IonBreadcrumb>
+        <IonBreadcrumb href="#film">胶卷</IonBreadcrumb>
+        <IonBreadcrumb href="#35mm">35毫米</IonBreadcrumb>
       </IonBreadcrumbs>
       <IonPopover ref={popover} isOpen={popoverOpen} onDidDismiss={() => setPopoverOpen(false)}>
         <IonContent>

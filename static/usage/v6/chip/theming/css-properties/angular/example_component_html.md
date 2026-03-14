@@ -1,3 +1,3 @@
 ```html
-<ion-chip>Default</ion-chip>
+<ion-chip>默认</ion-chip>
 ```

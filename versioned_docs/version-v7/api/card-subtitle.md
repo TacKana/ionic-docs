@@ -13,19 +13,19 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Card subtitle is a child component of card that should be placed inside of a [card header](./card-header).
+卡片副标题是卡片组件的子组件，应放置在 [卡片头部](./card-header) 内。
 
-See the [Card](./card) documentation for more information.
+更多信息请参阅 [卡片](./card) 文档。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -33,10 +33,10 @@ See the [Card](./card) documentation for more information.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

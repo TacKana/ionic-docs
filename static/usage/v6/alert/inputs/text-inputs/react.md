@@ -9,33 +9,33 @@ function Example() {
     <IonButton
       onClick={() =>
         presentAlert({
-          header: 'Please enter your info',
-          buttons: ['OK'],
+          header: '请输入您的信息',
+          buttons: ['确认'],
           inputs: [
             {
-              placeholder: 'Name',
+              placeholder: '姓名',
             },
             {
-              placeholder: 'Nickname (max 8 characters)',
+              placeholder: '昵称（最多 8 个字符）',
               attributes: {
                 maxlength: 8,
               },
             },
             {
               type: 'number',
-              placeholder: 'Age',
+              placeholder: '年龄',
               min: 1,
               max: 100,
             },
             {
               type: 'textarea',
-              placeholder: 'A little about yourself',
+              placeholder: '简单介绍一下自己',
             },
           ],
         })
       }
     >
-      Click Me
+      点击我
     </IonButton>
   );
 }

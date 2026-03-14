@@ -44,9 +44,9 @@ function Example() {
       <IonItem>
         <IonSelect
           aria-label="Food"
-          placeholder="Select food"
+          placeholder="选择食物"
           compareWith={compareWith}
-          onIonChange={(event) => console.log('Current value:', JSON.stringify(event.detail.value))}
+          onIonChange={(event) => console.log('当前值:', JSON.stringify(event.detail.value))}
           multiple={true}
         >
           {foods.map((food) => (

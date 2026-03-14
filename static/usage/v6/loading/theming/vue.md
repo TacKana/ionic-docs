@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="showLoading()">Show Loading</ion-button>
+  <ion-button @click="showLoading()">显示加载</ion-button>
 </template>
 
 <script lang="ts">
@@ -12,7 +12,7 @@
     setup() {
       const showLoading = async () => {
         const loading = await loadingController.create({
-          message: 'Loading...',
+          message: '加载中...',
           duration: 3000,
           cssClass: 'custom-loading',
         });

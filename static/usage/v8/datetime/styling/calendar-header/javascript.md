@@ -3,7 +3,7 @@
 
 <style>
   /*
-   * Custom Datetime Calendar Header Parts
+   * 自定义 Datetime 日历标题组件样式
    * -------------------------------------------
    */
   ion-datetime::part(calendar-header) {

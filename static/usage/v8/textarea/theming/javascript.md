@@ -1,9 +1,9 @@
 ```html
 <ion-textarea
   aria-label="Custom textarea"
-  placeholder="Type something here"
+  placeholder="在此输入内容"
   class="custom"
-  helper-text="Helper text"
+  helper-text="辅助说明文本"
   counter="true"
   maxlength="100"
 ></ion-textarea>

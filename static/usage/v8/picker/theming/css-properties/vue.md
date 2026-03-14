@@ -40,9 +40,9 @@
   <ion-picker>
     <ion-picker-column value="red">
       <ion-picker-column-option value="" disabled="true">--</ion-picker-column-option>
-      <ion-picker-column-option :value.attr="'red'">Red</ion-picker-column-option>
-      <ion-picker-column-option :value.attr="'blue'">Blue</ion-picker-column-option>
-      <ion-picker-column-option :value.attr="'green'">Green</ion-picker-column-option>
+      <ion-picker-column-option :value.attr="'red'">红色</ion-picker-column-option>
+      <ion-picker-column-option :value.attr="'blue'">蓝色</ion-picker-column-option>
+      <ion-picker-column-option :value.attr="'green'">绿色</ion-picker-column-option>
     </ion-picker-column>
   </ion-picker>
 </template>

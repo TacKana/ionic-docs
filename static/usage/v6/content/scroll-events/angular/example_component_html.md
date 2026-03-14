@@ -1,6 +1,6 @@
 ```html
-<!-- Scroll events are disabled by default for content for performance reasons, enable them to listen to them -->
-<!-- Casting $event to $any is a temporary fix for this bug https://github.com/ionic-team/ionic-framework/issues/24245 -->
+<!-- 出于性能考虑，默认禁用了内容的滚动事件，启用它们以监听这些事件 -->
+<!-- 将 $event 转换为 $any 是针对此 bug 的临时修复 https://github.com/ionic-team/ionic-framework/issues/24245 -->
 <ion-content
   [scrollEvents]="true"
   (ionScrollStart)="handleScrollStart()"
@@ -8,7 +8,7 @@
   (ionScrollEnd)="handleScrollEnd()"
   class="ion-padding"
 >
-  <h1>Scroll to fire the scroll events and view them in the console.</h1>
+  <h1>滚动以触发滚动事件并在控制台中查看它们。</h1>
 
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum in

@@ -9,19 +9,19 @@ function Example() {
       <IonList>
         <IonItem>
           <IonIcon aria-hidden="true" icon={airplane} slot="start"></IonIcon>
-          <IonLabel>Airplane Mode</IonLabel>
+          <IonLabel>飞行模式</IonLabel>
         </IonItem>
         <IonItem>
           <IonIcon aria-hidden="true" icon={wifi} slot="start"></IonIcon>
-          <IonLabel>Wi-Fi</IonLabel>
+          <IonLabel>无线网络</IonLabel>
         </IonItem>
         <IonItem>
           <IonIcon aria-hidden="true" icon={bluetooth} slot="start"></IonIcon>
-          <IonLabel>Bluetooth</IonLabel>
+          <IonLabel>蓝牙</IonLabel>
         </IonItem>
         <IonItem>
           <IonIcon aria-hidden="true" icon={call} slot="start"></IonIcon>
-          <IonLabel>Cellular</IonLabel>
+          <IonLabel>蜂窝网络</IonLabel>
         </IonItem>
       </IonList>
 
@@ -30,25 +30,25 @@ function Example() {
           <IonAvatar aria-hidden="true" slot="start">
             <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </IonAvatar>
-          <IonLabel>Huey</IonLabel>
+          <IonLabel>休伊</IonLabel>
         </IonItem>
         <IonItem>
           <IonAvatar aria-hidden="true" slot="start">
             <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </IonAvatar>
-          <IonLabel>Dewey</IonLabel>
+          <IonLabel>杜威</IonLabel>
         </IonItem>
         <IonItem>
           <IonAvatar aria-hidden="true" slot="start">
             <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </IonAvatar>
-          <IonLabel>Louie</IonLabel>
+          <IonLabel>路易</IonLabel>
         </IonItem>
         <IonItem>
           <IonAvatar aria-hidden="true" slot="start">
             <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </IonAvatar>
-          <IonLabel>Fooie</IonLabel>
+          <IonLabel>福伊</IonLabel>
         </IonItem>
       </IonList>
     </>

@@ -1,7 +1,7 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Pull to Refresh</ion-title>
+    <ion-title>下拉刷新</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -33,12 +33,15 @@
 
   refresher.addEventListener('ionRefresh', () => {
     setTimeout(() => {
+      // 添加新项目并标记为未读
       addItems(3, true);
+      // 完成刷新操作
       refresher.complete();
     }, 2000);
   });
 
   const list = document.querySelector('ion-list');
+  // 初始化时添加项目，标记为已读
   addItems(5, false);
 
   function chooseRandomName() {
@@ -60,7 +63,7 @@
       <ion-icon color="primary" name="${unread ? 'ellipse' : ''}" slot="start"></ion-icon>
       <ion-label>
         <h2>${name}</h2>
-        <p>New message from ${name}</p>
+        <p>来自 ${name} 的新消息</p>
       </ion-label>
     `;
 

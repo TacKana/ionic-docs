@@ -13,23 +13,23 @@ export class ExampleComponent {
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Actions',
+      header: '操作',
       buttons: [
         {
-          text: 'Delete',
+          text: '删除',
           role: 'destructive',
           data: {
             action: 'delete',
           },
         },
         {
-          text: 'Share',
+          text: '分享',
           data: {
             action: 'share',
           },
         },
         {
-          text: 'Cancel',
+          text: '取消',
           role: 'cancel',
           data: {
             action: 'cancel',

@@ -4,41 +4,41 @@ sidebar_label: 'package build'
 
 # ionic package build
 
-Create a package build on Appflow
+在 Appflow 上创建应用包构建
 
 ```shell
 ionic package build [options]
 ```
 
-This command creates a package build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory.
+此命令用于在 Appflow 上创建应用包构建。在构建运行时，它会将远程构建日志输出到终端。如果构建成功，它会在当前目录下下载生成的应用包文件。
 
-Apart from `--commit`, every option can be specified using the full name setup within the [Dashboard](https://dashboard.ionicframework.com).
+除了 `--commit` 选项外，每个选项都可以使用 [控制面板](https://dashboard.ionicframework.com) 中设置的完整名称来指定。
 
-The `--signing-certificate` option is mandatory for any iOS build but not for Android debug builds.
+对于任何 iOS 构建，`--signing-certificate` 选项都是必需的，但对于 Android 调试构建则不是必需的。
 
-Customizing the build:
+自定义构建：
 
-- The `--environment` and `--native-config` options can be used to customize the groups of values exposed to the build.
-- Override the preferred platform with `--build-stack`. This is useful for building older iOS apps.
+- 可以使用 `--environment` 和 `--native-config` 选项来自定义暴露给构建的值组。
+- 使用 `--build-stack` 覆盖首选平台。这对于构建较旧的 iOS 应用非常有用。
 
-Deploying the build to an App Store:
+将构建部署到应用商店：
 
-- The `--destination` option can be used to deliver the app created by the build to the configured App Store. This can be used only together with build type `release` for Android and build types `app-store` or `enterprise` for iOS.
+- 可以使用 `--destination` 选项将构建创建的应用交付到配置好的应用商店。这只能与 Android 的 `release` 构建类型以及 iOS 的 `app-store` 或 `enterprise` 构建类型一起使用。
 
-## Examples
+## 示例
 
 ```shell
 $ ionic package build android debug
-$ ionic package build ios development --signing-certificate="iOS Signing Certificate Name"
-$ ionic package build android debug --environment="My Custom Environment Name"
-$ ionic package build android debug --native-config="My Custom Native Config Name"
+$ ionic package build ios development --signing-certificate="iOS 签名证书名称"
+$ ionic package build android debug --environment="我的自定义环境名称"
+$ ionic package build android debug --native-config="我的自定义原生配置名称"
 $ ionic package build android debug --commit=2345cd3305a1cf94de34e93b73a932f25baac77c
-$ ionic package build ios development --signing-certificate="iOS Signing Certificate Name" --build-stack="iOS - Xcode 9"
-$ ionic package build ios development --signing-certificate="iOS Signing Certificate Name" --build-file-name=my_custom_file_name.ipa
-$ ionic package build ios app-store --signing-certificate="iOS Signing Certificate Name" --destination="Apple App Store Destination"
+$ ionic package build ios development --signing-certificate="iOS 签名证书名称" --build-stack="iOS - Xcode 9"
+$ ionic package build ios development --signing-certificate="iOS 签名证书名称" --build-file-name=my_custom_file_name.ipa
+$ ionic package build ios app-store --signing-certificate="iOS 签名证书名称" --destination="Apple App Store 目标"
 ```
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -50,10 +50,10 @@ $ ionic package build ios app-store --signing-certificate="iOS Signing Certifica
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <p>
-          The platform to package (<code>android</code>, <code>ios</code>)
+          要打包的平台 (<code>android</code>, <code>ios</code>)
         </p>
       </td>
     </tr>
@@ -67,10 +67,10 @@ $ ionic package build ios app-store --signing-certificate="iOS Signing Certifica
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <p>
-          The build type (<code>debug</code>, <code>release</code>, <code>development</code>, <code>ad-hoc</code>,{' '}
+          构建类型 (<code>debug</code>, <code>release</code>, <code>development</code>, <code>ad-hoc</code>,{' '}
           <code>app-store</code>, <code>enterprise</code>)
         </p>
       </td>
@@ -78,7 +78,7 @@ $ ionic package build ios app-store --signing-certificate="iOS Signing Certifica
   </tbody>
 </table>
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -95,9 +95,9 @@ $ ionic package build ios app-store --signing-certificate="iOS Signing Certifica
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Signing certificate</p>
+        <p>签名证书</p>
       </td>
     </tr>
   </tbody>
@@ -115,9 +115,9 @@ $ ionic package build ios app-store --signing-certificate="iOS Signing Certifica
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>The group of environment variables exposed to your build</p>
+        <p>暴露给构建的环境变量组</p>
       </td>
     </tr>
   </tbody>
@@ -135,9 +135,9 @@ $ ionic package build ios app-store --signing-certificate="iOS Signing Certifica
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>The group of native config variables exposed to your build</p>
+        <p>暴露给构建的原生配置变量组</p>
       </td>
     </tr>
   </tbody>
@@ -155,15 +155,15 @@ $ ionic package build ios app-store --signing-certificate="iOS Signing Certifica
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>The configuration to deploy the build artifact to the app store</p>
+        <p>将构建产物部署到应用商店的配置</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -180,10 +180,10 @@ $ ionic package build ios app-store --signing-certificate="iOS Signing Certifica
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>Commit (defaults to HEAD)</p>
+          <p>提交记录（默认为 HEAD）</p>
         </div>
       </td>
     </tr>
@@ -202,11 +202,11 @@ $ ionic package build ios app-store --signing-certificate="iOS Signing Certifica
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
           <p>
-            Build stack (<code>"Android"</code>, <code>"iOS - Xcode 11 (Preferred)"</code>,{' '}
+            构建栈 (<code>"Android"</code>, <code>"iOS - Xcode 11 (Preferred)"</code>,{' '}
             <code>"iOS - Xcode 10"</code>)
           </p>
         </div>
@@ -227,10 +227,10 @@ $ ionic package build ios app-store --signing-certificate="iOS Signing Certifica
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>The name for the downloaded build file</p>
+          <p>下载的构建文件的名称</p>
         </div>
       </td>
     </tr>

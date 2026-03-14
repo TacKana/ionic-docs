@@ -2,11 +2,11 @@
 <div class="ion-page">
   <ion-header>
     <ion-toolbar>
-      <ion-title>App</ion-title>
+      <ion-title>应用程序</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-button id="open-modal" expand="block">Open</ion-button>
+    <ion-button id="open-modal" expand="block">打开</ion-button>
     <ion-modal
       #modal
       trigger="open-modal"

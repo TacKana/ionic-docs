@@ -1,10 +1,12 @@
 ```html
 <ion-item-group>
   <ion-item-divider>
+    <!-- 保持英文组件名不变 -->
     <ion-label>A</ion-label>
   </ion-item-divider>
 
   <ion-item>
+    <!-- 标签内的国家名称保持英文原文 -->
     <ion-label>Angola</ion-label>
   </ion-item>
   <ion-item>

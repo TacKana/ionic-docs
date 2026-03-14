@@ -6,7 +6,7 @@ function Example() {
   return (
     <>
       <IonItem counter={true}>
-        <IonLabel position="floating">Default Counter</IonLabel>
+        <IonLabel position="floating">默认计数器</IonLabel>
         <IonInput maxlength={20}></IonInput>
       </IonItem>
 
@@ -14,7 +14,7 @@ function Example() {
         counter={true}
         counterFormatter={(inputLength, maxLength) => `${maxLength - inputLength} characters remaining`}
       >
-        <IonLabel position="floating">Custom Counter Format</IonLabel>
+        <IonLabel position="floating">自定义计数器格式</IonLabel>
         <IonInput maxlength={20}></IonInput>
       </IonItem>
     </>

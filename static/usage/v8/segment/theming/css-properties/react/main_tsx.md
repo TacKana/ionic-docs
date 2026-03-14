@@ -9,10 +9,10 @@ function Example() {
     <>
       <IonSegment value="custom">
         <IonSegmentButton value="custom">
-          <IonLabel>Custom</IonLabel>
+          <IonLabel>自定义</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>Segment</IonLabel>
+          <IonLabel>分段</IonLabel>
         </IonSegmentButton>
       </IonSegment>
     </>

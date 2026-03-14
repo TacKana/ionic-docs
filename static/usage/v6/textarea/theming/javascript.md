@@ -1,5 +1,5 @@
 ```html
-<ion-textarea class="custom-textarea" placeholder="Type something here"></ion-textarea>
+<ion-textarea class="custom-textarea" placeholder="在此输入内容"></ion-textarea>
 
 <style>
   ion-textarea.custom-textarea {

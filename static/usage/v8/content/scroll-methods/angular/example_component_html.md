@@ -1,15 +1,15 @@
 ```html
 <ion-content class="ion-padding">
-  <h1>Click on the buttons to scroll the content.</h1>
+  <h1>点击按钮来滚动内容。</h1>
 
-  <ion-button expand="block" (click)="scrollToBottom()">Scroll to Bottom</ion-button>
+  <ion-button expand="block" (click)="scrollToBottom()">滚动到底部</ion-button>
 
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum in
     risus. Sed nec convallis sapien, id tincidunt enim. Mauris ornare eleifend nunc id mattis. Fusce augue diam,
     sagittis nec posuere at, consectetur tempor lectus. Nulla at lectus eget mauris iaculis malesuada mollis sed neque.
     Curabitur et risus tristique, malesuada mauris finibus, elementum massa. Proin lacinia mauris quis ligula blandit
-    ullamcorper. Donec ut posuere lorem. In volutpat magna vitae tellus posuere pulvinar. Nam varius ligula justo, nec
+    ullamcorcorper. Donec ut posuere lorem. In volutpat magna vitae tellus posuere pulvinar. Nam varius ligula justo, nec
     placerat lacus pharetra ac. Aenean massa orci, tristique in nisl ut, aliquet consectetur libero. Etiam luctus
     placerat vulputate. Aliquam ipsum massa, porttitor at mollis ut, pretium sit amet mi. In neque mauris, placerat et
     neque vel, tempor interdum dolor. Suspendisse gravida malesuada tellus, vel dapibus nisl dignissim vel. Cras ut
@@ -50,6 +50,6 @@
     sed, tristique faucibus sem. Sed mollis dui quis ligula cursus rutrum.
   </p>
 
-  <ion-button expand="block" (click)="scrollToTop()">Scroll to Top</ion-button>
+  <ion-button expand="block" (click)="scrollToTop()">滚动到顶部</ion-button>
 </ion-content>
 ```

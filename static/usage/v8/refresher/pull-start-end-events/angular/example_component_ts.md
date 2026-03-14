@@ -46,7 +46,7 @@ export class ExampleComponent {
   handlePullStart() {
     console.log('Pull started');
 
-    // Disable the checkboxes when the pull starts
+    // 下拉开始时禁用所有复选框
     this.items.forEach((item) => {
       item.disabled = true;
     });
@@ -55,7 +55,7 @@ export class ExampleComponent {
   handlePullEnd(event: RefresherPullEndCustomEvent) {
     console.log('Pull ended with reason: "' + event.detail.reason + '"');
 
-    // Enable the checkboxes when the pull ends
+    // 下拉结束时启用所有复选框
     this.items.forEach((item) => {
       item.disabled = false;
     });
@@ -63,7 +63,7 @@ export class ExampleComponent {
 
   handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
-      // Any calls to load data go here
+      // 此处放置加载数据的调用
       event.target.complete();
       console.log('Refresh completed');
     }, 2000);

@@ -16,13 +16,9 @@ import Slots from '@ionic-internal/component-api/v5/card/slots.md';
 
 # ion-card
 
-Cards are a standard piece of UI that serves as an entry point to more detailed
-information. A card can be a single component, but is often made up of some
-header, title, subtitle, and content. `ion-card` is broken up into several
-sub-components to reflect this. Please see `ion-card-content`,
-`ion-card-header`, `ion-card-title`, `ion-card-subtitle`.
+卡片是一种标准的用户界面组件，作为查看更详细信息的入口。一个卡片可以是一个单独的组件，但通常由一些头部、标题、副标题和内容组成。`ion-card` 被拆分成若干子组件来体现这一点。请参阅 `ion-card-content`、`ion-card-header`、`ion-card-title`、`ion-card-subtitle`。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -31,47 +27,46 @@ sub-components to reflect this. Please see `ion-card-content`,
 ```html
 <ion-card>
   <ion-card-header>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    <ion-card-title>Card Title</ion-card-title>
+    <ion-card-subtitle>卡片副标题</ion-card-subtitle>
+    <ion-card-title>卡片标题</ion-card-title>
   </ion-card-header>
 
   <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the
-    woods. Wash your spirit clean.
+    时常亲近自然之心……偶尔远离喧嚣，去爬山或在林中度过一周。洗涤你的心灵。
   </ion-card-content>
 </ion-card>
 
 <ion-card>
   <ion-item>
     <ion-icon name="pin" slot="start"></ion-icon>
-    <ion-label>ion-item in a card, icon left, button right</ion-label>
-    <ion-button fill="outline" slot="end">View</ion-button>
+    <ion-label>卡片中的 ion-item，图标在左，按钮在右</ion-label>
+    <ion-button fill="outline" slot="end">查看</ion-button>
   </ion-item>
 
   <ion-card-content>
-    This is content, without any paragraph or header tags, within an ion-card-content element.
+    这是 ion-card-content 元素内的内容，没有使用任何段落或标题标签。
   </ion-card-content>
 </ion-card>
 
 <ion-card>
   <ion-item href="#" class="ion-activated">
     <ion-icon name="wifi" slot="start"></ion-icon>
-    <ion-label>Card Link Item 1 activated</ion-label>
+    <ion-label>卡片链接项 1 已激活</ion-label>
   </ion-item>
 
   <ion-item href="#">
     <ion-icon name="wine" slot="start"></ion-icon>
-    <ion-label>Card Link Item 2</ion-label>
+    <ion-label>卡片链接项 2</ion-label>
   </ion-item>
 
   <ion-item class="ion-activated">
     <ion-icon name="warning" slot="start"></ion-icon>
-    <ion-label>Card Button Item 1 activated</ion-label>
+    <ion-label>卡片按钮项 1 已激活</ion-label>
   </ion-item>
 
   <ion-item>
     <ion-icon name="walk" slot="start"></ion-icon>
-    <ion-label>Card Button Item 2</ion-label>
+    <ion-label>卡片按钮项 2</ion-label>
   </ion-item>
 </ion-card>
 ```
@@ -83,47 +78,46 @@ sub-components to reflect this. Please see `ion-card-content`,
 ```html
 <ion-card>
   <ion-card-header>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    <ion-card-title>Card Title</ion-card-title>
+    <ion-card-subtitle>卡片副标题</ion-card-subtitle>
+    <ion-card-title>卡片标题</ion-card-title>
   </ion-card-header>
 
   <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the
-    woods. Wash your spirit clean.
+    时常亲近自然之心……偶尔远离喧嚣，去爬山或在林中度过一周。洗涤你的心灵。
   </ion-card-content>
 </ion-card>
 
 <ion-card>
   <ion-item>
     <ion-icon name="pin" slot="start"></ion-icon>
-    <ion-label>ion-item in a card, icon left, button right</ion-label>
-    <ion-button fill="outline" slot="end">View</ion-button>
+    <ion-label>卡片中的 ion-item，图标在左，按钮在右</ion-label>
+    <ion-button fill="outline" slot="end">查看</ion-button>
   </ion-item>
 
   <ion-card-content>
-    This is content, without any paragraph or header tags, within an ion-card-content element.
+    这是 ion-card-content 元素内的内容，没有使用任何段落或标题标签。
   </ion-card-content>
 </ion-card>
 
 <ion-card>
   <ion-item href="#" class="ion-activated">
     <ion-icon name="wifi" slot="start"></ion-icon>
-    <ion-label>Card Link Item 1 activated</ion-label>
+    <ion-label>卡片链接项 1 已激活</ion-label>
   </ion-item>
 
   <ion-item href="#">
     <ion-icon name="wine" slot="start"></ion-icon>
-    <ion-label>Card Link Item 2</ion-label>
+    <ion-label>卡片链接项 2</ion-label>
   </ion-item>
 
   <ion-item class="ion-activated">
     <ion-icon name="warning" slot="start"></ion-icon>
-    <ion-label>Card Button Item 1 activated</ion-label>
+    <ion-label>卡片按钮项 1 已激活</ion-label>
   </ion-item>
 
   <ion-item>
     <ion-icon name="walk" slot="start"></ion-icon>
-    <ion-label>Card Button Item 2</ion-label>
+    <ion-label>卡片按钮项 2</ion-label>
   </ion-item>
 </ion-card>
 ```
@@ -157,55 +151,54 @@ export const CardExamples: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>CardExamples</IonTitle>
+          <IonTitle>卡片示例</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonCard>
           <IonCardHeader>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-            <IonCardTitle>Card Title</IonCardTitle>
+            <IonCardSubtitle>卡片副标题</IonCardSubtitle>
+            <IonCardTitle>卡片标题</IonCardTitle>
           </IonCardHeader>
 
           <IonCardContent>
-            Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week
-            in the woods. Wash your spirit clean.
+            时常亲近自然之心……偶尔远离喧嚣，去爬山或在林中度过一周。洗涤你的心灵。
           </IonCardContent>
         </IonCard>
 
         <IonCard>
           <IonItem>
             <IonIcon icon={pin} slot="start" />
-            <IonLabel>ion-item in a card, icon left, button right</IonLabel>
+            <IonLabel>卡片中的 ion-item，图标在左，按钮在右</IonLabel>
             <IonButton fill="outline" slot="end">
-              View
+              查看
             </IonButton>
           </IonItem>
 
           <IonCardContent>
-            This is content, without any paragraph or header tags, within an ion-cardContent element.
+            这是 ion-cardContent 元素内的内容，没有使用任何段落或标题标签。
           </IonCardContent>
         </IonCard>
 
         <IonCard>
           <IonItem href="#" className="ion-activated">
             <IonIcon icon={wifi} slot="start" />
-            <IonLabel>Card Link Item 1 activated</IonLabel>
+            <IonLabel>卡片链接项 1 已激活</IonLabel>
           </IonItem>
 
           <IonItem href="#">
             <IonIcon icon={wine} slot="start" />
-            <IonLabel>Card Link Item 2</IonLabel>
+            <IonLabel>卡片链接项 2</IonLabel>
           </IonItem>
 
           <IonItem className="ion-activated">
             <IonIcon icon={warning} slot="start" />
-            <IonLabel>Card Button Item 1 activated</IonLabel>
+            <IonLabel>卡片按钮项 1 已激活</IonLabel>
           </IonItem>
 
           <IonItem>
             <IonIcon icon={walk} slot="start" />
-            <IonLabel>Card Button Item 2</IonLabel>
+            <IonLabel>卡片按钮项 2</IonLabel>
           </IonItem>
         </IonCard>
       </IonContent>
@@ -230,49 +223,48 @@ export class CardExample {
     return [
       <ion-card>
         <ion-card-header>
-          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          <ion-card-title>Card Title</ion-card-title>
+          <ion-card-subtitle>卡片副标题</ion-card-subtitle>
+          <ion-card-title>卡片标题</ion-card-title>
         </ion-card-header>
 
         <ion-card-content>
-          Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in
-          the woods. Wash your spirit clean.
+          时常亲近自然之心……偶尔远离喧嚣，去爬山或在林中度过一周。洗涤你的心灵。
         </ion-card-content>
       </ion-card>,
 
       <ion-card>
         <ion-item>
           <ion-icon name="pin" slot="start"></ion-icon>
-          <ion-label>ion-item in a card, icon left, button right</ion-label>
+          <ion-label>卡片中的 ion-item，图标在左，按钮在右</ion-label>
           <ion-button fill="outline" slot="end">
-            View
+            查看
           </ion-button>
         </ion-item>
 
         <ion-card-content>
-          This is content, without any paragraph or header tags, within an ion-card-content element.
+          这是 ion-card-content 元素内的内容，没有使用任何段落或标题标签。
         </ion-card-content>
       </ion-card>,
 
       <ion-card>
         <ion-item href="#" class="ion-activated">
           <ion-icon name="wifi" slot="start"></ion-icon>
-          <ion-label>Card Link Item 1 activated</ion-label>
+          <ion-label>卡片链接项 1 已激活</ion-label>
         </ion-item>
 
         <ion-item href="#">
           <ion-icon name="wine" slot="start"></ion-icon>
-          <ion-label>Card Link Item 2</ion-label>
+          <ion-label>卡片链接项 2</ion-label>
         </ion-item>
 
         <ion-item class="ion-activated">
           <ion-icon name="warning" slot="start"></ion-icon>
-          <ion-label>Card Button Item 1 activated</ion-label>
+          <ion-label>卡片按钮项 1 已激活</ion-label>
         </ion-item>
 
         <ion-item>
           <ion-icon name="walk" slot="start"></ion-icon>
-          <ion-label>Card Button Item 2</ion-label>
+          <ion-label>卡片按钮项 2</ion-label>
         </ion-item>
       </ion-card>,
     ];
@@ -288,47 +280,46 @@ export class CardExample {
 <template>
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>卡片副标题</ion-card-subtitle>
+      <ion-card-title>卡片标题</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the
-      woods. Wash your spirit clean.
+      时常亲近自然之心……偶尔远离喧嚣，去爬山或在林中度过一周。洗涤你的心灵。
     </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-item>
       <ion-icon :icon="pin" slot="start"></ion-icon>
-      <ion-label>ion-item in a card, icon left, button right</ion-label>
-      <ion-button fill="outline" slot="end">View</ion-button>
+      <ion-label>卡片中的 ion-item，图标在左，按钮在右</ion-label>
+      <ion-button fill="outline" slot="end">查看</ion-button>
     </ion-item>
 
     <ion-card-content>
-      This is content, without any paragraph or header tags, within an ion-card-content element.
+      这是 ion-card-content 元素内的内容，没有使用任何段落或标题标签。
     </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-item href="#" class="ion-activated">
       <ion-icon :icon="wifi" slot="start"></ion-icon>
-      <ion-label>Card Link Item 1 activated</ion-label>
+      <ion-label>卡片链接项 1 已激活</ion-label>
     </ion-item>
 
     <ion-item href="#">
       <ion-icon :icon="wine" slot="start"></ion-icon>
-      <ion-label>Card Link Item 2</ion-label>
+      <ion-label>卡片链接项 2</ion-label>
     </ion-item>
 
     <ion-item class="ion-activated">
       <ion-icon :icon="warning" slot="start"></ion-icon>
-      <ion-label>Card Button Item 1 activated</ion-label>
+      <ion-label>卡片按钮项 1 已激活</ion-label>
     </ion-item>
 
     <ion-item>
       <ion-icon :icon="walk" slot="start"></ion-icon>
-      <ion-label>Card Button Item 2</ion-label>
+      <ion-label>卡片按钮项 2</ion-label>
     </ion-item>
   </ion-card>
 </template>
@@ -341,7 +332,7 @@ export class CardExample {
   export default defineComponent({
     components: { IonCard, IonCardContent, IonCardSubtitle, IonCardTitle, IonIcon, IonItem, IonLabel }
     setup() {
-      return { warning };
+      return { pin, walk, warning, wifi, wine };
     }
   });
 </script>
@@ -351,15 +342,15 @@ export class CardExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -367,10 +358,10 @@ export class CardExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

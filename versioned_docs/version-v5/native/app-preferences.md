@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'App Preferences'
+sidebar_label: '应用偏好设置'
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -8,29 +8,29 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-# App Preferences
+# 应用偏好设置
 
-This plugin allows you to read and write app preferences
+本插件支持读取和写入应用偏好设置
 
 <p>
   <a href="https://github.com/apla/me.apla.cordova.app-preferences" target="_blank" rel="noopener" className="git-link">github.com/apla/me.apla.cordova.app-preferences</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在开发重要项目，经不起数小时的问题排查。Ionic 专家为社区插件和高级插件提供专业的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -38,7 +38,7 @@ This plugin allows you to read and write app preferences
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: 'Enterprise' },
+    { value: 'Enterprise', label: '企业版' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -55,27 +55,27 @@ This plugin allows you to read and write app preferences
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版提供 Ionic 团队全面支持与维护的插件。&nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，如果您对此插件的企业版感兴趣，请 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - BlackBerry 10
-- Browser
+- 浏览器
 - iOS
 - macOS
 - Windows 8
 - Windows Phone
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 

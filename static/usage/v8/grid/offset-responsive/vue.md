@@ -1,6 +1,6 @@
 ```html
 <template>
-  <b>No offset for xs breakpoint, offset 1st column for sm and up</b>
+  <b>在 xs 断点无偏移，从 sm 断点开始第一列偏移</b>
   <ion-grid>
     <ion-row>
       <ion-col offset-sm="2">1</ion-col>
@@ -11,7 +11,7 @@
     </ion-row>
   </ion-grid>
 
-  <b>No offset for xs breakpoint, offset last 3 columns for md and up</b>
+  <b>在 xs 断点无偏移，从 md 断点开始最后三列偏移</b>
   <ion-grid>
     <ion-row>
       <ion-col>1</ion-col>
@@ -21,7 +21,7 @@
     </ion-row>
   </ion-grid>
 
-  <b>Offset all columns by 6 for xs breakpoint, offset by 4 for md, offset by 2 for lg and up</b>
+  <b>在 xs 断点所有列偏移 6，md 断点偏移 4，lg 及以上断点偏移 2</b>
   <ion-grid>
     <ion-row>
       <ion-col offset="6" offset-md="4" offset-lg="2">1</ion-col>

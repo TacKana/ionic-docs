@@ -1,5 +1,5 @@
 ---
-title: "ion-menu"
+title: 菜单组件
 ---
 import Props from '@ionic-internal/component-api/v8/menu/props.md';
 import Events from '@ionic-internal/component-api/v8/menu/events.md';
@@ -9,8 +9,8 @@ import CustomProps from '@ionic-internal/component-api/v8/menu/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v8/menu/slots.md';
 
 <head>
-  <title>ion-menu: API Framework Docs for Types of Menu Components</title>
-  <meta name="description" content="ion-menu components are navigation drawers that slide in from the side of the current view. Read our framework docs for the available menu types on Ionic API." />
+  <title>ion-menu：菜单组件的 API 框架文档</title>
+  <meta name="description" content="ion-menu 组件是从当前视图侧面滑入的导航抽屉。请阅读 Ionic API 上可用的菜单类型的框架文档。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,56 +18,56 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-The menu component is a navigation drawer that slides in from the side of the current view. By default, it uses the start side, making it slide in from the left for LTR and right for RTL, but the side can be overridden. The menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.
+菜单组件是一个从当前视图侧面滑入的导航抽屉。默认情况下，它使用起始侧（对于从左到右的布局是左侧，对于从右到左的布局是右侧），但可以通过配置覆盖该侧边。菜单的显示方式会根据模式有所不同，不过显示类型可以更改为任何可用的菜单类型。
 
-The menu element should be a sibling to the root content element. There can be any number of menus attached to the content. These can be controlled from the templates, or programmatically using the `MenuController`.
+菜单元素应该是根内容元素的同级元素。可以附加任意数量的菜单到内容上。这些菜单可以通过模板控制，也可以使用 `MenuController` 以编程方式控制。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v8/menu/basic/index.md';
 
 <Basic />
 
 
-## Menu Toggle
+## 菜单切换开关
 
-The [menu toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
+[menu toggle](./menu-toggle) 组件可用于创建可以打开或关闭菜单的自定义按钮。
 
 import MenuToggle from '@site/static/usage/v8/menu/toggle/index.md';
 
 <MenuToggle />
 
 
-## Menu Types
+## 菜单类型
 
-The `type` property can be used to customize how menus display in your application.
+`type` 属性可用于自定义菜单在应用程序中的显示方式。
 
 import MenuType from '@site/static/usage/v8/menu/type/index.md';
 
 <MenuType />
 
 
-## Menu Sides
+## 菜单侧边
 
-Menus are displayed on the `"start"` side by default. In apps that use left-to-right direction, this is the left side, and in right-to-left apps, this will be the right side. Menus can also be set to display on the `"end"` side, which is the opposite of `"start"`.
+菜单默认显示在 `"start"` 侧。在使用从左到右方向的应用中，这是左侧；在从右到左的应用中，这将是右侧。菜单也可以设置为显示在 `"end"` 侧，这与 `"start"` 侧相反。
 
-If menus on both sides are needed in an app, the menu can be opened by passing the `side` value to the `open` method on `MenuController`. If a side is not provided, the menu on the `"start"` side will be opened. See the [multiple menus](#multiple-menus) section below for an example using `MenuController`.
+如果应用中需要同时使用两侧的菜单，可以通过将 `side` 值传递给 `MenuController` 上的 `open` 方法来打开菜单。如果未提供侧边，将打开 `"start"` 侧的菜单。请参阅下面的[多菜单](#multiple-menus)部分，查看使用 `MenuController` 的示例。
 
 import Sides from '@site/static/usage/v8/menu/sides/index.md';
 
 <Sides />
 
 
-## Multiple Menus
+## 多菜单
 
-When multiple menus exist on the same side, we need refer to them by ID instead of side. Otherwise, the wrong menu may be activated.
+当同一侧存在多个菜单时，我们需要通过 ID 而不是侧边来引用它们。否则，可能会激活错误的菜单。
 
 import Multiple from '@site/static/usage/v8/menu/multiple/index.md';
 
 <Multiple />
 
 
-## Theming
+## 主题定制
 
 ### CSS Shadow Parts
 
@@ -75,11 +75,11 @@ import Theming from '@site/static/usage/v8/menu/theming/index.md';
 
 <Theming />
 
-## Interfaces
+## 接口
 
 ### MenuCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然这不是必需的，但此接口可用于替代 `CustomEvent` 接口，以便为此组件发出的 Ionic 事件提供更强的类型定义。
 
 ```typescript
 interface MenuCustomEvent<T = any> extends CustomEvent {
@@ -91,20 +91,20 @@ interface MenuCustomEvent<T = any> extends CustomEvent {
 
 
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

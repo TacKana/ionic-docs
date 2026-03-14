@@ -2,7 +2,7 @@
 <template>
   <ion-list>
     <ion-list-header>
-      <ion-label>Video Games</ion-label>
+      <ion-label>视频游戏</ion-label>
     </ion-list-header>
     <ion-item>
       <ion-label>Pokémon Yellow</ion-label>

@@ -4,13 +4,13 @@ sidebar_label: 'ssh add'
 
 # ionic ssh add
 
-Add an SSH public key to Ionic
+将 SSH 公钥添加到 Ionic
 
 ```shell
 ionic ssh add [options]
 ```
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -22,15 +22,15 @@ ionic ssh add [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Location of public key file to add to Ionic</p>
+        <p>要添加到 Ionic 的公钥文件位置</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -46,9 +46,9 @@ ionic ssh add [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Use the newly added key as your default SSH key for Ionic</p>
+        <p>将新添加的密钥设置为你在 Ionic 的默认 SSH 密钥</p>
       </td>
     </tr>
   </tbody>

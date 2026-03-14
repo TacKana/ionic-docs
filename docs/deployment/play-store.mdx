@@ -7,28 +7,28 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Android Play Store Deployment: Publish Your Ionic Apps</title>
+  <title>Android Play Store 部署：发布您的 Ionic 应用</title>
   <meta
     name="description"
-    content="Ionic documentation for Android Play Store app deployment. Read about how to generate a release build and publish your Ionic apps to the Google Play Store."
+    content="Ionic 文档中关于 Android Play Store 应用部署的内容。了解如何生成发布版本并将您的 Ionic 应用发布到 Google Play Store。"
   />
 </head>
 
-If you are using Capacitor, you can additionally refer to the Capacitor documentation for [Deploying to Google Play](https://capacitorjs.com/docs/android/deploying-to-google-play).
+如果您正在使用 Capacitor，还可以参考 Capacitor 文档中的 [部署到 Google Play](https://capacitorjs.com/docs/android/deploying-to-google-play)。
 
-## Generating a release build of an app
+## 生成应用的发布版本
 
 <Tabs groupId="runtime">
 <TabItem value="capacitor" label="Capacitor" default>
-To generate a release build for Android, build your web app and then run the following cli command:
+要为 Android 生成发布版本，请先构建您的 Web 应用，然后运行以下 CLI 命令：
 
 ```shell
 npx cap copy && npx cap sync
 ```
 
-This will copy all web assets and sync any plugin changes.
+这将复制所有 Web 资源并同步任何插件更改。
 
-Next, open Android studio:
+接下来，打开 Android Studio：
 
 ```shell
 npx cap open android
@@ -36,131 +36,131 @@ npx cap open android
 
 </TabItem>
 <TabItem value="cordova" label="Cordova">
-To generate a release build for Android, run the following cli command:
+要为 Android 生成发布版本，请运行以下 CLI 命令：
 
 ```shell
 ionic cordova build android --prod --release
 ```
 
-This will generate a release build based on the settings in the `config.xml` in the `platforms/android/app/build/outputs/apk` directory of an app.
-An Ionic app will have preset default values in this file but this can be changed to customize builds.
+这将根据 `config.xml` 中的设置在应用的 `platforms/android/app/build/outputs/apk` 目录下生成一个发布版本。
+Ionic 应用在此文件中已预设了默认值，但您可以更改这些值以自定义构建。
 
 </TabItem>
 </Tabs>
 
-## Signing an APK
+## 签名 APK
 
 <Tabs groupId="runtime">
 <TabItem value="capacitor" label="Capacitor" default>
-To create an AAB binary locally using Android Studio:
+要使用 Android Studio 本地创建 AAB 文件：
 
-- Open the Build menu
-- Choose **Generate Signed Bundle / APK**
-- Follow the prompts to sign the AAB with your keystore file
+- 打开 Build 菜单
+- 选择 **Generate Signed Bundle / APK**
+- 按照提示使用您的 keystore 文件为 AAB 签名
 
-For complete details, [view the Android documentation](https://developer.android.com/studio/publish/app-signing).
+完整详情请 [查看 Android 文档](https://developer.android.com/studio/publish/app-signing)。
 
-### Google Play Signing
+### Google Play 签名
 
-If you haven't made the switch to Android app bundles yet, you will need to opt into Play App Signing in the Google Play Console to be able to publish them.
+如果您尚未切换到 Android App Bundle 格式，则需要在 Google Play Console 中选择启用 Play App Signing 才能发布应用。
 
-#### New Apps
+#### 新应用
 
-First, create a new app in the Google Play Console. In order to enable app signing, you'll need to navigate to the new release screen, on one of the Production, Open testing, closed testing, or internal testing pages.
-Select the Create new release button as seen below (it doesn't matter which release type, since you don't have to actually go through with creating a new release right now):
+首先，在 Google Play Console 中创建一个新应用。要启用应用签名，您需要导航到新发布页面（可以是正式版、公开测试、封闭测试或内部测试页面）。
+选择 Create new release 按钮，如下所示（选择哪种发布类型并不重要，因为您现在不必立即完成新发布的创建）：
 
-![Google Play Console's Production tab with arrow pointing to the 'Create new release' button.](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-release-1024x561.png "Google Play Console New Release Creation")
+![Google Play Console 的 Production 选项卡，箭头指向 'Create new release' 按钮。](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-release-1024x561.png "Google Play Console 新发布创建")
 
-Under the App integrity section, click the **Change app signing key** button:
+在 App integrity 部分，点击 **Change app signing key** 按钮：
 
-![Google Play Console's App integrity section with the 'Change app signing key' button highlighted.](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-signingkey.png "Google Play Console Change App Signing Key Option")
+![Google Play Console 的 App integrity 部分，'Change app signing key' 按钮高亮显示。](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-signingkey.png "Google Play Console 更改应用签名密钥选项")
 
-Next, select the **Export and upload a key from Java Keystore** option. This is the only way in which you can retain the key and have Google Play use it for signing. If you're using Appflow to build Android apps in the cloud, this is also the required option so you can upload the keystore file to Appflow.
+接下来，选择 **Export and upload a key from Java Keystore** 选项。这是保留密钥并让 Google Play 使用它进行签名的唯一方式。如果您使用 Appflow 在云端构建 Android 应用，这也是必需选项，以便您可以将 keystore 文件上传到 Appflow。
 
-![The Google Play Console showing the option to 'Export and upload a key from Java Keystore'.](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-export-1024x564.png "Google Play Console Export and Upload Key Option")
+![Google Play Console 显示 'Export and upload a key from Java Keystore' 选项。](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-export-1024x564.png "Google Play Console 导出并上传密钥选项")
 
-Follow the instructions on the screen to generate the Keystore and you can use the same Keystore file to sign your app in the Appflow dashboard as well. If you need any help generating the Keystore file, you can refer to our docs [here](https://ionic.io/docs/appflow/package/credentials#android-certificates).
-Once the generated zip file has been uploaded, you're all set! Build an AAB binary signed with the keystore file then upload it to Google Play.
+按照屏幕上的说明生成 Keystore 文件，您可以在 Appflow 仪表板中使用相同的 Keystore 文件为您的应用签名。如果需要生成 Keystore 文件的帮助，可以参考我们的文档 [这里](https://ionic.io/docs/appflow/package/credentials#android-certificates)。
+生成后的 zip 文件上传完成后，就全部设置好了！构建一个使用 keystore 文件签名的 AAB 文件，然后将其上传到 Google Play。
 
-#### Existing Apps
+#### 现有应用
 
-As of now, existing apps aren't required to use the AAB format, but you can still enroll them using Play App signing.
+目前，现有应用无需使用 AAB 格式，但您仍然可以通过 Play App Signing 注册它们。
 
-To opt into app signing, you'll need to upload the app signing key used to sign previous releases of the app. Navigate to Setup -> App integrity, then choose one of the two methods seen in the screenshot below. Once the key has been uploaded, you can enroll in Play App Signing.
+要选择启用应用签名，您需要上传用于签署应用先前版本的应用签名密钥。导航到 Setup -> App integrity，然后选择下图中显示的两种方法之一。密钥上传后，您就可以注册 Play App Signing。
 
-![The opt-in options for Play App Signing in the Google Play Console.](https://blog.ionicframework.com/wp-content/uploads/2021/12/existingapps-optin.png "Google Play Console Opt-in to Play App Signing")
+![Google Play Console 中 Play App Signing 的启用选项。](https://blog.ionicframework.com/wp-content/uploads/2021/12/existingapps-optin.png "Google Play Console 启用 Play App Signing")
 
 :::tip
-With smaller app sizes, improved performance, and enhanced security, the AAB binary format is a win for app developers and users alike. If you have an existing Android app using the APK format, consider migrating to AAB to take advantage of all the great features it provides.
+AAB 格式具有更小的应用体积、更好的性能和增强的安全性，对于应用开发者和用户来说都是双赢。如果您现有的 Android 应用使用的是 APK 格式，请考虑迁移到 AAB 以利用其提供的所有优秀特性。
 :::
 
 </TabItem>
 <TabItem value="cordova" label="Cordova">
-First, the unsigned APK must be signed. If a signing key has already been generated, skip these steps and use that one instead.
-Generate a private key using the keytool command that comes with the Android SDK:
+首先，必须对未签名的 APK 进行签名。如果已经生成了签名密钥，请跳过这些步骤并使用现有密钥。
+使用 Android SDK 附带的 keytool 命令生成私钥：
 
 ```shell
 keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
 ```
 
-Once that command has been ran and its prompts have been answered a file called `my-release-key.keystore` will be created in the current directory.
+该命令运行并回答问题后，当前目录中将创建一个名为 `my-release-key.keystore` 的文件。
 
 :::warning
-Save this file and keep it somewhere safe. If it is lost the Google Play Store will not accept updates for this app!
+保存此文件并将其放在安全的地方。如果丢失此文件，Google Play Store 将无法接受此应用的更新！
 :::
 
-To sign the unsigned APK, run the jarsigner tool which is also included in the Android SDK:
+要对未签名的 APK 进行签名，请运行也包含在 Android SDK 中的 jarsigner 工具：
 
 ```shell
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore HelloWorld-release-unsigned.apk alias_name
 ```
 
-Finally, the zip align tool must be ran to optimize the APK.
-The `zipalign` tool can be found in `/path/to/Android/sdk/build-tools/VERSION/zipalign`.
-For example, on macOS with Android Studio installed, `zipalign` is in `~/Library/Android/sdk/build-tools/VERSION/zipalign`:
+最后，必须运行 zipalign 工具来优化 APK。
+`zipalign` 工具可以在 `/path/to/Android/sdk/build-tools/VERSION/zipalign` 找到。
+例如，在安装了 Android Studio 的 macOS 上，`zipalign` 位于 `~/Library/Android/sdk/build-tools/VERSION/zipalign`：
 
 ```shell
 zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk
 ```
 
-This generates a final release binary called HelloWorld.apk that can be accepted into the Google Play Store.
+这将生成一个名为 HelloWorld.apk 的最终发布二进制文件，可提交到 Google Play Store。
 
 </TabItem>
 </Tabs>
 
-## Submitting an app to the Google Play Store
+## 向 Google Play Store 提交应用
 
-Now that a release AAB/APK has been generated, a Play Store listing can be written and the AAB/APK can be uploaded.
+现在已经生成了发布 AAB/APK 文件，可以编写 Play Store 列表并上传 AAB/APK 文件。
 
-To start, visit the [Google Play Store Developer Console](https://play.google.com/apps/publish) and create a new developer account.
+首先，访问 [Google Play Store Developer Console](https://play.google.com/apps/publish) 并创建一个新的开发者账户。
 
 :::note
-Making a developer account with Google Play costs $25 USD.
+Google Play 的开发者账户费用为 25 美元。
 :::
 
-Once a developer account has been created, go ahead and click the `Create an Application`
+创建开发者账户后，请点击 `Create an Application`。
 
-![The Google Play Store Developer Console with the 'CREATE APPLICATION' button highlighted.](/img/publishing/newAppGPlay.png "Google Play Store Create Application Button")
+![Google Play Store Developer Console，'CREATE APPLICATION' 按钮高亮显示。](/img/publishing/newAppGPlay.png "Google Play Store 创建应用按钮")
 
-Be sure to fill out the description for the app along with providing screenshots and additional info.
-When ready, upload the signed release AAB/APK that was generated and publish the app.
+请务必填写应用的描述，并提供截图和其他信息。
+准备就绪后，上传生成的已签名发布 AAB/APK 文件并发布应用。
 
-## Updating an app
+## 更新应用
 
-As an app evolves, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to the Google Play Store, or by using a live update service like Appflow's Live Update feature. Using Live Updates, changes can be pushed directly to users from the Appflow dashboard, without submitting changes to the Play Store. Learn more about Live Updates <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">here</a>.
+随着应用的发展，需要通过新功能和修复进行更新。可以通过向 Google Play Store 提交新版本，或使用像 Appflow 的 Live Update 功能这样的实时更新服务来更新应用。使用 Live Updates，可以直接从 Appflow 仪表板向用户推送更改，而无需将更改提交到 Play Store。了解更多关于 Live Updates 的信息 <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">请点击这里</a>。
 
 <Tabs groupId="runtime">
 <TabItem value="capacitor" label="Capacitor" default>
 
 :::note
-In order for the Google Play Store to accept updated AAB/APK, the `android/app/build.gradle` file will need to be edited to increment the `versionCode` value, then rebuild the app for release following the instructions above.
+为了让 Google Play Store 接受更新的 AAB/APK，需要编辑 `android/app/build.gradle` 文件以增加 `versionCode` 值，然后按照上述说明重新构建发布版本。
 :::
 
 </TabItem>
 <TabItem value="cordova" label="Cordova">
 
 :::note
-In order for the Google Play Store to accept updated AAB/APK, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the instructions above.
+为了让 Google Play Store 接受更新的 AAB/APK，需要编辑 config.xml 文件以增加版本值，然后按照上述说明重新构建发布版本。
 :::
 
 </TabItem>

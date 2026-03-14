@@ -8,15 +8,15 @@ function Example() {
   return (
     <>
       <IonItem button detail lines="full">
-        <IonLabel>Custom Item</IonLabel>
+        <IonLabel>自定义项</IonLabel>
       </IonItem>
 
       <IonItem button detail lines="full">
-        <IonLabel>Custom Item</IonLabel>
+        <IonLabel>自定义项</IonLabel>
       </IonItem>
 
       <IonItem button detail lines="full">
-        <IonLabel>Custom Item</IonLabel>
+        <IonLabel>自定义项</IonLabel>
       </IonItem>
     </>
   );

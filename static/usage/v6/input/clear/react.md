@@ -6,18 +6,18 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonLabel position="stacked">Input with clear button</IonLabel>
-        <IonInput clearInput={true} placeholder="Enter text to see clear button" value="Default value"></IonInput>
+        <IonLabel position="stacked">带清除按钮的输入框</IonLabel>
+        <IonInput clearInput={true} placeholder="输入文本以显示清除按钮" value="默认值"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel position="stacked">Input with clear on edit</IonLabel>
-        <IonInput clearOnEdit={true} placeholder="Enter text, leave the input, come back and type to clear"></IonInput>
+        <IonLabel position="stacked">编辑时清除的输入框</IonLabel>
+        <IonInput clearOnEdit={true} placeholder="输入文本，离开输入框，返回并输入以清除"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel position="stacked">Password input</IonLabel>
-        <IonInput type="password" placeholder="Enter text, leave the input, come back and type to clear"></IonInput>
+        <IonLabel position="stacked">密码输入框</IonLabel>
+        <IonInput type="password" placeholder="输入文本，离开输入框，返回并输入以清除"></IonInput>
       </IonItem>
     </IonList>
   );

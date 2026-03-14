@@ -1,27 +1,27 @@
 ```html
 <template>
   <ion-item>
-    <ion-label>Default Label</ion-label>
+    <ion-label>默认标签</ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label>
-      Multi-line text that should ellipsis when it is too long to fit on one line. Lorem ipsum dolor sit amet,
+      当多行文本过长超出单行显示时，应以省略号截断。Lorem ipsum dolor sit amet,
       consectetur adipiscing elit.
     </ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label class="ion-text-wrap">
-      Multi-line text that should wrap when it is too long to fit on one line. Lorem ipsum dolor sit amet, consectetur
+      当多行文本过长超出单行显示时，应自动换行。Lorem ipsum dolor sit amet, consectetur
       adipiscing elit.
     </ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label>
-      <h1>Heading</h1>
-      <p>Paragraph</p>
+      <h1>标题</h1>
+      <p>段落</p>
     </ion-label>
   </ion-item>
 </template>

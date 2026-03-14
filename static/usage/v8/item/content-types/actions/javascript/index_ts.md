@@ -4,15 +4,15 @@ import { defineCustomElements } from '@ionic/core/loader';
 import { addIcons } from 'ionicons';
 import { pin, share, trash } from 'ionicons/icons';
 
-/* Core CSS required for Ionic components to work properly */
+/* Ionic 组件正常工作所需的核心 CSS */
 import '@ionic/core/css/core.css';
 
-/* Basic CSS for apps built with Ionic */
+/* 为使用 Ionic 构建的应用提供的基础 CSS */
 import '@ionic/core/css/normalize.css';
 import '@ionic/core/css/structure.css';
 import '@ionic/core/css/typography.css';
 
-/* Optional CSS utils that can be commented out */
+/* 可选的 CSS 工具类，可以注释掉 */
 import '@ionic/core/css/padding.css';
 import '@ionic/core/css/float-elements.css';
 import '@ionic/core/css/text-alignment.css';
@@ -21,9 +21,9 @@ import '@ionic/core/css/flex-utils.css';
 import '@ionic/core/css/display.css';
 
 /**
- * Ionic Dark Palette
+ * Ionic 深色主题调色板
  * -----------------------------------------------------
- * For more information, please see:
+ * 更多信息请参阅：
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
@@ -31,13 +31,13 @@ import '@ionic/core/css/display.css';
 // import '@ionic/core/css/palettes/dark.class.css';
 import '@ionic/core/css/palettes/dark.system.css';
 
-/* Theme variables */
+/* 主题变量 */
 import './theme/variables.css';
 
 /**
- * On Ionicons 7.2+ these icons
- * get mapped to a kebab-case key.
- * Alternatively, developers can do:
+ * 在 Ionicons 7.2+ 版本中，这些图标
+ * 会被映射到 kebab-case 格式的键。
+ * 开发者也可以使用以下方式：
  * addIcons({ 'pin': pin, 'share': share, 'trash': trash });
  */
 addIcons({ pin, share, trash });

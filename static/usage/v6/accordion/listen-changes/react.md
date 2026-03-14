@@ -14,8 +14,8 @@ function Example() {
     const selectedValue = ev.detail.value;
 
     nativeEl.innerText = `
-      Expanded: ${selectedValue === undefined ? 'None' : ev.detail.value}
-      Collapsed: ${collapsedItems.join(', ')}
+      展开项：${selectedValue === undefined ? '无' : ev.detail.value}
+      折叠项：${collapsedItems.join(', ')}
     `;
   };
 
@@ -24,26 +24,26 @@ function Example() {
       <IonAccordionGroup onIonChange={accordionGroupChange}>
         <IonAccordion value="first">
           <IonItem slot="header" color="light">
-            <IonLabel>First Accordion</IonLabel>
+            <IonLabel>第一个折叠面板</IonLabel>
           </IonItem>
           <div className="ion-padding" slot="content">
-            First Content
+            第一个内容区
           </div>
         </IonAccordion>
         <IonAccordion value="second">
           <IonItem slot="header" color="light">
-            <IonLabel>Second Accordion</IonLabel>
+            <IonLabel>第二个折叠面板</IonLabel>
           </IonItem>
           <div className="ion-padding" slot="content">
-            Second Content
+            第二个内容区
           </div>
         </IonAccordion>
         <IonAccordion value="third">
           <IonItem slot="header" color="light">
-            <IonLabel>Third Accordion</IonLabel>
+            <IonLabel>第三个折叠面板</IonLabel>
           </IonItem>
           <div className="ion-padding" slot="content">
-            Third Content
+            第三个内容区
           </div>
         </IonAccordion>
       </IonAccordionGroup>

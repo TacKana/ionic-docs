@@ -14,7 +14,7 @@ import { TypeaheadComponent } from './typeahead.component';
 export class ExampleComponent {
   @ViewChild('modal', { static: true }) modal!: IonModal;
 
-  selectedFruitsText = '0 Items';
+  selectedFruitsText = '0 个项目';
   selectedFruits: string[] = [];
 
   fruits: Item[] = [
@@ -46,21 +46,21 @@ export class ExampleComponent {
   ];
 
   /**
-   * Formats the display text based on the selected fruits.
-   * @param data - Array of selected fruit values
-   * @returns A formatted string for display
+   * 根据所选水果格式化显示文本。
+   * @param data - 所选水果值的数组
+   * @returns 用于显示的格式化字符串
    */
   private formatData(data: string[]): string {
     if (data.length === 1) {
       const fruit = this.fruits.find((fruit) => fruit.value === data[0]);
       return fruit ? fruit.text : '';
     }
-    return `${data.length} items`;
+    return `${data.length} 个项目`;
   }
 
   /**
-   * Handles fruit selection changes and updates the selected fruits and text.
-   * @param fruits - Array of selected fruit values
+   * 处理水果选择变更并更新所选水果和文本。
+   * @param fruits - 所选水果值的数组
    */
   fruitSelectionChanged(fruits: string[]) {
     this.selectedFruits = fruits;

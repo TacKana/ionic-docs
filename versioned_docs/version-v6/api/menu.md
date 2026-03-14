@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/menu/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v6/menu/slots.md';
 
 <head>
-  <title>ion-menu: API Framework Docs for Types of Menu Components</title>
+  <title>ion-menu：Ionic API 中各类菜单组件的框架文档</title>
   <meta
     name="description"
-    content="ion-menu components are navigation drawers that slide in from the side of the current view. Read our framework docs for the available menu types on Ionic API."
+    content="ion-menu 组件是从当前视图侧面滑入的导航抽屉。请阅读我们的框架文档，了解 Ionic API 中可用的菜单类型。"
   />
 </head>
 
@@ -21,36 +21,36 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-The Menu component is a navigation drawer that slides in from the side of the current view.
-By default, it slides in from the left, but the side can be overridden.
-The menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.
-The menu element should be a sibling to the root content element.
-There can be any number of menus attached to the content.
-These can be controlled from the templates, or programmatically using the MenuController.
+菜单组件是一个从当前视图侧面滑入的导航抽屉。
+默认情况下，它从左侧滑入，但可以覆盖此设置以从其他侧滑入。
+菜单将根据当前模式以不同方式显示，但显示类型可以更改为任何可用的菜单类型。
+菜单元素应是根内容元素的同级元素。
+可以附加任意数量的菜单到内容上。
+这些菜单可以通过模板控制，也可以使用 MenuController 进行编程控制。
 
-## Basic Usage
+## 基本用法
 
 import BasicUsage from '@site/static/usage/v6/menu/basic/index.md';
 
 <BasicUsage />
 
-## Menu Toggle
+## 菜单开关
 
-The [ion-menu-toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
+[ion-menu-toggle](./menu-toggle) 组件可用于创建可打开或关闭菜单的自定义按钮。
 
 import MenuToggle from '@site/static/usage/v6/menu/toggle/index.md';
 
 <MenuToggle />
 
-## Menu Types
+## 菜单类型
 
-The `type` property can be used to customize how menus display in your application.
+`type` 属性可用于自定义菜单在应用中的显示方式。
 
 import MenuType from '@site/static/usage/v6/menu/type/index.md';
 
 <MenuType />
 
-## Theming
+## 主题定制
 
 ### CSS Shadow Parts
 
@@ -58,11 +58,11 @@ import Theming from '@site/static/usage/v6/menu/theming/index.md';
 
 <Theming />
 
-## Interfaces
+## 接口
 
 ### MenuCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便在从此组件发出的 Ionic 事件中获得更强的类型提示。
 
 ```typescript
 interface MenuCustomEvent<T = any> extends CustomEvent {
@@ -71,15 +71,15 @@ interface MenuCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -87,10 +87,10 @@ interface MenuCustomEvent<T = any> extends CustomEvent {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

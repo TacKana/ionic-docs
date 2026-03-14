@@ -1,12 +1,12 @@
 ---
-title: Glossary
+title: 术语表
 ---
 
 <head>
-  <title>API Glossary: Terminology and Definitions | Ionic Framework</title>
+  <title>API 术语表：术语和定义 | Ionic 框架</title>
   <meta
     name="description"
-    content="Ionic is the platform for web developers. View our API Glossary for app-building terminology and keyword definitions to better understand Ionic's capabilities."
+    content="Ionic 是面向 Web 开发者的平台。查看我们的 API 术语表，了解应用构建相关的术语和关键词定义，以便更好地理解 Ionic 的功能。"
   />
 </head>
 
@@ -17,12 +17,10 @@ title: Glossary
     <h3>Android SDK</h3>
   </a>
   <p>
-    The{' '}
     <a href="http://developer.android.com/sdk/index.html" target="_blank">
       Android SDK
     </a>{' '}
-    is a software development kit built for developers building for Google's Android Platform. It includes tools for
-    building, testing, and debugging Android applications.
+    是一个为面向 Google Android 平台进行开发的开发者构建的软件开发工具包。它包含了用于构建、测试和调试 Android 应用程序的工具。
   </p>
 </section>
 
@@ -34,7 +32,7 @@ title: Glossary
     <a href="https://developer.android.com/studio/" target="_blank">
       Android Studio
     </a>{' '}
-    is the official Integrated Development Environment (IDE) for Native Android app development.
+    是用于原生 Android 应用开发的官方集成开发环境（IDE）。
   </p>
 </section>
 
@@ -46,20 +44,16 @@ title: Glossary
     <a href="https://github.com/postcss/autoprefixer" target="_blank">
       Autoprefixer
     </a>{' '}
-    is a tool that adds vendor-specific-prefixes to hand-written Sass/CSS code. This ensures that standardized CSS rules
-    you write will be applied across all supporting browsers. For example, instead of having to know every flexbox
-    syntax used by various browsers, autoprefixer allows you to just write <code>display: flex;</code> and it'll
-    automatically plug in the correct CSS.
+    是一个为手写 Sass/CSS 代码添加特定于浏览器的前缀的工具。这确保了您编写的标准化 CSS 规则能够适用于所有支持的浏览器。例如，您无需了解不同浏览器使用的各种 flexbox 语法，autoprefixer 允许您只需编写 <code>display: flex;</code>，它会自动插入正确的 CSS。
   </p>
 </section>
 
 <section id="bundling">
   <a href="#bundling">
-    <h3>Bundling</h3>
+    <h3>打包 (Bundling)</h3>
   </a>
   <p>
-    Bundling is the process of taking an app's dependencies (code you've written plus any npm modules installed) and
-    compiling/transpiling them down to one single file.
+    打包是指将应用程序的依赖项（您编写的代码以及已安装的任何 npm 模块）进行编译/转译，并将其合并到一个单一文件的过程。
   </p>
 </section>
 
@@ -71,10 +65,7 @@ title: Glossary
     <a href="https://capacitorjs.com/" target="_blank">
       Capacitor
     </a>{' '}
-    is an open source cross-platform app runtime that allows web-based apps to run natively on iOS, Android, Electron,
-    and the web. It's helpful to refer to these apps "Native Progressive Web Apps" and they represent the next evolution
-    beyond the traditional Hybrid app mentality. Capacitor was created and is actively developed/supported by Ionic, the
-    company.
+    是一个开源跨平台应用运行时，允许基于 Web 的应用在 iOS、Android、Electron 和 Web 上原生运行。将这些应用称为"原生渐进式 Web 应用"是有帮助的，它们代表了超越传统混合应用理念的下一代演进。Capacitor 由 Ionic 公司创建，并正在积极开发/支持中。
   </p>
 </section>
 
@@ -85,15 +76,12 @@ title: Glossary
     <h3>CLI</h3>
   </a>
   <p>
-    A CLI, or <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface, is a text-based interface for
-    interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often
-    use Command Prompt. The Ionic community often uses this term to refer to{' '}
-    <a href="https://ionicframework.com/docs/cli">Ionic's CLI</a>. Ionic's CLI can be used for a number of things, such
-    as creating production builds of an app, running the development server, and accessing{' '}
+    CLI，即<strong>命令</strong>行<strong>界面</strong> (Command-Line Interface)，是一种用于与程序交互的基于文本的界面。Mac 用户常见的命令行应用是终端 (Terminal) 应用，而 Windows 用户通常使用命令提示符 (Command Prompt)。Ionic 社区通常使用此术语来指代{' '}
+    <a href="https://ionicframework.com/docs/cli">Ionic 的 CLI</a>。Ionic 的 CLI 可用于多种用途，例如创建应用的生产环境构建、运行开发服务器以及访问{' '}
     <a href="https://ionic.io/appflow" target="_blank">
-      Ionic commercial services
+      Ionic 商业服务
     </a>
-    .
+    。
   </p>
 </section>
 
@@ -107,8 +95,7 @@ title: Glossary
     <a href="https://webpack.github.io/docs/commonjs.html" target="_blank">
       CommonJS
     </a>{' '}
-    is a group that defines standard formats for JavaScript APIs. They have defined standards for JavaScript modules and
-    packages.
+    是一个定义 JavaScript API 标准格式的组织。他们为 JavaScript 模块和包定义了标准。
   </p>
 </section>
 
@@ -120,9 +107,7 @@ title: Glossary
     <a href="https://cordova.apache.org" target="_blank">
       Apache Cordova
     </a>{' '}
-    is an open source mobile application development framework that transforms standard HTML/CSS/JS into full-fledged
-    native apps. It provides a JavaScript API for accessing native device functionality, such as the camera or
-    accelerometer. Cordova contains the necessary build tools for packaging webapps for iOS, Android, and Windows Phone.
+    是一个开源移动应用开发框架，它将标准的 HTML/CSS/JS 转换为功能完备的原生应用。它提供用于访问原生设备功能（如摄像头或加速度计）的 JavaScript API。Cordova 包含了将 Web 应用打包到 iOS、Android 和 Windows Phone 所需的构建工具。
   </p>
 </section>
 
@@ -134,36 +119,30 @@ title: Glossary
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">
       CORS
     </a>{' '}
-    (Cross-Origin Resource Sharing) is a mechanism for servers to control client access to web assets. See the{' '}
-    <a href="../troubleshooting/cors">CORS FAQs</a> for more information.
+    （跨域资源共享）是一种允许服务器控制客户端对 Web 资源访问的机制。更多信息请参阅{' '}
+    <a href="../troubleshooting/cors">CORS 常见问题解答</a>。
   </p>
 </section>
 
 <section id="css-variables">
   <a href="#css-variables">
-    <h3>CSS Variables</h3>
+    <h3>CSS 变量 (CSS Variables)</h3>
   </a>
   <p>
-    You may be familiar with variables from Sass.{' '}
+    您可能熟悉 Sass 中的变量。{' '}
     <a href="https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" target="_blank">
-      CSS Variables
+      CSS 变量
     </a>{' '}
-    enable the same functionality but are built into the browser. CSS Variables are available in all evergreen browsers.
+    实现了相同的功能，但内置于浏览器中。所有主流浏览器（常青浏览器）都支持 CSS 变量。
   </p>
 </section>
 
 <section id="decorators">
   <a href="#decorators">
-    <h3>Decorators</h3>
+    <h3>装饰器 (Decorators)</h3>
   </a>
   <p>
-    Decorators are expressions that return a function. They allow you to take an existing function, and extend its
-    behavior. With TypeScript, you can also decorate <i>classes</i> and <i>parameters</i>. When you decorate a{' '}
-    <strong>class</strong>, you are wrapping and extending the behavior of its constructor. In other words, the
-    decorator will add some functionality when the constructor is called, and will then return the original constructor.
-    When you decorate a <strong>parameter</strong>, you are wrapping the argument that gets passed in for that
-    parameter. The decorator will add functionality when an argument is passed to the method, and then return the
-    original argument.
+    装饰器是返回函数的表达式。它们允许您获取现有函数并扩展其行为。使用 TypeScript，您还可以装饰<i>类</i>和<i>参数</i>。当您装饰一个<strong>类</strong>时，您是在包装和扩展其构造函数的行为。换句话说，装饰器将在调用构造函数时添加一些功能，然后返回原始构造函数。当您装饰一个<strong>参数</strong>时，您是在包装传递给该参数的参数。装饰器将在将参数传递给方法时添加功能，然后返回原始参数。
   </p>
 </section>
 
@@ -172,8 +151,7 @@ title: Glossary
     <h3>ES5</h3>
   </a>
   <p>
-    ES5 refers to EcmaScript 5th Edition. A simple way to put it is that ES5 is the version of JavaScript which
-    developers are most familiar with today.
+    ES5 指的是 EcmaScript 第 5 版。简单来说，ES5 是当今开发者最熟悉的 JavaScript 版本。
   </p>
 </section>
 
@@ -182,10 +160,7 @@ title: Glossary
     <h3>ES2015/ES6</h3>
   </a>
   <p>
-    A wide range of new features were introduced in this version of JavaScript, including classes, modules, iterators,
-    and promises. Evergreen browsers (Chrome, Safari, Firefox and Edge) have full support for ES6, but to use ES6
-    features in older browsers, tools such as <a href="#babel">Babel</a> and <a href="#typescript">TypeScript</a> have
-    to <a href="#transpiler">transpile</a> ES6 code down to ES5.
+    JavaScript 的这个版本引入了许多新特性，包括类、模块、迭代器和 Promise。主流浏览器（Chrome、Safari、Firefox 和 Edge）完全支持 ES6，但要在旧版浏览器中使用 ES6 特性，则需要使用像 <a href="#babel">Babel</a> 和 <a href="#typescript">TypeScript</a> 这样的工具将 ES6 代码<a href="#transpiler">转译</a>为 ES5。
   </p>
 </section>
 
@@ -194,9 +169,7 @@ title: Glossary
     <h3>ES2016/ES7</h3>
   </a>
   <p>
-    This version of JavaScript added a number of new features to the language, including <code>Array.includes</code> and
-    the exponentiation operator. This version of JavaScript is fully supported by all evergreen browsers (Chrome,
-    Safari, Firefox and Edge)
+    JavaScript 的这个版本为该语言增加了一些新特性，包括 <code>Array.includes</code> 和指数运算符。所有主流浏览器（Chrome、Safari、Firefox 和 Edge）都完全支持此版本的 JavaScript。
   </p>
 </section>
 
@@ -205,8 +178,7 @@ title: Glossary
     <h3>ES2017/ES8</h3>
   </a>
   <p>
-    This version of JavaScript is the latest standard. It is currently in the final stage before becoming the new
-    official standard. This spec includes Async/Await (already in all evergreen browsers) and shared memory/atomics.
+    JavaScript 的这个版本是最新的标准。它目前处于成为新官方标准之前的最后阶段。该规范包括 Async/Await（已在所有主流浏览器中可用）和共享内存/原子操作。
   </p>
 </section>
 
@@ -215,9 +187,7 @@ title: Glossary
     <h3>Genymotion</h3>
   </a>
   <p>
-    Genymotion is a third-party Android emulator. It is extremely fast, and is useful for quickly testing your app on
-    Android. Check out our <a href="../developing/tips#using-genymotion-android">resource section</a> on Genymotion for
-    more info.
+    Genymotion 是一个第三方 Android 模拟器。它速度极快，对于在 Android 上快速测试您的应用非常有用。查看我们关于 Genymotion 的 <a href="../developing/tips#using-genymotion-android">资源部分</a>以获取更多信息。
   </p>
 </section>
 
@@ -229,8 +199,7 @@ title: Glossary
     <a href="https://git-scm.com/" target="_blank">
       Git
     </a>{' '}
-    is a distributed version control system for managing code. It allows development teams to contribute code to the
-    same project without causing code conflicts.
+    是一个用于管理代码的分布式版本控制系统。它允许开发团队向同一个项目贡献代码而不会引起代码冲突。
   </p>
 </section>
 
@@ -242,23 +211,19 @@ title: Glossary
     <a href="http://gulpjs.com/" target="_blank">
       Gulp
     </a>{' '}
-    is a tool for running tasks which can be used to build your app. Common build tasks include transpiling{' '}
-    <a href="#es2015-es6">ES6</a> to <a href="#es5">ES5</a>, turning <a href="#sass">Sass</a> into CSS, minifying code,
-    and concatenating files.
+    是一个用于运行任务的工具，可用于构建您的应用。常见的构建任务包括将 <a href="#es2015-es6">ES6</a> 转译为 <a href="#es5">ES5</a>，将 <a href="#sass">Sass</a> 转换为 CSS，压缩代码以及合并文件。
   </p>
 </section>
 
 <section id="es-modules">
   <a href="#es-modules">
-    <h3>ES Modules</h3>
+    <h3>ES 模块 (ES Modules)</h3>
   </a>
   <p>
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank">
-      ES Modules
+      ES 模块
     </a>{' '}
-    brings the concept of modules natively to JavaScript. With modules, classes and variables are no longer in the
-    global scope and have to be explicitly imported into your project to be used. This makes it much easier to
-    understand where your code is coming from and increases modularity and compartmentalization of functionality.
+    将模块的概念原生地带入了 JavaScript。使用模块后，类和变量不再处于全局作用域，必须显式导入到项目中才能使用。这使得理解代码的来源变得更加容易，并增加了功能的模块化和分离性。
   </p>
 </section>
 
@@ -270,9 +235,7 @@ title: Glossary
     <a href="https://ionic.io/ionicons/" target="_blank">
       Ionicons
     </a>{' '}
-    is an open-source icon set used and created by Ionic. It includes 1:1 iOS and Material Design icons, as well as
-    commonly used social/application icons. Ionicons is included by default in Ionic distributions, but they can also be
-    used in any project.
+    是一个由 Ionic 使用和创建的开源图标集。它包括 1:1 的 iOS 和 Material Design 图标，以及常用的社交/应用图标。Ionicons 默认包含在 Ionic 发行版中，但它们也可以在任何项目中使用。
   </p>
 </section>
 
@@ -284,40 +247,35 @@ title: Glossary
     <a href="https://karma-runner.github.io/latest/index.html" target="_blank">
       Karma
     </a>{' '}
-    is a test runner that will run an app's test inside a real browser. It executes test cases, written in any testing
-    framework, in a real browser. Karma was originally written for use with Angular 1.
+    是一个测试运行器，它将在真实的浏览器中运行应用程序的测试。它在真实的浏览器中执行用任何测试框架编写的测试用例。Karma 最初是为与 Angular 1 一起使用而编写的。
   </p>
 </section>
 
 <section id="module">
   <a href="#module">
-    <h3>Module</h3>
+    <h3>模块 (Module)</h3>
   </a>
   <p>
-    Modules in JavaScript are small, independent, and reusable pieces or code that are isolated from one another and the
-    Global scope.
+    JavaScript 中的模块是小型、独立、可重用的代码片段，它们彼此隔离并与全局作用域隔离。
   </p>
 </section>
 
 <section id="monorepo">
   <a href="#monorepo">
-    <h3>Monorepo</h3>
+    <h3>单体仓库 (Monorepo)</h3>
   </a>
   <p>
-    A <strong>monorepo</strong> is a single git repository with multiple projects. Advantages include simpler
-    organization, shared tooling and dependencies, and better collaboration with teammates.
+    <strong>单体仓库 (monorepo)</strong> 是一个包含多个项目的单一 git 仓库。其优点包括更简单的组织、共享的工具和依赖项，以及与团队成员更好的协作。
   </p>
 </section>
 
 <section id="livereload">
   <a href="#livereload">
-    <h3>Live Reload</h3>
+    <h3>实时重载 (Live Reload)</h3>
   </a>
   <p>
-    <strong>Live Reload</strong> (or <strong>live-reload</strong>) is a tool that automatically reloads the browser or{' '}
-    <a href="../core-concepts/webview">Web View</a> when it detects changes in your app. In some cases, it can replace
-    parts of your app without having to reload the entire window. See the{' '}
-    <a href="../cli/livereload">Live Reload docs</a> for more information.
+    <strong>实时重载 (Live Reload)</strong> 是一种工具，当它检测到您的应用发生变化时，会自动重新加载浏览器或<a href="../core-concepts/webview">Web 视图</a>。在某些情况下，它可以在无需重新加载整个窗口的情况下替换应用的部分内容。有关更多信息，请参阅{' '}
+    <a href="../cli/livereload">实时重载文档</a>。
   </p>
 </section>
 
@@ -329,8 +287,7 @@ title: Glossary
     <a href="https://nodejs.org/" target="_blank">
       Node
     </a>{' '}
-    is a runtime environment that allows JavaScript to be written on the server-side. In addition to being used for web
-    services, node is often used to build developer tools, such as the <a href="#cli">Ionic CLI</a>.
+    是一个允许在服务器端编写 JavaScript 的运行时环境。除了用于 Web 服务，Node 还常用于构建开发者工具，例如 <a href="#cli">Ionic CLI</a>。
   </p>
 </section>
 
@@ -342,34 +299,29 @@ title: Glossary
     <a href="https://www.npmjs.com/" target="_blank">
       npm
     </a>{' '}
-    is the package manager for <a href="#node">node</a>. It allows developers to install, share, and package node
-    modules. Ionic can be installed with npm, along with a number of its dependencies.
+    是 <a href="#node">node</a> 的包管理器。它允许开发者安装、分享和打包 node 模块。Ionic 及其许多依赖项都可以使用 npm 安装。
   </p>
 </section>
 
 <section id="observable">
   <a href="#observable">
-    <h3>Observable</h3>
+    <h3>可观察对象 (Observable)</h3>
   </a>
   <p>
-    An observable is an object that emits events (or notifications). An observer is an object that listens for these
-    events, and does something when an event is received. Together, they create a pattern that can be used for
-    programming asynchronously.
+    可观察对象是一个发出事件（或通知）的对象。观察者是一个监听这些事件，并在接收到事件时执行某些操作的对象。它们共同创建了一种可用于异步编程的模式。
   </p>
 </section>
 
 <section id="package-id">
   <a href="#package-id">
-    <h3>Package ID</h3>
+    <h3>包 ID (Package ID)</h3>
   </a>
   <p>
-    Referred to by Apple as <strong>Bundle ID</strong> and by Android as <strong>Application ID</strong>, the{' '}
-    <strong>Package ID</strong> is used for identifying apps published to the App Store/Play Store. It is a string
-    formatted in{' '}
+    Apple 称之为<strong>捆绑包 ID (Bundle ID)</strong>，Android 称之为<strong>应用 ID (Application ID)</strong>，<strong>包 ID (Package ID)</strong> 用于标识发布到 App Store/Play Store 的应用。它是一个格式化为{' '}
     <a href="https://en.wikipedia.org/wiki/Reverse_domain_name_notation" target="_blank">
-      reverse-DNS notation
+      反向域名表示法 (reverse-DNS notation)
     </a>
-    .
+    的字符串。
   </p>
 </section>
 
@@ -378,12 +330,10 @@ title: Glossary
     <h3>Polyfill</h3>
   </a>
   <p>
-    A{' '}
     <a href="https://remysharp.com/2010/10/08/what-is-a-polyfill" target="_blank">
-      polyfill
+      Polyfill
     </a>{' '}
-    is a bit of code that adds functionality to the browser and normalizes browser differences. This is similar to a{' '}
-    <a href="#shim">shim</a>, but where a shim has it's own API, a polyfill let's the expect API of the browser be used.
+    是一段代码，用于向浏览器添加功能并规范化浏览器之间的差异。这类似于 <a href="#shim">shim</a>，但 shim 有其自己的 API，而 polyfill 允许使用浏览器的预期 API。
   </p>
 </section>
 
@@ -395,8 +345,7 @@ title: Glossary
     <a href="https://angular.github.io/protractor/#/" target="_blank">
       Protractor
     </a>{' '}
-    is a testing framework written for and by the Angular team. Protractor can be used with test runners, like Karma,
-    for end-to-end testing. Test runners allow you to quickly and programmatically verify code quality.
+    是一个由 Angular 团队编写并为其服务的测试框架。Protractor 可以与测试运行器（如 Karma）一起用于端到端测试。测试运行器允许您快速且编程地验证代码质量。
   </p>
 </section>
 
@@ -405,34 +354,32 @@ title: Glossary
     <h3>Sass</h3>
   </a>
   <p>
-    Sass is a stylesheet language that compiles to CSS and is used by Ionic. Sass is like CSS, but with extra features
-    such as{' '}
+    Sass 是一种编译为 CSS 的样式表语言，被 Ionic 使用。Sass 类似于 CSS，但具有额外的功能，例如{' '}
     <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">
-      variables
+      变量
     </a>
-    , <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">
-      mixins
-    </a>, and <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">
-      loops
-    </a>.
+    、 <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">
+      混合宏 (mixins)
+    </a> 和 <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">
+      循环 (loops)
+    </a>。
   </p>
 </section>
 
 <section id="scoped">
   <a href="#scoped">
-    <h3>Scoped Encapsulation</h3>
+    <h3>作用域封装 (Scoped Encapsulation)</h3>
   </a>
   <p>
-    A component that uses scoped encapsulation will automatically scope its CSS by appending each of the styles with a
-    data attribute at run time. Overriding scoped selectors in CSS requires a{' '}
+    使用作用域封装的组件将在运行时通过为每个样式附加一个数据属性来自动限定其 CSS 的作用域。在 CSS 中覆盖作用域内的选择器需要使用具有{' '}
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank">
-      higher specificity
+      更高特异性
     </a>{' '}
-    selector. Scoped components can also be styled using{' '}
+    的选择器。作用域组件也可以使用{' '}
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">
-      CSS Custom Properties
+      CSS 自定义属性
     </a>
-    .
+    进行样式化。
   </p>
 </section>
 
@@ -444,16 +391,15 @@ title: Glossary
     <a href="https://developers.google.com/web/fundamentals/web-components/shadowdom" target="_blank">
       Shadow DOM
     </a>{' '}
-    is a native browser solution for DOM and style encapsulation of a component. It shields the component from its
-    surrounding environment. To externally style internal elements of a Shadow DOM component you must use{' '}
+    是浏览器原生提供的用于实现组件 DOM 和样式封装的解决方案。它保护组件免受其周围环境的影响。要从外部设置 Shadow DOM 组件的内部元素样式，您必须使用{' '}
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">
-      CSS Custom Properties
+      CSS 自定义属性
     </a>{' '}
-    or{' '}
+    或{' '}
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part" target="_blank">
       CSS Shadow Parts
     </a>
-    .
+    。
   </p>
 </section>
 
@@ -462,20 +408,16 @@ title: Glossary
     <h3>Shim</h3>
   </a>
   <p>
-    A shim is a piece of code that normalizes an APIs across browsers. A shim can have it's own API that hides the
-    browser specific implementation from the end user.
+    Shim 是一段代码，用于规范化跨浏览器的 API。Shim 可以有自己的 API，该 API 向最终用户隐藏特定于浏览器的实现。
   </p>
 </section>
 
 <section id="transpiler">
   <a href="#transpiler">
-    <h3>Transpiler</h3>
+    <h3>转译器 (Transpiler)</h3>
   </a>
   <p>
-    Transpilation is the process of converting code from one language to another language prior to execution. Typically,
-    a transpiler will convert a high-level language to another high-level language. The most common type of{' '}
-    <em>transpilation</em> in Ionic Framework is converting <a href="#es2015-es6">ES2015/ES6</a> (
-    <a href="#typescript">TypeScript</a>) to <a href="#es5">ES5</a> (traditional JavaScript).
+    转译是在执行之前将代码从一种语言转换为另一种语言的过程。通常，转译器会将一种高级语言转换为另一种高级语言。在 Ionic 框架中，最常见的<em>转译</em>类型是将 <a href="#es2015-es6">ES2015/ES6</a>（<a href="#typescript">TypeScript</a>）转换为 <a href="#es5">ES5</a>（传统 JavaScript）。
   </p>
 </section>
 
@@ -487,25 +429,24 @@ title: Glossary
     <a href="http://www.typescriptlang.org" target="_blank">
       TypeScript
     </a>{' '}
-    is a superset of JavaScript, which means it gives you JavaScript, along with a number of extra features such as{' '}
+    是 JavaScript 的一个超集，这意味着它在 JavaScript 的基础上提供了许多额外功能，例如{' '}
     <a href="http://www.typescriptlang.org/Handbook#basic-types" target="_blank">
-      type declarations
+      类型声明
     </a>{' '}
-    and{' '}
+    和{' '}
     <a href="http://www.typescriptlang.org/Handbook#interfaces" target="_blank">
-      interfaces
+      接口 (interfaces)
     </a>
-    . Although Ionic is built with TypeScript, using it to build an Ionic app is completely optional.
+    。尽管 Ionic 本身是使用 TypeScript 构建的，但使用它来构建 Ionic 应用完全是可选的。
   </p>
 </section>
 
 <section id="unit-tests">
   <a href="#unit-tests">
-    <h3>Unit Tests</h3>
+    <h3>单元测试 (Unit Tests)</h3>
   </a>
   <p>
-    Unit Tests and unit testing are a way to test small pieces of code to see if they behave as expected. Unit testing
-    frameworks include Jasmine, Mocha, QUnit, and many others.
+    单元测试是一种测试小块代码以查看其是否按预期行为运行的方法。单元测试框架包括 Jasmine、Mocha、QUnit 等等。
   </p>
 </section>
 
@@ -517,26 +458,23 @@ title: Glossary
     <a href="https://webpack.github.io/" target="_blank">
       Webpack
     </a>{' '}
-    bundles together JavaScript modules and other assets. It can be used to create single or multiple "chunks" that are
-    only loaded when needed. Webpack can be used to take many files and dependencies and bundle them into one file, or
-    other types.
+    将 JavaScript 模块和其他资源打包在一起。它可以用于创建仅在需要时加载的单个或多个"代码块"。Webpack 可用于获取许多文件和依赖项并将它们打包成一个文件或其他类型。
   </p>
 </section>
 
 <section id="web-standards">
   <a href="#web-standards">
-    <h3>Web Standards</h3>
+    <h3>Web 标准 (Web Standards)</h3>
   </a>
   <p>
-    The{' '}
     <a href="https://www.w3.org/" target="_blank">
-      World Wide Web Consortium
+      万维网联盟 (World Wide Web Consortium)
     </a>{' '}
-    (W3C) is the standards organization for the Web. Together, industry leaders and the public work together to develop{' '}
+    (W3C) 是 Web 的标准组织。行业领导者和公众共同制定{' '}
     <a href="https://www.w3.org/standards/" target="_blank">
-      web standards
+      Web 标准
     </a>
-    , which are a set of protocols, specifications, and technologies that define the Web Platform.
+    ，这是一组定义 Web 平台的协议、规范和技术。
   </p>
 </section>
 
@@ -548,8 +486,7 @@ title: Glossary
     <a href="https://developer.apple.com/xcode/" target="_blank">
       Xcode
     </a>{' '}
-    is an Apple IDE (integrated development environment) for software development on Apple operating systems (macOS,
-    iOS, watchOS and tvOS), with extensions available for other languages and platforms.
+    是 Apple 的 IDE（集成开发环境），用于在 Apple 操作系统（macOS、iOS、watchOS 和 tvOS）上进行软件开发，并提供适用于其他语言和平台的扩展。
   </p>
 </section>
 

@@ -35,7 +35,7 @@ function Example() {
         ))}
       </IonList>
       <IonInfiniteScroll>
-        <IonInfiniteScrollContent loadingText="Please wait..." loadingSpinner="bubbles"></IonInfiniteScrollContent>
+        <IonInfiniteScrollContent loadingText="请稍候..." loadingSpinner="bubbles"></IonInfiniteScrollContent>
       </IonInfiniteScroll>
     </IonContent>
   );

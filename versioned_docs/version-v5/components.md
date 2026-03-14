@@ -1,14 +1,14 @@
 ---
-title: UI Components
-description: Ionic Framework comes stock with a number of high-level UI components, including cards, lists, and tabs to quickly and easily build your app's user interface.
+title: UI 组件
+description: Ionic Framework 内置了多种高级 UI 组件，包括卡片、列表和标签页，可帮助您快速轻松地构建应用程序的用户界面。
 hide_table_of_contents: true
 ---
 
 <head>
-  <title>UI Components | User Interface Application Building Components</title>
+  <title>UI 组件 | 用户界面应用程序构建组件</title>
   <meta
     name="description"
-    content="Ionic Framework comes stock with a number of high-level UI components, including cards, lists, and tabs to quickly and easily build your app's user interface."
+    content="Ionic Framework 内置了多种高级 UI 组件，包括卡片、列表和标签页，可帮助您快速轻松地构建应用程序的用户界面。"
   />
   <style>{`
     :root {
@@ -20,141 +20,141 @@ hide_table_of_contents: true
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-Ionic apps are made of high-level building blocks called Components, which allow you to quickly construct the UI for your app. Ionic comes stock with a number of components, including cards, lists, and tabs. Once you’re familiar with the basics, refer to the [API Index](api.md) for a complete list of each component and sub-component.
+Ionic 应用程序由称为组件的高级构建块组成，这些组件可让您快速构建应用程序的用户界面。Ionic 内置了多种组件，包括卡片、列表和标签页。熟悉基础知识后，请参考 [API 索引](api.md) 获取每个组件及其子组件的完整列表。
 
 <intro-end />
 
 <DocsCards>
-  <DocsCard header="Action Sheet" href="api/action-sheet" img="/icons/feature-component-actionsheet-icon.png">
-    <p>Action Sheets display a set of options with the ability to confirm or cancel an action.</p>
+  <DocsCard header="操作表" href="api/action-sheet" img="/icons/feature-component-actionsheet-icon.png">
+    <p>操作表显示一组选项，并允许用户确认或取消操作。</p>
   </DocsCard>
 
-<DocsCard header="Alert" href="api/alert" icon="/icons/component-alert-icon.png">
-  <p>Alerts are a great way to offer the user the ability to choose a specific action or list of actions.</p>
+<DocsCard header="警告框" href="api/alert" icon="/icons/component-alert-icon.png">
+  <p>警告框是向用户提供选择特定操作或一系列操作能力的绝佳方式。</p>
 </DocsCard>
 
-<DocsCard header="Badge" href="api/badge" icon="/icons/component-badge-icon.png">
-  <p>Badges are a small component that typically communicate a numerical value to the user.</p>
+<DocsCard header="徽章" href="api/badge" icon="/icons/component-badge-icon.png">
+  <p>徽章是一种小型组件，通常用于向用户传达数值信息。</p>
 </DocsCard>
 
-<DocsCard header="Button" href="api/button" icon="/icons/component-button-icon.png">
-  <p>Buttons let your users take action. They're an essential way to interact with and navigate through an app.</p>
+<DocsCard header="按钮" href="api/button" icon="/icons/component-button-icon.png">
+  <p>按钮让用户能够执行操作。它们是与应用程序交互和导航的基本方式。</p>
 </DocsCard>
 
-<DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
+<DocsCard header="卡片" href="api/card" icon="/icons/component-card-icon.png">
   <!-- prettier-ignore -->
-  <p>Cards are a great way to display an important piece of content, and can contain images, buttons, text, and more.</p>
+  <p>卡片是展示重要内容的绝佳方式，可以包含图像、按钮、文本等。</p>
 </DocsCard>
 
-<DocsCard header="Checkbox" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
-  <p>Checkboxes can be used to let the user know they need to make a binary decision.</p>
+<DocsCard header="复选框" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
+  <p>复选框可用于告知用户需要做出二元决策。</p>
 </DocsCard>
 
-<DocsCard header="Chip" href="api/chip" icon="/icons/component-chip-icon.png">
-  <p>Chips are a compact way to display data or actions.</p>
+<DocsCard header="芯片" href="api/chip" icon="/icons/component-chip-icon.png">
+  <p>芯片是一种紧凑的显示数据或操作的方式。</p>
 </DocsCard>
 
-<DocsCard header="Content" href="api/content" icon="/icons/component-content-icon.png">
-  <p>Content is the quintessential way to interact with and navigate through an app.</p>
+<DocsCard header="内容区域" href="api/content" icon="/icons/component-content-icon.png">
+  <p>内容区域是与应用程序交互和导航的核心方式。</p>
 </DocsCard>
 
-<DocsCard header="Date & Time Pickers" href="api/datetime" icon="/icons/component-datetimepicker-icon.png">
-  <p>Date & time pickers are used to present an interface that makes it easy for users to select dates and times.</p>
+<DocsCard header="日期与时间选择器" href="api/datetime" icon="/icons/component-datetimepicker-icon.png">
+  <p>日期和时间选择器用于呈现一个界面，使用户能够轻松选择日期和时间。</p>
 </DocsCard>
 
-<DocsCard header="Floating Action Button" href="api/fab" icon="/icons/component-fab-icon.png">
-  <p>Floating action buttons are circular buttons that perform a primary action on a screen.</p>
+<DocsCard header="浮动操作按钮" href="api/fab" icon="/icons/component-fab-icon.png">
+  <p>浮动操作按钮是圆形按钮，用于在屏幕上执行主要操作。</p>
 </DocsCard>
 
-<DocsCard header="Icons" href="https://ionic.io/ionicons" img="/icons/feature-component-icons-icon.png">
-  <p>Beautifully designed icons for use in web, iOS, Android, and desktop apps.</p>
+<DocsCard header="图标" href="https://ionic.io/ionicons" img="/icons/feature-component-icons-icon.png">
+  <p>专为 Web、iOS、Android 和桌面应用程序设计的精美图标。</p>
 </DocsCard>
 
-<DocsCard header="Grid" href="api/grid" icon="/icons/component-grid-icon.png">
-  <p>The grid is a powerful mobile-first system for building custom layouts.</p>
+<DocsCard header="网格布局" href="api/grid" icon="/icons/component-grid-icon.png">
+  <p>网格是一种强大的移动优先系统，用于构建自定义布局。</p>
 </DocsCard>
 
-<DocsCard header="Infinite Scroll" href="api/infinite-scroll" icon="/icons/component-infinitescroll-icon.png">
-  <p>Infinite scroll allows you to load new data as the user scrolls through your app.</p>
+<DocsCard header="无限滚动" href="api/infinite-scroll" icon="/icons/component-infinitescroll-icon.png">
+  <p>无限滚动允许您在用户滚动浏览应用程序时加载新数据。</p>
 </DocsCard>
 
-<DocsCard header="Input" href="api/input" icon="/icons/component-input-icon.png">
-  <p>Inputs provides a way for users to enter data in your app.</p>
+<DocsCard header="输入框" href="api/input" icon="/icons/component-input-icon.png">
+  <p>输入框为用户在应用程序中输入数据提供了途径。</p>
 </DocsCard>
 
-<DocsCard header="Item" href="api/item" icon="/icons/component-item-icon.png">
-  <p>Items are an all-purpose UI container that can be used as part of a list.</p>
+<DocsCard header="列表项" href="api/item" icon="/icons/component-item-icon.png">
+  <p>列表项是一种多功能的 UI 容器，可以作为列表的一部分使用。</p>
 </DocsCard>
 
-<DocsCard header="List" href="api/list" icon="/icons/component-lists-icon.png">
-  <p>Lists can display rows of information, such as a contact list, playlist, or menu.</p>
+<DocsCard header="列表" href="api/list" icon="/icons/component-lists-icon.png">
+  <p>列表可以显示信息行，例如联系人列表、播放列表或菜单。</p>
 </DocsCard>
 
-<DocsCard header="Navigation" href="api/nav" img="/icons/feature-component-navigation-icon.png">
-  <p>Navigation is how users move between different pages in your app.</p>
+<DocsCard header="导航" href="api/nav" img="/icons/feature-component-navigation-icon.png">
+  <p>导航是用户在不同页面之间移动的方式。</p>
 </DocsCard>
 
-<DocsCard header="Menu" href="api/menu" icon="/icons/component-menu-icon.png">
-  <p>Menus are a common navigation pattern. They can be permanently on-screen, or revealed when needed.</p>
+<DocsCard header="菜单" href="api/menu" icon="/icons/component-menu-icon.png">
+  <p>菜单是一种常见的导航模式。它们可以永久显示在屏幕上，也可以在需要时显示。</p>
 </DocsCard>
 
-<DocsCard header="Modal" href="api/modal" icon="/icons/component-modal-icon.png">
-  <p>Modals slide in and off screen to display a temporary UI and are often used for login or sign-up pages.</p>
+<DocsCard header="模态框" href="api/modal" icon="/icons/component-modal-icon.png">
+  <p>模态框从屏幕边缘滑入滑出，用于显示临时 UI，常用于登录或注册页面。</p>
 </DocsCard>
 
-<DocsCard header="Popover" href="api/popover" icon="/icons/component-popover-icon.png">
-  <p>Popover provides an easy way to present information or options without changing contexts.</p>
+<DocsCard header="弹出框" href="api/popover" icon="/icons/component-popover-icon.png">
+  <p>弹出框提供了一种在不改变上下文的情况下呈现信息或选项的简便方式。</p>
 </DocsCard>
 
-<DocsCard header="Progress Indicators" href="api/progress-bar" icon="/icons/component-progress-icon.png">
-  <p>Progress indicators visualize the progression of an operation or activity.</p>
+<DocsCard header="进度指示器" href="api/progress-bar" icon="/icons/component-progress-icon.png">
+  <p>进度指示器用于可视化操作或活动的进度。</p>
 </DocsCard>
 
-<DocsCard header="Radio" href="api/radio" icon="/icons/component-radio-icon.png">
-  <p>Radio inputs allow you to present a set of exclusive options.</p>
+<DocsCard header="单选框" href="api/radio" icon="/icons/component-radio-icon.png">
+  <p>单选框输入允许您呈现一组互斥的选项。</p>
 </DocsCard>
 
-<DocsCard header="Refresher" href="api/refresher" icon="/icons/component-refresher-icon.png">
-  <p>Refresher provides pull-to-refresh functionality on a content component.</p>
+<DocsCard header="下拉刷新" href="api/refresher" icon="/icons/component-refresher-icon.png">
+  <p>下拉刷新为内容组件提供了下拉刷新功能。</p>
 </DocsCard>
 
-<DocsCard header="Searchbar" href="api/searchbar" img="/icons/feature-component-search-icon.png">
-  <p>Searchbar is used to search or filter items, usually from a toolbar.</p>
+<DocsCard header="搜索栏" href="api/searchbar" img="/icons/feature-component-search-icon.png">
+  <p>搜索栏用于搜索或筛选项目，通常位于工具栏中。</p>
 </DocsCard>
 
-<DocsCard header="Reorder" href="api/reorder" icon="/icons/component-reorder-icon.png">
-  <p>Reorder lets users drag and drop to reorder a list of items.</p>
+<DocsCard header="重新排序" href="api/reorder" icon="/icons/component-reorder-icon.png">
+  <p>重新排序允许用户通过拖放操作对项目列表进行重新排序。</p>
 </DocsCard>
 
-<DocsCard header="Routing" href="api/router" icon="/icons/component-routing-icon.png">
-  <p>Routing allows navigation based on the current path.</p>
+<DocsCard header="路由" href="api/router" icon="/icons/component-routing-icon.png">
+  <p>路由允许基于当前路径进行导航。</p>
 </DocsCard>
 
-<DocsCard header="Segment" href="api/segment" icon="/icons/component-segment-icon.png">
-  <p>Segments provide a set of exclusive buttons that can be used as a filter or view switcher.</p>
+<DocsCard header="分段控件" href="api/segment" icon="/icons/component-segment-icon.png">
+  <p>分段控件提供了一组互斥的按钮，可用作筛选器或视图切换器。</p>
 </DocsCard>
 
-<DocsCard header="Select" href="api/select" icon="/icons/component-select-icon.png">
-  <p>Select is similar to the native HTML select, with a few improvements to sorting and selecting.</p>
+<DocsCard header="选择器" href="api/select" icon="/icons/component-select-icon.png">
+  <p>选择器类似于原生 HTML 选择器，但在排序和选择方面进行了一些改进。</p>
 </DocsCard>
 
-<DocsCard header="Slides" href="api/slides" icon="/icons/component-slides-icon.png">
-  <p>Slides make it easy to create complex UI such as galleries, tutorials, and page-based layouts.</p>
+<DocsCard header="幻灯片" href="api/slides" icon="/icons/component-slides-icon.png">
+  <p>幻灯片让创建复杂的 UI（如图库、教程和基于页面的布局）变得简单。</p>
 </DocsCard>
 
-<DocsCard header="Tabs" href="api/tabs" img="/icons/feature-component-tabs-icon.png">
-  <p>Tabs enable tabbed navigation, a standard navigation pattern in modern apps.</p>
+<DocsCard header="标签页" href="api/tabs" img="/icons/feature-component-tabs-icon.png">
+  <p>标签页实现了标签式导航，这是现代应用程序中的标准导航模式。</p>
 </DocsCard>
 
-<DocsCard header="Toast" href="api/toast" icon="/icons/component-toast-icon.png">
-  <p>Toast is used to show a notification over the top of an app's content. It can be temporary or dismissible.</p>
+<DocsCard header="轻提示" href="api/toast" icon="/icons/component-toast-icon.png">
+  <p>轻提示用于在应用程序内容上方显示通知。它可以是临时的或可关闭的。</p>
 </DocsCard>
 
-<DocsCard header="Toggle" href="api/toggle" icon="/icons/component-toggle-icon.png">
-  <p>Toggles are an input for binary options, often used for options and switches.</p>
+<DocsCard header="开关" href="api/toggle" icon="/icons/component-toggle-icon.png">
+  <p>开关是一种用于二元选项的输入控件，常用于选项和切换开关。</p>
 </DocsCard>
 
-  <DocsCard header="Toolbar" href="api/toolbar" icon="/icons/component-toolbar-icon.png">
-    <p>Toolbars are used to house information and actions relating to your app.</p>
+  <DocsCard header="工具栏" href="api/toolbar" icon="/icons/component-toolbar-icon.png">
+    <p>工具栏用于容纳与您的应用程序相关的信息和操作。</p>
   </DocsCard>
 </DocsCards>

@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/toggle/custom-props.md
 import Slots from '@ionic-internal/component-api/v6/toggle/slots.md';
 
 <head>
-  <title>Toggle | ion-toggle: Custom Toggle Button for Ionic Applications</title>
+  <title>开关按钮 | ion-toggle: Ionic 应用的自定义切换按钮</title>
   <meta
     name="description"
-    content="Toggle changes the state of a single option. Use ion-toggle to create customizable toggle buttons that can be switched on or off for your applications."
+    content="开关按钮用于切换单个选项的状态。使用 ion-toggle 组件可以创建可自定义的开关按钮，可在应用中开启或关闭。"
   />
 </head>
 
@@ -21,47 +21,47 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Toggles are switches that change the state of a single option. They can be switched on or off by pressing or swiping them. Toggles can also be checked programmatically by setting the `checked` property.
+开关按钮（Toggle）是用于切换单个选项状态的开关控件。可以通过点击或滑动来开启或关闭。也可以通过设置 `checked` 属性以编程方式选中。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v6/toggle/basic/index.md';
 
 <Basic />
 
-## On / Off Labels
+## 开启 / 关闭标签
 
-Toggles can enable on/off labels by setting the `enableOnOffLabels` property. This is important for accessibility as it makes it easier to differentiate between a checked and unchecked toggle.
+开关按钮可以通过设置 `enableOnOffLabels` 属性来启用开启/关闭标签。这对于无障碍访问非常重要，因为它能更清晰地区分已选中和未选中的开关状态。
 
 import OnOff from '@site/static/usage/v6/toggle/on-off/index.md';
 
 <OnOff />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v6/toggle/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
-CSS custom properties can be combined with standard CSS to target different parts of a toggle. We can modify the `width` and `height` of the toggle directly to change the size of the track, while using the `--handle-width` and `--handle-height` custom properties to customize the handle size.
+CSS 自定义属性可以与标准 CSS 结合使用，以定位开关的不同部分。我们可以直接修改开关的 `width` 和 `height` 来改变轨道的尺寸，同时使用 `--handle-width` 和 `--handle-height` 自定义属性来定制滑块的尺寸。
 
 import CSSProps from '@site/static/usage/v6/toggle/theming/css-properties/index.md';
 
 <CSSProps />
 
-### CSS Shadow Parts
+### CSS 影子部件
 
-We can further customize toggle by targeting specific shadow parts that are exposed. Any CSS property on these parts can be styled and they can also be combined with CSS custom properties.
+我们可以通过定位暴露的特定影子部件来进一步自定义开关。这些部件上的任何 CSS 属性都可以被样式化，也可以与 CSS 自定义属性结合使用。
 
 import CSSParts from '@site/static/usage/v6/toggle/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
-## Interfaces
+## 接口定义
 
 ### ToggleChangeEventDetail
 
@@ -74,7 +74,7 @@ interface ToggleChangeEventDetail<T = any> {
 
 ### ToggleCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更严格的类型检查。
 
 ```typescript
 interface ToggleCustomEvent<T = any> extends CustomEvent {
@@ -83,26 +83,26 @@ interface ToggleCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 影子部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

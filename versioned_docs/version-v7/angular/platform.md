@@ -6,23 +6,23 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Platform | Ionic Platform to Customize Apps to Fit Any Device</title>
+  <title>平台 | Ionic 平台服务：为任意设备定制应用</title>
   <meta
     name="description"
-    content="Ionic Platform service can be used to get information about your current device. With this information you can completely customize your app to fit any device."
+    content="Ionic 平台服务可用于获取当前设备信息。利用这些信息，您可以完全定制应用以适配任何设备。"
   />
 </head>
 
-The Platform service can be used to get information about your current device. You can get all of the platforms associated with the device using the `platforms` method, including whether the app is being viewed from a tablet, if it's on a mobile device or browser, and the exact platform (iOS, Android, etc). You can also get the orientation of the device, if it uses right-to-left language direction, and much much more. With this information you can completely customize your app to fit any device.
+平台服务可用于获取当前设备的信息。您可以使用 `platforms` 方法获取与设备关联的所有平台信息，包括应用是否在平板设备上查看、是否在移动设备或浏览器上运行，以及具体的平台（iOS、Android 等）。您还可以获取设备的方向、是否使用从右到左的语言方向等。利用这些信息，您可以完全定制应用以适配任何设备。
 
-## Usage
+## 使用方法
 
 <Tabs
   groupId="framework"
   defaultValue="angular"
   values={[
     { value: 'angular', label: 'Angular' },
-    { value: 'angular-standalone', label: 'Angular (Standalone)' },
+    { value: 'angular-standalone', label: 'Angular（独立版）' },
   ]}
 >
 <TabItem value="angular">
@@ -55,45 +55,45 @@ export class MyPage {
 </TabItem>
 </Tabs>
 
-## Methods
+## 方法
 
 ### `is`
 
-|                 |                                                                                                                                                                                                                                                                                                                                                                           |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Depending on the platform the user is on, `is(platformName)` will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: `mobile`, `ios`, `ipad`, and `tablet`. Additionally, if the app was running from Cordova then `cordova` would be true. |
-| **Signature**   | `is(platformName: Platforms) => boolean`                                                                                                                                                                                                                                                                                                                                  |
+|                 |                                                                                                                                                                                                                                                                                                                                                                          |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **描述**        | 根据用户所在的平台，`is(platformName)` 将返回 true 或 false。请注意，同一个应用可能对多个平台名称返回 true。例如，在 iPad 上运行的应用会对以下平台名称返回 true：`mobile`、`ios`、`ipad` 和 `tablet`。此外，如果应用通过 Cordova 运行，则 `cordova` 也会返回 true。                                                                                                       |
+| **签名**        | `is(platformName: Platforms) => boolean`                                                                                                                                                                                                                                                                                                                                 |
 
-#### Parameters
+#### 参数
 
-| Name           | Type        | Description                                                                                                                                         |
-| -------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `platformName` | `Platforms` | Name of the platform. Available options are android, capacitor, cordova, desktop, electron, hybrid, ios, ipad, iphone, mobile, phablet, pwa, tablet |
+| 名称            | 类型          | 描述                                                                                                                                                                                           |
+| --------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `platformName`  | `Platforms`   | 平台名称。可用选项包括：android、capacitor、cordova、desktop、electron、hybrid、ios、ipad、iphone、mobile、phablet、pwa、tablet                                                               |
 
-#### Platforms
+#### 平台
 
-Below is a table listing all the possible platform values along with corresponding descriptions.
+下表列出了所有可能的平台值及其相应描述。
 
-| Platform Name | Description                              |
-| ------------- | ---------------------------------------- |
-| android       | a device running Android                 |
-| capacitor     | a device running Capacitor               |
-| cordova       | a device running Cordova                 |
-| desktop       | a desktop device                         |
-| electron      | a desktop device running Electron        |
-| hybrid        | a device running Capacitor or Cordova    |
-| ios           | a device running iOS                     |
-| ipad          | an iPad device                           |
-| iphone        | an iPhone device                         |
-| mobile        | a mobile device                          |
-| mobileweb     | a web browser running in a mobile device |
-| phablet       | a phablet device                         |
-| pwa           | a PWA app                                |
-| tablet        | a tablet device                          |
+| 平台名称       | 描述                                   |
+| -------------- | -------------------------------------- |
+| android        | 运行 Android 的设备                    |
+| capacitor      | 运行 Capacitor 的设备                  |
+| cordova        | 运行 Cordova 的设备                    |
+| desktop        | 桌面设备                               |
+| electron       | 运行 Electron 的桌面设备               |
+| hybrid         | 运行 Capacitor 或 Cordova 的设备       |
+| ios            | 运行 iOS 的设备                        |
+| ipad           | iPad 设备                              |
+| iphone         | iPhone 设备                            |
+| mobile         | 移动设备                               |
+| mobileweb      | 在移动设备中运行的网页浏览器           |
+| phablet        | 平板手机设备                           |
+| pwa            | PWA 应用                               |
+| tablet         | 平板设备                               |
 
-#### Customizing Platform Detection Functions
+#### 自定义平台检测函数
 
-The function used to detect a specific platform can be overridden by providing an alternative function in the global [Ionic config](../developing/config). Each function takes `window` as a parameter and returns a boolean.
+用于检测特定平台的函数可以通过在全局 [Ionic 配置](../developing/config) 中提供替代函数来覆盖。每个函数以 `window` 作为参数并返回布尔值。
 
 ```tsx
 import { IonicModule } from '@ionic/angular';
@@ -104,8 +104,8 @@ import { IonicModule } from '@ionic/angular';
     BrowserModule,
     IonicModule.forRoot({
       platform: {
-        /** The default `desktop` function returns false for devices with a touchscreen.
-        * This is not always wanted, so this function tests the User Agent instead.
+        /** 默认的 `desktop` 函数对于带触摸屏的设备返回 false。
+        * 这并不总是我们想要的，因此此函数改为测试用户代理。
         **/
         'desktop': (win) => {
           const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(win.navigator.userAgent);
@@ -140,107 +140,107 @@ type PlatformConfig = {
 
 ### `platforms`
 
-|                 |                                                                                                                                                                                                         |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Depending on what device you are on, `platforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return `mobile`, `ios`, and `iphone`. |
-| **Signature**   | `platforms() => string[]`                                                                                                                                                                               |
+|                 |                                                                                                                                                                             |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **描述**        | 根据您所在的设备，`platforms` 可以返回多个值。每个可能的值都是平台的层次结构。例如，在 iPhone 上，它将返回 `mobile`、`ios` 和 `iphone`。                                   |
+| **签名**        | `platforms() => string[]`                                                                                                                                                   |
 
 ### `ready`
 
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Returns a promise when the platform is ready and native functionality can be called. If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used. <br /><br />For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic. |
-| **Signature**   | `ready() => Promise<string>`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **描述**        | 当平台准备就绪且可以调用原生功能时返回一个 Promise。如果应用在网页浏览器中运行，则 Promise 会在 DOM 准备就绪时解析。当应用在 Cordova 等应用引擎中运行时，Promise 会在 Cordova 触发 `deviceready` 事件时解析。解析后的值是 `readySource`，它指明了所使用的平台。<br /><br />例如，当 Cordova 准备就绪时，解析的 ready source 是 `cordova`。默认的 ready source 值是 `dom`。`readySource` 非常有用，因为根据应用运行的平台，可能需要运行不同的逻辑。例如，只有 Capacitor 和 Cordova 可以执行状态栏插件，因此网页端不应运行状态栏插件逻辑。 |
+| **签名**        | `ready() => Promise<string>`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ### `isRTL`
 
-|                 |                                                                                                                                                                                                                                                                                                                                    |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Returns if this app is using right-to-left language direction or not. We recommend the app's `index.html` file already has the correct `dir` attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir) |
-| **Signature**   | `isRTL() => boolean`                                                                                                                                                                                                                                                                                                               |
+|                 |                                                                                                                                                                                                                                                                                               |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **描述**        | 返回此应用是否使用从右到左的语言方向。我们建议应用的 `index.html` 文件已经设置了正确的 `dir` 属性值，例如 `<html dir="ltr">` 或 `<html dir="rtl">`。[W3C：HTML 中的结构化标记和从右到左文本](http://www.w3.org/International/questions/qa-html-dir) |
+| **签名**        | `isRTL() => boolean`                                                                                                                                                                                                                                                                          |
 
 ### `isLandscape`
 
 |                 |                                                 |
 | --------------- | ----------------------------------------------- |
-| **Description** | Returns `true` if the app is in landscape mode. |
-| **Signature**   | `isLandscape() => boolean`                      |
+| **描述**        | 如果应用处于横屏模式，则返回 `true`。           |
+| **签名**        | `isLandscape() => boolean`                      |
 
 ### `isPortrait`
 
-|                 |                                                |
-| --------------- | ---------------------------------------------- |
-| **Description** | Returns `true` if the app is in portrait mode. |
-| **Signature**   | `isPortrait() => boolean`                      |
+|                 |                                                 |
+| --------------- | ----------------------------------------------- |
+| **描述**        | 如果应用处于竖屏模式，则返回 `true`。           |
+| **签名**        | `isPortrait() => boolean`                       |
 
 ### `width`
 
 |                 |                                                                      |
 | --------------- | -------------------------------------------------------------------- |
-| **Description** | Gets the width of the platform's viewport using `window.innerWidth`. |
-| **Signature**   | `width() => number`                                                  |
+| **描述**        | 使用 `window.innerWidth` 获取平台视口的宽度。                        |
+| **签名**        | `width() => number`                                                  |
 
 ### `height`
 
 |                 |                                                                        |
 | --------------- | ---------------------------------------------------------------------- |
-| **Description** | Gets the height of the platform's viewport using `window.innerHeight`. |
-| **Signature**   | `height() => number`                                                   |
+| **描述**        | 使用 `window.innerHeight` 获取平台视口的高度。                         |
+| **签名**        | `height() => number`                                                   |
 
 ### `url`
 
 |                 |                      |
 | --------------- | -------------------- |
-| **Description** | Get the current url. |
-| **Signature**   | `url() => string`    |
+| **描述**        | 获取当前 URL。       |
+| **签名**        | `url() => string`    |
 
 ### `testUserAgent`
 
 |                 |                                                                        |
 | --------------- | ---------------------------------------------------------------------- |
-| **Description** | Returns `true` if the expression is included in the user agent string. |
-| **Signature**   | `testUserAgent(expression: string) => boolean`                         |
+| **描述**        | 如果表达式包含在用户代理字符串中，则返回 `true`。                      |
+| **签名**        | `testUserAgent(expression: string) => boolean`                         |
 
-#### Parameters
+#### 参数
 
-| Name       | Type   | Description                           |
-| ---------- | ------ | ------------------------------------- |
-| expression | string | The string to check in the user agent |
+| 名称         | 类型     | 描述                           |
+| ------------ | -------- | ------------------------------ |
+| expression   | string   | 要在用户代理中检查的字符串     |
 
-## Events
+## 事件
 
 ### `pause`
 
-The `pause` event emits when the native platform puts the application into the background, typically when the user switches to a different application. This event emits when a Cordova/Capacitor app is put into the background but doesn't fire in a standard web browser.
+当原生平台将应用切换到后台时（通常是用户切换到另一个应用时），会触发 `pause` 事件。当 Cordova/Capacitor 应用被切换到后台时，此事件会触发，但在标准网页浏览器中不会触发。
 
-#### Examples
+#### 示例
 
 ```tsx
 this.platform.pause.subscribe(async () => {
-  alert('Pause event detected');
+  alert('检测到 Pause 事件');
 });
 ```
 
 ### `resize`
 
-The `resize` event emits when the browser window has changed dimensions. This could be from a browser window being physically resized, or from a device changing orientation.
+当浏览器窗口尺寸发生变化时，会触发 `resize` 事件。这可能是由于浏览器窗口被物理调整大小，或者是设备改变了方向。
 
-#### Examples
+#### 示例
 
 ```tsx
 this.platform.resize.subscribe(async () => {
-  alert('Resize event detected');
+  alert('检测到 Resize 事件');
 });
 ```
 
 ### `resume`
 
-The `resume` event fires when the native platform pulls the application out from the background. This event emits when a Cordova/Capacitor app comes out from the background but doesn't fire in a standard web browser.
+当原生平台将应用从后台切换到前台时，会触发 `resume` 事件。当 Cordova/Capacitor 应用从后台切换到前台时，此事件会触发，但在标准网页浏览器中不会触发。
 
-#### Examples
+#### 示例
 
 ```tsx
 this.platform.resume.subscribe(async () => {
-  alert('Resume event detected');
+  alert('检测到 Resume 事件');
 });
 ```

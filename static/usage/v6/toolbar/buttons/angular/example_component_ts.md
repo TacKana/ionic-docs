@@ -13,9 +13,9 @@ import { personCircle, search, ellipsisHorizontal, ellipsisVertical, helpCircle,
 export class ExampleComponent {
   constructor() {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 应用中需要使用的所有图标
+     * 都可以在 app.component.ts 中进行注册，
+     * 然后在整个应用中通过名称来引用。
      */
     addIcons({ personCircle, search, ellipsisHorizontal, ellipsisVertical, helpCircle, star, create });
   }

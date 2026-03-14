@@ -20,14 +20,14 @@ function Example() {
       <div className="ion-page">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Backdrop</IonTitle>
+            <IonTitle>背景层</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
           <IonItem>
-            <IonCheckbox>Checkbox</IonCheckbox>
+            <IonCheckbox>复选框</IonCheckbox>
           </IonItem>
-          <IonButton expand="block">Button</IonButton>
+          <IonButton expand="block">按钮</IonButton>
         </IonContent>
       </div>
     </>

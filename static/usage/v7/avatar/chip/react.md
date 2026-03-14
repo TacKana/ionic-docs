@@ -6,7 +6,7 @@ function Example() {
     <>
       <IonChip>
         <IonAvatar>
-          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <img alt="人物头部剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </IonAvatar>
         <IonLabel>Chip Avatar</IonLabel>
       </IonChip>

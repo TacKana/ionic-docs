@@ -1,11 +1,11 @@
 ```html
 <ion-content class="ion-padding">
-  <h1>Click on the buttons to scroll the content.</h1>
+  <h1>点击按钮滚动内容。</h1>
 
-  <ion-button expand="block" (click)="scrollToBottom()">Scroll to Bottom</ion-button>
+  <ion-button expand="block" (click)="scrollToBottom()">滚动到底部</ion-button>
 
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum in
+    此处为占位文本，描述内容区域。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum in
     risus. Sed nec convallis sapien, id tincidunt enim. Mauris ornare eleifend nunc id mattis. Fusce augue diam,
     sagittis nec posuere at, consectetur tempor lectus. Nulla at lectus eget mauris iaculis malesuada mollis sed neque.
     Curabitur et risus tristique, malesuada mauris finibus, elementum massa. Proin lacinia mauris quis ligula blandit
@@ -50,6 +50,6 @@
     sed, tristique faucibus sem. Sed mollis dui quis ligula cursus rutrum.
   </p>
 
-  <ion-button expand="block" (click)="scrollToTop()">Scroll to Top</ion-button>
+  <ion-button expand="block" (click)="scrollToTop()">滚动到顶部</ion-button>
 </ion-content>
 ```

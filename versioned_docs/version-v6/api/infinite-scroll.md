@@ -10,47 +10,47 @@ import CustomProps from '@ionic-internal/component-api/v6/infinite-scroll/custom
 import Slots from '@ionic-internal/component-api/v6/infinite-scroll/slots.md';
 
 <head>
-  <title>Infinite Scroller | ion-infinite-scroll Action Component</title>
+  <title>无限滚动组件 | ion-infinite-scroll 操作组件</title>
   <meta
     name="description"
-    content="The ion-infinite-scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page."
+    content="当用户滚动到距离页面底部或顶部指定距离时，ion-infinite-scroll 组件会触发一个要执行的操作。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-The Infinite Scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page.
+无限滚动组件会在用户滚动到距离页面底部或顶部指定距离时，触发一个要执行的操作。
 
-The expression assigned to the `ionInfinite` event is called when the user reaches that defined distance. When this expression has finished any and all tasks, it should call the `complete()` method on the infinite scroll instance.
+当用户达到该定义距离时，将调用分配给 `ionInfinite` 事件的表达式。当此表达式完成所有任务后，应调用无限滚动实例上的 `complete()` 方法。
 
 import Basic from '@site/static/usage/v6/infinite-scroll/basic/index.md';
 
 <Basic />
 
-## Loading Text and Spinner
+## 加载文本与旋转器
 
-The `ion-infinite-scroll-content` is responsible for the visual display of the infinite scroll interaction. By default this component changes its look depending on the infinite scroll's state. It displays a spinner that looks best based on the platform the user is on. Both the spinner and loading text can be customized by setting properties on the `ion-infinite-scroll-content` component.
+`ion-infinite-scroll-content` 负责无限滚动交互的视觉展示。默认情况下，该组件会根据无限滚动的状态改变其外观。它会显示一个根据用户所在平台优化显示的旋转器。通过设置 `ion-infinite-scroll-content` 组件的属性，可以自定义旋转器和加载文本。
 
 import InfiniteScrollContent from '@site/static/usage/v6/infinite-scroll/infinite-scroll-content/index.md';
 
 <InfiniteScrollContent />
 
-## Custom Content
+## 自定义内容
 
-Separating the `ion-infinite-scroll` and `ion-infinite-scroll-content` components allows developers to create their own content components, if desired. This content can contain anything, from an SVG element to elements with unique CSS animations.
+将 `ion-infinite-scroll` 和 `ion-infinite-scroll-content` 组件分离，允许开发者在需要时创建自己的内容组件。这些内容可以包含任何元素，从 SVG 元素到带有独特 CSS 动画的元素。
 
 import CustomContent from '@site/static/usage/v6/infinite-scroll/custom-infinite-scroll-content/index.md';
 
 <CustomContent />
 
-## Usage with Virtual Scroll
+## 与虚拟滚动结合使用
 
-Infinite scroll requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
+无限滚动需要一个滚动容器才能正常工作。当使用虚拟滚动方案时，您需要禁用 `ion-content` 的滚动，并通过 `.ion-content-scroll-host` 类目标指定哪个元素容器负责滚动容器。
 
 ```html
 <ion-content scroll-y="false">
   <virtual-scroll-element class="ion-content-scroll-host">
-    <!-- Your virtual scroll content -->
+    <!-- 您的虚拟滚动内容 -->
   </virtual-scroll-element>
   <ion-infinite-scroll>
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
@@ -58,19 +58,19 @@ Infinite scroll requires a scroll container to function. When using a virtual sc
 </ion-content>
 ```
 
-## Accessibility
+## 无障碍访问
 
-Developers should assign the `role="feed"` attribute to the scrollable list of items that are added to or removed from as the user scrolls.
+开发者应为可滚动的项目列表分配 `role="feed"` 属性，这些项目会随着用户滚动而添加或移除。
 
-Individual list items should either have `role="article"` or use the `<article>` element directly.
+单个列表项应具有 `role="article"` 属性或直接使用 `<article>` 元素。
 
-For example, when rendering a collection of items in an `ion-list`:
+例如，在 `ion-list` 中渲染项目集合时：
 
 ```html
 <ion-content role="feed">
   <ion-list>
-    <ion-item role="article"> First item </ion-item>
-    <ion-item role="article"> Second item </ion-item>
+    <ion-item role="article"> 第一项 </ion-item>
+    <ion-item role="article"> 第二项 </ion-item>
     ...
   </ion-list>
 
@@ -80,13 +80,13 @@ For example, when rendering a collection of items in an `ion-list`:
 </ion-content>
 ```
 
-Please refer to the [ARIA: feed role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/feed_role) documentation for additional information.
+请参阅 [ARIA：feed 角色](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/feed_role) 文档以获取更多信息。
 
-## Interfaces
+## 接口
 
 ### InfiniteScrollCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但此接口可用于替代 `CustomEvent` 接口，以便为此组件发出的 Ionic 事件提供更强的类型定义。
 
 ```typescript
 interface InfiniteScrollCustomEvent extends CustomEvent {
@@ -94,15 +94,15 @@ interface InfiniteScrollCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -110,10 +110,10 @@ interface InfiniteScrollCustomEvent extends CustomEvent {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

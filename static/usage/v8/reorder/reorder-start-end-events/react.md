@@ -20,29 +20,29 @@ function Example() {
   const iconsRef = useRef<(HTMLIonIconElement | null)[]>([]);
 
   function handleReorderStart() {
-    console.log('Reorder started');
+    console.log('开始重新排序');
 
-    // Hide the icons when the reorder starts
+    // 开始重新排序时隐藏图标
     iconsRef.current.forEach((icon) => {
       if (icon) icon.style.opacity = '0';
     });
   }
 
   function handleReorderEnd(event: ReorderEndCustomEvent) {
-    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+    console.log('从索引', event.detail.from, '拖拽到', event.detail.to);
 
-    // Show the icons again
+    // 重新显示图标
     iconsRef.current.forEach((icon) => {
       if (icon) icon.style.opacity = '1';
     });
 
-    // Finish the reorder and update the items data
+    // 完成重新排序并更新项目数据
     setItems(event.detail.complete(items));
   }
 
   return (
     <IonList>
-      {/* The reorder gesture is disabled by default, enable it to drag and drop items */}
+      {/* 默认禁用重新排序手势，启用后可以拖拽项目 */}
       <IonReorderGroup disabled={false} onIonReorderStart={handleReorderStart} onIonReorderEnd={handleReorderEnd}>
         {items.map((item: TodoItem, i: number) => (
           <IonItem key={item.label}>

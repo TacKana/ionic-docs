@@ -14,9 +14,9 @@ import { logoIonic } from 'ionicons/icons';
 export class ExampleComponent {
   constructor() {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 应用程序中想要使用的任何图标
+     * 都可以在 app.component.ts 中注册，
+     * 然后在整个应用程序中通过名称引用。
      */
     addIcons({ logoIonic });
   }

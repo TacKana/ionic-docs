@@ -1,44 +1,44 @@
 ---
-title: Ionic React Quickstart
-sidebar_label: Quickstart
+title: Ionic React 快速入门
+sidebar_label: 快速入门
 ---
 
 <head>
-  <title>Ionic React Quickstart Using Ionic CLI: React Basics</title>
+  <title>使用 Ionic CLI 的 Ionic React 快速入门：React 基础</title>
   <meta
     name="description"
-    content="Ionic React Quickstart covers the basics of React and Ionic, including any Ionic-specific features. Learn how to build React apps using the Ionic CLI."
+    content="Ionic React 快速入门涵盖了 React 和 Ionic 的基础知识，包括任何 Ionic 特有的功能。学习如何使用 Ionic CLI 构建 React 应用。"
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-Welcome! This guide will walk you through the basics of Ionic React development. You'll learn how to set up your development environment, generate a simple project, explore the project structure, and understand how Ionic components work. This is perfect for getting familiar with Ionic React before building your first real app.
+欢迎！本指南将引导您了解 Ionic React 开发的基础知识。您将学习如何设置开发环境、生成一个简单的项目、探索项目结构，并理解 Ionic 组件的工作原理。这是在构建第一个真实应用之前熟悉 Ionic React 的完美方式。
 
-If you're looking for a high-level overview of what Ionic React is and how it fits into the React ecosystem, see the [Ionic React Overview](overview).
+如果您想了解 Ionic React 是什么以及它在 React 生态系统中的位置，请参阅 [Ionic React 概述](overview)。
 
-## Prerequisites
+## 先决条件
 
-Before you begin, make sure you have Node.js and npm installed on your machine.
-You can check by running:
+在开始之前，请确保您的计算机上已安装 Node.js 和 npm。
+您可以通过运行以下命令来检查：
 
 ```shell
 node -v
 npm -v
 ```
 
-If you don't have Node.js and npm, [download Node.js here](https://nodejs.org/en/download) (which includes npm).
+如果您没有安装 Node.js 和 npm，请 [在此下载 Node.js](https://nodejs.org/en/download)（其中包含 npm）。
 
-## Create a Project with the Ionic CLI
+## 使用 Ionic CLI 创建项目
 
-First, install the latest [Ionic CLI](../cli):
+首先，安装最新的 [Ionic CLI](../cli)：
 
 ```shell
 npm install -g @ionic/cli
 ```
 
-Then, run the following commands to create and run a new project:
+然后，运行以下命令来创建并运行一个新项目：
 
 ```shell
 ionic start myApp blank --type react
@@ -47,13 +47,13 @@ cd myApp
 ionic serve
 ```
 
-After running `ionic serve`, your project will open in the browser.
+运行 `ionic serve` 后，您的项目将在浏览器中打开。
 
-![Screenshot of the Ionic React Home page](/img/guides/quickstart/home-page.png 'Ionic React Home Component')
+![Ionic React 主页截图](/img/guides/quickstart/home-page.png 'Ionic React 主页组件')
 
-## Explore the Project Structure
+## 探索项目结构
 
-Your new app's directory will look like this:
+您新应用的目录结构将如下所示：
 
 ```shell
 └── src/
@@ -68,14 +68,14 @@ Your new app's directory will look like this:
 ```
 
 :::info
-All file paths in the examples below are relative to the project root directory.
+以下示例中的所有文件路径都是相对于项目根目录的。
 :::
 
-Let's walk through these files to understand the app's structure.
+让我们逐一查看这些文件，以了解应用的结构。
 
-## View the App Component
+## 查看 App 组件
 
-The root of your app is defined in `App.tsx`:
+应用的根组件定义在 `App.tsx` 中：
 
 ```tsx title="src/App.tsx"
 import { Redirect, Route } from 'react-router-dom';
@@ -83,7 +83,7 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 
-// ..CSS imports...
+// ..CSS 导入...
 
 setupIonicReact();
 
@@ -105,11 +105,11 @@ const App: React.FC = () => (
 export default App;
 ```
 
-This sets up the root of your application, using Ionic's `IonApp` and `IonReactRouter` components. The `IonRouterOutlet` is where your pages will be displayed.
+这里设置了应用的根结构，使用了 Ionic 的 `IonApp` 和 `IonReactRouter` 组件。`IonRouterOutlet` 是您的页面将显示的位置。
 
-## View Routes
+## 查看路由
 
-Routes are defined within the `IonRouterOutlet` in `App.tsx`:
+路由定义在 `App.tsx` 的 `IonRouterOutlet` 内：
 
 ```tsx title="src/App.tsx"
 <IonRouterOutlet>
@@ -122,11 +122,11 @@ Routes are defined within the `IonRouterOutlet` in `App.tsx`:
 </IonRouterOutlet>
 ```
 
-When you visit the root URL (`/`), the `Home` component will be loaded.
+当您访问根 URL (`/`) 时，`Home` 组件将被加载。
 
-## View the Home Page
+## 查看主页
 
-The Home page component, defined in `Home.tsx`, imports the Ionic components and defines the page template:
+主页组件定义在 `Home.tsx` 中，它导入了 Ionic 组件并定义了页面模板：
 
 ```tsx title="src/pages/Home.tsx"
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -156,19 +156,19 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-This creates a page with a header and scrollable content area. The `IonPage` component provides the basic page structure and must be used on every page. The second header shows a [collapsible large title](/docs/api/title.md#collapsible-large-titles) that displays when at the top of the content, then condenses to show the smaller title in the first header when scrolling down.
+这会创建一个包含页眉和可滚动内容区域的页面。`IonPage` 组件提供了基本的页面结构，必须在每个页面上使用。第二个页眉显示了一个[可折叠大标题](/docs/api/title.md#collapsible-large-titles)，当位于内容顶部时显示，向下滚动时则缩合以显示第一个页眉中的较小标题。
 
-:::tip Learn More
-For detailed information about Ionic layout components, see the [Header](/docs/api/header.md), [Toolbar](/docs/api/toolbar.md), [Title](/docs/api/title.md), and [Content](/docs/api/content.md) documentation.
+:::tip 了解更多
+有关 Ionic 布局组件的详细信息，请参阅 [Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md) 和 [Content](/docs/api/content.md) 文档。
 :::
 
-## Add an Ionic Component
+## 添加 Ionic 组件
 
-You can enhance your Home page with more Ionic UI components. For example, import and add a [Button](/docs/api/button.md) at the end of the `IonContent` in `Home.tsx`:
+您可以使用更多 Ionic UI 组件来增强您的主页。例如，在 `Home.tsx` 的 `IonContent` 末尾导入并添加一个 [Button](/docs/api/button.md)：
 
 ```tsx title="src/pages/Home.tsx"
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-// ...existing imports...
+// ...现有导入...
 
 const Home: React.FC = () => {
   return (
@@ -179,7 +179,7 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        {/* ...existing content... */}
+        {/* ...现有内容... */}
 
         <IonButton>Navigate</IonButton>
       </IonContent>
@@ -190,9 +190,9 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-## Add a New Page
+## 添加新页面
 
-Create a new page at `New.tsx`:
+在 `New.tsx` 创建一个新页面：
 
 ```tsx title="src/pages/New.tsx"
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -222,21 +222,21 @@ const New: React.FC = () => {
 export default New;
 ```
 
-This creates a page with a [Back Button](/docs/api/back-button.md) in the [Toolbar](/docs/api/toolbar.md). The back button will automatically handle navigation back to the previous page, or to `/` if there is no history.
+这会创建一个在 [Toolbar](/docs/api/toolbar.md) 中包含 [Back Button](/docs/api/back-button.md) 的页面。返回按钮将自动处理导航回上一页，如果没有历史记录，则导航到 `/`。
 
 :::warning
-When creating your own pages, always use `IonPage` as the root component. This is essential for proper transitions between pages, base CSS styling that Ionic components depend on, and consistent layout behavior across your app.
+在创建自己的页面时，始终使用 `IonPage` 作为根组件。这对于页面之间的正确过渡、Ionic 组件依赖的基础 CSS 样式以及应用中一致的布局行为至关重要。
 :::
 
-## Navigate to the New Page
+## 导航到新页面
 
-To navigate to the new page, create a route for it by first importing it at the top of `App.tsx` after the `Home` import:
+要导航到新页面，请首先在 `App.tsx` 的顶部导入 `Home` 之后导入它，为其创建路由：
 
 ```tsx title="src/App.tsx"
 import New from './pages/New';
 ```
 
-Then, add its route in `IonRouterOutlet`:
+然后，在 `IonRouterOutlet` 中添加其路由：
 
 ```tsx title="src/App.tsx"
 <IonRouterOutlet>
@@ -252,43 +252,43 @@ Then, add its route in `IonRouterOutlet`:
 </IonRouterOutlet>
 ```
 
-Once that is done, update the button in `Home.tsx`:
+完成后，更新 `Home.tsx` 中的按钮：
 
 ```tsx title="src/pages/Home.tsx"
 <IonButton routerLink="/new">Navigate</IonButton>
 ```
 
 :::info
-Navigating can also be performed programmatically using React Router's `history` prop. See the [React Navigation documentation](/docs/react/navigation.md#navigating-using-history) for more information.
+导航也可以使用 React Router 的 `history` prop 以编程方式执行。有关更多信息，请参阅 [React 导航文档](/docs/react/navigation.md#navigating-using-history)。
 :::
 
-## Add Icons to the New Page
+## 为新页面添加图标
 
-Ionic React comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. You can use any icon by setting the `icon` property of the `IonIcon` component.
+Ionic React 预装了 [Ionicons](https://ionic.io/ionicons/)。您可以通过设置 `IonIcon` 组件的 `icon` 属性来使用任何图标。
 
-Update the imports in `New.tsx` to import `IonIcon` and the `heart` and `logoIonic` icons:
+更新 `New.tsx` 中的导入以导入 `IonIcon` 以及 `heart` 和 `logoIonic` 图标：
 
 ```tsx title="src/pages/New.tsx"
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { heart, logoIonic } from 'ionicons/icons';
 ```
 
-Then, include them inside of the `IonContent`:
+然后，将它们包含在 `IonContent` 内：
 
 ```tsx title="src/pages/New.tsx"
 <IonIcon icon={heart} />
 <IonIcon icon={logoIonic} />
 ```
 
-Note that we are passing the imported SVG reference, **not** the icon name as a string.
+请注意，我们传递的是导入的 SVG 引用，**而不是**字符串形式的图标名称。
 
-For more information, see the [Icon documentation](/docs/api/icon.md) and the [Ionicons documentation](https://ionic.io/ionicons/).
+有关更多信息，请参阅 [Icon 文档](/docs/api/icon.md) 和 [Ionicons 文档](https://ionic.io/ionicons/)。
 
-## Call Component Methods
+## 调用组件方法
 
-Let's add a button that can scroll the content area to the bottom.
+让我们添加一个可以将内容区域滚动到底部的按钮。
 
-Update `New.tsx` to add a `ref` on `IonContent` and a button and some items after the existing icons:
+更新 `New.tsx`，在 `IonContent` 上添加 `ref`，并在现有图标后添加一个按钮和一些项目：
 
 ```tsx title="src/pages/New.tsx"
 <IonContent ref={content}>
@@ -297,7 +297,7 @@ Update `New.tsx` to add a `ref` on `IonContent` and a button and some items afte
 
   <IonButton onClick={scrollToBottom}>Scroll to Bottom</IonButton>
 
-  {/* Add lots of content to make scrolling possible */}
+  {/* 添加大量内容以使滚动成为可能 */}
   {Array.from({ length: 50 }, (_, i) => (
     <IonItem key={i}>
       <IonLabel>Item {i + 1}</IonLabel>
@@ -306,7 +306,7 @@ Update `New.tsx` to add a `ref` on `IonContent` and a button and some items afte
 </IonContent>
 ```
 
-Then, add the imports for the additional components and define the `scrollToBottom` function:
+然后，添加额外组件的导入并定义 `scrollToBottom` 函数：
 
 ```tsx title="src/pages/New.tsx"
 import { useRef } from 'react';
@@ -321,25 +321,25 @@ const New: React.FC = () => {
   };
 
   return (
-    // ...existing template...
+    // ...现有模板...
   );
 };
 
 export default New;
 ```
 
-To call methods on Ionic components:
+要在 Ionic 组件上调用方法：
 
-1. Create a `ref` for the component
-2. Call the method directly on `ref.current`
+1. 为组件创建 `ref`
+2. 直接在 `ref.current` 上调用方法
 
-This pattern is necessary because React refs store the component instance in the `.current` property.
+这种模式是必要的，因为 React refs 将组件实例存储在 `.current` 属性中。
 
-You can find available methods for each component in the [Methods](/docs/api/content.md#methods) section of their API documentation.
+您可以在每个组件的 API 文档的 [Methods](/docs/api/content.md#methods) 部分找到可用的方法。
 
-## Run on a Device
+## 在设备上运行
 
-Ionic's components work everywhere: on iOS, Android, and PWAs. To deploy to mobile, use [Capacitor](https://capacitorjs.com):
+Ionic 的组件可以在任何地方工作：iOS、Android 和 PWA。要部署到移动设备，请使用 [Capacitor](https://capacitorjs.com)：
 
 ```shell
 ionic build
@@ -347,43 +347,43 @@ ionic cap add ios
 ionic cap add android
 ```
 
-Open the native projects in their IDEs:
+在各自的 IDE 中打开原生项目：
 
 ```shell
 ionic cap open ios
 ionic cap open android
 ```
 
-See [Capacitor's Getting Started guide](https://capacitorjs.com/docs/getting-started/with-ionic) for more.
+更多信息请参阅 [Capacitor 入门指南](https://capacitorjs.com/docs/getting-started/with-ionic)。
 
-## Explore More
+## 探索更多
 
-This guide covered the basics of creating an Ionic React app, adding navigation, and introducing Capacitor for native builds. To dive deeper, check out:
+本指南涵盖了创建 Ionic React 应用、添加导航以及引入 Capacitor 进行原生构建的基础知识。要深入了解，请查看：
 
 <DocsCards>
 
-<DocsCard header="Build Your First App" href="your-first-app" icon="/icons/component-content-icon.png">
-  <p>Build a real Photo Gallery app with Ionic React and native device features.</p>
+<DocsCard header="构建您的第一个应用" href="your-first-app" icon="/icons/component-content-icon.png">
+  <p>使用 Ionic React 和原生设备功能构建一个真实的照片库应用。</p>
 </DocsCard>
 
-<DocsCard header="React Documentation" href="https://react.dev/learn" icon="/icons/logo-react-icon.png">
-  <p>Learn more about React's core concepts, tools, and best practices from the official React documentation.</p>
+<DocsCard header="React 文档" href="https://react.dev/learn" icon="/icons/logo-react-icon.png">
+  <p>从官方 React 文档中了解更多关于 React 的核心概念、工具和最佳实践。</p>
 </DocsCard>
 
-<DocsCard header="Navigation" href="navigation" icon="/icons/component-navigation-icon.png">
-  <p>Discover how to handle routing and navigation in Ionic React apps using the React Router.</p>
+<DocsCard header="导航" href="navigation" icon="/icons/component-navigation-icon.png">
+  <p>了解如何使用 React Router 处理 Ionic React 应用中的路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="Components" href="/docs/components" icon="/icons/guide-components-icon.png">
-  <p>Explore Ionic's rich library of UI components for building beautiful apps.</p>
+<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+  <p>探索 Ionic 丰富的 UI 组件库，用于构建美观的应用。</p>
 </DocsCard>
 
-<DocsCard header="Theming" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
-  <p>Learn how to customize the look and feel of your app with Ionic's powerful theming system.</p>
+<DocsCard header="主题" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+  <p>学习如何使用 Ionic 强大的主题系统自定义应用的外观和感觉。</p>
 </DocsCard>
 
-<DocsCard header="Capacitor Documentation" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
-  <p>Explore how to access native device features and deploy your app to iOS, Android, and the web with Capacitor.</p>
+<DocsCard header="Capacitor 文档" href="https://capacitorjs.com/docs/" icon="/icons/guide-capacitor-icon.png">
+  <p>探索如何使用 Capacitor 访问原生设备功能并将您的应用部署到 iOS、Android 和 Web。</p>
 </DocsCard>
 
 </DocsCards>

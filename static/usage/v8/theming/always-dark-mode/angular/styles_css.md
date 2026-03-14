@@ -1,24 +1,22 @@
 ```css
 /*
- * App Global CSS
+ * 应用程序全局 CSS
  * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
+ * 在此处放置要全局应用的样式规则。这些样式适用于整个应用程序而不仅仅是单个组件。
+ * 此外，此文件可用作导入其他 CSS/Sass 文件的入口点，这些文件将被包含在输出的 CSS 中。
+ * 有关全局样式表的更多信息，请访问文档：
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
-/* Core CSS required for Ionic components to work properly */
+/* Ionic 组件正常工作所需的核心 CSS */
 @import '@ionic/angular/css/core.css';
 
-/* Basic CSS for apps built with Ionic */
+/* 使用 Ionic 构建的应用的基础 CSS */
 @import '@ionic/angular/css/normalize.css';
 @import '@ionic/angular/css/structure.css';
 @import '@ionic/angular/css/typography.css';
 
-/* Optional CSS utils that can be commented out */
+/* 可选的 CSS 工具类，可以注释掉 */
 @import '@ionic/angular/css/padding.css';
 @import '@ionic/angular/css/float-elements.css';
 @import '@ionic/angular/css/text-alignment.css';
@@ -27,9 +25,9 @@
 @import '@ionic/angular/css/display.css';
 
 /**
- * Ionic Dark Palette
+ * Ionic 深色主题调色板
  * -----------------------------------------------------
- * For more information, please see:
+ * 有关更多信息，请参阅：
  * https://ionicframework.com/docs/theming/dark-mode
  */
 

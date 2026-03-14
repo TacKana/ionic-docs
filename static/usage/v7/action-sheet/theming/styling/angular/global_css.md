@@ -1,5 +1,5 @@
 ```css
-/* Note: These styles should be located in your global stylesheet */
+/* 注意：这些样式应放置在你的全局样式表中 */
 ion-action-sheet.my-custom-class .action-sheet-group {
   background: #f58840;
 }

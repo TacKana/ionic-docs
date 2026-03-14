@@ -1,12 +1,12 @@
 ```html
 <form id="my-form">
-  <ion-checkbox helper-text="Agree to the terms before continuing" error-text="You must agree to the terms to continue">
-    I agree to the terms and conditions
+  <ion-checkbox helper-text="继续前请同意条款" error-text="必须同意条款才能继续">
+    我同意相关条款和条件
   </ion-checkbox>
 
   <br />
 
-  <ion-button type="submit" size="small">Submit</ion-button>
+  <ion-button type="submit" size="small">提交</ion-button>
 </form>
 
 <script>

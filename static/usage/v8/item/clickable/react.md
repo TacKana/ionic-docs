@@ -6,19 +6,19 @@ function Example() {
   return (
     <>
       <IonItem href="#">
-        <IonLabel>Anchor Item</IonLabel>
+        <IonLabel>锚点项目</IonLabel>
       </IonItem>
 
       <IonItem href="#" disabled={true}>
-        <IonLabel>Disabled Anchor Item</IonLabel>
+        <IonLabel>已禁用的锚点项目</IonLabel>
       </IonItem>
 
       <IonItem button>
-        <IonLabel>Button Item</IonLabel>
+        <IonLabel>按钮项目</IonLabel>
       </IonItem>
 
       <IonItem button disabled={true}>
-        <IonLabel>Disabled Button Item</IonLabel>
+        <IonLabel>已禁用的按钮项目</IonLabel>
       </IonItem>
     </>
   );

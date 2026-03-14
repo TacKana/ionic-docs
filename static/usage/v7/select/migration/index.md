@@ -15,125 +15,125 @@ import TabItem from '@theme/TabItem';
 <TabItem value="javascript">
 
 ```html
-<!-- Label and Label Position -->
+<!-- 标签与标签位置 -->
 
-<!-- Before -->
+<!-- 迁移前 -->
 <ion-item>
-  <ion-label position="floating">Favorite Fruit:</ion-label>
+  <ion-label position="floating">最爱的水果:</ion-label>
   <ion-select>...</ion-select>
 </ion-item>
 
-<!-- After -->
+<!-- 迁移后 -->
 <ion-item>
-  <ion-select label="Favorite Fruit:" label-placement="floating">...</ion-select>
+  <ion-select label="最爱的水果:" label-placement="floating">...</ion-select>
 </ion-item>
 
 
-<!-- Fill -->
+<!-- 填充样式 -->
 
-<!-- Before -->
+<!-- 迁移前 -->
 <ion-item fill="outline" shape="round">
-  <ion-label position="floating">Favorite Fruit:</ion-label>
+  <ion-label position="floating">最爱的水果:</ion-label>
   <ion-select>...</ion-select>
 </ion-item>
 
-<!-- After -->
+<!-- 迁移后 -->
 
-<!-- Inputs using `fill` should not be placed in ion-item -->
-<ion-select fill="outline" shape="round" label="Favorite Fruit:" label-placement="floating">...</ion-select>
+<!-- 使用 `fill` 属性的输入组件不应放在 ion-item 中 -->
+<ion-select fill="outline" shape="round" label="最爱的水果:" label-placement="floating">...</ion-select>
 ```
 </TabItem>
 <TabItem value="angular">
 
 ```html
-<!-- Label and Label Position -->
+<!-- 标签与标签位置 -->
 
-<!-- Before -->
+<!-- 迁移前 -->
 <ion-item>
-  <ion-label position="floating">Favorite Fruit:</ion-label>
+  <ion-label position="floating">最爱的水果:</ion-label>
   <ion-select>...</ion-select>
 </ion-item>
 
-<!-- After -->
+<!-- 迁移后 -->
 <ion-item>
-  <ion-select label="Favorite Fruit:" labelPlacement="floating">...</ion-select>
+  <ion-select label="最爱的水果:" labelPlacement="floating">...</ion-select>
 </ion-item>
 
 
-<!-- Fill -->
+<!-- 填充样式 -->
 
-<!-- Before -->
+<!-- 迁移前 -->
 <ion-item fill="outline" shape="round">
-  <ion-label position="floating">Favorite Fruit:</ion-label>
+  <ion-label position="floating">最爱的水果:</ion-label>
   <ion-select>...</ion-select>
 </ion-item>
 
-<!-- After -->
+<!-- 迁移后 -->
 
-<!-- Inputs using `fill` should not be placed in ion-item -->
-<ion-select fill="outline" shape="round" label="Favorite Fruit:" labelPlacement="floating">...</ion-select>
+<!-- 使用 `fill` 属性的输入组件不应放在 ion-item 中 -->
+<ion-select fill="outline" shape="round" label="最爱的水果:" labelPlacement="floating">...</ion-select>
 ```
 </TabItem>
 <TabItem value="react">
 
 ```tsx
-{/* Label and Label Position */}
+{/* 标签与标签位置 */}
 
-{/* Before */}
+{/* 迁移前 */}
 <IonItem>
-  <IonLabel position="floating">Favorite Fruit:</IonLabel>
+  <IonLabel position="floating">最爱的水果:</IonLabel>
   <IonSelect>...</IonSelect>
 </IonItem>
 
-{/* After */}
+{/* 迁移后 */}
 <IonItem>
-  <IonSelect label="Favorite Fruit:" labelPlacement="floating">...</IonSelect>
+  <IonSelect label="最爱的水果:" labelPlacement="floating">...</IonSelect>
 </IonItem>
 
 
-{/* Fill */}
+{/* 填充样式 */}
 
-{/* Before */}
+{/* 迁移前 */}
 <IonItem fill="outline" shape="round">
-  <IonLabel position="floating">Favorite Fruit:</IonLabel>
+  <IonLabel position="floating">最爱的水果:</IonLabel>
   <IonSelect>...</IonSelect>
 </IonItem>
 
-{/* After */}
+{/* 迁移后 */}
 
-{/* Inputs using `fill` should not be placed in IonItem */}
-<IonSelect fill="outline" shape="round" label="Favorite Fruit:" labelPlacement="floating">...</IonSelect>
+{/* 使用 `fill` 属性的输入组件不应放在 IonItem 中 */}
+<IonSelect fill="outline" shape="round" label="最爱的水果:" labelPlacement="floating">...</IonSelect>
 ```
 </TabItem>
 <TabItem value="vue">
 
 ```html
-<!-- Label and Label Position -->
+<!-- 标签与标签位置 -->
 
-<!-- Before -->
+<!-- 迁移前 -->
 <ion-item>
-  <ion-label position="floating">Favorite Fruit:</ion-label>
+  <ion-label position="floating">最爱的水果:</ion-label>
   <ion-select>...</ion-select>
 </ion-item>
 
-<!-- After -->
+<!-- 迁移后 -->
 <ion-item>
-  <ion-select label="Favorite Fruit:" label-placement="floating">...</ion-select>
+  <ion-select label="最爱的水果:" label-placement="floating">...</ion-select>
 </ion-item>
 
 
-<!-- Fill -->
+<!-- 填充样式 -->
 
-<!-- Before -->
+<!-- 迁移前 -->
 <ion-item fill="outline" shape="round">
-  <ion-label position="floating">Favorite Fruit:</ion-label>
+  <ion-label position="floating">最爱的水果:</ion-label>
   <ion-select>...</ion-select>
 </ion-item>
 
-<!-- After -->
+<!-- 迁移后 -->
 
-<!-- Inputs using `fill` should not be placed in ion-item -->
-<ion-select fill="outline" shape="round" label="Favorite Fruit:" label-placement="floating">...</ion-select>
+<!-- 使用 `fill` 属性的输入组件不应放在 ion-item 中 -->
+<ion-select fill="outline" shape="round" label="最爱的水果:" label-placement="floating">...</ion-select>
 ```
 </TabItem>
 </Tabs>

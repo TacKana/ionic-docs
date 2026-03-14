@@ -4,23 +4,23 @@ sidebar_label: 'config set'
 
 # ionic config set
 
-Set config values
+设置配置值
 
 ```shell
 ionic config set [options]
 ```
 
-This command writes configuration values to the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.
+此命令将配置值写入项目的 **./ionic.config.json** 文件。也可以使用 `--global` 选项操作全局 CLI 配置 (**~/.ionic/config.json**)。
 
-For nested properties, separate nest levels with dots. For example, the property name `integrations.cordova` will look in the **integrations** object for the **cordova** property.
+对于嵌套属性，请使用点号分隔嵌套层级。例如，属性名 `integrations.cordova` 会在 **integrations** 对象中查找 **cordova** 属性。
 
-For multi-app projects, this command is scoped to the current project by default. To operate at the root of the project configuration file instead, use the `--root` option.
+对于多应用项目，此命令默认作用于当前项目。如需在项目配置文件根目录操作，请使用 `--root` 选项。
 
-This command will attempt to coerce `value` into a suitable JSON type. If it is JSON-parsable, such as `123`, `true`, `[]`, etc., then it takes the parsed result. Otherwise, the value is interpreted as a string. For stricter input, use `--json`, which will error with non-JSON values.
+此命令会尝试将 `value` 转换为合适的 JSON 类型。如果值可被 JSON 解析（如 `123`、`true`、`[]` 等），则采用解析结果；否则将值解释为字符串。如需更严格的输入处理，请使用 `--json` 选项，该选项会在遇到非 JSON 值时报错。
 
-By default, if `property` exists and is an object or an array, the value is not overwritten. To disable this check and always overwrite the property, use `--force`.
+默认情况下，如果 `property` 已存在且为对象或数组，则不会覆盖该值。要禁用此检查并始终覆盖属性，请使用 `--force` 选项。
 
-## Examples
+## 使用示例
 
 ```shell
 $ ionic config set name newAppName
@@ -28,7 +28,7 @@ $ ionic config set name "\"newAppName\"" --json
 $ ionic config set -g interactive false
 ```
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -40,9 +40,9 @@ $ ionic config set -g interactive false
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>The property name you wish to set</p>
+        <p>要设置的属性名称</p>
       </td>
     </tr>
   </tbody>
@@ -55,15 +55,15 @@ $ ionic config set -g interactive false
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>The new value of the given property</p>
+        <p>指定属性的新值</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -79,13 +79,13 @@ $ ionic config set -g interactive false
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Use global CLI config</p>
+        <p>使用全局 CLI 配置</p>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-g</code>
       </td>
@@ -93,7 +93,7 @@ $ ionic config set -g interactive false
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -109,11 +109,11 @@ $ ionic config set -g interactive false
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
           <p>
-            Always interpret <code>value</code> as JSON
+            始终将 <code>value</code> 解释为 JSON
           </p>
         </div>
       </td>
@@ -132,10 +132,10 @@ $ ionic config set -g interactive false
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Always overwrite existing values</p>
+          <p>始终覆盖现有值</p>
         </div>
       </td>
     </tr>
@@ -153,11 +153,11 @@ $ ionic config set -g interactive false
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
           <p>
-            Operate on root of <strong>./ionic.config.json</strong>
+            在 <strong>./ionic.config.json</strong> 根目录操作
           </p>
         </div>
       </td>

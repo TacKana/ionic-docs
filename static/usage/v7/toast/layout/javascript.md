@@ -1,15 +1,15 @@
 ```html
-<ion-button id="open-inline-toast">Open Baseline Layout Toast</ion-button>
-<ion-button id="open-stacked-toast">Open Stacked Layout Toast</ion-button>
+<ion-button id="open-inline-toast">打开基线布局提示</ion-button>
+<ion-button id="open-stacked-toast">打开堆叠布局提示</ion-button>
 <ion-toast
   trigger="open-inline-toast"
   duration="3000"
-  message="This is a toast with a long message and a button that appears on the same line."
+  message="这是一个带有长消息的操作提示，按钮与消息显示在同一行。"
 ></ion-toast>
 <ion-toast
   trigger="open-stacked-toast"
   duration="3000"
-  message="This is a toast with a long message and a button that appears on the next line."
+  message="这是一个带有长消息的操作提示，按钮显示在下一行。"
   layout="stacked"
 ></ion-toast>
 

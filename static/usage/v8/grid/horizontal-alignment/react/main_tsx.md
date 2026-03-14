@@ -7,7 +7,7 @@ import './main.css';
 function Example() {
   return (
     <>
-      <b>Columns aligned at the start</b>
+      <b>列在起始位置对齐</b>
       <IonGrid>
         <IonRow class="ion-justify-content-start">
           <IonCol size="3">1</IonCol>
@@ -15,7 +15,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>Columns aligned at the center</b>
+      <b>列在中心位置对齐</b>
       <IonGrid>
         <IonRow class="ion-justify-content-center">
           <IonCol size="3">1</IonCol>
@@ -23,7 +23,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>Columns aligned at the end</b>
+      <b>列在结束位置对齐</b>
       <IonGrid>
         <IonRow class="ion-justify-content-end">
           <IonCol size="3">1</IonCol>
@@ -31,7 +31,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>Columns aligned with space around</b>
+      <b>列周围空间均匀分布</b>
       <IonGrid>
         <IonRow class="ion-justify-content-around">
           <IonCol size="3">1</IonCol>
@@ -39,7 +39,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>Columns aligned with space between</b>
+      <b>列之间空间均匀分布</b>
       <IonGrid>
         <IonRow class="ion-justify-content-between">
           <IonCol size="3">1</IonCol>

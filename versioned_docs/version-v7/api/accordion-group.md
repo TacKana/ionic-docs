@@ -13,11 +13,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Accordion group is a container for accordion instances. It manages the state of the accordions and provides keyboard navigation.
+手风琴组（accordion group）是手风琴（accordion）实例的容器。它负责管理手风琴的状态，并提供键盘导航功能。
 
-See the [Accordion](./accordion) documentation for more information.
+更多信息请参阅[手风琴（Accordion）](./accordion)文档。
 
-## Interfaces
+## 接口
 
 ### AccordionGroupChangeEventDetail
 
@@ -29,7 +29,7 @@ interface AccordionGroupChangeEventDetail<T = any> {
 
 ### AccordionGroupCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便在使用此组件发出的 Ionic 事件时获得更强的类型支持。
 
 ```typescript
 interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
@@ -38,15 +38,15 @@ interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -54,10 +54,10 @@ interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

@@ -1,7 +1,7 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Example</ion-title>
+    <ion-title>示例</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content color="light">
@@ -11,7 +11,7 @@
         <ion-avatar aria-hidden="true" slot="start">
           <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </ion-avatar>
-        <ion-label>Rick Astley</ion-label>
+        <ion-label>瑞克·阿斯特利</ion-label>
       </ion-item>
       <ion-item-options slot="end">
         <ion-item-option color="warning">
@@ -31,7 +31,7 @@
         <ion-avatar aria-hidden="true" slot="start">
           <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </ion-avatar>
-        <ion-label>Leeroy Jenkins</ion-label>
+        <ion-label>李罗伊·詹金斯</ion-label>
       </ion-item>
       <ion-item-options slot="end">
         <ion-item-option color="warning">
@@ -71,7 +71,7 @@
         <ion-avatar aria-hidden="true" slot="start">
           <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </ion-avatar>
-        <ion-label>Wall-E</ion-label>
+        <ion-label>瓦力</ion-label>
       </ion-item>
       <ion-item-options slot="end">
         <ion-item-option color="warning">
@@ -91,7 +91,7 @@
         <ion-avatar aria-hidden="true" slot="start">
           <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </ion-avatar>
-        <ion-label>Cortana</ion-label>
+        <ion-label>科塔娜</ion-label>
       </ion-item>
       <ion-item-options slot="end">
         <ion-item-option color="warning">
@@ -111,7 +111,7 @@
         <ion-avatar aria-hidden="true" slot="start">
           <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </ion-avatar>
-        <ion-label>Bender</ion-label>
+        <ion-label>班德</ion-label>
       </ion-item>
       <ion-item-options slot="end">
         <ion-item-option color="warning">

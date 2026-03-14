@@ -1,6 +1,6 @@
 ```html
 <ion-content class="ion-padding">
-  <h1>Scroll to fire the scroll events and view them in the console.</h1>
+  <h1>滚动以触发滚动事件，并在控制台中查看它们。</h1>
 
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum in
@@ -51,8 +51,8 @@
 
 <script>
   const content = document.querySelector('ion-content');
-  // Scroll events are disabled by default for content for
-  // performance reasons, enable them to listen to them
+  // 出于性能考虑，内容的滚动事件默认是禁用的，
+  // 启用它们以便监听这些事件
   content.scrollEvents = true;
 
   content.addEventListener('ionScrollStart', () => console.log('scroll start'));

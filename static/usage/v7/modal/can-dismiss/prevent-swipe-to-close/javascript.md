@@ -6,20 +6,20 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-button id="open-modal" expand="block">Open</ion-button>
+    <ion-button id="open-modal" expand="block">打开</ion-button>
 
     <ion-modal trigger="open-modal">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Modal</ion-title>
+          <ion-title>模态框</ion-title>
           <ion-buttons slot="end">
-            <ion-button onclick="dismiss()">Close</ion-button>
+            <ion-button onclick="dismiss()">关闭</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
         <p>
-          To close this modal, please use the "Close" button provided. Note that swiping the modal will not dismiss it.
+          请使用提供的“关闭”按钮来关闭此模态框。请注意，滑动模态框不会使其关闭。
         </p>
       </ion-content>
     </ion-modal>

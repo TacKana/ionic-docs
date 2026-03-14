@@ -19,7 +19,7 @@ function Example() {
   const input = useRef<HTMLIonInputElement>(null);
 
   const [message, setMessage] = useState(
-    'This modal example uses triggers to automatically open a modal when the button is clicked.'
+    '此模态框示例使用触发器，在按钮被点击时自动打开模态框。'
   );
 
   function confirm() {
@@ -28,7 +28,7 @@ function Example() {
 
   function onWillDismiss(event: CustomEvent<OverlayEventDetail>) {
     if (event.detail.role === 'confirm') {
-      setMessage(`Hello, ${event.detail.data}!`);
+      setMessage(`你好，${event.detail.data}！`);
     }
   }
 
@@ -36,24 +36,24 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Inline Modal</IonTitle>
+          <IonTitle>内联模态框</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          Open
+          打开
         </IonButton>
         <p>{message}</p>
         <IonModal ref={modal} trigger="open-modal" onWillDismiss={(event) => onWillDismiss(event)}>
           <IonHeader>
             <IonToolbar>
               <IonButtons slot="start">
-                <IonButton onClick={() => modal.current?.dismiss()}>Cancel</IonButton>
+                <IonButton onClick={() => modal.current?.dismiss()}>取消</IonButton>
               </IonButtons>
-              <IonTitle>Welcome</IonTitle>
+              <IonTitle>欢迎</IonTitle>
               <IonButtons slot="end">
                 <IonButton strong={true} onClick={() => confirm()}>
-                  Confirm
+                  确认
                 </IonButton>
               </IonButtons>
             </IonToolbar>
@@ -61,11 +61,11 @@ function Example() {
           <IonContent className="ion-padding">
             <IonItem>
               <IonInput
-                label="Enter your name"
+                label="输入您的姓名"
                 labelPlacement="stacked"
                 ref={input}
                 type="text"
-                placeholder="Your name"
+                placeholder="您的姓名"
               />
             </IonItem>
           </IonContent>

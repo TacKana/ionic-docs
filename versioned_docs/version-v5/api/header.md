@@ -1,6 +1,6 @@
 ---
-title: 'ion-header: Header Parent Component for Ionic Framework Apps'
-description: "Ion-header is a parent component that holds the toolbar. It's important to note that ion-header needs to be the one of the three root elements of a page."
+title: 'ion-header: Ionic 框架应用中的顶部栏父组件'
+description: 'ion-header 是一个包含工具栏的父组件。需要注意的是，ion-header 必须是页面的三个根元素之一。'
 sidebar_label: 'ion-header'
 ---
 
@@ -16,10 +16,10 @@ import Slots from '@ionic-internal/component-api/v5/header/slots.md';
 
 # ion-header
 
-Header is a parent component that holds the toolbar component.
-It's important to note that ion-header needs to be the one of the three root elements of a page
+Header 是一个包含工具栏组件的父组件。
+需要注意的是，ion-header 必须是页面的三个根元素之一。
 
-## Usage
+## 使用方式
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -31,25 +31,25 @@ It's important to note that ion-header needs to be the one of the three root ele
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>My Navigation Bar</ion-title>
+    <ion-title>我的导航栏</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
-    <ion-title>Subheader</ion-title>
+    <ion-title>副标题栏</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<!-- Header without a border -->
+<!-- 无边框的 Header -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>Header - No Border</ion-title>
+    <ion-title>Header - 无边框</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">My Navigation Bar</ion-title>
+      <ion-title size="large">我的导航栏</ion-title>
     </ion-toolbar>
   </ion-header>
 </ion-content>
@@ -65,25 +65,25 @@ It's important to note that ion-header needs to be the one of the three root ele
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>My Navigation Bar</ion-title>
+    <ion-title>我的导航栏</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
-    <ion-title>Subheader</ion-title>
+    <ion-title>副标题栏</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<!-- Header without a border -->
+<!-- 无边框的 Header -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>Header - No Border</ion-title>
+    <ion-title>Header - 无边框</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">My Navigation Bar</ion-title>
+      <ion-title size="large">我的导航栏</ion-title>
     </ion-toolbar>
   </ion-header>
 </ion-content>
@@ -104,25 +104,25 @@ export const HeaderExample: React.FC = () => (
         <IonButtons slot="start">
           <IonBackButton defaultHref="/" />
         </IonButtons>
-        <IonTitle>My Navigation Bar</IonTitle>
+        <IonTitle>我的导航栏</IonTitle>
       </IonToolbar>
 
       <IonToolbar>
-        <IonTitle>Subheader</IonTitle>
+        <IonTitle>副标题栏</IonTitle>
       </IonToolbar>
     </IonHeader>
 
-    {/*-- Header without a border --*/}
+    {/*-- 无边框的 Header --*/}
     <IonHeader className="ion-no-border">
       <IonToolbar>
-        <IonTitle>Header - No Border</IonTitle>
+        <IonTitle>Header - 无边框</IonTitle>
       </IonToolbar>
     </IonHeader>
 
     <IonContent>
       <IonHeader collapse="condense">
         <IonToolbar>
-          <IonTitle size="large">My Navigation Bar</IonTitle>
+          <IonTitle size="large">我的导航栏</IonTitle>
         </IonToolbar>
       </IonHeader>
     </IonContent>
@@ -149,25 +149,25 @@ export class HeaderExample {
           <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
           </ion-buttons>
-          <ion-title>My Navigation Bar</ion-title>
+          <ion-title>我的导航栏</ion-title>
         </ion-toolbar>
 
         <ion-toolbar>
-          <ion-title>Subheader</ion-title>
+          <ion-title>副标题栏</ion-title>
         </ion-toolbar>
       </ion-header>,
 
-      // Header without a border
+      // 无边框的 Header
       <ion-header class="ion-no-border">
         <ion-toolbar>
-          <ion-title>Header - No Border</ion-title>
+          <ion-title>Header - 无边框</ion-title>
         </ion-toolbar>
       </ion-header>,
 
       <ion-content>
         <ion-header collapse="condense">
           <ion-toolbar>
-            <ion-title size="large">My Navigation Bar</ion-title>
+            <ion-title size="large">我的导航栏</ion-title>
           </ion-toolbar>
         </ion-header>
       </ion-content>,
@@ -187,25 +187,25 @@ export class HeaderExample {
       <ion-buttons slot="start">
         <ion-back-button></ion-back-button>
       </ion-buttons>
-      <ion-title>My Navigation Bar</ion-title>
+      <ion-title>我的导航栏</ion-title>
     </ion-toolbar>
 
     <ion-toolbar>
-      <ion-title>Subheader</ion-title>
+      <ion-title>副标题栏</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <!-- Header without a border -->
+  <!-- 无边框的 Header -->
   <ion-header class="ion-no-border">
     <ion-toolbar>
-      <ion-title>Header - No Border</ion-title>
+      <ion-title>Header - 无边框</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-header collapse="condense">
       <ion-toolbar>
-        <ion-title size="large">My Navigation Bar</ion-title>
+        <ion-title size="large">我的导航栏</ion-title>
       </ion-toolbar>
     </ion-header>
   </ion-content>
@@ -232,15 +232,15 @@ export class HeaderExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -248,10 +248,10 @@ export class HeaderExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

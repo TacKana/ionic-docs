@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="showLoading">Show Loading</ion-button>
+  <ion-button @click="showLoading">显示加载</ion-button>
 </template>
 
 <script setup lang="ts">
@@ -8,7 +8,7 @@
 
   const showLoading = async () => {
     const loading = await loadingController.create({
-      message: 'Dismissing after 3 seconds...',
+      message: '将在3秒后关闭...',
       duration: 3000,
     });
 

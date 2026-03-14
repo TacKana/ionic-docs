@@ -20,9 +20,8 @@ export class ExampleComponent {
   }
 
   onSubmit() {
-    // Mark the control as touched to trigger the error message.
-    // This is needed if the user submits the form without interacting
-    // with the select.
+    // 将控件标记为已触摸，以触发错误消息。
+    // 如果用户在未与选择器交互的情况下提交表单，则需要此操作。
     this.myForm.get('favFruit')!.markAsTouched();
   }
 }

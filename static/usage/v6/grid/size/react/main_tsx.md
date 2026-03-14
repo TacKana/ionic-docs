@@ -8,7 +8,7 @@ function Example() {
   return (
     <>
       <b>
-        Column 2 has <code>size</code> set to <code>"8"</code>
+        第二列的 <code>size</code> 设置为 <code>"8"</code>
       </b>
       <IonGrid>
         <IonRow>
@@ -19,7 +19,7 @@ function Example() {
       </IonGrid>
 
       <b>
-        Columns 3 & 4 have <code>size</code> set to <code>"3"</code>
+        第三列和第四列的 <code>size</code> 设置为 <code>"3"</code>
       </b>
       <IonGrid>
         <IonRow>
@@ -33,7 +33,7 @@ function Example() {
       </IonGrid>
 
       <b>
-        Columns 1 & 2 have <code>size</code> set to <code>"4"</code>
+        第一列和第二列的 <code>size</code> 设置为 <code>"4"</code>
       </b>
       <IonGrid>
         <IonRow>

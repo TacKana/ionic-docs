@@ -1,16 +1,15 @@
 ```css
-/* Shared styles for all ranges */
+/* 适用于所有滑块的通用样式 */
 ion-range {
   --knob-size: 34px;
 }
 
 ion-range::part(knob) {
   background: #fff;
-
   box-sizing: border-box;
 }
 
-/* Hide the Material Design indicator */
+/* 隐藏 Material Design 指示器 */
 ion-range::part(knob)::before {
   display: none;
 }
@@ -26,7 +25,7 @@ ion-range::part(tick-active) {
   top: 17px;
 }
 
-/* Single Knob Range */
+/* 单滑块范围 */
 #range-single::part(bar),
 #range-single::part(tick) {
   background: #bed4ff;
@@ -50,7 +49,7 @@ ion-range::part(tick-active) {
   background: #40a2fd;
 }
 
-/* Dual Knobs (A/B) Range */
+/* 双滑块（A/B）范围 */
 #range-a-b::part(bar-active) {
   background: #1ea9ca;
 }
@@ -81,7 +80,7 @@ ion-range::part(tick-active) {
   background: #2dc2bd;
 }
 
-/* Dual Knobs (Lower/Upper) Range */
+/* 双滑块（下限/上限）范围 */
 #range-lower-upper::part(bar-active) {
   background: linear-gradient(to right, #0059ff 0%, #b77bff 100%);
 }

@@ -7,9 +7,9 @@ function Example() {
     <>
       <IonItem>
         <IonThumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+          <img alt="山的剪影" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
         </IonThumbnail>
-        <IonLabel>Item Thumbnail</IonLabel>
+        <IonLabel>带缩略图的列表项</IonLabel>
       </IonItem>
     </>
   );

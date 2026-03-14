@@ -17,7 +17,7 @@ function Example() {
     <>
       {loaded && (
         <IonList>
-          <IonListHeader>Albums</IonListHeader>
+          <IonListHeader>专辑</IonListHeader>
           <IonItem>
             <IonThumbnail slot="start">
               <IonIcon style={{ width: '100%', height: '100%' }} icon={musicalNotes}></IonIcon>
@@ -53,7 +53,7 @@ function Example() {
           </IonItem>
         </IonList>
       )}
-      <IonButton onClick={() => setLoaded(!loaded)}>Toggle</IonButton>
+      <IonButton onClick={() => setLoaded(!loaded)}>切换</IonButton>
     </>
   );
 }

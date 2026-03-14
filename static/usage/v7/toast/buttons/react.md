@@ -5,28 +5,28 @@ import { IonButton, IonToast } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton id="open-toast">Open Toast</IonButton>
+      <IonButton id="open-toast">打开提示框</IonButton>
       <IonToast
         trigger="open-toast"
-        message="Hello World!"
+        message="你好，世界！"
         duration={3000}
         buttons={[
           {
-            text: 'More Info',
+            text: '更多信息',
             role: 'info',
             handler: () => {
-              console.log('More Info clicked');
+              console.log('更多信息被点击');
             },
           },
           {
-            text: 'Dismiss',
+            text: '关闭',
             role: 'cancel',
             handler: () => {
-              console.log('Dismiss clicked');
+              console.log('关闭被点击');
             },
           },
         ]}
-        onDidDismiss={(e: CustomEvent) => console.log(`Dismissed with role: ${e.detail.role}`)}
+        onDidDismiss={(e: CustomEvent) => console.log(`提示框关闭，角色：${e.detail.role}`)}
       ></IonToast>
     </>
   );

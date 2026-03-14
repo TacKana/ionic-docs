@@ -1,6 +1,6 @@
 ```html
 <template>
-  <b>Column 1 has <code>size</code> set to <code>"auto"</code></b>
+  <b>列 1 的 <code>size</code> 属性设置为 <code>"auto"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col size="auto">1</ion-col>
@@ -9,7 +9,7 @@
     </ion-row>
   </ion-grid>
 
-  <b>Column 3 contains an input and has <code>size</code> set to <code>"auto"</code></b>
+  <b>列 3 包含一个输入框，且 <code>size</code> 属性设置为 <code>"auto"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col>1</ion-col>
@@ -23,7 +23,7 @@
     </ion-row>
   </ion-grid>
 
-  <b>Column 2 has <code>size</code> set to <code>"auto"</code> and a defined width</b>
+  <b>列 2 的 <code>size</code> 属性设置为 <code>"auto"</code>，并且定义了宽度</b>
   <ion-grid>
     <ion-row>
       <ion-col>1</ion-col>

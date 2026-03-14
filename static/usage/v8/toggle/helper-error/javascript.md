@@ -1,7 +1,7 @@
 ```html
 <ion-toggle
-  helper-text="Enable to connect to available networks"
-  error-text="Must be enabled to access the internet"
+  helper-text="启用以连接可用网络"
+  error-text="必须启用才能访问互联网"
   justify="space-between"
   checked
 >

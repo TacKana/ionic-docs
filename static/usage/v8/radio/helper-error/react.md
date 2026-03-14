@@ -31,23 +31,23 @@ function Example() {
           className={`${isValid ? 'ion-valid' : ''} ${isValid === false ? 'ion-invalid' : ''} ${
             isTouched ? 'ion-touched' : ''
           }`}
-          helperText="Select your favorite fruit"
-          errorText="This field is required"
+          helperText="选择你最喜欢的水果"
+          errorText="此字段为必填项"
           onIonChange={(event) => validateRadioGroup(event)}
         >
-          <IonRadio value="grapes">Grapes</IonRadio>
+          <IonRadio value="grapes">葡萄</IonRadio>
           <br />
-          <IonRadio value="strawberries">Strawberries</IonRadio>
+          <IonRadio value="strawberries">草莓</IonRadio>
           <br />
-          <IonRadio value="pineapple">Pineapple</IonRadio>
+          <IonRadio value="pineapple">菠萝</IonRadio>
           <br />
-          <IonRadio value="cherries">Cherries</IonRadio>
+          <IonRadio value="cherries">樱桃</IonRadio>
         </IonRadioGroup>
 
         <br />
 
         <IonButton type="submit" size="small">
-          Submit
+          提交
         </IonButton>
       </form>
     </>

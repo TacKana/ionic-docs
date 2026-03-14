@@ -1,10 +1,10 @@
 ```html
 <template>
   <ion-breadcrumbs>
-    <ion-breadcrumb href="#home">Home</ion-breadcrumb>
-    <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>
-    <ion-breadcrumb href="#cameras">Cameras</ion-breadcrumb>
-    <ion-breadcrumb href="#film">Film</ion-breadcrumb>
+    <ion-breadcrumb href="#home">首页</ion-breadcrumb>
+    <ion-breadcrumb href="#electronics">电子产品</ion-breadcrumb>
+    <ion-breadcrumb href="#cameras">相机</ion-breadcrumb>
+    <ion-breadcrumb href="#film">胶片相机</ion-breadcrumb>
   </ion-breadcrumbs>
 </template>
 

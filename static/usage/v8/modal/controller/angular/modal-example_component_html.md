@@ -2,11 +2,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+      <ion-button color="medium" (click)="cancel()">取消</ion-button>
     </ion-buttons>
-    <ion-title>Welcome</ion-title>
+    <ion-title>欢迎</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+      <ion-button (click)="confirm()" [strong]="true">确认</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

@@ -16,19 +16,18 @@ import Slots from '@ionic-internal/component-api/v5/list/slots.md';
 
 # ion-list
 
-Lists are made up of multiple rows of items which can contain text, buttons, toggles,
-icons, thumbnails, and much more. Lists generally contain items with similar data content, such as images and text.
+列表由多行项目组成，可以包含文本、按钮、开关、图标、缩略图等多种元素。列表通常包含具有相似数据内容的项目，例如图片和文本。
 
-Lists support several interactions including swiping items to reveal options, dragging to reorder items within the list, and deleting items.
+列表支持多种交互操作，包括滑动项目以显示选项、拖拽重新排序列表中的项目以及删除项目。
 
-## Usage
+## 使用方式
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- List of Text Items -->
+<!-- 文本项目列表 -->
 <ion-list>
   <ion-item>
     <ion-label>Pokémon Yellow</ion-label>
@@ -47,7 +46,7 @@ Lists support several interactions including swiping items to reveal options, dr
   </ion-item>
 </ion-list>
 
-<!-- List of Input Items -->
+<!-- 输入项目列表 -->
 <ion-list>
   <ion-item>
     <ion-label>Input</ion-label>
@@ -67,7 +66,7 @@ Lists support several interactions including swiping items to reveal options, dr
   </ion-item>
 </ion-list>
 
-<!-- List of Sliding Items -->
+<!-- 可滑动项目列表 -->
 <ion-list>
   <ion-item-sliding>
     <ion-item>
@@ -94,7 +93,7 @@ Lists support several interactions including swiping items to reveal options, dr
 <TabItem value="javascript">
 
 ```html
-<!-- List of Text Items -->
+<!-- 文本项目列表 -->
 <ion-list>
   <ion-item>
     <ion-label>Pokémon Yellow</ion-label>
@@ -113,7 +112,7 @@ Lists support several interactions including swiping items to reveal options, dr
   </ion-item>
 </ion-list>
 
-<!-- List of Input Items -->
+<!-- 输入项目列表 -->
 <ion-list>
   <ion-item>
     <ion-label>Input</ion-label>
@@ -133,7 +132,7 @@ Lists support several interactions including swiping items to reveal options, dr
   </ion-item>
 </ion-list>
 
-<!-- List of Sliding Items -->
+<!-- 可滑动项目列表 -->
 <ion-list>
   <ion-item-sliding>
     <ion-item>
@@ -177,7 +176,7 @@ import {
 
 export const ListExample: React.FC = () => (
   <IonContent>
-    {/*-- List of Text Items --*/}
+    {/*-- 文本项目列表 --*/}
     <IonList>
       <IonItem>
         <IonLabel>Pokémon Yellow</IonLabel>
@@ -196,7 +195,7 @@ export const ListExample: React.FC = () => (
       </IonItem>
     </IonList>
 
-    {/*-- List of Input Items --*/}
+    {/*-- 输入项目列表 --*/}
     <IonList>
       <IonItem>
         <IonLabel>Input</IonLabel>
@@ -216,7 +215,7 @@ export const ListExample: React.FC = () => (
       </IonItem>
     </IonList>
 
-    {/*-- List of Sliding Items --*/}
+    {/*-- 可滑动项目列表 --*/}
     <IonList>
       <IonItemSliding>
         <IonItem>
@@ -258,7 +257,7 @@ export class ListExample {
 
   render() {
     return [
-      // List of Text Items
+      // 文本项目列表
       <ion-list>
         <ion-item>
           <ion-label>Pokémon Yellow</ion-label>
@@ -277,7 +276,7 @@ export class ListExample {
         </ion-item>
       </ion-list>,
 
-      // List of Input Items
+      // 输入项目列表
       <ion-list>
         <ion-item>
           <ion-label>Input</ion-label>
@@ -297,7 +296,7 @@ export class ListExample {
         </ion-item>
       </ion-list>,
 
-      // List of Sliding Items
+      // 可滑动项目列表
       <ion-list>
         <ion-item-sliding>
           <ion-item>
@@ -328,7 +327,7 @@ export class ListExample {
 
 ```html
 <template>
-  <!-- List of Text Items -->
+  <!-- 文本项目列表 -->
   <ion-list>
     <ion-item>
       <ion-label>Pokémon Yellow</ion-label>
@@ -347,7 +346,7 @@ export class ListExample {
     </ion-item>
   </ion-list>
 
-  <!-- List of Input Items -->
+  <!-- 输入项目列表 -->
   <ion-list>
     <ion-item>
       <ion-label>Input</ion-label>
@@ -367,7 +366,7 @@ export class ListExample {
     </ion-item>
   </ion-list>
 
-  <!-- List of Sliding Items -->
+  <!-- 可滑动项目列表 -->
   <ion-list>
     <ion-item-sliding>
       <ion-item>
@@ -425,26 +424,26 @@ export class ListExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

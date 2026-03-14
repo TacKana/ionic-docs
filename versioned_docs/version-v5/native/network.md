@@ -1,7 +1,7 @@
 ---
-title: 'Ionic Native Network Plugin: Cordova Plugin Network Information'
-description: 'The Ionic native network plugin requires the Cordova plugin: cordova-plugin-network-information. Read to learn more about this Ionic app feature and usage.'
-sidebar_label: 'Network'
+title: 'Ionic Native 网络插件：Cordova 网络信息插件'
+description: 'Ionic native 网络插件需要 Cordova 插件：cordova-plugin-network-information。阅读本文了解此 Ionic 应用功能及使用详情。'
+sidebar_label: '网络'
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -10,29 +10,29 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-# Network
+# 网络
 
-Requires Cordova plugin: cordova-plugin-network-information. For more info, please see the [Network plugin docs](https://github.com/apache/cordova-plugin-network-information).
+需要 Cordova 插件：cordova-plugin-network-information。更多信息请参阅 [网络插件文档](https://github.com/apache/cordova-plugin-network-information)。
 
 <p>
   <a href="https://github.com/apache/cordova-plugin-network-information" target="_blank" rel="noopener" className="git-link">github.com/apache/cordova-plugin-network-information</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在开发重要项目，承担不起数小时的问题排查成本。Ionic 专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -57,25 +57,25 @@ Requires Cordova plugin: cordova-plugin-network-information. For more info, plea
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic Enterprise 提供 Ionic 团队全面支持与维护的插件。&nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或如果您对此插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Amazon Fire OS
 - Android
-- Browser
+- 浏览器
 - iOS
 - Windows
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解如何在 React 中使用 Ionic Native 组件](../native-community.md#react)
 
 ### Angular
 
@@ -86,29 +86,29 @@ constructor(private network: Network) { }
 
 ...
 
-// watch network for a disconnection
+// 监听网络断开连接
 let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
-  console.log('network was disconnected :-(');
+  console.log('网络已断开 :-(');
 });
 
-// stop disconnect watch
+// 停止断开连接监听
 disconnectSubscription.unsubscribe();
 
 
-// watch network for a connection
+// 监听网络连接
 let connectSubscription = this.network.onConnect().subscribe(() => {
-  console.log('network connected!');
-  // We just got a connection but we need to wait briefly
-   // before we determine the connection type. Might need to wait.
-  // prior to doing any api requests as well.
+  console.log('网络已连接！');
+  // 虽然已获得连接，但需要稍等片刻
+   // 才能确定连接类型。可能还需要等待
+  // 再进行任何 API 请求
   setTimeout(() => {
     if (this.network.type === 'wifi') {
-      console.log('we got a wifi connection, woohoo!');
+      console.log('我们获得了 WiFi 连接，太棒了！');
     }
   }, 3000);
 });
 
-// stop connect watch
+// 停止连接监听
 connectSubscription.unsubscribe();
 
 ```

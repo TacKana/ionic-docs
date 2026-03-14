@@ -6,8 +6,8 @@ import { heart } from 'ionicons/icons';
 function Example() {
   return (
     <>
-      <IonButton>Default</IonButton>
-      <IonButton shape="round">Round</IonButton>
+      <IonButton>默认</IonButton>
+      <IonButton shape="round">圆形</IonButton>
       <IonButton>
         <IonIcon slot="icon-only" icon={heart}></IonIcon>
       </IonButton>

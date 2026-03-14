@@ -1,7 +1,7 @@
 ```html
 <template>
-  <ion-button id="open-loading">Show Loading</ion-button>
-  <ion-loading trigger="open-loading" :duration="3000" message="Dismissing after 3 seconds..."> </ion-loading>
+  <ion-button id="open-loading">显示加载中</ion-button>
+  <ion-loading trigger="open-loading" :duration="3000" message="3秒后自动关闭..."> </ion-loading>
 </template>
 
 <script setup lang="ts">

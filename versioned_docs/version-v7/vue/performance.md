@@ -1,15 +1,15 @@
 ---
-title: Vue Performance
-sidebar_label: Performance
+title: Vue 性能优化
+sidebar_label: 性能优化
 ---
 
-# Vue Performance
+# Vue 性能优化
 
-## v-for with Ionic Components
+## 在 Ionic 组件中使用 v-for
 
-When using `v-for` with Ionic components, we recommend using Vue's `key` attribute. This allows Vue to re-render loop elements in an efficient way by only updating the content inside of the component rather than re-creating the component altogether.
+当在 Ionic 组件中使用 `v-for` 时，我们建议使用 Vue 的 `key` 属性。这能让 Vue 以高效的方式重新渲染循环元素，只更新组件内部的内容，而不是完全重新创建组件。
 
-By using `key` you can provide a stable identity for each loop element so Vue can track insertions and deletions within the iterator. Below is an example of how to use `key`:
+通过使用 `key`，您可以为每个循环元素提供稳定的标识，使 Vue 能够跟踪迭代器内的插入和删除操作。以下是如何使用 `key` 的示例：
 
 ```vue
 <template>
@@ -34,6 +34,6 @@ const items = ref([
 </script>
 ```
 
-In this example, we have an array of objects called `items`. Each object contains a `value` and an `id`. Using the `key` attribute, we pass the `item.id` for each object. This `id` is used to provide a stable identity for each loop element.
+在这个示例中，我们有一个名为 `items` 的对象数组。每个对象包含一个 `value` 和一个 `id`。通过 `key` 属性，我们为每个对象传递 `item.id`。这个 `id` 用于为每个循环元素提供稳定的标识。
 
-For more information on how Vue manages state with `v-for` see https://v3.vuejs.org/guide/list.html#maintaining-state
+有关 Vue 如何通过 `v-for` 管理状态的更多信息，请参阅 https://v3.vuejs.org/guide/list.html#maintaining-state

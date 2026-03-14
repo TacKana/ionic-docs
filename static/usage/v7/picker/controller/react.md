@@ -32,20 +32,20 @@ function Example() {
       ],
       buttons: [
         {
-          text: 'Cancel',
+          text: '取消',
           role: 'cancel',
         },
         {
-          text: 'Confirm',
+          text: '确认',
           handler: (value) => {
-            console.log(`You selected: ${value.languages.value}`);
+            console.log(`您选择了: ${value.languages.value}`);
           },
         },
       ],
     });
   };
 
-  return <IonButton onClick={openPicker}>Open</IonButton>;
+  return <IonButton onClick={openPicker}>打开</IonButton>;
 }
 
 export default Example;

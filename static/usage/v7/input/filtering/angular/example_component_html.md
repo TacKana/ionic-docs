@@ -2,7 +2,7 @@
 <ion-list>
   <ion-item>
     <ion-input
-      label="Alphanumeric Characters"
+      label="字母数字字符"
       [value]="inputModel"
       (ionInput)="onInput($event)"
       #ionInputEl

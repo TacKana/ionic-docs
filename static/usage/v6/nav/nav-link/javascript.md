@@ -9,13 +9,13 @@
       this.innerHTML = `
         <ion-header>
           <ion-toolbar>
-            <ion-title>Page One</ion-title>
+            <ion-title>页面一</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content class="ion-padding">
-          <h1>Page One</h1>
+          <h1>页面一</h1>
           <ion-nav-link router-direction="forward" component="page-two">
-            <ion-button>Go to Page Two</ion-button>
+            <ion-button>前往页面二</ion-button>
           </ion-nav-link>
         </ion-content>
       `;
@@ -29,14 +29,14 @@
             <ion-buttons slot="start">
               <ion-back-button></ion-back-button>
             </ion-buttons>
-            <ion-title>Page Two</ion-title>
+            <ion-title>页面二</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content class="ion-padding">
-          <h1>Page Two</h1>
+          <h1>页面二</h1>
           <div>
             <ion-nav-link router-direction="forward" component="page-three">
-              <ion-button>Go to Page Three</ion-button>
+              <ion-button>前往页面三</ion-button>
             </ion-nav-link>
           </div>
         </ion-content>
@@ -51,11 +51,11 @@
             <ion-buttons slot="start">
               <ion-back-button></ion-back-button>
             </ion-buttons>
-            <ion-title>Page Three</ion-title>
+            <ion-title>页面三</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content class="ion-padding">
-          <h1>Page Three</h1>
+          <h1>页面三</h1>
         </ion-content>
       `;
     }

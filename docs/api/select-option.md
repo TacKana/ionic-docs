@@ -1,5 +1,5 @@
 ---
-title: "ion-select-option"
+title: 选择对话框的选项组件
 ---
 import Props from '@ionic-internal/component-api/v8/select-option/props.md';
 import Events from '@ionic-internal/component-api/v8/select-option/events.md';
@@ -9,8 +9,8 @@ import CustomProps from '@ionic-internal/component-api/v8/select-option/custom-p
 import Slots from '@ionic-internal/component-api/v8/select-option/slots.md';
 
 <head>
-  <title>ion-select-option: Option For a Select Dialog</title>
-  <meta name="description" content="What is an option select? Select Options are child element components of a Select—each option defined is passed and displayed in the Select dialog." />
+  <title>ion-select-option：选择对话框的选项</title>
+  <meta name="description" content="什么是选项选择？选择选项是 Select 组件的子元素组件——每个定义的选项都会被传递并显示在选择对话框中。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,25 +18,25 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Select Options are components that are child elements of a Select. Each option defined is passed and displayed in the Select dialog.
+选择选项（Select Options）是作为选择框（Select）子元素的组件。每个定义的选项都会被传递并显示在选择对话框中。
 
-For usage examples, see the [Select](./select) documentation.
+关于使用示例，请参阅 [Select](./select) 的文档。
 
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

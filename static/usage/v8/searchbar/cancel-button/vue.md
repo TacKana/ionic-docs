@@ -1,13 +1,13 @@
 ```html
 <template>
-  <ion-searchbar show-cancel-button="focus" placeholder="Show on Focus"></ion-searchbar>
-  <ion-searchbar show-cancel-button="always" placeholder="Always Show"></ion-searchbar>
-  <ion-searchbar show-cancel-button="never" placeholder="Never Show"></ion-searchbar>
+  <ion-searchbar show-cancel-button="focus" placeholder="聚焦时显示"></ion-searchbar>
+  <ion-searchbar show-cancel-button="always" placeholder="始终显示"></ion-searchbar>
+  <ion-searchbar show-cancel-button="never" placeholder="永不显示"></ion-searchbar>
   <ion-searchbar
     show-cancel-button="always"
-    cancel-button-text="Custom Cancel"
+    cancel-button-text="自定义取消"
     :cancel-button-icon="trash"
-    placeholder="Custom Cancel Button"
+    placeholder="自定义取消按钮"
   ></ion-searchbar>
 </template>
 

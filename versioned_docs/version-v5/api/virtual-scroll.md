@@ -1,6 +1,6 @@
 ---
-title: 'ion-virtual-scroll | Angular Virtual Scroll List for Ionic Apps'
-description: 'ion-virtual-scroll, supported in Angular, displays a virtual, infinite list. Records are passed to the virtual scroll containing the data to create templates.'
+title: 'ion-virtual-scroll | 适用于 Ionic 应用的 Angular 虚拟滚动列表'
+description: 'ion-virtual-scroll 在 Angular 中受支持，可显示虚拟的无限列表。记录被传递给包含数据以创建模板的虚拟滚动组件。'
 sidebar_label: 'ion-virtual-scroll'
 ---
 
@@ -16,111 +16,59 @@ import Slots from '@ionic-internal/component-api/v5/virtual-scroll/slots.md';
 
 # ion-virtual-scroll
 
-Virtual Scroll displays a virtual, "infinite" list. An array of records
-is passed to the virtual scroll containing the data to create templates
-for. The template created for each record, referred to as a cell, can
-consist of items, headers, and footers. For performance reasons, not every record
-in the list is rendered at once; instead a small subset of records (enough to fill the viewport)
-are rendered and reused as the user scrolls.
+虚拟滚动组件可以显示一个虚拟的、"无限"列表。一组记录被传递给虚拟滚动组件，其中包含用于创建模板的数据。为每条记录创建的模板（称为单元格）可以包含项目、页眉和页脚。出于性能考虑，并不会一次性渲染列表中的所有记录；而是渲染一小部分记录（足以填满视口），并在用户滚动时复用这些记录。
 
-## Approximate Widths and Heights
+## 近似宽度和高度
 
-If the height of items in the virtual scroll are not close to the
-default size of `40px`, it is extremely important to provide a value for
-the `approxItemHeight` property. An exact pixel-perfect size is not necessary,
-but without an estimate the virtual scroll will not render correctly.
+如果虚拟滚动中项目的高度与默认大小 `40px` 相差较大，那么为 `approxItemHeight` 属性提供一个值就极为重要。不需要精确到像素级别的尺寸，但如果没有这个估计值，虚拟滚动将无法正确渲染。
 
-The approximate width and height of each template is used to help
-determine how many cells should be created, and to help calculate
-the height of the scrollable area. Note that the actual rendered size
-of each cell comes from the app's CSS, whereas this approximation
-is only used to help calculate initial dimensions.
+每个模板的近似宽度和高度用于帮助确定应创建多少个单元格，并帮助计算可滚动区域的高度。请注意，每个单元格的实际渲染大小来自应用的 CSS，而这个近似值仅用于帮助计算初始尺寸。
 
-It's also important to know that Ionic's default item sizes have
-slightly different heights between platforms, which is perfectly fine.
+同样重要的是要知道，Ionic 的默认项目大小在不同平台之间略有不同的高度，这完全没问题。
 
-## Images Within Virtual Scroll
+## 虚拟滚动中的图片
 
-HTTP requests, image decoding, and image rendering can cause jank while
-scrolling. In order to better control images, Ionic provides `<ion-img>`
-to manage HTTP requests and image rendering. While scrolling through items
-quickly, `<ion-img>` knows when and when not to make requests, when and
-when not to render images, and only loads the images that are viewable
-after scrolling. [Read more about `ion-img`.](img.md)
+HTTP 请求、图片解码和图片渲染可能会导致滚动时出现卡顿。为了更好地控制图片，Ionic 提供了 `<ion-img>` 来管理 HTTP 请求和图片渲染。当快速滚动浏览项目时，`<ion-img>` 知道何时以及何时不发出请求，何时以及何时不渲染图片，并且只加载滚动后可见的图片。[详细了解 `ion-img`](img.md)。
 
-It's also important for app developers to ensure image sizes are locked in,
-and after images have fully loaded they do not change size and affect any
-other element sizes. Simply put, to ensure rendering bugs are not introduced,
-it's vital that elements within a virtual item does not dynamically change.
+应用开发人员同样需要确保图片尺寸固定，并且在图片完全加载后不会改变大小并影响任何其他元素的尺寸。简而言之，为避免引入渲染错误，虚拟项目内的元素不能动态更改。
 
-For virtual scrolling, the natural effects of the `<img>` are not desirable
-features. We recommend using the `<ion-img>` component over the native
-`<img>` element because when an `<img>` element is added to the DOM, it
-immediately makes a HTTP request for the image file. Additionally, `<img>`
-renders whenever it wants which could be while the user is scrolling. However,
-`<ion-img>` is governed by the containing `ion-content` and does not render
-images while scrolling quickly.
+对于虚拟滚动，`<img>` 的自然效果并不是理想特性。我们建议使用 `<ion-img>` 组件而非原生的 `<img>` 元素，因为当 `<img>` 元素被添加到 DOM 时，它会立即发出图片文件的 HTTP 请求。此外，`<img>` 会在其认为合适的时候渲染，这可能发生在用户滚动时。然而，`<ion-img>` 受包含它的 `ion-content` 控制，在快速滚动时不会渲染图片。
 
-## Virtual Scroll Performance Tips
+## 虚拟滚动性能提示
 
 ### iOS Cordova WKWebView
 
-When deploying to iOS with Cordova, it's highly recommended to use the
-[WKWebView plugin](https://blog.ionicframework.com/cordova-ios-performance-improvements-drop-in-speed-with-wkwebview/)
-in order to take advantage of iOS's higher performing webview. Additionally,
-WKWebView is superior at scrolling efficiently in comparison to the older
-UIWebView.
+当使用 Cordova 部署到 iOS 时，强烈建议使用 [WKWebView 插件](https://blog.ionicframework.com/cordova-ios-performance-improvements-drop-in-speed-with-wkwebview/) 以利用 iOS 更高性能的 webview。此外，与旧的 UIWebView 相比，WKWebView 在高效滚动方面更胜一筹。
 
-### Lock in element dimensions and locations
+### 锁定元素尺寸和位置
 
-In order for virtual scroll to efficiently size and locate every item, it's
-very important every element within each virtual item does not dynamically
-change its dimensions or location. The best way to ensure size and location
-does not change, it's recommended each virtual item has locked in its size
-via CSS.
+为了使虚拟滚动能够高效地调整每个项目的尺寸和定位，每个虚拟项目内的每个元素都不能动态更改其尺寸或位置，这一点非常重要。确保尺寸和位置不发生改变的最佳方法是，建议每个虚拟项目都通过 CSS 锁定其尺寸。
 
-### Use `ion-img` for images
+### 使用 `ion-img` 处理图片
 
-When including images within Virtual Scroll, be sure to use
-[`ion-img`](img.md) rather than the standard `<img>` HTML element.
-With `ion-img`, images are lazy loaded so only the viewable ones are
-rendered, and HTTP requests are efficiently controlled while scrolling.
+当在虚拟滚动中包含图片时，请务必使用 [`ion-img`](img.md) 而不是标准的 `<img>` HTML 元素。使用 `ion-img` 时，图片会延迟加载，因此只渲染可见的图片，并且在滚动时高效控制 HTTP 请求。
 
-### Set Approximate Widths and Heights
+### 设置近似宽度和高度
 
-As mentioned above, all elements should lock in their dimensions. However,
-virtual scroll isn't aware of the dimensions until after they have been
-rendered. For the initial render, virtual scroll still needs to set
-how many items should be built. With "approx" property inputs, such as
-`approxItemHeight`, we're able to give virtual scroll an approximate size,
-therefore allowing virtual scroll to decide how many items should be
-created.
+如上所述，所有元素都应锁定其尺寸。然而，虚拟滚动在元素渲染之前并不知道其尺寸。对于初始渲染，虚拟滚动仍然需要设置应构建多少个项目。通过“近似”属性输入，例如 `approxItemHeight`，我们能够为虚拟滚动提供一个近似尺寸，从而让虚拟滚动决定应创建多少个项目。
 
-### Changing dataset should use `trackBy`
+### 更改数据集时应使用 `trackBy`
 
-It is possible for the identities of elements in the iterator to change
-while the data does not. This can happen, for example, if the iterator
-produced from an RPC to the server, and that RPC is re-run. Even if the
-"data" hasn't changed, the second response will produce objects with
-different identities, and Ionic will tear down the entire DOM and rebuild
-it. This is an expensive operation and should be avoided if possible.
+迭代器中元素的标识可能会在数据未改变时发生变化。例如，如果迭代器是从服务器 RPC 生成的，并且该 RPC 重新运行，就可能发生这种情况。即使“数据”没有改变，第二次响应也会产生具有不同标识的对象，而 Ionic 将拆除整个 DOM 并重建它。这是一项昂贵的操作，应尽可能避免。
 
-### Efficient headers and footer functions
+### 高效的页眉和页脚函数
 
-Each virtual item must stay extremely efficient, but one way to really
-kill its performance is to perform any DOM operations within section header
-and footer functions. These functions are called for every record in the
-dataset, so please make sure they're performant.
+每个虚拟项目必须保持极高的效率，但真正降低其性能的一种方式是在分区页眉和页脚函数中执行任何 DOM 操作。这些函数会针对数据集中的每条记录调用，因此请确保它们是高效的。
 
 ## React
 
-The Virtual Scroll component is not supported in React.
+虚拟滚动组件在 React 中不受支持。
 
 ## Vue
 
-`ion-virtual-scroll` is not supported in Vue. We plan on integrating with existing community-driven solutions for virtual scroll in the near future. Follow our [GitHub issue thread](https://github.com/ionic-team/ionic-framework/issues/17887) for the latest updates.
+`ion-virtual-scroll` 在 Vue 中不受支持。我们计划在不久的将来与社区现有的虚拟滚动解决方案集成。关注我们的 [GitHub 议题线程](https://github.com/ionic-team/ionic-framework/issues/17887) 以获取最新更新。
 
-## Usage
+## 用法
 
 ```html
 <ion-content>
@@ -188,10 +136,9 @@ function getImgSrc() {
 let rotateImg = 0;
 ```
 
-### Basic
+### 基础用法
 
-The array of records should be passed to the `items` property on the `ion-virtual-scroll` element.
-The data given to the `items` property must be an array. An item template with the `*virtualItem` property is required in the `ion-virtual-scroll`. The `*virtualItem` property can be added to any element.
+记录数组应传递给 `ion-virtual-scroll` 元素上的 `items` 属性。提供给 `items` 属性的数据必须是数组。`ion-virtual-scroll` 中需要一个带有 `*virtualItem` 属性的项目模板。`*virtualItem` 属性可以添加到任何元素上。
 
 ```html
 <ion-virtual-scroll [items]="items">
@@ -199,15 +146,9 @@ The data given to the `items` property must be an array. An item template with t
 </ion-virtual-scroll>
 ```
 
-### Section Headers and Footers
+### 分区页眉和页脚
 
-Section headers and footers are optional. They can be dynamically created
-from developer-defined functions. For example, a large list of contacts
-usually has a divider for each letter in the alphabet. Developers provide
-their own custom function to be called on each record. The logic in the
-custom function should determine whether to create the section template
-and what data to provide to the template. The custom function should
-return `null` if a template shouldn't be created.
+分区页眉和页脚是可选的。它们可以通过开发人员定义的函数动态创建。例如，一个大型联系人列表通常按字母表的每个字母都有一个分隔符。开发人员提供自己的自定义函数，每条记录都会调用该函数。自定义函数中的逻辑应确定是否创建分区模板以及向模板提供什么数据。如果不应该创建模板，自定义函数应返回 `null`。
 
 ```html
 <ion-virtual-scroll [items]="items" [headerFn]="myHeaderFn">
@@ -216,13 +157,7 @@ return `null` if a template shouldn't be created.
 </ion-virtual-scroll>
 ```
 
-Below is an example of a custom function called on every record. It
-gets passed the individual record, the record's index number,
-and the entire array of records. In this example, after every 20
-records a header will be inserted. So between the 19th and 20th records,
-between the 39th and 40th, and so on, a `<ion-item-divider>` will
-be created and the template's data will come from the function's
-returned data.
+下面是一个在每条记录上调用的自定义函数示例。它接收单个记录、记录的索引号以及整个记录数组。在此示例中，每 20 条记录后会插入一个页眉。因此，在第 19 条和第 20 条记录之间、第 39 条和第 40 条记录之间等等，将创建一个 `<ion-item-divider>`，并且模板的数据将来自函数的返回数据。
 
 ```ts
 myHeaderFn(record, recordIndex, records) {
@@ -233,12 +168,9 @@ myHeaderFn(record, recordIndex, records) {
 }
 ```
 
-### Custom Components
+### 自定义组件
 
-If a custom component is going to be used within Virtual Scroll, it's best
-to wrap it with a `<div>` to ensure the component is rendered correctly. Since
-each custom component's implementation and internals can be quite different, wrapping
-within a `<div>` is a safe way to make sure dimensions are measured correctly.
+如果要在虚拟滚动中使用自定义组件，最好用 `<div>` 包装它，以确保组件正确渲染。由于每个自定义组件的实现和内部结构可能大不相同，用 `<div>` 包装是确保正确测量尺寸的安全方式。
 
 ```html
 <ion-virtual-scroll [items]="items">
@@ -248,15 +180,15 @@ within a `<div>` is a safe way to make sure dimensions are measured correctly.
 </ion-virtual-scroll>
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -264,10 +196,10 @@ within a `<div>` is a safe way to make sure dimensions are measured correctly.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

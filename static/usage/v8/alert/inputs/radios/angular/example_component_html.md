@@ -1,8 +1,8 @@
 ```html
-<ion-button id="present-alert">Click Me</ion-button>
+<ion-button id="present-alert">点击我</ion-button>
 <ion-alert
   trigger="present-alert"
-  header="Select your favorite color"
+  header="选择您喜欢的颜色"
   [buttons]="alertButtons"
   [inputs]="alertInputs"
 ></ion-alert>

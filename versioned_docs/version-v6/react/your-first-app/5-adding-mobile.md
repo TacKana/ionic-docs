@@ -1,21 +1,21 @@
 ---
-sidebar_label: Adding Mobile
+sidebar_label: 添加移动端支持
 ---
 
-# Adding Mobile
+# 添加移动端支持
 
-Our photo gallery app won’t be complete until it runs on iOS, Android, and the web - all using one codebase. All it takes is some small logic changes to support mobile platforms, installing some native tooling, then running the app on a device. Let’s go!
+我们的照片库应用要能在 iOS、Android 和 Web 上运行才算完整——所有这些平台都使用同一套代码库。只需要做一些小的逻辑改动来支持移动平台，安装一些原生工具，然后在设备上运行应用就可以了。让我们开始吧！
 
-Let’s start with making some small code changes - then our app will “just work” when we deploy it to a device.
+首先让我们做一些小的代码调整——这样当我们把应用部署到设备上时，它就能"正常运行"。
 
-## Platform-specific Logic
+## 平台特定逻辑
 
-First, we’ll update the photo saving functionality to support mobile. In the `savePicture` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, the two native runtimes), then read the photo file into base64 format using the `readFile` method. Also, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://ionicframework.com/docs/core-concepts/webview#file-protocol)). Otherwise, use the same logic as before when running the app on the web.
+首先，我们将更新照片保存功能以支持移动端。在 `savePicture` 函数中，检查应用运行在哪个平台上。如果是"混合"平台（Capacitor 或 Cordova，这两种原生运行时），则使用 `readFile` 方法将照片文件读取为 base64 格式。同时，使用 Filesystem API 返回照片的完整文件路径。设置 `webviewPath` 时，使用特殊的 `Capacitor.convertFileSrc` 方法（[详情见此](https://ionicframework.com/docs/core-concepts/webview#file-protocol)）。否则，在 Web 上运行时使用与之前相同的逻辑。
 
 ```tsx
 const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
   let base64Data: string;
-  // "hybrid" will detect Cordova or Capacitor;
+  // "hybrid" 会检测 Cordova 或 Capacitor；
   if (isPlatform('hybrid')) {
     const file = await Filesystem.readFile({
       path: photo.path!,
@@ -31,15 +31,14 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
   });
 
   if (isPlatform('hybrid')) {
-    // Display the new image by rewriting the 'file://' path to HTTP
-    // Details: https://ionicframework.com/docs/building/webview#file-protocol
+    // 通过将 'file://' 路径重写为 HTTP 来显示新图片
+    // 详情：https://ionicframework.com/docs/building/webview#file-protocol
     return {
       filepath: savedFile.uri,
       webviewPath: Capacitor.convertFileSrc(savedFile.uri),
     };
   } else {
-    // Use webPath to display the new image instead of base64 since it's
-    // already loaded into memory
+    // 使用 webPath 显示新图片而不是 base64，因为它已经加载到内存中
     return {
       filepath: fileName,
       webviewPath: photo.webPath,
@@ -48,21 +47,21 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
 };
 ```
 
-Next, add a new bit of logic in the `loadSaved` function. On mobile, we can directly point to each photo file on the Filesystem and display them automatically. On the web, however, we must read each image from the Filesystem into base64 format. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Update the `loadSaved` function inside of `useEffect` to:
+接下来，在 `loadSaved` 函数中添加一些新逻辑。在移动设备上，我们可以直接指向 Filesystem 上的每个照片文件并自动显示它们。然而在 Web 上，我们必须将每个图像从 Filesystem 读取为 base64 格式。这是因为 Filesystem API 底层使用了 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)。更新 `useEffect` 中的 `loadSaved` 函数：
 
 ```tsx
 const loadSaved = async () => {
   const { value } = await Preferences.get({ key: PHOTO_STORAGE });
 
   const photosInPreferences = (value ? JSON.parse(value) : []) as UserPhoto[];
-  // If running on the web...
+  // 如果在 Web 上运行...
   if (!isPlatform('hybrid')) {
     for (let photo of photosInPreferences) {
       const file = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
-      // Web platform only: Load the photo as base64 data
+      // 仅限 Web 平台：将照片加载为 base64 数据
       photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
     }
   }
@@ -70,4 +69,4 @@ const loadSaved = async () => {
 };
 ```
 
-Our Photo Gallery now consists of one codebase that runs on the web, Android, and iOS. Next up, the part you’ve been waiting for - deploying the app to a device.
+现在我们的照片库应用已经拥有了一个可以在 Web、Android 和 iOS 上运行的统一代码库。接下来，就是你期待已久的环节——将应用部署到设备上。

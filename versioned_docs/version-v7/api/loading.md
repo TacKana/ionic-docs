@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/loading/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/loading/slots.md';
 
 <head>
-  <title>ion-loading: Loading | Application Loading Indicator Overlay</title>
+  <title>ion-loading: 加载中 | 应用加载指示器浮层组件</title>
   <meta
     name="description"
-    content="The ion-loading overlay indicates activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed."
+    content="ion-loading 浮层用于在阻止用户交互的同时指示活动状态。加载指示器显示在应用内容之上，可由应用关闭以恢复用户交互。它包含可选背景幕，创建时可通过设置 showBackdrop: false 来禁用。"
   />
 </head>
 
@@ -21,59 +21,59 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-An overlay that can be used to indicate activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app. It includes an optional backdrop, which can be disabled by setting `showBackdrop: false` upon creation.
+这是一种浮层组件，可用于在阻止用户交互的同时指示活动状态。加载指示器显示在应用程序内容之上，应用程序可将其关闭以恢复用户交互。它包含一个可选的背景幕，创建时可通过设置 `showBackdrop: false` 来禁用。
 
-## Basic Usage
+## 基本用法
 
-Once presented, the loading indicator will display indefinitely by default. Developers can manually dismiss the loading indicator after creation by calling the `dismiss()` method on the component. The `onDidDismiss` function can be called to perform an action after the loading indicator is dismissed.
+默认情况下，加载指示器在呈现后会无限期显示。开发者可以在创建后通过调用组件的 `dismiss()` 方法手动关闭加载指示器。可以调用 `onDidDismiss` 函数在加载指示器关闭后执行操作。
 
-Alternatively, developers can configure the loading indicator to dismiss automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the loading options.
+或者，开发者可以通过在加载选项的 `duration` 中传入要显示的毫秒数，来配置加载指示器在特定时间后自动关闭。
 
-### Inline (Recommended)
+### 内联方式（推荐）
 
 import Inline from '@site/static/usage/v7/loading/inline/index.md';
 
 <Inline />
 
-### Controller
+### 控制器方式
 
 import Controller from '@site/static/usage/v7/loading/controller/index.md';
 
 <Controller />
 
-## Customization
+## 自定义
 
-### Spinners
+### 旋转器
 
-The spinner that is used can be customized using the `spinner` property. See the [spinner property documentation](#spinner) for a full list of options.
+可以通过 `spinner` 属性自定义使用的旋转器。有关完整选项列表，请参阅 [spinner 属性文档](#spinner)。
 
 import Spinners from '@site/static/usage/v7/loading/spinners/index.md';
 
 <Spinners />
 
-### Theming
+### 主题
 
-Loading uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
+Loading 组件使用作用域封装，这意味着它会在运行时通过为每个样式追加一个额外的类来自动限定其 CSS 范围。要覆盖 CSS 中的作用域选择器，需要使用 [更高特异性](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity) 的选择器。
 
-We recommend passing a custom class and using that to add custom styles to the host and inner elements.
+我们建议传递一个自定义类，并使用该类为宿主元素和内部元素添加自定义样式。
 
 import Theming from '@site/static/usage/v7/loading/theming/index.md';
 
 <Theming />
 
 :::note
-`ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
+`ion-loading` 是在应用程序的根层级呈现的，因此我们建议将任何 `ion-loading` 样式放在全局样式表中。
 :::
 
-## Accessibility
+## 无障碍访问
 
-Ionic automatically sets Loading's `role` to [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role).
+Ionic 会自动将 Loading 的 `role` 设置为 [`dialog`](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA/Roles/dialog_role)。
 
-If the `message` property is defined for Loading, then the `aria-labelledby` attribute will be automatically set to the message element's ID. Otherwise, `aria-labelledby` will not be set, and developers must provide an `aria-label` using the `htmlAttributes` property.
+如果为 Loading 定义了 `message` 属性，则 `aria-labelledby` 属性将自动设置为消息元素的 ID。否则，`aria-labelledby` 将不会被设置，开发者必须使用 `htmlAttributes` 属性来提供 `aria-label`。
 
-All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of Loading.
+所有 ARIA 属性都可以通过在 Loading 的 `htmlAttributes` 属性中定义自定义值来手动覆盖。
 
-## Interfaces
+## 接口
 
 ### LoadingOptions
 
@@ -97,26 +97,26 @@ interface LoadingOptions {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

@@ -1,29 +1,29 @@
 ---
 title: Ionic CLI
-sidebar_label: Overview
+sidebar_label: 概述
 ---
 
 <head>
-  <title>Ionic CLI Framework: Command-Line Interface to Develop Apps</title>
+  <title>Ionic CLI 框架：用于开发应用的命令行界面</title>
   <meta
     name="description"
-    content="The Ionic command-line interface (CLI) is the go-to tool for developing Ionic apps. Install our framework globally with npm."
+    content="Ionic 命令行界面（CLI）是开发 Ionic 应用的核心工具。可通过 npm 全局安装我们的框架。"
   />
 </head>
 
-The Ionic command-line interface ([CLI](/docs/reference/glossary#cli)) is the go-to tool for developing Ionic apps.
+Ionic 命令行界面（[CLI](/docs/reference/glossary#cli)）是开发 Ionic 应用的核心工具。
 
-## Installation
+## 安装
 
-The Ionic CLI can be installed globally with npm:
+可通过 npm 全局安装 Ionic CLI：
 
 ```shell
 npm install -g @ionic/cli
 ```
 
-## Help
+## 帮助信息
 
-The Ionic CLI ships with command documentation that is accessible with the `--help` flag.
+Ionic CLI 内置了命令文档，可通过 `--help` 标志访问。
 
 ```shell
 $ ionic --help
@@ -32,23 +32,23 @@ $ ionic <command> <subcommand> --help
 ```
 
 :::note
-Be sure to run `ionic <command> --help` in your project directory.
+请务必在你的项目目录中运行 `ionic <command> --help`。
 
-For some commands, such as `ionic serve`, the help documentation is contextual to the type of your project, e.g. React vs Angular.
+对于某些命令（例如 `ionic serve`），帮助文档会根据项目类型（如 React 与 Angular）显示相应的上下文信息。
 :::
 
-<!-- TODO: image? -->
+<!-- TODO: 添加图片？ -->
 
-## Architecture
+## 架构
 
-The Ionic CLI is built with [TypeScript](/docs/reference/glossary#typescript) and [Node.js](/docs/reference/glossary#node). It supports Node 10.3+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub repository</a>.
+Ionic CLI 基于 [TypeScript](/docs/reference/glossary#typescript) 和 [Node.js](/docs/reference/glossary#node) 构建。它支持 Node 10.3+ 版本，但我们始终推荐使用最新的 Node LTS 版本。你可以在开源的 <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub 仓库</a> 上关注其开发进展。
 
-## Troubleshooting
+## 故障排除
 
-To troubleshoot issues with the Ionic CLI, the following may be useful:
+若遇到 Ionic CLI 相关问题，以下建议可能有所帮助：
 
-- Make sure the latest version of the Ionic CLI is installed. Get the installed version by running `ionic --version`.
-- Make sure the latest Node LTS is installed. See [Node & npm](/docs/intro/environment#node-npm) environment setup.
-- The `--verbose` flag prints debugging messages, which may narrow down the issue.
-- Connection issues may be due to improperly configured proxy settings. See [Using a Proxy](/docs/cli/using-a-proxy) to configure request proxying.
-- The global Ionic CLI configuration directory is `~/.ionic` on all platforms. It can safely be deleted and the Ionic CLI will repopulate it, but all configuration (including user sessions) will be lost. Configure this directory with [CLI environment variables](/docs/cli/configuration#environment-variables).
+- 确保已安装最新版本的 Ionic CLI。可通过运行 `ionic --version` 查看当前安装的版本。
+- 确保已安装最新的 Node LTS 版本。请参阅 [Node & npm](/docs/intro/environment#node-npm) 环境设置指南。
+- 使用 `--verbose` 标志可打印调试信息，有助于定位问题。
+- 连接问题可能源于代理设置配置不当。请参阅 [使用代理](/docs/cli/using-a-proxy) 来配置请求代理。
+- 全局 Ionic CLI 配置目录在所有平台下均为 `~/.ionic`。该目录可以安全删除，Ionic CLI 会重新生成它，但所有配置（包括用户会话）都将丢失。可通过 [CLI 环境变量](/docs/cli/configuration#environment-variables) 来配置此目录。

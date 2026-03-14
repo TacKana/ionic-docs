@@ -1,5 +1,5 @@
 ---
-title: "ion-menu-toggle"
+title: 菜单切换组件
 ---
 import Props from '@ionic-internal/component-api/v8/menu-toggle/props.md';
 import Events from '@ionic-internal/component-api/v8/menu-toggle/events.md';
@@ -9,8 +9,8 @@ import CustomProps from '@ionic-internal/component-api/v8/menu-toggle/custom-pro
 import Slots from '@ionic-internal/component-api/v8/menu-toggle/slots.md';
 
 <head>
-  <title>ion-menu-toggle: MenuToggle Component to Open/Close Menus</title>
-  <meta name="description" content="The MenuToggle component can be used to toggle a menu open or closed—by default, it's only visible when the selected menu is active. Read more about usage." />
+  <title>ion-menu-toggle：用于打开/关闭菜单的菜单切换组件</title>
+  <meta name="description" content="菜单切换组件可用于切换菜单的打开或关闭状态——默认情况下，仅当所选菜单处于活动状态时才会显示。阅读更多关于用法的信息。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,27 +18,27 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-The Menu Toggle component can be used to toggle a menu open or closed.
+菜单切换组件可用于切换菜单的打开或关闭状态。
 
-Menu toggles are only visible when the selected menu is enabled. If the menu is disabled or it's being presented as a split pane, the menu toggle will be hidden. To always display the menu toggle, the `autoHide` property can be set to `false`.
+菜单切换仅当所选菜单启用时才会显示。如果菜单被禁用或以分栏窗格形式呈现，菜单切换将会隐藏。如需始终显示菜单切换，可将 `autoHide` 属性设置为 `false`。
 
-See the [menu](./menu#menu-toggle) documentation for more information.
+更多信息请参阅[菜单](./menu#menu-toggle)文档。
 
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

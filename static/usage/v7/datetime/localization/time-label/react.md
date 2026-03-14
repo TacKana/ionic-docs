@@ -4,7 +4,7 @@ import { IonDatetime } from '@ionic/react';
 function Example() {
   return (
     <IonDatetime locale="es-ES">
-      <span slot="time-label">Tiempo</span>
+      <span slot="time-label">时间</span>
     </IonDatetime>
   );
 }

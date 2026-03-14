@@ -4,7 +4,7 @@
     background: #08a391;
   }
 
-  /* Material Design styles */
+  /* Material Design 样式 */
   ion-segment-button.md::part(native) {
     color: #000;
   }
@@ -17,7 +17,7 @@
     height: 4px;
   }
 
-  /* iOS styles */
+  /* iOS 样式 */
   ion-segment-button.ios::part(native) {
     color: #08a391;
   }

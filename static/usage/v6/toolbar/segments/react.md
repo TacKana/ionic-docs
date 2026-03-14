@@ -8,10 +8,10 @@ function Example() {
       <IonToolbar>
         <IonSegment value="all">
           <IonSegmentButton value="all">
-            <IonLabel>All</IonLabel>
+            <IonLabel>全部</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="favorites">
-            <IonLabel>Favorites</IonLabel>
+            <IonLabel>收藏夹</IonLabel>
           </IonSegmentButton>
         </IonSegment>
       </IonToolbar>

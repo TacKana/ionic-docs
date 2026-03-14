@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/button/custom-props.md
 import Slots from '@ionic-internal/component-api/v6/button/slots.md';
 
 <head>
-  <title>ion-button: Design and Style Buttons with Custom CSS Properties</title>
+  <title>ion-button：使用自定义 CSS 属性设计和样式化按钮</title>
   <meta
     name="description"
-    content="ion-button provides a clickable element for use anywhere needing standard button functionality. Design and style button elements with custom CSS properties."
+    content="ion-button 提供了一个可点击元素，适用于任何需要标准按钮功能的场景。使用自定义 CSS 属性设计和样式化按钮元素。"
   />
 </head>
 
@@ -21,9 +21,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Buttons provide a clickable element, which can be used in forms, or anywhere that needs simple, standard button functionality. They may display text, icons, or both. Buttons can be styled with several attributes to look a specific way.
+按钮提供了可点击元素，可用于表单中或任何需要简单标准按钮功能的场合。它们可以显示文本、图标或同时显示两者。按钮可以通过多种属性进行样式化，以呈现特定的外观。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v6/button/basic/index.md';
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v6/button/basic/index.md';
 
 ## Expand
 
-This property lets you specify how wide the button should be. By default, buttons are inline blocks, but setting this property will change the button to a full-width block element.
+此属性允许您指定按钮的宽度。默认情况下，按钮是内联块元素，但设置此属性会将按钮更改为全宽块元素。
 
 import Expand from '@site/static/usage/v6/button/expand/index.md';
 
@@ -39,7 +39,7 @@ import Expand from '@site/static/usage/v6/button/expand/index.md';
 
 ## Shape
 
-This property lets you specify the shape of the button. By default, buttons are rectangular with a small border radius, but setting this to `"round"` will change the button to a rounded element.
+此属性允许您指定按钮的形状。默认情况下，按钮是带有小圆角的矩形，但将其设置为 `"round"` 会将按钮更改为圆形元素。
 
 import Shape from '@site/static/usage/v6/button/shape/index.md';
 
@@ -47,7 +47,7 @@ import Shape from '@site/static/usage/v6/button/shape/index.md';
 
 ## Fill
 
-This property determines the background and border color of the button. By default, buttons have a solid background unless the button is inside of a toolbar, in which case it has a transparent background.
+此属性决定按钮的背景和边框颜色。默认情况下，按钮具有实心背景，除非该按钮位于工具栏内，此时它具有透明背景。
 
 import Fill from '@site/static/usage/v6/button/fill/index.md';
 
@@ -55,7 +55,7 @@ import Fill from '@site/static/usage/v6/button/fill/index.md';
 
 ## Size
 
-This property specifies the size of the button. Setting this property will change the height and padding of a button.
+此属性指定按钮的大小。设置此属性将改变按钮的高度和内边距。
 
 import Size from '@site/static/usage/v6/button/size/index.md';
 
@@ -67,7 +67,7 @@ import Icons from '@site/static/usage/v6/button/icons/index.md';
 
 <Icons />
 
-## Theming
+## 主题化
 
 ### Colors
 
@@ -75,21 +75,21 @@ import Colors from '@site/static/usage/v6/button/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v6/button/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -97,7 +97,7 @@ import CSSProps from '@site/static/usage/v6/button/theming/css-properties/index.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 

@@ -1,8 +1,8 @@
-# Android, iOS, and the Camera - Oh My!
+# Android、iOS 与相机 - 精彩纷呈！
 
-Previously, we got an Ionic app up and running locally in a web browser. Now, let’s get it onto your iOS or Android device, then start building the photo gallery feature. Fortunately, Ionic provides a way to skip the frustration of dealing with native SDK installations: Ionic DevApp!
+之前，我们已经在本地网页浏览器中成功运行了一个 Ionic 应用。现在，让我们将它部署到您的 iOS 或 Android 设备上，然后开始构建照片库功能。幸运的是，Ionic 提供了一种方法来避免处理原生 SDK 安装的烦恼：Ionic DevApp！
 
-The Ionic DevApp is a free app that makes it easy to run your Ionic app directly on your iOS or Android device. Download it here, then open on your device:
+Ionic DevApp 是一款免费应用，可以让您直接在 iOS 或 Android 设备上轻松运行 Ionic 应用。请在此处下载，然后在您的设备上打开：
 
 <a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8">
   <img src={require('@site/static/img/guides/first-app-v3/appstore.png').default} />
@@ -11,17 +11,17 @@ The Ionic DevApp is a free app that makes it easy to run your Ionic app directly
   <img src={require('@site/static/img/guides/first-app-v3/playstore.png').default} />
 </a>
 
-Afterwards, open a terminal and navigate to your Ionic project. Execute the following:
+之后，打开终端，导航到您的 Ionic 项目。执行以下命令：
 
 ```shell
 ionic serve -c
 ```
 
-In DevApp, you should now see the app appear. If it doesn't, or you have any issues throughout creating this app, [see here](https://ionicframework.com/docs/pro/devapp/).
+现在，您应该在 DevApp 中看到应用出现。如果没有，或者在创建此应用过程中遇到任何问题，[请参阅此处](https://ionicframework.com/docs/pro/devapp/)。
 
-Much better! Now we can add the camera functionality. By the way, you can find reference code for this in [the “part 1” folder](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part1) on GitHub.
+好多了！现在我们可以添加相机功能了。顺便说一下，您可以在 GitHub 上的 [“part 1”文件夹](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part1) 中找到相关参考代码。
 
-Back in `about.html`, add the following:
+回到 `about.html`，添加以下内容：
 
 ```html
 <ion-content>
@@ -35,50 +35,50 @@ Back in `about.html`, add the following:
 </ion-content>
 ```
 
-Save the file and watch - a camera button appears! Tap on it and notice that it doesn’t do anything. Let’s fix that next.
+保存文件并观察 - 一个相机按钮出现了！点击它，注意到它没有任何反应。接下来让我们解决这个问题。
 
-## Add the Camera Dependencies via the CLI
+## 通过 CLI 添加相机依赖项
 
-In order to use the Camera, we need to bring in its JavaScript and native library dependencies. Back over in your Terminal window, run the following command, which adds the JavaScript library to the project, thus exposing the Camera API in TypeScript code:
+为了使用相机功能，我们需要引入其 JavaScript 和原生库依赖项。回到您的终端窗口，运行以下命令，将 JavaScript 库添加到项目中，从而在 TypeScript 代码中公开 Camera API：
 
 ```shell
 npm install --save @awesome-cordova-plugins/camera
 ```
 
-In `package.json`, you’ll notice a new JavaScript dependency has been added:
+在 `package.json` 中，您会注意到已添加了一个新的 JavaScript 依赖项：
 
 `"@awesome-cordova-plugins/camera": "^4.12.0"`
 
-Next, run this command to add the native iOS and Android code, effectively allowing the Camera to work on a mobile device:
+接下来，运行此命令添加原生 iOS 和 Android 代码，从而让相机能够在移动设备上工作：
 
 ```shell
 ionic cordova plugin add cordova-plugin-camera
 ```
 
-In `config.xml`, a new plugin entry is created:
+在 `config.xml` 中，会创建一个新的插件条目：
 
 ```xml
 <plugin name="cordova-plugin-camera" spec="^4.0.3" />
 ```
 
-The next step is only required for iOS users. As of iOS 10, developers must provide a reason for why the app wishes to access the device camera. Add this to the bottom of `config.xml`:
+下一步仅适用于 iOS 用户。自 iOS 10 起，开发者必须提供应用希望访问设备相机的原因。将此添加到 `config.xml` 的底部：
 
 ```xml
 <!-- Required for iOS 10: Camera permission prompt -->
 <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
-    <string>Used to take pictures</string>
+    <string>用于拍摄照片</string>
 </edit-config>
 ```
 
-## Add Camera plugin to Angular App Module
+## 将 Camera 插件添加到 Angular 应用模块
 
-There’s one more step we need to do since this is an Angular project: register the Camera in the App Module (`src/app/app.module.ts`). First, import the Camera module:
+由于这是一个 Angular 项目，我们还需要执行一个步骤：在应用模块 (`src/app/app.module.ts`) 中注册 Camera。首先，导入 Camera 模块：
 
 ```Javascript
 import { Camera } from '@awesome-cordova-plugins/camera';
 ```
 
-Then, add it as a Provider:
+然后，将其添加为 Provider：
 
 ```Javascript
 providers: [
@@ -89,29 +89,29 @@ providers: [
   ],
 ```
 
-It can now be used on any of our App pages.
+现在，它可以在我们应用的任何页面上使用了。
 
-## Add the Camera to the About page
+## 将 Camera 添加到 About 页面
 
-Our camera button doesn’t do anything yet. Over in `about.html`, add a click handler to the button:
+我们的相机按钮目前还没有任何功能。回到 `about.html`，为按钮添加点击处理程序：
 
 ```html
 <button ion-fab (click)="takePicture()"></button>
 ```
 
-Then, update the image placeholder. The following binds the “currentImage” variable (which we’ll work on next) to the image to display to the user.
+然后，更新图片占位符。以下代码将 "currentImage" 变量（我们接下来会处理它）绑定到要显示给用户的图片上。
 
 ```html
 <img [src]="currentImage" *ngIf="currentImage" />
 ```
 
-Open `about.ts` next and import the Camera library:
+接下来打开 `about.ts`，导入 Camera 库：
 
 ```Javascript
 import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera';
 ```
 
-Next, define the “currentImage” variable and inject the Camera into this class via the constructor:
+接下来，定义 "currentImage" 变量，并通过构造函数将 Camera 注入此类：
 
 ```Javascript
 export class AboutPage {
@@ -121,7 +121,7 @@ export class AboutPage {
 }
 ```
 
-Finally, add the “takePicture” method, already wired up to execute once the camera button has been tapped:
+最后，添加 "takePicture" 方法，该方法已预设好在相机按钮被点击后执行：
 
 ```Javascript
 takePicture() {
@@ -135,22 +135,22 @@ takePicture() {
     this.camera.getPicture(options).then((imageData) => {
       this.currentImage = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
-     // Handle error
-     console.log("Camera issue:" + err);
+     // 处理错误
+     console.log("相机问题：" + err);
     });
   }
 ```
 
-Take notice: there’s no mention of iOS or Android! This is the awesome power of plugins: you use one API (`camera.getPicture()` in this case) and the plugin takes care of the platform differences for you. Write once, run everywhere `:)`
+请注意：这里没有提到 iOS 或 Android！这就是插件的神奇之处：您只需使用一个 API（在本例中是 `camera.getPicture()`），插件会为您处理平台差异。一次编写，到处运行 `:)`
 
-Save this file then tap the Camera button in DevApp. Voila! The camera should open on your device. Once a photo has been taken, it displays on the Photo Gallery page.
+保存此文件，然后在 DevApp 中点击相机按钮。瞧！相机应该在您的设备上打开了。拍摄照片后，它会显示在照片库页面上。
 
-Finally, back up your changes to Appflow:
+最后，将您的更改备份到 Appflow：
 
 ```shell
 git add .
-git commit -m “added camera functionality”
+git commit -m “添加了相机功能”
 git push ionic master
 ```
 
-Next, we’ll look at how to transform the app into a photo gallery, as well as how to save the photos to your device!
+接下来，我们将探讨如何将应用转变为照片库，以及如何将照片保存到您的设备上！

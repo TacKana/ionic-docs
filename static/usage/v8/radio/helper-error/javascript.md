@@ -1,15 +1,15 @@
 ```html
 <form id="my-form">
-  <ion-radio-group helper-text="Select your favorite fruit" error-text="This field is required">
-    <ion-radio value="grapes">Grapes</ion-radio><br />
-    <ion-radio value="strawberries">Strawberries</ion-radio><br />
-    <ion-radio value="pineapple">Pineapple</ion-radio><br />
-    <ion-radio value="cherries">Cherries</ion-radio>
+  <ion-radio-group helper-text="请选择你最喜欢的水果" error-text="此项为必填项">
+    <ion-radio value="grapes">葡萄</ion-radio><br />
+    <ion-radio value="strawberries">草莓</ion-radio><br />
+    <ion-radio value="pineapple">菠萝</ion-radio><br />
+    <ion-radio value="cherries">樱桃</ion-radio>
   </ion-radio-group>
 
   <br />
 
-  <ion-button type="submit" size="small">Submit</ion-button>
+  <ion-button type="submit" size="small">提交</ion-button>
 </form>
 
 <script>

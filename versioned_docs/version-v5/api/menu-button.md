@@ -14,17 +14,17 @@ import Slots from '@ionic-internal/component-api/v5/menu-button/slots.md';
 
 # ion-menu-button
 
-Menu Button is component that automatically creates the icon and functionality to open a menu on a page.
+菜单按钮是一个组件，它能自动创建图标和功能，用于在页面上打开菜单。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -32,10 +32,10 @@ Menu Button is component that automatically creates the icon and functionality t
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

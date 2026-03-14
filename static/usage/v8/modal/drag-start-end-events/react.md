@@ -7,7 +7,7 @@ function Example() {
   const header = useRef<HTMLIonHeaderElement>(null);
 
   const onDragStart = () => {
-    console.log('Drag started');
+    console.log('开始拖动');
 
     const headerEl = header.current!;
 
@@ -15,7 +15,7 @@ function Example() {
   };
 
   const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
-    console.log('Drag ended');
+    console.log('拖动结束');
 
     const headerEl = header.current!;
 
@@ -26,12 +26,12 @@ function Example() {
     <IonPage>
       <IonHeader ref={header}>
         <IonToolbar>
-          <IonTitle>App</IonTitle>
+          <IonTitle>应用</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          Open Sheet Modal
+          打开底部抽屉模态框
         </IonButton>
         <IonModal
           trigger="open-modal"
@@ -42,7 +42,7 @@ function Example() {
         >
           <IonContent className="ion-padding">
             <div className="ion-margin-top">
-              <IonLabel>Drag the handle to adjust the header's visibility.</IonLabel>
+              <IonLabel>拖动手柄来调整顶部栏的可见性。</IonLabel>
             </div>
           </IonContent>
         </IonModal>

@@ -2,33 +2,33 @@
 <template>
   <ion-header id="header">
     <ion-toolbar>
-      <ion-title>Header</ion-title>
+      <ion-title>页头</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content class="ion-padding">
-    <ion-button id="headerAnchor">Anchor to Header</ion-button>
-    <ion-button id="footerAnchor">Anchor to Footer</ion-button>
+    <ion-button id="headerAnchor">定位到页头</ion-button>
+    <ion-button id="footerAnchor">定位到页脚</ion-button>
 
     <ion-toast
       trigger="headerAnchor"
       position="top"
       position-anchor="header"
-      message="Hello World!"
+      message="你好，世界！"
       :duration="2000"
     ></ion-toast>
     <ion-toast
       trigger="footerAnchor"
       position="bottom"
       position-anchor="footer"
-      message="Hello World!"
+      message="你好，世界！"
       :duration="2000"
     ></ion-toast>
   </ion-content>
 
   <ion-footer id="footer">
     <ion-toolbar>
-      <ion-title>Footer</ion-title>
+      <ion-title>页脚</ion-title>
     </ion-toolbar>
   </ion-footer>
 </template>

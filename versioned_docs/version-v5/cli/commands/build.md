@@ -1,22 +1,22 @@
 ---
 title: 'Angular NG Build Configuration to Build Ionic Apps | ionic build'
-description: 'Build web assets and prepare your Ionic app for any platform targets. Ionic build uses the Angular CLI—see the ng build docs for how to use the configuration.'
+description: '构建 Web 资源并准备您的 Ionic 应用以适配任何平台目标。Ionic build 使用 Angular CLI——有关如何使用配置的详细信息，请参阅 ng build 文档。'
 sidebar_label: 'build'
 ---
 
 # ionic build
 
-Build web assets and prepare your app for any platform targets
+构建 Web 资源并准备您的应用以适配任何平台目标
 
 ```shell
-ionic build [options]
+ionic build [选项]
 ```
 
-`ionic build` will perform an Ionic build, which compiles web assets and prepares them for deployment.
+`ionic build` 将执行 Ionic 构建，该操作会编译 Web 资源并准备部署。
 
-`ionic build` uses the Angular CLI. Use `ng build --help` to list all Angular CLI options for building your app. See the `ng build` [docs](https://angular.io/cli/build) for explanations. Options not listed below are considered advanced and can be passed to the `ng` CLI using the `--` separator after the Ionic CLI arguments. See the examples.
+`ionic build` 使用 Angular CLI。使用 `ng build --help` 可列出构建应用的所有 Angular CLI 选项。有关解释，请参阅 `ng build` [文档](https://angular.io/cli/build)。下面未列出的选项被视为高级选项，可以在 Ionic CLI 参数后使用 `--` 分隔符传递给 `ng` CLI。请参阅示例。
 
-## Examples
+## 示例
 
 ```shell
 $ ionic build
@@ -24,7 +24,7 @@ $ ionic build --prod
 $ ionic build --watch
 ```
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -40,17 +40,17 @@ $ ionic build --watch
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <p>
-          Flag to use the <code>production</code> configuration
+          使用 <code>production</code> 配置的标志
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -67,15 +67,15 @@ $ ionic build --watch
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>Specify the configuration to use.</p>
+          <p>指定要使用的配置。</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-c</code>
       </td>
@@ -94,10 +94,10 @@ $ ionic build --watch
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>Output source maps</p>
+          <p>输出源映射</p>
         </div>
       </td>
     </tr>
@@ -115,10 +115,10 @@ $ ionic build --watch
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>Rebuild when files change</p>
+          <p>文件更改时重新构建</p>
         </div>
       </td>
     </tr>
@@ -137,11 +137,11 @@ $ ionic build --watch
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
           <p>
-            Target engine (e.g. <code>browser</code>, <code>cordova</code>)
+            目标引擎（例如 <code>browser</code>、<code>cordova</code>）
           </p>
         </div>
       </td>
@@ -161,11 +161,11 @@ $ ionic build --watch
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
           <p>
-            Target platform on chosen engine (e.g. <code>ios</code>, <code>android</code>)
+            所选引擎的目标平台（例如 <code>ios</code>、<code>android</code>）
           </p>
         </div>
       </td>

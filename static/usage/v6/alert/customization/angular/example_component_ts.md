@@ -13,15 +13,15 @@ export class ExampleComponent {
 
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Are you sure?',
+      header: '确认操作', // 翻译提示标题
       cssClass: 'custom-alert',
       buttons: [
         {
-          text: 'No',
+          text: '取消', // 翻译取消按钮
           cssClass: 'alert-button-cancel',
         },
         {
-          text: 'Yes',
+          text: '确定', // 翻译确认按钮
           cssClass: 'alert-button-confirm',
         },
       ],

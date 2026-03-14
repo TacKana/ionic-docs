@@ -1,8 +1,8 @@
-# Components folder
+# 组件文件夹
 
-This folder is used to style components that are used globally across the site. A good way to setup a file is to include any themed variables at the top, and the override styles below that. All these partials are imported into the base styles with the sass `@use` rule.
+该文件夹用于设置网站全局组件的样式。建议的文件组织方式是在顶部定义主题相关的变量，随后是覆盖样式。所有这些部分样式文件都通过 Sass 的 `@use` 规则导入到基础样式中。
 
-Light themed variables can be targeted using the following selector:
+浅色主题的变量可以通过以下选择器进行设置：
 
 ```css
 html[data-theme='light'] {
@@ -10,7 +10,7 @@ html[data-theme='light'] {
 }
 ```
 
-Dark themed variables can be targeted using the following selector:
+深色主题的变量可以通过以下选择器进行设置：
 
 ```css
 html[data-theme='dark'] {
@@ -18,7 +18,7 @@ html[data-theme='dark'] {
 }
 ```
 
-Global variables can be overridden at root like this:
+全局变量可以在根级别像这样进行覆盖：
 
 ```css
 :root {
@@ -26,7 +26,7 @@ Global variables can be overridden at root like this:
 }
 ```
 
-Styles can be overridden like this:
+样式可以像这样进行覆盖：
 
 ```css
 #__docusaurus {

@@ -1,9 +1,9 @@
 ```html
 <template>
-  <ion-button id="open-toast">Open Toast</ion-button>
+  <ion-button id="open-toast">打开 Toast</ion-button>
   <ion-toast
     trigger="open-toast"
-    message="Hello World!"
+    message="你好，世界！"
     :duration="3000"
     :buttons="toastButtons"
     @didDismiss="handleDismiss($event)"
@@ -15,24 +15,24 @@
 
   const toastButtons = [
     {
-      text: 'More Info',
+      text: '更多信息',
       role: 'info',
       handler: () => {
-        console.log('More Info clicked');
+        console.log('点击了更多信息');
       },
     },
     {
-      text: 'Dismiss',
+      text: '关闭',
       role: 'cancel',
       handler: () => {
-        console.log('Dismiss clicked');
+        console.log('点击了关闭');
       },
     },
   ];
 
   const handleDismiss = (event: CustomEvent) => {
     const { role } = event.detail;
-    console.log(`Dismissed with role: ${role}`);
+    console.log(`已关闭，角色：${role}`);
   };
 </script>
 ```

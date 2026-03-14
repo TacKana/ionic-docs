@@ -1,6 +1,6 @@
 ```html
 <ion-list lines="full">
-  <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+  <!-- 默认情况下拖拽排序手势是禁用的，启用后即可拖放项目 -->
   <ion-reorder-group disabled="false"></ion-reorder-group>
 </ion-list>
 
@@ -15,42 +15,42 @@
     const to = detail.to;
 
     if (from !== to) {
-      console.log('Dragged from index', from, 'to', to);
+      console.log('从索引', from, '拖拽到', to);
     }
 
-    // Get all items and sort by their current id (item-1, item-2, ...)
+    // 获取所有项目并按当前 id (item-1, item-2, ...) 排序
     const itemElements = Array.from(reorderGroup.querySelectorAll('ion-item')).sort((a, b) => {
       const aNum = parseInt(a.id.replace('item-', ''), 10);
       const bNum = parseInt(b.id.replace('item-', ''), 10);
       return aNum - bNum;
     });
 
-    // Dragging down: shift up items between from+1 and to, set dragged to to+1
+    // 向下拖拽：将 from+1 到 to 之间的项目上移，被拖拽项目设置为 to+1
     if (from < to) {
       for (let i = from; i <= to; i++) {
         const item = itemElements[i];
         const itemNum = item.querySelector('b');
         if (i === from) {
-          // Dragged item
+          // 被拖拽项目
           itemNum.textContent = to + 1;
           item.id = `item-${to + 1}`;
         } else {
-          // Items shift up
+          // 上移项目
           itemNum.textContent = i;
           item.id = `item-${i}`;
         }
       }
-      // Dragging up: shift down items between to and from-1, set dragged to to+1
+      // 向上拖拽：将 to 到 from-1 之间的项目下移，被拖拽项目设置为 to+1
     } else if (from > to) {
       for (let i = to; i <= from; i++) {
         const item = itemElements[i];
         const itemNum = item.querySelector('b');
         if (i === from) {
-          // Dragged item
+          // 被拖拽项目
           itemNum.textContent = to + 1;
           item.id = `item-${to + 1}`;
         } else {
-          // Items shift down
+          // 下移项目
           itemNum.textContent = i + 2;
           item.id = `item-${i + 2}`;
         }
@@ -59,10 +59,10 @@
   });
 
   reorderGroup.addEventListener('ionReorderEnd', ({ detail }) => {
-    // Finish the reorder and update the items data
+    // 完成排序并更新项目数据
     items = detail.complete(items);
 
-    // Re-render the DOM to match the new order
+    // 重新渲染 DOM 以匹配新顺序
     reorderItems(items);
   });
 

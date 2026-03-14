@@ -1,21 +1,21 @@
-# Videos
+# 视频教程
 
-### [Ionic 2 Crash Course](https://www.youtube.com/watch?v=O2WiI9QrS5s&feature=youtu.be)
+### [Ionic 2 速成课程](https://www.youtube.com/watch?v=O2WiI9QrS5s&feature=youtu.be)
 
-A quick introduction to Ionic 2 and how to build your first app.
+快速了解 Ionic 2 并学习如何构建你的第一个应用。
 
-### [Ionic &amp; Async](https://blog.ionicframework.com/screencast-ionic-async/)
+### [Ionic 与异步处理](https://blog.ionicframework.com/screencast-ionic-async/)
 
-Learn how to coordinate multiple events in a timely manner.
+学习如何协调多个事件，使其能够及时有序地执行。
 
-### [Building a TODO app in Ionic 2](http://www.joshmorony.com/build-a-todo-app-from-scratch-with-ionic-2-video-tutorial/)
+### [使用 Ionic 2 构建待办事项应用](http://www.joshmorony.com/build-a-todo-app-from-scratch-with-ionic-2-video-tutorial/)
 
-Learn how to build out an entire Ionic 2 app.
+学习如何从头到尾完整构建一个 Ionic 2 应用。
 
-### [Angular Connect: Ionic 2](https://www.youtube.com/watch?v=bAlydPwFONY)
+### [Angular 大会：Ionic 2](https://www.youtube.com/watch?v=bAlydPwFONY)
 
-Dive into some of the ideas and goals behind Ionic 2.
+深入探讨 Ionic 2 背后的设计理念和目标。
 
-### [Ionic &amp; Typings](https://blog.ionicframework.com/ionic-and-typings/)
+### [Ionic 与类型定义](https://blog.ionicframework.com/ionic-and-typings/)
 
-Learn how to add typings for libraries you are using in your Ionic 2 app.
+学习如何在 Ionic 2 应用中为所使用的库添加类型定义。

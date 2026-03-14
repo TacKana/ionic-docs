@@ -38,6 +38,7 @@ import {
 export class ExampleComponent {
   constructor(private animationCtrl: AnimationController) {}
 
+  // 定义进入动画
   enterAnimation = (baseEl: HTMLElement) => {
     const root = baseEl.shadowRoot;
 
@@ -62,6 +63,7 @@ export class ExampleComponent {
       .addAnimation([backdropAnimation, wrapperAnimation]);
   };
 
+  // 离开动画是进入动画的逆向播放
   leaveAnimation = (baseEl: HTMLElement) => {
     return this.enterAnimation(baseEl).direction('reverse');
   };

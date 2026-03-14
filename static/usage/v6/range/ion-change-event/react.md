@@ -7,7 +7,7 @@ function Example() {
   return (
     <>
       <IonRange onIonChange={({ detail }) => setLastEmittedValue(detail.value)}></IonRange>
-      <IonLabel>ionChange emitted value: {lastEmittedValue as number}</IonLabel>
+      <IonLabel>ionChange 事件发出的值：{lastEmittedValue as number}</IonLabel>
     </>
   );
 }

@@ -27,7 +27,7 @@ function Example() {
   };
   const phoneMask = useMaskito({ options: phoneMaskOptions });
 
-  //If you need to set an initial value, you can use maskitoTransform to ensure the value is valid
+  // 如果需要设置初始值，可以使用 maskitoTransform 来确保值有效
   const [myPhoneNumber, setMyPhoneNumber] = useState(maskitoTransform('5555551212', phoneMaskOptions));
 
   return (

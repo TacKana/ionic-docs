@@ -30,28 +30,28 @@
 
 <ion-header>
   <ion-toolbar>
-    <ion-title>App</ion-title>
+    <ion-title>应用</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-button id="open-custom-dialog" expand="block">Open Custom Dialog</ion-button>
+  <ion-button id="open-custom-dialog" expand="block">打开自定义对话框</ion-button>
 
   <ion-modal id="example-modal" trigger="open-custom-dialog">
     <div class="wrapper">
-      <h1>Dialog header</h1>
+      <h1>对话框标题</h1>
 
       <ion-list lines="none">
         <ion-item button="true" detail="false" onclick="dismiss()">
           <ion-icon name="person-circle"></ion-icon>
-          <ion-label>Item 1</ion-label>
+          <ion-label>选项一</ion-label>
         </ion-item>
         <ion-item button="true" detail="false" onclick="dismiss()">
           <ion-icon name="person-circle"></ion-icon>
-          <ion-label>Item 2</ion-label>
+          <ion-label>选项二</ion-label>
         </ion-item>
         <ion-item button="true" detail="false" onclick="dismiss()">
           <ion-icon name="person-circle"></ion-icon>
-          <ion-label>Item 3</ion-label>
+          <ion-label>选项三</ion-label>
         </ion-item>
       </ion-list>
     </div>

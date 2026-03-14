@@ -1,5 +1,5 @@
 ---
-title: "ion-router"
+title: 路由组件
 ---
 
 import Props from '@ionic-internal/component-api/v8/router/props.md';
@@ -10,37 +10,37 @@ import CustomProps from '@ionic-internal/component-api/v8/router/custom-props.md
 import Slots from '@ionic-internal/component-api/v8/router/slots.md';
 
 <head>
-  <title>ion-router: Router Component to Coordinate URL Navigation</title>
-  <meta name="description" content="ion-router is a URL coordinator for navigation outlets of ionic: ion-nav and ion-tabs. Router components handle routing inside vanilla and Stencil JavaScript." />
+  <title>ion-router：用于协调 URL 导航的路由组件</title>
+  <meta name="description" content="ion-router 是 Ionic 导航出口（ion-nav 和 ion-tabs）的 URL 协调器。该路由组件用于处理原生 JavaScript 和 Stencil 项目中的路由。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
 
-The router is a component for handling routing inside vanilla and Stencil JavaScript projects.
+路由组件是用于处理原生 JavaScript 和 Stencil 项目中路由的组件。
 
 :::note
- Note: This component should only be used with vanilla and Stencil JavaScript projects. See the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation) for framework-specific routing solutions.
+ 注意：此组件仅适用于原生 JavaScript 和 Stencil 项目。如需框架特定的路由解决方案，请参阅 [Angular](../angular/navigation)、[React](../react/navigation) 和 [Vue](../vue/navigation) 的路由指南。
 :::
 
 
-Apps should have a single `ion-router` component in the codebase.
-This component controls all interactions with the browser history and it aggregates updates through an event system.
+应用代码库中应只包含一个 `ion-router` 组件。
+该组件控制所有与浏览器历史记录的交互，并通过事件系统聚合更新。
 
-`ion-router` is just a URL coordinator for the navigation outlets of ionic: `ion-nav`, `ion-tabs`, and `ion-router-outlet`.
+`ion-router` 仅仅是 Ionic 导航出口（`ion-nav`、`ion-tabs` 和 `ion-router-outlet`）的 URL 协调器。
 
-That means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav`, `ion-tabs`, and `ion-router-outlet` what and when to "show" based on the browser's URL.
+这意味着 `ion-router` 从不操作 DOM，它不会显示组件或触发任何生命周期事件，它只是根据浏览器的 URL 告诉 `ion-nav`、`ion-tabs` 和 `ion-router-outlet` 要“显示”什么以及何时显示。
 
-In order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.
+为了配置组件（加载/选择）与 URL 之间的这种关系，`ion-router` 使用 JSX/HTML 的声明式语法来定义路由树。
 
-## Basic Usage
+## 基本用法
 
 import BasicExample from '@site/static/usage/v8/router/basic/index.md';
 
 <BasicExample />
 
-## Interfaces
+## 接口
 
 ### RouterEventDetail
 
@@ -54,7 +54,7 @@ interface RouterEventDetail {
 
 ### RouterCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更严格的类型检查。
 
 ```typescript
 interface RouterCustomEvent extends CustomEvent {
@@ -65,7 +65,7 @@ interface RouterCustomEvent extends CustomEvent {
 
 
 
-## Usage
+## 用法
 
 ```html
 <ion-router>
@@ -95,20 +95,20 @@ interface RouterCustomEvent extends CustomEvent {
 ```
 
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

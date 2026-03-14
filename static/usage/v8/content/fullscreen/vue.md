@@ -2,11 +2,11 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title> Header </ion-title>
+      <ion-title> 页眉 </ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content :fullscreen="true" class="ion-padding">
-    <h1>Scroll the content and notice that the text goes behind the header and footer.</h1>
+    <h1>滚动内容区域，注意文字会滑到页眉和页脚后面。</h1>
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum
@@ -56,7 +56,7 @@
   </ion-content>
   <ion-footer>
     <ion-toolbar>
-      <ion-title> Footer </ion-title>
+      <ion-title> 页脚 </ion-title>
     </ion-toolbar>
   </ion-footer>
 </template>

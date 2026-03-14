@@ -6,7 +6,7 @@ function Example() {
   return (
     <>
       <IonThumbnail>
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        <img alt="山峦剪影" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
       </IonThumbnail>
     </>
   );

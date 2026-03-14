@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="presentAlert">Click Me</ion-button>
+  <ion-button @click="presentAlert">点击我</ion-button>
 </template>
 
 <script lang="ts">
@@ -11,21 +11,21 @@
     setup() {
       const presentAlert = async () => {
         const alert = await alertController.create({
-          header: 'Select your favorite color',
-          buttons: ['OK'],
+          header: '选择你最喜欢的颜色',
+          buttons: ['确认'],
           inputs: [
             {
-              label: 'Red',
+              label: '红色',
               type: 'radio',
               value: 'red',
             },
             {
-              label: 'Blue',
+              label: '蓝色',
               type: 'radio',
               value: 'blue',
             },
             {
-              label: 'Green',
+              label: '绿色',
               type: 'radio',
               value: 'green',
             },

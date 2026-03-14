@@ -16,11 +16,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-A tab button is a UI component that is placed inside of a [tab bar](tab-bar.md). The tab button can specify the layout of the icon and label and connect to a [tab view](tab.md).
+选项卡按钮是一个放置在[选项卡栏](tab-bar.md)内的用户界面组件。它可以指定图标和标签的布局，并连接到[选项卡视图](tab.md)。
 
-See the [tabs documentation](tabs.md) for more details on configuring tabs.
+有关配置选项卡的更多详细信息，请参阅[选项卡文档](tabs.md)。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -28,26 +28,26 @@ See the [tabs documentation](tabs.md) for more details on configuring tabs.
 
 ```html
 <ion-tabs>
-  <!-- Tab bar -->
+  <!-- 选项卡栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="schedule">
       <ion-icon name="calendar" aria-hidden="true"></ion-icon>
-      <ion-label>Schedule</ion-label>
+      <ion-label>日程</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="speakers">
       <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
-      <ion-label>Speakers</ion-label>
+      <ion-label>演讲者</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="map">
       <ion-icon name="map" aria-hidden="true"></ion-icon>
-      <ion-label>Map</ion-label>
+      <ion-label>地图</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="about">
       <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
-      <ion-label>About</ion-label>
+      <ion-label>关于</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
@@ -59,7 +59,7 @@ See the [tabs documentation](tabs.md) for more details on configuring tabs.
 
 ```html
 <ion-tabs>
-  <!-- Tab views -->
+  <!-- 选项卡视图 -->
   <ion-tab tab="schedule">
     <ion-router-outlet name="schedule"></ion-router-outlet>
   </ion-tab>
@@ -76,26 +76,26 @@ See the [tabs documentation](tabs.md) for more details on configuring tabs.
     <ion-router-outlet name="about"></ion-router-outlet>
   </ion-tab>
 
-  <!-- Tab bar -->
+  <!-- 选项卡栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="schedule" href="/app/tabs/(schedule:schedule)">
       <ion-icon name="calendar" aria-hidden="true"></ion-icon>
-      <ion-label>Schedule</ion-label>
+      <ion-label>日程</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="speakers" href="/app/tabs/(speakers:speakers)">
       <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
-      <ion-label>Speakers</ion-label>
+      <ion-label>演讲者</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="map" href="/app/tabs/(map:map)">
       <ion-icon name="map" aria-hidden="true"></ion-icon>
-      <ion-label>Map</ion-label>
+      <ion-label>地图</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="about" href="/app/tabs/(about:about)">
       <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
-      <ion-label>About</ion-label>
+      <ion-label>关于</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
@@ -113,26 +113,26 @@ import { calendar, personCircle, map, informationCircle } from 'ionicons/icons';
 export const TabButtonExample: React.FC = () => (
   <IonContent>
     <IonTabs>
-      {/*-- Tab bar --*/}
+      {/*-- 选项卡栏 --*/}
       <IonTabBar slot="bottom">
         <IonTabButton tab="schedule">
           <IonIcon icon={calendar} aria-hidden="true" />
-          <IonLabel>Schedule</IonLabel>
+          <IonLabel>日程</IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="speakers">
           <IonIcon icon={personCircle} aria-hidden="true" />
-          <IonLabel>Speakers</IonLabel>
+          <IonLabel>演讲者</IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="map">
           <IonIcon icon={map} aria-hidden="true" />
-          <IonLabel>Map</IonLabel>
+          <IonLabel>地图</IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="about">
           <IonIcon icon={informationCircle} aria-hidden="true" />
-          <IonLabel>About</IonLabel>
+          <IonLabel>关于</IonLabel>
         </IonTabButton>
       </IonTabBar>
     </IonTabs>
@@ -147,26 +147,26 @@ export const TabButtonExample: React.FC = () => (
 ```html
 <template>
   <ion-tabs>
-    <!-- Tab bar -->
+    <!-- 选项卡栏 -->
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="schedule" href="/tabs/schedule">
         <ion-icon :icon="calendar" aria-hidden="true"></ion-icon>
-        <ion-label>Schedule</ion-label>
+        <ion-label>日程</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="speakers" href="/tabs/speakers">
         <ion-icon :icon="person-circle" aria-hidden="true"></ion-icon>
-        <ion-label>Speakers</ion-label>
+        <ion-label>演讲者</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="map" href="/tabs/map">
         <ion-icon :icon="map" aria-hidden="true"></ion-icon>
-        <ion-label>Map</ion-label>
+        <ion-label>地图</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="about" href="/tabs/about">
         <ion-icon :icon="informationCircle" aria-hidden="true"></ion-icon>
-        <ion-label>About</ion-label>
+        <ion-label>关于</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
@@ -182,15 +182,15 @@ export const TabButtonExample: React.FC = () => (
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -198,10 +198,10 @@ export const TabButtonExample: React.FC = () => (
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

@@ -1,19 +1,19 @@
 ```html
 <ion-breadcrumbs>
   <ion-breadcrumb href="#home">
-    Home
+    首页
     <ion-icon slot="separator" name="arrow-forward-circle"></ion-icon>
   </ion-breadcrumb>
   <ion-breadcrumb href="#electronics">
-    Electronics
+    电子产品
     <ion-icon slot="separator" name="arrow-forward-circle"></ion-icon>
   </ion-breadcrumb>
   <ion-breadcrumb href="#cameras">
-    Cameras
+    相机
     <ion-icon slot="separator" name="arrow-forward-circle"></ion-icon>
   </ion-breadcrumb>
   <ion-breadcrumb href="#film">
-    Film
+    胶卷
     <ion-icon slot="separator" name="arrow-forward-circle"></ion-icon>
   </ion-breadcrumb>
 </ion-breadcrumbs>

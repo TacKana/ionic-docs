@@ -1,6 +1,6 @@
 ```html
-<ion-toggle aria-label="Enable Notifications"></ion-toggle>
-<ion-toggle checked="true" aria-label="Enable Notifications"></ion-toggle>
+<ion-toggle aria-label="启用通知"></ion-toggle>
+<ion-toggle checked="true" aria-label="启用通知"></ion-toggle>
 
 <style>
   ion-toggle {
@@ -25,7 +25,7 @@
     height: 10px;
     width: 65px;
 
-    /* Required for iOS handle to overflow the height of the track */
+    /* 为 iOS 手柄超出轨道高度所需 */
     overflow: visible;
   }
 </style>

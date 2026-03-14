@@ -1,47 +1,47 @@
 ---
-title: Managing Focus
+title: 管理焦点
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Managing Focus</title>
+  <title>管理焦点</title>
   <meta
     name="description"
-    content="Learn how to manage focus in Ionic applications using the setFocus API instead of the autofocus attribute."
+    content="学习如何在 Ionic 应用中使用 setFocus API（而非 autofocus 属性）来管理焦点。"
   />
 </head>
 
-Ionic provides a `setFocus` API on components such as [Input](../api/input), [Searchbar](../api/searchbar), and [Textarea](../api/textarea) that allows developers to manually set focus to an element. This API should be used in place of the `autofocus` attribute and called within:
+Ionic 在 [Input](../api/input)、[Searchbar](../api/searchbar) 和 [Textarea](../api/textarea) 等组件上提供了 `setFocus` API，允许开发者手动将焦点设置到某个元素上。应使用此 API 来替代 `autofocus` 属性，并在以下情况下调用：
 
-- The `ionViewDidEnter` lifecycle event for routing applications when a page is entered.
-- The `didPresent` lifecycle event for overlays when an overlay is presented.
-- The `appload` event for vanilla JavaScript applications when the application loads.
-- The result of a user gesture or interaction.
+- 路由应用中，页面进入时的 `ionViewDidEnter` 生命周期事件。
+- 覆盖层（overlay）显示时的 `didPresent` 生命周期事件。
+- 原生 JavaScript 应用加载时的 `appload` 事件。
+- 用户手势或交互的结果。
 
-## Why not autofocus?
+## 为什么不使用 autofocus？
 
-The `autofocus` attribute is a standard HTML attribute that allows developers to set focus to an element when a page loads. This attribute is commonly used to set focus to the first input element on a page. However, the `autofocus` attribute can cause issues in routing applications when navigating between pages. This is because the `autofocus` attribute will set focus to the element when the page loads, but will not set focus to the element when the page is revisited. Learn more about the `autofocus` attribute in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus).
+`autofocus` 属性是一个标准的 HTML 属性，允许开发者在页面加载时将焦点设置到某个元素上。此属性通常用于将焦点设置到页面上的第一个输入元素。然而，在路由应用中进行页面导航时，`autofocus` 属性可能会引发问题。这是因为 `autofocus` 属性会在页面加载时设置焦点，但在重新访问页面时却不会。更多关于 `autofocus` 属性的信息，请参阅 [MDN Web 文档](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus)。
 
-## Platform Restrictions
+## 平台限制
 
-There are platform restrictions you should be aware of when using the `setFocus` API, including:
+使用 `setFocus` API 时，需要注意以下平台限制：
 
-1. Android requires user interaction before setting focus to an element. This can be as simple as a user tapping on the screen.
-2. Interactive elements can only focused a result of a user gesture on Mobile Safari (iOS), such as calling `setFocus` as the result of a button click.
+1. Android 要求在设置元素焦点之前必须有用户交互，例如用户轻点屏幕。
+2. 在移动版 Safari（iOS）上，交互性元素只有在用户手势（例如点击按钮后调用 `setFocus`）的结果下才能获得焦点。
 
-## Basic Usage
+## 基本用法
 
-The example below demonstrates how to use the `setFocus` API to request focus on an input when the user clicks a button.
+以下示例演示了如何在用户点击按钮时使用 `setFocus` API 来请求输入框焦点。
 
 import Basic from '@site/static/usage/v7/input/set-focus/index.md';
 
 <Basic />
 
-## Routing
+## 路由
 
-Developers can use the `ionViewDidEnter` lifecycle event to set focus to an element when a page is entered.
+开发者可以在页面进入时，使用 `ionViewDidEnter` 生命周期事件来设置元素焦点。
 
 ````mdx-code-block
 <Tabs
@@ -114,7 +114,7 @@ export default Home;
   const input = ref();
   onIonViewDidEnter(() => {
     requestAnimationFrame(() => {
-      // requestAnimationFrame is currently required due to:
+      // 由于以下问题，目前需要 requestAnimationFrame：
       // https://github.com/ionic-team/ionic-framework/issues/24434
       input.value.$el.setFocus();
     });
@@ -126,9 +126,9 @@ export default Home;
 </Tabs>
 ````
 
-## Overlays
+## 覆盖层
 
-Developers can use the `didPresent` lifecycle event to set focus to an element when an overlay is presented.
+开发者可以在覆盖层显示时，使用 `didPresent` 生命周期事件来设置元素焦点。
 
 ````mdx-code-block
 <Tabs

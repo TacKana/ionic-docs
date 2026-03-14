@@ -1,59 +1,59 @@
-# Platform
+# 平台
 
 ## isPlatform
 
-The `isPlatform` method can be used to test if your app is running on a certain platform:
+`isPlatform` 方法可用于测试你的应用是否在特定平台上运行：
 
 ```tsx
 import { isPlatform } from '@ionic/react';
 
-isPlatform('ios'); // returns true when running on a iOS device
+isPlatform('ios'); // 在 iOS 设备上运行时返回 true
 ```
 
-Depending on the platform the user is on, isPlatform(platformName) will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: mobile, ios, ipad, and tablet. Additionally, if the app was running from Cordova then cordova would be true.
+根据用户所在的平台，`isPlatform(platformName)` 将返回 true 或 false。请注意，同一个应用可能对多个平台名称返回 true。例如，在 iPad 上运行的应用会对以下平台名称返回 true：mobile、ios、ipad 和 tablet。此外，如果应用是从 Cordova 运行的，那么 cordova 也会返回 true。
 
 ## getPlatforms
 
-The `getPlatforms` method can be used to determine which platforms your app is currently running on.
+`getPlatforms` 方法可用于确定你的应用当前正在哪些平台上运行：
 
 ```tsx
 import { getPlatforms } from '@ionic/react';
 
-getPlatforms(); // returns ["iphone", "ios", "mobile", "mobileweb"] from an iPhone
+getPlatforms(); // 在 iPhone 上返回 ["iphone", "ios", "mobile", "mobileweb"]
 ```
 
-Depending on what device you are on, `getPlatforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return mobile, ios, and iphone.
+根据你所在的设备，`getPlatforms` 可能返回多个值。每个可能的值都是平台的层级结构。例如，在 iPhone 上，它会返回 mobile、ios 和 iphone。
 
-## Platforms
+## 平台
 
-Below is a table listing all the possible platform values along with corresponding descriptions.
+下表列出了所有可能的平台值及其对应描述：
 
-| Platform Name | Description                              |
-| ------------- | ---------------------------------------- |
-| android       | a device running Android                 |
-| capacitor     | a device running Capacitor               |
-| cordova       | a device running Cordova                 |
-| desktop       | a desktop device                         |
-| electron      | a desktop device running Electron        |
-| hybrid        | a device running Capacitor or Cordova    |
-| ios           | a device running iOS                     |
-| ipad          | an iPad device                           |
-| iphone        | an iPhone device                         |
-| mobile        | a mobile device                          |
-| mobileweb     | a web browser running in a mobile device |
-| phablet       | a phablet device                         |
-| pwa           | a PWA app                                |
-| tablet        | a tablet device                          |
+| 平台名称   | 描述                                      |
+| ---------- | ----------------------------------------- |
+| android    | 运行 Android 的设备                       |
+| capacitor  | 运行 Capacitor 的设备                     |
+| cordova    | 运行 Cordova 的设备                       |
+| desktop    | 桌面设备                                  |
+| electron   | 运行 Electron 的桌面设备                  |
+| hybrid     | 运行 Capacitor 或 Cordova 的设备          |
+| ios        | 运行 iOS 的设备                           |
+| ipad       | iPad 设备                                 |
+| iphone     | iPhone 设备                               |
+| mobile     | 移动设备                                  |
+| mobileweb  | 在移动设备中运行的 Web 浏览器             |
+| phablet    | 平板手机设备                              |
+| pwa        | PWA 应用                                  |
+| tablet     | 平板设备                                  |
 
-## Customizing Platform Detection Functions
+## 自定义平台检测函数
 
-The function used to detect a specific platform can be overridden by providing an alternative function in the global [Ionic config](../developing/config). Each function takes `window` as a parameter and returns a boolean.
+可以通过在全局 [Ionic 配置](../developing/config) 中提供替代函数来覆盖用于检测特定平台的函数。每个函数以 `window` 作为参数并返回布尔值：
 
 ```tsx
 setupIonicReact({
   platform: {
-    /** The default `desktop` function returns false for devices with a touchscreen.
-     * This is not always wanted, so this function tests the User Agent instead.
+    /** 默认的 `desktop` 函数对带触摸屏的设备返回 false。
+     * 但这并不总是我们想要的，因此此函数改为测试用户代理。
      **/
     desktop: (win) => {
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(win.navigator.userAgent);

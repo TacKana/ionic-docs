@@ -3,30 +3,30 @@
   <ion-content :scroll-y="false">
     <div class="ion-content-scroll-host">
       <ion-list>
-        <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+        <!-- 默认情况下重新排序手势处于禁用状态，启用后即可拖放项目 -->
         <ion-reorder-group :disabled="false" @ionItemReorder="handleReorder($event)">
           <ion-item>
-            <ion-label> Item 1 </ion-label>
+            <ion-label> 项目 1 </ion-label>
             <ion-reorder slot="end"></ion-reorder>
           </ion-item>
 
           <ion-item>
-            <ion-label> Item 2 </ion-label>
+            <ion-label> 项目 2 </ion-label>
             <ion-reorder slot="end"></ion-reorder>
           </ion-item>
 
           <ion-item>
-            <ion-label> Item 3 </ion-label>
+            <ion-label> 项目 3 </ion-label>
             <ion-reorder slot="end"></ion-reorder>
           </ion-item>
 
           <ion-item>
-            <ion-label> Item 4 </ion-label>
+            <ion-label> 项目 4 </ion-label>
             <ion-reorder slot="end"></ion-reorder>
           </ion-item>
 
           <ion-item>
-            <ion-label> Item 5 </ion-label>
+            <ion-label> 项目 5 </ion-label>
             <ion-reorder slot="end"></ion-reorder>
           </ion-item>
         </ion-reorder-group>
@@ -43,13 +43,11 @@
     components: { IonContent, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup },
     setup() {
       const handleReorder = (event: CustomEvent) => {
-        // The `from` and `to` properties contain the index of the item
-        // when the drag started and ended, respectively
-        console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+        // `from` 和 `to` 属性分别包含拖拽开始时和结束时项目的索引
+        console.log('从索引', event.detail.from, '拖拽到', event.detail.to);
 
-        // Finish the reorder and position the item in the DOM based on
-        // where the gesture ended. This method can also be called directly
-        // by the reorder group
+        // 完成重新排序，并根据手势结束位置在 DOM 中定位项目
+        // 此方法也可以由重新排序组直接调用
         event.detail.complete();
       };
 

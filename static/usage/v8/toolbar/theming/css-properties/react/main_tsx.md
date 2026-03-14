@@ -7,7 +7,7 @@ import './main.css';
 function Example() {
   return (
     <IonToolbar>
-      <IonTitle>Custom Toolbar</IonTitle>
+      <IonTitle>自定义工具栏</IonTitle>
     </IonToolbar>
   );
 }

@@ -16,20 +16,20 @@ export class ExampleComponent {
 
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Alert!',
+      header: '警告！',
       buttons: [
         {
-          text: 'Cancel',
+          text: '取消',
           role: 'cancel',
           handler: () => {
-            this.handlerMessage = 'Alert canceled';
+            this.handlerMessage = '警告已取消';
           },
         },
         {
-          text: 'OK',
+          text: '确认',
           role: 'confirm',
           handler: () => {
-            this.handlerMessage = 'Alert confirmed';
+            this.handlerMessage = '警告已确认';
           },
         },
       ],
@@ -38,7 +38,7 @@ export class ExampleComponent {
     await alert.present();
 
     const { role } = await alert.onDidDismiss();
-    this.roleMessage = `Dismissed with role: ${role}`;
+    this.roleMessage = `以角色 ${role} 关闭`;
   }
 }
 ```

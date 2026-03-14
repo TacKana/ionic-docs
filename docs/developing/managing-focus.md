@@ -1,49 +1,49 @@
 ---
-title: Managing Focus
+title: 管理焦点
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Managing Focus</title>
+  <title>管理焦点</title>
   <meta
     name="description"
-    content="Learn how to manage focus in Ionic applications using the setFocus API instead of the autofocus attribute."
+    content="了解如何在 Ionic 应用中使用 setFocus API 替代 autofocus 属性来管理焦点。"
   />
 </head>
 
-## Manual Focus Management
+## 手动焦点管理
 
-Ionic provides a `setFocus` API on components such as [Input](../api/input), [Searchbar](../api/searchbar), and [Textarea](../api/textarea) that allows developers to manually set focus to an element. This API should be used in place of the `autofocus` attribute and called within:
+Ionic 在 [Input](../api/input)、[Searchbar](../api/searchbar) 和 [Textarea](../api/textarea) 等组件上提供了 `setFocus` API，允许开发者手动设置元素焦点。此 API 应替代 `autofocus` 属性使用，并在以下场景中调用：
 
-- The `ionViewDidEnter` lifecycle event for routing applications when a page is entered.
-- The `didPresent` lifecycle event for overlays when an overlay is presented.
-- The `appload` event for vanilla JavaScript applications when the application loads.
-- The result of a user gesture or interaction.
+- 路由应用中页面进入时的 `ionViewDidEnter` 生命周期事件。
+- 叠加层显示时的 `didPresent` 生命周期事件。
+- 原生 JavaScript 应用加载时的 `appload` 事件。
+- 用户手势或交互的结果。
 
-### Why not autofocus?
+### 为什么不使用 autofocus？
 
-The `autofocus` attribute is a standard HTML attribute that allows developers to set focus to an element when a page loads. This attribute is commonly used to set focus to the first input element on a page. However, the `autofocus` attribute can cause issues in routing applications when navigating between pages. This is because the `autofocus` attribute will set focus to the element when the page loads, but will not set focus to the element when the page is revisited. Learn more about the `autofocus` attribute in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus).
+`autofocus` 属性是一个标准的 HTML 属性，允许开发者在页面加载时设置元素焦点。此属性常用于设置页面中第一个输入元素的焦点。然而，在路由应用中进行页面导航时，`autofocus` 属性可能会导致问题。这是因为 `autofocus` 属性仅在页面加载时设置焦点，而不会在页面重新访问时设置焦点。更多关于 `autofocus` 属性的信息，请参阅 [MDN Web 文档](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus)。
 
-### Platform Restrictions
+### 平台限制
 
-There are platform restrictions you should be aware of when using the `setFocus` API, including:
+使用 `setFocus` API 时，您需要注意以下平台限制：
 
-1. Android requires user interaction before setting focus to an element. This can be as simple as a user tapping on the screen.
-2. Interactive elements can only focused a result of a user gesture on Mobile Safari (iOS), such as calling `setFocus` as the result of a button click.
+1. Android 要求在与元素交互后才能设置焦点。这可以简单到用户轻触屏幕。
+2. 在移动版 Safari (iOS) 上，仅能通过用户手势（例如点击按钮后调用 `setFocus`）对交互元素设置焦点。
 
-### Basic Usage
+### 基本用法
 
-The example below demonstrates how to use the `setFocus` API to request focus on an input when the user clicks a button.
+以下示例展示了如何使用 `setFocus` API，在用户点击按钮时请求输入框的焦点。
 
 import Basic from '@site/static/usage/v8/input/set-focus/index.md';
 
 <Basic />
 
-### Routing
+### 路由
 
-Developers can use the `ionViewDidEnter` lifecycle event to set focus to an element when a page is entered.
+开发者可以在页面进入时，使用 `ionViewDidEnter` 生命周期事件来设置元素焦点。
 
 ````mdx-code-block
 <Tabs
@@ -116,7 +116,7 @@ export default Home;
   const input = ref();
   onIonViewDidEnter(() => {
     requestAnimationFrame(() => {
-      // requestAnimationFrame is currently required due to:
+      // 由于以下问题，目前需要 requestAnimationFrame：
       // https://github.com/ionic-team/ionic-framework/issues/24434
       input.value.$el.setFocus();
     });
@@ -128,9 +128,9 @@ export default Home;
 </Tabs>
 ````
 
-### Overlays
+### 叠加层
 
-Developers can use the `didPresent` lifecycle event to set focus to an element when an overlay is presented.
+开发者可以在叠加层显示时，使用 `didPresent` 生命周期事件来设置元素焦点。
 
 ````mdx-code-block
 <Tabs
@@ -239,43 +239,43 @@ export default Home;
 </Tabs>
 ````
 
-## Assistive Technology Focus Management
+## 辅助技术焦点管理
 
-By default, Single Page Applications have no built-in way of informing screen readers that the active view has changed in a browser or webview. This means that users who rely on assistive technology do not always know if a navigation event occurred.
+默认情况下，单页应用（SPA）没有内置的方式来通知屏幕阅读器浏览器或 Webview 中的活动视图已更改。这意味着依赖辅助技术的用户并不总是知道导航事件是否发生。
 
-Developers who enable the [focusManagerPriority config](./config#ionicconfig) can delegate focus management to Ionic during page transitions. When enabled, Ionic will move focus to the correct element as specified in the config option. This will inform screen readers that a navigation event occurred.
+启用 [focusManagerPriority 配置](./config#ionicconfig) 的开发者可以将页面切换期间的焦点管理委托给 Ionic。启用后，Ionic 将根据配置选项将焦点移动到正确的元素。这将通知屏幕阅读器发生了导航事件。
 
-### Types
+### 类型
 
 ```typescript
 type FocusManagerPriority = 'content' | 'heading' | 'banner';
 ```
 
-### Content Types
+### 内容类型
 
-The following table explains what each content type represents:
+下表说明了每种内容类型代表的含义：
 
-| Type      | Description                   | Ionic Component           | Semantic HTML Equivalent                                                     | Landmark Equivalent                                                                                                                                                                                                   |
-| --------- | ----------------------------- | ------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `content` | The main portion of the view. | [Content](../api/content) | [`main`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)     | [`role="main"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role)                                                                                                                      |
-| `heading` | The title of the view.        | [Title](../api/title)     | [`h1`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1)         | [`role="heading"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) with [`aria-level="1"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) |
-| `banner`  | The header of the view.       | [Header](../api/header)   | [`header`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header) | [`role="banner"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Banner_Role)                                                                                                                  |
+| 类型       | 描述                     | Ionic 组件             | 语义化 HTML 等效                                                              | 地标（Landmark）等效                                                                                                                                                                                                   |
+| ---------- | ------------------------ | ---------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`  | 视图的主要部分。         | [Content](../api/content) | [`main`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)      | [`role="main"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role)                                                                                                                      |
+| `heading`  | 视图的标题。             | [Title](../api/title)  | [`h1`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/h1)          | [`role="heading"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role) 配合 [`aria-level="1"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) |
+| `banner`   | 视图的页眉。             | [Header](../api/header)| [`header`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header)  | [`role="banner"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Banner_Role)                                                                                                                  |
 
 :::important
-Developers should assign `role="heading"` and `aria-level="1"` to the primary [Title](../api/title) on each view. Since multiple [Title](../api/title) components can be used in a single view, Ionic does not automatically assign these attributes.
+开发者应在每个视图的主 [Title](../api/title) 上分配 `role="heading"` 和 `aria-level="1"`。由于单个视图中可以使用多个 [Title](../api/title) 组件，Ionic 不会自动分配这些属性。
 :::
 
-### Specifying Priority
+### 指定优先级
 
-The config should be specified in order of decreasing priority. In the following example, Ionic will always focus headings to start. Ionic only proceeds to the next focus priority, banner, if a view does not have a heading:
+配置应按优先级降序指定。在以下示例中，Ionic 将始终优先聚焦标题。仅当视图没有标题时，Ionic 才会继续处理下一个焦点优先级（banner）：
 
 ```js
 focusManagerPriority: ['heading', 'banner'];
 ```
 
-### Implementation Notes
+### 实现说明
 
-- When specifying a focus priority, browsers may still move focus within that focus priority. For example, when specifying a `'content'` focus priority, Ionic will move focus to the content. However, the browser may then move focus within that content to the first focusable element such as a button.
-- If none of the focus priorities are found in a view, Ionic will instead focus the view itself to ensure focus generally moves to the correct place. Browsers may then adjust focus within the view.
-- When navigating from the current view to the previous view, Ionic will move focus back to the element that presented the current view.
-- The focus manager can be overridden on a per-view basis as shown in [Manual Focus Management with Routing](#routing).
+- 指定焦点优先级时，浏览器仍可能在该优先级内移动焦点。例如，指定 `'content'` 焦点优先级时，Ionic 会将焦点移动到内容区域。然而，浏览器随后可能会在该内容区域内将焦点移动到第一个可聚焦元素（例如按钮）。
+- 如果在视图中未找到任何焦点优先级，Ionic 将转而聚焦视图本身，以确保焦点大致移动到正确的位置。浏览器随后可能会在视图内调整焦点。
+- 从当前视图导航到上一个视图时，Ionic 会将焦点移回呈现当前视图的元素。
+- 焦点管理器可以基于每个视图进行覆盖，如[手动焦点管理与路由](#routing)所示。

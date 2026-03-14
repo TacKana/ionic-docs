@@ -6,34 +6,34 @@ function Example() {
   return (
     <>
       <IonToolbar>
-        <IonTitle>Default Toolbar</IonTitle>
+        <IonTitle>默认工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="primary">
-        <IonTitle>Primary Toolbar</IonTitle>
+        <IonTitle>主色调工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="secondary">
-        <IonTitle>Secondary Toolbar</IonTitle>
+        <IonTitle>辅助色调工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="tertiary">
-        <IonTitle>Tertiary Toolbar</IonTitle>
+        <IonTitle>第三色调工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="success">
-        <IonTitle>Success Toolbar</IonTitle>
+        <IonTitle>成功色调工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="warning">
-        <IonTitle>Warning Toolbar</IonTitle>
+        <IonTitle>警告色调工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="danger">
-        <IonTitle>Danger Toolbar</IonTitle>
+        <IonTitle>危险色调工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="light">
-        <IonTitle>Light Toolbar</IonTitle>
+        <IonTitle>浅色工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="medium">
-        <IonTitle>Medium Toolbar</IonTitle>
+        <IonTitle>中等色调工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="dark">
-        <IonTitle>Dark Toolbar</IonTitle>
+        <IonTitle>深色工具栏</IonTitle>
       </IonToolbar>
     </>
   );

@@ -6,34 +6,34 @@ function Example() {
   return (
     <>
       <IonListHeader>
-        <IonLabel>Default</IonLabel>
+        <IonLabel>默认</IonLabel>
       </IonListHeader>
       <IonListHeader color="primary">
-        <IonLabel>Primary</IonLabel>
+        <IonLabel>主要</IonLabel>
       </IonListHeader>
       <IonListHeader color="secondary">
-        <IonLabel>Secondary</IonLabel>
+        <IonLabel>次要</IonLabel>
       </IonListHeader>
       <IonListHeader color="tertiary">
-        <IonLabel>Tertiary</IonLabel>
+        <IonLabel>第三</IonLabel>
       </IonListHeader>
       <IonListHeader color="success">
-        <IonLabel>Success</IonLabel>
+        <IonLabel>成功</IonLabel>
       </IonListHeader>
       <IonListHeader color="warning">
-        <IonLabel>Warning</IonLabel>
+        <IonLabel>警告</IonLabel>
       </IonListHeader>
       <IonListHeader color="danger">
-        <IonLabel>Danger</IonLabel>
+        <IonLabel>危险</IonLabel>
       </IonListHeader>
       <IonListHeader color="light">
-        <IonLabel>Light</IonLabel>
+        <IonLabel>浅色</IonLabel>
       </IonListHeader>
       <IonListHeader color="medium">
-        <IonLabel>Medium</IonLabel>
+        <IonLabel>中性</IonLabel>
       </IonListHeader>
       <IonListHeader color="dark">
-        <IonLabel>Dark</IonLabel>
+        <IonLabel>深色</IonLabel>
       </IonListHeader>
     </>
   );

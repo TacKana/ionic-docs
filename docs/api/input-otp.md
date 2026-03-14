@@ -1,5 +1,5 @@
 ---
-title: "ion-input-otp"
+title: 一次性密码输入组件
 ---
 import Props from '@ionic-internal/component-api/v8/input-otp/props.md';
 import Events from '@ionic-internal/component-api/v8/input-otp/events.md';
@@ -9,165 +9,165 @@ import CustomProps from '@ionic-internal/component-api/v8/input-otp/custom-props
 import Slots from '@ionic-internal/component-api/v8/input-otp/slots.md';
 
 <head>
-  <title>ion-input-otp: One-Time Password Input Component</title>
-  <meta name="description" content="ion-input-otp is a component for entering one-time passwords (OTP) with support for multiple input boxes and automatic focus management." />
+  <title>ion-input-otp：一次性密码输入组件</title>
+  <meta name="description" content="ion-input-otp 是用于输入一次性密码（OTP）的组件，支持多个输入框和自动焦点管理。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-The Input OTP component is a specialized input component designed for entering one-time passwords (OTP). It provides a user-friendly interface for entering verification codes with support for multiple input boxes and automatic focus management.
+Input OTP 组件是一个专门用于输入一次性密码（OTP）的输入组件。它提供了一个用户友好的界面来输入验证码，支持多个输入框和自动焦点管理。
 
-## Basic Usage
+## 基本用法
 
-The component provides 4 input boxes by default, which is a common length for many verification codes. The number of input boxes can be customized using the `length` property.
+该组件默认提供 4 个输入框，这是许多验证码的常见长度。输入框的数量可以使用 `length` 属性进行自定义。
 
 import Basic from '@site/static/usage/v8/input-otp/basic/index.md';
 
 <Basic />
 
-## Type
+## 类型
 
-The `type` property determines the input format, supporting either numeric or alphanumeric verification codes. It accepts two values: `number` and `text`. It uses `type="number"` by default for entering numeric verification codes. When `type="text"` is specified, it accepts alphanumeric input. This flexibility allows handling different OTP formats, whether numeric-only codes (like SMS verification codes) or alphanumeric codes (like backup codes or recovery keys).
+`type` 属性决定了输入格式，支持数字或字母数字验证码。它接受两个值：`number` 和 `text`。默认使用 `type="number"` 来输入数字验证码。当指定 `type="text"` 时，它接受字母数字输入。这种灵活性允许处理不同的 OTP 格式，无论是纯数字代码（如短信验证码）还是字母数字代码（如备份码或恢复密钥）。
 
-The `type` property automatically sets both the `inputmode` and `pattern` attributes:
-- When `type="number"`:
-  - Sets `inputmode="numeric"` to show a numeric keyboard on mobile devices
-  - Sets `pattern="[\p{N}]"` to allow only numeric input
-- When `type="text"`:
-  - Sets `inputmode="text"` to show a standard keyboard
-  - Sets `pattern="[\p{L}\p{N}]"` to allow alphanumeric input
+`type` 属性会自动设置 `inputmode` 和 `pattern` 属性：
+- 当 `type="number"` 时：
+  - 设置 `inputmode="numeric"` 以在移动设备上显示数字键盘
+  - 设置 `pattern="[\p{N}]"` 以仅允许数字输入
+- 当 `type="text"` 时：
+  - 设置 `inputmode="text"` 以显示标准键盘
+  - 设置 `pattern="[\p{L}\p{N}]"` 以允许字母数字输入
 
-See the [Pattern](#pattern) section for more details on pattern validation and customization.
+有关模式验证和自定义的更多详细信息，请参阅[模式](#pattern)部分。
 
 import Type from '@site/static/usage/v8/input-otp/type/index.md';
 
 <Type />
 
-## Shape
+## 形状
 
-The `shape` property controls the border radius of the input boxes, creating rounded or sharp corners.
+`shape` 属性控制输入框的边框圆角，可以创建圆角或直角。
 
 import Shape from '@site/static/usage/v8/input-otp/shape/index.md';
 
 <Shape />
 
-## Fill
+## 填充样式
 
-The `fill` property controls the background style of the input boxes, offering bordered or filled backgrounds.
+`fill` 属性控制输入框的背景样式，提供带边框或实心填充的背景。
 
 import Fill from '@site/static/usage/v8/input-otp/fill/index.md';
 
 <Fill />
 
-## Size
+## 尺寸
 
-The `size` property provides different size options for the input boxes.
+`size` 属性为输入框提供不同的尺寸选项。
 
 import Size from '@site/static/usage/v8/input-otp/size/index.md';
 
 <Size />
 
-## Separators
+## 分隔符
 
-The `separators` property adds visual dividers between one or more of the input boxes. Separators can be defined in three ways:
-- Comma-separated string of numbers (e.g., `"1,3"`)
-- Array of numbers (e.g., `[1, 3]`)
-- String `"all"` to show separators between every input box
+`separators` 属性在一个或多个输入框之间添加视觉分隔符。分隔符可以通过三种方式定义：
+- 逗号分隔的数字字符串（如 `"1,3"`）
+- 数字数组（如 `[1, 3]`）
+- 字符串 `"all"` 以在每个输入框之间显示分隔符
 
-The numbers represent the index after which a separator should appear. For example, `"1,3"` displays a separator after the first and third input box. This can be used to create visually distinct groupings of input boxes, but it will still have one value.
+数字表示在哪个索引之后应显示分隔符。例如，`"1,3"` 会在第一个和第三个输入框后显示分隔符。这可以用于创建视觉上不同的输入框分组，但它仍然只有一个值。
 
 import Separators from '@site/static/usage/v8/input-otp/separators/index.md';
 
 <Separators />
 
-## States
+## 状态
 
-The component supports various states for automatic styling of input boxes:
-- `disabled` and `readonly` states via respective properties
-- Form validation states: `valid` and `invalid` visually indicated through CSS classes
-- In Angular: validation states are automatically managed through the framework's value accessors and form validation
-- For other frameworks: developers must manually add `ion-valid`, `ion-invalid`, and `ion-touched` classes
-- `ion-invalid` styles only display when touched (`ion-touched`)
-- `ion-valid` styles only display when focused (`has-focus`)
+组件支持各种状态以自动设置输入框的样式：
+- 通过相应属性设置的 `disabled` 和 `readonly` 状态
+- 表单验证状态：通过 CSS 类直观指示的 `valid` 和 `invalid`
+- 在 Angular 中：通过框架的值访问器和表单验证自动管理验证状态
+- 对于其他框架：开发人员必须手动添加 `ion-valid`、`ion-invalid` 和 `ion-touched` 类
+- `ion-invalid` 样式仅在触摸（`ion-touched`）时显示
+- `ion-valid` 样式仅在聚焦（`has-focus`）时显示
 
 import States from '@site/static/usage/v8/input-otp/states/index.md';
 
 <States />
 
-## Pattern
+## 模式
 
-The `pattern` property enables custom validation using regular expressions. It accepts a [string regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet) or [unicode regular expression](https://www.regular-expressions.info/unicode.html) to validate allowed characters. The `pattern` must match the entire value, not just a subset. Default patterns:
-- `type="number"`: `"[\p{N}]"` for matching any kind of numeric character in any script.
-- `type="text"`: `"[\p{L}\p{N}]"` for any kind of numeric character in any script and any kind of letter from any language.
+`pattern` 属性允许使用正则表达式进行自定义验证。它接受一个[字符串正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Cheatsheet)或[Unicode 正则表达式](https://www.regular-expressions.info/unicode.html)来验证允许的字符。`pattern` 必须匹配整个值，而不仅仅是子集。默认模式：
+- `type="number"`：`"[\p{N}]"` 用于匹配任何脚本中的任何类型的数字字符。
+- `type="text"`：`"[\p{L}\p{N}]"` 用于匹配任何脚本中的任何类型的数字字符和来自任何语言的任何类型的字母。
 
-The component will prevent users from entering any characters that don't match the specified pattern. Developers can override these defaults by providing their own pattern string to match specific input requirements.
+组件将阻止用户输入任何与指定模式不匹配的字符。开发人员可以通过提供自己的模式字符串来覆盖这些默认设置，以满足特定的输入要求。
 
 :::tip
-When using a custom `pattern`, remember that the `type` property controls which keyboard appears on mobile devices:
-- Use `type="number"` for numeric-only patterns to show the numeric keyboard
-- Use `type="text"` for patterns that include letters to show the alphanumeric keyboard
+使用自定义 `pattern` 时，请记住 `type` 属性控制移动设备上显示的键盘：
+- 对于纯数字模式，使用 `type="number"` 以显示数字键盘
+- 对于包含字母的模式，使用 `type="text"` 以显示字母数字键盘
 :::
 
 import Pattern from '@site/static/usage/v8/input-otp/pattern/index.md';
 
 <Pattern />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
-The `color` property changes the color palette for input boxes. For `outline` fills, this property changes the caret color, highlight color and border color. For `solid` fills, this property changes the caret color and highlight color.
+`color` 属性更改输入框的配色方案。对于 `outline` 填充样式，此属性更改光标颜色、高亮颜色和边框颜色。对于 `solid` 填充样式，此属性更改光标颜色和高亮颜色。
 
 :::note
-The `color` property does *not* change the text color of the input OTP. For that, use the [`--color` CSS property](#css-custom-properties-1).
+`color` 属性*不*更改输入 OTP 的文本颜色。为此，请使用 [`--color` CSS 属性](#css-custom-properties-1)。
 :::
 
 import Colors from '@site/static/usage/v8/input-otp/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
-Input OTP uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector. Targeting the `ion-input-otp` for customization will not work; therefore we recommend adding a class and customizing it that way. Due to certain styles being applied based on the `fill`, you may need to override properties on the fills separately.
+Input OTP 使用作用域封装，这意味着它会在运行时通过为每个样式附加一个额外的类来自动限定其 CSS 范围。在 CSS 中覆盖作用域选择器需要[更高特异性](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)的选择器。针对 `ion-input-otp` 进行自定义将不起作用；因此我们建议添加一个类并以这种方式进行自定义。由于某些样式是根据 `fill` 应用的，您可能需要分别覆盖不同填充样式上的属性。
 
 import CSSProps from '@site/static/usage/v8/input-otp/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Accessibility
+## 无障碍访问
 
-### Keyboard Interactions
+### 键盘交互
 
-The keyboard navigation for Input OTP follows the [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/)'s recommendations for composite widgets. It is treated as a composite widget because it contains multiple focusable elements (input boxes) that function as a single control.
+Input OTP 的键盘导航遵循 [ARIA 创作实践指南](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/) 关于复合小部件的建议。它被视为一个复合小部件，因为它包含多个可作为单个控件使用的可聚焦元素（输入框）。
 
-These keyboard interactions apply to all `ion-input-otp` elements when the component is not disabled.
+当组件未禁用时，这些键盘交互适用于所有 `ion-input-otp` 元素。
 
-| Key | Description |
+| 按键 | 描述 |
 | --- | --- |
-| <kbd>Tab</kbd> | When first tabbing into the component, focus moves to the first empty box. If all boxes are filled, focus moves to the last box. Once inside the component, tabbing moves to the next focusable element on the page. |
-| <kbd>Shift</kbd> + <kbd>Tab</kbd> | When tabbing backwards into the component, focus moves to the first empty box. If all boxes are filled, focus moves to the last box. Once inside the component, shift tabbing focus moves to the previous focusable element on the page. |
-| <kbd>ArrowRight</kbd> | Moves focus to the next input box, stopping at the first empty box. In RTL mode, moves focus back to any previous box that contains a value. |
-| <kbd>ArrowLeft</kbd> | Moves focus back to any previous box that contains a value. In RTL mode, moves focus to the next input box, stopping at the first empty box. |
-| Any character matching the `pattern` property | Fills the current box and automatically moves focus to the next empty box. If all boxes are filled, focus remains on the last box. If the current box has a value, override the value with the entered character. In RTL mode, input fills boxes from right to left. |
-| <kbd>Backspace</kbd> | In an empty box: moves focus back one box and clears its value. <br/> In a box with a value: clears that value. <br/> With values in boxes to the right: shifts them all one position to the left. In RTL mode, with values in boxes to the left: shifts them all one position to the right. |
-| <kbd>Ctrl</kbd> + <kbd>V</kbd> <br/> <kbd>Cmd</kbd> + <kbd>V</kbd> | Pastes content starting from the first box, regardless of which box is currently focused. All existing values are cleared before pasting. For example, if you have "1234" in all boxes and paste "56", the result will be "56" in the first two boxes with the remaining boxes empty. If the pasted content is longer than the available boxes, the extra characters are ignored. |
+| <kbd>Tab</kbd> | 首次按 Tab 键进入组件时，焦点移动到第一个空框。如果所有框都已填充，焦点移动到最后一个框。进入组件后，按 Tab 键将移动到页面上的下一个可聚焦元素。 |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd> | 向后按 Tab 键进入组件时，焦点移动到第一个空框。如果所有框都已填充，焦点移动到最后一个框。进入组件后，按 Shift + Tab 键将焦点移动到页面上的前一个可聚焦元素。 |
+| <kbd>ArrowRight</kbd> | 将焦点移动到下一个输入框，在第一个空框处停止。在 RTL 模式下，将焦点移回包含值的任何前一个框。 |
+| <kbd>ArrowLeft</kbd> | 将焦点移回包含值的任何前一个框。在 RTL 模式下，将焦点移动到下一个输入框，在第一个空框处停止。 |
+| 任何匹配 `pattern` 属性的字符 | 填充当前框并自动将焦点移动到下一个空框。如果所有框都已填充，焦点保留在最后一个框上。如果当前框已有值，则用输入的字符覆盖该值。在 RTL 模式下，输入从右向左填充框。 |
+| <kbd>Backspace</kbd> | 在空框中：将焦点向后移动一个框并清除其值。<br/> 在有值的框中：清除该值。<br/> 当右侧框中有值时：将它们全部向左移动一个位置。在 RTL 模式下，当左侧框中有值时：将它们全部向右移动一个位置。 |
+| <kbd>Ctrl</kbd> + <kbd>V</kbd> <br/> <kbd>Cmd</kbd> + <kbd>V</kbd> | 从第一个框开始粘贴内容，无论当前焦点在哪个框上。粘贴前会清除所有现有值。例如，如果所有框中都有 "1234" 并粘贴 "56"，结果将是前两个框为 "56"，其余框为空。如果粘贴的内容长度超过可用框数，则忽略额外字符。 |
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

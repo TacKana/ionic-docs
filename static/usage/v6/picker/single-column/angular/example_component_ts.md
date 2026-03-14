@@ -38,13 +38,13 @@ export class ExampleComponent {
       ],
       buttons: [
         {
-          text: 'Cancel',
+          text: '取消',
           role: 'cancel',
         },
         {
-          text: 'Confirm',
+          text: '确认',
           handler: (value) => {
-            window.alert(`You selected: ${value.languages.value}`);
+            window.alert(`您选择了: ${value.languages.value}`);
           },
         },
       ],

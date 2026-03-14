@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="setOpen(true)">Open</ion-button>
+  <ion-button @click="setOpen(true)">打开</ion-button>
   <ion-picker
     :is-open="isOpen"
     :columns="pickerColumns"
@@ -41,13 +41,13 @@
 
   const pickerButtons = [
     {
-      text: 'Cancel',
+      text: '取消',
       role: 'cancel',
     },
     {
-      text: 'Confirm',
+      text: '确认',
       handler: (value) => {
-        console.log(`You selected: ${value.languages.value}`);
+        console.log(`您选择了: ${value.languages.value}`);
       },
     },
   ];

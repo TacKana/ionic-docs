@@ -9,45 +9,45 @@ import CustomProps from '@ionic-internal/component-api/v8/app/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/app/slots.md';
 
 <head>
-  <title>ion-app: Container Element for an Ionic Application</title>
-  <meta name="description" content="ion-app is a container element for an Ionic application. Apps can have many Ionic components including menus, headers, content, and footers. Read to learn more." />
+  <title>ion-app: Ionic 应用的容器元素</title>
+  <meta name="description" content="ion-app 是 Ionic 应用的容器元素。应用可以包含许多 Ionic 组件，包括菜单、页眉、内容和页脚。阅读以了解更多。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-App is a container element for an Ionic application. There should only be one `<ion-app>` element per project. An app can have many Ionic components including menus, headers, content, and footers. The overlay components get appended to the `<ion-app>` when they are presented.
+`ion-app` 是 Ionic 应用的容器元素。每个项目应该只有一个 `<ion-app>` 元素。一个应用可以包含许多 Ionic 组件，包括菜单、页眉、内容和页脚。当叠加层组件显示时，它们会被附加到 `<ion-app>` 中。
 
-Using `ion-app` enables the following behaviors:
+使用 `ion-app` 可以启用以下行为：
 
-* [Keyboard Lifecycle Events](../developing/keyboard#keyboard-lifecycle-events) without the need for any native plugins
-* [Hardware Back Button Listeners](../developing/hardware-back-button) for customizing the hardware back button behavior on Android devices
-* Status bar support in Capacitor or Cordova which allows users to scroll to the top of the view by tapping the status bar
-* Scroll assist utilities which scroll the content so focused text inputs are not covered by the on-screen keyboard
-* [Ripple effect](./ripple-effect) when activating buttons on Material Design mode
-* Other tap and focus utilities which make the experience of using an Ionic app feel more native
+* 无需任何原生插件即可使用 [键盘生命周期事件](../developing/keyboard#keyboard-lifecycle-events)
+* 在 Android 设备上自定义硬件返回键行为的 [硬件返回键监听器](../developing/hardware-back-button)
+* Capacitor 或 Cordova 中的状态栏支持，允许用户通过点击状态栏滚动到视图顶部
+* 滚动辅助工具，可滚动内容，使聚焦的文本输入不被屏幕键盘遮挡
+* 在 Material Design 模式下激活按钮时的 [涟漪效果](./ripple-effect)
+* 其他点击和聚焦工具，使 Ionic 应用的使用体验更接近原生
 
-## Programmatic Focus
+## 编程式聚焦
 
-Ionic offers focus utilities for components with the `ion-focusable` class. These utilities automatically manage focus for components when certain keyboard keys, like <kbd>Tab</kbd>, are pressed. Components can also be programmatically focused in response to user actions using the `setFocus` method from `ion-app`.
+Ionic 为带有 `ion-focusable` 类的组件提供了聚焦工具。当按下某些键盘键（如 <kbd>Tab</kbd> ）时，这些工具会自动管理组件的聚焦。组件也可以通过使用 `ion-app` 中的 `setFocus` 方法，在响应用户操作时以编程方式聚焦。
 
 import SetFocus from '@site/static/usage/v8/app/set-focus/index.md';
 
 <SetFocus />
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

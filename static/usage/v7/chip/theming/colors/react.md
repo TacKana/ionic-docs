@@ -4,16 +4,16 @@ import { IonChip } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonChip>Default</IonChip>
-      <IonChip color="primary">Primary</IonChip>
-      <IonChip color="secondary">Secondary</IonChip>
-      <IonChip color="tertiary">Tertiary</IonChip>
-      <IonChip color="success">Success</IonChip>
-      <IonChip color="warning">Warning</IonChip>
-      <IonChip color="danger">Danger</IonChip>
-      <IonChip color="light">Light</IonChip>
-      <IonChip color="medium">Medium</IonChip>
-      <IonChip color="dark">Dark</IonChip>
+      <IonChip>默认</IonChip>
+      <IonChip color="primary">主色</IonChip>
+      <IonChip color="secondary">辅色</IonChip>
+      <IonChip color="tertiary">第三色</IonChip>
+      <IonChip color="success">成功</IonChip>
+      <IonChip color="warning">警告</IonChip>
+      <IonChip color="danger">危险</IonChip>
+      <IonChip color="light">浅色</IonChip>
+      <IonChip color="medium">中等</IonChip>
+      <IonChip color="dark">深色</IonChip>
     </>
   );
 }

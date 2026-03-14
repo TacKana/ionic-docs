@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/reorder/custom-props.m
 import Slots from '@ionic-internal/component-api/v6/reorder/slots.md';
 
 <head>
-  <title>Reorder | ion-reorder: Drag and Drop Icon to Reorder Items</title>
+  <title>项目重排 | ion-reorder: 拖拽图标重新排序项目</title>
   <meta
     name="description"
-    content="Ion-reorder is the anchor used to drag and drop the items inside of the ion-reorder-group. Read to learn more about custom reorder icons and items."
+    content="ion-reorder 是在 ion-reorder-group 内部用于拖拽和放置项目的锚点。阅读以了解更多关于自定义重排图标和项目的信息。"
   />
 </head>
 
@@ -21,69 +21,69 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Reorder is a component that allows an item to be dragged to change its order within a group of items. It must be used within a [reorder group](./reorder-group) to provide a visual drag and drop interface.
+Reorder 组件允许用户通过拖拽来改变项目在组内的顺序。它必须用在 [reorder group](./reorder-group) 内部，以提供视觉上的拖放界面。
 
-The reorder is the anchor used to drag and drop the items. Once the reorder is complete, the `ionItemReorder` event will be dispatched from the reorder group and the `complete` method needs to be called.
+Reorder 是用于拖放项目的锚点。重排完成后，`ionItemReorder` 事件会从重排组中发出，此时需要调用 `complete` 方法。
 
-## Basic Usage
+## 基本用法
 
-The most basic example of a reorder is slotting it inside of an item. By default, the reorder functionality is disabled for a reorder group. It can be enabled by setting the `disabled` property on the reorder group to `false`. The reorder icon can then be used to drag and drop the items and reorder them.
+Reorder 的最基本示例是将其插入到项目内部。默认情况下，重排组的功能是禁用的。可以通过将重排组的 `disabled` 属性设置为 `false` 来启用。然后就可以使用重排图标来拖放项目并重新排序。
 
 import Basic from '@site/static/usage/v6/reorder/basic/index.md';
 
 <Basic />
 
-## Toggling Reorder
+## 切换重排功能
 
-In some cases, it may be desired to have the option to toggle the reorder functionality. This can be done by making the `disabled` property reactive, based on a function or variable.
+在某些情况下，可能需要能够切换重排功能。这可以通过让 `disabled` 属性根据函数或变量动态响应来实现。
 
 import TogglingDisabled from '@site/static/usage/v6/reorder/toggling-disabled/index.md';
 
 <TogglingDisabled />
 
-## Custom Reorder Icon
+## 自定义重排图标
 
-The reorder component uses a reorder icon with three lines on iOS and two lines on Material Design. This can be customized by adding an [Icon](https://ionic.io/ionicons) component inside of the reorder with any of the available Ionicons.
+Reorder 组件在 iOS 上使用三条线的图标，在 Material Design 上使用两条线的图标。可以通过在 reorder 内部添加一个 [Icon](https://ionic.io/ionicons) 组件并选择任意可用的 Ionicons 图标来自定义。
 
 import CustomIcon from '@site/static/usage/v6/reorder/custom-icon/index.md';
 
 <CustomIcon />
 
-## Reorder Wrapper
+## 重排包装器
 
-Reorder can also be used as a wrapper around an item, making the item itself the anchor. Click anywhere on an item below and drag it to reorder the list.
+Reorder 也可以用作项目的包装器，使项目本身成为拖拽锚点。点击下方任意项目并拖拽即可重新排序列表。
 
 import Wrapper from '@site/static/usage/v6/reorder/wrapper/index.md';
 
 <Wrapper />
 
-## Updating Data
+## 更新数据
 
-When the `complete` method is called on the reorder group with no parameters, the DOM nodes will be reordered. If the items are rendered from an array of data that needs to be sorted, this can result in the data and DOM being out of sync. In order to sort the array upon completion of the reorder, the array should be passed as a parameter to the `complete` method. The `complete` method will sort the array and return it so it can be reassigned.
+当在重排组上调用不带参数的 `complete` 方法时，DOM 节点会被重新排序。如果项目是从需要排序的数据数组渲染的，这可能导致数据和 DOM 不同步。为了在重排完成后对数组进行排序，应将数组作为参数传递给 `complete` 方法。`complete` 方法将对数组进行排序并返回，以便重新赋值。
 
-In some cases, it may be necessary for an app to reorder both the array and the DOM nodes on its own. If this is required, `false` should be passed as a parameter to the `complete` method. This will prevent Ionic from reordering any DOM nodes inside of the reorder group.
+在某些情况下，应用可能需要自行对数组和 DOM 节点进行重排。如果需要这样做，应将 `false` 作为参数传递给 `complete` 方法。这将阻止 Ionic 对重排组内的任何 DOM 节点进行重新排序。
 
 import UpdatingData from '@site/static/usage/v6/reorder/updating-data/index.md';
 
 <UpdatingData />
 
-## Usage with Virtual Scroll
+## 与虚拟滚动一起使用
 
-Reorder requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
+Reorder 需要一个滚动容器才能正常工作。当使用虚拟滚动方案时，需要提供一个自定义的滚动目标。需要禁用内容上的滚动，并将 `.ion-content-scroll-host` 类添加到负责滚动的元素上。
 
 import CustomScrollTarget from '@site/static/usage/v6/reorder/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -91,10 +91,10 @@ import CustomScrollTarget from '@site/static/usage/v6/reorder/custom-scroll-targ
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

@@ -2,7 +2,7 @@
 <ion-list>
   <ion-list>
     <ion-item>
-      <ion-input label="Text input" placeholder="Enter text"></ion-input>
+      <ion-input label="Text input" placeholder="输入文本"></ion-input>
     </ion-item>
 
     <ion-item>

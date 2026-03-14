@@ -1,5 +1,5 @@
 ```html
-<ion-range aria-label="Custom range" value="50" pin="true"></ion-range>
+<ion-range aria-label="自定义范围" value="50" pin="true"></ion-range>
 
 <style>
   ion-range {

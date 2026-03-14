@@ -28,14 +28,14 @@ function Example() {
         {items.map((item, index) => (
           <IonItem key={item}>
             <IonAvatar slot="start">
-              <img src={'https://picsum.photos/80/80?random=' + index} alt="avatar" />
+              <img src={'https://picsum.photos/80/80?random=' + index} alt="头像" />
             </IonAvatar>
             <IonLabel>{item}</IonLabel>
           </IonItem>
         ))}
       </IonList>
       <IonInfiniteScroll>
-        <IonInfiniteScrollContent loadingText="Please wait..." loadingSpinner="bubbles"></IonInfiniteScrollContent>
+        <IonInfiniteScrollContent loadingText="请稍候..." loadingSpinner="bubbles"></IonInfiniteScrollContent>
       </IonInfiniteScroll>
     </IonContent>
   );

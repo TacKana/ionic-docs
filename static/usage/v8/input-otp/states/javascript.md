@@ -1,6 +1,6 @@
 ```html
-<ion-input-otp disabled value="1234"> Disabled </ion-input-otp>
-<ion-input-otp readonly value="1234"> Readonly </ion-input-otp>
+<ion-input-otp disabled value="1234"> 已禁用 </ion-input-otp>
+<ion-input-otp readonly value="1234"> 只读 </ion-input-otp>
 <ion-input-otp value="12"></ion-input-otp>
 <ion-input-otp value="1234" class="has-focus"></ion-input-otp>
 
@@ -9,13 +9,13 @@
     const otpInputs = document.querySelectorAll('ion-input-otp:not([disabled]):not([readonly])');
 
     otpInputs.forEach((input) => {
-      // Mark as touched on initialization
+      // 初始化时标记为已触摸
       input.classList.add('ion-touched');
 
-      // Validate on initialization
+      // 初始化时进行验证
       validateOtp(input);
 
-      // Add input event listener for real-time validation
+      // 添加输入事件监听器以实现实时验证
       input.addEventListener('ionInput', (event) => validateOtp(event.target));
     });
   });
@@ -23,17 +23,17 @@
   function validateOtp(input) {
     const value = input.value;
 
-    // Remove existing validation classes
+    // 移除现有的验证类
     input.classList.remove('ion-valid');
     input.classList.remove('ion-invalid');
 
-    // Input is valid if value is exactly 4 digits
+    // 当值恰好为4位数字时，输入有效
     if (value && value.toString().length === 4) {
       input.classList.add('ion-valid');
-      input.textContent = 'Valid';
+      input.textContent = '有效';
     } else {
       input.classList.add('ion-invalid');
-      input.textContent = 'Invalid';
+      input.textContent = '无效';
     }
   }
 </script>

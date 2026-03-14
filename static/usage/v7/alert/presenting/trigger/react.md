@@ -5,13 +5,13 @@ import { IonAlert, IonButton } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton id="present-alert">Click Me</IonButton>
+      <IonButton id="present-alert">点击我</IonButton>
       <IonAlert
         trigger="present-alert"
-        header="A Short Title Is Best"
-        subHeader="A Sub Header Is Optional"
-        message="A message should be a short, complete sentence."
-        buttons={['Action']}
+        header="简短的标题最为合适"
+        subHeader="副标题为可选"
+        message="消息内容应简短且语句完整。"
+        buttons={['操作']}
       ></IonAlert>
     </>
   );

@@ -10,46 +10,46 @@ import CustomProps from '@ionic-internal/component-api/v7/item-sliding/custom-pr
 import Slots from '@ionic-internal/component-api/v7/item-sliding/slots.md';
 
 <head>
-  <title>ion-item-sliding: Slide Buttons | Slide Right to Left</title>
+  <title>ion-item-sliding: 滑动按钮 | 从右向左滑动</title>
   <meta
     name="description"
-    content="ion-item-sliding component contains items that are dragged to reveal buttons. Options are revealed when the sliding item is swiped from left to right."
+    content="ion-item-sliding 组件包含可通过拖动显示按钮的条目。当滑动条目从左向右滑动时，会显示操作选项。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-A sliding item contains an item that can be dragged to reveal option buttons. It requires an [item](./item) component as a child. All options to reveal should be placed in the [item options](./item-options) element.
+滑动条目包含一个可以通过拖动来显示操作按钮的条目。它需要一个 [item](./item) 组件作为子元素。所有要显示的操作选项都应放置在 [item options](./item-options) 元素中。
 
-## Basic Usage
+## 基本用法
 
-Sliding item options are placed on the `"end"` side of the item by default. This means that options are revealed when the item is swiped from end to start, i.e. from right to left in LTR, but from left to right in RTL. To place them on the opposite side, so that they are revealed when swiping in the opposite direction, set the side attribute to `"start"` on the [item options](./item-options) element. Up to two item options can be used at the same time in order to reveal two different sets of options depending on the swiping direction.
+滑动条目的操作选项默认放置在条目的 `"end"` 侧。这意味着当从结束侧向起始侧滑动条目时（即在 LTR 语言环境下从右向左滑动，在 RTL 语言环境下从左向右滑动）会显示操作选项。若要将它们放置在相反的一侧，以便在相反方向的滑动时显示，请在 [item options](./item-options) 元素上设置 side 属性为 `"start"`。最多可以同时使用两个 item options，以便根据滑动方向显示两组不同的操作选项。
 
 import Basic from '@site/static/usage/v7/item-sliding/basic/index.md';
 
 <Basic />
 
-## Icon Options
+## 图标选项
 
-When an icon is placed alongside text in the [item option](./item-option), it will display the icon on top of the text by default. The slot on the icon can be changed to any of the available [item option slots](./item-option#slots) to change its position.
+当图标与文本一起放置在 [item option](./item-option) 中时，默认情况下图标会显示在文本上方。可以通过更改图标上的 slot 属性为任何可用的 [item option slots](./item-option#slots) 来改变其位置。
 
 import Icons from '@site/static/usage/v7/item-sliding/icons/index.md';
 
 <Icons />
 
-## Expandable Options
+## 可扩展选项
 
-Options can be expanded to take up the full width of the parent `ion-item` if you swipe past a certain point. This can be combined with the `ionSwipe` event on the [item options](./item-options) to call a method when the item is fully swiped.
+如果你滑动超过某个点，操作选项可以扩展以占据父级 `ion-item` 的全部宽度。这可以与 [item options](./item-options) 上的 `ionSwipe` 事件结合使用，以便在条目完全滑动时调用方法。
 
 import Expandable from '@site/static/usage/v7/item-sliding/expandable/index.md';
 
 <Expandable />
 
-## Interfaces
+## 接口
 
 ### ItemSlidingCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便为此组件发出的 Ionic 事件提供更强的类型定义。
 
 ```typescript
 interface ItemSlidingCustomEvent extends CustomEvent {
@@ -57,15 +57,15 @@ interface ItemSlidingCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -73,10 +73,10 @@ interface ItemSlidingCustomEvent extends CustomEvent {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

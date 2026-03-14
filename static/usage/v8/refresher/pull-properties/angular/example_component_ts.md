@@ -19,7 +19,7 @@ import {
 export class ExampleComponent {
   handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
-      // Any calls to load data go here
+      // 任何加载数据的调用都应放在这里
       event.target.complete();
     }, 2000);
   }

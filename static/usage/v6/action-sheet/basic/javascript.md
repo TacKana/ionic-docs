@@ -14,7 +14,7 @@
 </style>
 
 <div class="container">
-  <ion-button onclick="presentActionSheet()">Open</ion-button>
+  <ion-button onclick="presentActionSheet()">打开</ion-button>
   <code id="action"></code>
 </div>
 
@@ -23,24 +23,24 @@
 
   async function presentActionSheet() {
     const actionSheet = document.createElement('ion-action-sheet');
-    actionSheet.header = 'Example header';
-    actionSheet.subHeader = 'Example subheader';
+    actionSheet.header = '示例标题';
+    actionSheet.subHeader = '示例副标题';
     actionSheet.buttons = [
       {
-        text: 'Delete',
+        text: '删除',
         role: 'destructive',
         data: {
           action: 'delete',
         },
       },
       {
-        text: 'Share',
+        text: '分享',
         data: {
           action: 'share',
         },
       },
       {
-        text: 'Cancel',
+        text: '取消',
         role: 'cancel',
         data: {
           action: 'cancel',

@@ -1,20 +1,20 @@
 ---
-sidebar_label: Taking Photos
+sidebar_label: 拍摄照片
 ---
 
-# Taking Photos with the Camera
+# 使用相机拍摄照片
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitorjs.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+现在来到有趣的部分——利用 Capacitor 的[相机 API](https://capacitorjs.com/docs/apis/camera) 添加设备拍照功能。我们先从网页端开始构建，然后稍作调整使其能在移动端（iOS 和 Android）运行。
 
-## Photo Service
+## 照片服务
 
-All Capacitor logic (Camera usage and other native features) will be encapsulated in a service class. Create `PhotoService` using the `ionic generate` command:
+所有 Capacitor 逻辑（相机使用及其他原生功能）都将封装在服务类中。使用 `ionic generate` 命令创建 `PhotoService`：
 
 ```shell
 ionic g service services/photo
 ```
 
-Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
+打开新建的 `services/photo.service.ts` 文件，开始添加驱动相机功能的逻辑。首先导入 Capacitor 依赖项并获取相机、文件系统和存储插件的引用：
 
 ```tsx
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
@@ -22,11 +22,11 @@ import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 ```
 
-Next, define a new class method, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera:
+接下来，定义一个新的类方法 `addNewToGallery`，它将包含拍摄设备照片并保存到文件系统的核心逻辑。我们先从打开设备相机开始：
 
 ```tsx
 public async addNewToGallery() {
-  // Take a photo
+  // 拍摄照片
   const capturedPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri,
     source: CameraSource.Camera,
@@ -35,9 +35,9 @@ public async addNewToGallery() {
 }
 ```
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `Camera.getPhoto()` - that will open up the device's camera and allow us to take photos.
+注意这里的巧妙之处：没有特定平台的代码（网页、iOS 或 Android）！Capacitor 相机插件为我们抽象了这些细节，只需调用一个方法——`Camera.getPhoto()`——就能打开设备相机并允许我们拍摄照片。
 
-Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported service:
+接下来，打开 `tab2.page.ts`，导入 PhotoService 类并添加一个方法来调用导入服务的 `addNewToGallery` 方法：
 
 ```tsx
 import { PhotoService } from '../services/photo.service';
@@ -49,7 +49,7 @@ addPhotoToGallery() {
 }
 ```
 
-Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the FAB is tapped/clicked:
+然后，打开 `tab2.page.html`，在点击悬浮操作按钮（FAB）时调用 `addPhotoToGallery()` 函数：
 
 ```html
 <ion-content>
@@ -61,17 +61,17 @@ Then, open `tab2.page.html` and call the `addPhotoToGallery()` function when the
 </ion-content>
 ```
 
-Save the file, and if it's not running already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+保存文件，如果开发服务器尚未运行，请在浏览器中运行 `ionic serve` 重新启动它。在照片库页面，点击相机按钮。如果你的电脑有摄像头，会出现一个模态窗口。拍张自拍照吧！
 
-![A photo gallery app displaying a webcam selfie.](/img/guides/first-app-cap-ng/camera-web.png 'Webcam Selfie in Photo Gallery')
+![显示网络摄像头自拍的照片库应用界面](/img/guides/first-app-cap-ng/camera-web.png '照片库中的网络摄像头自拍')
 
-_(Your selfie is probably much better than mine)_
+_(你的自拍肯定比我的好看多了)_
 
-After taking a photo, it disappears right away. We need to display it within our app and save it for future access.
+拍摄照片后，它会立即消失。我们需要在应用中显示它并保存以便日后访问。
 
-## Displaying Photos
+## 显示照片
 
-Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata:
+在 `PhotoService` 类定义之外（文件的最后部分），创建一个新接口 `UserPhoto` 来保存照片元数据：
 
 ```tsx
 export interface UserPhoto {
@@ -80,17 +80,17 @@ export interface UserPhoto {
 }
 ```
 
-Back at the top of the file, define an array of Photos, which will contain a reference to each photo captured with the Camera.
+回到文件顶部，定义一个照片数组，用于存储每张用相机拍摄的照片引用。
 
 ```tsx
 export class PhotoService {
   public photos: UserPhoto[] = [];
 
-  // other code
+  // 其他代码
 }
 ```
 
-Over in the `addNewToGallery` function, add the newly captured photo to the beginning of the Photos array.
+在 `addNewToGallery` 函数中，将新拍摄的照片添加到照片数组的开头。
 
 ```tsx
   const capturedPhoto = await Camera.getPhoto({
@@ -100,13 +100,13 @@ Over in the `addNewToGallery` function, add the newly captured photo to the begi
   });
 
   this.photos.unshift({
-    filepath: "soon...",
+    filepath: "稍后添加...",
     webviewPath: capturedPhoto.webPath
   });
 }
 ```
 
-Next, move over to `tab2.page.html` so we can display the image on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as photos are added to the gallery, and loop through each photo in the `PhotoServices`'s Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) at the photo’s path:
+接下来，转到 `tab2.page.html` 以便在屏幕上显示图像。添加一个[网格组件](https://ionicframework.com/docs/api/grid)，这样随着照片添加到图库，每张照片都能美观地显示。遍历 `PhotoServices` 的照片数组中的每张照片，为每个添加图像组件（`<ion-img>`）。将 `src`（来源）指向照片的路径：
 
 ```html
 <ion-content>
@@ -118,10 +118,10 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
     </ion-row>
   </ion-grid>
 
-  <!-- ion-fab markup  -->
+  <!-- ion-fab 标记 -->
 </ion-content>
 ```
 
-Save all files. Within the web browser, click the Camera button and take another photo. This time, the photo is displayed in the Photo Gallery!
+保存所有文件。在网页浏览器中，点击相机按钮再拍一张照片。这次，照片会显示在照片库中！
 
-Up next, we’ll add support for saving the photos to the filesystem, so they can be retrieved and displayed in our app at a later time.
+接下来，我们将添加将照片保存到文件系统的支持，以便日后可以检索并在应用中显示。

@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/accordion/custom-props
 import Slots from '@ionic-internal/component-api/v6/accordion/slots.md';
 
 <head>
-  <title>Ion-Accordion Components: How to Build & Examples | Ionic</title>
+  <title>Ion-Accordion 组件：如何构建与使用示例 | Ionic</title>
   <meta
     name="description"
-    content="Ion-accordion components provide collapsible sections in content to reduce vertical space and organize information. Learn how to build one and see examples."
+    content="Ion-accordion 组件提供内容中的可折叠区域，以减少垂直空间占用并组织信息。了解如何构建及查看示例。"
   />
 </head>
 
@@ -21,110 +21,110 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Accordions provide collapsible sections in your content to reduce vertical space while providing a way of organizing and grouping information. All `ion-accordion` components should be grouped inside `ion-accordion-group` components.
+手风琴（Accordion）组件在您的内容中提供可折叠的区域，既能减少垂直空间占用，又能提供组织和分组信息的方式。所有 `ion-accordion` 组件都应分组放置在 `ion-accordion-group` 组件内。
 
-## Basic Usage
+## 基础用法
 
 import Basic from '@site/static/usage/v6/accordion/basic/index.md';
 
 <Basic />
 
-## Toggle Accordions
+## 切换手风琴状态
 
-Which accordion is open is controlled by setting the `value` property on `ion-accordion-group`. Setting this property allows developers to programmatically expand or collapse certain accordions.
+哪个手风琴处于展开状态是通过设置 `ion-accordion-group` 上的 `value` 属性来控制的。设置此属性允许开发者以编程方式展开或折叠特定的手风琴。
 
 import Toggle from '@site/static/usage/v6/accordion/toggle/index.md';
 
 <Toggle />
 
-## Listen for Accordion State Changes
+## 监听手风琴状态变化
 
-Developers can listen for the `ionChange` event to be notified when accordions expand or collapse.
+开发者可以监听 `ionChange` 事件，以便在手风琴展开或折叠时收到通知。
 
 import ListenChanges from '@site/static/usage/v6/accordion/listen-changes/index.md';
 
 <ListenChanges />
 
-## Multiple Accordions
+## 多手风琴展开
 
-Developers can allow multiple accordions to be open at once with the `multiple` property.
+开发者可以通过 `multiple` 属性允许多个手风琴同时展开。
 
 import Multiple from '@site/static/usage/v6/accordion/multiple/index.md';
 
 <Multiple />
 
-## Disabling Accordions
+## 禁用手风琴
 
-### Individual Accordion
+### 单个手风琴
 
-Individual accordions can be disabled with the `disabled` property on `ion-accordion`.
+可以通过 `ion-accordion` 上的 `disabled` 属性禁用单个手风琴。
 
 import DisableIndividual from '@site/static/usage/v6/accordion/disable/individual/index.md';
 
 <DisableIndividual />
 
-### Accordion Group
+### 手风琴组
 
-The accordion group can be disabled with the `disabled` property on `ion-accordion-group`.
+可以通过 `ion-accordion-group` 上的 `disabled` 属性禁用手风琴组。
 
 import DisableGroup from '@site/static/usage/v6/accordion/disable/group/index.md';
 
 <DisableGroup />
 
-## Readonly Accordions
+## 只读手风琴
 
-### Individual Accordion
+### 单个手风琴
 
-Individual accordions can be disabled with the `readonly` property on `ion-accordion`.
+可以通过 `ion-accordion` 上的 `readonly` 属性将单个手风琴设置为只读。
 
 import ReadonlyIndividual from '@site/static/usage/v6/accordion/readonly/individual/index.md';
 
 <ReadonlyIndividual />
 
-### Accordion Group
+### 手风琴组
 
-The accordion group can be disabled with the `readonly` property on `ion-accordion-group`.
+可以通过 `ion-accordion-group` 上的 `readonly` 属性将手风琴组设置为只读。
 
 import ReadonlyGroup from '@site/static/usage/v6/accordion/readonly/group/index.md';
 
 <ReadonlyGroup />
 
-## Anatomy
+## 结构解析
 
-### Header
+### 头部
 
-The `header` slot is used as the toggle that will expand or collapse your accordion. We recommend you use an `ion-item` here to take advantage of the accessibility and theming functionalities.
+`header` 插槽用作切换按钮，用于展开或折叠您的手风琴。我们建议您在此处使用 `ion-item`，以利用其辅助功能和主题化功能。
 
-When using `ion-item` in the `header` slot, the `ion-item`'s `button` prop is set to `true` and the `detail` prop is set to `false`. In addition, we will also automatically add a toggle icon to the `ion-item`. This icon will automatically be rotated when you expand or collapse the accordion. See [Customizing Icons](#icons) for more information.
+当在 `header` 插槽中使用 `ion-item` 时，`ion-item` 的 `button` 属性设置为 `true`，`detail` 属性设置为 `false`。此外，我们还会自动向 `ion-item` 添加一个切换图标。该图标会在您展开或折叠手风琴时自动旋转。更多信息请参阅 [自定义图标](#icons)。
 
-### Content
+### 内容
 
-The `content` slot is used as the part of the accordion that is revealed or hidden depending on the state of your accordion. You can place anything here except for another `ion-content` instance as only one instance of `ion-content` should be added per page.
+`content` 插槽用作手风琴的一部分，根据手风琴的状态显示或隐藏。您可以在此处放置任何内容，但不能放置另一个 `ion-content` 实例，因为每个页面只应添加一个 `ion-content` 实例。
 
-## Customization
+## 自定义
 
-### Expansion Styles
+### 展开样式
 
-There are two built in expansion styles: `compact` and `inset`. This expansion style is set via the `expand` property on `ion-accordion-group`.
+有两种内置的展开样式：`compact` 和 `inset`。此展开样式通过 `ion-accordion-group` 上的 `expand` 属性设置。
 
-When `expand="inset"`, the accordion group is given a border radius. On `md` mode, the entire accordion will shift down when it is opened.
+当 `expand="inset"` 时，手风琴组会获得边框半径。在 `md` 模式下，整个手风琴在展开时会向下移动。
 
 import ExpansionStyles from '@site/static/usage/v6/accordion/customization/expansion-styles/index.md';
 
 <ExpansionStyles />
 
-### Advanced Expansion Styles
+### 高级展开样式
 
-You can customize the expansion behavior by styling based on the accordion's state. There are four state classes applied to `ion-accordion`. Styling using these classes can allow you to create advanced state transitions:
+您可以根据手风琴的状态进行样式定制，从而自定义展开行为。`ion-accordion` 上应用了四种状态类。使用这些类进行样式设计可以创建高级的状态过渡效果：
 
-| Class Name              | Description                                       |
-| ----------------------- | ------------------------------------------------- |
-| `.accordion-expanding`  | Applied when the accordion is actively expanding  |
-| `.accordion-expanded`   | Applied when the accordion is fully expanded      |
-| `.accordion-collapsing` | Applied when the accordion is actively collapsing |
-| `.accordion-collapsed`  | Applied when the accordion is fully collapsed     |
+| 类名                  | 描述                                       |
+| --------------------- | ------------------------------------------ |
+| `.accordion-expanding`  | 当手风琴正在展开时应用                 |
+| `.accordion-expanded`   | 当手风琴完全展开时应用                   |
+| `.accordion-collapsing` | 当手风琴正在折叠时应用                 |
+| `.accordion-collapsed`  | 当手风琴完全折叠时应用                   |
 
-If you need to target specific pieces of the accordion, we recommend targeting the element directly. For example, if you want to customize the ion-item in your header slot when the accordion is expanded, you can use the following selector:
+如果您需要定位手风琴的特定部分，我们建议直接定位该元素。例如，如果您想在手风琴展开时自定义 `header` 插槽中的 `ion-item`，可以使用以下选择器：
 
 ```css
 ion-accordion.accordion-expanding ion-item[slot='header'],
@@ -137,84 +137,84 @@ import AdvancedExpansionStyles from '@site/static/usage/v6/accordion/customizati
 
 <AdvancedExpansionStyles />
 
-### Icons
+### 图标
 
-When using an `ion-item` in the `header` slot, we automatically add an `ion-icon`. The type of icon used can be controlled by the `toggleIcon` property, and the slot it is added to can be controlled with the `toggleIconSlot` property.
+当在 `header` 插槽中使用 `ion-item` 时，我们会自动添加一个 `ion-icon`。使用的图标类型可以通过 `toggleIcon` 属性控制，而图标添加到的插槽可以通过 `toggleIconSlot` 属性控制。
 
-If you would like to manage the icon yourself or use an icon that is not an `ion-icon`, you can add the `ion-accordion-toggle-icon` class to the icon element.
+如果您想自行管理图标或使用非 `ion-icon` 的图标，可以向图标元素添加 `ion-accordion-toggle-icon` 类。
 
-Regardless of which option you choose, the icon will automatically be rotated when you expand or collapse the accordion.
+无论您选择哪种方式，图标都会在您展开或折叠手风琴时自动旋转。
 
 import Icons from '@site/static/usage/v6/accordion/customization/icons/index.md';
 
 <Icons />
 
-### Theming
+### 主题定制
 
-Since `ion-accordion` acts as a shell around the header and content elements, you can easily theme the accordion however you would like. You can theme the header by targeting the slotted `ion-item`. Since you are using `ion-item`, you also have access to all of the [ion-item CSS Variables](./item#css-custom-properties) and [ion-item Shadow Parts](./item#css-shadow-parts). Theming the content is also easily achieved by targeting the element that is in the `content` slot.
+由于 `ion-accordion` 充当头部和内容元素的容器，您可以随心所欲地轻松定制手风琴的主题。您可以通过定位已插槽的 `ion-item` 来定制头部样式。由于您使用的是 `ion-item`，您还可以访问所有 [ion-item CSS 变量](./item#css-custom-properties) 和 [ion-item 阴影部件](./item#css-shadow-parts)。定制内容主题也很容易，只需定位 `content` 插槽中的元素即可。
 
 import Theming from '@site/static/usage/v6/accordion/customization/theming/index.md';
 
 <Theming />
 
-## Accessibility
+## 无障碍访问
 
-### Animations
+### 动画效果
 
-By default, animations are enabled when expanding or collapsing an accordion item. Animations will be automatically disabled when the `prefers-reduced-motion` media query is supported and set to `reduce`. For browsers that do not support this, animations can be disabled by setting the `animated` config in your Ionic Framework app.
+默认情况下，展开或折叠手风琴项时会启用动画。当支持 `prefers-reduced-motion` 媒体查询且其设置为 `reduce` 时，动画将自动禁用。对于不支持此功能的浏览器，可以通过在 Ionic Framework 应用中设置 `animated` 配置来禁用动画。
 
 import AccessibilityAnimations from '@site/static/usage/v6/accordion/accessibility/animations/index.md';
 
 <AccessibilityAnimations />
 
-### Keyboard Navigation
+### 键盘导航
 
-When used inside an `ion-accordion-group`, `ion-accordion` has full keyboard support for interacting with the component. The following table details what each key does:
+当在 `ion-accordion-group` 内部使用时，`ion-accordion` 具有完整的键盘支持，可与组件进行交互。下表详细说明了每个按键的功能：
 
-| Key                | Function                                                                                                                                                                             |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `Space` or `Enter` | When focus is on the accordion header, the accordion will collapse or expand depending on the state of the component.                                                                |
-| `Tab`              | Moves focus to the next focusable element.                                                                                                                                           |
-| `Shift` + `Tab`    | Moves focus to the previous focusable element.                                                                                                                                       |
-| `Down Arrow`       | - When focus is on an accordion header, moves focus to the next accordion header. <br />- When focus is on the last accordion header, moves focus to the first accordion header.     |
-| `Up Arrow`         | - When focus is on an accordion header, moves focus to the previous accordion header. <br />- When focus is on the first accordion header, moves focus to the last accordion header. |
-| `Home`             | When focus is on an accordion header, moves focus to the first accordion header.                                                                                                     |
-| `End`              | When focus is on an accordion header, moves focus to the last accordion header.                                                                                                      |
+| 按键                | 功能                                                                                                                                                                             |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `空格键` 或 `回车键` | 当焦点位于手风琴头部时，根据组件的状态，手风琴将折叠或展开。                                                                                                                       |
+| `Tab`               | 将焦点移动到下一个可聚焦元素。                                                                                                                                                     |
+| `Shift` + `Tab`     | 将焦点移动到上一个可聚焦元素。                                                                                                                                                     |
+| `向下箭头`          | - 当焦点位于手风琴头部时，将焦点移动到下一个手风琴头部。<br />- 当焦点位于最后一个手风琴头部时，将焦点移动到第一个手风琴头部。     |
+| `向上箭头`          | - 当焦点位于手风琴头部时，将焦点移动到上一个手风琴头部。<br />- 当焦点位于第一个手风琴头部时，将焦点移动到最后一个手风琴头部。 |
+| `Home`              | 当焦点位于手风琴头部时，将焦点移动到第一个手风琴头部。                                                                                                                             |
+| `End`               | 当焦点位于手风琴头部时，将焦点移动到最后一个手风琴头部。                                                                                                                           |
 
-## Performance
+## 性能优化
 
-### Animations
+### 动画效果
 
-The accordion animation works by knowing the height of the `content` slot when the animation starts. The accordion expects that this height will remain consistent throughout the animation. As a result, developers should avoid performing any operation that may change the height of the content during the animation.
+手风琴动画的工作原理是在动画开始时获取 `content` 插槽的高度。手风琴期望此高度在整个动画过程中保持一致。因此，开发者应避免在动画期间执行任何可能改变内容高度的操作。
 
-For example, using [ion-img](./img) may cause layout shifts as it lazily loads images. This means that as the animation plays, `ion-img` will load the image data, and the dimensions of `ion-img` will change to account for the loaded image data. This can result in the height of the `content` slot changing. Developers have a few options for avoiding this:
+例如，使用 [ion-img](./img) 可能会导致布局偏移，因为它会延迟加载图像。这意味着，在动画播放过程中，`ion-img` 将加载图像数据，并且 `ion-img` 的尺寸将根据加载的图像数据发生变化。这可能导致 `content` 插槽的高度发生变化。开发者有几个选项可以避免这种情况：
 
-1. Use an `img` element without any lazy loading. `ion-img` always uses lazy loading, but `img` does not use lazy loading by default. This is the simplest option and works well if you have small images that do not significantly benefit from lazy loading.
+1. 使用 `img` 元素而不进行任何延迟加载。`ion-img` 始终使用延迟加载，但 `img` 默认不使用延迟加载。这是最简单的选项，如果您有小型图像且延迟加载没有显著好处，则效果很好。
 
-2. Set a minimum width and height on `ion-img`. If you need to use lazy loading and know the dimensions of the images ahead of time (such as if you are loading icons of the same size), you can set the `ion-img` to have a minimum width or height using CSS. This gives developers the benefit of lazy loading while avoiding layout shifts. This works when using an `img` element with `loading="lazy"` too!
+2. 在 `ion-img` 上设置最小宽度和高度。如果您需要使用延迟加载并且提前知道图像的尺寸（例如，如果您正在加载相同尺寸的图标），可以使用 CSS 设置 `ion-img` 的最小宽度或高度。这样可以在避免布局偏移的同时获得延迟加载的好处。在使用带有 `loading="lazy"` 的 `img` 元素时也同样有效！
 
-3. If neither of these options are applicable, developers may want to consider disabling animations altogether by using the `animated` property on [ion-accordion-group](./accordion-group).
+3. 如果这些选项都不适用，开发者可能需要考虑通过使用 [ion-accordion-group](./accordion-group) 上的 `animated` 属性来完全禁用动画。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

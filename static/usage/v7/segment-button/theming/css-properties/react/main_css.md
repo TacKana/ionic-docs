@@ -3,14 +3,14 @@ ion-segment-button {
   --indicator-color: #08a391;
 }
 
-/* Material Design styles */
+/* Material Design 风格 */
 ion-segment-button.md {
   --color: #000;
   --color-checked: #08a391;
   --indicator-height: 4px;
 }
 
-/* iOS styles */
+/* iOS 风格 */
 ion-segment-button.ios {
   --color: #08a391;
   --color-checked: #fff;

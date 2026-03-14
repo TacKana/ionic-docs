@@ -2,7 +2,7 @@
 <template>
   <ion-list>
     <ion-item>
-      <ion-button @click="setFocus">Click to set focus</ion-button>
+      <ion-button @click="setFocus">点击设置焦点</ion-button>
     </ion-item>
     <ion-item>
       <ion-input ref="input" label="Email" label-placement="floating"></ion-input>

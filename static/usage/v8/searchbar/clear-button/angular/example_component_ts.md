@@ -14,9 +14,9 @@ import { trashBin } from 'ionicons/icons';
 export class ExampleComponent {
   constructor() {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 您可以在 app.component.ts 中注册应用中
+     * 需要使用的所有图标，然后在整个应用中
+     * 通过名称引用这些图标。
      */
     addIcons({ trashBin });
   }

@@ -1,65 +1,63 @@
 ---
-sidebar_label: What are PWAs?
+sidebar_label: 什么是 PWA？
 ---
 
-# Progressive Web Apps
+# 渐进式 Web 应用
 
-<!-- TOC goes here -->
+<!-- 目录会放在这里 -->
 
-### The web...but better
+### 网络体验...但更出色
 
-A Progressive Web App (PWA) is a web app that uses modern web capabilities to deliver an app-like experience to users.
-These apps meet certain requirements (see below), are deployed to servers, accessible through URLs, and indexed by search engines.
+渐进式 Web 应用（PWA）是一种利用现代网络能力为用户提供类应用体验的网络应用。这些应用满足特定要求（见下文），部署在服务器上，可通过 URL 访问，并能被搜索引擎索引。
 
-This can work in conjunction with [Capacitor](https://capacitorjs.com) to provide a multiple deploy targets for all your users.
-You can deploy your app as a PWA as well as Native app and take advantage of both channels.
+它可以与 [Capacitor](https://capacitorjs.com) 结合使用，为所有用户提供多种部署目标。你可以将应用部署为 PWA 和原生应用，同时利用这两种渠道的优势。
 
-Ionic allows you to ship your app to not only the app store, but also deploy to the mobile web as a PWA.
+Ionic 允许你不仅将应用发布到应用商店，还能作为 PWA 部署到移动网络。
 
-### What is required
+### 必备条件
 
-To be considered a Progressive Web App, your app must be:
+要被认定为渐进式 Web 应用，你的应用必须满足以下条件：
 
-- Progressive - Work for every user, regardless of browser choice, because they are built with progressive enhancement as a core tenet.
+- **渐进式** - 无论用户选择哪种浏览器都能运行，因为它们以渐进增强为核心原则构建。
 
-- Responsive - Fit any form factor, desktop, mobile, tablet, or whatever is next.
+- **响应式** - 适应任何设备形态，无论是桌面端、移动端、平板，还是未来的新设备。
 
-- Connectivity independent - Enhanced with service workers to work offline or on low quality networks.
+- **连接无关** - 通过 Service Worker 增强，能够在离线或网络质量差的情况下工作。
 
-- App-like - Use the app-shell model to provide app-style navigation and interactions.
+- **类应用体验** - 采用应用外壳模型，提供应用风格的导航和交互。
 
-- Fresh - Always up-to-date thanks to the service worker update process.
+- **保持更新** - 借助 Service Worker 更新机制，始终保持最新状态。
 
-- Safe - Served via HTTPS to prevent snooping and ensure content has not been tampered with.
+- **安全** - 通过 HTTPS 提供，防止窥探并确保内容未被篡改。
 
-- Discoverable - Are identifiable as “applications” thanks to W3C manifests and service worker registration scope allowing search engines to find them.
+- **可发现** - 得益于 W3C 清单和 Service Worker 注册范围，可被识别为“应用程序”，允许搜索引擎发现它们。
 
-- Re-engageable - Make re-engagement easy through features like push notifications.
+- **可重新互动** - 通过推送通知等功能轻松实现用户重新互动。
 
-- Installable - Allow users to “keep” apps they find most useful on their home screen without the hassle of an app store.
+- **可安装** - 允许用户将最常用的应用“保留”在主屏幕上，无需通过应用商店的繁琐流程。
 
-- Linkable - Easily share via URL and not require complex installation.
+- **可链接** - 通过 URL 轻松分享，无需复杂安装。
 
 <!-- cspell:disable -->
 
 <em>
   <a href="https://addyosmani.com/blog/getting-started-with-progressive-web-apps/" target="_blank">
-    Addy Osmani: Progressive web apps
+    Addy Osmani：渐进式 Web 应用
   </a>
 </em>
 
 <!-- cspell:enable -->
 
-There is a lot here, but it boils down to a few points for Ionic apps.
+虽然这里涉及很多内容，但对于 Ionic 应用来说，可以归结为以下几点。
 
-#### Offline Support
+#### 离线支持
 
-Apps should be able to work offline. Whether that be displaying a proper "offline" message or caching app data for display purpose.
+应用应能在离线状态下工作。无论是显示适当的“离线”消息，还是为显示目的缓存应用数据。
 
-#### <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">Web App Manifest</a>
+#### <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">Web 应用清单</a>
 
-An app manifest file should describe the resources your app will need. This includes your app's displayed name, icons, as well as splash screen. If you link to the manifest file in your index.html, browsers will detect that and load the resources for you.
+应用清单文件应描述应用所需的资源。这包括应用的显示名称、图标以及启动画面。如果你在 index.html 中链接到清单文件，浏览器会检测到它并为你加载资源。
 
 #### <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank">Service Worker</a>
 
-Service worker could be mentioned in Offline Support, but it really deserves its own section. Service worker provides a programmatic way to cache app resources. Be it JavaScript files or JSON data from a HTTP request. The programmatic API allows developers to decide how to handle caching and provides a much more flexible experience than other options.
+Service Worker 本可以在离线支持部分提及，但它确实值得单独说明。Service Worker 提供了一种以编程方式缓存应用资源的方法。无论是 JavaScript 文件还是 HTTP 请求中的 JSON 数据。其编程式 API 允许开发者决定如何处理缓存，并提供比其他方案更灵活的体验。

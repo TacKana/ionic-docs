@@ -16,7 +16,7 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <div class="example-content">Library content</div>
+      <div class="example-content">库页面内容</div>
     </ion-content>
   </ion-page>
 </template>

@@ -10,36 +10,36 @@ import CodeBlock from '@theme/CodeBlock';
 
 # NFC
 
-The NFC plugin allows you to read and write NFC tags. You can also beam to, and receive from, other NFC enabled devices.
+NFC 插件允许你读取和写入 NFC 标签。你也可以与其他支持 NFC 的设备进行数据发送和接收。
 
-Use to
+该插件可用于：
 
-- read data from NFC tags
-- write data to NFC tags
-- send data to other NFC enabled devices
-- receive data from NFC devices
+- 从 NFC 标签读取数据
+- 向 NFC 标签写入数据
+- 向其他支持 NFC 的设备发送数据
+- 从 NFC 设备接收数据
 
-This plugin uses NDEF (NFC Data Exchange Format) for maximum compatibilty between NFC devices, tag types, and operating systems.
+本插件使用 NDEF（NFC 数据交换格式），以确保在 NFC 设备、标签类型和操作系统之间获得最佳的兼容性。
 
 <p>
   <a href="https://github.com/chariotsolutions/phonegap-nfc" target="_blank" rel="noopener" className="git-link">github.com/chariotsolutions/phonegap-nfc</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵的时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果你正在开发一个严肃的项目，你无法承受花费数小时来排查问题。Ionic 的专家为社区插件和企业级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -62,23 +62,23 @@ This plugin uses NDEF (NFC Data Exchange Format) for maximum compatibilty betwee
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic Enterprise 提供了 Ionic 团队完全支持并维护的插件。 &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或者如果你对本插件的企业版感兴趣，请 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - iOS
 - Windows
 
-## Usage
+## 用法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -89,23 +89,23 @@ constructor(private nfc: NFC, private ndef: Ndef) { }
 
 ...
 
-// Read NFC Tag - Android
-// Once the reader mode is enabled, any tags that are scanned are sent to the subscriber
+// 读取 NFC 标签 - Android
+// 一旦启用读卡器模式，任何扫描到的标签都会发送给订阅者
  let flags = this.nfc.FLAG_READER_NFC_A | this.nfc.FLAG_READER_NFC_V;
  this.readerMode$ = this.nfc.readerMode(flags).subscribe(
      tag => console.log(JSON.stringify(tag)),
-     err => console.log('Error reading tag', err)
+     err => console.log('读取标签时出错', err)
  );
 
-// Read NFC Tag - iOS
-// On iOS, a NFC reader session takes control from your app while scanning tags then returns a tag
+// 读取 NFC 标签 - iOS
+// 在 iOS 上，NFC 读卡器会话会在扫描标签时接管你的应用控制权，然后返回一个标签
 try {
     let tag = await this.nfc.scanNdef();
     console.log(JSON.stringify(tag));
  } catch (err) {
-     console.log('Error reading tag', err);
+     console.log('读取标签时出错', err);
  }
 
 ```
 
-For more details on NFC tag operations see https://github.com/chariotsolutions/phonegap-nfc
+有关 NFC 标签操作的更多详细信息，请参阅 https://github.com/chariotsolutions/phonegap-nfc

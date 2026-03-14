@@ -4,9 +4,9 @@ import { IonChip } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonChip>Default</IonChip>
-      <IonChip disabled={true}>Disabled</IonChip>
-      <IonChip outline={true}>Outline</IonChip>
+      <IonChip>默认</IonChip>
+      <IonChip disabled={true}>禁用</IonChip>
+      <IonChip outline={true}>轮廓</IonChip>
     </>
   );
 }

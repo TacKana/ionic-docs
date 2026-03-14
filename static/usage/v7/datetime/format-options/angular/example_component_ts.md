@@ -7,9 +7,9 @@ import { IonDatetime } from '@ionic/angular/standalone';
   templateUrl: 'example.component.html',
   styleUrls: ['example.component.css'],
   imports: [IonDatetime],
-  // This schema is used to bypass an issue in Ionic Framework v7
-  // where formatOptions is not exported. Upgrade to Ionic
-  // Framework 8.1.1 or later to remove this workaround.
+  // 此架构用于绕过 Ionic Framework v7 中的一个问题
+  // 即 formatOptions 未导出。升级到 Ionic
+  // Framework 8.1.1 或更高版本可移除此变通方案。
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class ExampleComponent {}

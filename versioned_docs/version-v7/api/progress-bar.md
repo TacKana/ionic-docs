@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/progress-bar/custom-pr
 import Slots from '@ionic-internal/component-api/v7/progress-bar/slots.md';
 
 <head>
-  <title>ion-progress-bar: App Progress Bar for Loading Indicator</title>
+  <title>ion-progress-bar：应用进度条加载指示器</title>
   <meta
     name="description"
-    content="ion-progress-bars are horizontal loading indicators that inform users about the status of ongoing app processes—such as submitting a form or saving updates."
+    content="ion-progress-bar 是水平加载指示器，用于告知用户应用内进行中任务的状态——例如提交表单或保存更新。"
   />
 </head>
 
@@ -21,49 +21,49 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Progress bars inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. There are two types of progress bars: `determinate` and `indeterminate`.
+进度条用于告知用户进行中任务的状态，例如应用加载、表单提交或保存更新。进度条有两种类型：`determinate`（确定型）和 `indeterminate`（不确定型）。
 
-## Determinate
+## 确定型进度条
 
-Determinate is the default type. It should be used when the percentage of an operation is known. The progress is represented by setting the `value` property. This can be used to show the progress increasing from 0 to 100% of the track.
+确定型是默认类型。当操作进度百分比已知时应使用此类型。通过设置 `value` 属性来显示进度，可用于展示从轨道 0% 到 100% 的进度增长过程。
 
 import Determinate from '@site/static/usage/v7/progress-bar/determinate/index.md';
 
 <Determinate />
 
-### Buffer
+### 缓冲状态
 
-If the `buffer` property is set, a buffer stream will show with animated circles to indicate activity. The value of the `buffer` property will also be represented by how much visible track there is. If the value of `buffer` is less than the `value` property, there will be no visible track. If `buffer` is equal to `1` then the buffer stream will be hidden.
+若设置了 `buffer` 属性，将显示带有动画圆点的缓冲流以指示活动状态。`buffer` 属性的值也会通过可见轨道的长度来体现。如果 `buffer` 的值小于 `value` 属性，则不会显示可见轨道。若 `buffer` 等于 `1`，缓冲流将被隐藏。
 
 import Buffer from '@site/static/usage/v7/progress-bar/buffer/index.md';
 
 <Buffer />
 
-## Indeterminate
+## 不确定型进度条
 
-The indeterminate type should be used when it is unknown how long the process will take. The progress bar is not tied to the `value`, instead it continually slides along the track until the process is complete.
+不确定型应用于无法预估任务所需时间的情况。该进度条不与 `value` 值绑定，而是在任务完成前持续在轨道上滑动。
 
 import Indeterminate from '@site/static/usage/v7/progress-bar/indeterminate/index.md';
 
 <Indeterminate />
 
-## Progress Bars in Toolbars
+## 工具栏中的进度条
 
-<!-- Reuse the playground from the Toolbar directory -->
+<!-- 复用 Toolbar 目录中的示例 -->
 
 import Toolbar from '@site/static/usage/v7/toolbar/progress-bars/index.md';
 
 <Toolbar />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v7/progress-bar/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v7/progress-bar/theming/css-properties/index.md';
 
@@ -75,15 +75,15 @@ import CSSParts from '@site/static/usage/v7/progress-bar/theming/css-shadow-part
 
 <CSSParts />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -91,10 +91,10 @@ import CSSParts from '@site/static/usage/v7/progress-bar/theming/css-shadow-part
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

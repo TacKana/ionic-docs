@@ -14,7 +14,7 @@ export class ExampleComponent {
 
   async showLoading() {
     const loading = await this.loadingCtrl.create({
-      message: 'Dismissing after 3 seconds...',
+      message: '3秒后自动关闭...',
       duration: 3000,
     });
 

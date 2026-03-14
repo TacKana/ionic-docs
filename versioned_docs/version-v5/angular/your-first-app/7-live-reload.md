@@ -1,20 +1,20 @@
 ---
-sidebar_label: Live Reload
+sidebar_label: 实时重载
 ---
 
-# Rapid App Development with Live Reload
+# 通过实时重载实现快速应用开发
 
-So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
+到目前为止，我们已经领略了开发跨平台应用是多么轻松。开发体验已经相当快捷，但若我告诉你还有更快的方法，你会怎么想？
 
-We can use the Ionic CLI’s [Live Reload functionality](https://ionicframework.com/docs/cli/livereload) to boost our productivity when building Ionic apps. When active, Live Reload will reload the browser and/or WebView when changes in the app are detected.
+我们可以利用 Ionic CLI 的 [实时重载功能](https://ionicframework.com/docs/cli/livereload) 来提升构建 Ionic 应用时的开发效率。启用后，实时重载会在检测到应用变更时自动刷新浏览器和/或 WebView。
 
-## Live Reload
+## 实时重载
 
-Remember `ionic serve`? That was Live Reload working in the browser, allowing us to iterate quickly.
+还记得 `ionic serve` 吗？那就是实时重载在浏览器中发挥作用，让我们能够快速迭代。
 
-We can also use it when developing on iOS and Android devices. This is particularly useful when writing code that interacts with native plugins - we must run it on a device to verify that it works. Therefore, being able to quickly write, build, test, and deploy code is crucial to keeping up our development speed.
+我们也可以在 iOS 和 Android 设备上进行开发时使用它。这在编写与原生插件交互的代码时尤为有用——我们必须在设备上运行才能验证其功能。因此，能够快速编写、构建、测试和部署代码对于保持开发速度至关重要。
 
-Let’s use Live Reload to implement photo deletion, the missing piece of our Photo Gallery feature. Select your platform of choice (iOS or Android) and connect a device to your computer. Next, run either command in a terminal, based on your chosen platform:
+让我们使用实时重载来实现照片删除功能，这是我们照片库功能中缺失的一环。选择你偏好的平台（iOS 或 Android），并将设备连接到电脑。接着，根据所选平台在终端中运行相应的命令：
 
 ```shell
 $ ionic cap run ios -l --external
@@ -22,11 +22,11 @@ $ ionic cap run ios -l --external
 $ ionic cap run android -l --external
 ```
 
-The Live Reload server will start up, and the native IDE of choice will open if not opened already. Within the IDE, click the Play button to launch the app onto your device.
+实时重载服务器将启动，如果尚未打开，你选择的原生 IDE 也会自动开启。在 IDE 中，点击播放按钮即可将应用部署到你的设备上。
 
-## Deleting Photos
+## 删除照片
 
-With Live Reload running and the app open on your device, let’s implement photo deletion functionality. In your code editor (not Android Studio or Xcode), open `tab2.page.html` and add a new click handler to each `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog.
+在实时重载运行且应用已在设备上打开的情况下，让我们来实现照片删除功能。在你的代码编辑器（非 Android Studio 或 Xcode）中，打开 `tab2.page.html` 并为每个 `<ion-img>` 元素添加新的点击事件处理程序。当应用用户点击图库中的照片时，我们将显示一个 [操作表](https://ionicframework.com/docs/api/action-sheet) 对话框，提供删除选定照片或取消（关闭）对话框的选项。
 
 ```html
 <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
@@ -34,7 +34,7 @@ With Live Reload running and the app open on your device, let’s implement phot
 </ion-col>
 ```
 
-Over in `tab2.page.ts`, import Action Sheet and add it to the constructor:
+在 `tab2.page.ts` 中，导入操作表并将其添加到构造函数中：
 
 ```tsx
 import { ActionSheetController } from '@ionic/angular';
@@ -43,31 +43,31 @@ constructor(public photoService: PhotoService,
             public actionSheetController: ActionSheetController) {}
 ```
 
-Add `UserPhoto` to the import statement.
+将 `UserPhoto` 添加到导入语句中。
 
 ```tsx
 import { PhotoService, UserPhoto } from '../services/photo.service';
 ```
 
-Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
+接下来，实现 `showActionSheet()` 函数。我们添加两个选项：`Delete`（调用 PhotoService 的 `deletePicture()` 函数，该函数将在后续添加）和 `Cancel`，后者被赋予 "cancel" 角色时将自动关闭操作表：
 
 ```tsx
 public async showActionSheet(photo: UserPhoto, position: number) {
   const actionSheet = await this.actionSheetController.create({
-    header: 'Photos',
+    header: '照片',
     buttons: [{
-      text: 'Delete',
+      text: '删除',
       role: 'destructive',
       icon: 'trash',
       handler: () => {
         this.photoService.deletePicture(photo, position);
       }
     }, {
-      text: 'Cancel',
+      text: '取消',
       icon: 'close',
       role: 'cancel',
       handler: () => {
-        // Nothing to do, action sheet is automatically closed
+        // 无需操作，操作表会自动关闭
         }
     }]
   });
@@ -75,22 +75,22 @@ public async showActionSheet(photo: UserPhoto, position: number) {
 }
 ```
 
-Save both of the files we just edited. The Photo Gallery app will reload automatically, and now when we tap on one of the photos in the gallery, the action sheet displays. Tapping “Delete” doesn’t do anything yet, so head back into your code editor.
+保存我们刚刚编辑的两个文件。照片库应用将自动重新加载，现在当我们点击图库中的任意照片时，操作表就会显示。点击“删除”目前还未生效，所以请回到你的代码编辑器。
 
-In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
+在 `src/app/services/photo.service.ts` 中，添加 `deletePicture()` 函数：
 
 ```tsx
 public async deletePicture(photo: UserPhoto, position: number) {
-  // Remove this photo from the Photos reference data array
+  // 从 Photos 引用数据数组中移除这张照片
   this.photos.splice(position, 1);
 
-  // Update photos array cache by overwriting the existing photo array
+  // 通过覆盖现有照片数组来更新照片数组缓存
   Preferences.set({
     key: this.PHOTO_STORAGE,
     value: JSON.stringify(this.photos)
   });
 
-  // delete photo file from filesystem
+  // 从文件系统中删除照片文件
   const filename = photo.filepath
                       .substring(photo.filepath.lastIndexOf('/') + 1);
 
@@ -101,12 +101,12 @@ public async deletePicture(photo: UserPhoto, position: number) {
 }
 ```
 
-The selected photo is removed from the Photos array first. Then, we use the Capacitor Preferences API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
+首先，选中的照片会从 Photos 数组中移除。接着，我们使用 Capacitor Preferences API 来更新 Photos 数组的缓存版本。最后，我们利用 Filesystem API 删除实际的图片文件本身。
 
-Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
+保存此文件，然后再次点击一张照片并选择“删除”选项。这次，照片成功删除了！借助实时重载，我们实现得更快。💪
 
-## What’s Next?
+## 下一步
 
-Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitorjs.com/docs/apis). The sky’s the limit.
+恭喜！你已经构建了一个完整的跨平台照片库应用，可在网页、iOS 和 Android 上运行。从这里出发，有多种路径可选。尝试在应用中添加另一个 [Ionic UI 组件](https://ionicframework.com/docs/components)，或更多 [原生功能](https://capacitorjs.com/docs/apis)。一切皆有可能。
 
-Happy app building! 💙
+祝你应用开发愉快！💙

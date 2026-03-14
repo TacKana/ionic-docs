@@ -1,5 +1,5 @@
 ---
-title: "ion-backdrop"
+title: 背景幕组件
 ---
 import Props from '@ionic-internal/component-api/v8/backdrop/props.md';
 import Events from '@ionic-internal/component-api/v8/backdrop/events.md';
@@ -12,40 +12,40 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Backdrops are full screen components that overlay other components. They are useful behind components that transition in on top of other content and can be used to dismiss that component.
+背景幕（Backdrop）是全屏组件，会覆盖在其他组件之上。它们通常用在那些从其他内容上方滑入的组件背后，并且可以用于关闭该组件。
 
-## Basic Usage
+## 基本用法
 
-The backdrop prevents clicking or tapping on the content behind it. It is transparent by default, so the below demo includes CSS to make it visible.
+背景幕会阻止点击或触摸其背后的内容。默认情况下它是透明的，因此下面的演示包含了使其可见的 CSS。
 
 import Basic from '@site/static/usage/v8/backdrop/basic/index.md';
 
 <Basic />
 
-## Styling
+## 样式设置
 
-The backdrop can be customized by assigning CSS properties directly to the backdrop element. Common properties include `background-color`, `background` and `opacity`. 
+可以通过直接向背景幕元素分配 CSS 属性来自定义背景幕。常见的属性包括 `background-color`、`background` 和 `opacity`。
 
-Content can be displayed above the backdrop by setting a `z-index` on the content, higher than the backdrop (defaults to `2`).
+可以通过在内容上设置比背景幕更高的 `z-index` 值（默认为 `2`）来在背景幕上方显示内容。
 
 import Styling from '@site/static/usage/v8/backdrop/styling/index.md';
 
 <Styling />
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

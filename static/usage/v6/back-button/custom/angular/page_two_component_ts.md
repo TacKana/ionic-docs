@@ -10,14 +10,14 @@ import { caretBack } from 'ionicons/icons';
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-back-button text="Previous" icon="caret-back"></ion-back-button>
+          <ion-back-button text="上一页" icon="caret-back"></ion-back-button>
         </ion-buttons>
-        <ion-title>Back Button</ion-title>
+        <ion-title>返回按钮</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <h1>Page Two</h1>
-      <p>Use the back button to navigate to the previous page.</p>
+      <h1>第二页</h1>
+      <p>使用返回按钮可导航至上一页面。</p>
     </ion-content>
   `,
   imports: [IonicModule],
@@ -26,9 +26,9 @@ import { caretBack } from 'ionicons/icons';
 export class PageTwoComponent {
   constructor() {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 应用中需要使用的所有图标
+     * 都可在 app.component.ts 中注册，
+     * 之后便可在应用内通过名称引用。
      */
     addIcons({ caretBack });
   }

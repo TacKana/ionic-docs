@@ -22,21 +22,21 @@ import { pizza } from 'ionicons/icons';
 export class ExampleComponent {
   constructor() {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 您想在应用程序中使用的任何图标
+     * 都可以在 app.component.ts 中注册，
+     * 然后在整个应用程序中通过名称引用。
      */
     addIcons({ pizza });
   }
 
   handleReorderEnd(event: ReorderEndCustomEvent) {
-    // The `from` and `to` properties contain the index of the item
-    // when the drag started and ended, respectively
-    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+    // `from` 和 `to` 属性分别包含项目
+    // 在拖拽开始和结束时的索引位置
+    console.log('从索引', event.detail.from, '拖拽到', event.detail.to);
 
-    // Finish the reorder and position the item in the DOM based on
-    // where the gesture ended. This method can also be called directly
-    // by the reorder group.
+    // 完成重新排序，并根据手势结束的位置
+    // 将项目放置在 DOM 中。此方法也可以由
+    // 重新排序组直接调用。
     event.detail.complete();
   }
 }

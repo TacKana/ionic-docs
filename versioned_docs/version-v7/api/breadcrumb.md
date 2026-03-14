@@ -13,11 +13,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-A Breadcrumb is a single navigation item that is a child of the Breadcrumbs component. A breadcrumb can link elsewhere in an app or it can be plain text. Each breadcrumb has a separator between it and the next breadcrumb and can optionally contain an icon.
+面包屑（Breadcrumb）是面包屑导航组件中的单个导航项。它可以作为应用内部链接，也可以显示为纯文本。每个面包屑与下一个面包屑之间都有一个分隔符，并且可以选择性地包含图标。
 
-See the [Breadcrumbs](./breadcrumbs) documentation for more information.
+更多信息请查阅 [Breadcrumbs](./breadcrumbs) 文档。
 
-## Interfaces
+## 接口
 
 ### BreadcrumbCollapsedClickEventDetail
 
@@ -29,7 +29,7 @@ interface BreadcrumbCollapsedClickEventDetail {
 
 ### BreadcrumbCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing .
+虽然不是必须的，但可以使用此接口替代 `CustomEvent` 接口以获得更强的类型约束。
 
 ```typescript
 interface BreadcrumbCustomEvent extends CustomEvent {
@@ -38,15 +38,15 @@ interface BreadcrumbCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -54,10 +54,10 @@ interface BreadcrumbCustomEvent extends CustomEvent {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

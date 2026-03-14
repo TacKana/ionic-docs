@@ -4,15 +4,15 @@ sidebar_label: 'cordova compile'
 
 # ionic cordova compile
 
-Compile native platform code
+编译原生平台代码
 
 ```shell
 ionic cordova compile [options]
 ```
 
-Like running `cordova compile` directly, but provides friendly checks.
+与直接运行 `cordova compile` 类似，但提供了更友好的检查。
 
-## Examples
+## 示例
 
 ```shell
 $ ionic cordova compile ios
@@ -20,7 +20,7 @@ $ ionic cordova compile ios --device
 $ ionic cordova compile android
 ```
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -32,17 +32,17 @@ $ ionic cordova compile android
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <p>
-          The platform to compile (<code>android</code>, <code>ios</code>)
+          要编译的平台 (<code>android</code>, <code>ios</code>)
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -58,9 +58,9 @@ $ ionic cordova compile android
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Mark as a debug build</p>
+        <p>标记为调试构建</p>
       </td>
     </tr>
   </tbody>
@@ -77,9 +77,9 @@ $ ionic cordova compile android
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Mark as a release build</p>
+        <p>标记为发布构建</p>
       </td>
     </tr>
   </tbody>
@@ -96,9 +96,9 @@ $ ionic cordova compile android
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Deploy build to a device</p>
+        <p>将构建部署到设备</p>
       </td>
     </tr>
   </tbody>
@@ -115,15 +115,15 @@ $ ionic cordova compile android
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Deploy build to an emulator</p>
+        <p>将构建部署到模拟器</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -140,10 +140,10 @@ $ ionic cordova compile android
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Use the specified build configuration</p>
+          <p>使用指定的构建配置文件</p>
         </div>
       </td>
     </tr>

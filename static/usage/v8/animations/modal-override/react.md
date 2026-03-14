@@ -47,21 +47,21 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Page</IonTitle>
+          <IonTitle>页面</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <IonButton id="modal-trigger">Present Modal</IonButton>
+        <IonButton id="modal-trigger">显示模态框</IonButton>
         <IonModal trigger="modal-trigger" ref={modalEl} enterAnimation={enterAnimation} leaveAnimation={leaveAnimation}>
           <IonHeader>
             <IonToolbar>
-              <IonTitle>Modal</IonTitle>
+              <IonTitle>模态框</IonTitle>
               <IonButtons slot="end">
-                <IonButton onClick={closeModal}>Close</IonButton>
+                <IonButton onClick={closeModal}>关闭</IonButton>
               </IonButtons>
             </IonToolbar>
           </IonHeader>
-          <IonContent className="ion-padding">Modal Content</IonContent>
+          <IonContent className="ion-padding">模态框内容</IonContent>
         </IonModal>
       </IonContent>
     </>

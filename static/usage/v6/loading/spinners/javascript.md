@@ -1,10 +1,10 @@
 ```html
-<ion-button onclick="showLoading()">Show Loading</ion-button>
+<ion-button onclick="showLoading()">显示加载状态</ion-button>
 
 <script>
   var showLoading = async () => {
     const loading = await loadingController.create({
-      message: 'Loading...',
+      message: '加载中...',
       duration: 3000,
       spinner: 'circles',
     });

@@ -5,24 +5,24 @@ import { IonAlert, IonButton } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton id="present-alert">Click Me</IonButton>
+      <IonButton id="present-alert">点击我</IonButton>
       <IonAlert
         trigger="present-alert"
-        header="Select your favorite color"
-        buttons={['OK']}
+        header="选择你最喜欢的颜色"
+        buttons={['确认']}
         inputs={[
           {
-            label: 'Red',
+            label: '红色',
             type: 'radio',
             value: 'red',
           },
           {
-            label: 'Blue',
+            label: '蓝色',
             type: 'radio',
             value: 'blue',
           },
           {
-            label: 'Green',
+            label: '绿色',
             type: 'radio',
             value: 'green',
           },

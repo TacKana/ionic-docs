@@ -5,26 +5,26 @@ import { IonActionSheet, IonButton } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton id="open-action-sheet">Open</IonButton>
+      <IonButton id="open-action-sheet">打开</IonButton>
       <IonActionSheet
         trigger="open-action-sheet"
-        header="Actions"
+        header="操作"
         buttons={[
           {
-            text: 'Delete',
+            text: '删除',
             role: 'destructive',
             data: {
               action: 'delete',
             },
           },
           {
-            text: 'Share',
+            text: '分享',
             data: {
               action: 'share',
             },
           },
           {
-            text: 'Cancel',
+            text: '取消',
             role: 'cancel',
             data: {
               action: 'cancel',

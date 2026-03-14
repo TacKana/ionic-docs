@@ -1,6 +1,6 @@
 ```html
 <ion-img
   src="https://ionic-docs-demo-v6.vercel.app/assets/madison.jpg"
-  alt="The Wisconsin State Capitol building in Madison, WI at night"
+  alt="威斯康星州麦迪逊市的州议会大厦夜景"
 ></ion-img>
 ```

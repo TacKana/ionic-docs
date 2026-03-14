@@ -5,12 +5,12 @@
       class="always-flip"
       toggle-icon="caret-down-sharp"
       interface="popover"
-      label="Icon flips on both modes"
-      placeholder="Select fruit"
+      label="图标在两种模式下都会翻转"
+      placeholder="选择水果"
     >
-      <ion-select-option value="apples">Apples</ion-select-option>
-      <ion-select-option value="oranges">Oranges</ion-select-option>
-      <ion-select-option value="bananas">Bananas</ion-select-option>
+      <ion-select-option value="apples">苹果</ion-select-option>
+      <ion-select-option value="oranges">橙子</ion-select-option>
+      <ion-select-option value="bananas">香蕉</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-item>
@@ -18,12 +18,12 @@
       class="never-flip"
       toggle-icon="caret-down-sharp"
       interface="popover"
-      label="Icon never flips"
-      placeholder="Select fruit"
+      label="图标从不翻转"
+      placeholder="选择水果"
     >
-      <ion-select-option value="apples">Apples</ion-select-option>
-      <ion-select-option value="oranges">Oranges</ion-select-option>
-      <ion-select-option value="bananas">Bananas</ion-select-option>
+      <ion-select-option value="apples">苹果</ion-select-option>
+      <ion-select-option value="oranges">橙子</ion-select-option>
+      <ion-select-option value="bananas">香蕉</ion-select-option>
     </ion-select>
   </ion-item>
 </ion-list>

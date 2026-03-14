@@ -2,9 +2,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { IonDatetime } from '@ionic/angular/standalone';
 
-// ViewEncapsulation is turned off for this demo due to
-// a lack of support for styling multiple css shadow parts
-// See https://github.com/angular/angular/issues/22515
+// 此示例中关闭了 ViewEncapsulation，因为当前不支持样式化多个 CSS 影子部件
+// 详见 https://github.com/angular/angular/issues/22515
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',

@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-textarea
-    placeholder="Enter text, leave the textarea, come back, and type to clear"
+    placeholder="输入文本，离开文本框，再返回并输入以清空内容"
     :clear-on-edit="true"
   ></ion-textarea>
 </template>

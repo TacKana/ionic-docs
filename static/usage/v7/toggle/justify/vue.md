@@ -2,13 +2,13 @@
 <template>
   <ion-list>
     <ion-item>
-      <ion-toggle justify="start">Packed at the Start of Line</ion-toggle>
+      <ion-toggle justify="start">标签靠左对齐</ion-toggle>
     </ion-item>
     <ion-item>
-      <ion-toggle justify="end">Packed at the End of Line</ion-toggle>
+      <ion-toggle justify="end">标签靠右对齐</ion-toggle>
     </ion-item>
     <ion-item>
-      <ion-toggle justify="space-between">Space Between Label and Control</ion-toggle>
+      <ion-toggle justify="space-between">标签与控制项两端对齐</ion-toggle>
     </ion-item>
   </ion-list>
 </template>

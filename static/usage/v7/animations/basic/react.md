@@ -32,12 +32,12 @@ function Example() {
   return (
     <>
       <IonCard ref={cardEl}>
-        <IonCardContent>Card</IonCardContent>
+        <IonCardContent>卡片</IonCardContent>
       </IonCard>
 
-      <IonButton onClick={play}>Play</IonButton>
-      <IonButton onClick={pause}>Pause</IonButton>
-      <IonButton onClick={stop}>Stop</IonButton>
+      <IonButton onClick={play}>播放</IonButton>
+      <IonButton onClick={pause}>暂停</IonButton>
+      <IonButton onClick={stop}>停止</IonButton>
     </>
   );
 }

@@ -21,7 +21,7 @@ ion-toggle::part(track) {
   height: 10px;
   width: 65px;
 
-  /* Required for iOS handle to overflow the height of the track */
+  /* 使 iOS 的滑块手柄可以超出轨道高度 */
   overflow: visible;
 }
 ```

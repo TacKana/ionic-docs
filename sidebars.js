@@ -2,19 +2,19 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'Getting Started',
+      label: '入门指南',
       collapsed: false,
       items: ['index', 'intro/environment', 'intro/cli', 'intro/cdn', 'intro/vscode-extension', 'intro/next'],
     },
     {
       type: 'category',
-      label: 'Upgrade Guides',
+      label: '升级指南',
       collapsed: false,
       items: ['updating/8-0', 'updating/7-0', 'updating/6-0', 'updating/5-0', 'updating/4-0'],
     },
     {
       type: 'category',
-      label: 'Developing',
+      label: '开发',
       collapsed: false,
       items: [
         'developing/starting',
@@ -31,13 +31,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Layout',
+      label: '布局',
       collapsed: false,
       items: [
         'layout/structure',
         {
           type: 'link',
-          label: 'Responsive Grid',
+          label: '响应式网格',
           href: '/docs/api/grid',
         },
         'layout/global-stylesheets',
@@ -47,7 +47,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Theming',
+      label: '主题',
       collapsed: false,
       items: [
         'theming/basics',
@@ -71,7 +71,7 @@ module.exports = {
         'angular/quickstart',
         {
           type: 'category',
-          label: 'Build Your First App',
+          label: '构建你的第一个应用',
           items: [
             'angular/your-first-app',
             'angular/your-first-app/taking-photos',
@@ -113,7 +113,7 @@ module.exports = {
         'react/quickstart',
         {
           type: 'category',
-          label: 'Build Your First App',
+          label: '构建你的第一个应用',
           items: [
             'react/your-first-app',
             'react/your-first-app/taking-photos',
@@ -136,12 +136,12 @@ module.exports = {
         'react/storage',
         {
           type: 'category',
-          label: 'Testing',
+          label: '测试',
           items: [
             'react/testing/introduction',
             {
               type: 'category',
-              label: 'Unit Testing',
+              label: '单元测试',
               collapsed: false,
               items: [
                 'react/testing/unit-testing/setup',
@@ -163,7 +163,7 @@ module.exports = {
         'vue/quickstart',
         {
           type: 'category',
-          label: 'Build Your First App',
+          label: '构建你的第一个应用',
           items: [
             'vue/your-first-app',
             'vue/your-first-app/taking-photos',
@@ -191,25 +191,25 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Utilities',
+      label: '实用工具',
       collapsed: false,
       items: ['utilities/animations', 'utilities/gestures'],
     },
     {
       type: 'category',
-      label: 'Deployment',
+      label: '部署',
       collapsed: false,
       items: ['deployment/app-store', 'deployment/play-store', 'deployment/progressive-web-app'],
     },
     {
       type: 'category',
-      label: 'Techniques',
+      label: '技术',
       collapsed: false,
       items: ['techniques/security'],
     },
     {
       type: 'category',
-      label: 'Troubleshooting',
+      label: '故障排除',
       collapsed: false,
       items: [
         'troubleshooting/debugging',
@@ -221,7 +221,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Core Concepts',
+      label: '核心概念',
       collapsed: false,
       items: [
         'core-concepts/fundamentals',
@@ -232,13 +232,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Contributing',
+      label: '贡献',
       collapsed: false,
       items: ['contributing/how-to-contribute', 'contributing/coc'],
     },
     {
       type: 'category',
-      label: 'Reference',
+      label: '参考',
       collapsed: false,
       items: [
         'reference/glossary',
@@ -246,7 +246,7 @@ module.exports = {
         'reference/release-notes',
         {
           type: 'link',
-          label: 'GitHub Changelog',
+          label: 'GitHub 更新日志',
           href: 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md',
         },
         'reference/support',
@@ -258,73 +258,73 @@ module.exports = {
   api: [
     {
       type: 'category',
-      label: 'Getting Started',
+      label: '入门指南',
       collapsed: false,
       items: ['components'],
     },
     {
       type: 'category',
-      label: 'Accordion',
+      label: '手风琴',
       collapsed: false,
       items: ['api/accordion', 'api/accordion-group'],
     },
     {
       type: 'category',
-      label: 'Action Sheet',
+      label: '操作面板',
       collapsed: false,
       items: ['api/action-sheet'],
     },
     {
       type: 'category',
-      label: 'Alert',
+      label: '提示框',
       collapsed: false,
       items: ['api/alert'],
     },
     {
       type: 'category',
-      label: 'Badge',
+      label: '徽章',
       collapsed: false,
       items: ['api/badge'],
     },
     {
       type: 'category',
-      label: 'Breadcrumbs',
+      label: '面包屑',
       collapsed: false,
       items: ['api/breadcrumb', 'api/breadcrumbs'],
     },
     {
       type: 'category',
-      label: 'Button',
+      label: '按钮',
       collapsed: false,
       items: ['api/button', 'api/ripple-effect'],
     },
     {
       type: 'category',
-      label: 'Card',
+      label: '卡片',
       collapsed: false,
       items: ['api/card', 'api/card-content', 'api/card-header', 'api/card-subtitle', 'api/card-title'],
     },
     {
       type: 'category',
-      label: 'Checkbox',
+      label: '复选框',
       collapsed: false,
       items: ['api/checkbox'],
     },
     {
       type: 'category',
-      label: 'Chip',
+      label: '纸片',
       collapsed: false,
       items: ['api/chip'],
     },
     {
       type: 'category',
-      label: 'Content',
+      label: '内容',
       collapsed: false,
       items: ['api/app', 'api/content'],
     },
     {
       type: 'category',
-      label: 'Date & Time Pickers',
+      label: '日期和时间选择器',
       collapsed: false,
       items: [
         'api/datetime',
@@ -337,37 +337,37 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Floating Action Button',
+      label: '浮动操作按钮',
       collapsed: false,
       items: ['api/fab', 'api/fab-button', 'api/fab-list'],
     },
     {
       type: 'category',
-      label: 'Grid',
+      label: '网格',
       collapsed: false,
       items: ['api/grid', 'api/col', 'api/row'],
     },
     {
       type: 'category',
-      label: 'Icons',
+      label: '图标',
       collapsed: false,
       items: ['api/icon'],
     },
     {
       type: 'category',
-      label: 'Infinite Scroll',
+      label: '无限滚动',
       collapsed: false,
       items: ['api/infinite-scroll', 'api/infinite-scroll-content'],
     },
     {
       type: 'category',
-      label: 'Inputs',
+      label: '输入',
       collapsed: false,
       items: ['api/input', 'api/input-password-toggle', 'api/input-otp', 'api/textarea'],
     },
     {
       type: 'category',
-      label: 'Item',
+      label: '项目',
       collapsed: false,
       items: [
         'api/item',
@@ -382,127 +382,127 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'List',
+      label: '列表',
       collapsed: false,
       items: ['api/list', 'api/list-header'],
     },
     {
       type: 'category',
-      label: 'Media',
+      label: '媒体',
       collapsed: false,
       items: ['api/avatar', 'api/icon', 'api/img', 'api/thumbnail'],
     },
     {
       type: 'category',
-      label: 'Menu',
+      label: '菜单',
       collapsed: false,
       items: ['api/menu', 'api/menu-button', 'api/menu-toggle', 'api/split-pane'],
     },
     {
       type: 'category',
-      label: 'Modal',
+      label: '模态框',
       collapsed: false,
       items: ['api/modal', 'api/backdrop'],
     },
     {
       type: 'category',
-      label: 'Navigation',
+      label: '导航',
       collapsed: false,
       items: ['api/nav', 'api/nav-link'],
     },
     {
       type: 'category',
-      label: 'Popover',
+      label: '弹出框',
       collapsed: false,
       items: ['api/popover'],
     },
     {
       type: 'category',
-      label: 'Progress Indicators',
+      label: '进度指示器',
       collapsed: false,
       items: ['api/loading', 'api/progress-bar', 'api/skeleton-text', 'api/spinner'],
     },
     {
       type: 'category',
-      label: 'Radio',
+      label: '单选按钮',
       collapsed: false,
       items: ['api/radio', 'api/radio-group'],
     },
     {
       type: 'category',
-      label: 'Range',
+      label: '范围滑块',
       collapsed: false,
       items: ['api/range'],
     },
     {
       type: 'category',
-      label: 'Refresher',
+      label: '刷新器',
       collapsed: false,
       items: ['api/refresher', 'api/refresher-content'],
     },
     {
       type: 'category',
-      label: 'Reorder',
+      label: '重新排序',
       collapsed: false,
       items: ['api/reorder', 'api/reorder-group'],
     },
     {
       type: 'category',
-      label: 'Routing',
+      label: '路由',
       collapsed: false,
       items: ['api/router', 'api/router-link', 'api/router-outlet', 'api/route', 'api/route-redirect'],
     },
     {
       type: 'category',
-      label: 'Searchbar',
+      label: '搜索栏',
       collapsed: false,
       items: ['api/searchbar'],
     },
     {
       type: 'category',
-      label: 'Segment',
+      label: '分段',
       collapsed: false,
       items: ['api/segment', 'api/segment-button', 'api/segment-content', 'api/segment-view'],
     },
     {
       type: 'category',
-      label: 'Select',
+      label: '选择框',
       collapsed: false,
       items: ['api/select', 'api/select-option'],
     },
     {
       type: 'category',
-      label: 'Tabs',
+      label: '选项卡',
       collapsed: false,
       items: ['api/tabs', 'api/tab', 'api/tab-bar', 'api/tab-button'],
     },
     {
       type: 'category',
-      label: 'Toast',
+      label: '提示条',
       collapsed: false,
       items: ['api/toast'],
     },
     {
       type: 'category',
-      label: 'Toggle',
+      label: '开关',
       collapsed: false,
       items: ['api/toggle'],
     },
     {
       type: 'category',
-      label: 'Toolbar',
+      label: '工具栏',
       collapsed: false,
       items: ['api/toolbar', 'api/header', 'api/footer', 'api/title', 'api/buttons', 'api/back-button'],
     },
     {
       type: 'category',
-      label: 'Typography',
+      label: '排版',
       collapsed: false,
       items: ['api/text'],
     },
     {
       type: 'category',
-      label: 'Resources',
+      label: '资源',
       collapsed: false,
       items: ['api'],
     },
@@ -511,7 +511,7 @@ module.exports = {
   cli: [
     {
       type: 'category',
-      label: 'CLI Documentation',
+      label: 'CLI 文档',
       collapsed: false,
       items: [
         'cli',
@@ -520,19 +520,19 @@ module.exports = {
         'cli/using-a-proxy',
         {
           type: 'link',
-          label: 'Changelog',
+          label: '更新日志',
           href: 'https://github.com/ionic-team/ionic-cli/blob/develop/packages/@ionic/cli/CHANGELOG.md',
         },
       ],
     },
     {
       type: 'category',
-      label: 'Command Reference',
+      label: '命令参考',
       collapsed: false,
       items: [
         {
           type: 'autogenerated',
-          dirName: 'cli/commands', // Generate section automatically based on files
+          dirName: 'cli/commands', // 根据文件自动生成部分
         },
       ],
     },
@@ -541,18 +541,18 @@ module.exports = {
   native: [
     {
       type: 'category',
-      label: 'Getting Started',
+      label: '入门指南',
       collapsed: false,
       items: ['native', 'native-setup', 'native-faq'],
     },
     {
       type: 'category',
-      label: 'Plugins',
+      label: '插件',
       collapsed: false,
       items: [
         {
           type: 'autogenerated',
-          dirName: 'native', // Generate section automatically based on files
+          dirName: 'native', // 根据文件自动生成部分
         },
       ],
     },

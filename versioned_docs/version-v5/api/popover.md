@@ -17,35 +17,34 @@ import Slots from '@ionic-internal/component-api/v5/popover/slots.md';
 # ion-popover
 
 :::warning
-Popovers in Ionic v5 may collide with the [popover](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/popover)
-feature on newer versions of browsers which can cause Ionic's popovers to not render. We recommend upgrading to the latest version of Ionic to avoid this issue.
+Ionic v5 中的 Popover 可能会与新版浏览器中的 [popover](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/popover) 特性冲突，导致 Ionic 的 Popover 无法正常渲染。我们建议升级到最新版本的 Ionic 以避免此问题。
 :::
 
-A Popover is a dialog that appears on top of the current page. It can be used for anything, but generally it is used for overflow actions that don't fit in the navigation bar.
+Popover 是一种显示在当前页面上方的对话框。它可以用于多种场景，但通常用于容纳导航栏中无法放置的溢出操作。
 
-## Presenting
+## 弹出显示
 
-To present a popover, call the `present` method on a popover instance. In order to position the popover relative to the element clicked, a click event needs to be passed into the options of the `present` method. If the event is not passed, the popover will be positioned in the center of the viewport.
+要显示一个 Popover，请在 Popover 实例上调用 `present` 方法。为了使 Popover 相对于被点击的元素定位，需要将一个点击事件传入 `present` 方法的选项参数中。如果不传入事件，Popover 将默认显示在视口的中央。
 
-## Customization
+## 自定义样式
 
-Popover uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
+Popover 使用作用域封装（scoped encapsulation），这意味着它会在运行时通过为每个样式附加额外的类来自动限定其 CSS 范围。要覆盖作用域选择器的 CSS，需要使用 [更高特异性](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) 的选择器。
 
-We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.
+我们建议在 `create` 方法中向 `cssClass` 传递一个自定义类，并使用该类为宿主元素和内部元素添加自定义样式。该属性也可以接受多个以空格分隔的类。查看[用法](#用法)部分，了解如何使用 `cssClass` 传递类的示例。
 
 ```css
-/* DOES NOT WORK - not specific enough */
+/* 无效 - 特异性不足 */
 .popover-content {
   background: #222;
 }
 
-/* Works - pass "my-custom-class" in cssClass to increase specificity */
+/* 有效 - 在 cssClass 中传递 "my-custom-class" 以提高特异性 */
 .my-custom-class .popover-content {
   background: #222;
 }
 ```
 
-Any of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Popover without needing to target individual elements:
+可以使用任何已定义的 [CSS 自定义属性](#css-自定义属性) 来设置 Popover 的样式，而无需针对单个元素：
 
 ```css
 .my-custom-class {
@@ -53,9 +52,9 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 }
 ```
 
-> If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
+> 如果您正在构建 Ionic Angular 应用，样式需要添加到全局样式表文件中。请阅读下方 Angular 部分的 [样式放置](#样式放置) 了解更多信息。
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -89,9 +88,9 @@ export class PopoverExample {
 }
 ```
 
-### Style Placement
+### 样式放置
 
-In Angular, the CSS of a specific page is scoped only to elements of that page. Even though the Popover can be presented from within a page, the `ion-popover` element is appended outside of the current page. This means that any custom styles need to go in a global stylesheet file. In an Ionic Angular starter this can be the `src/global.scss` file or you can register a new global style file by [adding to the `styles` build option in `angular.json`](https://angular.io/guide/workspace-config#style-script-config).
+在 Angular 中，特定页面的 CSS 只作用于该页面的元素。尽管 Popover 可以从页面内部弹出，但 `ion-popover` 元素会被附加到当前页面之外。这意味着任何自定义样式都需要放在全局样式表文件中。在 Ionic Angular 起始项目中，可以是 `src/global.scss` 文件，也可以通过[在 `angular.json` 的 `styles` 构建选项中添加](https://angular.io/guide/workspace-config#style-script-config)来注册新的全局样式文件。
 
 </TabItem>
 
@@ -141,7 +140,7 @@ function presentPopover(ev) {
 <TabItem value="react">
 
 ```tsx
-/* Using with useIonPopover Hook */
+/* 使用 useIonPopover Hook */
 
 import React from 'react';
 import { IonButton, IonContent, IonItem, IonList, IonListHeader, IonPage, useIonPopover } from '@ionic/react';
@@ -177,7 +176,7 @@ const PopoverExample: React.FC = () => {
             })
           }
         >
-          Show Popover
+          显示 Popover
         </IonButton>
       </IonContent>
     </IonPage>
@@ -186,7 +185,7 @@ const PopoverExample: React.FC = () => {
 ```
 
 ```tsx
-/* Using with IonPopover Component */
+/* 使用 IonPopover 组件 */
 
 import React, { useState } from 'react';
 import { IonPopover, IonButton } from '@ionic/react';
@@ -205,7 +204,7 @@ export const PopoverExample: React.FC = () => {
         isOpen={popoverState.showPopover}
         onDidDismiss={() => setShowPopover({ showPopover: false, event: undefined })}
       >
-        <p>This is popover content</p>
+        <p>这是 Popover 内容</p>
       </IonPopover>
       <IonButton
         onClick={(e: any) => {
@@ -213,7 +212,7 @@ export const PopoverExample: React.FC = () => {
           setShowPopover({ showPopover: true, event: e });
         }}
       >
-        Show Popover
+        显示 Popover
       </IonButton>
     </>
   );
@@ -250,7 +249,7 @@ export class PopoverExample {
   render() {
     return [
       <ion-content>
-        <ion-button onClick={(ev) => this.presentPopover(ev)}>Present Popover</ion-button>
+        <ion-button onClick={(ev) => this.presentPopover(ev)}>弹出 Popover</ion-button>
       </ion-content>,
     ];
   }
@@ -269,13 +268,13 @@ export class PagePopover {
     return [
       <ion-list>
         <ion-item>
-          <ion-label>Documentation</ion-label>
+          <ion-label>文档</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Feedback</ion-label>
+          <ion-label>反馈</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Settings</ion-label>
+          <ion-label>设置</ion-label>
         </ion-item>
       </ion-list>,
     ];
@@ -289,7 +288,7 @@ export class PagePopover {
 
 ```html
 <template>
-  <ion-content class="ion-padding"> Popover Content </ion-content>
+  <ion-content class="ion-padding"> Popover 内容 </ion-content>
 </template>
 
 <script>
@@ -307,7 +306,7 @@ export class PagePopover {
 <template>
   <ion-page>
     <ion-content class="ion-padding">
-      <ion-button @click="openPopover">Open Popover</ion-button>
+      <ion-button @click="openPopover">打开 Popover</ion-button>
     </ion-content>
   </ion-page>
 </template>
@@ -336,11 +335,11 @@ export class PagePopover {
 </script>
 ```
 
-Developers can also use this component directly in their template:
+开发者也可以在模板中直接使用此组件：
 
 ```html
 <template>
-  <ion-button @click="setOpen(true, $event)">Show Popover</ion-button>
+  <ion-button @click="setOpen(true, $event)">显示 Popover</ion-button>
   <ion-popover
     :is-open="isOpenRef"
     css-class="my-custom-class"
@@ -376,15 +375,15 @@ Developers can also use this component directly in their template:
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -392,10 +391,10 @@ Developers can also use this component directly in their template:
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

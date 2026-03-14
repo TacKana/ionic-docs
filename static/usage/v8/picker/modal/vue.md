@@ -12,14 +12,14 @@
 </style>
 
 <template>
-  <ion-button id="open-modal">Open modal</ion-button>
+  <ion-button id="open-modal">打开模态框</ion-button>
   <ion-modal ref="modal" trigger="open-modal" is-open="true" @didDismiss="onDidDismiss">
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-button @click="modal.$el.dismiss(null, 'cancel')">Cancel</ion-button>
+        <ion-button @click="modal.$el.dismiss(null, 'cancel')">取消</ion-button>
       </ion-buttons>
       <ion-buttons slot="end">
-        <ion-button @click="modal.$el.dismiss(currentValue, 'confirm')">Done</ion-button>
+        <ion-button @click="modal.$el.dismiss(currentValue, 'confirm')">完成</ion-button>
       </ion-buttons>
     </ion-toolbar>
     <ion-picker>
@@ -56,7 +56,7 @@
   };
 
   const onDidDismiss = (event: CustomEvent) => {
-    console.log('didDismiss', JSON.stringify(event.detail));
+    console.log('模态框已关闭', JSON.stringify(event.detail));
   };
 </script>
 ```

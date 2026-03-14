@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/item-option/custom-pro
 import Slots from '@ionic-internal/component-api/v7/item-option/slots.md';
 
 <head>
-  <title>ion-item-option: Option Button for Sliding Item in Ionic</title>
+  <title>ion-item-option: Ionic 滑动列表项的操作按钮</title>
   <meta
     name="description"
-    content="ion-item-option is the option button for an ion-item-sliding and must be placed inside of an <ion-item-options>. Read to learn more about properties."
+    content="ion-item-option 是 ion-item-sliding 的操作按钮，必须放置在 <ion-item-options> 内部。了解更多相关属性。"
   />
 </head>
 
@@ -21,19 +21,19 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-The item option component is an button for a sliding item. It must be placed inside of [item options](./item-options). The `ionSwipe` event and the `expandable` property can be combined to create a full swipe action for the item.
+列表项操作组件是滑动列表项的一个按钮。它必须放置在 [item options](./item-options) 内部。`ionSwipe` 事件和 `expandable` 属性可以结合使用，为列表项创建完整的滑动手势操作。
 
-See the [item sliding](./item-sliding) documentation for more information.
+详细信息请参阅 [item sliding](./item-sliding) 文档。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -41,10 +41,10 @@ See the [item sliding](./item-sliding) documentation for more information.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

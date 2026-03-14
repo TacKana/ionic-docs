@@ -1,20 +1,20 @@
-# Troubleshooting
+# 故障排除
 
-This guide covers some of the more common issues you may run into when developing with Ionic Vue.
+本指南涵盖了使用 Ionic Vue 进行开发时可能遇到的一些常见问题。
 
-Have an issue that you think should be covered here? <a href="https://github.com/ionic-team/ionic-docs/issues/new?assignees=&labels=content&template=content-issue.md&title=" target="_blank" rel="noopener">Let us know!</a>
+有认为应该在此涵盖的问题吗？<a href="https://github.com/ionic-team/ionic-docs/issues/new?assignees=&labels=content&template=content-issue.md&title=" target="_blank" rel="noopener">请告诉我们！</a>
 
-## Failed to resolve component
+## 无法解析组件
 
 ```shell
 [Vue warn]: Failed to resolve component: ion-button
 ```
 
-If you see this warning, then it is likely you did not import your component from `@ionic/vue`. By default, all Ionic Vue components are locally registered, meaning you need to import them each time you want to use them.
+如果看到此警告，很可能是因为您没有从 `@ionic/vue` 导入组件。默认情况下，所有 Ionic Vue 组件都是局部注册的，这意味着每次使用它们时都需要导入。
 
-Without importing the component, you will only get the underlying Web Component, and Vue-specific features such as `v-model` will not work.
+如果不导入组件，您只会得到底层的 Web 组件，而 Vue 特有的功能（如 `v-model`）将无法工作。
 
-To resolve this issue, you need to import the component from `@ionic/vue` and provide it to your Vue component:
+要解决此问题，您需要从 `@ionic/vue` 导入组件并将其提供给 Vue 组件：
 
 ```html
 <template>
@@ -31,17 +31,17 @@ To resolve this issue, you need to import the component from `@ionic/vue` and pr
 </script>
 ```
 
-Prefer to register your components globally once? We have you covered. Our [Optimizing Your Build Guide](quickstart.md#optimizing-your-build) shows you how to register Ionic Vue components globally as well as the potential downsides to be aware of when using this approach.
+更倾向于全局注册组件一次？我们已经为您考虑到了。我们的[优化构建指南](quickstart.md#optimizing-your-build)展示了如何全局注册 Ionic Vue 组件，以及使用此方法时需要注意的潜在缺点。
 
-## Slot attributes are deprecated
+## Slot 属性已弃用
 
 ```shell
 `slot` attributes are deprecated  vue/no-deprecated-slot-attribute
 ```
 
-The slots that are used in Ionic Vue are <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots" target="_blank" rel="noopener">Web Component slots</a>, which are different than the slots used in Vue 2. Unfortunately, the APIs for both are very similar, and your linter is likely getting the two confused.
+Ionic Vue 中使用的插槽是 <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots" target="_blank" rel="noopener">Web 组件插槽</a>，与 Vue 2 中使用的插槽不同。不幸的是，两者的 API 非常相似，您的 linter 很可能将两者混淆了。
 
-All Ionic Vue starters ship with this rule turned off, but you can do it yourself by adding the following to your `.eslintrc.js` file:
+所有 Ionic Vue 起始模板都默认关闭了此规则，但您也可以通过将以下内容添加到 `.eslintrc.js` 文件来自行关闭：
 
 ```js
 module.exports = {
@@ -51,36 +51,36 @@ module.exports = {
 };
 ```
 
-If you are using VSCode and have the Vetur plugin installed, you are likely getting this warning because of Vetur, not ESLint. By default, Vetur loads the default Vue 3 linting rules and ignores any custom ESLint rules.
+如果您使用 VSCode 并安装了 Vetur 插件，很可能是因为 Vetur 而不是 ESLint 导致了此警告。默认情况下，Vetur 会加载默认的 Vue 3 代码检查规则，并忽略任何自定义的 ESLint 规则。
 
-To resolve this issue, you will need to turn off Vetur's template validation with `vetur.validation.template: false`. See the <a href="https://vuejs.github.io/vetur/guide/linting-error.html#linting" target="_blank" rel="noopener">Vetur Linting Guide</a> for more information.
+要解决此问题，您需要使用 `vetur.validation.template: false` 关闭 Vetur 的模板验证。更多信息请参阅 <a href="https://vuejs.github.io/vetur/guide/linting-error.html#linting" target="_blank" rel="noopener">Vetur 代码检查指南</a>。
 
-## Method on component is not a function
+## 组件上的方法不是函数
 
-In order to access a method on an Ionic Framework component in Vue, you will need to access the underlying Web Component instance first:
+要在 Vue 中访问 Ionic Framework 组件上的方法，您需要首先访问底层的 Web 组件实例：
 
 ```js
-// ✅ This is correct
+// ✅ 这是正确的
 ionContentRef.value.$el.scrollToBottom();
 
-// ❌ This is incorrect and will result in an error.
+// ❌ 这是错误的，会导致错误。
 ionContentRef.value.scrollToBottom();
 ```
 
-In other framework integrations such as Ionic React, this is not needed as any `ref` you provide is automatically forwarded to the underlying Web Component instance. We are unable to do the same thing here due to limitations in how Vue manages refs.
+在其他框架集成（如 Ionic React）中，不需要这样做，因为您提供的任何 `ref` 都会自动转发到底层的 Web 组件实例。由于 Vue 管理引用的方式存在限制，我们无法在此实现相同的功能。
 
-See the [Quickstart Guide](quickstart.md#calling-methods-on-components) for more information.
+更多信息请参阅[快速入门指南](quickstart.md#calling-methods-on-components)。
 
-## Page transitions are not working
+## 页面过渡效果不生效
 
-In order for page transitions to work correctly, each page must have an `ion-page` component at the root:
+为了使页面过渡效果正常工作，每个页面必须在根级别有一个 `ion-page` 组件：
 
 ```html
 <template>
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Home</ion-title>
+        <ion-title>首页</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">Hello World</ion-content>
@@ -103,4 +103,4 @@ In order for page transitions to work correctly, each page must have an `ion-pag
 </script>
 ```
 
-See the [IonPage documentation](navigation.md#ionpage) for more information.
+更多信息请参阅 [IonPage 文档](navigation.md#ionpage)。

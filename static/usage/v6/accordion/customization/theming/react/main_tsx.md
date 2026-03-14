@@ -9,26 +9,26 @@ function Example() {
     <IonAccordionGroup expand="inset">
       <IonAccordion value="first">
         <IonItem slot="header" color="rose">
-          <IonLabel>First Accordion</IonLabel>
+          <IonLabel>第一个手风琴</IonLabel>
         </IonItem>
         <div className="ion-padding" slot="content">
-          First Content
+          第一个内容
         </div>
       </IonAccordion>
       <IonAccordion value="second">
         <IonItem slot="header" color="rose">
-          <IonLabel>Second Accordion</IonLabel>
+          <IonLabel>第二个手风琴</IonLabel>
         </IonItem>
         <div className="ion-padding" slot="content">
-          Second Content
+          第二个内容
         </div>
       </IonAccordion>
       <IonAccordion value="third">
         <IonItem slot="header" color="rose">
-          <IonLabel>Third Accordion</IonLabel>
+          <IonLabel>第三个手风琴</IonLabel>
         </IonItem>
         <div className="ion-padding" slot="content">
-          Third Content
+          第三个内容
         </div>
       </IonAccordion>
     </IonAccordionGroup>

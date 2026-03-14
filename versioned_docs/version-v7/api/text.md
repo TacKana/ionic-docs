@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/text/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v7/text/slots.md';
 
 <head>
-  <title>ion-text: Ionic App Component to Style or Change Text Color</title>
+  <title>ion-text: Ionic 应用组件，用于设置文本样式或更改文本颜色</title>
   <meta
     name="description"
-    content="ion-text is a simple app component that can be used to style the text color of any element. Learn how ion-text wraps elements in order to change the text color."
+    content="ion-text 是一个简单的应用组件，可用于设置任何元素的文本颜色。了解 ion-text 如何包装元素以更改文本颜色。"
   />
 </head>
 
@@ -21,27 +21,27 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-The text component is a simple component that can be used to style the text color of any element. The `ion-text` element should wrap the element in order to change the text color of that element.
+文本组件是一个简单的组件，可用于设置任何元素的文本颜色。`ion-text` 元素应包装目标元素，以更改该元素的文本颜色。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v7/text/basic/index.md';
 
 <Basic />
 
-## Theming
+## 主题定制
 
-The text component can be customized by changing any of the default [colors](../../docs/theming/colors) Ionic provides.
+通过更改 Ionic 提供的任何默认[颜色](../../docs/theming/colors)，可以自定义文本组件。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -49,10 +49,10 @@ The text component can be customized by changing any of the default [colors](../
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

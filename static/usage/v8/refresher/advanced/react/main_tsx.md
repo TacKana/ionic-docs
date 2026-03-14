@@ -65,7 +65,7 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Pull to Refresh</IonTitle>
+          <IonTitle>下拉刷新</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -80,7 +80,7 @@ function Example() {
               <IonIcon slot="start" color="primary" icon={item.unread ? ellipse : ''}></IonIcon>
               <IonLabel>
                 <h2>{item.name}</h2>
-                <p>New message from {item.name}</p>
+                <p>来自 {item.name} 的新消息</p>
               </IonLabel>
             </IonItem>
           ))}

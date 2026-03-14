@@ -3,83 +3,82 @@ title: Configuration
 ---
 
 <head>
-  <title>Capacitor Configuration | Maintain a Global Configuration File</title>
+  <title>Capacitor 配置 | 维护全局配置文件</title>
   <meta
     name="description"
-    content="Set and print configuration values from project config files and the global CLI config file with Ionic CLI. Read to learn more about Capacitor configuration."
+    content="使用 Ionic CLI 从项目配置文件和全局 CLI 配置文件中设置和打印配置值。阅读了解有关 Capacitor 配置的更多信息"
   />
 </head>
 
-## Files
+## 配置文件
 
-Configuration values are stored in JSON files. The Ionic CLI maintains a global configuration file, usually located at `~/.ionic/config.json`, and project configuration files, usually at the project's root directory as `ionic.config.json`.
+配置值存储在 JSON 文件中。Ionic CLI 维护一个全局配置文件，通常位于 `~/.ionic/config.json`，以及项目配置文件，通常位于项目根目录下的 `ionic.config.json`。
 
-The CLI provides commands for setting and printing config values from project config files and the global CLI config file. See `ionic config --help` or see the documentation for usage of [`ionic config get`](commands/config-get.md) and [`ionic config set`](commands/config-set.md).
+CLI 提供命令用于从项目配置文件和全局 CLI 配置文件中设置和打印配置值。请参考 `ionic config --help` 或查看 [`ionic config get`](commands/config-get.md) 和 [`ionic config set`](commands/config-set.md) 的文档了解使用方法。
 
-### Project Configuration File
+### 项目配置文件
 
-Each Ionic project has a project configuration file, usually at the project's root directory. The following is an annotated `ionic.config.json` file.
+每个 Ionic 项目都有一个项目配置文件，通常位于项目根目录。以下是一个带注释的 `ionic.config.json` 文件示例。
 
 ```json
 {
-  // The human-readable name of the app.
+  // 应用程序的人类可读名称
   "name": "My App",
 
-  // The project type of the app. The CLI uses this value to determine which
-  // commands and command options are available, what to output for help
-  // documentation, and what to use for web asset builds and the dev server.
+  // 应用程序的项目类型。CLI 使用此值来确定哪些命令和命令选项可用，
+  // 帮助文档输出什么内容，以及用于 Web 资源构建和开发服务器的配置。
   "type": "angular",
 
-  // The App ID for Appflow.
+  // Appflow 的应用程序 ID
   "id": "abc123",
 
-  // Configuration object for integrations such as Cordova and Capacitor.
+  // 集成配置对象，如 Cordova 和 Capacitor
   "integrations": {
     "cordova": {
       ...
     }
   },
 
-  // Hook configuration--see the Hooks section below for details.
+  // 钩子配置——详情请参阅下面的钩子部分
   "hooks": {
     ...
   }
 }
 ```
 
-## Environment Variables
+## 环境变量
 
-The CLI will look for the following environment variables:
+CLI 将查找以下环境变量：
 
-- `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
-- `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](using-a-proxy.md).
-- `IONIC_TOKEN`: Automatically authenticates with [Appflow](https://ionic.io/appflow).
+- `IONIC_CONFIG_DIRECTORY`：全局 CLI 配置的目录。默认为 `~/.ionic`
+- `IONIC_HTTP_PROXY`：设置代理所有 CLI 请求的 URL。请参阅[使用代理](using-a-proxy.md)
+- `IONIC_TOKEN`：自动与 [Appflow](https://ionic.io/appflow) 进行身份验证
 
-## Flags
+## 标志参数
 
-CLI flags are global options that alter the behavior of a CLI command.
+CLI 标志参数是全局选项，用于改变 CLI 命令的行为：
 
-- `--help`: Instead of running the command, view its help page.
-- `--verbose`: Show all log messages for debugging purposes.
-- `--quiet`: Only show `WARN` and `ERROR` log messages.
-- `--no-interactive`: Turn off interactive prompts and fancy outputs. If CI or a non-TTY terminal is detected, the CLI is automatically non-interactive.
-- `--confirm`: Turn on auto-confirmation of confirmation prompts. Careful: the CLI prompts before doing something potentially harmful. Auto-confirming may have unintended results.
+- `--help`：不运行命令，查看其帮助页面
+- `--verbose`：显示所有日志消息用于调试目的
+- `--quiet`：仅显示 `WARN` 和 `ERROR` 级别的日志消息
+- `--no-interactive`：关闭交互式提示和精美输出。如果检测到 CI 或非 TTY 终端，CLI 会自动进入非交互模式
+- `--confirm`：开启确认提示的自动确认。注意：CLI 在执行可能有害的操作前会提示。自动确认可能导致意外结果
 
-## Hooks
+## 钩子
 
-The CLI can run scripts during certain events, such as before and after builds. To hook into the CLI, the following [npm scripts](https://docs.npmjs.com/misc/scripts) can be used in `package.json`:
+CLI 可以在某些事件期间运行脚本，例如构建前后。要使用 CLI 钩子，可以在 `package.json` 中使用以下 [npm 脚本](https://docs.npmjs.com/misc/scripts)：
 
-- `ionic:serve:before`: executed before the dev server starts
-- `ionic:serve:after`: executed after the dev server is terminated
-- `ionic:build:before`: executed before a web asset build begins
-- `ionic:build:after`: executed after a web asset build finishes
-- `ionic:capacitor:run:before`: executed during `ionic capacitor run` before capacitor open is executed
-- `ionic:capacitor:build:before`: executed during `ionic capacitor build` before capacitor open is executed
-- `ionic:capacitor:sync:after`: executed during `ionic capacitor sync` after a sync
+- `ionic:serve:before`：在开发服务器启动前执行
+- `ionic:serve:after`：在开发服务器终止后执行
+- `ionic:build:before`：在 Web 资源构建开始前执行
+- `ionic:build:after`：在 Web 资源构建完成后执行
+- `ionic:capacitor:run:before`：在 `ionic capacitor run` 期间，执行 capacitor open 前执行
+- `ionic:capacitor:build:before`：在 `ionic capacitor build` 期间，执行 capacitor open 前执行
+- `ionic:capacitor:sync:after`：在 `ionic capacitor sync` 期间，同步后执行
 
-When using a shell script for any of the hooks, hook context is defined in environment variables prefixed with `IONIC_CLI_HOOK_CTX_`.
+当为任何钩子使用 shell 脚本时，钩子上下文会在以 `IONIC_CLI_HOOK_CTX_` 为前缀的环境变量中定义。
 
-The following example shows the environment variables that are set for the `ionic:capacitor:build` hook.
+以下示例展示了为 `ionic:capacitor:build` 钩子设置的环境变量：
 
 ```shell
 IONIC_CLI_HOOK_CTX_NAME=capacitor:build:before
@@ -93,9 +92,9 @@ IONIC_CLI_HOOK_CTX_CAPACITOR_APP_NAME=ionic-starter-app
 IONIC_CLI_HOOK_CTX_CAPACITOR_VERBOSE=false
 ```
 
-Hooks can also be defined in `ionic.config.json`. Define a `hooks` object within the project, where each key is the name of the hook (without the `ionic:` prefix), and the value is a path to a JavaScript file or an array of paths.
+钩子也可以在 `ionic.config.json` 中定义。在项目中定义一个 `hooks` 对象，其中每个键是钩子的名称（不带 `ionic:` 前缀），值是指向 JavaScript 文件的路径或路径数组。
 
-In the following example, the file is imported and run during the `ionic:build:before` hook.
+在以下示例中，文件在 `ionic:build:before` 钩子期间被导入并运行：
 
 ```json
 "hooks": {
@@ -103,11 +102,11 @@ In the following example, the file is imported and run during the `ionic:build:b
 },
 ```
 
-JavaScript hook files should export a single function, which is passed a single argument (`ctx`) whenever the hook executes.
+JavaScript 钩子文件应导出一个单一函数，该函数在钩子执行时接收一个参数（`ctx`）。
 
-The argument is the context given to the hook file, which differs from hook to hook and with different invocations.
+该参数是传递给钩子文件的上下文，不同钩子和不同调用之间会有所不同。
 
-`./scripts/build-before.js`:
+`./scripts/build-before.js`：
 
 ```javascript
 module.exports = function (ctx) {
@@ -115,36 +114,36 @@ module.exports = function (ctx) {
 };
 ```
 
-## Multi-app Projects
+## 多应用项目
 
 <small>
-  <em>Available in CLI 6.2.0+</em>
+  <em>CLI 6.2.0+ 版本可用</em>
 </small>
 
-The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](../reference/glossary.md#monorepo).
+Ionic CLI 支持多应用配置设置，这涉及在单个仓库或[单体仓库](../reference/glossary.md#monorepo)中包含多个 Ionic 应用程序和共享代码。
 
 :::note
-These docs give an overview of the multi-app feature of the Ionic CLI, but don't really go into details for each framework.
+这些文档概述了 Ionic CLI 的多应用功能，但并未深入每个框架的细节。
 
-If you're using Angular, please see [this article](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) for examples.
+如果您使用 Angular，请参阅[这篇文章](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo)查看示例。
 :::
 
-### Setup Steps
+### 设置步骤
 
-1. Create a directory and initialize a monorepo (see [Project Structure](#project-structure) for full details).
-1. Initialize the monorepo as an Ionic multi-app project. This will create a multi-app `ionic.config.json` file. See [Config File](#config-file) for full details.
+1. 创建目录并初始化单体仓库（完整详情请参阅[项目结构](#项目结构)）
+1. 将单体仓库初始化为 Ionic 多应用项目。这将创建一个多应用 `ionic.config.json` 文件。完整详情请参阅[配置文件](#配置文件)
 
    ```shell
    $ ionic init --multi-app
    ```
 
-1. Use `ionic start` to create Ionic apps or `ionic init` to initialize existing apps (see [Adding an App](#adding-an-app) for full details).
+1. 使用 `ionic start` 创建 Ionic 应用程序或使用 `ionic init` 初始化现有应用程序（完整详情请参阅[添加应用程序](#添加应用程序)）
 
-### Project Structure
+### 项目结构
 
-In a multi-app project, project structure is flexible. The only requirement is a multi-app `ionic.config.json` file at the root of the repository.
+在多应用项目中，项目结构是灵活的。唯一的要求是在仓库根目录有一个多应用 `ionic.config.json` 文件。
 
-Below is an example setup, where apps in the `apps/` directory are separated from the shared code in the `lib/` directory. Notice the root `ionic.config.json` file and the monorepo's `package.json` file.
+以下是一个示例设置，其中 `apps/` 目录中的应用程序与 `lib/` 目录中的共享代码分离。注意根目录的 `ionic.config.json` 文件和单体仓库的 `package.json` 文件。
 
 ```bash
 apps/
@@ -155,11 +154,11 @@ ionic.config.json
 package.json
 ```
 
-### Config File
+### 配置文件
 
-In a multi-app project, apps share a single `ionic.config.json` file at the root of the repository instead of each app having their own. The multi-app config file contains the configuration for each app by nesting configuration objects in a `projects` object. A default app can be specified using `defaultProject`.
+在多应用项目中，应用程序共享仓库根目录的单个 `ionic.config.json` 文件，而不是每个应用程序都有自己的配置文件。多应用配置文件通过在 `projects` 对象中嵌套配置对象来包含每个应用程序的配置。可以使用 `defaultProject` 指定默认应用程序。
 
-Below is an example file, which corresponds to the file structure above.
+以下是示例文件，对应上述文件结构：
 
 ```json
 {
@@ -181,33 +180,33 @@ Below is an example file, which corresponds to the file structure above.
 }
 ```
 
-When a multi-app project is detected, the Ionic CLI will operate under the context of an app configured in the root `ionic.config.json`. Project selection criteria is as follows:
+当检测到多应用项目时，Ionic CLI 将在根目录 `ionic.config.json` 中配置的应用程序上下文中运行。项目选择标准如下：
 
-1. If the global CLI option `--project` is specified, the project is looked up by key in the `projects` object. For example, `--project=myApp` will select the `myApp` project.
-1. If the CLI detects it is being run within a project path, configured with the `root` key, it will select the matched project. For example, using the CLI within the `apps/myOtherApp/src` directory will select the `myOtherApp` project.
-1. If a `defaultProject` is specified in `ionic.config.json`, it will select the specified project when the above criteria is not met.
+1. 如果指定了全局 CLI 选项 `--project`，则按 `projects` 对象中的键查找项目。例如，`--project=myApp` 将选择 `myApp` 项目
+1. 如果 CLI 检测到它在项目路径内运行（通过 `root` 键配置），它将选择匹配的项目。例如，在 `apps/myOtherApp/src` 目录内使用 CLI 将选择 `myOtherApp` 项目
+1. 如果在 `ionic.config.json` 中指定了 `defaultProject`，当上述条件不满足时，它将选择指定的项目
 
-### Adding an App
+### 添加应用程序
 
-Apps can be registered in a multi-app project either by using `ionic start` to create new apps or `ionic init` to initialize existing apps.
+可以通过使用 `ionic start` 创建新应用程序或使用 `ionic init` 初始化现有应用程序来在多应用项目中注册应用程序。
 
-#### Using `ionic start`
+#### 使用 `ionic start`
 
-If a multi-app project is detected during `ionic start`, the CLI will add the app configuration to the root `ionic.config.json` file instead of creating a project-specific one.
+如果在 `ionic start` 期间检测到多应用项目，CLI 会将应用程序配置添加到根目录 `ionic.config.json` 文件中，而不是创建项目特定的配置文件。
 
-Dependency installation can be skipped using `--no-deps` if dependencies are hoisted to the root of the monorepo.
+如果依赖项被提升到单体仓库的根目录，可以使用 `--no-deps` 跳过依赖项安装。
 
 ```shell
 $ cd apps/
 $ ionic start "My New App" --no-deps
 ```
 
-#### Using `ionic init`
+#### 使用 `ionic init`
 
-If an app was created in a way other than `ionic start`, for example by using a prebuilt template, use `ionic init` to register the existing app with the multi-app project.
+如果以 `ionic start` 以外的其他方式创建了应用程序（例如使用预构建模板），请使用 `ionic init` 将现有应用程序注册到多应用项目中。
 
 :::note
-Make sure the app doesn't have an existing `ionic.config.json`.
+确保应用程序没有现有的 `ionic.config.json` 文件。
 :::
 
 ```shell
@@ -215,19 +214,19 @@ $ cd apps/existing-app/
 $ ionic init
 ```
 
-## Advanced Configuration
+## 高级配置
 
-### Overriding the Build
+### 覆盖构建
 
-Normally, the CLI runs a hard-coded set of commands based on the project type. For example, the standard web asset build for Angular projects is `ng run app:build`. The web asset build can be overridden and `ionic build` can continue to be used by utilizing the `ionic:build` [npm script](https://docs.npmjs.com/misc/scripts). Similarly, the dev server can be overridden by using the `ionic:serve` npm script.
+通常情况下，CLI 根据项目类型运行一组硬编码的命令。例如，Angular 项目的标准 Web 资源构建是 `ng run app:build`。可以通过使用 `ionic:build` [npm 脚本](https://docs.npmjs.com/misc/scripts)来覆盖 Web 资源构建并继续使用 `ionic build`。同样，可以通过使用 `ionic:serve` npm 脚本来覆盖开发服务器。
 
-Pay close attention to the flags supplied to the script by the Ionic CLI. Irregularities may occur if options are not respected, especially for livereload on devices.
+请密切关注 Ionic CLI 提供给脚本的标志参数。如果不遵守选项，可能会出现异常，尤其是设备上的实时重新加载。
 
-### Command Options
+### 命令选项
 
-Command options can be expressed with environment variables. They are normally set with `--opt=value` syntax. The naming of these environment variables follows a pattern: start with `IONIC_CMDOPTS_`, add the command name (replacing any spaces with underscores), add the option name (replacing any hyphens with underscores), and then uppercase everything. Boolean flags (command-line options that don't take a value) can be set to `1` or `0`. Strip the `--no-` prefix in boolean flags, if it exists (`--no-open` in ionic serve can be expressed with `IONIC_CMDOPTS_SERVE_OPEN=0`, for example).
+命令选项可以用环境变量表示。它们通常使用 `--opt=value` 语法设置。这些环境变量的命名遵循一个模式：以 `IONIC_CMDOPTS_` 开头，添加命令名称（将任何空格替换为下划线），添加选项名称（将任何连字符替换为下划线），然后将所有字母大写。布尔标志（不接受值的命令行选项）可以设置为 `1` 或 `0`。如果存在 `--no-` 前缀，请将其剥离（例如，ionic serve 中的 `--no-open` 可以用 `IONIC_CMDOPTS_SERVE_OPEN=0` 表示）。
 
-For example, the command options in `ionic cordova run ios -lc --livereload-port=1234 --host=0.0.0.0` can also be expressed with this series of environment variables:
+例如，`ionic cordova run ios -lc --livereload-port=1234 --host=0.0.0.0` 中的命令选项也可以用以下一系列环境变量表示：
 
 ```shell
 $ export IONIC_CMDOPTS_CORDOVA_RUN_LIVERELOAD=1
@@ -236,8 +235,8 @@ $ export IONIC_CMDOPTS_CORDOVA_RUN_LIVERELOAD_PORT=1234
 $ export IONIC_CMDOPTS_CORDOVA_RUN_HOST=0.0.0.0
 ```
 
-If these variables are set in the environment, `ionic cordova build ios` will use new defaults for its options.
+如果这些变量在环境中设置，`ionic cordova build ios` 将为其选项使用新的默认值。
 
-### Telemetry
+### 遥测功能
 
-The CLI sends usage data to Ionic to create a better experience. To disable this functionality, run `ionic config set -g telemetry false`.
+CLI 向 Ionic 发送使用数据以创造更好的体验。要禁用此功能，请运行 `ionic config set -g telemetry false`。

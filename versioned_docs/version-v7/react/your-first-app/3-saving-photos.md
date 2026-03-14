@@ -1,36 +1,36 @@
 ---
-title: Saving Photos to the Filesystem
-sidebar_label: Saving Photos
+title: 将照片保存到文件系统
+sidebar_label: 保存照片
 ---
 
 <head>
-  <title>Saving Photos to the Filesystem with React | Ionic Capacitor Camera</title>
+  <title>使用 React 和 Ionic Capacitor Camera 将照片保存到文件系统</title>
   <meta
     name="description"
-    content="We’re now able to take multiple photos and display them in a photo gallery. Learn how to save these photos to the filesystem using the Ionic Capacitor Filesystem API."
+    content="我们已经能够拍摄多张照片并在应用的第二个标签页中显示它们。然而，这些照片目前并未被永久存储，因此当应用关闭时，它们将被删除。"
   />
 </head>
 
-We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be deleted.
+我们现在已经能够拍摄多张照片，并在应用的第二个标签页的相册中显示它们。然而，这些照片目前并未被永久存储，因此当应用关闭时，它们将被删除。
 
-## Filesystem API
+## 文件系统 API
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new class method, `savePicture()`, in the `usePhotoGallery()` method in `usePhotoGallery.ts`.
+幸运的是，将它们保存到文件系统只需几个步骤。首先，在 `usePhotoGallery.ts` 文件的 `usePhotoGallery()` 方法中创建一个新的类方法 `savePicture()`。
 
 ```ts
 import { useState } from 'react';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
-// CHANGE: Add import
+// 更改：添加导入
 import type { Photo } from '@capacitor/camera';
 
 export function usePhotoGallery() {
-  // ...existing code...
+  // ...现有代码...
 
-  // CHANGE: Add the `savePicture()` method
+  // 更改：添加 `savePicture()` 方法
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
     return {
-      filepath: 'soon...',
-      webviewPath: 'soon...',
+      filepath: '稍后填充...',
+      webviewPath: '稍后填充...',
     };
   };
 
@@ -46,7 +46,7 @@ export interface UserPhoto {
 }
 ```
 
-We can use this new method immediately in `addNewToGallery()`.
+我们可以立即在 `addNewToGallery()` 中使用这个新方法。
 
 ```ts
 import { useState } from 'react';
@@ -57,7 +57,7 @@ export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
   const addNewToGallery = async () => {
-    // Take a photo
+    // 拍摄照片
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -65,19 +65,19 @@ export function usePhotoGallery() {
     });
 
     const fileName = Date.now() + '.jpeg';
-    // CHANGE: Add `savedImageFile`
-    // Save the picture and add it to photo collection
+    // 更改：添加 `savedImageFile`
+    // 保存图片并将其添加到照片集合中
     const savedImageFile = await savePicture(capturedPhoto, fileName);
 
-    // CHANGE: Update state with new photo
+    // 更改：用新照片更新状态
     const newPhotos = [savedImageFile, ...photos];
     setPhotos(newPhotos);
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
     return {
-      filepath: 'soon...',
-      webviewPath: 'soon...',
+      filepath: '稍后填充...',
+      webviewPath: '稍后填充...',
     };
   };
 
@@ -93,25 +93,25 @@ export interface UserPhoto {
 }
 ```
 
-We'll use the Capacitor [Filesystem API](../../native/filesystem.md) to save the photo. First, convert the photo to base64 format.
+我们将使用 Capacitor 的 [Filesystem API](../../native/filesystem.md) 来保存照片。首先，将照片转换为 base64 格式。
 
-Then, pass the data to the Filesystem's `writeFile` method. Recall that we display photos by setting the image's source path (`src`) to the `webviewPath` property. So, set the `webviewPath` and return the new `Photo` object.
+然后，将数据传递给 Filesystem 的 `writeFile` 方法。回想一下，我们通过将图像的源路径 (`src`) 设置为 `webviewPath` 属性来显示照片。因此，设置 `webviewPath` 并返回新的 `Photo` 对象。
 
-For now, create a new helper method, `convertBlobToBase64()`, to implement the necessary logic for running on the web.
+现在，创建一个新的辅助方法 `convertBlobToBase64()`，以实现 Web 端运行所需的逻辑。
 
 ```ts
 import { useState } from 'react';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
-// CHANGE: Add import
+// 更改：添加导入
 import { Filesystem, Directory } from '@capacitor/filesystem';
 
 export function usePhotoGallery() {
-  // ...existing code...
+  // ...现有代码...
 
-  // CHANGE: Update the `savePicture()` method
+  // 更改：更新 `savePicture()` 方法
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-    // Fetch the photo, read as a blob, then convert to base64 format
+    // 获取照片，读取为 blob，然后转换为 base64 格式
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
     const base64Data = (await convertBlobToBase64(blob)) as string;
@@ -122,15 +122,14 @@ export function usePhotoGallery() {
       directory: Directory.Data,
     });
 
-    // Use webPath to display the new image instead of base64 since it's
-    // already loaded into memory
+    // 使用 webPath 来显示新图像，而不是 base64，因为它已经加载到内存中
     return {
       filepath: fileName,
       webviewPath: photo.webPath,
     };
   };
 
-  // CHANGE: Add `convertBlobToBase64()` method
+  // 更改：添加 `convertBlobToBase64()` 方法
   const convertBlobToBase64 = (blob: Blob) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -154,7 +153,7 @@ export interface UserPhoto {
 }
 ```
 
-`usePhotoGallery.ts` should now look like this:
+现在 `usePhotoGallery.ts` 文件应该如下所示：
 
 ```ts
 import { useState } from 'react';
@@ -166,7 +165,7 @@ export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
 
   const addNewToGallery = async () => {
-    // Take a photo
+    // 拍摄照片
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -174,7 +173,7 @@ export function usePhotoGallery() {
     });
 
     const fileName = Date.now() + '.jpeg';
-    // Save the picture and add it to photo collection
+    // 保存图片并将其添加到照片集合中
     const savedImageFile = await savePicture(capturedPhoto, fileName);
 
     const newPhotos = [savedImageFile, ...photos];
@@ -182,7 +181,7 @@ export function usePhotoGallery() {
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-    // Fetch the photo, read as a blob, then convert to base64 format
+    // 获取照片，读取为 blob，然后转换为 base64 格式
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
     const base64Data = (await convertBlobToBase64(blob)) as string;
@@ -193,8 +192,7 @@ export function usePhotoGallery() {
       directory: Directory.Data,
     });
 
-    // Use webPath to display the new image instead of base64 since it's
-    // already loaded into memory
+    // 使用 webPath 来显示新图像，而不是 base64，因为它已经加载到内存中
     return {
       filepath: fileName,
       webviewPath: photo.webPath,
@@ -224,6 +222,6 @@ export interface UserPhoto {
 }
 ```
 
-Obtaining the camera photo as base64 format on the web appears to be a bit trickier than on mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
+在 Web 上以 base64 格式获取相机照片似乎比在移动设备上稍微复杂一些。实际上，我们只是使用了内置的 Web API：[fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 作为一种简洁的方式将文件读取为 blob 格式，然后使用 FileReader 的 [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) 将照片 blob 转换为 base64。
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem. Next up, we'll load and display our saved images.
+好了！现在每次拍摄新照片时，它都会自动保存到文件系统中。接下来，我们将加载并显示已保存的图像。

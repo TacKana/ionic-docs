@@ -1,25 +1,25 @@
 ```html
 <ion-segment value="buttons">
   <ion-segment-button value="default">
-    <ion-label>Default</ion-label>
+    <ion-label>默认</ion-label>
   </ion-segment-button>
   <ion-segment-button value="segment">
-    <ion-label>Segment</ion-label>
+    <ion-label>分段</ion-label>
   </ion-segment-button>
   <ion-segment-button value="buttons">
-    <ion-label>Button</ion-label>
+    <ion-label>按钮</ion-label>
   </ion-segment-button>
 </ion-segment>
 
 <ion-segment value="buttons">
   <ion-segment-button value="disabled" disabled="true">
-    <ion-label>Disabled</ion-label>
+    <ion-label>禁用</ion-label>
   </ion-segment-button>
   <ion-segment-button value="segment">
-    <ion-label>Segment</ion-label>
+    <ion-label>分段</ion-label>
   </ion-segment-button>
   <ion-segment-button value="buttons">
-    <ion-label>Button</ion-label>
+    <ion-label>按钮</ion-label>
   </ion-segment-button>
 </ion-segment>
 ```

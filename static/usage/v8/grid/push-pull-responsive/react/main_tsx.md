@@ -7,7 +7,7 @@ import './main.css';
 function Example() {
   return (
     <>
-      <b>No change for xs breakpoint, push 1st column & pull 2nd column for sm and up</b>
+      <b>在 xs 断点下无变化，sm 及以上断点时第一列右推、第二列左拉</b>
       <IonGrid>
         <IonRow>
           <IonCol push-sm="6">1</IonCol>
@@ -15,7 +15,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>No change for xs breakpoint, push middle columns & pull last column for md and up</b>
+      <b>在 xs 断点下无变化，md 及以上断点时中间列右推、最后一列左拉</b>
       <IonGrid>
         <IonRow>
           <IonCol>1</IonCol>
@@ -25,7 +25,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>Switch first and last 3 columns for xs breakpoints, reverse columns for lg and up</b>
+      <b>在 xs 断点上切换首尾三列，lg 及以上断点时列顺序反转</b>
       <IonGrid>
         <IonRow>
           <IonCol push="6" push-lg="10">

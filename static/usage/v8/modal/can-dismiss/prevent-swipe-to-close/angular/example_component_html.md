@@ -19,8 +19,7 @@
         </ion-header>
         <ion-content class="ion-padding">
           <p>
-            To close this modal, please use the "Close" button provided. Note that swiping the modal will not dismiss
-            it.
+            如需关闭此模态窗口，请使用提供的“关闭”按钮。请注意，滑动模态窗口不会将其关闭。
           </p>
         </ion-content>
       </ng-template>

@@ -1,22 +1,22 @@
-# Playground
+# 交互式演示
 
-The Playground component renders a demo preview of a component experience with code snippets available for each supported framework.
+Playground 组件能够以交互演示的形式预览组件体验，并为每个支持的框架提供代码片段。
 
-The Playground can be customized per example, to meet the requirements of the component or experience that you are trying to showcase.
+Playground 可以根据每个示例进行定制，以满足您想要展示的组件或体验需求。
 
-## Show example within a device frame (iPhone/Pixel 5)
+## 在设备框架内展示示例（iPhone/Pixel 5）
 
-By default, Playground examples will render in an empty container and fill the available space. Using the `devicePreview` flag, the Playground will render the demo experience within an iPhone device frame when on iOS mode and within a Pixel device frame when on MD.
+默认情况下，Playground 示例会在一个空容器中渲染并填满可用空间。使用 `devicePreview` 标志后，Playground 将在 iOS 模式下将演示体验渲染在 iPhone 设备框架内，在 MD 模式下渲染在 Pixel 设备框架内。
 
 ```tsx
 <Playground devicePreview />
 ```
 
-## Multiple File Examples
+## 多文件示例
 
-Playground supports single file and multi-file examples to show the required code to create a sample. To include multiple file examples for a single framework target, use the `files` option to specify the file location (in the StackBlitz generated project) and the file contents.
+Playground 支持单文件和多文件示例，展示创建示例所需的代码。要为单个框架目标包含多文件示例，请使用 `files` 选项指定文件位置（在 StackBlitz 生成的项目中）和文件内容。
 
-You can mix multi-file and single file examples together in a single example:
+您可以在单个示例中混合使用多文件和单文件示例：
 
 ```tsx
 import angular_example_component_html from './angular/example_component_html.md';
@@ -46,27 +46,27 @@ import javascript from './javascript.md';
 />;
 ```
 
-The file location is respective to the StackBlitz demo project. If you are unsure of the exact path, refer to the `stackblitz.utils.ts` method for each respective target. The path specified in `sdk.openProject` will coincide with the value used in the `files` configuration.
+文件位置相对于 StackBlitz 演示项目。如果不确定确切路径，请参考每个对应目标的 `stackblitz.utils.ts` 方法。`sdk.openProject` 中指定的路径将与 `files` 配置中使用的值一致。
 
-## Creating a New Playground
+## 创建新的 Playground
 
-You can [generate a new playground](../../../../_templates/README.md#new-playground-template) by running `npm run playground:new`.
+您可以通过运行 `npm run playground:new` 来[生成新的 Playground](../../../../_templates/README.md#new-playground-template)。
 
-## Ejecting from IonApp/IonContent Boilerplate
+## 从 IonApp/IonContent 样板代码中分离
 
-By default, Playground examples will automatically include the following template wrapper for each component example when opened in StackBlitz.
+默认情况下，当在 StackBlitz 中打开时，Playground 示例会自动为每个组件示例包含以下模板包装器。
 
 ```html
 <ion-app>
   <ion-content class="ion-padding">
-    <!-- Demo code injected here -->
+    <!-- 演示代码在此处注入 -->
   </ion-content>
 </ion-app>
 ```
 
-Note: The above code is just a sample. The code will be slightly different based on each framework target.
+注意：上述代码仅为示例。根据每个框架目标，代码会略有不同。
 
-To opt-out of this behavior, set `includeIonContent={false}` to disable this wrapper. You will be responsible for manually including `ion-content` in your code snippets.
+要退出此行为，请设置 `includeIonContent={false}` 以禁用此包装器。您将需要手动在代码片段中包含 `ion-content`。
 
 ```tsx
 <Playground includeIonContent={false} />

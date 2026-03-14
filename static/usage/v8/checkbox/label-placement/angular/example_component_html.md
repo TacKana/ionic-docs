@@ -1,15 +1,15 @@
 ```html
-<ion-checkbox labelPlacement="start">Label at the Start</ion-checkbox>
+<ion-checkbox labelPlacement="start">标签位于前面</ion-checkbox>
 
 <br />
 
-<ion-checkbox labelPlacement="end">Label at the End</ion-checkbox>
+<ion-checkbox labelPlacement="end">标签位于后面</ion-checkbox>
 
 <br />
 
-<ion-checkbox labelPlacement="fixed">Fixed Width Label</ion-checkbox>
+<ion-checkbox labelPlacement="fixed">固定宽度标签</ion-checkbox>
 
 <br />
 
-<ion-checkbox labelPlacement="stacked">Stacked Label</ion-checkbox>
+<ion-checkbox labelPlacement="stacked">堆叠标签</ion-checkbox>
 ```

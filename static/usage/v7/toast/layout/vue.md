@@ -1,18 +1,18 @@
 ```html
 <template>
-  <ion-button id="open-inline-toast">Open Baseline Layout Toast</ion-button>
-  <ion-button id="open-stacked-toast">Open Stacked Layout Toast</ion-button>
+  <ion-button id="open-inline-toast">打开基线布局 Toast</ion-button>
+  <ion-button id="open-stacked-toast">打开堆叠布局 Toast</ion-button>
   <ion-toast
     trigger="open-inline-toast"
     :duration="3000"
     :buttons="toastButtons"
-    message="This is a toast with a long message and a button that appears on the same line."
+    message="这是一个包含长消息的 Toast，按钮显示在同一行。"
   ></ion-toast>
   <ion-toast
     trigger="open-stacked-toast"
     :duration="3000"
     :buttons="toastButtons"
-    message="This is a toast with a long message and a button that appears on the next line."
+    message="这是一个包含长消息的 Toast，按钮显示在下一行。"
     layout="stacked"
   ></ion-toast>
 </template>

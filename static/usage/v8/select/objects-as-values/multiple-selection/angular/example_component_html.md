@@ -2,9 +2,9 @@
 <ion-list>
   <ion-item>
     <ion-select
-      aria-label="Food"
+      aria-label="食物"
       [compareWith]="compareWith"
-      placeholder="Select food"
+      placeholder="选择食物"
       (ionChange)="handleChange($event)"
       [multiple]="true"
     >

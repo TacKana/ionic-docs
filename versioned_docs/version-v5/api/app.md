@@ -14,28 +14,28 @@ import Slots from '@ionic-internal/component-api/v5/app/slots.md';
 
 # ion-app
 
-App is a container element for an Ionic application. There should only be one `<ion-app>` element per project. An app can have many Ionic components including menus, headers, content, and footers. The overlay components get appended to the `<ion-app>` when they are presented.
+App 是 Ionic 应用程序的容器元素。每个项目中应该只有一个 `<ion-app>` 元素。一个应用可以包含许多 Ionic 组件，包括菜单、页眉、内容区域和页脚。当叠加层组件被展示时，它们会被附加到 `<ion-app>` 元素上。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow 部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

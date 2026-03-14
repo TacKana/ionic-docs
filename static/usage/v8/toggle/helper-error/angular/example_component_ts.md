@@ -20,8 +20,8 @@ export class ExampleComponent {
   }
 
   onChange() {
-    // Mark the control as touched to trigger the error message
-    // without requiring the toggle to be blurred first
+    // 将控件标记为已触摸，以触发错误消息
+    // 而无需先让切换控件失去焦点
     this.myForm.get('wifi')!.markAsTouched();
   }
 }

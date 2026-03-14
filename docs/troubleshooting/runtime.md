@@ -1,30 +1,30 @@
 ---
-title: Runtime Issues
+title: 运行时问题
 ---
 
 <head>
-  <title>Solve App Runtime Issues: Blank App, Plugins Not Working, etc.</title>
+  <title>解决应用运行时问题：应用白屏、插件异常等</title>
   <meta
     name="description"
-    content="There are many causes of app runtime issues. Read how to solve issues such as a blank app, plugins not working, Angular change detection, and more with Ionic."
+    content="应用运行时问题可能由多种原因导致。阅读本文了解如何解决 Ionic 应用白屏、插件失效、Angular 变更检测等问题。"
   />
 </head>
 
-## Blank App
+## 应用白屏
 
 :::note
-I have no errors in my app. Why does it show a blank screen?
+我的应用没有任何错误，为什么显示白屏？
 :::
 
-There are several different reasons this can happen. If you are unable to find a solution on the [Ionic forums](https://forum.ionicframework.com), make sure:
+这个问题可能由多种原因导致。如果在 [Ionic 论坛](https://forum.ionicframework.com) 上找不到解决方案，请确认：
 
-- Polyfills are not included for older browser/versions of android
+- 没有为旧版浏览器/Android 版本包含 polyfills
 
-For projects with `@angular/cli@7.3` or above, polyfills will automatically be included. For project created before that, polyfills need to be manually enabled.
+对于使用 `@angular/cli@7.3` 或更高版本的项目，polyfills 会自动包含。对于在此之前创建的项目，需要手动启用 polyfills。
 
-In `src/polyfills.ts`, you must enabled all ES6 polyfills for Android 4.4 support.
+在 `src/polyfills.ts` 文件中，必须启用所有 ES6 polyfills 以支持 Android 4.4。
 
-Alternatively, a project could be updated to use the latest release of the `@angular/cli` package & `@angular-devkit` packages and include the `es5BrowserSupport` option in the `angular.json`'s build options object:
+或者，可以将项目更新到最新版本的 `@angular/cli` 包和 `@angular-devkit` 包，并在 `angular.json` 的构建选项对象中包含 `es5BrowserSupport` 选项：
 
 ```diff
         "input": "src/global.scss"
@@ -38,29 +38,29 @@ Alternatively, a project could be updated to use the latest release of the `@ang
     "production": {
 ```
 
-This will automatically include the polyfills for older browsers that need them.
+这将自动为需要 polyfills 的旧版浏览器包含相应的 polyfills。
 
-## Directive Not Working
+## 指令失效
 
 :::note
-Why is my custom component/directive not working?
+为什么我的自定义组件/指令不工作？
 :::
 
-There are a few things you can check. Make sure:
+你可以检查以下几点：
 
-- Your selector doesn't have any misspellings.
-- You're using the selector correctly as an attribute, element or class.
-- Your selector has the proper syntax:
-  - `[attr]` if it's an attribute selector
-  - `element` if it's an element selector
-  - `.class` if it's a class selector
+- 确保选择器没有拼写错误
+- 确保正确使用选择器作为属性、元素或类
+- 确保选择器语法正确：
+  - 如果是属性选择器，使用 `[attr]`
+  - 如果是元素选择器，使用 `element`
+  - 如果是类选择器，使用 `.class`
 
-Here's an example using an attribute selector:
+以下是使用属性选择器的示例：
 
 ```tsx
 @Directive({
-  selector: '[my-dir]' // <-- [my-dir] because it is an attribute
-})                     // Could be my-dir, [my-dir], .my-dir
+  selector: '[my-dir]' // <-- [my-dir] 因为是属性选择器
+})                     // 可以是 my-dir、[my-dir]、.my-dir
 class MyDir {
   constructor() {
     console.log('I'm alive!');
@@ -68,84 +68,69 @@ class MyDir {
 }
 
 @Component({
-  // We add my-dir as an attribute to match the directive's selector
+  // 我们将 my-dir 作为属性添加以匹配指令的选择器
   template: `<div my-dir>Hello World</div>`,
 
-  // Alternatively, if you were attaching the directive to an element it would be:
+  // 或者，如果要将指令附加到元素上：
   // template: `<my-dir>Hello World</my-dir>`
-  // and if you were attaching by class the template would be:
+  // 如果通过类附加：
   // template: `<div class="my-dir">Hello World</div>`
 
-  directives: [MyDir] // <-- Don't forget me! (only if your ionic-angular version is below RC0)
+  directives: [MyDir] // <-- 别忘了这个！（仅当 ionic-angular 版本低于 RC0 时需要）
 })
 class MyPage { }
 ```
 
-## Click Delays
+## 点击延迟
 
 :::note
-Why is there a delay on my click event?
+为什么我的点击事件有延迟？
 :::
 
-In general, we recommend only adding `(click)` events to elements that are
-normally clickable. This includes `<button>` and `<a>` elements. This improves
-accessibility as a screen reader will be able to tell that the element is
-clickable.
+一般来说，我们建议只在通常可点击的元素上添加 `(click)` 事件。这包括 `<button>` 和 `<a>` 元素。这有助于提高可访问性，因为屏幕阅读器能够识别这些元素是可点击的。
 
-However, you may need to add a `(click)` event to an element that is not
-normally clickable. When you do this you may experience a `300ms` delay from the
-time you click the element to the event firing. To remove this delay, you can
-add the `tappable` attribute to your element.
+但是，你可能需要在不可点击的元素上添加 `(click)` 事件。当你这样做时，可能会遇到从点击元素到事件触发有 `300ms` 延迟的情况。要消除这个延迟，可以在元素上添加 `tappable` 属性。
 
 ```html
-<div tappable (click)="doClick()">I am clickable!</div>
+<div tappable (click)="doClick()">我可以被点击！</div>
 ```
 
-## Angular Change Detection
+## Angular 变更检测
 
 :::note
-Why does Angular change detection run very frequently when my components are initializing?
+为什么我的组件初始化时 Angular 变更检测会频繁运行？
 :::
 
-Angular uses a library called [zone.js](https://github.com/angular/angular/tree/master/packages/zone.js/)
-which helps it determine when to run change detection.
+Angular 使用一个名为 [zone.js](https://github.com/angular/angular/tree/master/packages/zone.js/) 的库来帮助确定何时运行变更检测。
 
-As of zone.js `0.8.27`, certain APIs for Web Components also cause change
-detection to run. This can have the undesirable side effect of your app
-slowing down when a large number of components are initializing.
+从 zone.js `0.8.27` 开始，某些 Web Components API 也会触发变更检测。这可能带来不良的副作用：当大量组件初始化时，你的应用会变慢。
 
-To prevent this from happening, the zone.js flag that manages this portion of
-change detection can be disabled. In the `src` directory of your application,
-create a file called `zone-flags.ts`. Place the following code into the file:
+为了防止这种情况发生，可以禁用 zone.js 中管理这部分变更检测的标志。在应用程序的 `src` 目录中，创建一个名为 `zone-flags.ts` 的文件，并将以下代码放入文件中：
 
 ```tsx
 (window as any).__Zone_disable_customElements = true;
 ```
 
-The `zone-flags.ts` file then needs to be imported into your application's
-`polyfills.ts` file. Be sure to import it _before_ `zone.js` is imported:
+然后需要在应用程序的 `polyfills.ts` 文件中导入 `zone-flags.ts`。确保在导入 `zone.js` 之前导入它：
 
 ```tsx
 ...
 
 import './zone-flags.ts';
-import 'zone.js/dist/zone'; // Included with Angular CLI
+import 'zone.js/dist/zone'; // Angular CLI 自带
 
 ...
 ```
 
-This change will only affect applications that depend on zone.js `0.8.27` or
-newer. Older versions will not be affected by this change.
+此更改仅影响依赖 zone.js `0.8.27` 或更新版本的应用程序。旧版本不会受到此更改的影响。
 
 :::note
-This flag is automatically included when creating an Ionic app via
+通过 Ionic CLI 创建 Ionic 应用时，此标志会自动包含
 :::
-the Ionic CLI.
 
-## Cordova plugins not working in the browser
+## Cordova 插件在浏览器中不工作
 
-At some point in your development you may, try to call Cordova plugin, but get a
-warning:
+在开发过程中，你可能会尝试调用 Cordova 插件，但收到以下警告：
 
 ```shell
 [Warning] Native: tried calling StatusBar.styleDefault, but Cordova is not
@@ -153,25 +138,20 @@ available. Make sure to include cordova.js or run in a device/simulator
 (app.bundle.js, line 83388)
 ```
 
-This happens when you try to call a native plugin, but Cordova isn't available.
-Thankfully, Ionic Native will print out a nice warning, instead of an error.
+当你尝试调用原生插件但 Cordova 不可用时，会发生这种情况。幸运的是，Ionic Native 会打印出友好的警告，而不是错误。
 
-In other cases where the plugin is not being used through Ionic Native, plugins
-can print a much more obscure warning.
+在其他情况下，如果插件不是通过 Ionic Native 使用，插件可能会打印出更晦涩的警告：
 
 ```shell
 EXCEPTION: Error: Uncaught (in promise): TypeError: undefined is not an object
 (evaluating 'navigator.camera.getPicture')
 ```
 
-If this happens, test the plugin on a real device or simulator.
+如果发生这种情况，请在真实设备或模拟器上测试插件。
 
-## Multiple instances of a provider
+## 提供者的多个实例
 
-If you inject a provider in every component because you want it available to all
-of them you will end up with multiple instances of the provider. You should
-inject the provider once in the parent component if you want it to be available
-to the child components.
+如果你在每个组件中都注入提供者，希望它对所有组件都可用，那么最终会得到提供者的多个实例。如果你希望提供者对子组件可用，应该在父组件中注入一次提供者。
 
 ```tsx
 let id = 0;
@@ -186,10 +166,10 @@ export class MyService {
 @Component({
   selector: 'my-component',
   template: 'Hello World',
-  providers: [MyService], // <-- Creates a new instance of MyService :(
-}) // Unnecessary because MyService is in App's providers
+  providers: [MyService], // <-- 创建 MyService 的新实例 :(
+}) // 这是不必要的，因为 MyService 已经在 App 的 providers 中
 class MyComp {
-  // id is 1, s is a different MyService instance than MyApp
+  // id 是 1，s 是与 MyApp 不同的 MyService 实例
   constructor(s: MyService) {
     console.log('MyService id is: ' + s.id);
   }
@@ -197,25 +177,25 @@ class MyComp {
 
 @Component({
   template: '<my-component></my-component>',
-  providers: [MyService], // MyService only needs to be here
+  providers: [MyService], // MyService 只需要在这里提供
   directives: [MyComp],
 })
 class MyApp {
-  // id is 0
+  // id 是 0
   constructor(s: MyService) {
     console.log('MyService id is: ' + s.id);
   }
 }
 ```
 
-<!-- This is referenced in Ionic Framework component documentation so we explicitly define the anchor so it remains consistent. -->
+<!-- 这在 Ionic Framework 组件文档中被引用，因此我们明确定义锚点以保持一致性。 -->
 
-## Accessing `this` in a function callback returns `undefined` {#accessing-this}
+## 在函数回调中访问 `this` 返回 `undefined` {#accessing-this}
 
-Certain components, such as [counterFormatter on ion-input](../api/input#counterformatter) and [pinFormatter on ion-range](../api/input#pinformatter), allow developers to pass callbacks. It's important that you bind the correct `this` value if you plan to access `this` from within the context of the callback. You may need to access `this` when using Angular components or when using class components in React. There are two ways to bind `this`:
+某些组件，例如 [ion-input 的 counterFormatter](../api/input#counterformatter) 和 [ion-range 的 pinFormatter](../api/input#pinformatter)，允许开发者传递回调函数。如果你计划在回调上下文中访问 `this`，那么绑定正确的 `this` 值非常重要。在使用 Angular 组件或 React 类组件时，你可能需要访问 `this`。有两种方法可以绑定 `this`：
 
-The first way to bind `this` is to use the `bind()` method on a function instance. If you want to pass a callback called `counterFormatterFn`, then you would write `counterFormatterFn.bind(this)`.
+第一种方法是使用函数实例上的 `bind()` 方法。如果你想传递一个名为 `counterFormatterFn` 的回调，那么可以编写 `counterFormatterFn.bind(this)`。
 
-The second way to bind `this` is to use an [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) when defining the callback. This works because JavaScript does not create a new `this` binding for arrow functions.
+第二种方法是在定义回调时使用[箭头函数](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)。这之所以有效，是因为 JavaScript 不会为箭头函数创建新的 `this` 绑定。
 
-See its [MDN page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) for more information on how `this` works in JavaScript.
+有关 `this` 在 JavaScript 中如何工作的更多信息，请参阅其 [MDN 页面](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)。

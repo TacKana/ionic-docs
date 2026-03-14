@@ -1,10 +1,11 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Fab Buttons</ion-title>
+    <ion-title>浮动操作按钮</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
+  <!-- 左上角浮动操作按钮组 -->
   <ion-fab slot="fixed" vertical="top" horizontal="start">
     <ion-fab-button>
       <ion-icon name="chevron-forward-circle"></ion-icon>
@@ -22,6 +23,7 @@
     </ion-fab-list>
   </ion-fab>
 
+  <!-- 右上角边缘吸附浮动操作按钮组 -->
   <ion-fab slot="fixed" vertical="top" horizontal="end" edge="true">
     <ion-fab-button>
       <ion-icon name="chevron-down-circle"></ion-icon>
@@ -39,6 +41,7 @@
     </ion-fab-list>
   </ion-fab>
 
+  <!-- 右下角浮动操作按钮组 -->
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
     <ion-fab-button>
       <ion-icon name="chevron-up-circle"></ion-icon>

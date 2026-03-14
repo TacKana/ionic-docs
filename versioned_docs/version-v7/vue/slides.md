@@ -1,52 +1,52 @@
 ---
-title: Migrating From ion-slides to Swiper.js
+title: 从 ion-slides 迁移到 Swiper.js
 ---
 
 <head>
-  <title>Vue Slides Guide: How to Get Swiper for Vue on Ionic Apps</title>
+  <title>Vue 幻灯片指南：如何在 Ionic 应用中为 Vue 获取 Swiper</title>
   <meta
     name="description"
-    content="Our Slides guide teaches how to get Swiper for Vue set up in Ionic apps. It has any info needed to move from ion-slides to the official Swiper Vue integration."
+    content="我们的幻灯片指南教你如何在 Ionic 应用中为 Vue 设置 Swiper。它包含了从 ion-slides 迁移到官方 Swiper Vue 集成所需的所有信息。"
   />
 </head>
 
-:::warning Looking for `ion-slides`?
-`ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
+:::warning 正在寻找 `ion-slides`？
+`ion-slides` 在 v6.0.0 中已被弃用，并在 v7.0.0 中移除。我们建议直接使用 Swiper.js 库。下面的迁移过程有详细介绍。
 :::
 
-We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
+如果你需要一个现代的触摸滑块组件，我们推荐使用 <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a>。本指南将介绍如何在你的 Ionic Framework 应用程序中为 Vue 设置 Swiper。它还将涵盖你从 `ion-slides` 迁移到官方 Swiper Vue 集成可能需要的任何迁移信息。
 
 :::note
-Swiper's Vue component is set to be removed in a future release of Swiper, with <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as the replacement. However, this guide shows how to migrate to the Vue component because it provides the most stable experience at the time of writing.
+Swiper 的 Vue 组件计划在 Swiper 的未来版本中移除，取而代之的是 <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a>。然而，本指南演示了如何迁移到 Vue 组件，因为在撰写本文时它提供了最稳定的体验。
 
-Using Swiper's Vue component is **not** required to use Swiper.js with Ionic Framework.
+使用 Swiper 的 Vue 组件**不是**将 Swiper.js 与 Ionic Framework 一起使用的必要条件。
 :::
 
-## Getting Started
+## 开始入门
 
-First, update to the latest version of Ionic:
+首先，更新到最新版本的 Ionic：
 
 ```shell
 npm install @ionic/vue@latest @ionic/vue-router@latest
 ```
 
-We recommend upgrading to Vue CLI 5 for better compatibility with Swiper:
+我们建议升级到 Vue CLI 5 以获得与 Swiper 更好的兼容性：
 
 ```shell
 vue upgrade --next
 ```
 
-Once that is done, install the Swiper dependency in your project:
+完成后，在你的项目中安装 Swiper 依赖项：
 
 ```shell
 npm install swiper@latest
 ```
 
-## Swiping with Style
+## 滑动手势样式
 
-Next, we need to import the base Swiper styles. We are also going to import the styles that Ionic provides which will let us customize the Swiper styles using the same CSS Variables that we used with `ion-slides`.
+接下来，我们需要导入基础的 Swiper 样式。我们还将导入 Ionic 提供的样式，这将使我们能够使用与 `ion-slides` 相同的 CSS 变量来自定义 Swiper 样式。
 
-We recommend importing the styles in the component in which Swiper is being used. This ensures that the styles are only loaded when needed:
+我们建议在使用 Swiper 的组件中导入这些样式。这确保了样式仅在需要时加载：
 
 ```vue
 <script setup lang="ts">
@@ -56,50 +56,50 @@ import '@ionic/vue/css/ionic-swiper.css';
 ```
 
 :::note
-Importing `@ionic/vue/css/ionic-swiper.css` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `ion-slides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
+导入 `@ionic/vue/css/ionic-swiper.css` **不是**将 Swiper.js 与 Ionic 一起使用的必要条件。此文件用于与 `ion-slides` 组件向后兼容，如果你不想使用样式表中提供的 CSS 变量，可以安全地省略它。
 :::
 
-### Updating Selectors
+### 更新选择器
 
-Previously, we were able to target `ion-slides` and `ion-slide` to apply any custom styling. The contents of those style blocks remain the same, but we need to update the selectors. Below is a list of selector changes when going from `ion-slides` to Swiper Vue:
+以前，我们可以针对 `ion-slides` 和 `ion-slide` 来应用任何自定义样式。这些样式块的内容保持不变，但我们需要更新选择器。以下是从 `ion-slides` 迁移到 Swiper Vue 时的选择器更改列表：
 
-| ion-slides Selector | Swiper Selector |
-| ------------------- | --------------- |
-| `ion-slides`        | `.swiper`       |
-| `ion-slide`         | `.swiper-slide` |
+| ion-slides 选择器 | Swiper 选择器    |
+| ----------------- | ---------------- |
+| `ion-slides`      | `.swiper`        |
+| `ion-slide`       | `.swiper-slide`  |
 
-### Pre-processors (optional)
+### 预处理器（可选）
 
-For developers using SCSS or Less styles, Swiper also provides imports for those files.
+对于使用 SCSS 或 Less 样式的开发者，Swiper 也为这些文件提供了导入。
 
-For Less styles, replace `css` with `less` in the Swiper import path:
+对于 Less 样式，在 Swiper 导入路径中将 `css` 替换为 `less`：
 
 ```js
 import 'swiper/less';
 import '@ionic/vue/css/ionic-swiper.css';
 ```
 
-For SCSS styles replace `css` with `scss` in the Swiper import path:
+对于 SCSS 样式，在 Swiper 导入路径中将 `css` 替换为 `scss`：
 
 ```js
 import 'swiper/scss';
 import '@ionic/vue/css/ionic-swiper.css';
 ```
 
-## Using Components
+## 使用组件
 
-Swiper exports two components: `Swiper` and `SwiperSlide`. The `Swiper` component is the equivalent of `IonSlides`, and `SwiperSlide` is the equivalent of `IonSlide`.
+Swiper 导出两个组件：`Swiper` 和 `SwiperSlide`。`Swiper` 组件等同于 `IonSlides`，`SwiperSlide` 等同于 `IonSlide`。
 
-These components are imported from `swiper/vue` and provided to your Vue component:
+这些组件从 `swiper/vue` 导入，并提供给你的 Vue 组件：
 
 ```vue
 <template>
   <ion-page>
     <ion-content>
       <swiper>
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>幻灯片 1</swiper-slide>
+        <swiper-slide>幻灯片 2</swiper-slide>
+        <swiper-slide>幻灯片 3</swiper-slide>
       </swiper>
     </ion-content>
   </ion-page>
@@ -114,22 +114,22 @@ import '@ionic/vue/css/ionic-swiper.css';
 </script>
 ```
 
-## Using Modules
+## 使用模块
 
-By default, Swiper for Vue does not import any additional modules. To use modules such as Navigation or Pagination, you need to import them first.
+默认情况下，用于 Vue 的 Swiper 不导入任何额外的模块。要使用导航或分页等模块，你需要先导入它们。
 
-`ion-slides` automatically included the Pagination, Scrollbar, Autoplay, Keyboard, and Zoom modules. This part of the guide will show you how to install these modules.
+`ion-slides` 自动包含了分页（Pagination）、滚动条（Scrollbar）、自动播放（Autoplay）、键盘（Keyboard）和缩放（Zoom）模块。本指南的这一部分将向你展示如何安装这些模块。
 
-To begin, we need to import the modules and their corresponding CSS files from the `swiper` package:
+首先，我们需要从 `swiper` 包中导入模块及其对应的 CSS 文件：
 
 ```vue
 <template>
   <ion-page>
     <ion-content>
       <swiper>
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>幻灯片 1</swiper-slide>
+        <swiper-slide>幻灯片 2</swiper-slide>
+        <swiper-slide>幻灯片 3</swiper-slide>
       </swiper>
     </ion-content>
   </ion-page>
@@ -149,16 +149,16 @@ import '@ionic/vue/css/ionic-swiper.css';
 </script>
 ```
 
-From here, we need to provide these modules to Swiper by using the `modules` property on the `swiper` component:
+从这里开始，我们需要通过使用 `swiper` 组件上的 `modules` 属性将这些模块提供给 Swiper：
 
 ```vue
 <template>
   <ion-page>
     <ion-content>
       <swiper :modules="modules">
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>幻灯片 1</swiper-slide>
+        <swiper-slide>幻灯片 2</swiper-slide>
+        <swiper-slide>幻灯片 3</swiper-slide>
       </swiper>
     </ion-content>
   </ion-page>
@@ -180,16 +180,16 @@ const modules = [Autoplay, Keyboard, Pagination, Scrollbar, Zoom];
 </script>
 ```
 
-Finally, we can turn these features on by using the appropriate properties:
+最后，我们可以通过使用相应的属性来启用这些功能：
 
 ```vue
 <template>
   <ion-page>
     <ion-content>
       <swiper :modules="modules" :autoplay="true" :keyboard="true" :pagination="true" :scrollbar="true" :zoom="true">
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>幻灯片 1</swiper-slide>
+        <swiper-slide>幻灯片 2</swiper-slide>
+        <swiper-slide>幻灯片 3</swiper-slide>
       </swiper>
     </ion-content>
   </ion-page>
@@ -212,25 +212,25 @@ const modules = [Autoplay, Keyboard, Pagination, Scrollbar, Zoom];
 ```
 
 :::note
-See <a href="https://swiperjs.com/vue#usage" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#usage</a> for a full list of modules.
+有关模块的完整列表，请参见 <a href="https://swiperjs.com/vue#usage" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#usage</a>。
 :::
 
-## The IonicSlides Module
+## IonicSlides 模块
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly. However, using this module is **not** required to use Swiper.js in Ionic.
+使用 `ion-slides` 时，Ionic 自动自定义了数十个 Swiper 属性。这带来了在移动设备上滑动时感觉流畅的体验。我们建议使用 `IonicSlides` 模块来确保直接使用 Swiper 时也设置了这些属性。但是，在 Ionic 中使用 Swiper.js **不** 需要使用此模块。
 
-It is recommended to review the [properties](https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/slides/IonicSlides.ts) set by `IonicSlides` and determine which ones you would like to customize.
+建议查看 `IonicSlides` 设置的 [属性](https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/slides/IonicSlides.ts) 列表，并确定哪些是你想要自定义的。
 
-We can install the `IonicSlides` module by importing it from `@ionic/vue` and passing it in as the last item in the `modules` array:
+我们可以通过从 `@ionic/vue` 导入 `IonicSlides` 模块并将其作为 `modules` 数组中的最后一项传递来安装它：
 
 ```vue
 <template>
   <ion-page>
     <ion-content>
       <swiper :modules="modules" :autoplay="true" :keyboard="true" :pagination="true" :scrollbar="true" :zoom="true">
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>幻灯片 1</swiper-slide>
+        <swiper-slide>幻灯片 2</swiper-slide>
+        <swiper-slide>幻灯片 3</swiper-slide>
       </swiper>
     </ion-content>
   </ion-page>
@@ -253,81 +253,81 @@ const modules = [Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonicSlides];
 ```
 
 :::note
-The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
+`IonicSlides` 模块必须是数组中的最后一个模块。这将使其自动自定义分页（Pagination）、滚动条（Scrollbar）、缩放（Zoom）等模块的设置。
 :::
 
-## Properties
+## 属性
 
-Swiper options are provided as props directly on the `<swiper>` component rather than via the `options` object in `ion-slides`.
+Swiper 选项是作为 props 直接提供给 `<swiper>` 组件的，而不是通过 `ion-slides` 中的 `options` 对象。
 
-Let's say in an app with `ion-slides` we had the `slidesPerView` and `loop` options set:
+假设在一个使用 `ion-slides` 的应用中，我们设置了 `slidesPerView` 和 `loop` 选项：
 
 ```vue
 <template>
   <ion-slides :options="{ slidesPerView: 3, loop: true }">
-    <ion-slide>Slide 1</ion-slide>
-    <ion-slide>Slide 2</ion-slide>
-    <ion-slide>Slide 3</ion-slide>
+    <ion-slide>幻灯片 1</ion-slide>
+    <ion-slide>幻灯片 2</ion-slide>
+    <ion-slide>幻灯片 3</ion-slide>
   </ion-slides>
 </template>
 ```
 
-To migrate, we would move these options out of the `options` object and onto the `<swiper>` component directly as properties:
+要迁移，我们需要将这些选项从 `options` 对象中移出，直接作为属性放到 `<swiper>` 组件上：
 
 ```vue
 <template>
   <swiper :slides-per-view="3" :loop="true">
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>幻灯片 1</swiper-slide>
+    <swiper-slide>幻灯片 2</swiper-slide>
+    <swiper-slide>幻灯片 3</swiper-slide>
   </swiper>
 </template>
 ```
 
-Below is a full list of property changes when going from `ion-slides` to Swiper Vue:
+以下是从 `ion-slides` 迁移到 Swiper Vue 时的完整属性更改列表：
 
-| Name      | Notes                                                                                                                 |
-| --------- | --------------------------------------------------------------------------------------------------------------------- |
-| options   | Set each option as a property directly on the `<swiper>` component.                                                   |
-| mode      | For different styles based upon the mode, you can target the slides with `.ios .swiper` or `.md .swiper` in your CSS. |
-| pager     | Use the `pagination` property instead. Requires installation of the Pagination module.                                |
-| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                 |
+| 名称        | 备注                                                                                          |
+| ----------- | --------------------------------------------------------------------------------------------- |
+| options     | 将每个选项直接作为属性设置在 `<swiper>` 组件上。                                                |
+| mode        | 要基于模式应用不同的样式，可以在 CSS 中使用 `.ios .swiper` 或 `.md .swiper` 来定位幻灯片。       |
+| pager       | 改用 `pagination` 属性。需要安装 Pagination 模块。                                             |
+| scrollbar   | 你可以继续使用 `scrollbar` 属性，只需确保先安装 Scrollbar 模块即可。                             |
 
 :::note
-All properties available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-props</a>.
+Swiper Vue 中可用的所有属性可以在 <a href="https://swiperjs.com/vue#swiper-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-props</a> 找到。
 :::
 
-## Events
+## 事件
 
-Since the `Swiper` component is not provided by Ionic Framework, event names will not have an `ionSlide` prefix to them.
+由于 `Swiper` 组件不是由 Ionic Framework 提供的，事件名称将不再带有 `ionSlide` 前缀。
 
-Let's say in an app with `ion-slides` we used the `ionSlideDidChange` event:
+假设在一个使用 `ion-slides` 的应用中，我们使用了 `ionSlideDidChange` 事件：
 
 ```vue
 <template>
   <ion-slides @ionSlideDidChange="onSlideChange">
-    <ion-slide>Slide 1</ion-slide>
-    <ion-slide>Slide 2</ion-slide>
-    <ion-slide>Slide 3</ion-slide>
+    <ion-slide>幻灯片 1</ion-slide>
+    <ion-slide>幻灯片 2</ion-slide>
+    <ion-slide>幻灯片 3</ion-slide>
   </ion-slides>
 </template>
 ```
 
-To migrate, we would change the name of the event to `slideChange`:
+要迁移，我们需要将事件名称更改为 `slideChange`：
 
 ```vue
 <template>
   <swiper @slideChange="onSlideChange">
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>幻灯片 1</swiper-slide>
+    <swiper-slide>幻灯片 2</swiper-slide>
+    <swiper-slide>幻灯片 3</swiper-slide>
   </swiper>
 </template>
 ```
 
-Below is a full list of event name changes when going from `ion-slides` to Swiper Vue:
+以下是从 `ion-slides` 迁移到 Swiper Vue 时的完整事件名称更改列表：
 
-| ion-slides Event          | Swiper Event                 |
+| ion-slides 事件           | Swiper 事件                  |
 | ------------------------- | ---------------------------- |
 | `ionSlideWillChange`      | `slideChangeTransitionStart` |
 | `ionSlideDidChange`       | `slideChangeTransitionEnd`   |
@@ -347,14 +347,14 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 | `ionSlidesDidLoad`        | `init`                       |
 
 :::note
-All events available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-events</a>.
+Swiper Vue 中可用的所有事件可以在 <a href="https://swiperjs.com/vue#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-events</a> 找到。
 :::
 
-## Methods
+## 方法
 
-Most methods have been removed in favor of accessing the `<swiper>` props directly. Additionally, you no longer need to access `$el` first when calling methods.
+大多数方法已被移除，建议直接访问 `<swiper>` 的 props。此外，调用方法时不再需要先访问 `$el`。
 
-Accessing these properties can be tricky as you want to access the properties on the Swiper instance itself, not your Vue component. To do this, we recommend getting a reference to the Swiper instance via the `@swiper` event handler:
+访问这些属性可能有些棘手，因为你想要访问的是 Swiper 实例本身上的属性，而不是你的 Vue 组件上的。为此，我们建议通过 `@swiper` 事件处理程序获取对 Swiper 实例的引用：
 
 ```vue
 <template>
@@ -371,36 +371,36 @@ const setSwiperInstance = (swiper: any) => {
 </script>
 ```
 
-From here, if you wanted to access a property on the Swiper instance you would access `slides.value`. For example, if you wanted to check the `isBeginning` property, you could do: `slides.value.isBeginning`. Make sure `slides.value` is defined first though!
+从这里开始，如果你想访问 Swiper 实例上的一个属性，你可以通过 `slides.value` 来访问。例如，如果你想检查 `isBeginning` 属性，你可以这样做：`slides.value.isBeginning`。不过，请确保 `slides.value` 首先被定义！
 
-Below is a full list of method changes when going from `ion-slides` to Swiper Vue:
+以下是从 `ion-slides` 迁移到 Swiper Vue 时的完整方法更改列表：
 
-| ion-slides Method    | Notes                                                                                |
+| ion-slides 方法      | 备注                                                                                 |
 | -------------------- | ------------------------------------------------------------------------------------ |
-| `getActiveIndex()`   | Use the `activeIndex` property instead.                                              |
-| `getPreviousIndex()` | Use the `previousIndex` property instead.                                            |
-| `getSwiper()`        | Get a reference to the Swiper instance using `@swiper`. See example above.           |
-| `isBeginning()`      | Use the `isBeginning` property instead.                                              |
-| `isEnd()`            | Use the `isEnd` property instead.                                                    |
-| `length()`           | Use the `slides` property instead. (i.e swiperRef.slides.length)                     |
-| `lockSwipeToNext()`  | Use the `allowSlideNext` property instead.                                           |
-| `lockSwipeToPrev()`  | Use the `allowSlidePrev` property instead.                                           |
-| `lockSwipes()`       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
-| `startAutoplay()`    | Use the `autoplay` property instead.                                                 |
-| `stopAutoplay()`     | Use the `autoplay` property instead.                                                 |
+| `getActiveIndex()`   | 改用 `activeIndex` 属性。                                                              |
+| `getPreviousIndex()` | 改用 `previousIndex` 属性。                                                            |
+| `getSwiper()`        | 使用 `@swiper` 获取 Swiper 实例的引用。参见上面的示例。                                  |
+| `isBeginning()`      | 改用 `isBeginning` 属性。                                                               |
+| `isEnd()`            | 改用 `isEnd` 属性。                                                                     |
+| `length()`           | 改用 `slides` 属性。(例如 swiperRef.slides.length)                                      |
+| `lockSwipeToNext()`  | 改用 `allowSlideNext` 属性。                                                            |
+| `lockSwipeToPrev()`  | 改用 `allowSlidePrev` 属性。                                                            |
+| `lockSwipes()`       | 改用 `allowSlideNext`、`allowSlidePrev` 和 `allowTouchMove` 属性。                      |
+| `startAutoplay()`    | 改用 `autoplay` 属性。                                                                  |
+| `stopAutoplay()`     | 改用 `autoplay` 属性。                                                                  |
 
-## Effects
+## 特效
 
-If you are using effects such as Cube or Fade, you can install them just like we did with the other modules. In this example, we will use the fade effect. To start, we will import `EffectFade` from `swiper` and provide it in the `modules` array:
+如果你正在使用 Cube 或 Fade 等特效，你可以像我们安装其他模块一样安装它们。在这个例子中，我们将使用淡入淡出（fade）效果。首先，我们从 `swiper` 导入 `EffectFade` 并将其提供给 `modules` 数组：
 
 ```vue
 <template>
   <ion-page>
     <ion-content>
       <swiper :modules="modules">
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>幻灯片 1</swiper-slide>
+        <swiper-slide>幻灯片 2</swiper-slide>
+        <swiper-slide>幻灯片 3</swiper-slide>
       </swiper>
     </ion-content>
   </ion-page>
@@ -417,16 +417,16 @@ const modules = [EffectFade, IonicSlides];
 </script>
 ```
 
-Next, we need to import the stylesheet associated with the effect:
+接下来，我们需要导入与该特效相关的样式表：
 
 ```vue
 <template>
   <ion-page>
     <ion-content>
       <swiper :modules="modules">
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>幻灯片 1</swiper-slide>
+        <swiper-slide>幻灯片 2</swiper-slide>
+        <swiper-slide>幻灯片 3</swiper-slide>
       </swiper>
     </ion-content>
   </ion-page>
@@ -444,16 +444,16 @@ const modules = [EffectFade, IonicSlides];
 </script>
 ```
 
-After that, we can activate it by setting the `effect` property on `swiper` to `"fade"`:
+之后，我们可以通过在 `swiper` 上设置 `effect` 属性为 `"fade"` 来激活它：
 
 ```vue
 <template>
   <ion-page>
     <ion-content>
       <swiper :modules="modules" effect="fade">
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>幻灯片 1</swiper-slide>
+        <swiper-slide>幻灯片 2</swiper-slide>
+        <swiper-slide>幻灯片 3</swiper-slide>
       </swiper>
     </ion-content>
   </ion-page>
@@ -472,27 +472,27 @@ const modules = [EffectFade, IonicSlides];
 ```
 
 :::note
-For more information on effects in Swiper, please see <a href="https://swiperjs.com/vue#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#effects</a>.
+有关 Swiper 特效的更多信息，请参见 <a href="https://swiperjs.com/vue#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#effects</a>。
 :::
 
-## Wrap Up
+## 总结
 
-Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the <a href="https://swiperjs.com/vue" target="_blank" rel="noopener noreferrer">Swiper Vue Introduction</a> and then referencing <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">the Swiper API docs</a>.
+既然你已经安装了 Swiper，现在可以享受一整套新的 Swiper 功能了。我们建议从 <a href="https://swiperjs.com/vue" target="_blank" rel="noopener noreferrer">Swiper Vue 介绍</a> 开始，然后参考 <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">Swiper API 文档</a>。
 
-## FAQ
+## 常见问题解答
 
-### Where can I find an example of this migration?
+### 我在哪里可以找到这个迁移的示例？
 
-You can find a sample app with `ion-slides` and the equivalent Swiper usage at https://github.com/ionic-team/slides-migration-samples.
+你可以在 https://github.com/ionic-team/slides-migration-samples 找到一个包含 `ion-slides` 和等效 Swiper 用法的示例应用。
 
-### Where can I get help with this migration?
+### 我在哪里可以获得有关此迁移的帮助？
 
-If you are running into issues with the migration, please create a post on the [Ionic Forum](https://forum.ionicframework.com/).
+如果你在迁移过程中遇到问题，请在 [Ionic 论坛](https://forum.ionicframework.com/) 上创建一个帖子。
 
-### Where do I file bug reports?
+### 我在哪里提交错误报告？
 
-Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to see if your issue can be resolved by the community.
+在提出问题之前，请考虑在 <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper 讨论板</a> 或 <a href="https://forum.ionicframework.com" target="_blank">Ionic 论坛</a> 上创建一个帖子，看看你的问题是否可以由社区解决。
 
-If you are running into problems with the Swiper library, new bugs should be filed on the Swiper repo: <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">https://github.com/nolimits4web/swiper/issues</a>
+如果你遇到 Swiper 库的问题，新的错误应该提交到 Swiper 仓库：<a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">https://github.com/nolimits4web/swiper/issues</a>
 
-If you are running into problems with the `IonicSlides` module, new bugs should be filed on the Ionic Framework repo: <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">https://github.com/ionic-team/ionic-framework/issues</a>
+如果你遇到 `IonicSlides` 模块的问题，新的错误应该提交到 Ionic Framework 仓库：<a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">https://github.com/ionic-team/ionic-framework/issues</a>

@@ -1,16 +1,16 @@
 ---
-sidebar_label: Examples
-title: Ionic React Testing Examples
-description: Learn how to test an Ionic React application. This document provides examples of how to test different types of components.
+sidebar_label: 示例
+title: Ionic React 测试示例
+description: 学习如何测试 Ionic React 应用程序。本文档提供了测试不同类型组件的示例。
 ---
 
-# Examples
+# 示例
 
-## Testing a modal presented from a trigger
+## 测试由触发器触发的模态框
 
-This example shows how to test a modal that is presented from a trigger. The modal is presented when the user clicks a button.
+此示例展示了如何测试由触发器触发的模态框。当用户点击按钮时，模态框会被触发显示。
 
-### Example component
+### 示例组件
 
 ```tsx title="src/Example.tsx"
 import { IonButton, IonModal } from '@ionic/react';
@@ -25,7 +25,7 @@ export default function Example() {
 }
 ```
 
-### Testing the modal
+### 测试模态框
 
 ```tsx title="src/Example.test.tsx"
 import { IonApp } from '@ionic/react';
@@ -39,21 +39,21 @@ test('button presents a modal when clicked', async () => {
       <Example />
     </IonApp>
   );
-  // Simulate a click on the button
+  // 模拟点击按钮
   fireEvent.click(screen.getByText('Open'));
-  // Wait for the modal to be presented
+  // 等待模态框显示
   await waitFor(() => {
-    // Assert that the modal is present
+    // 断言模态框已显示
     expect(screen.getByText('Modal content')).toBeInTheDocument();
   });
 });
 ```
 
-## Testing a modal presented from useIonModal
+## 测试使用 useIonModal 钩子触发的模态框
 
-This example shows how to test a modal that is presented using the `useIonModal` hook. The modal is presented when the user clicks a button.
+此示例展示了如何测试使用 `useIonModal` 钩子触发的模态框。当用户点击按钮时，模态框会被触发显示。
 
-### Example component
+### 示例组件
 
 ```tsx title="src/Example.tsx"
 import { IonContent, useIonModal, IonHeader, IonToolbar, IonTitle, IonButton, IonPage } from '@ionic/react';
@@ -87,7 +87,7 @@ const Example: React.FC = () => {
 export default Example;
 ```
 
-### Testing the modal
+### 测试模态框
 
 ```tsx title="src/Example.test.tsx"
 import { IonApp } from '@ionic/react';
@@ -101,11 +101,11 @@ test('should present ModalContent when button is clicked', async () => {
       <Example />
     </IonApp>
   );
-  // Simulate a click on the button
+  // 模拟点击按钮
   fireEvent.click(screen.getByText('Open'));
-  // Wait for the modal to be presented
+  // 等待模态框显示
   await waitFor(() => {
-    // Assert that the modal is present
+    // 断言模态框已显示
     expect(screen.getByText('Modal Content')).toBeInTheDocument();
   });
 });

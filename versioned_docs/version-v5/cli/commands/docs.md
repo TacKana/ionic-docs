@@ -2,15 +2,15 @@
 sidebar_label: 'docs'
 ---
 
-# ionic docs
+# ionic 文档
 
-Open the Ionic documentation website
+在浏览器中打开 Ionic 文档网站
 
 ```shell
 ionic docs [options]
 ```
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -27,17 +27,17 @@ ionic docs [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
           <p>
-            Specifies the browser to use (<code>safari</code>, <code>firefox</code>, <code>google chrome</code>)
+            指定要使用的浏览器 (<code>safari</code>, <code>firefox</code>, <code>google chrome</code>)
           </p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-w</code>
       </td>

@@ -1,29 +1,29 @@
-# Environment Setup
+# 环境配置
 
-To get started with Ionic Framework, the only requirement is a [Node & npm](#node-npm) environment.
+要开始使用 Ionic Framework，唯一的要求是具备 [Node 和 npm](#node-npm) 环境。
 
-Of course, a code editor is also required. [Visual Studio Code](https://code.visualstudio.com/) is recommended. Visual Studio Code is a free, batteries-included text editor made by Microsoft.
+当然，还需要一个代码编辑器。推荐使用 [Visual Studio Code](https://code.visualstudio.com)。Visual Studio Code 是微软推出的免费、功能全面的文本编辑器。
 
-## Terminal
+## 终端
 
 :::note
-Much of Ionic development requires familiarity with the command line. If you're new to the command line, see [this Blog Post](https://ionicframework.com/blog/new-to-the-command-line/) for a quick introduction.
+Ionic 的很多开发工作都需要熟悉命令行。如果你是命令行新手，可以参考[这篇博文](https://ionicframework.com/blog/new-to-the-command-line/)快速入门。
 :::
 
-In general, we recommend using the built-in terminals. Many third-party terminals work well with Ionic, but may not be supported.
+一般来说，我们推荐使用系统自带的终端。虽然许多第三方终端与 Ionic 兼容良好，但可能无法获得官方支持。
 
-- For Windows, **Command Prompt** and **PowerShell** are supported. <a href="https://docs.microsoft.com/en-us/windows/wsl/faq" target="_blank">WSL</a> is known to work with Ionic, but may not be supported.
-- For macOS, the built-in **Terminal** app is supported.
+- 对于 Windows 系统，**命令提示符**和 **PowerShell** 是受支持的。<a href="https://docs.microsoft.com/en-us/windows/wsl/faq" target="_blank">WSL</a> 已知可以与 Ionic 配合工作，但可能不受官方支持。
+- 对于 macOS 系统，内置的 **终端** 应用程序是受支持的。
 
-Git Bash (from <a href="https://git-scm.com" target="_blank">git-scm.com</a>) does not support TTY interactivity and is **not supported** by Ionic.
+Git Bash（来自 <a href="https://git-scm.com" target="_blank">git-scm.com</a>）不支持 TTY 交互功能，因此 **不受** Ionic 支持。
 
-## Node & npm
+## Node 与 npm
 
-Almost all tooling for modern JavaScript projects is based in [Node.js](../reference/glossary.md#node). The [download page](https://nodejs.org/en/download/) has prebuilt installation packages for all platforms. We recommend selecting the LTS version to ensure best compatibility.
+几乎所有现代 JavaScript 项目的工具都基于 [Node.js](../reference/glossary.md#node)。[下载页面](https://nodejs.org/en/download/)提供了适用于所有平台的预构建安装包。我们建议选择 LTS 版本以确保最佳的兼容性。
 
-Node is bundled with [npm](../reference/glossary.md#npm), the package manager for JavaScript.
+Node 会捆绑安装 [npm](../reference/glossary.md#npm)，这是 JavaScript 的包管理器。
 
-To verify the installation, open a new terminal window and run:
+要验证安装是否成功，请打开一个新的终端窗口并运行：
 
 ```shell
 $ node --version
@@ -31,27 +31,27 @@ $ npm --version
 ```
 
 :::note
-Permission errors are common on macOS when installing global packages with `npm`. If you get an `EACCES` error, see [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors).
+在 macOS 上使用 `npm` 安装全局包时，权限错误很常见。如果你遇到 `EACCES` 错误，请参考[解决权限错误](../developing/tips.md#resolving-permission-errors)。
 :::
 
 ## Git
 
-Although not required, the version control system [Git](../reference/glossary.md#git) is highly recommended.
+虽然不是必须的，但我们强烈推荐使用版本控制系统 [Git](../reference/glossary.md#git)。
 
-Git is often accompanied by a Git Host, such as [GitHub](https://github.com/), in which case additional setup is required. Follow the tutorial from the Git Host's documentation to set up Git:
+Git 通常与 Git 托管服务（如 [GitHub](https://github.com/)）一起使用，此时需要进行额外的设置。请按照 Git 托管服务提供的教程来设置 Git：
 
-- GitHub: [Set up Git](https://help.github.com/en/articles/set-up-git)
-- GitLab: [Installing Git](https://docs.gitlab.com/ee/topics/git/how_to_install_git)
-- Bitbucket: [Install Git](https://www.atlassian.com/git/tutorials/install-git)
+- GitHub：[设置 Git](https://help.github.com/en/articles/set-up-git)
+- GitLab：[安装 Git](https://docs.gitlab.com/ee/topics/git/how_to_install_git)
+- Bitbucket：[安装 Git](https://www.atlassian.com/git/tutorials/install-git)
 
-Otherwise, follow the [official installation instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). The command-line utility can be downloaded from the [download page](https://git-scm.com/downloads).
+如果不使用托管服务，请按照[官方安装说明](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)操作。可以从[下载页面](https://git-scm.com/downloads)下载命令行工具。
 
-To verify the installation, open a new terminal window and run:
+要验证安装是否成功，请打开一个新的终端窗口并运行：
 
 ```shell
 git --version
 ```
 
-### Git GUI
+### Git 图形界面
 
-Git is a command-line utility, but there are many [GUI clients](https://git-scm.com/downloads/guis/) available. [GitHub Desktop](https://desktop.github.com/) is recommended, and works well with GitHub.
+Git 是一个命令行工具，但也有许多可用的[图形界面客户端](https://git-scm.com/downloads/guis/)。推荐使用 [GitHub Desktop](https://desktop.github.com/)，它与 GitHub 配合良好。

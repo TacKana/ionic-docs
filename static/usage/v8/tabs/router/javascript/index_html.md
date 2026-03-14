@@ -14,11 +14,11 @@
     <div id="home-page">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Listen now</ion-title>
+          <ion-title>即刻聆听</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <div class="example-content">Listen now content</div>
+        <div class="example-content">即刻聆听页面内容</div>
       </ion-content>
     </div>
   </ion-tab>
@@ -27,11 +27,11 @@
     <div id="radio-page">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Radio</ion-title>
+          <ion-title>电台</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <div class="example-content">Radio content</div>
+        <div class="example-content">电台页面内容</div>
       </ion-content>
     </div>
   </ion-tab>
@@ -40,11 +40,11 @@
     <div id="library-page">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Library</ion-title>
+          <ion-title>媒体库</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <div class="example-content">Library content</div>
+        <div class="example-content">媒体库页面内容</div>
       </ion-content>
     </div>
   </ion-tab>
@@ -53,30 +53,30 @@
     <div id="search-page">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Search</ion-title>
+          <ion-title>搜索</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <div class="example-content">Search content</div>
+        <div class="example-content">搜索页面内容</div>
       </ion-content>
     </div>
   </ion-tab>
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="home">
       <ion-icon name="play-circle"></ion-icon>
-      Listen Now
+      即刻聆听
     </ion-tab-button>
     <ion-tab-button tab="radio">
       <ion-icon name="radio"></ion-icon>
-      Radio
+      电台
     </ion-tab-button>
     <ion-tab-button tab="library">
       <ion-icon name="library"></ion-icon>
-      Library
+      媒体库
     </ion-tab-button>
     <ion-tab-button tab="search">
       <ion-icon name="search"></ion-icon>
-      Search
+      搜索
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

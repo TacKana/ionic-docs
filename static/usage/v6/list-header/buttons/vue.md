@@ -2,8 +2,8 @@
 <template>
   <ion-list>
     <ion-list-header>
-      <ion-label>Video Games</ion-label>
-      <ion-button>See All</ion-button>
+      <ion-label>电子游戏</ion-label>
+      <ion-button>查看全部</ion-button>
     </ion-list-header>
     <ion-item>
       <ion-label>Pokémon Yellow</ion-label>

@@ -8,11 +8,11 @@ function Example() {
     <>
       <IonButton>
         <IonIcon slot="start" icon={star}></IonIcon>
-        Left Icon
+        左侧图标
       </IonButton>
 
       <IonButton>
-        Right Icon
+        右侧图标
         <IonIcon slot="end" icon={star}></IonIcon>
       </IonButton>
 

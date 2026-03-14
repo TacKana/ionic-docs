@@ -1,5 +1,5 @@
 ```html
-<ion-button (click)="setOpen(true)">Open</ion-button>
+<ion-button (click)="setOpen(true)">打开</ion-button>
 <ion-picker
   [isOpen]="isPickerOpen"
   [columns]="pickerColumns"

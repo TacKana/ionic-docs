@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-card ref="card">
-    <ion-card-content>Double click me to move the card.</ion-card-content>
+    <ion-card-content>双击我移动卡片</ion-card-content>
   </ion-card>
 </template>
 

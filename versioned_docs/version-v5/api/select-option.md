@@ -1,6 +1,6 @@
 ---
-title: 'Select Option | What Is An Option Select on Ionic Framework Apps'
-description: 'What is an option select? Select Options are child element components of a Select—each option defined is passed and displayed in the Select dialog.'
+title: '选择选项 | Ionic Framework 应用中的选项选择是什么'
+description: '什么是选项选择？选择选项是选择器的子元素组件——每个定义的选项都会被传递并在选择器对话框中显示。'
 sidebar_label: 'ion-select-option'
 ---
 
@@ -16,41 +16,41 @@ import Slots from '@ionic-internal/component-api/v5/select-option/slots.md';
 
 # ion-select-option
 
-Select Options are components that are child elements of a Select. Each option defined is passed and displayed in the Select dialog. For more information, see the [Select docs](select.md).
+选择选项是选择器的子元素组件。每个定义的选项都会被传递并在选择器对话框中显示。更多信息请参阅[选择器文档](select.md)。
 
-## Customization
+## 定制化
 
-Each `ion-select-option` component that is added as a child of an `ion-select` is passed to the interface to display it in the dialog. It's important to note that the `ion-select-option` element itself is hidden from the view. This means that attempting to style it will not have any effect on the option in the dialog:
+每个作为 `ion-select` 子元素添加的 `ion-select-option` 组件都会被传递到界面以在对话框中显示。需要注意的是，`ion-select-option` 元素本身在视图中是隐藏的。这意味着尝试对其设置样式不会对对话框中的选项产生任何影响：
 
 ```css
-/* DOES NOT work */
+/* 无效 */
 ion-select-option {
   color: red;
 }
 ```
 
-Instead, each interface option has the class `.select-interface-option` which can be styled. Keep in mind that due to the overlays being scoped components the selector by itself will not work and a custom `cssClass` is recommended to be passed to the interface.
+相反，每个界面选项都有类 `.select-interface-option`，可以对其进行样式设置。请记住，由于叠加层是作用域组件，选择器本身无法生效，建议传递自定义的 `cssClass` 到界面。
 
 ```css
-/* This will NOT work on its own */
+/* 这单独使用不会生效 */
 .select-interface-option {
   color: red;
 }
 
 /*
- * "my-custom-interface" needs to be passed in through
- * the cssClass of the interface options for this to work
+ * 需要通过在界面选项的 cssClass 中传递
+ * "my-custom-interface" 才能生效
  */
 .my-custom-interface .select-interface-option {
   color: red;
 }
 ```
 
-> Note: Some interfaces require more in depth styling due to how the options are rendered. See usage for expanded information on this.
+> 注意：由于选项的渲染方式，某些界面需要更深入的样式设置。有关此方面的详细信息，请参阅用法。
 
-The options can be styled individually by adding your own class on the `ion-select-option` which gets passed to the interface option. See the [Usage](#usage) section below for examples of styling and setting individual classes on options.
+可以通过在传递给界面选项的 `ion-select-option` 上添加自己的类来单独设置选项的样式。有关在选项上设置样式和设置单独类的示例，请参阅下面的[用法](#usage)部分。
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="javascript" values={[{ value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
 
@@ -58,96 +58,96 @@ The options can be styled individually by adding your own class on the `ion-sele
 
 ```html
 <ion-item>
-  <ion-label>Select</ion-label>
+  <ion-label>选择</ion-label>
   <ion-select>
-    <ion-select-option value="brown">Brown</ion-select-option>
-    <ion-select-option value="blonde">Blonde</ion-select-option>
-    <ion-select-option value="black">Black</ion-select-option>
-    <ion-select-option value="red">Red</ion-select-option>
+    <ion-select-option value="brown">棕色</ion-select-option>
+    <ion-select-option value="blonde">金色</ion-select-option>
+    <ion-select-option value="black">黑色</ion-select-option>
+    <ion-select-option value="red">红色</ion-select-option>
   </ion-select>
 </ion-item>
 ```
 
-### Customizing Options
+### 定制选项
 
 ```html
 <ion-item>
-  <ion-label>Select: Alert Interface</ion-label>
+  <ion-label>选择：警告框界面</ion-label>
   <ion-select class="custom-options">
-    <ion-select-option value="brown">Brown</ion-select-option>
-    <ion-select-option value="blonde">Blonde</ion-select-option>
-    <ion-select-option value="black">Black</ion-select-option>
-    <ion-select-option value="red">Red</ion-select-option>
+    <ion-select-option value="brown">棕色</ion-select-option>
+    <ion-select-option value="blonde">金色</ion-select-option>
+    <ion-select-option value="black">黑色</ion-select-option>
+    <ion-select-option value="red">红色</ion-select-option>
   </ion-select>
 </ion-item>
 
 <ion-item>
-  <ion-label>Select: Alert Interface (Multiple Selection)</ion-label>
+  <ion-label>选择：警告框界面（多选）</ion-label>
   <ion-select class="custom-options" multiple="true">
-    <ion-select-option value="brown">Brown</ion-select-option>
-    <ion-select-option value="blonde">Blonde</ion-select-option>
-    <ion-select-option value="black">Black</ion-select-option>
-    <ion-select-option value="red">Red</ion-select-option>
+    <ion-select-option value="brown">棕色</ion-select-option>
+    <ion-select-option value="blonde">金色</ion-select-option>
+    <ion-select-option value="black">黑色</ion-select-option>
+    <ion-select-option value="red">红色</ion-select-option>
   </ion-select>
 </ion-item>
 
 <ion-item>
-  <ion-label>Select: Popover Interface</ion-label>
+  <ion-label>选择：弹出框界面</ion-label>
   <ion-select interface="popover" class="custom-options">
-    <ion-select-option value="brown">Brown</ion-select-option>
-    <ion-select-option value="blonde">Blonde</ion-select-option>
-    <ion-select-option value="black">Black</ion-select-option>
-    <ion-select-option value="red">Red</ion-select-option>
+    <ion-select-option value="brown">棕色</ion-select-option>
+    <ion-select-option value="blonde">金色</ion-select-option>
+    <ion-select-option value="black">黑色</ion-select-option>
+    <ion-select-option value="red">红色</ion-select-option>
   </ion-select>
 </ion-item>
 
 <ion-item>
-  <ion-label>Select: Action Sheet Interface</ion-label>
+  <ion-label>选择：操作表界面</ion-label>
   <ion-select interface="action-sheet" class="custom-options">
-    <ion-select-option value="brown">Brown</ion-select-option>
-    <ion-select-option value="blonde">Blonde</ion-select-option>
-    <ion-select-option value="black">Black</ion-select-option>
-    <ion-select-option value="red">Red</ion-select-option>
+    <ion-select-option value="brown">棕色</ion-select-option>
+    <ion-select-option value="blonde">金色</ion-select-option>
+    <ion-select-option value="black">黑色</ion-select-option>
+    <ion-select-option value="red">红色</ion-select-option>
   </ion-select>
 </ion-item>
 ```
 
 ```css
-/* Popover Interface: set color for the popover using Item's CSS variables */
+/* 弹出框界面：使用项目的 CSS 变量为弹出框设置颜色 */
 .my-custom-interface .select-interface-option {
   --color: #971e49;
   --color-hover: #79193b;
 }
 
-/* Action Sheet Interface: set color for the action sheet using its button CSS variables */
+/* 操作表界面：使用其按钮 CSS 变量为操作表设置颜色 */
 .my-custom-interface .select-interface-option {
   --button-color: #971e49;
   --button-color-hover: #79193b;
 }
 
-/* Alert Interface: set color for alert options (single selection) */
+/* 警告框界面：为警告框选项设置颜色（单选） */
 .my-custom-interface .select-interface-option .alert-radio-label {
   color: #971e49;
 }
 
-/* Alert Interface: set color for alert options (multiple selection) */
+/* 警告框界面：为警告框选项设置颜色（多选） */
 .my-custom-interface .select-interface-option .alert-checkbox-label {
   color: #971e49;
 }
 
-/* Alert Interface: set color for checked alert options (single selection) */
+/* 警告框界面：为选中的警告框选项设置颜色（单选） */
 .my-custom-interface .select-interface-option[aria-checked='true'] .alert-radio-label {
   color: #79193b;
 }
 
-/* Alert Interface: set color for checked alert options (multiple selection) */
+/* 警告框界面：为选中的警告框选项设置颜色（多选） */
 .my-custom-interface .select-interface-option[aria-checked='true'] .alert-checkbox-label {
   color: #79193b;
 }
 ```
 
 ```javascript
-// Pass a custom class to each select interface for styling
+// 为每个选择界面传递自定义类以进行样式设置
 const selects = document.querySelectorAll('.custom-options');
 
 for (var i = 0; i < selects.length; i++) {
@@ -157,26 +157,26 @@ for (var i = 0; i < selects.length; i++) {
 }
 ```
 
-> Note: In the CSS examples, some of the selectors could be combined together, but are separated out in order to better explain what each selector is for.
+> 注意：在 CSS 示例中，某些选择器可以组合在一起，但为了更好解释每个选择器的用途，将它们分开了。
 
-### Customizing Individual Options
+### 定制单个选项
 
-To customize an individual option, set a class on the `ion-select-option`:
+要定制单个选项，请在 `ion-select-option` 上设置一个类：
 
 ```html
 <ion-item>
-  <ion-label>Select</ion-label>
+  <ion-label>选择</ion-label>
   <ion-select class="custom-options" interface="popover">
-    <ion-select-option value="brown" class="brown-option">Brown</ion-select-option>
-    <ion-select-option value="blonde">Blonde</ion-select-option>
-    <ion-select-option value="black">Black</ion-select-option>
-    <ion-select-option value="red">Red</ion-select-option>
+    <ion-select-option value="brown" class="brown-option">棕色</ion-select-option>
+    <ion-select-option value="blonde">金色</ion-select-option>
+    <ion-select-option value="black">黑色</ion-select-option>
+    <ion-select-option value="red">红色</ion-select-option>
   </ion-select>
 </ion-item>
 ```
 
 ```css
-/* Popover Interface: set color for the popover using Item's CSS variables */
+/* 弹出框界面：使用项目的 CSS 变量为弹出框设置颜色 */
 .my-custom-interface .brown-option {
   --color: #5e3e2c;
   --color-hover: #362419;
@@ -184,7 +184,7 @@ To customize an individual option, set a class on the `ion-select-option`:
 ```
 
 ```javascript
-// Pass a custom class to each select interface for styling
+// 为每个选择界面传递自定义类以进行样式设置
 const select = document.querySelector('.custom-options');
 select.interfaceOptions = {
   cssClass: 'my-custom-interface',
@@ -204,12 +204,12 @@ export const SelectOptionExample: React.FC = () => {
     <IonPage>
       <IonContent>
         <IonItem>
-          <IonLabel>Select</IonLabel>
+          <IonLabel>选择</IonLabel>
           <IonSelect>
-            <IonSelectOption value="brown">Brown</IonSelectOption>
-            <IonSelectOption value="blonde">Blonde</IonSelectOption>
-            <IonSelectOption value="black">Black</IonSelectOption>
-            <IonSelectOption value="red">Red</IonSelectOption>
+            <IonSelectOption value="brown">棕色</IonSelectOption>
+            <IonSelectOption value="blonde">金色</IonSelectOption>
+            <IonSelectOption value="black">黑色</IonSelectOption>
+            <IonSelectOption value="red">红色</IonSelectOption>
           </IonSelect>
         </IonItem>
       </IonContent>
@@ -218,7 +218,7 @@ export const SelectOptionExample: React.FC = () => {
 };
 ```
 
-### Customizing Options
+### 定制选项
 
 ```tsx
 import React from 'react';
@@ -233,42 +233,42 @@ export const SelectOptionExample: React.FC = () => {
     <IonPage>
       <IonContent>
         <IonItem>
-          <IonLabel>Select: Alert Interface</IonLabel>
+          <IonLabel>选择：警告框界面</IonLabel>
           <IonSelect interfaceOptions={options}>
-            <IonSelectOption value="brown">Brown</IonSelectOption>
-            <IonSelectOption value="blonde">Blonde</IonSelectOption>
-            <IonSelectOption value="black">Black</IonSelectOption>
-            <IonSelectOption value="red">Red</IonSelectOption>
+            <IonSelectOption value="brown">棕色</IonSelectOption>
+            <IonSelectOption value="blonde">金色</IonSelectOption>
+            <IonSelectOption value="black">黑色</IonSelectOption>
+            <IonSelectOption value="red">红色</IonSelectOption>
           </IonSelect>
         </IonItem>
 
         <IonItem>
-          <IonLabel>Select: Alert Interface (Multiple Selection)</IonLabel>
+          <IonLabel>选择：警告框界面（多选）</IonLabel>
           <IonSelect interfaceOptions={options} multiple={true}>
-            <IonSelectOption value="brown">Brown</IonSelectOption>
-            <IonSelectOption value="blonde">Blonde</IonSelectOption>
-            <IonSelectOption value="black">Black</IonSelectOption>
-            <IonSelectOption value="red">Red</IonSelectOption>
+            <IonSelectOption value="brown">棕色</IonSelectOption>
+            <IonSelectOption value="blonde">金色</IonSelectOption>
+            <IonSelectOption value="black">黑色</IonSelectOption>
+            <IonSelectOption value="red">红色</IonSelectOption>
           </IonSelect>
         </IonItem>
 
         <IonItem>
-          <IonLabel>Select: Popover Interface</IonLabel>
+          <IonLabel>选择：弹出框界面</IonLabel>
           <IonSelect interface="popover" interfaceOptions={options}>
-            <IonSelectOption value="brown">Brown</IonSelectOption>
-            <IonSelectOption value="blonde">Blonde</IonSelectOption>
-            <IonSelectOption value="black">Black</IonSelectOption>
-            <IonSelectOption value="red">Red</IonSelectOption>
+            <IonSelectOption value="brown">棕色</IonSelectOption>
+            <IonSelectOption value="blonde">金色</IonSelectOption>
+            <IonSelectOption value="black">黑色</IonSelectOption>
+            <IonSelectOption value="red">红色</IonSelectOption>
           </IonSelect>
         </IonItem>
 
         <IonItem>
-          <IonLabel>Select: Action Sheet Interface</IonLabel>
+          <IonLabel>选择：操作表界面</IonLabel>
           <IonSelect interface="action-sheet" interfaceOptions={options}>
-            <IonSelectOption value="brown">Brown</IonSelectOption>
-            <IonSelectOption value="blonde">Blonde</IonSelectOption>
-            <IonSelectOption value="black">Black</IonSelectOption>
-            <IonSelectOption value="red">Red</IonSelectOption>
+            <IonSelectOption value="brown">棕色</IonSelectOption>
+            <IonSelectOption value="blonde">金色</IonSelectOption>
+            <IonSelectOption value="black">黑色</IonSelectOption>
+            <IonSelectOption value="red">红色</IonSelectOption>
           </IonSelect>
         </IonItem>
       </IonContent>
@@ -278,44 +278,44 @@ export const SelectOptionExample: React.FC = () => {
 ```
 
 ```css
-/* Popover Interface: set color for the popover using Item's CSS variables */
+/* 弹出框界面：使用项目的 CSS 变量为弹出框设置颜色 */
 .my-custom-interface .select-interface-option {
   --color: #971e49;
   --color-hover: #79193b;
 }
 
-/* Action Sheet Interface: set color for the action sheet using its button CSS variables */
+/* 操作表界面：使用其按钮 CSS 变量为操作表设置颜色 */
 .my-custom-interface .select-interface-option {
   --button-color: #971e49;
   --button-color-hover: #79193b;
 }
 
-/* Alert Interface: set color for alert options (single selection) */
+/* 警告框界面：为警告框选项设置颜色（单选） */
 .my-custom-interface .select-interface-option .alert-radio-label {
   color: #971e49;
 }
 
-/* Alert Interface: set color for alert options (multiple selection) */
+/* 警告框界面：为警告框选项设置颜色（多选） */
 .my-custom-interface .select-interface-option .alert-checkbox-label {
   color: #971e49;
 }
 
-/* Alert Interface: set color for checked alert options (single selection) */
+/* 警告框界面：为选中的警告框选项设置颜色（单选） */
 .my-custom-interface .select-interface-option[aria-checked='true'] .alert-radio-label {
   color: #79193b;
 }
 
-/* Alert Interface: set color for checked alert options (multiple selection) */
+/* 警告框界面：为选中的警告框选项设置颜色（多选） */
 .my-custom-interface .select-interface-option[aria-checked='true'] .alert-checkbox-label {
   color: #79193b;
 }
 ```
 
-> Note: In the CSS examples, some of the selectors could be combined together, but are separated out in order to better explain what each selector is for.
+> 注意：在 CSS 示例中，某些选择器可以组合在一起，但为了更好解释每个选择器的用途，将它们分开了。
 
-### Customizing Individual Options
+### 定制单个选项
 
-To customize an individual option, set a class on the `ion-select-option`:
+要定制单个选项，请在 `ion-select-option` 上设置一个类：
 
 ```tsx
 import React from 'react';
@@ -330,14 +330,14 @@ export const SelectOptionExample: React.FC = () => {
     <IonPage>
       <IonContent>
         <IonItem>
-          <IonLabel>Select</IonLabel>
+          <IonLabel>选择</IonLabel>
           <IonSelect interface="popover" interfaceOptions={options}>
             <IonSelectOption value="brown" class="brown-option">
-              Brown
+              棕色
             </IonSelectOption>
-            <IonSelectOption value="blonde">Blonde</IonSelectOption>
-            <IonSelectOption value="black">Black</IonSelectOption>
-            <IonSelectOption value="red">Red</IonSelectOption>
+            <IonSelectOption value="blonde">金色</IonSelectOption>
+            <IonSelectOption value="black">黑色</IonSelectOption>
+            <IonSelectOption value="red">红色</IonSelectOption>
           </IonSelect>
         </IonItem>
       </IonContent>
@@ -347,7 +347,7 @@ export const SelectOptionExample: React.FC = () => {
 ```
 
 ```css
-/* Popover Interface: set color for the popover using Item's CSS variables */
+/* 弹出框界面：使用项目的 CSS 变量为弹出框设置颜色 */
 .my-custom-interface .brown-option {
   --color: #5e3e2c;
   --color-hover: #362419;
@@ -369,12 +369,12 @@ export class SelectOptionExample {
   render() {
     return [
       <ion-item>
-        <ion-label>Select</ion-label>
+        <ion-label>选择</ion-label>
         <ion-select>
-          <ion-select-option value="brown">Brown</ion-select-option>
-          <ion-select-option value="blonde">Blonde</ion-select-option>
-          <ion-select-option value="black">Black</ion-select-option>
-          <ion-select-option value="red">Red</ion-select-option>
+          <ion-select-option value="brown">棕色</ion-select-option>
+          <ion-select-option value="blonde">金色</ion-select-option>
+          <ion-select-option value="black">黑色</ion-select-option>
+          <ion-select-option value="red">红色</ion-select-option>
         </ion-select>
       </ion-item>,
     ];
@@ -382,7 +382,7 @@ export class SelectOptionExample {
 }
 ```
 
-### Customizing Options
+### 定制选项
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -399,42 +399,42 @@ export class SelectOptionExample {
   render() {
     return [
       <ion-item>
-        <ion-label>Select: Alert Interface</ion-label>
+        <ion-label>选择：警告框界面</ion-label>
         <ion-select interfaceOptions={options}>
-          <ion-select-option value="brown">Brown</ion-select-option>
-          <ion-select-option value="blonde">Blonde</ion-select-option>
-          <ion-select-option value="black">Black</ion-select-option>
-          <ion-select-option value="red">Red</ion-select-option>
+          <ion-select-option value="brown">棕色</ion-select-option>
+          <ion-select-option value="blonde">金色</ion-select-option>
+          <ion-select-option value="black">黑色</ion-select-option>
+          <ion-select-option value="red">红色</ion-select-option>
         </ion-select>
       </ion-item>,
 
       <ion-item>
-        <ion-label>Select: Alert Interface (Multiple Selection)</ion-label>
+        <ion-label>选择：警告框界面（多选）</ion-label>
         <ion-select interfaceOptions={options} multiple={true}>
-          <ion-select-option value="brown">Brown</ion-select-option>
-          <ion-select-option value="blonde">Blonde</ion-select-option>
-          <ion-select-option value="black">Black</ion-select-option>
-          <ion-select-option value="red">Red</ion-select-option>
+          <ion-select-option value="brown">棕色</ion-select-option>
+          <ion-select-option value="blonde">金色</ion-select-option>
+          <ion-select-option value="black">黑色</ion-select-option>
+          <ion-select-option value="red">红色</ion-select-option>
         </ion-select>
       </ion-item>,
 
       <ion-item>
-        <ion-label>Select: Popover Interface</ion-label>
+        <ion-label>选择：弹出框界面</ion-label>
         <ion-select interface="popover" interfaceOptions={options}>
-          <ion-select-option value="brown">Brown</ion-select-option>
-          <ion-select-option value="blonde">Blonde</ion-select-option>
-          <ion-select-option value="black">Black</ion-select-option>
-          <ion-select-option value="red">Red</ion-select-option>
+          <ion-select-option value="brown">棕色</ion-select-option>
+          <ion-select-option value="blonde">金色</ion-select-option>
+          <ion-select-option value="black">黑色</ion-select-option>
+          <ion-select-option value="red">红色</ion-select-option>
         </ion-select>
       </ion-item>,
 
       <ion-item>
-        <ion-label>Select: Action Sheet Interface</ion-label>
+        <ion-label>选择：操作表界面</ion-label>
         <ion-select interface="action-sheet" interfaceOptions={options}>
-          <ion-select-option value="brown">Brown</ion-select-option>
-          <ion-select-option value="blonde">Blonde</ion-select-option>
-          <ion-select-option value="black">Black</ion-select-option>
-          <ion-select-option value="red">Red</ion-select-option>
+          <ion-select-option value="brown">棕色</ion-select-option>
+          <ion-select-option value="blonde">金色</ion-select-option>
+          <ion-select-option value="black">黑色</ion-select-option>
+          <ion-select-option value="red">红色</ion-select-option>
         </ion-select>
       </ion-item>,
     ];
@@ -443,44 +443,44 @@ export class SelectOptionExample {
 ```
 
 ```css
-/* Popover Interface: set color for the popover using Item's CSS variables */
+/* 弹出框界面：使用项目的 CSS 变量为弹出框设置颜色 */
 .my-custom-interface .select-interface-option {
   --color: #971e49;
   --color-hover: #79193b;
 }
 
-/* Action Sheet Interface: set color for the action sheet using its button CSS variables */
+/* 操作表界面：使用其按钮 CSS 变量为操作表设置颜色 */
 .my-custom-interface .select-interface-option {
   --button-color: #971e49;
   --button-color-hover: #79193b;
 }
 
-/* Alert Interface: set color for alert options (single selection) */
+/* 警告框界面：为警告框选项设置颜色（单选） */
 .my-custom-interface .select-interface-option .alert-radio-label {
   color: #971e49;
 }
 
-/* Alert Interface: set color for alert options (multiple selection) */
+/* 警告框界面：为警告框选项设置颜色（多选） */
 .my-custom-interface .select-interface-option .alert-checkbox-label {
   color: #971e49;
 }
 
-/* Alert Interface: set color for checked alert options (single selection) */
+/* 警告框界面：为选中的警告框选项设置颜色（单选） */
 .my-custom-interface .select-interface-option[aria-checked='true'] .alert-radio-label {
   color: #79193b;
 }
 
-/* Alert Interface: set color for checked alert options (multiple selection) */
+/* 警告框界面：为选中的警告框选项设置颜色（多选） */
 .my-custom-interface .select-interface-option[aria-checked='true'] .alert-checkbox-label {
   color: #79193b;
 }
 ```
 
-> Note: In the CSS examples, some of the selectors could be combined together, but are separated out in order to better explain what each selector is for.
+> 注意：在 CSS 示例中，某些选择器可以组合在一起，但为了更好解释每个选择器的用途，将它们分开了。
 
-### Customizing Individual Options
+### 定制单个选项
 
-To customize an individual option, set a class on the `ion-select-option`:
+要定制单个选项，请在 `ion-select-option` 上设置一个类：
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -497,14 +497,14 @@ export class SelectOptionExample {
   render() {
     return [
       <ion-item>
-        <ion-label>Select</ion-label>
+        <ion-label>选择</ion-label>
         <ion-select interface="popover" interfaceOptions={options}>
           <ion-select-option value="brown" class="brown-option">
-            Brown
+            棕色
           </ion-select-option>
-          <ion-select-option value="blonde">Blonde</ion-select-option>
-          <ion-select-option value="black">Black</ion-select-option>
-          <ion-select-option value="red">Red</ion-select-option>
+          <ion-select-option value="blonde">金色</ion-select-option>
+          <ion-select-option value="black">黑色</ion-select-option>
+          <ion-select-option value="red">红色</ion-select-option>
         </ion-select>
       </ion-item>,
     ];
@@ -513,7 +513,7 @@ export class SelectOptionExample {
 ```
 
 ```css
-/* Popover Interface: set color for the popover using Item's CSS variables */
+/* 弹出框界面：使用项目的 CSS 变量为弹出框设置颜色 */
 .my-custom-interface .brown-option {
   --color: #5e3e2c;
   --color-hover: #362419;
@@ -527,12 +527,12 @@ export class SelectOptionExample {
 ```html
 <template>
   <ion-item>
-    <ion-label>Select</ion-label>
+    <ion-label>选择</ion-label>
     <ion-select>
-      <ion-select-option value="brown">Brown</ion-select-option>
-      <ion-select-option value="blonde">Blonde</ion-select-option>
-      <ion-select-option value="black">Black</ion-select-option>
-      <ion-select-option value="red">Red</ion-select-option>
+      <ion-select-option value="brown">棕色</ion-select-option>
+      <ion-select-option value="blonde">金色</ion-select-option>
+      <ion-select-option value="black">黑色</ion-select-option>
+      <ion-select-option value="red">红色</ion-select-option>
     </ion-select>
   </ion-item>
 </template>
@@ -547,47 +547,47 @@ export class SelectOptionExample {
 </script>
 ```
 
-### Customizing Options
+### 定制选项
 
 ```html
 <template>
   <ion-item>
-    <ion-label>Select: Alert Interface</ion-label>
+    <ion-label>选择：警告框界面</ion-label>
     <ion-select :interface-options="options">
-      <ion-select-option value="brown">Brown</ion-select-option>
-      <ion-select-option value="blonde">Blonde</ion-select-option>
-      <ion-select-option value="black">Black</ion-select-option>
-      <ion-select-option value="red">Red</ion-select-option>
+      <ion-select-option value="brown">棕色</ion-select-option>
+      <ion-select-option value="blonde">金色</ion-select-option>
+      <ion-select-option value="black">黑色</ion-select-option>
+      <ion-select-option value="red">红色</ion-select-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
-    <ion-label>Select: Alert Interface (Multiple Selection)</ion-label>
+    <ion-label>选择：警告框界面（多选）</ion-label>
     <ion-select :interface-options="options" multiple="true">
-      <ion-select-option value="brown">Brown</ion-select-option>
-      <ion-select-option value="blonde">Blonde</ion-select-option>
-      <ion-select-option value="black">Black</ion-select-option>
-      <ion-select-option value="red">Red</ion-select-option>
+      <ion-select-option value="brown">棕色</ion-select-option>
+      <ion-select-option value="blonde">金色</ion-select-option>
+      <ion-select-option value="black">黑色</ion-select-option>
+      <ion-select-option value="red">红色</ion-select-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
-    <ion-label>Select: Popover Interface</ion-label>
+    <ion-label>选择：弹出框界面</ion-label>
     <ion-select interface="popover" :interface-options="options">
-      <ion-select-option value="brown">Brown</ion-select-option>
-      <ion-select-option value="blonde">Blonde</ion-select-option>
-      <ion-select-option value="black">Black</ion-select-option>
-      <ion-select-option value="red">Red</ion-select-option>
+      <ion-select-option value="brown">棕色</ion-select-option>
+      <ion-select-option value="blonde">金色</ion-select-option>
+      <ion-select-option value="black">黑色</ion-select-option>
+      <ion-select-option value="red">红色</ion-select-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
-    <ion-label>Select: Action Sheet Interface</ion-label>
+    <ion-label>选择：操作表界面</ion-label>
     <ion-select interface="action-sheet" :interface-options="options">
-      <ion-select-option value="brown">Brown</ion-select-option>
-      <ion-select-option value="blonde">Blonde</ion-select-option>
-      <ion-select-option value="black">Black</ion-select-option>
-      <ion-select-option value="red">Red</ion-select-option>
+      <ion-select-option value="brown">棕色</ion-select-option>
+      <ion-select-option value="blonde">金色</ion-select-option>
+      <ion-select-option value="black">黑色</ion-select-option>
+      <ion-select-option value="red">红色</ion-select-option>
     </ion-select>
   </ion-item>
 </template>
@@ -610,54 +610,54 @@ export class SelectOptionExample {
 ```
 
 ```css
-/* Popover Interface: set color for the popover using Item's CSS variables */
+/* 弹出框界面：使用项目的 CSS 变量为弹出框设置颜色 */
 .my-custom-interface .select-interface-option {
   --color: #971e49;
   --color-hover: #79193b;
 }
 
-/* Action Sheet Interface: set color for the action sheet using its button CSS variables */
+/* 操作表界面：使用其按钮 CSS 变量为操作表设置颜色 */
 .my-custom-interface .select-interface-option {
   --button-color: #971e49;
   --button-color-hover: #79193b;
 }
 
-/* Alert Interface: set color for alert options (single selection) */
+/* 警告框界面：为警告框选项设置颜色（单选） */
 .my-custom-interface .select-interface-option .alert-radio-label {
   color: #971e49;
 }
 
-/* Alert Interface: set color for alert options (multiple selection) */
+/* 警告框界面：为警告框选项设置颜色（多选） */
 .my-custom-interface .select-interface-option .alert-checkbox-label {
   color: #971e49;
 }
 
-/* Alert Interface: set color for checked alert options (single selection) */
+/* 警告框界面：为选中的警告框选项设置颜色（单选） */
 .my-custom-interface .select-interface-option[aria-checked='true'] .alert-radio-label {
   color: #79193b;
 }
 
-/* Alert Interface: set color for checked alert options (multiple selection) */
+/* 警告框界面：为选中的警告框选项设置颜色（多选） */
 .my-custom-interface .select-interface-option[aria-checked='true'] .alert-checkbox-label {
   color: #79193b;
 }
 ```
 
-> Note: In the CSS examples, some of the selectors could be combined together, but are separated out in order to better explain what each selector is for.
+> 注意：在 CSS 示例中，某些选择器可以组合在一起，但为了更好解释每个选择器的用途，将它们分开了。
 
-### Customizing Individual Options
+### 定制单个选项
 
-To customize an individual option, set a class on the `ion-select-option`:
+要定制单个选项，请在 `ion-select-option` 上设置一个类：
 
 ```html
 <template>
   <ion-item>
-    <ion-label>Select</ion-label>
+    <ion-label>选择</ion-label>
     <ion-select interface="popover" :interface-options="options">
-      <ion-select-option value="brown" class="brown-option">Brown</ion-select-option>
-      <ion-select-option value="blonde">Blonde</ion-select-option>
-      <ion-select-option value="black">Black</ion-select-option>
-      <ion-select-option value="red">Red</ion-select-option>
+      <ion-select-option value="brown" class="brown-option">棕色</ion-select-option>
+      <ion-select-option value="blonde">金色</ion-select-option>
+      <ion-select-option value="black">黑色</ion-select-option>
+      <ion-select-option value="red">红色</ion-select-option>
     </ion-select>
   </ion-item>
 </template>
@@ -680,7 +680,7 @@ To customize an individual option, set a class on the `ion-select-option`:
 ```
 
 ```css
-/* Popover Interface: set color for the popover using Item's CSS variables */
+/* 弹出框界面：使用项目的 CSS 变量为弹出框设置颜色 */
 .my-custom-interface .brown-option {
   --color: #5e3e2c;
   --color-hover: #362419;
@@ -691,26 +691,26 @@ To customize an individual option, set a class on the `ion-select-option`:
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

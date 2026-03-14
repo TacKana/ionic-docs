@@ -14,18 +14,18 @@ import TabItem from '@theme/TabItem';
 >
 <TabItem value="javascript">
 
-**Not recommended**
+**不推荐**
 
 ```ts
 window.Ionic = {
   config: {
-    // Not recommended when your app requires reactive values
+    // 当应用需要响应式值时，不推荐使用此方法
     backButtonText: 'Go Back',
   },
 };
 ```
 
-**Recommended**
+**推荐**
 
 ```html
 <ion-back-button></ion-back-button>
@@ -34,8 +34,8 @@ window.Ionic = {
   const backButton = document.querySelector('ion-back-button');
 
   /**
-   * The back button text can be updated
-   * anytime the locale changes.
+   * 返回按钮的文字可以在
+   * 语言环境改变时随时更新。
    */
   backButton.text = 'Go Back';
 </script>
@@ -44,7 +44,7 @@ window.Ionic = {
 </TabItem>
 <TabItem value="angular">
 
-**Not recommended**
+**不推荐**
 
 ```ts
 import { IonicModule } from '@ionic/angular';
@@ -53,7 +53,7 @@ import { IonicModule } from '@ionic/angular';
   ...
   imports: [
     IonicModule.forRoot({
-      // Not recommended when your app requires reactive values
+      // 当应用需要响应式值时，不推荐使用此方法
       backButtonText: 'Go Back'
     })
   ],
@@ -61,7 +61,7 @@ import { IonicModule } from '@ionic/angular';
 });
 ```
 
-**Recommended**
+**推荐**
 
 ```html
 <ion-back-button [text]="backButtonText"></ion-back-button>
@@ -71,8 +71,8 @@ import { IonicModule } from '@ionic/angular';
 @Component(...)
 class MyComponent {
   /**
-   * The back button text can be updated
-   * anytime the locale changes.
+   * 返回按钮的文字可以在
+   * 语言环境改变时随时更新。
    */
   backButtonText = 'Go Back';
 }
@@ -81,7 +81,7 @@ class MyComponent {
 </TabItem>
 <TabItem value="angular-standalone">
 
-**Not recommended**
+**不推荐**
 
 ```ts
 import { provideIonicAngular } from '@ionic/angular/standalone';
@@ -90,14 +90,14 @@ bootstrapApplication(AppComponent, {
   providers: [
     ...,
     provideIonicAngular({
-      // Not recommended when your app requires reactive values
+      // 当应用需要响应式值时，不推荐使用此方法
       backButtonText: 'Go Back'
     })
   ]
 })
 ```
 
-**Recommended**
+**推荐**
 
 ```html
 <ion-back-button [text]="backButtonText"></ion-back-button>
@@ -107,8 +107,8 @@ bootstrapApplication(AppComponent, {
 @Component(...)
 class MyComponent {
   /**
-   * The back button text can be updated
-   * anytime the locale changes.
+   * 返回按钮的文字可以在
+   * 语言环境改变时随时更新。
    */
   backButtonText = 'Go Back';
 }
@@ -117,18 +117,18 @@ class MyComponent {
 </TabItem>
 <TabItem value="react">
 
-**Not recommended**
+**不推荐**
 
 ```tsx
 import { setupIonicReact } from '@ionic/react';
 
 setupIonicReact({
-  // Not recommended when your app requires reactive values
+  // 当应用需要响应式值时，不推荐使用此方法
   backButtonText: 'Go Back',
 });
 ```
 
-**Recommended**
+**推荐**
 
 ```tsx
 import { useState } from 'react';
@@ -138,8 +138,8 @@ const ExampleComponent = () => {
   const [backButtonText, setBackButtonText] = useState('Go Back');
   return (
     {/*
-     * The back button text can be updated
-     * anytime the locale changes.
+     * 返回按钮的文字可以在
+     * 语言环境改变时随时更新。
      */}
     <IonBackButton text={backButtonText}></IonBackButton>
   )
@@ -149,19 +149,19 @@ const ExampleComponent = () => {
 </TabItem>
 <TabItem value="vue">
 
-**Not recommended**
+**不推荐**
 
 ```ts
 import { IonicVue } from '@ionic/vue';
 import { createApp } from 'vue';
 
-// Not recommended when your app requires reactive values
+// 当应用需要响应式值时，不推荐使用此方法
 createApp(App).use(IonicVue, {
   backButtonText: 'Go Back',
 });
 ```
 
-**Recommended**
+**推荐**
 
 ```html
 <template>
@@ -173,8 +173,8 @@ createApp(App).use(IonicVue, {
   import { ref } from 'vue';
 
   /**
-   * The back button text can be updated
-   * anytime the locale changes.
+   * 返回按钮的文字可以在
+   * 语言环境改变时随时更新。
    */
   const backButtonText = ref('Go Back');
 </script>

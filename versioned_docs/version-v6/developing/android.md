@@ -4,55 +4,55 @@ sidebar_label: Developing for Android
 ---
 
 <head>
-  <title>Android App Development Guide: Build Ionic Apps in Android Studio</title>
+  <title>Android 应用开发指南：在 Android Studio 中构建 Ionic 应用</title>
   <meta
     name="description"
-    content="This development guide covers how to run and debug Ionic apps on Android emulators and devices. Learn how to install Android Studio to get started building."
+    content="本开发指南涵盖如何在 Android 模拟器和设备上运行与调试 Ionic 应用。学习如何安装 Android Studio 以开始构建。"
   />
 </head>
 
-This guide covers how to run and debug Ionic apps on Android emulators and devices using [Capacitor](../reference/glossary.md#capacitor) or [Cordova](../reference/glossary.md#cordova). Android apps can be developed on Windows, macOS, and Linux.
+本指南将介绍如何使用 [Capacitor](../reference/glossary.md#capacitor) 或 [Cordova](../reference/glossary.md#cordova) 在 Android 模拟器和设备上运行与调试 Ionic 应用。Android 应用可以在 Windows、macOS 和 Linux 上进行开发。
 
 ## Android Studio
 
-[Android Studio](https://developer.android.com/studio/) is the IDE for creating native Android apps. It includes the [Android SDK](../reference/glossary.md#android-sdk), which will need to be configured for use in the command line.
+[Android Studio](https://developer.android.com/studio/) 是创建原生 Android 应用的集成开发环境（IDE）。它包含 [Android SDK](../reference/glossary.md#android-sdk)，需要在命令行中进行配置才能使用。
 
-Android Studio is also used to [create Android virtual devices](android.md#creating-an-android-virtual-device), which are required for the Android emulator. Ionic apps can also be [launched to a device](android.md#set-up-an-android-device).
+Android Studio 也用于[创建 Android 虚拟设备](android.md#creating-an-android-virtual-device)，这是 Android 模拟器所必需的。Ionic 应用也可以[启动到设备上](android.md#set-up-an-android-device)。
 
 :::note
-We don't recommend using Android Studio for _developing_ Ionic apps. Instead, it should only really be used to build and run your apps for the native Android platform and to manage the Android SDK and virtual devices.
+我们不建议使用 Android Studio 来*开发* Ionic 应用。相反，它应该仅用于为原生 Android 平台构建和运行您的应用，以及管理 Android SDK 和虚拟设备。
 :::
 
-### Installing Android Studio
+### 安装 Android Studio
 
-Download Android Studio from the <a href="https://developer.android.com/studio/" target="_blank">Android website</a>. More detailed installation instructions can be found in the <a href="https://developer.android.com/studio/install" target="_blank">User Guide</a>.
+从 <a href="https://developer.android.com/studio/" target="_blank">Android 网站</a>下载 Android Studio。更详细的安装说明可以在 <a href="https://developer.android.com/studio/install" target="_blank">用户指南</a>中找到。
 
-### Installing the Android SDK
+### 安装 Android SDK
 
-Once installed, open Android Studio. The IDE should detect that the Android SDK needs to be installed. In the **SDK Components Setup** screen, finish installing the SDK. Keep note of the **Android SDK Location**.
+安装完成后，打开 Android Studio。IDE 应该会检测到需要安装 Android SDK。在 **SDK 组件设置** 屏幕中，完成 SDK 的安装。请记下 **Android SDK 位置**。
 
-![Android Studio SDK Components Setup screen showing the Android SDK and API 28: Android 9.0 (Pie) selected for installation.](/img/installation/android-studio-sdk-setup.png 'Android Studio SDK Components Setup')
+![Android Studio SDK 组件设置屏幕，显示已选择安装 Android SDK 和 API 28：Android 9.0 (Pie)。](/img/installation/android-studio-sdk-setup.png 'Android Studio SDK 组件设置')
 
-By default, the latest stable SDK Platform is installed, which includes a collection of packages required to target that version of Android.
+默认情况下，会安装最新的稳定版 SDK 平台，其中包含针对该 Android 版本所需的一系列软件包。
 
-To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager.
-![The Android Studio SDK Manager showing installed and available SDK packages.](/img/installation/android-studio-sdk.png 'Android Studio SDK Manager')
+要安装系统映像和其他次要 SDK 平台软件包，您可能需要确保在 SDK 管理器的底部勾选了 **显示包详细信息**。
+![Android Studio SDK 管理器，显示已安装和可用的 SDK 软件包。](/img/installation/android-studio-sdk.png 'Android Studio SDK 管理器')
 
-For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
+供将来参考，可以通过 Android Studio 在欢迎屏幕的 **配置** &raquo; **SDK 管理器** 菜单或 Android 项目内部的 **工具** &raquo; **SDK 管理器** 中管理 Android SDK。
 
-### Configuring Command Line Tools
+### 配置命令行工具
 
-The Android SDK ships with <a href="https://developer.android.com/studio/command-line/" target="_blank">useful command-line tools</a>. Before they can be used, some environment variables must be set. The following instructions are for macOS and Linux. For Windows, check the documentation on setting and persisting environment variables in terminal sessions.
+Android SDK 附带了一些 <a href="https://developer.android.com/studio/command-line/" target="_blank">有用的命令行工具</a>。在使用它们之前，必须设置一些环境变量。以下说明适用于 macOS 和 Linux。对于 Windows，请查看关于在终端会话中设置和持久化环境变量的文档。
 
-In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the following modifications:
+在 `~/.bashrc`、`~/.bash_profile` 或类似的 shell 启动脚本中，进行以下修改：
 
-1. Set the `ANDROID_SDK_ROOT` environment variable. This path should be the **Android SDK Location** used in the previous section. To find the SDK Location in Android Studio, click **File** > **Project Structure**. Select **SDK Location** in the left pane. The path is shown under **Android SDK location**.
+1. 设置 `ANDROID_SDK_ROOT` 环境变量。该路径应为上一节中使用的 **Android SDK 位置**。要在 Android Studio 中找到 SDK 位置，点击 **文件** > **项目结构**。在左侧窗格中选择 **SDK 位置**。路径显示在 **Android SDK 位置** 下方。
 
    ```shell
    $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
    ```
 
-2. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
+2. 将 Android SDK 命令行目录添加到 `PATH` 中。每个目录对应一种 <a href="https://developer.android.com/studio/command-line/" target="_blank">命令行工具</a>的类别。
 
    ```shell-session
    $ # avdmanager, sdkmanager
@@ -64,144 +64,144 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
    ```
 
    :::note
-   For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools<version>` must also be added to `PATH`.
+   对于 `apksigner` 和 `zipalign`，还必须将 `$ANDROID_SDK_ROOT/build-tools<version>` 添加到 `PATH` 中。
    :::
 
-### Creating an Android Virtual Device
+### 创建 Android 虚拟设备
 
-Android Virtual Devices (AVDs) are blueprints that the Android emulator uses to run the Android OS. The following documentation is a quick way to get the Android emulator set up. For more detailed instructions and information, see <a href="https://developer.android.com/studio/run/managing-avds" target="_blank">the Android documentation</a>.
+Android 虚拟设备（AVD）是 Android 模拟器用来运行 Android 操作系统的蓝图。以下文档是设置 Android 模拟器的快速方法。更详细的说明和信息，请参阅 <a href="https://developer.android.com/studio/run/managing-avds" target="_blank">Android 文档</a>。
 
-AVDs are managed with the AVD Manager. In the Android Studio welcome screen, click **Configure** &raquo; **AVD Manager**. The AVD Manager can also be opened inside Android projects in the **Tools** &raquo; **AVD Manager** menu.
+AVD 通过 AVD 管理器进行管理。在 Android Studio 欢迎屏幕中，点击 **配置** &raquo; **AVD 管理器**。AVD 管理器也可以在 Android 项目内部的 **工具** &raquo; **AVD 管理器** 菜单中打开。
 
-![The Android Studio AVD Manager with the option to create a new Android Virtual Device.](/img/installation/android-studio-avd-setup.png 'Android Studio AVD Manager')
+![Android Studio AVD 管理器，显示创建新 Android 虚拟设备的选项。](/img/installation/android-studio-avd-setup.png 'Android Studio AVD 管理器')
 
-Click **Create Virtual Device** and select a suitable device definition. If unsure, choose **Pixel 2**. Then, select a suitable system image. If unsure, choose **Pie** (API 28) with Google Play services. See <a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank">Android version history</a> for information on Android versions.
+点击 **创建虚拟设备** 并选择一个合适的设备定义。如果不确定，选择 **Pixel 2**。然后，选择一个合适的系统映像。如果不确定，选择带有 Google Play 服务的 **Pie**（API 28）。有关 Android 版本的信息，请参阅 <a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank">Android 版本历史</a>。
 
-Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
+创建 AVD 后，将其启动到 Android 模拟器中。保持模拟器运行是确保在开发 Android 版 Ionic 应用时能被检测到的最佳方式。
 
 <figure className="device">
-  <img alt="Android Emulator Booting" src="/docs/img/installation/android-emulator-booting.png" />
+  <img alt="Android 模拟器启动中" src="/docs/img/installation/android-emulator-booting.png" />
 </figure>
 
-### Set up an Android Device
+### 设置 Android 设备
 
-Actual Android hardware can also be used for Ionic app development. But first, the device must be set up for development. The following documentation is a quick way to set up Android devices for development. For more detailed instructions and information, see <a href="https://developer.android.com/studio/run/device" target="_blank">the Android documentation</a>.
+实际的 Android 硬件设备也可用于 Ionic 应用开发。但首先，必须为开发设置设备。以下文档是为开发设置 Android 设备的快速方法。更详细的说明和信息，请参阅 <a href="https://developer.android.com/studio/run/device" target="_blank">Android 文档</a>。
 
-1. Enable USB debugging on the device. Open **Settings**, navigate to **Developer options**, and enable **USB debugging**. The **Developer options** menu may need to be enabled first. See <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">the Android documentation</a> for instructions.
-1. Ensure the device has permission to connect to the computer. For macOS, no additional setup is required. For Windows, <a href="https://developer.android.com/studio/run/oem-usb" target="_blank">install the OEM USB drivers</a>.
+1. 在设备上启用 USB 调试。打开 **设置**，导航到 **开发者选项**，并启用 **USB 调试**。**开发者选项** 菜单可能需要先启用。请参阅 <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">Android 文档</a> 获取说明。
+2. 确保设备有权限连接到计算机。对于 macOS，无需额外设置。对于 Windows，需要 <a href="https://developer.android.com/studio/run/oem-usb" target="_blank">安装 OEM USB 驱动程序</a>。
 
-Verify the connection works by connecting the device to the computer with a USB cable and using the following command:
+使用 USB 数据线将设备连接到计算机，并通过以下命令验证连接是否正常：
 
 ```shell
 adb devices
 ```
 
-The device should be listed. See the full <a href="https://developer.android.com/studio/command-line/adb" target="_blank">`adb` documentation</a> for troubleshooting and detailed information.
+设备应该被列出。有关故障排除和详细信息，请参阅完整的 <a href="https://developer.android.com/studio/command-line/adb" target="_blank">`adb` 文档</a>。
 
-## Cordova Setup
+## Cordova 设置
 
-Additional setup is required for Cordova to support programmatic builds. This section is not necessary for Capacitor.
+Cordova 需要进行额外的设置以支持程序化构建。本节内容对于 Capacitor 不是必需的。
 
 ### Java
 
-Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download the <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html" target="_blank">Java Development Kit (JDK) 11</a> if you are using **`cordova-android`** `10.0.0` or greater.
+原生 Android 应用使用 <a href="https://java.com/en/" target="_blank">Java</a> 编程语言编译。如果您使用的是 **`cordova-android`** `10.0.0` 或更高版本，请下载 <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html" target="_blank">Java 开发工具包（JDK）11</a>。
 
 :::note
-If you are using any version of **`cordova-android`** below `10.0.0`, install the <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank">Java Development Kit (JDK) 8</a>.
+如果您使用的是低于 `10.0.0` 的任何版本的 **`cordova-android`**，请安装 <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank">Java 开发工具包（JDK）8</a>。
 :::
 
 ### Gradle
 
 <!-- prettier-ignore -->
-<a href="https://gradle.org/" target="_blank">Gradle</a> is the build tool used in Android apps and must be installed separately. See the <a href="https://gradle.org/install/" target="_blank">install page</a> for details.
+<a href="https://gradle.org/" target="_blank">Gradle</a> 是 Android 应用中使用的构建工具，必须单独安装。详情请参阅 <a href="https://gradle.org/install/" target="_blank">安装页面</a>。
 
-## Project Setup
+## 项目设置
 
-Before apps can be deployed to Android simulators and devices, the native project must be configured.
+在应用可以部署到 Android 模拟器和设备之前，必须配置原生项目。
 
-1. **Generate the native project, if it does not already exist.**
+1. **生成原生项目，如果它尚不存在。**
 
-   For Capacitor, run the following:
+   对于 Capacitor，运行以下命令：
 
    ```shell
    $ ionic capacitor add android
    ```
 
-   For Cordova, run the following:
+   对于 Cordova，运行以下命令：
 
    ```shell
    $ ionic cordova prepare android
    ```
 
-2. **Set the [Package ID](../reference/glossary.md#package-id).**
+2. **设置 [包 ID](../reference/glossary.md#package-id)。**
 
-   For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
+   对于 Capacitor，打开 `capacitor.config.json` 文件并修改 `appId` 属性。
 
-   For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
+   对于 Cordova，打开 `config.xml` 文件并修改根元素 `<widget>` 的 `id` 属性。更多信息请参阅 [Cordova 文档](https://cordova.apache.org/docs/en/latest/config_ref/#widget)。
 
-## Running with Capacitor
+## 使用 Capacitor 运行
 
-Capacitor uses Android Studio to build and run apps to simulators and devices.
+Capacitor 使用 Android Studio 将应用构建并运行到模拟器和设备上。
 
-1. **Develop the Ionic app and sync it to the native project.**
+1. **开发 Ionic 应用并将其同步到原生项目。**
 
-   With each meaningful change, Ionic apps must be built into web assets before the change can appear on Android simulators and devices. The web assets then must be copied into the native project. Luckily, this process is made easy with a single Ionic CLI command.
+   每次有重要更改时，必须将 Ionic 应用构建成 Web 资源，更改才能在 Android 模拟器和设备上显示。然后，必须将 Web 资源复制到原生项目中。幸运的是，这个过程可以通过一个 Ionic CLI 命令轻松完成。
 
    ```shell
    $ ionic capacitor copy android
    ```
 
-2. **In Android Studio, click the Run button and then select the target simulator or device.**
+2. **在 Android Studio 中，点击运行按钮，然后选择目标模拟器或设备。**
 
-![The run button area in Android Studio to build and run an Android app.](/img/running/android-studio-run-button-area.png 'Android Studio Run Button Area')
+![Android Studio 中用于构建和运行 Android 应用的运行按钮区域。](/img/running/android-studio-run-button-area.png 'Android Studio 运行按钮区域')
 
-### Live reload
+### 实时重载
 
-To start a live-reload server run the following command.
+要启动实时重载服务器，请运行以下命令。
 
 ```shell
 ionic capacitor run android -l --external
 ```
 
-When running on a device make sure the device and your development machine are connected to the same network.
+在设备上运行时，请确保设备与您的开发机器连接到同一网络。
 
-## Running with Cordova
+## 使用 Cordova 运行
 
-The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](../reference/glossary.md#livereload) functionality.
+Ionic CLI 可以通过一个命令将 Ionic 应用构建、复制和部署到 Android 模拟器和设备上。它还可以启动一个开发服务器，类似于 `ionic serve` 中使用的服务器，以提供 [实时重载](../reference/glossary.md#livereload) 功能。
 
-Run the following to start a long-running CLI process that boots up a live-reload server:
+运行以下命令以启动一个长期运行的 CLI 进程，该进程会启动实时重载服务器：
 
 ```shell
 ionic cordova run android -l
 ```
 
-Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.
+现在，当对应用的源文件进行更改时，Web 资源会重新构建，并且更改会反映在模拟器或设备上，而无需再次部署。
 
-## Debugging Android Apps
+## 调试 Android 应用
 
-Once an app is running on an Android device or emulator, it can be debugged with Chrome DevTools.
+一旦应用在 Android 设备或模拟器上运行，就可以使用 Chrome DevTools 进行调试。
 
-### Using Chrome DevTools
+### 使用 Chrome DevTools
 
-Chrome has web developer tool support for Android simulators and devices. Go to `chrome://inspect` in Chrome while the simulator is running or a device is connected to the computer and **Inspect** the app that needs to be debugged.
-
-:::note
-Make sure your application is running on the device or simulator, or it will not show up in the list.
-:::
-
-![Chrome DevTools showing a list of devices available for inspection.](/img/running/android-chrome-devtools.png 'Chrome DevTools for Android')
-
-### Viewing Native Logs
-
-If running with Android Studio, native logs can be found in **Logcat**.
+Chrome 为 Android 模拟器和设备提供了 Web 开发者工具支持。在模拟器运行或设备连接到计算机时，在 Chrome 中访问 `chrome://inspect`，然后 **检查** 需要调试的应用。
 
 :::note
-If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool Windows** &raquo; **Logcat**.
+请确保您的应用正在设备或模拟器上运行，否则它将不会显示在列表中。
 :::
 
-![The Logcat window in Android Studio displaying logs from an Android device.](/img/running/android-studio-logcat.png 'Android Studio Logcat')
+![Chrome DevTools 显示可供检查的设备列表。](/img/running/android-chrome-devtools.png '适用于 Android 的 Chrome DevTools')
 
-You can also access **Logcat** with [ADB](https://developer.android.com/studio/command-line/adb).
+### 查看原生日志
+
+如果使用 Android Studio 运行，可以在 **Logcat** 中找到原生日志。
+
+:::note
+如果 **Logcat** 窗口被隐藏，您可以在 **视图** &raquo; **工具窗口** &raquo; **Logcat** 中启用它。
+:::
+
+![Android Studio 中的 Logcat 窗口，显示来自 Android 设备的日志。](/img/running/android-studio-logcat.png 'Android Studio Logcat')
+
+您也可以使用 [ADB](https://developer.android.com/studio/command-line/adb) 访问 **Logcat**。
 
 ```shell
 adb logcat

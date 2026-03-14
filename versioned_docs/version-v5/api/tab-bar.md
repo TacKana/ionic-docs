@@ -14,9 +14,9 @@ import Slots from '@ionic-internal/component-api/v5/tab-bar/slots.md';
 
 # ion-tab-bar
 
-The tab bar is a UI component that contains a set of [tab buttons](tab-button.md). A tab bar must be provided inside of [tabs](tabs.md) to communicate with each [tab](tab.md).
+标签栏（tab bar）是一个包含一组[标签按钮](tab-button.md)的用户界面组件。标签栏必须放置在[tabs](tabs.md)组件内部，以便与每个[标签页](tab.md)进行通信。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -24,7 +24,7 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 
 ```html
 <ion-tabs>
-  <!-- Tab bar -->
+  <!-- 标签栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="account">
       <ion-icon name="person"></ion-icon>
@@ -45,12 +45,12 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 
 ```html
 <ion-tabs>
-  <!-- Tab views -->
+  <!-- 标签页视图 -->
   <ion-tab tab="account"></ion-tab>
   <ion-tab tab="contact"></ion-tab>
   <ion-tab tab="settings"></ion-tab>
 
-  <!-- Tab bar -->
+  <!-- 标签栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="account">
       <ion-icon name="person"></ion-icon>
@@ -77,7 +77,7 @@ import { call, person, settings } from 'ionicons/icons';
 export const TabBarExample: React.FC = () => (
   <IonContent>
     <IonTabs>
-      {/*-- Tab bar --*/}
+      {/*-- 标签栏 --*/}
       <IonTabBar slot="bottom">
         <IonTabButton tab="account">
           <IonIcon icon={person} />
@@ -101,7 +101,7 @@ export const TabBarExample: React.FC = () => (
 ```html
 <template>
   <ion-tabs>
-    <!-- Tab bar -->
+    <!-- 标签栏 -->
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="account">
         <ion-icon :icon="person"></ion-icon>
@@ -134,15 +134,15 @@ export const TabBarExample: React.FC = () => (
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -150,10 +150,10 @@ export const TabBarExample: React.FC = () => (
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

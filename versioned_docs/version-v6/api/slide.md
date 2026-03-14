@@ -10,34 +10,32 @@ import CustomProps from '@ionic-internal/component-api/v6/slide/custom-props.mdx
 import Slots from '@ionic-internal/component-api/v6/slide/slots.md';
 
 <head>
-  <title>ion-slide | Slide API Component for Ionic Framework Apps</title>
+  <title>ion-slide | Ionic 框架应用中的幻灯片 API 组件</title>
   <meta
     name="description"
-    content="Slide is a child API component of Slides—written as ion-slide. Any slide content should be written in this component and used in conjunction with Slides."
+    content="Slide 是 Slides 的子组件 API，写作 ion-slide。所有幻灯片内容都应在此组件中编写，并与 Slides 组件配合使用。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 :::note
-This component has been deprecated in favor of using Swiper.js directly. Please see the [Slides Documentation](./slides#migration) for a migration guide.
+该组件已被弃用，建议直接使用 Swiper.js。请参阅 [Slides 文档](./slides#migration) 获取迁移指南。
 :::
 
-The Slide component is a child component of [Slides](./slides). The template
-should be written as `ion-slide`. Any slide content should be written
-in this component and it should be used in conjunction with [Slides](./slides).
+Slide 组件是 [Slides](./slides) 的子组件。模板应写作 `ion-slide`。所有幻灯片内容都应在此组件中编写，并应与 [Slides](./slides) 组件配合使用。
 
-See the [Slides API Docs](./slides) for more usage information.
+更多使用信息，请参阅 [Slides API 文档](./slides)。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -45,10 +43,10 @@ See the [Slides API Docs](./slides) for more usage information.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

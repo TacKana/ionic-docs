@@ -29,20 +29,20 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>App</IonTitle>
+          <IonTitle>应用</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          Open Modal
+          打开模态框
         </IonButton>
         <IonModal id="example-modal" ref={modal} trigger="open-modal">
           <IonContent>
             <IonToolbar>
-              <IonTitle>Modal</IonTitle>
+              <IonTitle>模态框</IonTitle>
               <IonButtons slot="end">
                 <IonButton color="light" onClick={() => dismiss()}>
-                  Close
+                  关闭
                 </IonButton>
               </IonButtons>
             </IonToolbar>
@@ -53,7 +53,7 @@ function Example() {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Connor Smith</h2>
-                  <p>Sales Rep</p>
+                  <p>销售代表</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -62,7 +62,7 @@ function Example() {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Daniel Smith</h2>
-                  <p>Product Designer</p>
+                  <p>产品设计师</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -71,7 +71,7 @@ function Example() {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Greg Smith</h2>
-                  <p>Director of Operations</p>
+                  <p>运营总监</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -80,7 +80,7 @@ function Example() {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Zoey Smith</h2>
-                  <p>CEO</p>
+                  <p>首席执行官</p>
                 </IonLabel>
               </IonItem>
             </IonList>

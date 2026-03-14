@@ -3,31 +3,31 @@
   <ion-list>
     <ion-item>
       <ion-input
-        label="Input with clear button"
+        label="带清除按钮的输入框"
         label-placement="stacked"
         :clear-input="true"
-        placeholder="Enter text to see clear button"
-        value="Default value"
+        placeholder="输入文字以显示清除按钮"
+        value="默认值"
       >
       </ion-input>
     </ion-item>
 
     <ion-item>
       <ion-input
-        label="Input with clear on edit"
+        label="编辑时清除的输入框"
         label-placement="stacked"
         :clear-on-edit="true"
-        placeholder="Enter text, leave the input, come back and type to clear"
+        placeholder="输入文字，离开输入框，返回并输入以清除"
       >
       </ion-input>
     </ion-item>
 
     <ion-item>
       <ion-input
-        label="Password input"
+        label="密码输入框"
         label-placement="stacked"
         type="password"
-        placeholder="Enter text, leave the input, come back and type to clear"
+        placeholder="输入文字，离开输入框，返回并输入以清除"
       >
       </ion-input>
     </ion-item>

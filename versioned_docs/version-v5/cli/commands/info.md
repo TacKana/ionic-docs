@@ -4,15 +4,15 @@ sidebar_label: 'info'
 
 # ionic info
 
-Print project, system, and environment information
+打印项目、系统和环境信息
 
 ```shell
 ionic info [options]
 ```
 
-This command is an easy way to share information about your setup. If applicable, be sure to run `ionic info` within your project directory to display even more information.
+此命令是分享您当前环境配置的便捷方式。如果适用，请务必在项目目录中运行 `ionic info`，以显示更多详细信息。
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -28,9 +28,9 @@ This command is an easy way to share information about your setup. If applicable
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Print system/environment info in JSON format</p>
+        <p>以 JSON 格式打印系统/环境信息</p>
       </td>
     </tr>
   </tbody>

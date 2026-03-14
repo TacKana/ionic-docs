@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/checkbox/custom-props.
 import Slots from '@ionic-internal/component-api/v6/checkbox/slots.md';
 
 <head>
-  <title>ion-checkboxes: Ionic App Component to Select Multiple Options</title>
+  <title>ion-checkbox 复选框：用于选择多个选项的 Ionic 应用组件</title>
   <meta
     name="description"
-    content="ion-checkboxes allow selection of multiple options from a set and appear as checked (ticked) when activated. Learn about the checkbox component for Ionic apps."
+    content="ion-checkbox 允许从一组选项中选择多个选项，激活时显示为选中（打勾）状态。了解适用于 Ionic 应用的复选框组件。"
   />
 </head>
 
@@ -21,29 +21,29 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Checkboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.
+复选框允许用户从一组选项中选择多个选项。当激活时，它们会显示为选中（打勾）状态。点击复选框将切换 `checked` 属性。也可以通过设置 `checked` 属性以编程方式选中它们。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v6/checkbox/basic/index.md';
 
 <Basic />
 
-## Indeterminate Checkboxes
+## 不确定状态复选框
 
 import Indeterminate from '@site/static/usage/v6/checkbox/indeterminate/index.md';
 
 <Indeterminate />
 
-## Theming
+## 主题定制
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v6/checkbox/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Interfaces
+## 接口定义
 
 ### CheckboxChangeEventDetail
 
@@ -56,7 +56,7 @@ interface CheckboxChangeEventDetail<T = any> {
 
 ### CheckboxCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，从而为从该组件发出的 Ionic 事件提供更强的类型约束。
 
 ```typescript
 interface CheckboxCustomEvent<T = any> extends CustomEvent {
@@ -65,26 +65,26 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS Shadow 部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

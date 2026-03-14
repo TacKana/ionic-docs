@@ -1,18 +1,18 @@
-# Utility Functions
+# 工具函数
 
-Ionic Vue ships with several utility functions that you can use in your application to make certain tasks easier such as managing the on-screen keyboard and the hardware back button.
+Ionic Vue 提供了一些可以在应用程序中使用的工具函数，这些函数能让某些任务变得更简单，例如管理屏幕键盘和硬件返回按钮。
 
-## Router
+## 路由器
 
-### Functions
+### 函数
 
 #### useIonRouter
 
 ▸ **useIonRouter**(): [`UseIonRouterResult`](#useionrouterresult)
 
-Returns the Ionic router instance, containing API methods for navigating, customizing page transitions and routing context for native features. This function can be used in combination with the [`useRouter`](https://router.vuejs.org/api/index.html#userouter) from Vue.
+返回 Ionic 路由器实例，包含用于导航、自定义页面转场效果以及原生功能路由上下文的 API 方法。此函数可与 Vue 的 [`useRouter`](https://router.vuejs.org/api/index.html#userouter) 组合使用。
 
-**Customizing Page Transitions**
+**自定义页面转场效果**
 
 ```js
 import { IonPage, useIonRouter } from '@ionic/vue';
@@ -35,9 +35,9 @@ export default defineComponent({
 });
 ```
 
-**Hardware back button on Android**
+**Android 硬件返回按钮**
 
-You may want to know if you are at the root page of the application when a user presses the hardware back button on Android.
+当用户在 Android 设备上按下硬件返回按钮时，你可能想知道当前是否处于应用程序的根页面。
 
 ```tsx
 import { useIonRouter } from '@ionic/vue';
@@ -48,15 +48,15 @@ export default {
   setup() {
     const ionRouter = useIonRouter();
     if (ionRouter.canGoBack()) {
-      // Perform some action here
+      // 在此处执行某些操作
     }
   }
 }
 ```
 
-For additional APIs with Vue routing, please refer to the [Vue Router documentation](https://router.vuejs.org/api/index.html).
+关于 Vue 路由的其他 API，请参阅 [Vue Router 文档](https://router.vuejs.org/api/index.html)。
 
-### Interfaces
+### 接口
 
 #### UseIonRouterResult
 
@@ -81,15 +81,15 @@ interface UseIonRouterResult {
 useIonRouter(): UseIonRouterResult;
 ```
 
-- The `push` method is the equivalent of calling `ionRouter.navigate(location, 'forward', 'push', animation)`.
+- `push` 方法等同于调用 `ionRouter.navigate(location, 'forward', 'push', animation)`。
 
-- The `replace` method is the equivalent of calling `ionRouter.navigate(location, 'root', 'replace', animation)`.
+- `replace` 方法等同于调用 `ionRouter.navigate(location, 'root', 'replace', animation)`。
 
-See the [Vue Navigation Documentation](./navigation#navigating-using-useionrouter) for more usage examples.
+更多使用示例请参阅 [Vue 导航文档](./navigation#navigating-using-useionrouter)。
 
-## Hardware Back Button
+## 硬件返回按钮
 
-The `useBackButton` function can be used to register a callback function to fire whenever the hardware back button on Android is pressed. Additionally it accepts a priority parameter, allowing developers to customize which handler fires first if multiple handlers are registered.
+`useBackButton` 函数可用于注册回调函数，当 Android 设备上的硬件返回按钮按下时触发。此外，它还接受优先级参数，允许开发者在注册多个处理器时自定义哪个处理器先触发。
 
 ```js
 import { useBackButton } from '@ionic/vue';
@@ -97,11 +97,11 @@ import { useBackButton } from '@ionic/vue';
 ...
 
 useBackButton(10, () => {
-  console.log('Hardware Back Button was called!');
+  console.log('硬件返回按钮被调用！');
 });
 ```
 
-### Interfaces
+### 接口
 
 ```ts
 type Handler = (processNextHandler: () => void) => Promise<any> | void | null;
@@ -112,15 +112,15 @@ interface UseBackButtonResult {
 useBackButton(priority: number, handler: Handler): UseBackButtonResult;
 ```
 
-See the [Hardware Back Button Documentation](../developing/hardware-back-button) for more information and usage examples.
+更多信息和使用示例请参阅 [硬件返回按钮文档](../developing/hardware-back-button)。
 
 :::note
-The `useBackButton` callback will only fire when your app is running in Capacitor or Cordova. See [Hardware Back Button in Capacitor and Cordova](../developing/hardware-back-button#hardware-back-button-in-capacitor-and-cordova) for more information.
+只有当你的应用在 Capacitor 或 Cordova 中运行时，`useBackButton` 回调才会触发。更多信息请参阅 [Capacitor 和 Cordova 中的硬件返回按钮](../developing/hardware-back-button#hardware-back-button-in-capacitor-and-cordova)。
 :::
 
-## Keyboard
+## 键盘
 
-The `useKeyboard` function returns an object that contains the state of the on-screen keyboard. This object provides information such as whether or not the on-screen keyboard is presented and what the height of the keyboard is in pixels. This information is provided in a Vue `ref` so it will be reactive in your application.
+`useKeyboard` 函数返回一个包含屏幕键盘状态的对象。该对象提供诸如屏幕键盘是否显示、键盘高度（以像素为单位）等信息。这些信息通过 Vue 的 `ref` 提供，因此在你的应用中将是响应式的。
 
 ```js
 import { watch } from 'vue';
@@ -129,11 +129,11 @@ import { useKeyboard } from '@ionic/vue';
 const { isOpen, keyboardHeight } = useKeyboard();
 
 watch(keyboardHeight, () => {
-  console.log(`Keyboard height is ${keyboardHeight.value}px`);
+  console.log(`键盘高度为 ${keyboardHeight.value}px`);
 });
 ```
 
-### Interfaces
+### 接口
 
 ```ts
 interface UseKeyboardResult {
@@ -145,11 +145,11 @@ interface UseKeyboardResult {
 useKeyboard(): UseKeyboardResult;
 ```
 
-See the [Keyboard Documentation](../developing/keyboard) for more information and usage examples.
+更多信息和使用示例请参阅 [键盘文档](../developing/keyboard)。
 
-## Ionic Lifecycles
+## Ionic 生命周期
 
-Ionic Vue provides several lifecycle hooks for the `setup()` function to tap into the Ionic Framework page lifecycle.
+Ionic Vue 为 `setup()` 函数提供了多个生命周期钩子，以便接入 Ionic Framework 的页面生命周期。
 
 ```js
 import { IonPage, onIonViewWillEnter, onIonViewDidEnter, onIonViewWillLeave, onIonViewDidLeave } from '@ionic/vue';
@@ -159,26 +159,26 @@ export default defineComponent({
   components: { IonPage },
   setup() {
     onIonViewDidEnter(() => {
-      console.log('Page did enter');
+      console.log('页面已进入');
     });
 
     onIonViewDidLeave(() => {
-      console.log('Page did leave');
+      console.log('页面已离开');
     });
 
     onIonViewWillEnter(() => {
-      console.log('Page will enter');
+      console.log('页面即将进入');
     });
 
     onIonViewWillLeave(() => {
-      console.log('Page will leave');
+      console.log('页面即将离开');
     });
   },
 });
 ```
 
 :::note
-Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
+为了使生命周期方法和钩子能正确触发，你应用中的页面需要使用 `IonPage` 组件。
 :::
 
-See the [Vue Lifecycle Documentation](./lifecycle) for more information and usage examples.
+更多信息和使用示例请参阅 [Vue 生命周期文档](./lifecycle)。

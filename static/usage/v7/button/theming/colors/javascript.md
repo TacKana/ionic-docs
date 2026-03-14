@@ -1,12 +1,10 @@
-```html
-<ion-button>Default</ion-button>
-<ion-button color="primary">Primary</ion-button>
-<ion-button color="secondary">Secondary</ion-button>
-<ion-button color="tertiary">Tertiary</ion-button>
-<ion-button color="success">Success</ion-button>
-<ion-button color="warning">Warning</ion-button>
-<ion-button color="danger">Danger</ion-button>
-<ion-button color="light">Light</ion-button>
-<ion-button color="medium">Medium</ion-button>
-<ion-button color="dark">Dark</ion-button>
-```
+<ion-button>默认</ion-button>
+<ion-button color="primary">主要</ion-button>
+<ion-button color="secondary">次要</ion-button>
+<ion-button color="tertiary">第三级</ion-button>
+<ion-button color="success">成功</ion-button>
+<ion-button color="warning">警告</ion-button>
+<ion-button color="danger">危险</ion-button>
+<ion-button color="light">浅色</ion-button>
+<ion-button color="medium">中性</ion-button>
+<ion-button color="dark">深色</ion-button>

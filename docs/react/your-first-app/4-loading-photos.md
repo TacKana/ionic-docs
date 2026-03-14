@@ -1,55 +1,55 @@
 ---
-title: Loading Photos from the Filesystem
-sidebar_label: Loading Photos
+title: 从文件系统加载照片
+sidebar_label: 加载照片
 ---
 
 <head>
-  <title>Loading Photos from the Filesystem with React | Ionic Capacitor Camera</title>
+  <title>使用 React 从文件系统加载照片 | Ionic Capacitor 相机</title>
   <meta
     name="description"
-    content="We’ve implemented photo taking and saving to the filesystem, now learn how Ionic leverages Capacitor Preferences API for loading our photos in a key-value store."
+    content="我们已经实现了拍照和保存到文件系统的功能，现在学习 Ionic 如何利用 Capacitor Preferences API 在键值存储中加载我们的照片。"
   />
 </head>
 
-We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
+我们已经实现了拍照和保存到文件系统的功能。现在只剩最后一项功能：照片存储在文件系统中，但我们需要一种保存每个文件指针的方法，以便它们能再次显示在照片库中。
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](../../native/preferences.md) to store our array of Photos in a key-value store.
+幸运的是，这很简单：我们将利用 Capacitor [Preferences API](../../native/preferences.md) 将照片数组存储在一个键值存储中。
 
 ## Preferences API
 
-Open `usePhotoGallery.ts` and begin by defining a constant variable that will act as the key for the store.
+打开 `usePhotoGallery.ts`，首先定义一个常量变量作为存储的键。
 
 ```ts
 export function usePhotoGallery() {
   const [photos, setPhotos] = useState<UserPhoto[]>([]);
-  // CHANGE: Add a key for photo storage
+  // 变更：添加照片存储的键
   const PHOTO_STORAGE = 'photos';
 
-  // ...existing code...
+  // ...现有代码...
 }
 ```
 
-Next, at the end of the `addNewToGallery()` method, add a call to the `Preferences.set()` method to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+接下来，在 `addNewToGallery()` 方法的末尾，添加对 `Preferences.set()` 方法的调用以保存 `photos` 数组。通过在这里添加，每次拍摄新照片时都会存储照片数组。这样，无论应用用户何时关闭或切换到其他应用，所有照片数据都会被保存。
 
 ```ts
 import { useState } from 'react';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-// CHANGE: Add import
+// 变更：添加导入
 import { Preferences } from '@capacitor/preferences';
 
 export function usePhotoGallery() {
-  // ...existing code...
+  // ...现有代码...
 
   const addNewToGallery = async () => {
-    // ...existing code...
+    // ...现有代码...
 
-    // CHANGE: Add method to cache all photo data for future retrieval
+    // 变更：添加方法以缓存所有照片数据供后续检索
     Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
   };
 
-  // ...existing code...
+  // ...现有代码...
 
   return {
     addNewToGallery,
@@ -58,10 +58,10 @@ export function usePhotoGallery() {
 }
 ```
 
-With the photo array data saved, create a new method in the `usePhotoGallery()` called `loadSaved()` that can retrieve the photo data. We use the same key to retrieve the `photos` array in JSON format, then parse it into an array.
+保存照片数组数据后，在 `usePhotoGallery()` 中创建一个名为 `loadSaved()` 的新方法，用于检索照片数据。我们使用相同的键以 JSON 格式检索 `photos` 数组，然后将其解析为数组。
 
 ```ts
-// CHANGE: Update import
+// 变更：更新导入
 import { useState, useEffect } from 'react';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
@@ -73,9 +73,9 @@ export function usePhotoGallery() {
 
   const PHOTO_STORAGE = 'photos';
 
-  // CHANGE: Add useEffect hook
+  // 变更：添加 useEffect 钩子
   useEffect(() => {
-    // CHANGE: Add `loadSaved()` method
+    // 变更：添加 `loadSaved()` 方法
     const loadSaved = async () => {
       const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
       const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
@@ -84,13 +84,13 @@ export function usePhotoGallery() {
     loadSaved();
   }, []);
 
-  // ...existing code...
+  // ...现有代码...
 }
 ```
 
-The second parameter, the empty dependency array (`[]`), is what tells React to only run the function once. Normally, [useEffect hooks](https://react.dev/reference/react/useEffect) run after every render, but passing an empty array prevents it from running again because none of the dependencies, the values the hook relies on, will ever change.
+第二个参数，空依赖数组（`[]`），告诉 React 只运行该函数一次。通常，[useEffect 钩子](https://react.dev/reference/react/useEffect) 在每次渲染后运行，但传递空数组可以防止它再次运行，因为钩子所依赖的值都不会改变。
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the `Filesystem`, displaying them automatically. On the web, however, we must read each image from the `Filesystem` into base64 format, using a new `base64` property on the `Photo` object. This is because the `Filesystem` API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Add the following code to complete the `loadSaved()` method.
+在移动端（接下来会介绍！），我们可以直接将图片标签的源 `<img src="x" />` 设置为 `Filesystem` 中的每个照片文件，从而自动显示它们。然而在 Web 端，我们必须将每个图像从 `Filesystem` 读取为 base64 格式，使用 `Photo` 对象上的新 `base64` 属性。这是因为 `Filesystem` API 底层使用了 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)。添加以下代码以完成 `loadSaved()` 方法。
 
 ```ts
 export function usePhotoGallery() {
@@ -99,12 +99,12 @@ export function usePhotoGallery() {
   const PHOTO_STORAGE = 'photos';
 
   useEffect(() => {
-    // CHANGE: Update `loadSaved()` method
+    // 变更：更新 `loadSaved()` 方法
     const loadSaved = async () => {
       const { value: photoList } = await Preferences.get({ key: PHOTO_STORAGE });
       const photosInPreferences = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
-      // CHANGE: Display the photo by reading into base64 format
+      // 变更：通过读取 base64 格式显示照片
       for (const photo of photosInPreferences) {
         const readFile = await Filesystem.readFile({
           path: photo.filepath,
@@ -119,11 +119,11 @@ export function usePhotoGallery() {
     loadSaved();
   }, []);
 
-  // ...existing code...
+  // ...现有代码...
 }
 ```
 
-`usePhotoGallery.ts` should now look like this:
+`usePhotoGallery.ts` 现在应该如下所示：
 
 ```ts
 import { useState, useEffect } from 'react';
@@ -157,7 +157,7 @@ export function usePhotoGallery() {
   }, []);
 
   const addNewToGallery = async () => {
-    // Take a photo
+    // 拍摄照片
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -165,7 +165,7 @@ export function usePhotoGallery() {
     });
 
     const fileName = Date.now() + '.jpeg';
-    // Save the picture and add it to photo collection
+    // 保存图片并添加到照片集合
     const savedImageFile = await savePicture(capturedPhoto, fileName);
 
     const newPhotos = [savedImageFile, ...photos];
@@ -175,7 +175,7 @@ export function usePhotoGallery() {
   };
 
   const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-    // Fetch the photo, read as a blob, then convert to base64 format
+    // 获取照片，读取为 blob，然后转换为 base64 格式
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
     const base64Data = (await convertBlobToBase64(blob)) as string;
@@ -186,8 +186,7 @@ export function usePhotoGallery() {
       directory: Directory.Data,
     });
 
-    // Use webPath to display the new image instead of base64 since it's
-    // already loaded into memory
+    // 使用 webPath 显示新图像而不是 base64，因为它已经加载到内存中
     return {
       filepath: fileName,
       webviewPath: photo.webPath,
@@ -218,9 +217,9 @@ export interface UserPhoto {
 ```
 
 :::note
-If you're seeing broken image links or missing photos after following these steps, you may need to open your browser's dev tools and clear both [localStorage](https://developer.chrome.com/docs/devtools/storage/localstorage) and [IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb).
+如果在完成这些步骤后看到损坏的图片链接或缺少照片，你可能需要打开浏览器的开发者工具并清除 [localStorage](https://developer.chrome.com/docs/devtools/storage/localstorage) 和 [IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb)。
 
-In localStorage, look for domain `http://localhost:8100` and key `CapacitorStorage.photos`. In IndexedDB, find a store called "FileStorage". Your photos will have a key like `/DATA/123456789012.jpeg`.
+在 localStorage 中，查找域名 `http://localhost:8100` 和键 `CapacitorStorage.photos`。在 IndexedDB 中，找到名为 "FileStorage" 的存储。你的照片将有一个类似 `/DATA/123456789012.jpeg` 的键。
 :::
 
-That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+完成！我们已经在 Ionic 应用中构建了一个完整的照片库功能，可以在 Web 上运行。接下来，我们将把它转换为适用于 iOS 和 Android 的移动应用！

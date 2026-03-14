@@ -9,7 +9,7 @@ function Example() {
         <IonButtons slot="start">
           <IonButton>Start</IonButton>
         </IonButtons>
-        <IonTitle>Buttons</IonTitle>
+        <IonTitle>按钮</IonTitle>
         <IonButtons slot="end">
           <IonButton>End</IonButton>
         </IonButtons>
@@ -17,11 +17,11 @@ function Example() {
 
       <IonToolbar>
         <IonButtons slot="secondary">
-          <IonButton>Secondary</IonButton>
+          <IonButton>次要按钮</IonButton>
         </IonButtons>
-        <IonTitle>Buttons</IonTitle>
+        <IonTitle>按钮</IonTitle>
         <IonButtons slot="primary">
-          <IonButton>Primary</IonButton>
+          <IonButton>主要按钮</IonButton>
         </IonButtons>
       </IonToolbar>
     </>

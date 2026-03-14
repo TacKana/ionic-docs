@@ -1,69 +1,69 @@
 ---
-title: Themes
+title: 主题
 ---
 
 import CodeColor from '@components/page/theming/CodeColor';
 import SteppedColorGenerator from '@components/page/theming/SteppedColorGenerator';
 
 <head>
-  <title>Ionic App Themes | Change Default App Background Themes & Colors</title>
+  <title>Ionic 应用主题 | 更改默认应用背景主题与颜色</title>
   <meta
     name="description"
-    content="Several global variables change the default theme of an entire application. Create a custom background and text color theme for your app with Ionic themes."
+    content="多个全局变量可改变整个应用程序的默认主题。使用 Ionic 主题为您的应用创建自定义背景和文本颜色主题。"
   />
 </head>
 
-Ionic provides several global variables that are used throughout components to change the default theme of an entire application. [Application Colors](#application-colors) are useful to change the look of most of the Ionic components, and [Stepped Colors](#stepped-colors) are used as variations in some of the Ionic components.
+Ionic 提供了多个全局变量，这些变量在组件中广泛使用，用于改变整个应用程序的默认主题。[应用颜色](#application-colors) 可用于改变大多数 Ionic 组件的外观，而 [阶梯颜色](#stepped-colors) 则在部分 Ionic 组件中作为颜色变体使用。
 
-## Application Colors
+## 应用颜色
 
-The application colors are used in multiple places in Ionic. These are useful for easily creating dark palettes or themes that match a brand.
+应用颜色在 Ionic 的多个位置被使用。它们便于轻松创建深色调色板或与品牌相匹配的主题。
 
-It is important to note that the background and text color variables also require a rgb variable to be set in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](advanced.md#the-alpha-problem) for an explanation of why the `rgb` property is also needed.
+需要注意的是，背景和文本颜色变量还需要一个以 <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb 格式</a> 设置的 rgb 变量。请参阅 [透明度问题](advanced.md#the-alpha-problem) 了解为何还需要 `rgb` 属性的解释。
 
-| Name                                       | Description                                          |
+| 名称                                       | 描述                                          |
 | ------------------------------------------ | ---------------------------------------------------- |
-| `--ion-background-color`                   | Background color of the entire app                   |
-| `--ion-background-color-rgb`               | Background color of the entire app, rgb format       |
-| `--ion-text-color`                         | Text color of the entire app                         |
-| `--ion-text-color-rgb`                     | Text color of the entire app, rgb format             |
-| `--ion-backdrop-color`                     | Color of the Backdrop component                      |
-| `--ion-backdrop-opacity`                   | Opacity of the Backdrop component                    |
-| `--ion-overlay-background-color`           | Background color of the overlays                     |
-| `--ion-border-color`                       | Border color                                         |
-| `--ion-box-shadow-color`                   | Box shadow color                                     |
-| `--ion-tab-bar-background`                 | Background of the Tab Bar                            |
-| `--ion-tab-bar-background-focused`         | Background of the focused Tab Bar                    |
-| `--ion-tab-bar-border-color`               | Border color of the Tab Bar                          |
-| `--ion-tab-bar-color`                      | Color of the Tab Bar                                 |
-| `--ion-tab-bar-color-selected`             | Color of the selected Tab Button                     |
-| `--ion-toolbar-background`                 | Background of the Toolbar                            |
-| `--ion-toolbar-border-color`               | Border color of the Toolbar                          |
-| `--ion-toolbar-color`                      | Color of the components in the Toolbar               |
-| `--ion-toolbar-segment-color`              | Color of the Segment Buttons in the Toolbar          |
-| `--ion-toolbar-segment-color-checked`      | Color of the checked Segment Buttons in the Toolbar  |
-| `--ion-toolbar-segment-background`         | Background of the Segment Buttons in the Toolbar     |
-| `--ion-toolbar-segment-background-checked` | Background of the Segment Buttons in the Toolbar     |
-| `--ion-toolbar-segment-indicator-color`    | Color of the Segment Button indicator in the Toolbar |
-| `--ion-item-background`                    | Background of the Item                               |
-| `--ion-item-border-color`                  | Border color of the Item                             |
-| `--ion-item-color`                         | Color of the components in the Item                  |
-| `--ion-placeholder-color`                  | Color of the placeholder in Inputs                   |
+| `--ion-background-color`                   | 整个应用的背景色                   |
+| `--ion-background-color-rgb`               | 整个应用的背景色，rgb 格式       |
+| `--ion-text-color`                         | 整个应用的文本颜色                         |
+| `--ion-text-color-rgb`                     | 整个应用的文本颜色，rgb 格式             |
+| `--ion-backdrop-color`                     | Backdrop 组件的颜色                      |
+| `--ion-backdrop-opacity`                   | Backdrop 组件的不透明度                    |
+| `--ion-overlay-background-color`           | 覆盖层的背景颜色                     |
+| `--ion-border-color`                       | 边框颜色                                         |
+| `--ion-box-shadow-color`                   | 盒阴影颜色                                     |
+| `--ion-tab-bar-background`                 | Tab 栏的背景                            |
+| `--ion-tab-bar-background-focused`         | 获得焦点时 Tab 栏的背景                    |
+| `--ion-tab-bar-border-color`               | Tab 栏的边框颜色                          |
+| `--ion-tab-bar-color`                      | Tab 栏的颜色                                 |
+| `--ion-tab-bar-color-selected`             | 被选中的 Tab 按钮的颜色                     |
+| `--ion-toolbar-background`                 | Toolbar 的背景                            |
+| `--ion-toolbar-border-color`               | Toolbar 的边框颜色                          |
+| `--ion-toolbar-color`                      | Toolbar 中组件的颜色               |
+| `--ion-toolbar-segment-color`              | Toolbar 中 Segment 按钮的颜色          |
+| `--ion-toolbar-segment-color-checked`      | Toolbar 中被选中的 Segment 按钮的颜色  |
+| `--ion-toolbar-segment-background`         | Toolbar 中 Segment 按钮的背景     |
+| `--ion-toolbar-segment-background-checked` | Toolbar 中被选中的 Segment 按钮的背景     |
+| `--ion-toolbar-segment-indicator-color`    | Toolbar 中 Segment 按钮指示器的颜色 |
+| `--ion-item-background`                    | Item 的背景                               |
+| `--ion-item-border-color`                  | Item 的边框颜色                             |
+| `--ion-item-color`                         | Item 中组件的颜色                  |
+| `--ion-placeholder-color`                  | Input 中占位符的颜色                   |
 
-## Stepped Colors
+## 阶梯颜色
 
-After exploring different ways to customize the Ionic theme, we found that we couldn't use just one background or text color. In order to imply importance and depth throughout the design, we need to use different shades of the background and text colors. To accommodate this pattern, we created stepped colors.
+在探索了多种自定义 Ionic 主题的方法后，我们发现不能只使用单一背景色或文本色。为了在设计中体现重要性和层次感，我们需要使用不同深浅的背景色和文本色。为了适应这种模式，我们创建了阶梯颜色。
 
-While updating the background (`--ion-background-color`) and text (`--ion-text-color`) variables will change the look of the app for most components, there are certain Ionic components where it may look off, or broken. This will be more apparent when applying a darker palette.
+虽然更新背景 (`--ion-background-color`) 和文本 (`--ion-text-color`) 变量会改变大多数组件的外观，但对于某些 Ionic 组件来说，这可能会显得不协调或异常。这在应用深色调色板时会更明显。
 
-In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <CodeColor color="#404040">#404040</CodeColor>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <CodeColor color="#f2f2f2">#f2f2f2</CodeColor>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.
+在某些组件中，我们使用比背景色略深或比文本色略浅的颜色。例如，项目标题文本可能需要使用 <CodeColor color="#404040">#404040</CodeColor>，这比我们的默认文本色浅几个色阶。同时，加载组件的背景色比白色略深，使用 <CodeColor color="#f2f2f2">#f2f2f2</CodeColor>。我们使用阶梯颜色来定义这些细微的差异。在更新应用程序的背景色或文本颜色时，更新阶梯颜色非常重要。
 
-Ionic provides separate step colors for text and background colors so they can be updated separately. This is useful for components that use both text and background stepped colors and allows us to effectively implement the [high contrast palette](./high-contrast-mode).
+Ionic 为文本和背景颜色提供了独立的阶梯颜色，以便它们可以单独更新。这对于同时使用文本和背景阶梯颜色的组件非常有用，并使我们能够有效实现 [高对比度调色板](./high-contrast-mode)。
 
-By default, the Ionic text stepped colors start at the default text color value <CodeColor color="#000000">#000000</CodeColor> and mix with the background color value <CodeColor color="#ffffff">#ffffff</CodeColor> using an increasing percentage. The Ionic background stepped colors start at the default background color value <CodeColor color="#ffffff">#ffffff</CodeColor> and mix with the text color value <CodeColor color="#000000">#000000</CodeColor> using an increasing percentage. The full list of stepped colors is shown in the generator below.
+默认情况下，Ionic 的文本阶梯颜色以默认文本颜色值 <CodeColor color="#000000">#000000</CodeColor> 开始，并按照递增的百分比与背景颜色值 <CodeColor color="#ffffff">#ffffff</CodeColor> 混合。Ionic 的背景阶梯颜色以默认背景颜色值 <CodeColor color="#ffffff">#ffffff</CodeColor> 开始，并按照递增的百分比与文本颜色值 <CodeColor color="#000000">#000000</CodeColor> 混合。完整的阶梯颜色列表如下方生成器所示。
 
-## Stepped Color Generator
+## 阶梯颜色生成器
 
-Create a custom background and text color theme for your app. Update the background or text color’s hex values below, then copy and paste the generated code directly into your Ionic project.
+为您的应用创建自定义背景和文本颜色主题。更新下方的背景或文本颜色的十六进制值，然后将生成的代码直接复制并粘贴到您的 Ionic 项目中。
 
 <SteppedColorGenerator useTextAndBackgroundStepColors={true} />

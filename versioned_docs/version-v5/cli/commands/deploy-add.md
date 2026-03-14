@@ -4,19 +4,19 @@ sidebar_label: 'deploy add'
 
 # ionic deploy add
 
-Adds Appflow Deploy to the project
+向项目中添加 Appflow Deploy 功能
 
 ```shell
 ionic deploy add [options]
 ```
 
-This command adds the Appflow Deploy plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.
+此命令为 Capacitor 和 Cordova 项目添加 Appflow Deploy 插件 (`cordova-plugin-ionic`)。
 
-For Capacitor projects it runs all the steps necessary to install the plugin, sync with the native projects and add the configuration to the proper iOS and Android configuration files.
+对于 Capacitor 项目，该命令会执行安装插件的所有必要步骤，与原生项目同步，并将配置添加到相应的 iOS 和 Android 配置文件中。
 
-For Cordova projects it just takes care of running the proper Cordova CLI command with the submitted parameters.
+对于 Cordova 项目，该命令仅负责使用提交的参数运行相应的 Cordova CLI 命令。
 
-## Examples
+## 示例
 
 ```shell
 $ ionic deploy add
@@ -25,7 +25,7 @@ $ ionic deploy add --max-store=2 --min-background-duration=30
 $ ionic deploy add --app-id=abcd1234 --channel-name="Master" --update-method=background --max-store=2 --min-background-duration=30
 ```
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -42,9 +42,9 @@ $ ionic deploy add --app-id=abcd1234 --channel-name="Master" --update-method=bac
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Your Appflow app ID</p>
+        <p>您的 Appflow 应用 ID</p>
       </td>
     </tr>
   </tbody>
@@ -62,9 +62,9 @@ $ ionic deploy add --app-id=abcd1234 --channel-name="Master" --update-method=bac
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>The channel to check for updates from</p>
+        <p>检查更新的渠道名称</p>
       </td>
     </tr>
   </tbody>
@@ -82,15 +82,15 @@ $ ionic deploy add --app-id=abcd1234 --channel-name="Master" --update-method=bac
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>The update method that dictates the behavior of the plugin</p>
+        <p>决定插件行为的更新方法</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -107,15 +107,15 @@ $ ionic deploy add --app-id=abcd1234 --channel-name="Master" --update-method=bac
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>The maximum number of downloaded versions to store on the device</p>
+          <p>设备上存储的已下载版本的最大数量</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Default</th>
+      <th>默认值</th>
       <td>2</td>
     </tr>
   </tbody>
@@ -133,15 +133,15 @@ $ ionic deploy add --app-id=abcd1234 --channel-name="Master" --update-method=bac
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>The minimum duration after which the app checks for an update in the background</p>
+          <p>应用程序在后台检查更新的最短时间间隔（秒）</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Default</th>
+      <th>默认值</th>
       <td>30</td>
     </tr>
   </tbody>

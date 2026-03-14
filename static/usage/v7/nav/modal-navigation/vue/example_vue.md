@@ -3,17 +3,17 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Modal Navigation</ion-title>
+        <ion-title>模态框导航</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-button id="openModal">Open Modal</ion-button>
+      <ion-button id="openModal">打开模态框</ion-button>
       <ion-modal ref="modal" trigger="openModal" @will-present="onWillPresent">
         <ion-header>
           <ion-toolbar>
-            <ion-title>Modal</ion-title>
+            <ion-title>模态框</ion-title>
             <ion-buttons slot="end">
-              <ion-button @click="dismiss"> Close </ion-button>
+              <ion-button @click="dismiss"> 关闭 </ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
@@ -48,7 +48,7 @@
   };
 
   const onWillPresent = async () => {
-    // Need to wait two ticks before the ref is set
+    // 需要等待两个 tick 才能确保 ref 被正确设置
     await nextTick();
     await nextTick();
 

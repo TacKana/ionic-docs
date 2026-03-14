@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { IonButton, IonContent, useIonPopover } from '@ionic/react';
 
-const Popover = () => <IonContent className="ion-padding">Hello World!</IonContent>;
+const Popover = () => <IonContent className="ion-padding">你好，世界！</IonContent>;
 
 function Example() {
   const [present, dismiss] = useIonPopover(Popover, {
@@ -16,11 +16,11 @@ function Example() {
         onClick={(e: any) =>
           present({
             event: e,
-            onDidDismiss: (e: CustomEvent) => setRoleMsg(`Popover dismissed with role: ${e.detail.role}`),
+            onDidDismiss: (e: CustomEvent) => setRoleMsg(`弹出层已关闭，关闭角色为: ${e.detail.role}`),
           })
         }
       >
-        Click Me
+        点我
       </IonButton>
       <p>{roleMsg}</p>
     </>

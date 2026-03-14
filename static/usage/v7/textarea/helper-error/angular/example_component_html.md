@@ -3,8 +3,8 @@
   fill="solid"
   label="Email"
   labelPlacement="floating"
-  helperText="Enter a valid email"
-  errorText="Invalid email"
+  helperText="请输入有效的邮箱地址"
+  errorText="邮箱地址无效"
   ngModel
   email
 ></ion-textarea>

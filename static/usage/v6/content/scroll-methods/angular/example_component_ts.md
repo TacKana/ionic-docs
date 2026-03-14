@@ -12,14 +12,12 @@ export class ExampleComponent {
   @ViewChild(IonContent) content: IonContent;
 
   scrollToBottom() {
-    // Passing a duration to the method makes it so the scroll slowly
-    // goes to the bottom instead of instantly
+    // 给方法传入一个时长参数，可以让滚动缓慢地到达底部，而不是瞬间跳转
     this.content.scrollToBottom(500);
   }
 
   scrollToTop() {
-    // Passing a duration to the method makes it so the scroll slowly
-    // goes to the top instead of instantly
+    // 给方法传入一个时长参数，可以让滚动缓慢地到达顶部，而不是瞬间跳转
     this.content.scrollToTop(500);
   }
 }

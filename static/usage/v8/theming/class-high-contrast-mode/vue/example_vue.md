@@ -5,7 +5,7 @@
       <ion-buttons slot="start">
         <ion-back-button default-href="#"></ion-back-button>
       </ion-buttons>
-      <ion-title>Display</ion-title>
+      <ion-title>显示设置</ion-title>
       <ion-buttons slot="end">
         <ion-button color="dark">
           <ion-icon slot="icon-only" :ios="personCircleOutline" :md="personCircle"></ion-icon>
@@ -15,28 +15,28 @@
   </ion-header>
 
   <ion-content color="light">
-    <ion-list-header>Appearance</ion-list-header>
+    <ion-list-header>外观</ion-list-header>
     <ion-list :inset="true">
       <ion-item>
         <ion-toggle :checked="darkPaletteToggle" @ionChange="darkChange($event)" justify="space-between"
-          >Dark Mode</ion-toggle
+          >深色模式</ion-toggle
         >
       </ion-item>
       <ion-item>
         <ion-toggle :checked="highContrastPaletteToggle" @ionChange="highContrastChange($event)" justify="space-between"
-          >High Contrast Mode</ion-toggle
+          >高对比度模式</ion-toggle
         >
       </ion-item>
     </ion-list>
 
     <ion-list :inset="true">
-      <ion-item :button="true">Text Size</ion-item>
+      <ion-item :button="true">文本大小</ion-item>
       <ion-item>
-        <ion-toggle justify="space-between">Bold Text</ion-toggle>
+        <ion-toggle justify="space-between">粗体文本</ion-toggle>
       </ion-item>
     </ion-list>
 
-    <ion-list-header>Brightness</ion-list-header>
+    <ion-list-header>亮度</ion-list-header>
     <ion-list :inset="true">
       <ion-item>
         <ion-range value="40">
@@ -45,14 +45,14 @@
         </ion-range>
       </ion-item>
       <ion-item>
-        <ion-toggle justify="space-between" checked>True Tone</ion-toggle>
+        <ion-toggle justify="space-between" checked>原彩显示</ion-toggle>
       </ion-item>
     </ion-list>
 
     <ion-list :inset="true">
       <ion-item :button="true">
-        <ion-label>Night Shift</ion-label>
-        <ion-text slot="end" color="medium">9:00 PM to 8:00 AM</ion-text>
+        <ion-label>夜览</ion-label>
+        <ion-text slot="end" color="medium">晚上 9:00 至早上 8:00</ion-text>
       </ion-item>
     </ion-list>
   </ion-content>
@@ -82,21 +82,21 @@
   const darkPaletteToggle = ref(false);
   const highContrastPaletteToggle = ref(false);
 
-  // Use matchMedia to check the user preference
+  // 使用 matchMedia 检查用户偏好
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
   const prefersHighContrast = window.matchMedia('(prefers-contrast: more)');
 
-  // Add or remove the "ion-palette-dark" class on the html element
+  // 在 html 元素上添加或移除 "ion-palette-dark" 类
   const toggleDarkPalette = (shouldAdd) => {
     document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
   };
 
-  // Add or remove the "ion-palette-high-contrast" class on the html element
+  // 在 html 元素上添加或移除 "ion-palette-high-contrast" 类
   const toggleHighContrastPalette = (shouldAdd) => {
     document.documentElement.classList.toggle('ion-palette-high-contrast', shouldAdd);
   };
 
-  // Check/uncheck the toggle and update the palettes
+  // 设置开关状态并更新调色板
   const initializeDarkPalette = (isDark) => {
     darkPaletteToggle.value = isDark;
     toggleDarkPalette(isDark);
@@ -107,28 +107,27 @@
     toggleHighContrastPalette(isHighContrast);
   };
 
-  // Initialize the dark palette based on the initial
-  // value of the media queries
+  // 根据媒体查询的初始值初始化深色调色板
   initializeDarkPalette(prefersDark.matches);
   initializeHighContrastPalette(prefersHighContrast.matches);
 
-  // Listen for changes to the media queries
+  // 监听媒体查询的变化
   prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
   prefersHighContrast.addEventListener('change', (mediaQuery) => initializeHighContrastPalette(mediaQuery.matches));
 
-  // Listen for the toggle check/uncheck to toggle the dark palette
+  // 监听开关的切换以控制深色调色板
   const darkChange = (event: ToggleCustomEvent) => {
     toggleDarkPalette(event.detail.checked);
   };
 
-  // Listen for the toggle check/uncheck to toggle the high contrast palette
+  // 监听开关的切换以控制高对比度调色板
   const highContrastChange = (event: ToggleCustomEvent) => {
     toggleHighContrastPalette(event.detail.checked);
   };
 </script>
 
 <style>
-  /* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
+  /* (可选) 添加此样式以防止切换调色板时出现闪烁 */
   ion-item {
     --transition: none;
   }

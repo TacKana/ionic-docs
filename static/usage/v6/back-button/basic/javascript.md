@@ -9,14 +9,14 @@
       this.innerHTML = `
       <ion-header>
         <ion-toolbar>
-          <ion-title>Back Button</ion-title>
+          <ion-title>返回按钮</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
-        <h1>Page One</h1>
-        <p>Navigate to the next page to see the back button.</p>
+        <h1>第一页</h1>
+        <p>导航到下一页查看返回按钮。</p>
         <ion-nav-link router-direction="forward" component="page-two">
-          <ion-button>Navigate</ion-button>
+          <ion-button>导航</ion-button>
         </ion-nav-link>
       </ion-content>
     `;
@@ -31,12 +31,12 @@
           <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
           </ion-buttons>
-          <ion-title>Back Button</ion-title>
+          <ion-title>返回按钮</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
-        <h1>Page Two</h1>
-        <p>Use the back button to navigate to the previous page.</p>
+        <h1>第二页</h1>
+        <p>使用返回按钮导航到上一页。</p>
       </ion-content>
     `;
     }

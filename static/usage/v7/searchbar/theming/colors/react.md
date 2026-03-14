@@ -5,16 +5,16 @@ import { IonSearchbar } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonSearchbar placeholder="Default"></IonSearchbar>
-      <IonSearchbar color="primary" placeholder="Primary"></IonSearchbar>
-      <IonSearchbar color="secondary" placeholder="Secondary"></IonSearchbar>
-      <IonSearchbar color="tertiary" placeholder="Tertiary"></IonSearchbar>
-      <IonSearchbar color="success" placeholder="Success"></IonSearchbar>
-      <IonSearchbar color="warning" placeholder="Warning"></IonSearchbar>
-      <IonSearchbar color="danger" placeholder="Danger"></IonSearchbar>
-      <IonSearchbar color="light" placeholder="Light"></IonSearchbar>
-      <IonSearchbar color="medium" placeholder="Medium"></IonSearchbar>
-      <IonSearchbar color="dark" placeholder="Dark"></IonSearchbar>
+      <IonSearchbar placeholder="默认"></IonSearchbar>
+      <IonSearchbar color="primary" placeholder="主色"></IonSearchbar>
+      <IonSearchbar color="secondary" placeholder="辅色"></IonSearchbar>
+      <IonSearchbar color="tertiary" placeholder="第三色"></IonSearchbar>
+      <IonSearchbar color="success" placeholder="成功"></IonSearchbar>
+      <IonSearchbar color="warning" placeholder="警告"></IonSearchbar>
+      <IonSearchbar color="danger" placeholder="危险"></IonSearchbar>
+      <IonSearchbar color="light" placeholder="浅色"></IonSearchbar>
+      <IonSearchbar color="medium" placeholder="中性色"></IonSearchbar>
+      <IonSearchbar color="dark" placeholder="深色"></IonSearchbar>
     </>
   );
 }

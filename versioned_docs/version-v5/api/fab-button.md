@@ -1,6 +1,6 @@
 ---
-title: 'Floating Action Button | Ionic FAB Button Icon for Primary Action'
-description: 'Floating Action Buttons (FABs) represent the primary action in an app. The icons are circular and, when pressed, the button may open more related actions.'
+title: '浮动操作按钮 | 用于主要操作的 Ionic FAB 按钮图标'
+description: '浮动操作按钮（FABs）代表应用中的主要操作。图标呈圆形，按下时按钮可能会打开更多相关操作。'
 sidebar_label: 'ion-fab-button'
 ---
 
@@ -16,11 +16,11 @@ import Slots from '@ionic-internal/component-api/v5/fab-button/slots.md';
 
 # ion-fab-button
 
-Floating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions. As the name suggests, FABs generally float over the content in a fixed position. This is not achieved exclusively by using an `<ion-fab-button>FAB</ion-fab-button>`. They need to be wrapped with an `<ion-fab>` component in order to be fixed over the content.
+浮动操作按钮（Floating Action Buttons，简称 FABs）代表应用程序中的主要操作。默认情况下，它们具有圆形外观。当按下时，按钮可能会展开更多相关操作。顾名思义，FABs 通常以固定位置浮动在内容上方。仅使用 `<ion-fab-button>FAB</ion-fab-button>` 并不能实现此效果，它们需要包裹在 `<ion-fab>` 组件中才能固定在内容上方。
 
-If the FAB button is not wrapped with `<ion-fab>`, it will scroll with the content. FAB buttons have a default size, a mini size and can accept different colors:
+如果 FAB 按钮没有被 `<ion-fab>` 包裹，它会随着内容一起滚动。FAB 按钮有默认尺寸、迷你尺寸，并可以接受不同的颜色：
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -28,23 +28,23 @@ If the FAB button is not wrapped with `<ion-fab>`, it will scroll with the conte
 
 ```html
 <ion-content>
-  <!-- Fixed Floating Action Button that does not scroll with the content -->
+  <!-- 固定浮动操作按钮，不会随内容滚动 -->
   <ion-fab slot="fixed">
-    <ion-fab-button>Button</ion-fab-button>
+    <ion-fab-button>按钮</ion-fab-button>
   </ion-fab>
 
-  <!-- Default Floating Action Button that scrolls with the content.-->
-  <ion-fab-button>Default</ion-fab-button>
+  <!-- 默认浮动操作按钮，会随内容滚动 -->
+  <ion-fab-button>默认</ion-fab-button>
 
-  <!-- Mini -->
-  <ion-fab-button size="small">Mini</ion-fab-button>
+  <!-- 迷你尺寸 -->
+  <ion-fab-button size="small">迷你</ion-fab-button>
 
-  <!-- Colors -->
-  <ion-fab-button color="primary">Primary</ion-fab-button>
-  <ion-fab-button color="secondary">Secondary</ion-fab-button>
-  <ion-fab-button color="danger">Danger</ion-fab-button>
-  <ion-fab-button color="light">Light</ion-fab-button>
-  <ion-fab-button color="dark">Dark</ion-fab-button>
+  <!-- 颜色示例 -->
+  <ion-fab-button color="primary">主要</ion-fab-button>
+  <ion-fab-button color="secondary">次要</ion-fab-button>
+  <ion-fab-button color="danger">危险</ion-fab-button>
+  <ion-fab-button color="light">浅色</ion-fab-button>
+  <ion-fab-button color="dark">深色</ion-fab-button>
 </ion-content>
 ```
 
@@ -54,23 +54,23 @@ If the FAB button is not wrapped with `<ion-fab>`, it will scroll with the conte
 
 ```html
 <ion-content>
-  <!-- Fixed Floating Action Button that does not scroll with the content -->
+  <!-- 固定浮动操作按钮，不会随内容滚动 -->
   <ion-fab slot="fixed">
-    <ion-fab-button>Button</ion-fab-button>
+    <ion-fab-button>按钮</ion-fab-button>
   </ion-fab>
 
-  <!-- Default Floating Action Button that scrolls with the content.-->
-  <ion-fab-button>Default</ion-fab-button>
+  <!-- 默认浮动操作按钮，会随内容滚动 -->
+  <ion-fab-button>默认</ion-fab-button>
 
-  <!-- Mini -->
-  <ion-fab-button size="small">Mini</ion-fab-button>
+  <!-- 迷你尺寸 -->
+  <ion-fab-button size="small">迷你</ion-fab-button>
 
-  <!-- Colors -->
-  <ion-fab-button color="primary">Primary</ion-fab-button>
-  <ion-fab-button color="secondary">Secondary</ion-fab-button>
-  <ion-fab-button color="danger">Danger</ion-fab-button>
-  <ion-fab-button color="light">Light</ion-fab-button>
-  <ion-fab-button color="dark">Dark</ion-fab-button>
+  <!-- 颜色示例 -->
+  <ion-fab-button color="primary">主要</ion-fab-button>
+  <ion-fab-button color="secondary">次要</ion-fab-button>
+  <ion-fab-button color="danger">危险</ion-fab-button>
+  <ion-fab-button color="light">浅色</ion-fab-button>
+  <ion-fab-button color="dark">深色</ion-fab-button>
 </ion-content>
 ```
 
@@ -84,23 +84,23 @@ import { IonContent, IonFab, IonFabButton } from '@ionic/react';
 
 export const FabButtonExample: React.FC = () => (
   <IonContent>
-    {/*-- Fixed Floating Action Button that does not scroll with the content --*/}
+    {/* 固定浮动操作按钮，不会随内容滚动 */}
     <IonFab slot="fixed">
-      <IonFabButton>Button</IonFabButton>
+      <IonFabButton>按钮</IonFabButton>
     </IonFab>
 
-    {/*-- Default Floating Action Button that scrolls with the content.--*/}
-    <IonFabButton>Default</IonFabButton>
+    {/* 默认浮动操作按钮，会随内容滚动 */}
+    <IonFabButton>默认</IonFabButton>
 
-    {/*-- Mini --*/}
-    <IonFabButton size="small">Mini</IonFabButton>
+    {/* 迷你尺寸 */}
+    <IonFabButton size="small">迷你</IonFabButton>
 
-    {/*-- Colors --*/}
-    <IonFabButton color="primary">Primary</IonFabButton>
-    <IonFabButton color="secondary">Secondary</IonFabButton>
-    <IonFabButton color="danger">Danger</IonFabButton>
-    <IonFabButton color="light">Light</IonFabButton>
-    <IonFabButton color="dark">Dark</IonFabButton>
+    {/* 颜色示例 */}
+    <IonFabButton color="primary">主要</IonFabButton>
+    <IonFabButton color="secondary">次要</IonFabButton>
+    <IonFabButton color="danger">危险</IonFabButton>
+    <IonFabButton color="light">浅色</IonFabButton>
+    <IonFabButton color="dark">深色</IonFabButton>
   </IonContent>
 );
 ```
@@ -120,23 +120,23 @@ export class FabButtonExample {
   render() {
     return [
       <ion-content>
-        {/* Fixed Floating Action Button that does not scroll with the content */}
+        {/* 固定浮动操作按钮，不会随内容滚动 */}
         <ion-fab slot="fixed">
-          <ion-fab-button>Button</ion-fab-button>
+          <ion-fab-button>按钮</ion-fab-button>
         </ion-fab>
 
-        {/* Default Floating Action Button that scrolls with the content */}
-        <ion-fab-button>Default</ion-fab-button>
+        {/* 默认浮动操作按钮，会随内容滚动 */}
+        <ion-fab-button>默认</ion-fab-button>
 
-        {/* Mini */}
-        <ion-fab-button size="small">Mini</ion-fab-button>
+        {/* 迷你尺寸 */}
+        <ion-fab-button size="small">迷你</ion-fab-button>
 
-        {/* Colors */}
-        <ion-fab-button color="primary">Primary</ion-fab-button>
-        <ion-fab-button color="secondary">Secondary</ion-fab-button>
-        <ion-fab-button color="danger">Danger</ion-fab-button>
-        <ion-fab-button color="light">Light</ion-fab-button>
-        <ion-fab-button color="dark">Dark</ion-fab-button>
+        {/* 颜色示例 */}
+        <ion-fab-button color="primary">主要</ion-fab-button>
+        <ion-fab-button color="secondary">次要</ion-fab-button>
+        <ion-fab-button color="danger">危险</ion-fab-button>
+        <ion-fab-button color="light">浅色</ion-fab-button>
+        <ion-fab-button color="dark">深色</ion-fab-button>
       </ion-content>,
     ];
   }
@@ -150,23 +150,23 @@ export class FabButtonExample {
 ```html
 <template>
   <ion-content>
-    <!-- Fixed Floating Action Button that does not scroll with the content -->
+    <!-- 固定浮动操作按钮，不会随内容滚动 -->
     <ion-fab slot="fixed">
-      <ion-fab-button>Button</ion-fab-button>
+      <ion-fab-button>按钮</ion-fab-button>
     </ion-fab>
 
-    <!-- Default Floating Action Button that scrolls with the content.-->
-    <ion-fab-button>Default</ion-fab-button>
+    <!-- 默认浮动操作按钮，会随内容滚动 -->
+    <ion-fab-button>默认</ion-fab-button>
 
-    <!-- Mini -->
-    <ion-fab-button size="small">Mini</ion-fab-button>
+    <!-- 迷你尺寸 -->
+    <ion-fab-button size="small">迷你</ion-fab-button>
 
-    <!-- Colors -->
-    <ion-fab-button color="primary">Primary</ion-fab-button>
-    <ion-fab-button color="secondary">Secondary</ion-fab-button>
-    <ion-fab-button color="danger">Danger</ion-fab-button>
-    <ion-fab-button color="light">Light</ion-fab-button>
-    <ion-fab-button color="dark">Dark</ion-fab-button>
+    <!-- 颜色示例 -->
+    <ion-fab-button color="primary">主要</ion-fab-button>
+    <ion-fab-button color="secondary">次要</ion-fab-button>
+    <ion-fab-button color="danger">危险</ion-fab-button>
+    <ion-fab-button color="light">浅色</ion-fab-button>
+    <ion-fab-button color="dark">深色</ion-fab-button>
   </ion-content>
 </template>
 
@@ -184,15 +184,15 @@ export class FabButtonExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -200,10 +200,10 @@ export class FabButtonExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

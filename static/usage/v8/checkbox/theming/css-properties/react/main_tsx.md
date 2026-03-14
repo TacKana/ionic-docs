@@ -5,7 +5,7 @@ import { IonCheckbox } from '@ionic/react';
 import './main.css';
 
 function Example() {
-  return <IonCheckbox>Themed checkbox</IonCheckbox>;
+  return <IonCheckbox>主题化复选框</IonCheckbox>;
 }
 export default Example;
 ```

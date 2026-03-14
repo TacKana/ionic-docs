@@ -6,27 +6,27 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonLabel>Default input</IonLabel>
+        <IonLabel>默认输入框</IonLabel>
         <IonInput></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Input with placeholder</IonLabel>
+        <IonLabel>带占位符的输入框</IonLabel>
         <IonInput placeholder="Enter company name"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Input with value</IonLabel>
+        <IonLabel>带初始值的输入框</IonLabel>
         <IonInput value="121 S Pinckney St #300"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Readonly input</IonLabel>
+        <IonLabel>只读输入框</IonLabel>
         <IonInput value="Madison" readonly={true}></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Disabled input</IonLabel>
+        <IonLabel>禁用输入框</IonLabel>
         <IonInput value="53703" disabled={true}></IonInput>
       </IonItem>
     </IonList>

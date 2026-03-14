@@ -9,14 +9,14 @@ function PageTwo() {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton text="Previous" icon={caretBack}></IonBackButton>
+            <IonBackButton text="上一页" icon={caretBack}></IonBackButton>
           </IonButtons>
-          <IonTitle>Back Button</IonTitle>
+          <IonTitle>返回按钮</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <h1>Page Two</h1>
-        <p>Use the back button to navigate to the previous page.</p>
+        <h1>第二页</h1>
+        <p>使用返回按钮可导航至上一页。</p>
       </IonContent>
     </>
   );

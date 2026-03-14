@@ -10,19 +10,19 @@ function Example() {
       <IonMenu contentId="main">
         <IonHeader>
           <IonToolbar color="tertiary">
-            <IonTitle>Menu</IonTitle>
+            <IonTitle>菜单</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent className="ion-padding">Menu Content is 350px wide and has a blue dashed border</IonContent>
+        <IonContent className="ion-padding">菜单内容宽度为350像素，并带有蓝色虚线边框</IonContent>
       </IonMenu>
 
       <div className="ion-page" id="main">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Main View</IonTitle>
+            <IonTitle>主视图</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent className="ion-padding">Main View Content</IonContent>
+        <IonContent className="ion-padding">主视图内容</IonContent>
       </div>
     </IonSplitPane>
   );

@@ -1,5 +1,5 @@
 ```html
-<ion-button id="open-picker">Open</ion-button>
+<ion-button id="open-picker">打开</ion-button>
 <ion-picker-legacy trigger="open-picker"></ion-picker-legacy>
 
 <script>
@@ -10,15 +10,15 @@
       name: 'meat',
       options: [
         {
-          text: 'Pepperoni',
+          text: '意大利辣香肠',
           value: 'pepperoni',
         },
         {
-          text: 'Smoked Ham',
+          text: '熏火腿',
           value: 'smoked-ham',
         },
         {
-          text: 'Crispy Bacon',
+          text: '香脆培根',
           value: 'bacon',
         },
       ],
@@ -27,15 +27,15 @@
       name: 'veggies',
       options: [
         {
-          text: 'Red onion',
+          text: '红洋葱',
           value: 'red-onion',
         },
         {
-          text: 'Peppers',
+          text: '彩椒',
           value: 'peppers',
         },
         {
-          text: 'Black olives',
+          text: '黑橄榄',
           value: 'black-olives',
         },
       ],
@@ -44,15 +44,15 @@
       name: 'crust',
       options: [
         {
-          text: 'Pan style',
+          text: '意式厚底',
           value: 'pan',
         },
         {
-          text: 'Hand tossed',
+          text: '手抛薄底',
           value: 'hand-tossed',
         },
         {
-          text: 'Stuffed crust',
+          text: '芝心卷边',
           value: 'stuffed-crust',
         },
       ],
@@ -61,13 +61,13 @@
 
   picker.buttons = [
     {
-      text: 'Cancel',
+      text: '取消',
       role: 'cancel',
     },
     {
-      text: 'Confirm',
+      text: '确认',
       handler: (value) => {
-        console.log(`You selected a ${value.crust.text} pizza with ${value.meat.text} and ${value.veggies.text}`);
+        console.log(`您选择了${value.crust.text}披萨，配料为${value.meat.text}和${value.veggies.text}`);
       },
     },
   ];

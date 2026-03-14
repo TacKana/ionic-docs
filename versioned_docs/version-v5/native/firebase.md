@@ -10,27 +10,27 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Firebase
 
-This plugin brings push notifications, analytics, event tracking, crash reporting and more from Google Firebase to your Cordova project! Android and iOS supported (including iOS 10).
+本插件将 Google Firebase 的推送通知、分析、事件追踪、崩溃报告等功能带到您的 Cordova 项目中！支持 Android 和 iOS（包括 iOS 10）。
 
 <p>
   <a href="https://github.com/arnesson/cordova-plugin-firebase" target="_blank" rel="noopener" className="git-link">github.com/arnesson/cordova-plugin-firebase</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>被 Cordova 问题困扰？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在构建一个严肃的项目，您不能承受花费数小时进行故障排除。Ionic 的专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -53,26 +53,26 @@ This plugin brings push notifications, analytics, event tracking, crash reportin
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic Enterprise 提供 Ionic 团队全面支持和维护的插件。&nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，如果您对本插件的企业版感兴趣，请 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - iOS
 
 ## Capacitor
 
-Not Compatible
+不兼容
 
-## Usage
+## 使用说明
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -84,7 +84,7 @@ constructor(private firebase: Firebase) { }
 ...
 
 this.firebase.getToken()
-  .then(token => console.log(`The token is ${token}`)) // save the token server-side and use it to push notifications to this device
+  .then(token => console.log(`The token is ${token}`)) // 将令牌保存到服务器端，并用于向此设备推送通知
   .catch(error => console.error('Error getting token', error));
 
 this.firebase.onNotificationOpen()

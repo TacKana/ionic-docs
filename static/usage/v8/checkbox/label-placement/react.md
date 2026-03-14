@@ -5,19 +5,19 @@ import { IonCheckbox } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonCheckbox labelPlacement="start">Label at the Start</IonCheckbox>
+      <IonCheckbox labelPlacement="start">标签置于起始位置</IonCheckbox>
 
       <br />
 
-      <IonCheckbox labelPlacement="end">Label at the End</IonCheckbox>
+      <IonCheckbox labelPlacement="end">标签置于末尾位置</IonCheckbox>
 
       <br />
 
-      <IonCheckbox labelPlacement="fixed">Fixed Width Label</IonCheckbox>
+      <IonCheckbox labelPlacement="fixed">固定宽度标签</IonCheckbox>
 
       <br />
 
-      <IonCheckbox labelPlacement="stacked">Stacked Label</IonCheckbox>
+      <IonCheckbox labelPlacement="stacked">堆叠标签</IonCheckbox>
     </>
   );
 }

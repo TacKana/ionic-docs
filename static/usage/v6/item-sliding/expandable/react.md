@@ -8,18 +8,18 @@ function Example() {
       <IonItemSliding>
         <IonItemOptions side="start">
           <IonItemOption color="success" expandable>
-            Archive
+            归档
           </IonItemOption>
         </IonItemOptions>
 
         <IonItem>
-          <IonLabel>Sliding Item with Expandable Options</IonLabel>
+          <IonLabel>带可扩展选项的滑动项</IonLabel>
         </IonItem>
 
         <IonItemOptions side="end">
-          <IonItemOption>Favorite</IonItemOption>
+          <IonItemOption>收藏</IonItemOption>
           <IonItemOption color="danger" expandable>
-            Delete
+            删除
           </IonItemOption>
         </IonItemOptions>
       </IonItemSliding>

@@ -2,11 +2,11 @@
 <template>
   <ion-button>
     <ion-icon slot="start" :icon="star"></ion-icon>
-    Left Icon
+    左侧图标
   </ion-button>
 
   <ion-button>
-    Right Icon
+    右侧图标
     <ion-icon slot="end" :icon="star"></ion-icon>
   </ion-button>
 

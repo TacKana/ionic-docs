@@ -1,10 +1,10 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Radio</ion-title>
+    <ion-title>单选框 (Radio)</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div class="example-content">Radio content</div>
+  <div class="example-content">单选框内容</div>
 </ion-content>
 ```

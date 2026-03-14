@@ -13,35 +13,35 @@ import { Item } from './types';
 export class ExampleComponent {
   @ViewChild('modal', { static: true }) modal!: IonModal;
 
-  selectedFruitsText = '0 Items';
+  selectedFruitsText = '0 项';
   selectedFruits: string[] = [];
 
   fruits: Item[] = [
-    { text: 'Apple', value: 'apple' },
-    { text: 'Apricot', value: 'apricot' },
-    { text: 'Banana', value: 'banana' },
-    { text: 'Blackberry', value: 'blackberry' },
-    { text: 'Blueberry', value: 'blueberry' },
-    { text: 'Cherry', value: 'cherry' },
-    { text: 'Cranberry', value: 'cranberry' },
-    { text: 'Grape', value: 'grape' },
-    { text: 'Grapefruit', value: 'grapefruit' },
-    { text: 'Guava', value: 'guava' },
-    { text: 'Jackfruit', value: 'jackfruit' },
-    { text: 'Lime', value: 'lime' },
-    { text: 'Mango', value: 'mango' },
-    { text: 'Nectarine', value: 'nectarine' },
-    { text: 'Orange', value: 'orange' },
-    { text: 'Papaya', value: 'papaya' },
-    { text: 'Passionfruit', value: 'passionfruit' },
-    { text: 'Peach', value: 'peach' },
-    { text: 'Pear', value: 'pear' },
-    { text: 'Plantain', value: 'plantain' },
-    { text: 'Plum', value: 'plum' },
-    { text: 'Pineapple', value: 'pineapple' },
-    { text: 'Pomegranate', value: 'pomegranate' },
-    { text: 'Raspberry', value: 'raspberry' },
-    { text: 'Strawberry', value: 'strawberry' },
+    { text: '苹果', value: 'apple' },
+    { text: '杏子', value: 'apricot' },
+    { text: '香蕉', value: 'banana' },
+    { text: '黑莓', value: 'blackberry' },
+    { text: '蓝莓', value: 'blueberry' },
+    { text: '樱桃', value: 'cherry' },
+    { text: '蔓越莓', value: 'cranberry' },
+    { text: '葡萄', value: 'grape' },
+    { text: '葡萄柚', value: 'grapefruit' },
+    { text: '番石榴', value: 'guava' },
+    { text: '菠萝蜜', value: 'jackfruit' },
+    { text: '青柠', value: 'lime' },
+    { text: '芒果', value: 'mango' },
+    { text: '油桃', value: 'nectarine' },
+    { text: '橙子', value: 'orange' },
+    { text: '木瓜', value: 'papaya' },
+    { text: '百香果', value: 'passionfruit' },
+    { text: '桃子', value: 'peach' },
+    { text: '梨子', value: 'pear' },
+    { text: '大蕉', value: 'plantain' },
+    { text: '李子', value: 'plum' },
+    { text: '菠萝', value: 'pineapple' },
+    { text: '石榴', value: 'pomegranate' },
+    { text: '树莓', value: 'raspberry' },
+    { text: '草莓', value: 'strawberry' },
   ];
 
   private formatData(data: string[]) {
@@ -50,7 +50,7 @@ export class ExampleComponent {
       return fruit.text;
     }
 
-    return `${data.length} items`;
+    return `${data.length} 项`;
   }
 
   fruitSelectionChanged(fruits: string[]) {

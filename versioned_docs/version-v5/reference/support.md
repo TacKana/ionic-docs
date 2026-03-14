@@ -1,79 +1,79 @@
-# Support Policy
+# 支持政策
 
-## Community Maintenance
+## 社区维护
 
-The Ionic Framework has been 100% open source (MIT) since the very beginning, and always will be. Developers can ensure Ionic is the right choice for their cross-platform apps through Ionic’s community maintenance strategy. The Ionic team regularly ships new releases, bug fixes, and is very welcoming to community pull requests.
+Ionic Framework 自诞生之初就一直是 100% 开源（MIT 协议），并将继续保持这一传统。开发者可以通过 Ionic 的社区维护策略，确保 Ionic 是他们跨平台应用的正确选择。Ionic 团队定期发布新版本、修复错误，并非常欢迎社区提交的拉取请求。
 
-## Framework Maintenance and Support Status
+## 框架维护与支持状态
 
-Given the reality of time and resource restraints as well as the desire to keep innovating in the frontend development space, over time it becomes necessary for the Ionic team to shift focus to newer versions of the Framework. However, Ionic will do everything it can to make the transition to newer versions as smooth as possible. The Ionic team recommends updating to the newest version of the Ionic Framework for the latest features, improvements and stability updates. For more details, consult [the Migration page](migration.md).
+考虑到时间和资源的现实限制，以及在 Web 前端开发领域持续创新的愿望，Ionic 团队有时需要将重心转向框架的新版本。然而，Ionic 会尽其所能确保向新版本的过渡尽可能顺利。Ionic 团队建议更新到 Ionic Framework 的最新版本，以获取最新的功能、改进和稳定性更新。更多详情，请查阅[迁移页面](migration.md)。
 
-The current status of each Ionic Framework version is:
+各 Ionic Framework 版本的当前状态如下：
 
-| Version |     Status     |   Released   | Maintenance Ends | Ext. Support Ends |
-| :-----: | :------------: | :----------: | :--------------: | :---------------: |
-|   V5    | End of Support | Feb 11, 2020 |   June 8, 2022   |    Dec 8, 2022    |
-|   V4    | End of Support | Jan 23, 2019 |   Aug 11, 2020   |   Sept 30, 2022   |
-|   V3    | End of Support | Apr 5, 2017  |   Oct 30, 2019   |   Aug 11, 2020    |
-|   V2    | End of Support | Jan 25, 2017 |   Apr 5, 2017    |    Apr 5, 2017    |
-|   V1    | End of Support | May 12, 2015 |   Jan 25, 2017   |   Jan 25, 2017    |
+| 版本 | 状态 | 发布日期 | 维护结束 | 扩展支持结束 |
+| :---: | :---: | :-------: | :-------: | :-----------: |
+| V5 | 支持终止 | 2020年2月11日 | 2022年6月8日 | 2022年12月8日 |
+| V4 | 支持终止 | 2019年1月23日 | 2020年8月11日 | 2022年9月30日 |
+| V3 | 支持终止 | 2017年4月5日 | 2019年10月30日 | 2020年8月11日 |
+| V2 | 支持终止 | 2017年1月25日 | 2017年4月5日 | 2017年4月5日 |
+| V1 | 支持终止 | 2015年5月12日 | 2017年1月25日 | 2017年1月25日 |
 
-- **Maintenance**: Only critical bug and security fixes. No major feature improvements.
-- **Extended Support**: For teams and organizations that require additional long term support, Ionic has extended support options available. To learn more, see our [Enterprise offerings](https://ionicframework.com/enterprise).
+- **维护期**：仅提供关键错误和安全修复。不提供重大功能改进。
+- **扩展支持**：对于需要额外长期支持的团队和组织，Ionic 提供扩展支持选项。了解更多信息，请参见我们的[企业产品](https://ionicframework.com/enterprise)。
 
-## Compatibility Recommendations
+## 兼容性建议
 
-The Ionic team has compiled a set of recommendations for using the Ionic Framework in conjunction with other contextually-relevant software. This is not meant to be a comprehensive list, but covers many common compatibility questions. The Ionic team strongly recommends reviewing your project dependencies once each quarter to keep track of new releases, features and bug fixes.
+Ionic 团队针对 Ionic Framework 与其他相关软件结合使用的情况，整理了一套建议。这并非一份详尽列表，但涵盖了许多常见的兼容性问题。Ionic 团队强烈建议每个季度审查一次项目依赖，以跟踪新版本、功能和错误修复。
 
-### Core Dependencies
+### 核心依赖
 
-|  Framework   | Angular | React  |  Vue  | Typescript |
-| :----------: | :-----: | :----: | :---: | :--------: |
-| V5 - Angular | v8.2.X  |  N/A   |  N/A  |   3.5.X    |
-|  V5 - React  |   N/A   | 16.8.X |  N/A  |   3.7.X    |
-|   V5 - Vue   |   N/A   |  N/A   | 3.0.X |   3.9.X    |
-| V4 - Angular | v8.2.X  |  N/A   |  N/A  |   3.5.X    |
-|  V4 - React  |   N/A   | 16.8.X |  N/A  |   3.7.X    |
-|      V3      | v5.2.11 |  N/A   |  N/A  |   2.6.2    |
+| 框架 | Angular | React | Vue | Typescript |
+| :---: | :-----: | :---: | :---: | :--------: |
+| V5 - Angular | v8.2.X | N/A | N/A | 3.5.X |
+| V5 - React | N/A | 16.8.X | N/A | 3.7.X |
+| V5 - Vue | N/A | N/A | 3.0.X | 3.9.X |
+| V4 - Angular | v8.2.X | N/A | N/A | 3.5.X |
+| V4 - React | N/A | 16.8.X | N/A | 3.7.X |
+| V3 | v5.2.11 | N/A | N/A | 2.6.2 |
 
-- The Ionic team generally recommends the latest releases of third party packages and strives to support the latest releases within 2-4 weeks of general availability.
+- Ionic 团队通常建议使用第三方包的最新版本，并努力在正式发布后的 2-4 周内支持最新版本。
 
-### Native Bridges
+### 原生桥接
 
-|  Framework   |               Cordova                |        Capacitor         |
-| :----------: | :----------------------------------: | :----------------------: |
-| V5 - Angular | cordova-android 8.X, cordova-ios 5.X |        Latest 2.X        |
-|  V5 - React  |            Not supported             |        Latest 2.x        |
-|   V5 - Vue   |            Not supported             |        Latest 2.X        |
-| V4 - Angular | cordova-android 8.X, cordova-ios 5.X |        Latest 2.X        |
-|  V4 - React  |            Not supported             |        Latest 2.x        |
-|      V3      | cordova-android 8.X, cordova-ios 5.X | Not officially supported |
+| 框架 | Cordova | Capacitor |
+| :---: | :----------------------------------: | :----------------------: |
+| V5 - Angular | cordova-android 8.X, cordova-ios 5.X | Latest 2.X |
+| V5 - React | Not supported | Latest 2.x |
+| V5 - Vue | Not supported | Latest 2.X |
+| V4 - Angular | cordova-android 8.X, cordova-ios 5.X | Latest 2.X |
+| V4 - React | Not supported | Latest 2.x |
+| V3 | cordova-android 8.X, cordova-ios 5.X | Not officially supported |
 
-- As iOS and Android (and related tools) are updated, you can expect more updates for Cordova and Capacitor, so it is recommended to stay on the latest version(s) of Cordova and Capacitor.
+- 随着 iOS 和 Android（及其相关工具）的更新，Cordova 和 Capacitor 也会得到更多更新，因此建议持续使用 Cordova 和 Capacitor 的最新版本。
 
-### Ionic Platform & Products
+### Ionic 平台与产品
 
-|  Framework   |        Appflow        |          Ionic Native Premier Plugins\*           |
-| :----------: | :-------------------: | :-----------------------------------------------: |
-| V5 - Angular | `@ionic/angular` 5.X  |               Use latest available                |
-|  V5 - React  |  `@ionic/react` 5.X   |               Use latest available                |
-| V4 - Angular | `@ionic/angular` 4.X  |               Use latest available                |
-|  V4 - React  |  `@ionic/react` 4.X   |               Use latest available                |
-|      V3      | `ionic-angular` 3.9.X | Use latest; special configuration may be required |
+| 框架 | Appflow | Ionic Native Premier Plugins\* |
+| :---: | :-------------------: | :-----------------------------------------------: |
+| V5 - Angular | `@ionic/angular` 5.X | Use latest available |
+| V5 - React | `@ionic/react` 5.X | Use latest available |
+| V4 - Angular | `@ionic/angular` 4.X | Use latest available |
+| V4 - React | `@ionic/react` 4.X | Use latest available |
+| V3 | `ionic-angular` 3.9.X | Use latest; special configuration may be required |
 
-- Native Premier Plugins require `@ionic-enterprise/cordova` for installation [see here](https://ionic.io/docs/premier-plugins/setup#install-tooling)
-- For Capacitor projects, follow the [Capacitor installation guide for Cordova plugins](https://capacitorjs.com/docs/cordova/using-cordova-plugins)
-- If you need to use an Enterprise plugin with an Ionic 3 project, please [contact us](https://ionic.zendesk.com/hc)
+- Native Premier Plugins 需要 `@ionic-enterprise/cordova` 进行安装 [参见此处](https://ionic.io/docs/premier-plugins/setup#install-tooling)
+- 对于 Capacitor 项目，请遵循 [Cordova 插件的 Capacitor 安装指南](https://capacitorjs.com/docs/cordova/using-cordova-plugins)
+- 如果您需要在 Ionic 3 项目中使用企业插件，请[联系我们](https://ionic.zendesk.com/hc)
 
-### Ionic Platform & Products (Cont.)
+### Ionic 平台与产品（续）
 
-|  Framework   |      Ionic Studio       | Ionic Native Community Plugins\* |
-| :----------: | :---------------------: | :------------------------------: |
-| V5 - Angular |  `@ionic/angular` 5.X   |   @awesome-cordova-plugins 5.X   |
-|  V5 - React  | Not currently supported |  @awesome-cordova-plugins 5.X\*  |
-| V4 - Angular |  `@ionic/angular` 5.X   |   @awesome-cordova-plugins 5.X   |
-|  V4 - React  | Not currently supported |  @awesome-cordova-plugins 5.X\*  |
-|      V3      | Not currently supported |   @awesome-cordova-plugins 4.X   |
+| 框架 | Ionic Studio | Ionic Native Community Plugins\* |
+| :---: | :---------------------: | :------------------------------: |
+| V5 - Angular | `@ionic/angular` 5.X | @awesome-cordova-plugins 5.X |
+| V5 - React | Not currently supported | @awesome-cordova-plugins 5.X\* |
+| V4 - Angular | `@ionic/angular` 5.X | @awesome-cordova-plugins 5.X |
+| V4 - React | Not currently supported | @awesome-cordova-plugins 5.X\* |
+| V3 | Not currently supported | @awesome-cordova-plugins 4.X |
 
-- Wrappers (and their associated plugins) are community maintained.
-- \*Cordova plugin support with Ionic Native and `@ionic/react` can be achieved using the [vanilla JavaScript implementation](../native.md#vanilla-javascript)
+- 封装器（及其关联插件）由社区维护。
+- \* 在 `@ionic/react` 中使用 Ionic Native 实现 Cordova 插件支持，可以通过[原生 JavaScript 实现](../native.md#vanilla-javascript)来实现。

@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/tab/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v7/tab/slots.md';
 
 <head>
-  <title>ion-tab: Ionic Framework Application Component</title>
+  <title>ion-tab：Ionic 框架应用组件</title>
   <meta
     name="description"
-    content="ion-tab is a child component of tabs. Each ion-tab can contain a top level navigation stack for an application or a single view. Read to learn more."
+    content="ion-tab 是 tabs 的子组件。每个 ion-tab 可以包含应用的一个顶级导航栈或单个视图。阅读以了解更多信息。"
   />
 </head>
 
@@ -21,23 +21,23 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-The tab component is a child component of [tabs](tabs.md). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.
+tab 组件是 [tabs](tabs.md) 的子组件。每个 tab 可以包含应用的一个顶级导航栈或单个视图。一个应用可以有多个 tabs，每个 tab 都有自己独立的导航。
 
 :::note
-Note: This component should only be used with vanilla JavaScript projects. For Angular, React, and Vue apps you do not need to use `ion-tab` to declare your tab components.
+注意：该组件仅适用于原生 JavaScript 项目。对于 Angular、React 和 Vue 应用，你不需要使用 `ion-tab` 来声明你的 tab 组件。
 :::
 
-See the [tabs documentation](tabs.md) for more details on configuring tabs.
+有关 tabs 配置的更多详细信息，请参阅 [tabs 文档](tabs.md)。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -45,10 +45,10 @@ See the [tabs documentation](tabs.md) for more details on configuring tabs.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

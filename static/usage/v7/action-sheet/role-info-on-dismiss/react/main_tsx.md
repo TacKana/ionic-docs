@@ -12,27 +12,27 @@ function Example() {
 
   return (
     <div className="container">
-      <IonButton id="open-action-sheet">Open</IonButton>
+      <IonButton id="open-action-sheet">打开</IonButton>
       <IonActionSheet
         trigger="open-action-sheet"
-        header="Example header"
-        subHeader="Example subheader"
+        header="示例标题"
+        subHeader="示例副标题"
         buttons={[
           {
-            text: 'Delete',
+            text: '删除',
             role: 'destructive',
             data: {
               action: 'delete',
             },
           },
           {
-            text: 'Share',
+            text: '分享',
             data: {
               action: 'share',
             },
           },
           {
-            text: 'Cancel',
+            text: '取消',
             role: 'cancel',
             data: {
               action: 'cancel',

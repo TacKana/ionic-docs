@@ -5,7 +5,7 @@
   const modeButton = document.querySelector('#modeButton');
   const mode = window.Ionic.config.get('mode') || document.documentElement.getAttribute('mode') || 'md';
 
-  modeButton.innerHTML = `Current mode: ${mode}`;
+  modeButton.innerHTML = `当前模式: ${mode}`;
   modeButton.setAttribute('color', mode === 'ios' ? 'secondary' : 'tertiary');
   modeButton.setAttribute('fill', mode === 'ios' ? 'outline' : 'solid');
 </script>

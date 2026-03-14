@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/toggle/custom-props.md
 import Slots from '@ionic-internal/component-api/v7/toggle/slots.md';
 
 <head>
-  <title>ion-toggle: Custom Toggle Button for Ionic Applications</title>
+  <title>ion-toggle: Ionic 应用的自定义开关按钮</title>
   <meta
     name="description"
-    content="Toggle changes the state of a single option. Use ion-toggle to create customizable toggle buttons that can be switched on or off for your applications."
+    content="Toggle 用于切换单个选项的状态。使用 ion-toggle 可以为你的应用创建可自定义的开关按钮，实现开启或关闭功能。"
   />
 </head>
 
@@ -21,105 +21,105 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Toggles are switches that change the state of a single option. They can be switched on or off by pressing or swiping them. Toggles can also be checked programmatically by setting the `checked` property.
+开关（Toggle）是用于改变单个选项状态的切换组件。可以通过按压或滑动手势来开启或关闭。也可以通过设置 `checked` 属性以编程方式选中开关。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v7/toggle/basic/index.md';
 
 <Basic />
 
-## On / Off Labels
+## 开/关标签
 
-Toggles can enable on/off labels by setting the `enableOnOffLabels` property. This is important for accessibility as it makes it easier to differentiate between a checked and unchecked toggle.
+通过设置 `enableOnOffLabels` 属性，开关可以启用开/关标签。这对于可访问性很重要，因为它让用户更容易区分选中和未选中的开关状态。
 
 import OnOff from '@site/static/usage/v7/toggle/on-off/index.md';
 
 <OnOff />
 
-## Toggles in a List
+## 列表中的开关
 
-Toggles can also be used in a list view by using the [Item](./item) and [List](./list) components.
+开关也可以与 [Item](./item) 和 [List](./list) 组件结合使用，在列表视图中呈现。
 
 import List from '@site/static/usage/v7/toggle/list/index.md';
 
 <List />
 
-## Label Placement
+## 标签位置
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+开发者可以使用 `labelPlacement` 属性来控制标签相对于开关控件的位置。
 
 import LabelPlacement from '@site/static/usage/v7/toggle/label-placement/index.md';
 
 <LabelPlacement />
 
-## Alignment
+## 对齐方式
 
-Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
+开发者可以使用 `alignment` 属性来控制标签和开关在交叉轴上的对齐方式。该属性与 flexbox 的 `align-items` 属性用法一致。
 
 :::note
-Stacked toggles can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
+堆叠排列的开关可以使用 `alignment` 属性进行对齐。当标签和控件需要水平居中对齐时，这非常有用。
 :::
 
 import Alignment from '@site/static/usage/v7/toggle/alignment/index.md';
 
 <Alignment />
 
-## Justification
+## 布局对齐
 
-Developers can use the `justify` property to control how the label and control are packed on a line.
+开发者可以使用 `justify` 属性来控制标签和开关在一行上的排列方式。
 
 import Justify from '@site/static/usage/v7/toggle/justify/index.md';
 
 <Justify />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v7/toggle/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
-CSS custom properties can be combined with standard CSS to target different parts of a toggle. We can modify the `width` and `height` of the toggle directly to change the size of the track, while using the `--handle-width` and `--handle-height` custom properties to customize the handle size.
+CSS 自定义属性可以与标准 CSS 结合使用，来定制开关的不同部分。我们可以直接修改开关的 `width` 和 `height` 来改变轨道的尺寸，同时使用 `--handle-width` 和 `--handle-height` 自定义属性来调整手柄的大小。
 
 import CSSProps from '@site/static/usage/v7/toggle/theming/css-properties/index.md';
 
 <CSSProps />
 
-### CSS Shadow Parts
+### CSS 影子部件
 
-We can further customize toggle by targeting specific shadow parts that are exposed. Any CSS property on these parts can be styled and they can also be combined with CSS custom properties.
+我们还可以通过定位暴露的特定影子部件来进一步定制开关。这些部件上的任何 CSS 属性都可以被样式化，并且它们也可以与 CSS 自定义属性结合使用。
 
 import CSSParts from '@site/static/usage/v7/toggle/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
-## Migrating from Legacy Toggle Syntax
+## 从旧版开关语法迁移
 
-A simpler toggle syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an toggle, resolves accessibility issues, and improves the developer experience.
+Ionic 7.0 引入了一种更简洁的开关语法。这种新语法减少了设置开关所需的模板代码，解决了可访问性问题，并改善了开发体验。
 
-While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+虽然开发者可以继续使用旧版语法，但我们建议尽快迁移。
 
-### Using the Modern Syntax
+### 使用现代语法
 
-Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-toggle`. The placement of the label can be configured using the `labelPlacement` property on `ion-toggle`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-toggle`.
+使用现代语法涉及移除 `ion-label`，并直接将标签传递到 `ion-toggle` 内部。标签的位置可以通过 `ion-toggle` 上的 `labelPlacement` 属性进行配置。标签和控件在一行上的排列方式可以通过 `ion-toggle` 上的 `justify` 属性来控制。
 
 import Migration from '@site/static/usage/v7/toggle/migration/index.md';
 
 <Migration />
 
 :::note
-In past versions of Ionic, `ion-item` was required for `ion-toggle` to function properly. Starting in Ionic 7.0, `ion-toggle` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-toggle` to function properly.
+在 Ionic 的早期版本中，`ion-toggle` 需要依赖 `ion-item` 才能正常工作。从 Ionic 7.0 开始，只有当 `ion-item` 被放置在 `ion-list` 中时，才需要在其中使用 `ion-toggle`。此外，`ion-toggle` 不再需要 `ion-item` 也能正常工作。
 :::
 
-### Using the Legacy Syntax
+### 使用旧版语法
 
-Ionic uses heuristics to detect if an app is using the modern toggle syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-toggle` to `true` to force that instance of the toggle to use the legacy syntax.
+Ionic 使用启发式方法来检测应用是否在使用现代开关语法。在某些情况下，可能更倾向于继续使用旧版语法。开发者可以将 `ion-toggle` 上的 `legacy` 属性设置为 `true`，以强制该开关实例使用旧版语法。
 
-## Interfaces
+## 接口
 
 ### ToggleChangeEventDetail
 
@@ -132,7 +132,7 @@ interface ToggleChangeEventDetail<T = any> {
 
 ### ToggleCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然这不是必需的，但这个接口可以替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更强的类型约束。
 
 ```typescript
 interface ToggleCustomEvent<T = any> extends CustomEvent {
@@ -141,26 +141,26 @@ interface ToggleCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 影子部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

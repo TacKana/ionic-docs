@@ -20,16 +20,16 @@ export class ExampleComponent {
   async presentBaselineToast() {
     await this.presentToast({
       duration: 3000,
-      message: 'This is a toast with a long message and a button that appears on the same line.',
-      buttons: [{ text: 'Action With Long Text' }],
+      message: '这是一个带有长消息和按钮的提示框，按钮与消息显示在同一行。',
+      buttons: [{ text: '操作按钮文字较长' }],
     });
   }
 
   async presentStackedToast() {
     await this.presentToast({
       duration: 3000,
-      message: 'This is a toast with a long message and a button that appears on the next line.',
-      buttons: [{ text: 'Action With Long Text' }],
+      message: '这是一个带有长消息和按钮的提示框，按钮显示在消息的下一行。',
+      buttons: [{ text: '操作按钮文字较长' }],
       layout: 'stacked',
     });
   }

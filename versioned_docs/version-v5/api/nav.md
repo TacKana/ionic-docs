@@ -1,6 +1,6 @@
 ---
-title: 'ion-nav | Nav View Component for Ionic Framework Apps'
-description: "ion-nav is a standalone for loading arbitrary, and pushing new, components on to the stack. Loading Nav view, and pushing others, won't affect overall routers."
+title: 'ion-nav | Ionic 框架应用的导航视图组件'
+description: 'ion-nav 是一个独立组件，用于在堆栈上加载任意组件并推送新组件。加载导航视图和推送其他组件不会影响整体路由。'
 sidebar_label: 'ion-nav'
 demoUrl: '/docs/demos/api/nav/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/nav/index.html'
@@ -18,19 +18,19 @@ import Slots from '@ionic-internal/component-api/v5/nav/slots.md';
 
 # ion-nav
 
-Nav is a standalone component for loading arbitrary components and pushing new components on to the stack.
+Nav 是一个独立组件，用于加载任意组件，并将新组件推送到堆栈上。
 
-Unlike Router Outlet, Nav is not tied to a particular router. This means that if we load a Nav component, and push other components to the stack, they will not affect the app's overall router. This fits use cases where you could have a modal, which needs its own sub-navigation, without making it tied to the apps URL.
+与 Router Outlet 不同，Nav 不与特定的路由绑定。这意味着如果我们加载一个 Nav 组件，并将其他组件推送到堆栈上，它们不会影响应用的整体路由。这适用于需要独立子导航的场景，例如模态框，而不必将其与应用的 URL 关联。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -38,10 +38,10 @@ Unlike Router Outlet, Nav is not tied to a particular router. This means that if
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

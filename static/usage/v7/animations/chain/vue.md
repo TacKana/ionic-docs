@@ -1,20 +1,20 @@
 ```html
 <template>
   <ion-card ref="cardAEl">
-    <ion-card-content>Card 1</ion-card-content>
+    <ion-card-content>卡片 1</ion-card-content>
   </ion-card>
 
   <ion-card ref="cardBEl">
-    <ion-card-content>Card 2</ion-card-content>
+    <ion-card-content>卡片 2</ion-card-content>
   </ion-card>
 
   <ion-card ref="cardCEl">
-    <ion-card-content>Card 3</ion-card-content>
+    <ion-card-content>卡片 3</ion-card-content>
   </ion-card>
 
-  <ion-button @click="play()">Play</ion-button>
-  <ion-button @click="pause()">Pause</ion-button>
-  <ion-button @click="stop()">Stop</ion-button>
+  <ion-button @click="play()">播放</ion-button>
+  <ion-button @click="pause()">暂停</ion-button>
+  <ion-button @click="stop()">停止</ion-button>
 </template>
 
 <script setup lang="ts">

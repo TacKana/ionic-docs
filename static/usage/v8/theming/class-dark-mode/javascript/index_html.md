@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-back-button default-href="#"></ion-back-button>
     </ion-buttons>
-    <ion-title>Display</ion-title>
+    <ion-title>显示设置</ion-title>
     <ion-buttons slot="end">
       <ion-button color="dark">
         <ion-icon slot="icon-only" ios="person-circle-outline" md="person-circle"></ion-icon>
@@ -14,21 +14,21 @@
 </ion-header>
 
 <ion-content>
-  <ion-list-header>Appearance</ion-list-header>
+  <ion-list-header>外观</ion-list-header>
   <ion-list inset="true">
     <ion-item>
-      <ion-toggle justify="space-between" id="paletteToggle">Dark Mode</ion-toggle>
+      <ion-toggle justify="space-between" id="paletteToggle">深色模式</ion-toggle>
     </ion-item>
   </ion-list>
 
   <ion-list inset="true">
-    <ion-item button="true">Text Size</ion-item>
+    <ion-item button="true">文字大小</ion-item>
     <ion-item>
-      <ion-toggle justify="space-between">Bold Text</ion-toggle>
+      <ion-toggle justify="space-between">粗体文本</ion-toggle>
     </ion-item>
   </ion-list>
 
-  <ion-list-header>Brightness</ion-list-header>
+  <ion-list-header>亮度</ion-list-header>
   <ion-list inset="true">
     <ion-item>
       <ion-range value="40">
@@ -37,56 +37,55 @@
       </ion-range>
     </ion-item>
     <ion-item>
-      <ion-toggle justify="space-between" checked>True Tone</ion-toggle>
+      <ion-toggle justify="space-between" checked>原彩显示</ion-toggle>
     </ion-item>
   </ion-list>
 
   <ion-list inset="true">
     <ion-item button="true">
-      <ion-label>Night Shift</ion-label>
-      <ion-text slot="end" color="medium">9:00 PM to 8:00 AM</ion-text>
+      <ion-label>夜览模式</ion-label>
+      <ion-text slot="end" color="medium">晚上 9:00 至次日上午 8:00</ion-text>
     </ion-item>
   </ion-list>
 </ion-content>
 
 <script>
-  // Query for the toggle that is used to change between palettes
+  // 查询用于切换配色方案的开关
   const toggle = document.querySelector('#paletteToggle');
 
-  // Listen for the toggle check/uncheck to toggle the dark palette
+  // 监听开关的选中/取消状态以切换深色配色方案
   toggle.addEventListener('ionChange', (event) => {
     toggleDarkPalette(event.detail.checked);
   });
 
-  // Use matchMedia to check the user preference
+  // 使用 matchMedia 检查用户偏好
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-  // Initialize the dark palette based on the initial
-  // value of the prefers-color-scheme media query
+  // 根据 prefers-color-scheme 媒体查询的初始值初始化深色配色方案
   initializeDarkPalette(prefersDark.matches);
 
-  // Listen for changes to the prefers-color-scheme media query
+  // 监听 prefers-color-scheme 媒体查询的变更
   prefersDark.addEventListener('change', (mediaQuery) => initializeDarkPalette(mediaQuery.matches));
 
-  // Check/uncheck the toggle and update the palette based on isDark
+  // 根据 isDark 参数设置/取消开关选中状态并更新配色方案
   function initializeDarkPalette(isDark) {
     toggle.checked = isDark;
     toggleDarkPalette(isDark);
   }
 
-  // Called by the media query to check/uncheck the toggle
+  // 由媒体查询调用来设置/取消开关选中状态
   function checkToggle(shouldCheck) {
     toggle.checked = shouldCheck;
   }
 
-  // Add or remove the "ion-palette-dark" class on the html element
+  // 在 html 元素上添加或移除 "ion-palette-dark" 类
   function toggleDarkPalette(shouldAdd) {
     document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
   }
 </script>
 
 <style>
-  /* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
+  /* (可选) 添加此样式以防止切换配色方案时出现的闪烁现象 */
   ion-item {
     --transition: none;
   }

@@ -1,6 +1,6 @@
 ```html
 <ion-card>
-  <ion-card-content>Double click me to move the card.</ion-card-content>
+  <ion-card-content>双击我可移动卡片。</ion-card-content>
 </ion-card>
 
 <style>

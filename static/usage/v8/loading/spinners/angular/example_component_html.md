@@ -1,4 +1,4 @@
 ```html
-<ion-button id="open-loading">Show Loading</ion-button>
-<ion-loading trigger="open-loading" message="Loading..." [duration]="3000" spinner="circles"></ion-loading>
+<ion-button id="open-loading">显示加载中</ion-button>
+<ion-loading trigger="open-loading" message="加载中..." [duration]="3000" spinner="circles"></ion-loading>
 ```

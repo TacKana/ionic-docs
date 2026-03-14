@@ -9,7 +9,7 @@
 
 <style scoped>
   /*
-   * Custom Datetime Calendar Header Part
+   * 自定义日期时间组件日历头部部件
    * -------------------------------------------
    */
   ion-datetime::part(calendar-header) {

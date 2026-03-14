@@ -3,22 +3,22 @@ sidebar_label: FAQ
 slug: /native/faq
 ---
 
-# Frequently Asked Question
+# 常见问题解答
 
-## What is Capacitor?
+## 什么是 Capacitor？
 
-Capacitor is a native runtime built by the Ionic team that offers web developers the ability to deploy their web apps to a native device. Capacitor is also exposing native device capabilities through JavaScript so developers can access features like native location services, filesystem access, or notifications as if they are interacting with any other JavaScript library.
+Capacitor 是由 Ionic 团队构建的原生运行时，它让 Web 开发者能够将自己的 Web 应用部署到原生设备上。Capacitor 还通过 JavaScript 暴露了原生设备的功能，因此开发者可以像使用任何其他 JavaScript 库一样，访问原生定位服务、文件系统访问或通知等功能。
 
-## Permission Issues
+## 权限问题
 
-If you're using a plugin, it may require adding additional permissions to your native project after you install the plugin. For instance, the Capacitor Camera plugin requires the following permission for iOS:
+如果你正在使用某个插件，安装该插件后可能需要在你的原生项目中添加额外的权限。例如，Capacitor Camera 插件在 iOS 上需要以下权限：
 
-- `NSCameraUsageDescription` (`Privacy - Camera Usage Description`)
-- `NSPhotoLibraryAddUsageDescription` (`Privacy - Photo Library Additions Usage Description`)
-- `NSPhotoLibraryUsageDescription` (`Privacy - Photo Library Usage Description`)
+- `NSCameraUsageDescription` (`隐私 - 相机使用说明`)
+- `NSPhotoLibraryAddUsageDescription` (`隐私 - 照片库添加使用说明`)
+- `NSPhotoLibraryUsageDescription` (`隐私 - 照片库使用说明`)
 
-You need to manually add those permissions to the `info.plist` in your native project. Otherwise, calls to the native camera API will fail.
+你需要手动将这些权限添加到原生项目的 `info.plist` 文件中。否则，调用原生相机 API 将会失败。
 
-## Unexpected behavior
+## 意外行为
 
-If for some reason the plugin does not behave in a way that is unexpected, please [open an issue on our github repo](https://github.com/ionic-team/capacitor-plugins)! Providing a clear issue report along with a reproduction can help get your issue resolved.
+如果插件由于某些原因出现了预期之外的行为，请在 [我们的 GitHub 仓库提交问题](https://github.com/ionic-team/capacitor-plugins) 提供清晰的问题描述和复现步骤，这将有助于解决你的问题。

@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-list v-if="loaded">
-    <ion-list-header>Albums</ion-list-header>
+    <ion-list-header>专辑</ion-list-header>
     <ion-item>
       <ion-thumbnail slot="start">
         <ion-icon style="width: 100%; height: 100%" :icon="musicalNotes"></ion-icon>
@@ -36,7 +36,7 @@
     </ion-item>
   </ion-list>
 
-  <ion-button @click="setLoaded(!loaded)">Toggle</ion-button>
+  <ion-button @click="setLoaded(!loaded)">切换</ion-button>
 </template>
 
 <script setup lang="ts">

@@ -1,7 +1,7 @@
 ```html
-<ion-button id="trigger-button">Click Me</ion-button>
+<ion-button id="trigger-button">点击我</ion-button>
 <ion-popover trigger="trigger-button">
-  <ion-content class="ion-padding">Hello Styled World!</ion-content>
+  <ion-content class="ion-padding">你好，带样式的世界！</ion-content>
 </ion-popover>
 
 <style>

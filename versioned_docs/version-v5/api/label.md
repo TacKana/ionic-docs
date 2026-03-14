@@ -1,6 +1,6 @@
 ---
-title: 'Item Label Color and Properties for Applications | ion-label'
-description: 'Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label.'
+title: '应用程序的标签颜色和属性 | ion-label'
+description: 'Label 是一个包装元素，可与其他 Ionic 组件结合使用。通过 ion-label 轻松设计项目标签颜色及其他属性。'
 sidebar_label: 'ion-label'
 ---
 
@@ -16,37 +16,37 @@ import Slots from '@ionic-internal/component-api/v5/label/slots.md';
 
 # ion-label
 
-Label is a wrapper element that can be used in combination with `ion-item`, `ion-input`, `ion-toggle`, and more. The position of the label inside of an item can be inline, fixed, stacked, or floating.
+Label 是一个包装元素，可与 `ion-item`、`ion-input`、`ion-toggle` 等组件结合使用。标签在项目内部的位置可以是内联、固定、堆叠或浮动。
 
-## Usage
+## 使用方式
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- Default Label -->
+<!-- 默认标签 -->
 <ion-label>Label</ion-label>
 
-<!-- Label Colors -->
+<!-- 标签颜色 -->
 <ion-label color="primary">Primary Label</ion-label>
 <ion-label color="secondary">Secondary Label</ion-label>
 <ion-label color="danger">Danger Label</ion-label>
 <ion-label color="light">Light Label</ion-label>
 <ion-label color="dark">Dark Label</ion-label>
 
-<!-- Item Labels -->
+<!-- 项目标签 -->
 <ion-item>
   <ion-label>Default Item</ion-label>
 </ion-item>
 
 <ion-item>
   <ion-label class="ion-text-wrap">
-    Multi-line text that should wrap when it is too long to fit on one line in the item.
+    多行文本，当内容过长无法在项目的一行内显示时，应自动换行。
   </ion-label>
 </ion-item>
 
-<!-- Input Labels -->
+<!-- 输入框标签 -->
 <ion-item>
   <ion-label>Default Input</ion-label>
   <ion-input></ion-input>
@@ -83,28 +83,28 @@ Label is a wrapper element that can be used in combination with `ion-item`, `ion
 <TabItem value="javascript">
 
 ```html
-<!-- Default Label -->
+<!-- 默认标签 -->
 <ion-label>Label</ion-label>
 
-<!-- Label Colors -->
+<!-- 标签颜色 -->
 <ion-label color="primary">Primary Label</ion-label>
 <ion-label color="secondary">Secondary Label</ion-label>
 <ion-label color="danger">Danger Label</ion-label>
 <ion-label color="light">Light Label</ion-label>
 <ion-label color="dark">Dark Label</ion-label>
 
-<!-- Item Labels -->
+<!-- 项目标签 -->
 <ion-item>
   <ion-label>Default Item</ion-label>
 </ion-item>
 
 <ion-item>
   <ion-label class="ion-text-wrap">
-    Multi-line text that should wrap when it is too long to fit on one line in the item.
+    多行文本，当内容过长无法在项目的一行内显示时，应自动换行。
   </ion-label>
 </ion-item>
 
-<!-- Input Labels -->
+<!-- 输入框标签 -->
 <ion-item>
   <ion-label>Default Input</ion-label>
   <ion-input></ion-input>
@@ -146,11 +146,11 @@ import { IonLabel, IonItem, IonInput, IonToggle, IonCheckbox, IonContent } from 
 
 export const LabelExample: React.FC = () => (
   <IonContent>
-    {/*-- Default Label --*/}
+    {/*-- 默认标签 --*/}
     <IonLabel>Label</IonLabel>
     <br />
 
-    {/*-- Label Colors --*/}
+    {/*-- 标签颜色 --*/}
     <IonLabel color="primary">Primary Label</IonLabel>
     <br />
     <IonLabel color="secondary">Secondary Label</IonLabel>
@@ -162,18 +162,18 @@ export const LabelExample: React.FC = () => (
     <IonLabel color="dark">Dark Label</IonLabel>
     <br />
 
-    {/*-- Item Labels --*/}
+    {/*-- 项目标签 --*/}
     <IonItem>
       <IonLabel>Default Item</IonLabel>
     </IonItem>
 
     <IonItem>
       <IonLabel className="ion-text-wrap">
-        Multi-line text that should wrap when it is too long to fit on one line in the item.
+        多行文本，当内容过长无法在项目的一行内显示时，应自动换行。
       </IonLabel>
     </IonItem>
 
-    {/*-- Input Labels --*/}
+    {/*-- 输入框标签 --*/}
     <IonItem>
       <IonLabel>Default Input</IonLabel>
       <IonInput></IonInput>
@@ -221,28 +221,28 @@ import { Component, h } from '@stencil/core';
 export class LabelExample {
   render() {
     return [
-      // Default Label
+      // 默认标签
       <ion-label>Label</ion-label>,
 
-      // Label Colors
+      // 标签颜色
       <ion-label color="primary">Primary Label</ion-label>,
       <ion-label color="secondary">Secondary Label</ion-label>,
       <ion-label color="danger">Danger Label</ion-label>,
       <ion-label color="light">Light Label</ion-label>,
       <ion-label color="dark">Dark Label</ion-label>,
 
-      // Item Labels
+      // 项目标签
       <ion-item>
         <ion-label>Default Item</ion-label>
       </ion-item>,
 
       <ion-item>
         <ion-label class="ion-text-wrap">
-          Multi-line text that should wrap when it is too long to fit on one line in the item.
+          多行文本，当内容过长无法在项目的一行内显示时，应自动换行。
         </ion-label>
       </ion-item>,
 
-      // Input Labels
+      // 输入框标签
       <ion-item>
         <ion-label>Default Input</ion-label>
         <ion-input></ion-input>
@@ -283,28 +283,28 @@ export class LabelExample {
 
 ```html
 <template>
-  <!-- Default Label -->
+  <!-- 默认标签 -->
   <ion-label>Label</ion-label>
 
-  <!-- Label Colors -->
+  <!-- 标签颜色 -->
   <ion-label color="primary">Primary Label</ion-label>
   <ion-label color="secondary">Secondary Label</ion-label>
   <ion-label color="danger">Danger Label</ion-label>
   <ion-label color="light">Light Label</ion-label>
   <ion-label color="dark">Dark Label</ion-label>
 
-  <!-- Item Labels -->
+  <!-- 项目标签 -->
   <ion-item>
     <ion-label>Default Item</ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label class="ion-text-wrap">
-      Multi-line text that should wrap when it is too long to fit on one line in the item.
+      多行文本，当内容过长无法在项目的一行内显示时，应自动换行。
     </ion-label>
   </ion-item>
 
-  <!-- Input Labels -->
+  <!-- 输入框标签 -->
   <ion-item>
     <ion-label>Default Input</ion-label>
     <ion-input></ion-input>
@@ -356,26 +356,26 @@ export class LabelExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

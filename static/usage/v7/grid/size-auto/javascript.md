@@ -1,5 +1,5 @@
 ```html
-<b>Column 1 has <code>size</code> set to <code>"auto"</code></b>
+<b>第一列的 <code>size</code> 设置为 <code>"auto"</code></b>
 <ion-grid>
   <ion-row>
     <ion-col size="auto">1</ion-col>
@@ -8,7 +8,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Column 3 contains an input and has <code>size</code> set to <code>"auto"</code></b>
+<b>第三列包含输入框，其 <code>size</code> 设置为 <code>"auto"</code></b>
 <ion-grid>
   <ion-row>
     <ion-col>1</ion-col>
@@ -22,7 +22,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Column 2 has <code>size</code> set to <code>"auto"</code> and a defined width</b>
+<b>第二列的 <code>size</code> 设置为 <code>"auto"</code> 并定义了宽度</b>
 <ion-grid>
   <ion-row>
     <ion-col>1</ion-col>

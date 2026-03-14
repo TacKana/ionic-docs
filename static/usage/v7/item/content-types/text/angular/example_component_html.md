@@ -1,7 +1,7 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Example</ion-title>
+    <ion-title>示例</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content color="light">
@@ -14,8 +14,8 @@
     </ion-item>
     <ion-item>
       <ion-toggle>
-        <ion-label>Allow Notifications</ion-label>
-        <ion-note color="medium">Unsubscribe at any time</ion-note>
+        <ion-label>允许通知</ion-label>
+        <ion-note color="medium">随时可以取消订阅</ion-note>
       </ion-toggle>
     </ion-item>
   </ion-list>
@@ -27,7 +27,7 @@
   </ion-list>
 
   <ion-note color="medium" class="ion-margin-horizontal">
-    Your comments will be kept anonymous and will only be used to improve the reliability of our products.</ion-note
-  >
+    您的评论将被匿名处理，仅用于提升我们产品的可靠性。
+  </ion-note>
 </ion-content>
 ```

@@ -1,15 +1,15 @@
 ```html
-<ion-button id="auto-trigger">Size=Auto</ion-button>
+<ion-button id="auto-trigger">尺寸=自动</ion-button>
 <ion-popover trigger="auto-trigger" size="auto">
   <ng-template>
-    <ion-content class="ion-padding">Hello!</ion-content>
+    <ion-content class="ion-padding">你好！</ion-content>
   </ng-template>
 </ion-popover>
 
-<ion-button id="cover-trigger">Size=Cover</ion-button>
+<ion-button id="cover-trigger">尺寸=覆盖</ion-button>
 <ion-popover trigger="cover-trigger" size="cover">
   <ng-template>
-    <ion-content class="ion-padding">Hello!</ion-content>
+    <ion-content class="ion-padding">你好！</ion-content>
   </ng-template>
 </ion-popover>
 ```

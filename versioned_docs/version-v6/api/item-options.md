@@ -10,35 +10,35 @@ import CustomProps from '@ionic-internal/component-api/v6/item-options/custom-pr
 import Slots from '@ionic-internal/component-api/v6/item-options/slots.md';
 
 <head>
-  <title>ion-item-options: Option Button Components for Ionic Apps</title>
+  <title>ion-item-options：Ionic 应用中的选项按钮组件</title>
   <meta
     name="description"
-    content="ion-item-options are for ion-item-sliding. These option buttons can be placed either on the start or end side. Read to learn more about use on Ionic apps."
+    content="ion-item-options 专为 ion-item-sliding 设计。这些选项按钮可以放置在起始侧或结束侧。阅读以了解更多关于在 Ionic 应用中的用法。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-The item options component is a container for the [item option](./item-option) buttons in a sliding item. These buttons can be placed either on the [start or end side](#side-description).
+项目选项组件是滑动项目中[项目选项](./item-option)按钮的容器。这些按钮可以放置在[起始侧或结束侧](#side-description)。
 
-See the [item sliding](./item-sliding) documentation for more information.
+更多信息请参阅[项目滑动](./item-sliding)文档。
 
-## Side Description
+## 侧边说明
 
-| Side    | Position                                                        | Swipe Direction                                                   |
-| ------- | --------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `start` | To the `left` of the content in LTR, and to the `right` in RTL. | From `left` to `right` in LTR, and from `right` to `left` in RTL. |
-| `end`   | To the `right` of the content in LTR, and to the `left` in RTL. | From `right` to `left` in LTR, and from `left` to `right` in RTL. |
+| 侧边    | 位置                                                          | 滑动方向                                                       |
+| ------- | ------------------------------------------------------------- | -------------------------------------------------------------- |
+| `start` | 在 LTR 中位于内容`左侧`，在 RTL 中位于内容`右侧`。            | 在 LTR 中从`左`到`右`滑动，在 RTL 中从`右`到`左`滑动。         |
+| `end`   | 在 LTR 中位于内容`右侧`，在 RTL 中位于内容`左侧`。            | 在 LTR 中从`右`到`左`滑动，在 RTL 中从`左`到`右`滑动。         |
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -46,10 +46,10 @@ See the [item sliding](./item-sliding) documentation for more information.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

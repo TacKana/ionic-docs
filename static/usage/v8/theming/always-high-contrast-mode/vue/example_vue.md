@@ -5,7 +5,7 @@
       <ion-buttons slot="start">
         <ion-back-button default-href="#"></ion-back-button>
       </ion-buttons>
-      <ion-title>Display</ion-title>
+      <ion-title>显示设置</ion-title>
       <ion-buttons slot="end">
         <ion-button color="dark">
           <ion-icon slot="icon-only" :ios="personCircleOutline" :md="personCircle"></ion-icon>
@@ -15,15 +15,15 @@
   </ion-header>
 
   <ion-content color="light">
-    <ion-list-header>Appearance</ion-list-header>
+    <ion-list-header>外观</ion-list-header>
     <ion-list :inset="true">
-      <ion-item :button="true">Text Size</ion-item>
+      <ion-item :button="true">文字大小</ion-item>
       <ion-item>
-        <ion-toggle justify="space-between">Bold Text</ion-toggle>
+        <ion-toggle justify="space-between">粗体文本</ion-toggle>
       </ion-item>
     </ion-list>
 
-    <ion-list-header>Brightness</ion-list-header>
+    <ion-list-header>亮度</ion-list-header>
     <ion-list :inset="true">
       <ion-item>
         <ion-range value="40">
@@ -32,14 +32,14 @@
         </ion-range>
       </ion-item>
       <ion-item>
-        <ion-toggle justify="space-between" checked>True Tone</ion-toggle>
+        <ion-toggle justify="space-between" checked>原彩显示</ion-toggle>
       </ion-item>
     </ion-list>
 
     <ion-list :inset="true">
       <ion-item :button="true">
-        <ion-label>Night Shift</ion-label>
-        <ion-text slot="end" color="medium">9:00 PM to 8:00 AM</ion-text>
+        <ion-label>夜览</ion-label>
+        <ion-text slot="end" color="medium">晚上 9:00 至次日 8:00</ion-text>
       </ion-item>
     </ion-list>
   </ion-content>

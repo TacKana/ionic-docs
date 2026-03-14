@@ -23,8 +23,8 @@
         this.buffer += 0.06;
         this.progress += 0.06;
 
-        // Reset the progress bar when it reaches 100%
-        // to continuously show the demo
+        // 当进度条达到 100% 时将其重置
+        // 以便持续展示示例效果
         if (this.progress > 1) {
           setTimeout(() => {
             this.buffer = 0.06;

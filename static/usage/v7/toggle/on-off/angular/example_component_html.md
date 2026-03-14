@@ -1,3 +1,3 @@
 ```html
-<ion-toggle [enableOnOffLabels]="true">Enable Notifications</ion-toggle>
+<ion-toggle [enableOnOffLabels]="true">启用通知</ion-toggle>
 ```

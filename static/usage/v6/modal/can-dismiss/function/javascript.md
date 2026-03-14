@@ -6,19 +6,19 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-button id="open-modal" expand="block">Open</ion-button>
+    <ion-button id="open-modal" expand="block">打开</ion-button>
 
     <ion-modal trigger="open-modal" swipe-to-close="true">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Modal</ion-title>
+          <ion-title>模态框</ion-title>
           <ion-buttons slot="end">
-            <ion-button onclick="dismiss()">Close</ion-button>
+            <ion-button onclick="dismiss()">关闭</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
-        <p>You will be prompted when closing this modal.</p>
+        <p>关闭此模态框时，系统会提示您确认。</p>
       </ion-content>
     </ion-modal>
   </ion-content>
@@ -37,14 +37,14 @@
   async function promptClose() {
     const actionSheet = document.createElement('ion-action-sheet');
 
-    actionSheet.header = 'Are you sure?';
+    actionSheet.header = '确定要关闭吗？';
     actionSheet.buttons = [
       {
-        text: 'Yes',
+        text: '是',
         role: 'confirm',
       },
       {
-        text: 'No',
+        text: '否',
         role: 'cancel',
       },
     ];

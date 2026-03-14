@@ -1,24 +1,24 @@
 ```html
-<ion-button onclick="presentAlert()">Click Me</ion-button>
+<ion-button onclick="presentAlert()">点击我</ion-button>
 
 <script>
   async function presentAlert() {
     const alert = document.createElement('ion-alert');
-    alert.header = 'Select your favorite color';
-    alert.buttons = ['OK'];
+    alert.header = '选择你最喜欢的颜色';
+    alert.buttons = ['确定'];
     alert.inputs = [
       {
-        label: 'Red',
+        label: '红色',
         type: 'radio',
         value: 'red',
       },
       {
-        label: 'Blue',
+        label: '蓝色',
         type: 'radio',
         value: 'blue',
       },
       {
-        label: 'Green',
+        label: '绿色',
         type: 'radio',
         value: 'green',
       },

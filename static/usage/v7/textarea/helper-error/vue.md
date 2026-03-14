@@ -5,8 +5,8 @@
     fill="solid"
     label="Email"
     label-placement="floating"
-    helper-text="Enter a valid email"
-    error-text="Invalid email"
+    helper-text="请输入有效的邮箱地址"
+    error-text="邮箱格式无效"
     @ionInput="validate"
     @ionBlur="markTouched"
   ></ion-textarea>

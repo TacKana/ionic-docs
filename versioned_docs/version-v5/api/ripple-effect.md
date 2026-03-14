@@ -14,13 +14,13 @@ import Slots from '@ionic-internal/component-api/v5/ripple-effect/slots.md';
 
 # ion-ripple-effect
 
-The ripple effect component adds the [Material Design ink ripple interaction effect](https://material.io/develop/web/components/ripples/). This component can only be used inside of an `<ion-app>` and can be added to any component.
+涟漪效果组件用于添加 [Material Design 的墨水涟漪交互效果](https://material.io/develop/web/components/ripples/)。该组件只能在 `<ion-app>` 内部使用，并且可以添加到任何组件中。
 
-It's important to note that the parent should have [relative positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/position) because the ripple effect is absolutely positioned and will cover the closest parent with relative positioning. The parent element should also be given the `ion-activatable` class, which tells the ripple effect that the element is clickable.
+需要特别注意的是，父级元素必须具有 [相对定位（relative positioning）](https://developer.mozilla.org/en-US/docs/Web/CSS/position)。因为涟漪效果是绝对定位的，它会覆盖最近一个具有相对定位的父元素。父元素还应添加 `ion-activatable` 类，该类会告知涟漪效果该元素是可点击的。
 
-The default type, `"bounded"`, will expand the ripple effect from the click position outwards. To add a ripple effect that always starts in the center of the element and expands in a circle, add an `"unbounded"` type. It's recommended to add `overflow: hidden` to the parent element to avoid the ripple overflowing its container, especially with an unbounded ripple.
+默认类型 `"bounded"` 会从点击位置向外扩展涟漪效果。若要添加一个始终从元素中心开始并以圆形扩展的涟漪效果，请添加 `"unbounded"` 类型。建议为父元素添加 `overflow: hidden` 样式，以防止涟漪效果溢出其容器，特别是对于无边界（unbounded）涟漪。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -30,22 +30,22 @@ The default type, `"bounded"`, will expand the ripple effect from the click posi
 <ion-app>
   <ion-content>
     <div class="ion-activatable ripple-parent">
-      A plain div with a bounded ripple effect
+      一个带有边界涟漪效果的普通 div
       <ion-ripple-effect></ion-ripple-effect>
     </div>
 
     <button class="ion-activatable ripple-parent">
-      A button with a bounded ripple effect
+      一个带有边界涟漪效果的按钮
       <ion-ripple-effect></ion-ripple-effect>
     </button>
 
     <div class="ion-activatable ripple-parent">
-      A plain div with an unbounded ripple effect
+      一个带有无边界涟漪效果的普通 div
       <ion-ripple-effect type="unbounded"></ion-ripple-effect>
     </div>
 
     <button class="ion-activatable ripple-parent">
-      A button with an unbounded ripple effect
+      一个带有无边界涟漪效果的按钮
       <ion-ripple-effect type="unbounded"></ion-ripple-effect>
     </button>
   </ion-content>
@@ -67,22 +67,22 @@ The default type, `"bounded"`, will expand the ripple effect from the click posi
 <ion-app>
   <ion-content>
     <div class="ion-activatable ripple-parent">
-      A plain div with a bounded ripple effect
+      一个带有边界涟漪效果的普通 div
       <ion-ripple-effect></ion-ripple-effect>
     </div>
 
     <button class="ion-activatable ripple-parent">
-      A button with a bounded ripple effect
+      一个带有边界涟漪效果的按钮
       <ion-ripple-effect></ion-ripple-effect>
     </button>
 
     <div class="ion-activatable ripple-parent">
-      A plain div with an unbounded ripple effect
+      一个带有无边界涟漪效果的普通 div
       <ion-ripple-effect type="unbounded"></ion-ripple-effect>
     </div>
 
     <button class="ion-activatable ripple-parent">
-      A button with an unbounded ripple effect
+      一个带有无边界涟漪效果的按钮
       <ion-ripple-effect type="unbounded"></ion-ripple-effect>
     </button>
   </ion-content>
@@ -109,22 +109,22 @@ export const RippleExample: React.FC = () => (
   <IonApp>
     <IonContent>
       <div className="ion-activatable ripple-parent">
-        A plain div with a bounded ripple effect
+        一个带有边界涟漪效果的普通 div
         <IonRippleEffect></IonRippleEffect>
       </div>
 
       <button className="ion-activatable ripple-parent">
-        A button with a bounded ripple effect
+        一个带有边界涟漪效果的按钮
         <IonRippleEffect></IonRippleEffect>
       </button>
 
       <div className="ion-activatable ripple-parent">
-        A plain div with an unbounded ripple effect
+        一个带有无边界涟漪效果的普通 div
         <IonRippleEffect type="unbounded"></IonRippleEffect>
       </div>
 
       <button className="ion-activatable ripple-parent">
-        A button with an unbounded ripple effect
+        一个带有无边界涟漪效果的按钮
         <IonRippleEffect type="unbounded"></IonRippleEffect>
       </button>
     </IonContent>
@@ -156,22 +156,22 @@ export class RippleEffectExample {
       <ion-app>
         <ion-content>
           <div class="ion-activatable ripple-parent">
-            A plain div with a bounded ripple effect
+            一个带有边界涟漪效果的普通 div
             <ion-ripple-effect></ion-ripple-effect>
           </div>
 
           <button class="ion-activatable ripple-parent">
-            A button with a bounded ripple effect
+            一个带有边界涟漪效果的按钮
             <ion-ripple-effect></ion-ripple-effect>
           </button>
 
           <div class="ion-activatable ripple-parent">
-            A plain div with an unbounded ripple effect
+            一个带有无边界涟漪效果的普通 div
             <ion-ripple-effect type="unbounded"></ion-ripple-effect>
           </div>
 
           <button class="ion-activatable ripple-parent">
-            A button with an unbounded ripple effect
+            一个带有无边界涟漪效果的按钮
             <ion-ripple-effect type="unbounded"></ion-ripple-effect>
           </button>
         </ion-content>
@@ -197,22 +197,22 @@ export class RippleEffectExample {
   <ion-app>
     <ion-content>
       <div class="ion-activatable ripple-parent">
-        A plain div with a bounded ripple effect
+        一个带有边界涟漪效果的普通 div
         <ion-ripple-effect></ion-ripple-effect>
       </div>
 
       <button class="ion-activatable ripple-parent">
-        A button with a bounded ripple effect
+        一个带有边界涟漪效果的按钮
         <ion-ripple-effect></ion-ripple-effect>
       </button>
 
       <div class="ion-activatable ripple-parent">
-        A plain div with an unbounded ripple effect
+        一个带有无边界涟漪效果的普通 div
         <ion-ripple-effect type="unbounded"></ion-ripple-effect>
       </div>
 
       <button class="ion-activatable ripple-parent">
-        A button with an unbounded ripple effect
+        一个带有无边界涟漪效果的按钮
         <ion-ripple-effect type="unbounded"></ion-ripple-effect>
       </button>
     </ion-content>
@@ -240,15 +240,15 @@ export class RippleEffectExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -256,10 +256,10 @@ export class RippleEffectExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

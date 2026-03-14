@@ -26,7 +26,7 @@ function Example() {
   const [darkPaletteToggle, setDarkPaletteToggle] = useState(false);
   const [highContrastPaletteToggle, setHighContrastPaletteToggle] = useState(false);
 
-  // Listen for the toggle check/uncheck to toggle the palettes
+  // 监听开关的勾选/取消状态以切换调色板
   const darkPaletteToggleChange = (event: ToggleCustomEvent) => {
     toggleDarkPalette(event.detail.checked);
   };
@@ -35,17 +35,17 @@ function Example() {
     toggleHighContrastPalette(event.detail.checked);
   };
 
-  // Add or remove the "ion-palette-dark" class on the html element
+  // 在 html 元素上添加或移除 "ion-palette-dark" 类
   const toggleDarkPalette = (shouldAdd: boolean) => {
     document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
   };
 
-  // Add or remove the "ion-palette-high-contrast" class on the html element
+  // 在 html 元素上添加或移除 "ion-palette-high-contrast" 类
   const toggleHighContrastPalette = (shouldAdd: boolean) => {
     document.documentElement.classList.toggle('ion-palette-high-contrast', shouldAdd);
   };
 
-  // Check/uncheck the toggle and update the palette
+  // 设置开关状态并更新调色板
   const initializeDarkPalette = (isDark: boolean) => {
     setDarkPaletteToggle(isDark);
     toggleDarkPalette(isDark);
@@ -57,12 +57,11 @@ function Example() {
   };
 
   useEffect(() => {
-    // Use matchMedia to check the user preference
+    // 使用 matchMedia 检查用户偏好
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
     const prefersHighContrast = window.matchMedia('(prefers-contrast: more)');
 
-    // Initialize the dark palette based on the initial
-    // value of the media queries
+    // 根据媒体查询的初始值初始化深色调色板
     initializeDarkPalette(prefersDark.matches);
     initializeHighContrastPalette(prefersHighContrast.matches);
 
@@ -74,7 +73,7 @@ function Example() {
       initializeHighContrastPalette(mediaQuery.matches);
     };
 
-    // Listen for changes to the media queries
+    // 监听媒体查询的变更
     prefersDark.addEventListener('change', setDarkPaletteFromMediaQuery);
     prefersHighContrast.addEventListener('change', setHighContrastPaletteFromMediaQuery);
 
@@ -91,7 +90,7 @@ function Example() {
           <IonButtons slot="start">
             <IonBackButton default-href="#"></IonBackButton>
           </IonButtons>
-          <IonTitle>Display</IonTitle>
+          <IonTitle>显示</IonTitle>
           <IonButtons slot="end">
             <IonButton color="dark">
               <IonIcon slot="icon-only" ios={personCircleOutline} md={personCircle}></IonIcon>
@@ -101,11 +100,11 @@ function Example() {
       </IonHeader>
 
       <IonContent color="light">
-        <IonListHeader>Appearance</IonListHeader>
+        <IonListHeader>外观</IonListHeader>
         <IonList inset={true}>
           <IonItem>
             <IonToggle checked={darkPaletteToggle} onIonChange={darkPaletteToggleChange} justify="space-between">
-              Dark Mode
+              深色模式
             </IonToggle>
           </IonItem>
           <IonItem>
@@ -114,19 +113,19 @@ function Example() {
               onIonChange={highContrastPaletteToggleChange}
               justify="space-between"
             >
-              High Contrast Mode
+              高对比度模式
             </IonToggle>
           </IonItem>
         </IonList>
 
         <IonList inset={true}>
-          <IonItem button={true}>Text Size</IonItem>
+          <IonItem button={true}>文字大小</IonItem>
           <IonItem>
-            <IonToggle justify="space-between">Bold Text</IonToggle>
+            <IonToggle justify="space-between">粗体文字</IonToggle>
           </IonItem>
         </IonList>
 
-        <IonListHeader>Brightness</IonListHeader>
+        <IonListHeader>亮度</IonListHeader>
         <IonList inset={true}>
           <IonItem>
             <IonRange value={40}>
@@ -136,16 +135,16 @@ function Example() {
           </IonItem>
           <IonItem>
             <IonToggle justify="space-between" checked>
-              True Tone
+              原彩显示
             </IonToggle>
           </IonItem>
         </IonList>
 
         <IonList inset={true}>
           <IonItem button={true}>
-            <IonLabel>Night Shift</IonLabel>
+            <IonLabel>夜览</IonLabel>
             <IonText slot="end" color="medium">
-              9:00 PM to 8:00 AM
+              晚上 9:00 至早上 8:00
             </IonText>
           </IonItem>
         </IonList>

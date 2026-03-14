@@ -15,7 +15,7 @@ import './main.css';
 function Example() {
   function handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
-      // Any calls to load data go here
+      // 任何加载数据的调用都应放在这里
       event.detail.complete();
     }, 2000);
   }
@@ -24,7 +24,7 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Pull to Refresh</IonTitle>
+          <IonTitle>下拉刷新</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -34,7 +34,7 @@ function Example() {
         </IonRefresher>
 
         <div className="ion-content-scroll-host ion-padding">
-          <p>Pull this content down to trigger the refresh.</p>
+          <p>向下拉动此内容以触发刷新。</p>
         </div>
       </IonContent>
     </>

@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/item-divider/custom-pr
 import Slots from '@ionic-internal/component-api/v7/item-divider/slots.md';
 
 <head>
-  <title>ion-item-divider: Item Divider Block Element for Ionic Apps</title>
+  <title>ion-item-divider：用于 Ionic 应用的项目分隔块元素</title>
   <meta
     name="description"
-    content="Item Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead, go in between groups of items."
+    content="项目分隔符是块元素，可用于分隔列表中的项目。它们类似于列表头部，但用于分隔项目组。"
   />
 </head>
 
@@ -21,37 +21,37 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Item dividers are block elements that can be used to separate [items](./item) in a list. They are similar to list headers, but instead of only being placed at the top of a list, they should go in between groups of items.
+项目分隔符是块元素，可用于分隔列表中的[项目](./item)。它们类似于列表头部，但不同于仅位于列表顶部，它们应放置在项目组之间。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v7/item-divider/basic/index.md';
 
 <Basic />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v7/item-divider/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v7/item-divider/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -59,10 +59,10 @@ import CSSProps from '@site/static/usage/v7/item-divider/theming/css-properties/
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

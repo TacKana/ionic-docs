@@ -15,7 +15,7 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Fab Buttons</IonTitle>
+          <IonTitle>浮动操作按钮</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">

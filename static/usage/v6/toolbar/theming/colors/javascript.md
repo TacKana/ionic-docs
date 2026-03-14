@@ -1,32 +1,32 @@
 ```html
 <ion-toolbar>
-  <ion-title>Default Toolbar</ion-title>
+  <ion-title>默认工具栏</ion-title>
 </ion-toolbar>
 <ion-toolbar color="primary">
-  <ion-title>Primary Toolbar</ion-title>
+  <ion-title>主色调工具栏</ion-title>
 </ion-toolbar>
 <ion-toolbar color="secondary">
-  <ion-title>Secondary Toolbar</ion-title>
+  <ion-title>辅助色调工具栏</ion-title>
 </ion-toolbar>
 <ion-toolbar color="tertiary">
-  <ion-title>Tertiary Toolbar</ion-title>
+  <ion-title>第三色调工具栏</ion-title>
 </ion-toolbar>
 <ion-toolbar color="success">
-  <ion-title>Success Toolbar</ion-title>
+  <ion-title>成功色调工具栏</ion-title>
 </ion-toolbar>
 <ion-toolbar color="warning">
-  <ion-title>Warning Toolbar</ion-title>
+  <ion-title>警告色调工具栏</ion-title>
 </ion-toolbar>
 <ion-toolbar color="danger">
-  <ion-title>Danger Toolbar</ion-title>
+  <ion-title>危险色调工具栏</ion-title>
 </ion-toolbar>
 <ion-toolbar color="light">
-  <ion-title>Light Toolbar</ion-title>
+  <ion-title>浅色调工具栏</ion-title>
 </ion-toolbar>
 <ion-toolbar color="medium">
-  <ion-title>Medium Toolbar</ion-title>
+  <ion-title>中等色调工具栏</ion-title>
 </ion-toolbar>
 <ion-toolbar color="dark">
-  <ion-title>Dark Toolbar</ion-title>
+  <ion-title>深色调工具栏</ion-title>
 </ion-toolbar>
 ```

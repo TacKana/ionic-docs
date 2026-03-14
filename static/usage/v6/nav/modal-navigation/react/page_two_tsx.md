@@ -9,8 +9,8 @@ function PageTwo({ nav }: { nav: HTMLIonNavElement }) {
 
   return (
     <IonContent class="ion-padding">
-      <h1>Page Two</h1>
-      <IonButton onClick={navigateToPageThree}>Go to Page Three</IonButton>
+      <h1>页面二</h1>
+      <IonButton onClick={navigateToPageThree}>前往页面三</IonButton>
     </IonContent>
   );
 }

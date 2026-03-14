@@ -19,9 +19,9 @@ function Example() {
         <IonRouterOutlet>
           <Redirect exact path="/" to="/home" />
           {/*
-          Use the render method to reduce the number of renders your component will have due to a route change.
+          使用 render 方法可以减少因路由变更而导致的组件渲染次数。
 
-          Use the component prop when your component depends on the RouterComponentProps passed in automatically.
+          当组件依赖于自动传入的 RouterComponentProps 时，请使用 component 属性。
         */}
           <Route path="/home" render={() => <HomePage />} exact={true} />
           <Route path="/radio" render={() => <RadioPage />} exact={true} />
@@ -32,22 +32,22 @@ function Example() {
         <IonTabBar slot="bottom">
           <IonTabButton tab="home" href="/home">
             <IonIcon icon={playCircle} />
-            <IonLabel>Listen now</IonLabel>
+            <IonLabel>立即收听</IonLabel>
           </IonTabButton>
 
           <IonTabButton tab="radio" href="/radio">
             <IonIcon icon={radio} />
-            <IonLabel>Radio</IonLabel>
+            <IonLabel>广播</IonLabel>
           </IonTabButton>
 
           <IonTabButton tab="library" href="/library">
             <IonIcon icon={library} />
-            <IonLabel>Library</IonLabel>
+            <IonLabel>音乐库</IonLabel>
           </IonTabButton>
 
           <IonTabButton tab="search" href="/search">
             <IonIcon icon={search} />
-            <IonLabel>Search</IonLabel>
+            <IonLabel>搜索</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

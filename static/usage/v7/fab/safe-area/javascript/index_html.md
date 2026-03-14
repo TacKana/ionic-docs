@@ -7,10 +7,9 @@
 
 <style>
   :root {
-    /**
-   * Setting the variables for DEMO purposes only.
-   * Values will be set automatically when building an iOS or Android app.
-   */
+    /* 仅为演示目的设置变量。
+     * 构建 iOS 或 Android 应用时会自动设置这些值。
+     */
     --ion-safe-area-top: 20px;
     --ion-safe-area-bottom: 20px;
   }

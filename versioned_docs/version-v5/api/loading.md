@@ -1,6 +1,6 @@
 ---
-title: 'Loading | Application Loading Indicator Overlay | ion-loading'
-description: "The ion-loading overlay indicates activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed."
+title: 'Loading | 应用加载指示器遮罩层 | ion-loading'
+description: "ion-loading 遮罩层在阻止用户交互时指示活动状态。加载指示器显示在应用内容之上，可以被关闭。"
 sidebar_label: 'ion-loading'
 demoUrl: '/docs/demos/api/loading/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/loading/index.html'
@@ -18,31 +18,31 @@ import Slots from '@ionic-internal/component-api/v5/loading/slots.md';
 
 # ion-loading
 
-An overlay that can be used to indicate activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app. It includes an optional backdrop, which can be disabled by setting `showBackdrop: false` upon creation.
+一种遮罩层，可用于在阻止用户交互时指示活动状态。加载指示器显示在应用内容之上，并且可以被应用关闭以恢复用户与应用交互。它包含一个可选的后置背景层，可以通过在创建时设置 `showBackdrop: false` 来禁用。
 
-## Dismissing
+## 关闭
 
-The loading indicator can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the loading options. To dismiss the loading indicator after creation, call the `dismiss()` method on the loading instance. The `onDidDismiss` function can be called to perform an action after the loading indicator is dismissed.
+可以通过在加载选项的 `duration` 中传递显示的毫秒数，让加载指示器在特定时间后自动关闭。要在创建后关闭加载指示器，可以在加载实例上调用 `dismiss()` 方法。可以在加载指示器被关闭后调用 `onDidDismiss` 函数来执行操作。
 
-## Customization
+## 自定义样式
 
-Loading uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
+Loading 使用作用域封装，这意味着它会在运行时通过为每个样式附加一个额外的类来自动限定其 CSS 范围。在 CSS 中覆盖作用域选择器需要一个[更高特异性](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)的选择器。
 
-We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.
+我们建议向 `create` 方法中的 `cssClass` 传递一个自定义类，并使用该类向宿主和内部元素添加自定义样式。此属性也可以接受多个以空格分隔的类。查看[用法](#usage)部分可以了解如何使用 `cssClass` 传递类的示例。
 
 ```css
-/* DOES NOT WORK - not specific enough */
+/* 不起作用 - 不够具体 */
 ion-loading {
   color: green;
 }
 
-/* Works - pass "my-custom-class" in cssClass to increase specificity */
+/* 有效 - 在 cssClass 中传递 "my-custom-class" 以增加特异性 */
 .my-custom-class {
   color: green;
 }
 ```
 
-Any of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Loading without needing to target individual elements:
+任何已定义的 [CSS 自定义属性](#css-custom-properties) 都可以用于设置 Loading 样式，无需针对单个元素：
 
 ```css
 .my-custom-class {
@@ -53,9 +53,9 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 }
 ```
 
-> If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
+> 如果你正在构建 Ionic Angular 应用，样式需要添加到全局样式表文件中。请阅读下方 Angular 部分中的[样式放置位置](#style-placement)获取更多信息。
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -76,20 +76,20 @@ export class LoadingExample {
   async presentLoading() {
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
-      message: 'Please wait...',
+      message: '请稍候...',
       duration: 2000,
     });
     await loading.present();
 
     const { role, data } = await loading.onDidDismiss();
-    console.log('Loading dismissed!');
+    console.log('加载已关闭！');
   }
 
   async presentLoadingWithOptions() {
     const loading = await this.loadingController.create({
       spinner: null,
       duration: 5000,
-      message: 'Click the backdrop to dismiss early...',
+      message: '点击后置背景层可提前关闭...',
       translucent: true,
       cssClass: 'custom-class custom-loading',
       backdropDismiss: true,
@@ -97,14 +97,14 @@ export class LoadingExample {
     await loading.present();
 
     const { role, data } = await loading.onDidDismiss();
-    console.log('Loading dismissed with role:', role);
+    console.log('加载已关闭，关闭方式为：', role);
   }
 }
 ```
 
-### Style Placement
+### 样式放置位置
 
-In Angular, the CSS of a specific page is scoped only to elements of that page. Even though the Loading can be presented from within a page, the `ion-loading` element is appended outside of the current page. This means that any custom styles need to go in a global stylesheet file. In an Ionic Angular starter this can be the `src/global.scss` file or you can register a new global style file by [adding to the `styles` build option in `angular.json`](https://angular.io/guide/workspace-config#style-script-config).
+在 Angular 中，特定页面的 CSS 仅作用于该页面的元素。即使 Loading 可以从页面内呈现，但 `ion-loading` 元素被附加到当前页面之外。这意味着任何自定义样式都需要放在全局样式表文件中。在 Ionic Angular 启动项目中，这可以是 `src/global.scss` 文件，或者你可以通过[在 `angular.json` 的 `styles` 构建选项中添加](https://angular.io/guide/workspace-config#style-script-config)来注册新的全局样式文件。
 
 </TabItem>
 
@@ -115,14 +115,14 @@ async function presentLoading() {
   const loading = document.createElement('ion-loading');
 
   loading.cssClass = 'my-custom-class';
-  loading.message = 'Please wait...';
+  loading.message = '请稍候...';
   loading.duration = 2000;
 
   document.body.appendChild(loading);
   await loading.present();
 
   const { role, data } = await loading.onDidDismiss();
-  console.log('Loading dismissed!');
+  console.log('加载已关闭！');
 }
 
 async function presentLoadingWithOptions() {
@@ -130,7 +130,7 @@ async function presentLoadingWithOptions() {
 
   loading.spinner = null;
   loading.duration = 5000;
-  loading.message = 'Click the backdrop to dismiss early...';
+  loading.message = '点击后置背景层可提前关闭...';
   loading.translucent = true;
   loading.cssClass = 'custom-class custom-loading';
   loading.backdropDismiss = true;
@@ -139,7 +139,7 @@ async function presentLoadingWithOptions() {
   await loading.present();
 
   const { role, data } = await loading.onDidDismiss();
-  console.log('Loading dismissed with role:', role);
+  console.log('加载已关闭，关闭方式为：', role);
 }
 ```
 
@@ -148,7 +148,7 @@ async function presentLoadingWithOptions() {
 <TabItem value="react">
 
 ```tsx
-/* Using with useIonLoading Hook */
+/* 使用 useIonLoading Hook */
 
 import React from 'react';
 import { IonButton, IonContent, IonPage, useIonLoading } from '@ionic/react';
@@ -168,10 +168,10 @@ const LoadingExample: React.FC<LoadingProps> = () => {
             })
           }
         >
-          Show Loading
+          显示加载指示器
         </IonButton>
-        <IonButton expand="block" onClick={() => present('Loading', 2000, 'dots')}>
-          Show Loading using params
+        <IonButton expand="block" onClick={() => present('加载中', 2000, 'dots')}>
+          使用参数显示加载指示器
         </IonButton>
       </IonContent>
     </IonPage>
@@ -180,7 +180,7 @@ const LoadingExample: React.FC<LoadingProps> = () => {
 ```
 
 ```tsx
-/* Using with IonLoading Component */
+/* 使用 IonLoading 组件 */
 
 import React, { useState } from 'react';
 import { IonLoading, IonButton, IonContent } from '@ionic/react';
@@ -194,12 +194,12 @@ export const LoadingExample: React.FC = () => {
 
   return (
     <IonContent>
-      <IonButton onClick={() => setShowLoading(true)}>Show Loading</IonButton>
+      <IonButton onClick={() => setShowLoading(true)}>显示加载指示器</IonButton>
       <IonLoading
         cssClass="my-custom-class"
         isOpen={showLoading}
         onDidDismiss={() => setShowLoading(false)}
-        message={'Please wait...'}
+        message={'请稍候...'}
         duration={5000}
       />
     </IonContent>
@@ -224,20 +224,20 @@ export class LoadingExample {
   async presentLoading() {
     const loading = await loadingController.create({
       cssClass: 'my-custom-class',
-      message: 'Please wait...',
+      message: '请稍候...',
       duration: 2000,
     });
     await loading.present();
 
     const { role, data } = await loading.onDidDismiss();
-    console.log('Loading dismissed!', role, data);
+    console.log('加载已关闭！', role, data);
   }
 
   async presentLoadingWithOptions() {
     const loading = await loadingController.create({
       spinner: null,
       duration: 5000,
-      message: 'Click the backdrop to dismiss early...',
+      message: '点击后置背景层可提前关闭...',
       translucent: true,
       cssClass: 'custom-class custom-loading',
       backdropDismiss: true,
@@ -245,14 +245,14 @@ export class LoadingExample {
     await loading.present();
 
     const { role, data } = await loading.onDidDismiss();
-    console.log('Loading dismissed with role:', role, data);
+    console.log('加载已关闭，关闭方式为：', role, data);
   }
 
   render() {
     return [
       <ion-content>
-        <ion-button onClick={() => this.presentLoading()}>Present Loading</ion-button>
-        <ion-button onClick={() => this.presentLoadingWithOptions()}>Present Loading: Options</ion-button>
+        <ion-button onClick={() => this.presentLoading()}>显示加载指示器</ion-button>
+        <ion-button onClick={() => this.presentLoadingWithOptions()}>显示加载指示器：选项</ion-button>
       </ion-content>,
     ];
   }
@@ -265,14 +265,12 @@ export class LoadingExample {
 
 ```html
 <template>
-  <ion-button @click="presentLoading">Show Loading</ion-button>
+  <ion-button @click="presentLoading">显示加载指示器</ion-button>
   <br />
-  <ion-button @click="presentLoadingWithOptions">Show Loading</ion-button>
+  <ion-button @click="presentLoadingWithOptions">显示加载指示器</ion-button>
 </template>
 
 <script>
-
-  <script>
   import { IonButton, loadingController } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
@@ -285,7 +283,7 @@ export class LoadingExample {
         const loading = await loadingController
           .create({
             cssClass: 'my-custom-class',
-            message: 'Please wait...',
+            message: '请稍候...',
             duration: this.timeout,
           });
 
@@ -300,7 +298,7 @@ export class LoadingExample {
           .create({
             spinner: null,
             duration: this.timeout,
-            message: 'Click the backdrop to dismiss early...',
+            message: '点击后置背景层可提前关闭...',
             translucent: true,
             cssClass: 'custom-class custom-loading',
             backdropDismiss: true
@@ -318,15 +316,15 @@ export class LoadingExample {
 </script>
 ```
 
-Developers can also use this component directly in their template:
+开发者也可以在模板中直接使用此组件：
 
 ```html
 <template>
-  <ion-button @click="setOpen(true)">Show Loading</ion-button>
+  <ion-button @click="setOpen(true)">显示加载指示器</ion-button>
   <ion-loading
     :is-open="isOpenRef"
     cssClass="my-custom-class"
-    message="Please wait..."
+    message="请稍候..."
     :duration="timeout"
     @didDismiss="setOpen(false)"
   >
@@ -356,26 +354,26 @@ Developers can also use this component directly in their template:
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

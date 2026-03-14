@@ -1,5 +1,5 @@
 ---
-title: "ion-avatar"
+title: 头像组件
 ---
 
 import Props from '@ionic-internal/component-api/v8/avatar/props.md';
@@ -10,58 +10,58 @@ import CustomProps from '@ionic-internal/component-api/v8/avatar/custom-props.md
 import Slots from '@ionic-internal/component-api/v8/avatar/slots.md';
 
 <head>
-  <title>ion-avatar: Circular Application Avatar Icon Component</title>
-  <meta name="description" content="Ion-avatars are circular application components that wrap an image or icon. They can represent a person or an object, by themselves or inside of any element." />
+  <title>ion-avatar：圆形应用头像图标组件</title>
+  <meta name="description" content="ion-avatar 是包裹图像或图标的圆形应用组件，可单独使用或置于任何元素内，用于表示人物或对象。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Avatars are circular components that usually wrap an image or icon. They can be used to represent a person or an object.
+头像（Avatars）是通常包裹图像或图标的圆形组件，可用于表示人物或对象。
 
-Avatars can be used by themselves or inside of any element. If placed inside of an `ion-chip` or `ion-item`, the avatar will resize to fit the parent component. To position an avatar on the left or right side of an item, set the slot to `start` or `end`, respectively.
+头像可以单独使用，也可以置于任何元素内部。如果放置在 `ion-chip` 或 `ion-item` 内，头像将自动调整大小以适应父组件。要将头像定位在项目的左侧或右侧，请分别将 slot 设置为 `start` 或 `end`。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v8/avatar/basic/index.md';
 
 <Basic />
 
-## Chip Avatar
+## 芯片头像
 
 import Chip from '@site/static/usage/v8/avatar/chip/index.md';
 
 <Chip />
 
-## Item Avatar
+## 项目头像
 
 import Item from '@site/static/usage/v8/avatar/item/index.md';
 
 <Item />
 
-## Theming
+## 主题定制
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v8/avatar/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

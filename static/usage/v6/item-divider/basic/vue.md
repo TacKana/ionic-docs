@@ -3,7 +3,7 @@
   <ion-list>
     <ion-item-group>
       <ion-item-divider>
-        <ion-label> Section A </ion-label>
+        <ion-label> 分区 A </ion-label>
       </ion-item-divider>
 
       <ion-item>
@@ -19,7 +19,7 @@
 
     <ion-item-group>
       <ion-item-divider>
-        <ion-label> Section B </ion-label>
+        <ion-label> 分区 B </ion-label>
       </ion-item-divider>
 
       <ion-item>

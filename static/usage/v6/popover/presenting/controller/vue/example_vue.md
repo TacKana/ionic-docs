@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="openPopover">Click Me</ion-button>
+  <ion-button @click="openPopover">点击我</ion-button>
   <p>{{ roleMsg }}</p>
 </template>
 
@@ -24,7 +24,7 @@
         await popover.present();
 
         const { role } = await popover.onDidDismiss();
-        this.roleMsg = `Popover dismissed with role: ${role}`;
+        this.roleMsg = `弹出框已关闭，角色为: ${role}`;
       },
     },
   };

@@ -1,6 +1,6 @@
 ```html
 <template>
-  <b>Columns aligned at the top</b>
+  <b>列顶部对齐</b>
   <ion-grid>
     <ion-row class="ion-align-items-start">
       <ion-col> 1 </ion-col>
@@ -15,7 +15,7 @@
     </ion-row>
   </ion-grid>
 
-  <b>Columns aligned at the center</b>
+  <b>列居中对齐</b>
   <ion-grid>
     <ion-row class="ion-align-items-center">
       <ion-col> 1 </ion-col>
@@ -30,7 +30,7 @@
     </ion-row>
   </ion-grid>
 
-  <b>Columns aligned at the bottom</b>
+  <b>列底部对齐</b>
   <ion-grid>
     <ion-row class="ion-align-items-end">
       <ion-col> 1 </ion-col>

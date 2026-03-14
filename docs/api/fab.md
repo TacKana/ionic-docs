@@ -1,5 +1,5 @@
 ---
-title: "ion-fab"
+title: 悬浮操作按钮组件
 ---
 import Props from '@ionic-internal/component-api/v8/fab/props.md';
 import Events from '@ionic-internal/component-api/v8/fab/events.md';
@@ -9,43 +9,43 @@ import CustomProps from '@ionic-internal/component-api/v8/fab/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/fab/slots.md';
 
 <head>
-  <title>ion-fab: Ionic Floating Action Button for Android and iOS</title>
-  <meta name="description" content="Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework." />
+  <title>ion-fab: 适用于 Android 和 iOS 的 Ionic 浮动操作按钮</title>
+  <meta name="description" content="浮动操作按钮 (FAB) 是包含一个或多个浮动操作按钮的容器元素。在使用 Ionic Framework 创建 Android 和 iOS 应用时使用 ion-fab 组件。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Fabs are container elements that contain one or more [fab buttons](./fab-button). They should be placed in a fixed position that does not scroll with the content. Fabs should have one main fab button. Fabs can also contain one or more [fab lists](./fab-list) which contain related buttons that show when the main fab button is clicked.
+浮动操作按钮 (FAB) 是包含一个或多个 [浮动操作按钮](./fab-button) 的容器元素。它们应放置在固定位置，不随内容滚动。每个 FAB 应有一个主浮动操作按钮。FAB 还可以包含一个或多个 [浮动操作按钮列表](./fab-list)，这些列表包含在主浮动操作按钮被点击时显示的相关按钮。
 
-## Basic Usage
+## 基本用法
 
 import BasicUsage from '@site/static/usage/v8/fab/basic/index.md';
 
 <BasicUsage />
 
-## List Side
+## 列表位置
 
-The `side` property of the [fab list](./fab-list) component controls where it appears relative to the main fab button. A single fab can have multiple fab lists as long as they all have different values for `side`.
+[浮动操作按钮列表](./fab-list) 组件的 `side` 属性控制其相对于主浮动操作按钮显示的位置。只要所有列表的 `side` 值不同，一个 FAB 可以包含多个浮动操作按钮列表。
 
 import ListSide from '@site/static/usage/v8/fab/list-side/index.md';
 
 <ListSide />
 
-## Positioning
+## 定位
 
-In order to place the fab in a fixed position, it should be assigned to the `fixed` slot of the outer [content](./content) component. Use the `vertical` and `horizontal` props to control the alignment of the fab in the viewport. The `edge` prop will cause the fab button to overlap with the app's header or footer.
+要将 FAB 放置在固定位置，应将其分配给外层 [内容](./content) 组件的 `fixed` 插槽。使用 `vertical` 和 `horizontal` 属性来控制 FAB 在视口中的对齐方式。`edge` 属性将使浮动操作按钮与应用页眉或页脚重叠。
 
 import Positioning from '@site/static/usage/v8/fab/positioning/index.md';
 
 <Positioning />
 
-### Safe Area
+### 安全区域
 
-If there is no `ion-header` or `ion-footer` component, the fab may be covered by a device's notch, status bar, or other device UI. In these cases, the [safe area](/docs/theming/advanced#safe-area-padding) on the top and bottom is not taken into account. This can be adjusted by using the [`--ion-safe-area-(dir)` variables](/docs/theming/advanced#application-variables).
+如果没有 `ion-header` 或 `ion-footer` 组件，FAB 可能会被设备的刘海屏、状态栏或其他设备 UI 遮挡。在这些情况下，顶部和底部的 [安全区域](/docs/theming/advanced#safe-area-padding) 不会被计入。可以通过使用 [`--ion-safe-area-(dir)` 变量](/docs/theming/advanced#application-variables) 来调整。
 
-When using a fab with `vertical` set to `"top"` without an `ion-header`, the top margin needs to be set:
+当使用 `vertical` 设置为 `"top"` 的 FAB 且没有 `ion-header` 时，需要设置顶部边距：
 
 ```css
 ion-fab {
@@ -53,7 +53,7 @@ ion-fab {
 }
 ```
 
-And when using a fab with `vertical` set to `"bottom"` without an `ion-footer`, the bottom margin needs to be set:
+当使用 `vertical` 设置为 `"bottom"` 的 FAB 且没有 `ion-footer` 时，需要设置底部边距：
 
 ```css
 ion-fab {
@@ -61,39 +61,39 @@ ion-fab {
 }
 ```
 
-If there is an `ion-header` (for a fab with `vertical` set to `"top"`) or `ion-footer` (for a fab with `vertical` set to `"bottom"`), no CSS adjustment is needed because the fab gets positioned relative to the header or footer.
+如果有 `ion-header`（对于 `vertical` 设置为 `"top"` 的 FAB）或 `ion-footer`（对于 `vertical` 设置为 `"bottom"` 的 FAB），则不需要进行 CSS 调整，因为 FAB 会相对于页眉或页脚定位。
 
 import SafeArea from '@site/static/usage/v8/fab/safe-area/index.md';
 
 <SafeArea />
 
-### Relative to Infinite List
+### 相对于无限列表
 
-In scenarios where a view contains many interactive elements, such as an infinitely-scrolling list, it may be challenging for users to navigate to the Floating Action Button (FAB) if it is placed below all the items in the DOM.
+在某些场景下，视图中包含许多交互元素，例如无限滚动的列表，如果将浮动操作按钮 (FAB) 放置在 DOM 中所有项目之后，用户可能难以导航到它。
 
-By setting the `fixedSlotPlacement` property on [Content](./content) to `before`, the FAB will be placed before the main content in the DOM. This ensures that the FAB receives keyboard focus before other interactive elements receive focus, making it easier for users to access the FAB.
+通过在 [Content](./content) 上设置 `fixedSlotPlacement` 属性为 `before`，FAB 将被放置在 DOM 中主内容之前。这确保 FAB 在其他交互元素获得焦点之前获得键盘焦点，从而使用户更容易访问 FAB。
 
 import BeforeContent from '@site/static/usage/v8/fab/before-content/index.md';
 
 <BeforeContent />
 
-## Button Sizing
+## 按钮尺寸
 
-Setting the `size` property of the main fab button to `"small"` will render it at a mini size. Note that this property will not have an effect when used with the inner fab buttons.
+将主浮动操作按钮的 `size` 属性设置为 `"small"` 会将其渲染为迷你尺寸。请注意，此属性在内层浮动操作按钮上使用时不会产生效果。
 
 import ButtonSizing from '@site/static/usage/v8/fab/button-sizing/index.md';
 
 <ButtonSizing />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v8/fab/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSCustomProperties from '@site/static/usage/v8/fab/theming/css-custom-properties/index.md';
 
@@ -105,26 +105,26 @@ import CSSShadowParts from '@site/static/usage/v8/fab/theming/css-shadow-parts/i
 
 <CSSShadowParts />
 
-## Accessibility
+## 可访问性
 
-### Labels
+### 标签
 
-Since FABs are allowed to contain only icons, developers must provide an `aria-label` on each `ion-fab-button` instance. Without this label, assistive technologies will not be able to announce the purpose of each button.
+由于 FAB 只能包含图标，开发者必须在每个 `ion-fab-button` 实例上提供 `aria-label`。没有此标签，辅助技术将无法宣布每个按钮的用途。
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

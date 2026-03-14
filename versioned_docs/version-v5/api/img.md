@@ -1,6 +1,6 @@
 ---
 title: 'Img Tag to Lazy Load Images in Viewport | ion-img Tag'
-description: 'Img tag lazy loads images whenever the tag is in the viewport. Utilize this component when generating large lists—as images are only loaded when visible.'
+description: 'Img 标签可在元素进入视口时延迟加载图像。在生成大型列表时特别有用——因为图像仅在可见时加载。'
 sidebar_label: 'ion-img'
 ---
 
@@ -16,9 +16,9 @@ import Slots from '@ionic-internal/component-api/v5/img/slots.md';
 
 # ion-img
 
-Img is a tag that will lazily load an image when ever the tag is in the viewport. This is extremely useful when generating a large list as images are only loaded when they're visible. The component uses [Intersection Observer](https://caniuse.com/#feat=intersectionobserver) internally, which is supported in most modern browser, but falls back to a `setTimeout` when it is not supported.
+ion-img 是一个标签，当元素进入视口时会延迟加载图像。这在生成大型列表时特别有用，因为图像仅在可见时才会加载。该组件内部使用 [Intersection Observer](https://caniuse.com/#feat=intersectionobserver)，该特性在大多数现代浏览器中都得到支持，如果不支持则会回退到 `setTimeout`。
 
-## Usage
+## 使用方式
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
 
@@ -79,15 +79,15 @@ import { Component, h } from '@stencil/core';
 export class ImgExample {
   private items = [
     {
-      text: 'Item 1',
+      text: '项目 1',
       src: '/path/to/external/file.png',
     },
     {
-      text: 'Item 2',
+      text: '项目 2',
       src: '/path/to/external/file.png',
     },
     {
-      text: 'Item 3',
+      text: '项目 3',
       src: '/path/to/external/file.png',
     },
   ];
@@ -134,15 +134,15 @@ export class ImgExample {
     setup() {
       const items = [
         {
-          text: 'Item 1',
+          text: '项目 1',
           src: '/path/to/external/file.png',
         },
         {
-          text: 'Item 2',
+          text: '项目 2',
           src: '/path/to/external/file.png',
         },
         {
-          text: 'Item 3',
+          text: '项目 3',
           src: '/path/to/external/file.png',
         },
       ];
@@ -156,15 +156,15 @@ export class ImgExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -172,10 +172,10 @@ export class ImgExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

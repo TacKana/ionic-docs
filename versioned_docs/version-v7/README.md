@@ -1,16 +1,16 @@
-# Docs folder
+# Docs 文件夹
 
-The `/docs` folder houses all markdown files. The page structure loosely maps to the routing on the site since paths can be changed in the frontmatter.
+`/docs` 文件夹存放所有 Markdown 文件。页面的结构大致对应网站的路由，因为路径可以在 frontmatter 中更改。
 
-## Versioning
+## 版本控制
 
-This folder can also contain components, assets, and whatever else is meant to be versioned when the docusaurus versioning script is run. For example, if there is a page component that is only relevant to the `layout` section in the current version of Ionic, it could be added to a `_components/` folder in `docs/layout/`. When the versioning script is run, the component will be copied to `versioned_docs/version-{X}/layout/_components/` and there will now be a separate component in `docs/layout/_components/` that can be deleted or updated to the latest version. The same concept applies to images and other files.
+此文件夹还可以包含组件、资源文件以及其他在运行 Docusaurus 版本控制脚本时需要版本化的内容。例如，如果有一个页面组件仅适用于当前 Ionic 版本的 `layout` 部分，可以将其添加到 `docs/layout/_components/` 文件夹中。当版本化脚本运行时，该组件将被复制到 `versioned_docs/version-{X}/layout/_components/` 中，而 `docs/layout/_components/` 中的组件可以被删除或更新到最新版本。同样的概念也适用于图片和其他文件。
 
-If components are meant to be shared across versions, they can be put in `src/components/`. If images and other served files are meant to be shared across versions they can be put in `static/`.
+如果组件需要在不同版本间共享，可以将其放在 `src/components/` 中。如果图片和其他服务文件需要在不同版本间共享，可以将其放在 `static/` 中。
 
-## Auto Generated Files
+## 自动生成的文件
 
-All markdown files in these directories are generated from [scripts](/scripts):
+以下目录中的所有 Markdown 文件都是由[脚本](/scripts)生成的：
 
 - `docs/api/`
 - `docs/cli/commands/`

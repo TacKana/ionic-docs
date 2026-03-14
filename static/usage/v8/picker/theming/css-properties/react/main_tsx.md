@@ -13,9 +13,9 @@ function Example() {
           <IonPickerColumnOption value="" disabled={true}>
             --
           </IonPickerColumnOption>
-          <IonPickerColumnOption value="red">Red</IonPickerColumnOption>
-          <IonPickerColumnOption value="blue">Blue</IonPickerColumnOption>
-          <IonPickerColumnOption value="green">Green</IonPickerColumnOption>
+          <IonPickerColumnOption value="red">红色</IonPickerColumnOption>
+          <IonPickerColumnOption value="blue">蓝色</IonPickerColumnOption>
+          <IonPickerColumnOption value="green">绿色</IonPickerColumnOption>
         </IonPickerColumn>
       </IonPicker>
     </>

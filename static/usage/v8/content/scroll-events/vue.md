@@ -1,6 +1,6 @@
 ```html
 <template>
-  <!-- Scroll events are disabled by default for content for performance reasons, enable them to listen to them -->
+  <!-- 出于性能考虑，内容的滚动事件默认是禁用的，启用它们以便监听 -->
   <ion-content
     :scroll-events="true"
     @ionScrollStart="handleScrollStart()"
@@ -8,7 +8,7 @@
     @ionScrollEnd="handleScrollEnd()"
     class="ion-padding"
   >
-    <h1>Scroll to fire the scroll events and view them in the console.</h1>
+    <h1>滚动以触发滚动事件并在控制台中查看它们。</h1>
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum

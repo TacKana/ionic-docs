@@ -8,14 +8,14 @@ function Example() {
   return (
     <IonCard>
       <IonCardHeader>
-        <IonCardTitle>Card Title</IonCardTitle>
-        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+        <IonCardTitle>卡片标题</IonCardTitle>
+        <IonCardSubtitle>卡片副标题</IonCardSubtitle>
       </IonCardHeader>
 
-      <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+      <IonCardContent>这里是为卡片内容提供的一小段文本描述。不多不少，恰到好处。</IonCardContent>
 
-      <IonButton fill="clear">Action 1</IonButton>
-      <IonButton fill="clear">Action 2</IonButton>
+      <IonButton fill="clear">操作 1</IonButton>
+      <IonButton fill="clear">操作 2</IonButton>
     </IonCard>
   );
 }

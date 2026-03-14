@@ -5,10 +5,10 @@ import { IonTextarea } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonTextarea label="Default counter" labelPlacement="floating" counter={true} maxlength={20}></IonTextarea>
+      <IonTextarea label="默认计数器" labelPlacement="floating" counter={true} maxlength={20}></IonTextarea>
 
       <IonTextarea
-        label="Custom Counter Format"
+        label="自定义计数器格式"
         labelPlacement="floating"
         counter={true}
         maxlength={20}

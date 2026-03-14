@@ -8,7 +8,7 @@ function Example() {
   return (
     <>
       <b>
-        Total number of columns is set to <code>6</code>, column <code>size</code> is set to <code>1</code>
+        总列数设置为 <code>6</code>，每列的 <code>size</code> 设置为 <code>1</code>
       </b>
       <IonGrid>
         <IonRow>

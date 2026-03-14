@@ -1,219 +1,218 @@
 ---
-sidebar_label: How to Contribute
+sidebar_label: 如何贡献
 ---
 
-# Contributing to Ionic
+# 为 Ionic 贡献力量
 
-Thanks for the interest in contributing to Ionic Framework!
+感谢您对 Ionic Framework 的贡献感兴趣！
 
-## Contributing Etiquette
+## 贡献礼仪
 
-Please see the [Contributor Code of Conduct](coc.md) for information on the rules of conduct.
+请参阅 [贡献者行为准则](coc.md) 了解行为准则相关信息。
 
-## Creating an Issue
+## 创建问题
 
-- If you have a question about using the framework, please ask on the [Ionic Forum](http://forum.ionicframework.com/).
+- 如果您对框架使用有疑问，请在 [Ionic 论坛](http://forum.ionicframework.com/) 上提问。
 
-- It is required that you clearly describe the steps necessary to reproduce the issue you are running into. Although we would love to help our users as much as possible, diagnosing issues without clear reproduction steps is extremely time-consuming and simply not sustainable.
+- **必须**清晰描述重现您遇到的问题所需的步骤。虽然我们非常乐意尽可能帮助用户，但如果没有明确的复现步骤来诊断问题，这将极其耗时且难以持续。
 
-- The issue list of the [Ionic](https://github.com/ionic-team/ionic) repository is exclusively for bug reports and feature requests. Non-conforming issues will be closed immediately.
+- [Ionic](https://github.com/ionic-team/ionic) 仓库的问题列表**仅**用于 Bug 报告和功能请求。不符合要求的议题将立即关闭。
 
-- Issues with no clear steps to reproduce will not be triaged. If an issue is labeled with "needs: reply" and receives no further replies from the author of the issue for more than 14 days, it will be closed.
+- 没有明确复现步骤的问题将不会被处理。如果一个问题被标记为"需要：回复"，并且在超过 14 天内未收到问题作者的进一步回复，它将被关闭。
 
-- If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been [reported](https://github.com/ionic-team/ionic/issues?utf8=%E2%9C%93&q=is%3Aissue). You can search through existing issues to see if there is a similar one reported. Include closed issues as it may have been closed with a solution.
+- 如果您认为自己发现了 Bug，或有一个新功能想法，请先确认它是否已被 [报告过](https://github.com/ionic-team/ionic/issues?utf8=%E2%9C%93&q=is%3Aissue)。您可以搜索现有议题，看看是否有类似的报告。请包含已关闭的议题，因为它可能已附带解决方案关闭。
 
-- Next, [create a new issue](https://github.com/ionic-team/ionic/issues/new/choose) that thoroughly explains the problem. Please fill out the populated issue form before submitting the issue.
+- 接下来，[创建一个新议题](https://github.com/ionic-team/ionic/issues/new/choose)，详细说明问题。请在提交议题前填写好弹出的议题表单。
 
-## Creating a Good Code Reproduction
+## 创建良好的代码复现
 
-### What is a Code Reproduction?
+### 什么是代码复现？
 
-A code reproduction is a small application that is built to demonstrate a particular issue. The code reproduction should contain the minimum amount of code needed to recreate the issue and should focus on a single issue.
+代码复现是为演示特定问题而构建的一个小型应用程序。代码复现应包含重现问题所需的最少代码，并应专注于单个问题。
 
-### Why Should You Create a Reproduction?
+### 为什么应该创建复现？
 
-A code reproduction of the issue you are experiencing helps us better isolate the cause of the problem. This is an important first step to getting any bug fixed!
+对您遇到的问题进行代码复现有助于我们更好地隔离问题的原因。这是解决任何 Bug 的重要第一步！
 
-Without a reliable code reproduction, it is unlikely we will be able to resolve the issue, leading to it being closed. In other words, creating a code reproduction of the issue helps us help you.
+如果没有可靠的代码复现，我们很可能无法解决问题，导致议题被关闭。换句话说，为问题创建代码复现有助于我们帮助您。
 
-### How to Create a Reproduction
+### 如何创建复现
 
-- Create a new Ionic application using one of our starter templates. The `blank` starter application is a great choice for this. You can create one using the following Ionic CLI command: `ionic start myApp blank`
-- Add the minimum amount of code needed to recreate the issue you are experiencing. Do not include anything that is not required to reproduce the issue. This includes any 3rd party plugins you have installed.
-- Publish the application on GitHub and include a link to it when [creating an issue](#creating-an-issue).
-- Be sure to include steps to reproduce the issue. These steps should be clear and easy to follow.
+- 使用我们的一个启动模板创建一个新的 Ionic 应用程序。`blank` 启动应用程序是很好的选择。您可以使用以下 Ionic CLI 命令创建一个：`ionic start myApp blank`
+- 添加重现您遇到的问题所需的最少代码。**不要**包含任何不需要用于重现问题的内容。这包括您已安装的任何第三方插件。
+- 将应用程序发布到 GitHub，并在 [创建议题](#创建问题) 时包含其链接。
+- 务必包含重现问题的步骤。这些步骤应清晰且易于遵循。
 
-### Benefits of Creating a Reproduction
+### 创建复现的好处
 
-- **Uses the latest version of Ionic:** By creating a new Ionic application, you are ensuring that you are testing against the latest version of the framework. Sometimes the issues you are experiencing have already been resolved in a newer version of the framework!
-- **Minimal surface area:** By removing code that is not needed in order to reproduce the issue, it makes it easier to identify the cause of the issue.
-- **No secret code needed:** Creating a minimal reproduction of the issue prevents you from having to publish any proprietary code used in your project.
-- **Get help fixing the issue:** If we can reliably reproduce an issue, there is a good chance we will be able to address it.
+- **使用 Ionic 最新版本：** 通过创建新的 Ionic 应用程序，您可以确保测试的是框架的最新版本。有时您遇到的问题已在框架的较新版本中解决！
+- **最小化影响面：** 通过移除重现问题不需要的代码，可以更容易地识别问题的原因。
+- **无需公开机密代码：** 为问题创建最小化复现，可避免您不得不发布项目中使用的任何专有代码。
+- **获得修复问题的帮助：** 如果我们能够可靠地复现问题，很可能就能解决它。
 
-## Creating a Pull Request
+## 创建拉取请求
 
-- We appreciate you taking the time to contribute! Before submitting a pull request, we ask that you please [create an issue](#creating-an-issue) that explains the bug or feature request and let us know that you plan on creating a pull request for it. If an issue already exists, please comment on that issue letting us know you would like to submit a pull request for it. This helps us to keep track of the pull request and make sure there isn't duplicated effort.
+- 感谢您花时间贡献！在提交拉取请求之前，我们请您先 [创建一个议题](#创建问题)，解释 Bug 或功能请求，并告知我们您计划为其创建拉取请求。如果议题已存在，请在该议题上评论，告知我们您想为其提交拉取请求。这有助于我们跟踪拉取请求，并确保没有重复的工作。
 
-- Looking for an issue to fix? Make sure to look through our issues with the [help wanted](https://github.com/ionic-team/ionic/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) label!
+- 在寻找可以修复的问题吗？请务必查看我们带有 [help wanted](https://github.com/ionic-team/ionic/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) 标签的议题！
 
-### Setup
+### 环境设置
 
-1. [Download the installer](https://nodejs.org/) for the LTS version of Node.js. This is the best way to also [install npm](https://blog.npmjs.org/post/85484771375/how-to-install-npm#_=_).
-2. Fork the [Ionic](https://github.com/ionic-team/ionic) repository.
-3. Clone your fork.
-4. Create a new branch from master for your change.
-5. Navigate into the directory of the package you wish to modify (core, angular, etc.).
-6. Run `npm install` to install dependencies for this package.
-7. Follow the steps for the specific package below.
+1. [下载](https://nodejs.org/) Node.js LTS 版本的安装程序。这也是 [安装 npm](https://blog.npmjs.org/post/85484771375/how-to-install-npm#_=_) 的最佳方式。
+2. Fork [Ionic](https://github.com/ionic-team/ionic) 仓库。
+3. 克隆您的 Fork。
+4. 从 master 分支为您要做的更改创建一个新分支。
+5. 导航到您希望修改的包目录（core、angular 等）。
+6. 运行 `npm install` 为此包安装依赖项。
+7. 按照下述特定包的步骤操作。
 
 ### Core
 
-#### Modifying Components
+#### 修改组件
 
-1. Locate the component(s) to modify inside `/core/src/components/`.
-2. Take a look at the [Stencil Documentation](https://stenciljs.com/docs/introduction/) and other components to understand the implementation of these components.
-3. Make your changes to the component. If the change is overly complex or out of the ordinary, add comments so we can understand the changes.
-4. [Preview your changes](#preview-changes) locally.
-5. [Modify the documentation](#modifying-documentation) if needed.
-6. [Run lint](#lint-changes) on the directory and make sure there are no errors.
-7. [Build the project](#building-changes).
-8. After the build is finished, commit the changes. Please follow the [commit message format](#commit-message-format) for every commit.
-9. [Submit a Pull Request](#submit-pull-request) of your changes.
+1. 在 `/core/src/components/` 中找到要修改的组件。
+2. 查阅 [Stencil 文档](https://stenciljs.com/docs/introduction/) 和其他组件，以了解这些组件的实现方式。
+3. 对组件进行更改。如果更改过于复杂或不寻常，请添加注释以便我们理解更改内容。
+4. 在本地 [预览您的更改](#预览更改)。
+5. 如果需要，[修改文档](#修改文档)。
+6. 对目录 [运行代码检查](#代码检查) 并确保没有错误。
+7. [构建项目](#构建更改)。
+8. 构建完成后，提交更改。请为每次提交遵循 [提交信息格式](#提交信息格式)。
+9. 为您的更改 [提交拉取请求](#提交拉取请求)。
 
-#### Preview Changes
+#### 预览更改
 
-1. Run `npm start` from within the `core` directory.
-2. A browser should open at `http://localhost:3333/`.
-3. From here, navigate to one of the component's tests to preview your changes.
-4. If a test showing your change doesn't exist, [add a new test or update an existing one](#modifying-tests).
-5. To test in RTL mode, once you are in the desired component's test, add `?rtl=true` at the end of the url; for example: `http://localhost:3333/src/components/alert/test/basic?rtl=true`.
+1. 在 `core` 目录中运行 `npm start`。
+2. 浏览器应在 `http://localhost:3333/` 打开。
+3. 从这里，导航到某个组件的测试页面以预览您的更改。
+4. 如果不存在显示您更改的测试，请 [添加新测试或更新现有测试](#修改测试)。
+5. 要在 RTL 模式下测试，进入所需组件的测试页面后，在 URL 末尾添加 `?rtl=true`；例如：`http://localhost:3333/src/components/alert/test/basic?rtl=true`。
 
-#### Lint Changes
+#### 代码检查
 
-1. Run `npm run lint` to lint the TypeScript and Sass.
-2. If there are lint errors, run `npm run lint.fix` to automatically fix any errors. Repeat step 1 to ensure the errors have been fixed, and manually fix them if not.
-3. To lint and fix only TypeScript errors, run `npm run lint.ts` and `npm run lint.ts.fix`, respectively.
-4. To lint and fix only Sass errors, run `npm run lint.sass` and `npm run lint.sass.fix`, respectively.
+1. 运行 `npm run lint` 以检查 TypeScript 和 Sass。
+2. 如果有检查错误，运行 `npm run lint.fix` 自动修复任何错误。重复步骤 1 以确保错误已修复，如果未修复则手动修复。
+3. 要仅检查并修复 TypeScript 错误，请分别运行 `npm run lint.ts` 和 `npm run lint.ts.fix`。
+4. 要仅检查并修复 Sass 错误，请分别运行 `npm run lint.sass` 和 `npm run lint.sass.fix`。
 
-#### Modifying Documentation
+#### 修改文档
 
-1. Locate the `readme.md` file in the component's directory.
-2. Modify the documentation **above** the line that says `<!-- Auto Generated Below -->` in this file.
-3. To update any of the auto generated documentation below that line, make the relevant changes in the following places:
+1. 在组件的目录中找到 `readme.md` 文件。
+2. 修改此文件中标记为 `<!-- Auto Generated Below -->` 的行**之上**的文档。
+3. 要更新该行以下的任何自动生成文档，请在以下位置进行相关更改：
 
-- `Usage`: update the component's usage examples in the component's `usage/` directory
-- `Properties`, `Events`, or `Methods`: update the component's TypeScript file (`*.tsx`)
-- `CSS Custom Properties`: update the component's main Sass file (`*.scss`)
+- `Usage`：在组件的 `usage/` 目录中更新组件的使用示例
+- `Properties`、`Events` 或 `Methods`：更新组件的 TypeScript 文件（`*.tsx`）
+- `CSS Custom Properties`：更新组件的主 Sass 文件（`*.scss`）
 
-#### Modifying Tests
+#### 修改测试
 
-1. Locate the test to modify inside the `test/` folder in the component's directory.
-2. If a test exists, modify the test by adding an example to reproduce the problem fixed or feature added.
-3. If a new test is needed, the easiest way is to copy the `basic/` directory from the component's `test/` directory, rename it, and edit the content in both the `index.html` and `e2e.ts` file (see [Screenshot Tests](#screenshot-tests) for more information on this file).
-4. The `preview/` directory is used in the documentation as a demo. Only update this test if there is a bug in the test or if the API has a change that hasn't been updated in the test.
+1. 在组件的 `test/` 文件夹中找到要修改的测试。
+2. 如果测试存在，请通过添加示例来修改测试，以复现修复的问题或添加的功能。
+3. 如果需要新测试，最简单的方法是从组件的 `test/` 目录复制 `basic/` 目录，重命名它，并编辑 `index.html` 和 `e2e.ts` 文件中的内容（有关此文件的更多信息，请参阅 [截图测试](#截图测试)）。
+4. `preview/` 目录在文档中用作演示。仅在测试中存在 Bug 或 API 有更改但测试中未更新时才更新此测试。
 
-##### Screenshot Tests
+##### 截图测试
 
-1. If the test exists in screenshot, there will be a file named `e2e.ts` in the directory of the test.
-2. A screenshot test can be added by including this file and adding one or more `test()` calls that include a call to `page.compareScreenshot()`. See [Stencil end-to-end testing](https://stenciljs.com/docs/end-to-end-testing) and existing tests in `core/` for examples.
-3. **Important:** each `test()` should have only one screenshot (`page.compareScreenshot()`) call **or** it should check the expect at the end of each test. If there is a mismatch it will fail the test which will prevent the rest of the test from running, i.e. if the first screenshot fails the remaining screenshot calls would not be called _unless_ they are in a separate test or all of the expects are called at the end.
-4. To run screenshot locally, use the following command: `npm run test.screenshot`.
-   - To run screenshot for a specific test, pass the path to the test or a string to search for.
-   - For example, running all `alert` tests: `npm run test.screenshot alert`.
-   - Or, running the basic `alert` tests: `npm run test.screenshot src/components/alert/test/basic/e2e.ts`.
+1. 如果测试存在于截图中，测试目录中会有一个名为 `e2e.ts` 的文件。
+2. 可以通过包含此文件并添加一个或多个包含 `page.compareScreenshot()` 调用的 `test()` 调用来添加截图测试。请参阅 [Stencil 端到端测试](https://stenciljs.com/docs/end-to-end-testing) 和 `core/` 中的现有测试以获取示例。
+3. **重要：** 每个 `test()` 应只包含一个截图（`page.compareScreenshot()`）调用**或**应在每个测试结束时检查期望值。如果不匹配，将导致测试失败，从而阻止测试的其余部分运行，即，如果第一个截图失败，除非它们位于单独的测试中，否则剩余的截图调用将不会被调用，或者所有期望值都在最后调用。
+4. 要在本地运行截图测试，请使用以下命令：`npm run test.screenshot`。
+   - 要为特定测试运行截图，请传递测试路径或要搜索的字符串。
+   - 例如，运行所有 `alert` 测试：`npm run test.screenshot alert`。
+   - 或者，运行基本的 `alert` 测试：`npm run test.screenshot src/components/alert/test/basic/e2e.ts`。
 
-#### Building Changes
+#### 构建更改
 
-1. Once all changes have been made and the documentation has been updated, run `npm run build` inside of the `core` directory. This will add your changes to any auto-generated files, if necessary.
-2. Review the changes and, if everything looks correct, [commit](#commit-message-format) the changes.
-3. Make sure the build has finished before committing. If you made changes to the documentation, properties, methods, or anything else that requires an update to a generate file, this needs to be committed.
-4. After the changes have been pushed, publish the branch and [create a pull request](#creating-a-pull-request).
+1. 完成所有更改并更新文档后，在 `core` 目录内运行 `npm run build`。这将在必要时将您的更改添加到任何自动生成的文件中。
+2. 检查更改，如果一切正确，请 [提交](#提交信息格式) 更改。
+3. 确保构建已完成再提交。如果您修改了文档、属性、方法或任何需要更新生成文件的内容，这需要一并提交。
+4. 推送更改后，发布分支并 [创建拉取请求](#创建拉取请求)。
 
-### Submit Pull Request
+### 提交拉取请求
 
-1. [Create a new pull request](https://github.com/ionic-team/ionic/compare) with the `master` branch as the `base`. You may need to click on `compare across forks` to find your changes.
-2. See the [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) GitHub help article for more information.
-3. Please fill out the provided Pull Request template to the best of your ability and include any issues that are related.
+1. [创建一个新的拉取请求](https://github.com/ionic-team/ionic/compare)，将 `master` 分支作为 `base`。您可能需要点击 `compare across forks` 来查找您的更改。
+2. 有关更多信息，请参阅 GitHub 帮助文章 [从 Fork 创建拉取请求](https://help.github.com/articles/creating-a-pull-request-from-a-fork/)。
+3. 请尽可能填写提供的拉取请求模板，并包含任何相关的议题。
 
-## Commit Message Guidelines
+## 提交信息指南
 
-We have very precise rules over how our git commit messages should be formatted. This leads to readable messages that are easy to follow when looking through the project history. We also use the git commit messages to generate our [changelog](https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md). Our format closely resembles Angular's [commit message guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit).
+我们对 Git 提交信息的格式有非常精确的规定。这可以使消息在查看项目历史时易于阅读和遵循。我们还使用 Git 提交信息来生成我们的 [更新日志](https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md)。我们的格式与 Angular 的 [提交信息指南](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) 非常相似。
 
-### Commit Message Format
+### 提交信息格式
 
-We follow the [Conventional Commits specification](https://www.conventionalcommits.org/). A commit message consists of a **header**, **body** and **footer**. The header has a **type**, **scope** and **subject**:
+我们遵循 [约定式提交规范](https://www.conventionalcommits.org/)。提交信息由 **标题**、**正文** 和 **页脚** 组成。标题包含 **类型**、**作用域** 和 **主题**：
 
 ```
-<type>(<scope>): <subject>
-<BLANK LINE>
-<body>
-<BLANK LINE>
-<footer>
+<类型>(<作用域>): <主题>
+<空行>
+<正文>
+<空行>
+<页脚>
 ```
 
-The **header** is mandatory and the **scope** of the header is optional.
+**标题** 是必需的，而标题的 **作用域** 是可选的。
 
-### Revert
+### 回退
 
-If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
+如果提交回退先前的提交，应以 `revert: ` 开头，后跟被回退提交的标题。正文中应注明：`This reverts commit <哈希值>.`，其中哈希值是被回退提交的 SHA。
 
-### Type
+### 类型
 
-If the prefix is `feat`, `fix` or `perf`, it will appear in the changelog. However if there is any [BREAKING CHANGE](#footer), the commit will always appear in the changelog.
+如果前缀是 `feat`、`fix` 或 `perf`，它将出现在更新日志中。但是，如果存在任何 [重大变更](#页脚)，该提交将始终出现在更新日志中。
 
-Must be one of the following:
+必须是以下之一：
 
-- **feat**: A new feature
-- **fix**: A bug fix
-- **docs**: Documentation only changes
-- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-- **refactor**: A code change that neither fixes a bug nor adds a feature
-- **perf**: A code change that improves performance
-- **test**: Adding missing tests
-- **chore**: Changes to the build process or auxiliary tools and libraries such as documentation generation
+- **feat**：新功能
+- **fix**：Bug 修复
+- **docs**：仅文档更改
+- **style**：不影响代码含义的更改（空格、格式、缺少分号等）
+- **refactor**：既不修复 Bug 也不添加功能的代码更改
+- **perf**：提高性能的代码更改
+- **test**：添加缺失的测试
+- **chore**：对构建过程或辅助工具和库的更改，例如文档生成
 
-### Scope
+### 作用域
 
-The scope can be anything specifying place of the commit change. Usually it will refer to a component but it can also refer to a utility. For example `action-sheet`, `button`, `css`, `menu`, `nav`, etc. If you make multiple commits for the same component, please keep the naming of this component consistent. For example, if you make a change to navigation and the first commit is `fix(nav)`, you should continue to use `nav` for any more commits related to navigation. As a general rule, if you're modifying a component use the name of the folder.
+作用域可以是任何指定提交更改位置的内容。通常它指的是一个组件，但也可以指一个实用程序。例如 `action-sheet`、`button`、`css`、`menu`、`nav` 等。如果您为同一组件进行多次提交，请保持此组件名称的一致性。例如，如果您对导航进行了更改，第一次提交是 `fix(nav)`，您应继续为任何与导航相关的更多提交使用 `nav`。作为一般规则，如果您正在修改一个组件，请使用文件夹的名称。
 
-### Subject
+### 主题
 
-The subject contains succinct description of the change:
+主题包含对更改的简要描述：
 
-- use the imperative, present tense: "change" not "changed" nor "changes"
-- do not capitalize first letter
-- do not place a period `.` at the end
-- entire length of the commit message must not go over 50 characters
-- describe what the commit does, not what issue it relates to or fixes
-- **be brief, yet descriptive** - we should have a good understanding of what the commit does by reading the subject
+- 使用祈使语气、现在时："change" 而不是 "changed" 或 "changes"
+- 不要大写首字母
+- 结尾不要加句号 `.`
+- 提交信息的整个长度不得超过 50 个字符
+- 描述提交做了什么，而不是它涉及或修复了什么问题
+- **简洁但具有描述性** - 我们应该通过阅读主题就能很好地理解提交做了什么
 
-### Body
+### 正文
 
-Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes".
-The body should include the motivation for the change and contrast this with previous behavior.
+与 **主题** 一样，使用祈使语气、现在时："change" 而不是 "changed" 或 "changes"。
+正文应包含更改的动机，并与之前的行为进行对比。
 
-### Footer
+### 页脚
 
-The footer should contain any information about **Breaking Changes** and is also the place to
-reference GitHub issues that this commit **Closes**.
+页脚应包含有关 **重大变更** 的任何信息，也是引用此提交所 **关闭** 的 GitHub 议题的地方。
 
-**Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
+**重大变更** 应以单词 `BREAKING CHANGE:` 开头，后跟一个空格或两个换行。然后提交信息的其余部分用于此说明。
 
-### Examples
+### 示例
 
-Does not appear in the generated changelog:
+不会出现在生成的更新日志中：
 
 ```
 docs(changelog): update steps to update
 ```
 
-Appears under "Features" header, toast subheader:
+出现在"功能"标题下，toast 子标题下：
 
 ```
 feat(toast): add 'buttons' property
 ```
 
-Appears under "Bug Fixes" header, skeleton-text subheader, with a link to issue #28:
+出现在"Bug 修复"标题下，skeleton-text 子标题下，并带有指向议题 #28 的链接：
 
 ```
 fix(skeleton-text): use proper color when animated
@@ -221,7 +220,7 @@ fix(skeleton-text): use proper color when animated
 closes #28
 ```
 
-Appears under "Performance Improvements" header, and under "Breaking Changes" with the breaking change explanation:
+出现在"性能改进"标题下，以及"重大变更"下，附带重大变更说明：
 
 ```
 perf(css): remove all css utility attributes
@@ -229,7 +228,7 @@ perf(css): remove all css utility attributes
 BREAKING CHANGE: The CSS utility attributes have been removed. Use CSS classes instead.
 ```
 
-Appears under "Breaking Changes" with the breaking change explanation:
+出现在"重大变更"下，附带重大变更说明：
 
 ```
 refactor(animations): update to new animation system
@@ -239,7 +238,7 @@ BREAKING CHANGE:
 Removes the old animation system to use the new Ionic animations.
 ```
 
-The following commit and commit `667ecc1` do not appear in the changelog if they are under the same release. If not, the revert commit appears under the "Reverts" header.
+如果以下提交和提交 `667ecc1` 在同一版本下，则不会出现在更新日志中。否则，回退提交将出现在"回退"标题下。
 
 ```
 revert: feat(skeleton-text): add animated property
@@ -247,6 +246,6 @@ revert: feat(skeleton-text): add animated property
 This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
 ```
 
-## License
+## 许可证
 
-By contributing your code to the ionic-team/ionic GitHub Repository, you agree to license your contribution under the MIT license.
+通过向 ionic-team/ionic GitHub 仓库贡献代码，您同意根据 MIT 许可证许可您的贡献。

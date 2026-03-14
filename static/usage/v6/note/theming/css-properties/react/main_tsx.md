@@ -7,7 +7,7 @@ import './main.css';
 function Example() {
   return (
     <>
-      <IonNote>Default Note</IonNote>
+      <IonNote>默认注释</IonNote>
     </>
   );
 }

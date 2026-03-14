@@ -1,44 +1,44 @@
 ---
-sidebar_label: Saving Photos
+sidebar_label: 保存照片
 ---
 
-# Saving Photos to the Filesystem
+# 保存照片到文件系统
 
-We’re now able to take multiple photos and display them in a photo gallery on the second tab of our app. These photos, however, are not currently being stored permanently, so when the app is closed, they will be deleted.
+现在我们已经能够拍摄多张照片，并在应用第二个标签页的照片库中显示它们。然而，这些照片目前并未被永久存储，因此当应用关闭时，它们将被删除。
 
-## Filesystem API
+## 文件系统 API
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by creating a new class method, `savePicture()`, in the `PhotoService` class (`src/app/services/photo.service.ts`). We pass in the `photo` object, which represents the newly captured device photo:
+幸运的是，将它们保存到文件系统只需要几个步骤。首先在 `PhotoService` 类 (`src/app/services/photo.service.ts`) 中创建一个新的类方法 `savePicture()`。我们传入代表新拍摄设备照片的 `photo` 对象：
 
 ```tsx
 private async savePicture(photo: Photo) { }
 ```
 
-We can use this new method immediately in `addNewToGallery()`:
+我们可以立即在 `addNewToGallery()` 中使用这个新方法：
 
 ```tsx
 public async addNewToGallery() {
-  // Take a photo
+  // 拍摄照片
   const capturedPhoto = await Camera.getPhoto({
-    resultType: CameraResultType.Uri, // file-based data; provides best performance
-    source: CameraSource.Camera, // automatically take a new photo with the camera
-    quality: 100 // highest quality (0 to 100)
+    resultType: CameraResultType.Uri, // 基于文件的数据；提供最佳性能
+    source: CameraSource.Camera, // 自动使用相机拍摄新照片
+    quality: 100 // 最高质量（0 到 100）
   });
 
-  // Save the picture and add it to photo collection
+  // 保存图片并将其添加到照片集合
   const savedImageFile = await this.savePicture(capturedPhoto);
   this.photos.unshift(savedImageFile);
 }
 ```
 
-We’ll use the Capacitor [Filesystem API](https://capacitorjs.com/docs/apis/filesystem) to save the photo to the filesystem. To start, convert the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function. As you’ll recall, we display each photo on the screen by setting each image’s source path (`src` attribute) in `tab2.page.html` to the webviewPath property. So, set it then return the new Photo object.
+我们将使用 Capacitor 的 [Filesystem API](https://capacitorjs.com/docs/apis/filesystem) 将照片保存到文件系统。首先，将照片转换为 base64 格式，然后将数据提供给 Filesystem 的 `writeFile` 函数。回想一下，我们通过在 `tab2.page.html` 中将每个图像的源路径（`src` 属性）设置为 webviewPath 属性来在屏幕上显示每张照片。所以，设置它然后返回新的 Photo 对象。
 
 ```tsx
 private async savePicture(photo: Photo) {
-  // Convert photo to base64 format, required by Filesystem API to save
+  // 将照片转换为 base64 格式，这是 Filesystem API 保存所需的
   const base64Data = await this.readAsBase64(photo);
 
-  // Write the file to the data directory
+  // 将文件写入数据目录
   const fileName = new Date().getTime() + '.jpeg';
   const savedFile = await Filesystem.writeFile({
     path: fileName,
@@ -46,8 +46,7 @@ private async savePicture(photo: Photo) {
     directory: Directory.Data
   });
 
-  // Use webPath to display the new image instead of base64 since it's
-  // already loaded into memory
+  // 使用 webPath 来显示新图像而不是 base64，因为它已经加载到内存中
   return {
     filepath: fileName,
     webviewPath: photo.webPath
@@ -55,11 +54,11 @@ private async savePicture(photo: Photo) {
 }
 ```
 
-`readAsBase64()` is a helper function we’ll define next. It's useful to organize via a separate method since it requires a small amount of platform-specific (web vs. mobile) logic - more on that in a bit. For now, implement the logic for running on the web:
+`readAsBase64()` 是我们接下来要定义的辅助函数。通过单独的方法来组织是有用的，因为它需要少量特定平台（Web 与移动设备）的逻辑 - 稍后会详细介绍。现在，先实现运行在 Web 上的逻辑：
 
 ```tsx
 private async readAsBase64(photo: Photo) {
-  // Fetch the photo, read as a blob, then convert to base64 format
+  // 获取照片，以 blob 形式读取，然后转换为 base64 格式
   const response = await fetch(photo.webPath!);
   const blob = await response.blob();
 
@@ -76,6 +75,6 @@ convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) => {
 });
 ```
 
-Obtaining the camera photo as base64 format on the web appears to be a bit trickier than on mobile. In reality, we’re just using built-in web APIs: [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) as a neat way to read the file into blob format, then FileReader’s [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) to convert the photo blob to base64.
+在 Web 上获取相机照片的 base64 格式似乎比在移动设备上稍微复杂一些。实际上，我们只是使用内置的 Web API：[fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 作为一种将文件读取为 blob 格式的简洁方式，然后使用 FileReader 的 [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) 将照片 blob 转换为 base64。
 
-There we go! Each time a new photo is taken, it’s now automatically saved to the filesystem.
+完成了！现在每次拍摄新照片时，它都会自动保存到文件系统中。

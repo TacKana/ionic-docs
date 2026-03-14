@@ -13,35 +13,35 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Backdrops are full screen components that overlay other components. They are useful behind components that transition in on top of other content and can be used to dismiss that component.
+背景遮罩层是一种全屏组件，会覆盖在其他组件之上。它们通常用于在内容上层切换显示的组件背后，并且可以用来关闭该组件。
 
-## Basic Usage
+## 基本用法
 
-The backdrop prevents clicking or tapping on the content behind it. It is transparent by default, so the below demo includes CSS to make it visible.
+背景遮罩层会阻止点击或触摸其背后的内容。默认情况下它是透明的，因此下面的演示示例添加了 CSS 样式使其可见。
 
 import Basic from '@site/static/usage/v7/backdrop/basic/index.md';
 
 <Basic />
 
-## Styling
+## 样式设置
 
-The backdrop can be customized by assigning CSS properties directly to the backdrop element. Common properties include `background-color`, `background` and `opacity`.
+通过直接设置背景遮罩层元素的 CSS 属性，可以对其进行自定义。常用的属性包括 `background-color`、`background` 和 `opacity`。
 
-Content can be displayed above the backdrop by setting a `z-index` on the content, higher than the backdrop (defaults to `2`).
+通过在内容上设置比背景遮罩层（默认为 `2`）更高的 `z-index`，可以在遮罩层上方显示内容。
 
 import Styling from '@site/static/usage/v7/backdrop/styling/index.md';
 
 <Styling />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -49,10 +49,10 @@ import Styling from '@site/static/usage/v7/backdrop/styling/index.md';
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

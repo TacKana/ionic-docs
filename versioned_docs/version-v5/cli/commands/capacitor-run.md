@@ -4,25 +4,25 @@ sidebar_label: 'capacitor run'
 
 # ionic capacitor run
 
-Run an Ionic project on a connected device
+在已连接的设备上运行 Ionic 项目
 
 ```shell
 ionic capacitor run [options]
 ```
 
-`ionic capacitor run` will do the following:
+`ionic capacitor run` 将执行以下操作：
 
-- Perform `ionic build` (or run the dev server from `ionic serve` with the `--livereload` option)
-- Copy web assets into the specified native platform
-- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)
+- 执行 `ionic build`（或在使用 `--livereload` 选项时运行 `ionic serve` 的 dev 服务器）
+- 将 Web 资源复制到指定的原生平台
+- 打开原生项目的 IDE（iOS 使用 Xcode，Android 使用 Android Studio）
 
-When using the `--livereload` option and need to serve to your LAN, a device, or an emulator, use the `--external` option also. Otherwise, the web view tries to access `localhost`.
+使用 `--livereload` 选项时需要将 dev 服务器提供给局域网、设备或模拟器时，请同时使用 `--external` 选项。否则，Web 视图会尝试访问 `localhost`。
 
-Once the web assets and configuration are copied into your native project, the app can run on devices and emulators/simulators using the native IDE. Unfortunately, programmatically building and launching the native project is not yet supported.
+一旦 Web 资源和配置被复制到您的原生项目中，应用即可使用原生 IDE 在设备及模拟器/仿真器上运行。遗憾的是，目前还不支持以编程方式构建和启动原生项目。
 
-For Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).
+对于 Android 和 iOS，您可以通过这些[文档](https://ionicframework.com/docs/developer-resources/developer-tips)在设备上使用浏览器开发工具设置远程调试。
 
-## Examples
+## 示例
 
 ```shell
 $ ionic capacitor run
@@ -32,7 +32,7 @@ $ ionic capacitor run ios --livereload --external
 $ ionic capacitor run ios --livereload-url=http://localhost:8100
 ```
 
-## Inputs
+## 输入项
 
 <table className="reference-table">
   <thead>
@@ -44,17 +44,17 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <p>
-          The platform to run (e.g. <code>android</code>, <code>ios</code>)
+          要运行的平台（例如 <code>android</code>、<code>ios</code>）
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -70,9 +70,9 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Use HTTPS for the dev server</p>
+        <p>为 dev 服务器使用 HTTPS</p>
       </td>
     </tr>
   </tbody>
@@ -89,9 +89,9 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Do not invoke Ionic build</p>
+        <p>不调用 Ionic build</p>
       </td>
     </tr>
   </tbody>
@@ -108,9 +108,9 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Do not invoke Capacitor open</p>
+        <p>不调用 Capacitor open</p>
       </td>
     </tr>
   </tbody>
@@ -127,10 +127,10 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <p>
-          Host dev server on all network interfaces (i.e. <code>--host=0.0.0.0</code>)
+          在所有网络接口上托管 dev 服务器（即 <code>--host=0.0.0.0</code>）
         </p>
       </td>
     </tr>
@@ -148,13 +148,13 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Spin up dev server to live-reload www files</p>
+        <p>启动 dev 服务器以实时重载 www 文件</p>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-l</code>
       </td>
@@ -174,9 +174,9 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Provide a custom URL to the dev server</p>
+        <p>为 dev 服务器提供自定义 URL</p>
       </td>
     </tr>
   </tbody>
@@ -193,17 +193,17 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <p>
-          Flag to use the <code>production</code> configuration
+          使用 <code>production</code> 配置的标志
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -219,10 +219,10 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Print app console logs to the terminal</p>
+          <p>将应用控制台日志打印到终端</p>
         </div>
       </td>
     </tr>
@@ -241,10 +241,10 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Use specific port for console logs server</p>
+          <p>为控制台日志服务器使用特定端口</p>
         </div>
       </td>
     </tr>
@@ -263,15 +263,15 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Use specific host for the dev server</p>
+          <p>为 dev 服务器使用特定主机</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Default</th>
+      <th>默认值</th>
       <td>localhost</td>
     </tr>
   </tbody>
@@ -289,21 +289,21 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Use specific port for the dev server</p>
+          <p>为 dev 服务器使用特定端口</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-p</code>
       </td>
     </tr>
     <tr>
-      <th>Default</th>
+      <th>默认值</th>
       <td>8100</td>
     </tr>
   </tbody>
@@ -321,10 +321,10 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>The host used for the browser or web view</p>
+          <p>用于浏览器或 Web 视图的主机</p>
         </div>
       </td>
     </tr>
@@ -343,15 +343,15 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Specify the configuration to use.</p>
+          <p>指定要使用的配置</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-c</code>
       </td>
@@ -370,10 +370,10 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Output source maps</p>
+          <p>输出源映射</p>
         </div>
       </td>
     </tr>
@@ -391,10 +391,10 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Rebuild when files change</p>
+          <p>在文件更改时重新构建</p>
         </div>
       </td>
     </tr>

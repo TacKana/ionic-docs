@@ -16,11 +16,11 @@ import Slots from '@ionic-internal/component-api/v5/radio/slots.md';
 
 # ion-radio
 
-Radios should be used inside of an [`ion-radio-group`](radio-group.md). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.
+单选按钮应放置在 [`ion-radio-group`](radio-group.md) 中使用。点击单选按钮将选中它。也可以通过编程方式，将父级 `ion-radio-group` 的 `value` 属性设置为对应单选按钮的值来选中。
 
-When radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time.
+当单选按钮位于单选按钮组内时，组内任意时刻最多只能有一个按钮被选中。点击一个单选按钮会选中它，并取消选中之前选中的按钮（如果存在）。如果某个单选按钮没有与其他按钮构成一个组，那么这些按钮都可以同时被选中。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -30,7 +30,7 @@ When radios are inside of a radio group, only one radio in the group will be che
 <ion-list>
   <ion-radio-group value="biff">
     <ion-list-header>
-      <ion-label>Name</ion-label>
+      <ion-label>姓名</ion-label>
     </ion-list-header>
 
     <ion-item>
@@ -59,7 +59,7 @@ When radios are inside of a radio group, only one radio in the group will be che
 <ion-list>
   <ion-radio-group value="biff">
     <ion-list-header>
-      <ion-label>Name</ion-label>
+      <ion-label>姓名</ion-label>
     </ion-list-header>
 
     <ion-item>
@@ -107,14 +107,14 @@ export const RadioExamples: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Radio Examples</IonTitle>
+          <IonTitle>单选按钮示例</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonList>
           <IonRadioGroup value={selected} onIonChange={(e) => setSelected(e.detail.value)}>
             <IonListHeader>
-              <IonLabel>Name</IonLabel>
+              <IonLabel>姓名</IonLabel>
             </IonListHeader>
 
             <IonItem>
@@ -132,8 +132,8 @@ export const RadioExamples: React.FC = () => {
               <IonRadio slot="start" value="buford" />
             </IonItem>
           </IonRadioGroup>
-          <IonItemDivider>Your Selection</IonItemDivider>
-          <IonItem>{selected ?? '(none selected'}</IonItem>
+          <IonItemDivider>您的选择</IonItemDivider>
+          <IonItem>{selected ?? '(未选择)'}</IonItem>
         </IonList>
       </IonContent>
     </IonPage>
@@ -158,7 +158,7 @@ export class RadioExample {
       <ion-list>
         <ion-radio-group value="biff">
           <ion-list-header>
-            <ion-label>Name</ion-label>
+            <ion-label>姓名</ion-label>
           </ion-list-header>
 
           <ion-item>
@@ -191,7 +191,7 @@ export class RadioExample {
   <ion-list>
     <ion-radio-group value="biff">
       <ion-list-header>
-        <ion-label>Name</ion-label>
+        <ion-label>姓名</ion-label>
       </ion-list-header>
 
       <ion-item>
@@ -233,15 +233,15 @@ export class RadioExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -249,10 +249,10 @@ export class RadioExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

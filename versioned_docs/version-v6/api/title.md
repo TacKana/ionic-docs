@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/title/custom-props.mdx
 import Slots from '@ionic-internal/component-api/v6/title/slots.md';
 
 <head>
-  <title>ion-title: Ionic Framework App Title Component for Toolbars</title>
+  <title>ion-title：用于工具栏的 Ionic 框架应用标题组件</title>
   <meta
     name="description"
-    content="ion-title is a component that sets the title of the toolbar. Read to learn more about title and collapsible title components and usage for Ionic Framework Apps."
+    content="ion-title 是用于设置工具栏标题的组件。阅读以了解更多关于标题、可折叠标题组件及其在 Ionic 框架应用中的用法。"
   />
 </head>
 
@@ -21,21 +21,21 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Title is a text component that sets the title for a [toolbar](./toolbar). It can be used to describe the screen or section a user is currently on or the app being used.
+标题是一个文本组件，用于为 [工具栏](./toolbar) 设置标题。它可以用来描述用户当前所在的屏幕或区域，或者正在使用的应用程序。
 
-## Basic
+## 基础用法
 
 import Basic from '@site/static/usage/v6/title/basic/index.md';
 
 <Basic />
 
-## Collapsible Large Titles
+## 可折叠大标题
 
-The large title will display when the [content](./content) is scrolled to the start of the scroll container. When the title is scrolled behind the header, the condensed title will fade in.
+当 [内容](./content) 滚动到滚动容器的起始位置时，大标题将会显示。当标题滚动到页眉后面时，紧凑标题会逐渐淡入。
 
 :::info
 
-This feature is only available for iOS.
+此功能仅适用于 iOS 系统。
 
 :::
 
@@ -43,39 +43,39 @@ import CollapsibleLargeTitle from '@site/static/usage/v6/title/collapsible-large
 
 <CollapsibleLargeTitle />
 
-### Collapsible Buttons
+### 可折叠按钮
 
-The [buttons](./buttons.md) component can be used with the [`collapse`](./buttons.md#collapse) property to additionally display in the header as the toolbar is collapsed.
+[按钮](./buttons.md)组件可以与 [`collapse`](./buttons.md#collapse) 属性一起使用，以便在工具栏折叠时额外显示在页眉中。
 
 import CollapsibleLargeTitleButtons from '@site/static/usage/v6/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />
 
-## Theming
+## 主题定制
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the toolbar containing the collapsible large title should always match the background color of the content.
+可折叠大标题应与您内容的其余部分无缝衔接。这意味着包含可折叠大标题的工具栏背景色应始终与内容的背景色保持一致。
 
-By default, the toolbar that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of the content.
+默认情况下，包含标准标题的工具栏会使用 `opacity: 0` 隐藏，并在您通过滚动折叠大标题时逐渐显示。因此，您在标准标题后面看到的背景色实际上是内容的背景色。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable. This will give the effect of the header changing color as you collapse the large title.
+您可以通过设置 `--background` CSS 变量来更改包含标准标题的工具栏的背景色。这将产生在折叠大标题时页眉颜色发生变化的效果。
 
-When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+在设置大标题的文本颜色样式时，您应该全局地针对大标题进行设置，而不是在特定页面或标签页的上下文中进行，否则其样式在导航动画期间将不会生效。
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSCustomProperties from '@site/static/usage/v6/title/theming/css-properties/index.md';
 
 <CSSCustomProperties />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -83,10 +83,10 @@ import CSSCustomProperties from '@site/static/usage/v6/title/theming/css-propert
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

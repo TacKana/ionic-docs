@@ -18,7 +18,7 @@
 
   <ion-item-group>
     <ion-item-divider>
-      <ion-label>B</ion-label>
+      <ion-label>B</ionion-label>
     </ion-item-divider>
 
     <ion-item>

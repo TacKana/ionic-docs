@@ -1,6 +1,6 @@
 ---
-title: "SQLite | Install Cordova SQLite Plugin for iOS and Android Apps"
-description: "Access SQLite databases on supported iOS, Android, macOS, and Windows devices by installing the Cordova SQLite Plugin for Ionic Framework Applications."
+title: "SQLite | 为 iOS 和 Android 应用安装 Cordova SQLite 插件"
+description: "通过为 Ionic Framework 应用安装 Cordova SQLite 插件，在支持的 iOS、Android、macOS 和 Windows 设备上访问 SQLite 数据库。"
 sidebar_label: "SQLite
 "
 ---
@@ -13,27 +13,27 @@ import CodeBlock from '@theme/CodeBlock';
 
 # SQLite
 
-Access SQLite databases on the device.
+在设备上访问 SQLite 数据库。
 
 <p>
   <a href="https://github.com/litehelpers/Cordova-sqlite-storage" target="_blank" rel="noopener" className="git-link">github.com/litehelpers/Cordova-sqlite-storage</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>是否在 Cordova 问题上卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵的时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在构建一个严肃的项目，您无法承担花费数小时进行故障排除的成本。Ionic 的专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -41,7 +41,7 @@ Access SQLite databases on the device.
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: 'Enterprise' },
+    { value: 'Enterprise', label: '企业版' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -56,24 +56,24 @@ Access SQLite databases on the device.
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版包含由 Ionic 团队提供全面支持与维护的插件。&nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，如果您对此插件的企业版本感兴趣，<a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">请联系我们</a>。
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - iOS
 - macOS
 - Windows
 
-## Usage
+## 用法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -92,7 +92,7 @@ this.sqlite.create({
 
 
     db.executeSql('create table danceMoves(name VARCHAR(32))', [])
-      .then(() => console.log('Executed SQL'))
+      .then(() => console.log('SQL 语句已执行'))
       .catch(e => console.log(e));
 
 

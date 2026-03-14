@@ -7,26 +7,26 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Keyboard Guide: Tools to Manage an On-Screen Mobile App Keyboard</title>
+  <title>键盘指南: 管理移动应用屏幕键盘的工具</title>
   <meta
     name="description"
-    content="Accounting for an on-screen keyboard is a common developer roadblock. This guide introduces the tools available for managing on-screen keyboards in mobile apps."
+    content="处理屏幕键盘是开发者常遇到的障碍。本指南介绍了在移动应用中管理屏幕键盘的各种可用工具。"
   />
 </head>
 
-Customizing and accounting for the presence of an on-screen keyboard are two common roadblocks developers face when building mobile apps and PWAs. This guide will provide an introduction to the various tools available for managing the on-screen keyboard in your application.
+自定义屏幕键盘并处理其显示是开发者在构建移动应用和 PWA 时经常遇到的两大挑战。本指南将介绍在应用中管理屏幕键盘的各种可用工具。
 
 ## inputmode
 
-The `inputmode` attribute allows developers to specify what type of data might be entered into an input. This will prompt the browser to show a keyboard that includes buttons relevant to what the user may enter. For example, `inputmode="email"` will display a keyboard with the `@` key as well as other optimizations for entering emails.
+`inputmode` 属性允许开发者指定输入框中可能输入的数据类型。这将提示浏览器显示包含与用户输入内容相关按钮的键盘。例如，`inputmode="email"` 会显示带有 `@` 键的键盘，并针对输入邮箱进行其他优化。
 
-Since `inputmode` is a global attribute, it can be used on Ionic components such as `ion-input` and `ion-textarea` in addition to regular input elements.
+由于 `inputmode` 是一个全局属性，它不仅可以用于常规输入元素，还可以用于 Ionic 组件，如 `ion-input` 和 `ion-textarea`。
 
-Inputs that _require_ a certain data type should use the `type` attribute instead. For example, inputs that require an email should use `type="email"` rather than specifying an `inputmode.` This is because the data that will be entered is always going to be in the form of an email. On the other hand, if the input accepts an email or a username, using `inputmode=”email”` is appropriate because the data being entered is not always going to be an email address.
+对于_必须_输入特定数据类型的输入框，应使用 `type` 属性代替。例如，要求输入邮箱的输入框应使用 `type="email"` 而不是指定 `inputmode`。这是因为将要输入的数据始终是邮箱格式。另一方面，如果输入框接受邮箱或用户名，则使用 `inputmode="email"` 是合适的，因为输入的数据并不总是邮箱地址。
 
-For a list of accepted values, see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>.
+有关可接受值的列表，请参阅 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode 文档</a>。
 
-### Usage
+### 用法
 
 ````mdx-code-block
 <Tabs
@@ -43,12 +43,12 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 
 ```html
 <ion-item>
-  <ion-label>Username or Email</ion-label>
+  <ion-label>用户名或邮箱</ion-label>
   <ion-input inputmode="email"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label>Enter a number</ion-label>
+  <ion-label>请输入数字</ion-label>
   <ion-textarea inputmode="numeric"></ion-textarea>
 </ion-item>
 ```
@@ -57,12 +57,12 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 
 ```html
 <ion-item>
-  <ion-label>Username or Email</ion-label>
+  <ion-label>用户名或邮箱</ion-label>
   <ion-input inputmode="email"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label>Enter a number</ion-label>
+  <ion-label>请输入数字</ion-label>
   <ion-textarea inputmode="numeric"></ion-textarea>
 </ion-item>
 ```
@@ -71,12 +71,12 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 
 ```html
 <IonItem>
-  <IonLabel>Username or Email</IonLabel>
+  <IonLabel>用户名或邮箱</IonLabel>
   <IonInput inputmode="email"></IonInput>
 </IonItem>
 
 <IonItem>
-  <IonLabel>Enter a number</IonLabel>
+  <IonLabel>请输入数字</IonLabel>
   <IonTextarea inputmode="numeric"></IonTextarea>
 </IonItem>
 ```
@@ -85,12 +85,12 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 
 ```html
 <ion-item>
-  <ion-label>Username or Email</ion-label>
+  <ion-label>用户名或邮箱</ion-label>
   <ion-input inputmode="email"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label>Enter a number</ion-label>
+  <ion-label>请输入数字</ion-label>
   <ion-textarea inputmode="numeric"></ion-textarea>
 </ion-item>
 ```
@@ -101,18 +101,18 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 <Codepen user="ionic" slug="abvJVVv" height="400" />
 
 :::note
-The `inputmode` attribute is supported on devices running Chrome 66+ and iOS Safari 12.2+: https://caniuse.com/#search=inputmode
+`inputmode` 属性在 Chrome 66+ 和 iOS Safari 12.2+ 的设备上支持：https://caniuse.com/#search=inputmode
 :::
 
 ## enterkeyhint
 
-The `enterkeyhint` attribute allows developers to specify what type of action label or icon should be shown for the "Enter" key. Using `enterkeyhint` lets the user know what will happen when they tap the “Enter” key. The value that should be specified here depends on the context of what the user is doing. For example, if the user is typing into a searchbox, developers should ensure that the input has `enterkeyhint="search"`.
+`enterkeyhint` 属性允许开发者指定“回车键”上应显示的操作标签或图标类型。使用 `enterkeyhint` 可以让用户知道点击“回车键”会发生什么。此处应指定的值取决于用户正在进行的操作上下文。例如，如果用户正在搜索框中输入，开发者应确保输入框具有 `enterkeyhint="search"`。
 
-Since `enterkeyhint` is a global attribute, it can be used on Ionic components such as `ion-input` and `ion-textarea` in addition to regular input elements.
+由于 `enterkeyhint` 是一个全局属性，它不仅可以用于常规输入元素，还可以用于 Ionic 组件，如 `ion-input` 和 `ion-textarea`。
 
-For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a>.
+有关可接受值的列表，请参阅 <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint 标准</a>。
 
-### Usage
+### 用法
 
 ````mdx-code-block
 <Tabs
@@ -129,7 +129,7 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 
 ```html
 <ion-item>
-  <ion-label>Enter search query</ion-label>
+  <ion-label>输入搜索查询</ion-label>
   <ion-input enterkeyhint="search" type="search"></ion-input>
 </ion-item>
 ```
@@ -138,7 +138,7 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 
 ```html
 <ion-item>
-  <ion-label>Enter search query</ion-label>
+  <ion-label>输入搜索查询</ion-label>
   <ion-input enterkeyhint="search" type="search"></ion-input>
 </ion-item>
 ```
@@ -147,7 +147,7 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 
 ```html
 <IonItem>
-  <IonLabel>Enter search query</IonLabel>
+  <IonLabel>输入搜索查询</IonLabel>
   <IonInput enterkeyhint="search" type="search"></IonInput>
 </IonItem>
 ```
@@ -156,7 +156,7 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 
 ```html
 <ion-item>
-  <ion-label>Enter search query</ion-label>
+  <ion-label>输入搜索查询</ion-label>
   <ion-input enterkeyhint="search" type="search"></ion-input>
 </ion-item>
 ```
@@ -167,30 +167,30 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 <Codepen user="ionic" slug="GRpWyRB" height="350" />
 
 :::note
-The `enterkeyhint` attribute is supported on devices running Chrome 77+ and iOS Safari 13.4+.
+`enterkeyhint` 属性在 Chrome 77+ 和 iOS Safari 13.4+ 的设备上支持。
 :::
 
-## Dark Mode
+## 深色模式
 
-By default the keyboard theme is determined by the OS. For example, if dark mode is enabled on iOS, the keyboard in your app will appear with a dark theme even if your application does not have a dark theme in its CSS.
+默认情况下，键盘主题由操作系统决定。例如，如果在 iOS 上启用了深色模式，即使你的应用 CSS 中没有深色主题，应用中的键盘也会以深色主题显示。
 
-When running an app in a mobile web browser or as a PWA there is no way to force the keyboard to appear with a certain theme.
+在移动网络浏览器或作为 PWA 运行的应用中，无法强制键盘以特定主题显示。
 
-When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, see the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+在 Capacitor 或 Cordova 中运行应用时，可以强制键盘以特定主题显示。有关此配置的更多信息，请参阅 <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor 键盘文档</a>。
 
-## Hiding the Accessory Bar
+## 隐藏辅助栏
 
-When running any kind of web based application, iOS will show an accessory bar above the keyboard. This allows users to move to the next or previous inputs as well as close the keyboard.
+当运行任何类型的基于 Web 的应用程序时，iOS 会在键盘上方显示一个辅助栏。这允许用户移动到下一个或上一个输入框，以及关闭键盘。
 
-When running an app in a mobile web browser or as a PWA there is no way to hide the accessory bar.
+在移动网络浏览器或作为 PWA 运行的应用中，无法隐藏辅助栏。
 
-When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, see the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+在 Capacitor 或 Cordova 中运行应用时，可以隐藏辅助栏。有关此配置的更多信息，请参阅 <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor 键盘文档</a>。
 
-## Keyboard Lifecycle Events
+## 键盘生命周期事件
 
-Detecting the presence of an on-screen keyboard is useful for adjusting the positioning of an input that would otherwise be hidden by the keyboard. For Capacitor and Cordova apps, developers typically rely on native keyboard plugins to listen for the keyboard lifecycle events. For apps running in a mobile browser or as a PWA, developers can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API" rel="noreferrer" target="_blank">Visual Viewport API</a> where supported. Ionic Framework wraps both of these approaches and emits `ionKeyboardDidShow` and `ionKeyboardDidHide` events on the `window`. The event payload for `ionKeyboardDidShow` contains an approximation of the keyboard height in pixels.
+检测屏幕键盘的存在有助于调整输入框的位置，否则键盘可能会遮挡输入框。对于 Capacitor 和 Cordova 应用，开发者通常依赖原生键盘插件来监听键盘生命周期事件。对于在移动浏览器或作为 PWA 运行的应用，开发者可以在支持的情况下使用 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API" rel="noreferrer" target="_blank">Visual Viewport API</a>。Ionic Framework 封装了这两种方法，并在 `window` 上触发 `ionKeyboardDidShow` 和 `ionKeyboardDidHide` 事件。`ionKeyboardDidShow` 的事件负载包含以像素为单位的键盘高度近似值。
 
-### Usage
+### 用法
 
 ````mdx-code-block
 <Tabs
@@ -208,11 +208,11 @@ Detecting the presence of an on-screen keyboard is useful for adjusting the posi
 ```javascript
 window.addEventListener('ionKeyboardDidShow', ev => {
   const { keyboardHeight } = ev;
-  // Do something with the keyboard height such as translating an input above the keyboard.
+  // 使用键盘高度做一些操作，例如将输入框移动到键盘上方。
 });
 
 window.addEventListener('ionKeyboardDidHide', () => {
-  // Move input back to original location
+  // 将输入框移回原始位置
 });
 ```
 </TabItem>
@@ -226,11 +226,11 @@ import { Platform } from '@ionic/angular';
 constructor(private platform: Platform) {
   this.platform.keyboardDidShow.subscribe(ev => {
     const { keyboardHeight } = ev;
-    // Do something with the keyboard height such as translating an input above the keyboard.
+    // 使用键盘高度做一些操作，例如将输入框移动到键盘上方。
   });
 
   this.platform.keyboardDidHide.subscribe(() => {
-    // Move input back to original location
+    // 将输入框移回原始位置
   });
 }
 ```
@@ -244,7 +244,7 @@ import { useKeyboardState } from '@ionic/react-hooks/keyboard';
 
 const { isOpen, keyboardHeight } = useKeyboardState();
 
-// Do something with the keyboard height such as translating an input above the keyboard
+// 使用键盘高度做一些操作，例如将输入框移动到键盘上方
 ```
 </TabItem>
 <TabItem value="vue">
@@ -258,7 +258,7 @@ import { watch } from 'vue';
 const { isOpen, keyboardHeight } = useKeyboard();
 
 watch(keyboardHeight, () => {
-  console.log(`Is Keyboard Open: ${isOpen.value}, Keyboard Height: ${keyboardHeight.value}`);
+  console.log(`键盘是否打开: ${isOpen.value}, 键盘高度: ${keyboardHeight.value}`);
 });
 
 
@@ -268,5 +268,5 @@ watch(keyboardHeight, () => {
 ````
 
 :::note
-For apps running in a mobile web browser or as a PWA, Keyboard Lifecycle Events are only supported on Chrome 62+ and iOS Safari 13.0+.
+对于在移动网络浏览器或作为 PWA 运行的应用，键盘生命周期事件仅在 Chrome 62+ 和 iOS Safari 13.0+ 上支持。
 :::

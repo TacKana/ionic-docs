@@ -4,10 +4,10 @@ sidebar_label: 'signup'
 
 # ionic signup
 
-Create an Ionic account
+创建 Ionic 账户
 
 ```shell
 ionic signup [options]
 ```
 
-If you are having issues signing up, please get in touch with our [Support](https://ion.link/support-request).
+如果在注册过程中遇到问题，请通过[技术支持](https://ion.link/support-request)联系我们。

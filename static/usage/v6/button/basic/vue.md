@@ -1,7 +1,7 @@
 ```html
 <template>
-  <ion-button>Default</ion-button>
-  <ion-button :disabled="true">Disabled</ion-button>
+  <ion-button>默认</ion-button>
+  <ion-button :disabled="true">禁用</ion-button>
 </template>
 
 <script lang="ts">

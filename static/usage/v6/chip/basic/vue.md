@@ -1,8 +1,8 @@
 ```html
 <template>
-  <ion-chip>Default</ion-chip>
-  <ion-chip :disabled="true">Disabled</ion-chip>
-  <ion-chip :outline="true">Outline</ion-chip>
+  <ion-chip>默认</ion-chip>
+  <ion-chip :disabled="true">禁用</ion-chip>
+  <ion-chip :outline="true">轮廓</ion-chip>
 </template>
 
 <script lang="ts">

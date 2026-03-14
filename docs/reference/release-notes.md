@@ -1,5 +1,5 @@
 ---
-title: Release Notes
+title: 版本发布说明
 ---
 
 import ReleaseNotes from '@components/page/reference/ReleaseNotes';

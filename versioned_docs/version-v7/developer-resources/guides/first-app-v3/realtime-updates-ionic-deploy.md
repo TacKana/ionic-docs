@@ -1,32 +1,32 @@
-# Realtime App Updates with Appflow Live Updates
+# 使用 Appflow 实时更新功能为应用推送在线更新
 
-As you’ve seen so far, building web and mobile apps is quick and easy with the Ionic Framework. However, nothing disrupts rapid iteration faster than App Store delays. Fortunately, with Appflow’s Deploy feature, you can send live code changes directly to your users. Paired with seamless background updates, they are always upgraded to the latest version.
+到目前为止，您已经看到使用 Ionic 框架构建 Web 和移动应用既快速又便捷。然而，没有什么比 App Store 的审核延迟更能打乱快速迭代的步伐了。幸运的是，借助 Appflow 的 Deploy 功能，您可以直接向用户推送实时代码变更。配合无缝的后台更新机制，用户总能升级到最新版本。
 
-Setting it up is quick and easy. For reference, continue to refer to [the part 3 folder](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part3) on GitHub. First, install the Appflow JavaScript library:
+设置过程简单快捷。作为参考，请继续查看 GitHub 上的 [第三部分文件夹](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part3)。首先，安装 Appflow JavaScript 库：
 
 ```shell
 npm install @ionic/pro@latest --save
 ```
 
-Then, add the Appflow plugin. Here’s the command to install it:
+然后，添加 Appflow 插件。以下是安装命令：
 
 ```shell
 $ ionic cordova plugin add cordova-plugin-ionic@latest --save
---variable APP_ID=YOUR_APP_ID --variable CHANNEL_NAME=YOUR_CHANNEL_NAME
+--variable APP_ID=您的应用ID --variable CHANNEL_NAME=您的渠道名称
 ```
 
-There are two unique values to provide: your app id and channel name. Sign into Appflow, then find the App Id on your app’s dashboard:
+需要提供两个唯一值：您的应用 ID 和渠道名称。登录 Appflow，然后在应用仪表板中找到应用 ID：
 
-![The location of the App ID in the Appflow dashboard.](/img/guides/first-app-v3/app-id-location.png 'Appflow App ID Location')
+![Appflow 仪表板中应用 ID 的位置。](/img/guides/first-app-v3/app-id-location.png 'Appflow 应用 ID 位置')
 
-And we’ll just use “Master” as the channel name. Putting this together looks like:
+我们将使用 "Master" 作为渠道名称。组合起来如下所示：
 
 ```shell
 $ ionic cordova plugin add cordova-plugin-ionic@latest --save
 --variable APP_ID=381533B9 --variable CHANNEL_NAME=Master
 ```
 
-After this plugin has been added, you’ll notice that `config.xml` and `package.json` have been updated with your app’s details:
+添加此插件后，您会注意到 `config.xml` 和 `package.json` 已更新为您的应用详情：
 
 ```xml
 <plugin name="cordova-plugin-ionic" spec="^5.0.6">
@@ -40,17 +40,17 @@ After this plugin has been added, you’ll notice that `config.xml` and `package
 </plugin>
 ```
 
-Next, modify `src/app/app.module.ts` to include the initialization of Appflow on app startup:
+接下来，修改 `src/app/app.module.ts`，在应用启动时包含 Appflow 的初始化：
 
 ```javascript
 import { Pro } from '@ionic/pro';
 
-Pro.init('YOUR_APP_ID', {
-  appVersion: 'APP_VERSION',
+Pro.init('您的应用ID', {
+  appVersion: '应用版本',
 });
 ```
 
-As an example, this would look like:
+例如，如下所示：
 
 ```javascript
 Pro.init('381533B9', {
@@ -58,39 +58,39 @@ Pro.init('381533B9', {
 });
 ```
 
-Next, push the code up to Appflow:
+然后，将代码推送到 Appflow：
 
 ```shell
 git add .
-git commit -m “adding Appflow”
+git commit -m "添加 Appflow"
 git push ionic master
 ```
 
-Next, create a local, native build of the app.
+接下来，为应用创建一个本地原生构建。
 
-## Android Builds
+## Android 构建
 
-Follow the [Android Setup instructions](../../../developing/android.md), which includes installing Java 8 and Android Studio on your machine. Then, in your Terminal run:
+请遵循 [Android 设置说明](../../../developing/android.md)，其中包括在您的机器上安装 Java 8 和 Android Studio。然后，在终端中运行：
 
 ```shell
 ionic cordova build android --prod
 ```
 
-This will generate a unsigned debug build (meaning the app can run on any Android device).
+这将生成一个未签名的调试版构建（意味着该应用可以在任何 Android 设备上运行）。
 
-## iOS Builds
+## iOS 构建
 
-iOS is [a bit trickier to set up](../../../developing/ios.md) than Android and requires a Mac computer. Ensure XCode is updated to the latest version and set up a development team. Then, in your Terminal, run:
+iOS 的设置比 Android [稍微复杂一些](../../../developing/ios.md)，并且需要 Mac 电脑。确保将 XCode 更新到最新版本，并设置开发团队。然后，在终端中运行：
 
 ```shell
 ionic cordova build ios --prod
 ```
 
-Then, continue to [follow the instructions here](../../../deployment/app-store.md) regarding signing certificates, etc. With a native version of your app built, let’s copy it to your device of choice.
+然后，继续 [按照这里的说明](../../../deployment/app-store.md) 操作，包括签名证书等。构建好应用的原生版本后，让我们将其复制到您选择的设备上。
 
-## Add the Native App to Your Local Device
+## 将原生应用添加到本地设备
 
-Now comes the fun part: testing out the native app on your device! For iOS, the easiest way (that works for both PC and Mac) involves using iTunes. Connect your iOS device, locate your IPA file, then drag and drop the IPA file from the file system onto your device in iTunes. The app will install immediately and be ready for use:
+现在到了有趣的部分：在您的设备上测试原生应用！对于 iOS，最简单的方法（适用于 PC 和 Mac）是使用 iTunes。连接您的 iOS 设备，找到您的 IPA 文件，然后将 IPA 文件从文件系统拖放到 iTunes 中的设备上。应用将立即安装并可以使用：
 
 <div class="wistia_responsive_padding" style={{ padding: '62.5% 0 0 0', position: 'relative' }}>
   <div
@@ -99,7 +99,7 @@ Now comes the fun part: testing out the native app on your device! For iOS, the 
   >
     <iframe
       src="https://fast.wistia.net/embed/iframe/s5v4fujv7w?videoFoam=true"
-      title="Wistia video player"
+      title="Wistia 视频播放器"
       allowtransparency="true"
       frameborder="0"
       scrolling="no"
@@ -117,9 +117,9 @@ Now comes the fun part: testing out the native app on your device! For iOS, the 
 </div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-For Android testing, the easiest way across all OS platforms is to use [Android Studio](https://developer.android.com/studio/), Google’s official Android IDE. After downloading it, connect your Android device to your computer. On the Studio startup screen, select “Profile or debug APK”, then select the recently built APK file.
+对于 Android 测试，跨所有操作系统平台最简单的方法是使用 [Android Studio](https://developer.android.com/studio/)，这是 Google 官方的 Android IDE。下载后，将您的 Android 设备连接到计算机。在 Studio 启动屏幕上，选择 "Profile or debug APK"，然后选择最近构建的 APK 文件。
 
-In the upper right hand corner, click the Play button. Select your connected device, then click OK:
+在右上角，点击播放按钮。选择您连接的设备，然后点击确定：
 
 <div class="wistia_responsive_padding" style={{ padding: '62.5% 0 0 0', position: 'relative' }}>
   <div
@@ -128,7 +128,7 @@ In the upper right hand corner, click the Play button. Select your connected dev
   >
     <iframe
       src="https://fast.wistia.net/embed/iframe/b2ys5v4sno?videoFoam=true"
-      title="Wistia video player"
+      title="Wistia 视频播放器"
       allowtransparency="true"
       frameborder="0"
       scrolling="no"
@@ -146,48 +146,48 @@ In the upper right hand corner, click the Play button. Select your connected dev
 </div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-## Deploying Changes
+## 部署变更
 
-With Appflow Deploy, any JavaScript, HTML, or CSS changes can be pushed automatically to app users. Open the Photo Gallery app in your favorite code editor, then update the title of the Gallery page:
+使用 Appflow Deploy，任何 JavaScript、HTML 或 CSS 变更都可以自动推送给应用用户。在您喜欢的代码编辑器中打开 Photo Gallery 应用，然后更新 Gallery 页面的标题：
 
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Photo Viewer</ion-title>
+    <ion-title>照片查看器</ion-title>
   </ion-toolbar>
 </ion-header>
 ```
 
-Next, push the code up to Appflow:
+接下来，将代码推送到 Appflow：
 
 ```shell
 $ git add .
-$ git commit -m “change name to Photo Viewer”
+$ git commit -m "将名称更改为照片查看器"
 $ git push ionic master
 ```
 
-Log into the [Appflow dashboard](https://dashboard.ionicframework.com) and navigate to Deploy -> Builds. You’ll see this newest commit begin to build immediately. Since we assigned the Appflow plugin to the Master branch (the one we always Git Push to), the Channel label will also point to this commit, effectively auto-deploying this change to all app users:
+登录 [Appflow 仪表板](https://dashboard.ionicframework.com) 并导航到 Deploy -> Builds。您将看到最新的提交立即开始构建。由于我们将 Appflow 插件分配给了 Master 分支（我们总是 Git Push 到的分支），Channel 标签也将指向此提交，从而有效地将此变更自动部署给所有应用用户：
 
-![The Deploy Builds section in the Appflow dashboard.](/img/guides/first-app-v3/deploy-channel.png 'Appflow Deploy Builds')
+![Appflow 仪表板中的 Deploy Builds 部分。](/img/guides/first-app-v3/deploy-channel.png 'Appflow Deploy Builds')
 
-A Channel points to a specific JavaScript Build or Snapshot of your app that will be shared with devices listening to that channel for updates. You can change which Build a Channel points to whenever you’d like.
+Channel（渠道）指向您应用的特定 JavaScript 构建或快照，该构建将共享给监听该渠道更新请求的设备。您可以随时更改 Channel 指向的构建。
 
-Each time a user launches our Photo Gallery app, it will poll for updates from Appflow. If new code is available, the update is downloaded in the background. There are [a handful of ways](https://ionic.io/docs/appflow/deploy/api#update_method) to control how updates are performed, but by default they will be applied the next time the user closes then opens the app.
+每次用户启动我们的 Photo Gallery 应用时，它都会从 Appflow 轮询更新。如果有新代码可用，更新将在后台下载。有 [几种方式](https://ionic.io/docs/appflow/deploy/api#update_method) 可以控制更新的执行方式，但默认情况下，更新将在用户下次关闭然后重新打开应用时应用。
 
-When the latest Build has been successful, close your local copy of Photo Gallery app or put it in the background for 30 seconds (the [MIN_BACKGROUND_DURATION default](https://ionic.io/docs/appflow/deploy/api#min_background_duration)), then reopen it. The title of the Photo Gallery page should change from “Photo Gallery” to “Photo Viewer.”
+当最新的构建成功后，关闭您的 Photo Gallery 应用本地副本或将其置于后台 30 秒（[MIN_BACKGROUND_DURATION 默认值](https://ionic.io/docs/appflow/deploy/api#min_background_duration)），然后重新打开。Photo Gallery 页面的标题应从 "Photo Gallery" 更改为 "Photo Viewer"。
 
-What if you deploy a change, then realize that there is a bug? Or perhaps you’re just not happy with the name “Photo Viewer?” No problem: Appflow Deploy makes it easy to roll back changes as well!
+如果您部署了一个变更，然后发现存在 bug 怎么办？或者只是对 "Photo Viewer" 这个名称不满意？没问题：Appflow Deploy 也使得回滚变更变得容易！
 
-On the Deploy Builds page, click the “Assign to Channel” button on the previous commit, then click “Deploy.” App users will be reverted to the previous version, and our “Photo Gallery” name has been restored.
+在 Deploy Builds 页面上，点击先前提交上的 "Assign to Channel" 按钮，然后点击 "Deploy"。应用用户将恢复到先前版本，我们的 "Photo Gallery" 名称已恢复。
 
-![The Deploy Builds section in Appflow with a commit labeled 'set name to Photo Gallery' being assigned to the master channel for rollback.](/img/guides/first-app-v3/deploy-revertChange.png 'Appflow Deploy Revert Change')
+![Appflow 中的 Deploy Builds 部分，一个标记为 'set name to Photo Gallery' 的提交被分配给 master 渠道以进行回滚。](/img/guides/first-app-v3/deploy-revertChange.png 'Appflow Deploy 回滚变更')
 
-This was just a taste of what you can do with Appflow Live Updates! You can also set up multiple deployment channels to send targeted updates to specific groups of users. Use it to run A/B tests, or target the distribution of updates by audience, geography, or test group.
+这只是您可以使用 Appflow 实时更新功能的一小部分！您还可以设置多个部署渠道，向特定用户组发送定向更新。用它来运行 A/B 测试，或按受众、地理位置或测试组定向分发更新。
 
-## Stuck on creating local native builds?
+## 在创建本地原生构建时遇到困难？
 
-Building native app binaries for Android and iOS can be painful. The tooling isn’t great, new OS versions often result in challenging upgrades, and creating consistent builds across your dev team can be frustrating. Fortunately, Appflow’s Package feature makes this easy: simply upload your iOS certificate and Android keystore files, then we take care of the rest!
+为 Android 和 iOS 构建原生应用二进制文件可能很痛苦。工具并不理想，新操作系统版本通常会导致具有挑战性的升级，并且在您的开发团队中创建一致的构建可能会令人沮丧。幸运的是，Appflow 的 Package 功能使这一切变得简单：只需上传您的 iOS 证书和 Android 密钥库文件，剩下的就交给我们了！
 
-[Start packaging your app in the cloud](https://dashboard.ionicframework.com/settings/billing) along with 10,000 Ionic Deploys per month.
+[开始在云端打包您的应用](https://dashboard.ionicframework.com/settings/billing)，每月还可获得 10,000 次 Ionic 部署。
 
-Up next, we look at Appflow Monitoring - track your app errors in realtime.
+接下来，我们将介绍 Appflow Monitoring - 实时跟踪您的应用错误。

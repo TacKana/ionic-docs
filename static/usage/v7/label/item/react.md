@@ -6,27 +6,27 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonLabel>Default Label</IonLabel>
+        <IonLabel>默认标签</IonLabel>
       </IonItem>
 
       <IonItem>
         <IonLabel>
-          Multi-line text that should wrap when it is too long to fit on one line. Lorem ipsum dolor sit amet,
+          当文本过长而无法在一行内完整显示时，应自动换行的多行文本。Lorem ipsum dolor sit amet,
           consectetur adipiscing elit.
         </IonLabel>
       </IonItem>
 
       <IonItem>
         <IonLabel class="ion-text-nowrap">
-          Multi-line text that should ellipsis when it is too long to fit on one line. Lorem ipsum dolor sit amet,
+          当文本过长而无法在一行内完整显示时，应显示省略号的多行文本。Lorem ipsum dolor sit amet,
           consectetur adipiscing elit.
         </IonLabel>
       </IonItem>
 
       <IonItem>
         <IonLabel>
-          <h1>Heading</h1>
-          <p>Paragraph</p>
+          <h1>标题</h1>
+          <p>段落</p>
         </IonLabel>
       </IonItem>
     </>

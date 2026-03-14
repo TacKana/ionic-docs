@@ -1,69 +1,69 @@
-# Virtual Scroll
+# 虚拟滚动
 
-One virtual scrolling solution to consider for your Ionic Vue app is [vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller/blob/next/packages/vue-virtual-scroller/README.md). This guide will go over how to install `vue-virtual-scroller` into your Ionic Vue application and use it with other Ionic components.
+为你的 Ionic Vue 应用程序考虑的一种虚拟滚动解决方案是 [vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller/blob/next/packages/vue-virtual-scroller/README.md)。本指南将介绍如何将 `vue-virtual-scroller` 安装到你的 Ionic Vue 应用程序中，并与其他 Ionic 组件一起使用。
 
-## Installation
+## 安装
 
-To setup the virtual scroller, first install `vue-virtual-scroller`:
+要设置虚拟滚动器，首先安装 `vue-virtual-scroller`：
 
 ```shell
 npm install vue-virtual-scroller@next
 ```
 
 :::note
-Be sure to use the `next` tag otherwise you will get a version of `vue-virtual-scroll` that is only compatible with Vue 2.
+请确保使用 `next` 标签，否则你将得到一个仅与 Vue 2 兼容的 `vue-virtual-scroll` 版本。
 :::
-From here, we need to import the virtual scroller's CSS into our app. In `main.ts`, add the following line:
+接下来，我们需要将虚拟滚动器的 CSS 导入到我们的应用程序中。在 `main.ts` 中，添加以下行：
 
 ```js
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css';
 ```
 
-## Registering Virtual Scroll Components
+## 注册虚拟滚动组件
 
-Now that we have the package installed and the CSS imported, we can either import all virtual scroll components or only import the components we want to use. This guide will show how to do both.
+现在我们已经安装了包并导入了 CSS，我们可以导入所有虚拟滚动组件，也可以只导入我们想要使用的组件。本指南将展示如何实现这两种方法。
 
-### Installing all Components
+### 安装所有组件
 
-To install all virtual scroll components for use your app, add the following import to `main.ts`:
+要在你的应用程序中安装所有虚拟滚动组件进行使用，请在 `main.ts` 中添加以下导入：
 
 ```js
 import VueVirtualScroller from 'vue-virtual-scroller';
 ```
 
-Next, we need to install this in our Vue application:
+接下来，我们需要将其安装到我们的 Vue 应用程序中：
 
 ```js
 app.use(VueVirtualScroller);
 ```
 
-After doing this, all virtual scroll components will be available for use in our app.
+完成此操作后，所有虚拟滚动组件都将在我们的应用程序中可用。
 
 :::note
-Installing all components may result in unused virtual scroll components being added to your application bundle. See the [Installing Specific Components](#installing-specific-components) section below for an approach that works better with treeshaking.
+安装所有组件可能会导致未使用的虚拟滚动组件被添加到你的应用程序包中。请参阅下面的 [安装特定组件](#安装特定组件) 部分，了解一种更适合 tree-shaking 的方法。
 :::
 
-### Installing Specific Components
+### 安装特定组件
 
-To install specific virtual scroll components for use in your app, import the component you want to use in `main.ts`. In this example, we will be using the `RecycleScroller` component:
+要在你的应用程序中安装特定的虚拟滚动组件进行使用，请在 `main.ts` 中导入你想要使用的组件。在这个例子中，我们将使用 `RecycleScroller` 组件：
 
 ```js
 import { RecycleScroller } from 'vue-virtual-scroller';
 ```
 
-Next, we need to add the component to our Vue application:
+接下来，我们需要将该组件添加到我们的 Vue 应用程序中：
 
 ```js
 app.component('RecycleScroller', RecycleScroller);
 ```
 
-After doing this, we will be able to use the `RecycleScroller` component in our app.
+完成此操作后，我们就能在我们的应用程序中使用 `RecycleScroller` 组件了。
 
-## Usage
+## 使用方法
 
-This example will use the `RecycleScroller` component which only renders the visible items in your list. Other components such as `DynamicScroller` can be used when you do not know the size of the items in advance.
+这个例子将使用 `RecycleScroller` 组件，它只渲染列表中可见的项。当你事先不知道项的大小时，可以使用其他组件，例如 `DynamicScroller`。
 
-The `RecycleScroller` component should be added inside of your `ion-content` component:
+`RecycleScroller` 组件应该添加在你的 `ion-content` 组件内部：
 
 ```html
 <template>
@@ -106,9 +106,9 @@ The `RecycleScroller` component should be added inside of your `ion-content` com
 </script>
 ```
 
-There are two important pieces we need to account for in order for `RecycleScroller` to work. First, we need to provide it with an array of data to iterate over via the `items` property. In this case, we have an array called `list` which provides our data. Second, we need to provide the size of each node via the `item-size` property. If you do not know the size of the node ahead of time, you should use the `DynamicScroller` component instead.
+为了让 `RecycleScroller` 正常工作，我们需要处理两个重要的部分。首先，我们需要通过 `items` 属性提供一个数据数组来迭代。在这个例子中，我们有一个名为 `list` 的数组，它提供我们的数据。其次，我们需要通过 `item-size` 属性提供每个节点的大小。如果你事先不知道节点的大小，你应该使用 `DynamicScroller` 组件。
 
-Now that our template is setup, we need to add some CSS to size the virtual scrolling viewport correctly. In a `style` tag in your component, add the following:
+现在我们的模板已经设置好了，我们需要添加一些 CSS 来正确调整虚拟滚动视口的大小。在你的组件的 `style` 标签中，添加以下内容：
 
 ```css
 .scroller {
@@ -116,24 +116,24 @@ Now that our template is setup, we need to add some CSS to size the virtual scro
 }
 ```
 
-## Usage with Ionic Components
+## 与 Ionic 组件一起使用
 
-Ionic Framework requires that features such as collapsible large titles, `ion-infinite-scroll`, `ion-refresher`, and `ion-reorder-group` be used within an `ion-content`. To use these experiences with virtual scrolling, you must add the `.ion-content-scroll-host` class to the virtual scroll viewport.
+Ionic Framework 要求诸如可折叠大标题、`ion-infinite-scroll`、`ion-refresher` 和 `ion-reorder-group` 等功能必须在 `ion-content` 内使用。要在虚拟滚动中使用这些功能，你必须将 `.ion-content-scroll-host` 类添加到虚拟滚动视口。
 
-For example:
+例如：
 
 ```html
 <template>
   <ion-page>
     <ion-content :scroll-y="false">
       <RecycleScroller class="ion-content-scroll-host scroller">
-        <!-- Your existing content and configurations -->
+        <!-- 你现有的内容和配置 -->
       </RecycleScroller>
     </ion-content>
   </ion-page>
 </template>
 ```
 
-## Further Reading
+## 进一步阅读
 
-This guide only covers a small portion of what `vue-virtual-scroller` is capable of. For more details, please see the [vue-virtual-scroller documentation](https://github.com/Akryum/vue-virtual-scroller/blob/next/packages/vue-virtual-scroller/README.md).
+本指南仅涵盖了 `vue-virtual-scroller` 功能的一小部分。更多详细信息，请参阅 [vue-virtual-scroller 文档](https://github.com/Akryum/vue-virtual-scroller/blob/next/packages/vue-virtual-scroller/README.md)。

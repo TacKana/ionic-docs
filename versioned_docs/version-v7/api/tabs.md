@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/tabs/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v7/tabs/slots.md';
 
 <head>
-  <title>ion-tabs: Tab-Based Component for App Top-Level Navigation</title>
+  <title>ion-tabs：应用顶级导航的标签页组件</title>
   <meta
     name="description"
-    content="Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps."
+    content="Tabs 是实现标签页导航的顶级组件。Ion-tabs 没有样式，作为路由出口用于实现类似原生应用的导航行为。"
   />
 </head>
 
@@ -21,40 +21,39 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Tabs are a top level navigation component to implement a tab-based navigation.
-The component is a container of individual [Tab](tab.md) components.
+Tabs 是实现标签页导航的顶级导航组件。该组件是各个 [Tab](tab.md) 组件的容器。
 
-The `ion-tabs` component does not have any styling and works as a router outlet in order to handle navigation. It does not provide any UI feedback or mechanism to switch between tabs. In order to do so, an `ion-tab-bar` should be provided as a direct child of `ion-tabs`.
+`ion-tabs` 组件本身没有任何样式，它作为路由出口来处理导航。它不提供任何用户界面反馈或切换标签页的机制。要实现这些功能，需要将 `ion-tab-bar` 作为 `ion-tabs` 的直接子元素提供。
 
-Both `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They don’t depend on each other to work, but they are usually used together in order to implement a tab-based navigation that behaves like a native app.
+`ion-tabs` 和 `ion-tab-bar` 都可以作为独立元素使用。它们不依赖彼此即可工作，但通常一起使用以实现类似原生应用的标签页导航。
 
-The `ion-tab-bar` needs a slot defined in order to be projected to the right place in an `ion-tabs` component.
+`ion-tab-bar` 需要定义一个插槽，以便在 `ion-tabs` 组件中投影到正确位置。
 
-:::note Framework Support
+:::note 框架支持
 
-Using `ion-tabs` within Angular, React or Vue requires the use of the `ion-router-outlet` or `ion-nav` components.
+在 Angular、React 或 Vue 中使用 `ion-tabs` 需要使用 `ion-router-outlet` 或 `ion-nav` 组件。
 
 :::
 
-## Usage with Router
+## 与路由器的配合使用
 
-Tabs can be used with the Ionic router to implement tab-based navigation. The tab bar and active tab will automatically resolve based on the url. This is the most common pattern for tabs navigation.
+Tabs 可以与 Ionic 路由器配合使用来实现标签页导航。标签栏和活动标签页将根据 URL 自动解析。这是标签页导航最常见的模式。
 
 import Router from '@site/static/usage/v7/tabs/router/index.md';
 
 <Router />
 
-:::tip Best Practices
+:::tip 最佳实践
 
-Ionic has guides on best practices for routing patterns with tabs. Check out the guides for [Angular](/angular/navigation#working-with-tabs), [React](/react/navigation#working-with-tabs), and [Vue](/vue/navigation#working-with-tabs) for additional information.
+Ionic 提供了关于标签页路由模式的最佳实践指南。如需更多信息，请查看 [Angular](/angular/navigation#working-with-tabs)、[React](/react/navigation#working-with-tabs) 和 [Vue](/vue/navigation#working-with-tabs) 的指南。
 
 :::
 
-## Interfaces
+## 接口
 
 ### TabsCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更严格的类型检查。
 
 ```typescript
 interface TabsCustomEvent extends CustomEvent {
@@ -63,26 +62,26 @@ interface TabsCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

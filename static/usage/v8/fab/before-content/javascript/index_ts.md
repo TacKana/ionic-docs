@@ -4,15 +4,15 @@ import { defineCustomElements } from '@ionic/core/loader';
 import { addIcons } from 'ionicons';
 import { add } from 'ionicons/icons';
 
-/* Core CSS required for Ionic components to work properly */
+/* Ionic组件正常工作所需的核心CSS */
 import '@ionic/core/css/core.css';
 
-/* Basic CSS for apps built with Ionic */
+/* 使用Ionic构建的应用所需的基础CSS */
 import '@ionic/core/css/normalize.css';
 import '@ionic/core/css/structure.css';
 import '@ionic/core/css/typography.css';
 
-/* Optional CSS utils that can be commented out */
+/* 可选的CSS工具类，可以注释掉 */
 import '@ionic/core/css/padding.css';
 import '@ionic/core/css/float-elements.css';
 import '@ionic/core/css/text-alignment.css';
@@ -21,9 +21,9 @@ import '@ionic/core/css/flex-utils.css';
 import '@ionic/core/css/display.css';
 
 /**
- * Ionic Dark Palette
+ * Ionic深色主题调色板
  * -----------------------------------------------------
- * For more information, please see:
+ * 更多信息请参阅：
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
@@ -31,13 +31,13 @@ import '@ionic/core/css/display.css';
 // import '@ionic/core/css/palettes/dark.class.css';
 import '@ionic/core/css/palettes/dark.system.css';
 
-/* Theme variables */
+/* 主题变量 */
 import './theme/variables.css';
 
 /**
- * On Ionicons 7.2+ this icon
- * gets mapped to a "add" key.
- * Alternatively, developers can do:
+ * 在Ionicons 7.2+版本中，此图标
+ * 会映射到"add"键。
+ * 或者，开发者也可以这样写：
  * addIcons({ 'add': add });
  */
 addIcons({ add });

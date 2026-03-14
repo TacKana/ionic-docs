@@ -3,11 +3,11 @@
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-button @click="cancelChanges()">Cancel</ion-button>
+        <ion-button @click="cancelChanges()">取消</ion-button>
       </ion-buttons>
       <ion-title>{{ $props.title }}</ion-title>
       <ion-buttons slot="end">
-        <ion-button @click="confirmChanges()">Done</ion-button>
+        <ion-button @click="confirmChanges()">完成</ion-button>
       </ion-buttons>
     </ion-toolbar>
     <ion-toolbar>
@@ -52,7 +52,7 @@
       selectedItems: Array,
       title: {
         type: String,
-        default: 'Select Items',
+        default: '选择项目',
       },
     },
     emits: ['selection-cancel', 'selection-change'],
@@ -90,23 +90,20 @@
       };
 
       /**
-       * Update the rendered view with
-       * the provided search query. If no
-       * query is provided, all data
-       * will be rendered.
+       * 根据提供的搜索查询更新渲染视图。
+       * 如果没有提供查询，则渲染所有数据。
        */
       const filterList = (searchQuery: string | undefined) => {
         /**
-         * If no search query is defined,
-         * return all options.
+         * 如果未定义搜索查询，
+         * 则返回所有选项。
          */
         if (searchQuery === undefined) {
           filteredItems.value = [...props.items];
         } else {
           /**
-           * Otherwise, normalize the search
-           * query and check to see which items
-           * contain the search query as a substring.
+           * 否则，将搜索查询标准化，
+           * 并检查哪些项目包含该搜索查询作为子字符串。
            */
           const normalizedQuery = searchQuery.toLowerCase();
           filteredItems.value = props.items.filter((item) => {

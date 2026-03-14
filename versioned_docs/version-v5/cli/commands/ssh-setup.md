@@ -2,14 +2,14 @@
 sidebar_label: 'ssh setup'
 ---
 
-# ionic ssh setup
+# Ionic SSH 配置
 
-Setup your Ionic SSH keys automatically
+自动配置您的 Ionic SSH 密钥
 
 ```shell
 ionic ssh setup [options]
 ```
 
-This command offers a setup wizard for Ionic SSH keys using a series of prompts. For more control, see the commands available for managing SSH keys with the `ionic ssh --help` command. For an entirely manual approach, see **Personal Settings** => **SSH Keys** in the [Dashboard](https://dashboard.ionicframework.com/settings/ssh-keys).
+此命令通过一系列提示，为 Ionic SSH 密钥提供配置向导。若需更多控制，请查看通过 `ionic ssh --help` 命令可用的 SSH 密钥管理命令。如需完全手动操作，请前往 [Dashboard](https://dashboard.ionicframework.com/settings/ssh-keys) 中的 **个人设置** => **SSH 密钥**。
 
-If you are having issues setting up SSH keys, please get in touch with our [Support](https://ion.link/support-request).
+如果在设置 SSH 密钥时遇到问题，请联系我们的 [技术支持](https://ion.link/support-request)。

@@ -9,6 +9,6 @@ import { IonAlert, IonButton } from '@ionic/angular/standalone';
   imports: [IonAlert, IonButton],
 })
 export class ExampleComponent {
-  alertButtons = ['Action'];
+  alertButtons = ['操作'];
 }
 ```

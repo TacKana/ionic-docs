@@ -1,11 +1,11 @@
 ```html
 <ion-header #header>
   <ion-toolbar>
-    <ion-title>App</ion-title>
+    <ion-title>应用</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button>
+  <ion-button id="open-modal" expand="block">打开底部模态框</ion-button>
 
   <ion-modal
     trigger="open-modal"
@@ -17,7 +17,7 @@
     <ng-template>
       <ion-content class="ion-padding">
         <div class="ion-margin-top">
-          <ion-label>Drag the handle to adjust the header's visibility.</ion-label>
+          <ion-label>拖动手柄以调整页头的可见性。</ion-label>
         </div>
       </ion-content>
     </ng-template>

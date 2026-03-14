@@ -1,16 +1,16 @@
 ---
-sidebar_label: Packages & CDN
+sidebar_label: 包与CDN
 ---
 
-# Ionic Packages
+# Ionic 包
 
-Ionic provides different packages that can be used to quickly get started using Ionic Framework or Ionicons in a test environment, Angular, any other framework, or none at all.
+Ionic 提供了不同的包，可用于在测试环境、Angular、任何其他框架或无框架的情况下快速开始使用 Ionic Framework 或 Ionicons。
 
 ## Ionic Framework CDN
 
-Ionic Framework can be included from a CDN for quick testing in a [Plunker](https://plnkr.co/), [Codepen](https://codepen.io), or any other online code editor!
+Ionic Framework 可以通过 CDN 引入，以便在 [Plunker](https://plnkr.co/)、[Codepen](https://codepen.io) 或任何其他在线代码编辑器中快速测试！
 
-It's recommended to use [jsdelivr](https://www.jsdelivr.com/) to access the Framework from a CDN. To get the latest version, add the following inside the `<head>` element in an HTML file, or where external assets are included in the online code editor:
+建议使用 [jsdelivr](https://www.jsdelivr.com/) 从 CDN 访问框架。要获取最新版本，请在 HTML 文件的 `<head>` 元素内或在线代码编辑器中包含外部资源的位置添加以下代码：
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
@@ -18,33 +18,33 @@ It's recommended to use [jsdelivr](https://www.jsdelivr.com/) to access the Fram
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 ```
 
-With this it's possible to use all of the Ionic Framework core components without having to install a framework. The CSS bundle will include all of the Ionic [Global Stylesheets](../layout/global-stylesheets).
+这样，您就可以使用所有 Ionic Framework 核心组件，而无需安装任何框架。CSS 包将包含所有 Ionic [全局样式表](../layout/global-stylesheets)。
 
 :::note
-This does not install Angular or any other frameworks. This allows use of the Ionic Framework core components without a framework.
+这不会安装 Angular 或任何其他框架。它允许您在没有框架的情况下使用 Ionic Framework 核心组件。
 :::
 
 ## Ionic + Angular
 
-When using Ionic Framework in an Angular project, install the latest `@ionic/angular` package from [npm](../reference/glossary.md#npm). This comes with all of the Ionic Framework components and Angular specific services and features.
+在 Angular 项目中使用 Ionic Framework 时，请从 [npm](../reference/glossary.md#npm) 安装最新的 `@ionic/angular` 包。该包包含所有 Ionic Framework 组件以及专为 Angular 定制的服务和功能。
 
 ```shell
 npm install @ionic/angular@latest --save
 ```
 
-Each time there is a new Ionic Framework release, this [version](../reference/versioning.md) will need to be updated to get the latest features and fixes. The version can be [updated using npm](../developing/tips.md#updating-dependencies), as well.
+每当有新的 Ionic Framework 版本发布时，都需要更新此 [版本](../reference/versioning.md) 以获取最新功能和修复。您也可以 [使用 npm 更新版本](../developing/tips.md#updating-dependencies)。
 
-For adding Ionic to an already existing Angular project, use the Angular CLI's `ng add` feature.
+要将 Ionic 添加到现有的 Angular 项目中，可以使用 Angular CLI 的 `ng add` 功能。
 
 ```shell
 ng add @ionic/angular
 ```
 
-This will add the necessary imports to the `@ionic/angular` package as well as add the styles needed.
+这将添加对 `@ionic/angular` 包的必要导入，并添加所需的样式。
 
 ## Ionic + React
 
-To add Ionic Framework to an already existing React project, install the `@ionic/react` and `@ionic/react-router` package.
+要将 Ionic Framework 添加到现有的 React 项目中，请安装 `@ionic/react` 和 `@ionic/react-router` 包。
 
 ```shell
 $ npm install @ionic/react
@@ -53,7 +53,7 @@ $ npm install @ionic/react-router
 
 ### CSS
 
-To include the necessary CSS in a React project, add the following to the root App component.
+要在 React 项目中包含必要的 CSS，请在根 App 组件中添加以下代码。
 
 ```javascript
 /* Core CSS required for Ionic components to work properly */
@@ -75,13 +75,13 @@ import '@ionic/react/css/display.css';
 
 ## Ionic + Vue
 
-To add Ionic Framework to an existing Vue project, install the `@ionic/vue` and `@ionic/vue-router` packages.
+要将 Ionic Framework 添加到现有的 Vue 项目中，请安装 `@ionic/vue` 和 `@ionic/vue-router` 包。
 
 ```shell
 npm install @ionic/vue @ionic/vue-router
 ```
 
-After that, you will need to install the `IonicVue` plugin in your Vue app.
+之后，您需要在 Vue 应用中安装 `IonicVue` 插件。
 
 **main.js**
 
@@ -98,11 +98,11 @@ router.isReady().then(() => {
 });
 ```
 
-Be sure to mount your app once `router.isReady()` has resolved.
+请确保在 `router.isReady()` 解析完成后再挂载您的应用。
 
-### Routing
+### 路由
 
-When setting up routing in your Vue app, you will need to import your dependencies from `@ionic/vue-router` instead of `vue-router`.
+在 Vue 应用中设置路由时，您需要从 `@ionic/vue-router` 而不是 `vue-router` 导入依赖项。
 
 **router/index.js**
 
@@ -123,7 +123,7 @@ export default router;
 
 ### CSS
 
-To include the necessary CSS in a Vue project, add the following to your `main.js` file.
+要在 Vue 项目中包含必要的 CSS，请在您的 `main.js` 文件中添加以下代码。
 
 ```javascript
 /* Core CSS required for Ionic components to work properly */
@@ -143,11 +143,11 @@ import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 ```
 
-From here, you can learn about how to develop with Ionic Framework in our [Ionic Vue Quickstart Guide](https://ionicframework.com/docs/vue/quickstart).
+接下来，您可以在我们的 [Ionic Vue 快速入门指南](https://ionicframework.com/docs/vue/quickstart) 中了解如何使用 Ionic Framework 进行开发。
 
 ## Ionicons CDN
 
-Ionicons is packaged by default with the Ionic Framework, so no installation is necessary if you're using Ionic. To use Ionicons without Ionic Framework, place the following `<script>` near the end of your page, right before the closing `</body>` tag.
+Ionicons 默认与 Ionic Framework 捆绑在一起，因此如果您在使用 Ionic，则无需额外安装。要在没有 Ionic Framework 的情况下使用 Ionicons，请将以下 `<script>` 标签放在页面末尾，即在闭合的 `</body>` 标签之前。
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>
@@ -155,5 +155,5 @@ Ionicons is packaged by default with the Ionic Framework, so no installation is 
 ```
 
 :::note
-See [Ionicons usage](https://ionic.io/ionicons/usage) for more information on using Ionicons.
+有关使用 Ionicons 的更多信息，请参阅 [Ionicons 使用指南](https://ionic.io/ionicons/usage)。
 :::

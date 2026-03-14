@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-datetime presentation="date">
-    <span slot="title">Select Date</span>
+    <span slot="title">选择日期</span>
   </ion-datetime>
 </template>
 
@@ -11,7 +11,7 @@
 
 <style scoped>
   /*
-   * Custom Datetime Header Parts
+   * 自定义日期时间组件头部样式
    * -------------------------------------------
    */
 

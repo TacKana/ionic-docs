@@ -1,12 +1,12 @@
 ---
-title: Next Steps
+title: 后续步骤
 ---
 
 <head>
-  <title>Next Steps for Starting an App: Choose Your JavaScript Framework</title>
+  <title>启动应用的后续步骤：选择你的 JavaScript 框架</title>
   <meta
     name="description"
-    content="In order to build an Ionic app, you first need to choose the JavaScript framework you plan to use. Learn more about next steps for starting an app with Ionic."
+    content="要构建 Ionic 应用，首先需要选择你计划使用的 JavaScript 框架。了解关于使用 Ionic 启动应用的后续步骤。"
   />
 </head>
 
@@ -15,21 +15,21 @@ import DocsCards from '@components/global/DocsCards';
 
 import DeveloperExperts from '@components/page/intro/next/DeveloperExperts';
 
-## Build Your First App
+## 构建你的第一个应用
 
-Pick the JavaScript framework you plan to use while building your Ionic app:
+选择你在构建 Ionic 应用时计划使用的 JavaScript 框架：
 
 <DocsCards>
-  <DocsCard header="Start with Angular" href="../angular/your-first-app" icon="/icons/logo-angular-icon.png">
-    <p>A complete guide to get you up to speed with the basics of building Ionic apps with Angular.</p>
+  <DocsCard header="从 Angular 开始" href="../angular/your-first-app" icon="/icons/logo-angular-icon.png">
+    <p>一份完整的指南，帮助你快速掌握使用 Angular 构建 Ionic 应用的基础知识。</p>
   </DocsCard>
 
-<DocsCard header="Start with React" href="../react/your-first-app" icon="/icons/logo-react-icon.png">
-  <p>A complete guide to get you up to speed with the basics of building Ionic apps with React.</p>
+<DocsCard header="从 React 开始" href="../react/your-first-app" icon="/icons/logo-react-icon.png">
+  <p>一份完整的指南，帮助你快速掌握使用 React 构建 Ionic 应用的基础知识。</p>
 </DocsCard>
 
-  <DocsCard header="Start with Vue" href="../vue/your-first-app" icon="/icons/logo-vue-icon.png">
-    <p>A complete guide to get you up to speed with the basics of building Ionic apps with Vue.</p>
+  <DocsCard header="从 Vue 开始" href="../vue/your-first-app" icon="/icons/logo-vue-icon.png">
+    <p>一份完整的指南，帮助你快速掌握使用 Vue 构建 Ionic 应用的基础知识。</p>
   </DocsCard>
 </DocsCards>
 

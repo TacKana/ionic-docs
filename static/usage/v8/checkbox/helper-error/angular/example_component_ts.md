@@ -20,9 +20,8 @@ export class ExampleComponent {
   }
 
   onSubmit() {
-    // Mark the control as touched to trigger the error message.
-    // This is needed if the user submits the form without interacting
-    // with the checkbox.
+    // 将控件标记为已接触以触发错误信息。
+    // 如果用户未与复选框交互就提交表单，则需要此操作。
     this.myForm.get('agree')!.markAsTouched();
   }
 }

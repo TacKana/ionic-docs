@@ -10,20 +10,20 @@ import CustomProps from '@ionic-internal/component-api/v6/reorder-group/custom-p
 import Slots from '@ionic-internal/component-api/v6/reorder-group/slots.md';
 
 <head>
-  <title>ion-reorder-group: Wrapper Component for Ionic Framework Apps</title>
+  <title>ion-reorder-group：Ionic 框架应用中的包装组件</title>
   <meta
     name="description"
-    content="ion-reorder-group is a wrapper component for items using the ion-reorder component on Ionic apps. Read to learn more about ion-reorder-group usage."
+    content="ion-reorder-group 是在 Ionic 应用中使用 ion-reorder 组件项目的包装容器。阅读本文以了解更多关于 ion-reorder-group 的使用方法。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-The reorder group is a container for items using the [reorder](./reorder) component. When the user drags an item and drops it in a new position, the `ionItemReorder` event is dispatched. A handler for this event should be implemented that calls the `complete` method.
+重新排序组是使用 [reorder](./reorder) 组件项目的容器。当用户拖拽某个项目并将其放置到新位置时，将触发 `ionItemReorder` 事件。需要为该事件实现一个处理函数，该函数应调用 `complete` 方法。
 
-The `detail` property of the `ionItemReorder` event includes all of the relevant information about the reorder operation, including the `from` and `to` indexes. In the context of reordering, an item moves `from` an index `to` a new index. For example usage of the reorder group, see the [reorder](./reorder) documentation.
+`ionItemReorder` 事件的 `detail` 属性包含了关于重新排序操作的所有相关信息，包括 `from` 和 `to` 索引。在重新排序的上下文中，一个项目会从某个索引 `from` 移动到新索引 `to`。关于重新排序组的使用示例，请参阅 [reorder](./reorder) 文档。
 
-## Interfaces
+## 接口
 
 ### ItemReorderEventDetail
 
@@ -37,7 +37,7 @@ interface ItemReorderEventDetail {
 
 ### ItemReorderCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但此接口可以替代 `CustomEvent` 接口，以便对从该组件发出的 Ionic 事件进行更严格的类型检查。
 
 ```typescript
 interface ItemReorderCustomEvent extends CustomEvent {
@@ -46,15 +46,15 @@ interface ItemReorderCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -62,10 +62,10 @@ interface ItemReorderCustomEvent extends CustomEvent {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

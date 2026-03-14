@@ -1,10 +1,10 @@
 # StackBlitz
 
-This directory contains the source files for generating the individual framework targets for a playground examples. The contents of the files will be loaded and injected into the StackBlitz example that is opened from the Playground.
+此目录包含了为各个框架目标生成 playground 示例的源文件。这些文件的内容将被加载并注入到从 Playground 打开的 StackBlitz 示例中。
 
-## Structure
+## 目录结构
 
-The files are organized by Ionic version (`v6`, `v7`, `v8`) and framework (`angular`, `html`, `react`, `vue`):
+文件按 Ionic 版本 (`v6`、`v7`、`v8`) 和框架 (`angular`、`html`、`react`、`vue`) 组织：
 
 ```
 stackblitz/
@@ -27,73 +27,72 @@ stackblitz/
 
 ## Angular
 
-| File                 | Description                                            |
-| -------------------- | ------------------------------------------------------ |
-| `angular.json`       | Main configuration file for any Angular application.   |
-| `app.component.css`  | App component styles.                              |
-| `app.component.html` | App component template.                           |
-| `app.component.ts`   | App component class/entry point.                   |
-| `app.component.withContent.html` | App component template with `ion-content` wrapper. |
-| `app.component.withContent.ts` | App component class/entry point with `ion-content` wrapper. |
-| `app.routes.ts`      | Application routing configuration.                 |
-| `example.component.ts` | Example component for demos.                     |
-| `global.css`         | Global styles.                                     |
-| `index.html`         | Main HTML template.                                |
-| `main.ts`            | Responsible for bootstrapping the application.     |
-| `package.json`       | Project dependencies.                              |
-| `package-lock.json`  | Locked dependency versions.                        |
-| `styles.css`         | Ionic default styles.                                   |
-| `tsconfig.app.json`  | TypeScript configuration for the app.              |
-| `tsconfig.json`      | TypeScript configuration.                          |
-| `variables.css`      | CSS variables for theming.                         |
+| 文件                       | 说明                                                         |
+| -------------------------- | ------------------------------------------------------------ |
+| `angular.json`             | Angular 应用程序的主要配置文件。                           |
+| `app.component.css`        | 应用组件的样式。                                           |
+| `app.component.html`       | 应用组件的模板。                                           |
+| `app.component.ts`         | 应用组件的类/入口点。                                      |
+| `app.component.withContent.html` | 包含 `ion-content` 包装器的应用组件模板。         |
+| `app.component.withContent.ts` | 包含 `ion-content` 包装器的应用组件类/入口点。     |
+| `app.routes.ts`            | 应用程序路由配置。                                         |
+| `example.component.ts`     | 用于演示的示例组件。                                       |
+| `global.css`               | 全局样式。                                                 |
+| `index.html`               | 主 HTML 模板。                                             |
+| `main.ts`                  | 负责引导应用程序启动。                                     |
+| `package.json`             | 项目依赖项。                                               |
+| `package-lock.json`        | 锁定依赖版本。                                             |
+| `styles.css`               | Ionic 默认样式。                                           |
+| `tsconfig.app.json`        | 应用程序的 TypeScript 配置。                               |
+| `tsconfig.json`            | TypeScript 配置。                                          |
+| `variables.css`            | 主题相关的 CSS 变量。                                      |
 
 ## HTML
 
-| File         | Description                                                       |
-| ------------ | ----------------------------------------------------------------- |
-| `index.html` | Main template file with CDN link to latest `@ionic/core` release. |
-| `index.withContent.html` | Main template with `ion-content` wrapper.               |
-| `index.ts`   | Defines the Stencil hydrated bundle for Ionic.                    |
-| `package.json` | Project dependencies.                                           |
-| `package-lock.json` | Locked dependency versions.                                  |
-| `tsconfig.json` | TypeScript configuration.                                      |
-| `variables.css` | CSS variables for theming.                                     |
-| `vite.config.ts` | Vite configuration file.                                      |
+| 文件                     | 说明                                                               |
+| ------------------------ | ------------------------------------------------------------------ |
+| `index.html`             | 主模板文件，包含指向最新 `@ionic/core` 发布的 CDN 链接。         |
+| `index.withContent.html` | 包含 `ion-content` 包装器的主模板。                           |
+| `index.ts`               | 定义 Ionic 的 Stencil 水合包。                                    |
+| `package.json`           | 项目依赖项。                                                     |
+| `package-lock.json`      | 锁定依赖版本。                                                   |
+| `tsconfig.json`          | TypeScript 配置。                                                |
+| `variables.css`          | 主题相关的 CSS 变量。                                            |
+| `vite.config.ts`         | Vite 配置文件。                                                  |
 
 ## React
 
-| File       | Description                                                                                  |
-| ---------- | -------------------------------------------------------------------------------------------- |
-| `app.tsx`  | Imports required Ionic styles and `setupIonicReact()` function to initialize web components. |
-| `app.withContent.tsx` | App component with `ion-content` wrapper.                                       |
-| `browserslistrc` | Browser support configuration.                                                         |
-| `eslintrc.js` | ESLint configuration.                                                                   |
-| `index.html` | The HTML template to create an element to mount React to.                                |
-| `index.tsx` | Boilerplate to render a React app.                                                           |
-| `package.json`   | Project dependencies.                                                                  |
-| `package-lock.json` | Locked dependency versions.                                                         |
-| `tsconfig.json` | TypeScript configuration.                                                               |
-| `variables.css` | CSS variables for theming.                                                              |
-| `vite.config.js` | Vite configuration file.                                                               |
+| 文件                 | 说明                                                                 |
+| -------------------- | -------------------------------------------------------------------- |
+| `app.tsx`            | 导入所需的 Ionic 样式和 `setupIonicReact()` 函数以初始化 Web 组件。 |
+| `app.withContent.tsx` | 包含 `ion-content` 包装器的应用组件。                         |
+| `browserslistrc`     | 浏览器支持配置。                                                   |
+| `eslintrc.js`        | ESLint 配置。                                                      |
+| `index.html`         | 用于创建挂载 React 的元素的 HTML 模板。                            |
+| `index.tsx`          | 渲染 React 应用程序的样板代码。                                      |
+| `package.json`       | 项目依赖项。                                                       |
+| `package-lock.json`  | 锁定依赖版本。                                                     |
+| `tsconfig.json`      | TypeScript 配置。                                                  |
+| `variables.css`      | 主题相关的 CSS 变量。                                              |
+| `vite.config.js`     | Vite 配置文件。                                                    |
 
 ## Vue
 
-| File             | Description                                                   |
-| ---------------- | ------------------------------------------------------------- |
-| `App.vue`        | Main Vue component that wraps each example in `ion-app`.      |
-| `App.withContent.vue` | Main Vue component with `ion-content` wrapper.           |
-| `index.html`     | The HTML template to create an element to mount Vue to.       |
-| `main.ts`        | Initializes Ionic Vue and imports global styles.              |
-| `package.json`   | Project dependencies.                                         |
-| `package-lock.json` | Locked dependency versions.                                |
-| `tsconfig.json`  | TypeScript configuration.                                     |
-| `tsconfig.node.json` | TypeScript configuration for Node.                        |
-| `variables.css`  | CSS variables for theming.                                    |
-| `vite.config.ts` | Vite configuration file.                                      |
+| 文件                 | 说明                                                           |
+| -------------------- | -------------------------------------------------------------- |
+| `App.vue`            | 主 Vue 组件，将每个示例包装在 `ion-app` 中。                 |
+| `App.withContent.vue` | 包含 `ion-content` 包装器的主 Vue 组件。               |
+| `index.html`         | 用于创建挂载 Vue 的元素的 HTML 模板。                          |
+| `main.ts`            | 初始化 Ionic Vue 并导入全局样式。                              |
+| `package.json`       | 项目依赖项。                                                   |
+| `package-lock.json`  | 锁定依赖版本。                                                 |
+| `tsconfig.json`      | TypeScript 配置。                                              |
+| `tsconfig.node.json` | Node 环境的 TypeScript 配置。                                |
+| `variables.css`      | 主题相关的 CSS 变量。                                          |
+| `vite.config.ts`     | Vite 配置文件。                                                |
 
+## 点文件
 
-## Dotfiles
+点文件必须保存时去掉点，否则无法正确获取。但是，在创建 StackBlitz 项目时，可以使用点。
 
-Dotfiles must be saved without the dot otherwise they will not be fetched correctly. However, when creating the StackBlitz project the dot can be used.
-
-For example, if you had an `.eslintrc.js` file you would save it as `eslintrc.js` in this repo. When creating the StackBlitz project the contents of that file can then be saved as `.eslintrc.js`.
+例如，如果你有一个 `.eslintrc.js` 文件，你需要将其保存为此仓库中的 `eslintrc.js`。在创建 StackBlitz 项目时，该文件的内容可以保存为 `.eslintrc.js`。

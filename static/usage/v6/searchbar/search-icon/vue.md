@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-searchbar></ion-searchbar>
-  <ion-searchbar :search-icon="searchCircle" placeholder="Custom Search Icon"></ion-searchbar>
+  <ion-searchbar :search-icon="searchCircle" placeholder="自定义搜索图标"></ion-searchbar>
 </template>
 
 <script lang="ts">

@@ -1,7 +1,7 @@
 ```html
 <template>
-  <ion-button id="open-action-sheet">Open</ion-button>
-  <ion-action-sheet trigger="open-action-sheet" header="Actions" :buttons="actionSheetButtons"></ion-action-sheet>
+  <ion-button id="open-action-sheet">打开</ion-button>
+  <ion-action-sheet trigger="open-action-sheet" header="操作" :buttons="actionSheetButtons"></ion-action-sheet>
 </template>
 
 <script setup lang="ts">
@@ -9,20 +9,20 @@
 
   const actionSheetButtons = [
     {
-      text: 'Delete',
+      text: '删除',
       role: 'destructive',
       data: {
         action: 'delete',
       },
     },
     {
-      text: 'Share',
+      text: '分享',
       data: {
         action: 'share',
       },
     },
     {
-      text: 'Cancel',
+      text: '取消',
       role: 'cancel',
       data: {
         action: 'cancel',

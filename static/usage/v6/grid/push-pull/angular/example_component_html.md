@@ -1,5 +1,5 @@
 ```html
-<b>Column 1 has <code>push</code> set to <code>"4"</code> and column 2 has <code>pull</code> set to <code>"4"</code></b>
+<b>第1列的 <code>push</code> 设置为 <code>"4"</code>，第2列的 <code>pull</code> 设置为 <code>"4"</code></b>
 <ion-grid>
   <ion-row>
     <ion-col push="4">1</ion-col>
@@ -9,7 +9,7 @@
 </ion-grid>
 
 <b
-  >Column 2 has <code>push</code> set to <code>"4"</code> and column 3 & 4 have <code>pull</code> set to
+  >第2列的 <code>push</code> 设置为 <code>"4"</code>，第3列和第4列的 <code>pull</code> 设置为
   <code>"2"</code></b
 >
 <ion-grid>
@@ -23,7 +23,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Column 1 has <code>push</code> set to <code>"3"</code> and column 2 has <code>pull</code> set to <code>"9"</code></b>
+<b>第1列的 <code>push</code> 设置为 <code>"3"</code>，第2列的 <code>pull</code> 设置为 <code>"9"</code></b>
 <ion-grid>
   <ion-row>
     <ion-col size="9" push="3">1</ion-col>

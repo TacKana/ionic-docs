@@ -4,18 +4,18 @@ sidebar_label: Overlays
 ---
 
 <head>
-  <title>Angular Overlay Components: Modals, Popovers with Custom Injectors</title>
+  <title>Angular 叠加层组件：模态框、弹出框及自定义注入器</title>
   <meta
     name="description"
-    content="Learn how to use overlay components like modals and popovers in Ionic Angular, including passing custom injectors for dependency injection."
+    content="学习如何在 Ionic Angular 中使用模态框和弹出框等叠加层组件，包括传递自定义注入器以实现依赖注入。"
   />
 </head>
 
-Ionic provides overlay components such as modals and popovers that display content on top of your application. In Angular, these overlays can be created using controllers like `ModalController` and `PopoverController`.
+Ionic 提供了一系列叠加层组件，如模态框（Modal）和弹出框（Popover），它们会在你的应用内容之上显示。在 Angular 中，这些叠加层可以通过控制器（如 `ModalController` 和 `PopoverController`）来创建。
 
-## Creating Overlays
+## 创建叠加层
 
-Overlays can be created programmatically using their respective controllers:
+可以通过编程方式使用各自的控制器来创建叠加层：
 
 ```typescript
 import { Component } from '@angular/core';
@@ -33,7 +33,7 @@ export class HomeComponent {
     const modal = await this.modalController.create({
       component: MyModalComponent,
       componentProps: {
-        title: 'My Modal',
+        title: '我的模态框',
       },
     });
     await modal.present();
@@ -41,23 +41,23 @@ export class HomeComponent {
 }
 ```
 
-## Custom Injectors
+## 自定义注入器
 
-By default, overlay components use the root injector for dependency injection. This means that services or tokens provided at the route level or within a specific component tree are not accessible inside the overlay.
+默认情况下，叠加层组件使用根注入器进行依赖注入。这意味着在路由级别或特定组件树中提供的服务或令牌，无法在叠加层内部访问。
 
-The `injector` option allows you to pass a custom Angular `Injector` when creating a modal or popover. This enables overlay components to access services and tokens that are not available in the root injector.
+通过 `injector` 选项，你可以在创建模态框或弹出框时传递一个自定义的 Angular `Injector`。这使得叠加层组件能够访问根注入器中不可用的服务和令牌。
 
-### Use Cases
+### 使用场景
 
-Custom injectors are useful when you need to:
+自定义注入器在以下场景中非常有用：
 
-- Access route-scoped services from within an overlay
-- Use Angular CDK's `Dir` directive for bidirectional text support
-- Access any providers that are not registered at the root level
+- 在叠加层内访问路由作用域的服务
+- 使用 Angular CDK 的 `Dir` 指令来实现双向文本支持
+- 访问任何未在根级别注册的提供者
 
-### Usage
+### 使用方法
 
-To use a custom injector, pass it to the `create()` method:
+要使用自定义注入器，请将其传递给 `create()` 方法：
 
 ```typescript
 import { Component, Injector } from '@angular/core';
@@ -68,7 +68,7 @@ import { MyRouteService } from './my-route.service';
 @Component({
   selector: 'app-feature',
   templateUrl: './feature.component.html',
-  providers: [MyRouteService], // Service provided at route level
+  providers: [MyRouteService], // 在路由级别提供的服务
 })
 export class FeatureComponent {
   constructor(private modalController: ModalController, private injector: Injector) {}
@@ -76,14 +76,14 @@ export class FeatureComponent {
   async openModal() {
     const modal = await this.modalController.create({
       component: MyModalComponent,
-      injector: this.injector, // Pass the component's injector
+      injector: this.injector, // 传递组件的注入器
     });
     await modal.present();
   }
 }
 ```
 
-The modal component can now inject `MyRouteService`:
+现在，模态框组件就可以注入 `MyRouteService` 了：
 
 ```typescript
 import { Component, inject } from '@angular/core';
@@ -98,9 +98,9 @@ export class MyModalComponent {
 }
 ```
 
-### Creating a Custom Injector
+### 创建自定义注入器
 
-You can also create a custom injector with specific providers:
+你也可以创建一个包含特定提供者的自定义注入器：
 
 ```typescript
 import { Component, Injector } from '@angular/core';
@@ -133,9 +133,9 @@ export class FeatureComponent {
 }
 ```
 
-### Using with Angular CDK Directionality
+### 与 Angular CDK 方向性结合使用
 
-A common use case is providing the Angular CDK `Dir` directive to overlays for bidirectional text support:
+一个常见的用例是为叠加层提供 Angular CDK 的 `Dir` 指令，以实现双向文本支持：
 
 ```typescript
 import { Component, Injector } from '@angular/core';
@@ -153,16 +153,16 @@ export class FeatureComponent {
   async openModal() {
     const modal = await this.modalController.create({
       component: MyModalComponent,
-      injector: this.injector, // Includes Dir from component tree
+      injector: this.injector, // 包含来自组件树的 Dir
     });
     await modal.present();
   }
 }
 ```
 
-### Popover Controller
+### Popover 控制器
 
-The `PopoverController` supports the same `injector` option:
+`PopoverController` 同样支持 `injector` 选项：
 
 ```typescript
 import { Component, Injector } from '@angular/core';
@@ -187,27 +187,27 @@ export class FeatureComponent {
 }
 ```
 
-## Angular Options Types
+## Angular 选项类型
 
-Ionic Angular exports its own `ModalOptions` and `PopoverOptions` types that extend the core options with Angular-specific properties like `injector`:
+Ionic Angular 导出了自己的 `ModalOptions` 和 `PopoverOptions` 类型，它们在核心选项的基础上扩展了 Angular 特有的属性，如 `injector`：
 
-- `ModalOptions` - Extends core `ModalOptions` with the `injector` property
-- `PopoverOptions` - Extends core `PopoverOptions` with the `injector` property
+- `ModalOptions` - 在核心 `ModalOptions` 基础上扩展了 `injector` 属性
+- `PopoverOptions` - 在核心 `PopoverOptions` 基础上扩展了 `injector` 属性
 
-These types are exported from `@ionic/angular` and `@ionic/angular/standalone`:
+这些类型从 `@ionic/angular` 和 `@ionic/angular/standalone` 中导出：
 
 ```typescript
 import type { ModalOptions, PopoverOptions } from '@ionic/angular/standalone';
 ```
 
-## Docs for Overlays in Ionic
+## Ionic 叠加层文档
 
-For full docs and to see usage examples, visit the docs page for each of the overlays in Ionic:
+要查看完整的文档和使用示例，请访问 Ionic 中各个叠加层的文档页面：
 
-- [Action Sheet](https://ionicframework.com/docs/api/action-sheet)
-- [Alert](https://ionicframework.com/docs/api/alert)
-- [Loading](https://ionicframework.com/docs/api/loading)
-- [Modal](https://ionicframework.com/docs/api/modal)
-- [Picker](https://ionicframework.com/docs/api/picker)
-- [Popover](https://ionicframework.com/docs/api/popover)
-- [Toast](https://ionicframework.com/docs/api/toast)
+- [操作表 (Action Sheet)](https://ionicframework.com/docs/api/action-sheet)
+- [警告框 (Alert)](https://ionicframework.com/docs/api/alert)
+- [加载指示器 (Loading)](https://ionicframework.com/docs/api/loading)
+- [模态框 (Modal)](https://ionicframework.com/docs/api/modal)
+- [选择器 (Picker)](https://ionicframework.com/docs/api/picker)
+- [弹出框 (Popover)](https://ionicframework.com/docs/api/popover)
+- [轻提示 (Toast)](https://ionicframework.com/docs/api/toast)

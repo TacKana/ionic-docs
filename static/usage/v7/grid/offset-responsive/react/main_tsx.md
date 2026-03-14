@@ -7,7 +7,7 @@ import './main.css';
 function Example() {
   return (
     <>
-      <b>No offset for xs breakpoint, offset 1st column for sm and up</b>
+      <b>在 xs 断点下无偏移，在 sm 及以上断点偏移第一列</b>
       <IonGrid>
         <IonRow>
           <IonCol offset-sm="2">1</IonCol>
@@ -18,7 +18,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>No offset for xs breakpoint, offset last 3 columns for md and up</b>
+      <b>在 xs 断点下无偏移，在 md 及以上断点偏移最后三列</b>
       <IonGrid>
         <IonRow>
           <IonCol>1</IonCol>
@@ -28,7 +28,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>Offset all columns by 6 for xs breakpoint, offset by 4 for md, offset by 2 for lg and up</b>
+      <b>在 xs 断点下所有列偏移 6，md 断点偏移 4，lg 及以上断点偏移 2</b>
       <IonGrid>
         <IonRow>
           <IonCol offset="6" offset-md="4" offset-lg="2">

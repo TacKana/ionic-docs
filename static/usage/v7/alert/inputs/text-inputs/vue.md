@@ -1,9 +1,9 @@
 ```html
 <template>
-  <ion-button id="present-alert">Click Me</ion-button>
+  <ion-button id="present-alert">点击我</ion-button>
   <ion-alert
     trigger="present-alert"
-    header="Please enter your info"
+    header="请输入您的信息"
     :buttons="alertButtons"
     :inputs="alertInputs"
   ></ion-alert>
@@ -12,26 +12,26 @@
 <script setup lang="ts">
   import { IonAlert, IonButton } from '@ionic/vue';
 
-  const alertButtons = ['OK'];
+  const alertButtons = ['确定'];
   const alertInputs = [
     {
-      placeholder: 'Name',
+      placeholder: '姓名',
     },
     {
-      placeholder: 'Nickname (max 8 characters)',
+      placeholder: '昵称（最多 8 个字符）',
       attributes: {
         maxlength: 8,
       },
     },
     {
       type: 'number',
-      placeholder: 'Age',
+      placeholder: '年龄',
       min: 1,
       max: 100,
     },
     {
       type: 'textarea',
-      placeholder: 'A little about yourself',
+      placeholder: '关于您自己的简短介绍',
     },
   ];
 </script>

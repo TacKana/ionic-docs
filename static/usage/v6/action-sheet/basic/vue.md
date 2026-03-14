@@ -15,7 +15,7 @@
 
 <template>
   <div class="container">
-    <ion-button @click="presentActionSheet">Open</ion-button>
+    <ion-button @click="presentActionSheet">打开</ion-button>
     <code>{{ result }}</code>
   </div>
 </template>
@@ -31,24 +31,24 @@
 
       const presentActionSheet = async () => {
         const actionSheet = await actionSheetController.create({
-          header: 'Example header',
-          subHeader: 'Example subheader',
+          header: '示例标题',
+          subHeader: '示例副标题',
           buttons: [
             {
-              text: 'Delete',
+              text: '删除',
               role: 'destructive',
               data: {
                 action: 'delete',
               },
             },
             {
-              text: 'Share',
+              text: '分享',
               data: {
                 action: 'share',
               },
             },
             {
-              text: 'Cancel',
+              text: '取消',
               role: 'cancel',
               data: {
                 action: 'cancel',

@@ -11,19 +11,19 @@ import Slots from '@ionic-internal/component-api/v6/refresher-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-The refresher content contains the text, icon and spinner to display during a pull-to-refresh. Ionic displays a pulling icon and refreshing spinner based on the platform. However, the default icon, spinner, and text can be customized based on the state of the refresher.
+刷新器内容包含在下拉刷新期间显示的文本、图标和旋转器。Ionic 会根据平台显示拉动图标和刷新旋转器。不过，默认的图标、旋转器和文本可以根据刷新器的状态进行自定义。
 
-For usage examples, see the [Refresher](/docs/api/refresher) documentation.
+关于使用示例，请参阅 [Refresher](/docs/api/refresher) 文档。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -31,10 +31,10 @@ For usage examples, see the [Refresher](/docs/api/refresher) documentation.
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

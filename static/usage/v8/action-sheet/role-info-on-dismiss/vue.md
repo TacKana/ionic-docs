@@ -11,11 +11,11 @@
 
 <template>
   <div class="container">
-    <ion-button id="open-action-sheet">Open</ion-button>
+    <ion-button id="open-action-sheet">打开</ion-button>
     <ion-action-sheet
       trigger="open-action-sheet"
-      header="Example header"
-      sub-header="Example subheader"
+      header="示例标题"
+      sub-header="示例副标题"
       :buttons="actionSheetButtons"
       @didDismiss="logResult($event)"
     ></ion-action-sheet>
@@ -27,20 +27,20 @@
 
   const actionSheetButtons = [
     {
-      text: 'Delete',
+      text: '删除',
       role: 'destructive',
       data: {
         action: 'delete',
       },
     },
     {
-      text: 'Share',
+      text: '分享',
       data: {
         action: 'share',
       },
     },
     {
-      text: 'Cancel',
+      text: '取消',
       role: 'cancel',
       data: {
         action: 'cancel',

@@ -3,20 +3,20 @@
   <form @submit.prevent="submit">
     <ion-radio-group
       v-model="favFruit"
-      helper-text="Select your favorite fruit"
-      error-text="This field is required"
+      helper-text="选择你最喜欢的水果"
+      error-text="此字段为必填项"
       @ionChange="validateRadioGroup"
       :class="{ 'ion-valid': isValid, 'ion-invalid': isValid === false, 'ion-touched': isTouched }"
     >
-      <ion-radio value="grapes">Grapes</ion-radio><br />
-      <ion-radio value="strawberries">Strawberries</ion-radio><br />
-      <ion-radio value="pineapple">Pineapple</ion-radio><br />
-      <ion-radio value="cherries">Cherries</ion-radio>
+      <ion-radio value="grapes">葡萄</ion-radio><br />
+      <ion-radio value="strawberries">草莓</ion-radio><br />
+      <ion-radio value="pineapple">菠萝</ion-radio><br />
+      <ion-radio value="cherries">樱桃</ion-radio>
     </ion-radio-group>
 
     <br />
 
-    <ion-button type="submit" size="small">Submit</ion-button>
+    <ion-button type="submit" size="small">提交</ion-button>
   </form>
 </template>
 

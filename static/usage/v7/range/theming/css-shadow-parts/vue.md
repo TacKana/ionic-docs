@@ -45,7 +45,7 @@
 
 <template>
   <ion-range
-    aria-label="Custom range"
+    aria-label="自定义范围滑块"
     :min="0"
     :max="10"
     :value="5"

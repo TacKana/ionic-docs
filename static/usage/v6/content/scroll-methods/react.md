@@ -6,20 +6,18 @@ function Example() {
   const contentRef = createRef<HTMLIonContentElement>();
 
   function scrollToBottom() {
-    // Passing a duration to the method makes it so the scroll slowly
-    // goes to the bottom instead of instantly
+    // 传入持续时间参数能让滚动缓慢地到达底部，而不是瞬间跳转
     contentRef.current?.scrollToBottom(500);
   }
 
   function scrollToTop() {
-    // Passing a duration to the method makes it so the scroll slowly
-    // goes to the top instead of instantly
+    // 传入持续时间参数能让滚动缓慢地到达顶部，而不是瞬间跳转
     contentRef.current?.scrollToTop(500);
   }
 
   return (
     <IonContent ref={contentRef} className="ion-padding">
-      <h1>Click on the buttons to scroll the content.</h1>
+      <h1>点击按钮来滚动内容区域。</h1>
 
       <IonButton expand="block" onClick={scrollToBottom}>
         Scroll to Bottom

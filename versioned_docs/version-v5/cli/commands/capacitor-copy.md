@@ -4,18 +4,18 @@ sidebar_label: 'capacitor copy'
 
 # ionic capacitor copy
 
-Copy web assets to native platforms
+将 Web 资源复制到原生平台
 
 ```shell
-ionic capacitor copy [options]
+ionic capacitor copy [选项]
 ```
 
-`ionic capacitor copy` will do the following:
+`ionic capacitor copy` 命令将执行以下操作：
 
-- Perform an Ionic build, which compiles web assets
-- Copy web assets to Capacitor native platform(s)
+- 执行 Ionic 构建，编译 Web 资源
+- 将 Web 资源复制到 Capacitor 原生平台
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -27,17 +27,17 @@ ionic capacitor copy [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <p>
-          The platform to copy (e.g. <code>android</code>, <code>ios</code>, <code>electron</code>)
+          要复制的目标平台（例如 <code>android</code>、<code>ios</code>、<code>electron</code>）
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -53,9 +53,9 @@ ionic capacitor copy [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Do not invoke an Ionic build</p>
+        <p>不执行 Ionic 构建</p>
       </td>
     </tr>
   </tbody>
@@ -72,17 +72,17 @@ ionic capacitor copy [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <p>
-          Flag to use the <code>production</code> configuration
+          使用 <code>production</code> 配置的标识
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -99,15 +99,15 @@ ionic capacitor copy [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Specify the configuration to use.</p>
+          <p>指定要使用的配置</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-c</code>
       </td>
@@ -126,10 +126,10 @@ ionic capacitor copy [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Output source maps</p>
+          <p>输出源代码映射</p>
         </div>
       </td>
     </tr>
@@ -147,10 +147,10 @@ ionic capacitor copy [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Rebuild when files change</p>
+          <p>文件变更时重新构建</p>
         </div>
       </td>
     </tr>

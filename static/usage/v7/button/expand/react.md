@@ -5,8 +5,8 @@ import { IonButton } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton expand="block">Block</IonButton>
-      <IonButton expand="full">Full</IonButton>
+      <IonButton expand="block">块级按钮</IonButton>
+      <IonButton expand="full">全宽按钮</IonButton>
     </>
   );
 }

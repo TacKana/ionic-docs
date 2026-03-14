@@ -1,6 +1,6 @@
 ---
-title: 'Back Button | ion-back-button: Custom Menu Icon for Applications'
-description: 'The ion-back-button is a custom menu icon for Android, iOS, and Progressive Web Apps. Use Ionic Framework components to easily build applications.'
+title: '后退按钮 | ion-back-button：应用程序的自定义菜单图标'
+description: 'ion-back-button 是一个适用于 Android、iOS 和渐进式 Web 应用的自定义菜单图标。使用 Ionic Framework 组件轻松构建应用程序。'
 sidebar_label: 'ion-back-button'
 demoUrl: '/docs/demos/api/back-button/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/back-button/index.html'
@@ -18,18 +18,18 @@ import Slots from '@ionic-internal/component-api/v5/back-button/slots.md';
 
 # ion-back-button
 
-The back button navigates back in the app's history upon click. It is smart enough to know what to render based on the mode and when to show based on the navigation stack.
+后退按钮在点击时会在应用程序的历史记录中导航返回。它足够智能，能够根据模式（mode）决定渲染什么内容，以及根据导航堆栈决定何时显示。
 
-To change what is displayed in the back button, use the `text` and `icon` properties.
+要更改后退按钮中显示的内容，请使用 `text` 和 `icon` 属性。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- Default back button -->
+<!-- 默认后退按钮 -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -38,7 +38,7 @@ To change what is displayed in the back button, use the `text` and `icon` proper
   </ion-toolbar>
 </ion-header>
 
-<!-- Back button with a default href -->
+<!-- 带有默认链接的后退按钮 -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -47,7 +47,7 @@ To change what is displayed in the back button, use the `text` and `icon` proper
   </ion-toolbar>
 </ion-header>
 
-<!-- Back button with custom text and icon -->
+<!-- 带有自定义文本和图标的后退按钮 -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -56,7 +56,7 @@ To change what is displayed in the back button, use the `text` and `icon` proper
   </ion-toolbar>
 </ion-header>
 
-<!-- Back button with no text and custom icon -->
+<!-- 无文本、带自定义图标的后退按钮 -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -65,7 +65,7 @@ To change what is displayed in the back button, use the `text` and `icon` proper
   </ion-toolbar>
 </ion-header>
 
-<!-- Danger back button next to a menu button -->
+<!-- 菜单按钮旁边的危险颜色后退按钮 -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -81,7 +81,7 @@ To change what is displayed in the back button, use the `text` and `icon` proper
 <TabItem value="javascript">
 
 ```html
-<!-- Default back button -->
+<!-- 默认后退按钮 -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -90,7 +90,7 @@ To change what is displayed in the back button, use the `text` and `icon` proper
   </ion-toolbar>
 </ion-header>
 
-<!-- Back button with a default href -->
+<!-- 带有默认链接的后退按钮 -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -99,7 +99,7 @@ To change what is displayed in the back button, use the `text` and `icon` proper
   </ion-toolbar>
 </ion-header>
 
-<!-- Back button with custom text and icon -->
+<!-- 带有自定义文本和图标的后退按钮 -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -108,7 +108,7 @@ To change what is displayed in the back button, use the `text` and `icon` proper
   </ion-toolbar>
 </ion-header>
 
-<!-- Back button with no text and custom icon -->
+<!-- 无文本、带自定义图标的后退按钮 -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -117,7 +117,7 @@ To change what is displayed in the back button, use the `text` and `icon` proper
   </ion-toolbar>
 </ion-header>
 
-<!-- Danger back button next to a menu button -->
+<!-- 菜单按钮旁边的危险颜色后退按钮 -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -138,7 +138,7 @@ import { IonBackButton, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonCon
 
 export const BackButtonExample: React.FC = () => (
   <IonContent>
-    {/*-- Default back button --*/}
+    {/*-- 默认后退按钮 --*/}
     <IonHeader>
       <IonToolbar>
         <IonButtons slot="start">
@@ -147,7 +147,7 @@ export const BackButtonExample: React.FC = () => (
       </IonToolbar>
     </IonHeader>
 
-    {/*-- Back button with a default href --*/}
+    {/*-- 带有默认链接的后退按钮 --*/}
     <IonHeader>
       <IonToolbar>
         <IonButtons slot="start">
@@ -156,7 +156,7 @@ export const BackButtonExample: React.FC = () => (
       </IonToolbar>
     </IonHeader>
 
-    {/*-- Back button with custom text and icon --*/}
+    {/*-- 带有自定义文本和图标的后退按钮 --*/}
     <IonHeader>
       <IonToolbar>
         <IonButtons slot="start">
@@ -165,7 +165,7 @@ export const BackButtonExample: React.FC = () => (
       </IonToolbar>
     </IonHeader>
 
-    {/*-- Back button with no text and custom icon --*/}
+    {/*-- 无文本、带自定义图标的后退按钮 --*/}
     <IonHeader>
       <IonToolbar>
         <IonButtons slot="start">
@@ -174,7 +174,7 @@ export const BackButtonExample: React.FC = () => (
       </IonToolbar>
     </IonHeader>
 
-    {/*-- Danger back button next to a menu button --*/}
+    {/*-- 菜单按钮旁边的危险颜色后退按钮 --*/}
     <IonHeader>
       <IonToolbar>
         <IonButtons slot="start">
@@ -204,7 +204,7 @@ export class BackButtonExample {
     const buttonIcon = 'add';
 
     return [
-      // Default back button
+      // 默认后退按钮
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
@@ -213,7 +213,7 @@ export class BackButtonExample {
         </ion-toolbar>
       </ion-header>,
 
-      // Back button with a default href
+      // 带有默认链接的后退按钮
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
@@ -222,7 +222,7 @@ export class BackButtonExample {
         </ion-toolbar>
       </ion-header>,
 
-      // Back button with custom text and icon
+      // 带有自定义文本和图标的后退按钮
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
@@ -231,7 +231,7 @@ export class BackButtonExample {
         </ion-toolbar>
       </ion-header>,
 
-      // Back button with no text and custom icon
+      // 无文本、带自定义图标的后退按钮
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
@@ -240,7 +240,7 @@ export class BackButtonExample {
         </ion-toolbar>
       </ion-header>,
 
-      // Danger back button next to a menu button
+      // 菜单按钮旁边的危险颜色后退按钮
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
@@ -260,7 +260,7 @@ export class BackButtonExample {
 
 ```html
 <template>
-  <!-- Default back button -->
+  <!-- 默认后退按钮 -->
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -269,7 +269,7 @@ export class BackButtonExample {
     </ion-toolbar>
   </ion-header>
 
-  <!-- Back button with a default href -->
+  <!-- 带有默认链接的后退按钮 -->
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -278,7 +278,7 @@ export class BackButtonExample {
     </ion-toolbar>
   </ion-header>
 
-  <!-- Back button with custom text and icon -->
+  <!-- 带有自定义文本和图标的后退按钮 -->
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -287,7 +287,7 @@ export class BackButtonExample {
     </ion-toolbar>
   </ion-header>
 
-  <!-- Back button with no text and custom icon -->
+  <!-- 无文本、带自定义图标的后退按钮 -->
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -296,7 +296,7 @@ export class BackButtonExample {
     </ion-toolbar>
   </ion-header>
 
-  <!-- Danger back button next to a menu button -->
+  <!-- 菜单按钮旁边的危险颜色后退按钮 -->
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -321,15 +321,15 @@ export class BackButtonExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -337,10 +337,10 @@ export class BackButtonExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

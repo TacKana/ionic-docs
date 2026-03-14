@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/item/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v6/item/slots.md';
 
 <head>
-  <title>ion-item: Input, Edit, or Delete iOS and Android Item Elements</title>
+  <title>ion-item：用于输入、编辑或删除的 iOS 与 Android 项目元素</title>
   <meta
     name="description"
-    content="ion-item elements for iOS/Android contain text, icons, images, and other custom elements. They're placed in a list and can be input, deleted, edited, and more."
+    content="iOS/Android 的 ion-item 元素可包含文本、图标、图像和其他自定义元素。它们被放置在列表中，可以进行输入、删除、编辑等操作。"
   />
 </head>
 
@@ -21,27 +21,27 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Generally they are placed in a [list](./list) with other items. Items can be swiped, deleted, reordered, edited, and more.
+项目（Item）是能够包含文本、图标、头像、图像、输入框以及任何其他原生或自定义元素的容器。通常它们与其他项目一起放置在[列表（list）](./list)中。项目可以进行滑动、删除、重新排序、编辑等操作。
 
-## Basic Usage
+## 基本用法
 
-Items left align text and add an ellipsis when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-wrap` in the below example. See the [CSS Utilities Documentation](/docs/layout/css-utilities) for more classes that can be added to an item to transform the text.
+项目默认左对齐文本，当文本宽度超过项目宽度时会显示省略号。我们可以使用 Ionic 框架提供的 CSS 工具来修改此行为，例如在下方的示例中使用 `.ion-text-wrap` 类。如需查看更多可以添加到项目中以转换文本的类，请参阅 [CSS 工具文档](/docs/layout/css-utilities)。
 
 import Basic from '@site/static/usage/v6/item/basic/index.md';
 
 <Basic />
 
-## Clickable Items
+## 可点击项目
 
-An item is considered "clickable" if it has an `href` or `button` property set. Clickable items have a few visual differences that indicate they can be interacted with. For example, a clickable item receives the ripple effect upon activation in `md` mode, has a highlight when activated in `ios` mode, and has a [detail arrow](#detail-arrows) by default in `ios` mode.
+如果一个项目设置了 `href` 或 `button` 属性，则被视为“可点击”。可点击项目在视觉上有一些不同之处，以表明它们可以被交互。例如，在 `md` 模式下，可点击项目在激活时会显示涟漪效果；在 `ios` 模式下激活时会高亮显示；并且在 `ios` 模式下默认会显示[详情箭头（detail arrow）](#detail-arrows)。
 
 import Clickable from '@site/static/usage/v6/item/clickable/index.md';
 
 <Clickable />
 
-## Detail Arrows
+## 详情箭头
 
-By default [clickable items](#clickable-items) will display a right arrow icon on `ios` mode. To hide the right arrow icon on clickable elements, set the `detail` property to `false`. To show the right arrow icon on an item that doesn't display it naturally, set the `detail` property to `true`.
+默认情况下，[可点击项目](#clickable-items)在 `ios` 模式下会显示右侧箭头图标。要隐藏可点击元素的右侧箭头图标，请将 `detail` 属性设置为 `false`。要在不自然显示的项目上显示右侧箭头图标，请将 `detail` 属性设置为 `true`。
 
 import DetailArrows from '@site/static/usage/v6/item/detail-arrows/index.md';
 
@@ -49,120 +49,120 @@ import DetailArrows from '@site/static/usage/v6/item/detail-arrows/index.md';
 
 <!--
 
-TODO add this functionality back as a css variable
+TODO 将此功能作为 CSS 变量重新添加回来
 
-This feature is not enabled by default on clickable items for the `md` mode, but it can be enabled by setting the following CSS variable:
+在 `md` 模式下，此功能默认不启用，但可以通过设置以下 CSS 变量来启用：
 
 ```css
 --item-detail-push-show: true;
 ```
 
-See the [theming documentation](/docs/theming/css-variables) for more information.
+更多信息请参阅 [主题文档](/docs/theming/css-variables)。
 
 -->
 
-## Item Lines
+## 项目分隔线
 
-Items show an inset bottom border by default. The border has padding on the left and does not appear under any content that is slotted in the `"start"` slot. The `lines` property can be modified to `"full"` or `"none"` which will show a full width border or no border, respectively.
+项目默认显示一条底部内嵌边框。该边框在左侧有内边距，并且不会出现在任何放置在 `"start"` 插槽中的内容下方。`lines` 属性可以修改为 `"full"` 或 `"none"`，分别表示显示全宽边框或不显示边框。
 
 import Lines from '@site/static/usage/v6/item/lines/index.md';
 
 <Lines />
 
-## Media Items
+## 媒体项目
 
-[Avatars](./avatar) and [Thumbnails](./thumbnail) can be slotted inside of an item. This is useful when making lists of images and text.
+[头像（avatar）](./avatar) 和 [缩略图（thumbnail）](./thumbnail) 可以放置在项目内部。这在制作图像和文本列表时非常有用。
 
 import Media from '@site/static/usage/v6/item/media/index.md';
 
 <Media />
 
-## Buttons in Items
+## 项目中的按钮
 
-Buttons are styled smaller inside of items than when they are outside of them. To make the button size match buttons outside of an item, set the `size` attribute to `"default"`.
+项目内部的按钮样式会比外部的按钮小。要使按钮大小与项目外部的按钮匹配，请将 `size` 属性设置为 `"default"`。
 
 import Buttons from '@site/static/usage/v6/item/buttons/index.md';
 
 <Buttons />
 
-## Icons in Items
+## 项目中的图标
 
 import Icons from '@site/static/usage/v6/item/icons/index.md';
 
 <Icons />
 
-## Item Inputs
+## 项目输入框
 
 import Inputs from '@site/static/usage/v6/item/inputs/index.md';
 
 <Inputs />
 
-## Helper & Error Text
+## 辅助文本与错误文本
 
-Helper & error text can be used inside of an item with an input by slotting a note in the `"helper"` and `"error"` slots. The error slot will not be displayed unless the `ion-invalid` class is added to the `ion-item`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+在包含输入框的项目中，可以通过在 `"helper"` 和 `"error"` 插槽中放置注释来使用辅助文本和错误文本。除非向 `ion-item` 添加了 `ion-invalid` 类，否则错误插槽不会显示。在 Angular 中，这会通过表单验证自动完成。在 JavaScript、React 和 Vue 中，需要根据你自己的验证手动添加此类。
 
 import HelperError from '@site/static/usage/v6/item/helper-error/index.md';
 
 <HelperError />
 
-## Item Counter
+## 项目计数器
 
-The item counter is helper text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding `counter`, the default behavior is to format the value that gets displayed as `inputLength / maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
+项目计数器是显示在输入框下方的辅助文本，用于通知用户已输入字符数占输入框可接受总字符数的比例。添加 `counter` 后，默认行为是将显示的值格式化为 `已输入长度 / 最大长度`。可以通过向 `counterFormatter` 属性传递一个格式化函数来自定义此行为。
 
 import Counter from '@site/static/usage/v6/item/counter/index.md';
 
 <Counter />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v6/item/theming/colors/index.md';
 
 <Colors />
 
-### CSS Shadow Parts
+### CSS 阴影部件
 
 import CSSParts from '@site/static/usage/v6/item/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v6/item/theming/css-properties/index.md';
 
 <CSSProps />
 
-### Input Highlight
+### 输入高亮
 
-Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`.
+包含输入框的项目在聚焦、验证通过或验证失败时，会用不同颜色高亮显示输入框的底部边框。默认情况下，`md` 项目的高亮高度设置为 `2px`，而 `ios` 没有高亮（技术上高度设置为 `0`）。可以使用 `--highlight-height` CSS 属性来更改高度。要关闭高亮，请将此变量设置为 `0`。
 
-The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. This can be customized using the provided CSS properties.
+高亮颜色会根据项目状态变化，但默认所有状态都使用 Ionic 的颜色。聚焦时，输入高亮将使用 `primary` 颜色。如果输入有效，则使用 `success` 颜色；无效输入将使用 `danger` 颜色。这可以通过提供的 CSS 属性进行自定义。
 
 import InputHighlight from '@site/static/usage/v6/item/theming/input-highlight/index.md';
 
 <InputHighlight />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

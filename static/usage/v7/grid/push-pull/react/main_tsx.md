@@ -8,7 +8,7 @@ function Example() {
   return (
     <>
       <b>
-        Column 1 has <code>push</code> set to <code>"4"</code> and column 2 has <code>pull</code> set to{' '}
+        列 1 的 <code>push</code> 设置为 <code>"4"</code>，列 2 的 <code>pull</code> 设置为{' '}
         <code>"4"</code>
       </b>
       <IonGrid>
@@ -20,7 +20,7 @@ function Example() {
       </IonGrid>
 
       <b>
-        Column 2 has <code>push</code> set to <code>"4"</code> and column 3 & 4 have <code>pull</code> set to{' '}
+        列 2 的 <code>push</code> 设置为 <code>"4"</code>，列 3 和列 4 的 <code>pull</code> 设置为{' '}
         <code>"2"</code>
       </b>
       <IonGrid>
@@ -35,7 +35,7 @@ function Example() {
       </IonGrid>
 
       <b>
-        Column 1 has <code>push</code> set to <code>"3"</code> and column 2 has <code>pull</code> set to{' '}
+        列 1 的 <code>push</code> 设置为 <code>"3"</code>，列 2 的 <code>pull</code> 设置为{' '}
         <code>"9"</code>
       </b>
       <IonGrid>

@@ -1,7 +1,7 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Pull to Refresh</ion-title>
+    <ion-title>下拉刷新</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -60,7 +60,7 @@
       <ion-icon color="primary" name="${unread ? 'ellipse' : ''}" slot="start"></ion-icon>
       <ion-label>
         <h2>${name}</h2>
-        <p>New message from ${name}</p>
+        <p>来自 ${name} 的新消息</p>
       </ion-label>
     `;
 

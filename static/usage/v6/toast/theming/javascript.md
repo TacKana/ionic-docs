@@ -1,15 +1,15 @@
 ```html
-<ion-button onclick="presentToast()">Click Me</ion-button>
+<ion-button onclick="presentToast()">点击我</ion-button>
 
 <script>
   async function presentToast() {
     const toast = await this.toastController.create({
-      message: 'Hello Styled World!',
+      message: '你好，多彩的世界！',
       duration: 3000,
       cssClass: 'custom-toast',
       buttons: [
         {
-          text: 'Dismiss',
+          text: '关闭',
           role: 'cancel',
         },
       ],

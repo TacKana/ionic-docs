@@ -1,6 +1,6 @@
 ```html
-<ion-button>Default</ion-button>
-<ion-button fill="clear">Clear</ion-button>
-<ion-button fill="outline">Outline</ion-button>
-<ion-button fill="solid">Solid</ion-button>
+<ion-button>默认</ion-button>
+<ion-button fill="clear">透明</ion-button>
+<ion-button fill="outline">描边</ion-button>
+<ion-button fill="solid">实心</ion-button>
 ```

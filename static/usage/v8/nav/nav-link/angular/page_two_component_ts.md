@@ -28,7 +28,7 @@ import { PageThreeComponent } from './page-three.component';
       <h1>Page Two</h1>
       <div>
         <ion-nav-link router-direction="forward" [component]="component">
-          <ion-button>Go to Page Three</ion-button>
+          <ion-button>前往页面三</ion-button>
         </ion-nav-link>
       </div>
     </ion-content>

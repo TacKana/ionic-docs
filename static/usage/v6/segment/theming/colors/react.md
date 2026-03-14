@@ -7,82 +7,82 @@ function Example() {
     <>
       <IonSegment value="default">
         <IonSegmentButton value="default">
-          <IonLabel>Default</IonLabel>
+          <IonLabel>默认</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>Segment</IonLabel>
+          <IonLabel>分段</IonLabel>
         </IonSegmentButton>
       </IonSegment>
       <IonSegment color="primary" value="primary">
         <IonSegmentButton value="primary">
-          <IonLabel>Primary</IonLabel>
+          <IonLabel>主要</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>Segment</IonLabel>
+          <IonLabel>分段</IonLabel>
         </IonSegmentButton>
       </IonSegment>
       <IonSegment color="secondary" value="secondary">
         <IonSegmentButton value="secondary">
-          <IonLabel>Secondary</IonLabel>
+          <IonLabel>次要</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>Segment</IonLabel>
+          <IonLabel>分段</IonLabel>
         </IonSegmentButton>
       </IonSegment>
       <IonSegment color="tertiary" value="tertiary">
         <IonSegmentButton value="tertiary">
-          <IonLabel>Tertiary</IonLabel>
+          <IonLabel>第三</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>Segment</IonLabel>
+          <IonLabel>分段</IonLabel>
         </IonSegmentButton>
       </IonSegment>
       <IonSegment color="success" value="success">
         <IonSegmentButton value="success">
-          <IonLabel>Success</IonLabel>
+          <IonLabel>成功</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>Segment</IonLabel>
+          <IonLabel>分段</IonLabel>
         </IonSegmentButton>
       </IonSegment>
       <IonSegment color="warning" value="warning">
         <IonSegmentButton value="warning">
-          <IonLabel>Warning</IonLabel>
+          <IonLabel>警告</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>Segment</IonLabel>
+          <IonLabel>分段</IonLabel>
         </IonSegmentButton>
       </IonSegment>
       <IonSegment color="danger" value="danger">
         <IonSegmentButton value="danger">
-          <IonLabel>Danger</IonLabel>
+          <IonLabel>危险</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>Segment</IonLabel>
+          <IonLabel>分段</IonLabel>
         </IonSegmentButton>
       </IonSegment>
       <IonSegment color="light" value="light">
         <IonSegmentButton value="light">
-          <IonLabel>Light</IonLabel>
+          <IonLabel>浅色</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>Segment</IonLabel>
+          <IonLabel>分段</IonLabel>
         </IonSegmentButton>
       </IonSegment>
       <IonSegment color="medium" value="medium">
         <IonSegmentButton value="medium">
-          <IonLabel>Medium</IonLabel>
+          <IonLabel>中等</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>Segment</IonLabel>
+          <IonLabel>分段</IonLabel>
         </IonSegmentButton>
       </IonSegment>
       <IonSegment color="dark" value="dark">
         <IonSegmentButton value="dark">
-          <IonLabel>Dark</IonLabel>
+          <IonLabel>深色</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>Segment</IonLabel>
+          <IonLabel>分段</IonLabel>
         </IonSegmentButton>
       </IonSegment>
     </>

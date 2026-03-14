@@ -1,15 +1,15 @@
 ---
-title: React Performance
-sidebar_label: Performance
+title: React 性能优化
+sidebar_label: 性能优化
 ---
 
-# React Performance
+# React 性能优化
 
-## Loops with Ionic Components
+## Ionic 组件循环渲染
 
-When using loops with Ionic components, we recommend using React's `key` attribute. This allows React to re-render loop elements in an efficient way by only updating the content inside of the component rather than re-creating the component altogether.
+在使用 Ionic 组件进行循环渲染时，我们推荐使用 React 的 `key` 属性。这能让 React 以更高效的方式重新渲染循环元素——只更新组件内部内容，而非完全重新创建组件。
 
-By using `key` you can provide a stable identity for each loop element so React can track insertions and deletions within the iterator. Below is an example of how to use `key`:
+通过使用 `key`，您可以为每个循环元素提供稳定的标识，使 React 能够追踪迭代器中的插入和删除操作。以下是一个使用 `key` 的示例：
 
 **MyComponent.tsx**
 
@@ -36,6 +36,6 @@ export const MyComponent: React.FC = () => {
 }
 ```
 
-In this example, we have an array of objects called `items`. Each object contains a `value` and an `id`. Using the `key` attribute, we pass the `item.id` for each object. This `id` is used to provide a stable identity for each loop element.
+在这个示例中，我们有一个名为 `items` 的对象数组。每个对象包含 `value` 和 `id` 属性。通过 `key` 属性，我们为每个对象传递 `item.id`。这个 `id` 用于为每个循环元素提供稳定的标识。
 
-For more information on how React renders lists using `key` see: https://reactjs.org/docs/lists-and-keys.html
+有关 React 如何使用 `key` 渲染列表的更多信息，请参阅 https://reactjs.org/docs/lists-and-keys.html

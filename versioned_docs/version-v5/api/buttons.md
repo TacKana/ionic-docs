@@ -1,6 +1,6 @@
 ---
-title: 'ion-buttons: Toolbar Element with Named Slots for Buttons'
-description: 'The Buttons component is a container element. Buttons placed in a toolbar should be inside the ion-buttons element and can be positioned using named slots.'
+title: 'ion-buttons：带有命名插槽的工具栏按钮容器'
+description: 'Buttons 组件是一个容器元素。放置在工具栏中的按钮应当位于 ion-buttons 元素内部，并可通过命名插槽进行定位。'
 sidebar_label: 'ion-buttons'
 ---
 
@@ -16,18 +16,18 @@ import Slots from '@ionic-internal/component-api/v5/buttons/slots.md';
 
 # ion-buttons
 
-The Buttons component is a container element. Buttons placed in a toolbar should be placed inside of the `<ion-buttons>` element.
+Buttons 组件是一个容器元素。放置在工具栏中的按钮应当位于 `<ion-buttons>` 元素内部。
 
-The `<ion-buttons>` element can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
+`<ion-buttons>` 元素可以通过命名插槽在工具栏中进行定位。下表描述了每个插槽的作用。
 
-| Slot        | Description                                                                                             |
+| 插槽        | 描述                                                                                             |
 | ----------- | ------------------------------------------------------------------------------------------------------- |
-| `secondary` | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode. |
-| `primary`   | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.     |
-| `start`     | Positions to the `left` of the content in LTR, and to the `right` in RTL.                               |
-| `end`       | Positions to the `right` of the content in LTR, and to the `left` in RTL.                               |
+| `secondary` | 在 `ios` 模式下将元素定位到内容左侧，在 `md` 模式下直接定位到内容右侧。 |
+| `primary`   | 在 `ios` 模式下将元素定位到内容右侧，在 `md` 模式下定位到最右侧。     |
+| `start`     | 在从左到右（LTR）布局中定位到内容左侧，在从右到左（RTL）布局中定位到内容右侧。                               |
+| `end`       | 在从左到右（LTR）布局中定位到内容右侧，在从右到左（RTL）布局中定位到内容左侧。                               |
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -38,7 +38,7 @@ The `<ion-buttons>` element can be positioned inside of the toolbar using a name
   <ion-buttons slot="start">
     <ion-back-button></ion-back-button>
   </ion-buttons>
-  <ion-title>Back Button</ion-title>
+  <ion-title>返回按钮</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
@@ -50,7 +50,7 @@ The `<ion-buttons>` element can be positioned inside of the toolbar using a name
       <ion-icon slot="icon-only" name="search"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>Default Buttons</ion-title>
+  <ion-title>默认按钮</ion-title>
   <ion-buttons slot="primary">
     <ion-button color="secondary">
       <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
@@ -64,7 +64,7 @@ The `<ion-buttons>` element can be positioned inside of the toolbar using a name
       <ion-icon slot="icon-only" name="star"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>Right side menu toggle</ion-title>
+  <ion-title>右侧菜单切换</ion-title>
   <ion-buttons slot="end">
     <ion-menu-button autoHide="false"></ion-menu-button>
   </ion-buttons>
@@ -76,7 +76,7 @@ The `<ion-buttons>` element can be positioned inside of the toolbar using a name
       <ion-icon slot="icon-only" name="star"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>Collapsible Buttons</ion-title>
+  <ion-title>可折叠按钮</ion-title>
 </ion-toolbar>
 ```
 
@@ -89,7 +89,7 @@ The `<ion-buttons>` element can be positioned inside of the toolbar using a name
   <ion-buttons slot="start">
     <ion-back-button></ion-back-button>
   </ion-buttons>
-  <ion-title>Back Button</ion-title>
+  <ion-title>返回按钮</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
@@ -101,7 +101,7 @@ The `<ion-buttons>` element can be positioned inside of the toolbar using a name
       <ion-icon slot="icon-only" name="search"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>Default Buttons</ion-title>
+  <ion-title>默认按钮</ion-title>
   <ion-buttons slot="primary">
     <ion-button color="secondary">
       <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
@@ -115,7 +115,7 @@ The `<ion-buttons>` element can be positioned inside of the toolbar using a name
       <ion-icon slot="icon-only" name="star"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>Right side menu toggle</ion-title>
+  <ion-title>右侧菜单切换</ion-title>
   <ion-buttons slot="end">
     <ion-menu-toggle auto-hide="false">
       <ion-button>
@@ -131,7 +131,7 @@ The `<ion-buttons>` element can be positioned inside of the toolbar using a name
       <ion-icon slot="icon-only" name="star"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>Collapsible Buttons</ion-title>
+  <ion-title>可折叠按钮</ion-title>
 </ion-toolbar>
 ```
 
@@ -159,7 +159,7 @@ export const ButtonsExample: React.FC = () => (
       <IonButtons slot="start">
         <IonBackButton defaultHref="/" />
       </IonButtons>
-      <IonTitle>Back Button</IonTitle>
+      <IonTitle>返回按钮</IonTitle>
     </IonToolbar>
 
     <IonToolbar>
@@ -171,7 +171,7 @@ export const ButtonsExample: React.FC = () => (
           <IonIcon slot="icon-only" icon={search} />
         </IonButton>
       </IonButtons>
-      <IonTitle>Default Buttons</IonTitle>
+      <IonTitle>默认按钮</IonTitle>
       <IonButtons slot="primary">
         <IonButton color="secondary">
           <IonIcon slot="icon-only" ios={ellipsisHorizontal} md={ellipsisVertical} />
@@ -185,7 +185,7 @@ export const ButtonsExample: React.FC = () => (
           <IonIcon slot="icon-only" icon={star} />
         </IonButton>
       </IonButtons>
-      <IonTitle>Right side menu toggle</IonTitle>
+      <IonTitle>右侧菜单切换</IonTitle>
       <IonButtons slot="end">
         <IonMenuButton autoHide={false} />
       </IonButtons>
@@ -197,7 +197,7 @@ export const ButtonsExample: React.FC = () => (
           <IonIcon slot="icon-only" icon={star} />
         </IonButton>
       </IonButtons>
-      <IonTitle>Collapsible Buttons</IonTitle>
+      <IonTitle>可折叠按钮</IonTitle>
     </IonToolbar>
   </IonContent>
 );
@@ -216,7 +216,7 @@ import { Component, h } from '@stencil/core';
 })
 export class ButtonsExample {
   clickedStar() {
-    console.log('Clicked star button');
+    console.log('点击了星标按钮');
   }
 
   render() {
@@ -225,7 +225,7 @@ export class ButtonsExample {
         <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>Back Button</ion-title>
+        <ion-title>返回按钮</ion-title>
       </ion-toolbar>,
 
       <ion-toolbar>
@@ -237,7 +237,7 @@ export class ButtonsExample {
             <ion-icon slot="icon-only" name="search"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-title>Default Buttons</ion-title>
+        <ion-title>默认按钮</ion-title>
         <ion-buttons slot="primary">
           <ion-button color="secondary">
             <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
@@ -251,7 +251,7 @@ export class ButtonsExample {
             <ion-icon slot="icon-only" name="star"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-title>Right side menu toggle</ion-title>
+        <ion-title>右侧菜单切换</ion-title>
         <ion-buttons slot="end">
           <ion-menu-button autoHide={false}></ion-menu-button>
         </ion-buttons>
@@ -263,7 +263,7 @@ export class ButtonsExample {
             <ion-icon slot="icon-only" name="star"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-title>Collapsible Buttons</ion-title>
+        <ion-title>可折叠按钮</ion-title>
       </ion-toolbar>,
     ];
   }
@@ -280,7 +280,7 @@ export class ButtonsExample {
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Back Button</ion-title>
+    <ion-title>返回按钮</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
@@ -292,7 +292,7 @@ export class ButtonsExample {
         <ion-icon slot="icon-only" :icon="search"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Default Buttons</ion-title>
+    <ion-title>默认按钮</ion-title>
     <ion-buttons slot="primary">
       <ion-button color="secondary">
         <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
@@ -306,7 +306,7 @@ export class ButtonsExample {
         <ion-icon slot="icon-only" name="star"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Right side menu toggle</ion-title>
+    <ion-title>右侧菜单切换</ion-title>
     <ion-buttons slot="end">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
@@ -318,7 +318,7 @@ export class ButtonsExample {
         <ion-icon slot="icon-only" name="star"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Collapsible Buttons</ion-title>
+    <ion-title>可折叠按钮</ion-title>
   </ion-toolbar>
 </template>
 
@@ -331,7 +331,7 @@ export class ButtonsExample {
     components: { IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar },
     setup() {
       const clickedStar = () => {
-        console.log('Star clicked!');
+        console.log('点击了星标！');
       };
       return { personCircle, search, clickedStar };
     },
@@ -343,15 +343,15 @@ export class ButtonsExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -359,10 +359,10 @@ export class ButtonsExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

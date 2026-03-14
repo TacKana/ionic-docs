@@ -1,3 +1,3 @@
 ```html
-<ion-button (click)="openPicker()">Open</ion-button>
+<ion-button (click)="openPicker()">打开</ion-button>
 ```

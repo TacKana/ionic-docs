@@ -43,10 +43,10 @@ function Example() {
     <IonList>
       <IonItem>
         <IonSelect
-          aria-label="Food"
-          placeholder="Select food"
+          aria-label="食品"
+          placeholder="选择食品"
           compareWith={compareWith}
-          onIonChange={(event) => console.log('Current value:', JSON.stringify(event.detail.value))}
+          onIonChange={(event) => console.log('当前值:', JSON.stringify(event.detail.value))}
           multiple={true}
         >
           {foods.map((food) => (

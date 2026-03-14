@@ -1,5 +1,5 @@
 ---
-title: Gestures
+title: 手势
 ---
 
 import Codepen from '@components/global/Codepen';
@@ -7,20 +7,20 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Gestures | Ionic App Utility for Custom Gestures and Interactions</title>
+  <title>手势 | 用于自定义手势和交互的Ionic应用工具</title>
   <meta
     name="description"
-    content="Ionic Gestures is a utility that allows developers to build custom gestures and interactions for their app in a platform agnostic manner. Read to learn more."
+    content="Ionic手势是一个实用程序，允许开发者以平台无关的方式为其应用构建自定义手势和交互。阅读以了解更多信息。"
   />
 </head>
 
-## Overview
+## 概述
 
-Ionic Gestures is a utility that allows developers to build custom gestures and interactions for their application in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app! As long as developers have access to v5.0 or greater of Ionic Framework, they will have access to all of Ionic Animations.
+Ionic手势是一个实用程序，允许开发者以平台无关的方式为其应用构建自定义手势和交互。开发者不需要使用特定的框架（如React或Angular），甚至不需要构建Ionic应用！只要开发者能够使用Ionic Framework 5.0或更高版本，他们就可以使用所有的Ionic动画。
 
-Building complex gestures can be time consuming. Other libraries that provide custom gestures are often times too heavy handed and end up capturing mouse or touch events and not letting them propagate. This can result in other elements no longer being scrollable or clickable.
+构建复杂的手势可能很耗时。提供自定义手势的其他库往往过于繁重，最终会捕获鼠标或触摸事件并阻止它们传播。这可能导致其他元素不再可滚动或可点击。
 
-## Installation
+## 安装
 
 ````mdx-code-block
 <Tabs
@@ -35,7 +35,7 @@ Building complex gestures can be time consuming. Other libraries that provide cu
 }>
 <TabItem value="javascript">
 
-Developers using Ionic Core and JavaScript should install the latest version of `@ionic/core`.
+使用Ionic Core和JavaScript的开发者应安装最新版本的 `@ionic/core`。
 
 ```javascript
 import { createGesture } from 'https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/esm/index.mjs';
@@ -53,7 +53,7 @@ const gesture = createGesture({
 </TabItem>
 <TabItem value="typescript">
 
-Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
+使用Ionic Core和TypeScript的开发者应安装最新版本的 `@ionic/core`。
 
 ```tsx
 import { createGesture, Gesture } from '@ionic/core';
@@ -70,10 +70,9 @@ const gesture: Gesture = createGesture({
 </TabItem>
 <TabItem value="angular">
 
-Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+使用Angular的开发者应安装最新版本的 `@ionic/angular`。动画可以通过 `AnimationController` 依赖注入创建。
 
-By default, gesture callbacks do not run inside of NgZone. Developers can either set the `runInsideAngularZone` parameter to `true` when creating a gesture,
-or they can wrap their callbacks in an `NgZone.run()` call.
+默认情况下，手势回调不在 NgZone 内运行。开发者可以在创建手势时将 `runInsideAngularZone` 参数设置为 `true`，或者将回调包装在 `NgZone.run()` 调用中。
 
 ```tsx
 import { Gesture, GestureController } from '@ionic/angular';
@@ -87,14 +86,14 @@ constructor(private gestureCtrl: GestureController) {
     gestureName: 'my-gesture',
     onMove: ev => this.onMoveHandler(ev)
   }, true);
-  // The `true` above ensures that callbacks run inside NgZone.
+  // 上面的 `true` 确保回调在 NgZone 内运行。
 }
 
 ```
 </TabItem>
 <TabItem value="react">
 
-Developers using React should install the latest version of `@ionic/react`. Full React wrappers are coming soon!
+使用React的开发者应安装最新版本的 `@ionic/react`。完整的React封装即将推出！
 
 ```tsx
 import { createGesture, Gesture } from '@ionic/react';
@@ -111,7 +110,7 @@ const gesture: Gesture = createGesture({
 </TabItem>
 <TabItem value="vue">
 
-Developers using Ionic Vue should install the latest version of `@ionic/vue`.
+使用Ionic Vue的开发者应安装最新版本的 `@ionic/vue`。
 
 ```javascript
 import { createGesture } from '@ionic/vue';
@@ -135,9 +134,9 @@ const gesture = createGesture({
 </Tabs>
 ````
 
-## Basic Gestures
+## 基本手势
 
-### Usage
+### 用法
 
 ````mdx-code-block
 <Tabs
@@ -168,10 +167,10 @@ const onMove = (detail) => {
   const velocityX = detail.velocityX;
 
   p.innerHTML = `
-    <div>Type: ${type}</div>
-    <div>Current X: ${currentX}</div>
-    <div>Delta X: ${deltaX}</div>
-    <div>Velocity X: ${velocityX}</div>
+    <div>类型: ${type}</div>
+    <div>当前 X: ${currentX}</div>
+    <div>增量 X: ${deltaX}</div>
+    <div>速度 X: ${velocityX}</div>
   `
 }
 ```
@@ -197,10 +196,10 @@ private onMove(detail) {
   const velocityX = detail.velocityX;
 
   this.p.innerHTML = `
-    <div>Type: ${type}</div>
-    <div>Current X: ${currentX}</div>
-    <div>Delta X: ${deltaX}</div>
-    <div>Velocity X: ${velocityX}</div>
+    <div>类型: ${type}</div>
+    <div>当前 X: ${currentX}</div>
+    <div>增量 X: ${deltaX}</div>
+    <div>速度 X: ${velocityX}</div>
   `
 }
 ```
@@ -223,10 +222,10 @@ const onMove = (detail) => {
   const velocityX = detail.velocityX;
 
   p.innerHTML = `
-    <div>Type: ${type}</div>
-    <div>Current X: ${currentX}</div>
-    <div>Delta X: ${deltaX}</div>
-    <div>Velocity X: ${velocityX}</div>
+    <div>类型: ${type}</div>
+    <div>当前 X: ${currentX}</div>
+    <div>增量 X: ${deltaX}</div>
+    <div>速度 X: ${velocityX}</div>
   `
 }
 ```
@@ -255,10 +254,10 @@ const onMove = (detail) => {
   const velocityX = detail.velocityX;
 
   pRef.value.innerHTML = `
-    <div>Type: ${type}</div>
-    <div>Current X: ${currentX}</div>
-    <div>Delta X: ${deltaX}</div>
-    <div>Velocity X: ${velocityX}</div>
+    <div>类型: ${type}</div>
+    <div>当前 X: ${currentX}</div>
+    <div>增量 X: ${deltaX}</div>
+    <div>速度 X: ${velocityX}</div>
   `
 }
 ```
@@ -266,13 +265,13 @@ const onMove = (detail) => {
 </Tabs>
 ````
 
-In this example, our app listens for gestures on the `.rectangle` element. When a gesture movement is detected, the `onMove` function is called, and our app logs the current gesture information.
+在这个例子中，我们的应用监听 `.rectangle` 元素上的手势。当检测到手势移动时，会调用 `onMove` 函数，我们的应用会记录当前的手势信息。
 
 <Codepen user="ionic" slug="xxKBYdL" />
 
-## Double Click Gesture
+## 双击手势
 
-### Usage
+### 用法
 
 ````mdx-code-block
 <Tabs
@@ -440,66 +439,66 @@ const getRandomBackground = () => {
 </Tabs>
 ````
 
-In the example above, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
+在上面的例子中，我们希望能够在元素上检测到双击。通过将 `threshold` 设置为 `0`，我们可以确保手势对象能够检测到点击。此外，我们定义了一个点击阈值，以便只有快速连续发生的两次点击才被视为双击。
 
 <Codepen user="ionic" slug="oNvVEwE" />
 
-## Gesture Animations
+## 手势动画
 
-See our guide on implementing gesture animations: [Gesture Animations with Ionic Animations](animations.md#gesture-animations)
+请参阅我们关于实现手势动画的指南：[使用Ionic动画的手势动画](animations.md#gesture-animations)
 
-## Types
+## 类型
 
-| Name              | Value                                        |
-| ----------------- | -------------------------------------------- |
+| 名称              | 值                                          |
+| ----------------- | ------------------------------------------- |
 | `GestureCallback` | `(detail: GestureDetail) => boolean \| void` |
 
-## Interfaces
+## 接口
 
 ### GestureConfig
 
-| Property        | Type                                       | Default     | Description                                                                                                                                                                                                                                                                                                             |
-| --------------- | ------------------------------------------ | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| el              | `Node`                                     | `undefined` | The element to listen on for gestures.                                                                                                                                                                                                                                                                                  |
-| disableScroll   | `boolean \| undefined`                     | `false`     | If true, scrolling will be disabled on `el` while the gesture is enabled.                                                                                                                                                                                                                                               |
-| direction       | `'x' \| 'y' \| undefined`                  | `'x'`       | Limit gesture detection to movements along a certain axis.                                                                                                                                                                                                                                                              |
-| gestureName     | `string`                                   | `undefined` | The name of the gesture to create.                                                                                                                                                                                                                                                                                      |
-| gesturePriority | `number \| undefined`                      | `0`         | Gestures with higher priorities will override gestures with lower priorities. Useful for ensuring the multiple gestures do not collide with one another.                                                                                                                                                                |
-| passive         | `boolean \| undefined`                     | `true`      | If true, this will indicate that the gesture will never call `preventDefault()`. This can be used to improve scrolling performance. See [Passive Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners) for more information. |
-| maxAngle        | `number \| undefined`                      | `40`        | The maximum angle to allow when detecting a gesture.                                                                                                                                                                                                                                                                    |
-| threshold       | `number \| undefined`                      | `10`        | Defines how much a pointer must move before the gesture starts.                                                                                                                                                                                                                                                         |
-| blurOnStart     | `boolean \| undefined`                     | `undefined` | If true, the gesture will blur any active selectable element such as an input or a textarea before firing the `onStart` callback.                                                                                                                                                                                       |
-| canStart        | `GestureCallback \| undefined`             | `undefined` | A callback that returns true if a gesture is allowed to start.                                                                                                                                                                                                                                                          |
-| onWillStart     | `(detail: GestureDetail) => Promise<void>` | `undefined` | A callback that fires when a gesture is about to start. This is fired after `canStart` but before `onStart`.                                                                                                                                                                                                            |
-| onStart         | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has started.                                                                                                                                                                                                                                                                       |
-| onMove          | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture movement was detected.                                                                                                                                                                                                                                                             |
-| onEnd           | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has ended. This is usually when a pointer has been released.                                                                                                                                                                                                                       |
-| notCaptured     | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has not been captured. This usually happens when there is a conflicting gesture with a higher priority.                                                                                                                                                                            |
+| 属性            | 类型                                       | 默认值      | 描述                                                                                                                                                                                                                                 |
+| --------------- | ------------------------------------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| el              | `Node`                                     | `undefined` | 要监听手势的元素。                                                                                                                                                                                                                   |
+| disableScroll   | `boolean \| undefined`                     | `false`     | 如果为 true，在手势启用时，`el` 上的滚动将被禁用。                                                                                                                                                                                   |
+| direction       | `'x' \| 'y' \| undefined`                  | `'x'`       | 将手势检测限制在沿着特定轴的运动。                                                                                                                                                                                                   |
+| gestureName     | `string`                                   | `undefined` | 要创建的手势的名称。                                                                                                                                                                                                                 |
+| gesturePriority | `number \| undefined`                      | `0`         | 优先级较高的手势将覆盖优先级较低的手势。有助于确保多个手势不会相互冲突。                                                                                                                                                            |
+| passive         | `boolean \| undefined`                     | `true`      | 如果为 true，则表示手势永远不会调用 `preventDefault()`。这可用于提高滚动性能。有关更多信息，请参阅[被动监听器](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener#%E4%BD%BF%E7%94%A8%E8%A2%AB%E5%8A%A8%E8%B0%83%E7%94%A8%E6%94%B9%E5%96%84%E6%BB%9A%E5%8A%A8%E6%80%A7%E8%83%BD)。 |
+| maxAngle        | `number \| undefined`                      | `40`        | 检测手势时允许的最大角度。                                                                                                                                                                                                           |
+| threshold       | `number \| undefined`                      | `10`        | 定义指针在开始手势之前必须移动多少。                                                                                                                                                                                                 |
+| blurOnStart     | `boolean \| undefined`                     | `undefined` | 如果为 true，则在触发 `onStart` 回调之前，手势将模糊任何活动可选元素（如 input 或 textarea）。                                                                                                                                        |
+| canStart        | `GestureCallback \| undefined`             | `undefined` | 一个回调函数，如果允许手势开始，则返回 true。                                                                                                                                                                                        |
+| onWillStart     | `(detail: GestureDetail) => Promise<void>` | `undefined` | 在手势即将开始时触发的回调。这在 `canStart` 之后但在 `onStart` 之前触发。                                                                                                                                                             |
+| onStart         | `GestureCallback \| undefined`             | `undefined` | 手势开始时触发的回调。                                                                                                                                                                                                               |
+| onMove          | `GestureCallback \| undefined`             | `undefined` | 检测到手势移动时触发的回调。                                                                                                                                                                                                         |
+| onEnd           | `GestureCallback \| undefined`             | `undefined` | 手势结束时触发的回调。通常在指针释放时。                                                                                                                                                                                             |
+| notCaptured     | `GestureCallback \| undefined`             | `undefined` | 手势未被捕获时触发的回调。这通常发生在存在具有更高优先级的冲突手势时。                                                                                                                                                                |
 
 ### GestureDetail
 
-| Property       | Type               | Description                                                                                                                               |
-| -------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| type           | `string`           | The type of gesture that was detected.                                                                                                    |
-| startX         | `number`           | The starting x coordinate of the gesture.                                                                                                 |
-| startY         | `number`           | The starting y coordinate of the gesture.                                                                                                 |
-| startTimeStamp | `number`           | The timestamp at which the gesture was started.                                                                                           |
-| currentX       | `number`           | The current x coordinate of the gesture.                                                                                                  |
-| currentY       | `number`           | The current y coordinate of the gesture.                                                                                                  |
-| velocityX      | `number`           | How fast the gesture is currently moving on the x axis.                                                                                   |
-| velocityY      | `number`           | How fast the gesture is currently moving on the y axis.                                                                                   |
-| deltaX         | `number`           | How much the gesture has moved on the x axis since it started.                                                                            |
-| deltaY         | `number`           | How much the gesture has moved on the y axis since it started.                                                                            |
-| timeStamp      | `number`           | The current timestamp of the gesture.                                                                                                     |
-| event          | `UIEvent`          | The native event dispatched by the browser. See [UIEvent](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) for more information. |
-| data           | `any \| undefined` | Any data specified by the user. This can be set and read in any of the callbacks.                                                         |
+| 属性           | 类型               | 描述                                                                                                     |
+| -------------- | ------------------ | -------------------------------------------------------------------------------------------------------- |
+| type           | `string`           | 检测到的手势类型。                                                                                       |
+| startX         | `number`           | 手势的起始 x 坐标。                                                                                      |
+| startY         | `number`           | 手势的起始 y 坐标。                                                                                      |
+| startTimeStamp | `number`           | 手势开始时的时间戳。                                                                                     |
+| currentX       | `number`           | 手势的当前 x 坐标。                                                                                      |
+| currentY       | `number`           | 手势的当前 y 坐标。                                                                                      |
+| velocityX      | `number`           | 手势当前在 x 轴上移动的速度。                                                                            |
+| velocityY      | `number`           | 手势当前在 y 轴上移动的速度。                                                                            |
+| deltaX         | `number`           | 手势开始以来在 x 轴上移动了多少。                                                                        |
+| deltaY         | `number`           | 手势开始以来在 y 轴上移动了多少。                                                                        |
+| timeStamp      | `number`           | 手势的当前时间戳。                                                                                       |
+| event          | `UIEvent`          | 浏览器派发的原生事件。有关更多信息，请参阅 [UIEvent](https://developer.mozilla.org/zh-CN/docs/Web/API/UIEvent)。 |
+| data           | `any \| undefined` | 用户指定的任何数据。可以在任何回调中设置和读取。                                                         |
 
-## Methods
+## 方法
 
 #### `enable(enable: boolean = true) => void`
 
-Enable or disable the gesture.
+启用或禁用该手势。
 
 #### `destroy() => void`
 
-Destroy the gesture instance and stop listening on the target element.
+销毁手势实例并停止监听目标元素。

@@ -1,21 +1,21 @@
 ---
-title: Angular Performance
-sidebar_label: Performance
+title: Angular 性能优化
+sidebar_label: 性能
 ---
 
 <head>
-  <title>Angular Performance: Manage App Component Change with ngFor</title>
+  <title>Angular 性能：使用 ngFor 管理应用组件变更</title>
   <meta
     name="description"
-    content="Learn how Angular manages change propagation using ngFor with Ionic Components. Read for more information about Angular performance on Ionic apps."
+    content="了解 Angular 如何结合 Ionic 组件使用 ngFor 来管理变更传播。阅读更多关于 Ionic 应用中 Angular 性能的信息。"
   />
 </head>
 
-## \*ngFor with Ionic Components
+## 在 Ionic 组件中使用 \*ngFor
 
-When using `*ngFor` with Ionic components, we recommend using Angular's `trackBy` option. This allows Angular to manage change propagation in a much more efficient way and only update the content inside of the component rather than re-create the component altogether.
+在 Ionic 组件中使用 `*ngFor` 时，我们建议使用 Angular 的 `trackBy` 选项。这使得 Angular 能够以更高效的方式管理变更传播，仅更新组件内部的内容，而不是完全重新创建组件。
 
-By using `trackBy` you can provide a stable identity for each loop element so Angular can track insertions and deletions within the iterator. Below is an example of how to use `trackBy`:
+通过使用 `trackBy`，您可以为每个循环元素提供一个稳定的身份标识，让 Angular 能够跟踪迭代器中的插入和删除操作。以下是如何使用 `trackBy` 的示例：
 
 **home.page.html**
 
@@ -40,34 +40,34 @@ trackItems(index: number, itemObject: any) {
 }
 ```
 
-In this example, we have an array of objects called `items`. Each object contains a `value` and an `id`. Using `trackBy`, we pass a `trackItems` function which returns the `id` of each object. This `id` is used to provide a stable identity for each loop element.
+在这个示例中，我们有一个名为 `items` 的对象数组。每个对象包含一个 `value` 和一个 `id`。通过 `trackBy`，我们传入一个 `trackItems` 函数，该函数返回每个对象的 `id`。这个 `id` 用于为每个循环元素提供稳定的身份标识。
 
-For more information on how Angular manages change propagation with `ngFor` see https://angular.io/api/common/NgForOf#change-propagation.
+有关 Angular 如何使用 `ngFor` 管理变更传播的更多信息，请参阅 https://angular.io/api/common/NgForOf#change-propagation
 
-## From the Ionic Team
+## Ionic 团队推荐
 
-[How to Lazy Load in Ionic Angular](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
+[如何在 Ionic Angular 中实现懒加载](https://ionicframework.com/blog/how-to-lazy-load-in-ionic-angular/)
 
-[Improved Perceived Performance with Skeleton Screens](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
+[使用骨架屏提升感知性能](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
 
-## From the Angular Team
+## Angular 团队推荐
 
-[Build performant and progressive Angular apps](https://web.dev/angular) - web.dev
+[构建高性能和渐进式的 Angular 应用](https://web.dev/angular) - web.dev
 
-## From the Community
+## 社区资源
 
 <!-- cspell:disable -->
 
-[High Performance Animations in Ionic](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
+[Ionic 中的高性能动画](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
 
-[High Performance List Filtering in Ionic](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
+[Ionic 中的高性能列表过滤](https://www.joshmorony.com/high-performance-list-filtering-in-ionic-2/) - Josh Morony
 
-[Increasing Performance with Efficient DOM Writes in Ionic](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
+[在 Ionic 中通过高效 DOM 写入提升性能](https://www.joshmorony.com/increasing-performance-with-efficient-dom-writes-in-ionic-2/) - Josh Morony
 
-[Ionic Framework is Fast (But Your Code Might Not Be)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
+[Ionic 框架很快（但您的代码可能不是）](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
 
 <!-- cspell:enable -->
 
 :::note
-Do you have a guide you'd like to share? Click the _Edit this page_ button below.
+您有想要分享的指南吗？点击下方的 _编辑此页面_ 按钮。
 :::

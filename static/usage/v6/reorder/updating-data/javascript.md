@@ -1,6 +1,6 @@
 ```html
 <ion-list>
-  <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+  <!-- 默认情况下重新排序手势是禁用的，需要启用才能拖放项目 -->
   <ion-reorder-group disabled="false"></ion-reorder-group>
 </ion-list>
 
@@ -11,19 +11,17 @@
   reorderItems(items);
 
   reorderGroup.addEventListener('ionItemReorder', ({ detail }) => {
-    // Before complete is called with the items they will remain in the
-    // order before the drag
+    // 在调用 complete 方法之前，项目将保持拖拽前的顺序
     console.log('Before complete', items);
 
-    // Finish the reorder and position the item in the DOM based on
-    // where the gesture ended. Update the items variable to the
-    // new order of items
+    // 完成重新排序并根据手势结束位置在 DOM 中定位项目。
+    // 将 items 变量更新为项目的新顺序
     items = detail.complete(items);
 
-    // Reorder the items in the DOM
+    // 在 DOM 中重新排序项目
     reorderItems(items);
 
-    // After complete is called the items will be in the new order
+    // 调用 complete 方法后，项目将按新顺序排列
     console.log('After complete', items);
   });
 

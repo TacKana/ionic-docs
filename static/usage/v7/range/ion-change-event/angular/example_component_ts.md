@@ -10,7 +10,7 @@ import { IonRange, RangeCustomEvent } from '@ionic/angular/standalone';
 })
 export class ExampleComponent {
   onIonChange(event: RangeCustomEvent) {
-    console.log('ionChange emitted value:', event.detail.value);
+    console.log('ionChange 事件发出的值:', event.detail.value);
   }
 }
 ```

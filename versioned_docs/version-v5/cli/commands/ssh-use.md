@@ -4,17 +4,17 @@ sidebar_label: 'ssh use'
 
 # ionic ssh use
 
-Set your active Ionic SSH key
+设置您当前使用的 Ionic SSH 密钥
 
 ```shell
 ionic ssh use [options]
 ```
 
-This command modifies the SSH configuration file (**~/.ssh/config**) to set an active private key for the **git.ionicjs.com** host. Read more about SSH configuration by running the `man ssh_config` command or by visiting online man [pages](https://linux.die.net/man/5/ssh_config).
+此命令会修改 SSH 配置文件 (**~/.ssh/config**)，为 **git.ionicjs.com** 主机设置活动的私钥。如需了解更多 SSH 配置信息，请运行 `man ssh_config` 命令或访问在线手册[页面](https://linux.die.net/man/5/ssh_config)。
 
-Before making changes, `ionic ssh use` will print a diff and ask for permission to write the file.
+在进行更改之前，`ionic ssh use` 会先显示差异并请求您确认是否写入文件。
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -26,9 +26,9 @@ Before making changes, `ionic ssh use` will print a diff and ask for permission 
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Location of private key file to use</p>
+        <p>要使用的私钥文件路径</p>
       </td>
     </tr>
   </tbody>

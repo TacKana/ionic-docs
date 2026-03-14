@@ -13,7 +13,7 @@ function Example() {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen={true} className="ion-padding">
-        <h1>Scroll the content and notice that the text goes behind the header and footer.</h1>
+        <h1>滚动内容区域，注意文字会滑动到页眉和页脚后面。</h1>
 
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim

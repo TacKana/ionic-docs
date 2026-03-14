@@ -17,7 +17,7 @@ export class ExampleComponent {
     mask: ['+', '1', ' ', '(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
   };
 
-  //If you need to set an initial value, you can use maskitoTransform to ensure the value is valid
+  // 如果需要设置初始值，可使用 maskitoTransform 确保值格式正确
   myPhoneNumber = maskitoTransform('5555551212', this.phoneMask);
 
   readonly cardMask: MaskitoOptions = {

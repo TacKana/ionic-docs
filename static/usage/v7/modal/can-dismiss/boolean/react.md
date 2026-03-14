@@ -32,24 +32,24 @@ function Example() {
     <IonPage ref={page}>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>App</IonTitle>
+          <IonTitle>应用</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          Open
+          打开
         </IonButton>
         <IonModal ref={modal} trigger="open-modal" canDismiss={canDismiss} presentingElement={presentingElement}>
           <IonHeader>
             <IonToolbar>
-              <IonTitle>Modal</IonTitle>
+              <IonTitle>模态框</IonTitle>
               <IonButtons slot="end">
-                <IonButton onClick={() => dismiss()}>Close</IonButton>
+                <IonButton onClick={() => dismiss()}>关闭</IonButton>
               </IonButtons>
             </IonToolbar>
           </IonHeader>
           <IonContent>
-            <p className="ion-padding-horizontal">You must accept the terms and conditions to close this modal.</p>
+            <p className="ion-padding-horizontal">您必须接受条款和条件才能关闭此模态框。</p>
             <IonItem>
               <IonCheckbox
                 id="terms"
@@ -58,7 +58,7 @@ function Example() {
                   setCanDismiss(event.detail.checked);
                 }}
               >
-                <div className="ion-text-wrap">Do you accept the terms and conditions?</div>
+                <div className="ion-text-wrap">您是否接受条款和条件？</div>
               </IonCheckbox>
             </IonItem>
           </IonContent>

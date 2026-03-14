@@ -11,24 +11,24 @@ import { IonButton, IonToast } from '@ionic/angular/standalone';
 export class ExampleComponent {
   public toastButtons = [
     {
-      text: 'More Info',
+      text: '更多信息',
       role: 'info',
       handler: () => {
-        console.log('More Info clicked');
+        console.log('点击了“更多信息”');
       },
     },
     {
-      text: 'Dismiss',
+      text: '关闭',
       role: 'cancel',
       handler: () => {
-        console.log('Dismiss clicked');
+        console.log('点击了“关闭”');
       },
     },
   ];
 
   setRoleMessage(event: CustomEvent) {
     const { role } = event.detail;
-    console.log(`Dismissed with role: ${role}`);
+    console.log(`以角色 ${role} 关闭`);
   }
 }
 ```

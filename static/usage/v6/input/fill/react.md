@@ -6,18 +6,18 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonLabel position="floating">Default input</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonLabel position="floating">默认输入框</IonLabel>
+        <IonInput placeholder="请输入文本"></IonInput>
       </IonItem>
 
       <IonItem fill="solid">
-        <IonLabel position="floating">Solid input</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonLabel position="floating">实线样式输入框</IonLabel>
+        <IonInput placeholder="请输入文本"></IonInput>
       </IonItem>
 
       <IonItem fill="outline">
-        <IonLabel position="floating">Outline input</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonLabel position="floating">轮廓样式输入框</IonLabel>
+        <IonInput placeholder="请输入文本"></IonInput>
       </IonItem>
     </>
   );

@@ -7,7 +7,7 @@ function Example() {
   return (
     <>
       <IonSearchbar></IonSearchbar>
-      <IonSearchbar searchIcon={searchCircle} placeholder="Custom Search Icon"></IonSearchbar>
+      <IonSearchbar searchIcon={searchCircle} placeholder="自定义搜索图标"></IonSearchbar>
     </>
   );
 }

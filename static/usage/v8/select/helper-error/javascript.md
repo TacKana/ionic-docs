@@ -13,7 +13,7 @@
 
   <br />
 
-  <ion-button type="submit" size="small">Submit</ion-button>
+  <ion-button type="submit" size="small">提交</ion-button>
 </form>
 
 <script>

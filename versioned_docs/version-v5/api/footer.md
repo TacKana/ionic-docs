@@ -1,6 +1,6 @@
 ---
-title: 'Page Footer | Ionic App Footer: Wrapper Root Page Component'
-description: 'A footer is a root component that sits at the bottom of a page. Ionic footers can be a wrapper for ion-toolbar to make sure the content area is sized correctly.'
+title: '页脚组件 | Ionic 应用页脚：页面根组件封装容器'
+description: '页脚（Footer）是一个位于页面底部的根组件。Ionic 页脚可以包装 ion-toolbar 组件，确保内容区域尺寸正确。'
 sidebar_label: 'ion-footer'
 ---
 
@@ -16,10 +16,10 @@ import Slots from '@ionic-internal/component-api/v5/footer/slots.md';
 
 # ion-footer
 
-Footer is a root component of a page that sits at the bottom of the page.
-Footer can be a wrapper for ion-toolbar to make sure the content area is sized correctly.
+页脚（Footer）是页面的根组件之一，位于页面底部。
+页脚可以包装 ion-toolbar 组件，确保内容区域尺寸正确。
 
-## Usage
+## 使用方式
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -28,16 +28,16 @@ Footer can be a wrapper for ion-toolbar to make sure the content area is sized c
 ```html
 <ion-content></ion-content>
 
-<!-- Footer without a border -->
+<!-- 无边框页脚 -->
 <ion-footer class="ion-no-border">
   <ion-toolbar>
-    <ion-title>Footer - No Border</ion-title>
+    <ion-title>页脚 - 无边框</ion-title>
   </ion-toolbar>
 </ion-footer>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-title>Footer</ion-title>
+    <ion-title>页脚</ion-title>
   </ion-toolbar>
 </ion-footer>
 ```
@@ -49,16 +49,16 @@ Footer can be a wrapper for ion-toolbar to make sure the content area is sized c
 ```html
 <ion-content></ion-content>
 
-<!-- Footer without a border -->
+<!-- 无边框页脚 -->
 <ion-footer class="ion-no-border">
   <ion-toolbar>
-    <ion-title>Footer - No Border</ion-title>
+    <ion-title>页脚 - 无边框</ion-title>
   </ion-toolbar>
 </ion-footer>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-title>Footer</ion-title>
+    <ion-title>页脚</ion-title>
   </ion-toolbar>
 </ion-footer>
 ```
@@ -75,16 +75,16 @@ export const FooterExample: React.FC = () => (
   <>
     <IonContent />
 
-    {/*-- Footer without a border --*/}
+    {/*-- 无边框页脚 --*/}
     <IonFooter className="ion-no-border">
       <IonToolbar>
-        <IonTitle>Footer - No Border</IonTitle>
+        <IonTitle>页脚 - 无边框</IonTitle>
       </IonToolbar>
     </IonFooter>
 
     <IonFooter>
       <IonToolbar>
-        <IonTitle>Footer</IonTitle>
+        <IonTitle>页脚</IonTitle>
       </IonToolbar>
     </IonFooter>
   </>
@@ -107,16 +107,16 @@ export class FooterExample {
     return [
       <ion-content></ion-content>,
 
-      // Footer without a border
+      // 无边框页脚
       <ion-footer class="ion-no-border">
         <ion-toolbar>
-          <ion-title>Footer - No Border</ion-title>
+          <ion-title>页脚 - 无边框</ion-title>
         </ion-toolbar>
       </ion-footer>,
 
       <ion-footer>
         <ion-toolbar>
-          <ion-title>Footer</ion-title>
+          <ion-title>页脚</ion-title>
         </ion-toolbar>
       </ion-footer>,
     ];
@@ -132,16 +132,16 @@ export class FooterExample {
 <template>
   <ion-content></ion-content>
 
-  <!-- Footer without a border -->
+  <!-- 无边框页脚 -->
   <ion-footer class="ion-no-border">
     <ion-toolbar>
-      <ion-title>Footer - No Border</ion-title>
+      <ion-title>页脚 - 无边框</ion-title>
     </ion-toolbar>
   </ion-footer>
 
   <ion-footer>
     <ion-toolbar>
-      <ion-title>Footer</ion-title>
+      <ion-title>页脚</ion-title>
     </ion-toolbar>
   </ion-footer>
 </template>
@@ -160,15 +160,15 @@ export class FooterExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -176,10 +176,10 @@ export class FooterExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

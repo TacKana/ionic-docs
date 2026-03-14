@@ -13,9 +13,9 @@ import { home, heart, pin, star, call, globe, basket, barbell, trash, person } f
 export class ExampleComponent {
   constructor() {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 应用中所有需要使用的图标
+     * 都可以在 app.component.ts 中注册，
+     * 然后在应用的任何地方通过名称引用。
      */
     addIcons({ home, heart, pin, star, call, globe, basket, barbell, trash, person });
   }

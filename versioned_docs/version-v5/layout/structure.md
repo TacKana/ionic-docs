@@ -5,21 +5,21 @@ title: Structure
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-# Structure
+# 结构体系
 
-Ionic Framework provides several different layouts that can be used to structure an app. From single page layouts, to split pane views and modals.
+Ionic Framework 提供了多种不同的布局方式，可用于构建应用程序。从单页布局，到分屏视图和模态框。
 
-## Header and Footer Layout
+## 页眉与页脚布局
 
-### Header
+### 页眉
 
 <aside>
-  <DocsCard href="../api/header" header="Learn More" icon="/icons/component-header-icon.png">
-    <code>ion-header</code> API docs
+  <DocsCard href="../api/header" header="了解更多" icon="/icons/component-header-icon.png">
+    <code>ion-header</code> API 文档
   </DocsCard>
 </aside>
 
-The most simple layout available consists of a [header](../api/header.md) and [content](../api/content.md). Most pages in an app generally have both of these, but a header is not required in order to use content.
+最简单的一种布局由 [页眉](../api/header.md) 和 [内容区域](../api/content.md) 组成。应用程序中的大多数页面通常都包含这两部分，但使用内容区域时并不强制要求必须有页眉。
 
 ```html
 <ion-app>
@@ -35,15 +35,15 @@ The most simple layout available consists of a [header](../api/header.md) and [c
 </ion-app>
 ```
 
-### Footer
+### 页脚
 
 <aside>
-  <DocsCard href="../api/footer" header="Learn More" icon="/icons/component-footer-icon.png">
-    <code>ion-footer</code> API docs
+  <DocsCard href="../api/footer" header="了解更多" icon="/icons/component-footer-icon.png">
+    <code>ion-footer</code> API 文档
   </DocsCard>
 </aside>
 
-As you can see, a toolbar in a header appears above the content. Sometimes an app needs to have a toolbar below the content, which is when a footer is used.
+如你所见，位于页眉中的工具栏会显示在内容区域的上方。有时应用程序需要在内容区域下方显示工具栏，这时就需要使用页脚。
 
 ```html
 <ion-app>
@@ -59,9 +59,9 @@ As you can see, a toolbar in a header appears above the content. Sometimes an ap
 </ion-app>
 ```
 
-### Header and Footer
+### 页眉与页脚结合
 
-These can also be combined on one page to have a toolbar above _and_ below the content.
+这两种布局也可以在同一页面中结合使用，从而在内容区域的上方 *和* 下方都显示工具栏。
 
 ```html
 <ion-app>
@@ -83,13 +83,13 @@ These can also be combined on one page to have a toolbar above _and_ below the c
 </ion-app>
 ```
 
-### Live examples
+### 实时示例
 
-You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-header-footer) and for React [here](https://stackblitz.com/edit/ionic-react-head-foot).
+你可以在此查看 Angular 版本的 [实时示例](https://stackblitz.com/edit/ionic-ng-header-footer)，以及 React 版本的 [实时示例](https://stackblitz.com/edit/ionic-react-head-foot)。
 
-## Tabs Layout
+## 标签页布局
 
-A layout consisting of horizontal [tabs](../api/tabs.md) can be used to let the user quickly change between content views. Each tab can contain static content or a navigation stack by using an `ion-router-outlet` or `ion-nav`.
+一种包含水平 [标签页](../api/tabs.md) 的布局，可用于让用户快速在不同内容视图之间切换。每个标签页都可以包含静态内容，或者通过使用 `ion-router-outlet` 或 `ion-nav` 来包含一个导航栈。
 
 ```html
 <ion-app>
@@ -115,13 +115,13 @@ A layout consisting of horizontal [tabs](../api/tabs.md) can be used to let the 
 </ion-app>
 ```
 
-### Live examples
+### 实时示例
 
-You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-tabs) and for React [here](https://stackblitz.com/edit/ionic-react-tab-layout).
+你可以在此查看 Angular 版本的 [实时示例](https://stackblitz.com/edit/ionic-ng-tabs)，以及 React 版本的 [实时示例](https://stackblitz.com/edit/ionic-react-tab-layout)。
 
-## Menu Layout
+## 侧边菜单布局
 
-A standard layout among mobile apps includes the ability to toggle a side [menu](../api/menu.md) by clicking a button or swiping it open from the side. Side menus are generally used for navigation, but they can contain any content.
+移动应用程序中一种常见的标准布局，包含通过点击按钮或从侧面滑动来切换 [侧边菜单](../api/menu.md) 的功能。侧边菜单通常用于导航，但它们也可以包含任何内容。
 
 ```html
 <ion-app>
@@ -160,7 +160,7 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
     </ion-header>
     <ion-content class="ion-padding">
       <h1>Main Content</h1>
-      <p>Click the icon in the top left to toggle the menu.</p>
+      <p>点击左上角的图标可切换菜单。</p>
     </ion-content>
   </ion-page>
 </ion-app>
@@ -168,15 +168,15 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
 <ion-menu-controller></ion-menu-controller>
 ```
 
-### Live examples
+### 实时示例
 
-You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-menu-layout) and for React [here](https://stackblitz.com/edit/ionic-react-menu).
+你可以在此查看 Angular 版本的 [实时示例](https://stackblitz.com/edit/ionic-ng-menu-layout)，以及 React 版本的 [实时示例](https://stackblitz.com/edit/ionic-react-menu)。
 
-## Split Pane Layout
+## 分屏布局
 
-A [split pane](../api/split-pane.md) layout has a more complex structure because it can combine the previous layouts. It allows for multiple views to be displayed when the viewport is above a specified breakpoint. If the device's screen size is below a certain size, the split pane view will be hidden.
+[分屏](../api/split-pane.md) 布局的结构更为复杂，因为它可以组合前述的各种布局。它允许在视口超过指定断点时显示多个视图。如果设备的屏幕尺寸小于特定大小，分屏视图将会被隐藏。
 
-By default, the split pane view will show when the screen is larger than `768px`, or the `md` breakpoint, but this can be customized to use different breakpoints by setting the `when` property. Below is an example where the split pane contains a menu that is visible for `sm` screens and up, or when the viewport is larger than `576px`. By resizing the browser horizontally so that the app is smaller than this, the split pane view will disappear.
+默认情况下，当屏幕大于 `768px`（即 `md` 断点）时，分屏视图将显示。但可以通过设置 `when` 属性来自定义使用不同的断点。下面是一个示例，其中分屏包含一个菜单，该菜单在 `sm` 及以上的屏幕尺寸（即视口大于 `576px`）时可见。通过水平调整浏览器大小，使应用程序小于此尺寸，分屏视图将会消失。
 
 ```html
 <ion-app>
@@ -222,8 +222,8 @@ By default, the split pane view will show when the screen is larger than `768px`
 </ion-app>
 ```
 
-It's important to note that the element with the `id` matching the `content-id` specified by the split pane will be the main content that is always visible. This can be any element, including an [ion-nav](../api/nav.md), [ion-router-outlet](../api/router-outlet.md), or an [ion-tabs](../api/tabs.md).
+需要注意的是，具有与分屏指定的 `content-id` 匹配的 `id` 的元素，将始终作为主内容区域可见。这可以是任何元素，包括 [ion-nav](../api/nav.md)、[ion-router-outlet](../api/router-outlet.md) 或 [ion-tabs](../api/tabs.md)。
 
-### Live examples
+### 实时示例
 
-You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-split-pane) and for React [here](https://stackblitz.com/edit/ionic-react-split-pane).
+你可以在此查看 Angular 版本的 [实时示例](https://stackblitz.com/edit/ionic-ng-split-pane)，以及 React 版本的 [实时示例](https://stackblitz.com/edit/ionic-react-split-pane)。

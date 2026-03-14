@@ -6,7 +6,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button>
+    <ion-button id="open-modal" expand="block">打开底部动作表模态框</ion-button>
 
     <ion-modal
       trigger="open-modal"
@@ -16,7 +16,7 @@
     >
       <ion-content class="ion-padding">
         <div class="ion-margin-top">
-          <ion-label>Click the handle above to advance to the next breakpoint.</ion-label>
+          <ion-label>点击上方的手柄以切换到下一个断点。</ion-label>
         </div>
       </ion-content>
     </ion-modal>

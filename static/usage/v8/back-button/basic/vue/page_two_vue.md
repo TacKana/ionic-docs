@@ -9,8 +9,8 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <h1>Page Two</h1>
-    <p>Use the back button to navigate to the previous page.</p>
+    <h1>页面二</h1>
+    <p>使用返回按钮可导航至上一页面。</p>
   </ion-content>
 </template>
 

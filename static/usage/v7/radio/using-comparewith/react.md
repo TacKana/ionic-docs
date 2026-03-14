@@ -35,7 +35,7 @@ function Example() {
     <IonList>
       <IonRadioGroup
         compareWith={compareWith}
-        onIonChange={(event) => console.log('Current value:', JSON.stringify(event.detail.value))}
+        onIonChange={(event) => console.log('当前值:', JSON.stringify(event.detail.value))}
       >
         {foods.map((food) => (
           <IonItem>

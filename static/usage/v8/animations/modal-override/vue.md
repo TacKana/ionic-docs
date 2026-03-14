@@ -2,21 +2,21 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title>Page</ion-title>
+      <ion-title>页面</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-button id="modal-trigger">Present Modal</ion-button>
+    <ion-button id="modal-trigger">打开模态框</ion-button>
     <ion-modal trigger="modal-trigger" ref="modalEl" :enterAnimation="enterAnimation" :leaveAnimation="leaveAnimation">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Modal</ion-title>
+          <ion-title>模态框</ion-title>
           <ion-buttons slot="end">
-            <ion-button @click="closeModal()">Close</ion-button>
+            <ion-button @click="closeModal()">关闭</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding"> Modal Content </ion-content>
+      <ion-content class="ion-padding"> 模态框内容 </ion-content>
     </ion-modal>
   </ion-content>
 </template>

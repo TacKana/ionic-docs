@@ -16,7 +16,7 @@ function Example() {
         </IonHeader>
         <IonContent className="ion-padding">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, cum aspernatur cupiditate nesciunt totam
+            这里是示例文本，用于展示在遮罩层后方的内容。Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, cum aspernatur cupiditate nesciunt totam
             perspiciatis delectus soluta laboriosam, ullam impedit porro eaque laborum optio natus sed nostrum,
             provident expedita vero!
           </p>
@@ -25,7 +25,7 @@ function Example() {
       <div id="box">
         <IonCheckbox color="light"></IonCheckbox>
         <IonButton class="ion-margin-start" color="light">
-          Clickable
+          可点击
         </IonButton>
       </div>
     </>

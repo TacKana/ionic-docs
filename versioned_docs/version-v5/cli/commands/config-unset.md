@@ -4,19 +4,19 @@ sidebar_label: 'config unset'
 
 # ionic config unset
 
-Delete config values
+删除配置值
 
 ```shell
 ionic config unset [options]
 ```
 
-This command deletes configuration values from the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.
+此命令会从项目的 **./ionic.config.json** 文件中删除配置值。使用 `--global` 选项时，也可操作全局 CLI 配置（**~/.ionic/config.json**）。
 
-For nested properties, separate nest levels with dots. For example, the property name `integrations.cordova` will look in the **integrations** object for the **cordova** property.
+对于嵌套属性，请使用点号分隔各个层级。例如，属性名 `integrations.cordova` 将在 **integrations** 对象中查找 **cordova** 属性。
 
-For multi-app projects, this command is scoped to the current project by default. To operate at the root of the project configuration file instead, use the `--root` option.
+对于多应用项目，此命令默认作用于当前项目。若要在项目配置文件根目录下操作，请使用 `--root` 选项。
 
-## Examples
+## 示例
 
 ```shell
 $ ionic config unset
@@ -25,7 +25,7 @@ $ ionic config unset --global git.setup
 $ ionic config unset -g interactive
 ```
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -37,15 +37,15 @@ $ ionic config unset -g interactive
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>The property name you wish to delete</p>
+        <p>您希望删除的属性名</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -61,13 +61,13 @@ $ ionic config unset -g interactive
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Use global CLI config</p>
+        <p>使用全局 CLI 配置</p>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-g</code>
       </td>
@@ -75,7 +75,7 @@ $ ionic config unset -g interactive
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -91,11 +91,11 @@ $ ionic config unset -g interactive
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
           <p>
-            Operate on root of <strong>./ionic.config.json</strong>
+            操作 <strong>./ionic.config.json</strong> 的根目录
           </p>
         </div>
       </td>

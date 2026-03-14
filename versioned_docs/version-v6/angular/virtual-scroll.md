@@ -1,24 +1,24 @@
-# Virtual Scroll
+# 虚拟滚动
 
-In the past, we have provided an `ion-virtual-scroll` component in Ionic Framework to help with list virtualization. At the time this was not available in Angular, but recently Angular has provided its own solution via the `@angular/cdk` package.
+过去，Ionic Framework 提供了 `ion-virtual-scroll` 组件来帮助实现列表虚拟化。当时 Angular 还没有提供这项功能，但最近 Angular 通过 `@angular/cdk` 包提供了自己的解决方案。
 
-## Setup
+## 安装设置
 
-To setup the CDK Scroller, first install `@angular/cdk`:
+要使用 CDK 滚动器，首先安装 `@angular/cdk`：
 
 ```shell
 npm add @angular/cdk
 ```
 
-This provides a collection of different utilities, but we'll focus on `ScrollingModule` for now.
+该包提供了多种实用工具，目前我们将重点介绍 `ScrollingModule`。
 
-When we want to use the CDK Scroller, we'll need to import the module in our component. For example, in a tabs starter project, we can add our import to the `tabs1.module.ts` file.
+当我们需要使用 CDK 滚动器时，需要在组件中导入该模块。例如，在一个标签页起始项目中，我们可以将导入添加到 `tabs1.module.ts` 文件中。
 
 ```diff
   import { IonicModule } from '@ionic/angular';
   import { NgModule } from '@angular/core';
   import { CommonModule } from '@angular/common';
-  import { FormsModule } from '@angular/forms';
+  import { FormsModule } from '@angular/common';
   import { Tab1Page } from './tab1.page';
   import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 + import { ScrollingModule } from '@angular/cdk/scrolling';
@@ -37,11 +37,11 @@ When we want to use the CDK Scroller, we'll need to import the module in our com
   export class Tab1PageModule {}
 ```
 
-With this added, we have access to the Virtual Scroller in the Tab1Page component.
+添加此导入后，我们就可以在 Tab1Page 组件中使用虚拟滚动器了。
 
-## Usage
+## 使用方法
 
-The CDK Virtual Scroller can be added to a component by adding the `cdk-virtual-scroll-viewport` to a component's template.
+通过将 `cdk-virtual-scroll-viewport` 添加到组件模板中，即可使用 CDK 虚拟滚动器。
 
 ```html
 <ion-content>
@@ -49,9 +49,9 @@ The CDK Virtual Scroller can be added to a component by adding the `cdk-virtual-
 </ion-content>
 ```
 
-`cdk-virtual-scroll-viewport` becomes the root of our scrollable content and is responsible for recycling DOM nodes as they scroll out of view.
+`cdk-virtual-scroll-viewport` 成为了可滚动内容的根容器，负责在 DOM 节点滚动出视图时进行回收利用。
 
-The DOM nodes at this point can be any content needed for an app. The difference is that when we want to iterate over a collection, `*cdkVirtualFor` is used instead of `*ngFor`.
+此时 DOM 节点可以是应用程序所需的任何内容。不同之处在于，当我们需要遍历集合时，使用 `*cdkVirtualFor` 而不是 `*ngFor`。
 
 ```html
 <ion-content>
@@ -68,21 +68,21 @@ The DOM nodes at this point can be any content needed for an app. The difference
 </ion-content>
 ```
 
-Here, `items` is an array, but it can be an array, `Observable<Array>`, or `DataSource`. `DataSource` is an abstract class that can provide the data needed as well as utility methods. For more details, check out the [CDK Virtual Scrolling docs](https://material.angular.io/cdk/scrolling/overview).
+这里，`items` 是一个数组，但它也可以是数组、`Observable<Array>` 或 `DataSource`。`DataSource` 是一个抽象类，可以提供所需数据以及实用方法。更多详细信息，请查阅 [CDK 虚拟滚动文档](https://material.angular.io/cdk/scrolling/overview)。
 
-The component is not complete yet as the `cdk-virtual-scroll-viewport` needs to know how big each node will be as well as the min/max buffer sizes.
+组件目前还不完整，因为 `cdk-virtual-scroll-viewport` 需要知道每个节点的大小以及最小/最大缓冲区大小。
 
-At the moment, CDK Virtual Scroller only supports fixed sized elements, but dynamic sized elements are planned for the future. For the `Tab1Page` component, since it is only rendering an item, it can be hard-coded to a fixed size.
+目前，CDK 虚拟滚动器仅支持固定大小的元素，但动态大小的元素已在计划中。对于 `Tab1Page` 组件，由于它只渲染一个项目，可以硬编码为固定大小。
 
-The min/max buffer size tells the scroller "render as many nodes as it takes to meet this minimum height, but not over this".
+最小/最大缓冲区大小告诉滚动器“渲染足够多的节点以达到这个最小高度，但不超过这个高度”。
 
 ```html
 <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350"></cdk-virtual-scroll-viewport>
 ```
 
-For this case, the `cdk-virtual-scroll-viewport` will render cells at a height 56px until it reaches a height of 900px, but no more at 1350px. These numbers are arbitrary, so be sure to test out what values will work in a real use case.
+在这种情况下，`cdk-virtual-scroll-viewport` 将以 56px 的高度渲染单元格，直到达到 900px 的高度，但不会超过 1350px。这些数字是任意的，因此请务必在实际使用场景中测试合适的值。
 
-Putting everything together, the final HTML should look like:
+将所有内容整合起来，最终的 HTML 应该如下所示：
 
 ```html
 <ion-content>
@@ -99,7 +99,7 @@ Putting everything together, the final HTML should look like:
 </ion-content>
 ```
 
-The last piece needed is a some CSS to size the viewport correctly. In the `tab1.page.scss` file, add the following
+最后一步是添加一些 CSS 来正确设置视口大小。在 `tab1.page.scss` 文件中，添加以下内容：
 
 ```scss
 cdk-virtual-scroll-viewport {
@@ -108,22 +108,22 @@ cdk-virtual-scroll-viewport {
 }
 ```
 
-Since the viewport is built to fit various use cases, the default sizing is not set and is up to developers to set.
+由于视口构建时考虑了各种使用场景，默认大小没有设置，需要开发人员自行设置。
 
-## Usage with Ionic Components
+## 与 Ionic 组件配合使用
 
-Ionic Framework requires that features such as collapsible large titles, `ion-infinite-scroll`, `ion-refresher`, and `ion-reorder-group` be used within an `ion-content`. To use these experiences with virtual scrolling, you must add the `.ion-content-scroll-host` class to the virtual scroll viewport.
+Ionic Framework 要求某些功能（如可折叠大标题、`ion-infinite-scroll`、`ion-refresher` 和 `ion-reorder-group`）必须在 `ion-content` 内使用。要在虚拟滚动中使用这些体验，您必须将 `.ion-content-scroll-host` 类添加到虚拟滚动视口。
 
-For example:
+例如：
 
 ```html
 <ion-content [scrollY]="false">
   <cdk-virtual-scroll-viewport class="ion-content-scroll-host">
-    <!-- Your existing content and configurations -->
+    <!-- 您现有的内容和配置 -->
   </cdk-virtual-scroll-viewport>
 </ion-content>
 ```
 
-## Further Reading
+## 延伸阅读
 
-This only covers a small portion of what the CDK Virtual Scroller is capable of. For more details, please see the [Angular CDK Virtual Scrolling docs](https://material.angular.io/cdk/scrolling/overview).
+本文仅涵盖了 CDK 虚拟滚动器功能的一小部分。更多详细信息，请参阅 [Angular CDK 虚拟滚动文档](https://material.angular.io/cdk/scrolling/overview)。

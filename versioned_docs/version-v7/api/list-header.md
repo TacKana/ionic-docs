@@ -13,53 +13,53 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-List headers are block elements that are used to describe the contents of a [list](./list). Unlike [item dividers](./item-divider), list headers should only be used once at the top of a list of [items](./item).
+列表头部（List headers）是用于描述[列表（list）](./list)内容的块级元素。与[项目分隔符（item dividers）](./item-divider)不同，列表头部应当仅出现在[项目（items）](./item)列表的顶部一次。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v7/list-header/basic/index.md';
 
 <Basic />
 
-## Buttons in List Headers
+## 列表头部中的按钮
 
-A [button](./button) placed in a list header can be useful for showing part of a list and redirecting to the full list with the button.
+在列表头部放置[按钮（button）](./button)有助于显示列表的一部分内容，并通过按钮引导用户查看完整列表。
 
 import Buttons from '@site/static/usage/v7/list-header/buttons/index.md';
 
 <Buttons />
 
-## List Header Lines
+## 列表头部线条
 
-List headers do not show a bottom border by default. The `lines` property can be modified to `"full"` or `"inset"` which will show a full width border or an inset border with left padding, respectively.
+默认情况下，列表头部不显示底部边框。通过将 `lines` 属性修改为 `"full"` 或 `"inset"`，可以分别显示全宽边框或带有左侧内边距的嵌入边框。
 
 import Lines from '@site/static/usage/v7/list-header/lines/index.md';
 
 <Lines />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v7/list-header/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v7/list-header/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -67,10 +67,10 @@ import CSSProps from '@site/static/usage/v7/list-header/theming/css-properties/i
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

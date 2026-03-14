@@ -9,13 +9,13 @@ import { PageTwoComponent } from './page-two.component';
   template: `
     <ion-header>
       <ion-toolbar>
-        <ion-title>Page One</ion-title>
+        <ion-title>页面一</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <h1>Page One</h1>
+      <h1>页面一</h1>
       <ion-nav-link router-direction="forward" [component]="component">
-        <ion-button>Go to Page Two</ion-button>
+        <ion-button>前往页面二</ion-button>
       </ion-nav-link>
     </ion-content>
   `,

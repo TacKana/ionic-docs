@@ -2,16 +2,16 @@
 <template>
   <ion-list>
     <ion-item>
-      <ion-label>Regular textarea</ion-label>
-      <ion-textarea placeholder="Type something here"></ion-textarea>
+      <ion-label>普通文本域</ion-label>
+      <ion-textarea placeholder="在此输入内容"></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-label>Readonly textarea</ion-label>
-      <ion-textarea :readonly="true" placeholder="Can't edit this"></ion-textarea>
+      <ion-label>只读文本域</ion-label>
+      <ion-textarea :readonly="true" placeholder="无法编辑此项"></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-label>Disabled textarea</ion-label>
-      <ion-textarea :disabled="true" placeholder="Can't type here"></ion-textarea>
+      <ion-label>禁用文本域</ion-label>
+      <ion-textarea :disabled="true" placeholder="无法在此输入"></ion-textarea>
     </ion-item>
   </ion-list>
 </template>

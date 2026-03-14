@@ -7,19 +7,19 @@ function Example() {
   return (
     <IonBreadcrumbs>
       <IonBreadcrumb href="#home">
-        Home
+        首页
         <IonIcon slot="separator" icon={arrowForwardCircle}></IonIcon>
       </IonBreadcrumb>
       <IonBreadcrumb href="#electronics">
-        Electronics
+        电子产品
         <IonIcon slot="separator" icon={arrowForwardCircle}></IonIcon>
       </IonBreadcrumb>
       <IonBreadcrumb href="#cameras">
-        Cameras
+        相机
         <IonIcon slot="separator" icon={arrowForwardCircle}></IonIcon>
       </IonBreadcrumb>
       <IonBreadcrumb href="#film">
-        Film
+        胶卷
         <IonIcon slot="separator" icon={arrowForwardCircle}></IonIcon>
       </IonBreadcrumb>
     </IonBreadcrumbs>

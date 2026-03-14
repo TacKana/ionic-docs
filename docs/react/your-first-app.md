@@ -1,19 +1,19 @@
 ---
-title: 'Your First Ionic App: React'
-sidebar_label: Build Your First App
+title: '您的第一个 Ionic 应用：React'
+sidebar_label: 构建首个应用
 ---
 
 <head>
-  <title>Build Your First Ionic Mobile App with React | Ionic Capacitor Camera</title>
+  <title>使用 React 构建您的第一个 Ionic 移动应用 | Ionic Capacitor 相机</title>
   <meta
     name="description"
-    content="This React tutorial teaches the fundamentals of Ionic app development by creating a realistic app step-by-step. Learn to run your first Ionic app with React."
+    content="本 React 教程通过逐步创建一个真实应用，教授 Ionic 应用开发的基础知识。学习如何运行您的第一个 Ionic React 应用。"
   />
 </head>
 
-The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
+Ionic 的一大优势在于，您只需一套代码库，就能使用 HTML、CSS 和 JavaScript 为任何平台构建应用。跟随我们的脚步，通过逐步创建一个真实应用来学习 Ionic 应用开发的基础知识。
 
-Here’s the finished app running on all 3 platforms:
+下面是最终应用在三大平台上的运行效果：
 
 <iframe
   width="560"
@@ -24,34 +24,34 @@ Here’s the finished app running on all 3 platforms:
   allowFullScreen
 ></iframe>
 
-## What We'll Build
+## 我们将构建什么
 
-We'll create a Photo Gallery app that offers the ability to take photos with your device's camera, display them in a grid, and store them permanently on the device.
+我们将创建一个照片墙应用，它能够使用设备摄像头拍照、在网格中显示照片，并将照片永久存储在设备上。
 
-Highlights include:
+主要亮点包括：
 
-- One React-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](../components.md).
-- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
-- Photo Gallery functionality powered by the Capacitor [Camera](../native/camera.md), [Filesystem](../native/filesystem.md), and [Preferences](../native/preferences.md) APIs.
+- 一套基于 React 的代码库，使用 Ionic 框架的 [UI 组件](../components.md) 在 Web、iOS 和 Android 上运行。
+- 通过 Ionic 官方原生应用运行时 [Capacitor](https://capacitorjs.com) 部署为原生 iOS 和 Android 移动应用。
+- 照片墙功能由 Capacitor 的 [相机](../native/camera.md)、[文件系统](../native/filesystem.md) 和 [偏好设置](../native/preferences.md) API 提供支持。
 
-Find the [complete app code](https://github.com/ionic-team/tutorial-photo-gallery-react) referenced in this guide on GitHub.
+您可以在 GitHub 上找到本指南引用的 [完整应用代码](https://github.com/ionic-team/tutorial-photo-gallery-react)。
 
-## Download Required Tools
+## 下载所需工具
 
-Download and install these right away to ensure an optimal Ionic development experience:
+立即下载并安装这些工具，以确保获得最佳的 Ionic 开发体验：
 
-- **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-- **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-- **Command-line interface/terminal (CLI)**:
-  - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
-  - **Mac/Linux** users: virtually any terminal will work.
+- **Node.js**：用于与 Ionic 生态系统交互。[在此下载 LTS 版本](https://nodejs.org/en/)。
+- **代码编辑器**：用于编写代码！我们推荐 [Visual Studio Code](https://code.visualstudio.com/)。
+- **命令行界面/终端 (CLI)**：
+  - **Windows** 用户：为获得最佳 Ionic 体验，我们建议使用内置命令行 (cmd) 或 PowerShell CLI，并以管理员模式运行。
+  - **Mac/Linux** 用户：几乎任何终端都可以使用。
 
-## Install Ionic Tooling
+## 安装 Ionic 工具
 
-Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
+在命令行终端中运行以下命令，安装 Ionic CLI (`ionic`)、用于在设备和模拟器/仿真器上运行原生二进制文件的 `native-run`，以及用于生成原生应用图标和启动画面的 `cordova-res`：
 
 :::note
-To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
+要在 Visual Studio Code 中打开终端，请转到 Terminal -> New Terminal。
 :::
 
 ```shell
@@ -59,53 +59,53 @@ npm install -g @ionic/cli native-run cordova-res
 ```
 
 :::note
-The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+`-g` 选项表示 *全局安装*。当包全局安装时，可能会出现 `EACCES` 权限错误。
 
-Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+考虑设置 npm 以在无需提升权限的情况下全局操作。更多信息请参阅 [解决权限错误](../developing/tips.md#resolving-permission-errors)。
 :::
 
-## Create an App
+## 创建应用
 
-Next, create an Ionic React app that uses the "Tabs" starter template and adds Capacitor for native functionality:
+接下来，创建一个使用“标签页”起始模板的 Ionic React 应用，并添加 Capacitor 以实现原生功能：
 
 ```shell
 ionic start photo-gallery tabs --type=react
 ```
 
-This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
+这个起始项目包含三个预构建页面和 Ionic 开发的最佳实践。有了现成的通用构建块，我们可以轻松添加更多功能！
 
-Next, change into the app folder:
+接下来，切换到应用文件夹：
 
 ```shell
 cd photo-gallery
 ```
 
-Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
+接下来，我们需要安装必要的 Capacitor 插件，以使应用的原生功能正常工作：
 
 ```shell
 npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 ```
 
-### PWA Elements
+### PWA 元素
 
-Some Capacitor plugins, including the [Camera API](../native/camera.md), provide the web-based functionality and UI via the Ionic [PWA Elements library](https://github.com/ionic-team/pwa-elements).
+一些 Capacitor 插件，包括 [相机 API](../native/camera.md)，通过 Ionic 的 [PWA 元素库](https://github.com/ionic-team/pwa-elements) 提供基于 Web 的功能和 UI。
 
-It's a separate dependency, so install it next:
+它是一个独立的依赖项，因此接下来需要安装它：
 
 ```shell
 npm install @ionic/pwa-elements
 ```
 
-Next, import `@ionic/pwa-elements` by editing `src/main.tsx`.
+接下来，通过编辑 `src/main.tsx` 来导入 `@ionic/pwa-elements`。
 
 ```tsx
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-// CHANGE: Add the following import
+// 修改：添加以下导入
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// CHANGE: Call the element loader before the render call
+// 修改：在渲染调用之前调用元素加载器
 defineCustomElements(window);
 
 const container = document.getElementById('root');
@@ -117,25 +117,25 @@ root.render(
 );
 ```
 
-That’s it! Now for the fun part - let’s see the app in action.
+准备工作就绪！现在进入有趣的部分——让我们看看实际运行的应用。
 
-## Run the App
+## 运行应用
 
-Run this command next:
+接下来运行此命令：
 
 ```shell
 ionic serve
 ```
 
-And voilà! Your Ionic app is now running in a web browser. Most of your app can be built and tested right in the browser, greatly increasing development and testing speed.
+瞧！您的 Ionic 应用现在正在 Web 浏览器中运行。您的大部分应用都可以直接在浏览器中构建和测试，这大大提高了开发和测试速度。
 
-## Photo Gallery
+## 照片墙
 
-There are three tabs. Click on the "Tab2" tab. It’s a blank canvas, aka the perfect spot to transform into a Photo Gallery. The Ionic CLI features Live Reload, so when you make changes and save them, the app is updated immediately!
+应用中有三个标签页。点击“Tab2”标签页。这是一个空白画布，也是将其转变为照片墙的绝佳位置。Ionic CLI 具有实时重载功能，因此当您进行更改并保存时，应用会立即更新！
 
-![Animated GIF showing the live reload feature in an Ionic app, with changes in code immediately updating the app in a web browser.](/img/guides/react/first-app/live-reload.gif 'Live Reload Feature in Ionic App')
+![展示 Ionic 应用中实时重载功能的动画 GIF，代码中的更改会立即更新 Web 浏览器中的应用。](/img/guides/react/first-app/live-reload.gif 'Ionic 应用中的实时重载功能')
 
-Open `/src/pages/Tab2.tsx`. We see:
+打开 `/src/pages/Tab2.tsx`。我们看到：
 
 ```tsx
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -165,37 +165,37 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-`IonHeader` represents the top navigation and toolbar, with "Tab 2" as the title (there are two of them due to iOS [Collapsible Large Title](../api/title.md#collapsible-large-titles) support). Let’s rename both `IonTitle` elements to:
+`IonHeader` 代表顶部导航和工具栏，标题为“Tab 2”（由于支持 iOS 的 [可折叠大标题](../api/title.md#collapsible-large-titles)，这里有两个标题）。让我们将两个 `IonTitle` 元素重命名为：
 
 ```tsx
 <IonPage>
   <IonHeader>
     <IonToolbar>
-      {/* CHANGE: Update title */}
-      <IonTitle>Photo Gallery</IonTitle>
+      {/* 修改：更新标题 */}
+      <IonTitle>照片墙</IonTitle>
     </IonToolbar>
   </IonHeader>
   <IonContent>
     <IonHeader collapse="condense">
       <IonToolbar>
-        {/* CHANGE: Update title */}
-        <IonTitle size="large">Photo Gallery</IonTitle>
+        {/* 修改：更新标题 */}
+        <IonTitle size="large">照片墙</IonTitle>
       </IonToolbar>
     </IonHeader>
 
-    {/* ...existing code... */}
+    {/* ...现有代码... */}
   </IonContent>
 </IonPage>
 ```
 
-We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](../api/fab.md) (FAB) to the bottom of the page and set the camera image as the icon.
+我们将应用的视觉部分放入 `<IonContent>` 中。在这里，我们将添加一个按钮，用于打开设备摄像头并显示摄像头捕获的图像。首先，在页面底部添加一个 [浮动操作按钮](../api/fab.md) (FAB)，并将相机图像设置为图标。
 
 ```tsx
-// CHANGE: Add the following import
+// 修改：添加以下导入
 import { camera } from 'ionicons/icons';
-// CHANGE: Update the following import
+// 修改：更新以下导入
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton, IonIcon } from '@ionic/react';
-// CHANGE: Remove or comment out `ExploreContainer`
+// 修改：移除或注释掉 `ExploreContainer`
 // import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
 
@@ -204,24 +204,24 @@ const Tab2: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Photo Gallery</IonTitle>
+          <IonTitle>照片墙</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Photo Gallery</IonTitle>
+            <IonTitle size="large">照片墙</IonTitle>
           </IonToolbar>
         </IonHeader>
 
-        {/* CHANGE: Add the floating action button */}
+        {/* 修改：添加浮动操作按钮 */}
         <IonFab vertical="bottom" horizontal="center" slot="fixed">
           <IonFabButton>
             <IonIcon icon={camera}></IonIcon>
           </IonFabButton>
         </IonFab>
 
-        {/* CHANGE: Remove or comment out `ExploreContainer` */}
+        {/* 修改：移除或注释掉 `ExploreContainer` */}
         {/* <ExploreContainer name="Tab 2 page" /> */}
       </IonContent>
     </IonPage>
@@ -231,7 +231,7 @@ const Tab2: React.FC = () => {
 export default Tab2;
 ```
 
-Next, open `src/App.tsx`. Change the label to "Photos" and the `ellipse` icon to `images` for the middle tab button.
+接下来，打开 `src/App.tsx`。将中间标签页按钮的标签更改为“照片”，并将 `ellipse` 图标更改为 `images`。
 
 ```tsx
 import { Redirect, Route } from 'react-router-dom';
@@ -246,13 +246,13 @@ import {
   setupIonicReact,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-// CHANGE: Update the following import
+// 修改：更新以下导入
 import { images, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 
-/* ...existing Ionic styles... */
+/* ...现有的 Ionic 样式... */
 
 const App: React.FC = () => (
   <IonApp>
@@ -278,10 +278,10 @@ const App: React.FC = () => (
             <IonLabel>Tab 1</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab2">
-            {/* CHANGE: Update icon */}
+            {/* 修改：更新图标 */}
             <IonIcon aria-hidden="true" icon={images} />
-            {/* CHANGE: Update label */}
-            <IonLabel>Photos</IonLabel>
+            {/* 修改：更新标签 */}
+            <IonLabel>照片</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab3" href="/tab3">
             <IonIcon aria-hidden="true" icon={square} />
@@ -296,4 +296,4 @@ const App: React.FC = () => (
 export default App;
 ```
 
-That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.
+这只是我们使用 Ionic 可以实现的众多酷炫功能的开始。接下来，我们将在 Web 上实现拍照功能，然后为 iOS 和 Android 构建应用。

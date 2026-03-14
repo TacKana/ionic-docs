@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/action-sheet/custom-pr
 import Slots from '@ionic-internal/component-api/v6/action-sheet/slots.md';
 
 <head>
-  <title>ion-action-sheet | Action Sheet Dialog for iOS and Android Apps</title>
+  <title>ion-action-sheet | iOS 与 Android 应用的操作表对话框</title>
   <meta
     name="description"
-    content="Action Sheets are dialogs that display a set of options above app content and must be manually dismissed. Read to learn about use on iOS and Android devices."
+    content="操作表是一种显示一组选项的对话框。它出现在应用内容上方，用户必须手动关闭它才能继续与应用交互。在 iOS 模式下，破坏性选项会以醒目的方式呈现。"
   />
 </head>
 
@@ -21,33 +21,33 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. Destructive options are made obvious in `ios` mode. There are multiple ways to dismiss the action sheet, including tapping the backdrop or hitting the escape key on desktop.
+操作表（Action Sheet）是一种显示一组选项的对话框。它会出现在应用内容的上方，用户必须手动关闭它才能继续与应用交互。在 `ios` 模式下，破坏性选项会以醒目的方式呈现。关闭操作表有多种方式，包括点击背景遮罩或在桌面端按下 Esc 键。
 
 import Basic from '@site/static/usage/v6/action-sheet/basic/index.md';
 
 <Basic />
 
-## Buttons
+## 按钮
 
-A button's `role` property can either be `destructive` or `cancel`. Buttons without a role property will have the default look for the platform. Buttons with the `cancel` role will always load as the bottom button, no matter where they are in the array. All other buttons will be displayed in the order they have been added to the `buttons` array. Note: We recommend that `destructive` buttons are always the first button in the array, making them the top button. Additionally, if the action sheet is dismissed by tapping the backdrop, then it will fire the handler from the button with the cancel role.
+按钮的 `role` 属性可以是 `destructive`（破坏性）或 `cancel`（取消）。没有设置 `role` 属性的按钮将采用平台默认样式。具有 `cancel` 角色的按钮总是会显示在底部，无论它们在数组中的位置如何。所有其他按钮将按照添加到 `buttons` 数组中的顺序显示。注意：我们建议将 `destructive` 按钮始终作为数组的第一个元素，使其显示在顶部。此外，如果通过点击背景遮罩来关闭操作表，则会触发具有 `cancel` 角色的按钮的处理函数。
 
-A button can also be passed data via the `data` property on `ActionSheetButton`. This will populate the `data` field in the return value of the `onDidDismiss` method.
+也可以通过 `ActionSheetButton` 上的 `data` 属性向按钮传递数据。这会在 `onDidDismiss` 方法的返回值中填充 `data` 字段。
 
-## Theming
+## 主题定制
 
-Action Sheet uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
+操作表使用作用域封装（scoped encapsulation），这意味着它会在运行时为每个样式追加一个额外的类来自动限定 CSS 的作用域。要覆盖 CSS 中的作用域选择器，需要使用[更高优先级](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity)的选择器。
 
-### Styling
+### 样式定制
 
-We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces.
+我们建议在 `create` 方法的 `cssClass` 参数中传入一个自定义类，并使用该类为宿主和内部元素添加自定义样式。该属性也可以接受多个以空格分隔的类名。
 
 ```css
-/* DOES NOT WORK - not specific enough */
+/* 无效 - 优先级不足 */
 .action-sheet-group {
   background: #e5e5e5;
 }
 
-/* Works - pass "my-custom-class" in cssClass to increase specificity */
+/* 有效 - 在 cssClass 中传入 "my-custom-class" 以提高优先级 */
 .my-custom-class .action-sheet-group {
   background: #e5e5e5;
 }
@@ -57,21 +57,21 @@ import Styling from '@site/static/usage/v6/action-sheet/theming/styling/index.md
 
 <Styling />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
-Any of the defined [CSS Custom Properties](#css-custom-properties-1) can be used to style the Action Sheet without needing to target individual elements.
+可以使用任何已定义的 [CSS 自定义属性](#css-custom-properties-1) 来设置操作表的样式，而无需针对单个元素进行定位。
 
 import CssCustomProperties from '@site/static/usage/v6/action-sheet/theming/css-properties/index.md';
 
 <CssCustomProperties />
 
-## Accessibility
+## 无障碍访问
 
-Action Sheets are given a `role` of [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role). In order to align with the ARIA spec, either the `aria-label` or `aria-labelledby` attribute must be set.
+操作表被赋予了 [`dialog`](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA/Roles/dialog_role) 角色。为了符合 ARIA 规范，必须设置 `aria-label` 或 `aria-labelledby` 属性。
 
-It is strongly recommended that every Action Sheet have the `header` property defined, as Ionic will automatically set `aria-labelledby` to point to the header element. However, if you choose not to include a `header`, an alternative is to use the `htmlAttributes` property to provide a descriptive `aria-label` or set a custom `aria-labelledby` value.
+强烈建议为每个操作表定义 `header` 属性，因为 Ionic 会自动将 `aria-labelledby` 指向标题元素。但是，如果你选择不包含 `header`，另一种方法是使用 `htmlAttributes` 属性提供描述性的 `aria-label` 或设置自定义的 `aria-labelledby` 值。
 
-## Interfaces
+## 接口
 
 ### ActionSheetButton
 
@@ -107,15 +107,15 @@ interface ActionSheetOptions {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -123,10 +123,10 @@ interface ActionSheetOptions {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

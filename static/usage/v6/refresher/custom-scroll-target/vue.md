@@ -2,7 +2,7 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title>Pull to Refresh</ion-title>
+      <ion-title>下拉刷新</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -12,7 +12,7 @@
     </ion-refresher>
 
     <div class="ion-content-scroll-host ion-padding">
-      <p>Pull this content down to trigger the refresh.</p>
+      <p>向下拉动此内容以触发刷新。</p>
     </div>
   </ion-content>
 </template>
@@ -26,7 +26,7 @@
     setup() {
       const handleRefresh = (event: CustomEvent) => {
         setTimeout(() => {
-          // Any calls to load data go here
+          // 加载数据的调用放在这里
           event.target.complete();
         }, 2000);
       };

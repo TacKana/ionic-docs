@@ -17,82 +17,81 @@ import CustomProps from '@ionic-internal/component-api/v6/slides/custom-props.md
 import Slots from '@ionic-internal/component-api/v6/slides/slots.md';
 
 <head>
-  <title>Ion-Slides: Mobile Touch Slider with Built-In & Custom Animation</title>
+  <title>Ion-Slides: 带内置和自定义动画的移动触摸滑块</title>
   <meta
     name="description"
-    content="Ion-Slides is a multi-section container which offers custom and built-in mobile touch slider animation effects. See how Ion-Slides works with iOS and Android."
+    content="Ion-Slides 是一个多节容器，提供自定义和内置的移动触摸滑块动画效果。了解 Ion-Slides 如何在 iOS 和 Android 上工作。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-<h2 className="table-of-contents__title">Contents</h2>
+<h2 className="table-of-contents__title">目录</h2>
 
 <TOCInline toc={toc} maxHeadingLevel={2} />
 
 :::note
-This component has been deprecated in favor of using Swiper.js directly. Please see the [migration guide](#migration) below.
+此组件已被弃用，建议直接使用 Swiper.js。请参阅下面的[迁移指南](#迁移)。
 :::
 
-The Slides component is a multi-section container. Each section can be swiped
-or dragged between. It contains any number of [Slide](slide.md) components.
+Slides 组件是一个多节容器。每个部分都可以滑动或拖动。它包含任意数量的 [Slide](slide.md) 组件。
 
-This guide will cover migration from the deprecated `ion-slides` component to the framework-specific solutions that Swiper.js provides as well as the existing `ion-slides` API for developers who are still using that component.
+本指南将涵盖从已弃用的 `ion-slides` 组件迁移到 Swiper.js 提供的特定框架解决方案的过程，以及为仍在使用该组件的开发者提供的现有 `ion-slides` API。
 
-Adopted from Swiper.js:
-The most modern mobile touch slider and framework with hardware accelerated transitions.
+改编自 Swiper.js：
+最现代的移动触摸滑块和框架，具有硬件加速的过渡效果。
 
 http://www.idangero.us/swiper/
 
-Copyright 2016, Vladimir Kharlampidi
+版权所有 2016, Vladimir Kharlampidi
 The iDangero.us
 http://www.idangero.us/
 
-Licensed under MIT
+根据 MIT 许可证授权
 
-## Migration
+## 迁移
 
-With the release of Ionic Framework v6, the Ionic Team has deprecated the `ion-slides` and `ion-slide` components in favor of using the official framework integrations provided by Swiper. Fear not! You will still be able to use slides components in your application. Additionally, because you are still using Swiper, the functionality of your slides component should remain exactly the same.
+随着 Ionic Framework v6 的发布，Ionic 团队已弃用 `ion-slides` 和 `ion-slide` 组件，转而推荐使用 Swiper 提供的官方框架集成。别担心！您仍然可以在应用程序中使用幻灯片组件。此外，由于您仍在使用 Swiper，幻灯片组件的功能应完全保持不变。
 
-### What is Swiper.js?
+### 什么是 Swiper.js？
 
-Swiper.js is the carousel/slider library that powers `ion-slides`. The library is bundled automatically with all versions of Ionic Framework. When Ionic Framework v4. was first released, Swiper did not have framework specific integrations of its library, so `ion-slides` was created as a way of bridging the gap between the core Swiper library and frameworks such as Angular, React, and Vue.
+Swiper.js 是为 `ion-slides` 提供支持的轮播/滑块库。该库会自动与所有版本的 Ionic Framework 捆绑在一起。当 Ionic Framework v4 首次发布时，Swiper 没有其库的特定框架集成，因此创建了 `ion-slides` 作为连接核心 Swiper 库与 Angular、React 和 Vue 等框架的桥梁。
 
-Since then, the Swiper team has released framework specific integrations of Swiper.js for Angular, React, Vue, and more!
+此后，Swiper 团队发布了针对 Angular、React、Vue 等框架的 Swiper.js 特定框架集成！
 
-### What are the benefits of this change?
+### 此更改有什么好处？
 
-There are several benefits for members of the Ionic Framework community. By using the official Swiper.js framework integrations:
+Ionic Framework 社区的成员可以从中受益良多。通过使用官方的 Swiper.js 框架集成：
 
-- Developers can now be in control of the exact version of Swiper.js they want to use. Previously, developers would need to rely on the Ionic Team to update the version internally and release a new version of Ionic Framework.
-- The Ionic Team can spend more time triaging and fixing other non-slides issues, speeding up our development process so we can make the framework work better for our community.
-- Developers should experience fewer bugs.
-- Application bundle sizes can shrink in some cases. By installing Swiper.js as a 3rd party dependency in your application, bundlers such as Webpack or Rollup should be able to treeshake your code better.
-- Developers have access to new features that they previously did not have when using `ion-slides`.
+- 开发者现在可以控制他们想要使用的 Swiper.js 的确切版本。以前，开发者需要依赖 Ionic 团队在内部更新版本并发布新版本的 Ionic Framework。
+- Ionic 团队可以花更多时间分类和修复其他非幻灯片问题，从而加快我们的开发过程，使框架更好地为我们的社区服务。
+- 开发者应该会遇到更少的错误。
+- 在某些情况下，应用程序的捆绑包大小可以缩小。通过将 Swiper.js 作为应用程序中的第三方依赖项安装，Webpack 或 Rollup 等打包工具应该能够更好地摇树优化您的代码。
+- 开发者可以访问以前在使用 `ion-slides` 时无法使用的新功能。
 
-### How long do I have to migrate?
+### 我必须在多长时间内迁移？
 
-We plan to remove `ion-slides` and `ion-slide` in Ionic Framework v7. `ion-slides` and `ion-slide` will continue to be available for the entire Ionic Framework v6 lifecycle but will only receive critical bug fixes.
+我们计划在 Ionic Framework v7 中移除 `ion-slides` 和 `ion-slide`。`ion-slides` 和 `ion-slide` 将在整个 Ionic Framework v6 生命周期内继续可用，但仅接收关键的错误修复。
 
-### How do I migrate?
+### 如何迁移？
 
-Since the underlying technology that powers your slides is the same, the migration process is easy! Follow the guides below for your specific framework.
+由于为您的幻灯片提供支持的基础技术是相同的，因此迁移过程很简单！请根据您的特定框架遵循以下指南。
 
-[Migration for Ionic Angular users](../angular/slides)
+[适用于 Ionic Angular 用户的迁移指南](../angular/slides)
 
-[Migration for Ionic React users](../react/slides)
+[适用于 Ionic React 用户的迁移指南](../react/slides)
 
-[Migration for Ionic Vue users](../vue/slides)
+[适用于 Ionic Vue 用户的迁移指南](../vue/slides)
 
 ---
 
-The following documentation applies to the `ion-slides` component.
+以下文档适用于 `ion-slides` 组件。
 
-## Custom Animations
+## 自定义动画
 
-By default, Ionic slides use the built-in `slide` animation effect. Custom animations can be provided via the `options` property. Examples of other animations can be found below.
+默认情况下，Ionic 幻灯片使用内置的 `slide` 动画效果。可以通过 `options` 属性提供自定义动画。其他动画的示例如下所示。
 
-### Coverflow
+### 覆盖流 (Coverflow)
 
 ```typescript
 const slideOpts = {
@@ -123,7 +122,7 @@ const slideOpts = {
       const center = isHorizontal ? -transform$$1 + swiperWidth / 2 : -transform$$1 + swiperHeight / 2;
       const rotate = isHorizontal ? params.rotate : -params.rotate;
       const translate = params.depth;
-      // Each slide offset from center
+      // 每个幻灯片相对于中心的偏移量
       for (let i = 0, length = slides.length; i < length; i += 1) {
         const $slideEl = slides.eq(i);
         const slideSize = slidesSizesGrid[i];
@@ -138,7 +137,7 @@ const slideOpts = {
         let translateY = isHorizontal ? 0 : params.stretch * offsetMultiplier;
         let translateX = isHorizontal ? params.stretch * offsetMultiplier : 0;
 
-        // Fix for ultra small values
+        // 修复极小值
         if (Math.abs(translateX) < 0.001) translateX = 0;
         if (Math.abs(translateY) < 0.001) translateY = 0;
         if (Math.abs(translateZ) < 0.001) translateZ = 0;
@@ -150,7 +149,7 @@ const slideOpts = {
         $slideEl.transform(slideTransform);
         $slideEl[0].style.zIndex = -Math.abs(Math.round(offsetMultiplier)) + 1;
         if (params.slideShadows) {
-          // Set shadows
+          // 设置阴影
           let $shadowBeforeEl = isHorizontal
             ? $slideEl.find('.swiper-slide-shadow-left')
             : $slideEl.find('.swiper-slide-shadow-top');
@@ -170,7 +169,7 @@ const slideOpts = {
         }
       }
 
-      // Set correct perspective for IE10
+      // 为 IE10 设置正确的透视
       if (swiper.support.pointerEvents || swiper.support.prefixedPointerEvents) {
         const ws = $wrapperEl[0].style;
         ws.perspectiveOrigin = `${center}px 50%`;
@@ -189,7 +188,7 @@ const slideOpts = {
 };
 ```
 
-### Cube
+### 立方体 (Cube)
 
 ```typescript
 const slideOpts = {
@@ -300,7 +299,7 @@ const slideOpts = {
         }
         $slideEl.transform(transform$$1);
         if (params.slideShadows) {
-          // Set shadows
+          // 设置阴影
           let shadowBefore = isHorizontal
             ? $slideEl.find('.swiper-slide-shadow-left')
             : $slideEl.find('.swiper-slide-shadow-top');
@@ -372,7 +371,7 @@ const slideOpts = {
 };
 ```
 
-### Fade
+### 淡入淡出 (Fade)
 
 ```typescript
 const slideOpts = {
@@ -436,7 +435,7 @@ const slideOpts = {
 };
 ```
 
-### Flip
+### 翻转 (Flip)
 
 ```typescript
 const slideOpts = {
@@ -483,7 +482,7 @@ const slideOpts = {
         $slideEl[0].style.zIndex = -Math.abs(Math.round(progress)) + slides.length;
 
         if (swiper.params.flipEffect.slideShadows) {
-          // Set shadows
+          // 设置阴影
           let shadowBefore = swiper.isHorizontal()
             ? $slideEl.find('.swiper-slide-shadow-left')
             : $slideEl.find('.swiper-slide-shadow-top');
@@ -537,7 +536,7 @@ const slideOpts = {
 };
 ```
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -552,21 +551,21 @@ import { Component } from '@angular/core';
     <ion-content>
       <ion-slides pager="true" [options]="slideOpts">
         <ion-slide>
-          <h1>Slide 1</h1>
+          <h1>幻灯片 1</h1>
         </ion-slide>
         <ion-slide>
-          <h1>Slide 2</h1>
+          <h1>幻灯片 2</h1>
         </ion-slide>
         <ion-slide>
-          <h1>Slide 3</h1>
+          <h1>幻灯片 3</h1>
         </ion-slide>
       </ion-slides>
     </ion-content>
   `,
 })
 export class SlideExample {
-  // Optional parameters to pass to the swiper instance.
-  // See https://swiperjs.com/swiper-api for valid options.
+  // 传递给 swiper 实例的可选参数。
+  // 查看 https://swiperjs.com/swiper-api 获取有效选项。
   slideOpts = {
     initialSlide: 1,
     speed: 400,
@@ -576,7 +575,7 @@ export class SlideExample {
 ```
 
 ```css
-/* Without setting height the slides will take up the height of the slide's content */
+/* 不设置高度，幻灯片将占据幻灯片内容的高度 */
 ion-slides {
   height: 100%;
 }
@@ -590,15 +589,15 @@ ion-slides {
 <ion-content>
   <ion-slides pager="true">
     <ion-slide>
-      <h1>Slide 1</h1>
+      <h1>幻灯片 1</h1>
     </ion-slide>
 
     <ion-slide>
-      <h1>Slide 2</h1>
+      <h1>幻灯片 2</h1>
     </ion-slide>
 
     <ion-slide>
-      <h1>Slide 3</h1>
+      <h1>幻灯片 3</h1>
     </ion-slide>
   </ion-slides>
 </ion-content>
@@ -607,8 +606,8 @@ ion-slides {
 ```javascript
 var slides = document.querySelector('ion-slides');
 
-// Optional parameters to pass to the swiper instance.
-// See https://swiperjs.com/swiper-api for valid options.
+// 传递给 swiper 实例的可选参数。
+// 查看 https://swiperjs.com/swiper-api 获取有效选项。
 slides.options = {
   initialSlide: 1,
   speed: 400,
@@ -616,7 +615,7 @@ slides.options = {
 ```
 
 ```css
-/* Without setting height the slides will take up the height of the slide's content */
+/* 不设置高度，幻灯片将占据幻灯片内容的高度 */
 ion-slides {
   height: 100%;
 }
@@ -630,8 +629,8 @@ ion-slides {
 import React from 'react';
 import { IonSlides, IonSlide, IonContent } from '@ionic/react';
 
-// Optional parameters to pass to the swiper instance.
-// See https://swiperjs.com/swiper-api for valid options.
+// 传递给 swiper 实例的可选参数。
+// 查看 https://swiperjs.com/swiper-api 获取有效选项。
 const slideOpts = {
   initialSlide: 1,
   speed: 400,
@@ -641,13 +640,13 @@ export const SlidesExample: React.FC = () => (
   <IonContent>
     <IonSlides pager={true} options={slideOpts}>
       <IonSlide>
-        <h1>Slide 1</h1>
+        <h1>幻灯片 1</h1>
       </IonSlide>
       <IonSlide>
-        <h1>Slide 2</h1>
+        <h1>幻灯片 2</h1>
       </IonSlide>
       <IonSlide>
-        <h1>Slide 3</h1>
+        <h1>幻灯片 3</h1>
       </IonSlide>
     </IonSlides>
   </IonContent>
@@ -655,7 +654,7 @@ export const SlidesExample: React.FC = () => (
 ```
 
 ```css
-/* Without setting height the slides will take up the height of the slide's content */
+/* 不设置高度，幻灯片将占据幻灯片内容的高度 */
 ion-slides {
   height: 100%;
 }
@@ -673,8 +672,8 @@ import { Component, h } from '@stencil/core';
   styleUrl: 'slides-example.css',
 })
 export class SlidesExample {
-  // Optional parameters to pass to the swiper instance.
-  // See https://swiperjs.com/swiper-api for valid options.
+  // 传递给 swiper 实例的可选参数。
+  // 查看 https://swiperjs.com/swiper-api 获取有效选项。
   private slideOpts = {
     initialSlide: 1,
     speed: 400,
@@ -685,15 +684,15 @@ export class SlidesExample {
       <ion-content>
         <ion-slides pager={true} options={this.slideOpts}>
           <ion-slide>
-            <h1>Slide 1</h1>
+            <h1>幻灯片 1</h1>
           </ion-slide>
 
           <ion-slide>
-            <h1>Slide 2</h1>
+            <h1>幻灯片 2</h1>
           </ion-slide>
 
           <ion-slide>
-            <h1>Slide 3</h1>
+            <h1>幻灯片 3</h1>
           </ion-slide>
         </ion-slides>
       </ion-content>,
@@ -703,7 +702,7 @@ export class SlidesExample {
 ```
 
 ```css
-/* Without setting height the slides will take up the height of the slide's content */
+/* 不设置高度，幻灯片将占据幻灯片内容的高度 */
 ion-slides {
   height: 100%;
 }
@@ -717,13 +716,13 @@ ion-slides {
 <template>
   <ion-slides pager="true" :options="slideOpts">
     <ion-slide>
-      <h1>Slide 1</h1>
+      <h1>幻灯片 1</h1>
     </ion-slide>
     <ion-slide>
-      <h1>Slide 2</h1>
+      <h1>幻灯片 2</h1>
     </ion-slide>
     <ion-slide>
-      <h1>Slide 3</h1>
+      <h1>幻灯片 3</h1>
     </ion-slide>
   </ion-slides>
 </template>
@@ -735,7 +734,7 @@ ion-slides {
   export default defineComponent({
     components: { IonSlides, IonSlide },
     setup() {
-      // Optional parameters to pass to the swiper instance. See https://swiperjs.com/swiper-api for valid options.
+      // 传递给 swiper 实例的可选参数。查看 https://swiperjs.com/swiper-api 获取有效选项。
       const slideOpts = {
         initialSlide: 1,
         speed: 400,
@@ -750,26 +749,26 @@ ion-slides {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

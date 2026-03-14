@@ -14,9 +14,9 @@ import { arrowForwardCircle } from 'ionicons/icons';
 export class ExampleComponent {
   constructor() {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 您想要在应用程序中使用的图标
+     * 可以在 app.component.ts 中注册，
+     * 然后通过名称在应用程序的任何地方引用。
      */
     addIcons({ arrowForwardCircle });
   }

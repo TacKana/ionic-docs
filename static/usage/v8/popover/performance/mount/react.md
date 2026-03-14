@@ -4,9 +4,9 @@ import { IonButton, IonContent, IonPopover } from '@ionic/react';
 function Example() {
   return (
     <IonContent>
-      <IonButton id="open-popover">Open Popover</IonButton>
+      <IonButton id="open-popover">打开弹出层</IonButton>
       <IonPopover keepContentsMounted={true} trigger="open-popover">
-        <IonContent class="ion-padding">This content was mounted as soon as the popover was created.</IonContent>
+        <IonContent class="ion-padding">此内容在弹出层创建时便已加载完成。</IonContent>
       </IonPopover>
     </IonContent>
   );

@@ -1,76 +1,76 @@
 ---
-title: CSS Variables
+title: CSS 变量
 ---
 
 <head>
-  <title>CSS Variables | CSS Custom Properties for Variables & Components</title>
+  <title>CSS 变量 | 用于变量与组件的 CSS 自定义属性</title>
   <meta
     name="description"
-    content="Ionic components are built with CSS Variables for easy custom app properties. They allow a value to be stored in one place, then referenced in multiple places."
+    content="Ionic 组件使用 CSS 变量构建，便于自定义应用属性。它们允许将值存储在一个位置，然后在多个位置引用。"
   />
 </head>
 
-Ionic components are built with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS Variables</a> for easy customization of an application. CSS variables allow a value to be stored in one place, then referenced in multiple other places. They also make it possible to change CSS dynamically at runtime (which previously required a CSS preprocessor). CSS variables make it easier than ever to override Ionic components to match a brand or theme.
+Ionic 组件基于 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSS 变量</a>构建，便于轻松自定义应用。CSS 变量允许将值存储在一个位置，然后在多个其他位置引用。它们还使得在运行时动态更改 CSS 成为可能（这在以前需要 CSS 预处理器）。CSS 变量使得覆盖 Ionic 组件以匹配品牌或主题变得前所未有的简单。
 
-## Setting Values
+## 设置值
 
-### Global Variables
+### 全局变量
 
-CSS variables can be set globally in an application in the `:root` selector. They can also be applied only for a specific mode. See [Ionic Variables](#ionic-variables) for more information on the global variables Ionic provides.
+可以在应用程序的 `:root` 选择器中全局设置 CSS 变量。它们也可以仅针对特定模式（mode）应用。有关 Ionic 提供的全局变量的更多信息，请参阅 [Ionic 变量](#ionic-变量)。
 
-When using the Ionic CLI to start an Angular, React or Vue project, the `src/theme/variables.scss` file is created where you can override the default Ionic Variables.
+当使用 Ionic CLI 启动 Angular、React 或 Vue 项目时，会创建 `src/theme/variables.scss` 文件，您可以在其中覆盖默认的 Ionic 变量。
 
 ```css
-/* Set variables for all modes */
+/* 为所有模式设置变量 */
 :root {
-  /* Set the background of the entire app */
+  /* 设置整个应用的背景 */
   --ion-background-color: #ff3700;
 
-  /* Set the font family of the entire app */
+  /* 设置整个应用的字体族 */
   --ion-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto', sans-serif;
 }
 
-/* Set text color of the entire app for iOS only */
+/* 仅针对 iOS 设置整个应用的文本颜色 */
 :root.ios {
   --ion-text-color: #000;
 }
 
-/* Set text color of the entire app for Material Design only */
+/* 仅针对 Material Design 设置整个应用的文本颜色 */
 :root.md {
   --ion-text-color: #222;
 }
 ```
 
-### Component Variables
+### 组件变量
 
-To set a CSS variable for a specific component, add the variable inside of its selector. See [Ionic Variables](#ionic-variables) for more information on the component-level variables Ionic provides.
+要为特定组件设置 CSS 变量，请在其选择器内部添加该变量。有关 Ionic 提供的组件级变量的更多信息，请参阅 [Ionic 变量](#ionic-变量)。
 
 ```css
-/* Set the color on all ion-button elements */
+/* 在所有 ion-button 元素上设置颜色 */
 ion-button {
   --color: #222;
 }
 
-/* Set the background on an ion-button with the .fancy-button class */
+/* 在带有 .fancy-button 类的 ion-button 上设置背景 */
 .fancy-button {
   --background: #00ff00;
 }
 ```
 
-### Variables set via JavaScript
+### 通过 JavaScript 设置变量
 
-CSS variables can also be changed via JavaScript using [setProperty()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty):
+CSS 变量也可以使用 [setProperty()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty) 通过 JavaScript 更改：
 
 ```js
 const el = document.querySelector('.fancy-button');
 el.style.setProperty('--background', '#36454f');
 ```
 
-## Getting Values
+## 获取值
 
-### Using CSS
+### 使用 CSS
 
-The [var() CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/var) can be used to get the value of a CSS variable, along with any number of fallback values, if desired. In the below example, the `--background` property will be set to the value of the `--charcoal` variable, if defined, and if not it will use `#36454f`.
+可以使用 [var() CSS 函数](https://developer.mozilla.org/en-US/docs/Web/CSS/var) 来获取 CSS 变量的值，如果需要，还可以获取任意数量的回退值。在下面的示例中，如果定义了 `--charcoal` 变量，则 `--background` 属性将设置为 `--charcoal` 的值，否则将使用 `#36454f`。
 
 ```css
 .fancy-button {
@@ -78,21 +78,21 @@ The [var() CSS function](https://developer.mozilla.org/en-US/docs/Web/CSS/var) c
 }
 ```
 
-### Using JavaScript
+### 使用 JavaScript
 
-The value of a CSS variable can be read in JavaScript using [getPropertyValue()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue):
+可以使用 [getPropertyValue()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue) 在 JavaScript 中读取 CSS 变量的值：
 
 ```js
 const el = document.querySelector('.fancy-button');
 const color = el.style.getPropertyValue('--background');
 ```
 
-## Ionic Variables
+## Ionic 变量
 
-### Component Variables
+### 组件变量
 
-Ionic provides variables that exist at the component level, such as `--background` and `--color`. For a list of the custom properties a component accepts, view the `CSS Custom Properties` section of its [API reference](../api.md). For example, see the [Button CSS Custom Properties](../api/button.md#css-custom-properties).
+Ionic 提供了存在于组件级别的变量，例如 `--background` 和 `--color`。要查看组件接受的 CSS 自定义属性列表，请访问其 [API 参考文档](../api.md) 中的 `CSS Custom Properties` 部分。例如，请参阅 [Button CSS 自定义属性](../api/button.md#css-custom-properties)。
 
-### Global Variables
+### 全局变量
 
-There are several global variables that Ionic provides in order to make theming an entire application easier. For more information, see [Colors](colors.md), [Themes](themes.md) and [Advanced Theming](advanced.md).
+Ionic 提供了几个全局变量，以便更轻松地为整个应用程序设置主题。更多信息，请参阅 [颜色](colors.md)、[主题](themes.md) 和 [高级主题](advanced.md)。

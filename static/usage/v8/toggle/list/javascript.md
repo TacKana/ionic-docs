@@ -1,13 +1,13 @@
 ```html
 <ion-list>
   <ion-item>
-    <ion-toggle>Receive Push Notifications</ion-toggle>
+    <ion-toggle>接收推送通知</ion-toggle>
   </ion-item>
   <ion-item>
-    <ion-toggle>Receive Emails</ion-toggle>
+    <ion-toggle>接收电子邮件</ion-toggle>
   </ion-item>
   <ion-item>
-    <ion-toggle>Receive Text Messages</ion-toggle>
+    <ion-toggle>接收短信</ion-toggle>
   </ion-item>
 </ion-list>
 ```

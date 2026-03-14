@@ -9,7 +9,7 @@ function Example() {
         <IonThumbnail slot="start">
           <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
         </IonThumbnail>
-        <IonLabel>Item Thumbnail</IonLabel>
+        <IonLabel>项目缩略图</IonLabel>
       </IonItem>
     </>
   );

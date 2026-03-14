@@ -1,6 +1,6 @@
 ```html
 <template>
-  <b>Column 2 has <code>offset</code> set to <code>"3"</code></b>
+  <b>第二列的 <code>offset</code> 设置为 <code>"3"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col>1</ion-col>
@@ -9,7 +9,7 @@
     </ion-row>
   </ion-grid>
 
-  <b>Column 5 has <code>offset</code> set to <code>"2"</code></b>
+  <b>第五列的 <code>offset</code> 设置为 <code>"2"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col>1</ion-col>
@@ -20,7 +20,7 @@
     </ion-row>
   </ion-grid>
 
-  <b>Column 1 has <code>offset</code> set to <code>"4"</code></b>
+  <b>第一列的 <code>offset</code> 设置为 <code>"4"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col size="2" offset="4">1</ion-col>

@@ -51,58 +51,57 @@ export class ExampleComponent implements OnInit {
 
   constructor() {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 应用中所有需要使用的图标
+     * 都可以在 app.component.ts 中注册，
+     * 然后在应用的任何位置通过名称引用。
      */
     addIcons({ personCircle, personCircleOutline, sunny, sunnyOutline });
   }
 
   ngOnInit() {
-    // Use matchMedia to check the user preference
+    // 使用 matchMedia 检查用户偏好
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
     const prefersHighContrast = window.matchMedia('(prefers-contrast: more)');
 
-    // Initialize the dark and high contrast palettes based on the initial
-    // value of the media queries
+    // 根据媒体查询的初始值初始化深色和高对比度调色板
     this.initializeDarkPalette(prefersDark.matches);
     this.initializeHighContrastPalette(prefersHighContrast.matches);
 
-    // Listen for changes to the media queries
+    // 监听媒体查询的变化
     prefersDark.addEventListener('change', (mediaQuery) => this.initializeDarkPalette(mediaQuery.matches));
     prefersHighContrast.addEventListener('change', (mediaQuery) =>
       this.initializeHighContrastPalette(mediaQuery.matches)
     );
   }
 
-  // Check/uncheck the toggle and update the palette based on isDark
+  // 根据 isDark 值切换开关状态并更新调色板
   initializeDarkPalette(isDark: boolean) {
     this.darkPaletteToggle = isDark;
     this.toggleDarkPalette(isDark);
   }
 
-  // Check/uncheck the toggle and update the palette based on isHighContrast
+  // 根据 isHighContrast 值切换开关状态并更新调色板
   initializeHighContrastPalette(isHighContrast: boolean) {
     this.highContrastPaletteToggle = isHighContrast;
     this.toggleHighContrastPalette(isHighContrast);
   }
 
-  // Listen for the toggle check/uncheck to toggle the dark palette
+  // 监听开关的勾选/取消勾选以切换深色调色板
   darkPaletteToggleChange(event: CustomEvent) {
     this.toggleDarkPalette(event.detail.checked);
   }
 
-  // Listen for the toggle check/uncheck to toggle the high contrast palette
+  // 监听开关的勾选/取消勾选以切换高对比度调色板
   highContrastPaletteToggleChange(event: CustomEvent) {
     this.toggleHighContrastPalette(event.detail.checked);
   }
 
-  // Add or remove the "ion-palette-dark" class on the html element
+  // 在 html 元素上添加或移除 "ion-palette-dark" 类
   toggleDarkPalette(shouldAdd: boolean) {
     document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
   }
 
-  // Add or remove the "ion-palette-high-contrast" class on the html element
+  // 在 html 元素上添加或移除 "ion-palette-high-contrast" 类
   toggleHighContrastPalette(shouldAdd: boolean) {
     document.documentElement.classList.toggle('ion-palette-high-contrast', shouldAdd);
   }

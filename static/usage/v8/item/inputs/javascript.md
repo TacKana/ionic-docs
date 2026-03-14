@@ -1,23 +1,23 @@
 ```html
 <ion-item>
-  <ion-input label="Default Input" placeholder="Enter text"></ion-input>
+  <ion-input label="默认输入框" placeholder="输入文本"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-input label="Fixed Input" label-placement="fixed" placeholder="Enter text"></ion-input>
+  <ion-input label="固定标签输入框" label-placement="fixed" placeholder="输入文本"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-input label="Stacked Input" label-placement="stacked" placeholder="Enter text"></ion-input>
+  <ion-input label="堆叠标签输入框" label-placement="stacked" placeholder="输入文本"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-input label="Floating Input" label-placement="floating" placeholder="Enter text"></ion-input>
+  <ion-input label="浮动标签输入框" label-placement="floating" placeholder="输入文本"></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-select label="Select" placeholder="Make a Selection">
-    <ion-select-option value="">No Game Console</ion-select-option>
+  <ion-select label="选择框" placeholder="请选择">
+    <ion-select-option value="">无游戏主机</ion-select-option>
     <ion-select-option value="nes">NES</ion-select-option>
     <ion-select-option value="n64">Nintendo64</ion-select-option>
     <ion-select-option value="ps">PlayStation</ion-select-option>
@@ -29,19 +29,19 @@
 
 <ion-item>
   <ion-toggle>
-    <div>Toggle</div>
+    <div>开关</div>
   </ion-toggle>
 </ion-item>
 
 <ion-item>
   <ion-checkbox>
-    <div>Checkbox</div>
+    <div>复选框</div>
   </ion-checkbox>
 </ion-item>
 
 <ion-item>
   <ion-range label-placement="start">
-    <div slot="label">Range</div>
+    <div slot="label">滑动条</div>
   </ion-range>
 </ion-item>
 ```

@@ -1,10 +1,10 @@
 ```html
 <template>
   <ion-searchbar></ion-searchbar>
-  <ion-searchbar placeholder="Custom Placeholder"></ion-searchbar>
-  <ion-searchbar disabled="true" placeholder="Disabled"></ion-searchbar>
-  <ion-searchbar value="Value"></ion-searchbar>
-  <ion-searchbar animated="true" placeholder="Animated"></ion-searchbar>
+  <ion-searchbar placeholder="自定义占位文字"></ion-searchbar>
+  <ion-searchbar disabled="true" placeholder="禁用状态"></ion-searchbar>
+  <ion-searchbar value="预设值"></ion-searchbar>
+  <ion-searchbar animated="true" placeholder="带动效"></ion-searchbar>
 </template>
 
 <script lang="ts">

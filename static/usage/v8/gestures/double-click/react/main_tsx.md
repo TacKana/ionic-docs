@@ -49,7 +49,7 @@ function Example() {
 
   return (
     <IonCard ref={card}>
-      <IonCardContent>Double click me to move the card.</IonCardContent>
+      <IonCardContent>双击卡片使其移动。</IonCardContent>
     </IonCard>
   );
 }

@@ -6,10 +6,10 @@ function Example() {
   return (
     <>
       <IonSearchbar></IonSearchbar>
-      <IonSearchbar placeholder="Custom Placeholder"></IonSearchbar>
-      <IonSearchbar disabled={true} placeholder="Disabled"></IonSearchbar>
-      <IonSearchbar value="Value"></IonSearchbar>
-      <IonSearchbar animated={true} placeholder="Animated"></IonSearchbar>
+      <IonSearchbar placeholder="自定义占位符"></IonSearchbar>
+      <IonSearchbar disabled={true} placeholder="已禁用"></IonSearchbar>
+      <IonSearchbar value="已输入的值"></IonSearchbar>
+      <IonSearchbar animated={true} placeholder="带动画效果"></IonSearchbar>
     </>
   );
 }

@@ -8,7 +8,7 @@
 </script>
 
 <style scoped>
-  /* Scoped components require higher specificity to customize */
+  /* 作用域内的组件需要更高的特异性来定制样式 */
   ion-searchbar.custom {
     --background: #19422d;
     --color: #fff;

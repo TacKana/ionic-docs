@@ -6,7 +6,7 @@ function Example() {
   return (
     <IonItem>
       <IonCheckbox slot="start" indeterminate={true}></IonCheckbox>
-      <IonLabel>Indeterminate checkbox</IonLabel>
+      <IonLabel>不确定状态复选框</IonLabel>
     </IonItem>
   );
 }

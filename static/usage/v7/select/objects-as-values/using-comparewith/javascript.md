@@ -1,7 +1,7 @@
 ```html
 <ion-list>
   <ion-item>
-    <ion-select aria-label="Food" placeholder="Select food"></ion-select>
+    <ion-select aria-label="食品" placeholder="选择食品"></ion-select>
   </ion-item>
 </ion-list>
 
@@ -39,7 +39,7 @@
   });
 
   selectEl.addEventListener('ionChange', () => {
-    console.log('Current value:', JSON.stringify(selectEl.value));
+    console.log('当前值:', JSON.stringify(selectEl.value));
   });
 </script>
 ```

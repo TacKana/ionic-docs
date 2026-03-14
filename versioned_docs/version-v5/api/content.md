@@ -16,17 +16,15 @@ import Slots from '@ionic-internal/component-api/v5/content/slots.md';
 
 # ion-content
 
-The content component provides an easy to use content area with some useful methods
-to control the scrollable area. There should only be one content in a single
-view.
+内容组件提供了一个易于使用的内容区域，并附带一些控制可滚动区域的有用方法。在单个视图中，通常只应放置一个内容组件。
 
-Content, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](../layout/css-utilities.md) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties).
+与许多其他 Ionic 组件一样，可以通过 [CSS 工具类](../layout/css-utilities.md) 提供的全局样式来自定义内容组件的内边距、外边距等，也可以使用 CSS 和可用的 [CSS 自定义属性](#css-custom-properties) 进行单独样式设置。
 
-## Fixed Content
+## 固定内容
 
-In order to place elements outside of the scrollable area, `slot="fixed"` can be added to the element. This will absolutely position the element placing it in the top left. In order to place the element in a different position, style it using [top, right, bottom, and left](https://developer.mozilla.org/en-US/docs/Web/CSS/position).
+若要将元素置于可滚动区域之外，可以在元素上添加 `slot="fixed"`。这会将元素绝对定位在左上角。要将元素放置在其他位置，可以使用 [top、right、bottom 和 left](https://developer.mozilla.org/en-US/docs/Web/CSS/position) 样式进行定位。
 
-## Usage
+## 使用方式
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -39,10 +37,10 @@ In order to place elements outside of the scrollable area, `slot="fixed"` can be
   (ionScroll)="logScrolling($event)"
   (ionScrollEnd)="logScrollEnd()"
 >
-  <h1>Main Content</h1>
+  <h1>主要内容</h1>
 
   <div slot="fixed">
-    <h1>Fixed Content</h1>
+    <h1>固定内容</h1>
   </div>
 </ion-content>
 ```
@@ -53,10 +51,10 @@ In order to place elements outside of the scrollable area, `slot="fixed"` can be
 
 ```html
 <ion-content>
-  <h1>Main Content</h1>
+  <h1>主要内容</h1>
 
   <div slot="fixed">
-    <h1>Fixed Content</h1>
+    <h1>固定内容</h1>
   </div>
 </ion-content>
 ```
@@ -64,9 +62,9 @@ In order to place elements outside of the scrollable area, `slot="fixed"` can be
 ```javascript
 var content = document.querySelector('ion-content');
 content.scrollEvents = true;
-content.addEventListener('ionScrollStart', () => console.log('scroll start'));
-content.addEventListener('ionScroll', (ev) => console.log('scroll', ev.detail));
-content.addEventListener('ionScrollEnd', () => console.log('scroll end'));
+content.addEventListener('ionScrollStart', () => console.log('滚动开始'));
+content.addEventListener('ionScroll', (ev) => console.log('滚动中', ev.detail));
+content.addEventListener('ionScrollEnd', () => console.log('滚动结束'));
 ```
 
 </TabItem>
@@ -79,10 +77,10 @@ import { IonContent } from '@ionic/react';
 
 const ContentExample: React.FC = () => (
   <IonContent scrollEvents={true} onIonScrollStart={() => {}} onIonScroll={() => {}} onIonScrollEnd={() => {}}>
-    <h1>Main Content</h1>
+    <h1>主要内容</h1>
 
     <div slot="fixed">
-      <h1>Fixed Content</h1>
+      <h1>固定内容</h1>
     </div>
   </IonContent>
 );
@@ -101,15 +99,15 @@ import { Component, h } from '@stencil/core';
 })
 export class ContentExample {
   logScrollStart() {
-    console.log('Scroll start');
+    console.log('滚动开始');
   }
 
   logScrolling(ev) {
-    console.log('Scrolling', ev);
+    console.log('滚动中', ev);
   }
 
   logScrollEnd() {
-    console.log('Scroll end');
+    console.log('滚动结束');
   }
 
   render() {
@@ -120,10 +118,10 @@ export class ContentExample {
         onIonScroll={(ev) => this.logScrolling(ev)}
         onIonScrollEnd={() => this.logScrollEnd()}
       >
-        <h1>Main Content</h1>
+        <h1>主要内容</h1>
 
         <div slot="fixed">
-          <h1>Fixed Content</h1>
+          <h1>固定内容</h1>
         </div>
       </ion-content>,
     ];
@@ -143,10 +141,10 @@ export class ContentExample {
     @ionScroll="logScrolling($event)"
     @ionScrollEnd="logScrollEnd()"
   >
-    <h1>Main Content</h1>
+    <h1>主要内容</h1>
 
     <div slot="fixed">
-      <h1>Fixed Content</h1>
+      <h1>固定内容</h1>
     </div>
   </ion-content>
 </template>
@@ -165,26 +163,26 @@ export class ContentExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

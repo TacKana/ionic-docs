@@ -10,15 +10,15 @@ import { IonicModule, ScrollDetail } from '@ionic/angular';
 })
 export class ExampleComponent {
   handleScrollStart() {
-    console.log('scroll start');
+    console.log('滚动开始');
   }
 
   handleScroll(ev: CustomEvent<ScrollDetail>) {
-    console.log('scroll', ev.detail);
+    console.log('滚动', ev.detail);
   }
 
   handleScrollEnd() {
-    console.log('scroll end');
+    console.log('滚动结束');
   }
 }
 ```

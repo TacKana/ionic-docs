@@ -5,7 +5,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-input label="Input with placeholder" placeholder="Enter company name"></ion-input>
+    <ion-input label="Input with placeholder" placeholder="请输入公司名称"></ion-input>
   </ion-item>
 
   <ion-item>

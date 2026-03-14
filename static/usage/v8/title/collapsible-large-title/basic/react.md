@@ -7,17 +7,17 @@ function Example() {
     <>
       <IonHeader translucent={true}>
         <IonToolbar>
-          <IonTitle>Title</IonTitle>
+          <IonTitle>标题</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen={true}>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Title</IonTitle>
+            <IonTitle size="large">标题</IonTitle>
           </IonToolbar>
         </IonHeader>
 
-        <div className="ion-padding">Scroll the list to see the title collapse.</div>
+        <div className="ion-padding">滚动列表以查看标题折叠效果。</div>
 
         <IonList>
           <IonItem>Item 1</IonItem>

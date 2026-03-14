@@ -1,3 +1,3 @@
 ```html
-<ion-note>Default Note</ion-note>
+<ion-note>默认备注</ion-note>
 ```

@@ -7,26 +7,26 @@ function Example() {
 
   return (
     <>
-      <IonButton onClick={() => setIsOpen(true)}>Open</IonButton>
+      <IonButton onClick={() => setIsOpen(true)}>打开</IonButton>
       <IonActionSheet
         isOpen={isOpen}
-        header="Actions"
+        header="操作"
         buttons={[
           {
-            text: 'Delete',
+            text: '删除',
             role: 'destructive',
             data: {
               action: 'delete',
             },
           },
           {
-            text: 'Share',
+            text: '分享',
             data: {
               action: 'share',
             },
           },
           {
-            text: 'Cancel',
+            text: '取消',
             role: 'cancel',
             data: {
               action: 'cancel',

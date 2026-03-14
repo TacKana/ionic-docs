@@ -13,8 +13,8 @@
     setInterval(() => {
       progress.value += 0.01;
 
-      // Reset the progress bar when it reaches 100%
-      // to continuously show the demo
+      // 当进度条达到 100% 时重置
+      // 以便持续展示演示效果
       if (progress.value > 1) {
         setTimeout(() => {
           progress.value = 0;

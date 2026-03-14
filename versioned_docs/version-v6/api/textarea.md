@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/textarea/custom-props.
 import Slots from '@ionic-internal/component-api/v6/textarea/slots.md';
 
 <head>
-  <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>
+  <title>Ionic 多行输入框组件与 CSS 属性</title>
   <meta
     name="description"
-    content="Textarea is for multi-line input. The component accepts native textarea attributes in addition to Ionic properties. Read to learn about use and CSS elements."
+    content="Textarea 用于多行文本输入。该组件除 Ionic 属性外，还接受原生 textarea 属性。了解其使用方法和 CSS 元素。"
   />
 </head>
 
@@ -21,41 +21,41 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-The textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.
+textarea 组件用于多行文本输入。组件内部会渲染一个原生的 textarea 元素。通过控制原生 textarea，textarea 组件的用户体验和交互性得到了提升。
 
-Unlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.
+与原生 textarea 元素不同，Ionic 的 textarea 不支持从内部内容加载其值。textarea 的值应通过 `value` 属性设置。
 
-The textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.
+除了 Ionic 属性外，textarea 组件还接受 [原生 textarea 属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)。
 
-## Basic Usage
+## 基本用法
 
 import BasicPlayground from '@site/static/usage/v6/textarea/basic/index.md';
 
 <BasicPlayground />
 
-## Autogrow
+## 自动增长
 
-When the `autoGrow` property is set to `true`, the textarea will grow and shrink based on its contents.
+当 `autoGrow` 属性设置为 `true` 时，textarea 将根据其内容自动增长和收缩。
 
 import AutogrowPlayground from '@site/static/usage/v6/textarea/autogrow/index.md';
 
 <AutogrowPlayground />
 
-## Clear on Edit
+## 编辑时清除
 
-Setting the `clearOnEdit` property to `true` will clear the textarea after it has been blurred and then typed in again.
+将 `clearOnEdit` 属性设置为 `true` 后，textarea 在失去焦点后再次输入时会被清空。
 
 import ClearOnEditPlayground from '@site/static/usage/v6/textarea/clear-on-edit/index.md';
 
 <ClearOnEditPlayground />
 
-## Theming
+## 主题定制
 
 import ThemingPlayground from '@site/static/usage/v6/textarea/theming/index.md';
 
 <ThemingPlayground />
 
-## Interfaces
+## 接口
 
 ### TextareaChangeEventDetail
 
@@ -67,7 +67,7 @@ interface TextareaChangeEventDetail {
 
 ### TextareaCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然并非必需，但可以使用此接口替代 `CustomEvent` 接口，以便在此组件发出的 Ionic 事件中获得更强的类型支持。
 
 ```typescript
 interface TextareaCustomEvent extends CustomEvent {
@@ -76,15 +76,15 @@ interface TextareaCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -92,10 +92,10 @@ interface TextareaCustomEvent extends CustomEvent {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

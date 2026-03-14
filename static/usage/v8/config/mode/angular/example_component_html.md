@@ -1,5 +1,5 @@
 ```html
 <ion-button [color]="mode === 'ios' ? 'secondary' : 'tertiary'" [fill]="mode === 'ios' ? 'outline' : 'solid'">
-  Current mode: {{ mode }}
+  当前模式：{{ mode }}
 </ion-button>
 ```

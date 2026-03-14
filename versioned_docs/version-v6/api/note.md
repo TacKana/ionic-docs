@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/note/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v6/note/slots.md';
 
 <head>
-  <title>ion-note: Note Text Elements for iOS and Android Ionic Apps</title>
+  <title>ion-note：适用于 iOS 和 Android  Ionic 应用的注释文本元素</title>
   <meta
     name="description"
-    content="ion-notes are text elements generally used as subtitles that provide more information. Learn how notes can be used and styled on iOS and Android Ionic apps."
+    content="ion-note 是通常用作副标题的文本元素，用于提供更多信息。了解如何在 iOS 和 Android Ionic 应用中使用和设置注释样式。"
   />
 </head>
 
@@ -21,43 +21,43 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Notes are text elements generally used as subtitles that provide more information. They are styled to appear grey by default. Notes can be used in an item as metadata text.
+注释（Notes）通常是作为副标题的文本元素，用于提供更多信息。默认情况下，它们的样式显示为灰色。注释可以在项目（item）中作为元数据文本使用。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v6/note/basic/index.md';
 
 <Basic />
 
-## Item Notes
+## 项目注释
 
 import Item from '@site/static/usage/v6/note/item/index.md';
 
 <Item />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v6/note/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v6/note/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -65,10 +65,10 @@ import CSSProps from '@site/static/usage/v6/note/theming/css-properties/index.md
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

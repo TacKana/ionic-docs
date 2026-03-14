@@ -6,13 +6,13 @@
     --button-background-selected: #e97223;
     --button-color: #000000;
     --color: #fff;
-    /* role: "destructive" button iOS styling override */
+    /* role: "destructive" 按钮的 iOS 样式覆盖 */
     --ion-color-danger: #000000;
   }
 </style>
 
 <template>
-  <ion-button @click="presentActionSheet">Open</ion-button>
+  <ion-button @click="presentActionSheet">打开</ion-button>
 </template>
 
 <script lang="ts">
@@ -23,25 +23,25 @@
     setup() {
       const presentActionSheet = async () => {
         const actionSheet = await actionSheetController.create({
-          header: 'Example header',
-          subHeader: 'Example subheader',
+          header: '示例标题',
+          subHeader: '示例副标题',
           cssClass: 'my-custom-class',
           buttons: [
             {
-              text: 'Delete',
+              text: '删除',
               role: 'destructive',
               data: {
                 action: 'delete',
               },
             },
             {
-              text: 'Share',
+              text: '分享',
               data: {
                 action: 'share',
               },
             },
             {
-              text: 'Cancel',
+              text: '取消',
               role: 'cancel',
               data: {
                 action: 'cancel',

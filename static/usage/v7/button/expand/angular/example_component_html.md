@@ -1,3 +1,3 @@
 ```html
-<ion-button expand="block">Block</ion-button> <ion-button expand="full">Full</ion-button>
+<ion-button expand="block">块状</ion-button> <ion-button expand="full">全宽</ion-button>
 ```

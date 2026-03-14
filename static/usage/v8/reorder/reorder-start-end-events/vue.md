@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-list>
-    <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+    <!-- 拖拽排序手势默认是禁用的，启用后可以通过拖放来重新排序项目 -->
     <ion-reorder-group :disabled="false" @ionReorderStart="handleReorderStart" @ionReorderEnd="handleReorderEnd">
       <ion-item v-for="item in items" :key="item.label">
         <ion-label>{{ item.label }}</ion-label>
@@ -36,23 +36,23 @@
   }
 
   function handleReorderStart() {
-    console.log('Reorder started');
+    console.log('开始重新排序');
 
-    // Hide the icons when the reorder starts
+    // 排序开始时隐藏图标
     iconMap.value.forEach((icon) => {
       icon.$el.style.opacity = '0';
     });
   }
 
   function handleReorderEnd(event: ReorderEndCustomEvent) {
-    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
+    console.log('从索引', event.detail.from, '拖拽到', event.detail.to);
 
-    // Show the icons again
+    // 重新显示图标
     iconMap.value.forEach((icon) => {
       icon.$el.style.opacity = '1';
     });
 
-    // Finish the reorder and update the items data
+    // 完成排序并更新项目数据
     items.value = event.detail.complete(items.value);
   }
 </script>

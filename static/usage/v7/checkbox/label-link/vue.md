@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-checkbox>I agree to the <a href="#" @click="$event.stopPropagation()">terms and conditions</a></ion-checkbox>
+  <ion-checkbox>我同意 <a href="#" @click="$event.stopPropagation()">条款与条件</a></ion-checkbox>
 </template>
 
 <script setup lang="ts">

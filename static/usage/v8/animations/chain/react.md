@@ -68,20 +68,20 @@ function Example() {
   return (
     <>
       <IonCard ref={cardAEl}>
-        <IonCardContent>Card 1</IonCardContent>
+        <IonCardContent>卡片 1</IonCardContent>
       </IonCard>
 
       <IonCard ref={cardBEl}>
-        <IonCardContent>Card 2</IonCardContent>
+        <IonCardContent>卡片 2</IonCardContent>
       </IonCard>
 
       <IonCard ref={cardCEl}>
-        <IonCardContent>Card 3</IonCardContent>
+        <IonCardContent>卡片 3</IonCardContent>
       </IonCard>
 
-      <IonButton onClick={play}>Play</IonButton>
-      <IonButton onClick={pause}>Pause</IonButton>
-      <IonButton onClick={stop}>Stop</IonButton>
+      <IonButton onClick={play}>播放</IonButton>
+      <IonButton onClick={pause}>暂停</IonButton>
+      <IonButton onClick={stop}>停止</IonButton>
     </>
   );
 }

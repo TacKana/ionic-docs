@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/range/custom-props.mdx
 import Slots from '@ionic-internal/component-api/v7/range/slots.md';
 
 <head>
-  <title>ion-range: Range Slider Knob Controls with Labels</title>
+  <title>ion-range：带标签的范围滑块旋钮控件</title>
   <meta
     name="description"
-    content="ion-range lets you select from a range of values by moving the slider. It accepts dual knobs but one controls the value and labels can be placed on either side."
+    content="ion-range 允许通过移动滑块来从一系列值中进行选择。它支持双旋钮，但一个旋钮控制值，标签可以放置在任意一侧。"
   />
 </head>
 
@@ -21,103 +21,103 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-The Range slider lets users select from a range of values by moving the slider knob. By default one knob controls the value of the range. This behavior can be customized using [dual knobs](#dual-knobs).
+范围滑块允许用户通过移动滑块旋钮从一系列值中进行选择。默认情况下，一个旋钮控制范围的值。此行为可以使用[双旋钮](#双旋钮)进行自定义。
 
-By default the Range slider has a minimum value of `0` and a maximum value of `100`. This can be configured with the `min` and `max` properties.
+默认情况下，范围滑块的最小值为 `0`，最大值为 `100`。这可以通过 `min` 和 `max` 属性进行配置。
 
-## Labels
+## 标签
 
-Labels should be used to describe the range. They can be used visually, and they will also be read out by screen readers when the user is focused on the range. This makes it easy for the user to understand the intent of the range. Range has several ways to assign a label:
+标签应用于描述范围。它们可以用于视觉展示，并且当用户聚焦在范围滑块上时，屏幕阅读器也会朗读它们。这使得用户更容易理解范围的意图。范围滑块有几种分配标签的方式：
 
-- `label` property: used for plaintext labels
-- `label` slot: used for custom HTML labels
-- `aria-label`: used to provide a label for screen readers but adds no visible label
+- `label` 属性：用于纯文本标签
+- `label` 插槽：用于自定义 HTML 标签
+- `aria-label`：用于为屏幕阅读器提供标签，但不添加可见标签
 
-### Label Placement
+### 标签位置
 
-The below demo shows how to use the `labelPlacement` property to change the position of the label relative to the range. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
+下面的演示展示了如何使用 `labelPlacement` 属性来更改标签相对于范围滑块的位置。虽然这里使用了 `label` 属性，但 `labelPlacement` 也可以与 `label` 插槽一起使用。
 
 import LabelsPlayground from '@site/static/usage/v7/range/labels/index.md';
 
 <LabelsPlayground />
 
-### Label Slot
+### 标签插槽
 
-While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+虽然纯文本标签应通过 `label` 属性传递，但如果需要自定义 HTML，可以通过 `label` 插槽传递。
 
 import LabelSlotPlayground from '@site/static/usage/v7/range/label-slot/index.md';
 
 <LabelSlotPlayground />
 
-### No Visible Label
+### 无可见标签
 
-If no visible label is needed, developers should still supply an `aria-label` so the range is accessible to screen readers.
+如果不需要可见标签，开发者仍应提供 `aria-label`，以便范围滑块对屏幕阅读器可访问。
 
 import NoVisibleLabel from '@site/static/usage/v7/range/no-visible-label/index.md';
 
 <NoVisibleLabel />
 
-## Decorations
+## 装饰元素
 
-Decorative elements can be passed into the `start` or `end` slots of the range. This is useful for adding icons such as low volume or high volume icons. Since these elements are decorative, they should not be announced by assistive technology such as screen readers.
+装饰元素可以传递到范围滑块的 `start` 或 `end` 插槽中。这对于添加图标（如低音量或高音量图标）非常有用。由于这些元素是装饰性的，它们不应被屏幕阅读器等辅助技术朗读。
 
-If the directionality of the document is set to left to right, the contents slotted to the `start` position will display to the left of the range, where as contents slotted to the `end` position will display to the right of the range. In right to left (rtl) directionality, the contents slotted to the `start` position will display to the right of the range, where as contents slotted to the `end` position will display to the left of the range.
+如果文档的方向性设置为从左到右，则插入到 `start` 位置的内容将显示在范围滑块的左侧，而插入到 `end` 位置的内容将显示在范围滑块的右侧。在从右到左（rtl）的方向性中，插入到 `start` 位置的内容将显示在范围滑块的右侧，而插入到 `end` 位置的内容将显示在范围滑块的左侧。
 
 import DecorationsPlayground from '@site/static/usage/v7/range/slots/index.md';
 
 <DecorationsPlayground />
 
-## Dual Knobs
+## 双旋钮
 
-Dual knobs introduce two knob controls that users can use to select a value at a lower and upper bounds. When selected, the Range will emit an `ionChange` event with a [RangeValue](#rangevalue), containing the upper and lower values selected.
+双旋钮引入了两个旋钮控件，用户可以使用它们来选择下限和上限的值。选择后，范围滑块将发出一个 `ionChange` 事件，并附带一个 [RangeValue](#rangevalue)，其中包含所选的上限和下限值。
 
 import DualKnobs from '@site/static/usage/v7/range/dual-knobs/index.md';
 
 <DualKnobs />
 
-## Pins
+## 数值提示
 
-The `pin` attribute will display the value of the Range above the knob when dragged. This allows users to select a specific value within the Range.
+`pin` 属性将在拖动旋钮时在旋钮上方显示范围滑块的值。这允许用户在范围滑块中选择特定值。
 
-With the `pinFormatter` function, developers can customize the formatting of the range value to the user.
+通过 `pinFormatter` 函数，开发者可以自定义范围滑块值的显示格式。
 
 import Pins from '@site/static/usage/v7/range/pins/index.md';
 
 <Pins />
 
-## Snapping & Ticks
+## 吸附与刻度
 
-Ticks show indications for each available value on the Range. In order to use ticks, developers must set both `snaps` and the `ticks` property to `true`.
+刻度显示范围滑块上每个可用值的指示。为了使用刻度，开发者必须将 `snaps` 和 `ticks` 属性都设置为 `true`。
 
-With snapping enabled, the Range knob will snap to the nearest available value as the knob is dragged and released.
+启用吸附后，范围滑块旋钮将在拖动和释放时吸附到最近的可用值。
 
 import SnappingTicks from '@site/static/usage/v7/range/snapping-ticks/index.md';
 
 <SnappingTicks />
 
-## Event Handling
+## 事件处理
 
-### Using `ionChange`
+### 使用 `ionChange`
 
-The `ionChange` event emits as the Range knob value changes.
+`ionChange` 事件在范围滑块旋钮值更改时发出。
 
 import IonChangeEvent from '@site/static/usage/v7/range/ion-change-event/index.md';
 
 <IonChangeEvent />
 
-### Using `ionKnobMoveStart` and `ionKnobMoveEnd`
+### 使用 `ionKnobMoveStart` 和 `ionKnobMoveEnd`
 
-The `ionKnobMoveStart` event emits when the Range knob begins dragging, whether through mouse drag, touch gesture or keyboard interaction. Inversely, `ionKnobMoveEnd` emits when the Range knob is released. Both events emit with the `RangeValue` type and work in combination with the `dualKnobs` property.
+`ionKnobMoveStart` 事件在范围滑块旋钮开始拖动时发出，无论是通过鼠标拖动、触摸手势还是键盘交互。相反，`ionKnobMoveEnd` 事件在范围滑块旋钮释放时发出。两个事件都使用 `RangeValue` 类型发出，并与 `dualKnobs` 属性结合使用。
 
 import IonKnobMoveEvent from '@site/static/usage/v7/range/ion-knob-move-event/index.md';
 
 <IonKnobMoveEvent />
 
-## Theming
+## 主题定制
 
-### CSS Custom Properties
+### CSS 自定义属性
 
-Range includes [CSS Variables](#css-custom-properties) to quickly theme and customize the appearance of the Range component to match your application's design.
+范围滑块包含 [CSS 变量](#css自定义属性)，用于快速主题化和自定义范围滑块组件的外观，以匹配您的应用程序设计。
 
 import CSSProps from '@site/static/usage/v7/range/theming/css-properties/index.md';
 
@@ -125,37 +125,37 @@ import CSSProps from '@site/static/usage/v7/range/theming/css-properties/index.m
 
 ### CSS Shadow Parts
 
-Range includes [CSS Shadow Parts](#css-shadow-parts) to allow complete customization of specific element nodes within the Range component. CSS Shadow Parts offer the most customization capabilities and are the recommended approach when requiring advance styling with the Range component.
+范围滑块包含 [CSS Shadow Parts](#css-shadow-parts)，以允许完全自定义范围滑块组件内的特定元素节点。CSS Shadow Parts 提供了最多的自定义功能，是需要对范围滑块组件进行高级样式设置时的推荐方法。
 
 import CSSParts from '@site/static/usage/v7/range/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
-## Migrating from Legacy Range Syntax
+## 从旧版范围滑块语法迁移
 
-A simpler range syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an range, resolves accessibility issues, and improves the developer experience.
+Ionic 7.0 引入了更简单的范围滑块语法。这种新语法减少了设置范围滑块所需的样板代码，解决了可访问性问题，并改善了开发者体验。
 
-Developers can perform this migration one range at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+开发者可以逐个范围滑块执行此迁移。虽然开发者可以继续使用旧版语法，但我们建议尽快迁移。
 
-### Using the Modern Syntax
+### 使用现代语法
 
-Using the modern syntax involves removing the `ion-label` and passing the label to `ion-range` using the `label` property. The placement of the label can be configured using the `labelPlacement` property.
+使用现代语法涉及移除 `ion-label` 并使用 `label` 属性将标签传递给 `ion-range`。标签的位置可以使用 `labelPlacement` 属性进行配置。
 
-If custom HTML is needed for the label, it can be passed directly inside the `ion-range` using the `label` slot instead.
+如果标签需要自定义 HTML，可以直接使用 `label` 插槽将其传递到 `ion-range` 内部。
 
 import Migration from '@site/static/usage/v7/range/migration/index.md';
 
 <Migration />
 
 :::note
-In past versions of Ionic, `ion-item` was required for `ion-range` to function properly. Starting in Ionic 7.0, `ion-range` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-range` to function properly.
+在 Ionic 的早期版本中，`ion-range` 需要 `ion-item` 才能正常工作。从 Ionic 7.0 开始，只有当项目放置在 `ion-list` 中时，才应在 `ion-item` 中使用 `ion-range`。此外，`ion-range` 不再需要 `ion-item` 即可正常工作。
 :::
 
-### Using the Legacy Syntax
+### 使用旧版语法
 
-Ionic uses heuristics to detect if an app is using the modern range syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-range` to `true` to force that instance of the range to use the legacy syntax.
+Ionic 使用启发式方法检测应用程序是否使用现代范围滑块语法。在某些情况下，可能更倾向于继续使用旧版语法。开发者可以将 `ion-range` 上的 `legacy` 属性设置为 `true`，以强制该范围滑块实例使用旧版语法。
 
-## Interfaces
+## 接口
 
 ### RangeChangeEventDetail
 
@@ -183,7 +183,7 @@ interface RangeKnobMoveEndEventDetail {
 
 ### RangeCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但此接口可以替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更强的类型检查。
 
 ```typescript
 interface RangeCustomEvent extends CustomEvent {
@@ -192,7 +192,7 @@ interface RangeCustomEvent extends CustomEvent {
 }
 ```
 
-## Types
+## 类型
 
 ### RangeValue
 
@@ -200,15 +200,15 @@ interface RangeCustomEvent extends CustomEvent {
 type RangeValue = number | { lower: number; upper: number };
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -216,10 +216,10 @@ type RangeValue = number | { lower: number; upper: number };
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

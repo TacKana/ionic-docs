@@ -6,11 +6,11 @@ function Example() {
     <IonList>
       <IonItem>
         <IonBadge slot="start">11</IonBadge>
-        <IonLabel>Badge in start slot</IonLabel>
+        <IonLabel>徽章位于起始插槽</IonLabel>
       </IonItem>
       <IonItem>
         <IonBadge slot="end">22</IonBadge>
-        <IonLabel>Badge in end slot</IonLabel>
+        <IonLabel>徽章位于结束插槽</IonLabel>
       </IonItem>
     </IonList>
   );

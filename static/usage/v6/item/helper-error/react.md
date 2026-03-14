@@ -31,10 +31,10 @@ function Example() {
       fill="solid"
       className={`${isValid && 'ion-valid'} ${isValid === false && 'ion-invalid'} ${isTouched && 'ion-touched'}`}
     >
-      <IonLabel position="floating">Email</IonLabel>
+      <IonLabel position="floating">邮箱</IonLabel>
       <IonInput type="email" onIonInput={(event) => validate(event)} onIonBlur={() => markTouched()}></IonInput>
-      <IonNote slot="helper">Enter a valid email</IonNote>
-      <IonNote slot="error">Invalid email</IonNote>
+      <IonNote slot="helper">请输入有效的邮箱地址</IonNote>
+      <IonNote slot="error">邮箱地址无效</IonNote>
     </IonItem>
   );
 }

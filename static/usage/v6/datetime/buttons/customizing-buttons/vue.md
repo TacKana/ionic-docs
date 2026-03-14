@@ -2,9 +2,9 @@
 <template>
   <ion-datetime ref="datetime">
     <ion-buttons slot="buttons">
-      <ion-button color="danger" @click="reset()">Reset</ion-button>
-      <ion-button color="primary" @click="cancel()">Never mind</ion-button>
-      <ion-button color="primary" @click="confirm()">All Set</ion-button>
+      <ion-button color="danger" @click="reset()">重置</ion-button>
+      <ion-button color="primary" @click="cancel()">取消</ion-button>
+      <ion-button color="primary" @click="confirm()">确认</ion-button>
     </ion-buttons>
   </ion-datetime>
 </template>

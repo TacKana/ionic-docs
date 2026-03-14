@@ -4,33 +4,33 @@ sidebar_label: Injection Tokens
 ---
 
 <head>
-  <title>Angular Injection Tokens | Access Ionic Elements via Dependency Injection</title>
+  <title>Angular Injection Tokens | 通过依赖注入访问 Ionic 元素</title>
   <meta
     name="description"
-    content="Learn how to use Ionic's Angular injection tokens to access Ionic elements through Angular's dependency injection system for more streamlined component interactions."
+    content="了解如何使用 Ionic 的 Angular 注入令牌，通过 Angular 的依赖注入系统访问 Ionic 元素，以实现更流畅的组件交互。"
   />
 </head>
 
-Ionic provides Angular injection tokens that allow you to access Ionic elements through Angular's dependency injection system. This provides a more Angular-idiomatic way to interact with Ionic components programmatically.
+Ionic 提供了 Angular 注入令牌，允许您通过 Angular 的依赖注入系统访问 Ionic 元素。这为以编程方式与 Ionic 组件交互提供了一种更符合 Angular 习惯的方式。
 
-## Benefits
+## 优势
 
-Using injection tokens provides several advantages:
+使用注入令牌具有以下几个优点：
 
-- **Type Safety**: Full TypeScript support with proper typing for the modal element
-- **Angular Integration**: Works seamlessly with Angular's dependency injection system
-- **Simplified Code**: Eliminates the need for `ViewChild` queries or manual element references
-- **Better Testing**: Easier to mock and test components that use injection tokens
+- **类型安全**：全面的 TypeScript 支持，为模态元素提供正确的类型定义
+- **Angular 集成**：与 Angular 的依赖注入系统无缝协作
+- **简化代码**：无需使用 `ViewChild` 查询或手动元素引用
+- **更好的测试**：更容易模拟和测试使用注入令牌的组件
 
 ## IonModalToken
 
-The `IonModalToken` injection token allows you to inject a reference to the current modal element directly into your Angular components. This is particularly useful when you need to programmatically control modal behavior, listen to modal events, or access modal properties.
+`IonModalToken` 注入令牌允许您将当前模态元素的引用直接注入到您的 Angular 组件中。这在您需要以编程方式控制模态行为、监听模态事件或访问模态属性时特别有用。
 
-Starting in `@ionic/angular` v8.7.0, you can use this injection token to streamline modal interactions in your Angular applications.
+从 `@ionic/angular` v8.7.0 开始，您可以使用此注入令牌来简化 Angular 应用中的模态交互。
 
-### Basic Usage
+### 基本用法
 
-To use the `IonModalToken`, inject it into your component's constructor:
+要使用 `IonModalToken`，请将其注入到组件的构造函数中：
 
 ```tsx
 import { Component, inject } from '@angular/core';
@@ -41,12 +41,12 @@ import { IonButton, IonContent, IonHeader, IonModalToken, IonTitle, IonToolbar }
   template: `
     <ion-header>
       <ion-toolbar>
-        <ion-title>Modal Content</ion-title>
+        <ion-title>模态内容</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <p>This is modal content</p>
-      <ion-button (click)="closeModal()">Close Modal</ion-button>
+      <p>这是模态内容</p>
+      <ion-button (click)="closeModal()">关闭模态</ion-button>
     </ion-content>
   `,
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton],
@@ -60,9 +60,9 @@ export class ModalComponent {
 }
 ```
 
-### Listening to Modal Events
+### 监听模态事件
 
-You can use the injected modal reference to listen to modal lifecycle events:
+您可以使用注入的模态引用来监听模态生命周期事件：
 
 ```tsx
 import { Component, inject, OnInit } from '@angular/core';
@@ -73,12 +73,12 @@ import { IonButton, IonContent, IonHeader, IonModalToken, IonTitle, IonToolbar }
   template: `
     <ion-header>
       <ion-toolbar>
-        <ion-title>Modal with Events</ion-title>
+        <ion-title>带事件的模态</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <p>Check the console for modal events</p>
-      <ion-button (click)="closeModal()">Close</ion-button>
+      <p>请查看控制台中的模态事件</p>
+      <ion-button (click)="closeModal()">关闭</ion-button>
     </ion-content>
   `,
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton],
@@ -88,23 +88,23 @@ export class ModalComponent implements OnInit {
 
   ngOnInit() {
     this.modalToken.addEventListener('ionModalWillDismiss', (event) => {
-      console.log('Modal will dismiss:', event.detail);
+      console.log('模态即将关闭:', event.detail);
     });
 
     this.modalToken.addEventListener('ionModalDidDismiss', (event) => {
-      console.log('Modal did dismiss:', event.detail);
+      console.log('模态已关闭:', event.detail);
     });
   }
 
   closeModal() {
-    this.modalToken.dismiss({ result: 'closed by button' });
+    this.modalToken.dismiss({ result: '通过按钮关闭' });
   }
 }
 ```
 
-### Accessing Modal Properties
+### 访问模态属性
 
-The injected modal reference provides access to all modal properties and methods:
+注入的模态引用提供了对所有模态属性和方法的访问：
 
 ```tsx
 import { Component, inject, OnInit } from '@angular/core';
@@ -115,12 +115,12 @@ import { IonButton, IonContent, IonHeader, IonModalToken, IonTitle, IonToolbar }
   template: `
     <ion-header>
       <ion-toolbar>
-        <ion-title>Modal Properties</ion-title>
+        <ion-title>模态属性</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <p>Modal ID: {{ modalId }}</p>
-      <ion-button (click)="toggleBackdropDismiss()"> Toggle Backdrop Dismiss: {{ backdropDismiss }} </ion-button>
+      <p>模态 ID: {{ modalId }}</p>
+      <ion-button (click)="toggleBackdropDismiss()"> 切换背景关闭: {{ backdropDismiss }} </ion-button>
     </ion-content>
   `,
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton],
@@ -132,7 +132,7 @@ export class ModalComponent implements OnInit {
   backdropDismiss = true;
 
   ngOnInit() {
-    this.modalId = this.modalToken.id || 'No ID';
+    this.modalId = this.modalToken.id || '无 ID';
     this.backdropDismiss = this.modalToken.backdropDismiss;
   }
 
@@ -143,9 +143,9 @@ export class ModalComponent implements OnInit {
 }
 ```
 
-### Opening a Modal with Injection Token Content
+### 打开使用注入令牌内容的模态
 
-When opening a modal that uses the injection token, you can pass the component directly to the modal controller:
+当打开一个使用注入令牌的模态时，您可以将组件直接传递给模态控制器：
 
 ```tsx
 import { Component, inject } from '@angular/core';
@@ -156,7 +156,7 @@ import { ModalComponent } from './modal.component';
   selector: 'app-home',
   template: `
     <ion-content>
-      <ion-button (click)="openModal()">Open Modal</ion-button>
+      <ion-button (click)="openModal()">打开模态</ion-button>
     </ion-content>
   `,
 })
@@ -167,7 +167,7 @@ export class HomePage {
     const myModal = await this.modalController.create({
       component: ModalComponent,
       componentProps: {
-        // Any props you want to pass to the modal content
+        // 任何您想要传递给模态内容的属性
       },
     });
 

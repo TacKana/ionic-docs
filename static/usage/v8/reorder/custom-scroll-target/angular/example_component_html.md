@@ -2,8 +2,8 @@
 <ion-content [scrollY]="false">
   <div class="ion-content-scroll-host">
     <ion-list>
-      <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
-      <!-- Casting $event to $any is a temporary fix for this bug https://github.com/ionic-team/ionic-framework/issues/24245 -->
+      <!-- 默认情况下重新排序手势是禁用的，请启用它以拖放项目 -->
+      <!-- 将 $event 强制转换为 $any 是解决此 bug 的临时方案：https://github.com/ionic-team/ionic-framework/issues/24245 -->
       <ion-reorder-group [disabled]="false" (ionReorderEnd)="handleReorderEnd($any($event))">
         <ion-item>
           <ion-label> Item 1 </ion-label>

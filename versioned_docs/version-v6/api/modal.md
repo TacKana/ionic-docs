@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/modal/custom-props.mdx
 import Slots from '@ionic-internal/component-api/v6/modal/slots.md';
 
 <head>
-  <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
+  <title>ion-modal：Ionic 移动应用自定义模态框 API 组件</title>
   <meta
     name="description"
-    content="ion-modal is a dialog that appears on top of mobile app content, and must be dismissed before interaction resumes. Learn more about custom modal components."
+    content="ion-modal 是在移动应用内容上方显示的对话框，必须在恢复交互前关闭。了解更多关于自定义模态框组件的信息。"
   />
 </head>
 
@@ -21,132 +21,132 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-A Modal is a dialog that appears on top of the app's content, and must be dismissed by the app before interaction can resume. It is useful as a select component when there are a lot of options to choose from, or when filtering items in a list, as well as many other use cases.
+模态框（Modal）是显示在应用内容上方的对话框，必须由应用关闭后才能继续交互。当需要从大量选项中进行选择、筛选列表项或处理许多其他用例时，模态框非常有用。
 
-## Inline Modals (Recommended)
+## 内联模态框（推荐）
 
-`ion-modal` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the modal.
+可以直接在模板中编写组件来使用 `ion-modal`。这减少了展示模态框时需要设置的处理程序数量。
 
-When using `ion-modal` with Angular, React, or Vue, the component you pass in will be destroyed when the modal is dismissed. As this functionality is provided by the JavaScript framework, using `ion-modal` without a JavaScript framework will not destroy the component you passed in. If this is a needed functionality, we recommend using the `modalController` instead.
+当在 Angular、React 或 Vue 中使用 `ion-modal` 时，传入的组件会在模态框关闭时被销毁。由于此功能由 JavaScript 框架提供，因此在不使用 JavaScript 框架时使用 `ion-modal` 不会销毁传入的组件。如果需要此功能，我们建议改用 `modalController`。
 
 import InlineModalTriggerExample from '@site/static/usage/v6/modal/inline/basic/index.md';
 
 <InlineModalTriggerExample />
 
-### Using `isOpen`
+### 使用 `isOpen`
 
-The `isOpen` property on `ion-modal` allows developers to control the presentation state of the modal from their application state. This means when `isOpen` is set to `true` the modal will be presented and when `isOpen` is set to `false` the modal will be dismissed.
+`ion-modal` 上的 `isOpen` 属性允许开发者通过应用状态来控制模态框的展示状态。这意味着当 `isOpen` 设置为 `true` 时，模态框将显示；当 `isOpen` 设置为 `false` 时，模态框将关闭。
 
-`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the modal is dismissed. Developers should listen for the `ionModalDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-modal` from being tightly coupled with the state of the application. With a one way data binding, the modal only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the modal needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+`isOpen` 使用单向数据绑定，这意味着当模态框关闭时，它不会自动设置为 `false`。开发者应监听 `ionModalDidDismiss` 或 `didDismiss` 事件，并将 `isOpen` 设置为 `false`。这样做的原因是防止 `ion-modal` 的内部逻辑与应用程序状态紧密耦合。通过单向数据绑定，模态框只需关注响应式变量提供的布尔值。而通过双向数据绑定，模态框需要同时关注布尔值以及响应式变量本身的存在。这可能导致非确定性行为，并使应用程序更难调试。
 
 import InlineModalIsOpenExample from '@site/static/usage/v6/modal/inline/is-open/index.md';
 
 <InlineModalIsOpenExample />
 
-## Controller Modals
+## 控制器模态框
 
-With the `modalController` developers can present an `ion-modal` programmatically. Developers will have complete control over when a modal is presented and dismissed.
+使用 `modalController`，开发者可以以编程方式展示 `ion-modal`。开发者可以完全控制模态框何时显示和关闭。
 
 import ControllerExample from '@site/static/usage/v6/modal/controller/index.md';
 
 <ControllerExample />
 
-## Preventing a Modal from Dismissing
+## 防止模态框关闭
 
-When entering data into a modal, it is often desirable to have a way of preventing accidental data loss. The `canDismiss` property on `ion-modal` gives developers control over when a modal is allowed to dismiss.
+在模态框中输入数据时，通常需要一种防止意外数据丢失的方法。`ion-modal` 上的 `canDismiss` 属性让开发者可以控制模态框何时允许关闭。
 
-There are two different ways of using the `canDismiss` property: setting a boolean value or setting a callback function.
+有两种不同的方式使用 `canDismiss` 属性：设置布尔值或设置回调函数。
 
 :::note
-Note: When using a sheet modal, `canDismiss` will not be checked on swipe if there is no `0` breakpoint set. However, it will still be checked when pressing `Esc` or the hardware back button.
+注意：当使用表单模态框时，如果没有设置 `0` 断点，则在滑动时不会检查 `canDismiss`。但按下 `Esc` 或硬件返回键时仍会检查。
 :::
 
-### Setting a boolean value
+### 设置布尔值
 
-Developers can set `canDismiss` to a boolean value. If `canDismiss` is `true`, then the modal will close when users attempt to dismiss the modal. If `canDismiss` is `false`, then the modal will not close when users attempt to dismiss the modal.
+开发者可以将 `canDismiss` 设置为布尔值。如果 `canDismiss` 为 `true`，则当用户尝试关闭模态框时，模态框将关闭。如果 `canDismiss` 为 `false`，则当用户尝试关闭模态框时，模态框不会关闭。
 
-Setting a boolean value should be used when you need to require a particular action to be taken prior to a modal being dismissed. For example, if developers want to require that a "Terms of Use" checkbox is checked prior to closing the modal, they could set `canDismiss` to `false` initially and update it to `true` when the checkbox is checked.
+当需要在模态框关闭前执行特定操作时，应使用布尔值设置。例如，如果开发者要求在关闭模态框前必须勾选“使用条款”复选框，他们可以先将 `canDismiss` 设置为 `false`，然后在复选框被勾选时更新为 `true`。
 
 import CanDismissBooleanExample from '@site/static/usage/v6/modal/can-dismiss/boolean/index.md';
 
 <CanDismissBooleanExample />
 
-### Setting a callback function
+### 设置回调函数
 
-Developers can set `canDismiss` to be a function. This function must return a `Promise` that resolves to either `true` or `false`. If the promise resolves to `true`, then the modal will dismiss. If the promise resolves to `false`, then the modal will not dismiss.
+开发者可以将 `canDismiss` 设置为一个函数。此函数必须返回一个解析为 `true` 或 `false` 的 `Promise`。如果 Promise 解析为 `true`，则模态框将关闭。如果 Promise 解析为 `false`，则模态框不会关闭。
 
-Setting a callback function should be used when you have complex dismissing criteria such as showing a confirmation dialog prior to dismissing the modal. The option that users select in this dialog can then be used to determine whether or not the modal should proceed with dismissing.
+当关闭条件复杂时（例如在关闭模态框前显示确认对话框），应使用回调函数设置。然后，用户在此对话框中选择的选项可用于确定模态框是否继续关闭。
 
-Note that setting a callback function will cause the swipe gesture to be interrupted when using a card or sheet modal. This is because Ionic does not know what your callback function will resolve to ahead of time.
+请注意，设置回调函数会导致在使用卡片或表单模态框时中断滑动手势。这是因为 Ionic 无法提前知道回调函数将解析为什么值。
 
 import CanDismissFunctionExample from '@site/static/usage/v6/modal/can-dismiss/function/index.md';
 
 <CanDismissFunctionExample />
 
-### Prevent swipe to close
+### 防止滑动关闭
 
-Developers may want to prevent users from swiping to close a modal. This can be done by setting a callback function for `canDismiss` and checking if the `role` is not `gesture`.
+开发者可能希望防止用户通过滑动来关闭模态框。这可以通过为 `canDismiss` 设置回调函数并检查 `role` 是否为 `gesture` 来实现。
 
 import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v6/modal/can-dismiss/prevent-swipe-to-close/index.md';
 
 <CanDismissPreventSwipeToCloseExample />
 
-## Types of modals
+## 模态框类型
 
-### Card Modal
+### 卡片模态框
 
-Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property on `ion-modal`.
+开发者可以创建卡片模态框效果，使模态框显示为堆叠在应用主内容上方的卡片。要创建卡片模态框，开发者需要设置 `ion-modal` 上的 `presentingElement` 属性。
 
-The `presentingElement` property accepts a reference to the element that should display under your modal. This is typically a reference to `ion-router-outlet`.
+`presentingElement` 属性接受应显示在模态框下方的元素的引用。这通常是 `ion-router-outlet` 的引用。
 
-The `canDismiss` property can be used to control whether or not the card modal can be swiped to close.
+`canDismiss` 属性可用于控制卡片模态框是否可以通过滑动关闭。
 
 :::note
-The card display style is only available on iOS.
+卡片显示样式仅在 iOS 上可用。
 :::
 
 import CardExample from '@site/static/usage/v6/modal/card/basic/index.md';
 
 <CardExample />
 
-### Sheet Modal
+### 表单模态框
 
-Developers can create a sheet modal effect similar to the drawer components available in maps applications. To create a sheet modal, developers need to set the `breakpoints` and `initialBreakpoint` properties on `ion-modal`.
+开发者可以创建类似于地图应用中可用的抽屉组件的表单模态框效果。要创建表单模态框，开发者需要设置 `ion-modal` 上的 `breakpoints` 和 `initialBreakpoint` 属性。
 
-The `breakpoints` property accepts an array which states each breakpoint that the sheet can snap to when swiped. A `breakpoints` property of `[0, 0.5, 1]` would indicate that the sheet can be swiped to show 0% of the modal, 50% of the modal, and 100% of the modal. When the modal is swiped to 0%, the modal will be automatically dismissed. Note that the modal cannot be dismissed on swipe if no `0` breakpoint is included, but it can still be dismissed by pressing `Esc` or the hardware back button.
+`breakpoints` 属性接受一个数组，指定表单在滑动时可以吸附到的每个断点。`[0, 0.5, 1]` 的 `breakpoints` 属性表示表单可以滑动以显示模态框的 0%、50% 和 100%。当模态框滑动到 0% 时，模态框将自动关闭。请注意，如果未包含 `0` 断点，则无法通过滑动关闭模态框，但仍可以通过按 `Esc` 或硬件返回键来关闭。
 
-The `initialBreakpoint` property is required so that the sheet modal knows which breakpoint to start at when presenting. The `initialBreakpoint` value must also exist in the `breakpoints` array. Given a `breakpoints` value of `[0, 0.5, 1]`, an `initialBreakpoint` value of `0.5` would be valid as `0.5` is in the `breakpoints` array. An `initialBreakpoint` value of `0.25` would not be valid as `0.25` does not exist in the `breakpoints` array.
+`initialBreakpoint` 属性是必需的，以便表单模态框知道在展示时从哪个断点开始。`initialBreakpoint` 值也必须存在于 `breakpoints` 数组中。给定 `breakpoints` 值为 `[0, 0.5, 1]`，`initialBreakpoint` 值为 `0.5` 将是有效的，因为 `0.5` 在 `breakpoints` 数组中。`initialBreakpoint` 值为 `0.25` 将无效，因为 `0.25` 不在 `breakpoints` 数组中。
 
-The `backdropBreakpoint` property can be used to customize the point at which the `ion-backdrop` will begin to fade in. This is useful when creating interfaces that have content underneath the sheet that should remain interactive. A common use case is a sheet modal that overlays a map where the map is interactive until the sheet is fully expanded.
+`backdropBreakpoint` 属性可用于自定义 `ion-backdrop` 开始淡入的点。这在创建表单下方有应保持交互的内容的界面时非常有用。一个常见的用例是覆盖地图的表单模态框，其中地图在表单完全展开之前保持交互。
 
 import SheetExample from '@site/static/usage/v6/modal/sheet/basic/index.md';
 
 <SheetExample />
 
-#### Interacting with background content
+#### 与背景内容交互
 
 import SheetBackgroundContentExample from '@site/static/usage/v6/modal/sheet/background-content/index.md';
 
 <SheetBackgroundContentExample />
 
-#### Handle Behavior
+#### 手柄行为
 
-Sheet modals can optionally render a handle indicator used for dragging the sheet between breakpoints. The `handleBehavior` property can be used to configure the behavior of when the handle is activated by the user.
+表单模态框可以选择渲染一个手柄指示器，用于在断点之间拖拽表单。`handleBehavior` 属性可用于配置用户激活手柄时的行为。
 
 import SheetHandleBehaviorExample from '@site/static/usage/v6/modal/sheet/handle-behavior/index.md';
 
 <SheetHandleBehaviorExample />
 
-## Styling
+## 样式设置
 
-Modals are presented at the root of your application so they overlay your entire app. This behavior applies to both inline modals and modals presented from a controller. As a result, custom modal styles can not be scoped to a particular component as they will not apply to the modal. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
+模态框在应用程序的根级别展示，因此它们会覆盖整个应用。此行为适用于内联模态框和通过控制器展示的模态框。因此，自定义模态框样式不能限定在特定组件范围内，因为它们不会应用于模态框。相反，样式必须全局应用。对于大多数开发者来说，将自定义样式放在 `global.css` 中就足够了。
 
 :::note
-If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
+如果您正在构建 Ionic Angular 应用，样式需要添加到全局样式表文件中。请阅读下面 Angular 部分中的[样式放置](#style-placement)以获取更多信息。
 :::
 
 :::note
-`ion-modal` works under the assumption that stacked modals are the same size. As a result, each subsequent modal will have no box shadow and a backdrop opacity of `0`. This is to avoid the effect of shadows and backdrops getting darker with each added modal. This can be changed by setting the `--box-shadow` and `--backdrop-opacity` CSS variables:
+`ion-modal` 假设堆叠的模态框大小相同。因此，每个后续模态框将没有阴影，并且背景不透明度为 `0`。这是为了避免每个添加的模态框使阴影和背景变暗的效果。可以通过设置 `--box-shadow` 和 `--backdrop-opacity` CSS 变量来更改：
 :::
 
 ```
@@ -160,32 +160,33 @@ import ThemeExample from '@site/static/usage/v6/modal/styling/theming/index.md';
 
 <ThemeExample />
 
-### Animations
+### 动画
 
-The enter and leave animations can be customized by using our animation builder and assigning animations to `enterAnimation` and `leaveAnimation`.
+可以通过使用动画构建器并将动画分配给 `enterAnimation` 和 `leaveAnimation` 来自定义进入和离开动画。
 
 import AnimationsExample from '@site/static/usage/v6/modal/styling/animations/index.md';
 
 <AnimationsExample />
 
-## Custom Dialogs
+## 自定义对话框
 
-While `ion-modal` is most often used for full-page views, cards, or sheets, it is also possible to use it for custom dialogs. This is useful if developers need an interface that is more complex than what components such as [ion-alert](./alert) or [ion-loading](./loading) provide.
+虽然 `ion-modal` 最常用于全屏视图、卡片或表单，但也可以将其用于自定义对话框。如果开发者需要比 [ion-alert](./alert) 或 [ion-loading](./loading) 等组件提供的更复杂的界面，这将非常有用。
 
 import CustomDialogs from '@site/static/usage/v6/modal/custom-dialogs/index.md';
 
 <CustomDialogs />
 
-A few things to keep in mind when creating custom dialogs:
+创建自定义对话框时需要注意以下几点：
 
-- `ion-content` is intended to be used in full-page modals, cards, and sheets. If your custom dialog has a dynamic or unknown size, `ion-content` should not be used.
-- Creating custom dialogs provides a way of ejecting from the default modal experience. As a result, custom dialogs should not be used with card or sheet modals.
+- `ion-content` 旨在用于全屏模态框、卡片和表单。如果自定义对话框具有动态或未知大小，则不应使用 `ion-content`。
 
-## Interfaces
+- 创建自定义对话框提供了一种脱离默认模态框体验的方法。因此，自定义对话框不应与卡片或表单模态框一起使用。
+
+## 接口
 
 ### ModalOptions
 
-Below you will find all of the options available to you when using the `modalController`. These options should be supplied when calling `modalController.create()`.
+下面列出了使用 `modalController` 时可用的所有选项。这些选项应在调用 `modalController.create()` 时提供。
 
 ```typescript
 interface ModalOptions {
@@ -215,7 +216,7 @@ interface ModalOptions {
 
 ### ModalCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但此接口可以替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更强的类型检查。
 
 ```typescript
 interface ModalCustomEvent extends CustomEvent {
@@ -223,67 +224,67 @@ interface ModalCustomEvent extends CustomEvent {
 }
 ```
 
-## Accessibility
+## 可访问性
 
-### Keyboard Navigation
+### 键盘导航
 
-| Key   | Function            |
-| ----- | ------------------- |
-| `Esc` | Dismisses the modal |
+| 按键   | 功能               |
+| ------ | ------------------ |
+| `Esc`  | 关闭模态框         |
 
-### Labels
+### 标签
 
-Modals have a [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) role. As a result, developers **must** properly label their modals. If the modal is using `ion-title`, the text inside can be used to label the modal itself by setting [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) on `ion-modal`. If the modal contains additional descriptive text, this text can be associated with the modal by using [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby).
+模态框具有 [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) 角色。因此，开发者**必须**正确标记其模态框。如果模态框使用 `ion-title`，则可以通过在 `ion-modal` 上设置 [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) 来使用其中的文本标记模态框本身。如果模态框包含其他描述性文本，可以使用 [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) 将此文本与模态框关联。
 
-### Screen Readers
+### 屏幕阅读器
 
-Modals have the `aria-modal` attribute applied. This attribute can cause assistive technologies to limit navigation to the modal element's contents. As a result, using gestures that move to the next or previous items may not focus elements outside of the modal. This applies even when the backdrop is disabled in sheet modals using the `backdropBreakpoint` property.
+模态框应用了 `aria-modal` 属性。此属性可能导致辅助技术将导航限制在模态框元素的内容内。因此，使用移动到下一个或上一个项目的手势可能无法聚焦模态框之外的元素。即使在使用 `backdropBreakpoint` 属性禁用表单模态框的背景时，这也适用。
 
-Assistive technologies will not limit navigation to the modal element's contents if developers manually move focus. However, manually moving focus outside of a modal is not supported in Ionic for modals that have focus trapping enabled.
+如果开发者手动移动焦点，辅助技术不会将导航限制在模态框元素的内容内。但是，在 Ionic 中，不支持在启用焦点捕获的模态框中手动将焦点移出模态框。
 
-See https://w3c.github.io/aria/#aria-modal for more information.
+有关更多信息，请参阅 https://w3c.github.io/aria/#aria-modal。
 
-### Focus Trapping
+### 焦点捕获
 
-When a modal is presented, focus will be trapped inside of the presented modal. Users can focus other interactive elements inside the modal but will never be able to focus interactive elements outside the modal while the modal is presented. For applications that present multiple stacked modals, focus will be trapped on the modal that was presented last.
+当模态框展示时，焦点将被捕获在展示的模态框内。用户可以聚焦模态框内的其他交互元素，但在模态框展示期间永远无法聚焦模态框外的交互元素。对于展示多个堆叠模态框的应用程序，焦点将被捕获在最后展示的模态框上。
 
-Sheet modals that have had their backdrop disabled by the `backdropBreakpoint` property are not subject to focus trapping.
+通过 `backdropBreakpoint` 属性禁用背景的表单模态框不受焦点捕获的限制。
 
-### Sheet Modals
+### 表单模态框
 
-Sheet modals allow users to interact with content behind the modal when the `backdropBreakpoint` property is used. The backdrop will be disabled up to and including the specified `backdropBreakpoint` and will be enabled after it.
+当使用 `backdropBreakpoint` 属性时，表单模态框允许用户与模态框后面的内容进行交互。背景将在达到并包括指定的 `backdropBreakpoint` 之前被禁用，并在之后启用。
 
-When the backdrop is disabled, users will be able to interact with elements outside the sheet modal using a pointer or keyboard. Assistive technologies may not focus outside the sheet modal by default due to the usage of `aria-modal`. We recommend avoiding features such as autofocus here as it can cause assistive technologies to jump between two interactive contexts without warning the user.
+当背景被禁用时，用户将能够使用指针或键盘与表单模态框外部的元素进行交互。由于使用了 `aria-modal`，辅助技术可能默认不会聚焦表单模态框外部。我们建议在此处避免使用自动聚焦等功能，因为它可能导致辅助技术在两个交互上下文之间跳转，而不警告用户。
 
-## Performance
+## 性能
 
-### Mounting Inner Contents
+### 挂载内部内容
 
-The content of an inline `ion-modal` is unmounted when closed. If this content is expensive to render, developers can use the `keepContentsMounted` property to mount the content as soon as the modal is mounted. This can help optimize the responsiveness of your application as the inner contents will have already been mounted when the modal opens.
+内联 `ion-modal` 的内容在关闭时会被卸载。如果此内容渲染成本较高，开发者可以使用 `keepContentsMounted` 属性在模态框挂载时立即挂载内容。这有助于优化应用程序的响应性，因为内部内容在模态框打开时已经挂载。
 
 import Mount from '@site/static/usage/v6/modal/performance/mount/index.md';
 
 <Mount />
 
-Developers should keep the following in mind when using `keepContentsMounted`:
+使用 `keepContentsMounted` 时，开发者应注意以下几点：
 
-- This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
+- 此功能应作为处理现有性能问题的最后手段。在使用此功能之前，尝试识别并解决性能瓶颈。此外，不要使用此功能来预期性能问题。
 
-- This feature is only needed when using a JavaScript Framework. Developers not using a framework can pass the contents to be rendered into the modal, and the contents will be rendered automatically.
+- 此功能仅在需要使用 JavaScript 框架时才需要。不使用框架的开发者可以将要渲染的内容传递到模态框中，内容将自动渲染。
 
-- This feature only works with inline modals. Modals created with the `modalController` are not created ahead of time, so the inner contents are not created either.
+- 此功能仅适用于内联模态框。使用 `modalController` 创建的模态框不会提前创建，因此内部内容也不会创建。
 
-- Any JavaScript Framework lifecycle hooks on the inner component will run as soon as the modal is mounted, not when the modal is presented.
+- 内部组件上的任何 JavaScript 框架生命周期钩子将在模态框挂载时立即运行，而不是在模态框展示时。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -291,7 +292,7 @@ Developers should keep the following in mind when using `keepContentsMounted`:
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 

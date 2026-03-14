@@ -3,11 +3,11 @@
   <div class="container">
     <div class="track">
       <ion-card id="card" button="true" ref="cardEl">
-        <ion-card-content>Card</ion-card-content>
+        <ion-card-content>卡片</ion-card-content>
       </ion-card>
     </div>
 
-    <p>Drag the square along the track.</p>
+    <p>沿轨道拖动方块。</p>
   </div>
 </template>
 
@@ -23,9 +23,9 @@
     let started = false;
 
     /**
-     * The track is 344px wide.
-     * The card is 100px wide.
-     * We want 16px of margin on each end of the track.
+     * 轨道宽度为 344px。
+     * 卡片宽度为 100px。
+     * 我们希望轨道两端各有 16px 的边距。
      */
     const MAX_TRANSLATE = 344 - 100 - 32;
 

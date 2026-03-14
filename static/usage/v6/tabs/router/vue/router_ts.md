@@ -37,7 +37,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  // Use: createWebHistory(process.env.BASE_URL) in your app
+  // 在你的应用中请使用：createWebHistory(process.env.BASE_URL)
   history: createWebHistory(),
   routes,
 });

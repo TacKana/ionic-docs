@@ -2,23 +2,23 @@
 <template>
   <ion-list>
     <ion-item>
-      <ion-label>Default label</ion-label>
-      <ion-input placeholder="Enter text"></ion-input>
+      <ion-label>默认标签</ion-label>
+      <ion-input placeholder="输入文本"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="fixed">Fixed label</ion-label>
-      <ion-input placeholder="Enter text"></ion-input>
+      <ion-label position="fixed">固定标签</ion-label>
+      <ion-input placeholder="输入文本"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Stacked label</ion-label>
-      <ion-input placeholder="Enter text"></ion-input>
+      <ion-label position="stacked">堆叠标签</ion-label>
+      <ion-input placeholder="输入文本"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Floating label</ion-label>
-      <ion-input placeholder="Enter text"></ion-input>
+      <ion-label position="floating">浮动标签</ion-label>
+      <ion-input placeholder="输入文本"></ion-input>
     </ion-item>
   </ion-list>
 </template>

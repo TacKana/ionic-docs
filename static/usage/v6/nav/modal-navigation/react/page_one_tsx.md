@@ -8,8 +8,8 @@ function PageOne({ nav }: { nav: HTMLIonNavElement }) {
   const navigateToPageTwo = () => nav.push(PageTwo, { nav });
   return (
     <IonContent class="ion-padding">
-      <h1>Page One</h1>
-      <IonButton onClick={navigateToPageTwo}>Go to Page Two</IonButton>
+      <h1>第一页</h1>
+      <IonButton onClick={navigateToPageTwo}>前往第二页</IonButton>
     </IonContent>
   );
 }

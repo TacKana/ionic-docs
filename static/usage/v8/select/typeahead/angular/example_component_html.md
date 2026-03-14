@@ -2,7 +2,7 @@
 <ion-content color="light">
   <ion-list [inset]="true">
     <ion-item [button]="true" [detail]="false" id="select-fruits">
-      <ion-label>Favorite Fruits</ion-label>
+      <ion-label>喜爱的水果</ion-label>
       <div slot="end" id="selected-fruits">{{ selectedFruitsText }}</div>
     </ion-item>
   </ion-list>
@@ -12,7 +12,7 @@
   <ng-template>
     <app-typeahead
       class="ion-page"
-      title="Favorite Fruits"
+      title="喜爱的水果"
       [items]="fruits"
       [selectedItems]="selectedFruits"
       (selectionChange)="fruitSelectionChanged($event)"

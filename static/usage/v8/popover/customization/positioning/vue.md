@@ -1,24 +1,24 @@
 ```html
 <template>
   <div class="container">
-    <ion-button id="top-center">Side=Top, Alignment=Center</ion-button>
+    <ion-button id="top-center">侧边=顶部，对齐=居中</ion-button>
     <ion-popover trigger="top-center" side="top" alignment="center">
-      <ion-content class="ion-padding">Hello World!</ion-content>
+      <ion-content class="ion-padding">你好，世界！</ion-content>
     </ion-popover>
 
-    <ion-button id="bottom-start">Side=Bottom, Alignment=Start</ion-button>
+    <ion-button id="bottom-start">侧边=底部，对齐=起始</ion-button>
     <ion-popover trigger="bottom-start" side="bottom" alignment="start">
-      <ion-content class="ion-padding">Hello World!</ion-content>
+      <ion-content class="ion-padding">你好，世界！</ion-content>
     </ion-popover>
 
-    <ion-button id="left-start">Side=Left, Alignment=Start</ion-button>
+    <ion-button id="left-start">侧边=左侧，对齐=起始</ion-button>
     <ion-popover trigger="left-start" side="left" alignment="start">
-      <ion-content class="ion-padding">Hello World!</ion-content>
+      <ion-content class="ion-padding">你好，世界！</ion-content>
     </ion-popover>
 
-    <ion-button id="right-end">Side=Right, Alignment=End</ion-button>
+    <ion-button id="right-end">侧边=右侧，对齐=末端</ion-button>
     <ion-popover trigger="right-end" side="right" alignment="end">
-      <ion-content class="ion-padding">Hello World!</ion-content>
+      <ion-content class="ion-padding">你好，世界！</ion-content>
     </ion-popover>
   </div>
 </template>

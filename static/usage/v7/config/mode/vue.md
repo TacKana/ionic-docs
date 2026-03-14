@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button :color="color" :fill="fill"> Current mode: {{ mode }} </ion-button>
+  <ion-button :color="color" :fill="fill"> 当前模式：{{ mode }} </ion-button>
 </template>
 
 <script setup>

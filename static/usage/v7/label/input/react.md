@@ -6,33 +6,33 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonLabel>Default Label</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonLabel>默认标签</IonLabel>
+        <IonInput placeholder="请输入文本"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel position="fixed">Fixed Label</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonLabel position="fixed">固定标签</IonLabel>
+        <IonInput placeholder="请输入文本"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel position="floating">Floating Label</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonLabel position="floating">浮动标签</IonLabel>
+        <IonInput placeholder="请输入文本"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel position="stacked">Stacked Label</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonLabel position="stacked">堆叠标签</IonLabel>
+        <IonInput placeholder="请输入文本"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Toggle</IonLabel>
+        <IonLabel>开关</IonLabel>
         <IonToggle slot="end" checked></IonToggle>
       </IonItem>
 
       <IonItem>
         <IonCheckbox slot="start" checked></IonCheckbox>
-        <IonLabel>Checkbox</IonLabel>
+        <IonLabel>复选框</IonLabel>
       </IonItem>
     </>
   );

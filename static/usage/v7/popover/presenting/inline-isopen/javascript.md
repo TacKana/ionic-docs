@@ -1,7 +1,7 @@
 ```html
-<ion-button>Click Me</ion-button>
+<ion-button>点击我</ion-button>
 <ion-popover>
-  <ion-content class="ion-padding">Hello World!</ion-content>
+  <ion-content class="ion-padding">你好世界！</ion-content>
 </ion-popover>
 
 <script>

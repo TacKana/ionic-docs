@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'ion-segment-button'
+sidebar_label: 'ion-segment-按钮'
 ---
 
 import Tabs from '@theme/Tabs';
@@ -12,41 +12,41 @@ import Parts from '@ionic-internal/component-api/v5/segment-button/parts.md';
 import CustomProps from '@ionic-internal/component-api/v5/segment-button/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v5/segment-button/slots.md';
 
-# ion-segment-button
+# ion-segment-按钮
 
-Segment buttons are groups of related buttons inside of a [Segment](segment.md). They are displayed in a horizontal row. A segment button can be checked by default by setting the `value` of the segment to the `value` of the segment button. Only one segment button can be selected at a time.
+分段按钮是[分段](segment.md)内部的一组相关按钮。它们以水平行显示。通过将分段的`value`设置为分段按钮的`value`，可以默认选中某个分段按钮。一次只能选择一个分段按钮。
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- Segment buttons with text and click listener -->
+<!-- 带文本和点击监听器的分段按钮 -->
 <ion-segment (ionChange)="segmentChanged($event)">
   <ion-segment-button>
-    <ion-label>Friends</ion-label>
+    <ion-label>朋友</ion-label>
   </ion-segment-button>
   <ion-segment-button>
-    <ion-label>Enemies</ion-label>
+    <ion-label>敌人</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Segment buttons with the first checked and the last disabled -->
+<!-- 第一个选中且最后一个禁用的分段按钮 -->
 <ion-segment value="paid">
   <ion-segment-button value="paid">
-    <ion-label>Paid</ion-label>
+    <ion-label>付费</ion-label>
   </ion-segment-button>
   <ion-segment-button value="free">
-    <ion-label>Free</ion-label>
+    <ion-label>免费</ion-label>
   </ion-segment-button>
   <ion-segment-button disabled value="top">
-    <ion-label>Top</ion-label>
+    <ion-label>置顶</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Segment buttons with values and icons -->
+<!-- 带值和图标的分段按钮 -->
 <ion-segment>
   <ion-segment-button value="camera">
     <ion-icon name="camera"></ion-icon>
@@ -56,33 +56,33 @@ Segment buttons are groups of related buttons inside of a [Segment](segment.md).
   </ion-segment-button>
 </ion-segment>
 
-<!-- Segment with a value that checks the last button -->
+<!-- 具有选中最后一个按钮的值 的分段 -->
 <ion-segment value="shared">
   <ion-segment-button value="bookmarks">
-    <ion-label>Bookmarks</ion-label>
+    <ion-label>书签</ion-label>
   </ion-segment-button>
   <ion-segment-button value="reading">
-    <ion-label>Reading List</ion-label>
+    <ion-label>阅读列表</ion-label>
   </ion-segment-button>
   <ion-segment-button value="shared">
-    <ion-label>Shared Links</ion-label>
+    <ion-label>共享链接</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Label only -->
+<!-- 仅标签 -->
 <ion-segment value="1">
   <ion-segment-button value="1">
-    <ion-label>Item One</ion-label>
+    <ion-label>项目一</ion-label>
   </ion-segment-button>
   <ion-segment-button value="2">
-    <ion-label>Item Two</ion-label>
+    <ion-label>项目二</ion-label>
   </ion-segment-button>
   <ion-segment-button value="3">
-    <ion-label>Item Three</ion-label>
+    <ion-label>项目三</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Icon only -->
+<!-- 仅图标 -->
 <ion-segment value="heart">
   <ion-segment-button value="call">
     <ion-icon name="call"></ion-icon>
@@ -95,67 +95,67 @@ Segment buttons are groups of related buttons inside of a [Segment](segment.md).
   </ion-segment-button>
 </ion-segment>
 
-<!-- Icon top -->
+<!-- 图标在上方 -->
 <ion-segment value="2">
   <ion-segment-button value="1">
-    <ion-label>Item One</ion-label>
+    <ion-label>项目一</ion-label>
     <ion-icon name="call"></ion-icon>
   </ion-segment-button>
   <ion-segment-button value="2">
-    <ion-label>Item Two</ion-label>
+    <ion-label>项目二</ion-label>
     <ion-icon name="heart"></ion-icon>
   </ion-segment-button>
   <ion-segment-button value="3">
-    <ion-label>Item Three</ion-label>
+    <ion-label>项目三</ion-label>
     <ion-icon name="pin"></ion-icon>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Icon bottom -->
+<!-- 图标在下方 -->
 <ion-segment value="1">
   <ion-segment-button value="1" layout="icon-bottom">
     <ion-icon name="call"></ion-icon>
-    <ion-label>Item One</ion-label>
+    <ion-label>项目一</ion-label>
   </ion-segment-button>
   <ion-segment-button value="2" layout="icon-bottom">
     <ion-icon name="heart"></ion-icon>
-    <ion-label>Item Two</ion-label>
+    <ion-label>项目二</ion-label>
   </ion-segment-button>
   <ion-segment-button value="3" layout="icon-bottom">
     <ion-icon name="pin"></ion-icon>
-    <ion-label>Item Three</ion-label>
+    <ion-label>项目三</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Icon start -->
+<!-- 图标在起始位置 -->
 <ion-segment value="1">
   <ion-segment-button value="1" layout="icon-start">
-    <ion-label>Item One</ion-label>
+    <ion-label>项目一</ion-label>
     <ion-icon name="call"></ion-icon>
   </ion-segment-button>
   <ion-segment-button value="2" layout="icon-start">
-    <ion-label>Item Two</ion-label>
+    <ion-label>项目二</ion-label>
     <ion-icon name="heart"></ion-icon>
   </ion-segment-button>
   <ion-segment-button value="3" layout="icon-start">
-    <ion-label>Item Three</ion-label>
+    <ion-label>项目三</ion-label>
     <ion-icon name="pin"></ion-icon>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Icon end -->
+<!-- 图标在结束位置 -->
 <ion-segment value="1">
   <ion-segment-button value="1" layout="icon-end">
     <ion-icon name="call"></ion-icon>
-    <ion-label>Item One</ion-label>
+    <ion-label>项目一</ion-label>
   </ion-segment-button>
   <ion-segment-button value="2" disabled layout="icon-end">
     <ion-icon name="heart"></ion-icon>
-    <ion-label>Item Two</ion-label>
+    <ion-label>项目二</ion-label>
   </ion-segment-button>
   <ion-segment-button value="3" layout="icon-end">
     <ion-icon name="pin"></ion-icon>
-    <ion-label>Item Three</ion-label>
+    <ion-label>项目三</ion-label>
   </ion-segment-button>
 </ion-segment>
 ```
@@ -170,7 +170,7 @@ import { Component } from '@angular/core';
 })
 export class SegmentButtonExample {
   segmentChanged(ev: any) {
-    console.log('Segment changed', ev);
+    console.log('分段已更改', ev);
   }
 }
 ```
@@ -180,30 +180,30 @@ export class SegmentButtonExample {
 <TabItem value="javascript">
 
 ```html
-<!-- Segment buttons with text -->
+<!-- 带文本的分段按钮 -->
 <ion-segment>
   <ion-segment-button>
-    <ion-label>Friends</ion-label>
+    <ion-label>朋友</ion-label>
   </ion-segment-button>
   <ion-segment-button>
-    <ion-label>Enemies</ion-label>
+    <ion-label>敌人</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Segment buttons with the first checked and the last disabled -->
+<!-- 第一个选中且最后一个禁用的分段按钮 -->
 <ion-segment value="paid">
   <ion-segment-button value="paid">
-    <ion-label>Paid</ion-label>
+    <ion-label>付费</ion-label>
   </ion-segment-button>
   <ion-segment-button value="free">
-    <ion-label>Free</ion-label>
+    <ion-label>免费</ion-label>
   </ion-segment-button>
   <ion-segment-button disabled value="top">
-    <ion-label>Top</ion-label>
+    <ion-label>置顶</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Segment buttons with values and icons -->
+<!-- 带值和图标的分段按钮 -->
 <ion-segment>
   <ion-segment-button value="camera">
     <ion-icon name="camera"></ion-icon>
@@ -213,33 +213,33 @@ export class SegmentButtonExample {
   </ion-segment-button>
 </ion-segment>
 
-<!-- Segment with a value that checks the last button -->
+<!-- 具有选中最后一个按钮的值 的分段 -->
 <ion-segment value="shared">
   <ion-segment-button value="bookmarks">
-    <ion-label>Bookmarks</ion-label>
+    <ion-label>书签</ion-label>
   </ion-segment-button>
   <ion-segment-button value="reading">
-    <ion-label>Reading List</ion-label>
+    <ion-label>阅读列表</ion-label>
   </ion-segment-button>
   <ion-segment-button value="shared">
-    <ion-label>Shared Links</ion-label>
+    <ion-label>共享链接</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Label only -->
+<!-- 仅标签 -->
 <ion-segment value="1">
   <ion-segment-button value="1">
-    <ion-label>Item One</ion-label>
+    <ion-label>项目一</ion-label>
   </ion-segment-button>
   <ion-segment-button value="2">
-    <ion-label>Item Two</ion-label>
+    <ion-label>项目二</ion-label>
   </ion-segment-button>
   <ion-segment-button value="3">
-    <ion-label>Item Three</ion-label>
+    <ion-label>项目三</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Icon only -->
+<!-- 仅图标 -->
 <ion-segment value="heart">
   <ion-segment-button value="call">
     <ion-icon name="call"></ion-icon>
@@ -252,76 +252,76 @@ export class SegmentButtonExample {
   </ion-segment-button>
 </ion-segment>
 
-<!-- Icon top -->
+<!-- 图标在上方 -->
 <ion-segment value="2">
   <ion-segment-button value="1">
-    <ion-label>Item One</ion-label>
+    <ion-label>项目一</ion-label>
     <ion-icon name="call"></ion-icon>
   </ion-segment-button>
   <ion-segment-button value="2">
-    <ion-label>Item Two</ion-label>
+    <ion-label>项目二</ion-label>
     <ion-icon name="heart"></ion-icon>
   </ion-segment-button>
   <ion-segment-button value="3">
-    <ion-label>Item Three</ion-label>
+    <ion-label>项目三</ion-label>
     <ion-icon name="pin"></ion-icon>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Icon bottom -->
+<!-- 图标在下方 -->
 <ion-segment value="1">
   <ion-segment-button value="1" layout="icon-bottom">
     <ion-icon name="call"></ion-icon>
-    <ion-label>Item One</ion-label>
+    <ion-label>项目一</ion-label>
   </ion-segment-button>
   <ion-segment-button value="2" layout="icon-bottom">
     <ion-icon name="heart"></ion-icon>
-    <ion-label>Item Two</ion-label>
+    <ion-label>项目二</ion-label>
   </ion-segment-button>
   <ion-segment-button value="3" layout="icon-bottom">
     <ion-icon name="pin"></ion-icon>
-    <ion-label>Item Three</ion-label>
+    <ion-label>项目三</ion-label>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Icon start -->
+<!-- 图标在起始位置 -->
 <ion-segment value="1">
   <ion-segment-button value="1" layout="icon-start">
-    <ion-label>Item One</ion-label>
+    <ion-label>项目一</ion-label>
     <ion-icon name="call"></ion-icon>
   </ion-segment-button>
   <ion-segment-button value="2" layout="icon-start">
-    <ion-label>Item Two</ion-label>
+    <ion-label>项目二</ion-label>
     <ion-icon name="heart"></ion-icon>
   </ion-segment-button>
   <ion-segment-button value="3" layout="icon-start">
-    <ion-label>Item Three</ion-label>
+    <ion-label>项目三</ion-label>
     <ion-icon name="pin"></ion-icon>
   </ion-segment-button>
 </ion-segment>
 
-<!-- Icon end -->
+<!-- 图标在结束位置 -->
 <ion-segment value="1">
   <ion-segment-button value="1" layout="icon-end">
     <ion-icon name="call"></ion-icon>
-    <ion-label>Item One</ion-label>
+    <ion-label>项目一</ion-label>
   </ion-segment-button>
   <ion-segment-button value="2" disabled layout="icon-end">
     <ion-icon name="heart"></ion-icon>
-    <ion-label>Item Two</ion-label>
+    <ion-label>项目二</ion-label>
   </ion-segment-button>
   <ion-segment-button value="3" layout="icon-end">
     <ion-icon name="pin"></ion-icon>
-    <ion-label>Item Three</ion-label>
+    <ion-label>项目三</ion-label>
   </ion-segment-button>
 </ion-segment>
 ```
 
 ```javascript
-// Listen for ionChange on segment
+// 监听分段的 ionChange 事件
 const segment = document.querySelector('ion-segment');
 segment.addEventListener('ionChange', (ev) => {
-  console.log('Segment changed', ev);
+  console.log('分段已更改', ev);
 });
 ```
 
@@ -349,34 +349,34 @@ export const SegmentButtonExamples: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>SegmentButton</IonTitle>
+          <IonTitle>分段按钮</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        {/*-- Segment buttons with text and click listener --*/}
-        <IonSegment onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
+        {/*-- 带文本和点击监听器的分段按钮 --*/}
+        <IonSegment onIonChange={(e) => console.log(`${e.detail.value} 分段已选中`)}>
           <IonSegmentButton value="Friends">
-            <IonLabel>Friends</IonLabel>
+            <IonLabel>朋友</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="Enemies">
-            <IonLabel>Enemies</IonLabel>
+            <IonLabel>敌人</IonLabel>
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Segment buttons with the first checked and the last disabled --*/}
+        {/*-- 第一个选中且最后一个禁用的分段按钮 --*/}
         <IonSegment value="paid">
           <IonSegmentButton value="paid">
-            <IonLabel>Paid</IonLabel>
+            <IonLabel>付费</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="free">
-            <IonLabel>Free</IonLabel>
+            <IonLabel>免费</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton disabled value="top">
-            <IonLabel>Top</IonLabel>
+            <IonLabel>置顶</IonLabel>
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Segment buttons with values and icons --*/}
+        {/*-- 带值和图标的分段按钮 --*/}
         <IonSegment>
           <IonSegmentButton value="camera">
             <IonIcon icon={camera} />
@@ -386,33 +386,33 @@ export const SegmentButtonExamples: React.FC = () => {
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Segment with a value that checks the last button --*/}
+        {/*-- 具有选中最后一个按钮的值 的分段 --*/}
         <IonSegment value="shared">
           <IonSegmentButton value="bookmarks">
-            <IonLabel>Bookmarks</IonLabel>
+            <IonLabel>书签</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="reading">
-            <IonLabel>Reading List</IonLabel>
+            <IonLabel>阅读列表</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="shared">
-            <IonLabel>Shared Links</IonLabel>
+            <IonLabel>共享链接</IonLabel>
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Label only --*/}
+        {/*-- 仅标签 --*/}
         <IonSegment value="1">
           <IonSegmentButton value="1">
-            <IonLabel>Item One</IonLabel>
+            <IonLabel>项目一</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="2">
-            <IonLabel>Item Two</IonLabel>
+            <IonLabel>项目二</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="3">
-            <IonLabel>Item Three</IonLabel>
+            <IonLabel>项目三</IonLabel>
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Icon only --*/}
+        {/*-- 仅图标 --*/}
         <IonSegment value="heart">
           <IonSegmentButton value="call">
             <IonIcon icon={call} />
@@ -425,67 +425,67 @@ export const SegmentButtonExamples: React.FC = () => {
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Icon top --*/}
+        {/*-- 图标在上方 --*/}
         <IonSegment value="2">
           <IonSegmentButton value="1">
-            <IonLabel>Item One</IonLabel>
+            <IonLabel>项目一</IonLabel>
             <IonIcon icon={call} />
           </IonSegmentButton>
           <IonSegmentButton value="2">
-            <IonLabel>Item Two</IonLabel>
+            <IonLabel>项目二</IonLabel>
             <IonIcon icon={heart} />
           </IonSegmentButton>
           <IonSegmentButton value="3">
-            <IonLabel>Item Three</IonLabel>
+            <IonLabel>项目三</IonLabel>
             <IonIcon icon={pin} />
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Icon bottom --*/}
+        {/*-- 图标在下方 --*/}
         <IonSegment value="1">
           <IonSegmentButton value="1" layout="icon-bottom">
             <IonIcon icon={call} />
-            <IonLabel>Item One</IonLabel>
+            <IonLabel>项目一</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="2" layout="icon-bottom">
             <IonIcon icon={heart} />
-            <IonLabel>Item Two</IonLabel>
+            <IonLabel>项目二</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="3" layout="icon-bottom">
             <IonIcon icon={pin} />
-            <IonLabel>Item Three</IonLabel>
+            <IonLabel>项目三</IonLabel>
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Icon start --*/}
+        {/*-- 图标在起始位置 --*/}
         <IonSegment value="1">
           <IonSegmentButton value="1" layout="icon-start">
-            <IonLabel>Item One</IonLabel>
+            <IonLabel>项目一</IonLabel>
             <IonIcon icon={call} />
           </IonSegmentButton>
           <IonSegmentButton value="2" layout="icon-start">
-            <IonLabel>Item Two</IonLabel>
+            <IonLabel>项目二</IonLabel>
             <IonIcon icon={heart} />
           </IonSegmentButton>
           <IonSegmentButton value="3" layout="icon-start">
-            <IonLabel>Item Three</IonLabel>
+            <IonLabel>项目三</IonLabel>
             <IonIcon icon={pin} />
           </IonSegmentButton>
         </IonSegment>
 
-        {/*-- Icon end --*/}
+        {/*-- 图标在结束位置 --*/}
         <IonSegment value="1">
           <IonSegmentButton value="1" layout="icon-end">
             <IonIcon icon={call} />
-            <IonLabel>Item One</IonLabel>
+            <IonLabel>项目一</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="2" disabled layout="icon-end">
             <IonIcon icon={heart} />
-            <IonLabel>Item Two</IonLabel>
+            <IonLabel>项目二</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="3" layout="icon-end">
             <IonIcon icon={pin} />
-            <IonLabel>Item Three</IonLabel>
+            <IonLabel>项目三</IonLabel>
           </IonSegmentButton>
         </IonSegment>
       </IonContent>
@@ -507,35 +507,35 @@ import { Component, h } from '@stencil/core';
 })
 export class SegmentButtonExample {
   segmentChanged(ev: any) {
-    console.log('Segment changed', ev);
+    console.log('分段已更改', ev);
   }
 
   render() {
     return [
-      // Segment buttons with text and click listener
+      // 带文本和点击监听器的分段按钮
       <ion-segment onIonChange={(ev) => this.segmentChanged(ev)}>
         <ion-segment-button>
-          <ion-label>Friends</ion-label>
+          <ion-label>朋友</ion-label>
         </ion-segment-button>
         <ion-segment-button>
-          <ion-label>Enemies</ion-label>
+          <ion-label>敌人</ion-label>
         </ion-segment-button>
       </ion-segment>,
 
-      // Segment buttons with the first checked and the last disabled
+      // 第一个选中且最后一个禁用的分段按钮
       <ion-segment value="paid">
         <ion-segment-button value="paid">
-          <ion-label>Paid</ion-label>
+          <ion-label>付费</ion-label>
         </ion-segment-button>
         <ion-segment-button value="free">
-          <ion-label>Free</ion-label>
+          <ion-label>免费</ion-label>
         </ion-segment-button>
         <ion-segment-button disabled value="top">
-          <ion-label>Top</ion-label>
+          <ion-label>置顶</ion-label>
         </ion-segment-button>
       </ion-segment>,
 
-      // Segment buttons with values and icons
+      // 带值和图标的分段按钮
       <ion-segment>
         <ion-segment-button value="camera">
           <ion-icon name="camera"></ion-icon>
@@ -545,33 +545,33 @@ export class SegmentButtonExample {
         </ion-segment-button>
       </ion-segment>,
 
-      // Segment with a value that checks the last button
+      // 具有选中最后一个按钮的值 的分段
       <ion-segment value="shared">
         <ion-segment-button value="bookmarks">
-          <ion-label>Bookmarks</ion-label>
+          <ion-label>书签</ion-label>
         </ion-segment-button>
         <ion-segment-button value="reading">
-          <ion-label>Reading List</ion-label>
+          <ion-label>阅读列表</ion-label>
         </ion-segment-button>
         <ion-segment-button value="shared">
-          <ion-label>Shared Links</ion-label>
+          <ion-label>共享链接</ion-label>
         </ion-segment-button>
       </ion-segment>,
 
-      // Label only
+      // 仅标签
       <ion-segment value="1">
         <ion-segment-button value="1">
-          <ion-label>Item One</ion-label>
+          <ion-label>项目一</ion-label>
         </ion-segment-button>
         <ion-segment-button value="2">
-          <ion-label>Item Two</ion-label>
+          <ion-label>项目二</ion-label>
         </ion-segment-button>
         <ion-segment-button value="3">
-          <ion-label>Item Three</ion-label>
+          <ion-label>项目三</ion-label>
         </ion-segment-button>
       </ion-segment>,
 
-      // Icon only
+      // 仅图标
       <ion-segment value="heart">
         <ion-segment-button value="call">
           <ion-icon name="call"></ion-icon>
@@ -584,67 +584,67 @@ export class SegmentButtonExample {
         </ion-segment-button>
       </ion-segment>,
 
-      // Icon top
+      // 图标在上方
       <ion-segment value="2">
         <ion-segment-button value="1">
-          <ion-label>Item One</ion-label>
+          <ion-label>项目一</ion-label>
           <ion-icon name="call"></ion-icon>
         </ion-segment-button>
         <ion-segment-button value="2">
-          <ion-label>Item Two</ion-label>
+          <ion-label>项目二</ion-label>
           <ion-icon name="heart"></ion-icon>
         </ion-segment-button>
         <ion-segment-button value="3">
-          <ion-label>Item Three</ion-label>
+          <ion-label>项目三</ion-label>
           <ion-icon name="pin"></ion-icon>
         </ion-segment-button>
       </ion-segment>,
 
-      // Icon bottom
+      // 图标在下方
       <ion-segment value="1">
         <ion-segment-button value="1" layout="icon-bottom">
           <ion-icon name="call"></ion-icon>
-          <ion-label>Item One</ion-label>
+          <ion-label>项目一</ion-label>
         </ion-segment-button>
         <ion-segment-button value="2" layout="icon-bottom">
           <ion-icon name="heart"></ion-icon>
-          <ion-label>Item Two</ion-label>
+          <ion-label>项目二</ion-label>
         </ion-segment-button>
         <ion-segment-button value="3" layout="icon-bottom">
           <ion-icon name="pin"></ion-icon>
-          <ion-label>Item Three</ion-label>
+          <ion-label>项目三</ion-label>
         </ion-segment-button>
       </ion-segment>,
 
-      // Icon start
+      // 图标在起始位置
       <ion-segment value="1">
         <ion-segment-button value="1" layout="icon-start">
-          <ion-label>Item One</ion-label>
+          <ion-label>项目一</ion-label>
           <ion-icon name="call"></ion-icon>
         </ion-segment-button>
         <ion-segment-button value="2" layout="icon-start">
-          <ion-label>Item Two</ion-label>
+          <ion-label>项目二</ion-label>
           <ion-icon name="heart"></ion-icon>
         </ion-segment-button>
         <ion-segment-button value="3" layout="icon-start">
-          <ion-label>Item Three</ion-label>
+          <ion-label>项目三</ion-label>
           <ion-icon name="pin"></ion-icon>
         </ion-segment-button>
       </ion-segment>,
 
-      // Icon end
+      // 图标在结束位置
       <ion-segment value="1">
         <ion-segment-button value="1" layout="icon-end">
           <ion-icon name="call"></ion-icon>
-          <ion-label>Item One</ion-label>
+          <ion-label>项目一</ion-label>
         </ion-segment-button>
         <ion-segment-button value="2" disabled layout="icon-end">
           <ion-icon name="heart"></ion-icon>
-          <ion-label>Item Two</ion-label>
+          <ion-label>项目二</ion-label>
         </ion-segment-button>
         <ion-segment-button value="3" layout="icon-end">
           <ion-icon name="pin"></ion-icon>
-          <ion-label>Item Three</ion-label>
+          <ion-label>项目三</ion-label>
         </ion-segment-button>
       </ion-segment>,
     ];
@@ -658,30 +658,30 @@ export class SegmentButtonExample {
 
 ```html
 <template>
-  <!-- Segment buttons with text and click listener -->
+  <!-- 带文本和点击监听器的分段按钮 -->
   <ion-segment @ionChange="segmentChanged($event)">
     <ion-segment-button>
-      <ion-label>Friends</ion-label>
+      <ion-label>朋友</ion-label>
     </ion-segment-button>
     <ion-segment-button>
-      <ion-label>Enemies</ion-label>
+      <ion-label>敌人</ion-label>
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Segment buttons with the first checked and the last disabled -->
+  <!-- 第一个选中且最后一个禁用的分段按钮 -->
   <ion-segment value="paid">
     <ion-segment-button value="paid">
-      <ion-label>Paid</ion-label>
+      <ion-label>付费</ion-label>
     </ion-segment-button>
     <ion-segment-button value="free">
-      <ion-label>Free</ion-label>
+      <ion-label>免费</ion-label>
     </ion-segment-button>
     <ion-segment-button disabled value="top">
-      <ion-label>Top</ion-label>
+      <ion-label>置顶</ion-label>
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Segment buttons with values and icons -->
+  <!-- 带值和图标的分段按钮 -->
   <ion-segment>
     <ion-segment-button value="camera">
       <ion-icon :icon="camera"></ion-icon>
@@ -691,33 +691,33 @@ export class SegmentButtonExample {
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Segment with a value that checks the last button -->
+  <!-- 具有选中最后一个按钮的值 的分段 -->
   <ion-segment value="shared">
     <ion-segment-button value="bookmarks">
-      <ion-label>Bookmarks</ion-label>
+      <ion-label>书签</ion-label>
     </ion-segment-button>
     <ion-segment-button value="reading">
-      <ion-label>Reading List</ion-label>
+      <ion-label>阅读列表</ion-label>
     </ion-segment-button>
     <ion-segment-button value="shared">
-      <ion-label>Shared Links</ion-label>
+      <ion-label>共享链接</ion-label>
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Label only -->
+  <!-- 仅标签 -->
   <ion-segment value="1">
     <ion-segment-button value="1">
-      <ion-label>Item One</ion-label>
+      <ion-label>项目一</ion-label>
     </ion-segment-button>
     <ion-segment-button value="2">
-      <ion-label>Item Two</ion-label>
+      <ion-label>项目二</ion-label>
     </ion-segment-button>
     <ion-segment-button value="3">
-      <ion-label>Item Three</ion-label>
+      <ion-label>项目三</ion-label>
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Icon only -->
+  <!-- 仅图标 -->
   <ion-segment value="heart">
     <ion-segment-button value="call">
       <ion-icon :icon="call"></ion-icon>
@@ -730,67 +730,67 @@ export class SegmentButtonExample {
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Icon top -->
+  <!-- 图标在上方 -->
   <ion-segment value="2">
     <ion-segment-button value="1">
-      <ion-label>Item One</ion-label>
+      <ion-label>项目一</ion-label>
       <ion-icon :icon="call"></ion-icon>
     </ion-segment-button>
     <ion-segment-button value="2">
-      <ion-label>Item Two</ion-label>
+      <ion-label>项目二</ion-label>
       <ion-icon :icon="heart"></ion-icon>
     </ion-segment-button>
     <ion-segment-button value="3">
-      <ion-label>Item Three</ion-label>
+      <ion-label>项目三</ion-label>
       <ion-icon :icon="pin"></ion-icon>
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Icon bottom -->
+  <!-- 图标在下方 -->
   <ion-segment value="1">
     <ion-segment-button value="1" layout="icon-bottom">
       <ion-icon :icon="call"></ion-icon>
-      <ion-label>Item One</ion-label>
+      <ion-label>项目一</ion-label>
     </ion-segment-button>
     <ion-segment-button value="2" layout="icon-bottom">
       <ion-icon :icon="heart"></ion-icon>
-      <ion-label>Item Two</ion-label>
+      <ion-label>项目二</ion-label>
     </ion-segment-button>
     <ion-segment-button value="3" layout="icon-bottom">
       <ion-icon :icon="pin"></ion-icon>
-      <ion-label>Item Three</ion-label>
+      <ion-label>项目三</ion-label>
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Icon start -->
+  <!-- 图标在起始位置 -->
   <ion-segment value="1">
     <ion-segment-button value="1" layout="icon-start">
-      <ion-label>Item One</ion-label>
+      <ion-label>项目一</ion-label>
       <ion-icon :icon="call"></ion-icon>
     </ion-segment-button>
     <ion-segment-button value="2" layout="icon-start">
-      <ion-label>Item Two</ion-label>
+      <ion-label>项目二</ion-label>
       <ion-icon :icon="heart"></ion-icon>
     </ion-segment-button>
     <ion-segment-button value="3" layout="icon-start">
-      <ion-label>Item Three</ion-label>
+      <ion-label>项目三</ion-label>
       <ion-icon :icon="pin"></ion-icon>
     </ion-segment-button>
   </ion-segment>
 
-  <!-- Icon end -->
+  <!-- 图标在结束位置 -->
   <ion-segment value="1">
     <ion-segment-button value="1" layout="icon-end">
       <ion-icon :icon="call"></ion-icon>
-      <ion-label>Item One</ion-label>
+      <ion-label>项目一</ion-label>
     </ion-segment-button>
     <ion-segment-button value="2" disabled layout="icon-end">
       <ion-icon :icon="heart"></ion-icon>
-      <ion-label>Item Two</ion-label>
+      <ion-label>项目二</ion-label>
     </ion-segment-button>
     <ion-segment-button value="3" layout="icon-end">
       <ion-icon :icon="pin"></ion-icon>
-      <ion-label>Item Three</ion-label>
+      <ion-label>项目三</ion-label>
     </ion-segment-button>
   </ion-segment>
 </template>
@@ -801,12 +801,12 @@ export class SegmentButtonExample {
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonIcon, IonLabel, IonSegment, IonSegmentButtonr },
+    components: { IonIcon, IonLabel, IonSegment, IonSegmentButton },
     methods: {
       segmentChanged(ev: CustomEvent) {
-        console.log('Segment changed', ev);
+        console.log('分段已更改', ev);
       }
-    }
+    },
     setup() {
       return {
         bookmark,
@@ -824,26 +824,26 @@ export class SegmentButtonExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

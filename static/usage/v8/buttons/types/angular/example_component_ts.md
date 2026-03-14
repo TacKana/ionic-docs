@@ -22,9 +22,9 @@ import { create, ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle,
 export class ExampleComponent {
   constructor() {
     /**
-     * Any icons you want to use in your application
-     * can be registered in app.component.ts and then
-     * referenced by name anywhere in your application.
+     * 应用中任何你想使用的图标
+     * 都可以在 app.component.ts 中注册，
+     * 然后通过名称在应用中的任何地方引用。
      */
     addIcons({ create, ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle, search, star });
   }

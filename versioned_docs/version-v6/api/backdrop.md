@@ -13,35 +13,35 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Backdrops are full screen components that overlay other components. They are useful behind components that transition in on top of other content and can be used to dismiss that component.
+背景幕（Backdrop）是一种全屏组件，会覆盖在其他组件之上。它通常用在那些需要在其他内容上方滑入的组件背后，并且可以用来关闭该组件。
 
-## Basic Usage
+## 基本用法
 
-The backdrop is transparent by default. The backdrop will prevent clicking or tapping on the content behind it.
+背景幕默认是透明的。它会阻止点击或触摸其背后的内容。
 
 import Basic from '@site/static/usage/v6/backdrop/basic/index.md';
 
 <Basic />
 
-## Styling
+## 样式定制
 
-The backdrop can be customized by assigning CSS properties directly to the backdrop element. Common properties include `background-color`, `background` and `opacity`.
+可以通过直接为背景幕元素设置 CSS 属性来自定义其样式。常用的属性包括 `background-color`、`background` 和 `opacity`。
 
-Content can be displayed above the backdrop by setting a `z-index` on the content, higher than the backdrop (defaults to `2`).
+通过在内容上设置比背景幕更高的 `z-index`（默认值为 `2`），可以在背景幕上方显示内容。
 
 import Styling from '@site/static/usage/v6/backdrop/styling/index.md';
 
 <Styling />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -49,10 +49,10 @@ import Styling from '@site/static/usage/v6/backdrop/styling/index.md';
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

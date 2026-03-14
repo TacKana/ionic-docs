@@ -1,18 +1,18 @@
-# Make It Your Own! Ionic Theming
+# 打造专属风格！Ionic 主题定制
 
-Previously, we converted our single use Camera app into an epic photo gallery. Now, let’s explore how to make the photo gallery our own with Ionic theming. The visual design of the app is incredibly important - fortunately, Ionic provides a lot for us out-of-the-box.
+之前，我们将单一功能的相机应用转变成了一个惊艳的照片画廊应用。现在，让我们探索如何通过 Ionic 主题定制，让这个照片画廊应用变得独一无二。应用程序的视觉设计极其重要——幸运的是，Ionic 为我们提供了许多开箱即用的功能。
 
-Ionic has nine default colors, defined as CSS variables, that can be used to change the color of its UI components:
+Ionic 定义了九个默认颜色作为 CSS 变量，可用于更改其 UI 组件的颜色：
 
-![A chart showing Ionic's nine default colors with their hex codes.](/img/guides/first-app-v4/theming-defaults.png 'Ionic Default Color Palette')
+![展示 Ionic 九个默认颜色及其十六进制代码的图表。](/img/guides/first-app-v4/theming-defaults.png 'Ionic 默认调色板')
 
-You can customize each color further by supplying a base, contrast, shade, and tint properties. These provide flexible control over your styles:
+你可以通过提供基色、对比色、阴影色和色调属性来进一步自定义每种颜色。这些属性为你的样式提供了灵活的控制：
 
-![Table detailing the properties for customizing the primary color in Ionic, including base, contrast, shade, and tint.](/img/guides/first-app-v4/theming-properties.png 'Ionic Color Customization Properties')
+![详细说明 Ionic 中主色调自定义属性的表格，包括基色、对比色、阴影色和色调。](/img/guides/first-app-v4/theming-properties.png 'Ionic 颜色自定义属性')
 
-You can find these colors defined in `src/theme/variables.scss`.
+你可以在 `src/theme/variables.scss` 中找到这些颜色的定义。
 
-By changing these variables here and there, you can easily update the entire theme of the application! Try changing a few of them and watch the app update in DevApp. For example, change the default blue color for Primary to purple:
+通过修改这些变量，你可以轻松更新整个应用程序的主题！尝试更改其中几个变量，并在 DevApp 中观察应用程序的更新。例如，将默认的蓝色主色调改为紫色：
 
 ```css
 /** Ionic CSS Variables **/
@@ -27,15 +27,15 @@ By changing these variables here and there, you can easily update the entire the
 }
 ```
 
-The easiest and most powerful way to create custom color palettes for your app’s UI is Ionic's [Color Generator tool](../../../theming/color-generator.md). As you change a color’s hex values, the embedded demo app automatically reflects the new colors. When you've finished making changes, simply copy and paste the generated code directly into your Ionic project.
+为应用程序 UI 创建自定义调色盘最简单且最强大的方法是使用 Ionic 的[颜色生成器工具](../../../theming/color-generator.md)。当你更改颜色的十六进制值时，嵌入式演示应用程序会自动反映新颜色。完成更改后，只需将生成的代码直接复制并粘贴到你的 Ionic 项目中即可。
 
-But wait, there’s more! Ionic automatically provides platform specific styles based on the device the application is running on, giving that native look and feel your users are used to:
+但等等，还有更多！Ionic 会根据应用程序运行的设备自动提供特定平台的样式，为用户带来习惯的原生外观和感觉：
 
-![Comparing the native look of an Ionic app on iOS and Android platforms.](/img/guides/first-app-v3/ion-lab-comparison.png 'Ionic Platform Specific Styles Comparison')
+![比较 Ionic 应用在 iOS 和 Android 平台上的原生外观。](/img/guides/first-app-v3/ion-lab-comparison.png 'Ionic 平台特定样式对比')
 
-In our app, this is clearly visible in how the header and the icons are styled.
+在我们的应用程序中，标题和图标的样式清楚地展示了这一点。
 
-If you want consistency, you can tell Ionic to use the same mode regardless of platform. For example, to apply Material Design (Android’s platform style), set it globally in the App Module class. Open `src/app/app.module.ts`, then set the `mode` property:
+如果你希望保持一致性，可以告诉 Ionic 无论平台如何都使用相同的模式。例如，要应用 Material Design（Android 的平台样式），可以在 App Module 类中进行全局设置。打开 `src/app/app.module.ts`，然后设置 `mode` 属性：
 
 ```Javascript
 imports: [
@@ -47,10 +47,10 @@ imports: [
   ],
 ```
 
-Now, the iOS version of our app has a Material Design skin!
+现在，我们应用程序的 iOS 版本也拥有了 Material Design 的外观！
 
-![An Ionic app with Material Design styling applied on an iOS device.](/img/guides/first-app-v3/ion-lab-md-styling.png 'Ionic Material Design Styling on iOS')
+![在 iOS 设备上应用了 Material Design 样式的 Ionic 应用。](/img/guides/first-app-v3/ion-lab-md-styling.png 'iOS 上的 Ionic Material Design 样式')
 
-Creating gorgeous-looking Ionic apps is easy with CSS variables and platform-specific styling. You now have everything you need to get started with Ionic.
+借助 CSS 变量和平台特定样式，创建外观惊艳的 Ionic 应用变得轻而易举。现在，你已经掌握了开始使用 Ionic 所需的一切。
 
-Go forth and build great apps!
+出发吧，构建出色的应用程序！

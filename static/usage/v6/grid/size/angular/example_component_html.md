@@ -1,5 +1,5 @@
 ```html
-<b>Column 2 has <code>size</code> set to <code>"8"</code></b>
+<b>第 2 列设置了 <code>size</code> 属性为 <code>"8"</code></b>
 <ion-grid>
   <ion-row>
     <ion-col>1</ion-col>
@@ -8,7 +8,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Columns 3 & 4 have <code>size</code> set to <code>"3"</code></b>
+<b>第 3 列和第 4 列设置了 <code>size</code> 属性为 <code>"3"</code></b>
 <ion-grid>
   <ion-row>
     <ion-col>1</ion-col>
@@ -20,7 +20,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Columns 1 & 2 have <code>size</code> set to <code>"4"</code></b>
+<b>第 1 列和第 2 列设置了 <code>size</code> 属性为 <code>"4"</code></b>
 <ion-grid>
   <ion-row>
     <ion-col size="4">1</ion-col>

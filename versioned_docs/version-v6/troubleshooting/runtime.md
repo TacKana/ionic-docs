@@ -3,28 +3,28 @@ title: Runtime Issues
 ---
 
 <head>
-  <title>Solve App Runtime Issues: Blank App, Plugins Not Working, etc.</title>
+  <title>解决应用运行时问题：空白应用、插件不工作等</title>
   <meta
     name="description"
-    content="There are many causes of app runtime issues. Read how to solve issues such as a blank app, plugins not working, Angular change detection, and more with Ionic."
+    content="应用运行时问题有多种原因。了解如何解决空白应用、插件不工作、Angular 变更检测等问题。"
   />
 </head>
 
-## Blank App
+## 空白应用
 
 :::note
-I have no errors in my app. Why does it show a blank screen?
+我的应用中没有错误。为什么它显示空白屏幕？
 :::
 
-There are several different reasons this can happen. If you are unable to find a solution on the [Ionic forums](https://forum.ionicframework.com), make sure:
+这可能有多种原因。如果你在 [Ionic 论坛](https://forum.ionicframework.com) 上找不到解决方案，请确保：
 
-- Polyfills are not included for older browser/versions of android
+- 没有为旧版浏览器/Android 版本包含 polyfills
 
-For projects with `@angular/cli@7.3` or above, polyfills will automatically be included. For project created before that, polyfills need to be manually enabled.
+对于使用 `@angular/cli@7.3` 或更高版本的项目，polyfills 会自动包含。对于在此之前创建的项目，需要手动启用 polyfills。
 
-In `src/polyfills.ts`, you must enabled all ES6 polyfills for Android 4.4 support.
+在 `src/polyfills.ts` 中，必须启用所有 ES6 polyfills 以支持 Android 4.4。
 
-Alternatively, a project could be updated to use the latest release of the `@angular/cli` package & `@angular-devkit` packages and include the `es5BrowserSupport` option in the `angular.json`'s build options object:
+或者，可以将项目更新为使用最新版本的 `@angular/cli` 包和 `@angular-devkit` 包，并在 `angular.json` 的构建选项对象中包含 `es5BrowserSupport` 选项：
 
 ```diff
         "input": "src/global.scss"
@@ -38,29 +38,29 @@ Alternatively, a project could be updated to use the latest release of the `@ang
     "production": {
 ```
 
-This will automatically include the polyfills for older browsers that need them.
+这将自动为需要 polyfills 的旧版浏览器包含它们。
 
-## Directive Not Working
+## 指令不工作
 
 :::note
-Why is my custom component/directive not working?
+为什么我的自定义组件/指令不工作？
 :::
 
-There are a few things you can check. Make sure:
+你可以检查以下几点。确保：
 
-- Your selector doesn't have any misspellings.
-- You're using the selector correctly as an attribute, element or class.
-- Your selector has the proper syntax:
-  - `[attr]` if it's an attribute selector
-  - `element` if it's an element selector
-  - `.class` if it's a class selector
+- 你的选择器没有拼写错误。
+- 你正在正确地将选择器用作属性、元素或类。
+- 你的选择器具有正确的语法：
+  - `[attr]` 如果是属性选择器
+  - `element` 如果是元素选择器
+  - `.class` 如果是类选择器
 
-Here's an example using an attribute selector:
+以下是一个使用属性选择器的示例：
 
 ```tsx
 @Directive({
-  selector: '[my-dir]' // <-- [my-dir] because it is an attribute
-})                     // Could be my-dir, [my-dir], .my-dir
+  selector: '[my-dir]' // <-- [my-dir] 因为它是属性
+})                     // 可以是 my-dir、[my-dir]、.my-dir
 class MyDir {
   constructor() {
     console.log('I'm alive!');
@@ -68,84 +68,69 @@ class MyDir {
 }
 
 @Component({
-  // We add my-dir as an attribute to match the directive's selector
+  // 我们添加 my-dir 作为属性以匹配指令的选择器
   template: `<div my-dir>Hello World</div>`,
 
-  // Alternatively, if you were attaching the directive to an element it would be:
+  // 或者，如果你要将指令附加到元素，它将是：
   // template: `<my-dir>Hello World</my-dir>`
-  // and if you were attaching by class the template would be:
+  // 如果你要通过类附加，模板将是：
   // template: `<div class="my-dir">Hello World</div>`
 
-  directives: [MyDir] // <-- Don't forget me! (only if your ionic-angular version is below RC0)
+  directives: [MyDir] // <-- 不要忘记我！（仅当你的 ionic-angular 版本低于 RC0 时）
 })
 class MyPage { }
 ```
 
-## Click Delays
+## 点击延迟
 
 :::note
-Why is there a delay on my click event?
+为什么我的点击事件有延迟？
 :::
 
-In general, we recommend only adding `(click)` events to elements that are
-normally clickable. This includes `<button>` and `<a>` elements. This improves
-accessibility as a screen reader will be able to tell that the element is
-clickable.
+通常，我们建议仅向通常可点击的元素添加 `(click)` 事件。这包括 `<button>` 和 `<a>` 元素。这提高了可访问性，因为屏幕阅读器将能够识别该元素是可点击的。
 
-However, you may need to add a `(click)` event to an element that is not
-normally clickable. When you do this you may experience a `300ms` delay from the
-time you click the element to the event firing. To remove this delay, you can
-add the `tappable` attribute to your element.
+但是，你可能需要向通常不可点击的元素添加 `(click)` 事件。当你这样做时，你可能会遇到从点击元素到事件触发的 `300ms` 延迟。要消除此延迟，你可以向元素添加 `tappable` 属性。
 
 ```html
-<div tappable (click)="doClick()">I am clickable!</div>
+<div tappable (click)="doClick()">我是可点击的！</div>
 ```
 
-## Angular Change Detection
+## Angular 变更检测
 
 :::note
-Why does Angular change detection run very frequently when my components are initializing?
+为什么当我的组件初始化时，Angular 变更检测运行得非常频繁？
 :::
 
-Angular uses a library called [zone.js](https://github.com/angular/angular/tree/master/packages/zone.js/)
-which helps it determine when to run change detection.
+Angular 使用一个名为 [zone.js](https://github.com/angular/angular/tree/master/packages/zone.js/) 的库来帮助确定何时运行变更检测。
 
-As of zone.js `0.8.27`, certain APIs for Web Components also cause change
-detection to run. This can have the undesirable side effect of your app
-slowing down when a large number of components are initializing.
+从 zone.js `0.8.27` 开始，某些 Web Components 的 API 也会导致变更检测运行。当大量组件初始化时，这可能会产生应用程序变慢的不良副作用。
 
-To prevent this from happening, the zone.js flag that manages this portion of
-change detection can be disabled. In the `src` directory of your application,
-create a file called `zone-flags.ts`. Place the following code into the file:
+为了防止这种情况发生，可以禁用管理这部分变更检测的 zone.js 标志。在应用程序的 `src` 目录中，创建一个名为 `zone-flags.ts` 的文件。将以下代码放入该文件中：
 
 ```tsx
 (window as any).__Zone_disable_customElements = true;
 ```
 
-The `zone-flags.ts` file then needs to be imported into your application's
-`polyfills.ts` file. Be sure to import it _before_ `zone.js` is imported:
+然后需要将 `zone-flags.ts` 文件导入到应用程序的 `polyfills.ts` 文件中。确保在导入 `zone.js` **之前**导入它：
 
 ```tsx
 ...
 
 import './zone-flags.ts';
-import 'zone.js/dist/zone'; // Included with Angular CLI
+import 'zone.js/dist/zone'; // 由 Angular CLI 包含
 
 ...
 ```
 
-This change will only affect applications that depend on zone.js `0.8.27` or
-newer. Older versions will not be affected by this change.
+此更改仅影响依赖 zone.js `0.8.27` 或更高版本的应用程序。旧版本不会受到此更改的影响。
 
 :::note
-This flag is automatically included when creating an Ionic app via
+通过 Ionic CLI 创建 Ionic 应用时，此标志会自动包含。
 :::
-the Ionic CLI.
 
-## Cordova plugins not working in the browser
+## 浏览器中 Cordova 插件不工作
 
-At some point in your development you may, try to call Cordova plugin, but get a
-warning:
+在开发的某个阶段，你可能尝试调用 Cordova 插件，但收到警告：
 
 ```shell
 [Warning] Native: tried calling StatusBar.styleDefault, but Cordova is not
@@ -153,25 +138,20 @@ available. Make sure to include cordova.js or run in a device/simulator
 (app.bundle.js, line 83388)
 ```
 
-This happens when you try to call a native plugin, but Cordova isn't available.
-Thankfully, Ionic Native will print out a nice warning, instead of an error.
+当你尝试调用原生插件但 Cordova 不可用时，会发生这种情况。幸运的是，Ionic Native 会打印出友好的警告，而不是错误。
 
-In other cases where the plugin is not being used through Ionic Native, plugins
-can print a much more obscure warning.
+在其他情况下，如果插件不是通过 Ionic Native 使用的，插件可能会打印出更模糊的警告。
 
 ```shell
 EXCEPTION: Error: Uncaught (in promise): TypeError: undefined is not an object
 (evaluating 'navigator.camera.getPicture')
 ```
 
-If this happens, test the plugin on a real device or simulator.
+如果发生这种情况，请在真实设备或模拟器上测试插件。
 
-## Multiple instances of a provider
+## 提供者的多个实例
 
-If you inject a provider in every component because you want it available to all
-of them you will end up with multiple instances of the provider. You should
-inject the provider once in the parent component if you want it to be available
-to the child components.
+如果你在每个组件中注入提供者，因为你希望所有组件都能使用它，最终你将得到该提供者的多个实例。如果你希望子组件可以使用提供者，你应该在父组件中注入一次提供者。
 
 ```tsx
 let id = 0;
@@ -186,10 +166,10 @@ export class MyService {
 @Component({
   selector: 'my-component',
   template: 'Hello World',
-  providers: [MyService], // <-- Creates a new instance of MyService :(
-}) // Unnecessary because MyService is in App's providers
+  providers: [MyService], // <-- 创建 MyService 的新实例 :(
+}) // 不需要，因为 MyService 在 App 的 providers 中
 class MyComp {
-  // id is 1, s is a different MyService instance than MyApp
+  // id 是 1，s 是与 MyApp 不同的 MyService 实例
   constructor(s: MyService) {
     console.log('MyService id is: ' + s.id);
   }
@@ -197,11 +177,11 @@ class MyComp {
 
 @Component({
   template: '<my-component></my-component>',
-  providers: [MyService], // MyService only needs to be here
+  providers: [MyService], // MyService 只需要在这里
   directives: [MyComp],
 })
 class MyApp {
-  // id is 0
+  // id 是 0
   constructor(s: MyService) {
     console.log('MyService id is: ' + s.id);
   }

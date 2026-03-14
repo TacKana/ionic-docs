@@ -5,13 +5,13 @@
       <ion-page id="home-page">
         <ion-header>
           <ion-toolbar>
-            <ion-title>Listen now</ion-title>
+            <ion-title>即刻聆听</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content>
           <div class="example-content">
-            Listen now content
-            <ion-button @click="selectRadio()">Go to Radio</ion-button>
+            即刻聆听内容
+            <ion-button @click="selectRadio()">前往电台</ion-button>
           </div>
         </ion-content>
       </ion-page>
@@ -20,11 +20,11 @@
       <ion-page id="radio-page">
         <ion-header>
           <ion-toolbar>
-            <ion-title>Radio</ion-title>
+            <ion-title>电台</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content>
-          <div class="example-content">Radio content</div>
+          <div class="example-content">电台内容</div>
         </ion-content>
       </ion-page>
     </ion-tab>
@@ -32,11 +32,11 @@
       <ion-page id="library-page">
         <ion-header>
           <ion-toolbar>
-            <ion-title>Library</ion-title>
+            <ion-title>音乐库</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content>
-          <div class="example-content">Library content</div>
+          <div class="example-content">音乐库内容</div>
         </ion-content>
       </ion-page>
     </ion-tab>
@@ -44,11 +44,11 @@
       <ion-page id="search-page">
         <ion-header>
           <ion-toolbar>
-            <ion-title>Search</ion-title>
+            <ion-title>搜索</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content>
-          <div class="example-content">Search content</div>
+          <div class="example-content">搜索内容</div>
         </ion-content>
       </ion-page>
     </ion-tab>
@@ -56,19 +56,19 @@
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="home">
         <ion-icon :icon="playCircle" />
-        Listen Now
+        即刻聆听
       </ion-tab-button>
       <ion-tab-button tab="radio">
         <ion-icon :icon="radio" />
-        Radio
+        电台
       </ion-tab-button>
       <ion-tab-button tab="library">
         <ion-icon :icon="library" />
-        Library
+        音乐库
       </ion-tab-button>
       <ion-tab-button tab="search">
         <ion-icon :icon="search" />
-        Search
+        搜索
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
@@ -99,8 +99,8 @@
 </script>
 
 <style scoped>
-  /* This style is for demonstration purposes only. */
-  /* It's not required for the tabs to function. */
+  /* 此样式仅用于演示目的。 */
+  /* 标签页功能的正常运行并不需要此样式。 */
   .example-content {
     display: flex;
     flex-direction: column;

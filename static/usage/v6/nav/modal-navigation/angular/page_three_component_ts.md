@@ -6,9 +6,9 @@ import { IonicModule, IonNav } from '@ionic/angular';
   selector: 'app-page-one',
   template: `
     <ion-content class="ion-padding">
-      <h1>Page Three</h1>
-      <ion-button (click)="navigateBack()">Go Back</ion-button>
-      <ion-button (click)="navigateToRoot()">Go to Root</ion-button>
+      <h1>页面三</h1>
+      <ion-button (click)="navigateBack()">返回</ion-button>
+      <ion-button (click)="navigateToRoot()">返回根页面</ion-button>
     </ion-content>
   `,
   imports: [IonicModule],

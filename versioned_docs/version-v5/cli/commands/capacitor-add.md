@@ -4,17 +4,17 @@ sidebar_label: 'capacitor add'
 
 # ionic capacitor add
 
-Add a native platform to your Ionic project
+为你的 Ionic 项目添加原生平台支持
 
 ```shell
 ionic capacitor add [options]
 ```
 
-`ionic capacitor add` will do the following:
+`ionic capacitor add` 命令将执行以下操作：
 
-- Add a new platform specific folder to your project (ios, android, or electron)
+- 在你的项目中添加一个新的平台特定文件夹（ios、android 或 electron）
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -26,10 +26,10 @@ ionic capacitor add [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <p>
-          The platform to add (e.g. <code>android</code>, <code>ios</code>, <code>electron</code>)
+          要添加的平台（例如 <code>android</code>、<code>ios</code>、<code>electron</code>）
         </p>
       </td>
     </tr>

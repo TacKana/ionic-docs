@@ -4,19 +4,19 @@ import { IonContent, ScrollDetail } from '@ionic/react';
 
 function Example() {
   function handleScrollStart() {
-    console.log('scroll start');
+    console.log('滚动开始');
   }
 
   function handleScroll(event: CustomEvent<ScrollDetail>) {
-    console.log('scroll', JSON.stringify(event.detail));
+    console.log('滚动', JSON.stringify(event.detail));
   }
 
   function handleScrollEnd() {
-    console.log('scroll end');
+    console.log('滚动结束');
   }
 
   return (
-    // Scroll events are disabled by default for content for performance reasons, enable them to listen to them
+    // 出于性能考虑，内容区域的滚动事件默认是禁用的，启用它们以监听滚动事件
     <IonContent
       scrollEvents={true}
       onIonScrollStart={handleScrollStart}
@@ -24,7 +24,7 @@ function Example() {
       onIonScrollEnd={handleScrollEnd}
       class="ion-padding"
     >
-      <h1>Scroll to fire the scroll events and view them in the console.</h1>
+      <h1>滚动以触发滚动事件，并在控制台中查看它们。</h1>
 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum

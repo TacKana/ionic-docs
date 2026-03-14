@@ -1,7 +1,7 @@
 ```html
 <template>
-  <ion-input-otp fill="outline"> Outline </ion-input-otp>
-  <ion-input-otp fill="solid"> Solid </ion-input-otp>
+  <ion-input-otp fill="outline"> 轮廓样式 </ion-input-otp>
+  <ion-input-otp fill="solid"> 实心样式 </ion-input-otp>
 </template>
 
 <script setup lang="ts">

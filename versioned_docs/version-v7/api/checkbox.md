@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/checkbox/custom-props.
 import Slots from '@ionic-internal/component-api/v7/checkbox/slots.md';
 
 <head>
-  <title>ion-checkbox: Ionic App Checkbox to Select Multiple Options</title>
+  <title>ion-checkbox：用于选择多个选项的 Ionic 应用复选框</title>
   <meta
     name="description"
-    content="ion-checkboxes allow selection of multiple options from a set and appear as checked (ticked) when activated. Learn about the checkbox component for Ionic apps."
+    content="ion-checkbox 允许从一组选项中选择多个选项，激活时会显示为选中状态（打勾）。了解 Ionic 应用中的复选框组件。"
   />
 </head>
 
@@ -21,69 +21,69 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Checkboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.
+复选框允许从一组选项中选择多个选项。激活时，它们会显示为选中状态（打勾）。点击复选框将切换 `checked` 属性。也可以通过设置 `checked` 属性以编程方式选中它们。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
 
 <Basic />
 
-## Label Placement
+## 标签位置
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control. This property mirrors the flexbox `flex-direction` property.
+开发者可以使用 `labelPlacement` 属性来控制标签相对于控件的位置。此属性与 flexbox 的 `flex-direction` 属性相对应。
 
 import LabelPlacement from '@site/static/usage/v7/checkbox/label-placement/index.md';
 
 <LabelPlacement />
 
-## Alignment
+## 对齐方式
 
-Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
+开发者可以使用 `alignment` 属性来控制标签和控件在交叉轴上的对齐方式。此属性与 flexbox 的 `align-items` 属性相对应。
 
 :::note
-Stacked checkboxes can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
+堆叠的复选框可以使用 `alignment` 属性进行对齐。当标签和控件需要水平居中对齐时，这很有用。
 :::
 
 import Alignment from '@site/static/usage/v7/checkbox/alignment/index.md';
 
 <Alignment />
 
-## Justification
+## 排列方式
 
-Developers can use the `justify` property to control how the label and control are packed on a line. This property mirrors the flexbox `justify-content` property.
+开发者可以使用 `justify` 属性来控制标签和控件在行上的排列方式。此属性与 flexbox 的 `justify-content` 属性相对应。
 
 import Justify from '@site/static/usage/v7/checkbox/justify/index.md';
 
 <Justify />
 
 :::note
-`ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
+`ion-item` 仅在演示中用于强调 `justify` 的工作方式。要让 `justify` 正常工作，并不需要 `ion-item`。
 :::
 
-## Indeterminate Checkboxes
+## 不确定状态复选框
 
 import Indeterminate from '@site/static/usage/v7/checkbox/indeterminate/index.md';
 
 <Indeterminate />
 
-## Links inside of Labels
+## 标签内的链接
 
-Checkbox labels can sometimes be accompanied with links. These links can provide more information related to the checkbox. However, clicking the link should not check the checkbox. To achieve this, we can use [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) to prevent the click event from bubbling. When using this approach, the rest of the label still remains clickable.
+复选框标签有时会附带链接。这些链接可以提供与复选框相关的更多信息。但是，点击链接不应选中复选框。为了实现这一点，我们可以使用 [stopPropagation](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/stopPropagation) 来阻止点击事件冒泡。使用这种方法时，标签的其余部分仍然保持可点击。
 
 import LabelLink from '@site/static/usage/v7/checkbox/label-link/index.md';
 
 <LabelLink />
 
-## Theming
+## 主题定制
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v7/checkbox/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Interfaces
+## 接口
 
 ### CheckboxChangeEventDetail
 
@@ -96,7 +96,7 @@ interface CheckboxChangeEventDetail<T = any> {
 
 ### CheckboxCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但此接口可以替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更强的类型检查。
 
 ```typescript
 interface CheckboxCustomEvent<T = any> extends CustomEvent {
@@ -105,37 +105,37 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Migrating from Legacy Checkbox Syntax
+## 从旧版复选框语法迁移
 
-A simpler checkbox syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup a checkbox, resolves accessibility issues, and improves the developer experience.
+Ionic 7.0 中引入了更简洁的复选框语法。这种新语法减少了设置复选框所需的样板代码，解决了可访问性问题，并改善了开发体验。
 
-Developers can perform this migration one checkbox at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+开发者可以逐个复选框进行迁移。虽然开发者可以继续使用旧版语法，但我们建议尽快迁移。
 
-### Using the Modern Syntax
+### 使用现代语法
 
-Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-checkbox`. The placement of the label can be configured using the `labelPlacement` property on `ion-checkbox`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-checkbox`.
+使用现代语法需要移除 `ion-label`，并将标签直接传递到 `ion-checkbox` 内部。标签的位置可以通过 `ion-checkbox` 上的 `labelPlacement` 属性进行配置。标签和控件在行上的排列方式可以通过 `ion-checkbox` 上的 `justify` 属性来控制。
 
 import Migration from '@site/static/usage/v7/checkbox/migration/index.md';
 
 <Migration />
 
 :::note
-In past versions of Ionic, `ion-item` was required for `ion-checkbox` to function properly. Starting in Ionic 7.0, `ion-checkbox` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-checkbox` to function properly.
+在 Ionic 的早期版本中，`ion-checkbox` 需要 `ion-item` 才能正常工作。从 Ionic 7.0 开始，仅当 `ion-item` 放置在 `ion-list` 中时，才应在 `ion-item` 中使用 `ion-checkbox`。此外，`ion-checkbox` 不再需要 `ion-item` 即可正常工作。
 :::
 
-### Using the Legacy Syntax
+### 使用旧版语法
 
-Ionic uses heuristics to detect if an app is using the modern checkbox syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-checkbox` to `true` to force that instance of the checkbox to use the legacy syntax.
+Ionic 使用启发式方法来检测应用是否使用现代复选框语法。在某些情况下，可能更倾向于继续使用旧版语法。开发者可以将 `ion-checkbox` 上的 `legacy` 属性设置为 `true`，以强制该复选框实例使用旧版语法。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -143,10 +143,10 @@ Ionic uses heuristics to detect if an app is using the modern checkbox syntax. I
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

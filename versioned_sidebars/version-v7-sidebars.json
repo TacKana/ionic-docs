@@ -4,25 +4,13 @@
       "type": "category",
       "label": "Getting Started",
       "collapsed": false,
-      "items": [
-        "index",
-        "intro/environment",
-        "intro/cli",
-        "intro/cdn",
-        "intro/vscode-extension",
-        "intro/next"
-      ]
+      "items": ["index", "intro/environment", "intro/cli", "intro/cdn", "intro/vscode-extension", "intro/next"]
     },
     {
       "type": "category",
       "label": "Upgrade Guides",
       "collapsed": false,
-      "items": [
-        "updating/7-0",
-        "updating/6-0",
-        "updating/5-0",
-        "updating/4-0"
-      ]
+      "items": ["updating/7-0", "updating/6-0", "updating/5-0", "updating/4-0"]
     },
     {
       "type": "category",
@@ -194,28 +182,19 @@
       "type": "category",
       "label": "Utilities",
       "collapsed": false,
-      "items": [
-        "utilities/animations",
-        "utilities/gestures"
-      ]
+      "items": ["utilities/animations", "utilities/gestures"]
     },
     {
       "type": "category",
       "label": "Deployment",
       "collapsed": false,
-      "items": [
-        "deployment/app-store",
-        "deployment/play-store",
-        "deployment/progressive-web-app"
-      ]
+      "items": ["deployment/app-store", "deployment/play-store", "deployment/progressive-web-app"]
     },
     {
       "type": "category",
       "label": "Techniques",
       "collapsed": false,
-      "items": [
-        "techniques/security"
-      ]
+      "items": ["techniques/security"]
     },
     {
       "type": "category",
@@ -231,7 +210,7 @@
     },
     {
       "type": "category",
-      "label": "Core Concepts",
+      "label": "核心概念 - 基础",
       "collapsed": false,
       "items": [
         "core-concepts/fundamentals",
@@ -244,10 +223,7 @@
       "type": "category",
       "label": "Contributing",
       "collapsed": false,
-      "items": [
-        "contributing/how-to-contribute",
-        "contributing/coc"
-      ]
+      "items": ["contributing/how-to-contribute", "contributing/coc"]
     },
     {
       "type": "category",
@@ -272,153 +248,103 @@
       "type": "category",
       "label": "Getting Started",
       "collapsed": false,
-      "items": [
-        "components"
-      ]
+      "items": ["components"]
     },
     {
       "type": "category",
       "label": "Accordion",
       "collapsed": false,
-      "items": [
-        "api/accordion",
-        "api/accordion-group"
-      ]
+      "items": ["api/accordion", "api/accordion-group"]
     },
     {
       "type": "category",
       "label": "Action Sheet",
       "collapsed": false,
-      "items": [
-        "api/action-sheet"
-      ]
+      "items": ["api/action-sheet"]
     },
     {
       "type": "category",
       "label": "Alert",
       "collapsed": false,
-      "items": [
-        "api/alert"
-      ]
+      "items": ["api/alert"]
     },
     {
       "type": "category",
       "label": "Badge",
       "collapsed": false,
-      "items": [
-        "api/badge"
-      ]
+      "items": ["api/badge"]
     },
     {
       "type": "category",
       "label": "Breadcrumbs",
       "collapsed": false,
-      "items": [
-        "api/breadcrumb",
-        "api/breadcrumbs"
-      ]
+      "items": ["api/breadcrumb", "api/breadcrumbs"]
     },
     {
       "type": "category",
       "label": "Button",
       "collapsed": false,
-      "items": [
-        "api/button",
-        "api/ripple-effect"
-      ]
+      "items": ["api/button", "api/ripple-effect"]
     },
     {
       "type": "category",
       "label": "Card",
       "collapsed": false,
-      "items": [
-        "api/card",
-        "api/card-content",
-        "api/card-header",
-        "api/card-subtitle",
-        "api/card-title"
-      ]
+      "items": ["api/card", "api/card-content", "api/card-header", "api/card-subtitle", "api/card-title"]
     },
     {
       "type": "category",
       "label": "Checkbox",
       "collapsed": false,
-      "items": [
-        "api/checkbox"
-      ]
+      "items": ["api/checkbox"]
     },
     {
       "type": "category",
       "label": "Chip",
       "collapsed": false,
-      "items": [
-        "api/chip"
-      ]
+      "items": ["api/chip"]
     },
     {
       "type": "category",
       "label": "Content",
       "collapsed": false,
-      "items": [
-        "api/app",
-        "api/content"
-      ]
+      "items": ["api/app", "api/content"]
     },
     {
       "type": "category",
       "label": "Date & Time Pickers",
       "collapsed": false,
-      "items": [
-        "api/datetime",
-        "api/datetime-button",
-        "api/picker"
-      ]
+      "items": ["api/datetime", "api/datetime-button", "api/picker"]
     },
     {
       "type": "category",
       "label": "Floating Action Button",
       "collapsed": false,
-      "items": [
-        "api/fab",
-        "api/fab-button",
-        "api/fab-list"
-      ]
+      "items": ["api/fab", "api/fab-button", "api/fab-list"]
     },
     {
       "type": "category",
       "label": "Grid",
       "collapsed": false,
-      "items": [
-        "api/grid",
-        "api/col",
-        "api/row"
-      ]
+      "items": ["api/grid", "api/col", "api/row"]
     },
     {
       "type": "category",
       "label": "Icons",
       "collapsed": false,
-      "items": [
-        "api/icon"
-      ]
+      "items": ["api/icon"]
     },
     {
       "type": "category",
       "label": "Infinite Scroll",
       "collapsed": false,
-      "items": [
-        "api/infinite-scroll",
-        "api/infinite-scroll-content"
-      ]
+      "items": ["api/infinite-scroll", "api/infinite-scroll-content"]
     },
     {
       "type": "category",
       "label": "Inputs",
       "collapsed": false,
-      "items": [
-        "api/input",
-        "api/textarea"
-      ]
+      "items": ["api/input", "api/textarea"]
     },
     {
       "type": "category",
@@ -439,198 +365,127 @@
       "type": "category",
       "label": "List",
       "collapsed": false,
-      "items": [
-        "api/list",
-        "api/list-header"
-      ]
+      "items": ["api/list", "api/list-header"]
     },
     {
       "type": "category",
       "label": "Media",
       "collapsed": false,
-      "items": [
-        "api/avatar",
-        "api/icon",
-        "api/img",
-        "api/thumbnail"
-      ]
+      "items": ["api/avatar", "api/icon", "api/img", "api/thumbnail"]
     },
     {
       "type": "category",
       "label": "Menu",
       "collapsed": false,
-      "items": [
-        "api/menu",
-        "api/menu-button",
-        "api/menu-toggle",
-        "api/split-pane"
-      ]
+      "items": ["api/menu", "api/menu-button", "api/menu-toggle", "api/split-pane"]
     },
     {
       "type": "category",
       "label": "Modal",
       "collapsed": false,
-      "items": [
-        "api/modal",
-        "api/backdrop"
-      ]
+      "items": ["api/modal", "api/backdrop"]
     },
     {
       "type": "category",
       "label": "Navigation",
       "collapsed": false,
-      "items": [
-        "api/nav",
-        "api/nav-link"
-      ]
+      "items": ["api/nav", "api/nav-link"]
     },
     {
       "type": "category",
       "label": "Popover",
       "collapsed": false,
-      "items": [
-        "api/popover"
-      ]
+      "items": ["api/popover"]
     },
     {
       "type": "category",
       "label": "Progress Indicators",
       "collapsed": false,
-      "items": [
-        "api/loading",
-        "api/progress-bar",
-        "api/skeleton-text",
-        "api/spinner"
-      ]
+      "items": ["api/loading", "api/progress-bar", "api/skeleton-text", "api/spinner"]
     },
     {
       "type": "category",
       "label": "Radio",
       "collapsed": false,
-      "items": [
-        "api/radio",
-        "api/radio-group"
-      ]
+      "items": ["api/radio", "api/radio-group"]
     },
     {
       "type": "category",
       "label": "Range",
       "collapsed": false,
-      "items": [
-        "api/range"
-      ]
+      "items": ["api/range"]
     },
     {
       "type": "category",
       "label": "Refresher",
       "collapsed": false,
-      "items": [
-        "api/refresher",
-        "api/refresher-content"
-      ]
+      "items": ["api/refresher", "api/refresher-content"]
     },
     {
       "type": "category",
       "label": "Reorder",
       "collapsed": false,
-      "items": [
-        "api/reorder",
-        "api/reorder-group"
-      ]
+      "items": ["api/reorder", "api/reorder-group"]
     },
     {
       "type": "category",
       "label": "Routing",
       "collapsed": false,
-      "items": [
-        "api/router",
-        "api/router-link",
-        "api/router-outlet",
-        "api/route",
-        "api/route-redirect"
-      ]
+      "items": ["api/router", "api/router-link", "api/router-outlet", "api/route", "api/route-redirect"]
     },
     {
       "type": "category",
       "label": "Searchbar",
       "collapsed": false,
-      "items": [
-        "api/searchbar"
-      ]
+      "items": ["api/searchbar"]
     },
     {
       "type": "category",
       "label": "Segment",
       "collapsed": false,
-      "items": [
-        "api/segment",
-        "api/segment-button"
-      ]
+      "items": ["api/segment", "api/segment-button"]
     },
     {
       "type": "category",
       "label": "Select",
       "collapsed": false,
-      "items": [
-        "api/select",
-        "api/select-option"
-      ]
+      "items": ["api/select", "api/select-option"]
     },
     {
       "type": "category",
       "label": "Tabs",
       "collapsed": false,
-      "items": [
-        "api/tabs",
-        "api/tab",
-        "api/tab-bar",
-        "api/tab-button"
-      ]
+      "items": ["api/tabs", "api/tab", "api/tab-bar", "api/tab-button"]
     },
     {
       "type": "category",
       "label": "Toast",
       "collapsed": false,
-      "items": [
-        "api/toast"
-      ]
+      "items": ["api/toast"]
     },
     {
       "type": "category",
       "label": "Toggle",
       "collapsed": false,
-      "items": [
-        "api/toggle"
-      ]
+      "items": ["api/toggle"]
     },
     {
       "type": "category",
       "label": "Toolbar",
       "collapsed": false,
-      "items": [
-        "api/toolbar",
-        "api/header",
-        "api/footer",
-        "api/title",
-        "api/buttons",
-        "api/back-button"
-      ]
+      "items": ["api/toolbar", "api/header", "api/footer", "api/title", "api/buttons", "api/back-button"]
     },
     {
       "type": "category",
       "label": "Typography",
       "collapsed": false,
-      "items": [
-        "api/text"
-      ]
+      "items": ["api/text"]
     },
     {
       "type": "category",
       "label": "Resources",
       "collapsed": false,
-      "items": [
-        "api"
-      ]
+      "items": ["api"]
     }
   ],
   "cli": [
@@ -667,11 +522,7 @@
       "type": "category",
       "label": "Getting Started",
       "collapsed": false,
-      "items": [
-        "native",
-        "native-setup",
-        "native-faq"
-      ]
+      "items": ["native", "native-setup", "native-faq"]
     },
     {
       "type": "category",

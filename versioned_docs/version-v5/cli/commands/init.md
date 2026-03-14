@@ -4,19 +4,19 @@ sidebar_label: 'init'
 
 # ionic init
 
-Initialize existing projects with Ionic
+为现有项目初始化 Ionic 配置
 
 ```shell
 ionic init [options]
 ```
 
-This command will initialize an Ionic app within the current directory. Usually, this means an `ionic.config.json` file is created. If used within a multi-app project, the app is initialized in the root `ionic.config.json`.
+此命令将在当前目录下初始化一个 Ionic 应用。通常，这意味着会创建一个 `ionic.config.json` 文件。如果在多应用项目中使用，应用将在根目录的 `ionic.config.json` 中初始化。
 
-`ionic init` will prompt for a project name and then proceed to determine the type of your project. You can specify the `name` argument and `--type` option to provide these values via command-line.
+`ionic init` 会提示输入项目名称，然后继续确定您的项目类型。您可以通过命令行指定 `name` 参数和 `--type` 选项来提供这些值。
 
-If the `--multi-app` flag is specified, this command will initialize your project as a multi-app project, allowing for apps within monorepos and unconventional repository structures. See the multi-app [docs](https://ionicframework.com/docs/cli/configuration#multi-app-projects) for details. Once a multi-app project is initialized, you can run `ionic init` again within apps in your project to initialize them.
+如果指定了 `--multi-app` 标志，此命令会将您的项目初始化为多应用项目，支持在 monorepo 和非传统仓库结构中管理多个应用。详见多应用项目的[文档](https://ionicframework.com/docs/cli/configuration#multi-app-projects)。一旦多应用项目初始化完成，您可以在项目中的应用目录中再次运行 `ionic init` 来初始化它们。
 
-## Examples
+## 示例
 
 ```shell
 $ ionic init
@@ -25,7 +25,7 @@ $ ionic init "My App" --type=angular
 $ ionic init --multi-app
 ```
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -37,17 +37,17 @@ $ ionic init --multi-app
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <p>
-          The name of your project (e.g. <code>myApp</code>, <code>"My App"</code>)
+          您的项目名称（例如 <code>myApp</code>、<code>"My App"</code>）
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -64,10 +64,10 @@ $ ionic init --multi-app
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <p>
-          Type of project (e.g. <code>angular</code>, <code>react</code>, <code>vue</code>, <code>custom</code>)
+          项目类型（例如 <code>angular</code>、<code>react</code>、<code>vue</code>、<code>custom</code>）
         </p>
       </td>
     </tr>
@@ -85,13 +85,13 @@ $ ionic init --multi-app
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Initialize even if a project already exists</p>
+        <p>即使项目已存在也强制初始化</p>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-f</code>
       </td>
@@ -110,15 +110,15 @@ $ ionic init --multi-app
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Initialize a multi-app project</p>
+        <p>初始化为多应用项目</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -135,10 +135,10 @@ $ ionic init --multi-app
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Specify a slug for your app</p>
+          <p>为您的应用指定一个简短标识符</p>
         </div>
       </td>
     </tr>
@@ -156,10 +156,10 @@ $ ionic init --multi-app
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Mark the initialized app as the default project</p>
+          <p>将初始化的应用标记为默认项目</p>
         </div>
       </td>
     </tr>

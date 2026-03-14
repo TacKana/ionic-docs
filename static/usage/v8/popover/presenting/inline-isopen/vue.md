@@ -1,8 +1,8 @@
 ```html
 <template>
-  <ion-button @click="openPopover($event)">Click Me</ion-button>
+  <ion-button @click="openPopover($event)">点击我</ion-button>
   <ion-popover :is-open="popoverOpen" :event="event" @didDismiss="popoverOpen = false">
-    <ion-content class="ion-padding">Hello World!</ion-content>
+    <ion-content class="ion-padding">你好世界！</ion-content>
   </ion-popover>
 </template>
 

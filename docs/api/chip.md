@@ -1,5 +1,5 @@
 ---
-title: "ion-chip"
+title: 芯片组件
 ---
 import Props from '@ionic-internal/component-api/v8/chip/props.md';
 import Events from '@ionic-internal/component-api/v8/chip/events.md';
@@ -9,56 +9,56 @@ import CustomProps from '@ionic-internal/component-api/v8/chip/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v8/chip/slots.md';
 
 <head>
-  <title>ion-chip: Text, Icon and Avatar for Ionic Framework Apps</title>
-  <meta name="description" content="ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons." />
+  <title>ion-chip: Ionic 框架应用中的文本、图标和头像组件</title>
+  <meta name="description" content="ion-chips 以小方块形式呈现复杂实体，例如联系人。一个芯片可以包含多种不同元素，例如姓名、头像、文本和图标。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.
+芯片（Chips）以小方块形式呈现复杂实体，例如联系人。一个芯片可以包含多种不同元素，例如头像、文本和图标。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v8/chip/basic/index.md';
 
 <Basic />
 
-## Slotting Components and Icons
+## 插槽组件和图标
 
 import SlotExample from '@site/static/usage/v8/chip/slots/index.md';
 
 <SlotExample />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v8/chip/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v8/chip/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

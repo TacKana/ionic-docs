@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/select/custom-props.md
 import Slots from '@ionic-internal/component-api/v6/select/slots.md';
 
 <head>
-  <title>ion-select: Select One or Multiple Value Boxes or Placeholders</title>
+  <title>ion-select：单选或多选值框与占位符</title>
   <meta
     name="description"
-    content="ion-select is represented by selected value(s), or a placeholder, and dropdown icon. When you tap select, a dialog box appears with an easy to select list."
+    content="ion-select通过选定值（或多个值）或占位符及下拉图标来呈现。点击选择时，会出现一个对话框，显示易于选择的列表。"
   />
 </head>
 
@@ -21,127 +21,127 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Selects are form controls to select an option, or options, from a set of options, similar to a native `<select>` element. When a user taps the select, a dialog appears with all of the options in a large, easy to select list.
+选择器（Selects）是一种表单控件，用于从一组选项中选取一个或多个选项，类似于原生 `<select>` 元素。当用户点击选择器时，会弹出一个对话框，以大型且易于选择的列表形式展示所有选项。
 
-A select should be used with child `<ion-select-option>` elements. If the child option is not given a `value` attribute then its text will be used as the value.
+选择器应与子元素 `<ion-select-option>` 配合使用。如果子选项未设置 `value` 属性，则其文本将用作值。
 
-If `value` is set on the `<ion-select>`, the selected option will be chosen based on that value.
+如果在 `<ion-select>` 上设置了 `value`，将根据该值选择对应的选项。
 
-## Single Selection
+## 单选
 
-By default, the select allows the user to select only one option. The alert interface presents users with a radio button styled list of options. The select component's value receives the value of the selected option's value.
+默认情况下，选择器允许用户仅选择一个选项。警告（alert）界面会向用户展示一个单选按钮样式的选项列表。选择器组件的值将接收所选选项的 `value`。
 
 import SingleSelectionExample from '@site/static/usage/v6/select/basic/single-selection/index.md';
 
 <SingleSelectionExample />
 
-## Interfaces
+## 界面类型
 
-By default, select uses [ion-alert](alert.md) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.md) or [ion-popover](popover.md) by passing `action-sheet` or `popover`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
+默认情况下，选择器使用 [ion-alert](alert.md) 在警告框中打开选项覆盖层。通过将 `action-sheet` 或 `popover` 传递给 `interface` 属性，可以将界面分别更改为使用 [ion-action-sheet](action-sheet.md) 或 [ion-popover](popover.md)。请参阅其他章节了解不同界面的限制。
 
-### Action Sheet
+### 操作表
 
 import ActionSheetExample from '@site/static/usage/v6/select/interfaces/action-sheet/index.md';
 
 <ActionSheetExample />
 
-### Popover
+### 弹出框
 
 import PopoverExample from '@site/static/usage/v6/select/interfaces/popover/index.md';
 
 <PopoverExample />
 
-## Multiple Selection
+## 多选
 
-By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
+通过向选择器添加 `multiple` 属性，用户可以选择多个选项。当可以选择多个选项时，警告覆盖层会向用户展示一个复选框样式的选项列表。选择器组件的值将接收所有选中选项值的数组。
 
-Note: the `action-sheet` and `popover` interfaces will not work with multiple selection.
+注意：`action-sheet` 和 `popover` 界面不支持多选。
 
 import MultipleSelectionExample from '@site/static/usage/v6/select/basic/multiple-selection/index.md';
 
 <MultipleSelectionExample />
 
-## Responding to Interaction
+## 响应交互
 
-The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. See [Events](#events) for more details on these and other events that select fires.
+处理用户与选择器交互的主要方式是 `ionChange`、`ionDismiss` 和 `ionCancel` 事件。有关这些事件以及选择器触发的其他事件的更多详细信息，请参阅[事件](#events)部分。
 
 import RespondingToInteractionExample from '@site/static/usage/v6/select/basic/responding-to-interaction/index.md';
 
 <RespondingToInteractionExample />
 
-## Object Value References
+## 对象值引用
 
-When using objects for select values, it is possible for the identities of these objects to change if they are coming from a server or database, while the selected value's identity remains the same. For example, this can occur when an existing record with the desired object value is loaded into the select, but the newly retrieved select options now have different identities. This will result in the select appearing to have no value at all, even though the original selection in still intact.
+当使用对象作为选择器的值时，如果这些对象来自服务器或数据库，其标识可能会发生变化，而选中值的标识保持不变。例如，当将包含所需对象值的现有记录加载到选择器中时，但新检索到的选择选项现在具有不同的标识，就会发生这种情况。这将导致选择器看起来没有任何值，即使原始选择仍然存在。
 
-By default, the select uses object equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
+默认情况下，选择器使用对象相等性（`===`）来确定是否选择了某个选项。可以通过向 `compareWith` 属性提供属性名称或函数来覆盖此行为。
 
-### Using compareWith
+### 使用 compareWith
 
 import UsingCompareWithExample from '@site/static/usage/v6/select/objects-as-values/using-comparewith/index.md';
 
 <UsingCompareWithExample />
 
-### Object Values and Multiple Selection
+### 对象值与多选
 
 import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v6/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
 
-## Select Buttons
+## 选择器按钮
 
-The alert supports two buttons: `Cancel` and `OK`. Each button's text can be customized using the `cancelText` and `okText` properties.
+警告框支持两个按钮：`Cancel`（取消）和 `OK`（确定）。每个按钮的文本可以使用 `cancelText` 和 `okText` 属性进行自定义。
 
-The `action-sheet` and `popover` interfaces do not have an `OK` button, clicking on any of the options will automatically close the overlay and select that value. The `popover` interface does not have a `Cancel` button, clicking on the backdrop will close the overlay.
+`action-sheet` 和 `popover` 界面没有 `OK` 按钮，点击任何选项都会自动关闭覆盖层并选择该值。`popover` 界面没有 `Cancel` 按钮，点击背景会关闭覆盖层。
 
 import ButtonTextExample from '@site/static/usage/v6/select/customization/button-text/index.md';
 
 <ButtonTextExample />
 
-## Interface Options
+## 界面选项
 
-Since select uses the alert, action sheet and popover interfaces, options can be passed to these components through the `interfaceOptions` property. This can be used to pass a custom header, subheader, css class, and more.
+由于选择器使用警告框、操作表和弹出框界面，因此可以通过 `interfaceOptions` 属性向这些组件传递选项。这可用于传递自定义标题、副标题、CSS 类等。
 
-See the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), and [ion-popover docs](popover.md) for the properties that each interface accepts.
+有关每个界面接受的属性，请参阅 [ion-alert 文档](alert.md)、[ion-action-sheet 文档](action-sheet.md)和 [ion-popover 文档](popover.md)。
 
-Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
+注意：`interfaceOptions` 不会覆盖 `alert` 界面的 `inputs` 或 `buttons`。
 
 import InterfaceOptionsExample from '@site/static/usage/v6/select/customization/interface-options/index.md';
 
 <InterfaceOptionsExample />
 
-## Customization
+## 自定义样式
 
-There are two units that make up the Select component and each need to be styled separately. The `ion-select` element is represented on the view by the selected value(s), or placeholder if there is none, and dropdown icon. The interface, which is defined in the [Interfaces](#interfaces) section above, is the dialog that opens when clicking on the `ion-select`. The interface contains all of the options defined by adding `ion-select-option` elements. The following sections will go over the differences between styling these.
+选择器组件由两个单元组成，每个单元都需要单独设置样式。`ion-select` 元素在视图中由选定值（或多个值）（如果没有值则为占位符）和下拉图标表示。界面（在上面的[界面类型](#interfaces)部分中定义）是点击 `ion-select` 时打开的对话框。界面包含所有通过添加 `ion-select-option` 元素定义的选项。以下章节将介绍设置这些样式时的差异。
 
-### Styling Select Element
+### 设置选择器元素样式
 
-As mentioned, the `ion-select` element consists only of the value(s), or placeholder, and icon that is displayed on the view. To customize this, style using a combination of CSS and any of the [CSS custom properties](#css-custom-properties).
+如前所述，`ion-select` 元素仅包含视图中显示的值（或多个值）、占位符和图标。要自定义此部分，请结合使用 CSS 和任何 [CSS 自定义属性](#css-custom-properties) 进行样式设置。
 
-Alternatively, depending on the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) needed, CSS shadow parts can be used to style the select. Notice that by using `::part`, any CSS property on the element can be targeted.
+或者，根据所需的[浏览器支持](https://caniuse.com/#feat=mdn-css_selectors_part)情况，可以使用 CSS Shadow Parts 来设置选择器的样式。请注意，通过使用 `::part`，可以定位元素上的任何 CSS 属性。
 
 import StylingSelectExample from '@site/static/usage/v6/select/customization/styling-select/index.md';
 
 <StylingSelectExample />
 
-### Styling Select Interface
+### 设置选择器界面样式
 
-Customizing the interface dialog should be done by following the Customization section in that interface's documentation:
+自定义界面对话框应遵循该界面文档中的自定义部分：
 
-- [Alert Customization](alert.md#customization)
-- [Action Sheet Customization](action-sheet.md#customization)
-- [Popover Customization](popover.md#customization)
+- [警告框自定义](alert.md#customization)
+- [操作表自定义](action-sheet.md#customization)
+- [弹出框自定义](popover.md#customization)
 
-However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.md) for usage examples of customizing options.
+但是，选择器选项确实设置了一个类以便于样式设置，并允许将类传递给覆盖层选项，有关自定义选项的使用示例，请参阅[选择器选项文档](select-option.md)。
 
-## Typeahead Component
+## 类型提前（Typeahead）组件
 
-Typeahead or autocomplete functionality can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
+可以使用现有的 Ionic 组件构建类型提前或自动完成功能。我们建议使用 `ion-modal` 来充分利用可用的屏幕空间。
 
 import TypeaheadExample from '@site/static/usage/v6/select/typeahead/index.md';
 
 <TypeaheadExample />
 
-## Interfaces
+## 接口
 
 ### SelectChangeEventDetail
 
@@ -153,7 +153,7 @@ interface SelectChangeEventDetail<T = any> {
 
 ### SelectCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但此接口可用于替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更严格的类型检查。
 
 ```typescript
 interface SelectCustomEvent<T = any> extends CustomEvent {
@@ -162,15 +162,15 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -178,10 +178,10 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

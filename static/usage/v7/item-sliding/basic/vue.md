@@ -3,37 +3,37 @@
   <ion-list>
     <ion-item-sliding>
       <ion-item>
-        <ion-label>Sliding Item with End Options</ion-label>
+        <ion-label>带右侧选项的滑动项</ion-label>
       </ion-item>
 
       <ion-item-options>
-        <ion-item-option>Favorite</ion-item-option>
-        <ion-item-option color="danger">Delete</ion-item-option>
+        <ion-item-option>收藏</ion-item-option>
+        <ion-item-option color="danger">删除</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
 
     <ion-item-sliding>
       <ion-item-options side="start">
-        <ion-item-option color="success">Archive</ion-item-option>
+        <ion-item-option color="success">归档</ion-item-option>
       </ion-item-options>
 
       <ion-item>
-        <ion-label>Sliding Item with Start Options</ion-label>
+        <ion-label>带左侧选项的滑动项</ion-label>
       </ion-item>
     </ion-item-sliding>
 
     <ion-item-sliding>
       <ion-item-options side="start">
-        <ion-item-option color="success">Archive</ion-item-option>
+        <ion-item-option color="success">归档</ion-item-option>
       </ion-item-options>
 
       <ion-item>
-        <ion-label>Sliding Item with Options on Both Sides</ion-label>
+        <ion-label>两侧都带选项的滑动项</ion-label>
       </ion-item>
 
       <ion-item-options side="end">
-        <ion-item-option>Favorite</ion-item-option>
-        <ion-item-option color="danger">Delete</ion-item-option>
+        <ion-item-option>收藏</ion-item-option>
+        <ion-item-option color="danger">删除</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>

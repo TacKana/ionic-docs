@@ -6,7 +6,7 @@ ion-toast.custom-toast {
 }
 
 ion-toast.custom-toast::part(message) {
-  font-style: italic;
+  font-style: italic; /* 将消息文本设置为斜体 */
 }
 
 ion-toast.custom-toast::part(button) {

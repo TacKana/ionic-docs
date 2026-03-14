@@ -13,7 +13,7 @@ function Example() {
         <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
       </IonCardHeader>
 
-      <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+      <IonCardContent>这是一小段用于卡片内容的文字描述。不多不少，恰到好处。</IonCardContent>
     </IonCard>
   );
 }

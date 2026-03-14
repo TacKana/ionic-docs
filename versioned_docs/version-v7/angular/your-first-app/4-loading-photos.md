@@ -1,54 +1,54 @@
 ---
-title: Loading Photos from the Filesystem
-sidebar_label: Loading Photos
+title: 从文件系统加载照片
+sidebar_label: 加载照片
 ---
 
 <head>
-  <title>Loading Photos from the Filesystem with Angular | Ionic Capacitor Camera</title>
+  <title>使用 Angular 从文件系统加载照片 | Ionic Capacitor 相机</title>
   <meta
     name="description"
-    content="We’ve implemented photo taking and saving to the filesystem, now learn how Ionic leverages Capacitor Preferences API for loading our photos in a key-value store."
+    content="我们已经实现了拍照和保存到文件系统的功能，现在学习 Ionic 如何利用 Capacitor Preferences API 在键值存储中加载我们的照片。"
   />
 </head>
 
-We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
+我们已经实现了拍照和保存到文件系统的功能。现在还缺少最后一个功能：照片存储在文件系统中，但我们需要一种保存每个文件指针的方法，以便它们可以再次显示在照片库中。
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](../../native/preferences.md) to store our array of Photos in a key-value store.
+幸运的是，这很简单：我们将利用 Capacitor [Preferences API](../../native/preferences.md) 将照片数组存储在键值存储中。
 
 ## Preferences API
 
-Open `photo.service.ts` and begin by defining a new property in the `PhotoService` class that will act as the key for the store.
+打开 `photo.service.ts`，首先在 `PhotoService` 类中定义一个新属性，作为存储的键。
 
 ```ts
 export class PhotoService {
   public photos: UserPhoto[] = [];
 
-  // CHANGE: Add a key for photo storage
+  // 修改：添加照片存储的键名
   private PHOTO_STORAGE: string = 'photos';
 
-  // ...existing code...
+  // ...已有代码...
 }
 ```
 
-Next, at the end of the `addNewToGallery()` method, add a call to `Preferences.set()` to save the `photos` array. By adding it here, the `photos` array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+接下来，在 `addNewToGallery()` 方法的末尾，添加对 `Preferences.set()` 的调用来保存 `photos` 数组。通过在这里添加，每次拍摄新照片时都会存储 `photos` 数组。这样，无论应用用户何时关闭或切换到其他应用，所有照片数据都会被保存。
 
 ```ts
 import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-// CHANGE: Add import
+// 修改：添加导入
 import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PhotoService {
-  // ...existing code...
+  // ...已有代码...
 
-  // CHANGE: Update `addNewToGallery()` method
+  // 修改：更新 `addNewToGallery()` 方法
   public async addNewToGallery() {
-    // Take a photo
+    // 拍照
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -59,14 +59,14 @@ export class PhotoService {
 
     this.photos.unshift(savedImageFile);
 
-    // CHANGE: Add method to cache all photo data for future retrieval
+    // 修改：添加方法以缓存所有照片数据供后续检索
     Preferences.set({
       key: this.PHOTO_STORAGE,
       value: JSON.stringify(this.photos),
     });
   }
 
-  // ...existing code...
+  // ...已有代码...
 }
 
 export interface UserPhoto {
@@ -75,49 +75,49 @@ export interface UserPhoto {
 }
 ```
 
-With the photo array data saved, create a new public method in the `PhotoService` class called `loadSaved()` that can retrieve the photo data. We use the same key to retrieve the `photos` array in JSON format, then parse it into an array:
+照片数组数据保存后，在 `PhotoService` 类中创建一个名为 `loadSaved()` 的新公共方法，用于检索照片数据。我们使用相同的键来检索 JSON 格式的 `photos` 数组，然后将其解析为数组：
 
 ```ts
 export class PhotoService {
-  // ...existing code...
+  // ...已有代码...
 
-  // CHANGE: Add the method to load the photo data
+  // 修改：添加加载照片数据的方法
   public async loadSaved() {
-    // Retrieve cached photo array data
+    // 检索缓存的照片数组数据
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
     this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
   }
 }
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the `Filesystem`, displaying them automatically. On the web, however, we must read each image from the `Filesystem` into base64 format, using a new `base64` property on the `Photo` object. This is because the `Filesystem` API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Add the following code to complete the `loadSaved()` method:
+在移动设备上（接下来会介绍！），我们可以直接将图像标签的源 `<img src="x" />` 设置为 `Filesystem` 上的每个照片文件，从而自动显示它们。然而，在 Web 平台上，我们必须使用 `Photo` 对象上的新 `base64` 属性，将每个图像从 `Filesystem` 读取为 base64 格式。这是因为 `Filesystem` API 底层使用了 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)。添加以下代码以完成 `loadSaved()` 方法：
 
 ```ts
 export class PhotoService {
-  // ...existing code...
+  // ...已有代码...
 
-  // CHANGE: Update the `loadSaved()` method
+  // 修改：更新 `loadSaved()` 方法
   public async loadSaved() {
-    // Retrieve cached photo array data
+    // 检索缓存的照片数组数据
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
     this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
-    // CHANGE: Display the photo by reading into base64 format
+    // 修改：通过读取为 base64 格式来显示照片
     for (let photo of this.photos) {
-      // Read each saved photo's data from the Filesystem
+      // 从文件系统读取每个已保存照片的数据
       const readFile = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
 
-      // Web platform only: Load the photo as base64 data
+      // 仅限 Web 平台：将照片加载为 base64 数据
       photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 }
 ```
 
-`photo.service.ts` should now look like this:
+现在 `photo.service.ts` 应该如下所示：
 
 ```ts
 import { Injectable } from '@angular/core';
@@ -135,14 +135,14 @@ export class PhotoService {
   private PHOTO_STORAGE: string = 'photos';
 
   public async addNewToGallery() {
-    // Take a photo
+    // 拍照
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
     });
 
-    // Save the picture and add it to photo collection
+    // 保存图片并添加到照片集合
     const savedImageFile = await this.savePicture(capturedPhoto);
 
     this.photos.unshift(savedImageFile);
@@ -154,12 +154,12 @@ export class PhotoService {
   }
 
   private async savePicture(photo: Photo) {
-    // Fetch the photo, read as a blob, then convert to base64 format
+    // 获取照片，读取为 blob，然后转换为 base64 格式
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
     const base64Data = (await this.convertBlobToBase64(blob)) as string;
 
-    // Write the file to the data directory
+    // 将文件写入数据目录
     const fileName = Date.now() + '.jpeg';
     const savedFile = await Filesystem.writeFile({
       path: fileName,
@@ -167,8 +167,7 @@ export class PhotoService {
       directory: Directory.Data,
     });
 
-    // Use webPath to display the new image instead of base64 since it's
-    // already loaded into memory
+    // 使用 webPath 显示新图像而不是 base64，因为它已经加载到内存中
     return {
       filepath: fileName,
       webviewPath: photo.webPath,
@@ -187,18 +186,18 @@ export class PhotoService {
   }
 
   public async loadSaved() {
-    // Retrieve cached photo array data
+    // 检索缓存的照片数组数据
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
     this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
     for (let photo of this.photos) {
-      // Read each saved photo's data from the Filesystem
+      // 从文件系统读取每个已保存照片的数据
       const readFile = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
       });
 
-      // Web platform only: Load the photo as base64 data
+      // 仅限 Web 平台：将照片加载为 base64 数据
       photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
@@ -210,9 +209,9 @@ export interface UserPhoto {
 }
 ```
 
-Our `PhotoService` can now load the saved images, but we'll need to update `tab2.page.ts` to put that new code to work. We'll call `loadSaved()` within the [ngOnInit](https://angular.dev/guide/components/lifecycle#ngoninit) lifecycle method so that when the user first navigates to the Photo Gallery, all photos are loaded and displayed on the screen.
+现在我们的 `PhotoService` 可以加载保存的图像了，但我们需要更新 `tab2.page.ts` 来使用这些新代码。我们将在 [ngOnInit](https://angular.dev/guide/components/lifecycle#ngoninit) 生命周期方法中调用 `loadSaved()`，这样当用户首次导航到照片库时，所有照片都会被加载并显示在屏幕上。
 
-Update `tab2.page.ts` to look like the following:
+将 `tab2.page.ts` 更新为如下内容：
 
 ```ts
 import { Component } from '@angular/core';
@@ -227,7 +226,7 @@ import { PhotoService } from '../services/photo.service';
 export class Tab2Page {
   constructor(public photoService: PhotoService) {}
 
-  // CHANGE: Add call to `loadSaved()` when navigating to the Photos tab
+  // 修改：在导航到照片标签页时添加对 `loadSaved()` 的调用
   async ngOnInit() {
     await this.photoService.loadSaved();
   }
@@ -239,9 +238,9 @@ export class Tab2Page {
 ```
 
 :::note
-If you're seeing broken image links or missing photos after following these steps, you may need to open your browser's dev tools and clear both [localStorage](https://developer.chrome.com/docs/devtools/storage/localstorage) and [IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb).
+如果在按照这些步骤操作后看到损坏的图像链接或缺失的照片，您可能需要打开浏览器的开发者工具并清除 [localStorage](https://developer.chrome.com/docs/devtools/storage/localstorage) 和 [IndexedDB](https://developer.chrome.com/docs/devtools/storage/indexeddb)。
 
-In localStorage, look for domain `http://localhost:8100` and key `CapacitorStorage.photos`. In IndexedDB, find a store called "FileStorage". Your photos will have a key like `/DATA/123456789012.jpeg`.
+在 localStorage 中，查找域 `http://localhost:8100` 和键 `CapacitorStorage.photos`。在 IndexedDB 中，找到名为 "FileStorage" 的存储。您的照片将有一个类似于 `/DATA/123456789012.jpeg` 的键。
 :::
 
-That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+完成了！我们已经在 Ionic 应用中构建了一个完整的照片库功能，可以在 Web 上运行。接下来，我们将把它转换为适用于 iOS 和 Android 的移动应用！

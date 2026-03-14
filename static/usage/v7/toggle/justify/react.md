@@ -6,13 +6,13 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonToggle justify="start">Packed at the Start of Line</IonToggle>
+        <IonToggle justify="start">对齐行首</IonToggle>
       </IonItem>
       <IonItem>
-        <IonToggle justify="end">Packed at the End of Line</IonToggle>
+        <IonToggle justify="end">对齐行尾</IonToggle>
       </IonItem>
       <IonItem>
-        <IonToggle justify="space-between">Space Between Label and Control</IonToggle>
+        <IonToggle justify="space-between">标签与控件间留空</IonToggle>
       </IonItem>
     </IonList>
   );

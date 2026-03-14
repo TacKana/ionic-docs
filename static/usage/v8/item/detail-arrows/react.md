@@ -8,37 +8,37 @@ function Example() {
     <>
       <IonItem detail={true}>
         <IonLabel>
-          <h3>Text Item</h3>
-          <p>Detail set to true - detail arrow displays on both modes</p>
+          <h3>文本项目</h3>
+          <p>detail 设置为 true - 详情箭头在两种模式下均显示</p>
         </IonLabel>
       </IonItem>
 
       <IonItem button>
         <IonLabel>
-          <h3>Button Item</h3>
-          <p>Default detail - detail arrow displays on iOS only</p>
+          <h3>按钮项目</h3>
+          <p>默认 detail - 详情箭头仅在 iOS 模式下显示</p>
         </IonLabel>
       </IonItem>
 
       <IonItem button detail={true}>
         <IonLabel>
-          <h3>Button Item</h3>
-          <p>Detail set to true - detail arrow displays on both modes</p>
+          <h3>按钮项目</h3>
+          <p>detail 设置为 true - 详情箭头在两种模式下均显示</p>
         </IonLabel>
       </IonItem>
 
       <IonItem button detail={false}>
         <IonLabel>
-          <h3>Button Item</h3>
-          <p>Detail set to false - detail arrow hidden on both modes</p>
+          <h3>按钮项目</h3>
+          <p>detail 设置为 false - 详情箭头在两种模式下均隐藏</p>
         </IonLabel>
       </IonItem>
 
       <IonItem button detail={true} detailIcon={caretForwardOutline}>
         <IonLabel>
-          <h3>Button Item</h3>
-          <p>Detail set to true - detail arrow displays on both modes</p>
-          <p>Detail icon set to caret-forward-outline</p>
+          <h3>按钮项目</h3>
+          <p>detail 设置为 true - 详情箭头在两种模式下均显示</p>
+          <p>详情图标设置为 caret-forward-outline</p>
         </IonLabel>
       </IonItem>
     </>

@@ -1,5 +1,5 @@
 ---
-title: "ion-col"
+title: 列组件
 ---
 import Props from '@ionic-internal/component-api/v8/col/props.md';
 import Events from '@ionic-internal/component-api/v8/col/events.md';
@@ -9,8 +9,8 @@ import CustomProps from '@ionic-internal/component-api/v8/col/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/col/slots.md';
 
 <head>
-  <title>ion-col: Column Component Padding and Other Properties</title>
-  <meta name="description" content="ion-col is a column component that goes inside a row. Content within a grid goes inside of a column. Read more on column padding, size, and other properties." />
+  <title>ion-col：列组件的内边距及其他属性</title>
+  <meta name="description" content="ion-col 是位于行（row）内部的列组件。网格（grid）中的内容都应放置在列内。了解更多关于列内边距、尺寸及其他属性的内容。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,32 +18,31 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Columns are cellular components of the [grid](./grid) system and go inside of a [row](./row). They will expand to fill the row. All content within a grid should go inside of a column.
+列是[网格（grid）](./grid)系统的单元格组件，位于[行（row）](./row)内部。列会自动扩展以填满所在行的宽度。网格中的所有内容都应放置在列内。
 
-See the [grid](./grid) documentation for more information.
-
-
-## Column Alignment
-
-By default, columns will stretch to fill the entire height of the row. Columns are [flex items](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item), so there are several [CSS classes](/docs/layout/css-utilities#flex-item-properties) that can be applied to a column to customize this behavior.
+更多详细信息，请参阅[网格（grid）](./grid)文档。
 
 
+## 列对齐方式
+
+默认情况下，列会拉伸以填满行（row）的整个高度。列属于[弹性项目（flex items）](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item)，因此可以通过应用多个[CSS类](/docs/layout/css-utilities#flex-item-properties)来自定义其对齐行为。
 
 
-## Properties
+
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

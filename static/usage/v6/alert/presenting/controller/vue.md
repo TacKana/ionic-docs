@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="presentAlert">Click Me</ion-button>
+  <ion-button @click="presentAlert">点击我</ion-button>
 </template>
 
 <script lang="ts">
@@ -11,10 +11,10 @@
     setup() {
       const presentAlert = async () => {
         const alert = await alertController.create({
-          header: 'Alert',
-          subHeader: 'Important message',
-          message: 'This is an alert!',
-          buttons: ['OK'],
+          header: '提示',
+          subHeader: '重要信息',
+          message: '这是一个提示框！',
+          buttons: ['确定'],
         });
 
         await alert.present();

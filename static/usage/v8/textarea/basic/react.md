@@ -5,13 +5,13 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonTextarea label="Regular textarea" placeholder="Type something here"></IonTextarea>
+        <IonTextarea label="常规文本区域" placeholder="在这里输入内容"></IonTextarea>
       </IonItem>
       <IonItem>
-        <IonTextarea readonly={true} label="Readonly textarea" placeholder="Can't edit this"></IonTextarea>
+        <IonTextarea readonly={true} label="只读文本区域" placeholder="无法编辑此项"></IonTextarea>
       </IonItem>
       <IonItem>
-        <IonTextarea disabled={true} label="Disabled textarea" placeholder="Can't type here"></IonTextarea>
+        <IonTextarea disabled={true} label="禁用文本区域" placeholder="无法在此输入"></IonTextarea>
       </IonItem>
     </IonList>
   );

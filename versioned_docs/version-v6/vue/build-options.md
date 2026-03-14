@@ -1,32 +1,32 @@
 ---
-title: Vue Build Options
-sidebar_label: Build Options
+title: Vue 构建选项
+sidebar_label: 构建选项
 ---
 
 <head>
-  <title>Vue Build Options: Component Registration and Build Configuration</title>
+  <title>Vue 构建选项：组件注册与构建配置</title>
   <meta
     name="description"
-    content="Learn about Vue build configuration options including component registration strategies, prefetching, and build optimization for Ionic Vue apps."
+    content="了解 Vue 构建配置选项，包括组件注册策略、预加载以及 Ionic Vue 应用的构建优化。"
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-Vue gives you several tools to fine tune your application. This guide covers the build options that are most relevant to Ionic Framework.
+Vue 提供了多种工具来微调你的应用程序。本指南涵盖了与 Ionic Framework 最相关的构建选项。
 
-## Component Registration Strategies
+## 组件注册策略
 
-### Local Component Registration (Recommended)
+### 局部组件注册（推荐）
 
-By default, Ionic Framework components are registered locally. With local registration, these components are imported and provided to each Vue component you want to use them in. This is the recommended approach as it allows lazy loading and treeshaking to work properly with Ionic Framework components.
+默认情况下，Ionic Framework 组件采用局部注册。通过局部注册，这些组件会被导入并提供给每个需要使用它们的 Vue 组件。这是推荐的方法，因为它允许 Ionic Framework 组件正确地进行懒加载和摇树优化。
 
-The one downside to this approach is that it may be tedious to re-import your Ionic Framework components multiple times. However, we feel that the performance benefits you receive in exchange are worth it.
+这种方法的唯一缺点是可能需要多次重复导入 Ionic Framework 组件，略显繁琐。但我们认为，由此带来的性能优势是值得的。
 
-Also note that locally registered components are not available in subcomponents. You will need to re-import the Ionic Framework components you would like to use in your subcomponent.
+另外请注意，局部注册的组件在子组件中不可用。如果你希望在子组件中使用 Ionic Framework 组件，需要重新导入。
 
-Let's take a look at how local component registration works:
+让我们看看局部组件注册是如何工作的：
 
 ```html
 <template>
@@ -43,19 +43,19 @@ Let's take a look at how local component registration works:
 </script>
 ```
 
-In the example above, we are using the `IonPage` and `IonContent` components. To use them, we import them from `@ionic/vue`. From there, we can use the components in our template.
+在上面的示例中，我们使用了 `IonPage` 和 `IonContent` 组件。为了使用它们，我们从 `@ionic/vue` 导入。之后，我们就可以在模板中使用这些组件了。
 
-Note that since we are registering these components locally, neither `IonPage` nor `IonContent` will be available in `SubComponent` unless we register them there as well.
+请注意，由于我们是在局部注册这些组件，`IonPage` 和 `IonContent` 在 `SubComponent` 中将不可用，除非我们在那里也注册它们。
 
-For more information, see the [Local Registration Vue Documentation](https://v3.vuejs.org/guide/component-registration.html#local-registration).
+更多信息，请参阅 [Vue 局部注册文档](https://v3.vuejs.org/guide/component-registration.html#local-registration)。
 
-### Global Component Registration
+### 全局组件注册
 
-The other option for registering components is to use global registration. Global registration involves importing the components you want to use in `main.ts` and calling the `component` method on your Vue app instance.
+注册组件的另一种选择是使用全局注册。全局注册涉及在你想要使用的组件中导入 `main.ts`，并在你的 Vue 应用实例上调用 `component` 方法。
 
-While this makes it easier to add Ionic Framework components to your Vue app, global registration often is not ideal. To quote the Vue documentation: "If you're using a build system like Webpack, globally registering all components means that even if you stop using a component, it could still be included in your final build. This unnecessarily increases the amount of JavaScript your users have to download".
+虽然这使得向 Vue 应用添加 Ionic Framework 组件更加容易，但全局注册通常并不理想。引用 Vue 文档中的话：“如果你使用像 Webpack 这样的构建系统，全局注册所有组件意味着即使你停止使用某个组件，它仍可能被包含在最终构建中。这会不必要地增加用户必须下载的 JavaScript 数量”。
 
-Let's take a look at how global component registration works:
+让我们看看全局组件注册是如何工作的：
 
 **main.ts**
 
@@ -84,17 +84,17 @@ app.component('ion-page', IonPage);
 </script>
 ```
 
-In the example above, we are using the `IonPage` and `IonContent` components. To use them, we first import them from `@ionic/vue` in `main.ts`. From there, we call the `component` method on our app instance and pass it the tag name as well as the component definition. After we do that, we can use the components in the rest of our application without having to import them into each Vue component.
+在上面的示例中，我们使用了 `IonPage` 和 `IonContent` 组件。为了使用它们，我们首先在 `main.ts` 中从 `@ionic/vue` 导入它们。然后，我们在应用实例上调用 `component` 方法，并传入标签名和组件定义。完成这些后，我们就可以在应用的其余部分使用这些组件，而无需在每个 Vue 组件中导入它们。
 
-For more information, see the [Global Registration Vue Documentation](https://v3.vuejs.org/guide/component-registration.html#global-registration).
+更多信息，请参阅 [Vue 全局注册文档](https://v3.vuejs.org/guide/component-registration.html#global-registration)。
 
-## Build Optimization
+## 构建优化
 
-### Prefetching Application JavaScript
+### 预取应用程序 JavaScript
 
-By default, the Vue CLI will automatically generate prefetch hints for the JavaScript in your application. Prefetching utilizes the browser idle time to download documents that the user might visit in the near future. When the user visits a page that requires the prefetched document, it can be served quickly from the browser's cache.
+默认情况下，Vue CLI 会自动为应用程序中的 JavaScript 生成预取提示。预取利用浏览器的空闲时间下载用户可能在近期访问的文档。当用户访问需要预取文档的页面时，可以快速从浏览器缓存中提供。
 
-Prefetching consumes bandwidth, so if you have a large app, you may want to disable it. You can do this by modifying or creating your `vue.config.js` file:
+预取会消耗带宽，因此如果你的应用程序较大，可能需要禁用它。你可以通过修改或创建 `vue.config.js` 文件来实现：
 
 **vue.config.js**
 
@@ -106,4 +106,4 @@ module.exports = {
 };
 ```
 
-The configuration above will prevent all files from being prefetched and, instead, will be loaded when they are needed. You can also select certain chunks to prefetch. Check out the [Vue CLI Docs on Prefetching](https://cli.vuejs.org/guide/html-and-static-assets.html#prefetch) for more examples.
+上述配置将阻止所有文件的预取，改为在需要时加载它们。你也可以选择预取特定的代码块。查看 [Vue CLI 关于预取的文档](https://cli.vuejs.org/guide/html-and-static-assets.html#prefetch) 获取更多示例。

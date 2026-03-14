@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/fab/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v6/fab/slots.md';
 
 <head>
-  <title>ion-fab: Floating Action Button for Android and iOS Ionic Apps</title>
+  <title>ion-fab：用于 Android 和 iOS Ionic 应用的浮动操作按钮</title>
   <meta
     name="description"
-    content="Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework."
+    content="FAB（浮动操作按钮）是包含一个或多个 fab 按钮的容器元素。在使用 Ionic Framework 创建 Android 和 iOS 应用时使用 ion-fab。"
   />
 </head>
 
@@ -21,78 +21,78 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Fabs are container elements that contain one or more [fab buttons](./fab-button). They should be placed in a fixed position that does not scroll with the content. Fabs should have one main fab button. Fabs can also contain one or more [fab lists](./fab-list) which contain related buttons that show when the main fab button is clicked.
+浮动操作按钮（FAB）是包含一个或多个 [fab 按钮](./fab-button) 的容器元素。它们应放置在固定位置，不随内容滚动。FAB 应有一个主 fab 按钮。FAB 也可以包含一个或多个 [fab 列表](./fab-list)，这些列表包含在主 fab 按钮被点击时显示的相关按钮。
 
-## Basic Usage
+## 基本用法
 
 import BasicUsage from '@site/static/usage/v6/fab/basic/index.md';
 
 <BasicUsage />
 
-## List Side
+## 列表侧边
 
-The `side` property of the [fab list](./fab-list) component controls where it appears relative to the main fab button. A single fab can have multiple fab lists as long as they all have different values for `side`.
+[fab 列表](./fab-list) 组件的 `side` 属性控制其相对于主 fab 按钮出现的位置。只要所有 fab 列表的 `side` 值不同，单个 fab 可以包含多个 fab 列表。
 
 import ListSide from '@site/static/usage/v6/fab/list-side/index.md';
 
 <ListSide />
 
-## Positioning
+## 定位
 
-In order to place the fab in a fixed position, it should be assigned to the `fixed` slot of the outer [content](./content) component. Use the `vertical` and `horizontal` props to control the alignment of the fab in the viewport. The `edge` prop will cause the fab button to overlap with the app's header or footer.
+为了将 fab 放置在固定位置，应将其分配给外部 [内容](./content) 组件的 `fixed` 插槽。使用 `vertical` 和 `horizontal` 属性来控制 fab 在视口中的对齐方式。`edge` 属性将使 fab 按钮与应用标题或页脚重叠。
 
 import Positioning from '@site/static/usage/v6/fab/positioning/index.md';
 
 <Positioning />
 
-## Button Sizing
+## 按钮尺寸
 
-Setting the `size` property of the main fab button to `"small"` will render it at a mini size. Note that this property will not have an effect when used with the inner fab buttons.
+将主 fab 按钮的 `size` 属性设置为 `"small"` 会将其渲染为迷你尺寸。请注意，此属性在与内部 fab 按钮一起使用时不会产生效果。
 
 import ButtonSizing from '@site/static/usage/v6/fab/button-sizing/index.md';
 
 <ButtonSizing />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v6/fab/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSCustomProperties from '@site/static/usage/v6/fab/theming/css-custom-properties/index.md';
 
 <CSSCustomProperties />
 
-### CSS Shadow Parts
+### CSS 影子部件
 
 import CSSShadowParts from '@site/static/usage/v6/fab/theming/css-shadow-parts/index.md';
 
 <CSSShadowParts />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 影子部件
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

@@ -4,13 +4,13 @@ sidebar_label: 'ssh list'
 
 # ionic ssh list
 
-List your SSH public keys on Ionic
+列出您在 Ionic 上的 SSH 公钥
 
 ```shell
 ionic ssh list [options]
 ```
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -26,9 +26,9 @@ ionic ssh list [options]
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Output SSH keys in JSON</p>
+        <p>以 JSON 格式输出 SSH 密钥</p>
       </td>
     </tr>
   </tbody>

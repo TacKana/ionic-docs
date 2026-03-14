@@ -1,4 +1,4 @@
 ```html
-<ion-input-otp> Didn't get a code? <a href="#">Resend the code</a> </ion-input-otp>
-<ion-input-otp length="6"> Didn't get a code? <a href="#">Resend the code</a> </ion-input-otp>
+<ion-input-otp> 没收到验证码？ <a href="#">重新发送验证码</a> </ion-input-otp>
+<ion-input-otp length="6"> 没收到验证码？ <a href="#">重新发送验证码</a> </ion-input-otp>
 ```

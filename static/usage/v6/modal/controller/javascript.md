@@ -1,12 +1,12 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Controller Modal</ion-title>
+    <ion-title>控制器模态框</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-button expand="block" onclick="openModal()">Open</ion-button>
-  <p id="message">This modal example uses the modalController to present and dismiss modals.</p>
+  <ion-button expand="block" onclick="openModal()">打开</ion-button>
+  <p id="message">此模态框示例使用 modalController 来展示和关闭模态框。</p>
 </ion-content>
 
 <script>
@@ -16,18 +16,18 @@
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
-            <ion-button color="medium" onclick="cancel()">Cancel</ion-button>
+            <ion-button color="medium" onclick="cancel()">取消</ion-button>
           </ion-buttons>
-          <ion-title>Welcome</ion-title>
+          <ion-title>欢迎</ion-title>
           <ion-buttons slot="end">
-            <ion-button onclick="confirm()" strong>Confirm</ion-button>
+            <ion-button onclick="confirm()" strong>确认</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
         <ion-item>
-          <ion-label position="stacked">Enter your name</ion-label>
-          <ion-input type="text" placeholder="Your name"></ion-input>
+          <ion-label position="stacked">请输入您的姓名</ion-label>
+          <ion-input type="text" placeholder="您的姓名"></ion-input>
         </ion-item>
       </ion-content>
       `;
@@ -41,7 +41,7 @@
     const { data, role } = await modal.onWillDismiss();
 
     if (role === 'confirm') {
-      document.querySelector('#message').innerHTML = `Hello, ${data}!`;
+      document.querySelector('#message').innerHTML = `您好，${data}！`;
     }
   };
 

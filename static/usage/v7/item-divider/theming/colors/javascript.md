@@ -1,32 +1,32 @@
 ```html
 <ion-item-divider>
-  <ion-label>Default</ion-label>
+  <ion-label>默认</ion-label>
 </ion-item-divider>
 <ion-item-divider color="primary">
-  <ion-label>Primary</ion-label>
+  <ion-label>主要</ion-label>
 </ion-item-divider>
 <ion-item-divider color="secondary">
-  <ion-label>Secondary</ion-label>
+  <ion-label>次要</ion-label>
 </ion-item-divider>
 <ion-item-divider color="tertiary">
-  <ion-label>Tertiary</ion-label>
+  <ion-label>第三级</ion-label>
 </ion-item-divider>
 <ion-item-divider color="success">
-  <ion-label>Success</ion-label>
+  <ion-label>成功</ion-label>
 </ion-item-divider>
 <ion-item-divider color="warning">
-  <ion-label>Warning</ion-label>
+  <ion-label>警告</ion-label>
 </ion-item-divider>
 <ion-item-divider color="danger">
-  <ion-label>Danger</ion-label>
+  <ion-label>危险</ion-label>
 </ion-item-divider>
 <ion-item-divider color="light">
-  <ion-label>Light</ion-label>
+  <ion-label>浅色</ion-label>
 </ion-item-divider>
 <ion-item-divider color="medium">
-  <ion-label>Medium</ion-label>
+  <ion-label>中等</ion-label>
 </ion-item-divider>
 <ion-item-divider color="dark">
-  <ion-label>Dark</ion-label>
+  <ion-label>深色</ion-label>
 </ion-item-divider>
 ```

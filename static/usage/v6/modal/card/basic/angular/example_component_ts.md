@@ -9,7 +9,7 @@ import { IonicModule } from '@ionic/angular';
   standalone: true,
 })
 export class ExampleComponent {
-  // Typically referenced to your ion-router-outlet
+  // 通常指向你的 ion-router-outlet
   presentingElement = null;
 
   ngOnInit() {

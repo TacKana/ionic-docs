@@ -3,8 +3,8 @@
   <div class="container">
     <ion-list inset="true">
       <ion-item button="true" detail="false" id="select-fruits">
-        <ion-label>Favorite Fruits</ion-label>
-        <div slot="end" id="selected-fruits">0 Items</div>
+        <ion-label>喜爱的水果</ion-label>
+        <div slot="end" id="selected-fruits">0 项</div>
       </ion-item>
     </ion-list>
   </div>
@@ -14,11 +14,11 @@
   <ion-header>
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-button onclick="cancelChanges()">Cancel</ion-button>
+        <ion-button onclick="cancelChanges()">取消</ion-button>
       </ion-buttons>
-      <ion-title>Favorite Fruits</ion-title>
+      <ion-title>喜爱的水果</ion-title>
       <ion-buttons slot="end">
-        <ion-button onclick="confirmChanges()">Done</ion-button>
+        <ion-button onclick="confirmChanges()">完成</ion-button>
       </ion-buttons>
     </ion-toolbar>
     <ion-toolbar>
@@ -64,29 +64,28 @@
   ];
 
   /**
-   * This is the confirmed
-   * list of selected fruits. It
-   * is only updated once the "Done"
-   * button is pressed in the modal.
+   * 这是已确认的
+   * 选定水果列表。它
+   * 仅在模态框中的"完成"
+   * 按钮被按下时更新。
    */
   var selectedFruits = [];
 
   /**
-   * This is the working list of
-   * selected fruits. It tracks any
-   * uncommitted changes that the user
-   * makes in the modal. If the user pressed
-   * the "Cancel" button then this is
-   * reset to the value of the confirmed
-   * selected fruits.
+   * 这是选定水果的
+   * 工作列表。它跟踪用户
+   * 在模态框中做出的任何
+   * 未提交的更改。如果用户按下
+   * "取消"按钮，则此列表
+   * 将重置为已确认的
+   * 选定水果的值。
    */
   var workingSelectedFruits = [];
 
   /**
-   * Filter the list of fruits base
-   * on the search query. If no query
-   * is provided then the entire list
-   * will be returned.
+   * 根据搜索查询
+   * 过滤水果列表。如果未提供查询，
+   * 则返回整个列表。
    */
   function filterList(searchQuery = undefined) {
     if (searchQuery === undefined) return fruits;
@@ -97,9 +96,9 @@
   }
 
   /**
-   * Render a filtered list of fruits
-   * inside of the modal based on the
-   * search query.
+   * 根据搜索查询，
+   * 在模态框内渲染
+   * 过滤后的水果列表。
    */
   function renderList(searchQuery = undefined) {
     const data = filterList(searchQuery);
@@ -118,12 +117,12 @@
   }
 
   /**
-   * Formats the selected fruits in
-   * an easier to read way. If only
-   * 1 fruit is selected, then the
-   * fruit name will be rendered.
-   * Otherwise the number of fruits
-   * selected will be rendered.
+   * 以更易读的方式
+   * 格式化选定的水果。
+   * 如果只选择了 1 个水果，
+   * 则显示水果名称。
+   * 否则将显示
+   * 选定的水果数量。
    */
   function formatData(data) {
     if (data.length === 1) {
@@ -131,12 +130,12 @@
       return fruit.text;
     }
 
-    return `${data.length} items`;
+    return `${data.length} 项`;
   }
 
   /**
-   * Reset any working changes
-   * and dismiss the modal.
+   * 重置所有工作更改
+   * 并关闭模态框。
    */
   function cancelChanges() {
     workingSelectedFruits = [...selectedFruits];
@@ -144,15 +143,15 @@
   }
 
   /**
-   * Return the selected
-   * fruits to the parent page.
+   * 将选定的水果
+   * 返回给父页面。
    */
   function confirmChanges() {
     selectedFruits = [...workingSelectedFruits];
     modal.dismiss(selectedFruits);
   }
 
-  // Listen for all ionChange events from the checkbox
+  // 监听复选框的所有 ionChange 事件
   modal.addEventListener('ionChange', (event) => {
     if (event.target.tagName !== 'ION-CHECKBOX') {
       return;
@@ -168,18 +167,18 @@
   });
 
   /**
-   * As users type into the searchbar
-   * we need to update the view with
-   * the filtered list.
+   * 当用户在搜索栏中输入时，
+   * 我们需要用过滤后的列表
+   * 更新视图。
    */
   searchbar.addEventListener('ionInput', (event) => {
     renderList(event.target.value);
   });
 
   /**
-   * When the modal is about to dismiss
-   * update the parent page with the
-   * selected fruits.
+   * 当模态框即将关闭时，
+   * 用选定的水果
+   * 更新父页面。
    */
   modal.addEventListener('ionModalWillDismiss', (event) => {
     const { data } = event.detail;
@@ -192,8 +191,8 @@
   });
 
   /**
-   * When the modal has completed we need to
-   * reset the filtered state of the list.
+   * 当模态框完全关闭后，我们需要
+   * 重置列表的过滤状态。
    */
   modal.addEventListener('ionModalDidDismiss', (event) => {
     searchbar.value = undefined;

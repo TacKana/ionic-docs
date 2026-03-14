@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button>Custom Button</ion-button>
+  <ion-button>自定义按钮</ion-button>
 </template>
 
 <script lang="ts">

@@ -2,21 +2,21 @@
 <ion-accordion-group>
   <ion-accordion value="first">
     <ion-item slot="header">
-      <ion-label>First Accordion</ion-label>
+      <ion-label>第一个手风琴</ion-label>
     </ion-item>
-    <div class="ion-padding" slot="content">First Content</div>
+    <div class="ion-padding" slot="content">第一项内容</div>
   </ion-accordion>
   <ion-accordion value="second">
     <ion-item slot="header">
-      <ion-label>Second Accordion</ion-label>
+      <ion-label>第二个手风琴</ion-label>
     </ion-item>
-    <div class="ion-padding" slot="content">Second Content</div>
+    <div class="ion-padding" slot="content">第二项内容</div>
   </ion-accordion>
   <ion-accordion value="third">
     <ion-item slot="header">
-      <ion-label>Third Accordion</ion-label>
+      <ion-label>第三个手风琴</ion-label>
     </ion-item>
-    <div class="ion-padding" slot="content">Third Content</div>
+    <div class="ion-padding" slot="content">第三项内容</div>
   </ion-accordion>
 </ion-accordion-group>
 ```

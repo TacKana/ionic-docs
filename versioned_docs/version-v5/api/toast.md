@@ -16,17 +16,17 @@ import Slots from '@ionic-internal/component-api/v5/toast/slots.md';
 
 # ion-toast
 
-A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.
+Toast（轻提示）是现代应用中常用的简洁通知方式。它可用于提供操作反馈或显示系统消息。Toast 会显示在应用内容的上方，并且可以被应用关闭，以恢复用户与应用交互。
 
-## Positioning
+## 定位
 
-Toasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.
+Toast 可以定位在视口的顶部、底部或中间。可以在创建时传入位置参数。可选值有 `top`、`bottom` 和 `middle`。如果未指定位置，Toast 将默认显示在视口底部。
 
-## Dismissing
+## 关闭
 
-The toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. If a button with a role of `"cancel"` is added, then that button will dismiss the toast. To dismiss the toast after creation, call the `dismiss()` method on the instance.
+Toast 可以在指定的时间后自动关闭，只需在 Toast 选项的 `duration` 属性中传入要显示的毫秒数即可。如果添加了一个角色为 `"cancel"` 的按钮，那么点击该按钮即可关闭 Toast。要在创建后手动关闭 Toast，可以在实例上调用 `dismiss()` 方法。
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -46,7 +46,7 @@ export class ToastExample {
 
   async presentToast() {
     const toast = await this.toastController.create({
-      message: 'Your settings have been saved.',
+      message: '您的设置已保存。',
       duration: 2000,
     });
     toast.present();
@@ -54,23 +54,23 @@ export class ToastExample {
 
   async presentToastWithOptions() {
     const toast = await this.toastController.create({
-      header: 'Toast header',
-      message: 'Click to Close',
+      header: 'Toast 标题',
+      message: '点击关闭',
       position: 'top',
       buttons: [
         {
           side: 'start',
           icon: 'star',
-          text: 'Favorite',
+          text: '收藏',
           handler: () => {
-            console.log('Favorite clicked');
+            console.log('点击了收藏');
           },
         },
         {
-          text: 'Done',
+          text: '完成',
           role: 'cancel',
           handler: () => {
-            console.log('Cancel clicked');
+            console.log('点击了取消');
           },
         },
       ],
@@ -78,7 +78,7 @@ export class ToastExample {
     await toast.present();
 
     const { role } = await toast.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
+    console.log('onDidDismiss 返回的角色为', role);
   }
 }
 ```
@@ -90,7 +90,7 @@ export class ToastExample {
 ```javascript
 async function presentToast() {
   const toast = document.createElement('ion-toast');
-  toast.message = 'Your settings have been saved.';
+  toast.message = '您的设置已保存。';
   toast.duration = 2000;
 
   document.body.appendChild(toast);
@@ -99,23 +99,23 @@ async function presentToast() {
 
 async function presentToastWithOptions() {
   const toast = document.createElement('ion-toast');
-  toast.header = 'Toast header';
-  toast.message = 'Click to Close';
+  toast.header = 'Toast 标题';
+  toast.message = '点击关闭';
   toast.position = 'top';
   toast.buttons = [
     {
       side: 'start',
       icon: 'star',
-      text: 'Favorite',
+      text: '收藏',
       handler: () => {
-        console.log('Favorite clicked');
+        console.log('点击了收藏');
       },
     },
     {
-      text: 'Done',
+      text: '完成',
       role: 'cancel',
       handler: () => {
-        console.log('Cancel clicked');
+        console.log('点击了取消');
       },
     },
   ];
@@ -124,7 +124,7 @@ async function presentToastWithOptions() {
   await toast.present();
 
   const { role } = await toast.onDidDismiss();
-  console.log('onDidDismiss resolved with role', role);
+  console.log('onDidDismiss 返回的角色为', role);
 }
 ```
 
@@ -133,7 +133,7 @@ async function presentToastWithOptions() {
 <TabItem value="react">
 
 ```tsx
-/* Using the useIonToast Hook */
+/* 使用 useIonToast Hook */
 
 import React from 'react';
 import { IonButton, IonContent, IonPage, useIonToast } from '@ionic/react';
@@ -148,20 +148,20 @@ const ToastExample: React.FC = () => {
           expand="block"
           onClick={() =>
             present({
-              buttons: [{ text: 'hide', handler: () => dismiss() }],
-              message: 'toast from hook, click hide to dismiss',
-              onDidDismiss: () => console.log('dismissed'),
-              onWillDismiss: () => console.log('will dismiss'),
+              buttons: [{ text: '隐藏', handler: () => dismiss() }],
+              message: '来自 Hook 的 Toast，点击隐藏即可关闭',
+              onDidDismiss: () => console.log('已关闭'),
+              onWillDismiss: () => console.log('即将关闭'),
             })
           }
         >
-          Show Toast
+          显示 Toast
         </IonButton>
-        <IonButton expand="block" onClick={() => present('hello from hook', 3000)}>
-          Show Toast using params, closes in 3 secs
+        <IonButton expand="block" onClick={() => present('来自 Hook 的问候', 3000)}>
+          使用参数显示 Toast，3 秒后关闭
         </IonButton>
         <IonButton expand="block" onClick={dismiss}>
-          Hide Toast
+          隐藏 Toast
         </IonButton>
       </IonContent>
     </IonPage>
@@ -170,7 +170,7 @@ const ToastExample: React.FC = () => {
 ```
 
 ```tsx
-/* Using the IonToast Component */
+/* 使用 IonToast 组件 */
 
 import React, { useState } from 'react';
 import { IonToast, IonContent, IonButton } from '@ionic/react';
@@ -182,37 +182,37 @@ export const ToastExample: React.FC = () => {
   return (
     <IonContent>
       <IonButton onClick={() => setShowToast1(true)} expand="block">
-        Show Toast 1
+        显示 Toast 1
       </IonButton>
       <IonButton onClick={() => setShowToast2(true)} expand="block">
-        Show Toast 2
+        显示 Toast 2
       </IonButton>
       <IonToast
         isOpen={showToast1}
         onDidDismiss={() => setShowToast1(false)}
-        message="Your settings have been saved."
+        message="您的设置已保存。"
         duration={200}
       />
 
       <IonToast
         isOpen={showToast2}
         onDidDismiss={() => setShowToast2(false)}
-        message="Click to Close"
+        message="点击关闭"
         position="top"
         buttons={[
           {
             side: 'start',
             icon: 'star',
-            text: 'Favorite',
+            text: '收藏',
             handler: () => {
-              console.log('Favorite clicked');
+              console.log('点击了收藏');
             },
           },
           {
-            text: 'Done',
+            text: '完成',
             role: 'cancel',
             handler: () => {
-              console.log('Cancel clicked');
+              console.log('点击了取消');
             },
           },
         ]}
@@ -238,7 +238,7 @@ import { toastController } from '@ionic/core';
 export class ToastExample {
   async presentToast() {
     const toast = await toastController.create({
-      message: 'Your settings have been saved.',
+      message: '您的设置已保存。',
       duration: 2000,
     });
     toast.present();
@@ -246,23 +246,23 @@ export class ToastExample {
 
   async presentToastWithOptions() {
     const toast = await toastController.create({
-      header: 'Toast header',
-      message: 'Click to Close',
+      header: 'Toast 标题',
+      message: '点击关闭',
       position: 'top',
       buttons: [
         {
           side: 'start',
           icon: 'star',
-          text: 'Favorite',
+          text: '收藏',
           handler: () => {
-            console.log('Favorite clicked');
+            console.log('点击了收藏');
           },
         },
         {
-          text: 'Done',
+          text: '完成',
           role: 'cancel',
           handler: () => {
-            console.log('Cancel clicked');
+            console.log('点击了取消');
           },
         },
       ],
@@ -270,14 +270,14 @@ export class ToastExample {
     await toast.present();
 
     const { role } = await toast.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
+    console.log('onDidDismiss 返回的角色为', role);
   }
 
   render() {
     return [
       <ion-content>
-        <ion-button onClick={() => this.presentToast()}>Present Toast</ion-button>
-        <ion-button onClick={() => this.presentToastWithOptions()}>Present Toast: Options</ion-button>
+        <ion-button onClick={() => this.presentToast()}>显示 Toast</ion-button>
+        <ion-button onClick={() => this.presentToastWithOptions()}>显示 Toast：选项</ion-button>
       </ion-content>,
     ];
   }
@@ -292,8 +292,8 @@ export class ToastExample {
 <template>
   <ion-page>
     <ion-content class="ion-padding">
-      <ion-button @click="openToast">Open Toast</ion-button>
-      <ion-button @click="openToastOptions">Open Toast: Options</ion-button>
+      <ion-button @click="openToast">打开 Toast</ion-button>
+      <ion-button @click="openToastOptions">打开 Toast：选项</ion-button>
     </ion-content>
   </ion-page>
 </template>
@@ -306,30 +306,30 @@ export class ToastExample {
     methods: {
       async openToast() {
         const toast = await toastController.create({
-          message: 'Your settings have been saved.',
+          message: '您的设置已保存。',
           duration: 2000,
         });
         return toast.present();
       },
       async openToastOptions() {
         const toast = await toastController.create({
-          header: 'Toast header',
-          message: 'Click to Close',
+          header: 'Toast 标题',
+          message: '点击关闭',
           position: 'top',
           buttons: [
             {
               side: 'start',
               icon: 'star',
-              text: 'Favorite',
+              text: '收藏',
               handler: () => {
-                console.log('Favorite clicked');
+                console.log('点击了收藏');
               },
             },
             {
-              text: 'Done',
+              text: '完成',
               role: 'cancel',
               handler: () => {
-                console.log('Cancel clicked');
+                console.log('点击了取消');
               },
             },
           ],
@@ -337,21 +337,21 @@ export class ToastExample {
         await toast.present();
 
         const { role } = await toast.onDidDismiss();
-        console.log('onDidDismiss resolved with role', role);
+        console.log('onDidDismiss 返回的角色为', role);
       },
     },
   };
 </script>
 ```
 
-Developers can also use this component directly in their template:
+开发者也可以在模板中直接使用此组件：
 
 ```html
 <template>
-  <ion-button @click="setOpen(true)">Show Toast</ion-button>
+  <ion-button @click="setOpen(true)">显示 Toast</ion-button>
   <ion-toast
     :is-open="isOpenRef"
-    message="Your settings have been saved."
+    message="您的设置已保存。"
     :duration="2000"
     @didDismiss="setOpen(false)"
   >
@@ -378,15 +378,15 @@ Developers can also use this component directly in their template:
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -394,10 +394,10 @@ Developers can also use this component directly in their template:
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

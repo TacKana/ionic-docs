@@ -12,7 +12,7 @@ import { ModalExampleComponent } from './modal-example.component';
   imports: [FormsModule, IonButton, IonContent, IonHeader, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
-  message = 'This modal example uses the modalController to present and dismiss modals.';
+  message = '此模态框示例使用 modalController 来呈现和关闭模态框。';
 
   constructor(private modalCtrl: ModalController) {}
 

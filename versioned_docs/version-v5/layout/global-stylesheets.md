@@ -1,65 +1,65 @@
 ---
-title: Global Stylesheets
+title: 全局样式表
 ---
 
-# Global Stylesheets
+# 全局样式表
 
-While Ionic Framework component styles are self-contained, there are several global stylesheets that should be included in order to use all of Ionic's features. Some of the stylesheets are required in order for an Ionic Framework app to look and behave properly, and others include optional utilities to quickly style your app.
+尽管 Ionic Framework 组件样式是独立自包含的，但仍有一些全局样式表需要引入以使用 Ionic 的所有功能。其中一些样式表是 Ionic Framework 应用正常显示和运行所必需的，而另一些则包含可选的实用工具类，用于快速美化应用样式。
 
-## Available
+## 可用样式表
 
-### Required
+### 必需样式表
 
-The following CSS file must be included in order for Ionic Framework to work properly.
+以下 CSS 文件必须引入，否则 Ionic Framework 将无法正常工作。
 
 #### core.css
 
-This file is the only stylesheet that is required in order for Ionic components to work properly. It includes app specific styles, and allows the `color` property to work across components. If this file is not included the colors will not show up and some elements may not appear properly.
+该文件是 Ionic 组件正常工作的唯一必需样式表。它包含应用特定的样式，并使 `color` 属性能够在各组件间生效。如果不引入此文件，颜色将无法正确显示，某些元素也可能无法正常呈现。
 
-### Recommended
+### 推荐样式表
 
-The following CSS files are recommended to be included in an Ionic Framework app. If they are not included, some elements may have undesired styles. If Ionic Framework components are being used outside of an app, these files may not be necessary.
+以下 CSS 文件在 Ionic Framework 应用中推荐引入。如果未引入，某些元素可能会出现不期望的样式。如果 Ionic Framework 组件在应用外部使用，这些文件可能不是必需的。
 
 #### structure.css
 
-Applies styles to `<html>` and defaults `box-sizing` to `border-box`. It ensures scrolling behaves like native in mobile devices.
+该样式表为 `<html>` 元素应用样式，并将 `box-sizing` 默认设为 `border-box`。它能确保移动设备上的滚动行为与原生应用一致。
 
 #### typography.css
 
-Typography changes the font-family of the entire document and modifies the font styles for heading elements. It also applies positioning styles to some native text elements.
+该样式表修改整个文档的字体族，并调整标题元素的字体样式。同时，它还为一些原生文本元素应用定位样式。
 
 #### normalize.css
 
-Makes browsers render all elements more consistently and in line with modern standards. It is based on [Normalize.css](https://necolas.github.io/normalize.css/).
+使浏览器更一致地渲染所有元素，并符合现代标准。它基于 [Normalize.css](https://necolas.github.io/normalize.css/) 构建。
 
-### Optional
+### 可选样式表
 
-The following set of CSS files are optional and can safely be commented out or removed if the application is not using any of the features.
+以下 CSS 文件是可选的，如果应用未使用相关功能，可以安全地注释掉或移除。
 
 #### padding.css
 
-Adds utility classes to modify the padding or margin on any element, see [CSS Utilities](css-utilities.md#content-space) for usage information.
+添加实用工具类来修改任何元素的边距（padding）或外边距（margin），用法请参考 [CSS 实用工具](css-utilities.md#内容间距)。
 
 #### float-elements.css
 
-Adds utility classes to float an element based on the breakpoint and side, see [CSS Utilities](css-utilities.md#element-placement) for usage information.
+添加实用工具类，根据断点和方向浮动元素，用法请参考 [CSS 实用工具](css-utilities.md#元素定位)。
 
 #### text-alignment.css
 
-Adds utility classes to align the text of an element or adjust the white space based on the breakpoint, see [CSS Utilities](css-utilities.md#text-alignment) for usage information.
+添加实用工具类，根据断点对齐元素文本或调整空白字符，用法请参考 [CSS 实用工具](css-utilities.md#文本对齐)。
 
 #### text-transformation.css
 
-Adds utility classes to transform the text of an element to `uppercase`, `lowercase` or `capitalize` based on the breakpoint, see [CSS Utilities](css-utilities.md#text-transformation) for usage information.
+添加实用工具类，根据断点将元素文本转换为 `uppercase`、`lowercase` 或 `capitalize`，用法请参考 [CSS 实用工具](css-utilities.md#文本转换)。
 
 #### flex-utils.css
 
-Adds utility classes to align flex containers and items, see [CSS Utilities](css-utilities.md#flex-properties) for usage information.
+添加实用工具类来对齐弹性容器和项目，用法请参考 [CSS 实用工具](css-utilities.md#弹性属性)。
 
 #### display.css
 
-Adds utility classes to hide any element based on the breakpoint, see [CSS Utilities](css-utilities.md#element-display) for usage information.
+添加实用工具类，根据断点隐藏任何元素，用法请参考 [CSS 实用工具](css-utilities.md#元素显示)。
 
-## Usage
+## 使用方法
 
-Refer to [Ionic Packages](../intro/cdn.md) for how to include the global stylesheets based on the framework and [CSS Utilities](css-utilities.md) for how to use the optional utilities.
+关于如何根据框架引入全局样式表，请参考 [Ionic 包](../intro/cdn.md)。关于如何使用可选实用工具类，请参考 [CSS 实用工具](css-utilities.md)。

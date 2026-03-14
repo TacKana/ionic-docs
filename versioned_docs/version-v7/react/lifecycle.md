@@ -4,43 +4,43 @@ sidebar_label: Lifecycle
 ---
 
 <head>
-  <title>React Lifecycle: A Guide to Ionic React App Component Lifecycles</title>
+  <title>React 生命周期：Ionic React 应用组件生命周期指南</title>
   <meta
     name="description"
-    content="The React Lifecycle guide discusses how to use the Ionic Lifecycle events in an Ionic React application. Read to learn more about React component lifecycles."
+    content="React 生命周期指南讨论了如何在 Ionic React 应用中使用 Ionic 生命周期事件。阅读以了解更多关于 React 组件生命周期的信息。"
   />
 </head>
 
-This guide discusses how to use the Ionic Lifecycle events in an Ionic React application.
+本指南讨论了如何在 Ionic React 应用中使用 Ionic 生命周期事件。
 
-## Ionic Lifecycle Methods
+## Ionic 生命周期方法
 
-Ionic provides a few lifecycle methods that you can use in your apps:
+Ionic 提供了几个可以在应用中使用的生命周期方法：
 
-| Event Name         | Description                                                        |
-| ------------------ | ------------------------------------------------------------------ |
-| `ionViewWillEnter` | Fired when the component routing to is about to animate into view. |
-| `ionViewDidEnter`  | Fired when the component routing to has _finished_ animating.      |
-| `ionViewWillLeave` | Fired when the component routing _from_ is about to animate.       |
-| `ionViewDidLeave`  | Fired when the component routing _from_ has _finished_ animating.  |
+| 事件名称            | 描述                                                                 |
+| ------------------- | -------------------------------------------------------------------- |
+| `ionViewWillEnter` | 当路由目标组件即将开始进入视图的动画时触发。                         |
+| `ionViewDidEnter`  | 当路由目标组件已完成进入视图的动画时触发。                           |
+| `ionViewWillLeave` | 当离开路由的源组件即将开始离开视图的动画时触发。                     |
+| `ionViewDidLeave`  | 当离开路由的源组件已完成离开视图的动画时触发。                       |
 
-These lifecycles are only called on components directly mapped by a router. This means if `/pageOne` maps to `PageOneComponent`, then Ionic lifecycles will be called on `PageOneComponent` but will not be called on any child components that `PageOneComponent` may render.
+这些生命周期仅在被路由器直接映射的组件上调用。这意味着，如果 `/pageOne` 映射到 `PageOneComponent`，那么 Ionic 生命周期将在 `PageOneComponent` 上调用，但不会在 `PageOneComponent` 可能渲染的任何子组件上调用。
 
-The way you access these methods varies based on if you are using class-based components or functional components. We cover both methods below.
+访问这些方法的方式取决于您使用的是类组件还是函数组件。我们在下面介绍这两种方法。
 
-## Lifecycle Methods in Class-Based Components
+## 类组件中的生命周期方法
 
-to use the Ionic Lifecycle methods in a class-based component, you must wrap your component with the `withIonLifeCycle` higher order component (HOC) like so:
+要在类组件中使用 Ionic 生命周期方法，必须用 `withIonLifeCycle` 高阶组件（HOC）包装您的组件，如下所示：
 
 ```tsx
 export default withIonLifeCycle(HomePage);
 ```
 
 :::note
-`withIonLifeCycle` is imported from `@ionic/react`
+`withIonLifeCycle` 从 `@ionic/react` 导入
 :::
 
-You can then create the appropriate lifecycle method on your class component, and the HOC calls that method when the event happens. Below is the entire component with each of the lifecycle methods implemented:
+然后，您可以在类组件上创建相应的生命周期方法，当事件发生时，HOC 会调用该方法。下面是实现了所有生命周期方法的完整组件：
 
 ```tsx
 import React from 'react';
@@ -80,9 +80,9 @@ class HomePage extends React.Component {
 export default withIonLifeCycle(HomePage);
 ```
 
-## Lifecycle Methods in Functional Components
+## 函数组件中的生命周期方法
 
-Ionic React exports hooks for each of the lifecycle methods that you can use in your functional components. Each of the hooks takes the method you want called when the event fires.
+Ionic React 为每个生命周期方法导出了钩子（hooks），您可以在函数组件中使用。每个钩子都接受一个在事件触发时要调用的方法。
 
 ```tsx
 import {
@@ -130,10 +130,10 @@ export default HomePage;
 ```
 
 :::note
-Functional components don't need to be wrapped with the `withIonLifeCycle` HOC as class components do.
+函数组件不需要像类组件那样用 `withIonLifeCycle` HOC 包装。
 :::
 
-Developers can also optionally pass reactive dependencies to each lifecycle hook. These are then passed to the underlying [React useEffect hook](https://react.dev/reference/react/useEffect#useeffect):
+开发人员还可以选择性地向每个生命周期钩子传递响应式依赖项。这些依赖项随后会传递给底层的 [React useEffect 钩子](https://react.dev/reference/react/useEffect#useeffect)：
 
 ```tsx
 const [data, setData] = useState('foo');
@@ -143,25 +143,25 @@ useIonViewDidEnter(() => {
 }, [data]);
 ```
 
-## React LifeCycle Methods
+## React 生命周期方法
 
-All the lifecycle methods in React (`componentDidMount`, `componentWillUnmount`, etc..) are available for you to use as well. However, since Ionic React manages the lifetime of a page, certain events might not fire when you expect them to. For instance, `componentDidMount` fires the first time a page is displayed, but if you navigate away from the page Ionic might keep the page around in the DOM, and a subsequent visit to the page might not call `componentDidMount` again. This scenario is the main reason the Ionic lifecycle methods exist, to still give you a way to call logic when views enter and exit when the native framework's events might not fire.
+您也可以使用 React 中的所有生命周期方法（`componentDidMount`、`componentWillUnmount` 等）。然而，由于 Ionic React 管理页面的生命周期，某些事件可能不会在您预期的时候触发。例如，`componentDidMount` 在页面首次显示时触发，但如果您离开该页面，Ionic 可能会将页面保留在 DOM 中，后续再次访问该页面时可能不会再次调用 `componentDidMount`。这种情况正是 Ionic 生命周期方法存在的主要原因，以便在原生框架的事件可能不触发时，仍然为您提供一种在视图进入和退出时调用逻辑的方式。
 
-## Guidance for Each LifeCycle Method
+## 各生命周期方法的使用指导
 
-Below are some tips on use cases for each of the life cycle events.
+以下是关于每个生命周期事件使用场景的一些建议。
 
-- `ionViewWillEnter` - Since `ionViewWillEnter` is called every time the view is navigated to (regardless if initialized or not), it's a good method to load data from services.
-- `ionViewDidEnter` - If you see performance problems from using `ionViewWillEnter` when loading data, you can do your data calls in `ionViewDidEnter` instead. This event won't fire until after the page is visible to the user, however, so you might want to use either a loading indicator or a skeleton screen, so content doesn't flash in un-naturally after the transition is complete.
-- `ionViewWillLeave` - Can be used for cleanup, like unsubscribing from data sources. Since `componentWillUnmount` might not fire when you navigate from the current page, put your cleanup code here if you don't want it active while the screen is not in view.
-- `ionViewDidLeave` - When this event fires, you know the new page has fully transitioned in, so any logic you might not normally do when the view is visible can go here.
+- `ionViewWillEnter` - 由于 `ionViewWillEnter` 在每次导航到该视图时都会被调用（无论是否初始化），因此它是从服务加载数据的好方法。
+- `ionViewDidEnter` - 如果在使用 `ionViewWillEnter` 加载数据时遇到性能问题，可以改为在 `ionViewDidEnter` 中进行数据调用。然而，此事件直到页面对用户可见后才会触发，因此您可能需要使用加载指示器或骨架屏，以避免内容在过渡完成后不自然地闪现。
+- `ionViewWillLeave` - 可用于清理工作，例如取消订阅数据源。由于 `componentWillUnmount` 在您离开当前页面时可能不会触发，因此如果您不希望代码在屏幕不可见时仍然活跃，可以将清理代码放在这里。
+- `ionViewDidLeave` - 当此事件触发时，您知道新页面已经完全过渡完成，因此任何在视图可见时通常不会执行的逻辑可以放在这里。
 
-## Passing state between pages
+## 页面间传递状态
 
-Since Ionic React manages the lifetime of a page, state on previous pages may update as users navigate your application. This can impact state that is determined using `useEffect` from React or `useLocation` from React Router. For example, if `PageA` calls `useLocation`, the state of `useLocation` will change when the user navigates from `PageA` to `PageB`.
+由于 Ionic React 管理页面的生命周期，随着用户在应用中导航，先前页面上的状态可能会更新。这可能会影响使用 React 的 `useEffect` 或 React Router 的 `useLocation` 确定的状态。例如，如果 `PageA` 调用了 `useLocation`，当用户从 `PageA` 导航到 `PageB` 时，`useLocation` 的状态将发生变化。
 
-Developers should include the appropriate checks to ensure that previous pages only access defined states.
+开发人员应包含适当的检查，以确保先前页面仅访问已定义的状态。
 
-For example, the following code will error if `testObject` is not defined: `{ state.testObject.childKey }`
+例如，如果 `testObject` 未定义，以下代码将出错：`{ state.testObject.childKey }`
 
-Instead, developers should access `childKey` only if `testObject` is defined: `{ state.testObject?.childKey }`
+相反，开发人员应仅在 `testObject` 已定义时才访问 `childKey`：`{ state.testObject?.childKey }`

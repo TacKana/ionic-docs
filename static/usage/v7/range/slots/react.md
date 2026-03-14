@@ -5,7 +5,7 @@ import { snowOutline, sunnyOutline } from 'ionicons/icons';
 
 function Example() {
   return (
-    <IonRange aria-label="Temperature">
+    <IonRange aria-label="温度">
       <IonIcon slot="start" icon={snowOutline}></IonIcon>
       <IonIcon slot="end" icon={sunnyOutline}></IonIcon>
     </IonRange>

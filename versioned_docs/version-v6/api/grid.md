@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/grid/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v6/grid/slots.md';
 
 <head>
-  <title>Ion-Grid: Display Grids to Build Mobile-First Custom App Layout</title>
+  <title>Ion-Grid：构建移动优先自定义应用布局的显示网格</title>
   <meta
     name="description"
-    content="Ion-Grid is a mobile-first flexbox system to build custom application display layouts with a 12 column layout and different breakpoints based on screen size."
+    content="Ion-Grid 是一个移动优先的弹性盒系统，用于构建自定义应用显示布局，它基于 12 列布局，并根据屏幕尺寸提供不同的断点。"
   />
 </head>
 
@@ -21,186 +21,182 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-The grid is a powerful mobile-first flexbox system for building custom layouts. It is composed of three units — a grid, [row(s)](row.md) and [column(s)](col.md). Columns will expand to fill the row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
+网格是一个强大的移动优先弹性盒系统，用于构建自定义布局。它由三个单元组成：网格、[行](row.md)和[列](col.md)。列会自动扩展以填满行，并会调整大小以适应额外的列。它基于 12 列布局，并根据屏幕尺寸提供不同的断点。列的数量可以使用 CSS 进行自定义。
 
-## Overview
+## 概述
 
-- Grids act as a container for all rows and columns. Grids take up the full width of their container,
-  but adding the `fixed` property will set the width based on the screen size, see [Fixed Grid](#fixed-grid) below.
-- Rows are horizontal groups of columns that line the columns up properly.
-- Content should be placed within columns, and only columns may be immediate children of rows.
-- The `size` property indicates the number of columns to use out of the default 12 per row.
-  So, `size="4"` can be added to a column in order to take up 1/3 of the grid, or 4 of the 12 columns.
-- Columns without a value for size will automatically have equal widths. For example, four columns will each automatically be 25% wide.
-- Column widths are set as a percentage, so they’re always fluid and sized relative to their parent element.
-- There is padding between individual columns. However, the padding can be removed from the grid and
-  columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities](../layout/css-utilities) for more styles that can be applied to the grid.
-- There are five grid tiers, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
-- Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them
-  (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
-- Grids can be customized via CSS variables. See [Customizing the Grid](#customizing-the-grid).
+- 网格充当所有行和列的容器。网格会占据其容器的全部宽度，但添加 `fixed` 属性将根据屏幕尺寸设置宽度，详见下方的[固定网格](#固定网格)。
+- 行是列的水平分组，用于正确排列列。
+- 内容应放置在列内，并且只有列可以是行的直接子元素。
+- `size` 属性表示每行默认 12 列中要使用的列数。例如，向列添加 `size="4"` 可以占据网格的 1/3，即 12 列中的 4 列。
+- 未设置 `size` 值的列将自动具有相等的宽度。例如，四个列将自动各占 25% 的宽度。
+- 列宽度以百分比设置，因此它们始终是流动的，并相对于其父元素调整大小。
+- 各个列之间存在内边距。但是，可以通过向网格添加 `ion-no-padding` 类来移除网格和列的内边距。有关可应用于网格的更多样式，请参阅 [CSS 实用工具](../layout/css-utilities)。
+- 有五个网格层级，分别对应每个响应式断点：所有断点（超小）、小、中、大和超大。
+- 网格层级基于最小宽度，这意味着它们适用于其层级及所有更大的层级（例如，`size-sm="4"` 适用于小、中、大和超大设备）。
+- 网格可以通过 CSS 变量进行自定义。请参阅[自定义网格](#自定义网格)。
 
-## Default Breakpoints
+## 默认断点
 
-The default breakpoints for the grid and the corresponding properties are defined in the table below. Breakpoint values can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](../theming/advanced#variables-in-media-queries).
+网格的默认断点及相应属性定义如下表。目前无法自定义断点值。有关为何无法自定义的更多信息，请参阅[媒体查询中的变量](../theming/advanced#媒体查询中的变量)。
 
-| Name | Value  | Width Property | Offset Property | Push Property | Pull Property | Description                          |
-| ---- | ------ | -------------- | --------------- | ------------- | ------------- | ------------------------------------ |
-| xs   | 0      | `size`         | `offset`        | `push`        | `pull`        | Set columns when (min-width: 0)      |
-| sm   | 576px  | `sizeSm`       | `offsetSm`      | `pushSm`      | `pullSm`      | Set columns when (min-width: 576px)  |
-| md   | 768px  | `sizeMd`       | `offsetMd`      | `pushMd`      | `pullMd`      | Set columns when (min-width: 768px)  |
-| lg   | 992px  | `sizeLg`       | `offsetLg`      | `pushLg`      | `pullLg`      | Set columns when (min-width: 992px)  |
-| xl   | 1200px | `sizeXl`       | `offsetXl`      | `pushXl`      | `pullXl`      | Set columns when (min-width: 1200px) |
+| 名称 | 值      | 宽度属性   | 偏移属性    | 推入属性  | 拉出属性  | 描述                           |
+| ---- | ------- | ---------- | ----------- | --------- | --------- | ------------------------------ |
+| xs   | 0       | `size`     | `offset`    | `push`    | `pull`    | 当 (min-width: 0) 时设置列     |
+| sm   | 576px   | `sizeSm`   | `offsetSm`  | `pushSm`  | `pullSm`  | 当 (min-width: 576px) 时设置列 |
+| md   | 768px   | `sizeMd`   | `offsetMd`  | `pushMd`  | `pullMd`  | 当 (min-width: 768px) 时设置列 |
+| lg   | 992px   | `sizeLg`   | `offsetLg`  | `pushLg`  | `pullLg`  | 当 (min-width: 992px) 时设置列 |
+| xl   | 1200px  | `sizeXl`   | `offsetXl`  | `pushXl`  | `pullXl`  | 当 (min-width: 1200px) 时设置列 |
 
-## Basic Usage
+## 基本用法
 
-By default, columns will take up equal width inside of a row for all devices and screen sizes.
+默认情况下，列在所有设备和屏幕尺寸的行内将占据相等的宽度。
 
 import Basic from '@site/static/usage/v6/grid/basic/index.md';
 
 <Basic />
 
-## Fixed Grid
+## 固定网格
 
-Grids take up 100% width of their container. By adding the `fixed` property to the grid, the width will be set based on the screen size. The width of the grid for each breakpoint is listed in the table below, but it can be customized. For more information, see [Customizing the Grid](#customizing-the-grid). Open the below example in StackBlitz and resize the screen to see the grid width change.
+网格会占据其容器的 100% 宽度。通过向网格添加 `fixed` 属性，宽度将根据屏幕尺寸设置。每个断点的网格宽度列于下表，但可以自定义。更多信息请参阅[自定义网格](#自定义网格)。在 StackBlitz 中打开以下示例并调整屏幕大小，以查看网格宽度的变化。
 
-| Name | Value  | Description                                       |
-| ---- | ------ | ------------------------------------------------- |
-| xs   | 100%   | Width is 100% for xs screens                      |
-| sm   | 540px  | Set grid width to 540px when (min-width: 576px)   |
-| md   | 720px  | Set grid width to 720px when (min-width: 768px)   |
-| lg   | 960px  | Set grid width to 960px when (min-width: 992px)   |
-| xl   | 1140px | Set grid width to 1140px when (min-width: 1200px) |
+| 名称 | 值      | 描述                                       |
+| ---- | ------- | ------------------------------------------ |
+| xs   | 100%    | 在 xs 屏幕上宽度为 100%                    |
+| sm   | 540px   | 当 (min-width: 576px) 时设置网格宽度为 540px |
+| md   | 720px   | 当 (min-width: 768px) 时设置网格宽度为 720px |
+| lg   | 960px   | 当 (min-width: 992px) 时设置网格宽度为 960px |
+| xl   | 1140px  | 当 (min-width: 1200px) 时设置网格宽度为 1140px |
 
 import Fixed from '@site/static/usage/v6/grid/fixed/index.md';
 
 <Fixed />
 
-## Column Size
+## 列尺寸
 
-Columns can be set to specific sizes to take up a certain number out of the total number of columns, or resize their width based on the content. The default number of columns is 12, but this can be customized. See the [Number of Columns](#number-of-columns) section below for more information.
+可以将列设置为特定尺寸，以占据总列数中的一定数量，或者根据内容调整其宽度。默认列数为 12，但可以自定义。更多信息请参阅下方的[列数](#列数)部分。
 
-### Content-based size
+### 基于内容的尺寸
 
-By setting the `size` to `"auto"` the column can size itself based on the natural width of its content. This is necessary when setting a column to an absolute width, such as a specific number of pixels. The columns next to the auto-width column will resize to fill the row.
+通过将 `size` 设置为 `"auto"`，列可以根据其内容的自然宽度自行调整大小。当需要将列设置为绝对宽度（例如特定的像素数）时，这是必要的。位于自动宽度列旁边的列将调整大小以填满行。
 
 import SizeAuto from '@site/static/usage/v6/grid/size-auto/index.md';
 
 <SizeAuto />
 
-### Specified size
+### 指定尺寸
 
-Set the `size` of a column and the others will automatically resize around it. If a size is specified on all of the columns and it doesn't add up to the total number of columns, there will be empty space after the columns.
+设置一个列的 `size`，其他列将自动围绕它调整大小。如果在所有列上都指定了尺寸，并且这些尺寸之和未达到总列数，列后会出现空白空间。
 
 import Size from '@site/static/usage/v6/grid/size/index.md';
 
 <Size />
 
-### Responsive size
+### 响应式尺寸
 
-The `size` property will change the column width for all [breakpoints](#default-breakpoints). Column also provides several size properties with the breakpoint name appended to the end of "size". These properties can be used to change the width of the column based on the screen size. Open the below example in StackBlitz and resize the screen to see the column widths change.
+`size` 属性将改变所有[断点](#默认断点)的列宽。列还提供了几个在 "size" 后附加断点名称的尺寸属性。这些属性可用于根据屏幕尺寸改变列的宽度。在 StackBlitz 中打开以下示例并调整屏幕大小，以查看列宽的变化。
 
 import SizeResponsive from '@site/static/usage/v6/grid/size-responsive/index.md';
 
 <SizeResponsive />
 
-## Column Offset
+## 列偏移
 
-Columns can be offset to shift to the right by a certain number of columns out of the total number of columns.
+可以通过指定总列数中的若干列来将列向右偏移。
 
-### Specified offset
+### 指定偏移
 
-Columns can be moved to the right by using the `offset` property. This property increases the left margin of the column by the number of specified columns. It also shifts the columns to the right of it, if any exist.
+可以使用 `offset` 属性将列向右移动。此属性通过指定的列数增加列的左边距。如果存在右侧的列，也会将它们向右移动。
 
 import Offset from '@site/static/usage/v6/grid/offset/index.md';
 
 <Offset />
 
-### Responsive offset
+### 响应式偏移
 
-The `offset` property will change the column's left margin for all [breakpoints](#default-breakpoints). Column also provides several offset properties with the breakpoint name appended to the end of "offset". These properties can be used to change the offset of the column based on the screen size. Open the below example in StackBlitz and resize the screen to see the column offsets change.
+`offset` 属性将改变所有[断点](#默认断点)的列的左边距。列还提供了几个在 "offset" 后附加断点名称的偏移属性。这些属性可用于根据屏幕尺寸改变列的偏移量。在 StackBlitz 中打开以下示例并调整屏幕大小，以查看列偏移的变化。
 
 import OffsetResponsive from '@site/static/usage/v6/grid/offset-responsive/index.md';
 
 <OffsetResponsive />
 
-## Column Push & Pull
+## 列推入与拉出
 
-Columns can be pushed to to the right or pulled to the left by a certain number of columns out of the total number of columns.
+可以通过指定总列数中的若干列将列向右推入或向左拉出。
 
-### Specified push & pull
+### 指定推入与拉出
 
-Reorder the columns by adding the `push` and `pull` properties. These properties adjust the `left` and `right` of the columns by the specified number of columns making it easy to reorder columns. This will cause columns to overlap if they are shifted to where another column is positioned.
+通过添加 `push` 和 `pull` 属性来重新排列列。这些属性通过指定的列数调整列的 `left` 和 `right`，从而轻松重新排列列。如果列被移动到另一个列所在的位置，这将导致列重叠。
 
 import PushPull from '@site/static/usage/v6/grid/push-pull/index.md';
 
 <PushPull />
 
-### Responsive push & pull
+### 响应式推入与拉出
 
-The `push` and `pull` properties will change the column's position for all [breakpoints](#default-breakpoints). Column also provides several `push` and `pull` properties with the breakpoint name appended to the end of "push" / "pull". These properties can be used to change the position of the column based on the screen size. Open the below example in StackBlitz and resize the screen to see the column positions change.
+`push` 和 `pull` 属性将改变所有[断点](#默认断点)的列的位置。列还提供了几个在 "push" / "pull" 后附加断点名称的 `push` 和 `pull` 属性。这些属性可用于根据屏幕尺寸改变列的位置。在 StackBlitz 中打开以下示例并调整屏幕大小，以查看列位置的变化。
 
 import PushPullResponsive from '@site/static/usage/v6/grid/push-pull-responsive/index.md';
 
 <PushPullResponsive />
 
-## Alignment
+## 对齐
 
-### Vertical Alignment
+### 垂直对齐
 
-All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities#flex-container-properties).
+通过向行添加不同的类，可以在行内垂直对齐所有列。有关可用类的列表，请参阅 [CSS 实用工具](/layout/css-utilities#flex-container-properties)。
 
 import VerticalAlignment from '@site/static/usage/v6/grid/vertical-alignment/index.md';
 
 <VerticalAlignment />
 
-### Horizontal Alignment
+### 水平对齐
 
-All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities.md#flex-container-properties).
+通过向行添加不同的类，可以在行内水平对齐所有列。有关可用类的列表，请参阅 [CSS 实用工具](/layout/css-utilities.md#flex-container-properties)。
 
 import HorizontalAlignment from '@site/static/usage/v6/grid/horizontal-alignment/index.md';
 
 <HorizontalAlignment />
 
-## Customizing the Grid
+## 自定义网格
 
-Using our built-in CSS variables, it’s possible to customize the predefined grid attributes. Change the values of the padding, the number of columns, and more.
+使用我们内置的 CSS 变量，可以自定义预定义的网格属性。更改内边距的值、列数等。
 
-### Fixed Width
+### 固定宽度
 
-The width of a fixed grid can be set for all breakpoints with the `--ion-grid-width` CSS variable. To override individual breakpoints, use the `--ion-grid-width-{breakpoint}` CSS variables. The default value for each of the breakpoints can be found in the [Fixed Grid](#fixed-grid) section. Open the below example in StackBlitz and resize the screen to see the grid width change.
+可以使用 `--ion-grid-width` CSS 变量为所有断点设置固定网格的宽度。要覆盖单个断点，请使用 `--ion-grid-width-{breakpoint}` CSS 变量。每个断点的默认值可以在[固定网格](#固定网格)部分找到。在 StackBlitz 中打开以下示例并调整屏幕大小，以查看网格宽度的变化。
 
 import Width from '@site/static/usage/v6/grid/customizing/width/index.md';
 
 <Width />
 
-### Number of Columns
+### 列数
 
-The number of grid columns can be modified with the `--ion-grid-columns` CSS variable. By default there are 12 grid columns, but this can be changed to any positive integer and be used to calculate the width of each individual column.
+可以使用 `--ion-grid-columns` CSS 变量修改网格列数。默认情况下有 12 个网格列，但这可以更改为任何正整数，并用于计算每个单独列的宽度。
 
 import ColumnNumber from '@site/static/usage/v6/grid/customizing/column-number/index.md';
 
 <ColumnNumber />
 
-### Padding
+### 内边距
 
-The padding on the grid container can be set for all breakpoints with the `--ion-grid-padding` CSS variable. To override individual breakpoints, use the `--ion-grid-padding-{breakpoint}` CSS variables.
+可以使用 `--ion-grid-padding` CSS 变量为所有断点设置网格容器的内边距。要覆盖单个断点，请使用 `--ion-grid-padding-{breakpoint}` CSS 变量。
 
-The padding on the columns can be set for all breakpoints with the `--ion-grid-column-padding` CSS variable. To override individual breakpoints, use the `--ion-grid-column-padding-{breakpoint}` CSS variables.
+可以使用 `--ion-grid-column-padding` CSS 变量为所有断点设置列的内边距。要覆盖单个断点，请使用 `--ion-grid-column-padding-{breakpoint}` CSS 变量。
 
 import Padding from '@site/static/usage/v6/grid/customizing/padding/index.md';
 
 <Padding />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -208,10 +204,10 @@ import Padding from '@site/static/usage/v6/grid/customizing/padding/index.md';
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

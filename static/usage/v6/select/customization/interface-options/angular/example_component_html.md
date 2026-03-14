@@ -1,29 +1,29 @@
 ```html
 <ion-list>
   <ion-item>
-    <ion-label>Alert</ion-label>
-    <ion-select [interfaceOptions]="customAlertOptions" interface="alert" placeholder="Select One">
-      <ion-select-option value="bacon">Bacon</ion-select-option>
-      <ion-select-option value="onions">Onions</ion-select-option>
-      <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
+    <ion-label>警告框</ion-label>
+    <ion-select [interfaceOptions]="customAlertOptions" interface="alert" placeholder="选择一项">
+      <ion-select-option value="bacon">培根</ion-select-option>
+      <ion-select-option value="onions">洋葱</ion-select-option>
+      <ion-select-option value="pepperoni">意大利辣香肠</ion-select-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
-    <ion-label>Popover</ion-label>
-    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
-      <ion-select-option value="brown">Brown</ion-select-option>
-      <ion-select-option value="blonde">Blonde</ion-select-option>
-      <ion-select-option value="red">Red</ion-select-option>
+    <ion-label>弹出框</ion-label>
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="选择一项">
+      <ion-select-option value="brown">棕色</ion-select-option>
+      <ion-select-option value="blonde">金色</ion-select-option>
+      <ion-select-option value="red">红色</ion-select-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
-    <ion-label>Action Sheet</ion-label>
-    <ion-select [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select One">
-      <ion-select-option value="red">Red</ion-select-option>
-      <ion-select-option value="green">Green</ion-select-option>
-      <ion-select-option value="blue">Blue</ion-select-option>
+    <ion-label>操作表</ion-label>
+    <ion-select [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="选择一项">
+      <ion-select-option value="red">红色</ion-select-option>
+      <ion-select-option value="green">绿色</ion-select-option>
+      <ion-select-option value="blue">蓝色</ion-select-option>
     </ion-select>
   </ion-item>
 </ion-list>

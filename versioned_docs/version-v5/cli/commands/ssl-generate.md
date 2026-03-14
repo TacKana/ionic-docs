@@ -4,19 +4,19 @@ sidebar_label: 'ssl generate'
 
 # ionic ssl generate
 
-Generates an SSL key & certificate
+生成 SSL 密钥和证书
 
 ```shell
 ionic ssl generate [options]
 ```
 
-Uses OpenSSL to create a self-signed certificate for **localhost** (by default).
+使用 OpenSSL 为 **localhost**（默认）创建自签名证书。
 
-After the certificate is generated, you will still need to add it to your system or browser as a trusted certificate.
+生成证书后，您仍然需要将其添加到系统或浏览器中作为受信任证书。
 
-The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
+`--key-path` 和 `--cert-path` 的默认目录是 `.ionic/ssl/`。
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -33,13 +33,13 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Destination of private key file</p>
+        <p>私钥文件的目标路径</p>
       </td>
     </tr>
     <tr>
-      <th>Default</th>
+      <th>默认值</th>
       <td>./.ionic/ssl/key.pem</td>
     </tr>
   </tbody>
@@ -57,19 +57,19 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
-        <p>Destination of certificate file</p>
+        <p>证书文件的目标路径</p>
       </td>
     </tr>
     <tr>
-      <th>Default</th>
+      <th>默认值</th>
       <td>./.ionic/ssl/cert.pem</td>
     </tr>
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -86,15 +86,15 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>The country name (C) of the SSL certificate</p>
+          <p>SSL 证书的国家名称 (C)</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Default</th>
+      <th>默认值</th>
       <td>US</td>
     </tr>
   </tbody>
@@ -112,15 +112,15 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>The state or province name (ST) of the SSL certificate</p>
+          <p>SSL 证书的州或省名称 (ST)</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Default</th>
+      <th>默认值</th>
       <td>Wisconsin</td>
     </tr>
   </tbody>
@@ -138,15 +138,15 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>The locality name (L) of the SSL certificate</p>
+          <p>SSL 证书的城市名称 (L)</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Default</th>
+      <th>默认值</th>
       <td>Madison</td>
     </tr>
   </tbody>
@@ -164,15 +164,15 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>The organization name (O) of the SSL certificate</p>
+          <p>SSL 证书的组织名称 (O)</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Default</th>
+      <th>默认值</th>
       <td>Ionic</td>
     </tr>
   </tbody>
@@ -190,15 +190,15 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>The common name (CN) of the SSL certificate</p>
+          <p>SSL 证书的通用名称 (CN)</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Default</th>
+      <th>默认值</th>
       <td>localhost</td>
     </tr>
   </tbody>
@@ -216,21 +216,21 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>描述</th>
       <td>
         <div>
-          <p>Number of bits in the key</p>
+          <p>密钥的位数</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-b</code>
       </td>
     </tr>
     <tr>
-      <th>Default</th>
+      <th>默认值</th>
       <td>2048</td>
     </tr>
   </tbody>

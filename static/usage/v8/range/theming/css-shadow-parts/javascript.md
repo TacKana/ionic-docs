@@ -1,8 +1,8 @@
 ```html
-<h2>Single Knob</h2>
+<h2>单旋钮滑块</h2>
 <ion-range
   id="range-single"
-  aria-label="Custom range"
+  aria-label="自定义滑块"
   min="0"
   max="10"
   value="5"
@@ -11,20 +11,20 @@
   snaps="true"
 ></ion-range>
 
-<h2>Dual Knobs (A/B)</h2>
+<h2>双旋钮滑块 (A/B)</h2>
 <ion-range
   id="range-a-b"
-  aria-label="Custom dual knob range with A/B styling"
+  aria-label="采用 A/B 样式的自定义双旋钮滑块"
   min="0"
   max="10"
   dual-knobs="true"
   pin="true"
 ></ion-range>
 
-<h2>Dual Knobs (Lower/Upper)</h2>
+<h2>双旋钮滑块 (下限/上限)</h2>
 <ion-range
   id="range-lower-upper"
-  aria-label="Custom dual knob range with lower/upper styling"
+  aria-label="采用下限/上限样式的自定义双旋钮滑块"
   min="0"
   max="10"
   dual-knobs="true"
@@ -32,7 +32,7 @@
 ></ion-range>
 
 <style>
-  /* Shared styles for all ranges */
+  /* 所有滑块的共用样式 */
   ion-range {
     --knob-size: 34px;
   }
@@ -43,7 +43,7 @@
     box-sizing: border-box;
   }
 
-  /* Hide the Material Design indicator */
+  /* 隐藏 Material Design 指示器 */
   ion-range::part(knob)::before {
     display: none;
   }
@@ -59,7 +59,7 @@
     top: 17px;
   }
 
-  /* Single Knob Range */
+  /* 单旋钮滑块 */
   #range-single::part(bar),
   #range-single::part(tick) {
     background: #bed4ff;
@@ -83,7 +83,7 @@
     background: #40a2fd;
   }
 
-  /* Dual Knobs (A/B) Range */
+  /* 双旋钮滑块 (A/B) */
   #range-a-b::part(bar-active) {
     background: #1ea9ca;
   }
@@ -114,7 +114,7 @@
     background: #2dc2bd;
   }
 
-  /* Dual Knobs (Lower/Upper) Range */
+  /* 双旋钮滑块 (下限/上限) */
   #range-lower-upper::part(bar-active) {
     background: linear-gradient(to right, #0059ff 0%, #b77bff 100%);
   }

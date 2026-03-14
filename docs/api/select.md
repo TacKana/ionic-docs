@@ -1,5 +1,5 @@
 ---
-title: "ion-select"
+title: 选择对话框的单选或多选值框与占位符组件
 ---
 import Props from '@ionic-internal/component-api/v8/select/props.md';
 import Events from '@ionic-internal/component-api/v8/select/events.md';
@@ -9,8 +9,8 @@ import CustomProps from '@ionic-internal/component-api/v8/select/custom-props.md
 import Slots from '@ionic-internal/component-api/v8/select/slots.md';
 
 <head>
-  <title>ion-select: Select One or Multiple Value Boxes or Placeholders</title>
-  <meta name="description" content="ion-select is represented by selected value(s), or a placeholder, and dropdown icon. When you tap select, a dialog box appears with an easy to select list." />
+  <title>ion-select：单选或多选值框与占位符</title>
+  <meta name="description" content="ion-select 以选中值（或占位符）和下拉图标的形式呈现。点击选择框时，会弹出一个易于操作的列表对话框。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,252 +18,249 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Selects are form controls to select an option, or options, from a set of options. When a user taps the select, a dialog appears with all of the options in a large, easy to select list.
+选择框（Select）是从一组选项中选择一个或多个选项的表单控件。当用户点击选择框时，会弹出一个包含所有选项的对话框，列表清晰易选。
 
-A select should be used with child `<ion-select-option>` elements. If the child option is not given a `value` attribute then its text will be used as the value.
+选择框应搭配子元素 `<ion-select-option>` 使用。如果子选项未设置 `value` 属性，则其文本内容将作为值使用。
 
-If `value` is set on the `<ion-select>`, the selected option will be chosen based on that value.
+如果在 `<ion-select>` 上设置了 `value` 属性，将根据该值自动选中对应的选项。
 
-## Labels
+## 标签
 
-Labels should be used to describe the select. They can be used visually, and they will also be read out by screen readers when the user is focused on the select. This makes it easy for the user to understand the intent of the select. Select has several ways to assign a label:
+标签用于描述选择框。它们不仅用于视觉展示，还会在用户聚焦于选择框时被屏幕阅读器朗读，帮助用户理解选择框的用途。选择框提供多种方式来分配标签：
 
-Select has several options for supplying a label for the component:
+选择框提供多种方式来为组件提供标签：
 
-- `label` property: used for plaintext labels
-- `label` slot: used for custom HTML labels
-- `aria-label`: used to provide a label for screen readers but adds no visible label
+- `label` 属性：用于纯文本标签
+- `label` 插槽：用于自定义 HTML 标签
+- `aria-label`：为屏幕阅读器提供标签，但不会显示可见标签
 
-### Label Placement
+### 标签位置
 
-Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
+默认情况下，标签宽度会根据其内容自适应。开发者可以使用 `labelPlacement` 属性来控制标签相对于控件的位置。虽然此处示例使用了 `label` 属性，但 `labelPlacement` 同样适用于 `label` 插槽。
 
 import LabelPlacement from '@site/static/usage/v8/select/label-placement/index.md';
 
 <LabelPlacement />
 
-### Label Slot
+### 标签插槽
 
-While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+纯文本标签应通过 `label` 属性传入，如果需要自定义 HTML 标签，则可以通过 `label` 插槽传入。
 
 import LabelSlot from '@site/static/usage/v8/select/label-slot/index.md';
 
 <LabelSlot />
 
-### No Visible Label
+### 无可见标签
 
-If no visible label is needed, developers should still supply an `aria-label` so the select is accessible to screen readers.
+如果不需要可见标签，开发者仍应提供 `aria-label`，以确保选择框对屏幕阅读器可访问。
 
 import NoVisibleLabel from '@site/static/usage/v8/select/no-visible-label/index.md';
 
 <NoVisibleLabel />
 
-## Single Selection
+## 单选
 
-By default, the select allows the user to select only one option. The alert interface presents users with a radio button styled list of options. The select component's value receives the value of the selected option's value.
+默认情况下，选择框只允许用户选择一个选项。弹窗（alert）界面会向用户展示一个单选按钮样式的选项列表。选择框组件的值会接收所选选项的值。
 
-Keyboard interactions for single selection are described in the [Keyboard Interactions](#single-selection-1) section below.
+单选的键盘交互详见下方的 [键盘交互](#single-selection-1) 部分。
 
 import SingleSelectionExample from '@site/static/usage/v8/select/basic/single-selection/index.md';
 
 <SingleSelectionExample />
 
-## Multiple Selection
+## 多选
 
-By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert, popover, or modal overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
+通过为选择框添加 `multiple` 属性，用户可以同时选择多个选项。当允许多选时，弹窗（alert）、弹出框（popover）或模态框（modal）会向用户展示复选框样式的选项列表。选择框组件的值会接收所有选中选项值的数组。
 
 :::note
 
-The `action-sheet` interface is not supported with multiple selection.
+`action-sheet` 界面不支持多选。
 
 :::
 
-Keyboard interactions for multiple selection are described in the [Keyboard Interactions](#multiple-selection-1) section below.
+多选的键盘交互详见下方的 [键盘交互](#multiple-selection-1) 部分。
 
 import MultipleSelectionExample from '@site/static/usage/v8/select/basic/multiple-selection/index.md';
 
 <MultipleSelectionExample />
 
-## Interfaces
+## 界面类型
 
-By default, select uses [ion-alert](alert.md) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.md), [ion-popover](popover.md), or [ion-modal](modal.md) by passing `action-sheet`, `popover`, or `modal`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
+默认情况下，选择框使用 [ion-alert](alert.md) 在弹窗中打开选项叠加层。可以通过将 `interface` 属性分别设置为 `action-sheet`、`popover` 或 `modal` 来将界面更改为使用 [ion-action-sheet](action-sheet.md)、[ion-popover](popover.md) 或 [ion-modal](modal.md)。请继续阅读其他部分以了解不同界面的限制。
 
-### Alert
+### 弹窗（Alert）
 
 import AlertExample from '@site/static/usage/v8/select/basic/single-selection/index.md';
 
 <AlertExample />
 
 
-### Action Sheet
+### 操作表（Action Sheet）
 
 import ActionSheetExample from '@site/static/usage/v8/select/interfaces/action-sheet/index.md';
 
 <ActionSheetExample />
 
-### Popover
+### 弹出框（Popover）
 
 import PopoverExample from '@site/static/usage/v8/select/interfaces/popover/index.md';
 
 <PopoverExample />
 
-### Modal
+### 模态框（Modal）
 
 import ModalExample from '@site/static/usage/v8/select/interfaces/modal/index.md';
 
 <ModalExample />
 
-## Responding to Interaction
+## 响应用户交互
 
-The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. See [Events](#events) for more details on these and other events that select fires.
+处理用户与选择框交互的主要方式是通过 `ionChange`、`ionDismiss` 和 `ionCancel` 事件。有关这些事件以及选择框触发的其他事件的更多详细信息，请参阅 [事件](#events)。
 
 import RespondingToInteractionExample from '@site/static/usage/v8/select/basic/responding-to-interaction/index.md';
 
 <RespondingToInteractionExample />
 
-## Object Value References
+## 对象值引用
 
-When using objects for select values, it is possible for the identities of these objects to change if they are coming from a server or database, while the selected value's identity remains the same. For example, this can occur when an existing record with the desired object value is loaded into the select, but the newly retrieved select options now have different identities. This will result in the select appearing to have no value at all, even though the original selection in still intact.
+当使用对象作为选择框的值时，如果这些对象来自服务器或数据库，它们的标识可能会发生变化，而选中值的标识保持不变。例如，当将包含所需对象值的现有记录加载到选择框时，新检索到的选择选项可能具有不同的标识。这将导致选择框看起来没有任何值，即使原始选择仍然有效。
 
-By default, the select uses strict equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
+默认情况下，选择框使用严格相等（`===`）来确定是否选中了某个选项。可以通过为 `compareWith` 属性提供属性名或函数来覆盖此行为。
 
-### Using compareWith
+### 使用 compareWith
 
 import UsingCompareWithExample from '@site/static/usage/v8/select/objects-as-values/using-comparewith/index.md';
 
 <UsingCompareWithExample />
 
-### Object Values and Multiple Selection
+### 对象值与多选
 
 import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v8/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
 
-## Justification
+## 对齐方式
 
-Developers can use the `justify` property to control how the label and control are packed on a line.
+开发者可以使用 `justify` 属性来控制标签和控件在行上的排列方式。
 
 import JustifyExample from '@site/static/usage/v8/select/justify/index.md';
 
 <JustifyExample />
 
-## Filled Selects
+## 填充式选择框
 
-Material Design offers filled styles for a select. The `fill` property on the select can be set to either `"solid"` or `"outline"`.
+Material Design 为选择框提供了填充样式。选择框的 `fill` 属性可以设置为 `"solid"` 或 `"outline"`。
 
-Filled selects can be used on iOS by setting the select's `mode` to `md`.
+在 iOS 上使用填充式选择框时，可以将选择框的 `mode` 设置为 `md`。
 
 :::warning
-Selects that use `fill` should not be used in an `ion-item` due to styling conflicts between the components.
+由于组件之间的样式冲突，使用 `fill` 的选择框不应在 `ion-item` 中使用。
 :::
 
 import FillExample from '@site/static/usage/v8/select/fill/index.md';
 
 <FillExample />
 
-## Select Buttons
+## 选择框按钮
 
-The alert supports two buttons: `Cancel` and `OK`. Each button's text can be customized using the `cancelText` and `okText` properties.
+弹窗（alert）支持两个按钮：`Cancel` 和 `OK`。每个按钮的文本可以通过 `cancelText` 和 `okText` 属性进行自定义。
 
-The `action-sheet` and `popover` interfaces do not have an `OK` button, clicking on any of the options will automatically close the overlay and select that value. The `popover` interface does not have a `Cancel` button, clicking on the backdrop will close the overlay.
+`action-sheet` 和 `popover` 界面没有 `OK` 按钮，点击任何选项都会自动关闭叠加层并选中该值。`popover` 界面没有 `Cancel` 按钮，点击背景会关闭叠加层。
 
-The `modal` interface has a single `Close` button in the header. This button is only responsible for dismissing the modal. Any selections made will persist
-after clicking this button or if the modal is dismissed using an alternative method.
+`modal` 界面在标题栏中有一个 `Close` 按钮。此按钮仅负责关闭模态框。点击此按钮或使用其他方法关闭模态框后，已做出的任何选择都将保留。
 
 import ButtonTextExample from '@site/static/usage/v8/select/customization/button-text/index.md';
 
 <ButtonTextExample />
 
-## Interface Options
+## 界面选项
 
-Since select uses the alert, action sheet, popover, and modal interfaces, options can be passed to these components through the `interfaceOptions` property. This can be used to pass a custom header, subheader, css class, and more.
+由于选择框使用弹窗（alert）、操作表（action sheet）、弹出框（popover）和模态框（modal）界面，因此可以通过 `interfaceOptions` 属性向这些组件传递选项。这可用于传递自定义标题、副标题、CSS 类等。
 
-See the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), [ion-popover docs](popover.md), and [ion-modal docs](modal.md)
-for the properties that each interface accepts.
+有关每个界面接受的属性，请参阅 [ion-alert 文档](alert.md)、[ion-action-sheet 文档](action-sheet.md)、[ion-popover 文档](popover.md) 和 [ion-modal 文档](modal.md)。
 
-Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
+注意：对于 `alert` 界面，`interfaceOptions` 不会覆盖 `inputs` 或 `buttons`。
 
 import InterfaceOptionsExample from '@site/static/usage/v8/select/customization/interface-options/index.md';
 
 <InterfaceOptionsExample />
 
-## Start and End Slots
+## 起始与结束插槽
 
-The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the select. If the slot content is clicked, the select will not open.
+`start` 和 `end` 插槽可用于在选择框的任一侧放置图标、按钮或前缀/后缀文本。如果点击插槽内容，选择框不会打开。
 
 :::note
-In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+在大多数情况下，放置在这些插槽中的 [Icon](./icon.md) 组件应设置 `aria-hidden="true"`。有关更多信息，请参阅 [Icon 可访问性文档](https://ionicframework.com/docs/api/icon#accessibility)。
 
-If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+如果插槽内容需要交互，应将其包装在交互式元素中，例如 [Button](./button.md)。这确保了内容可以通过 Tab 键访问。
 :::
 
 import StartEndSlots from '@site/static/usage/v8/select/start-end-slots/index.md';
 
 <StartEndSlots />
 
-## Customization
+## 自定义样式
 
-There are two units that make up the Select component and each need to be styled separately. The `ion-select` element is represented on the view by the selected value(s), or placeholder if there is none, and dropdown icon. The interface, which is defined in the [Interfaces](#interfaces) section above, is the dialog that opens when clicking on the `ion-select`. The interface contains all of the options defined by adding `ion-select-option` elements. The following sections will go over the differences between styling these.
+选择框组件由两个单元组成，每个单元都需要单独设置样式。`ion-select` 元素在视图中由选中值（或无选中值时的占位符）和下拉图标表示。界面（在上述 [界面类型](#interfaces) 部分定义）是点击 `ion-select` 时打开的对话框。界面包含所有通过添加 `ion-select-option` 元素定义的选项。以下部分将介绍样式设置上的差异。
 
-### Styling Select Element
+### 设置选择框元素样式
 
-As mentioned, the `ion-select` element consists only of the value(s), or placeholder, and icon that is displayed on the view. To customize this, style using a combination of CSS and any of the [CSS custom properties](#css-custom-properties).
+如前所述，`ion-select` 元素仅包含视图中显示的值（或占位符）和图标。要自定义此部分，可以使用 CSS 和任何 [CSS 自定义属性](#css-custom-properties) 的组合进行样式设置。
 
-Alternatively, depending on the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) needed, CSS shadow parts can be used to style the select. Notice that by using `::part`, any CSS property on the element can be targeted.
+或者，根据所需的 [浏览器支持](https://caniuse.com/#feat=mdn-css_selectors_part)，可以使用 CSS 影子部分（shadow parts）来设置选择框样式。请注意，使用 `::part` 可以定位元素上的任何 CSS 属性。
 
 import StylingSelectExample from '@site/static/usage/v8/select/customization/styling-select/index.md';
 
 <StylingSelectExample />
 
-### Styling Select Interface
+### 设置选择框界面样式
 
-Customizing the interface dialog should be done by following the styling sections (CSS shadow parts, CSS custom properties, and slots) in
-that interface's documentation:
+自定义界面对话框的样式应遵循该界面文档中的样式设置部分（CSS 影子部分、CSS 自定义属性和插槽）：
 
 - [Alert](alert.md#css-shadow-parts)
 - [Action Sheet](action-sheet.md#css-shadow-parts)
 - [Popover](popover.md#css-shadow-parts)
 - [Modal](modal.md#css-shadow-parts)
 
-However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.md) for usage examples of customizing options.
+但是，Select Option 确实设置了一个类以方便样式设置，并允许将类传递给叠加层选项，有关自定义选项的用法示例，请参阅 [Select Options 文档](select-option.md)。
 
-### Custom Toggle Icons
+### 自定义切换图标
 
-The icon that displays next to the select text can be set to any [Ionicon](https://ionic.io/ionicons) using the `toggleIcon` and/or `expandedIcon` properties.
+选择框文本旁边显示的图标可以使用 `toggleIcon` 和/或 `expandedIcon` 属性设置为任何 [Ionicon](https://ionic.io/ionicons)。
 
 import CustomToggleIconsExample from '@site/static/usage/v8/select/customization/custom-toggle-icons/index.md';
 
 <CustomToggleIconsExample />
 
-### Icon Flip Behavior
+### 图标翻转行为
 
-By default, when the select is open, the toggle icon will automatically rotate on `md` mode and remain static on `ios` mode. This behavior can be customized using CSS.
+默认情况下，当选择框打开时，切换图标在 `md` 模式下会自动旋转，在 `ios` 模式下保持静态。可以使用 CSS 自定义此行为。
 
-The below example also uses a [custom `toggleIcon`](#custom-toggle-icons) to better demonstrate the flip behavior on `ios`, since the default icon is vertically symmetrical.
+以下示例还使用了 [自定义 `toggleIcon`](#custom-toggle-icons) 以更好地展示 `ios` 上的翻转行为，因为默认图标是垂直对称的。
 
 import IconFlipBehaviorExample from '@site/static/usage/v8/select/customization/icon-flip-behavior/index.md';
 
 <IconFlipBehaviorExample />
 
-## Typeahead Component
+## 类型提示组件
 
-Typeahead or autocomplete functionality can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
+可以使用现有的 Ionic 组件构建类型提示（Typeahead）或自动完成（autocomplete）功能。我们建议使用 `ion-modal` 以充分利用可用屏幕空间。
 
 import TypeaheadExample from '@site/static/usage/v8/select/typeahead/index.md';
 
 <TypeaheadExample />
 
-## Helper & Error Text
+## 辅助与错误文本
 
-Helper and error text can be used inside of a select with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-select`. This ensures errors are not shown before the user has a chance to enter data.
+辅助文本和错误文本可以通过 `helperText` 和 `errorText` 属性在选择框内部使用。除非将 `ion-invalid` 和 `ion-touched` 类添加到 `ion-select` 上，否则错误文本不会显示。这确保在用户有机会输入数据之前不会显示错误。
 
-In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+在 Angular 中，这会通过表单验证自动完成。在 JavaScript、React 和 Vue 中，需要根据你自己的验证手动添加类。
 
 import HelperError from '@site/static/usage/v8/select/helper-error/index.md';
 
 <HelperError />
 
-## Interfaces
+## 接口
 
 ### SelectChangeEventDetail
 
@@ -275,7 +272,7 @@ interface SelectChangeEventDetail<T = any> {
 
 ### SelectCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不强制要求，但可以使用此接口替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更严格的类型检查。
 
 ```typescript
 interface SelectCustomEvent<T = any> extends CustomEvent {
@@ -284,66 +281,66 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Accessibility
+## 可访问性
 
-### Keyboard Interactions
+### 键盘交互
 
-Ionic's keyboard interactions follow the implementation patterns of the web instead of the native iOS select for a consistent experience across all platforms.
+Ionic 的键盘交互遵循 Web 的实现模式，而不是 iOS 原生选择框的实现，以在所有平台上提供一致的体验。
 
-These keyboard interactions apply to all `ion-select` elements when the following conditions are met:
-- The select is closed.
-- The select is focused.
-- The select is not disabled.
+当满足以下条件时，这些键盘交互适用于所有 `ion-select` 元素：
+- 选择框处于关闭状态。
+- 选择框获得焦点。
+- 选择框未禁用。
 
-| Key                | Description                                                  |
+| 按键                | 说明                                                  |
 | ------------------ | ------------------------------------------------------------ |
-| <kbd>Enter</kbd>   | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
-| <kbd>Space</kbd>   | Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option. |
+| <kbd>Enter</kbd>   | 打开叠加层并聚焦到第一个选中的选项。如果没有选中的选项，则聚焦到第一个选项。 |
+| <kbd>Space</kbd>   | 打开叠加层并聚焦到第一个选中的选项。如果没有选中的选项，则聚焦到第一个选项。 |
 
-#### Single Selection
+#### 单选
 
-Single selection keyboard interaction follows the [ARIA implementation patterns of a radio](https://www.w3.org/WAI/ARIA/apg/patterns/radio/).
+单选键盘交互遵循 [ARIA 单选按钮的实现模式](https://www.w3.org/WAI/ARIA/apg/patterns/radio/)。
 
-These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, `ion-popover`, and `ion-modal` elements when the overlay is presented and focused.
+当叠加层已呈现并获得焦点时，这些键盘交互适用于 `ion-action-sheet`、`ion-alert`、`ion-popover` 和 `ion-modal` 元素。
 
-| Key                   | Description                                                  |
+| 按键                   | 说明                                                  |
 | --------------------- | ------------------------------------------------------------ |
-| <kbd>ArrowDown</kbd>  | Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option. |
-| <kbd>ArrowLeft</kbd>  | Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option. |
-| <kbd>ArrowRight</kbd> | Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option. |
-| <kbd>ArrowUp</kbd>    | Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option. |
-| <kbd>Enter</kbd>      | If an option is focused, it will select the option. Overlays **without** an 'OK' button will commit the value immediately, dismiss the overlay and return focus to the `ion-select` element.<br /><br/>If the 'OK' button is focused, it will save the user's selection, dismiss the overlay and return focus to the `ion-select` element. |
-| <kbd>Escape</kbd>     | Closes the overlay without changing the submitted option. Returns the focus back to the `ion-select` element. |
-| <kbd>Space</kbd>      | If the focused radio button is not checked, unchecks the currently checked radio button and checks the focused radio button. Otherwise, does nothing. If the overlay does not have an 'OK' button, the value will be committed immediately and the overlay will dismiss. |
-| <kbd>Tab</kbd>        | Moves focus to the next focusable element (cancel button, 'OK' button, or either the selection or the first option) on the overlay. If the next focusable element is an option, then it will focus on the selected option, otherwise it will focus the first option. |
+| <kbd>ArrowDown</kbd>  | 聚焦并选中列表中的下一个选项。如果没有下一个选项，选择将循环到第一个选项。 |
+| <kbd>ArrowLeft</kbd>  | 聚焦并选中列表中的上一个选项。如果没有上一个选项，选择将循环到最后一个选项。 |
+| <kbd>ArrowRight</kbd> | 聚焦并选中列表中的下一个选项。如果没有下一个选项，选择将循环到第一个选项。 |
+| <kbd>ArrowUp</kbd>    | 聚焦并选中列表中的上一个选项。如果没有上一个选项，选择将循环到最后一个选项。 |
+| <kbd>Enter</kbd>      | 如果某个选项获得焦点，它将选中该选项。**没有** 'OK' 按钮的叠加层将立即提交值，关闭叠加层并将焦点返回到 `ion-select` 元素。<br /><br/>如果 'OK' 按钮获得焦点，它将保存用户的选择，关闭叠加层并将焦点返回到 `ion-select` 元素。 |
+| <kbd>Escape</kbd>     | 关闭叠加层而不更改已提交的选项。将焦点返回到 `ion-select` 元素。 |
+| <kbd>Space</kbd>      | 如果聚焦的单选按钮未选中，则取消选中当前选中的单选按钮并选中聚焦的单选按钮。否则，不执行任何操作。如果叠加层没有 'OK' 按钮，将立即提交值并关闭叠加层。 |
+| <kbd>Tab</kbd>        | 将焦点移动到叠加层上的下一个可聚焦元素（取消按钮、'OK' 按钮，或选中项或第一个选项）。如果下一个可聚焦元素是选项，则它将聚焦到选中的选项，否则将聚焦到第一个选项。 |
 
-#### Multiple Selection
+#### 多选
 
-Multiple selection keyboard interaction follows the [ARIA implementation patterns of a checkbox](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/).
+多选键盘交互遵循 [ARIA 复选框的实现模式](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/)。
 
-These keyboard interactions apply to `ion-alert`, `ion-popover`, and `ion-modal` elements when the overlay is presented and multiple selection is enabled.
+当叠加层已呈现并启用多选时，这些键盘交互适用于 `ion-alert`、`ion-popover` 和 `ion-modal` 元素。
 
-| Key                | Description                                                  |
+| 按键                | 说明                                                  |
 | ------------------ | ------------------------------------------------------------ |
-| <kbd>Enter</kbd>   | When the 'OK' button is focused, it will save the user's selection, dismiss the overlay, and return focus to the `ion-select` element. |
-| <kbd>Escape</kbd>  | Closes the overlay without changing the submitted option(s). Returns the focus back to the `ion-select` element. |
-| <kbd>Space</kbd>   | Selects or deselects the currently focused option. This does not deselect the other selected options. If the overlay does not have an 'OK' button, the value will be committed immediately. |
-| <kbd>Tab</kbd>     | Move focus to the next focusable element (cancel button, 'OK' button, or any of the options) on the overlay. If the next focusable element is the options list, then it should iterate through each option. |
+| <kbd>Enter</kbd>   | 当 'OK' 按钮获得焦点时，它将保存用户的选择，关闭叠加层，并将焦点返回到 `ion-select` 元素。 |
+| <kbd>Escape</kbd>  | 关闭叠加层而不更改已提交的选项。将焦点返回到 `ion-select` 元素。 |
+| <kbd>Space</kbd>   | 选中或取消选中当前聚焦的选项。这不会取消选中其他已选中的选项。如果叠加层没有 'OK' 按钮，将立即提交值。 |
+| <kbd>Tab</kbd>     | 将焦点移动到叠加层上的下一个可聚焦元素（取消按钮、'OK' 按钮或任何选项）。如果下一个可聚焦元素是选项列表，则应遍历每个选项。 |
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
-## CSS Shadow Parts
+## CSS 影子部分
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

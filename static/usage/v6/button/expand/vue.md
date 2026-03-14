@@ -1,7 +1,7 @@
 ```html
 <template>
-  <ion-button expand="block">Block</ion-button>
-  <ion-button expand="full">Full</ion-button>
+  <ion-button expand="block">块级按钮</ion-button>
+  <ion-button expand="full">全宽按钮</ion-button>
 </template>
 
 <script lang="ts">

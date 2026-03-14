@@ -7,15 +7,15 @@ import './main.css';
 function Example() {
   return (
     <>
-      <IonButton id="open-toast">Open Toast</IonButton>
+      <IonButton id="open-toast">打开 Toast</IonButton>
       <IonToast
         trigger="open-toast"
         duration={3000}
-        message="Hello Styled World!"
+        message="你好，带样式的世界！"
         className="custom-toast"
         buttons={[
           {
-            text: 'Dismiss',
+            text: '关闭',
             role: 'cancel',
           },
         ]}

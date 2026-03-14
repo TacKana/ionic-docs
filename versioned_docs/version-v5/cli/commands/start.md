@@ -1,28 +1,28 @@
 ---
-title: 'How to Create A New Application with Ionic Start for New Projects'
-description: 'Learn how to create a new app project with Ionic Start. This command creates a working Ionic app that installs dependencies for you and sets up your project.'
+title: '如何使用 Ionic Start 创建新应用项目'
+description: '学习如何使用 Ionic Start 创建新的应用项目。该命令会创建一个可运行的 Ionic 应用，自动安装依赖项并设置项目结构。'
 sidebar_label: 'start'
 ---
 
 # ionic start
 
-Create a new project
+创建新项目
 
 ```shell
 ionic start [options]
 ```
 
-This command creates a working Ionic app. It installs dependencies for you and sets up your project.
+此命令用于创建一个可直接运行的 Ionic 应用。它会自动为您安装依赖项并完成项目配置。
 
-Running `ionic start` without any arguments will prompt you for information about your new project.
+如果直接运行 `ionic start` 而不带任何参数，系统将提示您输入新项目的相关信息。
 
-The first argument is your app's `name`. Don't worry--you can always change this later. The `--project-id` is generated from `name` unless explicitly specified.
+第一个参数是应用的 `name`（名称）。请放心，后续随时可以修改此名称。除非明确指定，否则 `--project-id` 将根据 `name` 自动生成。
 
-The second argument is the `template` from which to generate your app. You can list all templates with the `--list` option. You can also specify a git repository URL for `template`, in which case the existing project will be cloned.
+第二个参数是用于生成应用的 `template`（模板）。您可以使用 `--list` 选项查看所有可用模板。您也可以为 `template` 指定一个 Git 仓库 URL，此时将直接克隆现有项目。
 
-Use the `--type` option to start projects using older versions of Ionic. For example, you can start an Ionic 3 project with `--type=ionic-angular`. Use `--list` to see all project types and templates.
+使用 `--type` 选项可创建基于旧版 Ionic 的项目。例如，您可以通过 `--type=ionic-angular` 创建 Ionic 3 项目。使用 `--list` 可查看所有项目类型和模板。
 
-## Examples
+## 示例
 
 ```shell
 $ ionic start
@@ -38,7 +38,7 @@ $ ionic start "My App" blank
 $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-app
 ```
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -50,10 +50,10 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <p>
-          The name of your new project (e.g. <code>myApp</code>, <code>"My App"</code>)
+          新项目的名称（例如 <code>myApp</code>, <code>"My App"</code>）
         </p>
       </td>
     </tr>
@@ -67,17 +67,17 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <p>
-          The starter template to use (e.g. <code>blank</code>, <code>tabs</code>; use <code>--list</code> to see all)
+          使用的初始模板（例如 <code>blank</code>, <code>tabs</code>；使用 <code>--list</code> 查看所有选项）
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Options
+## 选项
 
 <table className="reference-table">
   <thead>
@@ -93,13 +93,13 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>List available starter templates</p>
+        <p>列出可用的初始模板</p>
       </td>
     </tr>
     <tr>
-      <th>Aliases</th>
+      <th>别名</th>
       <td>
         <code>-l</code>
       </td>
@@ -119,11 +119,11 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <p>
-          Type of project to start (e.g. <code>angular</code>, <code>react</code>, <code>ionic-angular</code>,{' '}
-          <code>ionic1</code>)
+          要创建的项目类型（例如 <code>angular</code>, <code>react</code>, <code>ionic-angular</code>,{' '}
+          <code>ionic1</code>）
         </p>
       </td>
     </tr>
@@ -141,9 +141,9 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Include Cordova integration</p>
+        <p>包含 Cordova 集成</p>
       </td>
     </tr>
   </tbody>
@@ -160,9 +160,9 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Include Capacitor integration</p>
+        <p>包含 Capacitor 集成</p>
       </td>
     </tr>
   </tbody>
@@ -180,15 +180,15 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
-        <p>Specify an Ionic App ID to link</p>
+        <p>指定要关联的 Ionic App ID</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Advanced Options
+## 高级选项
 
 <table className="reference-table">
   <thead>
@@ -204,10 +204,10 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Do not install npm/yarn dependencies</p>
+          <p>不安装 npm/yarn 依赖项</p>
         </div>
       </td>
     </tr>
@@ -225,10 +225,10 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Do not initialize a git repo</p>
+          <p>不初始化 git 仓库</p>
         </div>
       </td>
     </tr>
@@ -246,10 +246,10 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Connect your new app to Ionic</p>
+          <p>将新应用连接到 Ionic</p>
         </div>
       </td>
     </tr>
@@ -268,10 +268,10 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Specify a slug for your app (used for the directory name and package name)</p>
+          <p>为应用指定一个 slug（用于目录名和包名）</p>
         </div>
       </td>
     </tr>
@@ -290,10 +290,10 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>说明</th>
       <td>
         <div>
-          <p>Specify the bundle ID/application ID for your app (reverse-DNS notation)</p>
+          <p>为应用指定 bundle ID/application ID（反向 DNS 表示法）</p>
         </div>
       </td>
     </tr>

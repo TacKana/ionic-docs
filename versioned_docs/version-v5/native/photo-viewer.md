@@ -8,29 +8,29 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-# Photo Viewer
+# 图片查看器
 
-This plugin can display your image in full screen with the ability to pan, zoom, and share the image.
+该插件能够以全屏模式展示您的图片，并支持平移、缩放和分享图片。
 
 <p>
   <a href="https://github.com/sarriaroman/photoviewer" target="_blank" rel="noopener" className="git-link">github.com/sarriaroman/photoviewer</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在开发一个重要的项目，就负担不起耗费数小时进行故障排查的时间。Ionic 的专家为社区插件和高级插件均提供专业的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -55,22 +55,22 @@ This plugin can display your image in full screen with the ability to pan, zoom,
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版提供由 Ionic 团队完全支持并维护的插件。 &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，或者如果您对本插件的企业版本感兴趣，请 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - iOS
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -83,7 +83,7 @@ constructor(private photoViewer: PhotoViewer) { }
 
 this.photoViewer.show('https://mysite.com/path/to/image.jpg');
 
-this.photoViewer.show('https://mysite.com/path/to/image.jpg', 'My image title', {share: false});
+this.photoViewer.show('https://mysite.com/path/to/image.jpg', '我的图片标题', {share: false});
 
-this.photoViewer.show('https://mysecuresite.com/path/to/image.jpg', 'My image title', {share: false, headers: '{username:foo,password:bar}'});
+this.photoViewer.show('https://mysecuresite.com/path/to/image.jpg', '我的图片标题', {share: false, headers: '{username:foo,password:bar}'});
 ```

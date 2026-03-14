@@ -1,5 +1,5 @@
 ```html
-<b>No change for xs breakpoint, push 1st column & pull 2nd column for sm and up</b>
+<b>xs 断点无变化，sm 及以上断点将第一列后推、第二列前拉</b>
 <ion-grid>
   <ion-row>
     <ion-col push-sm="6">1</ion-col>
@@ -7,7 +7,7 @@
   </ion-row>
 </ion-grid>
 
-<b>No change for xs breakpoint, push middle columns & pull last column for md and up</b>
+<b>xs 断点无变化，md 及以上断点将中间列后推、最后一列前拉</b>
 <ion-grid>
   <ion-row>
     <ion-col>1</ion-col>
@@ -17,7 +17,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Switch first and last 3 columns for xs breakpoints, reverse columns for lg and up</b>
+<b>xs 断点交换首尾三列位置，lg 及以上断点反转列顺序</b>
 <ion-grid>
   <ion-row>
     <ion-col push="6" push-lg="10">1</ion-col>

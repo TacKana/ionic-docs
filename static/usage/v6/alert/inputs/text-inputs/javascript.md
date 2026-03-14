@@ -1,30 +1,30 @@
 ```html
-<ion-button onclick="presentAlert()">Click Me</ion-button>
+<ion-button onclick="presentAlert()">点击我</ion-button>
 
 <script>
   async function presentAlert() {
     const alert = document.createElement('ion-alert');
-    alert.header = 'Please enter your info';
-    alert.buttons = ['OK'];
+    alert.header = '请输入您的信息';
+    alert.buttons = ['确定'];
     alert.inputs = [
       {
-        placeholder: 'Name',
+        placeholder: '姓名',
       },
       {
-        placeholder: 'Nickname (max 8 characters)',
+        placeholder: '昵称（最多8个字符）',
         attributes: {
           maxlength: 8,
         },
       },
       {
         type: 'number',
-        placeholder: 'Age',
+        placeholder: '年龄',
         min: 1,
         max: 100,
       },
       {
         type: 'textarea',
-        placeholder: 'A little about yourself',
+        placeholder: '关于你自己的一些介绍',
       },
     ];
 

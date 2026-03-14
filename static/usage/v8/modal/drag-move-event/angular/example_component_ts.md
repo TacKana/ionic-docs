@@ -12,26 +12,25 @@ import type { ModalDragEventDetail } from '@ionic/angular/standalone';
 export class ExampleComponent {
   @ViewChild('header', { read: ElementRef })
   header!: ElementRef<HTMLIonHeaderElement>;
-  // Assign the current snap breakpoint to the initial breakpoint so
-  // that we can track changes during the drag
+  // 将当前吸附断点赋值为初始断点，以便在拖拽过程中追踪变化
   currentSnap = 0.25;
 
   onDragMove(event: CustomEvent<ModalDragEventDetail>) {
-    // `progress` is a value from 1 (top) to 0 (bottom)
-    // `snapBreakpoint` tells us which snap point the modal will animate to after the drag ends
+    // `progress` 是从 1（顶部）到 0（底部）的值
+    // `snapBreakpoint` 告诉我们拖拽结束后模态框将动画到哪个吸附点
     const { progress, snapBreakpoint } = event.detail;
 
     if (this.currentSnap !== snapBreakpoint) {
       this.currentSnap = snapBreakpoint as number;
 
-      console.log('Current snap breakpoint:', snapBreakpoint);
+      console.log('当前吸附断点：', snapBreakpoint);
     }
 
     const headerEl = this.header.nativeElement;
     /**
-     * Inverse relationship:
-     * 1.0 progress = 0 opacity
-     * 0 progress = 1.0 opacity
+     * 反比关系：
+     * 1.0 进度 = 0 不透明度
+     * 0 进度 = 1.0 不透明度
      */
     const currentOpacity = 1 - progress;
 
@@ -39,14 +38,13 @@ export class ExampleComponent {
   }
 
   onDragEnd(event: CustomEvent<ModalDragEventDetail>) {
-    // `progress` is a value from 1 (top) to 0 (bottom)
-    // `snapBreakpoint` tells us which snap point the modal will animate to after the drag ends
+    // `progress` 是从 1（顶部）到 0（底部）的值
+    // `snapBreakpoint` 告诉我们拖拽结束后模态框将动画到哪个吸附点
     const { progress, snapBreakpoint } = event.detail;
     const headerEl = this.header.nativeElement;
 
     /**
-     * If the modal is snapping to the closed state (0), reset the
-     * styles.
+     * 如果模态框吸附到关闭状态（0），则重置样式。
      */
     if (snapBreakpoint === 0) {
       headerEl.style.removeProperty('opacity');
@@ -54,20 +52,19 @@ export class ExampleComponent {
       return;
     }
 
-    // Smooth transition to the final resting opacity
+    // 平滑过渡到最终静止状态的不透明度
     headerEl.style.transition = 'opacity 0.4s ease';
-    // The final opacity matches the inverse of the resting progress
+    // 最终不透明度与静止进度的倒数匹配
     headerEl.style.opacity = (1 - progress).toString();
   }
 
   /**
-   * If the user dismisses the modal (e.g. tapping the backdrop),
-   * reset the styles.
+   * 如果用户关闭模态框（例如点击背景遮罩），重置样式。
    */
   onWillDismiss() {
     const headerEl = this.header.nativeElement;
 
-    // Reset styles when the modal is dismissed
+    // 模态框关闭时重置样式
     headerEl.style.removeProperty('opacity');
     headerEl.style.removeProperty('transition');
   }

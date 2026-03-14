@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Android Notch'
+sidebar_label: 'Android 刘海屏'
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -10,29 +10,29 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Android Notch
 
-This plugin enables developers to get the cutout and android devices inset sizes
-It is based on the cordova plugin developed by @tobspr: https://github.com/tobspr/cordova-plugin-android-notch
-This plugin works on all android versions, but we can only detect notches starting from Android 9.
+本插件允许开发者获取 Android 设备的缺口（Cutout）和内边距（Inset）尺寸。
+它基于 @tobspr 开发的 Cordova 插件：https://github.com/tobspr/cordova-plugin-android-notch
+该插件支持所有 Android 版本，但刘海检测功能仅从 Android 9 开始支持。
 
 <p>
-  <a href="https://github.com/tobspr/cordova-plugin-android-notch.git" target="_blank" el="noopener" className="git-link">github.com/tobspr/cordova-plugin-android-notch.git</a>
+  <a href="https://github.com/tobspr/cordova-plugin-android-notch.git" target="_blank" rel="noopener" className="git-link">github.com/tobspr/cordova-plugin-android-notch.git</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>被 Cordova 问题困扰？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在开发一个严肃的项目，您不能花费数小时进行故障排除。Ionic 专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -40,7 +40,7 @@ This plugin works on all android versions, but we can only detect notches starti
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: 'Enterprise' },
+    { value: 'Enterprise', label: '企业版' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -57,21 +57,21 @@ This plugin works on all android versions, but we can only detect notches starti
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版提供由 Ionic 团队完全支持并维护的插件。&nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，如果您对此插件的企业版感兴趣，请<a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>。
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -85,23 +85,23 @@ constructor(private androidNotch: AndroidNotch) { }
 
 
 this.androidNotch.hasCutout()
-   .then((px: number) => console.log('Inset size: '), px)
-   .catch((error: any) => console.log('Error: ', error))
+   .then((px: number) => console.log('内边距尺寸: '), px)
+   .catch((error: any) => console.log('错误: ', error))
 
 this.androidNotch.getInsetTop()
-   .then((px: number) => console.log('Inset size: '), px)
-   .catch((error: any) => console.log('Error: ', error))
+   .then((px: number) => console.log('内边距尺寸: '), px)
+   .catch((error: any) => console.log('错误: ', error))
 
 this.androidNotch.getInsetRight()
-   .then((px: number) => console.log('Inset size: '), px)
-   .catch((error: any) => console.log('Error: ', error))
+   .then((px: number) => console.log('内边距尺寸: '), px)
+   .catch((error: any) => console.log('错误: ', error))
 
 this.androidNotch.getInsetBottom()
-   .then((px: number) => console.log('Inset size: '), px)
-   .catch((error: any) => console.log('Error: ', error))
+   .then((px: number) => console.log('内边距尺寸: '), px)
+   .catch((error: any) => console.log('错误: ', error))
 
 this.androidNotch.getInsetLeft()
-   .then((px: number) => console.log('Inset size: '), px)
-   .catch((error: any) => console.log('Error: ', error))
+   .then((px: number) => console.log('内边距尺寸: '), px)
+   .catch((error: any) => console.log('错误: ', error))
 
 ```

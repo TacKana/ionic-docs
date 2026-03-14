@@ -5,16 +5,16 @@ import { IonLabel } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonLabel>Default</IonLabel>
-      <IonLabel color="primary">Primary</IonLabel>
-      <IonLabel color="secondary">Secondary</IonLabel>
-      <IonLabel color="tertiary">Tertiary</IonLabel>
-      <IonLabel color="success">Success</IonLabel>
-      <IonLabel color="warning">Warning</IonLabel>
-      <IonLabel color="danger">Danger</IonLabel>
-      <IonLabel color="light">Light</IonLabel>
-      <IonLabel color="medium">Medium</IonLabel>
-      <IonLabel color="dark">Dark</IonLabel>
+      <IonLabel>默认</IonLabel>
+      <IonLabel color="primary">主要</IonLabel>
+      <IonLabel color="secondary">次要</IonLabel>
+      <IonLabel color="tertiary">第三级</IonLabel>
+      <IonLabel color="success">成功</IonLabel>
+      <IonLabel color="warning">警告</IonLabel>
+      <IonLabel color="danger">危险</IonLabel>
+      <IonLabel color="light">浅色</IonLabel>
+      <IonLabel color="medium">中等</IonLabel>
+      <IonLabel color="dark">深色</IonLabel>
     </>
   );
 }

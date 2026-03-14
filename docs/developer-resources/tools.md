@@ -1,21 +1,21 @@
-# Tools
+# 工具
 
 ### [Angular CLI](https://github.com/angular/angular-cli)
 
-Learn more about the power of the Angular CLI
+深入了解 Angular CLI 的强大功能
 
 ### [StackBlitz](https://stackblitz.com/)
 
-Quickly get started with a new Ionic app entirely in the browser!
+直接在浏览器中快速启动全新的 Ionic 应用！
 
 ### [TypeScript](https://www.typescriptlang.org/)
 
-Check out the features that make working with TypeScript amazing.
+探索 TypeScript 的卓越特性
 
-### [Glossary](../reference/glossary.md)
+### [术语表](../reference/glossary.md)
 
-A list of common terms you'll see while developing in Ionic.
+一份在 Ionic 开发过程中常见术语的列表
 
-### [Starter Apps](https://ionicthemes.com)
+### [入门应用](https://ionicthemes.com)
 
-Ionic Starter Apps to speed up and improve your app development.
+Ionic 入门应用，助您加速并优化应用开发流程

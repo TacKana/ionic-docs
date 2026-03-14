@@ -16,185 +16,118 @@ import Slots from '@ionic-internal/component-api/v5/datetime/slots.md';
 
 # ion-datetime
 
-Datetimes present a picker interface from the bottom of a page, making it easy for
-users to select dates and times. The picker displays scrollable columns that can be
-used to individually select years, months, days, hours and minute values. Datetimes
-are similar to the native `input` elements of type `datetime-local`, however, Ionic's
-Datetime component makes it easy to display the date and time in a preferred format,
-and manage the datetime values.
+日期时间组件从页面底部呈现一个选择器界面，方便用户选择日期和时间。该选择器显示可滚动的列，可用于单独选择年、月、日、小时和分钟值。日期时间组件类似于原生的 `datetime-local` 类型的 `input` 元素，但是，Ionic 的 Datetime 组件使得以首选格式显示日期和时间以及管理日期时间值变得容易。
 
-## Display and Picker Formats
+## 显示和选择器格式
 
-The datetime component displays the values in two places: in the `<ion-datetime>` component,
-and in the picker interface that is presented from the bottom of the screen. The following
-chart lists all of the formats that can be used.
+日期时间组件在两个位置显示值：在 `<ion-datetime>` 组件内部，以及从屏幕底部呈现的选择器界面中。下表列出了所有可以使用的格式。
 
-| Format | Description                    | Example                 |
-| ------ | ------------------------------ | ----------------------- |
-| `YYYY` | Year, 4 digits                 | `2018`                  |
-| `YY`   | Year, 2 digits                 | `18`                    |
-| `M`    | Month                          | `1` ... `12`            |
-| `MM`   | Month, leading zero            | `01` ... `12`           |
-| `MMM`  | Month, short name              | `Jan`                   |
-| `MMMM` | Month, full name               | `January`               |
-| `D`    | Day                            | `1` ... `31`            |
-| `DD`   | Day, leading zero              | `01` ... `31`           |
-| `DDD`  | Day, short name                | `Fri`                   |
-| `DDDD` | Day, full name                 | `Friday`                |
-| `H`    | Hour, 24-hour                  | `0` ... `23`            |
-| `HH`   | Hour, 24-hour, leading zero    | `00` ... `23`           |
-| `h`    | Hour, 12-hour                  | `1` ... `12`            |
-| `hh`   | Hour, 12-hour, leading zero    | `01` ... `12`           |
-| `a`    | 12-hour time period, lowercase | `am` `pm`               |
-| `A`    | 12-hour time period, uppercase | `AM` `PM`               |
-| `m`    | Minute                         | `1` ... `59`            |
-| `mm`   | Minute, leading zero           | `01` ... `59`           |
-| `s`    | Second                         | `1` ... `59`            |
-| `ss`   | Second, leading zero           | `01` ... `59`           |
-| `Z`    | UTC Timezone Offset            | `Z or +HH:mm or -HH:mm` |
+| 格式 | 描述                    | 示例                      |
+|------|------------------------|---------------------------|
+| `YYYY` | 年，4 位数字             | `2018`                    |
+| `YY`   | 年，2 位数字             | `18`                      |
+| `M`    | 月                       | `1` ... `12`              |
+| `MM`   | 月，带前导零             | `01` ... `12`             |
+| `MMM`  | 月，简称                 | `一月`                    |
+| `MMMM` | 月，全称                 | `一月`                    |
+| `D`    | 日                       | `1` ... `31`              |
+| `DD`   | 日，带前导零             | `01` ... `31`             |
+| `DDD`  | 星期，简称               | `周五`                    |
+| `DDDD` | 星期，全称               | `星期五`                  |
+| `H`    | 小时，24 小时制          | `0` ... `23`              |
+| `HH`   | 小时，24 小时制，带前导零 | `00` ... `23`             |
+| `h`    | 小时，12 小时制          | `1` ... `12`              |
+| `hh`   | 小时，12 小时制，带前导零 | `01` ... `12`             |
+| `a`    | 12 小时制时间段，小写    | `am` `pm`                 |
+| `A`    | 12 小时制时间段，大写    | `AM` `PM`                 |
+| `m`    | 分钟                     | `1` ... `59`              |
+| `mm`   | 分钟，带前导零           | `01` ... `59`             |
+| `s`    | 秒                       | `1` ... `59`              |
+| `ss`   | 秒，带前导零             | `01` ... `59`             |
+| `Z`    | UTC 时区偏移             | `Z 或 +HH:mm 或 -HH:mm`   |
 
-**Important**: See the [Month Names and Day of the Week
-Names](#month-names-and-day-of-the-week-names) section below on how to use
-different names for the month and day.
+**重要提示**：关于如何使用不同的月份和星期名称，请参阅下面的[月份名称和星期名称](#月份名称和星期名称)部分。
 
-### Display Format
+### 显示格式
 
-The `displayFormat` property specifies how a datetime's value should be
-printed, as formatted text, within the datetime component.
+`displayFormat` 属性指定了 datetime 组件的值在组件内应该如何以格式化的文本形式打印。
 
-A few examples are provided in the chart below. The formats mentioned
-above can be passed in to the display format in any combination.
+下表提供了一些示例。上面提到的格式可以以任意组合传递给显示格式。
 
-| Display Format       | Example              |
-| -------------------- | -------------------- |
-| `M-YYYY`             | `6-2005`             |
-| `MM/YY`              | `06/05`              |
-| `MMM YYYY`           | `Jun 2005`           |
-| `YYYY, MMMM`         | `2005, June`         |
-| `MMM DD, YYYY HH:mm` | `Jun 17, 2005 11:06` |
+| 显示格式               | 示例                   |
+|------------------------|------------------------|
+| `M-YYYY`               | `6-2005`               |
+| `MM/YY`                | `06/05`                |
+| `MMM YYYY`             | `六月 2005`            |
+| `YYYY, MMMM`           | `2005, 六月`           |
+| `MMM DD, YYYY HH:mm`   | `六月 17, 2005 11:06`  |
 
-**Important**: `ion-datetime` will by default display values relative to the user's timezone.
-Given a value of `09:00:00+01:00`, the datetime component will
-display it as `04:00:00-04:00` for users in a `-04:00` timezone offset.
-To change the display to use a different timezone, use the displayTimezone property described below.
+**重要提示**：默认情况下，`ion-datetime` 将相对于用户的时区显示值。给定一个 `09:00:00+01:00` 的值，对于处于 `-04:00` 时区偏移的用户，datetime 组件会将其显示为 `04:00:00-04:00`。要更改显示以使用不同的时区，请使用下面描述的 displayTimezone 属性。
 
-### Display Timezone
+### 显示时区
 
-The `displayTimezone` property allows you to change the default behavior
-of displaying values relative to the user's local timezone. In addition to "UTC" valid
-time zone values are determined by the browser, and in most cases follow the time zone names
-of the [IANA time zone database](https://www.iana.org/time-zones), such as "Asia/Shanghai",
-"Asia/Kolkata", "America/New_York". In the following example:
+`displayTimezone` 属性允许您更改默认的相对于用户本地时区显示值的行为。除了 "UTC" 之外，有效的时区值由浏览器确定，并且在大多数情况下遵循 [IANA 时区数据库](https://www.iana.org/time-zones) 的时区名称，例如 "Asia/Shanghai"、"Asia/Kolkata"、"America/New_York"。在以下示例中：
 
 ```html
 <ion-datetime value="2019-10-01T15:43:40.394Z" display-timezone="utc"></ion-datetime>
 ```
 
-The displayed value will not be converted and will be displayed as provided (UTC).
+显示的值将不会被转换，并会按照提供的样子显示（UTC）。
 
-### Picker Format
+### 选择器格式
 
-The `pickerFormat` property determines which columns should be shown in the picker
-interface, the order of the columns, and which format to use within each
-column. If `pickerFormat` is not provided then it will use the value of
-`displayFormat`. Refer to the chart in the [Display Format](#display-format) section
-for some formatting examples.
+`pickerFormat` 属性决定选择器界面中应显示哪些列、列的顺序以及每列中使用的格式。如果未提供 `pickerFormat`，则它将使用 `displayFormat` 的值。有关一些格式示例，请参阅[显示格式](#显示格式)部分中的图表。
 
-### Datetime Data
+### 日期时间数据
 
-Historically, handling datetime values within JavaScript, or even within HTML
-inputs, has always been a challenge. Specifically, JavaScript's `Date` object is
-notoriously difficult to correctly parse apart datetime strings or to format
-datetime values. Even worse is how different browsers and JavaScript versions
-parse various datetime strings differently, especially per locale.
+从历史上看，在 JavaScript 甚至 HTML 输入中处理日期时间值一直是一个挑战。具体来说，JavaScript 的 `Date` 对象以难以正确解析日期时间字符串或格式化日期时间值而闻名。更糟糕的是，不同的浏览器和 JavaScript 版本如何解析各种日期时间字符串也存在差异，尤其是在不同区域设置下。
 
-Fortunately, Ionic's datetime input has been designed so developers can avoid
-the common pitfalls, allowing developers to easily format datetime values within
-the input, and give the user a simple datetime picker for a great user
-experience.
+幸运的是，Ionic 的日期时间输入被设计为允许开发者避免常见的陷阱，使开发者能够轻松地在输入中格式化日期时间值，并为用户提供一个简单的日期时间选择器，以获得出色的用户体验。
 
-##### ISO 8601 Datetime Format: YYYY-MM-DDTHH:mmZ
+##### ISO 8601 日期时间格式：YYYY-MM-DDTHH:mmZ
 
-Ionic uses the [ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime)
-for its value. The value is simply a string, rather than using JavaScript's
-`Date` object. Using the ISO datetime format makes it easy to serialize
-and parse within JSON objects and databases.
+Ionic 使用 [ISO 8601 日期时间格式](https://www.w3.org/TR/NOTE-datetime) 作为其值。该值只是一个字符串，而不是使用 JavaScript 的 `Date` 对象。使用 ISO 日期时间格式可以轻松地在 JSON 对象和数据库中序列化和解析。
 
-An ISO format can be used as a simple year, or just the hour and minute, or get
-more detailed down to the millisecond and timezone. Any of the ISO formats below
-can be used, and after a user selects a new value, Ionic will continue to use
-the same ISO format which datetime value was originally given as.
+ISO 格式可以用作简单的年份，或仅小时和分钟，或者更详细到毫秒和时区。下面任何 ISO 格式都可以使用，并且在用户选择新值后，Ionic 将继续使用最初给定的日期时间值所使用的相同 ISO 格式。
 
-| Description          | Format                 | Datetime Value Example        |
-| -------------------- | ---------------------- | ----------------------------- |
-| Year                 | YYYY                   | 1994                          |
-| Year and Month       | YYYY-MM                | 1994-12                       |
-| Complete Date        | YYYY-MM-DD             | 1994-12-15                    |
-| Date and Time        | YYYY-MM-DDTHH:mm       | 1994-12-15T13:47              |
-| UTC Timezone         | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20.789Z      |
-| Timezone Offset      | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20.789+05:00 |
-| Hour and Minute      | HH:mm                  | 13:47                         |
-| Hour, Minute, Second | HH:mm:ss               | 13:47:20                      |
+| 描述                 | 格式                     | 日期时间值示例                 |
+|----------------------|--------------------------|--------------------------------|
+| 年                   | YYYY                     | 1994                           |
+| 年和月               | YYYY-MM                  | 1994-12                        |
+| 完整日期             | YYYY-MM-DD               | 1994-12-15                     |
+| 日期和时间           | YYYY-MM-DDTHH:mm         | 1994-12-15T13:47               |
+| UTC 时区             | YYYY-MM-DDTHH:mm:ssTZD   | 1994-12-15T13:47:20.789Z       |
+| 时区偏移             | YYYY-MM-DDTHH:mm:ssTZD   | 1994-12-15T13:47:20.789+05:00  |
+| 小时和分钟           | HH:mm                    | 13:47                          |
+| 小时、分钟、秒       | HH:mm:ss                 | 13:47:20                       |
 
-Note that the year is always four-digits, milliseconds (if it's added) is always
-three-digits, and all others are always two-digits. So the number representing
-January always has a leading zero, such as `01`. Additionally, the hour is
-always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
-`1pm`, and `23` means `11pm`.
+请注意，年份始终是四位数字，毫秒（如果添加）始终是三位数字，所有其他项始终是两位数字。因此，表示一月的数字始终带有前导零，例如 `01`。此外，小时始终采用 24 小时制，因此 `00` 表示 12 小时制的 `12am`，`13` 表示 `1pm`，`23` 表示 `11pm`。
 
-Also note that neither the `displayFormat` nor the `pickerFormat`
-can set the datetime value's output, which is the value that is set by the
-component's `ngModel`. The formats are merely for displaying the value as text
-and the picker's interface, but the datetime's value is always persisted as a
-valid ISO 8601 datetime string.
+另请注意，`displayFormat` 和 `pickerFormat` 都不能设置日期时间值的输出，该值是由组件的 `ngModel` 设置的值。这些格式仅用于将值显示为文本和显示选择器界面，但日期时间的值始终保存为有效的 ISO 8601 日期时间字符串。
 
-## Min and Max Datetimes
+## 最小和最大日期时间
 
-Dates are infinite in either direction, so for a user's selection there should
-be at least some form of restricting the dates that can be selected. By default,
-the maximum date is to the end of the current year, and the minimum date is from
-the beginning of the year that was 100 years ago.
+日期在任一方向上都是无限的，因此对于用户的选择，至少应该有某种形式限制可以选择的日期。默认情况下，最大日期是当前年份的年底，最小日期是从 100 年前的年初开始。
 
-To customize the minimum and maximum datetime values, the `min` and `max`
-component properties can be provided which may make more sense for the app's
-use-case, rather than the default of the last 100 years. Following the same IS0
-8601 format listed in the table above, each component can restrict which dates
-can be selected by the user. By passing `2016` to the `min` property and `2020-10-31`
-to the `max` property, the datetime will restrict the date selection between the
-beginning of 2016, and October 31st of 2020.
+要自定义最小和最大日期时间值，可以提供 `min` 和 `max` 组件属性，这比默认的最近 100 年更适合应用程序的用例。遵循上表中列出的相同 ISO 8601 格式，每个组件可以限制用户可以选择哪些日期。通过将 `2016` 传递给 `min` 属性，将 `2020-10-31` 传递给 `max` 属性，datetime 将限制日期选择在 2016 年初到 2020 年 10 月 31 日之间。
 
-## Month Names and Day of the Week Names
+## 月份名称和星期名称
 
-At this time, there is no one-size-fits-all standard to automatically choose the
-correct language/spelling for a month name, or day of the week name, depending
-on the language or locale.
+目前，没有一个通用的标准可以根据语言或区域设置自动选择月份名称或星期名称的正确语言/拼写。
 
-The good news is that there is an [Intl.DatetimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat)
-standard which [most browsers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat#Browser_compatibility) have adopted.
+好消息是，有一个 [Intl.DatetimeFormat](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) 标准，[大多数浏览器](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat#浏览器兼容性) 已经采用。
 
-However, at this time the standard has not been fully implemented by all popular browsers
-so Ionic is unavailable to take advantage of it yet.
+然而，目前该标准尚未被所有流行浏览器完全实现，因此 Ionic 还无法利用它。
 
-Additionally, Angular also provides an internationalization service, but it is still
-under heavy development so Ionic does not depend on it at this time.
+此外，Angular 也提供了一个国际化服务，但它仍在大量开发中，因此 Ionic 目前不依赖它。
 
-The current best practice is to provide an array of names if the app needs to use names other
-than the default English version of month and day names. The month names and day names can be
-either configured at the app level, or individual `ion-datetime` level.
+如果应用程序需要使用默认英文版本以外的月份和日期名称，当前的最佳实践是提供一个名称数组。月份名称和日期名称可以在应用程序级别配置，也可以在单个 `ion-datetime` 级别配置。
 
-### Advanced Datetime Validation and Manipulation
+### 高级日期时间验证和操作
 
-The datetime picker provides the simplicity of selecting an exact format, and
-persists the datetime values as a string using the standardized [ISO 8601
-datetime format](https://www.w3.org/TR/NOTE-datetime). However, it's important
-to note that `ion-datetime` does not attempt to solve all situations when
-validating and manipulating datetime values. If datetime values need to be
-parsed from a certain format, or manipulated (such as adding 5 days to a date,
-subtracting 30 minutes, etc.), or even formatting data to a specific locale,
-then we highly recommend using [date-fns](https://date-fns.org) to work with
-dates in JavaScript.
+日期时间选择器提供了选择精确格式的简便性，并使用标准化的 [ISO 8601 日期时间格式](https://www.w3.org/TR/NOTE-datetime) 将日期时间值保存为字符串。然而，重要的是要注意 `ion-datetime` 并不试图解决验证和操作日期时间值时的所有情况。如果需要从特定格式解析日期时间值，或对其进行操作（例如，给日期增加 5 天、减去 30 分钟等），甚至将数据格式化为特定区域设置，那么我们强烈建议使用 [date-fns](https://date-fns.org) 在 JavaScript 中处理日期。
 
-## Usage
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -208,11 +141,11 @@ dates in JavaScript.
 
 <ion-item>
   <ion-label>MM DD YY</ion-label>
-  <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+  <ion-datetime displayFormat="MM DD YY" placeholder="选择日期"></ion-datetime>
 </ion-item>
 
 <ion-item>
-  <ion-label>Disabled</ion-label>
+  <ion-label>已禁用</ion-label>
   <ion-datetime id="dynamicDisabled" displayFormat="MM DD YY" disabled value="1994-12-15"></ion-datetime>
 </ion-item>
 
@@ -220,7 +153,7 @@ dates in JavaScript.
   <ion-label>YYYY</ion-label>
   <ion-datetime
     [pickerOptions]="customPickerOptions"
-    placeholder="Custom Options"
+    placeholder="自定义选项"
     displayFormat="YYYY"
     min="1981"
     max="2002"
@@ -253,14 +186,14 @@ dates in JavaScript.
 </ion-item>
 
 <ion-item>
-  <ion-label>DDD. MMM DD, YY (custom locale)</ion-label>
+  <ion-label>DDD. MMM DD, YY (自定义语言环境)</ion-label>
   <ion-datetime
     value="1995-04-15"
     min="1990-02"
     max="2000"
     [dayShortNames]="customDayShortNames"
     displayFormat="DDD. MMM DD, YY"
-    monthShortNames="jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des"
+    monthShortNames="1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月"
   ></ion-datetime>
 </ion-item>
 
@@ -285,12 +218,12 @@ dates in JavaScript.
 </ion-item>
 
 <ion-item>
-  <ion-label>hh:mm A (15 min steps)</ion-label>
+  <ion-label>hh:mm A (15 分钟步进)</ion-label>
   <ion-datetime displayFormat="h:mm A" minuteValues="0,15,30,45"></ion-datetime>
 </ion-item>
 
 <ion-item>
-  <ion-label>Leap years, summer months</ion-label>
+  <ion-label>闰年，夏季月份</ion-label>
   <ion-datetime
     displayFormat="MM/YYYY"
     pickerFormat="MMMM YYYY"
@@ -300,32 +233,32 @@ dates in JavaScript.
 </ion-item>
 
 <ion-item>
-  <ion-label>Specific days/months/years</ion-label>
+  <ion-label>特定的日/月/年</ion-label>
   <ion-datetime
     monthValues="6,7,8"
     yearValues="2014,2015"
-    dayValues="01,02,03,04,05,06,08,09,10, 11, 12, 13, 14"
+    dayValues="01,02,03,04,05,06,08,09,10,11,12,13,14"
     displayFormat="DD/MMM/YYYY"
   ></ion-datetime>
 </ion-item>
 ```
 
 ```tsx
-@Component({…})
+@Component({...})
 export class MyComponent {
   customYearValues = [2020, 2016, 2008, 2004, 2000, 1996];
-  customDayShortNames = ['s\u00f8n', 'man', 'tir', 'ons', 'tor', 'fre', 'l\u00f8r'];
+  customDayShortNames = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
   customPickerOptions: any;
 
   constructor() {
     this.customPickerOptions = {
       buttons: [{
-        text: 'Save',
-        handler: () => console.log('Clicked Save!')
+        text: '保存',
+        handler: () => console.log('点击了保存！')
       }, {
-        text: 'Log',
+        text: '记录',
         handler: () => {
-          console.log('Clicked Log. Do not Dismiss.');
+          console.log('点击了记录。不关闭。');
           return false;
         }
       }]
@@ -347,11 +280,11 @@ export class MyComponent {
 
 <ion-item>
   <ion-label>MM DD YY</ion-label>
-  <ion-datetime display-format="MM DD YY" placeholder="Select Date"></ion-datetime>
+  <ion-datetime display-format="MM DD YY" placeholder="选择日期"></ion-datetime>
 </ion-item>
 
 <ion-item>
-  <ion-label>Disabled</ion-label>
+  <ion-label>已禁用</ion-label>
   <ion-datetime id="dynamicDisabled" display-format="MM DD YY" disabled value="1994-12-15"></ion-datetime>
 </ion-item>
 
@@ -359,7 +292,7 @@ export class MyComponent {
   <ion-label>YYYY</ion-label>
   <ion-datetime
     id="customPickerOptions"
-    placeholder="Custom Options"
+    placeholder="自定义选项"
     display-format="YYYY"
     min="1981"
     max="2002"
@@ -392,14 +325,14 @@ export class MyComponent {
 </ion-item>
 
 <ion-item>
-  <ion-label>DDD. MMM DD, YY (custom locale)</ion-label>
+  <ion-label>DDD. MMM DD, YY (自定义语言环境)</ion-label>
   <ion-datetime
     id="customDayShortNames"
     value="1995-04-15"
     min="1990-02"
     max="2000"
     display-format="DDD. MMM DD, YY"
-    month-short-names="jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des"
+    month-short-names="1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月"
   ></ion-datetime>
 </ion-item>
 
@@ -424,12 +357,12 @@ export class MyComponent {
 </ion-item>
 
 <ion-item>
-  <ion-label>hh:mm A (15 min steps)</ion-label>
+  <ion-label>hh:mm A (15 分钟步进)</ion-label>
   <ion-datetime display-format="h:mm A" minute-values="0,15,30,45"></ion-datetime>
 </ion-item>
 
 <ion-item>
-  <ion-label>Leap years, summer months</ion-label>
+  <ion-label>闰年，夏季月份</ion-label>
   <ion-datetime
     id="customYearValues"
     display-format="MM/YYYY"
@@ -439,11 +372,11 @@ export class MyComponent {
 </ion-item>
 
 <ion-item>
-  <ion-label>Specific days/months/years</ion-label>
+  <ion-label>特定的日/月/年</ion-label>
   <ion-datetime
     month-values="6,7,8"
     year-values="2014,2015"
-    day-values="01,02,03,04,05,06,08,09,10, 11, 12, 13, 14"
+    day-values="01,02,03,04,05,06,08,09,10,11,12,13,14"
     display-format="DD/MMM/YYYY"
   ></ion-datetime>
 </ion-item>
@@ -454,20 +387,20 @@ var yearValuesArray = [2020, 2016, 2008, 2004, 2000, 1996];
 var customYearValues = document.getElementById('customYearValues');
 customYearValues.yearValues = yearValuesArray;
 
-var dayShortNamesArray = ['s\u00f8n', 'man', 'tir', 'ons', 'tor', 'fre', 'l\u00f8r'];
+var dayShortNamesArray = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
 var customDayShortNames = document.getElementById('customDayShortNames');
 customDayShortNames.dayShortNames = dayShortNamesArray;
 
 var customPickerButtons = {
   buttons: [
     {
-      text: 'Save',
-      handler: () => console.log('Clicked Save!'),
+      text: '保存',
+      handler: () => console.log('点击了保存！'),
     },
     {
-      text: 'Log',
+      text: '记录',
       handler: () => {
-        console.log('Clicked Log. Do not Dismiss.');
+        console.log('点击了记录。不关闭。');
         return false;
       },
     },
@@ -497,7 +430,7 @@ import {
 
 const customYearValues = [2020, 2016, 2008, 2004, 2000, 1996];
 
-const customDayShortNames = ['s\u00f8n', 'man', 'tir', 'ons', 'tor', 'fre', 'l\u00f8r'];
+const customDayShortNames = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
 
 export const DateTimeExamples: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<string>('2012-12-15T13:47:20.789');
@@ -505,7 +438,7 @@ export const DateTimeExamples: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>IonDatetime Examples</IonTitle>
+          <IonTitle>IonDatetime 示例</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -522,14 +455,14 @@ export const DateTimeExamples: React.FC = () => {
           <IonLabel>MM DD YY</IonLabel>
           <IonDatetime
             displayFormat="MM DD YY"
-            placeholder="Select Date"
+            placeholder="选择日期"
             value={selectedDate}
             onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
         <IonItem>
-          <IonLabel>Disabled</IonLabel>
+          <IonLabel>已禁用</IonLabel>
           <IonDatetime
             id="dynamicDisabled"
             displayFormat="MM DD YY"
@@ -545,19 +478,19 @@ export const DateTimeExamples: React.FC = () => {
             pickerOptions={{
               buttons: [
                 {
-                  text: 'Save',
-                  handler: () => console.log('Clicked Save!'),
+                  text: '保存',
+                  handler: () => console.log('点击了保存！'),
                 },
                 {
-                  text: 'Log',
+                  text: '记录',
                   handler: () => {
-                    console.log('Clicked Log. Do not Dismiss.');
+                    console.log('点击了记录。不关闭。');
                     return false;
                   },
                 },
               ],
             }}
-            placeholder="Custom Options"
+            placeholder="自定义选项"
             displayFormat="YYYY"
             min="1981"
             max="2002"
@@ -600,13 +533,13 @@ export const DateTimeExamples: React.FC = () => {
         </IonItem>
 
         <IonItem>
-          <IonLabel>DDD. MMM DD, YY (custom locale)</IonLabel>
+          <IonLabel>DDD. MMM DD, YY (自定义语言环境)</IonLabel>
           <IonDatetime
             min="1990-02"
             max="2000"
             dayShortNames={customDayShortNames}
             displayFormat="DDD. MMM DD, YY"
-            monthShortNames="jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des"
+            monthShortNames="1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月"
             value={selectedDate}
             onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
@@ -653,7 +586,7 @@ export const DateTimeExamples: React.FC = () => {
         </IonItem>
 
         <IonItem>
-          <IonLabel>hh:mm A (15 min steps)</IonLabel>
+          <IonLabel>hh:mm A (15 分钟步进)</IonLabel>
           <IonDatetime
             displayFormat="h:mm A"
             minuteValues="0,15,30,45"
@@ -663,7 +596,7 @@ export const DateTimeExamples: React.FC = () => {
         </IonItem>
 
         <IonItem>
-          <IonLabel>Leap years, summer months</IonLabel>
+          <IonLabel>闰年，夏季月份</IonLabel>
           <IonDatetime
             displayFormat="MM/YYYY"
             pickerFormat="MMMM YYYY"
@@ -675,11 +608,11 @@ export const DateTimeExamples: React.FC = () => {
         </IonItem>
 
         <IonItem>
-          <IonLabel>Specific days/months/years</IonLabel>
+          <IonLabel>特定的日/月/年</IonLabel>
           <IonDatetime
             monthValues="6,7,8"
             yearValues="2014,2015"
-            dayValues="01,02,03,04,05,06,08,09,10, 11, 12, 13, 14"
+            dayValues="01,02,03,04,05,06,08,09,10,11,12,13,14"
             displayFormat="DD/MMM/YYYY"
             value={selectedDate}
             onIonChange={(e) => setSelectedDate(e.detail.value!)}
@@ -687,7 +620,7 @@ export const DateTimeExamples: React.FC = () => {
         </IonItem>
       </IonContent>
       <IonFooter>
-        <IonToolbar>Selected Date: {selectedDate ?? '(none)'}</IonToolbar>
+        <IonToolbar>所选日期: {selectedDate ?? '(无)'}</IonToolbar>
       </IonFooter>
     </IonPage>
   );
@@ -707,17 +640,17 @@ import { Component, h } from '@stencil/core';
 })
 export class DatetimeExample {
   private customYearValues = [2020, 2016, 2008, 2004, 2000, 1996];
-  private customDayShortNames = ['s\u00f8n', 'man', 'tir', 'ons', 'tor', 'fre', 'l\u00f8r'];
+  private customDayShortNames = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
   private customPickerOptions = {
     buttons: [
       {
-        text: 'Save',
-        handler: () => console.log('Clicked Save!'),
+        text: '保存',
+        handler: () => console.log('点击了保存！'),
       },
       {
-        text: 'Log',
+        text: '记录',
         handler: () => {
-          console.log('Clicked Log. Do not Dismiss.');
+          console.log('点击了记录。不关闭。');
           return false;
         },
       },
@@ -733,11 +666,11 @@ export class DatetimeExample {
 
       <ion-item>
         <ion-label>MM DD YY</ion-label>
-        <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+        <ion-datetime displayFormat="MM DD YY" placeholder="选择日期"></ion-datetime>
       </ion-item>,
 
       <ion-item>
-        <ion-label>Disabled</ion-label>
+        <ion-label>已禁用</ion-label>
         <ion-datetime id="dynamicDisabled" displayFormat="MM DD YY" disabled value="1994-12-15"></ion-datetime>
       </ion-item>,
 
@@ -745,7 +678,7 @@ export class DatetimeExample {
         <ion-label>YYYY</ion-label>
         <ion-datetime
           pickerOptions={this.customPickerOptions}
-          placeholder="Custom Options"
+          placeholder="自定义选项"
           displayFormat="YYYY"
           min="1981"
           max="2002"
@@ -778,14 +711,14 @@ export class DatetimeExample {
       </ion-item>,
 
       <ion-item>
-        <ion-label>DDD. MMM DD, YY (custom locale)</ion-label>
+        <ion-label>DDD. MMM DD, YY (自定义语言环境)</ion-label>
         <ion-datetime
           value="1995-04-15"
           min="1990-02"
           max="2000"
           dayShortNames={this.customDayShortNames}
           displayFormat="DDD. MMM DD, YY"
-          monthShortNames="jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des"
+          monthShortNames="1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月"
         ></ion-datetime>
       </ion-item>,
 
@@ -810,12 +743,12 @@ export class DatetimeExample {
       </ion-item>,
 
       <ion-item>
-        <ion-label>hh:mm A (15 min steps)</ion-label>
+        <ion-label>hh:mm A (15 分钟步进)</ion-label>
         <ion-datetime displayFormat="h:mm A" minuteValues="0,15,30,45"></ion-datetime>
       </ion-item>,
 
       <ion-item>
-        <ion-label>Leap years, summer months</ion-label>
+        <ion-label>闰年，夏季月份</ion-label>
         <ion-datetime
           displayFormat="MM/YYYY"
           pickerFormat="MMMM YYYY"
@@ -825,11 +758,11 @@ export class DatetimeExample {
       </ion-item>,
 
       <ion-item>
-        <ion-label>Specific days/months/years</ion-label>
+        <ion-label>特定的日/月/年</ion-label>
         <ion-datetime
           monthValues="6,7,8"
           yearValues="2014,2015"
-          dayValues="01,02,03,04,05,06,08,09,10, 11, 12, 13, 14"
+          dayValues="01,02,03,04,05,06,08,09,10,11,12,13,14"
           displayFormat="DD/MMM/YYYY"
         ></ion-datetime>
       </ion-item>,
@@ -851,11 +784,11 @@ export class DatetimeExample {
 
   <ion-item>
     <ion-label>MM DD YY</ion-label>
-    <ion-datetime display-format="MM DD YY" placeholder="Select Date"></ion-datetime>
+    <ion-datetime display-format="MM DD YY" placeholder="选择日期"></ion-datetime>
   </ion-item>
 
   <ion-item>
-    <ion-label>Disabled</ion-label>
+    <ion-label>已禁用</ion-label>
     <ion-datetime id="dynamicDisabled" display-format="MM DD YY" disabled value="1994-12-15"></ion-datetime>
   </ion-item>
 
@@ -863,7 +796,7 @@ export class DatetimeExample {
     <ion-label>YYYY</ion-label>
     <ion-datetime
       :picker-options="customPickerOptions"
-      placeholder="Custom Options"
+      placeholder="自定义选项"
       display-format="YYYY"
       min="1981"
       max="2002"
@@ -896,14 +829,14 @@ export class DatetimeExample {
   </ion-item>
 
   <ion-item>
-    <ion-label>DDD. MMM DD, YY (custom locale)</ion-label>
+    <ion-label>DDD. MMM DD, YY (自定义语言环境)</ion-label>
     <ion-datetime
       value="1995-04-15"
       min="1990-02"
       max="2000"
       :day-short-names="customDayShortNames"
       display-format="DDD. MMM DD, YY"
-      month-short-names="jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des"
+      month-short-names="1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月"
     ></ion-datetime>
   </ion-item>
 
@@ -928,12 +861,12 @@ export class DatetimeExample {
   </ion-item>
 
   <ion-item>
-    <ion-label>hh:mm A (15 min steps)</ion-label>
+    <ion-label>hh:mm A (15 分钟步进)</ion-label>
     <ion-datetime display-format="h:mm A" minute-values="0,15,30,45"></ion-datetime>
   </ion-item>
 
   <ion-item>
-    <ion-label>Leap years, summer months</ion-label>
+    <ion-label>闰年，夏季月份</ion-label>
     <ion-datetime
       display-format="MM/YYYY"
       picker-format="MMMM YYYY"
@@ -943,11 +876,11 @@ export class DatetimeExample {
   </ion-item>
 
   <ion-item>
-    <ion-label>Specific days/months/years</ion-label>
+    <ion-label>特定的日/月/年</ion-label>
     <ion-datetime
       month-values="6,7,8"
       year-values="2014,2015"
-      day-values="01,02,03,04,05,06,08,09,10, 11, 12, 13, 14"
+      day-values="01,02,03,04,05,06,08,09,10,11,12,13,14"
       display-format="DD/MMM/YYYY"
     ></ion-datetime>
   </ion-item>
@@ -961,17 +894,17 @@ export class DatetimeExample {
     components: { IonDatetime, IonItem, IonLabel },
     setup() {
       const customYearValues = [2020, 2016, 2008, 2004, 2000, 1996];
-      const customDayShortNames = ['s\u00f8n', 'man', 'tir', 'ons', 'tor', 'fre', 'l\u00f8r'];
+      const customDayShortNames = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
       const customPickerOptions = {
         buttons: [
           {
-            text: 'Save',
-            handler: () => console.log('Clicked Save!'),
+            text: '保存',
+            handler: () => console.log('点击了保存！'),
           },
           {
-            text: 'Log',
+            text: '记录',
             handler: () => {
-              console.log('Clicked Log. Do not Dismiss.');
+              console.log('点击了记录。不关闭。');
               return false;
             },
           },
@@ -992,26 +925,26 @@ export class DatetimeExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

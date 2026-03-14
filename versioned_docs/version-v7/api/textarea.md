@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/textarea/custom-props.
 import Slots from '@ionic-internal/component-api/v7/textarea/slots.md';
 
 <head>
-  <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>
+  <title>Ionic 多行文本输入框组件与 CSS 属性</title>
   <meta
     name="description"
-    content="Textarea is for multi-line input. The component accepts native textarea attributes in addition to Ionic properties. Read to learn about use and CSS elements."
+    content="Textarea 用于多行文本输入。该组件除了支持 Ionic 属性外，还接受原生 textarea 属性。阅读本文了解使用方法和 CSS 元素。"
   />
 </head>
 
@@ -21,143 +21,143 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-The textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.
+textarea 组件用于多行文本输入。组件内部会渲染一个原生的 textarea 元素。通过对原生 textarea 的控制，textarea 组件的用户体验和交互性得到了提升。
 
-Unlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.
+与原生 textarea 元素不同，Ionic 的 textarea 不支持从内部内容加载其值。textarea 的值应通过 `value` 属性设置。
 
-The textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.
+textarea 组件除了支持 Ionic 属性外，还接受[原生 textarea 属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)。
 
-## Basic Usage
+## 基本用法
 
 import BasicPlayground from '@site/static/usage/v7/textarea/basic/index.md';
 
 <BasicPlayground />
 
-## Labels
+## 标签
 
-Labels should be used to describe the textarea. They can be used visually, and they will also be read out by screen readers when the user is focused on the textarea. This makes it easy for the user to understand the intent of the textarea. Textarea has several ways to assign a label:
+标签应用于描述 textarea。它们既可以在视觉上使用，也会在用户聚焦 textarea 时被屏幕阅读器朗读。这使得用户能够轻松理解 textarea 的用途。Textarea 提供了多种分配标签的方式：
 
-- `label` property: used for plaintext labels
-- `label` slot: used for custom HTML labels (experimental)
-- `aria-label`: used to provide a label for screen readers but adds no visible label
+- `label` 属性：用于纯文本标签
+- `label` 插槽：用于自定义 HTML 标签（实验性功能）
+- `aria-label`：用于为屏幕阅读器提供标签，但不会添加可见标签
 
-### Label Placement
+### 标签位置
 
-Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+默认情况下，标签将占据其内容的宽度。开发者可以使用 `labelPlacement` 属性来控制标签相对于控件的位置。
 
 import LabelPlacement from '@site/static/usage/v7/textarea/label-placement/index.md';
 
 <LabelPlacement />
 
-### Label Slot (experimental)
+### 标签插槽（实验性）
 
-While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+虽然纯文本标签应通过 `label` 属性传递，但如果需要自定义 HTML，可以通过 `label` 插槽传递。
 
-Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+请注意，此功能被视为实验性功能，因为它依赖于[Web 组件插槽](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)的模拟版本。因此，模拟行为可能与原生插槽行为不完全匹配。
 
 import LabelSlot from '@site/static/usage/v7/textarea/label-slot/index.md';
 
 <LabelSlot />
 
-### No Visible Label
+### 无可见标签
 
-If no visible label is needed, developers should still supply an `aria-label` so the textarea is accessible to screen readers.
+如果不需要可见标签，开发者仍应提供 `aria-label`，以便 textarea 能够被屏幕阅读器访问。
 
 import NoVisibleLabel from '@site/static/usage/v7/textarea/no-visible-label/index.md';
 
 <NoVisibleLabel />
 
-## Filled Textareas
+## 填充式文本输入框
 
-Material Design offers filled styles for a textarea. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
+Material Design 为 textarea 提供了填充样式。可以在 item 上将 `fill` 属性设置为 `"solid"` 或 `"outline"`。
 
-Since the `fill` styles visually defines the textarea container, textareas that use `fill` should not be used in `ion-item`.
+由于 `fill` 样式在视觉上定义了 textarea 容器，因此使用 `fill` 的 textarea 不应在 `ion-item` 中使用。
 
-Filled textareas can be used on iOS by setting Textarea's `mode` to `md`.
+通过在 textarea 上将 `mode` 设置为 `md`，可以在 iOS 上使用填充式 textarea。
 
 import Fill from '@site/static/usage/v7/textarea/fill/index.md';
 
 <Fill />
 
-## Helper & Error Text
+## 辅助文本与错误文本
 
-Helper and error text can be used inside of a textarea with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-textarea`. This ensures errors are not shown before the user has a chance to enter data.
+辅助文本和错误文本可以通过 `helperText` 和 `errorText` 属性在 textarea 内部使用。除非将 `ion-invalid` 和 `ion-touched` 类添加到 `ion-textarea`，否则错误文本不会显示。这确保了在用户有机会输入数据之前不会显示错误。
 
-In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+在 Angular 中，这是通过表单验证自动完成的。在 JavaScript、React 和 Vue 中，需要根据你自己的验证手动添加该类。
 
 import HelperError from '@site/static/usage/v7/textarea/helper-error/index.md';
 
 <HelperError />
 
-## Textarea Counter
+## 文本输入框计数器
 
-The textarea counter is text that displays under a textarea to notify the user of how many characters have been entered out of the total that the textarea will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
+textarea 计数器是显示在 textarea 下方的文本，用于通知用户已输入的字符数占 textarea 可接受字符总数的比例。添加计数器时，默认行为是将显示的值格式化为 `inputLength` / `maxLength`。可以通过向 `counterFormatter` 属性传递格式化函数来自定义此行为。
 
 import Counter from '@site/static/usage/v7/textarea/counter/index.md';
 
 <Counter />
 
-## Autogrow
+## 自动增长
 
-When the `autoGrow` property is set to `true`, the textarea will grow and shrink based on its contents.
+将 `autoGrow` 属性设置为 `true` 时，textarea 将根据其内容自动增长和收缩。
 
 import AutogrowPlayground from '@site/static/usage/v7/textarea/autogrow/index.md';
 
 <AutogrowPlayground />
 
-## Clear on Edit
+## 编辑时清除
 
-Setting the `clearOnEdit` property to `true` will clear the textarea after it has been blurred and then typed in again.
+将 `clearOnEdit` 属性设置为 `true` 将在 textarea 失去焦点后再次键入时清除其内容。
 
 import ClearOnEditPlayground from '@site/static/usage/v7/textarea/clear-on-edit/index.md';
 
 <ClearOnEditPlayground />
 
-## Start and End Slots (experimental)
+## 起始和结束插槽（实验性）
 
-The `start` and `end` slots can be used to place icons, buttons, or prefix/suffix text on either side of the textarea.
+`start` 和 `end` 插槽可用于在 textarea 的任一侧放置图标、按钮或前缀/后缀文本。
 
-Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+请注意，此功能被视为实验性功能，因为它依赖于[Web 组件插槽](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)的模拟版本。因此，模拟行为可能与原生插槽行为不完全匹配。
 
 :::note
-In most cases, [Icon](./icon.md) components placed in these slots should have `aria-hidden="true"`. See the [Icon accessibility docs](https://ionicframework.com/docs/api/icon#accessibility) for more information.
+在大多数情况下，放置在这些插槽中的[图标](./icon.md)组件应具有 `aria-hidden="true"`。有关更多信息，请参阅[图标无障碍性文档](https://ionicframework.com/docs/api/icon#accessibility)。
 
-If slot content is meant to be interacted with, it should be wrapped in an interactive element such as a [Button](./button.md). This ensures that the content can be tabbed to.
+如果插槽内容需要交互，应将其包装在交互式元素中，例如[按钮](./button.md)。这确保了内容可以通过 Tab 键访问。
 :::
 
 import StartEndSlots from '@site/static/usage/v7/textarea/start-end-slots/index.md';
 
 <StartEndSlots />
 
-## Migrating from Legacy Textarea Syntax
+## 从旧版 Textarea 语法迁移
 
-A simpler textarea syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an textarea, resolves accessibility issues, and improves the developer experience.
+Ionic 7.0 引入了更简洁的 textarea 语法。这种新语法减少了设置 textarea 所需的样板代码，解决了无障碍性问题，并改善了开发者体验。
 
-Developers can perform this migration one textarea at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+开发者可以一次迁移一个 textarea。虽然开发者可以继续使用旧版语法，但我们建议尽快迁移。
 
-### Using the Modern Syntax
+### 使用现代语法
 
-Using the modern syntax involves three steps:
+使用现代语法涉及三个步骤：
 
-1. Remove `ion-label` and use the `label` property on `ion-textarea` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-textarea`.
-2. Move textarea-specific properties from `ion-item` on to `ion-textarea`. This includes the `counter`, `counterFormatter`, `fill`, and `shape` properties.
-3. Remove usages of the `helper` and `error` slots on `ion-item` and use the `helperText` and `errorText` properties on `ion-textarea` instead.
+1. 移除 `ion-label`，改为在 `ion-textarea` 上使用 `label` 属性。可以使用 `ion-textarea` 上的 `labelPlacement` 属性配置标签位置。
+2. 将 textarea 特定的属性从 `ion-item` 移动到 `ion-textarea` 上。这包括 `counter`、`counterFormatter`、`fill` 和 `shape` 属性。
+3. 移除 `ion-item` 上对 `helper` 和 `error` 插槽的使用，改为使用 `ion-textarea` 上的 `helperText` 和 `errorText` 属性。
 
 import Migration from '@site/static/usage/v7/textarea/migration/index.md';
 
 <Migration />
 
-### Using the Legacy Syntax
+### 使用旧版语法
 
-Ionic uses heuristics to detect if an app is using the modern textarea syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-textarea` to `true` to force that instance of the textarea to use the legacy syntax.
+Ionic 使用启发式方法检测应用是否使用现代 textarea 语法。在某些情况下，可能更倾向于继续使用旧版语法。开发者可以将 `ion-textarea` 上的 `legacy` 属性设置为 `true`，以强制该 textarea 实例使用旧版语法。
 
-## Theming
+## 主题定制
 
 import ThemingPlayground from '@site/static/usage/v7/textarea/theming/index.md';
 
 <ThemingPlayground />
 
-## Interfaces
+## 接口
 
 ### TextareaChangeEventDetail
 
@@ -169,7 +169,7 @@ interface TextareaChangeEventDetail {
 
 ### TextareaCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更强的类型检查。
 
 ```typescript
 interface TextareaCustomEvent extends CustomEvent {
@@ -178,15 +178,15 @@ interface TextareaCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -194,10 +194,10 @@ interface TextareaCustomEvent extends CustomEvent {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

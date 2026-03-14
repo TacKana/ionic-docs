@@ -2,42 +2,42 @@
 <ion-menu menuId="first-menu" contentId="main-content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>First Menu</ion-title>
+      <ion-title>第一个菜单</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding">This is the first menu content.</ion-content>
+  <ion-content class="ion-padding">这是第一个菜单的内容。</ion-content>
 </ion-menu>
 
 <ion-menu menuId="second-menu" contentId="main-content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Second Menu</ion-title>
+      <ion-title>第二个菜单</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding">This is the second menu content.</ion-content>
+  <ion-content class="ion-padding">这是第二个菜单的内容。</ion-content>
 </ion-menu>
 
 <ion-menu side="end" contentId="main-content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>End Menu</ion-title>
+      <ion-title>右侧菜单</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding">This is the end menu content.</ion-content>
+  <ion-content class="ion-padding">这是右侧菜单的内容。</ion-content>
 </ion-menu>
 
 <div class="ion-page" id="main-content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title>菜单</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <p>Tap a button below to open a specific menu.</p>
+    <p>点击下方按钮打开特定菜单。</p>
 
-    <ion-button expand="block" (click)="openFirstMenu()">Open First Menu</ion-button>
-    <ion-button expand="block" (click)="openSecondMenu()">Open Second Menu</ion-button>
-    <ion-button expand="block" (click)="openEndMenu()">Open End Menu</ion-button>
+    <ion-button expand="block" (click)="openFirstMenu()">打开第一个菜单</ion-button>
+    <ion-button expand="block" (click)="openSecondMenu()">打开第二个菜单</ion-button>
+    <ion-button expand="block" (click)="openEndMenu()">打开右侧菜单</ion-button>
   </ion-content>
 </div>
 ```

@@ -1,37 +1,37 @@
 ```html
 <ion-item detail="true">
   <ion-label>
-    <h3>Text Item</h3>
-    <p>Detail set to true - detail arrow displays on both modes</p>
+    <h3>文本项目</h3>
+    <p>detail 设置为 true - 详情箭头在两种模式下都会显示</p>
   </ion-label>
 </ion-item>
 
 <ion-item button>
   <ion-label>
-    <h3>Button Item</h3>
-    <p>Default detail - detail arrow displays on iOS only</p>
+    <h3>按钮项目</h3>
+    <p>默认 detail - 详情箭头仅在 iOS 模式下显示</p>
   </ion-label>
 </ion-item>
 
 <ion-item button detail="true">
   <ion-label>
-    <h3>Button Item</h3>
-    <p>Detail set to true - detail arrow displays on both modes</p>
+    <h3>按钮项目</h3>
+    <p>detail 设置为 true - 详情箭头在两种模式下都会显示</p>
   </ion-label>
 </ion-item>
 
 <ion-item button detail="false">
   <ion-label>
-    <h3>Button Item</h3>
-    <p>Detail set to false - detail arrow hidden on both modes</p>
+    <h3>按钮项目</h3>
+    <p>detail 设置为 false - 详情箭头在两种模式下都会隐藏</p>
   </ion-label>
 </ion-item>
 
 <ion-item button detail="true" detail-icon="caret-forward-outline">
   <ion-label>
-    <h3>Button Item</h3>
-    <p>Detail set to true - detail arrow displays on both modes</p>
-    <p>Detail icon set to caret-forward-outline</p>
+    <h3>按钮项目</h3>
+    <p>detail 设置为 true - 详情箭头在两种模式下都会显示</p>
+    <p>详情图标设置为 caret-forward-outline</p>
   </ion-label>
 </ion-item>
 ```

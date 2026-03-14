@@ -1,12 +1,12 @@
 ---
-sidebar_label: Best Practices
+sidebar_label: 最佳实践
 ---
 
-# Best Practices
+# 最佳实践
 
-## IonApp is required for test templates
+## 测试模板中必须包含 IonApp
 
-In your test template when rendering with React Testing Library, you must wrap your component with an `IonApp` component. This is required for the component to be rendered correctly.
+在使用 React Testing Library 进行渲染时，你的测试模板必须用 `IonApp` 组件包裹待测组件。这是确保组件正确渲染的必要条件。
 
 ```tsx title="Example.test.tsx"
 import { IonApp } from '@ionic/react';
@@ -24,9 +24,9 @@ test('example', () => {
 });
 ```
 
-## Use `user-event` for user interactions
+## 使用 `user-event` 模拟用户交互
 
-React Testing Library recommends using the `user-event` library for simulating user interactions. This library provides a more realistic simulation of user interactions than the `fireEvent` function provided by React Testing Library.
+React Testing Library 推荐使用 `user-event` 库来模拟用户交互。相比 React Testing Library 自带的 `fireEvent` 函数，这个库能提供更贴近真实用户操作的模拟效果。
 
 ```tsx title="Example.test.tsx"
 import { IonApp } from '@ionic/react';
@@ -48,4 +48,4 @@ test('example', async () => {
 });
 ```
 
-For more information on `user-event`, see the [user-event documentation](https://testing-library.com/docs/user-event/intro/).
+关于 `user-event` 的更多信息，请查阅 [user-event 文档](https://testing-library.com/docs/user-event/intro/)。

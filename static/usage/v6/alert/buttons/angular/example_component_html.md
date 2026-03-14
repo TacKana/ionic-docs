@@ -1,5 +1,5 @@
 ```html
-<ion-button (click)="presentAlert()">Click Me</ion-button>
+<ion-button (click)="presentAlert()">点击我</ion-button>
 <p>{{ handlerMessage }}</p>
 <p>{{ roleMessage }}</p>
 ```

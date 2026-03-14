@@ -23,16 +23,16 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>App</IonTitle>
+          <IonTitle>应用</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          Open Sheet Modal
+          打开抽屉式模态框
         </IonButton>
         <IonModal ref={modal} trigger="open-modal" initialBreakpoint={0.25} breakpoints={[0, 0.25, 0.5, 0.75]}>
           <IonContent className="ion-padding">
-            <IonSearchbar onClick={() => modal.current?.setCurrentBreakpoint(0.75)} placeholder="Search"></IonSearchbar>
+            <IonSearchbar onClick={() => modal.current?.setCurrentBreakpoint(0.75)} placeholder="搜索"></IonSearchbar>
             <IonList>
               <IonItem>
                 <IonAvatar slot="start">
@@ -40,7 +40,7 @@ function Example() {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Connor Smith</h2>
-                  <p>Sales Rep</p>
+                  <p>销售代表</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -49,7 +49,7 @@ function Example() {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Daniel Smith</h2>
-                  <p>Product Designer</p>
+                  <p>产品设计师</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -58,7 +58,7 @@ function Example() {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Greg Smith</h2>
-                  <p>Director of Operations</p>
+                  <p>运营总监</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -67,7 +67,7 @@ function Example() {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Zoey Smith</h2>
-                  <p>CEO</p>
+                  <p>首席执行官</p>
                 </IonLabel>
               </IonItem>
             </IonList>

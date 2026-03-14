@@ -1,26 +1,26 @@
 ```html
-<ion-button onclick="actionSheet.isOpen = true">Open</ion-button>
-<ion-action-sheet header="Actions"></ion-action-sheet>
+<ion-button onclick="actionSheet.isOpen = true">打开</ion-button>
+<ion-action-sheet header="操作"></ion-action-sheet>
 
 <script>
   var actionSheet = document.querySelector('ion-action-sheet');
 
   actionSheet.buttons = [
     {
-      text: 'Delete',
+      text: '删除',
       role: 'destructive',
       data: {
         action: 'delete',
       },
     },
     {
-      text: 'Share',
+      text: '分享',
       data: {
         action: 'share',
       },
     },
     {
-      text: 'Cancel',
+      text: '取消',
       role: 'cancel',
       data: {
         action: 'cancel',

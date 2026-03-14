@@ -1,17 +1,17 @@
 ```html
 <ion-item href="#">
-  <ion-label>Anchor Item</ion-label>
+  <ion-label>锚点项目</ion-label>
 </ion-item>
 
 <ion-item href="#" disabled="true">
-  <ion-label>Disabled Anchor Item</ion-label>
+  <ion-label>已禁用的锚点项目</ion-label>
 </ion-item>
 
 <ion-item button>
-  <ion-label>Button Item</ion-label>
+  <ion-label>按钮项目</ion-label>
 </ion-item>
 
 <ion-item button disabled="true">
-  <ion-label>Disabled Button Item</ion-label>
+  <ion-label>已禁用的按钮项目</ion-label>
 </ion-item>
 ```

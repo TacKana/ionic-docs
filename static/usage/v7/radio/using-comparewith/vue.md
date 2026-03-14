@@ -35,7 +35,7 @@
   };
 
   const handleChange = (event) => {
-    console.log('Current value:', JSON.stringify(event.detail.value));
+    console.log('当前选择的值:', JSON.stringify(event.detail.value));
   };
 </script>
 ```

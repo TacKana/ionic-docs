@@ -1,5 +1,5 @@
 ---
-title: "ion-segment-content"
+title: 可滑动分段组件的显示控制元素
 ---
 
 import Props from '@ionic-internal/component-api/v8/segment-content/props.md';
@@ -10,43 +10,40 @@ import CustomProps from '@ionic-internal/component-api/v8/segment-content/custom
 import Slots from '@ionic-internal/component-api/v8/segment-content/slots.md';
 
 <head>
-  <title>ion-segment-content: Display control element for swipeable segments</title>
-  <meta name="description" content="ion-segment-contents are wrapper elements used to control the display of child elements when using swipeable segments." />
+  <title>ion-segment-content：可滑动分段组件的显示控制元素</title>
+  <meta name="description" content="ion-segment-content 是包装器元素，用于在使用可滑动分段组件时控制子元素的显示。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Segment content is a wrapper element used to control the display of child elements when using swipeable segments. Segment content elements are children of a single
-[segment view](./segment-view.md) instance that is linked to a [segment](./segment.md). See our [swipeable segments](./segment.md#swipeable-segments) documentation
-for more information on how to use segment contents.
+Segment content（分段内容）是一个包装器元素，用于在使用可滑动分段组件时控制子元素的显示。分段内容元素是单个 [segment view（分段视图）](./segment-view.md) 实例的子元素，该实例链接到一个 [segment（分段组件）](./segment.md)。有关如何使用分段内容的更多信息，请参阅我们的 [可滑动分段组件](./segment.md#swipeable-segments) 文档。
 
-## Usage
+## 使用方法
 
-Each `ion-segment-content` needs a unique `id` attribute. This will be used to link the segment content to a segment button via the button's
-[contentId property](./segment-button.md#properties).
+每个 `ion-segment-content` 都需要一个唯一的 `id` 属性。这将用于通过分段按钮的 [contentId 属性](./segment-button.md#properties) 将分段内容链接到分段按钮。
 
-<!-- Reuse swipeable segments playground -->
+<!-- 复用可滑动分段组件示例 -->
 
 import Swipeable from '@site/static/usage/v8/segment/swipeable/index.md';
 
 <Swipeable />
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

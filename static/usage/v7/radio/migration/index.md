@@ -15,172 +15,172 @@ import TabItem from '@theme/TabItem';
 <TabItem value="javascript">
 
 ```html
-<!-- Basic -->
+<!-- 基础用法 -->
 
-<!-- Before -->
+<!-- 旧版写法 -->
 <ion-item>
-  <ion-label>Radio Label</ion-label>
+  <ion-label>单选标签</ion-label>
   <ion-radio></ion-radio>
 </ion-item>
 
-<!-- After -->
+<!-- 新版写法 -->
 <ion-item>
-  <ion-radio>Radio Label</ion-radio>
+  <ion-radio>单选标签</ion-radio>
 </ion-item>
 
-<!-- Fixed Labels -->
+<!-- 固定标签 -->
 
-<!-- Before -->
+<!-- 旧版写法 -->
 <ion-item>
-  <ion-label position="fixed">Radio Label</ion-label>
+  <ion-label position="fixed">单选标签</ion-label>
   <ion-radio></ion-radio>
 </ion-item>
 
-<!-- After -->
+<!-- 新版写法 -->
 <ion-item>
-  <ion-radio label-placement="fixed">Radio Label</ion-radio>
+  <ion-radio label-placement="fixed">单选标签</ion-radio>
 </ion-item>
 
-<!-- Radio at the start of line, Label at the end of line -->
+<!-- 单选框在行首，标签在行尾 -->
 
-<!-- Before -->
+<!-- 旧版写法 -->
 <ion-item>
-  <ion-label slot="end">Radio Label</ion-label>
+  <ion-label slot="end">单选标签</ion-label>
   <ion-radio></ion-radio>
 </ion-item>
 
-<!-- After -->
+<!-- 新版写法 -->
 <ion-item>
-  <ion-radio label-placement="end">Radio Label</ion-radio>
+  <ion-radio label-placement="end">单选标签</ion-radio>
 </ion-item>
 ```
 </TabItem>
 <TabItem value="angular">
 
 ```html
-<!-- Basic -->
+<!-- 基础用法 -->
 
-<!-- Before -->
+<!-- 旧版写法 -->
 <ion-item>
-  <ion-label>Radio Label</ion-label>
+  <ion-label>单选标签</ion-label>
   <ion-radio></ion-radio>
 </ion-item>
 
-<!-- After -->
+<!-- 新版写法 -->
 <ion-item>
-  <ion-radio>Radio Label</ion-radio>
+  <ion-radio>单选标签</ion-radio>
 </ion-item>
 
-<!-- Fixed Labels -->
+<!-- 固定标签 -->
 
-<!-- Before -->
+<!-- 旧版写法 -->
 <ion-item>
-  <ion-label position="fixed">Radio Label</ion-label>
+  <ion-label position="fixed">单选标签</ion-label>
   <ion-radio></ion-radio>
 </ion-item>
 
-<!-- After -->
+<!-- 新版写法 -->
 <ion-item>
-  <ion-radio labelPlacement="fixed">Radio Label</ion-radio>
+  <ion-radio labelPlacement="fixed">单选标签</ion-radio>
 </ion-item>
 
-<!-- Radio at the start of line, Label at the end of line -->
+<!-- 单选框在行首，标签在行尾 -->
 
-<!-- Before -->
+<!-- 旧版写法 -->
 <ion-item>
-  <ion-label slot="end">Radio Label</ion-label>
+  <ion-label slot="end">单选标签</ion-label>
   <ion-radio></ion-radio>
 </ion-item>
 
-<!-- After -->
+<!-- 新版写法 -->
 <ion-item>
-  <ion-radio labelPlacement="end">Radio Label</ion-radio>
+  <ion-radio labelPlacement="end">单选标签</ion-radio>
 </ion-item>
 ```
 </TabItem>
 <TabItem value="react">
 
 ```tsx
-{/* Basic */}
+{/* 基础用法 */}
 
-{/* Before */}
+{/* 旧版写法 */}
 <IonItem>
-  <IonLabel>Radio Label</IonLabel>
+  <IonLabel>单选标签</IonLabel>
   <IonRadio></IonRadio>
 </IonItem>
 
-{/* After */}
+{/* 新版写法 */}
 <IonItem>
-  <IonRadio>Radio Label</IonRadio>
+  <IonRadio>单选标签</IonRadio>
 </IonItem>
 
-{/* Fixed Labels */}
+{/* 固定标签 */}
 
-{/* Before */}
+{/* 旧版写法 */}
 <IonItem>
-  <IonLabel position="fixed">Radio Label</IonLabel>
+  <IonLabel position="fixed">单选标签</IonLabel>
   <IonRadio></IonRadio>
 </IonItem>
 
-{/* After */}
+{/* 新版写法 */}
 <IonItem>
-  <IonRadio labelPlacement="fixed">Radio Label</IonRadio>
+  <IonRadio labelPlacement="fixed">单选标签</IonRadio>
 </IonItem>
 
-{/* Radio at the start of line, Label at the end of line */}
+{/* 单选框在行首，标签在行尾 */}
 
-{/* Before */}
+{/* 旧版写法 */}
 <IonItem>
-  <IonLabel slot="end">Radio Label</IonLabel>
+  <IonLabel slot="end">单选标签</IonLabel>
   <IonRadio></IonRadio>
 </IonItem>
 
-{/* After */}
+{/* 新版写法 */}
 <IonItem>
-  <IonRadio labelPlacement="end">Radio Label</IonRadio>
+  <IonRadio labelPlacement="end">单选标签</IonRadio>
 </IonItem>
 ```
 </TabItem>
 <TabItem value="vue">
 
 ```html
-<!-- Basic -->
+<!-- 基础用法 -->
 
-<!-- Before -->
+<!-- 旧版写法 -->
 <ion-item>
-  <ion-label>Radio Label</ion-label>
+  <ion-label>单选标签</ion-label>
   <ion-radio></ion-radio>
 </ion-item>
 
-<!-- After -->
+<!-- 新版写法 -->
 <ion-item>
-  <ion-radio>Radio Label</ion-radio>
+  <ion-radio>单选标签</ion-radio>
 </ion-item>
 
-<!-- Fixed Labels -->
+<!-- 固定标签 -->
 
-<!-- Before -->
+<!-- 旧版写法 -->
 <ion-item>
-  <ion-label position="fixed">Radio Label</ion-label>
+  <ion-label position="fixed">单选标签</ion-label>
   <ion-radio></ion-radio>
 </ion-item>
 
-<!-- After -->
+<!-- 新版写法 -->
 <ion-item>
-  <ion-radio label-placement="fixed">Radio Label</ion-radio>
+  <ion-radio label-placement="fixed">单选标签</ion-radio>
 </ion-item>
 
-<!-- Radio at the start of line, Label at the end of line -->
+<!-- 单选框在行首，标签在行尾 -->
 
-<!-- Before -->
+<!-- 旧版写法 -->
 <ion-item>
-  <ion-label slot="end">Radio Label</ion-label>
+  <ion-label slot="end">单选标签</ion-label>
   <ion-radio></ion-radio>
 </ion-item>
 
-<!-- After -->
+<!-- 新版写法 -->
 <ion-item>
-  <ion-radio label-placement="end">Radio Label</ion-radio>
+  <ion-radio label-placement="end">单选标签</ion-radio>
 </ion-item>
 ```
 </TabItem>

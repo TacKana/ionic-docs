@@ -1,16 +1,16 @@
 ---
-sidebar_label: Migration
+sidebar_label: 迁移指南
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migration Guide
+# 迁移指南
 
-## Migrating from Ionic 4.x to Ionic 5.x
+## 从 Ionic 4.x 迁移到 Ionic 5.x
 
-Please see the [Ionic 5 Migration Guide](/docs/updating/5-0).
+请查看 [Ionic 5 迁移指南](/docs/updating/5-0)。
 
-## Migrating to Ionic 4.0
+## 迁移到 Ionic 4.0
 
-Please see the [Ionic 4 Migration Guide](/docs/updating/4-0).
+请查看 [Ionic 4 迁移指南](/docs/updating/4-0)。

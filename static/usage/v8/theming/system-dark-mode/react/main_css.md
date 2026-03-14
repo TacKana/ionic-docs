@@ -1,5 +1,5 @@
 ```css
-/* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
+/* (可选) 用于防止在切换调色板时出现闪烁现象 */
 ion-item {
   --transition: none;
 }

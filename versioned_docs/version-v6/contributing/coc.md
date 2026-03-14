@@ -1,13 +1,13 @@
-# Code of Conduct
+# 行为准则
 
-As contributors and maintainers of the Ionic project, we pledge to respect everyone who contributes by posting issues, updating documentation, submitting pull requests, providing feedback in comments, and any other activities.
+作为 Ionic 项目的贡献者和维护者，我们承诺尊重每一位通过提交问题、更新文档、发起拉取请求、在评论中提供反馈以及其他任何活动参与贡献的人员。
 
-Communication through any of Ionic's channels (GitHub, Slack, Forum, IRC, mailing lists, Twitter, etc.) must be constructive and never resort to personal attacks, trolling, public or private harassment, insults, or other unprofessional conduct.
+通过 Ionic 的任何渠道（GitHub、Slack、论坛、IRC、邮件列表、Twitter 等）进行交流时，必须保持建设性，绝不允许进行人身攻击、恶意挑衅、公开或私下骚扰、侮辱或其他任何不专业的行为。
 
-We promise to extend courtesy and respect to everyone involved in this project regardless of gender, gender identity, sexual orientation, disability, age, race, ethnicity, religion, or level of experience. We expect anyone contributing to the Ionic project to do the same.
+我们承诺以礼相待、尊重参与本项目的每一个人，无论其性别、性别认同、性取向、残障状况、年龄、种族、民族、宗教或经验水平如何。我们希望所有为 Ionic 项目做出贡献的人员都能做到这一点。
 
-If any member of the community violates this code of conduct, the maintainers of the Ionic project may take action, removing issues, comments, and PRs or blocking accounts as deemed appropriate.
+如果社区中的任何成员违反了本行为准则，Ionic 项目的维护者可能会采取相应措施，例如删除问题、评论和拉取请求，或酌情封禁账户。
 
-If you are subject to or witness unacceptable behavior, or have any other concerns, please email us at <a href="mailto:devrel@ionic.io">devrel@ionic.io</a>.
+如果您遭遇或目睹了不当行为，或有任何其他疑虑，请通过 <a href="mailto:devrel@ionic.io">devrel@ionic.io</a> 联系我们。
 
-Please click <a href="https://ionic.io/code-of-conduct" target="_blank" rel="noopener">here</a> to review to Ionic's full code of conduct.
+请点击 <a href="https://ionic.io/code-of-conduct" target="_blank" rel="noopener">此处</a> 查看 Ionic 的完整行为准则。

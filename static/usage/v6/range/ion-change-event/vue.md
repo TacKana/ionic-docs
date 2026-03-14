@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-range @ionChange="onIonChange"></ion-range>
-  <ion-label>ionChange emitted value: {{lastEmittedValue}}</ion-label>
+  <ion-label>ionChange 触发值：{{lastEmittedValue}}</ion-label>
 </template>
 
 <script lang="ts">

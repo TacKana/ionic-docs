@@ -1,26 +1,26 @@
-# Creating a Photo Gallery with Device Storage
+# 创建设备存储相册
 
-Last time, we successfully added the Camera plugin to the About page of our Tabs app. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this in [the part 2 folder](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part2) on GitHub.
+上一次，我们在 Tabs 应用的关于页面成功添加了 Camera 插件。目前，每次拍摄新照片都会替换之前的照片。如果我们想要同时展示多张照片呢？让我们来创建一个相册。您可以在 GitHub 的 [part 2 文件夹](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part2) 中查看完整代码并跟随操作。
 
-## Creating a Dedicated Photo Service
+## 创建专用的照片服务
 
-From a terminal window, navigate to your Ionic project and run:
+在终端窗口中，导航到您的 Ionic 项目并运行：
 
 ```shell
 ionic g provider PhotoProvider
 ```
 
-This creates a PhotoProvider class in a dedicated providers/photo folder:
+这将在专门的 providers/photo 文件夹中创建 PhotoProvider 类：
 
 ```Javascript
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
-  Generated class for the PhotoProvider provider.
+  由 PhotoProvider provider 生成的类。
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
+  有关 providers 和 Angular DI 的更多信息，请参阅
+  https://angular.io/guide/dependency-injection
 */
 @Injectable()
 export class PhotoProvider {
@@ -31,7 +31,7 @@ export class PhotoProvider {
 }
 ```
 
-Within this class, add a Photo class. The “data” property represents the base64 image data of a captured photo:
+在这个类中，添加一个 Photo 类。"data" 属性表示拍摄照片的 base64 图像数据：
 
 ```Javascript
 class Photo {
@@ -39,7 +39,7 @@ class Photo {
 }
 ```
 
-Then, create a Photos array to represent our photo gallery:
+然后，创建一个 Photos 数组来表示我们的相册：
 
 ```Javascript
 export class PhotoProvider {
@@ -50,34 +50,34 @@ export class PhotoProvider {
 }
 ```
 
-Back in `about.ts`, import PhotoProvider:
+回到 `about.ts` 中，导入 PhotoProvider：
 
 ```Javascript
 import { PhotoProvider } from '../../providers/photo/photo';
 ```
 
-Add it to the Constructor:
+将其添加到构造函数中：
 
 ```Javascript
 constructor(private camera: Camera, public photoService: PhotoProvider) {  }
 ```
 
-Next, move all code pertaining to the Camera plugin to the PhotoService class. This includes the takePicture method, the Camera import, and the About page constructor. Also, remove references to HttpClient - we won’t be making any HTTP calls.
+接下来，将与 Camera 插件相关的所有代码移动到 PhotoService 类中。这包括 takePicture 方法、Camera 导入和 About 页面的构造函数。同时，移除对 HttpClient 的引用 - 我们不会进行任何 HTTP 调用。
 
-Continuing on, we need to convert currentImage variable references to the new photos array. Start by adding the captured photo data into the photos array:
+继续，我们需要将 currentImage 变量引用转换为新的 photos 数组。首先将拍摄的照片数据添加到 photos 数组中：
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
-    // Add new photo to gallery
+    // 将新照片添加到相册
     this.photos.unshift({
         data: 'data:image/jpeg;base64,' + imageData
     }); }, (err) => {
-    // Handle error
-    console.log("Camera issue: " + err);
+    // 处理错误
+    console.log("相机问题：" + err);
 });
 ```
 
-In `about.page.ts`, remove the currentImage variable and the reference to Camera in the constructor, leaving only PhotoService:
+在 `about.page.ts` 中，移除 currentImage 变量和构造函数中对 Camera 的引用，只保留 PhotoService：
 
 ```Javascript
 export class AboutPage {
@@ -85,7 +85,7 @@ export class AboutPage {
 }
 ```
 
-Next, in `about.page.html`, remove the currentImage img tag. In its place, use an ion-grid component, which provides a great way to arrange elements on a page. In this case, we’ll use it to display 2 photos per row.
+接下来，在 `about.page.html` 中，移除 currentImage img 标签。在其位置使用 ion-grid 组件，这是在页面上排列元素的绝佳方式。在这里，我们将用它每行显示 2 张照片。
 
 ```html
 <ion-grid>
@@ -97,33 +97,33 @@ Next, in `about.page.html`, remove the currentImage img tag. In its place, use a
 </ion-grid>
 ```
 
-Here, we loop through each photo in the PhotoServices photos array, adding a new column for each. Since an ion-row consists of 12 “blocks” of space, and we’re setting the size to 6 (“col-6”), only 2 photos are displayed per row.
+在这里，我们遍历 PhotoServices 的 photos 数组中的每张照片，为每个照片添加一个新列。由于一个 ion-row 由 12 个"块"的空间组成，而我们将其大小设置为 6 ("col-6")，所以每行只能显示 2 张照片。
 
-Last, update the Fab button to call the PhotoProvider’s `takePicture` method:
+最后，更新 Fab 按钮来调用 PhotoProvider 的 `takePicture` 方法：
 
 ```Html
 <button ion-fab (click)="photoService.takePicture()">
 ```
 
-Excellent! We now have a basic photo gallery working.
+太棒了！我们现在有了一个基本可工作的相册。
 
-## Saving photos to the device
+## 将照片保存到设备
 
-Having a working photo gallery is pretty cool, but you’ll likely notice that when the app is closed, the photos are lost forever. That’s no good, so let’s add the Ionic Storage plugin, as easy way to store key/value pairs and JSON objects. When running in a native app context, Storage will prioritize using SQLite, one of the most stable and widely used file-based databases. When running on the web or as a Progressive Web App, Storage will attempt to use IndexedDB, WebSQL, and localstorage, in that order.
+拥有一个可工作的相册非常酷，但您可能会注意到，当应用关闭时，照片会永久丢失。这不太好，所以让我们添加 Ionic Storage 插件，这是一个存储键值对和 JSON 对象的简便方法。在原生应用环境中运行时，Storage 会优先使用 SQLite，这是最稳定、使用最广泛的基于文件的数据库之一。在 Web 上或作为渐进式 Web 应用运行时，Storage 会尝试按顺序使用 IndexedDB、WebSQL 和 localstorage。
 
-The Storage plugin works perfectly for our base64 image data. To begin, add the SQLite plugin for native:
+Storage 插件非常适合我们的 base64 图像数据。首先，为原生环境添加 SQLite 插件：
 
 ```shell
 ionic cordova plugin add cordova-sqlite-storage
 ```
 
-Next, add the JavaScript library for the web:
+接下来，为 Web 环境添加 JavaScript 库：
 
 ```shell
 npm install --save @ionic/storage
 ```
 
-Last, import the Storage module and add it to the imports list in `app.module.ts`:
+最后，导入 Storage 模块并将其添加到 `app.module.ts` 的导入列表中：
 
 ```Javascript
 import { IonicStorageModule } from '@ionic/storage';
@@ -135,36 +135,36 @@ imports: [
   ],
 ```
 
-It’s now ready to be used in our PhotoProvider class. Import it:
+现在它可以在我们的 PhotoProvider 类中使用了。导入它：
 
 ```Javascript
 import { Storage } from '@ionic/storage-angular';
 ```
 
-Then inject it via the constructor:
+然后通过构造函数注入：
 
 ```Javascript
 constructor(private camera: Camera, private storage: Storage) { }
 ```
 
-To add the capability to save photos, there’s only a couple steps left. Update the `takePicture()` method to save the entire photos array after each photo is taken using the storage.set method:
+要添加保存照片的功能，只剩下几个步骤了。更新 `takePicture()` 方法，在每次拍摄照片后使用 storage.set 方法保存整个 photos 数组：
 
 ```Javascript
 this.camera.getPicture(options).then((imageData) => {
-      // Add new photo to gallery
+      // 将新照片添加到相册
       this.photos.unshift({
         data: 'data:image/jpeg;base64,' + imageData
       });
 
-      // Save all photos for later viewing
+      // 保存所有照片供以后查看
       this.storage.set('photos', this.photos);
     }, (err) => {
-     // Handle error
-     console.log("Camera issue: " + err);
+     // 处理错误
+     console.log("相机问题：" + err);
     });
 ```
 
-We still need to load the saved photos when the app is first opened. This is simple enough - retrieve the “photos” key then assign its value to the photos array:
+我们仍然需要在应用首次打开时加载已保存的照片。这很简单 - 检索 "photos" 键，然后将其值分配给 photos 数组：
 
 ```Javascript
 loadSaved() {
@@ -174,7 +174,7 @@ loadSaved() {
   }
 ```
 
-Over in the About page, call the loadSaved method once it begins loading:
+在 About 页面中，一旦开始加载就调用 loadSaved 方法：
 
 ```Javascript
 ngOnInit() {
@@ -182,14 +182,14 @@ ngOnInit() {
 }
 ```
 
-Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the About page. Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
+太好了！照片现在已保存到您的设备中。为了证明它们确实被保存了，强制关闭 DevApp，重新打开它，然后打开 About 页面。或者，摇动您的设备使控制菜单弹出，然后点击"退出预览"。之后，重新加载此应用以查看照片。
 
-Finally, back up your changes to Appflow:
+最后，将您的更改备份到 Appflow：
 
 ```shell
 git add .
-git commit -m “implemented photo gallery”
+git commit -m "实现了相册功能"
 git push ionic master
 ```
 
-Next up, we’ll look at how to apply a custom theme to an Ionic app.
+接下来，我们将了解如何为 Ionic 应用应用自定义主题。

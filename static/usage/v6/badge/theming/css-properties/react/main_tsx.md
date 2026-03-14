@@ -8,7 +8,7 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonLabel>Badges styled</IonLabel>
+        <IonLabel>徽章样式</IonLabel>
         <IonBadge>1</IonBadge>
       </IonItem>
     </IonList>

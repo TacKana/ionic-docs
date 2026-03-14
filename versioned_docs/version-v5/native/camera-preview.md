@@ -10,29 +10,29 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Camera Preview
 
-Showing camera preview in HTML
+在 HTML 中显示摄像头预览
 
-Requires Cordova plugin: `https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git`. For more info, please see the [Cordova Camera Preview docs](https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview).
+需要 Cordova 插件：`https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git`。更多信息，请参阅 [Cordova Camera Preview 文档](https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview)。
 
 <p>
-  <a href="https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview" arget="_blank" rel="noopener" className="git-link">github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview</a>
+  <a href="https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview" target="_blank" rel="noopener" className="git-link">github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在构建一个严肃的项目，您没有时间耗费数小时进行故障排除。Ionic 专家为社区插件和高级插件提供优质的咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -40,7 +40,7 @@ Requires Cordova plugin: `https://github.com/cordova-plugin-camera-preview/cordo
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: 'Enterprise' },
+    { value: 'Enterprise', label: '企业版' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -57,22 +57,22 @@ Requires Cordova plugin: `https://github.com/cordova-plugin-camera-preview/cordo
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版提供由 Ionic 团队全面支持和维护的插件。 &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或如果您对此插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - iOS
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -83,7 +83,7 @@ constructor(private cameraPreview: CameraPreview) { }
 
 ...
 
-// camera options (Size and location). In the following example, the preview uses the rear camera and display the preview in the back of the webview
+// 摄像头选项（尺寸和位置）。在以下示例中，预览使用后置摄像头并在 webview 后方显示预览
 const cameraPreviewOpts: CameraPreviewOptions = {
   x: 0,
   y: 0,
@@ -96,7 +96,7 @@ const cameraPreviewOpts: CameraPreviewOptions = {
   alpha: 1
 }
 
-// start camera
+// 启动摄像头
 this.cameraPreview.startCamera(cameraPreviewOpts).then(
   (res) => {
     console.log(res)
@@ -105,21 +105,21 @@ this.cameraPreview.startCamera(cameraPreviewOpts).then(
     console.log(err)
   });
 
-// Set the handler to run every time we take a picture
+// 设置每次拍照时运行的处理器
 this.cameraPreview.setOnPictureTakenHandler().subscribe((result) => {
   console.log(result);
-  // do something with the result
+  // 对结果进行处理
 });
 
 
-// picture options
+// 图片选项
 const pictureOpts: CameraPreviewPictureOptions = {
   width: 1280,
   height: 1280,
   quality: 85
 }
 
-// take a picture
+// 拍照
 this.cameraPreview.takePicture(this.pictureOpts).then((imageData) => {
   this.picture = 'data:image/jpeg;base64,' + imageData;
 }, (err) => {
@@ -127,7 +127,7 @@ this.cameraPreview.takePicture(this.pictureOpts).then((imageData) => {
   this.picture = 'assets/img/test.jpg';
 });
 
-// take a snap shot
+// 拍摄快照
 this.cameraPreview.takeSnapshot(this.pictureOpts).then((imageData) => {
   this.picture = 'data:image/jpeg;base64,' + imageData;
 }, (err) => {
@@ -136,13 +136,13 @@ this.cameraPreview.takeSnapshot(this.pictureOpts).then((imageData) => {
 });
 
 
-// Switch camera
+// 切换摄像头
 this.cameraPreview.switchCamera();
 
-// set color effect to negative
+// 设置颜色效果为负片
 this.cameraPreview.setColorEffect('negative');
 
-// Stop the camera preview
+// 停止摄像头预览
 this.cameraPreview.stopCamera();
 
 ```

@@ -6,13 +6,13 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonLabel>Label</IonLabel>
-        <IonNote slot="end">Note (End)</IonNote>
+        <IonLabel>标签</IonLabel>
+        <IonNote slot="end">备注（右侧）</IonNote>
       </IonItem>
 
       <IonItem>
-        <IonNote slot="start">Note (Start)</IonNote>
-        <IonLabel>Label</IonLabel>
+        <IonNote slot="start">备注（左侧）</IonNote>
+        <IonLabel>标签</IonLabel>
       </IonItem>
     </>
   );

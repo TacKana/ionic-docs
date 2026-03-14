@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Code Push'
+sidebar_label: '代码热更新'
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -8,31 +8,31 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-# Code Push
+# 代码热更新
 
-CodePush plugin for Cordova by Microsoft that supports iOS and Android.
+这是微软为 Cordova 提供的代码热更新插件，支持 iOS 和 Android 平台。
 
-For more info, please see https://github.com/Dellos7/example-cordova-code-push-plugin
+更多信息请访问 https://github.com/Dellos7/example-cordova-code-push-plugin
 
 <p>
   <a href="https://github.com/Microsoft/cordova-plugin-code-push" target="_blank" rel="noopener" className="git-link">github.com/Microsoft/cordova-plugin-code-push</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="别在插件问题上浪费宝贵时间了"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果你正在开发一个重要的项目，经不起数小时的问题排查。Ionic 专家为社区插件和高级插件提供专业咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -40,7 +40,7 @@ For more info, please see https://github.com/Dellos7/example-cordova-code-push-p
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: 'Enterprise' },
+    { value: 'Enterprise', label: '企业版' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -56,22 +56,22 @@ For more info, please see https://github.com/Dellos7/example-cordova-code-push-p
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版包含 Ionic 团队全面支持维护的插件。 &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或如果你想获取此插件的企业版本 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - iOS
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -82,11 +82,11 @@ constructor(private codePush: CodePush) { }
 
 ...
 
-// note - mostly error & completed methods of observable will not fire
-// as syncStatus will contain the current state of the update
+// 注意 - 由于 syncStatus 会包含更新的当前状态
+// observable 的错误和完成方法通常不会触发
 this.codePush.sync().subscribe((syncStatus) => console.log(syncStatus));
 
-const downloadProgress = (progress) => { console.log(`Downloaded ${progress.receivedBytes} of ${progress.totalBytes}`); }
+const downloadProgress = (progress) => { console.log(`已下载 ${progress.receivedBytes} / ${progress.totalBytes}`); }
 this.codePush.sync({}, downloadProgress).subscribe((syncStatus) => console.log(syncStatus));
 
 ```

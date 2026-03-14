@@ -1,7 +1,7 @@
 ```html
 <ion-item-group>
   <ion-item-divider>
-    <ion-label> Fruits </ion-label>
+    <ion-label> 水果 </ion-label>
   </ion-item-divider>
 
   <ion-item-sliding>
@@ -9,7 +9,7 @@
       <ion-label> Grapes </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option> Favorite </ion-item-option>
+      <ion-item-option> 收藏 </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
@@ -18,7 +18,7 @@
       <ion-label> Apples </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option> Favorite </ion-item-option>
+      <ion-item-option> 收藏 </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
@@ -27,14 +27,14 @@
       <ion-label> Bananas </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option> Favorite </ion-item-option>
+      <ion-item-option> 收藏 </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 </ion-item-group>
 
 <ion-item-group>
   <ion-item-divider>
-    <ion-label> Vegetables </ion-label>
+    <ion-label> 蔬菜 </ion-label>
   </ion-item-divider>
 
   <ion-item-sliding>
@@ -42,7 +42,7 @@
       <ion-label> Carrots </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option> Favorite </ion-item-option>
+      <ion-item-option> 收藏 </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
@@ -51,7 +51,7 @@
       <ion-label> Broccoli </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option> Favorite </ion-item-option>
+      <ion-item-option> 收藏 </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
@@ -60,7 +60,7 @@
       <ion-label> Celery </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option> Favorite </ion-item-option>
+      <ion-item-option> 收藏 </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 </ion-item-group>

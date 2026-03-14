@@ -1,5 +1,5 @@
 ```html
-<b>Columns aligned at the start</b>
+<b>列靠起始位置对齐</b>
 <ion-grid>
   <ion-row class="ion-justify-content-start">
     <ion-col size="3"> 1 </ion-col>
@@ -7,7 +7,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Columns aligned at the center</b>
+<b>列居中对齐</b>
 <ion-grid>
   <ion-row class="ion-justify-content-center">
     <ion-col size="3"> 1 </ion-col>
@@ -15,7 +15,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Columns aligned at the end</b>
+<b>列靠末尾对齐</b>
 <ion-grid>
   <ion-row class="ion-justify-content-end">
     <ion-col size="3"> 1 </ion-col>
@@ -23,7 +23,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Columns aligned with space around</b>
+<b>列周围等间距对齐</b>
 <ion-grid>
   <ion-row class="ion-justify-content-around">
     <ion-col size="3"> 1 </ion-col>
@@ -31,7 +31,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Columns aligned with space between</b>
+<b>列两端对齐，中间等间距</b>
 <ion-grid>
   <ion-row class="ion-justify-content-between">
     <ion-col size="3"> 1 </ion-col>

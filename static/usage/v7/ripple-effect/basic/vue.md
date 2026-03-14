@@ -1,7 +1,7 @@
 ```html
 <template>
   <div class="wrapper">
-    <b>Click on a shape to see the ripple</b>
+    <b>点击任意形状查看涟漪效果</b>
 
     <div class="ion-activatable ripple-parent rectangle">
       <ion-ripple-effect></ion-ripple-effect>

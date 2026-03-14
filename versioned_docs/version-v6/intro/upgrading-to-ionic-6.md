@@ -1,42 +1,42 @@
-# Upgrading to Ionic 6
+# 升级到 Ionic 6
 
-Follow this guide to upgrade your Ionic 5 apps to Ionic 6.
+按照本指南将您的 Ionic 5 应用升级到 Ionic 6。
 
-## Getting Started
+## 开始之前
 
 ### Angular
 
-1. Ionic 6 supports Angular 12+. Update to the latest version of Angular by following the [Angular Update Guide](https://update.angular.io/).
-2. Update to the latest version of Ionic 6:
+1. Ionic 6 支持 Angular 12+。请按照 [Angular 更新指南](https://update.angular.io/) 更新到最新版本的 Angular。
+2. 更新到 Ionic 6 的最新版本：
 
 ```shell
 npm install @ionic/angular@6
 ```
 
-If you are using Ionic Angular Server, be sure to update that as well:
+如果您正在使用 Ionic Angular Server，请确保也更新它：
 
 ```shell
 npm install @ionic/angular@6 @ionic/angular-server@6
 ```
 
-3. Remove any usage of `Config.set()`. Instead, set your config in `IonicModule.forRoot()`. See the [Config Documentation](../developing/config) for more examples.
-4. Remove any usage of the `setupConfig` function previously exported from `@ionic/angular`. Set your config in `IonicModule.forRoot()` instead.
+3. 移除所有 `Config.set()` 的使用方式。改为在 `IonicModule.forRoot()` 中设置您的配置。请参阅 [配置文档](../developing/config) 获取更多示例。
+4. 移除所有之前从 `@ionic/angular` 导出的 `setupConfig` 函数的使用方式。改为在 `IonicModule.forRoot()` 中设置您的配置。
 
 ### React
 
-1. Ionic 6 supports React 17+. Update to the latest version of React:
+1. Ionic 6 支持 React 17+。更新到最新版本的 React：
 
 ```shell
 npm install react@latest react-dom@latest
 ```
 
-2. Update to the latest version of Ionic 6:
+2. 更新到 Ionic 6 的最新版本：
 
 ```shell
 npm install @ionic/react@6 @ionic/react-router@6
 ```
 
-3. Update the `test` field in the `scripts` object of your `package.json` to include `transformIgnorePatterns`:
+3. 更新 `package.json` 中 `scripts` 对象的 `test` 字段，包含 `transformIgnorePatterns`：
 
 ```json
 "scripts": {
@@ -45,9 +45,9 @@ npm install @ionic/react@6 @ionic/react-router@6
 }
 ```
 
-4. Import and call `setupIonicReact` in your `App` component file. If you are also using `setupConfig`, pass your config to `setupIonicReact` instead:
+4. 在您的 `App` 组件文件中导入并调用 `setupIonicReact`。如果您也在使用 `setupConfig`，请将您的配置传递给 `setupIonicReact` 代替：
 
-**Before**
+**升级前**
 
 ```tsx title="App.tsx"
 import { setupConfig } from '@ionic/react';
@@ -59,7 +59,7 @@ setupConfig({
 });
 ```
 
-**After**
+**升级后**
 
 ```tsx title="App.tsx"
 import { setupIonicReact } from '@ionic/react';
@@ -72,20 +72,20 @@ setupIonicReact({
 ```
 
 :::note
-Developers must import and call `setupIonicReact` even if they are not setting custom config.
+即使开发者不设置自定义配置，也必须导入并调用 `setupIonicReact`。
 :::
 
-See the [Config Documentation](../developing/config) for more examples.
+请参阅 [配置文档](../developing/config) 获取更多示例。
 
-5. Update all controller imports from `@ionic/core` to `@ionic/core/components`. As an example, here is a migration for `menuController`:
+5. 将所有控制器导入从 `@ionic/core` 更新为 `@ionic/core/components`。以下以 `menuController` 为例展示迁移方式：
 
-**Before**
+**升级前**
 
 ```tsx
 import { menuController } from '@ionic/core';
 ```
 
-**After**
+**升级后**
 
 ```tsx
 import { menuController } from '@ionic/core/components';
@@ -93,31 +93,31 @@ import { menuController } from '@ionic/core/components';
 
 ### Vue
 
-1. Ionic 6 supports Vue 3.0.6+. Update to the latest version of Vue:
+1. Ionic 6 支持 Vue 3.0.6+。更新到最新版本的 Vue：
 
 ```shell
 npm install vue@3 vue-router@4
 ```
 
-2. For apps that use the Vue CLI, install Vue CLI 5:
+2. 对于使用 Vue CLI 的应用，请安装 Vue CLI 5：
 
 ```shell
 npm install -g @vue/cli@next
 ```
 
-Then, upgrade all Vue CLI plugins:
+然后，升级所有 Vue CLI 插件：
 
 ```shell
 vue upgrade --next
 ```
 
-3. Update to the latest version of Ionic 6:
+3. 更新到 Ionic 6 的最新版本：
 
 ```shell
 npm install @ionic/vue@6 @ionic/vue-router@6
 ```
 
-4. Add the following `transformIgnorePatterns` to either `jest.config.js` or the `jest` field in `package.json`:
+4. 将以下 `transformIgnorePatterns` 添加到 `jest.config.js` 或 `package.json` 的 `jest` 字段中：
 
 ```js title="jest.config.js"
 module.exports = {
@@ -135,17 +135,17 @@ module.exports = {
   }
 ```
 
-See the [Testing section below](#testing) for more information.
+更多信息请参阅下面的 [测试部分](#测试)。
 
-5. Remove any usage of the `setupConfig` function previously exported from `@ionic/vue`. Set your config when installing the `IonicVue` plugin instead. See the [Config Documentation](../developing/config) for more examples.
+5. 移除所有之前从 `@ionic/vue` 导出的 `setupConfig` 函数的使用方式。改为在安装 `IonicVue` 插件时设置您的配置。请参阅 [配置文档](../developing/config) 获取更多示例。
 
-6. Rename the `IonRouter` type for `useIonRouter` to `UseIonRouterResult`.
+6. 将 `useIonRouter` 的 `IonRouter` 类型重命名为 `UseIonRouterResult`。
 
-7. Rename the `IonKeyboardRef` type for `useKeyboard` to `UseKeyboardResult`.
+7. 将 `useKeyboard` 的 `IonKeyboardRef` 类型重命名为 `UseKeyboardResult`。
 
-8. Rename any overlay event listeners to use the new format:
+8. 重命名所有覆盖层事件监听器以使用新格式：
 
-**Before**
+**升级前**
 
 ```html
 <ion-modal
@@ -159,7 +159,7 @@ See the [Testing section below](#testing) for more information.
 </ion-modal>
 ```
 
-**After**
+**升级后**
 
 ```html
 <ion-modal
@@ -174,12 +174,12 @@ See the [Testing section below](#testing) for more information.
 ```
 
 :::note
-This applies to `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-picker`, `ion-popover`, and `ion-toast`.
+这适用于 `ion-action-sheet`、`ion-alert`、`ion-loading`、`ion-modal`、`ion-picker`、`ion-popover` 和 `ion-toast`。
 :::
 
-9. Pass in an `ion-router-outlet` into any `ion-tabs` that are being used:
+9. 在所有正在使用的 `ion-tabs` 中传入一个 `ion-router-outlet`：
 
-**Before**
+**升级前**
 
 ```html
 <ion-tabs>
@@ -196,7 +196,7 @@ This applies to `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `io
 </script>
 ```
 
-**After**
+**升级后**
 
 ```html
 <ion-tabs>
@@ -214,9 +214,9 @@ This applies to `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `io
 </script>
 ```
 
-10. Additional routes inside of tabs should be re-written as sibling routes instead of child routes:
+10. 标签页内的额外路由应重写为同级路由，而不是子路由：
 
-**Before**
+**升级前**
 
 ```ts
 const routes: Array<RouteRecordRaw> = [
@@ -255,7 +255,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 ```
 
-**After**
+**升级后**
 
 ```ts
 const routes: Array<RouteRecordRaw> = [
@@ -294,43 +294,43 @@ const routes: Array<RouteRecordRaw> = [
 
 ### Core
 
-1. Update to the latest version of Ionic 6:
+1. 更新到 Ionic 6 的最新版本：
 
 ```shell
 npm install @ionic/core@6
 ```
 
-## Updating Your Code
+## 更新您的代码
 
-### Datetime
+### Datetime（日期时间）
 
-1. Remove any usages of the `placeholder`, `pickerOptions`, `pickerFormat`, `monthNames`, `monthShortNames`, `dayNames`, and `dayShortNames` properties. `ion-datetime` now automatically formats the month names, day names, and time displayed inside of the component according to the language and region set on the device. See the [ion-datetime Localization Documentation](../api/datetime#localization) for more information.
+1. 移除所有 `placeholder`、`pickerOptions`、`pickerFormat`、`monthNames`、`monthShortNames`、`dayNames` 和 `dayShortNames` 属性的使用方式。`ion-datetime` 现在会根据设备设置的语言和地区自动格式化组件内显示的月份名称、日期名称和时间。更多信息请参阅 [ion-datetime 本地化文档](../api/datetime#localization)。
 
-2. Remove any usages of the `text` and `placeholder` CSS Shadow Parts.
+2. 移除所有 `text` 和 `placeholder` CSS Shadow Parts 的使用方式。
 
-3. Remove any usages of the `--padding-bottom`, `--padding-end`, `--padding-start`, `--padding-top`, and `--placeholder-color` CSS Variables. To customize the padding on `ion-datetime`, you can use any of the `padding` CSS properties.
+3. 移除所有 `--padding-bottom`、`--padding-end`、`--padding-start`、`--padding-top` 和 `--placeholder-color` CSS 变量的使用方式。要自定义 `ion-datetime` 的内边距，您可以使用任何 `padding` CSS 属性。
 
-4. Remove any usage of the `open` method. To present the datetime in an overlay, place it inside of an `ion-modal` or an `ion-popover` component. See the [ion-datetime Usage Examples](../api/datetime#usage) for more information.
+4. 移除所有 `open` 方法的使用方式。要在覆盖层中显示日期时间，请将其放置在 `ion-modal` 或 `ion-popover` 组件内部。更多信息请参阅 [ion-datetime 使用示例](../api/datetime#usage)。
 
-5. Remove any usage of the `displayFormat` or `displayTimezone` properties. To parse the UTC string provided in the payload of the `ionChange` event, we recommend using [date-fns](https://date-fns.org/). See the [ion-datetime Parsing Dates Documentation](../api/datetime#parsing-dates) for examples.
+5. 移除所有 `displayFormat` 或 `displayTimezone` 属性的使用方式。要解析 `ionChange` 事件负载中提供的 UTC 字符串，我们建议使用 [date-fns](https://date-fns.org/)。示例请参阅 [ion-datetime 日期解析文档](../api/datetime#parsing-dates)。
 
 :::note
-See the [Datetime Migration Sample Application](https://github.com/ionic-team/datetime-migration-samples) for more migration examples.
+更多迁移示例请参阅 [Datetime 迁移示例应用](https://github.com/ionic-team/datetime-migration-samples)。
 :::
 
-### Icon
+### Icon（图标）
 
-Ionic 6 now ships with Ionicons 6. Review the [Ionicons 6 Breaking Changes Guide](https://github.com/ionic-team/ionicons/releases/tag/v6.0.0) and make any necessary changes.
+Ionic 6 现在附带了 Ionicons 6。请查看 [Ionicons 6 破坏性变更指南](https://github.com/ionic-team/ionicons/releases/tag/v6.0.0) 并进行必要的更改。
 
-### Input
+### Input（输入框）
 
-Ensure `null` is not passed in as a value to the `placeholder` property. We recommend using `undefined` instead.
+确保不要将 `null` 作为值传递给 `placeholder` 属性。我们建议使用 `undefined` 代替。
 
-### Modal
+### Modal（模态框）
 
-`ion-modal` now uses the Shadow DOM. Update any styles targeting the internals of `ion-modal` to use either the [ion-modal CSS Variables](../api/modal#css-custom-properties) or the [ion-modal CSS Shadow Parts](../api/modal#css-shadow-parts):
+`ion-modal` 现在使用 Shadow DOM。更新所有针对 `ion-modal` 内部样式的代码，使用 [ion-modal CSS 变量](../api/modal#css-custom-properties) 或 [ion-modal CSS Shadow Parts](../api/modal#css-shadow-parts)：
 
-**Before**
+**升级前**
 
 ```css
 ion-modal .modal-wrapper {
@@ -342,7 +342,7 @@ ion-modal ion-backdrop {
 }
 ```
 
-**After**
+**升级后**
 
 ```css
 ion-modal::part(content) {
@@ -354,11 +354,11 @@ ion-modal::part(backdrop) {
 }
 ```
 
-### Popover
+### Popover（弹出框）
 
-`ion-popover` now uses the Shadow DOM. Update any styles targeting the internals of `ion-popover` to use either [ion-popover CSS Variables](../api/popover#css-custom-properties) or the [ion-popover CSS Shadow Parts](../api/popover#css-shadow-parts):
+`ion-popover` 现在使用 Shadow DOM。更新所有针对 `ion-popover` 内部样式的代码，使用 [ion-popover CSS 变量](../api/popover#css-custom-properties) 或 [ion-popover CSS Shadow Parts](../api/popover#css-shadow-parts)：
 
-**Before**
+**升级前**
 
 ```css
 ion-popover .popover-arrow {
@@ -374,7 +374,7 @@ ion-popover .popover-content {
 }
 ```
 
-**After**
+**升级后**
 
 ```css
 ion-popover::part(arrow) {
@@ -390,23 +390,23 @@ ion-popover::part(content) {
 }
 ```
 
-### Radio
+### Radio（单选按钮）
 
-Remove any usage of the `RadioChangeEventDetail` interface.
+移除所有 `RadioChangeEventDetail` 接口的使用方式。
 
-### Select
+### Select（选择框）
 
-Ensure `null` is not passed in as a value to the `placeholder` property. We recommend using `undefined` instead.
+确保不要将 `null` 作为值传递给 `placeholder` 属性。我们建议使用 `undefined` 代替。
 
-### Textarea
+### Textarea（文本区域）
 
-Ensure `null` is not passed in as a value to the `placeholder` property. We recommend using `undefined` instead.
+确保不要将 `null` 作为值传递给 `placeholder` 属性。我们建议使用 `undefined` 代替。
 
-### Browser Support
+### 浏览器支持
 
-The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support) to ensure you are deploying apps to supported browsers.
+Ionic 支持的浏览器列表已更改。请查看 [浏览器支持指南](../reference/browser-support)，确保您将应用部署到支持的浏览器。
 
-If you have a `browserslist` or `.browserslistrc` file, update it with the following content:
+如果您有 `browserslist` 或 `.browserslistrc` 文件，请使用以下内容更新它：
 
 ```
 Chrome >=60
@@ -416,15 +416,15 @@ Safari >=13
 iOS >=13
 ```
 
-### Testing
+### 测试
 
-Ionic 6 now ships as ES Modules. ES Modules are supported in all major browsers and bring developer experience and code maintenance improvements. Developers testing with Jest will need to update their Jest configuration as Jest does not have full support for ES Modules as of Jest 27.
+Ionic 6 现在以 ES 模块形式发布。ES 模块在所有主流浏览器中都得到支持，并带来了开发者体验和代码维护的改进。使用 Jest 进行测试的开发者需要更新他们的 Jest 配置，因为截至 Jest 27，Jest 尚未完全支持 ES 模块。
 
-This update involves using Babel to compile Ionic's ES Modules down to the CommonJS (CJS) format, a format that Jest can understand. Once Jest ships support for ES Modules, this change will no longer be necessary. See https://github.com/facebook/jest/issues/9430 for updates on ES Modules support in Jest.
+此更新涉及使用 Babel 将 Ionic 的 ES 模块编译为 CommonJS (CJS) 格式，这是 Jest 能够理解的格式。一旦 Jest 支持 ES 模块，此更改将不再必要。有关 Jest 中 ES 模块支持的更新，请参阅 https://github.com/facebook/jest/issues/9430。
 
-If you are starting fresh with a new Ionic app, this configuration is done for you in our starter applications. For those with existing Ionic apps, follow the steps below to get Jest working with Ionic 6:
+如果您是从头开始创建一个新的 Ionic 应用，此配置已在我们提供的入门应用模板中为您完成。对于已有的 Ionic 应用，请按照以下步骤使 Jest 在 Ionic 6 中正常工作：
 
-1. Add a `transformIgnorePatterns` field to your Jest config that includes the relevant Ionic packages. This is typically found in `jest.config.js` or the `jest` field in `package.json`:
+1. 在您的 Jest 配置中添加一个 `transformIgnorePatterns` 字段，其中包含相关的 Ionic 包。这通常位于 `jest.config.js` 或 `package.json` 的 `jest` 字段中：
 
 ```js title="jest.config.js"
 module.exports = {
@@ -443,10 +443,10 @@ module.exports = {
 ```
 
 :::note
-If you are using Ionic React or Ionic Vue, be sure to add the appropriate packages to the `transformIgnorePatterns` array. For Ionic React this includes `@ionic/react` and `@ionic/react-router`. For Ionic Vue this includes `@ionic/vue` and `@ionic/vue-router`.
+如果您使用的是 Ionic React 或 Ionic Vue，请确保将相应的包添加到 `transformIgnorePatterns` 数组中。对于 Ionic React，这包括 `@ionic/react` 和 `@ionic/react-router`。对于 Ionic Vue，这包括 `@ionic/vue` 和 `@ionic/vue-router`。
 :::
 
-For developers using Create React App (CRA), there is currently no way to update the `transformIgnorePatterns` in a Jest config file. This is a CRA restriction and not something Ionic has control over. We can, however, pass the `transformIgnorePatterns` directly into the `react-scripts test` command:
+对于使用 Create React App (CRA) 的开发者，目前无法在 Jest 配置文件中更新 `transformIgnorePatterns`。这是 CRA 的限制，Ionic 无法控制。但是，我们可以直接将 `transformIgnorePatterns` 传递给 `react-scripts test` 命令：
 
 ```json title="package.json"
 "scripts": {
@@ -455,14 +455,14 @@ For developers using Create React App (CRA), there is currently no way to update
 }
 ```
 
-If you are still running into issues, here are a couple things to try:
+如果仍然遇到问题，可以尝试以下方法：
 
-1. Verify that `@babel/preset-env` is included in your [project-wide configuration](https://babeljs.io/docs/en/config-files#project-wide-configuration) instead of your [file-relative configuration](https://babeljs.io/docs/en/config-files#file-relative-configuration). This typically means defining the Babel configuration in `<project-root>/babel.config.json`.
+1. 验证 `@babel/preset-env` 是否包含在您的 [项目级配置](https://babeljs.io/docs/en/config-files#project-wide-configuration) 中，而不是 [文件相对配置](https://babeljs.io/docs/en/config-files#file-relative-configuration) 中。这通常意味着在 `<project-root>/babel.config.json` 中定义 Babel 配置。
 
-2. If you have a `browserslist/test` field in `package.json` file, make sure it is set to `current node`.
+2. 如果您的 `package.json` 文件中有 `browserslist/test` 字段，请确保它设置为 `current node`。
 
-## Need Help Upgrading?
+## 需要升级帮助？
 
-Be sure to look at the [Ionic 6 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md). There were several changes to default property and CSS Variable values that developers may need to be aware of. Only the breaking changes that required user action are listed on this page.
+请务必查看 [Ionic 6 破坏性变更指南](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md)。其中包含了一些默认属性和 CSS 变量值的更改，开发者可能需要了解。本页仅列出了需要用户操作的破坏性变更。
 
-If you need help upgrading, please post a thread on the [Ionic Forum](https://forum.ionicframework.com/).
+如果您需要升级帮助，请在 [Ionic 论坛](https://forum.ionicframework.com/) 上发帖。

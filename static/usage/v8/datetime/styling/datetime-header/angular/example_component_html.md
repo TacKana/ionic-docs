@@ -1,5 +1,5 @@
 ```html
 <ion-datetime presentation="date">
-  <span slot="title">Select Date</span>
+  <span slot="title">选择日期</span>
 </ion-datetime>
 ```

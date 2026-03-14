@@ -5,180 +5,180 @@ skipIntros: true
 ---
 
 <head>
-  <title>iOS App Development Guide: Xcode Setup to Build and Run iOS Apps</title>
+  <title>iOS 应用开发指南：从 Xcode 设置到构建运行 iOS 应用</title>
   <meta
     name="description"
-    content="Ionic's iOS development guide covers how to build and run Ionic apps on iOS simulators and devices. iOS apps can only be developed on macOS with Xcode setup."
+    content="Ionic iOS 开发指南涵盖如何在 iOS 模拟器和设备上构建和运行 Ionic 应用。iOS 应用只能在安装了 Xcode 的 macOS 系统上进行开发。"
   />
 </head>
 
-This guide covers how to run and debug Ionic apps on iOS simulators and devices using [Capacitor](../reference/glossary.md#capacitor) or [Cordova](../reference/glossary.md#cordova). iOS apps can only be developed on macOS with Xcode installed.
+本指南介绍如何使用 [Capacitor](../reference/glossary.md#capacitor) 或 [Cordova](../reference/glossary.md#cordova) 在 iOS 模拟器和设备上运行及调试 Ionic 应用。iOS 应用只能在安装了 Xcode 的 macOS 系统上进行开发。
 
-There are two workflows for running Ionic apps on iOS:
+在 iOS 上运行 Ionic 应用有两种工作流程：
 
-- [Running with Xcode](#running-with-xcode)
-- [Running with the Ionic CLI](#running-with-the-ionic-cli)
+- [使用 Xcode 运行](#使用-xcode-运行)
+- [使用 Ionic CLI 运行](#使用-ionic-cli-运行)
 
-The Xcode approach is generally more stable, but the Ionic CLI approach offers [live-reload](../reference/glossary.md#livereload) functionality.
+Xcode 方法通常更稳定，但 Ionic CLI 方法提供了[实时重载](../reference/glossary.md#livereload)功能。
 
-## Xcode Setup
+## Xcode 设置
 
-[Xcode](https://developer.apple.com/xcode/) is the IDE for creating native iOS apps. It includes the iOS SDK and Xcode command-line tools. Xcode can be [downloaded for free](https://developer.apple.com/download/) with an Apple account or it can be installed through the App Store.
+[Xcode](https://developer.apple.com/xcode/) 是创建原生 iOS 应用的集成开发环境（IDE）。它包含 iOS SDK 和 Xcode 命令行工具。使用 Apple 账户可以[免费下载](https://developer.apple.com/download/) Xcode，也可以通过 App Store 安装。
 
-Once Xcode is installed, make sure the command-line tools are selected for use:
+安装 Xcode 后，请确保选择使用命令行工具：
 
 ```shell
 xcode-select --install
 ```
 
-### Setting up a Development Team
+### 设置开发团队
 
-All iOS apps must be code signed, even for development. Luckily, Xcode makes this easy with automatic code signing. The only prerequisite is an Apple ID.
+所有 iOS 应用都必须进行代码签名，即使是开发版本也不例外。幸运的是，Xcode 通过自动代码签名使这一过程变得简单。唯一的先决条件是拥有一个 Apple ID。
 
-Open Xcode and navigate to **Xcode** &raquo; **Preferences** &raquo; **Accounts**. Add an Apple ID if none are listed. Once logged in, a Personal Team will appear in the team list of the Apple ID.
+打开 Xcode 并导航至 **Xcode** &raquo; **Preferences（偏好设置）** &raquo; **Accounts（账户）**。如果列表中没有 Apple ID，请添加一个。登录后，该 Apple ID 的团队列表中将显示一个 Personal Team（个人团队）。
 
-![The Accounts section in Xcode Preferences showing an Apple ID and Personal Team.](/img/installation/ios-xcode-accounts.png 'Xcode Preferences Accounts Section')
+![Xcode 偏好设置的账户部分显示了一个 Apple ID 和个人团队](/img/installation/ios-xcode-accounts.png 'Xcode 偏好设置账户部分')
 
-### Creating an iOS Simulator
+### 创建 iOS 模拟器
 
-The iOS simulator emulates iOS devices on Macs. The following documentation is a quick way to get the iOS simulator set up. For more information, see [Apple's documentation](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/simulator_help_topics/Chapter/Chapter.html).
+iOS 模拟器可以在 Mac 上模拟 iOS 设备。以下文档是快速设置 iOS 模拟器的方法。更多信息请参阅 [Apple 官方文档](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/simulator_help_topics/Chapter/Chapter.html)。
 
-Open Xcode and navigate to **Window** &raquo; **Devices and Simulators**. Create an **iPhone 11** simulator if one does not already exist.
+打开 Xcode 并导航至 **Window** &raquo; **Devices and Simulators（设备和模拟器）**。如果不存在 **iPhone 11** 模拟器，请创建一个。
 
-![Xcode window displaying the Devices and Simulators section with an iPhone X simulator selected.](/img/installation/ios-xcode-simulators-setup.png 'Xcode Devices and Simulators Window')
+![Xcode 窗口显示设备和模拟器部分，其中选择了 iPhone X 模拟器](/img/installation/ios-xcode-simulators-setup.png 'Xcode 设备和模拟器窗口')
 
-## Cordova Setup
+## Cordova 设置
 
-Additional setup is required for Cordova to support programmatic builds. This section is not necessary for Capacitor.
+为了使 Cordova 支持编程式构建，需要进行额外的设置。如果您使用 Capacitor，则无需阅读本节内容。
 
-### ios-sim & ios-deploy
+### ios-sim 和 ios-deploy
 
-The [`ios-sim`](https://github.com/ios-control/ios-sim) and [`ios-deploy`](https://github.com/ios-control/ios-deploy) are utilities that deploy apps to the iOS simulator and iOS devices during development. They can be installed globally with [npm](../reference/glossary.md#npm).
+[`ios-sim`](https://github.com/ios-control/ios-sim) 和 [`ios-deploy`](https://github.com/ios-control/ios-deploy) 是在开发期间将应用部署到 iOS 模拟器和 iOS 设备的实用工具。可以通过 [npm](../reference/glossary.md#npm) 全局安装它们。
 
 ```shell
 $ npm install -g ios-sim
 $ brew install ios-deploy
 ```
 
-## Project Setup
+## 项目设置
 
-Before apps can be deployed to iOS simulators and devices, the native project must be configured.
+在应用可以部署到 iOS 模拟器和设备之前，必须先配置原生项目。
 
-1. **Generate the native project, if it does not already exist.**
+1. **生成原生项目（如果尚不存在）。**
 
-   For Capacitor, run the following:
+   对于 Capacitor，运行以下命令：
 
    ```shell
    $ ionic capacitor add ios
    ```
 
-   For Cordova, run the following:
+   对于 Cordova，运行以下命令：
 
    ```shell
    $ ionic cordova prepare ios
    ```
 
-1. **Set the [Package ID](/reference/glossary.md#package-id).**
+1. **设置 [Package ID（包标识符）](/reference/glossary.md#package-id)。**
 
-   For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
+   对于 Capacitor，打开 `capacitor.config.json` 文件并修改 `appId` 属性。
 
-   For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
+   对于 Cordova，打开 `config.xml` 文件并修改根元素 `<widget>` 的 `id` 属性。更多信息请参阅 [Cordova 文档](https://cordova.apache.org/docs/en/latest/config_ref/#widget)。
 
-1. **Open the project in <b>Xcode</b>.**
+1. **在 <b>Xcode</b> 中打开项目。**
 
-   For Capacitor, run the following to open the app in Xcode:
+   对于 Capacitor，运行以下命令在 Xcode 中打开应用：
 
    ```shell
    $ ionic capacitor open ios
    ```
 
-   For Cordova, open Xcode. Use **File** &raquo; **Open** and locate the app. Open the app's `platforms/ios` directory.
+   对于 Cordova，打开 Xcode。使用 **File** &raquo; **Open** 并找到应用。打开应用的 `platforms/ios` 目录。
 
-1. **In <b>Project navigator</b>, select the project root to open the project editor. Under the **Identity** section, verify that the Package ID that was set matches the Bundle Identifier.**
+1. **在 <b>Project navigator（项目导航器）</b>中，选择项目根目录以打开项目编辑器。在 **Identity（标识）** 部分，验证设置的 Package ID 是否与 Bundle Identifier（包标识符）匹配。**
 
-   ![Xcode showing the Identity section for an iOS app with fields for Display Name, Bundle Identifier, Version, and Build.](/img/running/ios-xcode-identity-setup.png 'Xcode Identity Section')
+   ![Xcode 显示 iOS 应用的 Identity 部分，包含 Display Name、Bundle Identifier、Version 和 Build 字段](/img/running/ios-xcode-identity-setup.png 'Xcode 标识部分')
 
-1. **In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.** Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
+1. **在同一项目编辑器的 <b>Signing（签名）</b>部分，确保启用 <b>Automatically manage signing（自动管理签名）</b>。然后选择一个 Development Team（开发团队）。指定开发团队后，Xcode 将尝试自动准备配置文件和签名。**
 
-   ![Xcode showing the Signing section with 'Automatically manage signing' enabled and a Development Team selected.](/img/running/ios-xcode-signing-setup.png 'Xcode Signing Section')
+   ![Xcode 显示 Signing 部分，其中“Automatically manage signing”已启用并选择了 Development Team](/img/running/ios-xcode-signing-setup.png 'Xcode 签名设置')
 
-## Running with Xcode
+## 使用 Xcode 运行
 
-In this workflow, Xcode can automatically fix common compilation and signing issues that can occur.
+在此工作流程中，Xcode 可以自动修复可能出现的常见编译和签名问题。
 
-1. **Develop the Ionic app and sync it to the native project.**
+1. **开发 Ionic 应用并将其同步到原生项目。**
 
-   With each meaningful change, Ionic apps must be built into web assets before the change can appear on iOS simulators and devices. The web assets then must be copied into the native project. Luckily, this process is made easy with a single Ionic CLI command.
+   每次有重要变更时，必须先构建 Ionic 应用生成 Web 资源，变更才能在 iOS 模拟器和设备上显示。然后必须将这些 Web 资源复制到原生项目中。幸运的是，使用单个 Ionic CLI 命令即可轻松完成此过程。
 
-   For Capacitor, run the following:
+   对于 Capacitor，运行以下命令：
 
    ```shell
    $ ionic capacitor copy ios
    $ ionic capacitor update
    ```
 
-   For Cordova, run the following:
+   对于 Cordova，运行以下命令：
 
    ```shell
    $ ionic cordova prepare ios
    ```
 
-1. **In Xcode, select a target simulator or device and click the play button.**
+1. **在 Xcode 中，选择目标模拟器或设备，然后点击播放按钮。**
 
-   ![Xcode toolbar with the play button and the active scheme for an iPhone simulator.](/img/running/ios-xcode-play-button-area.png 'Xcode Play Button and Active Scheme')
+   ![Xcode 工具栏显示播放按钮和 iPhone 模拟器的活动方案](/img/running/ios-xcode-play-button-area.png 'Xcode 播放按钮和活动方案')
 
-## Running with the Ionic CLI
+## 使用 Ionic CLI 运行
 
-The Ionic CLI can build, copy, and deploy Ionic apps to iOS simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](../reference/glossary.md#livereload) functionality.
+Ionic CLI 可以用一个命令构建、复制 Ionic 应用并将其部署到 iOS 模拟器和设备。它还可以启动一个开发服务器（类似于 `ionic serve` 中使用的服务器），以提供[实时重载](../reference/glossary.md#livereload)功能。
 
-With live-reload, changes made to the app's source files trigger a rebuild of web assets and the changes are reflected on the simulator or device without having to deploy again.
+使用实时重载功能时，对应用源文件的更改会触发 Web 资源的重建，并且更改会反映在模拟器或设备上，而无需重新部署。
 
 :::warning
-For iOS devices, the device and the computer need to be on the same Wi-Fi network. An external URL for the dev server is also required so the device can connect to it. Use `--external` (or `--host=0.0.0.0`) to bind to external addresses.
+对于 iOS 设备，设备和电脑需要连接到同一个 Wi-Fi 网络。还需要为开发服务器提供一个外部 URL，以便设备可以连接。使用 `--external`（或 `--host=0.0.0.0`）绑定到外部地址。
 :::
 
-### Live-reload with Capacitor
+### 使用 Capacitor 实现实时重载
 
-Capacitor does not yet have a way to build native projects. It relies on Xcode to build and deploy app binaries. However, the Ionic CLI can boot up a live-reload server and configure Capacitor to use it with a single command.
+Capacitor 目前还没有构建原生项目的方法。它依赖 Xcode 来构建和部署应用二进制文件。然而，Ionic CLI 可以启动实时重载服务器，并通过单个命令配置 Capacitor 使用该服务器。
 
-Run the following, then select a target simulator or device and click the play button in Xcode:
+运行以下命令，然后在 Xcode 中选择目标模拟器或设备并点击播放按钮：
 
 ```shell
 ionic capacitor run ios -l --external
 ```
 
-### Live-reload with Cordova
+### 使用 Cordova 实现实时重载
 
-Cordova can build and deploy native projects programmatically.
+Cordova 可以通过编程方式构建和部署原生项目。
 
-To boot up a live-reload server, build, and deploy the app, run the following:
+要启动实时重载服务器、构建并部署应用，请运行以下命令：
 
 ```shell
 ionic cordova run ios -l --external
 ```
 
-## Debugging iOS Apps
+## 调试 iOS 应用
 
-Once an app is running on an iOS device or simulator, it can be debugged in Safari.
+应用在 iOS 设备或模拟器上运行后，可以在 Safari 中进行调试。
 
-### Using Safari Web Inspector
+### 使用 Safari Web 检查器
 
-Safari has Web Inspector support for iOS simulators and devices. Open the **Develop** menu and select the simulator or device, then select the Ionic App to open Web Inspector.
-
-:::note
-If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences** &raquo; **Advanced** &raquo; **Show Develop menu in menu bar**.
-
-If the app isn't listed, the Web Inspector may need to be enabled on the device in **Settings** &raquo; **Safari** &raquo; **Advanced** &raquo; **Web Inspector**.
-:::
-
-![Safari Web Inspector window showing the Timelines tab for performance profiling of an iOS app.](/img/running/ios-safari-web-inspector-timelines.png 'Safari Web Inspector Timelines')
-
-### Viewing Native Logs
-
-If running with Xcode, native logs can be found in the Xcode **Console**.
+Safari 支持对 iOS 模拟器和设备使用 Web 检查器。打开 **Develop（开发）** 菜单，选择模拟器或设备，然后选择 Ionic 应用以打开 Web 检查器。
 
 :::note
-If the **Console** is hidden, enable it in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
+如果 **Develop** 菜单被隐藏，请在 **Safari** &raquo; **Preferences（偏好设置）** &raquo; **Advanced（高级）** &raquo; **Show Develop menu in menu bar（在菜单栏中显示“开发”菜单）** 中启用它。
+
+如果应用未列出，可能需要在设备的 **Settings（设置）** &raquo; **Safari** &raquo; **Advanced** &raquo; **Web Inspector** 中启用 Web 检查器。
 :::
 
-![Xcode Console output displaying logs from an iOS app running on a simulator.](/img/running/ios-xcode-console.png 'Xcode Console Logs')
+![Safari Web 检查器窗口显示 Timelines 选项卡，用于 iOS 应用的性能分析](/img/running/ios-safari-web-inspector-timelines.png 'Safari Web 检查器时间线')
+
+### 查看原生日志
+
+如果使用 Xcode 运行，可以在 Xcode **Console（控制台）** 中找到原生日志。
+
+:::note
+如果 **Console** 被隐藏，请在 **View** &raquo; **Debug Area（调试区域）** &raquo; **Activate Console（激活控制台）** 中启用它。
+:::
+
+![Xcode 控制台输出显示在模拟器上运行的 iOS 应用的日志](/img/running/ios-xcode-console.png 'Xcode 控制台日志')

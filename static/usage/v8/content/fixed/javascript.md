@@ -1,9 +1,9 @@
 ```html
 <ion-content class="ion-padding">
-  <h1>Scroll the content and notice that the fixed button does not scroll.</h1>
+  <h1>滚动页面内容，你会发现固定按钮不会随之滚动。</h1>
 
-  <ion-button>Normal Button</ion-button>
-  <ion-button slot="fixed">Fixed Button</ion-button>
+  <ion-button>普通按钮</ion-button>
+  <ion-button slot="fixed">固定按钮</ion-button>
 
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum in

@@ -1,6 +1,6 @@
 ```html
-<!-- Scroll events are disabled by default for content for performance reasons, enable them to listen to them -->
-<!-- Casting $event to $any is a temporary fix for this bug https://github.com/ionic-team/ionic-framework/issues/24245 -->
+<!-- 出于性能考虑，默认禁用了内容的滚动事件，如需监听请启用它们 -->
+<!-- 将 $event 强制转换为 $any 是针对此 bug 的临时修复方案 https://github.com/ionic-team/ionic-framework/issues/24245 -->
 <ion-content
   [scrollEvents]="true"
   (ionScrollStart)="handleScrollStart()"
@@ -8,52 +8,22 @@
   (ionScrollEnd)="handleScrollEnd()"
   class="ion-padding"
 >
-  <h1>Scroll to fire the scroll events and view them in the console.</h1>
+  <h1>滚动页面以触发滚动事件，可在控制台中查看事件详情。</h1>
 
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum in
-    risus. Sed nec convallis sapien, id tincidunt enim. Mauris ornare eleifend nunc id mattis. Fusce augue diam,
-    sagittis nec posuere at, consectetur tempor lectus. Nulla at lectus eget mauris iaculis malesuada mollis sed neque.
-    Curabitur et risus tristique, malesuada mauris finibus, elementum massa. Proin lacinia mauris quis ligula blandit
-    ullamcorper. Donec ut posuere lorem. In volutpat magna vitae tellus posuere pulvinar. Nam varius ligula justo, nec
-    placerat lacus pharetra ac. Aenean massa orci, tristique in nisl ut, aliquet consectetur libero. Etiam luctus
-    placerat vulputate. Aliquam ipsum massa, porttitor at mollis ut, pretium sit amet mi. In neque mauris, placerat et
-    neque vel, tempor interdum dolor. Suspendisse gravida malesuada tellus, vel dapibus nisl dignissim vel. Cras ut
-    nulla sit amet erat malesuada euismod vel a nulla.
+    此处为示例文本内容，供滚动测试使用。通常在此处放置占位文本以模拟实际内容区域。滚动时请注意观察控制台输出的滚动事件信息。这些事件有助于实现基于滚动位置的交互效果，例如隐藏/显示导航栏、懒加载内容等。
   </p>
   <p>
-    Phasellus sit amet iaculis odio, eget feugiat erat. Etiam sit amet turpis sit amet massa viverra maximus. Aenean
-    venenatis porttitor pharetra. Fusce vulputate urna purus, vel efficitur mauris auctor non. Etiam libero odio,
-    sodales in velit a, faucibus venenatis erat. Ut convallis sit amet urna in ultrices. Cras neque est, vehicula sed
-    lorem ac, placerat commodo elit. Praesent turpis metus, elementum eget iaculis ac, elementum in odio. Nunc et elit
-    faucibus, condimentum mauris consequat, ornare dolor. Sed ac lectus a est blandit tempor. Etiam lobortis tristique
-    maximus.
+    继续滚动以查看更多示例内容。每个段落都用于填充页面高度，确保能够产生足够的滚动空间来触发滚动事件。在实际应用中，这里会替换为实际的文章、列表或其他页面内容。
   </p>
   <p>
-    Quisque tempus porttitor massa, vel condimentum risus finibus a. Aliquam viverra maximus odio, id ornare justo
-    tristique ac. Mauris euismod arcu eget neque sagittis rutrum. Ut vehicula porta lacus nec lobortis. Vestibulum et
-    elit ultrices, lacinia metus in, lobortis est. Vivamus nisi justo, venenatis sit amet arcu ac, congue faucibus
-    justo. Duis volutpat posuere enim, vel sagittis elit dictum et. Sed et congue mauris. Nam venenatis venenatis risus,
-    ac condimentum neque sagittis sed. In eget nulla ultricies urna sollicitudin posuere. Aenean sagittis congue mauris.
-    Proin nec libero mi. In hac habitasse platea dictumst. Praesent nunc nulla, dictum id molestie sed, pretium vitae
-    turpis.
+    当用户开始滚动、正在滚动或结束滚动时，相应的事件处理函数会被调用。您可以在这些函数中添加自定义逻辑，响应滚动行为。例如，根据滚动位置改变页面元素的样式或触发数据加载。
   </p>
   <p>
-    Pellentesque vitae dapibus lacus. Nullam suscipit ornare risus quis ullamcorper. Nullam feugiat, sapien et sodales
-    fermentum, risus ligula semper risus, id efficitur ligula augue id diam. Suspendisse lobortis est sit amet quam
-    facilisis, ut vestibulum nunc dignissim. Donec at vestibulum magna. Maecenas maximus pretium metus. Phasellus congue
-    sapien vel odio imperdiet, nec mollis odio euismod. Sed vel eros ut sapien accumsan condimentum vehicula vitae
-    lectus. Donec sed efficitur lorem. Aenean tristique mi libero, eleifend tincidunt libero finibus at. Mauris
-    condimentum fermentum rutrum.
+    请注意，启用滚动事件可能会对性能产生轻微影响，特别是在低端设备或复杂页面上。因此建议仅在需要监听滚动时启用该功能，并在不需要时及时禁用。
   </p>
   <p>
-    Nulla tristique ultricies suscipit. Donec non ornare elit. Vivamus id pretium mauris, nec sagittis leo. Fusce mattis
-    eget est id sollicitudin. Suspendisse dictum sem magna, in imperdiet metus suscipit et. Suspendisse enim enim,
-    venenatis et orci eu, suscipit congue lacus. Praesent vel ligula non eros tempor interdum. Proin justo orci,
-    ultricies vitae diam sed, semper consectetur ligula. Aenean finibus ante velit, nec efficitur libero cursus cursus.
-    Duis mi nunc, imperdiet sed condimentum vel, porttitor ut lacus. Quisque dui ipsum, vehicula sed vestibulum id,
-    semper vel libero. Suspendisse tincidunt mollis condimentum. Nulla facilisi. Etiam neque nisl, egestas nec iaculis
-    sed, tristique faucibus sem. Sed mollis dui quis ligula cursus rutrum.
+    最后一段示例文本。滚动到此位置时，您应该已经能够在控制台中看到完整的滚动事件序列：ionScrollStart、多次ionScroll和ionScrollEnd。这些事件对象包含了滚动位置、速度等有用信息，可用于实现丰富的滚动交互效果。
   </p>
 </ion-content>
 ```

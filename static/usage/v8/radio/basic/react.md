@@ -5,13 +5,13 @@ import { IonRadio, IonRadioGroup } from '@ionic/react';
 function Example() {
   return (
     <IonRadioGroup value="strawberries">
-      <IonRadio value="grapes">Grapes</IonRadio>
+      <IonRadio value="grapes">葡萄</IonRadio>
       <br />
-      <IonRadio value="strawberries">Strawberries</IonRadio>
+      <IonRadio value="strawberries">草莓</IonRadio>
       <br />
-      <IonRadio value="pineapple">Pineapple</IonRadio>
+      <IonRadio value="pineapple">菠萝</IonRadio>
       <br />
-      <IonRadio value="cherries">Cherries</IonRadio>
+      <IonRadio value="cherries">樱桃</IonRadio>
     </IonRadioGroup>
   );
 }

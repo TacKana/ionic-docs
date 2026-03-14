@@ -1,5 +1,5 @@
 ---
-title: "ion-card-header"
+title: 卡片头部组件
 ---
 import Props from '@ionic-internal/component-api/v8/card-header/props.md';
 import Events from '@ionic-internal/component-api/v8/card-header/events.md';
@@ -13,25 +13,25 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Card header is a child component of card that should be placed before the card content. It can contain a [card title](./card-title) and a [card subtitle](./card-subtitle).
+卡片头部（card header）是卡片（card）的子组件，应放置在卡片内容之前。它可以包含[卡片标题（card title）](./card-title)和[卡片子标题（card subtitle）](./card-subtitle)。
 
-See the [Card](./card) documentation for more information.
+更多信息请参阅[卡片（Card）](./card)文档。
 
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

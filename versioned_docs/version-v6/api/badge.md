@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/badge/custom-props.mdx
 import Slots from '@ionic-internal/component-api/v6/badge/slots.md';
 
 <head>
-  <title>Badges | ion-badge: iOS & Android App Notification Badge Icons</title>
+  <title>徽章 | ion-badge：iOS 与 Android 应用通知徽章图标</title>
   <meta
     name="description"
-    content="Badges are inline block elements that appear near other elements on iOS & Android apps—use ion-badges as notifications that indicate how many items there are."
+    content="徽章是在 iOS 和 Android 应用中靠近其他元素显示的内联块级元素，使用 ion-badge 作为通知，用于指示关联项目的数量。"
   />
 </head>
 
@@ -21,37 +21,37 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Badges are inline block elements that usually appear near another element. Typically they contain a number or other characters. They can be used as a notification that there are additional items associated with an element and indicate how many items there are. Badges are hidden if no content is passed in.
+徽章通常是靠近其他元素显示的内联块级元素。它们通常包含数字或其他字符。徽章可作为通知使用，表示某个元素还有更多关联项目，并指示其数量。如果未传入任何内容，徽章将隐藏。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v6/badge/basic/index.md';
 
 <Basic />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v6/badge/theming/colors/index.md';
 
 <Colors />
 
-### CSS Properties
+### CSS 属性
 
 import CSSProps from '@site/static/usage/v6/badge/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -59,10 +59,10 @@ import CSSProps from '@site/static/usage/v6/badge/theming/css-properties/index.m
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

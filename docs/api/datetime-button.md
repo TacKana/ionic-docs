@@ -1,5 +1,5 @@
 ---
-title: "ion-datetime-button"
+title: 日期时间按钮组件
 ---
 import Props from '@ionic-internal/component-api/v8/datetime-button/props.md';
 import Events from '@ionic-internal/component-api/v8/datetime-button/events.md';
@@ -9,72 +9,72 @@ import CustomProps from '@ionic-internal/component-api/v8/datetime-button/custom
 import Slots from '@ionic-internal/component-api/v8/datetime-button/slots.md';
 
 <head>
-  <title>ion-datetime-button: Ionic Input for Datetime Picker</title>
-  <meta name="description" content="Datetime button links with a datetime instance to easily a datetime in a popover, modal, and more." />
+  <title>ion-datetime-button：Ionic 日期时间选择器输入组件</title>
+  <meta name="description" content="日期时间按钮与日期时间实例关联，便于在弹出层、模态框等界面中轻松调用日期时间选择器。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Datetime Button links with a [Datetime](./datetime) component to display the formatted date and time. It also provides buttons to present the datetime in a modal, popover, and more.
+日期时间按钮与 [Datetime](./datetime) 组件关联，用于显示格式化后的日期和时间。它还提供按钮以便在模态框、弹出层等界面中呈现日期时间选择器。
 
-## Overview
+## 概览
 
-Datetime Button should be used when space is constrained. This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.
+当界面空间有限时，应使用日期时间按钮。该组件显示展示当前日期和时间值的按钮。点击按钮时，日期或时间选择器将在叠加层中打开。
 
-When using Datetime Button with a JavaScript framework such as Angular, React, or Vue be sure to use the [keepContentsMounted property on ion-modal](./modal#keepcontentsmounted) or the [keepContentsMounted property on ion-popover](./popover#keepcontentsmounted). This allows the linked datetime instance to be mounted even if the overlay has not been presented yet.
+当在 Angular、React 或 Vue 等 JavaScript 框架中使用日期时间按钮时，请确保在 ion-modal 上使用 [keepContentsMounted 属性](./modal#keepcontentsmounted) 或在 ion-popover 上使用 [keepContentsMounted 属性](./popover#keepcontentsmounted)。这允许关联的日期时间实例即使在叠加层尚未呈现时也能被挂载。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v8/datetime-button/basic/index.md';
 
 <Basic />
 
-## Localization
+## 本地化
 
-The localized text on `ion-datetime-button` is determined by the `locale` property on the associated `ion-datetime` instance. See [Datetime Localization](./datetime#localization) for more details.
+`ion-datetime-button` 上的本地化文本由关联的 `ion-datetime` 实例的 `locale` 属性决定。更多详情请参阅 [日期时间本地化](./datetime#localization)。
 
-## Format Options
+## 格式选项
 
-You can customize the format of the date and time in a Datetime Button by providing `formatOptions` on the associated Datetime instance. See [Datetime Format Options](./datetime#format-options) for more details.
+您可以通过在关联的日期时间实例上提供 `formatOptions` 来自定义日期时间按钮中日期和时间的格式。更多详情请参阅 [日期时间格式选项](./datetime#format-options)。
 
 import FormatOptions from '@site/static/usage/v8/datetime-button/format-options/index.md';
 
 <FormatOptions />
 
-## Usage with Modals and Popovers
+## 与模态框和弹出层配合使用
 
-`ion-datetime-button` must be associated with a mounted `ion-datetime` instance. As a result, [Inline Modals](./modal#inline-modals-recommended) and [Inline Popovers](./popover#inline-popovers) with the `keepContentsMounted` property set to `true` must be used.
+`ion-datetime-button` 必须与已挂载的 `ion-datetime` 实例关联。因此，必须使用 [内联模态框](./modal#inline-modals-recommended) 和 [内联弹出层](./popover#inline-popovers) 并将 `keepContentsMounted` 属性设置为 `true`。
 
 <!--
-## Customization
+## 自定义
 
-TODO
+待办事项
 
-### Buttons
+### 按钮
 
-TODO
+待办事项
 
-### Theming
+### 主题
 
-TODO
+待办事项
 -->
 
-## Properties
+## 属性
 <Props />
 
-## Events
+## 事件
 <Events />
 
-## Methods
+## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 <CustomProps />
 
-## Slots
+## 插槽
 <Slots />

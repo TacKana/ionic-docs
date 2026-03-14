@@ -7,12 +7,12 @@
   </ion-card-header>
 
   <ion-card-content>
-    Here's a small text description for the card content. Nothing more, nothing less.
+    这里是一小段用于卡片内容的文本描述。不多不少，恰到好处。
   </ion-card-content>
 </ion-card>
 
 <style>
-  /* iOS places the subtitle above the title */
+  /* iOS 系统会将副标题置于标题上方 */
   ion-card-header.ios {
     display: flex;
     flex-flow: column-reverse;

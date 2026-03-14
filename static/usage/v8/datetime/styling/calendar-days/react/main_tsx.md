@@ -10,19 +10,16 @@ function Example() {
   useEffect(() => {
     const date = new Date();
 
-    // Set the value of the datetime to 2 days
-    // before the current day
+    // 将日期选择器的值设置为当前日期的前两天
     let dayChange = -2;
 
-    // If the day we are going to set the value to
-    // is in the previous month then set the day 2 days
-    // later instead so it remains in the same month
+    // 如果设置后的日期会进入上个月
+    // 则改为向后推两天，以确保日期保持在同一个月内
     if (date.getDate() + dayChange <= 0) {
       dayChange = -dayChange;
     }
 
-    // Set the value of the datetime to the day
-    // calculated above
+    // 将日期选择器的值设置为上面计算出的日期
     date.setDate(date.getDate() + dayChange);
     setDatetime(date.toISOString());
   }, []);

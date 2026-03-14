@@ -1,5 +1,5 @@
 ```html
 <ion-avatar>
-  <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+  <img alt="一个人头部的剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
 </ion-avatar>
 ```

@@ -21,7 +21,7 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Example</IonTitle>
+          <IonTitle>示例</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent color="light">

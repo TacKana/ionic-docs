@@ -1,7 +1,7 @@
 ```html
 <ion-list lines="full">
-  <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
-  <!-- Casting $event to $any is a temporary fix for this bug https://github.com/ionic-team/ionic-framework/issues/24245 -->
+  <!-- 默认情况下重新排序手势是禁用的，启用它才能拖放项目 -->
+  <!-- 将 $event 强制转换为 $any 是对此 bug 的临时修复 https://github.com/ionic-team/ionic-framework/issues/24245 -->
   <ion-reorder-group
     [disabled]="false"
     (ionReorderMove)="handleReorderMove($any($event))"

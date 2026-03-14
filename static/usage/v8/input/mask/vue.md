@@ -54,7 +54,7 @@
       });
     },
   };
-  // If you need to set an initial value, you can use maskitoTransform to ensure the value is valid
+  // 如果需要设置初始值，可以使用 maskitoTransform 来确保值的有效性
   const myPhoneNumber = ref(maskitoTransform('5555551212', phoneOptions));
 </script>
 ```

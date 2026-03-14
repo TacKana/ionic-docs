@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <IonList>
       <IonItem>
-        <IonButton onClick={() => input.current?.setFocus()}>Click to set focus</IonButton>
+        <IonButton onClick={() => input.current?.setFocus()}>点击设置焦点</IonButton>
       </IonItem>
       <IonItem>
         <IonInput ref={input} label="Email" labelPlacement="floating"></IonInput>

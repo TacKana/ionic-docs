@@ -38,8 +38,8 @@ function Example() {
       fill="solid"
       label="Email"
       labelPlacement="floating"
-      helperText="Enter a valid email"
-      errorText="Invalid email"
+      helperText="请输入有效的电子邮件地址"
+      errorText="电子邮件地址无效"
       onIonInput={(event) => validate(event)}
       onIonBlur={() => markTouched()}
     ></IonTextarea>

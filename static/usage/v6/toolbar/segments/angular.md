@@ -3,10 +3,10 @@
   <ion-toolbar>
     <ion-segment value="all">
       <ion-segment-button value="all">
-        <ion-label>All</ion-label>
+        <ion-label>全部</ion-label>
       </ion-segment-button>
       <ion-segment-button value="favorites">
-        <ion-label>Favorites</ion-label>
+        <ion-label>收藏</ion-label>
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>

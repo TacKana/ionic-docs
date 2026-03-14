@@ -1,6 +1,6 @@
 ---
-title: Capacitor Plugins
-sidebar_label: Setup
+title: Capacitor 插件
+sidebar_label: 安装配置
 hide_table_of_contents: true
 slug: /native/setup
 ---
@@ -9,10 +9,10 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Capacitor Plugins | Capacitor Core Plugins for Ionic Apps</title>
+  <title>Capacitor 插件 | 适用于 Ionic 应用的 Capacitor 核心插件</title>
   <meta
     name="description"
-    content="Capacitor offers a collection APIs that make adding native functionality to your Ionic app as simple as using any JavaScript library."
+    content="Capacitor 提供了一系列 API，让你可以像使用任何 JavaScript 库一样轻松地为 Ionic 应用添加原生功能。"
   />
   <style>{`
     :root {
@@ -21,23 +21,23 @@ import TabItem from '@theme/TabItem';
   `}</style>
 </head>
 
-Getting started with Capacitor is fairly straight forward for Ionic developers. Adding plugins to your project is no different than adding any dependencies you may need to a project.
+对于 Ionic 开发者来说，上手 Capacitor 相当简单。向项目中添加插件与添加任何其他项目所需的依赖项没有区别。
 <intro-end />
 
-## Install
+## 安装
 
-To install a plugin, find the plugin you want to use and install it using your package manager, like npm:
+要安装一个插件，找到你想要使用的插件，然后使用你的包管理器（如 npm）进行安装：
 
 ```shell
-# Install the Capacitor Plugins
+# 安装 Capacitor 插件
 $ npm install @capacitor/camera
 ```
 
-## Usage
+## 使用方法
 
-Once installed, plugins can be imported into a component and you can call the native functionality directly from your code.
+安装完成后，插件就可以导入到组件中，你可以直接从代码中调用原生功能。
 
-Using the [Camera plugin](native/camera.md) as an example, first install it:
+以 [Camera 插件](native/camera.md) 为例，首先安装它：
 
 ````mdx-code-block
 <Tabs

@@ -1,6 +1,6 @@
 ---
-title: 'Router Link | Navigating The ion-router-link Component'
-description: 'Use the ion-router-link component to navigate to a specified link. The router link can accept an href for location and a direction for the transition animation.'
+title: 'Router Link | ion-router-link 组件导航指南'
+description: '使用 ion-router-link 组件跳转到指定链接。该路由链接可接受用于定位的 href 属性和用于过渡动画的方向设置。'
 sidebar_label: 'ion-router-link'
 demoUrl: '/docs/demos/api/router-link/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/router-link/index.html'
@@ -18,19 +18,19 @@ import Slots from '@ionic-internal/component-api/v5/router-link/slots.md';
 
 # ion-router-link
 
-The router link component is used for navigating to a specified link. Similar to the browser's anchor tag, it can accept a href for the location, and a direction for the transition animation.
+路由链接组件用于导航至指定链接。类似于浏览器的锚点标签，它可以接受用于定位的 href 属性和用于过渡动画的方向设置。
 
-> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use an `<a>` and `routerLink` with the Angular router.
+> 注意：此组件仅适用于原生 JavaScript 和 Stencil JavaScript 项目。对于 Angular 项目，请使用带有 Angular 路由器的 `<a>` 标签和 `routerLink` 指令。
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -38,10 +38,10 @@ The router link component is used for navigating to a specified link. Similar to
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

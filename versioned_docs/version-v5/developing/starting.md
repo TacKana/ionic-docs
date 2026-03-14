@@ -1,41 +1,40 @@
 ---
-sidebar_label: Starting
+sidebar_label: 起步指南
 ---
 
-# Starting an App
+# 创建应用
 
-Starting a new Ionic app is incredibly simple. From the command line, run the `ionic start` command and the CLI will handle the rest.
+启动一个新的 Ionic 应用非常简单。只需在命令行中运行 `ionic start` 命令，CLI 将自动处理后续所有步骤。
 
 ```shell-session
 $ ionic start
 
-Every great app needs a name! 😍
+每个优秀的应用都需要一个名字！😍
 
-Please enter the full name of your app. You can change this at any time.
-To bypass this prompt next time, supply name,
-the first argument to ionic start.
+请输入应用的完整名称。您可以随时更改此名称。
+下次要跳过此提示，请在 ionic start 命令后直接提供名称参数。
 
-? Project name: █
+? 项目名称：█
 ```
 
-The Ionic CLI will display prompts asking for the new project's name and which template to use. These details can be provided as command arguments:
+Ionic CLI 会通过交互式提示询问新项目的名称和要使用的模板。这些信息也可以通过命令行参数直接提供：
 
 ```shell-session
 $ ionic start myApp tabs
 ```
 
-Here, `myApp` is the name of the project, `tabs` is the starter template, and the project type is `angular`.
+这里，`myApp` 是项目名称，`tabs` 是起始模板，项目类型为 `angular`。
 
-`tabs` is not the only project template available. Between all project types, there are three templates available:
+`tabs` 并不是唯一可用的项目模板。在所有项目类型中，我们提供了三种模板：
 
-- `tabs`: A tabs based layout
-- `sidemenu`: A sidemenu based layout
-- `blank`: An empty project with a single page
+- `tabs`：基于标签页的布局
+- `sidemenu`：基于侧边菜单的布局
+- `blank`：仅包含单页面的空白项目
 
-See all available templates with the following command:
+通过以下命令查看所有可用模板：
 
 ```shell-session
 $ ionic start --list
 ```
 
-These templates provide a great starting point for any app and include all the best practices for making a code base scale.
+这些模板为任何应用提供了绝佳的起点，并包含了构建可扩展代码库的最佳实践。

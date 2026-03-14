@@ -1,8 +1,8 @@
 ```html
 <ion-content class="ion-padding">
-  <h1>Click on the buttons to scroll the content.</h1>
+  <h1>点击按钮滚动内容。</h1>
 
-  <ion-button expand="block" onClick="scrollToBottom()">Scroll to Bottom</ion-button>
+  <ion-button expand="block" onClick="scrollToBottom()">滚动到底部</ion-button>
 
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum in
@@ -50,21 +50,19 @@
     sed, tristique faucibus sem. Sed mollis dui quis ligula cursus rutrum.
   </p>
 
-  <ion-button expand="block" onClick="scrollToTop()">Scroll to Top</ion-button>
+  <ion-button expand="block" onClick="scrollToTop()">滚动到顶部</ion-button>
 </ion-content>
 
 <script>
   const content = document.querySelector('ion-content');
 
   function scrollToBottom() {
-    // Passing a duration to the method makes it so the scroll slowly
-    // goes to the bottom instead of instantly
+    // 给方法传入一个持续时间参数，可以让滚动缓慢到达底部，而不是瞬间完成
     content.scrollToBottom(500);
   }
 
   function scrollToTop() {
-    // Passing a duration to the method makes it so the scroll slowly
-    // goes to the top instead of instantly
+    // 给方法传入一个持续时间参数，可以让滚动缓慢到达顶部，而不是瞬间完成
     content.scrollToTop(500);
   }
 </script>

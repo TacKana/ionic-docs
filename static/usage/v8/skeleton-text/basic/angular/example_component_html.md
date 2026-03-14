@@ -1,7 +1,7 @@
 ```html
 @if (loaded) {
 <ion-list>
-  <ion-list-header>Albums</ion-list-header>
+  <ion-list-header>专辑</ion-list-header>
   <ion-item>
     <ion-thumbnail slot="start">
       <ion-icon style="width: 100%; height: 100%" name="musical-notes"></ion-icon>
@@ -37,5 +37,5 @@
 </ion-list>
 }
 
-<ion-button (click)="loaded = !loaded">Toggle</ion-button>
+<ion-button (click)="loaded = !loaded">切换</ion-button>
 ```

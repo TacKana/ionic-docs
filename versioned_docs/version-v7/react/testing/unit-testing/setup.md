@@ -1,26 +1,26 @@
 ---
-sidebar_label: Setup
-title: Ionic React Unit Testing Setup
-description: Learn how to set up unit tests for an Ionic React application.
+sidebar_label: 设置
+title: Ionic React 单元测试设置
+description: 学习如何为 Ionic React 应用程序设置单元测试。
 ---
 
-# Unit Testing Setup
+# 单元测试设置
 
-Ionic requires a few additional steps to set up unit tests. If you are using an Ionic starter project, these steps have already been completed for you.
+Ionic 需要一些额外的步骤来设置单元测试。如果你使用的是 Ionic 入门项目，这些步骤已经为你完成了。
 
-### Install React Testing Library
+### 安装 React Testing Library
 
-React Testing Library is a set of utilities that make it easier to test React components. It's used to interact with components and test their behavior.
+React Testing Library 是一组工具集，可以让测试 React 组件更加容易。它用于与组件交互并测试其行为。
 
 ```bash
 npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
 ```
 
-### Initialize Ionic React
+### 初始化 Ionic React
 
-Ionic React requires the `setupIonicReact` function to be called before any tests are run. Failing to do so will result in mode-based classes and platform behaviors not being applied to your components.
+Ionic React 需要在运行任何测试之前调用 `setupIonicReact` 函数。如果不这样做，将导致基于模式的类（mode-based classes）和平台行为无法应用到你的组件上。
 
-In `src/setupTest.ts`, add the following code:
+在 `src/setupTest.ts` 文件中，添加以下代码：
 
 ```diff
 import '@testing-library/jest-dom/extend-expect';
@@ -29,7 +29,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 + setupIonicReact();
 
-// Mock matchmedia
+// 模拟 matchmedia
 window.matchMedia = window.matchMedia || function () {
   return {
     matches: false,

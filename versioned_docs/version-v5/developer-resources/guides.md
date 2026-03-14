@@ -1,9 +1,9 @@
-# Guides
+# 入门指南
 
-### [Your First Ionic App - v3](guides/first-app-v3/intro.md)
+### [你的第一个 Ionic 应用 - v3 版本](guides/first-app-v3/intro.md)
 
-Follow along as we create a working Photo Gallery app using Ionic Framework v3 and Appflow.
+跟着我们一起使用 Ionic Framework v3 和 Appflow 创建一个实用的照片墙应用。
 
-### [Your First Ionic 4 App - Angular and Cordova](guides/first-app-v4/intro.md)
+### [你的第一个 Ionic 4 应用 - Angular 与 Cordova](guides/first-app-v4/intro.md)
 
-Follow along as we create a working Photo Gallery app using Ionic Framework v4 and Cordova.
+跟着我们一起使用 Ionic Framework v4 和 Cordova 创建一个实用的照片墙应用。

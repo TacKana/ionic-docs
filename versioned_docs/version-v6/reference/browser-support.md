@@ -1,51 +1,51 @@
 ---
-title: Browser Support
+title: 浏览器支持
 ---
 
 <head>
-  <title>Mobile Browser Support to Run Ionic Apps Anywhere</title>
+  <title>移动浏览器支持 - 在任意平台运行 Ionic 应用</title>
   <meta
     name="description"
-    content="Due to a foundation in web technologies, Ionic mobile apps can run anywhere the web runs — iOS, Android, browsers, PWAs, and more. Learn about browser support."
+    content="基于 Web 技术构建的 Ionic 移动应用可以在任何 Web 运行的地方运行——包括 iOS、Android、浏览器、PWA 等平台。了解浏览器支持详情。"
   />
 </head>
 
-Ionic's earliest goal was to make it easy to develop mobile apps using web technologies like HTML, CSS, and JavaScript. Because of this foundation in web technologies, Ionic can run anywhere the web runs — iOS, Android, browsers, PWAs, and more.
+Ionic 的初衷是让开发者能够轻松地使用 HTML、CSS 和 JavaScript 等 Web 技术来开发移动应用。正是基于这种 Web 技术基础，Ionic 可以在任何 Web 运行的地方运行——包括 iOS、Android、浏览器、PWA 等平台。
 
-## Mobile Browsers
+## 移动浏览器
 
-In pursuit of [adaptive styling](../core-concepts/fundamentals.md#adaptive-styling), Ionic fully supports and is well tested on the mobile platforms listed below:
+为实现[自适应样式](../core-concepts/fundamentals.md#adaptive-styling)，Ionic 对以下移动平台提供了全面支持并经过充分测试：
 
-| Framework |        Android         |  iOS  |
-| :-------: | :--------------------: | :---: |
-| Ionic v6  | 5.0+ with Chromium 60+ | 13.0+ |
-| Ionic v5  |          5.0+          | 11.0+ |
-| Ionic v4  |          4.4+          | 10.0+ |
+| 框架版本 |     Android      |  iOS  |
+| :------: | :--------------: | :---: |
+| Ionic v6 | 5.0+（需 Chromium 60+） | 13.0+ |
+| Ionic v5 |       5.0+       | 11.0+ |
+| Ionic v4 |       4.4+       | 10.0+ |
 
 :::note
-Check the [latest Android stats](https://developer.android.com/about/dashboards/) and the [latest iOS stats](https://developer.apple.com/support/app-store/) for up-to-date platform information.
+请查阅[最新 Android 统计数据](https://developer.android.com/about/dashboards/) 和[最新 iOS 统计数据](https://developer.apple.com/support/app-store/) 获取最新的平台信息。
 :::
 
-### A Note on Android Support
+### 关于 Android 支持的说明
 
-Starting with Android 5.0, the webview was moved to a separate application that can be updated independently of Android. This means that most Android 5.0+ devices are going to be running a modern version of Chromium. However, there are a still a subset of Android devices whose manufacturer has locked the webview version and does not allow the webview to update. These webviews are typically stuck at the version that was available when the device initially shipped.
+从 Android 5.0 开始，Webview 被移到了一个独立的应用程序中，可以独立于 Android 系统进行更新。这意味着大多数 Android 5.0+ 设备都将运行现代版本的 Chromium。然而，仍有部分 Android 设备制造商锁定了 Webview 版本，不允许 Webview 更新。这些 Webview 通常停留在设备出厂时的版本。
 
-As a result, Ionic Framework v6 only supports Android devices and emulators running Android 5.0+ with a webview of Chromium 60 or newer. For context, this is the version that Stencil can support with no polyfills: https://stenciljs.com/docs/browser-support
+因此，Ionic Framework v6 仅支持运行 Android 5.0+ 且 Webview 为 Chromium 60 或更高版本的 Android 设备和模拟器。作为参考，这是 Stencil 无需 polyfill 即可支持的版本：https://stenciljs.com/docs/browser-support
 
-To figure out what version of the webview a device is running, log `window.navigator.userAgent` to the console when inspecting the application using Chrome Dev Tools.
+要查看设备运行的 Webview 版本，在使用 Chrome 开发者工具检查应用时，请在控制台打印 `window.navigator.userAgent`。
 
-### A Note on Angular 13+ Support
+### 关于 Angular 13+ 支持的说明
 
-Angular's support policy for iOS is the two most recent major versions. At the time of release that is iOS 14 and 15. To support iOS 13, change the project `target` specified in `compilerOptions` in the tsconfig.json to `es5`. Without this change an error of `Unexpected token '.' in promiseReactionJob` will occur on app startup in iOS 13.
+Angular 对 iOS 的支持策略是支持最近的两个主要版本。在发布时，这指的是 iOS 14 和 15。要支持 iOS 13，请将 tsconfig.json 中 `compilerOptions` 下的项目 `target` 改为 `es5`。如果不进行此更改，在 iOS 13 中启动应用时会出现 `Unexpected token '.' in promiseReactionJob` 错误。
 
-## Desktop Browsers
+## 桌面浏览器
 
-Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](../core-concepts/cross-platform.md#desktop).
+由于 Ionic 基于 Web 技术构建，它在桌面浏览器上的运行效果与在移动设备上一样出色。有关桌面布局的更多信息，请参阅[跨平台](../core-concepts/cross-platform.md#desktop)。
 
-|   Browser   | Ionic v6 | Ionic v5 | Ionic v4 |
-| :---------: | :------: | :------: | :------: |
-| **Chrome**  |   60+    |    ✔     |    ✔     |
-| **Safari**  |   13+    |    ✔     |    ✔     |
-|  **Edge**   |   79+    |   79+    |    ✔     |
-| **Firefox** |   63+    |    ✔     |    ✔     |
-|  **IE 11**  |  **X**   |  **X**   |  **X**   |
+|   浏览器   | Ionic v6 | Ionic v5 | Ionic v4 |
+| :--------: | :------: | :------: | :------: |
+| **Chrome** |   60+    |    ✔     |    ✔     |
+| **Safari** |   13+    |    ✔     |    ✔     |
+|  **Edge**  |   79+    |   79+    |    ✔     |
+| **Firefox**|   63+    |    ✔     |    ✔     |
+|  **IE 11** |  **X**   |  **X**   |  **X**   |

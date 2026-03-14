@@ -1,5 +1,5 @@
 ```html
-<ion-range aria-label="Range with knob events"></ion-range>
+<ion-range aria-label="带旋钮事件的范围控件"></ion-range>
 
 <script>
   const range = document.querySelector('ion-range');

@@ -1,10 +1,10 @@
 ```html
 <template>
-  <ion-input label="Default counter" label-placement="floating" :counter="true" :maxlength="20"></ion-input>
+  <ion-input label="默认计数器" label-placement="floating" :counter="true" :maxlength="20"></ion-input>
 
   <ion-input
     id="custom-input"
-    label="Custom Counter Format"
+    label="自定义计数器格式"
     label-placement="floating"
     :counter="true"
     :maxlength="20"

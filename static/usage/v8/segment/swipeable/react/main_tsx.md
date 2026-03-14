@@ -9,19 +9,19 @@ function Example() {
     <>
       <IonSegment value="first">
         <IonSegmentButton value="first" contentId="first">
-          <IonLabel>First</IonLabel>
+          <IonLabel>第一项</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="second" contentId="second">
-          <IonLabel>Second</IonLabel>
+          <IonLabel>第二项</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="third" contentId="third">
-          <IonLabel>Third</IonLabel>
+          <IonLabel>第三项</IonLabel>
         </IonSegmentButton>
       </IonSegment>
       <IonSegmentView>
-        <IonSegmentContent id="first">First</IonSegmentContent>
-        <IonSegmentContent id="second">Second</IonSegmentContent>
-        <IonSegmentContent id="third">Third</IonSegmentContent>
+        <IonSegmentContent id="first">第一项内容</IonSegmentContent>
+        <IonSegmentContent id="second">第二项内容</IonSegmentContent>
+        <IonSegmentContent id="third">第三项内容</IonSegmentContent>
       </IonSegmentView>
     </>
   );

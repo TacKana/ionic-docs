@@ -1,24 +1,24 @@
 ---
-title: CSS Utilities
+title: CSS 工具类
 ---
 
 <head>
-  <title>CSS Utilities: Classes for Text/Element Alignment or Modification</title>
+  <title>CSS 工具类：用于文本/元素对齐或修改的类</title>
   <meta
     name="description"
-    content="Ionic CSS utility classes can be used on any element for text modification/alignment, element placement, or to adjust padding and margin. Read to learn more."
+    content="Ionic CSS 工具类可用于任何元素，以修改文本/对齐方式、元素位置，或调整内边距和外边距。阅读以了解更多。"
   />
 </head>
 
-Ionic Framework provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
+Ionic 框架提供了一套 CSS 工具类，可用于任何元素，以修改文本、元素位置或调整内边距和外边距。
 
 :::important
-If your app was not started using an available Ionic Framework starter, the stylesheets listed in the [optional section of the global stylesheets](global-stylesheets.md#optional) will need to be included in order for these styles to work.
+如果你的应用不是使用可用的 Ionic 框架启动模板启动的，则需要引入 [全局样式表](global-stylesheets.md#optional) 的 [可选部分] 中列出的样式表，才能使这些样式生效。
 :::
 
-## Text Modification
+## 文本修改
 
-### Text Align
+### 文本对齐
 
 ```html
 <ion-grid>
@@ -65,18 +65,18 @@ If your app was not started using an available Ionic Framework starter, the styl
 </ion-grid>
 ```
 
-| Class               | Style Rule            | Description                                                                                                                                                         |
-| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `.ion-text-left`    | `text-align: left`    | The inline contents are aligned to the left edge of the line box.                                                                                                   |
-| `.ion-text-right`   | `text-align: right`   | The inline contents are aligned to the right edge of the line box.                                                                                                  |
-| `.ion-text-start`   | `text-align: start`   | The same as `text-left` if direction is left-to-right and `text-right` if direction is right-to-left.                                                               |
-| `.ion-text-end`     | `text-align: end`     | The same as `text-right` if direction is left-to-right and `text-left` if direction is right-to-left.                                                               |
-| `.ion-text-center`  | `text-align: center`  | The inline contents are centered within the line box.                                                                                                               |
-| `.ion-text-justify` | `text-align: justify` | The inline contents are justified. Text should be spaced to line up its left and right edges to the left and right edges of the line box, except for the last line. |
-| `.ion-text-wrap`    | `white-space: normal` | Sequences of whitespace are collapsed. Newline characters in the source are handled as other whitespace. Breaks lines as necessary to fill line boxes.              |
-| `.ion-text-nowrap`  | `white-space: nowrap` | Collapses whitespace as for `normal`, but suppresses line breaks (text wrapping) within text.                                                                       |
+| 类                   | 样式规则                 | 描述                                                                                                                         |
+| -------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| `.ion-text-left`     | `text-align: left`       | 行内内容与行框的左边缘对齐。                                                                                                 |
+| `.ion-text-right`    | `text-align: right`      | 行内内容与行框的右边缘对齐。                                                                                                 |
+| `.ion-text-start`    | `text-align: start`      | 如果方向是左到右，则与 `text-left` 相同；如果方向是右到左，则与 `text-right` 相同。                                         |
+| `.ion-text-end`      | `text-align: end`        | 如果方向是左到右，则与 `text-right` 相同；如果方向是右到左，则与 `text-left` 相同。                                         |
+| `.ion-text-center`   | `text-align: center`     | 行内内容在行框中居中。                                                                                                       |
+| `.ion-text-justify`  | `text-align: justify`    | 行内内容两端对齐。文本应进行间距调整，使其左右边缘与行框的左右边缘对齐，最后一行除外。                                       |
+| `.ion-text-wrap`     | `white-space: normal`    | 空白序列被合并。源码中的换行符与其他空白符处理方式相同。根据需要换行以填充行框。                                           |
+| `.ion-text-nowrap`   | `white-space: nowrap`    | 像 `normal` 一样合并空白，但抑制文本内的换行符（文本换行）。                                                                  |
 
-### Text Transform
+### 文本转换
 
 ```html
 <ion-grid>
@@ -103,31 +103,31 @@ If your app was not started using an available Ionic Framework starter, the styl
 </ion-grid>
 ```
 
-| Class                  | Style Rule                   | Description                                                        |
-| ---------------------- | ---------------------------- | ------------------------------------------------------------------ |
-| `.ion-text-uppercase`  | `text-transform: uppercase`  | Forces all characters to be converted to uppercase.                |
-| `.ion-text-lowercase`  | `text-transform: lowercase`  | Forces all characters to be converted to lowercase.                |
-| `.ion-text-capitalize` | `text-transform: capitalize` | Forces the first letter of each word to be converted to uppercase. |
+| 类                     | 样式规则                    | 描述                                         |
+| ---------------------- | --------------------------- | -------------------------------------------- |
+| `.ion-text-uppercase`  | `text-transform: uppercase` | 强制所有字符转换为大写。                     |
+| `.ion-text-lowercase`  | `text-transform: lowercase` | 强制所有字符转换为小写。                     |
+| `.ion-text-capitalize` | `text-transform: capitalize`| 强制每个单词的首字母转换为大写。             |
 
-### Responsive Text Classes
+### 响应式文本类
 
-All of the text classes listed above have additional classes to modify the text based on the screen size. Instead of `text-` in each class, use `text-{breakpoint}-` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints).
+上面列出的所有文本类都有额外的类，可以根据屏幕尺寸修改文本。在每个类中使用 `text-{breakpoint}-` 而不是 `text-`，以仅在特定屏幕尺寸上使用该类，其中 `{breakpoint}` 是 [Ionic 断点](#ionic-断点) 中列出的断点名称之一。
 
-The table below shows the default behavior, where `{modifier}` is any of the following: `left`, `right`, `start`, `end`, `center`, `justify`, `wrap`, `nowrap`, `uppercase`, `lowercase`, or `capitalize`, as they are described above.
+下表显示了默认行为，其中 `{modifier}` 是以下任意一项：`left`、`right`、`start`、`end`、`center`、`justify`、`wrap`、`nowrap`、`uppercase`、`lowercase` 或 `capitalize`，如上所述。
 
-| Class                     | Description                                                   |
-| ------------------------- | ------------------------------------------------------------- |
-| `.ion-text-{modifier}`    | Applies the modifier to the element on all screen sizes.      |
-| `.ion-text-sm-{modifier}` | Applies the modifier to the element when `min-width: 576px`.  |
-| `.ion-text-md-{modifier}` | Applies the modifier to the element when `min-width: 768px`.  |
-| `.ion-text-lg-{modifier}` | Applies the modifier to the element when `min-width: 992px`.  |
-| `.ion-text-xl-{modifier}` | Applies the modifier to the element when `min-width: 1200px`. |
+| 类                          | 描述                                                       |
+| --------------------------- | ---------------------------------------------------------- |
+| `.ion-text-{modifier}`      | 在所有屏幕尺寸上将修饰符应用于元素。                         |
+| `.ion-text-sm-{modifier}`   | 当 `min-width: 576px` 时将修饰符应用于元素。                |
+| `.ion-text-md-{modifier}`   | 当 `min-width: 768px` 时将修饰符应用于元素。                |
+| `.ion-text-lg-{modifier}`   | 当 `min-width: 992px` 时将修饰符应用于元素。                |
+| `.ion-text-xl-{modifier}`   | 当 `min-width: 1200px` 时将修饰符应用于元素。               |
 
-## Element Placement
+## 元素放置
 
-### Float Elements
+### 浮动元素
 
-The [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) CSS property specifies that an element should be placed along the left or right side of its container, where text and inline elements will wrap around it. This way, the element is taken from the normal flow of the web page, though still remaining a part of the flow, contrary to absolute positioning.
+[float](https://developer.mozilla.org/zh-CN/docs/Web/CSS/float) CSS 属性指定一个元素应沿其容器的左侧或右侧放置，允许文本和内联元素环绕它。这样，该元素从网页的正常流中脱离，但仍保持为流的一部分，这与绝对定位相反。
 
 ```html
 <ion-grid>
@@ -148,30 +148,30 @@ The [float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) CSS property
 </ion-grid>
 ```
 
-| Class              | Style Rule                     | Description                                                                                             |
-| ------------------ | ------------------------------ | ------------------------------------------------------------------------------------------------------- |
-| `.ion-float-left`  | `float: left`                  | The element will float on the left side of its containing block.                                        |
-| `.ion-float-right` | `float: right`                 | The element will float on the right side of its containing block.                                       |
-| `.ion-float-start` | `float: left` / `float: right` | The same as `float-left` if direction is left-to-right and `float-right` if direction is right-to-left. |
-| `.ion-float-end`   | `float: left` / `float: right` | The same as `float-right` if direction is left-to-right and `float-left` if direction is right-to-left. |
+| 类                 | 样式规则                      | 描述                                                                                             |
+| ------------------ | ----------------------------- | ------------------------------------------------------------------------------------------------ |
+| `.ion-float-left`  | `float: left`                 | 元素将浮动在其包含块的左侧。                                                                     |
+| `.ion-float-right` | `float: right`                | 元素将浮动在其包含块的右侧。                                                                     |
+| `.ion-float-start` | `float: left` / `float: right`| 如果方向是左到右，则与 `float-left` 相同；如果方向是右到左，则与 `float-right` 相同。           |
+| `.ion-float-end`   | `float: left` / `float: right`| 如果方向是左到右，则与 `float-right` 相同；如果方向是右到左，则与 `float-left` 相同。           |
 
-### Responsive Float Classes
+### 响应式浮动类
 
-All of the float classes listed above have additional classes to modify the float based on the screen size. Instead of `float-` in each class, use `float-{breakpoint}-` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints).
+上面列出的所有浮动类都有额外的类，可以根据屏幕尺寸修改浮动。在每个类中使用 `float-{breakpoint}-` 而不是 `float-`，以仅在特定屏幕尺寸上使用该类，其中 `{breakpoint}` 是 [Ionic 断点](#ionic-断点) 中列出的断点名称之一。
 
-The table below shows the default behavior, where `{modifier}` is any of the following: `left`, `right`, `start`, or `end`, as they are described above.
+下表显示了默认行为，其中 `{modifier}` 是以下任意一项：`left`、`right`、`start` 或 `end`，如上所述。
 
-| Class                      | Description                                                   |
-| -------------------------- | ------------------------------------------------------------- |
-| `.ion-float-{modifier}`    | Applies the modifier to the element on all screen sizes.      |
-| `.ion-float-sm-{modifier}` | Applies the modifier to the element when `min-width: 576px`.  |
-| `.ion-float-md-{modifier}` | Applies the modifier to the element when `min-width: 768px`.  |
-| `.ion-float-lg-{modifier}` | Applies the modifier to the element when `min-width: 992px`.  |
-| `.ion-float-xl-{modifier}` | Applies the modifier to the element when `min-width: 1200px`. |
+| 类                         | 描述                                                       |
+| -------------------------- | ---------------------------------------------------------- |
+| `.ion-float-{modifier}`    | 在所有屏幕尺寸上将修饰符应用于元素。                         |
+| `.ion-float-sm-{modifier}` | 当 `min-width: 576px` 时将修饰符应用于元素。                |
+| `.ion-float-md-{modifier}` | 当 `min-width: 768px` 时将修饰符应用于元素。                |
+| `.ion-float-lg-{modifier}` | 当 `min-width: 992px` 时将修饰符应用于元素。                |
+| `.ion-float-xl-{modifier}` | 当 `min-width: 1200px` 时将修饰符应用于元素。               |
 
-## Element Display
+## 元素显示
 
-The [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) CSS property sets whether an element is treated as a block or inline box and the layout used for its children, such as flow layout, grid or flex. It can also be used to completely hide an element from the layout.
+[display](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display) CSS 属性设置元素是否被视为块级或内联盒子，以及用于其子元素的布局，例如流式布局、网格或弹性布局。它也可用于完全从布局中隐藏元素。
 
 ```html
 <ion-grid>
@@ -192,28 +192,28 @@ The [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) CSS prop
 </ion-grid>
 ```
 
-| Class       | Style Rule      | Description                 |
-| ----------- | --------------- | --------------------------- |
-| `.ion-hide` | `display: none` | The element will be hidden. |
+| 类          | 样式规则         | 描述               |
+| ----------- | ---------------- | ------------------ |
+| `.ion-hide` | `display: none`  | 元素将被隐藏。     |
 
-### Responsive Display Classes
+### 响应式显示类
 
-There are also additional classes to modify the visibility based on the screen size. Instead of just `.ion-hide` for all screen sizes, use `.ion-hide-{breakpoint}-{dir}` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints), and `{dir}` is whether the element should be hidden on all screen sizes above (`up`) or below (`down`) the specified breakpoint.
+还有额外的类可以根据屏幕尺寸修改可见性。不要对所有屏幕尺寸使用单一的 `.ion-hide`，而应使用 `.ion-hide-{breakpoint}-{dir}` 来仅在特定屏幕尺寸上使用该类，其中 `{breakpoint}` 是 [Ionic 断点](#ionic-断点) 中列出的断点名称之一，`{dir}` 表示元素应在指定断点以上 (`up`) 还是以下 (`down`) 的所有屏幕尺寸上隐藏。
 
-| Class                | Description                                                                                          |
-| -------------------- | ---------------------------------------------------------------------------------------------------- |
-| `.ion-hide-sm-{dir}` | Applies the modifier to the element when `min-width: 576px` (`up`) or `max-width: 576px` (`down`).   |
-| `.ion-hide-md-{dir}` | Applies the modifier to the element when `min-width: 768px` (`up`) or `max-width: 768px` (`down`).   |
-| `.ion-hide-lg-{dir}` | Applies the modifier to the element when `min-width: 992px` (`up`) or `max-width: 992px` (`down`).   |
-| `.ion-hide-xl-{dir}` | Applies the modifier to the element when `min-width: 1200px` (`up`) or `max-width: 1200px` (`down`). |
+| 类                     | 描述                                                                                                  |
+| ---------------------- | ----------------------------------------------------------------------------------------------------- |
+| `.ion-hide-sm-{dir}`   | 当 `min-width: 576px` (`up`) 或 `max-width: 576px` (`down`) 时将修饰符应用于元素。                    |
+| `.ion-hide-md-{dir}`   | 当 `min-width: 768px` (`up`) 或 `max-width: 768px` (`down`) 时将修饰符应用于元素。                    |
+| `.ion-hide-lg-{dir}`   | 当 `min-width: 992px` (`up`) 或 `max-width: 992px` (`down`) 时将修饰符应用于元素。                    |
+| `.ion-hide-xl-{dir}`   | 当 `min-width: 1200px` (`up`) 或 `max-width: 1200px` (`down`) 时将修饰符应用于元素。                  |
 
-## Content Space
+## 内容间距
 
-### Padding
+### 内边距
 
-The padding class sets the padding area of an element. The padding area is the space between the content of the element and its border.
+内边距类设置元素的内边距区域。内边距区域是元素内容与其边框之间的空间。
 
-The default amount of `padding` to be applied is `16px` and is set by the `--ion-padding` variable. See the [CSS Variables](../theming/css-variables.md) section for more information on how to change these values.
+要应用的默认 `padding` 量为 `16px`，由 `--ion-padding` 变量设置。有关如何更改这些值的更多信息，请参阅 [CSS 变量](../theming/css-variables.md) 部分。
 
 ```html
 <ion-grid>
@@ -248,22 +248,22 @@ The default amount of `padding` to be applied is `16px` and is set by the `--ion
 </ion-grid>
 ```
 
-| Class                     | Style Rule             | Description                            |
-| ------------------------- | ---------------------- | -------------------------------------- |
-| `.ion-padding`            | `padding: 16px`        | Applies padding to all sides.          |
-| `.ion-padding-top`        | `padding-top: 16px`    | Applies padding to the top.            |
-| `.ion-padding-start`      | `padding-start: 16px`  | Applies padding to the start.          |
-| `.ion-padding-end`        | `padding-end: 16px`    | Applies padding to the end.            |
-| `.ion-padding-bottom`     | `padding-bottom: 16px` | Applies padding to the bottom.         |
-| `.ion-padding-vertical`   | `padding: 16px 0`      | Applies padding to the top and bottom. |
-| `.ion-padding-horizontal` | `padding: 0 16px`      | Applies padding to the left and right. |
-| `.ion-no-padding`         | `padding: 0`           | Applies no padding to all sides.       |
+| 类                        | 样式规则              | 描述                         |
+| ------------------------- | --------------------- | ---------------------------- |
+| `.ion-padding`            | `padding: 16px`       | 为所有边应用内边距。         |
+| `.ion-padding-top`        | `padding-top: 16px`   | 为顶部应用内边距。           |
+| `.ion-padding-start`      | `padding-start: 16px` | 为起始侧应用内边距。         |
+| `.ion-padding-end`        | `padding-end: 16px`   | 为结束侧应用内边距。         |
+| `.ion-padding-bottom`     | `padding-bottom: 16px`| 为底部应用内边距。           |
+| `.ion-padding-vertical`   | `padding: 16px 0`     | 为顶部和底部应用内边距。     |
+| `.ion-padding-horizontal` | `padding: 0 16px`     | 为左侧和右侧应用内边距。     |
+| `.ion-no-padding`         | `padding: 0`          | 不为所有边应用内边距。       |
 
-### Margin
+### 外边距
 
-The margin area extends the border area with an empty area used to separate the element from its neighbors.
+外边距区域扩展边框区域，用一个空白区域分隔元素与其邻居。
 
-The default amount of `margin` to be applied is `16px` and is set by the `--ion-margin` variable. See the [CSS Variables](../theming/css-variables.md) section for more information on how to change these values.
+要应用的默认 `margin` 量为 `16px`，由 `--ion-margin` 变量设置。有关如何更改这些值的更多信息，请参阅 [CSS 变量](../theming/css-variables.md) 部分。
 
 ```html
 <ion-grid>
@@ -298,22 +298,22 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 </ion-grid>
 ```
 
-| Class                    | Style Rule            | Description                           |
-| ------------------------ | --------------------- | ------------------------------------- |
-| `.ion-margin`            | `margin: 16px`        | Applies margin to all sides.          |
-| `.ion-margin-top`        | `margin-top: 16px`    | Applies margin to the top.            |
-| `.ion-margin-start`      | `margin-start: 16px`  | Applies margin to the left.           |
-| `.ion-margin-end`        | `margin-end: 16px`    | Applies margin to the right.          |
-| `.ion-margin-bottom`     | `margin-bottom: 16px` | Applies margin to the bottom.         |
-| `.ion-margin-vertical`   | `margin: 16px 0`      | Applies margin to the top and bottom. |
-| `.ion-margin-horizontal` | `margin: 0 16px`      | Applies margin to the left and right. |
-| `.ion-no-margin`         | `margin: 0`           | Applies no margin to all sides.       |
+| 类                     | 样式规则             | 描述                         |
+| ---------------------- | -------------------- | ---------------------------- |
+| `.ion-margin`          | `margin: 16px`       | 为所有边应用外边距。         |
+| `.ion-margin-top`      | `margin-top: 16px`   | 为顶部应用外边距。           |
+| `.ion-margin-start`    | `margin-start: 16px` | 为左侧应用外边距。           |
+| `.ion-margin-end`      | `margin-end: 16px`   | 为右侧应用外边距。           |
+| `.ion-margin-bottom`   | `margin-bottom: 16px`| 为底部应用外边距。           |
+| `.ion-margin-vertical` | `margin: 16px 0`     | 为顶部和底部应用外边距。     |
+| `.ion-margin-horizontal`| `margin: 0 16px`    | 为左侧和右侧应用外边距。     |
+| `.ion-no-margin`       | `margin: 0`          | 不为所有边应用外边距。       |
 
-## Flex Properties
+## Flex 属性
 
 <img src={require('@site/static/img/layout/diagram-flex-attributes.png').default} />
 
-### Flex Container Properties
+### Flex 容器属性
 
 ```html
 <ion-grid>
@@ -450,24 +450,24 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 </ion-grid>
 ```
 
-| Class                          | Style Rule                       | Description                                                                 |
-| ------------------------------ | -------------------------------- | --------------------------------------------------------------------------- |
-| `.ion-justify-content-start`   | `justify-content: flex-start`    | Items are packed toward the start on the main axis.                         |
-| `.ion-justify-content-end`     | `justify-content: flex-end`      | Items are packed toward the end on the main axis.                           |
-| `.ion-justify-content-center`  | `justify-content: center`        | Items are centered along the main axis.                                     |
-| `.ion-justify-content-around`  | `justify-content: space-around`  | Items are evenly distributed on the main axis with equal space around them. |
-| `.ion-justify-content-between` | `justify-content: space-between` | Items are evenly distributed on the main axis.                              |
-| `.ion-justify-content-evenly`  | `justify-content: space-evenly`  | Items are distributed so that the spacing between any two items is equal.   |
-| `.ion-align-items-start`       | `align-items: flex-start`        | Items are packed toward the start on the cross axis.                        |
-| `.ion-align-items-end`         | `align-items: flex-end`          | Items are packed toward the end on the cross axis.                          |
-| `.ion-align-items-center`      | `align-items: center`            | Items are centered along the cross axis.                                    |
-| `.ion-align-items-baseline`    | `align-items: baseline`          | Items are aligned so that their baselines align.                            |
-| `.ion-align-items-stretch`     | `align-items: stretch`           | Items are stretched to fill the container.                                  |
-| `.ion-nowrap`                  | `flex-wrap: nowrap`              | Items will all be on one line.                                              |
-| `.ion-wrap`                    | `flex-wrap: wrap`                | Items will wrap onto multiple lines, from top to bottom.                    |
-| `.ion-wrap-reverse`            | `flex-wrap: wrap-reverse`        | Items will wrap onto multiple lines, from bottom to top.                    |
+| 类                               | 样式规则                        | 描述                                             |
+| -------------------------------- | ------------------------------- | ------------------------------------------------ |
+| `.ion-justify-content-start`     | `justify-content: flex-start`   | 项目在主轴起始端对齐。                           |
+| `.ion-justify-content-end`       | `justify-content: flex-end`     | 项目在主轴末端对齐。                             |
+| `.ion-justify-content-center`    | `justify-content: center`       | 项目沿主轴居中。                                 |
+| `.ion-justify-content-around`    | `justify-content: space-around` | 项目在主轴周围均匀分布，周围空间相等。           |
+| `.ion-justify-content-between`   | `justify-content: space-between`| 项目在主轴均匀分布。                             |
+| `.ion-justify-content-evenly`    | `justify-content: space-evenly` | 项目分布使得任意两个项目之间的间距相等。         |
+| `.ion-align-items-start`         | `align-items: flex-start`       | 项目在交叉轴起始端对齐。                         |
+| `.ion-align-items-end`           | `align-items: flex-end`         | 项目在交叉轴末端对齐。                           |
+| `.ion-align-items-center`        | `align-items: center`           | 项目沿交叉轴居中。                               |
+| `.ion-align-items-baseline`      | `align-items: baseline`         | 项目对齐，使其基线对齐。                         |
+| `.ion-align-items-stretch`       | `align-items: stretch`          | 项目拉伸以填充容器。                             |
+| `.ion-nowrap`                    | `flex-wrap: nowrap`             | 所有项目将位于一行。                             |
+| `.ion-wrap`                      | `flex-wrap: wrap`               | 项目将换行到多行，从上到下。                     |
+| `.ion-wrap-reverse`              | `flex-wrap: wrap-reverse`       | 项目将换行到多行，从下到上。                     |
 
-### Flex Item Properties
+### Flex 项目属性
 
 ```html
 <ion-grid>
@@ -488,18 +488,18 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 </ion-grid>
 ```
 
-| Class                      | Style Rule               | Description                                                            |
-| -------------------------- | ------------------------ | ---------------------------------------------------------------------- |
-| `.ion-align-self-start`    | `align-self: flex-start` | Item is packed toward the start on the cross axis.                     |
-| `.ion-align-self-end`      | `align-self: flex-end`   | Item is packed toward the end on the cross axis.                       |
-| `.ion-align-self-center`   | `align-self: center`     | Item is centered along the cross axis.                                 |
-| `.ion-align-self-baseline` | `align-self: baseline`   | Item is aligned so that its baseline aligns with other item baselines. |
-| `.ion-align-self-stretch`  | `align-self: stretch`    | Item is stretched to fill the container.                               |
-| `.ion-align-self-auto`     | `align-self: auto`       | Item is positioned according to the parent's `align-items` value.      |
+| 类                           | 样式规则                | 描述                                           |
+| ---------------------------- | ----------------------- | ---------------------------------------------- |
+| `.ion-align-self-start`      | `align-self: flex-start`| 项目在交叉轴起始端对齐。                       |
+| `.ion-align-self-end`        | `align-self: flex-end`  | 项目在交叉轴末端对齐。                         |
+| `.ion-align-self-center`     | `align-self: center`    | 项目沿交叉轴居中。                             |
+| `.ion-align-self-baseline`   | `align-self: baseline`  | 项目对齐，使其基线与其它项目基线对齐。         |
+| `.ion-align-self-stretch`    | `align-self: stretch`   | 项目拉伸以填充容器。                           |
+| `.ion-align-self-auto`       | `align-self: auto`      | 项目根据父元素的 `align-items` 值进行定位。    |
 
-## Border Display
+## 边框显示
 
-The `.ion-no-border` utility class can be used to remove borders from Ionic components. This class can be applied to the `ion-header` and `ion-footer` components.
+`.ion-no-border` 工具类可用于移除 Ionic 组件的边框。此类可以应用于 `ion-header` 和 `ion-footer` 组件。
 
 ```html
 <ion-header class="ion-no-border">
@@ -515,18 +515,18 @@ The `.ion-no-border` utility class can be used to remove borders from Ionic comp
 </ion-footer>
 ```
 
-| Class            | Description                      |
-| ---------------- | -------------------------------- |
-| `.ion-no-border` | The element will have no border. |
+| 类                 | 描述                 |
+| ------------------ | -------------------- |
+| `.ion-no-border`   | 元素将没有边框。     |
 
-## Ionic Breakpoints
+## Ionic 断点
 
-Ionic uses breakpoints in media queries in order to style an application differently based on the screen size. The following breakpoint names are used in the utility classes listed above, where the class will apply when the width is met.
+Ionic 在媒体查询中使用断点，以便根据屏幕尺寸为应用设置不同的样式。以下断点名称用于上面列出的工具类中，当宽度满足条件时，该类将应用。
 
-| Breakpoint Name | Width    |
-| --------------- | -------- |
-| `xs`            | `0`      |
-| `sm`            | `576px`  |
-| `md`            | `768px`  |
-| `lg`            | `992px`  |
-| `xl`            | `1200px` |
+| 断点名称 | 宽度     |
+| -------- | -------- |
+| `xs`     | `0`      |
+| `sm`     | `576px`  |
+| `md`     | `768px`  |
+| `lg`     | `992px`  |
+| `xl`     | `1200px` |

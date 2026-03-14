@@ -9,61 +9,31 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Header</IonTitle>
+          <IonTitle>标题栏</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen={true} className="ion-padding">
-        <h1>Scroll the content and notice that the text goes behind the header and footer.</h1>
+        <h1>滚动内容区域，注意文字会隐藏在标题栏和页脚栏后面。</h1>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim
-          fermentum in risus. Sed nec convallis sapien, id tincidunt enim. Mauris ornare eleifend nunc id mattis. Fusce
-          augue diam, sagittis nec posuere at, consectetur tempor lectus. Nulla at lectus eget mauris iaculis malesuada
-          mollis sed neque. Curabitur et risus tristique, malesuada mauris finibus, elementum massa. Proin lacinia
-          mauris quis ligula blandit ullamcorper. Donec ut posuere lorem. In volutpat magna vitae tellus posuere
-          pulvinar. Nam varius ligula justo, nec placerat lacus pharetra ac. Aenean massa orci, tristique in nisl ut,
-          aliquet consectetur libero. Etiam luctus placerat vulputate. Aliquam ipsum massa, porttitor at mollis ut,
-          pretium sit amet mi. In neque mauris, placerat et neque vel, tempor interdum dolor. Suspendisse gravida
-          malesuada tellus, vel dapibus nisl dignissim vel. Cras ut nulla sit amet erat malesuada euismod vel a nulla.
+          这里是示例文本。实际上，在真实应用中，您会在这里放置实际内容。这段文字用于演示当内容区域滚动时，文本如何与页眉和页脚交互。请尝试滚动查看效果。
         </p>
         <p>
-          Phasellus sit amet iaculis odio, eget feugiat erat. Etiam sit amet turpis sit amet massa viverra maximus.
-          Aenean venenatis porttitor pharetra. Fusce vulputate urna purus, vel efficitur mauris auctor non. Etiam libero
-          odio, sodales in velit a, faucibus venenatis erat. Ut convallis sit amet urna in ultrices. Cras neque est,
-          vehicula sed lorem ac, placerat commodo elit. Praesent turpis metus, elementum eget iaculis ac, elementum in
-          odio. Nunc et elit faucibus, condimentum mauris consequat, ornare dolor. Sed ac lectus a est blandit tempor.
-          Etiam lobortis tristique maximus.
+          继续滚动以查看更多内容。注意观察文本如何平滑地过渡到标题栏和页脚栏的后方。这种设计模式在移动端应用中十分常见。
         </p>
         <p>
-          Quisque tempus porttitor massa, vel condimentum risus finibus a. Aliquam viverra maximus odio, id ornare justo
-          tristique ac. Mauris euismod arcu eget neque sagittis rutrum. Ut vehicula porta lacus nec lobortis. Vestibulum
-          et elit ultrices, lacinia metus in, lobortis est. Vivamus nisi justo, venenatis sit amet arcu ac, congue
-          faucibus justo. Duis volutpat posuere enim, vel sagittis elit dictum et. Sed et congue mauris. Nam venenatis
-          venenatis risus, ac condimentum neque sagittis sed. In eget nulla ultricies urna sollicitudin posuere. Aenean
-          sagittis congue mauris. Proin nec libero mi. In hac habitasse platea dictumst. Praesent nunc nulla, dictum id
-          molestie sed, pretium vitae turpis.
+          当您向下滚动时，内容会逐渐向上移动，部分文本会被标题栏遮挡。同样，向上滚动时，底部的文本会被页脚栏遮挡。
         </p>
         <p>
-          Pellentesque vitae dapibus lacus. Nullam suscipit ornare risus quis ullamcorper. Nullam feugiat, sapien et
-          sodales fermentum, risus ligula semper risus, id efficitur ligula augue id diam. Suspendisse lobortis est sit
-          amet quam facilisis, ut vestibulum nunc dignissim. Donec at vestibulum magna. Maecenas maximus pretium metus.
-          Phasellus congue sapien vel odio imperdiet, nec mollis odio euismod. Sed vel eros ut sapien accumsan
-          condimentum vehicula vitae lectus. Donec sed efficitur lorem. Aenean tristique mi libero, eleifend tincidunt
-          libero finibus at. Mauris condimentum fermentum rutrum.
+          这种布局确保了标题栏和页脚栏始终保持在视图中，为用户提供持久的导航和操作入口，同时内容区域可以自由滚动。
         </p>
         <p>
-          Nulla tristique ultricies suscipit. Donec non ornare elit. Vivamus id pretium mauris, nec sagittis leo. Fusce
-          mattis eget est id sollicitudin. Suspendisse dictum sem magna, in imperdiet metus suscipit et. Suspendisse
-          enim enim, venenatis et orci eu, suscipit congue lacus. Praesent vel ligula non eros tempor interdum. Proin
-          justo orci, ultricies vitae diam sed, semper consectetur ligula. Aenean finibus ante velit, nec efficitur
-          libero cursus cursus. Duis mi nunc, imperdiet sed condimentum vel, porttitor ut lacus. Quisque dui ipsum,
-          vehicula sed vestibulum id, semper vel libero. Suspendisse tincidunt mollis condimentum. Nulla facilisi. Etiam
-          neque nisl, egestas nec iaculis sed, tristique faucibus sem. Sed mollis dui quis ligula cursus rutrum.
+          您可以尝试添加更多内容，或者调整浏览器窗口大小，来观察不同情况下的布局表现。
         </p>
       </IonContent>
       <IonFooter>
         <IonToolbar>
-          <IonTitle>Footer</IonTitle>
+          <IonTitle>页脚栏</IonTitle>
         </IonToolbar>
       </IonFooter>
     </>

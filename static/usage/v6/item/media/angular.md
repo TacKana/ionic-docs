@@ -1,15 +1,15 @@
 ```html
 <ion-item>
   <ion-avatar slot="start">
-    <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    <img alt="人物头部轮廓" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
   </ion-avatar>
-  <ion-label> Avatar Item </ion-label>
+  <ion-label> 头像项目 </ion-label>
 </ion-item>
 
 <ion-item>
   <ion-thumbnail slot="start">
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+    <img alt="山脉轮廓" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
   </ion-thumbnail>
-  <ion-label> Thumbnail Item </ion-label>
+  <ion-label> 缩略图项目 </ion-label>
 </ion-item>
 ```

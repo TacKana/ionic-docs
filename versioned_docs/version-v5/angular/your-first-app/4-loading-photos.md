@@ -1,27 +1,27 @@
 ---
-sidebar_label: Loading Photos
+sidebar_label: 加载照片
 ---
 
-# Loading Photos from the Filesystem
+# 从文件系统加载照片
 
-We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
+我们已经实现了拍照和保存到文件系统的功能。现在还缺少最后一块拼图：照片虽然存储在文件系统中，但我们需要一种方式来保存每个文件的引用，以便能够在照片库中再次显示它们。
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](https://capacitorjs.com/docs/apis/preferences) to store our array of Photos in a key-value store.
+幸运的是，这很简单：我们将利用 Capacitor 的 [Preferences API](https://capacitorjs.com/docs/apis/preferences)，将照片数组存储在一个键值存储中。
 
 ## Preferences API
 
-Begin by defining a constant variable that will act as the key for the store:
+首先定义一个常量变量，它将作为存储的键：
 
 ```tsx
 export class PhotoService {
   public photos: UserPhoto[] = [];
   private PHOTO_STORAGE: string = 'photos';
 
-  // other code
+  // 其他代码
 }
 ```
 
-Next, at the end of the `addNewToGallery` function, add a call to `Preferences.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+接下来，在 `addNewToGallery` 函数的末尾，添加对 `Preferences.set()` 的调用来保存照片数组。通过在这里添加，每次拍摄新照片时都会存储照片数组。这样，无论应用用户何时关闭应用或切换到其他应用，所有照片数据都会被保存。
 
 ```tsx
 Preferences.set({
@@ -30,35 +30,35 @@ Preferences.set({
 });
 ```
 
-With the photo array data saved, create a function called `loadSaved()` that can retrieve that data. We use the same key to retrieve the photos array in JSON format, then parse it into an array:
+保存好照片数组数据后，创建一个名为 `loadSaved()` 的函数来检索这些数据。我们使用相同的键来检索 JSON 格式的照片数组，然后将其解析为数组：
 
 ```tsx
 public async loadSaved() {
-  // Retrieve cached photo array data
+  // 检索缓存的照片数组数据
   const photoList = await Preferences.get({ key: this.PHOTO_STORAGE });
   this.photos = JSON.parse(photoList.value) || [];
 
-  // more to come...
+  // 更多内容即将添加...
 }
 ```
 
-On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below is the code you need to add in the `loadSaved()` function you just added:
+在移动端（接下来的部分会讲到！），我们可以直接将图像标签 `<img src="x" />` 的源设置为文件系统中的每个照片文件，从而自动显示它们。然而在网页端，我们必须将每个图像从文件系统读取为 base64 格式，并将其作为 `Photo` 对象的新属性 `base64`。这是因为文件系统 API 底层使用了 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)。以下是你需要在你刚刚添加的 `loadSaved()` 函数中添加的代码：
 
 ```tsx
-// Display the photo by reading into base64 format
+// 通过读取为 base64 格式来显示照片
 for (let photo of this.photos) {
-  // Read each saved photo's data from the Filesystem
+  // 从文件系统读取每个已保存照片的数据
   const readFile = await Filesystem.readFile({
     path: photo.filepath,
     directory: Directory.Data,
   });
 
-  // Web platform only: Load the photo as base64 data
+  // 仅限网页平台：将照片作为 base64 数据加载
   photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
 }
 ```
 
-After, call this new method in `tab2.page.ts` so that when the user first navigates to Tab 2 (the Photo Gallery), all photos are loaded and displayed on the screen.
+之后，在 `tab2.page.ts` 中调用这个新方法，这样当用户首次导航到 Tab 2（照片库）时，所有照片都会被加载并显示在屏幕上。
 
 ```tsx
 async ngOnInit() {
@@ -66,4 +66,4 @@ async ngOnInit() {
 }
 ```
 
-That’s it! We’ve built a complete Photo Gallery feature in our Ionic app that works on the web. Next up, we’ll transform it into a mobile app for iOS and Android!
+完成！我们已经在 Ionic 应用中构建了一个完整的照片库功能，可以在网页上运行。接下来，我们将把它转换成一个适用于 iOS 和 Android 的移动应用！

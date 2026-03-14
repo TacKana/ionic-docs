@@ -1,5 +1,5 @@
 ```html
-<ion-button>Click Me</ion-button>
+<ion-button>点击我</ion-button>
 
 <script>
   class PopoverPage extends HTMLElement {
@@ -8,7 +8,7 @@
     }
 
     connectedCallback() {
-      this.innerHTML = `<ion-content class="ion-padding">Hello World!</ion-content>`;
+      this.innerHTML = `<ion-content class="ion-padding">你好，世界！</ion-content>`;
     }
   }
 
@@ -24,7 +24,7 @@
     await popover.present();
 
     const { role } = await popover.onDidDismiss();
-    console.log(`Popover dismissed with role: ${role}`);
+    console.log(`弹窗已关闭，操作标识：${role}`);
   }
 
   const button = document.querySelector('ion-button');

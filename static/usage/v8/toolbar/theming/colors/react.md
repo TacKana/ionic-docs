@@ -6,34 +6,34 @@ function Example() {
   return (
     <>
       <IonToolbar>
-        <IonTitle>Default Toolbar</IonTitle>
+        <IonTitle>默认工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="primary">
-        <IonTitle>Primary Toolbar</IonTitle>
+        <IonTitle>主要工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="secondary">
-        <IonTitle>Secondary Toolbar</IonTitle>
+        <IonTitle>次要工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="tertiary">
-        <IonTitle>Tertiary Toolbar</IonTitle>
+        <IonTitle>第三工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="success">
-        <IonTitle>Success Toolbar</IonTitle>
+        <IonTitle>成功工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="warning">
-        <IonTitle>Warning Toolbar</IonTitle>
+        <IonTitle>警告工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="danger">
-        <IonTitle>Danger Toolbar</IonTitle>
+        <IonTitle>危险工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="light">
-        <IonTitle>Light Toolbar</IonTitle>
+        <IonTitle>浅色工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="medium">
-        <IonTitle>Medium Toolbar</IonTitle>
+        <IonTitle>中等工具栏</IonTitle>
       </IonToolbar>
       <IonToolbar color="dark">
-        <IonTitle>Dark Toolbar</IonTitle>
+        <IonTitle>深色工具栏</IonTitle>
       </IonToolbar>
     </>
   );

@@ -1,8 +1,8 @@
-# Scaffolding
+# 项目脚手架
 
-Once an app is created by the Ionic CLI, the next step is to start building out features and components. The majority of the app will be developed in the `src/app/` directory.
+使用 Ionic CLI 创建应用后，下一步就是开始构建功能和组件。应用的大部分代码将位于 `src/app/` 目录中。
 
-## Project Structure
+## 项目结构
 
 ```bash
 src/
@@ -18,7 +18,7 @@ src/
 └── zone-flags.ts
 ```
 
-The `src/` directory has items such as the `index.html` file, configuration files for tests, an asset folder for images, and the main `app/` directory for the app's code.
+`src/` 目录包含 `index.html` 文件、测试配置文件、存放图片的资源文件夹，以及存放应用代码的主目录 `app/`。
 
 ```bash
 src/
@@ -30,15 +30,15 @@ src/
     └── app.module.ts
 ```
 
-The `src/app/` directory contains the root app component and module as well as additional directories that contain app features such as pages, components, services, etc.
+`src/app/` 目录包含根应用组件和模块，以及其他存放应用功能的目录，如页面、组件、服务等。
 
-## Generating New Features
+## 生成新功能
 
-The Ionic CLI can generate new app features with the [`ionic generate`](../cli/commands/generate.md) command. By running `ionic generate` in the command line, a selection prompt is displayed which lists the available features that can be generated.
+Ionic CLI 可以通过 [`ionic generate`](../cli/commands/generate.md) 命令生成新的应用功能。在命令行中运行 `ionic generate` 会显示一个选择提示，列出所有可生成的功能类型。
 
 ```shell-session
 $ ionic generate
-? What would you like to generate?
+? 您希望生成什么？
 ❯ page
   component
   service
@@ -48,19 +48,19 @@ $ ionic generate
   guard
 ```
 
-After a selection is made, the Ionic CLI will prompt for a name. The name can be a path, allowing easy generation of features within an organized project structure.
+选择功能类型后，Ionic CLI 会提示输入名称。名称可以包含路径，便于在组织有序的项目结构中轻松生成功能。
 
 :::note
-Any level of nesting is allowed, such as `portfolio/intro`. You can easily scope components to pages by using `ionic g component "portfolio/intro/About Me"`, for example.
+支持任意层级的嵌套路径，例如 `portfolio/intro`。您可以通过路径将组件限定在特定页面下，例如使用命令 `ionic g component "portfolio/intro/About Me"`。
 :::
 
 ```shell-session
 $ ionic generate
-? What would you like to generate? page
-? Name/path of page: portfolio █
+? 您希望生成什么？ page
+? 页面名称/路径： portfolio █
 ```
 
-Alternatively, the `type` and `name` of the generated feature can be entered on the command line:
+或者，也可以在命令行中直接指定要生成的功能类型和名称：
 
 ```shell-session
 $ ionic g page "User Detail"
@@ -71,11 +71,11 @@ CREATE src/app/user-detail/user-detail.page.html (138 bytes)
 CREATE src/app/user-detail/user-detail.page.spec.ts (720 bytes)
 CREATE src/app/user-detail/user-detail.page.ts (280 bytes)
 UPDATE src/app/app-routing.module.ts (475 bytes)
-[OK] Generated page!
+[OK] 页面已生成！
 ```
 
-The Ionic CLI uses the underlying framework tooling to stay close to best practices. For `@ionic/angular`, the Angular CLI is used under the hood.
+Ionic CLI 利用底层框架工具来遵循最佳实践。对于 `@ionic/angular`，底层使用的是 Angular CLI。
 
-After creating the files and directories for the new page, the CLI will also update the router configuration to include the new page. This reduces the amount of manual work needed to keep the development lifecycle moving.
+在为新页面创建文件和目录后，CLI 还会更新路由配置以包含这个新页面。这减少了手动工作量，让开发流程保持顺畅。
 
-For more details, run `ionic g --help` from the command line or see [the documentation](../cli/commands/generate.md) for `ionic generate`.
+更多详情，请在命令行中运行 `ionic g --help` 或查阅 [`ionic generate`](../cli/commands/generate.md) 的文档。

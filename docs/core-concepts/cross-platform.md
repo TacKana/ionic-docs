@@ -1,165 +1,165 @@
 ---
-title: Cross Platform
+title: 跨平台开发
 ---
 
-# Cross Platform
+# 跨平台开发
 
-Ionic is built from the ground up to make development easy, no matter what platform you are building for. Ionic apps are truly cross-platform: able to run as an Android, iOS, Electron, and Progressive Web App (PWA), all from a single codebase. There are some points to keep in mind when optimizing an app to work across these platforms.
+Ionic 从底层构建时就考虑了开发便捷性，无论你为哪个平台构建应用。Ionic 应用是真正跨平台的：能够作为 Android、iOS、Electron 和渐进式 Web 应用（PWA）运行，所有这些都来自同一个代码库。在优化应用以在这些平台上工作时，有几个要点需要注意。
 
-## Hardware APIs
+## 硬件 API
 
-In a native application, it's common to make API calls to communicate with the device, such as opening the camera or accessing geolocation. These API calls won’t work when called in a web environment because there’s no native bridge. There are a few ways Ionic handles this.
+在原生应用中，通常需要调用 API 与设备通信，例如打开摄像头或访问地理位置。这些 API 调用在 Web 环境中无法工作，因为没有原生桥接。Ionic 有几种方式来处理这个问题。
 
 ### Ionic Native
 
-[Ionic Native](../native.md) has its own internal logic to detect if it is inside of a native environment. Instead of throwing a runtime error, it will print a warning if it is not a native environment and there are no Cordova plugins available. The app won’t break and it will continue to work, although without the native functionality.
+[Ionic Native](../native.md) 有自己的内部逻辑来检测是否处于原生环境中。如果不是原生环境且没有可用的 Cordova 插件，它不会抛出运行时错误，而是会打印警告。应用不会崩溃，会继续工作，只是缺少原生功能。
 
-### Platform Detection
+### 平台检测
 
-In an app’s logic, whenever it is needed to make a native API call, it is recommended to always check the status of the native environment first. For example:
+在应用逻辑中，每当需要进行原生 API 调用时，建议始终先检查原生环境的状态。例如：
 
 ```tsx
 this.platform.ready().then(() => {
-  // 'hybrid' detects both Cordova and Capacitor
+  // 'hybrid' 可以检测 Cordova 和 Capacitor
   if (this.platform.is('hybrid')) {
-    // make your native API calls
+    // 执行原生 API 调用
   } else {
-    // fallback to browser APIs
+    // 回退到浏览器 API
   }
 });
 ```
 
-This bit of code can be incredibly helpful when targeting environments where access to the native APIs is uncertain.
+当目标环境对原生 API 的访问不确定时，这段代码会非常有帮助。
 
-### Browser Fallbacks
+### 浏览器回退方案
 
-Many native APIs that people use (for example, the File API), are not available in the browser. The APIs are always improving and catching up to native, so it is recommended to research them. Taking the first two points into consideration, it's fairly easy to create a nice experience that will adapt for the platform the app is running on.
+许多人们使用的原生 API（例如文件 API）在浏览器中不可用。这些 API 正在不断改进并逐渐赶上原生功能，因此建议研究它们。考虑到前两点，创建能够适应应用运行平台的优秀体验是相当容易的。
 
-## Responsive UI
+## 响应式 UI
 
-When planning to deploy an app that may be used across a variety of devices, it is important to ensure the app works smoothly on larger screen sizes.
+当计划部署可能在不同设备上使用的应用时，确保应用在大屏幕尺寸上流畅运行非常重要。
 
-### Layout
+### 布局
 
-Many people rarely notice the layout of an app, but it can have a massive impact on experience and usability. Consider this common UI pattern:
+许多人很少注意到应用的布局，但它对体验和可用性有着重大影响。考虑这个常见的 UI 模式：
 
 ```html
 <ion-content>
   <ion-item>
-    <ion-label>Item 1</ion-label>
+    <ion-label>项目 1</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>Item 2</ion-label>
+    <ion-label>项目 2</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>Item 3</ion-label>
+    <ion-label>项目 3</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>Item 4</ion-label>
+    <ion-label>项目 4</ion-label>
   </ion-item>
   <ion-item>
-    <ion-label>Item 5</ion-label>
+    <ion-label>项目 5</ion-label>
   </ion-item>
 </ion-content>
 ```
 
-This will render 5 items with a width of 100% each. This may look great on a phone, but viewing this on a larger screen is a different story. The items become stretched to fill the entire screen because of the wide screen width, leaving screen space unused.
+这将渲染 5 个项目，每个宽度为 100%。这在手机上可能看起来很好，但在大屏幕上查看就是另一回事了。由于屏幕宽度较大，项目会拉伸以填满整个屏幕，导致屏幕空间未被充分利用。
 
 <img src={require('@site/static/img/building/cross-platform-items.png').default} />
 
-To improve this experience, we can wrap the items in a [Grid](../api/grid.md) component. The view can be easily rewritten into something more usable on larger screens:
+为改善这种体验，我们可以将项目包装在 [Grid](../api/grid.md) 组件中。视图可以轻松重写为在大屏幕上更易用的形式：
 
 ```html
 <ion-grid>
   <ion-row>
     <ion-col>
       <ion-item>
-        <ion-label>Item 1</ion-label>
+        <ion-label>项目 1</ion-label>
       </ion-item>
     </ion-col>
     <ion-col>
       <ion-item>
-        <ion-label>Item 2</ion-label>
+        <ion-label>项目 2</ion-label>
       </ion-item>
     </ion-col>
     <ion-col>
       <ion-item>
-        <ion-label>Item 3</ion-label>
+        <ion-label>项目 3</ion-label>
       </ion-item>
     </ion-col>
     <ion-col>
       <ion-item>
-        <ion-label>Item 4</ion-label>
+        <ion-label>项目 4</ion-label>
       </ion-item>
     </ion-col>
     <ion-col>
       <ion-item>
-        <ion-label>Item 5</ion-label>
+        <ion-label>项目 5</ion-label>
       </ion-item>
     </ion-col>
   </ion-row>
 </ion-grid>
 ```
 
-By wrapping the items in an `ion-grid` element, the Ionic grid system is added to our layout. Wrapping each item in a column makes the items take up equal-width inside of the grid, along the same row.
+通过将项目包装在 `ion-grid` 元素中，Ionic 网格系统就添加到我们的布局中。将每个项目包装在列中，使项目在网格内同一行上占据相等的宽度。
 
 <img src={require('@site/static/img/building/cross-platform-grid.png').default} />
 
-We can take this even further by adding the `fixed` attribute to the `<ion-grid>` element. This tells the grid to have a fixed width based on the screen size. This is perfect for larger screens when items will begin to stretch again without a width on the grid.
+我们可以通过向 `<ion-grid>` 元素添加 `fixed` 属性来进一步优化。这会告诉网格根据屏幕尺寸设置固定宽度。这对于大屏幕非常完美，因为如果没有网格宽度，项目会再次开始拉伸。
 
 <img src={require('@site/static/img/building/cross-platform-grid-fixed.png').default} />
 
-The grid can be further customized to change the sizes of columns with the addition of the `ion-col` properties.
+网格可以通过添加 `ion-col` 属性来进一步定制，以更改列的大小。
 
 ```html
 <ion-grid fixed>
   <ion-row>
     <ion-col size="12" size-sm="9" size-md="6" size-lg="4" size-xl="3">
       <ion-item>
-        <ion-label>Item 1</ion-label>
+        <ion-label>项目 1</ion-label>
       </ion-item>
     </ion-col>
     <ion-col size="12" size-sm="9" size-md="6" size-lg="4" size-xl="3">
       <ion-item>
-        <ion-label>Item 2</ion-label>
+        <ion-label>项目 2</ion-label>
       </ion-item>
     </ion-col>
     <ion-col size="12" size-sm="9" size-md="6" size-lg="4" size-xl="3">
       <ion-item>
-        <ion-label>Item 3</ion-label>
+        <ion-label>项目 3</ion-label>
       </ion-item>
     </ion-col>
     <ion-col size="12" size-sm="9" size-md="6" size-lg="4" size-xl="3">
       <ion-item>
-        <ion-label>Item 4</ion-label>
+        <ion-label>项目 4</ion-label>
       </ion-item>
     </ion-col>
     <ion-col size="12" size-sm="9" size-md="6" size-lg="4" size-xl="3">
       <ion-item>
-        <ion-label>Item 5</ion-label>
+        <ion-label>项目 5</ion-label>
       </ion-item>
     </ion-col>
   </ion-row>
 </ion-grid>
 ```
 
-There’s a lot going on in the example above. These are the key points:
+上面的例子中有很多内容。以下是关键点：
 
-- The `ion-col` gets its width from the `size` attribute added to it, where the value of size is the number of columns to take up out of the total available columns. The default number of available columns is 12.
+- `ion-col` 的宽度来自添加到它的 `size` 属性，其中 size 的值是占用的列数占可用总列数的比例。默认可用列数为 12。
 
-- The `size` attribute can have a breakpoint added to it, `size-{breakpoint}`. This value sets the size for the specified breakpoint and above.
+- `size` 属性可以添加断点，`size-{breakpoint}`。这个值为指定的断点及以上设置大小。
 
-For more information on customizing with grid, see the [Grid](../api/grid.md) documentation.
+有关使用网格进行定制的更多信息，请参阅 [Grid](../api/grid.md) 文档。
 
-## Storage
+## 存储
 
-Most apps at some point will need to store some sort of data locally. Whether it’s storing some JSON from an XHR request, or saving an auth token, there are many different storage options available. On top of this, if the app is running in a native environment, it is possible to create a full SQLite database and store data there. All of these different storage mechanisms have their own advantages and disadvantages, but Ionic developers should not have to worry about that.
+大多数应用在某个时间点都需要在本地存储某种数据。无论是存储来自 XHR 请求的 JSON，还是保存认证令牌，都有许多不同的存储选项可用。除此之外，如果应用在原生环境中运行，还可以创建完整的 SQLite 数据库并在其中存储数据。所有这些不同的存储机制都有各自的优缺点，但 Ionic 开发者不必为此担心。
 
 ### Ionic Storage
 
-In this case, <a href="https://github.com/ionic-team/ionic-storage" target="_blank">Ionic’s Storage library</a> is a perfect candidate for the multi-environment use case. Built on top of the well tested LocalForage library, Ionic’s storage class provides an adaptable storage mechanism that will pick the best storage solution for the current run time.
+在这种情况下，<a href="https://github.com/ionic-team/ionic-storage" target="_blank">Ionic 的 Storage 库</a> 是多环境使用场景的完美选择。基于经过充分测试的 LocalForage 库构建，Ionic 的存储类提供了一个适应性强的存储机制，将为当前运行时选择最佳的存储解决方案。
 
-Currently this means it will run through SQLite for native, IndexedDB (if available), WebSql, or Local Storage. By handling all of this, it allows writing to storage using a stable API.
+目前这意味着它将通过 SQLite（原生）、IndexedDB（如果可用）、WebSql 或 Local Storage 运行。通过处理所有这些，它允许使用稳定的 API 进行存储写入。
 
 ```tsx
 class MyClass {
@@ -177,4 +177,4 @@ class MyClass {
 }
 ```
 
-There are other storage solutions out there as well, such as PouchDB, which provide a similar, adaptable storage mechanism.
+还有其他存储解决方案，例如 PouchDB，它们提供了类似的、适应性强的存储机制。

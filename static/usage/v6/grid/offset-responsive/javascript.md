@@ -1,5 +1,5 @@
 ```html
-<b>No offset for xs breakpoint, offset 1st column for sm and up</b>
+<b>xs 断点无偏移，sm 及以上断点第一列偏移 1</b>
 <ion-grid>
   <ion-row>
     <ion-col offset-sm="2">1</ion-col>
@@ -10,7 +10,7 @@
   </ion-row>
 </ion-grid>
 
-<b>No offset for xs breakpoint, offset last 3 columns for md and up</b>
+<b>xs 断点无偏移，md 及以上断点后三列偏移 2</b>
 <ion-grid>
   <ion-row>
     <ion-col>1</ion-col>
@@ -20,7 +20,7 @@
   </ion-row>
 </ion-grid>
 
-<b>Offset all columns by 6 for xs breakpoint, offset by 4 for md, offset by 2 for lg and up</b>
+<b>xs 断点所有列偏移 6，md 断点偏移 4，lg 及以上断点偏移 2</b>
 <ion-grid>
   <ion-row>
     <ion-col offset="6" offset-md="4" offset-lg="2">1</ion-col>

@@ -1,6 +1,6 @@
 ```html
 <template>
-  <b>Total number of columns is set to <code>6</code>, column <code>size</code> is set to <code>1</code></b>
+  <b>总列数设置为 <code>6</code>，每列 <code>size</code> 设置为 <code>1</code></b>
   <ion-grid>
     <ion-row>
       <ion-col size="1">1</ion-col>

@@ -5,7 +5,7 @@ import { IonButton, IonPicker } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton id="open-picker">Open</IonButton>
+      <IonButton id="open-picker">打开</IonButton>
       <IonPicker
         trigger="open-picker"
         columns={[
@@ -13,15 +13,15 @@ function Example() {
             name: 'meat',
             options: [
               {
-                text: 'Pepperoni',
+                text: '意大利辣香肠',
                 value: 'pepperoni',
               },
               {
-                text: 'Smoked Ham',
+                text: '烟熏火腿',
                 value: 'smoked-ham',
               },
               {
-                text: 'Crispy Bacon',
+                text: '酥脆培根',
                 value: 'bacon',
               },
             ],
@@ -30,15 +30,15 @@ function Example() {
             name: 'veggies',
             options: [
               {
-                text: 'Red onion',
+                text: '红洋葱',
                 value: 'red-onion',
               },
               {
-                text: 'Peppers',
+                text: '彩椒',
                 value: 'peppers',
               },
               {
-                text: 'Black olives',
+                text: '黑橄榄',
                 value: 'black-olives',
               },
             ],
@@ -47,15 +47,15 @@ function Example() {
             name: 'crust',
             options: [
               {
-                text: 'Pan style',
+                text: '平底锅式饼底',
                 value: 'pan',
               },
               {
-                text: 'Hand tossed',
+                text: '手抛式饼底',
                 value: 'hand-tossed',
               },
               {
-                text: 'Stuffed crust',
+                text: '芝心饼底',
                 value: 'stuffed-crust',
               },
             ],
@@ -63,13 +63,13 @@ function Example() {
         ]}
         buttons={[
           {
-            text: 'Cancel',
+            text: '取消',
             role: 'cancel',
           },
           {
-            text: 'Confirm',
+            text: '确认',
             handler: (value) => {
-              console.log(`You selected a ${value.crust.text} pizza with ${value.meat.text} and ${value.veggies.text}`);
+              console.log(`您选择了一个 ${value.crust.text} 比萨，配料是 ${value.meat.text} 和 ${value.veggies.text}`);
             },
           },
         ]}

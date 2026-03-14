@@ -2,17 +2,17 @@
 <ion-app>
   <ion-header>
     <ion-toolbar>
-      <ion-title>Modal Navigation</ion-title>
+      <ion-title>模态框导航</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-button id="openModal">Open Modal</ion-button>
+    <ion-button id="openModal">打开模态框</ion-button>
     <ion-modal trigger="openModal">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Modal</ion-title>
+          <ion-title>模态框</ion-title>
           <ion-buttons slot="end">
-            <ion-button onclick="dismiss()"> Close </ion-button>
+            <ion-button onclick="dismiss()"> 关闭 </ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
@@ -49,8 +49,8 @@
     connectedCallback() {
       this.innerHTML = `
         <ion-content class="ion-padding">
-          <h1>Page One</h1>
-          <ion-button onclick="navigate('page-two')">Go to Page Two</ion-button>
+          <h1>第一页</h1>
+          <ion-button onclick="navigate('page-two')">前往第二页</ion-button>
         </ion-content>
       `;
     }
@@ -60,8 +60,8 @@
     connectedCallback() {
       this.innerHTML = `
         <ion-content class="ion-padding">
-          <h1>Page Two</h1>
-          <ion-button onclick="navigate('page-three')">Go to Page Three</ion-button>
+          <h1>第二页</h1>
+          <ion-button onclick="navigate('page-three')">前往第三页</ion-button>
         </ion-content>
       `;
     }
@@ -71,9 +71,9 @@
     connectedCallback() {
       this.innerHTML = `
         <ion-content class="ion-padding">
-          <h1>Page Three</h1>
-          <ion-button onclick="navigateBack()">Go Back</ion-button>
-          <ion-button onclick="navigateToRoot()">Go to Root</ion-button>
+          <h1>第三页</h1>
+          <ion-button onclick="navigateBack()">返回上一页</ion-button>
+          <ion-button onclick="navigateToRoot()">返回首页</ion-button>
         </ion-content>
       `;
     }

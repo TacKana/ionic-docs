@@ -14,9 +14,9 @@ import Slots from '@ionic-internal/component-api/v5/fab-list/slots.md';
 
 # ion-fab-list
 
-The `ion-fab-list` element is a container for multiple fab buttons. This collection of fab buttons contains actions related to the main fab button and is flung out on click. To specify what side the buttons should appear on, set the `side` property to 'start', 'end', 'top', 'bottom'
+`ion-fab-list` 元素是用于容纳多个浮动操作按钮（fab buttons）的容器。这组浮动操作按钮包含与主浮动操作按钮相关的操作，点击后会弹出显示。如需指定按钮出现的位置，可将 `side` 属性设置为 'start'、'end'、'top' 或 'bottom'。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -24,7 +24,7 @@ The `ion-fab-list` element is a container for multiple fab buttons. This collect
 
 ```html
 <ion-fab vertical="center" horizontal="center">
-  <ion-fab-button>Share</ion-fab-button>
+  <ion-fab-button>分享</ion-fab-button>
   <ion-fab-list side="top">
     <ion-fab-button>
       <ion-icon name="logo-facebook"></ion-icon>
@@ -81,7 +81,7 @@ The `ion-fab-list` element is a container for multiple fab buttons. This collect
 
 ```html
 <ion-fab vertical="center" horizontal="center">
-  <ion-fab-button>Share</ion-fab-button>
+  <ion-fab-button>分享</ion-fab-button>
   <ion-fab-list side="top">
     <ion-fab-button>
       <ion-icon name="logo-facebook"></ion-icon>
@@ -157,7 +157,7 @@ import {
 export const FabListExample: React.FC = () => (
   <IonContent>
     <IonFab vertical="center" horizontal="center">
-      <IonFabButton>Share</IonFabButton>
+      <IonFabButton>分享</IonFabButton>
       <IonFabList side="top">
         <IonFabButton>
           <IonIcon icon={logoFacebook} />
@@ -225,7 +225,7 @@ export class FabListExample {
   render() {
     return [
       <ion-fab vertical="center" horizontal="center">
-        <ion-fab-button>Share</ion-fab-button>
+        <ion-fab-button>分享</ion-fab-button>
         <ion-fab-list side="top">
           <ion-fab-button>
             <ion-icon name="logo-facebook"></ion-icon>
@@ -286,7 +286,7 @@ export class FabListExample {
 ```html
 <template>
   <ion-fab vertical="bottom" horizontal="end">
-    <ion-fab-button>Share</ion-fab-button>
+    <ion-fab-button>分享</ion-fab-button>
 
     <ion-fab-list side="top">
       <ion-fab-button>Facebook</ion-fab-button>
@@ -314,15 +314,15 @@ export class FabListExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -330,10 +330,10 @@ export class FabListExample {
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

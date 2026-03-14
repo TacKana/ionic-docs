@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v6/img/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v6/img/slots.md';
 
 <head>
-  <title>Img Tag to Lazy Load Images in Viewport | ion-img Tag</title>
+  <title>视口内图片懒加载的Img标签 | ion-img 标签</title>
   <meta
     name="description"
-    content="Img tag lazy loads images whenever the tag is in the viewport. Utilize this component when generating large lists—as images are only loaded when visible."
+    content="Img标签在进入视口时对图片进行懒加载。在生成大型列表时使用此组件——因为图片只在可见时才加载。"
   />
 </head>
 
@@ -21,23 +21,23 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Img is a tag that will lazily load an image whenever the tag is in the viewport. This is extremely useful when generating a large list as images are only loaded when they're visible. The component uses [Intersection Observer](https://caniuse.com/#feat=intersectionobserver) internally, which is supported in most modern browsers, but falls back to a `setTimeout` when it is not supported.
+Img 是一个标签，当该标签进入视口（viewport）时会懒加载图片。这在生成大型列表时非常有用，因为图片只在可见时才被加载。该组件内部使用 [Intersection Observer](https://caniuse.com/#feat=intersectionobserver)，大多数现代浏览器都支持此 API，在不支持时会回退到 `setTimeout` 方法。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v6/img/basic/index.md';
 
 <Basic />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -45,10 +45,10 @@ import Basic from '@site/static/usage/v6/img/basic/index.md';
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

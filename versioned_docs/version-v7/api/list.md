@@ -10,51 +10,50 @@ import CustomProps from '@ionic-internal/component-api/v7/list/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v7/list/slots.md';
 
 <head>
-  <title>ion-list: Item List View Component for iOS and Android Apps</title>
+  <title>ion-list：适用于 iOS 和 Android 应用的项目列表视图组件</title>
   <meta
     name="description"
-    content="ion-lists are made up of multiple rows of items containing text, icons, toggles, and more. Learn about the list view component for iOS and Android Ionic apps."
+    content="ion-list 由多行项目组成，包含文本、图标、开关等。了解适用于 iOS 和 Android Ionic 应用的列表视图组件。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-Lists are made up of multiple rows of [items](./item) which can contain text, buttons, toggles,
-icons, thumbnails, and much more. Lists generally contain items with similar data content, such as images and text.
+列表由多行[项目](./item)组成，这些项目可以包含文本、按钮、开关、图标、缩略图等。列表通常包含具有相似数据内容的项目，例如图像和文本。
 
-Lists support several interactions including swiping items to reveal options, dragging to [reorder](./reorder) items within the list, and deleting items.
+列表支持多种交互操作，包括滑动项目以显示选项、拖动[重新排序](./reorder)列表中的项目以及删除项目。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v7/list/basic/index.md';
 
 <Basic />
 
-## Inset List
+## 内嵌列表
 
-Adding the `inset` property to a list will apply margin around the list. In `ios` mode it will also add rounded corners to the list.
+为列表添加 `inset` 属性将在列表周围应用边距。在 `ios` 模式下，它还会为列表添加圆角。
 
 import Inset from '@site/static/usage/v7/list/inset/index.md';
 
 <Inset />
 
-## List Lines
+## 列表分隔线
 
-Adding the `lines` property to a list will adjust the bottom borders of all of the items in the list. Setting it to `"full"` will display full width borders, `"inset"` will display borders adjusted with left padding, and `"none"` will show no borders. If the `lines` property is set on an item in a list, that will take priority over the property on the list.
+为列表添加 `lines` 属性将调整列表中所有项目的底部边框。设置为 `"full"` 将显示全宽边框，`"inset"` 将显示带左内边距调整的边框，`"none"` 则不显示边框。如果列表中的某个项目设置了 `lines` 属性，该属性将优先于列表上的属性。
 
 import Lines from '@site/static/usage/v7/list/lines/index.md';
 
 <Lines />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -62,10 +61,10 @@ import Lines from '@site/static/usage/v7/list/lines/index.md';
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

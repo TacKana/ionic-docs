@@ -1,33 +1,33 @@
 ---
-sidebar_label: Overview
+sidebar_label: 概述
 ---
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-# Ionic Vue Overview
+# Ionic Vue 概述
 
-`@ionic/vue` combines the core Ionic Framework experience with the tooling and APIs that are tailored to Vue Developers.
+`@ionic/vue` 将 Ionic Framework 的核心体验与为 Vue 开发者量身定制的工具和 API 相结合。
 
-## Vue Version Support
+## Vue 版本支持
 
-Ionic Vue is built on top of Vue 3.0.0. If you've built an app with early versions of Ionic Vue, you'll want to upgrade to the latest release and upgrade your Vue dependencies.
+Ionic Vue 基于 Vue 3.0.0 构建。如果您使用早期版本的 Ionic Vue 构建过应用，建议您升级到最新版本并更新 Vue 依赖项。
 
-## Vue Tooling
+## Vue 工具
 
-Ionic Vue projects ship with the same tooling as regular Vue CLI projects. Meaning you'll be building with the Vue CLI and all of it's features. In addition, starter projects also ship with few features enabled by default, like Routing and TypeScript support.
+Ionic Vue 项目与常规 Vue CLI 项目使用相同的工具链。这意味着您将使用 Vue CLI 及其所有功能进行开发。此外，初始项目还默认启用了少量功能，例如路由和 TypeScript 支持。
 
-## Native Tooling
+## 原生工具
 
-[Capacitor](https://capacitorjs.com) is the official cross-platform app runtime used to make your `Ionic Vue` web app run natively on iOS, Android, and the web.
+[Capacitor](https://capacitorjs.com) 是官方推荐的跨平台应用运行时，用于让您的 `Ionic Vue` Web 应用在 iOS、Android 和 Web 上原生运行。
 
-While there are no known technical limitations to using `Ionic Vue` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic Vue` in the [Ionic CLI tooling](../cli.md) at this time. For more details, please [see here](https://capacitorjs.com/docs/cordova).
+虽然 `Ionic Vue` 与 [Cordova](https://cordova.apache.org/) 插件配合使用没有已知的技术限制，但我们官方推荐使用 Capacitor。目前 [Ionic CLI 工具](../cli.md) 暂无支持 `Ionic Vue` 与 Cordova 集成的计划。更多详情，请[参阅此处](https://capacitorjs.com/docs/cordovy)。
 
-## From the Community
+## 社区资源
 
-- [Using Vue.js with Ionic & Capacitor](https://dev.to/aaronksaunders/using-vue-js-v3-beta-with-ionic-components-capacitor-plugins-2b6f) - Aaron Saunders
+- [在 Ionic 与 Capacitor 中使用 Vue.js](https://dev.to/aaronksaunders/using-vue-js-v3-beta-with-ionic-components-capacitor-plugins-2b6f) - Aaron Saunders
 
-## Installation
+## 安装
 
 ```shell-session
 $ npm install -g @ionic/cli
@@ -37,19 +37,19 @@ $ cd myApp
 $ ionic serve █
 ```
 
-## Resources
+## 资源
 
 <DocsCards>
-  <DocsCard header="Getting Started" href="your-first-app" icon="/icons/feature-component-actionsheet-icon.png">
-    <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
+  <DocsCard header="入门指南" href="your-first-app" icon="/icons/feature-component-actionsheet-icon.png">
+    <p>学习使用 Ionic Framework 开始构建出色应用所需的基础知识。</p>
   </DocsCard>
 
-<DocsCard header="Navigation" href="navigation" icon="/icons/feature-component-navigation-icon.png">
-  <p>Learn the basics of navigation inside your app with Ionic and Vue Router</p>
+<DocsCard header="导航" href="navigation" icon="/icons/feature-component-navigation-icon.png">
+  <p>学习使用 Ionic 和 Vue Router 在应用内进行导航的基础知识</p>
 </DocsCard>
 
-<DocsCard header="Lifecycle" href="lifecycle" icon="/icons/feature-guide-components-icon.png">
-  <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
+<DocsCard header="生命周期" href="lifecycle" icon="/icons/feature-guide-components-icon.png">
+  <p>学习在类组件和钩子函数中使用 Ionic 生命周期事件</p>
 </DocsCard>
 
 </DocsCards>

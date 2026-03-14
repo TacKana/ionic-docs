@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/thumbnail/custom-props
 import Slots from '@ionic-internal/component-api/v7/thumbnail/slots.md';
 
 <head>
-  <title>ion-thumbnail: Thumbnail App Component for Images or Icons</title>
+  <title>ion-thumbnail：用于图片或图标的缩略图应用组件</title>
   <meta
     name="description"
-    content="What is a thumbnail image? Thumbnail app components wrap an image or icon and can be used to display a layout of images or for previews of full-size images."
+    content="什么是缩略图？缩略图应用组件包裹图片或图标，可用于展示图片布局或全尺寸图片的预览。"
   />
 </head>
 
@@ -21,39 +21,39 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Thumbnails are square components that usually wrap an image or icon. They can be used to make it easier to display a group of larger images or provide a preview of the full-size image.
+缩略图是通常包裹图片或图标的方形组件。它们可用于更轻松地展示一组大尺寸图片，或提供全尺寸图片的预览。
 
-Thumbnails can be used by themselves or inside of any element. If placed inside of an `ion-item`, the thumbnail will resize to fit the parent component. To position a thumbnail on the left or right side of an item, set the slot to `start` or `end`, respectively.
+缩略图可以单独使用，也可以置于任何元素内部。如果放置在 `ion-item` 内，缩略图将调整大小以适应父组件。若要将缩略图定位在项目的左侧或右侧，请将 `slot` 属性分别设置为 `start` 或 `end`。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v7/thumbnail/basic/index.md';
 
 <Basic />
 
-## Item Thumbnails
+## 项目缩略图
 
 import Item from '@site/static/usage/v7/thumbnail/item/index.md';
 
 <Item />
 
-## Theming
+## 主题定制
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v7/thumbnail/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -61,10 +61,10 @@ import CSSProps from '@site/static/usage/v7/thumbnail/theming/css-properties/ind
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

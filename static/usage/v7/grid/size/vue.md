@@ -1,6 +1,6 @@
 ```html
 <template>
-  <b>Column 2 has <code>size</code> set to <code>"8"</code></b>
+  <b>第二列设置了 <code>size</code> 为 <code>"8"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col>1</ion-col>
@@ -9,7 +9,7 @@
     </ion-row>
   </ion-grid>
 
-  <b>Columns 3 & 4 have <code>size</code> set to <code>"3"</code></b>
+  <b>第三列和第四列设置了 <code>size</code> 为 <code>"3"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col>1</ion-col>
@@ -21,7 +21,7 @@
     </ion-row>
   </ion-grid>
 
-  <b>Columns 1 & 2 have <code>size</code> set to <code>"4"</code></b>
+  <b>第一列和第二列设置了 <code>size</code> 为 <code>"4"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col size="4">1</ion-col>

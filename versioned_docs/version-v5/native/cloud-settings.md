@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Cloud Settings'
+sidebar_label: '云设置'
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -8,29 +8,29 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-# Cloud Settings
+# 云设置
 
-Stores app settings in cloud storage so if the user re-installs the app or installs it on a different device, the settings will be restored and available in the new installation.
+将应用程序设置存储于云端存储中，这样即使用户重新安装应用或在其他设备上安装，设置也能被恢复并在新安装中使用。
 
 <p>
   <a href="https://github.com/dpa99c/cordova-plugin-cloud-settings" target="_blank" rel="noopener" className="git-link">github.com/dpa99c/cordova-plugin-cloud-settings</a>
 </p>
 
-<h2>Stuck on a Cordova issue?</h2>
+<h2>遇到 Cordova 问题卡住了？</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="Don't waste precious time on plugin issues."
+  header="不要在插件问题上浪费宝贵时间。"
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
+    <p>如果您正在构建一个严肃的项目，您无法承受数小时故障排除的代价。Ionic 专家为社区插件和企业插件提供高级咨询服务。</p>
+    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">Installation</a>
+  <a href="#installation">安装</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -38,7 +38,7 @@ Stores app settings in cloud storage so if the user re-installs the app or insta
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: 'Enterprise' },
+    { value: 'Enterprise', label: '企业版' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -55,22 +55,22 @@ Stores app settings in cloud storage so if the user re-installs the app or insta
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
+      Ionic 企业版提供 Ionic 团队全面支持与维护的插件。&nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，或者如果您对此插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">请联系我们</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## Supported Platforms
+## 支持的平台
 
 - Android
 - iOS
 
-## Usage
+## 使用方法
 
 ### React
 
-[Learn more about using Ionic Native components in React](../native-community.md#react)
+[了解更多在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
 
 ### Angular
 
@@ -83,14 +83,14 @@ constructor(private cloudSettings: CloudSettings) { }
 ...
 
 this.cloudSettings.exists()
-  .then((exists: boolean) => console.log("Saved settings exist: " + exists) )
+  .then((exists: boolean) => console.log("已保存的设置是否存在: " + exists) )
 
 this.cloudSettings.load()
   .then((settings: any) => this.settings = settings)
   .catch((error: any) => console.error(error));
 
 this.cloudSettings.save(this.settings)
-  .then((savedSettings: any) => console.log("Saved settings: " + JSON.stringify(savedSettings)))
+  .then((savedSettings: any) => console.log("已保存的设置: " + JSON.stringify(savedSettings)))
   .catch((error: any) => console.error(error));
 
 ```

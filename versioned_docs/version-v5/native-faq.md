@@ -1,49 +1,49 @@
 ---
-sidebar_label: FAQ
+sidebar_label: 常见问题
 slug: /native/faq
 ---
 
-# Ionic Native FAQ
+# Ionic Native 常见问题
 
-## Cordova Management Tips
+## Cordova 管理技巧
 
-**1) Use the [Ionic CLI](cli.md) to add/update/delete plugins.**
+**1) 使用 [Ionic CLI](cli.md) 来添加/更新/删除插件。**
 
-Instead of directly editing `config.xml` and `package.json`. Use `ionic` in front of Cordova commands for a better experience and additional functionality (`ionic cordova build ios` instead of `cordova build ios`).
+不要直接编辑 `config.xml` 和 `package.json`。建议在 Cordova 命令前加上 `ionic`，以获得更好的体验和额外功能（例如使用 `ionic cordova build ios` 而不是 `cordova build ios`）。
 
-**2) Upgrade plugins by removing, then re-adding them.**
+**2) 通过先删除再重新添加的方式来升级插件。**
 
 ```shell
 $ ionic cordova plugin remove cordova-plugin-camera
 $ ionic cordova plugin add cordova-plugin-camera
 ```
 
-**3) Install explicit versions.**
+**3) 安装指定版本。**
 
-To ensure that the same version of a plugin is always installed via `npm install`, specify the version number:
+为确保通过 `npm install` 始终安装相同版本的插件，请指定版本号：
 
 ```shell
 ionic cordova plugin add cordova-plugin-camera@4.3.2
 ```
 
-**4) Restore Cordova in an existing Ionic project**
+**4) 在现有 Ionic 项目中恢复 Cordova**
 
-Useful when adding new developers to a project. `ionic cordova prepare` restores platforms and plugins from `package.json` and `config.xml`. The version to be installed is taken from `package.json` or `config.xml`, if found in those files. In case of conflicts, `package.json` is given precedence over `config.xml`.
+在向项目添加新开发人员时非常有用。`ionic cordova prepare` 会根据 `package.json` 和 `config.xml` 恢复平台和插件。要安装的版本取自 `package.json` 或 `config.xml`（如果这些文件中存在）。如果存在冲突，`package.json` 的优先级高于 `config.xml`。
 
-**5) Troubleshoot Cordova issues with Ionic CLI commands**
+**5) 使用 Ionic CLI 命令排查 Cordova 问题**
 
-- `ionic doctor list`: Detects [common issues](cli/commands/doctor-list.md) and suggests steps to fix them
-- `ionic repair`: Remove, then [regenerate](cli/commands/repair.md) all dependencies
+- `ionic doctor list`：检测[常见问题](cli/commands/doctor-list.md)并提供修复建议
+- `ionic repair`：删除并[重新生成](cli/commands/repair.md)所有依赖项
 
-## Understanding Version Numbers
+## 理解版本号
 
-For any given Ionic Native plugin, the Ionic Native (TypeScript code) and Cordova (native code) version numbers will not match. The Ionic Native version number is found in `package.json`:
+对于任何 Ionic Native 插件，Ionic Native（TypeScript 代码）和 Cordova（原生代码）的版本号通常不会匹配。Ionic Native 版本号可在 `package.json` 中找到：
 
 ```json
 "@awesome-cordova-plugins/camera": "^5.3.0",
 ```
 
-The Cordova plugin version number is found in both `package.json` and `config.xml`:
+Cordova 插件版本号在 `package.json` 和 `config.xml` 中都可以找到：
 
 ```json
 "cordova-plugin-camera": "4.0.3",
@@ -53,33 +53,33 @@ The Cordova plugin version number is found in both `package.json` and `config.xm
 <plugin name="cordova-plugin-camera" spec="4.0.3" />
 ```
 
-When checking for new native functionality or bug fixes, look for new versions on the Cordova plugin GitHub page itself (here's the [Camera one](https://github.com/apache/cordova-plugin-camera), for example).
+当检查新的原生功能或错误修复时，请在 Cordova 插件的 GitHub 页面上查找新版本（例如，这里是 [Camera 插件](https://github.com/apache/cordova-plugin-camera)）。
 
-To check for new Ionic Native releases (may include exposing methods recently added by the Cordova plugin, etc.), see [here](https://github.com/ionic-team/ionic-native/releases).
+要检查新的 Ionic Native 版本（可能包括最近由 Cordova 插件添加的方法等），请参见 [此处](https://github.com/ionic-team/ionic-native/releases)。
 
-## Troubleshooting Failed Builds
+## 排查构建失败问题
 
-Research the build error(s) by checking out these resources:
+通过查阅以下资源来研究构建错误：
 
-- Google & [StackOverflow](https://stackoverflow.com): Many issues are documented online
-- Ask the [Ionic Community Ionic Forum](https://forum.ionicframework.com) (see the Ionic Native category)
-- See the Ionic Customer Success [Knowledge Base](https://ionic.zendesk.com)
+- 谷歌和 [StackOverflow](https://stackoverflow.com)：许多问题已有在线文档
+- 在 [Ionic 社区论坛](https://forum.ionicframework.com) 提问（请查看 Ionic Native 类别）
+- 参考 Ionic 客户成功 [知识库](https://ionic.zendesk.com)
 
-### Cordova Plugin Conflicts
+### Cordova 插件冲突
 
-Plugins can conflict with each other when they share the same underlying native dependencies or when more than one plugin tries to access the same native code at once. For example, common libraries like the Google Play Services version (Google Maps is using GPS v24.2 but Firebase wants GPS v27.1). Keeping these plugins updated regularly can help with this.
+当插件共享相同的底层原生依赖项，或多个插件同时尝试访问相同的原生代码时，插件之间可能会发生冲突。例如，常见的库如 Google Play Services 版本（Google Maps 使用 GPS v24.2，但 Firebase 需要 GPS v27.1）。定期更新这些插件有助于避免此类问题。
 
-Another tip is to ensure that your app uses only one plugin per specific feature/functionality (example: Push Notifications).
+另一个建议是确保您的应用对特定功能/特性仅使用一个插件（例如：推送通知）。
 
-## Recommended Upgrade Strategy
+## 推荐的升级策略
 
-The most Ionic stable apps are routinely updated, especially at the native layer. Keeping native plugins up to date ensures your project has the latest security fixes, new features, and improved performance.
+最稳定的 Ionic 应用会定期更新，尤其是在原生层面。保持原生插件更新可确保您的项目拥有最新的安全修复、新功能和改进的性能。
 
-Update your project's plugins one at a time, ideally in separate code branches. This reduces the surface area that issues can arise from - if you update everything in your project at once, it's sometimes hard to tell where the problem stems from.
+一次更新一个项目插件，最好在单独的分支中进行。这样可以减少可能出现问题的范围——如果您一次性更新项目中的所有内容，有时很难确定问题出在哪里。
 
-### When should I update?
+### 何时应该更新？
 
-- When a new feature/bug is released: Run `npm outdated` to see a list of available updates.
-- When new major versions are released: Official blogs, such as the [Cordova blog](https://cordova.apache.org/blog/) and [Ionic blog](https://ionicframework.com/blog/), will publish announcements and news.
-- Evaluate the nature of the update: is it a shiny new feature or critical security fix?
-- Timing: Where does it fit in against your team's project goals?
+- 当新功能/错误修复发布时：运行 `npm outdated` 查看可用更新列表。
+- 当新的主要版本发布时：官方博客，如 [Cordova 博客](https://cordova.apache.org/blog/) 和 [Ionic 博客](https://ionicframework.com/blog/)，会发布公告和新闻。
+- 评估更新的性质：是华丽的新功能还是关键的安全修复？
+- 时机：它是否符合您团队的项目目标？

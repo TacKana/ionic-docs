@@ -5,9 +5,9 @@ import { IonInputOtp } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonInputOtp size="small"> Small </IonInputOtp>
-      <IonInputOtp size="medium"> Medium </IonInputOtp>
-      <IonInputOtp size="large"> Large </IonInputOtp>
+      <IonInputOtp size="small"> 小尺寸 </IonInputOtp>
+      <IonInputOtp size="medium"> 中等尺寸 </IonInputOtp>
+      <IonInputOtp size="large"> 大尺寸 </IonInputOtp>
     </>
   );
 }

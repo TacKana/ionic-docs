@@ -13,85 +13,85 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Breadcrumbs are navigation items that are used to indicate where a user is on an app or site. They should be used for large sites and apps with hierarchically arranged pages. Breadcrumbs can be collapsed based on the maximum number that can show, and the collapsed indicator can be clicked on to present a popover with more information or expand the collapsed breadcrumbs.
+面包屑（Breadcrumbs）是一种导航组件，用于指示用户在应用或网站中的当前位置。它们适用于具有层级结构页面的大型网站和应用。面包屑可以根据最大显示数量进行折叠，点击折叠指示器可以弹出一个包含更多信息的浮层或展开被折叠的面包屑。
 
-## Basic Usage
+## 基本用法
 
 import Basic from '@site/static/usage/v7/breadcrumbs/basic/index.md';
 
 <Basic />
 
-## Using Icons
+## 使用图标
 
-### Icons on Items
+### 在项目上使用图标
 
 import IconsOnItems from '@site/static/usage/v7/breadcrumbs/icons/icons-on-items/index.md';
 
 <IconsOnItems />
 
-### Custom Separators
+### 自定义分隔符
 
 import CustomSeparators from '@site/static/usage/v7/breadcrumbs/icons/custom-separators/index.md';
 
 <CustomSeparators />
 
-## Collapsing Items
+## 折叠项目
 
-### Max Items
+### 最大项目数
 
-If there are more items than the value of `maxItems`, the breadcrumbs will be collapsed. By default, only the first and last items will be shown.
+如果项目数量超过 `maxItems` 的值，面包屑将被折叠。默认情况下，只会显示第一个和最后一个项目。
 
 import MaxItems from '@site/static/usage/v7/breadcrumbs/collapsing-items/max-items/index.md';
 
 <MaxItems />
 
-### Items Before or After Collapse
+### 折叠前后显示的项目
 
-Once the items are collapsed, the number of items to show can be controlled by the `itemsBeforeCollapse` and `itemsAfterCollapse` properties.
+项目折叠后，可以通过 `itemsBeforeCollapse` 和 `itemsAfterCollapse` 属性控制显示的项目数量。
 
 import ItemsBeforeAfter from '@site/static/usage/v7/breadcrumbs/collapsing-items/items-before-after/index.md';
 
 <ItemsBeforeAfter />
 
-### Collapsed Indicator Click -- Expand Breadcrumbs
+### 点击折叠指示器 —— 展开面包屑
 
-Clicking the collapsed indicator will fire the `ionCollapsedClick` event. This can be used to, for example, expand the breadcrumbs.
+点击折叠指示器会触发 `ionCollapsedClick` 事件。例如，可以用它来展开面包屑。
 
 import ExpandOnClick from '@site/static/usage/v7/breadcrumbs/collapsing-items/expand-on-click/index.md';
 
 <ExpandOnClick />
 
-### Collapsed Indicator Click -- Present Popover
+### 点击折叠指示器 —— 弹出浮层
 
-The `ionCollapsedClick` event can also be used to present an overlay (in this case, an `ion-popover`) showing the hidden breadcrumbs.
+`ionCollapsedClick` 事件也可用于弹出一个浮层（例如 `ion-popover`），显示隐藏的面包屑。
 
 import PopoverOnClick from '@site/static/usage/v7/breadcrumbs/collapsing-items/popover-on-click/index.md';
 
 <PopoverOnClick />
 
-## Theming
+## 主题定制
 
-### Colors
+### 颜色
 
 import Colors from '@site/static/usage/v7/breadcrumbs/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+### CSS 自定义属性
 
 import CSSProps from '@site/static/usage/v7/breadcrumbs/theming/css-properties/index.md';
 
 <CSSProps />
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
@@ -99,10 +99,10 @@ import CSSProps from '@site/static/usage/v7/breadcrumbs/theming/css-properties/i
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

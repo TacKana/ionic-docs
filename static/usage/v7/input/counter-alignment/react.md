@@ -7,7 +7,7 @@ function Example() {
     <>
       <IonList>
         <IonItem>
-          <IonInput label="Text input" placeholder="Enter text"></IonInput>
+          <IonInput label="Text input" placeholder="请输入文本"></IonInput>
         </IonItem>
 
         <div className="ion-padding-start">

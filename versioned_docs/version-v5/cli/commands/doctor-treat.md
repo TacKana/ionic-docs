@@ -4,24 +4,24 @@ sidebar_label: 'doctor treat'
 
 # ionic doctor treat
 
-Attempt to fix issues in your Ionic project
+诊断并尝试修复 Ionic 项目中的常见问题
 
 ```shell
 ionic doctor treat [options]
 ```
 
-This command detects and attempts to fix common issues. Before a fix is attempted, the steps are printed and a confirmation prompt is displayed.
+此命令会检测并尝试修复常见问题。在尝试修复之前，会显示修复步骤并弹出确认提示。
 
-Optionally supply the `id` argument to attempt to fix a single issue. Use `ionic doctor list` to list all known issues.
+可选择提供 `id` 参数来尝试修复单个问题。使用 `ionic doctor list` 可列出所有已知问题。
 
-## Examples
+## 使用示例
 
 ```shell
 $ ionic doctor treat
 $ ionic doctor treat git-not-used
 ```
 
-## Inputs
+## 输入参数
 
 <table className="reference-table">
   <thead>
@@ -33,9 +33,9 @@ $ ionic doctor treat git-not-used
   </thead>
   <tbody>
     <tr>
-      <th>Description</th>
+      <th>参数说明</th>
       <td>
-        <p>The issue identifier</p>
+        <p>问题标识符</p>
       </td>
     </tr>
   </tbody>

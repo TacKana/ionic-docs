@@ -1,6 +1,6 @@
 ---
-title: 'ion-fab: Floating Action Button for Android and iOS Ionic Apps'
-description: 'Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework.'
+title: 'ion-fab：适用于 Android 和 iOS Ionic 应用的浮动操作按钮'
+description: 'FAB（浮动操作按钮）是包含一个或多个 fab 按钮的容器元素。使用 Ionic Framework 创建 Android 和 iOS 应用时，请使用 ion-fab。'
 sidebar_label: 'ion-fab'
 demoUrl: '/docs/demos/api/fab/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/fab/index.html'
@@ -18,9 +18,9 @@ import Slots from '@ionic-internal/component-api/v5/fab/slots.md';
 
 # ion-fab
 
-Fabs are container elements that contain one or more fab buttons. They should be placed in a fixed position that does not scroll with the content. Fab should have one main fab-button. Fabs can also contain fab-lists which contain related buttons that show when the main fab button is clicked. The same fab container can contain several [fab-list](fab-list.md) elements with different side values.
+FAB 是包含一个或多个 fab 按钮的容器元素。它们应放置在固定的位置，不会随内容滚动。FAB 容器应该有一个主要的 fab-button。FAB 也可以包含 fab-list，其中包含相关的按钮，当点击主要的 fab 按钮时显示。同一个 fab 容器可以包含多个具有不同 `side` 属性值的 [fab-list](fab-list.md) 元素。
 
-## Usage
+## 使用方法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -29,61 +29,61 @@ Fabs are container elements that contain one or more fab buttons. They should be
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Header</ion-title>
+    <ion-title>头部</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- fab placed to the top end -->
+  <!-- fab 置于顶部末尾 -->
   <ion-fab vertical="top" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the bottom end -->
+  <!-- fab 置于底部末尾 -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="arrow-forward-circle"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the top start -->
+  <!-- fab 置于顶部开始位置 -->
   <ion-fab vertical="top" horizontal="start" slot="fixed">
     <ion-fab-button>
       <ion-icon name="arrow-back-circle"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the bottom start -->
+  <!-- fab 置于底部开始位置 -->
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
     <ion-fab-button>
       <ion-icon name="arrow-up-circle"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the (vertical) center and start -->
+  <!-- fab 置于（垂直）中间和开始位置 -->
   <ion-fab vertical="center" horizontal="start" slot="fixed">
     <ion-fab-button>
       <ion-icon name="share"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the (vertical) center and end -->
+  <!-- fab 置于（垂直）中间和末尾 -->
   <ion-fab vertical="center" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the top and end and on the top edge of the content overlapping header -->
+  <!-- fab 置于顶部末尾，位于内容顶部边缘并与头部重叠 -->
   <ion-fab vertical="top" horizontal="end" edge slot="fixed">
     <ion-fab-button>
       <ion-icon name="person"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the bottom and start and on the bottom edge of the content overlapping footer with a list to the right -->
+  <!-- fab 置于底部开始，位于内容底部边缘并与底部重叠，右侧带有一个列表 -->
   <ion-fab vertical="bottom" horizontal="start" edge slot="fixed">
     <ion-fab-button>
       <ion-icon name="settings"></ion-icon>
@@ -93,7 +93,7 @@ Fabs are container elements that contain one or more fab buttons. They should be
     </ion-fab-list>
   </ion-fab>
 
-  <!-- fab placed in the center of the content with a list on each side -->
+  <!-- fab 置于内容中心，每个方向带有一个列表 -->
   <ion-fab vertical="center" horizontal="center" slot="fixed">
     <ion-fab-button>
       <ion-icon name="share"></ion-icon>
@@ -115,7 +115,7 @@ Fabs are container elements that contain one or more fab buttons. They should be
 
 <ion-footer>
   <ion-toolbar>
-    <ion-title>Footer</ion-title>
+    <ion-title>底部</ion-title>
   </ion-toolbar>
 </ion-footer>
 ```
@@ -127,61 +127,61 @@ Fabs are container elements that contain one or more fab buttons. They should be
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>Header</ion-title>
+    <ion-title>头部</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- fab placed to the top end -->
+  <!-- fab 置于顶部末尾 -->
   <ion-fab vertical="top" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the bottom end -->
+  <!-- fab 置于底部末尾 -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="arrow-forward-circle"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the top start -->
+  <!-- fab 置于顶部开始位置 -->
   <ion-fab vertical="top" horizontal="start" slot="fixed">
     <ion-fab-button>
       <ion-icon name="arrow-back-circle"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the bottom start -->
+  <!-- fab 置于底部开始位置 -->
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
     <ion-fab-button>
       <ion-icon name="arrow-up-circle"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the (vertical) center and start -->
+  <!-- fab 置于（垂直）中间和开始位置 -->
   <ion-fab vertical="center" horizontal="start" slot="fixed">
     <ion-fab-button>
       <ion-icon name="share"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the (vertical) center and end -->
+  <!-- fab 置于（垂直）中间和末尾 -->
   <ion-fab vertical="center" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the top and end and on the top edge of the content overlapping header -->
+  <!-- fab 置于顶部末尾，位于内容顶部边缘并与头部重叠 -->
   <ion-fab vertical="top" horizontal="end" edge slot="fixed">
     <ion-fab-button>
       <ion-icon name="person"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- fab placed to the bottom and start and on the bottom edge of the content overlapping footer with a list to the right -->
+  <!-- fab 置于底部开始，位于内容底部边缘并与底部重叠，右侧带有一个列表 -->
   <ion-fab vertical="bottom" horizontal="start" edge slot="fixed">
     <ion-fab-button>
       <ion-icon name="settings"></ion-icon>
@@ -191,7 +191,7 @@ Fabs are container elements that contain one or more fab buttons. They should be
     </ion-fab-list>
   </ion-fab>
 
-  <!-- fab placed in the center of the content with a list on each side -->
+  <!-- fab 置于内容中心，每个方向带有一个列表 -->
   <ion-fab vertical="center" horizontal="center" slot="fixed">
     <ion-fab-button>
       <ion-icon name="share"></ion-icon>
@@ -213,7 +213,7 @@ Fabs are container elements that contain one or more fab buttons. They should be
 
 <ion-footer>
   <ion-toolbar>
-    <ion-title>Footer</ion-title>
+    <ion-title>底部</ion-title>
   </ion-toolbar>
 </ion-footer>
 ```
@@ -255,60 +255,60 @@ export const FabExamples: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Header</IonTitle>
+          <IonTitle>头部</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        {/*-- fab placed to the top end --*/}
+        {/*-- fab 置于顶部末尾 --*/}
         <IonFab vertical="top" horizontal="end" slot="fixed">
           <IonFabButton>
             <IonIcon icon={add} />
           </IonFabButton>
         </IonFab>
 
-        {/*-- fab placed to the bottom end --*/}
+        {/*-- fab 置于底部末尾 --*/}
         <IonFab vertical="bottom" horizontal="end" slot="fixed">
           <IonFabButton>
             <IonIcon icon={arrowForwardCircle} />
           </IonFabButton>
         </IonFab>
 
-        {/*-- fab placed to the top start --*/}
+        {/*-- fab 置于顶部开始位置 --*/}
         <IonFab vertical="top" horizontal="start" slot="fixed">
           <IonFabButton>
             <IonIcon icon={arrowBackCircle} />
           </IonFabButton>
         </IonFab>
 
-        {/*-- fab placed to the bottom start --*/}
+        {/*-- fab 置于底部开始位置 --*/}
         <IonFab vertical="bottom" horizontal="start" slot="fixed">
           <IonFabButton>
             <IonIcon icon={arrowUpCircle} />
           </IonFabButton>
         </IonFab>
 
-        {/*-- fab placed to the (vertical) center and start --*/}
+        {/*-- fab 置于（垂直）中间和开始位置 --*/}
         <IonFab vertical="center" horizontal="start" slot="fixed">
           <IonFabButton>
             <IonIcon icon={share} />
           </IonFabButton>
         </IonFab>
 
-        {/*-- fab placed to the (vertical) center and end --*/}
+        {/*-- fab 置于（垂直）中间和末尾 --*/}
         <IonFab vertical="center" horizontal="end" slot="fixed">
           <IonFabButton>
             <IonIcon icon={add} />
           </IonFabButton>
         </IonFab>
 
-        {/*-- fab placed to the top and end and on the top edge of the content overlapping header --*/}
+        {/*-- fab 置于顶部末尾，位于内容顶部边缘并与头部重叠 --*/}
         <IonFab vertical="top" horizontal="end" edge slot="fixed">
           <IonFabButton>
             <IonIcon icon={person} />
           </IonFabButton>
         </IonFab>
 
-        {/*-- fab placed to the bottom and start and on the bottom edge of the content overlapping footer with a list to the right --*/}
+        {/*-- fab 置于底部开始，位于内容底部边缘并与底部重叠，右侧带有一个列表 --*/}
         <IonFab vertical="bottom" horizontal="start" edge slot="fixed">
           <IonFabButton>
             <IonIcon icon={settings} />
@@ -320,7 +320,7 @@ export const FabExamples: React.FC = () => {
           </IonFabList>
         </IonFab>
 
-        {/*-- fab placed in the center of the content with a list on each side --*/}
+        {/*-- fab 置于内容中心，每个方向带有一个列表 --*/}
         <IonFab vertical="center" horizontal="center" slot="fixed">
           <IonFabButton>
             <IonIcon icon={share} />
@@ -349,7 +349,7 @@ export const FabExamples: React.FC = () => {
       </IonContent>
       <IonFooter>
         <IonToolbar>
-          <IonTitle>Footer</IonTitle>
+          <IonTitle>底部</IonTitle>
         </IonToolbar>
       </IonFooter>
     </IonPage>
@@ -373,61 +373,61 @@ export class FabExample {
     return [
       <ion-header>
         <ion-toolbar>
-          <ion-title>Header</ion-title>
+          <ion-title>头部</ion-title>
         </ion-toolbar>
       </ion-header>,
 
       <ion-content>
-        {/* fab placed to the top end */}
+        {/* fab 置于顶部末尾 */}
         <ion-fab vertical="top" horizontal="end" slot="fixed">
           <ion-fab-button>
             <ion-icon name="add"></ion-icon>
           </ion-fab-button>
         </ion-fab>
 
-        {/* fab placed to the bottom end */}
+        {/* fab 置于底部末尾 */}
         <ion-fab vertical="bottom" horizontal="end" slot="fixed">
           <ion-fab-button>
             <ion-icon name="arrow-forward-circle"></ion-icon>
           </ion-fab-button>
         </ion-fab>
 
-        {/* fab placed to the top start */}
+        {/* fab 置于顶部开始位置 */}
         <ion-fab vertical="top" horizontal="start" slot="fixed">
           <ion-fab-button>
             <ion-icon name="arrow-back-circle"></ion-icon>
           </ion-fab-button>
         </ion-fab>
 
-        {/* fab placed to the bottom start */}
+        {/* fab 置于底部开始位置 */}
         <ion-fab vertical="bottom" horizontal="start" slot="fixed">
           <ion-fab-button>
             <ion-icon name="arrow-up-circle"></ion-icon>
           </ion-fab-button>
         </ion-fab>
 
-        {/* fab placed to the (vertical) center and start */}
+        {/* fab 置于（垂直）中间和开始位置 */}
         <ion-fab vertical="center" horizontal="start" slot="fixed">
           <ion-fab-button>
             <ion-icon name="share"></ion-icon>
           </ion-fab-button>
         </ion-fab>
 
-        {/* fab placed to the (vertical) center and end */}
+        {/* fab 置于（垂直）中间和末尾 */}
         <ion-fab vertical="center" horizontal="end" slot="fixed">
           <ion-fab-button>
             <ion-icon name="add"></ion-icon>
           </ion-fab-button>
         </ion-fab>
 
-        {/* fab placed to the top and end and on the top edge of the  content overlapping header */}
+        {/* fab 置于顶部末尾，位于内容顶部边缘并与头部重叠 */}
         <ion-fab vertical="top" horizontal="end" edge slot="fixed">
           <ion-fab-button>
             <ion-icon name="person"></ion-icon>
           </ion-fab-button>
         </ion-fab>
 
-        {/* fab placed to the bottom and start and on the bottom edge of content  overlapping footer with a list to the right */}
+        {/* fab 置于底部开始，位于内容底部边缘并与底部重叠，右侧带有一个列表 */}
         <ion-fab vertical="bottom" horizontal="start" edge slot="fixed">
           <ion-fab-button>
             <ion-icon name="settings"></ion-icon>
@@ -439,7 +439,7 @@ export class FabExample {
           </ion-fab-list>
         </ion-fab>
 
-        {/* fab placed in the center of the content with a list on each side */}
+        {/* fab 置于内容中心，每个方向带有一个列表 */}
         <ion-fab vertical="center" horizontal="center" slot="fixed">
           <ion-fab-button>
             <ion-icon name="share"></ion-icon>
@@ -469,7 +469,7 @@ export class FabExample {
 
       <ion-footer>
         <ion-toolbar>
-          <ion-title>Footer</ion-title>
+          <ion-title>底部</ion-title>
         </ion-toolbar>
       </ion-footer>,
     ];
@@ -485,61 +485,61 @@ export class FabExample {
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title>Header</ion-title>
+      <ion-title>头部</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
-    <!-- fab placed to the top end -->
+    <!-- fab 置于顶部末尾 -->
     <ion-fab vertical="top" horizontal="end" slot="fixed">
       <ion-fab-button>
         <ion-icon :icon="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
 
-    <!-- fab placed to the bottom end -->
+    <!-- fab 置于底部末尾 -->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button>
         <ion-icon :icon="arrowForwardCircle"></ion-icon>
       </ion-fab-button>
     </ion-fab>
 
-    <!-- fab placed to the top start -->
+    <!-- fab 置于顶部开始位置 -->
     <ion-fab vertical="top" horizontal="start" slot="fixed">
       <ion-fab-button>
         <ion-icon :icon="arrowBackCircle"></ion-icon>
       </ion-fab-button>
     </ion-fab>
 
-    <!-- fab placed to the bottom start -->
+    <!-- fab 置于底部开始位置 -->
     <ion-fab vertical="bottom" horizontal="start" slot="fixed">
       <ion-fab-button>
         <ion-icon :icon="arrowUpCircle"></ion-icon>
       </ion-fab-button>
     </ion-fab>
 
-    <!-- fab placed to the (vertical) center and start -->
+    <!-- fab 置于（垂直）中间和开始位置 -->
     <ion-fab vertical="center" horizontal="start" slot="fixed">
       <ion-fab-button>
         <ion-icon :icon="share"></ion-icon>
       </ion-fab-button>
     </ion-fab>
 
-    <!-- fab placed to the (vertical) center and end -->
+    <!-- fab 置于（垂直）中间和末尾 -->
     <ion-fab vertical="center" horizontal="end" slot="fixed">
       <ion-fab-button>
         <ion-icon :icon="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
 
-    <!-- fab placed to the top and end and on the top edge of the content overlapping header -->
+    <!-- fab 置于顶部末尾，位于内容顶部边缘并与头部重叠 -->
     <ion-fab vertical="top" horizontal="end" edge slot="fixed">
       <ion-fab-button>
         <ion-icon :icon="person"></ion-icon>
       </ion-fab-button>
     </ion-fab>
 
-    <!-- fab placed to the bottom and start and on the bottom edge of the content overlapping footer with a list to the right -->
+    <!-- fab 置于底部开始，位于内容底部边缘并与底部重叠，右侧带有一个列表 -->
     <ion-fab vertical="bottom" horizontal="start" edge slot="fixed">
       <ion-fab-button>
         <ion-icon :icon="settings"></ion-icon>
@@ -549,7 +549,7 @@ export class FabExample {
       </ion-fab-list>
     </ion-fab>
 
-    <!-- fab placed in the center of the content with a list on each side -->
+    <!-- fab 置于内容中心，每个方向带有一个列表 -->
     <ion-fab vertical="center" horizontal="center" slot="fixed">
       <ion-fab-button>
         <ion-icon :icon="share"></ion-icon>
@@ -571,7 +571,7 @@ export class FabExample {
 
   <ion-footer>
     <ion-toolbar>
-      <ion-title>Footer</ion-title>
+      <ion-title>底部</ion-title>
     </ion-toolbar>
   </ion-footer>
 </template>
@@ -638,26 +638,26 @@ export class FabExample {
 
 </Tabs>
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

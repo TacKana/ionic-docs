@@ -8,7 +8,7 @@ function Example() {
       <IonItem>
         <IonTextarea labelPlacement="floating" value="Lorem Ipsum">
           <div slot="label">
-            Comments <IonText color="danger">(Required)</IonText>
+            备注 <IonText color="danger">（必填）</IonText>
           </div>
         </IonTextarea>
       </IonItem>

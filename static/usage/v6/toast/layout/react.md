@@ -11,24 +11,24 @@ function Example() {
         onClick={() => {
           presentToast({
             duration: 3000,
-            message: 'This is a toast with a long message and a button that appears on the next line.',
-            buttons: [{ text: 'Action With Long Text' }],
+            message: '这是一条包含长消息和按钮的提示，按钮会显示在下一行。',
+            buttons: [{ text: '带长文本的操作按钮' }],
           });
         }}
       >
-        Open Baseline Layout Toast
+        打开基线布局提示
       </IonButton>
       <IonButton
         onClick={() => {
           presentToast({
             duration: 3000,
-            message: 'This is a toast with a long message and a button that appears on the next line.',
-            buttons: [{ text: 'Action With Long Text' }],
+            message: '这是一条包含长消息和按钮的提示，按钮会显示在下一行。',
+            buttons: [{ text: '带长文本的操作按钮' }],
             layout: 'stacked',
           });
         }}
       >
-        Open Stacked Layout Toast
+        打开堆叠布局提示
       </IonButton>
     </>
   );

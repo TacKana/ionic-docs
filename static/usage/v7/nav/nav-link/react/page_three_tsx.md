@@ -14,7 +14,7 @@ function PageThree() {
         </IonToolbar>
       </IonHeader>
       <IonContent class="ion-padding">
-        <h1>Page Three</h1>
+        <h1>页面三</h1>
       </IonContent>
     </>
   );

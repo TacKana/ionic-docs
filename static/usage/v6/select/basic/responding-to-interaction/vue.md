@@ -3,14 +3,14 @@
   <ion-list>
     <ion-item>
       <ion-select
-        placeholder="Select fruit"
-        @ionChange="pushLog('ionChange fired with value: ' + $event.detail.value)"
-        @ionCancel="pushLog('ionCancel fired')"
-        @ionDismiss="pushLog('ionDismiss fired')"
+        placeholder="选择水果"
+        @ionChange="pushLog('ionChange 事件触发，值为：' + $event.detail.value)"
+        @ionCancel="pushLog('ionCancel 事件触发')"
+        @ionDismiss="pushLog('ionDismiss 事件触发')"
       >
-        <ion-select-option value="apples">Apples</ion-select-option>
-        <ion-select-option value="oranges">Oranges</ion-select-option>
-        <ion-select-option value="bananas">Bananas</ion-select-option>
+        <ion-select-option value="apples">苹果</ion-select-option>
+        <ion-select-option value="oranges">橙子</ion-select-option>
+        <ion-select-option value="bananas">香蕉</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>

@@ -10,18 +10,18 @@ import CustomProps from '@ionic-internal/component-api/v7/radio-group/custom-pro
 import Slots from '@ionic-internal/component-api/v7/radio-group/slots.md';
 
 <head>
-  <title>ion-radio-group: Radio Button Group Usage for Ionic Apps</title>
+  <title>ion-radio-group：Ionic 应用的单选按钮组使用方法</title>
   <meta
     name="description"
-    content="A radio group is a group of radio buttons. Radio groups allow a user to select at most one radio button from a set. Learn more about ion-radio-group usage."
+    content="单选按钮组是一组单选按钮的容器。它允许用户从一组选项中最多选择一个单选按钮。深入了解 ion-radio-group 的使用方法。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-A radio group is a container for a group of [radios](./radio). It allows a user to select at most one radio button from a set. Checking one radio button that belongs to a radio group unchecks any previous checked radio button within the same group. For example usage of the radio group, see the [radio](./radio) documentation.
+单选按钮组是一组 [单选按钮](./radio) 的容器。它允许用户从一组选项中最多选择一个单选按钮。当选中属于同一组的某个单选按钮时，之前在该组内选中的任何其他单选按钮都将被取消选中。有关单选按钮组的使用示例，请参阅 [单选按钮](./radio) 文档。
 
-## Interfaces
+## 接口
 
 ### RadioGroupChangeEventDetail
 
@@ -33,7 +33,7 @@ interface RadioGroupChangeEventDetail<T = any> {
 
 ### RadioGroupCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便在使用此组件触发的 Ionic 事件时获得更严格的类型检查。
 
 ```typescript
 interface RadioGroupCustomEvent<T = any> extends CustomEvent {
@@ -42,26 +42,26 @@ interface RadioGroupCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Properties
+## 属性
 
 <Props />
 
-## Events
+## 事件
 
 <Events />
 
-## Methods
+## 方法
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 影子部分
 
 <Parts />
 
-## CSS Custom Properties
+## CSS 自定义属性
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

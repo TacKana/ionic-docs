@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-range>
-    <div slot="label">Label with <ion-text color="primary">custom HTML</ion-text></div>
+    <div slot="label">标签包含 <ion-text color="primary">自定义 HTML</ion-text></div>
   </ion-range>
 </template>
 

@@ -14,31 +14,31 @@
 
   <ion-button size="small">
     <ion-icon slot="start" :icon="star"></ion-icon>
-    Left Icon
+    左侧图标
   </ion-button>
 
   <ion-button>
     <ion-icon slot="start" :icon="star"></ion-icon>
-    Left Icon
+    左侧图标
   </ion-button>
 
   <ion-button size="large">
     <ion-icon slot="start" :icon="star"></ion-icon>
-    Left Icon
+    左侧图标
   </ion-button>
 
   <ion-button size="small">
-    Right Icon
+    右侧图标
     <ion-icon slot="end" :icon="heart"></ion-icon>
   </ion-button>
 
   <ion-button>
-    Right Icon
+    右侧图标
     <ion-icon slot="end" :icon="heart"></ion-icon>
   </ion-button>
 
   <ion-button size="large">
-    Right Icon
+    右侧图标
     <ion-icon slot="end" :icon="heart"></ion-icon>
   </ion-button>
 </template>
