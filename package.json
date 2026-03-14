@@ -37,6 +37,7 @@
     ]
   },
   "dependencies": {
+    "node-fetch": "^3.3.2",
     "@docusaurus/core": "^3.7.0",
     "@docusaurus/mdx-loader": "^3.7.0",
     "@docusaurus/plugin-client-redirects": "^3.7.0",
