@@ -91,6 +91,8 @@ export class MyPage {
 | pwa            | PWA 应用                               |
 | tablet         | 平板设备                               |
 
+<LegacyAnchor id="customizing-platform-detection-methods" />
+
 #### 自定义平台检测函数
 
 用于检测特定平台的函数可以通过在全局 [Ionic 配置](../developing/config) 中提供替代函数来覆盖。每个函数以 `window` 作为参数并返回布尔值。

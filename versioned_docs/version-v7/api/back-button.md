@@ -37,6 +37,8 @@ import Custom from '@site/static/usage/v7/back-button/custom/index.md';
 
 <Custom />
 
+<LegacyAnchor id="default-back-history" />
+
 ## 默认返回历史记录
 
 有时，应用可能需要在没有历史记录时显示返回按钮并执行后退操作。这可以通过在返回按钮上设置 `defaultHref` 为一个路径来实现。要使用 `defaultHref`，应用必须包含一个已设置路径的路由器。

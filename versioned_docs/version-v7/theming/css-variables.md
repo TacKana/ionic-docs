@@ -87,6 +87,8 @@ const el = document.querySelector('.fancy-button');
 const color = el.style.getPropertyValue('--charcoal');
 ```
 
+<LegacyAnchor id="ionic-variables" />
+
 ## Ionic 变量
 
 ### 组件变量

@@ -291,6 +291,8 @@ interface ActionSheetOptions {
 ## CSS Shadow Parts
 <Parts />
 
+<LegacyAnchor id="css-custom-properties-1" />
+
 ## CSS 自定义属性
 <CustomProps />
 

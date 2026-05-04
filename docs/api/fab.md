@@ -43,7 +43,7 @@ import Positioning from '@site/static/usage/v8/fab/positioning/index.md';
 
 ### 安全区域
 
-如果没有 `ion-header` 或 `ion-footer` 组件，FAB 可能会被设备的刘海屏、状态栏或其他设备 UI 遮挡。在这些情况下，顶部和底部的 [安全区域](/docs/theming/advanced#safe-area-padding) 不会被计入。可以通过使用 [`--ion-safe-area-(dir)` 变量](/docs/theming/advanced#application-variables) 来调整。
+如果没有 `ion-header` 或 `ion-footer` 组件，FAB 可能会被设备的刘海屏、状态栏或其他设备 UI 遮挡。在这些情况下，顶部和底部的 [安全区域](/theming/advanced#safe-area-padding) 不会被计入。可以通过使用 [`--ion-safe-area-(dir)` 变量](/theming/advanced#application-variables) 来调整。
 
 当使用 `vertical` 设置为 `"top"` 的 FAB 且没有 `ion-header` 时，需要设置顶部边距：
 

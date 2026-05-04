@@ -7,6 +7,8 @@ import TabItem from '@theme/TabItem';
 
 虽然独立组件的方式更新，并且使用了更现代的 Angular API，但 Ionic 会继续支持模块方式。本文档网站上的大多数 Angular 示例都采用模块方式。
 
+<LegacyAnchor id="从模块迁移到独立组件" />
+
 ## 独立组件（Standalone）
 
 :::info

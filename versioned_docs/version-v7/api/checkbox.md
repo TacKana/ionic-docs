@@ -105,6 +105,8 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
+<LegacyAnchor id="migrating-from-legacy-checkbox-syntax" />
+
 ## 从旧版复选框语法迁移
 
 Ionic 7.0 中引入了更简洁的复选框语法。这种新语法减少了设置复选框所需的样板代码，解决了可访问性问题，并改善了开发体验。

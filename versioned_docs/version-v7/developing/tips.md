@@ -10,6 +10,8 @@ title: Development Tips
   />
 </head>
 
+<LegacyAnchor id="resolving-permission-errors" />
+
 ## 解决权限错误
 
 当全局安装软件包时，可能会出现 `EACCES` 权限错误。如果出现这种情况，可能需要配置 npm 使其无需提升权限即可运行。
@@ -74,6 +76,8 @@ $ sudo chown -R $(whoami) ~/.npm ~/.npmrc
 ```
 
 由于这些全局目录不再由 `root` 拥有，因此可以在**不使用** `sudo` 的情况下全局安装软件包。
+
+<LegacyAnchor id="updating-dependencies" />
 
 ## 更新依赖项
 

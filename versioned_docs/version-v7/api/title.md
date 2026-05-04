@@ -29,6 +29,8 @@ import Basic from '@site/static/usage/v7/title/basic/index.md';
 
 <Basic />
 
+<LegacyAnchor id="collapsible-large-titles" />
+
 ## 可折叠大标题
 
 当[内容区域](./content)滚动到滚动容器的起始位置时，大标题会显示。当标题滚动到标题栏后面时，紧凑标题会淡入显示。

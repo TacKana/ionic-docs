@@ -21,7 +21,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 内容组件提供一个易于使用的内容区域，并包含一些控制可滚动区域的有用方法。
 在单个视图中应该只有一个内容组件。
 
-内容组件与许多其他 Ionic 组件一样，可以通过 [CSS 实用工具](/docs/layout/css-utilities) 中提供的全局样式进行自定义，或使用 CSS 和可用的 [CSS 自定义属性](#css-custom-properties) 单独设置样式，从而修改其内边距、外边距等属性。
+内容组件与许多其他 Ionic 组件一样，可以通过 [CSS 实用工具](/layout/css-utilities) 中提供的全局样式进行自定义，或使用 CSS 和可用的 [CSS 自定义属性](#css-custom-properties) 单独设置样式，从而修改其内边距、外边距等属性。
 
 
 ## 基本用法
@@ -98,7 +98,7 @@ import CSSProps from '@site/static/usage/v8/content/theming/css-properties/index
 
 ### 安全区域内边距
 
-内容组件不会自动向任何一侧应用内边距以考虑 [安全区域](/docs/theming/advanced#safe-area-padding)。这是因为内容组件通常与其他应用了自己内边距的组件（如 [页眉](./header) 和 [页脚](./footer)）一起使用。但是，如果单独使用内容组件，可能需要对安全区域应用内边距。这可以通过 CSS 使用 [应用变量](../theming/advanced.md#application-variables) 中描述的 `--ion-safe-area-(dir)` 变量来实现。
+内容组件不会自动向任何一侧应用内边距以考虑 [安全区域](/theming/advanced#safe-area-padding)。这是因为内容组件通常与其他应用了自己内边距的组件（如 [页眉](./header) 和 [页脚](./footer)）一起使用。但是，如果单独使用内容组件，可能需要对安全区域应用内边距。这可以通过 CSS 使用 [应用变量](../theming/advanced.md#application-variables) 中描述的 `--ion-safe-area-(dir)` 变量来实现。
 
 最常见的用例是为状态栏向内容顶部应用内边距。这可以通过将 `padding-top` 属性设置为 `--ion-safe-area-top` 变量的值来实现。
 
@@ -164,14 +164,20 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 ## 属性
 <Props />
 
+<LegacyAnchor id="events" />
+
 ## 事件
 <Events />
+
+<LegacyAnchor id="methods" />
 
 ## 方法
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
+
+<LegacyAnchor id="css-custom-properties" />
 
 ## CSS 自定义属性
 <CustomProps />

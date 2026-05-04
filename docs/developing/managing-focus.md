@@ -41,6 +41,8 @@ import Basic from '@site/static/usage/v8/input/set-focus/index.md';
 
 <Basic />
 
+<LegacyAnchor id="routing" />
+
 ### 路由
 
 开发者可以在页面进入时，使用 `ionViewDidEnter` 生命周期事件来设置元素焦点。
@@ -239,6 +241,8 @@ export default Home;
 </Tabs>
 ````
 
+<LegacyAnchor id="assistive-technology-focus-management" />
+
 ## 辅助技术焦点管理
 
 默认情况下，单页应用（SPA）没有内置的方式来通知屏幕阅读器浏览器或 Webview 中的活动视图已更改。这意味着依赖辅助技术的用户并不总是知道导航事件是否发生。
@@ -250,6 +254,8 @@ export default Home;
 ```typescript
 type FocusManagerPriority = 'content' | 'heading' | 'banner';
 ```
+
+<LegacyAnchor id="types" />
 
 ### 内容类型
 

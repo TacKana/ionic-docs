@@ -22,6 +22,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 使用 `ion-popover` 有两种方式：内联方式或通过 `popoverController`。每种方法都有不同的注意事项，因此请务必选择最适合您用例的方式。
 
+<LegacyAnchor id="css-shadow-parts" />
+<LegacyAnchor id="inline-popovers" />
+
 ## 内联浮动操作面板
 
 `ion-popover` 可以通过直接在模板中编写组件来使用。这减少了您为了呈现浮动操作面板而需要连接的处理程序数量。
@@ -249,6 +252,8 @@ import Mount from '@site/static/usage/v8/popover/performance/mount/index.md';
 
 ## CSS Shadow 部件
 <Parts />
+
+<LegacyAnchor id="css-custom-properties" />
 
 ## CSS 自定义属性
 <CustomProps />

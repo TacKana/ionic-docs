@@ -62,6 +62,8 @@ Vue 没有内置任何类型的净化方法。建议开发者使用诸如 [sanit
 
 要了解更多关于绑定到指令（如 `v-html`）的安全建议，请参阅 [Vue 语法指南](https://vuejs.org/v2/guide/syntax.html#Raw-HTML)。
 
+<LegacyAnchor id="enabling-custom-html-parsing-via-innerhtml" />
+
 ## 通过 `innerHTML` 启用自定义 HTML 解析
 
 `ion-alert`、`ion-infinite-scroll-content`、`ion-loading`、`ion-refresher-content` 和 `ion-toast` 可以为某些属性接受字符串形式的自定义 HTML。这些字符串使用 `innerHTML` 添加到 DOM 中，必须由开发者进行适当的净化。默认情况下，此行为是禁用的，这意味着传递给受影响组件的值将始终被解释为纯文本。开发者可以通过在 [IonicConfig](../developing/config#ionicconfig) 中设置 `innerHTMLTemplatesEnabled: true` 来启用此自定义 HTML 行为。

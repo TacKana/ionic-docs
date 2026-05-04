@@ -33,17 +33,18 @@ module.exports = function (context, options) {
         components.forEach((comp) => {
           const compTag = comp.tag.slice(4);
           const outDir = getDirectoryPath(compTag, version, isCurrentVersion);
+          const docsBasePath = isCurrentVersion ? '/' : `/${version}/`;
 
           data.push({
             outDir,
             componentTag: compTag,
             version,
-            props: renderProperties(comp),
-            events: renderEvents(comp),
-            methods: renderMethods(comp),
-            parts: renderParts(comp),
-            customProps: renderCustomProps(comp),
-            slots: renderSlots(comp),
+            props: normalizeGeneratedLinks(renderProperties(comp), docsBasePath),
+            events: normalizeGeneratedLinks(renderEvents(comp), docsBasePath),
+            methods: normalizeGeneratedLinks(renderMethods(comp), docsBasePath),
+            parts: normalizeGeneratedLinks(renderParts(comp), docsBasePath),
+            customProps: normalizeGeneratedLinks(renderCustomProps(comp), docsBasePath),
+            slots: normalizeGeneratedLinks(renderSlots(comp), docsBasePath),
           });
         });
       };
@@ -130,6 +131,10 @@ function getDirectoryPath(componentTag, version, isCurrentVersion) {
  */
 function formatMultiline(str) {
   return str.split('\n\n').join('<br /><br />').split('\n').join(' ');
+}
+
+function normalizeGeneratedLinks(markdown, docsBasePath) {
+  return markdown.replace(/(?<=[("'\s=])\/docs\//g, docsBasePath);
 }
 
 function formatType(attr, type) {

@@ -36,6 +36,8 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
   （例如，`size-sm="4"` 适用于小、中、大和超大设备）。
 - 网格可以通过 CSS 变量进行自定义。请参阅 [自定义网格](#customizing-the-grid)。
 
+<LegacyAnchor id="default-breakpoints" />
+
 ## 默认断点
 
 网格的默认断点及相应属性定义在下表中。目前无法自定义断点值。有关为何无法自定义的更多信息，请参阅 [媒体查询中的变量](../theming/advanced#variables-in-media-queries)。
@@ -57,6 +59,8 @@ import Basic from '@site/static/usage/v8/grid/basic/index.md';
 
 <Basic />
 
+
+<LegacyAnchor id="fixed-grid" />
 
 ## 固定网格
 
@@ -165,6 +169,8 @@ import HorizontalAlignment from '@site/static/usage/v8/grid/horizontal-alignment
 
 <HorizontalAlignment />
 
+<LegacyAnchor id="customizing-the-grid" />
+
 ## 自定义网格
 
 使用我们内置的 CSS 变量，可以自定义预定义的网格属性。更改内边距的值、列数等。
@@ -176,6 +182,8 @@ import HorizontalAlignment from '@site/static/usage/v8/grid/horizontal-alignment
 import Width from '@site/static/usage/v8/grid/customizing/width/index.md';
 
 <Width />
+
+<LegacyAnchor id="number-of-columns" />
 
 ### 列数
 

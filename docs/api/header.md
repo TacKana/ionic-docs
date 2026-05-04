@@ -35,6 +35,8 @@ import Translucent from '@site/static/usage/v8/header/translucent/index.md';
 <Translucent />
 
 
+<LegacyAnchor id="condensed-header" />
+
 ## 收缩式头部
 
 Ionic 提供了原生 iOS 应用中的功能：显示一个大的工具栏标题，然后在滚动时将其收缩为小标题。这可以通过添加两个头部来实现，一个在内容上方，另一个在内容内部，然后将内容内部头部的 `collapse` 属性设置为 `"condense"`。此效果仅在模式为 `"ios"` 时生效。

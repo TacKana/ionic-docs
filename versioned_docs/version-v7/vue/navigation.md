@@ -134,6 +134,8 @@ const router = useRouter();
 <ion-button router-link="/page2" router-direction="back" :router-animation="myAnimation">点击我</ion-button>
 ```
 
+<LegacyAnchor id="navigating-using-useionrouter" />
+
 ### 使用 `useIonRouter` 导航
 
 使用 `router-link` 的一个缺点是无法在导航之前运行自定义代码。这使得诸如在导航之前发起网络请求之类的任务变得困难。您可以直接使用 Vue Router，但那样会失去控制页面过渡的能力。这就是 `useIonRouter` 实用工具有用的地方。

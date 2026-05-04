@@ -12,6 +12,8 @@ title: 移动端浏览器支持
 
 Ionic 最早的目标是让使用 HTML、CSS 和 JavaScript 等 Web 技术开发移动应用变得简单。正是由于这种基于 Web 技术的根基，Ionic 可以在任何 Web 能够运行的地方运行——iOS、Android、浏览器、PWA 等等。
 
+<LegacyAnchor id="mobile-browsers" />
+
 ## 移动平台
 
 为了实现[自适应样式](../core-concepts/fundamentals.md#adaptive-styling)，Ionic 对以下移动平台提供完全支持并经过充分测试：

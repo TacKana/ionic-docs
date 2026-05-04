@@ -14,7 +14,7 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-本指南介绍了如何将 Ionic React 添加到现有的 React 项目中。如果你想从头开始一个新项目，请查阅 [Ionic React 快速入门](/docs/react/quickstart.md) 指南。要了解 Ionic React 如何与 React 协同工作，包括版本支持和工具，请查阅 [Ionic React 概述](/docs/react/overview.md)。
+本指南介绍了如何将 Ionic React 添加到现有的 React 项目中。如果你想从头开始一个新项目，请查阅 [Ionic React 快速入门](/v7/react/quickstart) 指南。要了解 Ionic React 如何与 React 协同工作，包括版本支持和工具，请查阅 [Ionic React 概述](/v7/react/overview)。
 
 :::tip
 
@@ -64,7 +64,7 @@ setupIonicReact();
 
 :::info
 
-虽然 `core.css` 是必需的，但 `normalize.css`、`structure.css` 和 `typography.css` 是推荐的，但不是必需的。它们可以标准化跨浏览器差异，确保正确的滚动行为，并提供一致的排版和表单样式。如果没有它们，你可能需要自己处理这些问题。更多详情，请参阅 [全局样式表](/docs/layout/global-stylesheets.md)。
+虽然 `core.css` 是必需的，但 `normalize.css`、`structure.css` 和 `typography.css` 是推荐的，但不是必需的。它们可以标准化跨浏览器差异，确保正确的滚动行为，并提供一致的排版和表单样式。如果没有它们，你可能需要自己处理这些问题。更多详情，请参阅 [全局样式表](/v7/layout/global-stylesheets)。
 
 :::
 
@@ -98,7 +98,7 @@ const App: React.FC = () => (
 export default App;
 ```
 
-访问 [组件](/docs/components.md) 页面以查看所有可用的 Ionic 组件。
+访问 [组件](/v7/components) 页面以查看所有可用的 Ionic 组件。
 
 :::tip
 
@@ -132,7 +132,7 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 ```
 
-这些样式表设置了整体页面结构，并为快速开发提供了 [CSS 工具类](/docs/layout/css-utilities.md)。其中一些样式表是可选的。要了解哪些样式表是必需的，请查阅 [全局样式表](/docs/layout/global-stylesheets.md)。
+这些样式表设置了整体页面结构，并为快速开发提供了 [CSS 工具类](/v7/layout/css-utilities)。其中一些样式表是可选的。要了解哪些样式表是必需的，请查阅 [全局样式表](/v7/layout/global-stylesheets)。
 
 #### 2. 设置主题
 
@@ -169,7 +169,7 @@ setupIonicReact();
 // ...现有的应用函数和导出...
 ```
 
-`variables.css` 文件可用于创建自定义的 Ionic Framework 主题。`dark.system.css` 导入会在系统设置为偏好深色外观时为你的 Ionic 应用启用 [深色模式支持](/docs/theming/dark-mode.md)。你可以通过取消注释不同的深色调色板导入或在 `theme/variables.css` 中添加自定义 CSS 变量来自定义主题行为。
+`variables.css` 文件可用于创建自定义的 Ionic Framework 主题。`dark.system.css` 导入会在系统设置为偏好深色外观时为你的 Ionic 应用启用 [深色模式支持](/v7/theming/dark-mode)。你可以通过取消注释不同的深色调色板导入或在 `theme/variables.css` 中添加自定义 CSS 变量来自定义主题行为。
 
 #### 3. 更新应用组件
 
@@ -356,11 +356,11 @@ export default App;
   <p>了解如何使用 React Router 在 Ionic React 应用中处理路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="组件" href="/v7/components" icon="/icons/guide-components-icon.png">
   <p>探索 Ionic 丰富的 UI 组件库，用于构建精美的应用。</p>
 </DocsCard>
 
-<DocsCard header="主题" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="主题" href="/v7/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>学习如何使用 Ionic 强大的主题系统自定义应用的外观和风格。</p>
 </DocsCard>
 

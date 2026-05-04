@@ -166,6 +166,8 @@ Input OTP 的键盘导航遵循 [ARIA 创作实践指南](https://www.w3.org/WAI
 ## CSS Shadow Parts
 <Parts />
 
+<LegacyAnchor id="css-custom-properties-1" />
+
 ## CSS 自定义属性
 <CustomProps />
 

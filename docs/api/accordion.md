@@ -140,6 +140,8 @@ import AdvancedExpansionStyles from '@site/static/usage/v8/accordion/customizati
 
 <AdvancedExpansionStyles />
 
+<LegacyAnchor id="icons" />
+
 ### 图标
 
 当在 `header` 插槽中使用 `ion-item` 时，我们会自动添加一个 `ion-icon`。所使用的图标类型可以通过 `toggleIcon` 属性控制，其添加到的插槽可以通过 `toggleIconSlot` 属性控制。

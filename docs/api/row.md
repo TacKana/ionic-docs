@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 行对齐
 
-默认情况下，列会拉伸以填满行的整个高度，并在必要时换行。行是[弹性容器](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container)，因此有多个[CSS 类](/docs/layout/css-utilities#flex-container-properties)可应用于行以自定义此行为。
+默认情况下，列会拉伸以填满行的整个高度，并在必要时换行。行是[弹性容器](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container)，因此有多个[CSS 类](/layout/css-utilities#flex-container-properties)可应用于行以自定义此行为。
 
 ## 属性
 <Props />

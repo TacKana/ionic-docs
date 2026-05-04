@@ -226,7 +226,7 @@ customElements.define('home-page', HomePage);
 这将创建一个名为 `home-page` 的自定义元素，其中包含首页的布局。该页面使用 Ionic 的布局组件创建了一个带有工具栏和可滚动内容区域的标题栏。
 
 :::tip 了解更多
-有关 Ionic 布局组件的详细信息，请参阅 [Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md) 和 [Content](/docs/api/content.md) 文档。
+有关 Ionic 布局组件的详细信息，请参阅 [Header](/api/header.md)、[Toolbar](/api/toolbar.md)、[Title](/api/title.md) 和 [Content](/api/content.md) 文档。
 :::
 
 接下来，在 `index.html` 中的 `main.js` 导入之前添加一个 `<script>` 标签来导入首页：
@@ -245,7 +245,7 @@ customElements.define('home-page', HomePage);
 
 ## 添加 Ionic 组件
 
-您可以使用更多 Ionic UI 组件来增强首页。例如，添加一个[按钮](/docs/api/button.md)来导航到另一个页面。更新 `HomePage.js` 中的 `HomePage` 组件：
+您可以使用更多 Ionic UI 组件来增强首页。例如，添加一个[按钮](/api/button.md)来导航到另一个页面。更新 `HomePage.js` 中的 `HomePage` 组件：
 
 ```js title="src/pages/HomePage.js"
 class HomePage extends HTMLElement {
@@ -300,7 +300,7 @@ class NewPage extends HTMLElement {
 customElements.define('new-page', NewPage);
 ```
 
-这将创建一个在[工具栏](/docs/api/toolbar.md)中带有[返回按钮](/docs/api/back-button.md)的页面。返回按钮将自动处理导航回上一页，或者如果没有历史记录则导航到 `/`。
+这将创建一个在[工具栏](/api/toolbar.md)中带有[返回按钮](/api/back-button.md)的页面。返回按钮将自动处理导航回上一页，或者如果没有历史记录则导航到 `/`。
 
 接下来，更新 `index.html` 文件中导入首页的 `<script>` 标签，以同时导入新页面：
 
@@ -324,7 +324,7 @@ customElements.define('new-page', NewPage);
 当按钮被点击时，Ionic 的路由器将自动导航到 `/new` 路由并显示 `new-page` 组件。
 
 :::info
-导航也可以通过编程方式使用 `document.querySelector('ion-router').push('/new')` 来执行。更多信息请参阅 [Ionic Router 文档](/docs/api/router.md)。
+导航也可以通过编程方式使用 `document.querySelector('ion-router').push('/new')` 来执行。更多信息请参阅 [Ionic Router 文档](/api/router.md)。
 :::
 
 ## 为新页面添加图标
@@ -372,7 +372,7 @@ class NewPage extends HTMLElement {
 customElements.define('new-page', NewPage);
 ```
 
-更多信息请参阅[图标文档](/docs/api/icon.md)和[Ionicons 文档](https://ionic.io/ionicons/)。
+更多信息请参阅[图标文档](/api/icon.md)和[Ionicons 文档](https://ionic.io/ionicons/)。
 
 ## 调用组件方法
 
@@ -441,7 +441,7 @@ customElements.define('new-page', NewPage);
 1. 使用 `querySelector` 获取对组件元素的引用
 2. 直接在元素上调用方法
 
-您可以在每个组件的 API 文档的[方法](/docs/api/content.md#methods)部分找到可用的方法。
+您可以在每个组件的 API 文档的[方法](/api/content.md#methods)部分找到可用的方法。
 
 ## 在设备上运行
 
@@ -488,15 +488,15 @@ Ionic Core 也适用于支持自定义元素的其他框架和库，例如 [Alpi
   <p>从 MDN Web Docs 了解更多关于 JavaScript 核心概念、工具和最佳实践的信息。</p>
 </DocsCard>
 
-<DocsCard header="导航" href="/docs/api/router" icon="/icons/component-navigation-icon.png">
+<DocsCard header="导航" href="/api/router" icon="/icons/component-navigation-icon.png">
   <p>了解如何使用 Ionic Router 处理 Ionic JavaScript 应用中的路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="组件" href="/components" icon="/icons/guide-components-icon.png">
   <p>探索 Ionic 丰富的 UI 组件库，用于构建精美的应用。</p>
 </DocsCard>
 
-<DocsCard header="主题" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="主题" href="/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>学习如何使用 Ionic 强大的主题系统自定义应用的外观和感觉。</p>
 </DocsCard>
 

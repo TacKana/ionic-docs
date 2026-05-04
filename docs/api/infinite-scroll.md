@@ -34,6 +34,8 @@ import InfiniteScrollContent from '@site/static/usage/v8/infinite-scroll/infinit
 
 <InfiniteScrollContent />
 
+<LegacyAnchor id="infinite-scroll-content" />
+
 ## 自定义内容
 
 将 `ion-infinite-scroll` 和 `ion-infinite-scroll-content` 组件分开，允许开发者在需要时创建自己的内容组件。这些内容可以包含任何元素，从 SVG 元素到具有独特 CSS 动画的元素。

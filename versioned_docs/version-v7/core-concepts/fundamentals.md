@@ -17,6 +17,8 @@ sidebar_label: 核心概念
 
 Ionic Framework 是一个 UI 组件库，这些可复用元素构成了应用程序的基础构建模块。Ionic 组件基于 [Web 标准](../reference/glossary.md#web-standards) 使用 HTML、CSS 和 JavaScript 构建。虽然组件是预构建的，但它们从设计之初就支持高度自定义，使应用能够赋予每个组件独特的风格，让每个应用都拥有自己的外观和体验。具体来说，Ionic 组件可以轻松地通过主题化来全局改变整个应用的外观。有关自定义外观的更多信息，请参阅 [主题化](../theming/basics.md)。
 
+<LegacyAnchor id="adaptive-styling" />
+
 ## 自适应样式
 
 自适应样式是 Ionic Framework 的内置功能，允许应用开发者使用相同的代码库适配多个平台。每个 Ionic 组件都会根据应用运行的平台自适应其外观。例如，苹果设备（如 iPhone 和 iPad）使用苹果自家的 <a href="https://www.apple.com/ios" target="_blank">iOS 设计语言</a>。同样，Android 设备使用谷歌的设计语言——<a href="https://material.io/guidelines/" target="_blank">Material Design</a>。
@@ -53,7 +55,7 @@ Ionic Framework 的核心是使用 <a href="https://developer.mozilla.org/en-US/
 
 ## 属性
 
-属性是可以在 Ionic 组件上设置的 JavaScript 属性，用于配置其行为和外观。属性在每个组件的 [API 文档](/docs/api) 页面中定义。
+属性是可以在 Ionic 组件上设置的 JavaScript 属性，用于配置其行为和外观。属性在每个组件的 [API 文档](/v7/api) 页面中定义。
 
 ### 响应式属性
 
@@ -65,6 +67,8 @@ Ionic Framework 的核心是使用 <a href="https://developer.mozilla.org/en-US/
 
 `color` 属性是一个响应式属性，用于配置按钮的外观。如果在初始渲染后更改 `color` 值，按钮将更新以反映新值。
 
+<LegacyAnchor id="virtual-properties" />
+
 ### 虚拟属性
 
 虚拟属性设计用于在组件初始化期间进行一次性配置。它们在更新时不会触发重新渲染。
@@ -75,4 +79,4 @@ Ionic Framework 的核心是使用 <a href="https://developer.mozilla.org/en-US/
 
 `mode` 属性是一个虚拟属性，用于确定组件使用哪种平台样式。它可以在组件级别或通过应用配置全局设置。在这两种情况下，它都在初始化期间设置一次，并且在组件的生命周期中不会更改。
 
-有关 Ionic 模式的更多信息，请阅读 [平台样式文档](/docs/theming/platform-styles)。
+有关 Ionic 模式的更多信息，请阅读 [平台样式文档](/v7/theming/platform-styles)。

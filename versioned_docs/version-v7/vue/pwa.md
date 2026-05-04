@@ -11,6 +11,8 @@ sidebar_label: 渐进式网络应用
   />
 </head>
 
+<LegacyAnchor id="making-your-vue-app-a-pwa-with-vite" />
+
 ## 使用 Vite 将 Vue 应用转换为 PWA
 
 PWA 的两个主要要求是 <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> 和 <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web 应用清单</a>。虽然可以手动将这两者添加到应用中，但我们建议使用 [Vite PWA 插件](https://vite-pwa-org.netlify.app/)。

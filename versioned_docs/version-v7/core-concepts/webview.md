@@ -30,6 +30,8 @@ Ionic Web View 插件专为现代 JavaScript 应用而设计。对于 iOS 和 An
 
 Web View 强制执行 [CORS](../reference/glossary.md#cors)（跨源资源共享），因此外部服务正确处理跨源请求非常重要。有关在 Ionic 应用中处理 CORS 的信息，请参阅 [CORS 常见问题解答](../troubleshooting/cors.md)。
 
+<LegacyAnchor id="file-protocol" />
+
 ### 文件协议
 
 Capacitor 和 Cordova 应用托管在本地 HTTP 服务器上，并通过 `http://` 协议提供服务。然而，一些插件尝试通过 `file://` 协议访问设备文件。为了避免 `http://` 和 `file://` 之间的冲突，设备文件的路径必须重写以使用本地 HTTP 服务器。例如，在应用中渲染之前，`file:///path/to/device/file` 必须重写为 `http://<host>:<port>/<prefix>/path/to/device/file`。

@@ -64,6 +64,8 @@ import CSSProps from '@site/static/usage/v8/segment-button/theming/css-propertie
 ## CSS 影子部件
 <Parts />
 
+<LegacyAnchor id="properties" />
+
 ## CSS 自定义属性
 <CustomProps />
 

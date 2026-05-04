@@ -209,6 +209,8 @@ const UsersListPage: React.FC = () => {
 
 我们建议尽可能使用上述方法之一进行路由。这些方法的优点是它们都渲染一个锚点 (`<a>`) 标签，这对于整个应用的可访问性非常有利。
 
+<LegacyAnchor id="navigating-using-history" />
+
 一个编程式的导航选项是使用 React Router 通过路由提供给其渲染组件的 [`history`](https://v5.reactrouter.com/web/api/history) 属性。
 
 ```tsx

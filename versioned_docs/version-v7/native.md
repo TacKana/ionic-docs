@@ -1,3 +1,5 @@
+<LegacyAnchor id="vanilla-javascript" />
+
 ---
 title: Capacitor
 hide_table_of_contents: true

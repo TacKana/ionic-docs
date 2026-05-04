@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Vue 版本支持
 
-Ionic Vue v7 支持 Vue 3.x。有关支持版本的详细信息及我们的支持政策，请参阅 [Ionic Vue 支持政策](/docs/reference/support#ionic-vue)。
+Ionic Vue v7 支持 Vue 3.x。有关支持版本的详细信息及我们的支持政策，请参阅 [Ionic Vue 支持政策](/v7/reference/support#ionic-vue)。
 
 ## Vue 工具
 
@@ -56,11 +56,11 @@ $ ionic serve █
   <p>了解如何在 Ionic Vue 应用中使用 Vue Router 处理路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="组件" href="/v7/components" icon="/icons/guide-components-icon.png">
   <p>探索 Ionic 丰富的 UI 组件库，用于构建精美的应用。</p>
 </DocsCard>
 
-<DocsCard header="主题定制" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="主题定制" href="/v7/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>学习如何使用 Ionic 强大的主题系统来定制应用的外观和风格。</p>
 </DocsCard>
 

@@ -134,6 +134,8 @@ const router = useRouter();
 <ion-button router-link="/page2" router-direction="back" :router-animation="myAnimation">点击我</ion-button>
 ```
 
+<LegacyAnchor id="navigating-using-useionrouter" />
+
 ### 使用 `useIonRouter` 导航
 
 使用 `router-link` 的一个缺点是，你无法在导航前执行自定义代码。这使得诸如在导航前发起网络请求之类的任务变得困难。你可以直接使用 Vue Router，但这样又会失去对页面过渡的控制。这就是 `useIonRouter` 工具函数的用武之地。
@@ -324,6 +326,8 @@ const routes: Array<RouteRecordRaw> = [
 当你想要在出口 A 中渲染内容，同时在嵌套的出口 B 中渲染子内容时，应该使用嵌套路由。你最常遇到的用例就是标签页。当你加载一个 Ionic 标签页启动应用时，你会看到 `ion-tab-bar` 和 `ion-tabs` 组件渲染在第一个 `ion-router-outlet` 中。`ion-tabs` 组件会渲染另一个 `ion-router-outlet`，负责渲染每个标签页的内容。
 
 在移动应用中，嵌套路由合理的用例非常少。如果有疑问，请使用共享 URL 路由配置。我们强烈建议不要在除标签页以外的上下文中使用嵌套路由，因为它很容易使应用的导航变得混乱。
+
+<LegacyAnchor id="working-with-tabs" />
 
 ## 标签页的使用
 

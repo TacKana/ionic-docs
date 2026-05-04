@@ -1,3 +1,5 @@
+<LegacyAnchor id="running-with-xcode" />
+
 ---
 title: iOS 开发
 sidebar_label: iOS 开发指南

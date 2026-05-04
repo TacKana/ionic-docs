@@ -38,5 +38,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 ## CSS 自定义属性
 <CustomProps />
 
+<LegacyAnchor id="slots" />
+
 ## 插槽
 <Slots />

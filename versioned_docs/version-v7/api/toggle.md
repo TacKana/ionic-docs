@@ -97,6 +97,8 @@ import CSSParts from '@site/static/usage/v7/toggle/theming/css-shadow-parts/inde
 
 <CSSParts />
 
+<LegacyAnchor id="migrating-from-legacy-toggle-syntax" />
+
 ## 从旧版开关语法迁移
 
 Ionic 7.0 引入了一种更简洁的开关语法。这种新语法减少了设置开关所需的模板代码，解决了可访问性问题，并改善了开发体验。

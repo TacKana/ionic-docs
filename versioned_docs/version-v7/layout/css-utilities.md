@@ -18,7 +18,11 @@ Ionic 框架提供了一套 CSS 工具类，可用于任何元素，以修改文
 如果你的应用不是使用可用的 Ionic 框架启动器启动的，则需要引入[全局样式表](global-stylesheets.md#optional)的可选部分中列出的样式表，这些样式才能生效。
 :::
 
+<LegacyAnchor id="element-placement" />
+
 ## 文本修改
+
+<LegacyAnchor id="text-alignment" />
 
 ### 文本对齐
 
@@ -77,6 +81,8 @@ Ionic 框架提供了一套 CSS 工具类，可用于任何元素，以修改文
 | `.ion-text-justify`  | `text-align: justify`   | 行内内容两端对齐。文本应均匀分布，使其左右边缘与行框的左右边缘对齐，最后一行除外。                                           |
 | `.ion-text-wrap`     | `white-space: normal`   | 合并空白序列。源代码中的换行符与其他空白符处理方式相同。根据需要换行以填充行框。                                             |
 | `.ion-text-nowrap`   | `white-space: nowrap`   | 与 `normal` 一样合并空白，但禁止文本内的换行（文本换行）。                                                                   |
+
+<LegacyAnchor id="text-transformation" />
 
 ### 文本转换
 
@@ -188,6 +194,8 @@ Ionic 框架提供了一套 CSS 工具类，可用于任何元素，以修改文
 | `.ion-float-lg-{modifier}`  | 在 `min-width: 992px` 时将修改器应用于元素。         |
 | `.ion-float-xl-{modifier}`  | 在 `min-width: 1200px` 时将修改器应用于元素。        |
 
+<LegacyAnchor id="element-display" />
+
 ## 元素显示
 
 [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) CSS 属性设置元素是被视为块级还是内联盒子，以及用于其子元素的布局，例如流式布局、网格或弹性盒。它还可用于完全隐藏元素。
@@ -226,7 +234,11 @@ Ionic 框架提供了一套 CSS 工具类，可用于任何元素，以修改文
 | `.ion-hide-lg-{dir}`    | 在 `min-width: 992px` (`up`) 或 `max-width: 992px` (`down`) 时将修改器应用于元素。                   |
 | `.ion-hide-xl-{dir}`    | 在 `min-width: 1200px` (`up`) 或 `max-width: 1200px` (`down`) 时将修改器应用于元素。                 |
 
+<LegacyAnchor id="content-space" />
+
 ## 内容间距
+
+<LegacyAnchor id="element-padding" />
 
 ### 内边距
 
@@ -277,6 +289,8 @@ Ionic 框架提供了一套 CSS 工具类，可用于任何元素，以修改文
 | `.ion-padding-vertical`    | `padding: 16px 0`     | 为顶部和底部应用内边距。     |
 | `.ion-padding-horizontal`  | `padding: 0 16px`     | 为左侧和右侧应用内边距。     |
 | `.ion-no-padding`          | `padding: 0`          | 所有边不应用内边距。         |
+
+<LegacyAnchor id="element-margin" />
 
 ### 外边距
 
@@ -331,6 +345,8 @@ Ionic 框架提供了一套 CSS 工具类，可用于任何元素，以修改文
 ## Flex 属性
 
 <img src={require('@site/static/img/layout/diagram-flex-attributes.png').default} />
+
+<LegacyAnchor id="flex-container-properties" />
 
 ### Flex 容器属性
 
@@ -485,6 +501,10 @@ Ionic 框架提供了一套 CSS 工具类，可用于任何元素，以修改文
 | `.ion-nowrap`                   | `flex-wrap: nowrap`               | 所有项目将在一行上显示。                           |
 | `.ion-wrap`                     | `flex-wrap: wrap`                 | 项目将换行到多行，从上到下排列。                   |
 | `.ion-wrap-reverse`             | `flex-wrap: wrap-reverse`         | 项目将换行到多行，从下到上排列。                   |
+
+<LegacyAnchor id="flex-properties" />
+
+<LegacyAnchor id="flex-item-properties" />
 
 ### Flex 项目属性
 

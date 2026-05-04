@@ -347,6 +347,9 @@ interface AlertOptions {
 
 <Parts />
 
+<LegacyAnchor id="css-custom-properties" />
+<LegacyAnchor id="customization" />
+
 ## CSS 自定义属性
 
 <CustomProps />

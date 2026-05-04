@@ -25,7 +25,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 列对齐方式
 
-默认情况下，列会拉伸以填满行（row）的整个高度。列属于[弹性项目（flex items）](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item)，因此可以通过应用多个[CSS类](/docs/layout/css-utilities#flex-item-properties)来自定义其对齐行为。
+默认情况下，列会拉伸以填满行（row）的整个高度。列属于[弹性项目（flex items）](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item)，因此可以通过应用多个[CSS类](/layout/css-utilities#flex-item-properties)来自定义其对齐行为。
 
 
 

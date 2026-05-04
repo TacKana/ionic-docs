@@ -12,6 +12,11 @@ title: CSS Shadow Parts
 
 CSS Shadow Parts 允许开发者为影子树内部的元素设置 CSS 属性样式。这在自定义 Ionic Framework <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM" target="_blank" rel="noopener noreferrer">Shadow DOM</a> 组件时极其有用。
 
+<LegacyAnchor id="exposing-a-part" />
+<LegacyAnchor id="how-part-works" />
+<LegacyAnchor id="structural-pseudo-classes" />
+<LegacyAnchor id="vendor-prefixed-pseudo-elements" />
+
 ## 为什么需要 Shadow Parts？
 
 Ionic Framework 是一组分布式的 <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" rel="noopener noreferrer">Web Components</a>。Web Components 遵循 <a href="https://w3c.github.io/webcomponents/spec/shadow/" target="_blank" rel="noopener noreferrer">Shadow DOM 规范</a>以实现样式和标记的封装。
@@ -42,6 +47,8 @@ ion-select .select-placeholder {
 ```
 
 那么，我们如何解决这个问题呢？答案就是 [CSS Shadow Parts](#shadow-parts-explained)！
+
+<LegacyAnchor id="shadow-parts-explained" />
 
 ## Shadow Parts 详解
 

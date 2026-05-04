@@ -107,6 +107,8 @@ import CSSParts from '@site/static/usage/v7/radio/theming/css-shadow-parts/index
 
 <CSSParts />
 
+<LegacyAnchor id="migrating-from-legacy-radio-syntax" />
+
 ## 从旧版单选按钮语法迁移
 
 Ionic 7.0 引入了一种更简洁的单选按钮语法。这种新语法减少了设置单选按钮所需的样板代码，解决了无障碍访问问题，并改善了开发者体验。

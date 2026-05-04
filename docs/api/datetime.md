@@ -57,6 +57,8 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 日期时间组件提供了一个日历界面和时间滚轮，让用户可以轻松选择日期和时间。它类似于原生的 `datetime-local` 类型的 `input` 元素，但 Ionic Framework 的 Datetime 组件可以更轻松地以首选格式显示日期和时间，并管理日期时间值。
 
+<LegacyAnchor id="format-options" />
+
 ## 概述
 
 一直以来，在 JavaScript 甚至 HTML 输入框中处理日期时间值都是一项挑战。尤其是 JavaScript 的 `Date` 对象，很难正确解析日期时间字符串或格式化日期时间值。更糟糕的是，不同的浏览器和 JavaScript 版本会以不同方式解析各种日期时间字符串，特别是针对不同地区。
@@ -84,6 +86,8 @@ Ionic Framework 使用 [ISO 8601 日期时间格式](https://www.w3.org/TR/NOTE-
 :::note
 虽然可以使用 ISO 8601 日期时间格式指定秒、毫秒和时区，但 `ion-datetime` 不提供选择秒、毫秒和时区的界面。提供的任何秒、毫秒或时区值都将被忽略。
 :::
+
+<LegacyAnchor id="usage" />
 
 ## 基本用法
 
@@ -122,6 +126,8 @@ Ionic Framework 使用 [ISO 8601 日期时间格式](https://www.w3.org/TR/NOTE-
 以下示例展示如何禁用所有周末日期。对于更高级的日期操作，我们建议使用诸如 `date-fns` 之类的日期工具库。
 
 <Advanced />
+
+<LegacyAnchor id="localization" />
 
 ## 本地化
 
@@ -398,6 +404,8 @@ const zonedTime = utcToZonedTime(date, userTimeZone);
 // 从带时区的时间创建格式化字符串
 format(zonedTime, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: userTimeZone });
 ```
+
+<LegacyAnchor id="parsing-dates" />
 
 ### 解析日期值
 

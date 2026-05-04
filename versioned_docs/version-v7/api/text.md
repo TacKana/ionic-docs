@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v7/text/basic/index.md';
 
 ## 主题定制
 
-通过更改 Ionic 提供的任何默认[颜色](../../docs/theming/colors)，可以自定义文本组件。
+通过更改 Ionic 提供的任何默认[颜色](/v7/theming/colors)，可以自定义文本组件。
 
 ## 属性
 

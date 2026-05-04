@@ -105,7 +105,7 @@ import HelperError from '@site/static/usage/v7/input/helper-error/index.md';
 
 输入计数器是显示在输入框下方的文本，用于通知用户已输入的字符数占输入框可接受总字符数的比例。添加计数器时，默认行为是将显示的值格式化为 `inputLength` / `maxLength`。可以通过向 `counterFormatter` 属性传递格式化函数来自定义此行为。
 
-`ion-item` 上的 `counter` 和 `counterFormatter` 属性在 [Ionic 7 中已弃用](/docs/api/input#using-the-modern-syntax)，应直接在 `ion-input` 上使用。
+`ion-item` 上的 `counter` 和 `counterFormatter` 属性在 [Ionic 7 中已弃用](/v7/api/input#using-the-modern-syntax)，应直接在 `ion-input` 上使用。
 
 import Counter from '@site/static/usage/v7/input/counter/index.md';
 
@@ -126,6 +126,8 @@ import CounterAlignment from '@site/static/usage/v7/input/counter-alignment/inde
 import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
 
 <FilteringData />
+
+<LegacyAnchor id="pinformatter" />
 
 ## 输入掩码
 
@@ -185,11 +187,15 @@ import CSSProps from '@site/static/usage/v7/input/theming/css-properties/index.m
 
 <CSSProps />
 
+<LegacyAnchor id="migrating-from-legacy-input-syntax" />
+
 ## 从旧版输入语法迁移
 
 Ionic 7.0 引入了一种更简单的输入语法。这种新语法减少了设置输入框所需的样板代码，解决了无障碍问题，并改善了开发体验。
 
 开发者可以一次迁移一个输入框。虽然开发者可以继续使用旧版语法，但我们建议尽快迁移。
+
+<LegacyAnchor id="using-the-modern-syntax" />
 
 ### 使用现代语法
 
@@ -243,6 +249,8 @@ interface InputCustomEvent extends CustomEvent {
 ## CSS 阴影部件
 
 <Parts />
+
+<LegacyAnchor id="css-custom-properties-1" />
 
 ## CSS 自定义属性
 

@@ -40,6 +40,8 @@ inlineHtmlPreviews: true
 
 使浏览器更一致地按照现代标准渲染所有元素。它基于 [Normalize.css](https://necolas.github.io.io/normalize.css/) 构建。
 
+<LegacyAnchor id="optional" />
+
 ### 可选样式表
 
 以下 CSS 文件是可选的，如果应用程序未使用任何相关功能，可以安全地注释掉或删除。

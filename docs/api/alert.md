@@ -336,8 +336,12 @@ interface AlertOptions {
 ## 方法
 <Methods />
 
+<LegacyAnchor id="css-shadow-parts" />
+
 ## CSS 阴影部件
 <Parts />
+
+<LegacyAnchor id="css-custom-properties" />
 
 ## CSS 自定义属性
 <CustomProps />

@@ -55,7 +55,7 @@ $ ionic serve
 
 在本地或远程地址打开您的应用程序。例如，`http://localhost:4200`。然后，在 Windows/Linux 上按 `Ctrl+Shift+I` 或在 Mac 上按 `Cmd+Opt+I` 打开 Chrome 开发者工具。
 
-<img src="/docs/img/developing/previewing/chrome-dev-tools.png" alt="Chrome 开发者工具" />
+<img src="/v7/img/developing/previewing/chrome-dev-tools.png" alt="Chrome 开发者工具" />
 
 在这里，您可以从下拉菜单中选择不同的设备类型，更改设备方向并限制网络速度。
 
@@ -71,7 +71,7 @@ $ ionic serve
 
 在本地或远程地址打开您的应用程序。例如，`http://localhost:4200`。在 Safari 中选择 **开发** 菜单，然后选择 **进入响应式设计模式**。或者，您可以使用键盘快捷键 `Cmd+Opt+R`。
 
-<img src="/docs/img/developing/previewing/safari-responsive-design-mode.png" alt="Safari 响应式设计模式" />
+<img src="/v7/img/developing/previewing/safari-responsive-design-mode.png" alt="Safari 响应式设计模式" />
 
 在这里，您可以选择不同的设备类型进行模拟，并更改设备方向。
 
@@ -81,7 +81,7 @@ $ ionic serve
 
 在本地或远程地址打开您的应用程序。例如，`http://localhost:4200`。然后，在 Windows/Linux 上按 `Ctrl+Shift+M` 或在 Mac 上按 `Cmd+Opt+M` 打开 Firefox 开发者工具。
 
-<img src="/docs/img/developing/previewing/firefox-responsive-design-mode.png" alt="Firefox 响应式设计模式" />
+<img src="/v7/img/developing/previewing/firefox-responsive-design-mode.png" alt="Firefox 响应式设计模式" />
 
 在这里，您可以从下拉菜单中选择不同的设备类型，更改设备方向并限制网络速度。
 

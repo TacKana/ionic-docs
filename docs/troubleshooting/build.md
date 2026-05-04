@@ -10,6 +10,8 @@ title: 构建错误
   />
 </head>
 
+<LegacyAnchor id="multiple_instances" />
+
 ## 常见问题
 
 ### 装饰器缺少圆括号

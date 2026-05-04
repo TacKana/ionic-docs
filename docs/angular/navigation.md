@@ -69,6 +69,8 @@ import { RouterModule } from '@angular/router';
 
 那么加载 `/route1/route2/route3` 和 `/route1/route2/route4` 时都会被重定向。这是因为 `pathMatch: 'prefix'` 只匹配路径的部分内容。
 
+<LegacyAnchor id="navigating-to-different-routes" />
+
 ## 导航到不同的路由
 
 谈论路由固然重要，但实际如何进行导航呢？这时可以使用 `routerLink` 指令。让我们回顾一下之前的简单路由设置：
@@ -128,6 +130,8 @@ Angular Router 提供了一个 [LocationStrategy.historyGo](https://angular.io/a
 如果在 `/pageC` 调用 `LocationStrategy.historyGo(-2)`，你将回到 `/pageA`。如果之后再调用 `LocationStrategy.historyGo(2)`，你将前进到 `/pageC`。
 
 `LocationStrategy.historyGo()` 的一个重要特性是它期望你的应用历史记录是线性的。这意味着 `LocationStrategy.historyGo()` 不应该用于使用了非线性路由的应用。更多信息请参阅[线性路由与非线性路由](#线性路由与非线性路由)。
+
+<LegacyAnchor id="lazy-loading-routes" />
 
 ## 路由懒加载
 
@@ -320,6 +324,8 @@ const routes: Routes = [
 当你想要在 outlet A 中渲染内容，同时在嵌套的 outlet B 中渲染子内容时，应该使用嵌套路由。你最常遇到的用例就是标签页。当你加载一个 Ionic 标签页 starter 应用时，你会看到 `ion-tab-bar` 和 `ion-tabs` 组件在第一个 `ion-router-outlet` 中渲染。`ion-tabs` 组件会渲染另一个 `ion-router-outlet`，后者负责渲染每个标签页的内容。
 
 在移动应用中，嵌套路由合理的用例非常少。如果有疑问，请使用共享 URL 路由配置。我们强烈建议不要在标签页以外的上下文中使用嵌套路由，因为它会很快让你的应用导航变得混乱。
+
+<LegacyAnchor id="working-with-tabs" />
 
 ## 使用标签页
 

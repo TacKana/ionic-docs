@@ -18,6 +18,8 @@ import DocsCards from '@components/global/DocsCards';
 
 如果您想了解 Ionic Vue 是什么以及它如何融入 Vue 生态系统的高层次概述，请参阅 [Ionic Vue 概述](overview)。
 
+<LegacyAnchor id="optimizing-your-build" />
+
 ## 先决条件
 
 在开始之前，请确保您的计算机上已安装 Node.js 和 npm。
@@ -161,15 +163,15 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 <!-- ...styles... -->
 ```
 
-这将创建一个带有标题和可滚动内容区域的页面。第二个标题显示一个[可折叠大标题](/docs/api/title.md#collapsible-large-titles)，当位于内容顶部时显示，然后当向下滚动时收起，以在第一个标题中显示较小的标题。
+这将创建一个带有标题和可滚动内容区域的页面。第二个标题显示一个[可折叠大标题](/v7/api/title#collapsible-large-titles)，当位于内容顶部时显示，然后当向下滚动时收起，以在第一个标题中显示较小的标题。
 
 :::tip 了解更多
-有关 Ionic 布局组件的详细信息，请参阅 [Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md) 和 [Content](/docs/api/content.md) 文档。
+有关 Ionic 布局组件的详细信息，请参阅 [Header](/v7/api/header)、[Toolbar](/v7/api/toolbar)、[Title](/v7/api/title) 和 [Content](/v7/api/content) 文档。
 :::
 
 ## 添加 Ionic 组件
 
-您可以使用更多的 Ionic UI 组件来增强您的首页。例如，在 `ion-content` 的末尾添加一个[按钮](/docs/api/button.md)：
+您可以使用更多的 Ionic UI 组件来增强您的首页。例如，在 `ion-content` 的末尾添加一个[按钮](/v7/api/button)：
 
 ```vue title="src/views/HomePage.vue"
 <ion-content>
@@ -218,7 +220,7 @@ import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, Io
 </script>
 ```
 
-这将创建一个在[工具栏](/docs/api/toolbar.md)中带有[返回按钮](/docs/api/back-button.md)的页面。返回按钮将自动处理导航回上一页，如果没有历史记录，则导航回 `/`。
+这将创建一个在[工具栏](/v7/api/toolbar)中带有[返回按钮](/v7/api/back-button)的页面。返回按钮将自动处理导航回上一页，如果没有历史记录，则导航回 `/`。
 
 :::warning
 创建自己的页面时，请始终使用 `ion-page` 作为根组件。这对于页面之间的正确过渡、Ionic 组件依赖的基础 CSS 样式以及整个应用中一致的布局行为至关重要。
@@ -260,7 +262,7 @@ const routes: Array<RouteRecordRaw> = [
 ```
 
 :::info
-也可以使用 Vue Router 以编程方式执行导航，并且可以延迟加载路由以获得更好的性能。有关更多信息，请参阅 [Vue 导航文档](/docs/vue/navigation.md)。
+也可以使用 Vue Router 以编程方式执行导航，并且可以延迟加载路由以获得更好的性能。有关更多信息，请参阅 [Vue 导航文档](/v7/vue/navigation)。
 :::
 
 ## 向新页面添加图标
@@ -285,7 +287,9 @@ import { heart, logoIonic } from 'ionicons/icons';
 
 请注意，我们传递的是导入的 SVG 引用，**而不是**字符串形式的图标名称。
 
-有关更多信息，请参阅[图标文档](/docs/api/icon.md)和 [Ionicons 文档](https://ionic.io/ionicons/)。
+有关更多信息，请参阅[图标文档](/v7/api/icon)和 [Ionicons 文档](https://ionic.io/ionicons/)。
+
+<LegacyAnchor id="calling-methods-on-components" />
 
 ## 调用组件方法
 
@@ -340,7 +344,7 @@ const scrollToBottom = () => {
 
 这种模式是必要的，因为 Ionic 组件是作为 Web 组件构建的。`$el` 属性使您能够访问定义方法的实际 Web 组件实例。
 
-您可以在每个组件的 API 文档的[方法](/docs/api/content.md#methods)部分找到可用的方法。
+您可以在每个组件的 API 文档的[方法](/v7/api/content#methods)部分找到可用的方法。
 
 ## 在设备上运行
 
@@ -405,11 +409,11 @@ npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @ty
   <p>了解如何使用 Vue Router 处理 Ionic Vue 应用中的路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="组件" href="/v7/components" icon="/icons/guide-components-icon.png">
   <p>探索 Ionic 丰富的 UI 组件库，用于构建精美的应用。</p>
 </DocsCard>
 
-<DocsCard header="主题" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="主题" href="/v7/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>学习如何使用 Ionic 强大的主题系统来定制应用的外观和感觉。</p>
 </DocsCard>
 

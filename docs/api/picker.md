@@ -49,6 +49,8 @@ import ModalExample from '@site/static/usage/v8/picker/modal/index.md';
 
 <ModalExample />
 
+<LegacyAnchor id="accessibility" />
+
 ## 无障碍访问
 
 ### 屏幕阅读器

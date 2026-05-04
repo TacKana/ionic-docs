@@ -10,6 +10,8 @@ title: CORS 错误
   />
 </head>
 
+<LegacyAnchor id="server-headers-response-" />
+
 ## 什么是 CORS？
 
 **跨域资源共享（CORS）** 是一种机制，浏览器和 WebView（例如为 Capacitor 和 Cordova 提供支持的 WebView）出于安全原因使用它来限制脚本向不同源中的资源发出 HTTP 和 HTTPS 请求，主要是为了保护用户数据并防止可能危及应用程序的攻击。
@@ -84,6 +86,8 @@ Access-Control-Allow-Headers: Content-Type
 
 在我们的示例中，由于 API 期望 JSON，所有 `POST` 请求都将具有 `Content-Type: application/json` 头部，并且始终会进行预检。
 
+<LegacyAnchor id="simple-requests" />
+
 ### 简单请求
 
 如果满足以下所有条件，某些请求始终被认为是安全发送的，不需要预检：
@@ -109,6 +113,8 @@ Access-Control-Allow-Headers: Content-Type
 - 未使用 `ReadableStream` 或 `XMLHttpRequestUpload` 中的事件监听器。
 
 在我们的示例 API 中，`GET` 请求不需要预检，因为不发送 JSON 数据，因此应用程序不需要使用 `Content-Type: application/json` 头部。它们将始终是简单请求。
+
+<LegacyAnchor id="cors-headers" />
 
 ## CORS 头部
 

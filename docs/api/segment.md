@@ -49,6 +49,8 @@ import Toolbar from '@site/static/usage/v8/toolbar/segments/index.md';
 <Toolbar />
 
 
+<LegacyAnchor id="swipeable-segments" />
+
 ## 可滑动切换的分段控件
 
 每个 [segment button](./segment-button.md) 可以关联一个 [segment content](./segment-content.md) 元素，该元素将在分段激活时显示。通过这种方法，可以在每个分段的内容之间滑动或滚动，同时分段控件会更新以反映当前可见的内容。

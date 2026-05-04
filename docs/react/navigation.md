@@ -226,6 +226,8 @@ const UsersListPage: React.FC = () => {
 `history` 是一个属性 (prop)。
 :::
 
+<LegacyAnchor id="navigating-using-history" />
+
 ### 使用 `history.go` 进行导航
 
 React Router 使用了 `history` 包，它提供了一个 [history.go](https://github.com/remix-run/history/blob/dev/docs/api-reference.md#history.go) 方法，允许开发者在应用历史记录中向前或向后移动。让我们看一个例子。
@@ -359,6 +361,8 @@ const App: React.FC = () => (
 
 上面的路由被认为是“共享”的，因为它们重用了 URL 中的 `dashboard` 部分。
 
+<LegacyAnchor id="nested-routes" />
+
 ### 嵌套路由
 
 嵌套路由是一种将路由列为其他路由子级的路由配置。以下是一个嵌套路由配置的示例：
@@ -397,6 +401,8 @@ const DashboardRouterOutlet: React.FC = () => (
 当你想要在出口 A 中渲染内容，同时在嵌套的出口 B 中渲染子内容时，应该使用嵌套路由。你最常遇到的用例是标签页。当你加载一个 Ionic 标签页启动应用时，你会看到 `IonTabBar` 和 `IonTabs` 组件在第一个 `IonRouterOutlet` 中渲染。`IonTabs` 组件会渲染另一个 `IonRouterOutlet`，它负责渲染每个标签页的内容。
 
 在移动应用中，很少有其他场景适合使用嵌套路由。如果拿不准，就使用共享 URL 的路由配置。我们强烈建议不要在标签页以外的上下文中使用嵌套路由，因为它可能会很快让你的应用导航变得混乱。
+
+<LegacyAnchor id="working-with-tabs" />
 
 ## 标签页的使用
 

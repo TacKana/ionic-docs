@@ -12,6 +12,6 @@ import APIList from '@components/page/api/APIList';
   />
 </head>
 
-每个 Ionic [组件](/docs/components) 都由一个或多个 [自定义元素](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) 组成。而每个自定义元素又可能暴露属性、方法、事件和 CSS 自定义属性。
+每个 Ionic [组件](/components) 都由一个或多个 [自定义元素](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) 组成。而每个自定义元素又可能暴露属性、方法、事件和 CSS 自定义属性。
 
 <APIList sidebar={require('@site/sidebars.js').default} />

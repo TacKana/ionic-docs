@@ -79,6 +79,8 @@ import Clear from '@site/static/usage/v8/input/clear/index.md';
 <Clear />
 
 
+<LegacyAnchor id="filled-inputs" />
+
 ## 填充式输入
 
 Material Design 为输入框提供了填充样式。输入框的 `fill` 属性可以设置为 `"solid"` 或 `"outline"`。
@@ -104,11 +106,13 @@ import HelperError from '@site/static/usage/v8/input/helper-error/index.md';
 
 <HelperError />
 
+<LegacyAnchor id="using-the-modern-syntax" />
+
 ## 输入计数器
 
 输入计数器是显示在输入框下方的文本，用于通知用户已输入的字符数占输入框可接受总字符数的比例。添加计数器时，默认行为是将显示的值格式化为 `inputLength` / `maxLength`。可以通过向 `counterFormatter` 属性传入格式化函数来自定义此行为。
 
-`ion-item` 上的 `counter` 和 `counterFormatter` 属性[在 Ionic 7 中已弃用](/docs/api/input#using-the-modern-syntax)，应直接在 `ion-input` 上使用。
+`ion-item` 上的 `counter` 和 `counterFormatter` 属性[在 Ionic 7 中已弃用](/api/input#using-the-modern-syntax)，应直接在 `ion-input` 上使用。
 
 import Counter from '@site/static/usage/v8/input/counter/index.md';
 
@@ -129,6 +133,8 @@ import CounterAlignment from '@site/static/usage/v8/input/counter-alignment/inde
 import FilteringData from '@site/static/usage/v8/input/filtering/index.md';
 
 <FilteringData />
+
+<LegacyAnchor id="pinformatter" />
 
 ## 输入掩码
 
@@ -221,6 +227,8 @@ interface InputCustomEvent extends CustomEvent {
 
 ## CSS 阴影部件
 <Parts />
+
+<LegacyAnchor id="css-custom-properties-1" />
 
 ## CSS 自定义属性
 <CustomProps />

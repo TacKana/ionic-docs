@@ -29,6 +29,8 @@ import Basic from '@site/static/usage/v8/menu/basic/index.md';
 <Basic />
 
 
+<LegacyAnchor id="menu-toggle" />
+
 ## 菜单切换开关
 
 [menu toggle](./menu-toggle) 组件可用于创建可以打开或关闭菜单的自定义按钮。
@@ -57,6 +59,8 @@ import Sides from '@site/static/usage/v8/menu/sides/index.md';
 
 <Sides />
 
+
+<LegacyAnchor id="multiple-menus" />
 
 ## 多菜单
 

@@ -11,6 +11,8 @@ title: 构建错误
   />
 </head>
 
+<LegacyAnchor id="multiple_instances" />
+
 ## 常见错误
 
 ### 装饰器遗漏括号

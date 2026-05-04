@@ -64,6 +64,8 @@ import DecorationsPlayground from '@site/static/usage/v8/range/slots/index.md';
 
 <DecorationsPlayground />
 
+<LegacyAnchor id="dual-knobs" />
+
 ## 双旋钮
 
 双旋钮引入了两个旋钮控件，用户可以使用它们来选择下限和上限的值。选择后，Range 将发出一个包含所选上限和下限值的 `ionChange` 事件，其类型为 [RangeValue](#rangevalue)。
@@ -185,8 +187,12 @@ type RangeValue = number | { lower: number, upper: number };
 ## 方法
 <Methods />
 
+<LegacyAnchor id="css-shadow-parts" />
+
 ## CSS 阴影部件
 <Parts />
+
+<LegacyAnchor id="css-custom-properties" />
 
 ## CSS 自定义属性
 <CustomProps />

@@ -19,6 +19,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill'
 
 模态框（Modal）是一种显示在应用内容之上的对话框，必须在应用将其关闭后才能恢复与页面的交互。当有大量选项需要选择时，它非常适合用作选择组件，也适用于列表过滤等许多其他场景。
 
+<LegacyAnchor id="focus-trapping" />
+<LegacyAnchor id="inline-modals-recommended" />
+<LegacyAnchor id="style-placement" />
+
 ## 内联模态框（推荐）
 
 可以直接在模板中编写 `<ion-modal>` 组件来使用它。这种方式减少了呈现模态框所需的事件处理程序。
@@ -378,8 +382,12 @@ import Mount from '@site/static/usage/v8/modal/performance/mount/index.md'
 ## 方法
 <Methods />
 
+<LegacyAnchor id="css-shadow-parts" />
+
 ## CSS 阴影部分
 <Parts />
+
+<LegacyAnchor id="css-custom-properties" />
 
 ## CSS 自定义属性
 <CustomProps />

@@ -24,7 +24,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 内容组件提供了一个易于使用的内容区域，并带有一些控制可滚动区域的有用方法。
 单个视图中只应存在一个内容组件。
 
-与许多其他 Ionic 组件一样，可以通过 [CSS 实用工具](/docs/layout/css-utilities) 中提供的全局样式自定义内容的填充、边距等，或使用 CSS 和可用的 [CSS 自定义属性](#css-custom-properties) 单独设置样式。
+与许多其他 Ionic 组件一样，可以通过 [CSS 实用工具](/v7/layout/css-utilities) 中提供的全局样式自定义内容的填充、边距等，或使用 CSS 和可用的 [CSS 自定义属性](#css-custom-properties) 单独设置样式。
 
 ## 基本用法
 
@@ -94,7 +94,7 @@ import CSSProps from '@site/static/usage/v7/content/theming/css-properties/index
 
 ### 安全区域填充
 
-内容组件不会自动向其任何一侧应用填充以考虑 [安全区域](/docs/theming/advanced#safe-area-padding)。这是因为内容组件通常与自身应用填充的其他组件（如 [页眉](./header) 和 [页脚](./footer)）结合使用。但是，如果内容组件单独使用，则可能需要对安全区域应用填充。这可以通过 CSS 使用 [应用变量](../theming/advanced.md#application-variables) 中描述的 `--ion-safe-area-(dir)` 变量来实现。
+内容组件不会自动向其任何一侧应用填充以考虑 [安全区域](/v7/theming/advanced#safe-area-padding)。这是因为内容组件通常与自身应用填充的其他组件（如 [页眉](./header) 和 [页脚](./footer)）结合使用。但是，如果内容组件单独使用，则可能需要对安全区域应用填充。这可以通过 CSS 使用 [应用变量](../theming/advanced.md#application-variables) 中描述的 `--ion-safe-area-(dir)` 变量来实现。
 
 最常见的用例是向内容顶部应用填充以考虑状态栏。这可以通过将 `padding-top` 属性设置为 `--ion-safe-area-top` 变量的值来实现。
 
@@ -160,9 +160,13 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 
 <Props />
 
+<LegacyAnchor id="events" />
+
 ## 事件
 
 <Events />
+
+<LegacyAnchor id="methods" />
 
 ## 方法
 
@@ -171,6 +175,8 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 ## CSS Shadow Parts
 
 <Parts />
+
+<LegacyAnchor id="css-custom-properties" />
 
 ## CSS 自定义属性
 

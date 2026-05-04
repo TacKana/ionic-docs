@@ -27,6 +27,8 @@ import TabItem from '@theme/TabItem';
 
 在某些情况下，你可能希望触发多个处理函数。每个处理函数回调都会接收一个函数作为参数，该函数可用于告诉 Ionic 调用下一个处理函数。
 
+<LegacyAnchor id="hardware-back-button-in-capacitor-and-cordova" />
+
 ## 支持情况
 
 下表显示了硬件返回按钮支持在不同环境中的差异。
@@ -247,6 +249,8 @@ useBackButton(10, (processNextHandler) => {
 ````
 
 这个示例展示了如何指示 Ionic Framework 你希望触发下一个处理函数。所有回调都提供了一个 `processNextHandler` 函数作为参数。调用此函数将导致下一个处理函数（如果存在）被触发。
+
+<LegacyAnchor id="handlers-with-the-same-priorities" />
 
 ## 具有相同优先级的处理函数
 

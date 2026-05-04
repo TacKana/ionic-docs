@@ -172,15 +172,15 @@ export class HomePage {
 </ion-content>
 ```
 
-这创建了一个带有标题和可滚动内容区域的页面。第二个标题显示了一个 [可折叠大标题](/docs/api/title.md#collapsible-large-titles)，当位于内容顶部时显示，向下滚动时则会收起，在第一个标题中显示较小的标题。
+这创建了一个带有标题和可滚动内容区域的页面。第二个标题显示了一个 [可折叠大标题](/v7/api/title#collapsible-large-titles)，当位于内容顶部时显示，向下滚动时则会收起，在第一个标题中显示较小的标题。
 
 :::tip 了解更多
-有关 Ionic 布局组件的详细信息，请参阅 [Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md) 和 [Content](/docs/api/content.md) 文档。
+有关 Ionic 布局组件的详细信息，请参阅 [Header](/v7/api/header)、[Toolbar](/v7/api/toolbar)、[Title](/v7/api/title) 和 [Content](/v7/api/content) 文档。
 :::
 
 ## 添加 Ionic 组件
 
-你可以使用更多 Ionic UI 组件来增强你的主页。例如，在 `ion-content` 的末尾添加一个 [Button](/docs/api/button.md)：
+你可以使用更多 Ionic UI 组件来增强你的主页。例如，在 `ion-content` 的末尾添加一个 [Button](/v7/api/button)：
 
 ```html title="src/app/home/home.page.html"
 <ion-content>
@@ -211,7 +211,7 @@ ionic generate page new
 
 路由将自动添加到 `app.routes.ts`。
 
-在 `new.page.html` 中，你可以向 [Toolbar](/docs/api/toolbar.md) 添加一个 [返回按钮](/docs/api/back-button.md)：
+在 `new.page.html` 中，你可以向 [Toolbar](/v7/api/toolbar) 添加一个 [返回按钮](/v7/api/back-button)：
 
 ```html title="src/app/new/new.page.html"
 <ion-header [translucent]="true">
@@ -257,7 +257,7 @@ import { RouterLink } from '@angular/router';
 ```
 
 :::info
-导航也可以使用 Angular 的 Router 服务来执行。更多信息请参阅 [Angular 导航文档](/docs/angular/navigation.md#navigating-to-different-routes)。
+导航也可以使用 Angular 的 Router 服务来执行。更多信息请参阅 [Angular 导航文档](/v7/angular/navigation#navigating-to-different-routes)。
 :::
 
 ## 向新页面添加图标
@@ -301,7 +301,7 @@ export class NewPage implements OnInit {
 
 或者，你可以在 `app.component.ts` 中注册图标，以便在整个应用中使用。
 
-更多信息，请参阅 [Icon 文档](/docs/api/icon.md) 和 [Ionicons 文档](https://ionic.io/ionicons/)。
+更多信息，请参阅 [Icon 文档](/v7/api/icon) 和 [Ionicons 文档](https://ionic.io/ionicons/)。
 
 ## 调用组件方法
 
@@ -387,7 +387,7 @@ export class NewPage implements OnInit {
 1.  为该组件创建一个 `ViewChild` 引用
 2.  直接在组件实例上调用方法
 
-你可以在每个组件的 API 文档的 [方法](/docs/api/content.md#methods) 部分找到可用的方法。
+你可以在每个组件的 API 文档的 [方法](/v7/api/content#methods) 部分找到可用的方法。
 
 ## 在设备上运行
 
@@ -426,11 +426,11 @@ ionic cap open android
   <p>了解如何使用 Angular Router 处理 Ionic Angular 应用中的路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="组件" href="/v7/components" icon="/icons/guide-components-icon.png">
   <p>探索 Ionic 丰富的 UI 组件库，用于构建精美的应用。</p>
 </DocsCard>
 
-<DocsCard header="主题" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="主题" href="/v7/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>学习如何使用 Ionic 强大的主题系统自定义应用的外观和感觉。</p>
 </DocsCard>
 

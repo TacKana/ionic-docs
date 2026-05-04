@@ -15,6 +15,8 @@ import DocsCards from '@components/global/DocsCards';
 
 import DeveloperExperts from '@components/page/intro/next/DeveloperExperts';
 
+<LegacyAnchor id="build-your-first-app" />
+
 ## 构建您的第一个应用
 
 选择您在构建 Ionic 应用时计划使用的 JavaScript 框架：

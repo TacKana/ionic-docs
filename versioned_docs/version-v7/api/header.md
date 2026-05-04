@@ -21,6 +21,8 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Header（头部）是页面的一个根组件，它会自动对齐到页面顶部。通常建议用它来包裹一个或多个 [工具栏](./toolbar)，但也可以用它来包裹任何元素。当工具栏被用在头部内部时，内容会进行相应调整以确保尺寸正确，并且头部会考虑到任何设备的安全区域。
 
+<LegacyAnchor id="condensed-header" />
+
 ## 基本用法
 
 import Basic from '@site/static/usage/v7/header/basic/index.md';

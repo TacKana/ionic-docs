@@ -45,6 +45,8 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <CustomProps />
 
+<LegacyAnchor id="slots" />
+
 ## 插槽
 
 <Slots />

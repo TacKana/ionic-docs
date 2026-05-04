@@ -25,6 +25,8 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 菜单元素应是根内容元素的同级元素。可以有任意数量的菜单附加到内容上。这些可以通过模板控制，也可以使用 `MenuController` 以编程方式控制。
 
+<LegacyAnchor id="menu-toggle" />
+
 ## 基本用法
 
 import Basic from '@site/static/usage/v7/menu/basic/index.md';

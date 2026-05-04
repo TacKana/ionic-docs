@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## React 版本支持
 
-Ionic React 支持最新版本的 React。有关支持的版本和我们的支持政策的详细信息，请参阅 [Ionic React 支持政策](/docs/reference/support#ionic-react)。
+Ionic React 支持最新版本的 React。有关支持的版本和我们的支持政策的详细信息，请参阅 [Ionic React 支持政策](/reference/support#ionic-react)。
 
 ## React 工具链
 
@@ -54,11 +54,11 @@ $ ionic serve █
   <p>了解如何在 Ionic React 应用中使用 React Router 处理路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="组件" href="/components" icon="/icons/guide-components-icon.png">
   <p>探索 Ionic 丰富的 UI 组件库，用于构建美观的应用。</p>
 </DocsCard>
 
-<DocsCard header="主题" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="主题" href="/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>学习如何使用 Ionic 强大的主题系统来自定义应用的外观和风格。</p>
 </DocsCard>
 

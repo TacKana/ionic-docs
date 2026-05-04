@@ -156,15 +156,15 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-这创建了一个带有标题和可滚动内容区域的页面。`IonPage` 组件提供了基本的页面结构，必须在每个页面上使用。第二个标题显示一个[可折叠大标题](/docs/api/title.md#collapsible-large-titles)，当位于内容顶部时显示，向下滚动时则压缩以显示第一个标题中的较小标题。
+这创建了一个带有标题和可滚动内容区域的页面。`IonPage` 组件提供了基本的页面结构，必须在每个页面上使用。第二个标题显示一个[可折叠大标题](/v7/api/title#collapsible-large-titles)，当位于内容顶部时显示，向下滚动时则压缩以显示第一个标题中的较小标题。
 
 :::tip 了解更多
-有关 Ionic 布局组件的详细信息，请参阅 [Header](/docs/api/header.md)、[Toolbar](/docs/api/toolbar.md)、[Title](/docs/api/title.md) 和 [Content](/docs/api/content.md) 文档。
+有关 Ionic 布局组件的详细信息，请参阅 [Header](/v7/api/header)、[Toolbar](/v7/api/toolbar)、[Title](/v7/api/title) 和 [Content](/v7/api/content) 文档。
 :::
 
 ## 添加 Ionic 组件
 
-你可以使用更多 Ionic UI 组件来增强你的主页。例如，在 `Home.tsx` 的 `IonContent` 末尾导入并添加一个[按钮](/docs/api/button.md)：
+你可以使用更多 Ionic UI 组件来增强你的主页。例如，在 `Home.tsx` 的 `IonContent` 末尾导入并添加一个[按钮](/v7/api/button)：
 
 ```tsx title="src/pages/Home.tsx"
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
@@ -222,7 +222,7 @@ const New: React.FC = () => {
 export default New;
 ```
 
-这创建了一个在[工具栏](/docs/api/toolbar.md)中带有[返回按钮](/docs/api/back-button.md)的页面。返回按钮将自动处理导航回上一页，如果没有历史记录，则导航到 `/`。
+这创建了一个在[工具栏](/v7/api/toolbar)中带有[返回按钮](/v7/api/back-button)的页面。返回按钮将自动处理导航回上一页，如果没有历史记录，则导航到 `/`。
 
 :::warning
 创建自己的页面时，请始终将 `IonPage` 用作根组件。这对于页面之间的正确过渡、Ionic 组件依赖的基础 CSS 样式以及整个应用中一致的布局行为至关重要。
@@ -259,7 +259,7 @@ import New from './pages/New';
 ```
 
 :::info
-导航也可以使用 React Router 的 `history` 属性以编程方式执行。有关更多信息，请参阅 [React 导航文档](/docs/react/navigation.md#navigating-using-history)。
+导航也可以使用 React Router 的 `history` 属性以编程方式执行。有关更多信息，请参阅 [React 导航文档](/v7/react/navigation#navigating-using-history)。
 :::
 
 ## 为新页面添加图标
@@ -282,7 +282,7 @@ import { heart, logoIonic } from 'ionicons/icons';
 
 请注意，我们传递的是导入的 SVG 引用，**而不是**字符串形式的图标名称。
 
-有关更多信息，请参阅[图标文档](/docs/api/icon.md)和 [Ionicons 文档](https://ionic.io/ionicons/)。
+有关更多信息，请参阅[图标文档](/v7/api/icon)和 [Ionicons 文档](https://ionic.io/ionicons/)。
 
 ## 调用组件方法
 
@@ -335,7 +335,7 @@ export default New;
 
 这种模式是必要的，因为 React refs 将组件实例存储在 `.current` 属性中。
 
-你可以在每个组件的 API 文档的[方法](/docs/api/content.md#methods)部分找到可用的方法。
+你可以在每个组件的 API 文档的[方法](/v7/api/content#methods)部分找到可用的方法。
 
 ## 在设备上运行
 
@@ -374,11 +374,11 @@ ionic cap open android
   <p>了解如何使用 React Router 处理 Ionic React 应用中的路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="组件" href="/v7/components" icon="/icons/guide-components-icon.png">
   <p>探索 Ionic 丰富的 UI 组件库，用于构建精美的应用。</p>
 </DocsCard>
 
-<DocsCard header="主题" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="主题" href="/v7/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>学习如何使用 Ionic 强大的主题系统定制应用的外观和感觉。</p>
 </DocsCard>
 

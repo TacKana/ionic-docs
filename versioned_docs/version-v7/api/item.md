@@ -28,11 +28,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本用法
 
-当文本宽度超过项目宽度时，项目会左对齐文本并自动换行。我们可以使用 Ionic Framework 提供的 CSS 工具类来修改此行为，例如在下面的示例中使用 `.ion-text-nowrap`。有关可以添加到项目以转换文本的更多类，请参阅[CSS 工具类文档](/docs/layout/css-utilities)。
+当文本宽度超过项目宽度时，项目会左对齐文本并自动换行。我们可以使用 Ionic Framework 提供的 CSS 工具类来修改此行为，例如在下面的示例中使用 `.ion-text-nowrap`。有关可以添加到项目以转换文本的更多类，请参阅[CSS 工具类文档](/v7/layout/css-utilities)。
 
 import Basic from '@site/static/usage/v7/item/basic/index.md';
 
 <Basic />
+
+<LegacyAnchor id="content-types" />
 
 ## 内容类型
 
@@ -152,6 +154,8 @@ import Metadata from '@site/static/usage/v7/item/content-types/metadata/index.md
 
 <Metadata />
 
+<LegacyAnchor id="actions" />
+
 ### 操作
 
 操作是交互式元素，当你激活它们时会执行某些操作。一个项目可以在同一行显示多个操作。但是，开发人员应确保每个操作的点击目标足够大，以便使用。
@@ -241,7 +245,7 @@ import Actions from '@site/static/usage/v7/item/content-types/actions/index.md';
 <BestPracticeFigure
   text={
     <>
-      项目通常不应超过两个控件。如果需要更多控件，请考虑在可从项目访问的<a href="useBaseUrl('api/modal')">模态框（Modal）</a>中添加额外的控件。
+      项目通常不应超过两个控件。如果需要更多控件，请考虑在可从项目访问的<a href={useBaseUrl('api/modal')}>模态框（Modal）</a>中添加额外的控件。
     </>
   }
   doText="将额外的控件移到可从项目访问的子菜单中。"
@@ -266,6 +270,8 @@ import Controls from '@site/static/usage/v7/item/content-types/controls/index.md
 
 <Controls />
 
+<LegacyAnchor id="clickable-items" />
+
 ## 可点击项目
 
 如果一个项目设置了 `href` 或 `button` 属性，则被视为“可点击”。可点击项目有一些视觉上的差异，表明它们可以交互。例如，可点击项目在 `md` 模式下激活时会获得涟漪效果，在 `ios` 模式下激活时会有高亮显示，并且在 `ios` 模式下默认会显示[详情箭头](#detail-arrows)。
@@ -273,6 +279,8 @@ import Controls from '@site/static/usage/v7/item/content-types/controls/index.md
 import Clickable from '@site/static/usage/v7/item/clickable/index.md';
 
 <Clickable />
+
+<LegacyAnchor id="detail-arrows" />
 
 ## 详情箭头
 
@@ -292,7 +300,7 @@ TODO add this functionality back as a css variable
 --item-detail-push-show: true;
 ```
 
-有关更多信息，请参阅[主题文档](/docs/theming/css-variables)。
+有关更多信息，请参阅[主题文档](/v7/theming/css-variables)。
 
 -->
 
@@ -362,6 +370,8 @@ import CSSProps from '@site/static/usage/v7/item/theming/css-properties/index.md
 ## CSS Shadow Parts
 
 <Parts />
+
+<LegacyAnchor id="css-custom-properties" />
 
 ## CSS 自定义属性
 

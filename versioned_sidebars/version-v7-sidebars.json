@@ -38,7 +38,7 @@
         {
           "type": "link",
           "label": "Responsive Grid",
-          "href": "/docs/api/grid"
+          "href": "/v7/api/grid"
         },
         "layout/global-stylesheets",
         "layout/css-utilities",

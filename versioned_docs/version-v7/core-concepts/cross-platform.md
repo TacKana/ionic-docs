@@ -35,6 +35,8 @@ this.platform.ready().then(() => {
 
 许多原生 API（例如文件 API）在浏览器中不可用。随着 Web API 的不断改进并逐渐接近原生功能，建议对此进行研究。结合前两点考虑，可以轻松创建出能根据运行平台自适应调整的优秀用户体验。
 
+<LegacyAnchor id="desktop" />
+
 ## 桌面端
 
 当计划将应用部署到桌面端时，无论是使用 <a href="https://electronjs.org" target="_blank">Electron</a> 还是作为**渐进式 Web 应用**，确保应用在较大尺寸设备上流畅运行至关重要。

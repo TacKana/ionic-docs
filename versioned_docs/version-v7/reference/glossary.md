@@ -12,7 +12,9 @@ title: 术语表
 
 <div id="what-is">
 
-<section id="a11y">
+<LegacyAnchor id="a11y" />
+
+<section>
   <a href="#a11y">
     <h3>无障碍 (Accessibility)</h3>
   </a>
@@ -69,7 +71,9 @@ title: 术语表
   </p>
 </section>
 
-<section id="capacitor">
+<LegacyAnchor id="capacitor" />
+
+<section>
   <a href="#capacitor">
     <h3>Capacitor</h3>
   </a>
@@ -83,7 +87,9 @@ title: 术语表
 
 <!-- cspell:disable -->
 
-<section id="cli">
+<LegacyAnchor id="cli" />
+
+<section>
   <a href="#cli">
     <h3>CLI</h3>
   </a>
@@ -111,7 +117,9 @@ title: 术语表
   </p>
 </section>
 
-<section id="cordova">
+<LegacyAnchor id="cordova" />
+
+<section>
   <a href="#cordova">
     <h3>Cordova</h3>
   </a>
@@ -123,7 +131,9 @@ title: 术语表
   </p>
 </section>
 
-<section id="cors">
+<LegacyAnchor id="cors" />
+
+<section>
   <a href="#cors">
     <h3>CORS</h3>
   </a>
@@ -203,7 +213,9 @@ title: 术语表
   </p>
 </section>
 
-<section id="git">
+<LegacyAnchor id="git" />
+
+<section>
   <a href="#git">
     <h3>Git</h3>
   </a>
@@ -272,7 +284,9 @@ title: 术语表
   </p>
 </section>
 
-<section id="monorepo">
+<LegacyAnchor id="monorepo" />
+
+<section>
   <a href="#monorepo">
     <h3>Monorepo</h3>
   </a>
@@ -290,7 +304,9 @@ title: 术语表
   </p>
 </section>
 
-<section id="node">
+<LegacyAnchor id="node" />
+
+<section>
   <a href="#node">
     <h3>Node</h3>
   </a>
@@ -302,7 +318,9 @@ title: 术语表
   </p>
 </section>
 
-<section id="npm">
+<LegacyAnchor id="npm" />
+
+<section>
   <a href="#npm">
     <h3>npm</h3>
   </a>
@@ -323,7 +341,9 @@ title: 术语表
   </p>
 </section>
 
-<section id="package-id">
+<LegacyAnchor id="package-id" />
+
+<section>
   <a href="#package-id">
     <h3>包 ID (Package ID)</h3>
   </a>
@@ -377,7 +397,9 @@ title: 术语表
   </p>
 </section>
 
-<section id="scoped">
+<LegacyAnchor id="scoped" />
+
+<section>
   <a href="#scoped">
     <h3>Scoped 封装 (Scoped Encapsulation)</h3>
   </a>
@@ -386,7 +408,9 @@ title: 术语表
   </p>
 </section>
 
-<section id="shadow">
+<LegacyAnchor id="shadow" />
+
+<section>
   <a href="#shadow">
     <h3>Shadow DOM</h3>
   </a>
@@ -416,7 +440,9 @@ title: 术语表
   </p>
 </section>
 
-<section id="typescript">
+<LegacyAnchor id="typescript" />
+
+<section>
   <a href="#typescript">
     <h3>TypeScript</h3>
   </a>
@@ -449,7 +475,9 @@ title: 术语表
   </p>
 </section>
 
-<section id="web-standards">
+<LegacyAnchor id="web-standards" />
+
+<section>
   <a href="#web-standards">
     <h3>Web 标准 (Web Standards)</h3>
   </a>

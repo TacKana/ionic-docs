@@ -129,6 +129,8 @@ import StartEndSlots from '@site/static/usage/v7/textarea/start-end-slots/index.
 
 <StartEndSlots />
 
+<LegacyAnchor id="migrating-from-legacy-textarea-syntax" />
+
 ## 从旧版 Textarea 语法迁移
 
 Ionic 7.0 引入了更简洁的 textarea 语法。这种新语法减少了设置 textarea 所需的样板代码，解决了无障碍性问题，并改善了开发者体验。

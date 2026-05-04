@@ -18,7 +18,7 @@ import DocsCards from '@components/global/DocsCards';
 
 ## Angular 版本支持
 
-Ionic Angular v8 支持 Angular 16 及以上版本。有关支持版本和我们的支持政策的详细信息，请参阅 [Ionic Angular 支持政策](/docs/reference/support#ionic-angular)。
+Ionic Angular v8 支持 Angular 16 及以上版本。有关支持版本和我们的支持政策的详细信息，请参阅 [Ionic Angular 支持政策](/reference/support#ionic-angular)。
 
 ## Angular 工具链
 
@@ -56,11 +56,11 @@ $ ionic serve █
   <p>探索如何在 Ionic Angular 应用中使用 Angular Router 处理路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="组件" href="/components" icon="/icons/guide-components-icon.png">
   <p>探索 Ionic 丰富的 UI 组件库，用于构建精美的应用程序。</p>
 </DocsCard>
 
-<DocsCard header="主题定制" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="主题定制" href="/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>学习如何使用 Ionic 强大的主题系统定制应用的外观和风格。</p>
 </DocsCard>
 

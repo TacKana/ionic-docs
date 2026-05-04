@@ -86,6 +86,8 @@ Ionic Framework 使用 [ISO 8601 日期时间格式](https://www.w3.org/TR/NOTE-
 虽然可以使用 ISO 8601 日期时间格式指定秒、毫秒和时区，但 `ion-datetime` 不提供用于选择秒、毫秒和时区的界面。任何提供的秒、毫秒或时区值都将被忽略。
 :::
 
+<LegacyAnchor id="usage" />
+
 ## 基本用法
 
 <Basic />
@@ -123,6 +125,8 @@ Ionic Framework 使用 [ISO 8601 日期时间格式](https://www.w3.org/TR/NOTE-
 以下示例展示了如何禁用所有周末日期。对于更高级的日期操作，我们建议使用诸如 `date-fns` 之类的日期工具。
 
 <Advanced />
+
+<LegacyAnchor id="localization" />
 
 ## 本地化
 
@@ -261,6 +265,8 @@ import Wheel from '@site/static/usage/v7/datetime/presentation/wheel/index.md';
 
 <CustomizingTitle />
 
+<LegacyAnchor id="format-options" />
+
 ## 格式选项
 
 您可以通过提供 `formatOptions` 来自定义 Datetime 组件中页眉文本的日期格式和时间按钮中的时间格式。`formatOptions` 属性中的 `date` 和 `time` 应该分别是 [`Intl.DateTimeFormatOptions`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options) 对象。如果未提供 `formatOptions`，则将使用日期和时间的默认格式。
@@ -374,6 +380,8 @@ const zonedTime = utcToZonedTime(date, userTimeZone);
 // 从带时区的时间创建格式化字符串
 format(zonedTime, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: userTimeZone });
 ```
+
+<LegacyAnchor id="parsing-dates" />
 
 ### 解析日期值
 

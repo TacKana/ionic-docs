@@ -10,6 +10,8 @@ title: 实用开发技巧
   />
 </head>
 
+<LegacyAnchor id="resolving-permission-errors" />
+
 ## 解决权限错误
 
 在全局安装包时可能会遇到 `EACCES` 权限错误。如果出现这种情况，可能需要配置 npm 使其无需提升权限即可运行。

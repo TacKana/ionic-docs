@@ -26,6 +26,9 @@ Tabs 是实现标签页导航的顶级导航组件。
 
 `ion-tab-bar` 需要定义一个插槽，以便投影到 `ion-tabs` 组件中的正确位置。
 
+<LegacyAnchor id="basic-usage" />
+<LegacyAnchor id="usage-with-router" />
+
 ## 基础用法
 
 标签页可用于显示不同内容而无需更改 URL。这在标签页不用于导航，而仅用于显示不同内容时非常有用。

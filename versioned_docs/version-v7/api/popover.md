@@ -25,6 +25,8 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 有两种方式可以使用 `ion-popover`：内联方式或通过 `popoverController`。每种方法都有不同的注意事项，因此请务必选择最适合您用例的方式。
 
+<LegacyAnchor id="inline-popovers" />
+
 ## 内联弹窗
 
 可以通过直接在模板中编写组件来使用 `ion-popover`。这样可以减少您需要连接以展示弹窗的处理程序数量。
@@ -70,6 +72,8 @@ import InlineTrigger from '@site/static/usage/v7/popover/presenting/inline-trigg
 import IsOpenTrigger from '@site/static/usage/v7/popover/presenting/inline-isopen/index.md';
 
 <IsOpenTrigger />
+
+<LegacyAnchor id="controller-popovers" />
 
 ## 控制器弹窗
 
@@ -252,6 +256,9 @@ import Mount from '@site/static/usage/v7/popover/performance/mount/index.md';
 ## CSS Shadow Parts
 
 <Parts />
+
+<LegacyAnchor id="css-custom-properties" />
+<LegacyAnchor id="customization" />
 
 ## CSS 自定义属性
 

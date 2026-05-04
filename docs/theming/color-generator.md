@@ -1,7 +1,7 @@
 ---
 title: 颜色生成器
 hide_table_of_contents: true
-demoUrl: /docs/demos/color-generator/index.html
+demoUrl: /demos/color-generator/index.html
 ---
 
 import ColorGenerator from '@components/page/theming/ColorGenerator';

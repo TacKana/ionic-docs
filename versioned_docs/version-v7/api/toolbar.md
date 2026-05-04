@@ -105,6 +105,8 @@ import CSSProps from '@site/static/usage/v7/toolbar/theming/css-properties/index
 
 <CustomProps />
 
+<LegacyAnchor id="slots" />
+
 ## 插槽
 
 <Slots />

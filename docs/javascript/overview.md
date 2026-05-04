@@ -58,15 +58,15 @@ $ npm run dev █
   </p>
 </DocsCard>
 
-<DocsCard header="导航" href="/docs/api/router" icon="/icons/component-navigation-icon.png">
+<DocsCard header="导航" href="/api/router" icon="/icons/component-navigation-icon.png">
   <p>了解如何使用 Ionic Router 处理 Ionic JavaScript 应用中的路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="组件" href="/components" icon="/icons/guide-components-icon.png">
   <p>探索 Ionic 丰富的 UI 组件库，用于构建精美的应用。</p>
 </DocsCard>
 
-<DocsCard header="主题" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="主题" href="/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>学习如何使用 Ionic 强大的主题系统自定义应用的外观和风格。</p>
 </DocsCard>
 

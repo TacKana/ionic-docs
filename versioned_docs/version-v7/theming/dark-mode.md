@@ -14,6 +14,8 @@ inlineHtmlPreviews: true
 
 Ionic让您能够轻松更改应用的主题，包括支持深色配色方案。深色模式是一种显示设置，可将应用的所有视图切换为深色主题。它在iOS和Android系统上得到全面支持，因此开发者非常希望将其添加到应用中。
 
+<LegacyAnchor id="using-media-queries" />
+
 ## 使用媒体查询
 
 启用深色模式的现代方法是使用[针对用户偏好配色方案的CSS媒体查询](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)。此媒体查询将关联到用户设备的系统设置，并在启用深色模式时应用主题。Ionic Framework入门项目使用此方法来包含深色主题。
@@ -27,6 +29,8 @@ Ionic让您能够轻松更改应用的主题，包括支持深色配色方案。
 ```
 
 所有现代浏览器都支持`prefers-color-scheme`媒体查询。在某些浏览器中，用户可能无法通过此媒体查询享受到深色主题带来的好处，但若需要支持旧版浏览器，仍可通过[CSS类回退方案](#css-class-fallback)应用深色主题。
+
+<LegacyAnchor id="css-class-fallback" />
 
 ## CSS类回退方案
 
@@ -48,6 +52,8 @@ body.dark {
 变量以`body.dark`选择器为目标后，现在只需将类添加到应用的`<body>`元素中。根据构建应用所用的框架，可以通过多种方式实现。
 
 请注意，在此示例中，变量应同时出现在两个位置。我们可以[结合使用JavaScript](#combining-with-javascript)来避免在两个位置设置变量。
+
+<LegacyAnchor id="combining-with-javascript" />
 
 ## 结合JavaScript使用
 

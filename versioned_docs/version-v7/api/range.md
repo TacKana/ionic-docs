@@ -216,6 +216,8 @@ type RangeValue = number | { lower: number; upper: number };
 
 <Parts />
 
+<LegacyAnchor id="css自定义属性" />
+
 ## CSS 自定义属性
 
 <CustomProps />

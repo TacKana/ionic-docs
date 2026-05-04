@@ -14,7 +14,7 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-本指南将介绍如何将 Ionic Angular 整合到现有的 Angular 项目中。如果您想从头开始一个新项目，请查阅 [Ionic Angular 快速入门](/docs/angular/quickstart.md) 指南。要了解 Ionic Angular 如何与 Angular 配合工作（包括版本支持和工具链），请查阅 [Ionic Angular 概述](/docs/angular/overview.md)。
+本指南将介绍如何将 Ionic Angular 整合到现有的 Angular 项目中。如果您想从头开始一个新项目，请查阅 [Ionic Angular 快速入门](/angular/quickstart.md) 指南。要了解 Ionic Angular 如何与 Angular 配合工作（包括版本支持和工具链），请查阅 [Ionic Angular 概述](/angular/overview.md)。
 
 :::tip
 
@@ -76,7 +76,7 @@ npm install @ionic/angular
 
 :::info
 
-`core.css` 是必需的，而 `normalize.css`、`structure.css` 和 `typography.css` 是推荐但非必需的。它们可以标准化跨浏览器差异、确保正确的滚动行为，并提供一致的排版和表单样式。如果没有它们，您可能需要自行处理这些问题。更多详情，请参考 [全局样式表](/docs/layout/global-stylesheets.md)。
+`core.css` 是必需的，而 `normalize.css`、`structure.css` 和 `typography.css` 是推荐但非必需的。它们可以标准化跨浏览器差异、确保正确的滚动行为，并提供一致的排版和表单样式。如果没有它们，您可能需要自行处理这些问题。更多详情，请参考 [全局样式表](/layout/global-stylesheets.md)。
 
 :::
 
@@ -126,7 +126,7 @@ import { IonButton, IonDatetime } from '@ionic/angular/standalone';
 export class App {}
 ```
 
-访问 [组件](/docs/components.md) 页面查看所有可用的 Ionic 组件。
+访问 [组件](/components.md) 页面查看所有可用的 Ionic 组件。
 
 ## 使用 Ionic 页面
 
@@ -175,7 +175,7 @@ export class App {}
 ]
 ```
 
-这些样式表设置了整体页面结构，并提供了 [CSS 工具类](/docs/layout/css-utilities.md) 以加快开发速度。部分样式表是可选的。关于哪些样式表是必需的详细信息，请查看 [全局样式表](/docs/layout/global-stylesheets.md)。
+这些样式表设置了整体页面结构，并提供了 [CSS 工具类](/layout/css-utilities.md) 以加快开发速度。部分样式表是可选的。关于哪些样式表是必需的详细信息，请查看 [全局样式表](/layout/global-stylesheets.md)。
 
 #### 2. 设置主题
 
@@ -194,7 +194,7 @@ export class App {}
 @import '@ionic/angular/css/palettes/dark.system.css';
 ```
 
-当系统设置为偏好深色外观时，此文件可为您的 Ionic 应用启用 [深色模式支持](/docs/theming/dark-mode.md)。您可以通过取消注释不同的深色调色板导入或添加自定义 CSS 变量来自定义主题行为。
+当系统设置为偏好深色外观时，此文件可为您的 Ionic 应用启用 [深色模式支持](/theming/dark-mode.md)。您可以通过取消注释不同的深色调色板导入或添加自定义 CSS 变量来自定义主题行为。
 
 #### 3. 更新应用组件
 
@@ -329,11 +329,11 @@ export const routes: Routes = [
   <p>探索如何在 Ionic Angular 应用中使用 Angular 路由器处理路由和导航。</p>
 </DocsCard>
 
-<DocsCard header="组件" href="/docs/components" icon="/icons/guide-components-icon.png">
+<DocsCard header="组件" href="/components" icon="/icons/guide-components-icon.png">
   <p>探索 Ionic 丰富的 UI 组件库，用于构建精美的应用。</p>
 </DocsCard>
 
-<DocsCard header="主题" href="/docs/theming/basics" icon="/icons/guide-theming-icon.png">
+<DocsCard header="主题" href="/theming/basics" icon="/icons/guide-theming-icon.png">
   <p>学习如何使用 Ionic 强大的主题系统自定义应用的外观和风格。</p>
 </DocsCard>
 

@@ -107,6 +107,8 @@ import TextWrapping from '@site/static/usage/v8/button/text-wrapping/index.md';
 ## CSS 影子部件
 <Parts />
 
+<LegacyAnchor id="css-custom-properties" />
+
 ## CSS 自定义属性
 <CustomProps />
 

@@ -17,6 +17,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Angular 路由器是 Angular 应用程序中最重要的库之一。没有它，应用程序将只能呈现单一视图或单一上下文，或者在浏览器刷新时无法维护其导航状态。借助 Angular 路由器，我们可以创建内容丰富、可链接且具有丰富动画（当然，当与 Ionic 配对时）的应用。让我们看看 Angular 路由器的基础知识以及我们如何为 Ionic 应用配置它。
 
+<LegacyAnchor id="lazy-loading-routes" />
+
 ## 一个简单的路由
 
 对于大多数应用来说，某种形式的路由通常是必需的。最基本的配置看起来像这样：
@@ -68,6 +70,8 @@ import { RouterModule } from '@angular/router';
 ```
 
 那么加载 `/route1/route2/route3` 和 `/route1/route2/route4` 时，我们都会被重定向到这两个路由。这是因为 `pathMatch: 'prefix'` 只会匹配路径的一部分。
+
+<LegacyAnchor id="navigating-to-different-routes" />
 
 ## 导航到不同的路由
 

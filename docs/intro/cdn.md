@@ -116,7 +116,7 @@ Ionic Framework 为 Angular、React、Vue 和 JavaScript 提供了 npm 软件包
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 ```
 
-通过这种方式，您无需安装任何框架即可使用所有 Ionic Framework 核心组件。CSS 包将包含所有 Ionic [全局样式表](/docs/layout/global-stylesheets.md)。
+通过这种方式，您无需安装任何框架即可使用所有 Ionic Framework 核心组件。CSS 包将包含所有 Ionic [全局样式表](/layout/global-stylesheets.md)。
 
 ## Ionicons CDN
 

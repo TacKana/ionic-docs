@@ -4,6 +4,8 @@
 
 从 Ionic v7.5 开始，动态字体缩放已在 Android、iOS 和 iPadOS 上获得支持。
 
+<LegacyAnchor id="changing-the-font-size-on-a-device" />
+
 ## 体验功能
 
 :::提示
@@ -17,6 +19,8 @@
 import DynamicFontScaling from '@site/static/usage/v7/layout/dynamic-font-scaling/index.md';
 
 <DynamicFontScaling />
+
+<LegacyAnchor id="enabling-dynamic-font-scaling-in-ionic" />
 
 ## 在 Ionic 中启用动态字体缩放
 
@@ -47,6 +51,8 @@ html {
 :::
 
 ## 使用动态字体缩放
+
+<LegacyAnchor id="integrating-custom-components" />
 
 ### 集成自定义组件
 

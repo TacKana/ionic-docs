@@ -210,6 +210,8 @@ import Chain from '@site/static/usage/v8/animations/chain/index.md';
 
 <Chain />
 
+<LegacyAnchor id="gesture-animations" />
+
 ## 手势动画
 
 Ionic Animations 让开发者能够通过与 [Ionic Gestures](gestures.md) 无缝集成，创建强大的基于手势的动画。

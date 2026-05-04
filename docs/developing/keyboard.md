@@ -53,6 +53,8 @@ import Enterkeyhint from '@site/static/usage/v8/keyboard/enterkeyhint/index.md';
 `enterkeyhint` 属性在运行 Chrome 77+ 和 iOS Safari 13.4+ 的设备上受支持。
 :::
 
+<LegacyAnchor id="dark-mode" />
+
 ## 深色模式
 
 默认情况下，键盘主题由操作系统决定。例如，如果在 iOS 上启用了深色模式，即使应用的 CSS 中没有深色主题，应用中的键盘也会以深色主题显示。
@@ -68,6 +70,8 @@ import Enterkeyhint from '@site/static/usage/v8/keyboard/enterkeyhint/index.md';
 在移动浏览器或作为 PWA 运行应用时，无法隐藏辅助栏。
 
 在 Capacitor 或 Cordova 中运行应用时，可以隐藏辅助栏。有关此配置的更多信息，请参阅 <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor 键盘文档</a>。
+
+<LegacyAnchor id="keyboard-lifecycle-events" />
 
 ## 键盘生命周期事件
 
