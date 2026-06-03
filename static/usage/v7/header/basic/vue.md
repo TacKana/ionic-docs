@@ -2,11 +2,11 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title>标题栏</ion-title>
+      <ion-title>Header</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <h1>内容区域</h1>
+    <h1>Content</h1>
   </ion-content>
 </template>
 

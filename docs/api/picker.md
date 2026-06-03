@@ -1,5 +1,5 @@
 ---
-title: 选择器组件
+title: "ion-picker"
 ---
 import Props from '@ionic-internal/component-api/v8/picker/props.md';
 import Events from '@ionic-internal/component-api/v8/picker/events.md';
@@ -9,78 +9,76 @@ import CustomProps from '@ionic-internal/component-api/v8/picker/custom-props.md
 import Slots from '@ionic-internal/component-api/v8/picker/slots.md';
 
 <head>
-  <title>ion-picker：以列的形式展示选项列表</title>
-  <meta name="description" content="选择器会显示一列或多列选项供用户选择。" />
+  <title>ion-picker：在列中显示选项列表</title>
+  <meta name="description" content="Picker 显示一个或多个列，其中包含供用户选择的选项。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-选择器会显示一列或多列选项供用户选择。
+Picker 显示一个或多个列，其中包含供用户选择的选项。
 
 import Basic from '@site/static/usage/v8/picker/basic/index.md';
 
 <Basic />
 
-## 前缀与后缀内容
+## 前缀和后缀内容
 
-使用 `prefix` 和 `suffix` 插槽可以为选择器添加额外的内容。
+使用 `prefix` 和 `suffix` 插槽向选择器添加额外内容。
 
 import PrefixSuffix from '@site/static/usage/v8/picker/prefix-suffix/index.md';
 
 <PrefixSuffix />
 
-## 主题定制
+## 主题
 
 ### CSS 变量
 
-选择器的高亮和淡出效果可以通过在 `ion-picker` 上使用 CSS 变量进行自定义。开发者可以通过直接定位 `ion-picker-column-options` 并使用宿主级别的样式来自定义其外观。
+选择器的高亮和淡入淡出效果可以使用 `ion-picker` 上的 CSS 变量进行自定义。开发者可以通过直接定位 `ion-picker-column-options` 并使用宿主级别样式来自定义其单独外观。
 
 import CSSProps from '@site/static/usage/v8/picker/theming/css-properties/index.md';
 
 <CSSProps />
 
-## 模态框中的选择器
+## 在 Modal 中使用 Picker
 
-选择器可以显示在覆盖层（如 `ion-modal`）内部，以创建带有确认或取消按钮的选择器体验。
+Picker 可以显示在覆盖层（如 `ion-modal`）内部，以创建带有确认或取消按钮的选择器体验。
 
 import ModalExample from '@site/static/usage/v8/picker/modal/index.md';
 
 <ModalExample />
 
-<LegacyAnchor id="accessibility" />
-
-## 无障碍访问
+## 无障碍
 
 ### 屏幕阅读器
 
-选择器通过在每个[选择器列](./picker-column)上实现 [`slider` 角色](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA/Roles/slider_role)来支持屏幕阅读器导航。可以使用以下手势来浏览选择器。
+Picker 通过在每个 [Picker Column](./picker-column) 上实现 [`slider` 角色](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role)来支持使用屏幕阅读器进行导航。以下手势可用于导航 Picker。
 
 | 手势 | 功能 |
 | - | - |
-| 向左滑动 | 将焦点移至上一个选择器列。 |
-| 向右滑动 | 将焦点移至下一个选择器列。 |
-| 向上滑动 | 在选择器列中选择下一个选项。 |
-| 向下滑动 | 在选择器列中选择上一个选项。 |
-| 双击并向上/向下滑动 | 调整选择器列中的选定选项。可作为向上/向下滑动的替代方案。 |
+| 向左滑动 | 将焦点移动到上一个 Picker Column。 |
+| 向右滑动 | 将焦点移动到下一个 Picker Column。 |
+| 向上滑动 | 在 Picker Column 中选择下一个选项。 |
+| 向下滑动 | 在 Picker Column 中选择上一个选项。 |
+| 双击并上下滑动 | 调整 Picker Column 中所选选项。可替代上下滑动使用。 |
 
 :::caution
-向上滑动和向下滑动手势依赖于正确的键盘事件合成，如 [`slider` 文档](https://developer.mozilla.org/zh-CN/docs/Web/Accessibility/ARIA/Roles/slider_role)所述。[基于 Chromium 的浏览器未能正确合成键盘事件](https://issues.chromium.org/issues/40816094)，但在基于 Chromium 的浏览器实现此功能之前，可以使用“双击并向上/向下滑动”手势作为替代方案。
+向上滑动和向下滑动手势依赖于如 [`slider` 文档](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role)所述的正确合成按键事件。[基于 Chromium 的浏览器无法正确合成键盘事件](https://issues.chromium.org/issues/40816094)，但在 Chromium 浏览器实现此功能之前，可以使用"双击并上下滑动"手势作为替代方案。
 :::
 
 ### 键盘交互
 
-每个[选择器列](./picker-column)在获得焦点时都可以使用键盘进行导航。
+每个 [Picker Column](./picker-column) 在聚焦时可以使用键盘进行导航。
 
-| 按键                  | 描述                          |
-| -------------------- | ------------------------------------ |
-| <kbd>ArrowUp</kbd>   | 向上滚动至上一个选项。       |
-| <kbd>ArrowDown</kbd> | 向下滚动至下一个选项。           |
-| <kbd>PageUp</kbd>    | 向上滚动多个选项。   |
-| <kbd>PageDown</kbd>  | 向下滚动多个选项。 |
-| <kbd>Home</kbd>      | 滚动至第一个选项。          |
-| <kbd>End</kbd>       | 滚动至最后一个选项。           |
+| 键                    | 描述                           |
+| --------------------  | -----------------------------  |
+| <kbd>ArrowUp</kbd>   | 滚动到上一个选项。              |
+| <kbd>ArrowDown</kbd> | 滚动到下一个选项。              |
+| <kbd>PageUp</kbd>    | 向上滚动多个选项。              |
+| <kbd>PageDown</kbd>  | 向下滚动多个选项。              |
+| <kbd>Home</kbd>      | 滚动到第一个选项。              |
+| <kbd>End</kbd>       | 滚动到最后一个选项。            |
 
 ## 属性
 <Props />

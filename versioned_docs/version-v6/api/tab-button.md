@@ -5,20 +5,20 @@ title: 'ion-tab-button'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v6/tab-button/props.md';
-import Events from '@ionic-internal/component-api/v6/tab-button/events.md';
-import Methods from '@ionic-internal/component-api/v6/tab-button/methods.md';
-import Parts from '@ionic-internal/component-api/v6/tab-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/tab-button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v6/tab-button/slots.md';
+import Props from '@ionic-internal/component-api/v7/tab-button/props.md';
+import Events from '@ionic-internal/component-api/v7/tab-button/events.md';
+import Methods from '@ionic-internal/component-api/v7/tab-button/methods.md';
+import Parts from '@ionic-internal/component-api/v7/tab-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/tab-button/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v7/tab-button/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-标签按钮（tab button）是一个放置在[标签栏](tab-bar.md)内的 UI 组件。它可以指定图标和标签的布局，并连接到[标签视图](tab.md)。
+标签按钮（Tab button）是放置在[标签栏（tab bar）](tab-bar.md)内的 UI 组件。标签按钮可以指定图标和标签的布局，并连接到[标签视图（tab view）](tab.md)。
 
-有关配置标签的更多详细信息，请参阅[标签页文档](tabs.md)。
+请参阅[tabs 文档](tabs.md)了解更多关于配置标签的详细信息。
 
 ## 用法
 
@@ -31,22 +31,22 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
   <!-- 标签栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="schedule">
-      <ion-icon name="calendar"></ion-icon>
+      <ion-icon name="calendar" aria-hidden="true"></ion-icon>
       <ion-label>日程</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="speakers">
-      <ion-icon name="person-circle"></ion-icon>
+      <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
       <ion-label>演讲者</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="map">
-      <ion-icon name="map"></ion-icon>
+      <ion-icon name="map" aria-hidden="true"></ion-icon>
       <ion-label>地图</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="about">
-      <ion-icon name="information-circle"></ion-icon>
+      <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
       <ion-label>关于</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
@@ -79,22 +79,22 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
   <!-- 标签栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="schedule" href="/app/tabs/(schedule:schedule)">
-      <ion-icon name="calendar"></ion-icon>
+      <ion-icon name="calendar" aria-hidden="true"></ion-icon>
       <ion-label>日程</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="speakers" href="/app/tabs/(speakers:speakers)">
-      <ion-icon name="person-circle"></ion-icon>
+      <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
       <ion-label>演讲者</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="map" href="/app/tabs/(map:map)">
-      <ion-icon name="map"></ion-icon>
+      <ion-icon name="map" aria-hidden="true"></ion-icon>
       <ion-label>地图</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="about" href="/app/tabs/(about:about)">
-      <ion-icon name="information-circle"></ion-icon>
+      <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
       <ion-label>关于</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
@@ -116,22 +116,22 @@ export const TabButtonExample: React.FC = () => (
       {/*-- 标签栏 --*/}
       <IonTabBar slot="bottom">
         <IonTabButton tab="schedule">
-          <IonIcon icon={calendar} />
+          <IonIcon icon={calendar} aria-hidden="true" />
           <IonLabel>日程</IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="speakers">
-          <IonIcon icon={personCircle} />
+          <IonIcon icon={personCircle} aria-hidden="true" />
           <IonLabel>演讲者</IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="map">
-          <IonIcon icon={map} />
+          <IonIcon icon={map} aria-hidden="true" />
           <IonLabel>地图</IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="about">
-          <IonIcon icon={informationCircle} />
+          <IonIcon icon={informationCircle} aria-hidden="true" />
           <IonLabel>关于</IonLabel>
         </IonTabButton>
       </IonTabBar>
@@ -150,45 +150,31 @@ export const TabButtonExample: React.FC = () => (
     <!-- 标签栏 -->
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="schedule" href="/tabs/schedule">
-        <ion-icon :icon="calendar"></ion-icon>
+        <ion-icon :icon="calendar" aria-hidden="true"></ion-icon>
         <ion-label>日程</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="speakers" href="/tabs/speakers">
-        <ion-icon :icon="person-circle"></ion-icon>
+        <ion-icon :icon="person-circle" aria-hidden="true"></ion-icon>
         <ion-label>演讲者</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="map" href="/tabs/map">
-        <ion-icon :icon="map"></ion-icon>
+        <ion-icon :icon="map" aria-hidden="true"></ion-icon>
         <ion-label>地图</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="about" href="/tabs/about">
-        <ion-icon :icon="informationCircle"></ion-icon>
+        <ion-icon :icon="informationCircle" aria-hidden="true"></ion-icon>
         <ion-label>关于</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
 </template>
 
-<script>
+<script setup lang="ts">
   import { IonIcon, IonLabel, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
   import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonIcon,
-      IonLabel,
-      IonTabBar,
-      IonTabButton,
-      IonTabs,
-    },
-    setup() {
-      return { calendar, informationCircle, map, personCircle };
-    },
-  });
 </script>
 ```
 
@@ -208,7 +194,7 @@ export const TabButtonExample: React.FC = () => (
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

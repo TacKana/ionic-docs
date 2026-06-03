@@ -10,7 +10,7 @@ function Example() {
         <IonButtons slot="start">
           <IonButton>Start</IonButton>
         </IonButtons>
-        <IonTitle>起始/结束按钮</IonTitle>
+        <IonTitle>Start / End Buttons</IonTitle>
         <IonButtons slot="end">
           <IonButton>End</IonButton>
         </IonButtons>
@@ -23,7 +23,7 @@ function Example() {
         <IonButtons slot="primary">
           <IonButton>Primary</IonButton>
         </IonButtons>
-        <IonTitle>主要/次要按钮</IonTitle>
+        <IonTitle>Primary / Secondary Buttons</IonTitle>
       </IonToolbar>
 
       <IonToolbar>
@@ -40,53 +40,53 @@ function Example() {
             <IonIcon slot="icon-only" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
           </IonButton>
         </IonButtons>
-        <IonTitle>图标按钮</IonTitle>
+        <IonTitle>Icon Buttons</IonTitle>
       </IonToolbar>
 
       <IonToolbar>
         <IonButtons slot="secondary">
           <IonButton fill="solid">
             <IonIcon slot="start" icon={personCircle}></IonIcon>
-            联系人
+            Contact
           </IonButton>
         </IonButtons>
         <IonButtons slot="primary">
           <IonButton fill="solid">
-            帮助
+            Help
             <IonIcon slot="end" icon={helpCircle}></IonIcon>
           </IonButton>
         </IonButtons>
-        <IonTitle>实心按钮</IonTitle>
+        <IonTitle>Solid Buttons</IonTitle>
       </IonToolbar>
 
       <IonToolbar>
         <IonButtons slot="secondary">
           <IonButton fill="outline">
             <IonIcon slot="start" icon={star}></IonIcon>
-            收藏
+            Star
           </IonButton>
         </IonButtons>
         <IonButtons slot="primary">
           <IonButton fill="outline">
-            编辑
+            Edit
             <IonIcon slot="end" icon={create}></IonIcon>
           </IonButton>
         </IonButtons>
-        <IonTitle>轮廓按钮</IonTitle>
+        <IonTitle>Outline Buttons</IonTitle>
       </IonToolbar>
 
       <IonToolbar>
         <IonButtons slot="start">
           <IonBackButton defaultHref="#"></IonBackButton>
         </IonButtons>
-        <IonTitle>返回按钮</IonTitle>
+        <IonTitle>Back Button</IonTitle>
       </IonToolbar>
 
       <IonToolbar>
         <IonButtons slot="start">
           <IonMenuButton autoHide={false}></IonMenuButton>
         </IonButtons>
-        <IonTitle>菜单按钮</IonTitle>
+        <IonTitle>Menu Button</IonTitle>
       </IonToolbar>
     </>
   );

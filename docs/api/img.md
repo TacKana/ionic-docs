@@ -1,5 +1,5 @@
 ---
-title: 图片组件
+title: "ion-img"
 ---
 
 import Props from '@ionic-internal/component-api/v8/img/props.md';
@@ -10,8 +10,8 @@ import CustomProps from '@ionic-internal/component-api/v8/img/custom-props.mdx';
 import Slots from '@ionic-internal/component-api/v8/img/slots.md';
 
 <head>
-  <title>ion-img：视口内图片懒加载标签</title>
-  <meta name="description" content="ion-img 标签会在元素进入视口时懒加载图片。在生成大型列表时使用此组件非常有用，因为图片仅在可见时才加载。" />
+  <title>ion-img: 在视口中延迟加载图像的图片标签</title>
+  <meta name="description" content="Img 标签在标签进入视口时延迟加载图像。在生成大型列表时使用此组件——因为图像仅在可见时才加载。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-ion-img 是一个图片标签，当标签进入视口时会懒加载图片。这在生成大型列表时特别有用，因为图片只在可见时才加载。该组件内部使用 [Intersection Observer](https://caniuse.com/#feat=intersectionobserver)（交集观察器），大多数现代浏览器都支持此特性，在不支持的浏览器中会自动回退到 `setTimeout` 方案。
+Img 是一个标签，当标签在视口中时，它会延迟加载图像。这在生成大型列表时非常有用，因为图像仅在可见时才加载。该组件在内部使用 [Intersection Observer](https://caniuse.com/#feat=intersectionobserver)，大多数现代浏览器都支持它，但在不支持时会回退到使用 `setTimeout`。
 
 ## 基本用法
 

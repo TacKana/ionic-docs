@@ -2,20 +2,20 @@
 title: 'ion-card-subtitle'
 ---
 
-import Props from '@ionic-internal/component-api/v6/card-subtitle/props.md';
-import Events from '@ionic-internal/component-api/v6/card-subtitle/events.md';
-import Methods from '@ionic-internal/component-api/v6/card-subtitle/methods.md';
-import Parts from '@ionic-internal/component-api/v6/card-subtitle/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/card-subtitle/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v6/card-subtitle/slots.md';
+import Props from '@ionic-internal/component-api/v7/card-subtitle/props.md';
+import Events from '@ionic-internal/component-api/v7/card-subtitle/events.md';
+import Methods from '@ionic-internal/component-api/v7/card-subtitle/methods.md';
+import Parts from '@ionic-internal/component-api/v7/card-subtitle/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/card-subtitle/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v7/card-subtitle/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-卡片副标题是卡片组件的子组件，应放置在 [卡片头部](./card-header) 内部。
+卡片副标题（Card subtitle）是卡片的子组件，应放置在[卡片头部](./card-header)内部。
 
-更多信息请参阅 [卡片](./card) 文档。
+更多信息请参阅[卡片](./card)文档。
 
 ## 属性
 
@@ -29,7 +29,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

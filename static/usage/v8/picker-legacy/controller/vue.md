@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="openPicker()">打开</ion-button>
+  <ion-button @click="openPicker()">Open</ion-button>
 </template>
 
 <script setup lang="ts">
@@ -36,13 +36,13 @@
       ],
       buttons: [
         {
-          text: '取消',
+          text: 'Cancel',
           role: 'cancel',
         },
         {
-          text: '确认',
+          text: 'Confirm',
           handler: (value) => {
-            console.log(`您选择了: ${value.languages.value}`);
+            console.log(`You selected: ${value.languages.value}`);
           },
         },
       ],

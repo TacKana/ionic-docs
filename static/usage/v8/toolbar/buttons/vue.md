@@ -2,22 +2,22 @@
 <template>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button> 起始 </ion-button>
+      <ion-button> Start </ion-button>
     </ion-buttons>
-    <ion-title>起始 / 结束按钮</ion-title>
+    <ion-title>Start / End Buttons</ion-title>
     <ion-buttons slot="end">
-      <ion-button> 结束 </ion-button>
+      <ion-button> End </ion-button>
     </ion-buttons>
   </ion-toolbar>
 
   <ion-toolbar>
     <ion-buttons slot="secondary">
-      <ion-button> 次要 </ion-button>
+      <ion-button> Secondary </ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
-      <ion-button> 主要 </ion-button>
+      <ion-button> Primary </ion-button>
     </ion-buttons>
-    <ion-title>主要 / 次要按钮</ion-title>
+    <ion-title>Primary / Secondary Buttons</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
@@ -34,53 +34,53 @@
         <ion-icon slot="icon-only" :ios="ellipsisHorizontal" :md="ellipsisVertical"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>图标按钮</ion-title>
+    <ion-title>Icon Buttons</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
     <ion-buttons slot="secondary">
       <ion-button fill="solid">
         <ion-icon slot="start" :icon="personCircle"></ion-icon>
-        联系人
+        Contact
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
       <ion-button fill="solid">
-        帮助
+        Help
         <ion-icon slot="end" :icon="helpCircle"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>实心按钮</ion-title>
+    <ion-title>Solid Buttons</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
     <ion-buttons slot="secondary">
       <ion-button fill="outline">
         <ion-icon slot="start" :icon="star"></ion-icon>
-        收藏
+        Star
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
       <ion-button fill="outline">
-        编辑
+        Edit
         <ion-icon slot="end" :icon="create"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>轮廓按钮</ion-title>
+    <ion-title>Outline Buttons</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button default-href="#"></ion-back-button>
     </ion-buttons>
-    <ion-title>返回按钮</ion-title>
+    <ion-title>Back Button</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button :auto-hide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title>菜单按钮</ion-title>
+    <ion-title>Menu Button</ion-title>
   </ion-toolbar>
 </template>
 

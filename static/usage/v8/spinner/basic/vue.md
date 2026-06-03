@@ -1,52 +1,52 @@
 ```html
 <template>
   <ion-item>
-    <ion-label>默认</ion-label>
+    <ion-label>Default</ion-label>
     <ion-spinner></ion-spinner>
   </ion-item>
 
   <ion-item>
-    <ion-label>点状</ion-label>
+    <ion-label>Dots</ion-label>
     <ion-spinner name="dots"></ion-spinner>
   </ion-item>
 
   <ion-item>
-    <ion-label>线条</ion-label>
+    <ion-label>Lines</ion-label>
     <ion-spinner name="lines"></ion-spinner>
   </ion-item>
 
   <ion-item>
-    <ion-label>小线条</ion-label>
+    <ion-label>Lines Small</ion-label>
     <ion-spinner name="lines-small"></ion-spinner>
   </ion-item>
 
   <ion-item>
-    <ion-label>锐利线条</ion-label>
+    <ion-label>Lines Sharp</ion-label>
     <ion-spinner name="lines-sharp"></ion-spinner>
   </ion-item>
 
   <ion-item>
-    <ion-label>锐利小线条</ion-label>
+    <ion-label>Lines Sharp Small</ion-label>
     <ion-spinner name="lines-sharp-small"></ion-spinner>
   </ion-item>
 
   <ion-item>
-    <ion-label>气泡</ion-label>
+    <ion-label>Bubbles</ion-label>
     <ion-spinner name="bubbles"></ion-spinner>
   </ion-item>
 
   <ion-item>
-    <ion-label>圆圈</ion-label>
+    <ion-label>Circles</ion-label>
     <ion-spinner name="circles"></ion-spinner>
   </ion-item>
 
   <ion-item>
-    <ion-label>环形</ion-label>
+    <ion-label>Circular</ion-label>
     <ion-spinner name="circular"></ion-spinner>
   </ion-item>
 
   <ion-item>
-    <ion-label>月牙形</ion-label>
+    <ion-label>Crescent</ion-label>
     <ion-spinner name="crescent"></ion-spinner>
   </ion-item>
 </template>

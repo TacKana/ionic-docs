@@ -1,5 +1,5 @@
 ---
-title: 选项卡按钮组件
+title: "ion-tab-button"
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -18,9 +18,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-选项卡按钮是放置在[选项卡栏](tab-bar.md)内的 UI 组件。它可以指定图标和标签的布局，并连接到[选项卡视图](tab.md)。
+选项卡按钮是一个 UI 组件，放置在[选项卡栏](tab-bar.md)内部。选项卡按钮可以指定图标和标签的布局，并连接到[选项卡视图](tab.md)。
 
-有关配置选项卡的更多详细信息，请参阅[选项卡文档](tabs.md)。
+有关配置选项卡的更多详细信息，请参阅 [tabs 文档](tabs.md)。
 
 
 

@@ -2,28 +2,28 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title>内联模态框</ion-title>
+      <ion-title>Inline Modal</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-button id="open-modal" expand="block">打开</ion-button>
+    <ion-button id="open-modal" expand="block">Open</ion-button>
     <p>{{ message }}</p>
     <ion-modal ref="modal" trigger="open-modal" @willDismiss="onWillDismiss">
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
-            <ion-button @click="cancel()">取消</ion-button>
+            <ion-button @click="cancel()">Cancel</ion-button>
           </ion-buttons>
-          <ion-title>欢迎</ion-title>
+          <ion-title>Welcome</ion-title>
           <ion-buttons slot="end">
-            <ion-button :strong="true" @click="confirm()">确认</ion-button>
+            <ion-button :strong="true" @click="confirm()">Confirm</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
         <ion-item>
-          <ion-label position="stacked">请输入您的姓名</ion-label>
-          <ion-input ref="input" type="text" placeholder="您的姓名"></ion-input>
+          <ion-label position="stacked">Enter your name</ion-label>
+          <ion-input ref="input" type="text" placeholder="Your name"></ion-input>
         </ion-item>
       </ion-content>
     </ion-modal>
@@ -61,7 +61,7 @@
     },
     data() {
       return {
-        message: '此模态框示例使用触发器，在按钮点击时自动打开模态框。',
+        message: 'This modal example uses triggers to automatically open a modal when the button is clicked.',
       };
     },
     methods: {
@@ -74,7 +74,7 @@
       },
       onWillDismiss(ev: CustomEvent<OverlayEventDetail>) {
         if (ev.detail.role === 'confirm') {
-          this.message = `你好，${ev.detail.data}！`;
+          this.message = `Hello, ${ev.detail.data}!`;
         }
       },
     },

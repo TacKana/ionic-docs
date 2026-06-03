@@ -1,8 +1,8 @@
 ```html
 <template>
   <ion-content class="ion-padding">
-    <h1>第二页</h1>
-    <ion-button @click="navigateToPageThree">前往第三页</ion-button>
+    <h1>Page Two</h1>
+    <ion-button @click="navigateToPageThree">Go to Page Three</ion-button>
   </ion-content>
 </template>
 

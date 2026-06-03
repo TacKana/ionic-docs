@@ -4,7 +4,7 @@ import { IonDatetime } from '@ionic/react';
 function Example() {
   return (
     <IonDatetime>
-      <span slot="title">选择预订日期</span>
+      <span slot="title">Select a Reservation Date</span>
     </IonDatetime>
   );
 }

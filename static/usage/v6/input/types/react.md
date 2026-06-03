@@ -6,27 +6,27 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonLabel>文本输入</IonLabel>
-        <IonInput placeholder="请输入文本"></IonInput>
+        <IonLabel>Text input</IonLabel>
+        <IonInput placeholder="Enter text"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel>数字输入</IonLabel>
+        <IonLabel>Number input</IonLabel>
         <IonInput type="number" placeholder="000"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel>密码输入</IonLabel>
+        <IonLabel>Password input</IonLabel>
         <IonInput type="password" value="password"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel>邮箱输入</IonLabel>
+        <IonLabel>Email input</IonLabel>
         <IonInput type="email" placeholder="email@domain.com"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel>电话输入</IonLabel>
+        <IonLabel>Telephone input</IonLabel>
         <IonInput type="tel" placeholder="888-888-8888"></IonInput>
       </IonItem>
     </IonList>

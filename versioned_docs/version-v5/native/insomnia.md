@@ -10,27 +10,27 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Insomnia
 
-防止移动设备的屏幕进入休眠状态。
+Prevent the screen of the mobile device from falling asleep.
 
 <p>
   <a href="https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin" target="_blank" el="noopener" className="git-link">github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin</a>
 </p>
 
-<h2>遇到 Cordova 问题卡住了？</h2>
+<h2>Stuck on a Cordova issue?</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="不要在插件问题上浪费宝贵时间。"
+  header="Don't waste precious time on plugin issues."
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>如果您正在开发一个重要的项目，承受不起花费数小时进行故障排除的代价。Ionic 的专家为社区插件和高级插件提供优质的咨询服务。</p>
-    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer premium advisory services for both community plugins and premier plugins.</p>
+    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">安装</a>
+  <a href="#installation">Installation</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -53,13 +53,13 @@ import CodeBlock from '@theme/CodeBlock';
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise 包含了 Ionic 团队全面支持与维护的插件。 &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或如果您对此插件的企业版感兴趣，请 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
+      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## 支持的平台
+## Supported Platforms
 
 - Android
 - Browser
@@ -68,11 +68,11 @@ import CodeBlock from '@theme/CodeBlock';
 - Windows
 - Windows Phone 8
 
-## 使用说明
+## Usage
 
 ### React
 
-[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
+[Learn more about using Ionic Native components in React](../native-community.md#react)
 
 ### Angular
 

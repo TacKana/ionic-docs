@@ -1,5 +1,5 @@
 ---
-title: 选择器组件（已弃用）
+title: "ion-picker-legacy"
 ---
 import Props from '@ionic-internal/component-api/v8/picker-legacy/props.md';
 import Events from '@ionic-internal/component-api/v8/picker-legacy/events.md';
@@ -9,51 +9,51 @@ import CustomProps from '@ionic-internal/component-api/v8/picker-legacy/custom-p
 import Slots from '@ionic-internal/component-api/v8/picker-legacy/slots.md';
 
 <head>
-  <title>ion-picker-legacy：显示按钮和列的选择器对话框</title>
-  <meta name="description" content="选择器是一种对话框，显示一行按钮和下方的多列选项。ion-picker-legacy 会出现在应用内容的上方，并位于视口的底部。" />
+  <title>ion-picker-legacy：显示按钮和列的对话框</title>
+  <meta name="description" content="Picker 是一个对话框，显示一行按钮及其下方的列。Ion-picker-legacy 显示在应用内容上方、视口底部。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-:::warning 弃用提示
+:::warning 弃用说明
 
-`ion-picker-legacy` 已弃用，并将在下一个主要版本中移除。请尽快迁移至 [`ion-picker`](./picker.md)。
+`ion-picker-legacy` 已弃用，将在下一个主要版本中移除。请尽快迁移到 [`ion-picker`](./picker.md)。
 
 :::
 
-选择器（Picker）是一种对话框，它显示一行按钮以及下方的多列选项。该组件会悬浮在应用内容之上，并位于视口的底部。
+Picker 是一个对话框，显示一行按钮及其下方的列。它显示在应用内容上方、视口底部。
 
-## 内联选择器（推荐）
+## 内联 Picker（推荐）
 
-通过在模板中直接编写组件，即可使用 `ion-picker-legacy`。这种方式可以减少呈现选择器时需要连接的处理程序数量。
+`ion-picker-legacy` 可以通过直接在模板中编写组件来使用。这减少了呈现 Picker 时需要连接的处理程序数量。
 
 import Trigger from '@site/static/usage/v8/picker-legacy/inline/trigger/index.md';
 
 <Trigger />
 
-### 使用 `isOpen` 属性
+### 使用 `isOpen`
 
-`ion-picker-legacy` 上的 `isOpen` 属性允许开发者通过应用状态来控制选择器的呈现状态。这意味着当 `isOpen` 设置为 `true` 时，选择器将被呈现；当 `isOpen` 设置为 `false` 时，选择器将被关闭。
+`ion-picker-legacy` 上的 `isOpen` 属性允许开发者从应用状态控制 Picker 的呈现状态。这意味着当 `isOpen` 设置为 `true` 时，Picker 将呈现；当 `isOpen` 设置为 `false` 时，Picker 将关闭。
 
-`isOpen` 采用单向数据绑定方式，这意味着选择器关闭时，该值不会自动设置为 `false`。开发者应监听 `ionPickerDidDismiss` 或 `didDismiss` 事件，并将 `isOpen` 设置为 `false`。这样做是为了避免 `ion-picker` 的内部逻辑与应用状态紧密耦合。通过单向数据绑定，选择器只需关注响应式变量提供的布尔值。而如果采用双向数据绑定，选择器不仅需要关注布尔值，还需要考虑响应式变量本身的存在性，这可能导致不确定的行为，并使应用更难调试。
+`isOpen` 使用单向数据绑定，这意味着 Picker 关闭时它不会自动设置为 `false`。开发者应监听 `ionPickerDidDismiss` 或 `didDismiss` 事件并将 `isOpen` 设置为 `false`。这样做的原因是防止 `ion-picker` 的内部逻辑与应用状态紧密耦合。使用单向数据绑定时，Picker 只需关注响应式变量提供的布尔值。而使用双向数据绑定时，Picker 需要同时关注布尔值和响应式变量本身的存在性。这可能导致不确定的行为，并使应用更难调试。
 
 import IsOpen from '@site/static/usage/v8/picker-legacy/inline/isOpen/index.md';
 
 <IsOpen />
 
-## 控制器选择器
+## 控制器 Picker
 
-当需要对选择器的呈现和关闭时机进行更精细的控制时，可以使用 `pickerController`。
+在需要对 Picker 的呈现和关闭进行更多控制的情况下，可以使用 `pickerController`。
 
 import Controller from '@site/static/usage/v8/picker-legacy/controller/index.md';
 
 <Controller />
 
-## 多列选择器
+## 多列
 
-通过 `columns` 属性，可以显示包含多列不同选项的选择器。
+`columns` 属性可用于显示具有多个不同选项列的 Picker。
 
 import MultipleColumn from '@site/static/usage/v8/picker-legacy/multiple-column/index.md';
 
@@ -79,7 +79,7 @@ interface PickerColumn {
   name: string;
   align?: string;
   /**
-   * 修改此值可设置选择器列的初始值。
+   * 更改此值可以设置选择器列的初始值。
    */
   selectedIndex?: number;
   prevSelected?: number;
@@ -105,7 +105,7 @@ interface PickerColumnOption {
   transform?: string;
   selected?: boolean;
   /**
-   * 可选的文本，将作为 aria-label 分配给选择器列选项。
+   * 要分配给选择器列选项的 aria-label 的可选文本。
    */
   ariaLabel?: string;
 }

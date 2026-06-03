@@ -1,24 +1,24 @@
 ---
-title: Ionic 软件包与 CDN
-sidebar_label: 软件包与 CDN
+title: Ionic 包与 CDN
+sidebar_label: 包与 CDN
 ---
 
 <head>
-  <title>Ionic Framework 软件包：CDN、Angular、Vue、React 与 JavaScript</title>
+  <title>Ionic Framework 包：CDN、Angular、Vue、React 和 JavaScript</title>
   <meta
     name="description"
-    content="查看我们提供的不同软件包，它们可以用于在测试环境、Angular、Vue、React 或 JavaScript 项目中快速开始使用 Ionic Framework 或 Ionicons CDN。"
+    content="查看我们可用于在测试环境中快速开始使用 Ionic Framework 或 Ionicons CDN 的不同包：Angular、Vue、React 或 JavaScript。"
   />
 </head>
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-Ionic Framework 为 Angular、React、Vue 和 JavaScript 提供了 npm 软件包，同时还提供了用于快速原型的 CDN 链接。请选择下方您要使用的框架开始使用，或者使用 CDN 在浏览器中测试 Ionic Framework 组件。
+Ionic Framework 提供了用于 Angular、React、Vue 和 JavaScript 的 npm 包，以及用于快速原型开发的 CDN 链接。在下方选择您的框架开始使用，或使用 CDN 在浏览器中测试 Ionic Framework 组件。
 
 ## Ionic Angular
 
-开始一个新的 Ionic Angular 应用，或将 Ionic 添加到您现有的 Angular 项目中。
+启动一个新的 Ionic Angular 应用，或将 Ionic 添加到您现有的 Angular 项目中。
 
 <DocsCards>
 
@@ -42,7 +42,7 @@ Ionic Framework 为 Angular、React、Vue 和 JavaScript 提供了 npm 软件包
 
 ## Ionic React
 
-开始一个新的 Ionic React 应用，或将 Ionic 添加到您现有的 React 项目中。
+启动一个新的 Ionic React 应用，或将 Ionic 添加到您现有的 React 项目中。
 
 <DocsCards>
 
@@ -66,7 +66,7 @@ Ionic Framework 为 Angular、React、Vue 和 JavaScript 提供了 npm 软件包
 
 ## Ionic Vue
 
-开始一个新的 Ionic Vue 应用，或将 Ionic 添加到您现有的 Vue 项目中。
+启动一个新的 Ionic Vue 应用，或将 Ionic 添加到您现有的 Vue 项目中。
 
 <DocsCards>
 
@@ -90,7 +90,7 @@ Ionic Framework 为 Angular、React、Vue 和 JavaScript 提供了 npm 软件包
 
 ## Ionic JavaScript
 
-开始一个新的 Ionic JavaScript 应用。
+启动一个新的 Ionic JavaScript 应用。
 
 <DocsCards>
 
@@ -106,9 +106,9 @@ Ionic Framework 为 Angular、React、Vue 和 JavaScript 提供了 npm 软件包
 
 ## Ionic Framework CDN
 
-可以从 CDN 引入 Ionic Framework，以便在 [StackBlitz](https://stackblitz.com/)、[Plunker](https://plnkr.co/)、[Codepen](https://codepen.io) 或任何其他在线代码编辑器中进行快速测试！
+Ionic Framework 可以通过 CDN 引入，以便在 [StackBlitz](https://stackblitz.com/)、[Plunker](https://plnkr.co/)、[Codepen](https://codepen.io) 或任何其他在线代码编辑器中进行快速测试！
 
-推荐使用 [jsdelivr](https://www.jsdelivr.com/) 从 CDN 获取框架。要获取最新版本，请在 HTML 文件的 `<head>` 元素内，或者在线代码编辑器中引入外部资源的位置添加以下代码：
+建议使用 [jsdelivr](https://www.jsdelivr.com/) 从 CDN 访问 Framework。要获取最新版本，请在 HTML 文件的 `<head>` 元素内或在线代码编辑器中引入外部资源的位置添加以下内容：
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
@@ -116,11 +116,11 @@ Ionic Framework 为 Angular、React、Vue 和 JavaScript 提供了 npm 软件包
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 ```
 
-通过这种方式，您无需安装任何框架即可使用所有 Ionic Framework 核心组件。CSS 包将包含所有 Ionic [全局样式表](/layout/global-stylesheets.md)。
+这样，无需安装框架就可以使用所有 Ionic Framework 核心组件。CSS 包将包含所有 Ionic [全局样式表](/layout/global-stylesheets.md)。
 
 ## Ionicons CDN
 
-Ionic Framework 默认已打包了 Ionicons，因此如果您正在使用 Ionic，就无需单独安装。要在不使用 Ionic Framework 的情况下使用 Ionicons，请将以下 `<script>` 标签放置在页面末尾，紧邻闭合的 `</body>` 标签之前。
+Ionicons 默认包含在 Ionic Framework 中，因此如果您使用 Ionic，则无需额外安装。要在没有 Ionic Framework 的情况下使用 Ionicons，请在页面末尾附近、`</body>` 结束标签之前放置以下 `<script>` 标签。
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>

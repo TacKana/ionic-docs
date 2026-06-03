@@ -1,5 +1,5 @@
 ---
-title: 路由组件
+title: "ion-router"
 ---
 
 import Props from '@ionic-internal/component-api/v8/router/props.md';
@@ -10,29 +10,29 @@ import CustomProps from '@ionic-internal/component-api/v8/router/custom-props.md
 import Slots from '@ionic-internal/component-api/v8/router/slots.md';
 
 <head>
-  <title>ion-router：用于协调 URL 导航的路由组件</title>
-  <meta name="description" content="ion-router 是 Ionic 导航出口（ion-nav 和 ion-tabs）的 URL 协调器。该路由组件用于处理原生 JavaScript 和 Stencil 项目中的路由。" />
+  <title>ion-router：协调 URL 导航的路由组件</title>
+  <meta name="description" content="ion-router 是 ionic 导航输出组件（ion-nav 和 ion-tabs）的 URL 协调器。路由组件处理 vanilla 和 Stencil JavaScript 项目中的路由。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
 
-路由组件是用于处理原生 JavaScript 和 Stencil 项目中路由的组件。
+路由是用于处理 vanilla 和 Stencil JavaScript 项目中路由的组件。
 
 :::note
- 注意：此组件仅适用于原生 JavaScript 和 Stencil 项目。如需框架特定的路由解决方案，请参阅 [Angular](../angular/navigation)、[React](../react/navigation) 和 [Vue](../vue/navigation) 的路由指南。
+ 注意：此组件仅应使用于 vanilla 和 Stencil JavaScript 项目。关于各框架特定的路由解决方案，请参阅 [Angular](../angular/navigation)、[React](../react/navigation) 和 [Vue](../vue/navigation) 的路由指南。
 :::
 
 
-应用代码库中应只包含一个 `ion-router` 组件。
-该组件控制所有与浏览器历史记录的交互，并通过事件系统聚合更新。
+应用中应只有一个 `ion-router` 组件。
+此组件控制与浏览器历史记录的所有交互，并通过事件系统聚合更新。
 
-`ion-router` 仅仅是 Ionic 导航出口（`ion-nav`、`ion-tabs` 和 `ion-router-outlet`）的 URL 协调器。
+`ion-router` 只是 ionic 导航输出组件（`ion-nav`、`ion-tabs` 和 `ion-router-outlet`）的 URL 协调器。
 
-这意味着 `ion-router` 从不操作 DOM，它不会显示组件或触发任何生命周期事件，它只是根据浏览器的 URL 告诉 `ion-nav`、`ion-tabs` 和 `ion-router-outlet` 要“显示”什么以及何时显示。
+这意味着 `ion-router` 从不接触 DOM，它不展示组件也不触发任何生命周期事件，它只是根据浏览器的 URL 告诉 `ion-nav`、`ion-tabs` 和 `ion-router-outlet` "展示"什么以及何时"展示"。
 
-为了配置组件（加载/选择）与 URL 之间的这种关系，`ion-router` 使用 JSX/HTML 的声明式语法来定义路由树。
+为了配置组件（加载/选择）与 URL 之间的这种关系，`ion-router` 使用声明式语法（JSX/HTML）来定义路由树。
 
 ## 基本用法
 
@@ -54,7 +54,7 @@ interface RouterEventDetail {
 
 ### RouterCustomEvent
 
-虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更严格的类型检查。
+虽然不是必需的，但此接口可以替代 `CustomEvent` 接口，用于与此组件发出的 Ionic 事件提供更强的类型支持。
 
 ```typescript
 interface RouterCustomEvent extends CustomEvent {

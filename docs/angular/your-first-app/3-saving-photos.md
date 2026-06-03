@@ -7,28 +7,28 @@ sidebar_label: 保存照片
   <title>使用 Angular 将照片保存到文件系统 | Ionic Capacitor Camera</title>
   <meta
     name="description"
-    content="我们已经能够拍摄多张照片并在照片画廊中显示它们。学习如何使用 Ionic Capacitor Filesystem API 将这些照片保存到文件系统中。"
+    content="我们现在可以拍摄多张照片并在相册中显示。了解如何使用 Ionic Capacitor Filesystem API 将这些照片保存到文件系统。"
   />
 </head>
 
-现在我们已经能够在应用的第二个标签页上拍摄多张照片并在照片画廊中显示它们。然而，这些照片目前并没有被永久存储，所以当应用关闭时，它们将会被删除。
+我们现在能够拍摄多张照片并在应用的第二个标签页的相册中显示。但是，这些照片目前并未永久存储，因此当应用关闭时，它们将被删除。
 
-## 文件系统 API
+## Filesystem API
 
-幸运的是，将它们保存到文件系统只需要几个步骤。首先，在 `PhotoService` 类中创建一个新的方法 `savePicture()`。我们传入 `photo` 对象，它代表新拍摄的设备照片：
+幸运的是，将它们保存到文件系统只需几个步骤。首先在 `PhotoService` 类中创建一个新的类方法 `savePicture()`。我们传入 `photo` 对象，它代表新拍摄的设备照片：
 
 ```ts
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
-// 变更：添加导入
+// CHANGE: Add import
 import type { Photo } from '@capacitor/camera';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PhotoService {
-  // ...现有代码...
+  // ...existing code...
 
-  // 变更：添加 `savePicture()` 方法
+  // CHANGE: Add the `savePicture()` method
   private async savePicture(photo: Photo) {
     return {
       filepath: 'soon...',
@@ -55,20 +55,20 @@ import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera
 export class PhotoService {
   public photos: UserPhoto[] = [];
 
-  // 变更：更新 `addNewToGallery()` 方法
+  // CHANGE: Update the `addNewToGallery()` method
   public async addNewToGallery() {
-    // 拍摄照片
+    // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
     });
 
-    // 变更：添加 `savedImageFile`
-    // 保存图片并添加到照片集合
+    // CHANGE: Add `savedImageFile`
+    // Save the picture and add it to photo collection
     const savedImageFile = await this.savePicture(capturedPhoto);
 
-    // 变更：更新 unshift 数组方法的参数
+    // CHANGE: Update argument to unshift array method
     this.photos.unshift(savedImageFile);
   }
 
@@ -86,33 +86,33 @@ export interface UserPhoto {
 }
 ```
 
-我们将使用 Capacitor 的[文件系统 API](../../native/filesystem.md)来保存照片。首先，将照片转换为 base64 格式。
+我们将使用 Capacitor [Filesystem API](../../native/filesystem.md) 来保存照片。首先，将照片转换为 base64 格式。
 
-然后，将数据传递给文件系统的 `writeFile` 方法。回想一下，我们通过将图像的源路径 (`src`) 设置为 `webviewPath` 属性来显示照片。因此，设置 `webviewPath` 并返回新的 `Photo` 对象。
+然后，将数据传递给 Filesystem 的 `writeFile` 方法。回想一下，我们通过将图像的源路径 (`src`) 设置为 `webviewPath` 属性来显示照片。因此，设置 `webviewPath` 并返回新的 `Photo` 对象。
 
-现在，创建一个新的辅助方法 `convertBlobToBase64()`，以实现 Web 端运行所需的逻辑。
+现在，创建一个新的辅助方法 `convertBlobToBase64()`，以实现 Web 上运行所需的逻辑。
 
 ```ts
 import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
-// 变更：添加导入
+// CHANGE: Add import
 import { Filesystem, Directory } from '@capacitor/filesystem';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PhotoService {
-  // ...现有代码...
+  // ...existing code...
 
-  // 变更：更新 `savePicture()` 方法
+  // CHANGE: Update the `savePicture()` method
   private async savePicture(photo: Photo) {
-    // 获取照片，读取为 blob，然后转换为 base64 格式
+    // Fetch the photo, read as a blob, then convert to base64 format
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
     const base64Data = (await this.convertBlobToBase64(blob)) as string;
 
-    // 将文件写入数据目录
+    // Write the file to the data directory
     const fileName = Date.now() + '.jpeg';
     const savedFile = await Filesystem.writeFile({
       path: fileName,
@@ -120,14 +120,15 @@ export class PhotoService {
       directory: Directory.Data,
     });
 
-    // 使用 webPath 显示新图像，而不是 base64，因为它已经加载到内存中
+    // Use webPath to display the new image instead of base64 since it's
+    // already loaded into memory
     return {
       filepath: fileName,
       webviewPath: photo.webPath,
     };
   }
 
-  // 变更：添加 `convertBlobToBase64` 方法
+  // CHANGE: Add the `convertBlobToBase64` method
   private convertBlobToBase64(blob: Blob) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -146,7 +147,7 @@ export interface UserPhoto {
 }
 ```
 
-`photo.service.ts` 现在应该看起来像这样：
+`photo.service.ts` 现在应该如下所示：
 
 ```ts
 import { Injectable } from '@angular/core';
@@ -161,26 +162,26 @@ export class PhotoService {
   public photos: UserPhoto[] = [];
 
   public async addNewToGallery() {
-    // 拍摄照片
+    // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
     });
 
-    // 保存图片并添加到照片集合
+    // Save the picture and add it to photo collection
     const savedImageFile = await this.savePicture(capturedPhoto);
 
     this.photos.unshift(savedImageFile);
   }
 
   private async savePicture(photo: Photo) {
-    // 获取照片，读取为 blob，然后转换为 base64 格式
+    // Fetch the photo, read as a blob, then convert to base64 format
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
     const base64Data = (await this.convertBlobToBase64(blob)) as string;
 
-    // 将文件写入数据目录
+    // Write the file to the data directory
     const fileName = Date.now() + '.jpeg';
     const savedFile = await Filesystem.writeFile({
       path: fileName,
@@ -188,7 +189,8 @@ export class PhotoService {
       directory: Directory.Data,
     });
 
-    // 使用 webPath 显示新图像，而不是 base64，因为它已经加载到内存中
+    // Use webPath to display the new image instead of base64 since it's
+    // already loaded into memory
     return {
       filepath: fileName,
       webviewPath: photo.webPath,
@@ -213,6 +215,6 @@ export interface UserPhoto {
 }
 ```
 
-在 Web 上获取相机照片的 base64 格式似乎比在移动端稍微复杂一些。实际上，我们只是使用内置的 Web API：[fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 作为一种简洁的方式将文件读取为 blob 格式，然后使用 FileReader 的 [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) 将照片 blob 转换为 base64。
+在 Web 上将相机照片获取为 base64 格式似乎比在移动端要复杂一些。实际上，我们只是使用了内置的 Web API：[fetch()](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) 作为一种将文件读取为 blob 格式的简洁方法，然后使用 FileReader 的 [readAsDataURL()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL) 将照片 blob 转换为 base64。
 
-搞定！现在每次拍摄新照片时，它都会自动保存到文件系统中。接下来，我们将加载并显示保存的图像。
+就是这样！每次拍摄新照片时，它现在都会自动保存到文件系统。接下来，我们将加载并显示已保存的图像。

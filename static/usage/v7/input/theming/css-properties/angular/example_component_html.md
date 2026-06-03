@@ -1,9 +1,9 @@
 ```html
 <ion-input
   aria-label="Custom input"
-  placeholder="自定义输入"
+  placeholder="Custom input"
   class="custom"
-  helperText="辅助文本"
+  helperText="Helper text"
   [counter]="true"
   [maxlength]="20"
 ></ion-input>

@@ -2,11 +2,11 @@
 <template>
   <ion-header ref="header">
     <ion-toolbar>
-      <ion-title>应用</ion-title>
+      <ion-title>App</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-button id="open-modal" expand="block">打开底部模态框</ion-button>
+    <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button>
 
     <ion-modal
       ref="modal"
@@ -18,7 +18,7 @@
     >
       <ion-content class="ion-padding">
         <div class="ion-margin-top">
-          <ion-label>拖动手柄以调整顶栏的可见性。</ion-label>
+          <ion-label>Drag the handle to adjust the header's visibility.</ion-label>
         </div>
       </ion-content>
     </ion-modal>
@@ -33,7 +33,7 @@ import type { ModalDragEventDetail } from '@ionic/vue';
 const header = ref<InstanceType<typeof IonHeader>>();
 
 const onDragStart = () => {
-  console.log('开始拖动');
+  console.log('Drag started');
 
   const headerEl = header.value!.$el;
 
@@ -41,7 +41,7 @@ const onDragStart = () => {
 };
 
 const onDragEnd = (event: CustomEvent<ModalDragEventDetail>) => {
-  console.log('拖动结束');
+  console.log('Drag ended');
 
   const headerEl = header.value!.$el;
 

@@ -34,7 +34,7 @@ const fruits: Item[] = [
 ];
 
 function Example() {
-  const [selectedFruitsText, setSelectedFruitsText] = useState<string>('0 项');
+  const [selectedFruitsText, setSelectedFruitsText] = useState<string>('0 Items');
   const [selectedFruits, setSelectedFruits] = useState<string[]>([]);
 
   const modal = useRef<HTMLIonModalElement>(null);
@@ -45,7 +45,7 @@ function Example() {
       return fruit.text;
     }
 
-    return `${data.length} 项`;
+    return `${data.length} items`;
   };
 
   const fruitSelectionChanged = (fruits: string[]) => {
@@ -59,7 +59,7 @@ function Example() {
       <IonContent color="light">
         <IonList inset={true}>
           <IonItem button={true} detail={false} id="select-fruits">
-            <IonLabel>喜爱的水果</IonLabel>
+            <IonLabel>Favorite Fruits</IonLabel>
             <div slot="end" id="selected-fruits">
               {selectedFruitsText}
             </div>
@@ -69,7 +69,7 @@ function Example() {
 
       <IonModal trigger="select-fruits" ref={modal}>
         <AppTypeahead
-          title="喜爱的水果"
+          title="Favorite Fruits"
           items={fruits}
           selectedItems={selectedFruits}
           onSelectionCancel={() => modal.current?.dismiss()}

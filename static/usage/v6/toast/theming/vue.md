@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="presentToast">点击我</ion-button>
+  <ion-button @click="presentToast">Click Me</ion-button>
 </template>
 
 <script lang="ts">
@@ -11,12 +11,12 @@
     methods: {
       async presentToast() {
         const toast = await toastController.create({
-          message: '你好，风格化的世界！',
+          message: 'Hello Styled World!',
           duration: 3000,
           cssClass: 'custom-toast',
           buttons: [
             {
-              text: '关闭',
+              text: 'Dismiss',
               role: 'cancel',
             },
           ],

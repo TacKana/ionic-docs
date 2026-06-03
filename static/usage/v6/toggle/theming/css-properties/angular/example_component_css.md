@@ -19,7 +19,7 @@ ion-toggle {
   --handle-border-radius: 4px;
   --handle-box-shadow: none;
 
-  /* iOS手柄需要溢出轨道高度时必需 */
+  /* Required for iOS handle to overflow the height of the track */
   overflow: visible;
   contain: none;
 }

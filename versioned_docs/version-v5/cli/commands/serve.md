@@ -4,23 +4,23 @@ sidebar_label: 'serve'
 
 # ionic serve
 
-启动本地开发服务器用于应用开发与测试
+Start a local dev server for app dev/testing
 
 ```shell
 ionic serve [options]
 ```
 
-轻松启动一个将在浏览器中打开的开发服务器。它会监视源文件中的更改，并自动重新加载更新后的构建。
+Easily spin up a development server which launches in your browser. It watches for changes in your source files and automatically reloads with the updated build.
 
-默认情况下，`ionic serve` 在 `localhost` 上启动开发服务器。若要向局域网提供服务，请指定 `--external` 选项，该选项将使用所有网络接口，并打印服务你的应用的外部地址。
+By default, `ionic serve` boots up a development server on `localhost`. To serve to your LAN, specify the `--external` option, which will use all network interfaces and print the external address(es) on which your app is being served.
 
-尝试使用 `--lab` 选项可同时查看多个平台。
+Try the `--lab` option to see multiple platforms at once.
 
-`ionic serve` 使用 Angular CLI。使用 `ng serve --help` 可列出为应用提供服务的所有 Angular CLI 选项。请参阅 `ng serve` [文档](https://angular.io/cli/serve) 以获取解释。下面未列出的选项被视为高级选项，可以在 Ionic CLI 参数后使用 `--` 分隔符传递给 Angular CLI。请参阅示例。
+`ionic serve` uses the Angular CLI. Use `ng serve --help` to list all Angular CLI options for serving your app. See the `ng serve` [docs](https://angular.io/cli/serve) for explanations. Options not listed below are considered advanced and can be passed to the Angular CLI using the `--` separator after the Ionic CLI arguments. See the examples.
 
-开发服务器可以通过 `--ssl` 选项使用 HTTPS **(实验性功能)**。HTTPS 存在一些已知问题。请参阅 issue [#3305](https://github.com/ionic-team/ionic-cli/issues/3305)。
+The dev server can use HTTPS via the `--ssl` option **(experimental)**. There are several known issues with HTTPS. See issue [#3305](https://github.com/ionic-team/ionic-cli/issues/3305).
 
-## 示例
+## Examples
 
 ```shell
 $ ionic serve
@@ -29,7 +29,7 @@ $ ionic serve --lab
 $ ionic serve -- --proxy-config proxy.conf.json
 ```
 
-## 选项
+## Options
 
 <table className="reference-table">
   <thead>
@@ -45,9 +45,9 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>为开发服务器使用 HTTPS</p>
+        <p>Use HTTPS for the dev server</p>
       </td>
     </tr>
   </tbody>
@@ -64,10 +64,10 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          使用 <code>production</code> 配置的标志
+          Flag to use the <code>production</code> configuration
         </p>
       </td>
     </tr>
@@ -85,10 +85,10 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          在所有网络接口上托管开发服务器（即 <code>--host=0.0.0.0</code>）
+          Host dev server on all network interfaces (i.e. <code>--host=0.0.0.0</code>)
         </p>
       </td>
     </tr>
@@ -106,9 +106,9 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>不启动开发服务器——仅提供文件服务</p>
+        <p>Do not spin up dev server--just serve files</p>
       </td>
     </tr>
   </tbody>
@@ -125,9 +125,9 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>不打开浏览器窗口</p>
+        <p>Do not open a browser window</p>
       </td>
     </tr>
   </tbody>
@@ -144,13 +144,13 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>在浏览器中同时测试你的应用在多个平台类型上的效果</p>
+        <p>Test your apps on multiple platform types in the browser</p>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-l</code>
       </td>
@@ -158,7 +158,7 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </tbody>
 </table>
 
-## 高级选项
+## Advanced Options
 
 <table className="reference-table">
   <thead>
@@ -174,10 +174,10 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>将应用控制台日志打印到终端</p>
+          <p>Print app console logs to the terminal</p>
         </div>
       </td>
     </tr>
@@ -196,10 +196,10 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>为控制台日志服务器使用特定端口</p>
+          <p>Use specific port for console logs server</p>
         </div>
       </td>
     </tr>
@@ -218,15 +218,15 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>指定要使用的配置。</p>
+          <p>Specify the configuration to use.</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-c</code>
       </td>
@@ -245,10 +245,10 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>输出源码映射</p>
+          <p>Output sourcemaps</p>
         </div>
       </td>
     </tr>
@@ -267,15 +267,15 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>为开发服务器使用特定主机</p>
+          <p>Use specific host for the dev server</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>localhost</td>
     </tr>
   </tbody>
@@ -293,21 +293,21 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>为开发服务器使用特定端口</p>
+          <p>Use specific port for the dev server</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-p</code>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>8100</td>
     </tr>
   </tbody>
@@ -325,10 +325,10 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>用于浏览器或 Web 视图的主机</p>
+          <p>The host used for the browser or web view</p>
         </div>
       </td>
     </tr>
@@ -347,15 +347,15 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>为 Ionic Lab 服务器使用特定主机</p>
+          <p>Use specific host for Ionic Lab server</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>localhost</td>
     </tr>
   </tbody>
@@ -373,15 +373,15 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>为 Ionic Lab 服务器使用特定端口</p>
+          <p>Use specific port for Ionic Lab server</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>8200</td>
     </tr>
   </tbody>
@@ -399,17 +399,17 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
           <p>
-            指定要使用的浏览器 (<code>safari</code>, <code>firefox</code>, <code>google chrome</code>)
+            Specifies the browser to use (<code>safari</code>, <code>firefox</code>, <code>google chrome</code>)
           </p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-w</code>
       </td>
@@ -429,17 +429,17 @@ $ ionic serve -- --proxy-config proxy.conf.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
           <p>
-            指定要打开的路径 (<code>/#/tab/dash</code>)
+            Specifies a path to open to (<code>/#/tab/dash</code>)
           </p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-o</code>
       </td>

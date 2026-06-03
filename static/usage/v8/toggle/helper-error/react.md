@@ -22,8 +22,8 @@ function Example() {
         className={`${isValid ? 'ion-valid' : ''} ${isValid === false ? 'ion-invalid' : ''} ${
           isTouched ? 'ion-touched' : ''
         }`}
-        helperText="启用以连接到可用网络"
-        errorText="必须启用才能访问互联网"
+        helperText="Enable to connect to available networks"
+        errorText="Must be enabled to access the internet"
         justify="space-between"
         checked={isChecked}
         onIonChange={(event) => validateToggle(event)}

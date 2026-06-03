@@ -1,6 +1,6 @@
 ---
-title: 'ion-avatar: 圆形应用头像图标组件'
-description: 'Ion-avatars 是包裹图像或图标的圆形应用组件，可以独立使用或嵌入任何元素中，用于表示人物或对象。'
+title: 'ion-avatar: Circular Application Avatar Icon Component'
+description: 'Ion-avatars are circular application components that wrap an image or icon. They can represent a person or an object, by themselves or inside of any element.'
 sidebar_label: 'ion-avatar'
 demoUrl: '/docs/demos/api/avatar/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/avatar/index.html'
@@ -18,11 +18,11 @@ import Slots from '@ionic-internal/component-api/v5/avatar/slots.md';
 
 # ion-avatar
 
-头像组件是通常包裹图像或图标的圆形组件，可用于表示人物或对象。
+Avatars are circular components that usually wrap an image or icon. They can be used to represent a person or an object.
 
-头像组件可以独立使用，也可以嵌入任何元素内部。如果放置在 `ion-chip` 或 `ion-item` 内部，头像会自动调整大小以适应父组件。要将头像定位在项目的左侧或右侧，请分别将 slot 属性设置为 `start` 或 `end`。
+Avatars can be used by themselves or inside of any element. If placed inside of an `ion-chip` or `ion-item`, the avatar will resize to fit the parent component. To position an avatar on the left or right side of an item, set the slot to `start` or `end`, respectively.
 
-## 使用方法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -178,26 +178,26 @@ export class AvatarExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS 阴影部件
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

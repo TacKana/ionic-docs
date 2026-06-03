@@ -1,5 +1,5 @@
 ---
-title: Colors
+title: 颜色
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
@@ -9,19 +9,19 @@ import NewColorGenerator from '@components/page/theming/NewColorGenerator';
 import CodeColor from '@components/page/theming/CodeColor';
 
 <head>
-  <title>Ionic CSS 颜色组件：自定义应用默认配色方案</title>
+  <title>Ionic CSS 颜色组件：样式化或更改默认应用颜色</title>
   <meta
     name="description"
-    content="Ionic 内置九种默认颜色，可用于调整多种组件的配色。学习如何使用 Ionic CSS 颜色属性来设计你的应用样式。"
+    content="Ionic 有九种默认颜色，可用于更改许多组件的颜色。了解如何利用 Ionic CSS 颜色属性来样式化您的应用。"
   />
 </head>
 
-Ionic 提供了九种默认颜色，可用于调整众多组件的配色。每种颜色实际上是一组包含多个属性的集合，其中包括 `shade`（暗调）和 `tint`（亮调），这些属性在 Ionic 组件中被广泛使用。
+Ionic 有九种默认颜色，可用于更改许多组件的颜色。每种颜色实际上是多个属性的集合，包括在整个 Ionic 中使用的 `shade`（暗色调）和 `tint`（亮色调）。
 
-通过 `color` 属性，可以将颜色应用于 Ionic 组件，以改变其默认配色。观察下面的按钮，你会发现文本和背景颜色会根据所设置的 `color` 值而变化。当按钮未设置 `color` 属性时，默认使用 `primary` 颜色。
+可以使用 `color` 属性将颜色应用到 Ionic 组件，以更改默认颜色。注意下方按钮中，文本和背景会根据设置的 `color` 而变化。当按钮上没有设置 `color` 时，默认使用 `primary` 颜色。
 
 ```html
-<ion-button>Default</ion-button>
+<ion-button>默认</ion-button>
 <ion-button color="primary">Primary</ion-button>
 <ion-button color="secondary">Secondary</ion-button>
 <ion-button color="tertiary">Tertiary</ion-button>
@@ -33,17 +33,15 @@ Ionic 提供了九种默认颜色，可用于调整众多组件的配色。每�
 <ion-button color="dark">Dark</ion-button>
 ```
 
-<LegacyAnchor id="layered-colors" />
+## 分层颜色
 
-## 分层颜色体系
-
-每种颜色包含以下属性：`base`（基色）、`contrast`（对比色）、`shade`（暗调）和 `tint`（亮调）。`base` 和 `contrast` 颜色还需要一个 `rgb` 属性，该属性表示相同的颜色，只是以 <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb 格式</a>呈现。关于为何需要 `rgb` 属性的解释，请参阅 [透明度问题](advanced.md#the-alpha-problem)。从下面的下拉菜单中选择，可以查看 Ionic 提供的所有默认颜色及其变体。
+每种颜色包含以下属性：`base`（基础色）、`contrast`（对比色）、`shade`（暗色调）和 `tint`（亮色调）。`base` 和 `contrast` 颜色还需要一个 `rgb` 属性，它是相同的颜色，只是使用 <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/RGB" target="_blank">rgb 格式</a>。请参阅 [Alpha 问题](advanced.md#alpha-问题) 了解为什么还需要 `rgb` 属性。从下面的下拉列表中选择，查看 Ionic 提供的所有默认颜色及其变体。
 
 <LayeredColorsSelect />
 
 ## 修改颜色
 
-要修改某个颜色的默认值，需要设置该颜色所有列出的变体属性。例如，要将 secondary 颜色更改为 <CodeColor color="#006600">#006600</CodeColor>，需设置以下 CSS 属性：
+要更改颜色的默认值，应设置该颜色的所有列出的变体。例如，要将次要颜色更改为 <CodeColor color="#006600">#006600</CodeColor>，设置以下 CSS 属性：
 
 ```css
 :root {
@@ -56,19 +54,19 @@ Ionic 提供了九种默认颜色，可用于调整众多组件的配色。每�
 }
 ```
 
-当 `secondary` 颜色应用于按钮时，不仅会使用基色 <CodeColor color="#006600">#006600</CodeColor>，还会使用对比色 <CodeColor color="#ffffff">#ffffff</CodeColor> 作为文本颜色，同时使用暗调 <CodeColor color="#005a00">#005a00</CodeColor> 和亮调 <CodeColor color="#1a751a">#1a751a</CodeColor> 作为按钮不同状态的颜色。
+当 `secondary` 应用于按钮时，不仅使用基础色 <CodeColor color="#006600">#006600</CodeColor>，还使用对比色 <CodeColor color="#ffffff">#ffffff</CodeColor> 作为文本颜色，以及暗色调 <CodeColor color="#005a00">#005a00</CodeColor> 和亮色调 <CodeColor color="#1a751a">#1a751a</CodeColor> 用于按钮的不同状态。
 
 :::note
-不确定如何从基色计算出各种变体颜色？试试我们的 [颜色生成器](color-generator.md)，它可以计算所有变体并提供可直接复制/粘贴到应用中的代码！
+不知道如何从基础色获取变体颜色？试试我们的 [Color Generator](color-generator.md)，它可以计算所有变体并提供可复制/粘贴到应用中的代码！
 :::
 
-有关 CSS 变量的更多信息，请参阅 [CSS 变量文档](css-variables.md)。
+有关 CSS 变量的更多信息，请参阅 [CSS Variables 文档](css-variables.md)。
 
 ## 添加颜色
 
-可以通过在 Ionic 组件上设置 `color` 属性，或使用 CSS 样式的方式，为整个应用添加新的颜色。继续阅读了解如何手动添加新颜色，或使用下面的 [新颜色创建器](#new-color-creator) 快速生成新颜色的代码，以便复制粘贴到你的应用中。
+可以通过在 Ionic 组件上设置 `color` 属性或使用 CSS 设置样式来添加颜色，以便在整个应用中使用。继续阅读了解如何手动添加新颜色，或使用 [New Color Creator](#新颜色创建器) 快速生成新颜色的代码以复制粘贴到应用中。
 
-要添加新颜色，首先需要在根元素上为该颜色的所有变体定义 CSS 变量。例如，要添加一个名为 `favorite` 的新颜色，我们可以定义以下变量：
+要添加新颜色，首先在根级别定义该颜色所有变体的 CSS 变量。例如，要添加一个名为 `favorite` 的新颜色，我们可以定义以下变量：
 
 ```css
 :root {
@@ -81,7 +79,7 @@ Ionic 提供了九种默认颜色，可用于调整众多组件的配色。每�
 }
 ```
 
-然后，创建一个使用这些 CSS 变量的新 CSS 类。该类 **必须** 遵循 `.ion-color-{COLOR}` 的格式，其中 `{COLOR}` 是要添加的颜色名称：
+然后，创建一个使用这些 CSS 变量的新类。类**必须**使用 `.ion-color-{COLOR}` 格式编写，其中 `{COLOR}` 是要添加的颜色名称：
 
 ```css
 .ion-color-favorite {
@@ -94,13 +92,13 @@ Ionic 提供了九种默认颜色，可用于调整众多组件的配色。每�
 }
 ```
 
-添加该类后，该颜色就可以用于任何支持 `color` 属性的 Ionic 组件。以下是在 Ionic 按钮上使用 `favorite` 颜色的示例。
+添加类后，该颜色可用于任何支持 `color` 属性的 Ionic 组件。以下是在 Ionic 按钮上使用 `favorite` 颜色的示例：
 
 ```html
-<ion-button color="favorite">Favorite</ion-button>
+<ion-button color="favorite">收藏</ion-button>
 ```
 
-在根元素上定义的 CSS 变量也可以通过 CSS 用于任何元素的样式设置：
+在根级别定义的 CSS 变量也可用于使用 CSS 设置任何元素的样式：
 
 ```css
 div {
@@ -109,12 +107,10 @@ div {
 }
 ```
 
-有关设置和使用 CSS 变量的更多信息，请参阅 [CSS 变量文档](css-variables.md)。
-
-<LegacyAnchor id="new-color-creator" />
+有关设置和使用 CSS 变量的更多信息，请参阅 [CSS Variables 文档](css-variables.md)。
 
 ## 新颜色创建器
 
-通过修改下面的名称和值来创建新颜色，然后将生成的代码复制并粘贴到你的项目中。
+在下面通过更改名称和值来创建新颜色，然后将代码复制并粘贴到您的项目中。
 
 <NewColorGenerator />

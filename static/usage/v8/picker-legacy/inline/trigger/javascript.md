@@ -1,5 +1,5 @@
 ```html
-<ion-button id="open-picker">打开</ion-button>
+<ion-button id="open-picker">Open</ion-button>
 <ion-picker-legacy trigger="open-picker"></ion-picker-legacy>
 
 <script>
@@ -31,13 +31,13 @@
 
   picker.buttons = [
     {
-      text: '取消',
+      text: 'Cancel',
       role: 'cancel',
     },
     {
-      text: '确认',
+      text: 'Confirm',
       handler: (value) => {
-        console.log(`您选择了: ${value.languages.value}`);
+        console.log(`You selected: ${value.languages.value}`);
       },
     },
   ];

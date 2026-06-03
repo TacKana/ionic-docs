@@ -7,7 +7,7 @@ function Example() {
 
   const presentToast = (position: 'top' | 'middle' | 'bottom') => {
     present({
-      message: '你好世界！',
+      message: 'Hello World!',
       duration: 1500,
       position: position,
     });
@@ -16,13 +16,13 @@ function Example() {
   return (
     <>
       <IonButton expand="block" onClick={() => presentToast('top')}>
-        在顶部显示提示
+        Present Toast At the Top
       </IonButton>
       <IonButton expand="block" onClick={() => presentToast('middle')}>
-        在中间显示提示
+        Present Toast At the Middle
       </IonButton>
       <IonButton expand="block" onClick={() => presentToast('bottom')}>
-        在底部显示提示
+        Present Toast At the Bottom
       </IonButton>
     </>
   );

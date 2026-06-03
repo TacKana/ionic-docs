@@ -1,8 +1,8 @@
 ```html
 <template>
-  <ion-button id="trigger-button">点击我</ion-button>
+  <ion-button id="trigger-button">Click Me</ion-button>
   <ion-popover trigger="trigger-button">
-    <ion-content>你好，多彩的世界！</ion-content>
+    <ion-content>Hello Styled World!</ion-content>
   </ion-popover>
 </template>
 

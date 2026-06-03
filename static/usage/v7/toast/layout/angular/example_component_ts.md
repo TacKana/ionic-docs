@@ -11,7 +11,7 @@ import { IonButton, IonToast } from '@ionic/angular/standalone';
 export class ExampleComponent {
   toastButtons = [
     {
-      text: '长文本操作按钮',
+      text: 'Action With Long Text',
     },
   ];
 }

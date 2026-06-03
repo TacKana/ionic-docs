@@ -13,9 +13,9 @@ import { home, flash, camera, film } from 'ionicons/icons';
 export class ExampleComponent {
   constructor() {
     /**
-     * 您希望在应用程序中使用的任何图标
-     * 都可以在 app.component.ts 中注册，
-     * 然后在整个应用程序中通过名称引用。
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
      */
     addIcons({ home, flash, camera, film });
   }

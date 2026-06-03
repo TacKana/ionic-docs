@@ -14,50 +14,50 @@ import Slots from '@ionic-internal/component-api/v5/list-header/slots.md';
 
 # ion-list-header
 
-ListHeader 是列表的头部组件。
-与 ItemDivider 不同，ListHeader 的样式设计是为了在列表项中更加突出。
+ListHeader a header component for a list.
+Unlike ItemDivider, ListHeaders are styled to be stand-out from the rest of the list items.
 
-## 使用方法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- 默认列表头部 -->
+<!-- Default List Header -->
 <ion-list-header>
-  <ion-label>列表头部</ion-label>
+  <ion-label>List Header</ion-label>
 </ion-list-header>
 
-<!-- 带按钮的列表头部 -->
+<!-- List Header with Button -->
 <ion-list-header>
-  <ion-label>本周新内容</ion-label>
-  <ion-button>查看全部</ion-button>
+  <ion-label>New This Week</ion-label>
+  <ion-button>See All</ion-button>
 </ion-list-header>
 
-<!-- 带轮廓按钮的列表头部 -->
+<!-- List Header with Outline Button -->
 <ion-list-header>
-  <ion-label>本周新内容</ion-label>
-  <ion-button fill="outline">查看全部</ion-button>
+  <ion-label>New This Week</ion-label>
+  <ion-button fill="outline">See All</ion-button>
 </ion-list-header>
 
-<!-- 全线条的列表头部 -->
+<!-- List Header Full Lines -->
 <ion-list-header lines="full">
-  <ion-label>本周新内容</ion-label>
-  <ion-button>查看全部</ion-button>
+  <ion-label>New This Week</ion-label>
+  <ion-button>See All</ion-button>
 </ion-list-header>
 
-<!-- 内嵌线条的列表头部 -->
+<!-- List Header Inset Lines -->
 <ion-list-header lines="inset">
-  <ion-label>本周新内容</ion-label>
-  <ion-button>查看全部</ion-button>
+  <ion-label>New This Week</ion-label>
+  <ion-button>See All</ion-button>
 </ion-list-header>
 
-<!-- 列表中的列表头部 -->
+<!-- List Headers in Lists -->
 <ion-list>
   <ion-list-header lines="inset">
-    <ion-label>最近</ion-label>
-    <ion-button>清除</ion-button>
+    <ion-label>Recent</ion-label>
+    <ion-button>Clear</ion-button>
   </ion-list-header>
   <ion-item lines="none">
     <ion-label color="primary">
@@ -68,7 +68,7 @@ ListHeader 是列表的头部组件。
 
 <ion-list>
   <ion-list-header lines="inset">
-    <ion-label>热门趋势</ion-label>
+    <ion-label>Trending</ion-label>
   </ion-list-header>
   <ion-item>
     <ion-label color="primary">
@@ -93,40 +93,40 @@ ListHeader 是列表的头部组件。
 <TabItem value="javascript">
 
 ```html
-<!-- 默认列表头部 -->
+<!-- Default List Header -->
 <ion-list-header>
-  <ion-label>列表头部</ion-label>
+  <ion-label>List Header</ion-label>
 </ion-list-header>
 
-<!-- 带按钮的列表头部 -->
+<!-- List Header with Button -->
 <ion-list-header>
-  <ion-label>本周新内容</ion-label>
-  <ion-button>查看全部</ion-button>
+  <ion-label>New This Week</ion-label>
+  <ion-button>See All</ion-button>
 </ion-list-header>
 
-<!-- 带轮廓按钮的列表头部 -->
+<!-- List Header with Outline Button -->
 <ion-list-header>
-  <ion-label>本周新内容</ion-label>
-  <ion-button fill="outline">查看全部</ion-button>
+  <ion-label>New This Week</ion-label>
+  <ion-button fill="outline">See All</ion-button>
 </ion-list-header>
 
-<!-- 全线条的列表头部 -->
+<!-- List Header Full Lines -->
 <ion-list-header lines="full">
-  <ion-label>本周新内容</ion-label>
-  <ion-button>查看全部</ion-button>
+  <ion-label>New This Week</ion-label>
+  <ion-button>See All</ion-button>
 </ion-list-header>
 
-<!-- 内嵌线条的列表头部 -->
+<!-- List Header Inset Lines -->
 <ion-list-header lines="inset">
-  <ion-label>本周新内容</ion-label>
-  <ion-button>查看全部</ion-button>
+  <ion-label>New This Week</ion-label>
+  <ion-button>See All</ion-button>
 </ion-list-header>
 
-<!-- 列表中的列表头部 -->
+<!-- List Headers in Lists -->
 <ion-list>
   <ion-list-header lines="inset">
-    <ion-label>最近</ion-label>
-    <ion-button>清除</ion-button>
+    <ion-label>Recent</ion-label>
+    <ion-button>Clear</ion-button>
   </ion-list-header>
   <ion-item lines="none">
     <ion-label color="primary">
@@ -137,7 +137,7 @@ ListHeader 是列表的头部组件。
 
 <ion-list>
   <ion-list-header lines="inset">
-    <ion-label>热门趋势</ion-label>
+    <ion-label>Trending</ion-label>
   </ion-list-header>
   <ion-item>
     <ion-label color="primary">
@@ -167,40 +167,40 @@ import { IonButton, IonContent, IonItem, IonLabel, IonList, IonListHeader } from
 
 export const ListHeaderExample: React.FC = () => (
   <IonContent>
-    {/*-- 默认列表头部 --*/}
+    {/*-- Default List Header --*/}
     <IonListHeader>
-      <IonLabel>列表头部</IonLabel>
+      <IonLabel>List Header</IonLabel>
     </IonListHeader>
 
-    {/*-- 带按钮的列表头部 --*/}
+    {/*-- List Header with Button --*/}
     <IonListHeader>
-      <IonLabel>本周新内容</IonLabel>
-      <IonButton>查看全部</IonButton>
+      <IonLabel>New This Week</IonLabel>
+      <IonButton>See All</IonButton>
     </IonListHeader>
 
-    {/*-- 带轮廓按钮的列表头部 --*/}
+    {/*-- List Header with Outline Button --*/}
     <IonListHeader>
-      <IonLabel>本周新内容</IonLabel>
-      <IonButton fill="outline">查看全部</IonButton>
+      <IonLabel>New This Week</IonLabel>
+      <IonButton fill="outline">See All</IonButton>
     </IonListHeader>
 
-    {/*-- 全线条的列表头部 --*/}
+    {/*-- List Header Full Lines --*/}
     <IonListHeader lines="full">
-      <IonLabel>本周新内容</IonLabel>
-      <IonButton>查看全部</IonButton>
+      <IonLabel>New This Week</IonLabel>
+      <IonButton>See All</IonButton>
     </IonListHeader>
 
-    {/*-- 内嵌线条的列表头部 --*/}
+    {/*-- List Header Inset Lines --*/}
     <IonListHeader lines="inset">
-      <IonLabel>本周新内容</IonLabel>
-      <IonButton>查看全部</IonButton>
+      <IonLabel>New This Week</IonLabel>
+      <IonButton>See All</IonButton>
     </IonListHeader>
 
-    {/*-- 列表中的列表头部 --*/}
+    {/*-- List Headers in Lists --*/}
     <IonList>
       <IonListHeader lines="inset">
-        <IonLabel>最近</IonLabel>
-        <IonButton>清除</IonButton>
+        <IonLabel>Recent</IonLabel>
+        <IonButton>Clear</IonButton>
       </IonListHeader>
       <IonItem lines="none">
         <IonLabel color="primary">
@@ -211,7 +211,7 @@ export const ListHeaderExample: React.FC = () => (
 
     <IonList>
       <IonListHeader lines="inset">
-        <IonLabel>热门趋势</IonLabel>
+        <IonLabel>Trending</IonLabel>
       </IonListHeader>
       <IonItem>
         <IonLabel color="primary">
@@ -247,40 +247,40 @@ import { Component, h } from '@stencil/core';
 export class ListHeaderExample {
   render() {
     return [
-      // 默认列表头部
+      // Default List Header
       <ion-list-header>
-        <ion-label>列表头部</ion-label>
+        <ion-label>List Header</ion-label>
       </ion-list-header>,
 
-      // 带按钮的列表头部
+      // List Header with Button
       <ion-list-header>
-        <ion-label>本周新内容</ion-label>
-        <ion-button>查看全部</ion-button>
+        <ion-label>New This Week</ion-label>
+        <ion-button>See All</ion-button>
       </ion-list-header>,
 
-      // 带轮廓按钮的列表头部
+      // List Header with Outline Button
       <ion-list-header>
-        <ion-label>本周新内容</ion-label>
-        <ion-button fill="outline">查看全部</ion-button>
+        <ion-label>New This Week</ion-label>
+        <ion-button fill="outline">See All</ion-button>
       </ion-list-header>,
 
-      // 全线条的列表头部
+      // List Header Full Lines
       <ion-list-header lines="full">
-        <ion-label>本周新内容</ion-label>
-        <ion-button>查看全部</ion-button>
+        <ion-label>New This Week</ion-label>
+        <ion-button>See All</ion-button>
       </ion-list-header>,
 
-      // 内嵌线条的列表头部
+      // List Header Inset Lines
       <ion-list-header lines="inset">
-        <ion-label>本周新内容</ion-label>
-        <ion-button>查看全部</ion-button>
+        <ion-label>New This Week</ion-label>
+        <ion-button>See All</ion-button>
       </ion-list-header>,
 
-      // 列表中的列表头部
+      // List Headers in Lists
       <ion-list>
         <ion-list-header lines="inset">
-          <ion-label>最近</ion-label>
-          <ion-button>清除</ion-button>
+          <ion-label>Recent</ion-label>
+          <ion-button>Clear</ion-button>
         </ion-list-header>
         <ion-item lines="none">
           <ion-label color="primary">
@@ -291,7 +291,7 @@ export class ListHeaderExample {
 
       <ion-list>
         <ion-list-header lines="inset">
-          <ion-label>热门趋势</ion-label>
+          <ion-label>Trending</ion-label>
         </ion-list-header>
         <ion-item>
           <ion-label color="primary">
@@ -320,40 +320,40 @@ export class ListHeaderExample {
 
 ```html
 <template>
-  <!-- 默认列表头部 -->
+  <!-- Default List Header -->
   <ion-list-header>
-    <ion-label>列表头部</ion-label>
+    <ion-label>List Header</ion-label>
   </ion-list-header>
 
-  <!-- 带按钮的列表头部 -->
+  <!-- List Header with Button -->
   <ion-list-header>
-    <ion-label>本周新内容</ion-label>
-    <ion-button>查看全部</ion-button>
+    <ion-label>New This Week</ion-label>
+    <ion-button>See All</ion-button>
   </ion-list-header>
 
-  <!-- 带轮廓按钮的列表头部 -->
+  <!-- List Header with Outline Button -->
   <ion-list-header>
-    <ion-label>本周新内容</ion-label>
-    <ion-button fill="outline">查看全部</ion-button>
+    <ion-label>New This Week</ion-label>
+    <ion-button fill="outline">See All</ion-button>
   </ion-list-header>
 
-  <!-- 全线条的列表头部 -->
+  <!-- List Header Full Lines -->
   <ion-list-header lines="full">
-    <ion-label>本周新内容</ion-label>
-    <ion-button>查看全部</ion-button>
+    <ion-label>New This Week</ion-label>
+    <ion-button>See All</ion-button>
   </ion-list-header>
 
-  <!-- 内嵌线条的列表头部 -->
+  <!-- List Header Inset Lines -->
   <ion-list-header lines="inset">
-    <ion-label>本周新内容</ion-label>
-    <ion-button>查看全部</ion-button>
+    <ion-label>New This Week</ion-label>
+    <ion-button>See All</ion-button>
   </ion-list-header>
 
-  <!-- 列表中的列表头部 -->
+  <!-- List Headers in Lists -->
   <ion-list>
     <ion-list-header lines="inset">
-      <ion-label>最近</ion-label>
-      <ion-button>清除</ion-button>
+      <ion-label>Recent</ion-label>
+      <ion-button>Clear</ion-button>
     </ion-list-header>
     <ion-item lines="none">
       <ion-label color="primary">
@@ -364,7 +364,7 @@ export class ListHeaderExample {
 
   <ion-list>
     <ion-list-header lines="inset">
-      <ion-label>热门趋势</ion-label>
+      <ion-label>Trending</ion-label>
     </ion-list-header>
     <ion-item>
       <ion-label color="primary">
@@ -398,26 +398,26 @@ export class ListHeaderExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

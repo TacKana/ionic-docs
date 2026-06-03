@@ -1,14 +1,14 @@
 ```css
-/* Ionic 组件正常工作所需的核心 CSS */
+/* Core CSS required for Ionic components to work properly */
 @import '@ionic/angular/css/core.css';
 
-/* 为使用 Ionic 构建的应用提供的基础 CSS */
+/* Basic CSS for apps built with Ionic */
 @import '@ionic/angular/css/normalize.css';
 @import '@ionic/angular/css/structure.css';
 @import '@ionic/angular/css/typography.css';
 @import '@ionic/angular/css/display.css';
 
-/* 可选的 CSS 工具类，可以注释掉不使用 */
+/* Optional CSS utils that can be commented out */
 @import '@ionic/angular/css/padding.css';
 @import '@ionic/angular/css/float-elements.css';
 @import '@ionic/angular/css/text-alignment.css';

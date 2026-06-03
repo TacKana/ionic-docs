@@ -10,27 +10,27 @@ import CodeBlock from '@theme/CodeBlock';
 
 # UrbanAirShip
 
-该插件提供 Urban Airship 相关功能。
+This plugin does something
 
 <p>
   <a href="https://www.npmjs.com/package/urbanairship-cordova" target="_blank" rel="noopener" className="git-link">npmjs.com/package/urbanairship-cordova</a>
 </p>
 
-<h2>遇到 Cordova 问题卡住了？</h2>
+<h2>Stuck on a Cordova issue?</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="不要在插件问题上浪费宝贵时间。"
+  header="Don't waste precious time on plugin issues."
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>如果您正在开发一个严肃的项目，您承担不起花费数小时进行故障排查的代价。Ionic 专家为社区插件和高级插件提供优质的咨询服务。</p>
-    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer premium advisory services for both community plugins and premier plugins.</p>
+    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">安装</a>
+  <a href="#installation">Installation</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -54,22 +54,22 @@ import CodeBlock from '@theme/CodeBlock';
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise 包含 Ionic 团队提供全面支持与维护的插件。 &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，如果您对此插件的企业版感兴趣，<a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">请联系我们</a>
+      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## 支持的平台
+## Supported Platforms
 
 - Android
 - iOS
 
-## 使用方法
+## Usage
 
 ### React
 
-[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
+[Learn more about using Ionic Native components in React](../native-community.md#react)
 
 ### Angular
 

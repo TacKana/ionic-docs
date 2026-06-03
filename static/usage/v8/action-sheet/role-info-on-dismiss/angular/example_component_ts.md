@@ -12,20 +12,20 @@ import type { OverlayEventDetail } from '@ionic/core';
 export class ExampleComponent {
   public actionSheetButtons = [
     {
-      text: '删除',
+      text: 'Delete',
       role: 'destructive',
       data: {
         action: 'delete',
       },
     },
     {
-      text: '分享',
+      text: 'Share',
       data: {
         action: 'share',
       },
     },
     {
-      text: '取消',
+      text: 'Cancel',
       role: 'cancel',
       data: {
         action: 'cancel',

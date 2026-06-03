@@ -6,7 +6,7 @@ function Example() {
   return (
     <IonList>
       <IonListHeader>
-        <IonLabel>电子游戏</IonLabel>
+        <IonLabel>Video Games</IonLabel>
       </IonListHeader>
       <IonItem>
         <IonLabel>Pokémon Yellow</IonLabel>

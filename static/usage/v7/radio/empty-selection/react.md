@@ -5,13 +5,13 @@ import { IonRadio, IonRadioGroup } from '@ionic/react';
 function Example() {
   return (
     <IonRadioGroup allowEmptySelection={true} value="turtles">
-      <IonRadio value="dogs">狗</IonRadio>
+      <IonRadio value="dogs">Dogs</IonRadio>
       <br />
-      <IonRadio value="cats">猫</IonRadio>
+      <IonRadio value="cats">Cats</IonRadio>
       <br />
-      <IonRadio value="turtles">乌龟</IonRadio>
+      <IonRadio value="turtles">Turtles</IonRadio>
       <br />
-      <IonRadio value="fish">鱼</IonRadio>
+      <IonRadio value="fish">Fish</IonRadio>
       <br />
     </IonRadioGroup>
   );

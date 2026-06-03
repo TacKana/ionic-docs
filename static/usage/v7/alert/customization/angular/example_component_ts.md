@@ -11,11 +11,11 @@ import { IonAlert, IonButton } from '@ionic/angular/standalone';
 export class ExampleComponent {
   public alertButtons = [
     {
-      text: '否',
+      text: 'No',
       cssClass: 'alert-button-cancel',
     },
     {
-      text: '是',
+      text: 'Yes',
       cssClass: 'alert-button-confirm',
     },
   ];

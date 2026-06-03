@@ -6,24 +6,26 @@ function Example() {
   const [items, setItems] = useState([1, 2, 3, 4, 5]);
 
   function handleReorder(event: CustomEvent<ItemReorderEventDetail>) {
-    // 在调用 complete 方法之前，项目保持拖拽前的顺序
-    console.log('拖拽完成前', items);
+    // Before complete is called with the items they will remain in the
+    // order before the drag
+    console.log('Before complete', items);
 
-    // 完成重新排序，根据手势结束位置在 DOM 中定位项目
-    // 更新 items 变量为新的项目顺序
+    // Finish the reorder and position the item in the DOM based on
+    // where the gesture ended. Update the items variable to the
+    // new order of items
     setItems(event.detail.complete(items));
 
-    // 调用 complete 方法后，项目将按新顺序排列
-    console.log('拖拽完成后', items);
+    // After complete is called the items will be in the new order
+    console.log('After complete', items);
   }
 
   return (
     <IonList>
-      {/* 重新排序手势默认禁用，启用后可拖拽项目 */}
+      {/* The reorder gesture is disabled by default, enable it to drag and drop items */}
       <IonReorderGroup disabled={false} onIonItemReorder={handleReorder}>
         {items.map((item) => (
           <IonItem>
-            <IonLabel>项目 {item}</IonLabel>
+            <IonLabel>Item {item}</IonLabel>
             <IonReorder slot="end"></IonReorder>
           </IonItem>
         ))}

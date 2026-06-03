@@ -13,14 +13,16 @@ export class ExampleComponent {
   items = [1, 2, 3, 4, 5];
 
   handleReorder(ev: CustomEvent<ItemReorderEventDetail>) {
-    // 在调用 complete 方法之前，items 将保持拖拽前的顺序
+    // Before complete is called with the items they will remain in the
+    // order before the drag
     console.log('Before complete', this.items);
 
-    // 完成重新排序，根据手势结束位置在 DOM 中定位项目
-    // 更新 items 变量为新的项目顺序
+    // Finish the reorder and position the item in the DOM based on
+    // where the gesture ended. Update the items variable to the
+    // new order of items
     this.items = ev.detail.complete(this.items);
 
-    // 调用 complete 方法后，items 将变为新的顺序
+    // After complete is called the items will be in the new order
     console.log('After complete', this.items);
   }
 }

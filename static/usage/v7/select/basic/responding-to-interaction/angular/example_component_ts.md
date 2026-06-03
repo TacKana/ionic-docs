@@ -10,15 +10,15 @@ import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/angular/sta
 })
 export class ExampleComponent {
   handleChange(event: CustomEvent) {
-    console.log('ionChange 事件触发，值为: ' + event.detail.value);
+    console.log('ionChange fired with value: ' + event.detail.value);
   }
 
   handleCancel() {
-    console.log('ionCancel 事件触发');
+    console.log('ionCancel fired');
   }
 
   handleDismiss() {
-    console.log('ionDismiss 事件触发');
+    console.log('ionDismiss fired');
   }
 }
 ```

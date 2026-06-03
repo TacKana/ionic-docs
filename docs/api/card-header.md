@@ -1,5 +1,5 @@
 ---
-title: 卡片头部组件
+title: "ion-card-header"
 ---
 import Props from '@ionic-internal/component-api/v8/card-header/props.md';
 import Events from '@ionic-internal/component-api/v8/card-header/events.md';
@@ -10,28 +10,33 @@ import Slots from '@ionic-internal/component-api/v8/card-header/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
+<head>
+  <title>ion-card-header：卡片头部组件</title>
+  <meta name="description" content="ion-card-header 是卡片的子组件，应放置在卡片内容之前。它可以包含卡片标题和卡片副标题。" />
+</head>
+
 <EncapsulationPill type="shadow" />
 
 
-卡片头部（card header）是卡片（card）的子组件，应放置在卡片内容之前。它可以包含[卡片标题（card title）](./card-title)和[卡片子标题（card subtitle）](./card-subtitle)。
+卡片头部是卡片的子组件，应放置在卡片内容之前。它可以包含[卡片标题](./card-title)和[卡片副标题](./card-subtitle)。
 
-更多信息请参阅[卡片（Card）](./card)文档。
+更多信息请参见[卡片](./card)文档。
 
 
-## 属性
+## Properties
 <Props />
 
-## 事件
+## Events
 <Events />
 
-## 方法
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 <CustomProps />
 
-## 插槽
+## Slots
 <Slots />

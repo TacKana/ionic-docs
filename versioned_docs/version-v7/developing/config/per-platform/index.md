@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="angular">
 
 :::note
-由于配置在运行时设置，你将无法访问平台依赖注入。不过，你可以直接使用该提供者所使用的底层函数。
+由于配置是在运行时设置的，您将无法访问平台依赖注入（Platform Dependency Injection）。不过，您可以直接使用提供者所依赖的底层函数。
 
 有关可检测的平台类型，请参阅 [Angular 平台文档](/v7/angular/platform)。
 :::
@@ -37,7 +37,7 @@ import { isPlatform, IonicModule } from '@ionic/angular';
 <TabItem value="angular-standalone">
 
 :::note
-由于配置在运行时设置，你将无法访问平台依赖注入。不过，你可以直接使用该提供者所使用的底层函数。
+由于配置是在运行时设置的，您将无法访问平台依赖注入（Platform Dependency Injection）。不过，您可以直接使用提供者所依赖的底层函数。
 
 有关可检测的平台类型，请参阅 [Angular 平台文档](/v7/angular/platform)。
 :::

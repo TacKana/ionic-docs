@@ -13,7 +13,7 @@ import Slots from '@ionic-internal/component-api/v7/note/slots.md';
   <title>ion-note：适用于 iOS 和 Android Ionic 应用的注释文本元素</title>
   <meta
     name="description"
-    content="ion-note 通常是作为副标题的文本元素，用于提供更多信息。了解如何在 iOS 和 Android Ionic 应用中使用和样式化注释。"
+    content="ion-note 是通常用作提供更多信息的副标题的文本元素。了解注释如何在 iOS 和 Android Ionic 应用中使用和设置样式。"
   />
 </head>
 
@@ -21,7 +21,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-注释（Note）通常是作为副标题的文本元素，用于提供更多信息。默认情况下，它们被样式化为灰色显示。注释可以作为元数据文本在项目（item）中使用。
+注释（Note）是通常用作提供更多信息的副标题的文本元素。默认情况下它们样式为灰色。注释可以在项目中用作元数据文本。
 
 ## 基本用法
 
@@ -29,13 +29,13 @@ import Basic from '@site/static/usage/v7/note/basic/index.md';
 
 <Basic />
 
-## 项目中的注释
+## 项目注释
 
 import Item from '@site/static/usage/v7/note/item/index.md';
 
 <Item />
 
-## 主题定制
+## 主题
 
 ### 颜色
 
@@ -61,7 +61,7 @@ import CSSProps from '@site/static/usage/v7/note/theming/css-properties/index.md
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

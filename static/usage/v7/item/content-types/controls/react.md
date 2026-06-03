@@ -7,38 +7,38 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>示例</IonTitle>
+          <IonTitle>Example</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent color="light">
         <IonList inset={true}>
           <IonItem>
-            <IonCheckbox slot="start" aria-label="切换任务完成状态"></IonCheckbox>
-            <IonInput aria-label="任务名称" value="买鸡蛋"></IonInput>
+            <IonCheckbox slot="start" aria-label="Toggle task completion"></IonCheckbox>
+            <IonInput aria-label="Task name" value="Get eggs"></IonInput>
           </IonItem>
           <IonItem>
-            <IonCheckbox slot="start" aria-label="切换任务完成状态"></IonCheckbox>
-            <IonInput aria-label="任务名称" value="买牛奶"></IonInput>
+            <IonCheckbox slot="start" aria-label="Toggle task completion"></IonCheckbox>
+            <IonInput aria-label="Task name" value="Get milk"></IonInput>
           </IonItem>
           <IonItem>
-            <IonCheckbox slot="start" aria-label="切换任务完成状态"></IonCheckbox>
-            <IonInput aria-label="任务名称" value="倒厨余垃圾"></IonInput>
+            <IonCheckbox slot="start" aria-label="Toggle task completion"></IonCheckbox>
+            <IonInput aria-label="Task name" value="Take out compost"></IonInput>
           </IonItem>
           <IonItem>
-            <IonCheckbox slot="start" aria-label="切换任务完成状态"></IonCheckbox>
-            <IonInput aria-label="任务名称" value="取干洗衣物"></IonInput>
+            <IonCheckbox slot="start" aria-label="Toggle task completion"></IonCheckbox>
+            <IonInput aria-label="Task name" value="Pick up dry cleaning"></IonInput>
           </IonItem>
           <IonItem>
-            <IonCheckbox slot="start" aria-label="切换任务完成状态"></IonCheckbox>
-            <IonInput aria-label="任务名称" value="给妈妈打电话"></IonInput>
+            <IonCheckbox slot="start" aria-label="Toggle task completion"></IonCheckbox>
+            <IonInput aria-label="Task name" value="Call mom"></IonInput>
           </IonItem>
           <IonItem>
-            <IonCheckbox slot="start" aria-label="切换任务完成状态"></IonCheckbox>
-            <IonInput aria-label="任务名称" value="订购更多狗粮"></IonInput>
+            <IonCheckbox slot="start" aria-label="Toggle task completion"></IonCheckbox>
+            <IonInput aria-label="Task name" value="Order more dog food"></IonInput>
           </IonItem>
           <IonItem>
-            <IonCheckbox slot="start" aria-label="切换任务完成状态"></IonCheckbox>
-            <IonInput aria-label="任务名称" value="为这个演示想出新任务"></IonInput>
+            <IonCheckbox slot="start" aria-label="Toggle task completion"></IonCheckbox>
+            <IonInput aria-label="Task name" value="Think of new tasks for this demo"></IonInput>
           </IonItem>
         </IonList>
       </IonContent>

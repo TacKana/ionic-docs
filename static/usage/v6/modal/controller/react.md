@@ -15,7 +15,6 @@ import {
 } from '@ionic/react';
 import { OverlayEventDetail } from '@ionic/core/components';
 
-// 模态框组件示例
 const ModalExample = ({
   onDismiss,
 }: {
@@ -28,21 +27,21 @@ const ModalExample = ({
         <IonToolbar>
           <IonButtons slot="start">
             <IonButton color="medium" onClick={() => onDismiss(null, 'cancel')}>
-              取消
+              Cancel
             </IonButton>
           </IonButtons>
-          <IonTitle>欢迎</IonTitle>
+          <IonTitle>Welcome</IonTitle>
           <IonButtons slot="end">
             <IonButton onClick={() => onDismiss(inputRef.current?.value, 'confirm')} strong={true}>
-              确认
+              Confirm
             </IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonItem>
-          <IonLabel position="stacked">请输入您的姓名</IonLabel>
-          <IonInput ref={inputRef} placeholder="请输入姓名" />
+          <IonLabel position="stacked">Enter your name</IonLabel>
+          <IonInput ref={inputRef} placeholder="Your name" />
         </IonItem>
       </IonContent>
     </IonPage>
@@ -53,13 +52,13 @@ function Example() {
   const [present, dismiss] = useIonModal(ModalExample, {
     onDismiss: (data: string, role: string) => dismiss(data, role),
   });
-  const [message, setMessage] = useState('此模态框示例使用 modalController 来呈现和关闭模态框。');
+  const [message, setMessage] = useState('This modal example uses the modalController to present and dismiss modals.');
 
   function openModal() {
     present({
       onWillDismiss: (ev: CustomEvent<OverlayEventDetail>) => {
         if (ev.detail.role === 'confirm') {
-          setMessage(`你好，${ev.detail.data}！`);
+          setMessage(`Hello, ${ev.detail.data}!`);
         }
       },
     });
@@ -69,12 +68,12 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>控制器模态框</IonTitle>
+          <IonTitle>Controller Modal</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton expand="block" onClick={() => openModal()}>
-          打开模态框
+          Open
         </IonButton>
         <p>{message}</p>
       </IonContent>

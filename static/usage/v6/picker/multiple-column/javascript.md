@@ -1,5 +1,5 @@
 ```html
-<ion-button onclick="openPicker()">打开</ion-button>
+<ion-button onclick="openPicker()">Open</ion-button>
 
 <script>
   async function openPicker() {
@@ -9,15 +9,15 @@
           name: 'meat',
           options: [
             {
-              text: '意大利辣香肠',
+              text: 'Pepperoni',
               value: 'pepperoni',
             },
             {
-              text: '烟熏火腿',
+              text: 'Smoked Ham',
               value: 'smoked-ham',
             },
             {
-              text: '香脆培根',
+              text: 'Crispy Bacon',
               value: 'bacon',
             },
           ],
@@ -26,15 +26,15 @@
           name: 'veggies',
           options: [
             {
-              text: '红洋葱',
+              text: 'Red onion',
               value: 'red-onion',
             },
             {
-              text: '甜椒',
+              text: 'Peppers',
               value: 'peppers',
             },
             {
-              text: '黑橄榄',
+              text: 'Black olives',
               value: 'black-olives',
             },
           ],
@@ -43,15 +43,15 @@
           name: 'crust',
           options: [
             {
-              text: '深盘厚底',
+              text: 'Pan style',
               value: 'pan',
             },
             {
-              text: '手抛薄底',
+              text: 'Hand tossed',
               value: 'hand-tossed',
             },
             {
-              text: '芝心饼边',
+              text: 'Stuffed crust',
               value: 'stuffed-crust',
             },
           ],
@@ -59,13 +59,13 @@
       ],
       buttons: [
         {
-          text: '取消',
+          text: 'Cancel',
           role: 'cancel',
         },
         {
-          text: '确认',
+          text: 'Confirm',
           handler: (value) => {
-            window.alert(`您选择了${value.crust.text}披萨，配料为${value.meat.text}和${value.veggies.text}`);
+            window.alert(`You selected a ${value.crust.text} pizza with ${value.meat.text} and ${value.veggies.text}`);
           },
         },
       ],

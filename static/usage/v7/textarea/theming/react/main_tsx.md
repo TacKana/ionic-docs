@@ -7,10 +7,10 @@ import './main.css';
 function Example() {
   return (
     <IonTextarea
-      aria-label="自定义文本框"
-      placeholder="在此输入内容"
+      aria-label="Custom textarea"
+      placeholder="Type something here"
       class="custom"
-      helperText="辅助说明文本"
+      helperText="Helper text"
       counter={true}
       maxlength={100}
     ></IonTextarea>

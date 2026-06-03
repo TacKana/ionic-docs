@@ -7,11 +7,11 @@ function Example() {
     <>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonTitle>标题栏</IonTitle>
+          <IonTitle>Header</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <h1>内容区域</h1>
+        <h1>Content</h1>
       </IonContent>
     </>
   );

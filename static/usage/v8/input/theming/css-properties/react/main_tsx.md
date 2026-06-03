@@ -7,10 +7,10 @@ import './main.css';
 function Example() {
   return (
     <IonInput
-      aria-label="自定义输入框"
-      placeholder="自定义输入"
+      aria-label="Custom input"
+      placeholder="Custom input"
       class="custom"
-      helperText="辅助说明文字"
+      helperText="Helper text"
       counter={true}
       maxlength={20}
     ></IonInput>

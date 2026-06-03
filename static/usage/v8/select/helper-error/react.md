@@ -43,25 +43,25 @@ function Example() {
       <form onSubmit={submit}>
         <IonSelect
           ref={favFruitRef}
-          label="最喜欢的水果"
-          placeholder="选择水果"
+          label="Favorite fruit"
+          placeholder="Select fruit"
           className={`${isValid ? 'ion-valid' : ''} ${isValid === false ? 'ion-invalid' : ''} ${
             isTouched ? 'ion-touched' : ''
           }`}
-          helperText="请选择您最喜欢的水果"
-          errorText="此字段为必填项"
+          helperText="Select your favorite fruit"
+          errorText="This field is required"
           onIonChange={(event) => validateSelect(event)}
           onIonBlur={onIonBlur}
         >
-          <IonSelectOption value="apple">苹果</IonSelectOption>
-          <IonSelectOption value="banana">香蕉</IonSelectOption>
-          <IonSelectOption value="orange">橙子</IonSelectOption>
+          <IonSelectOption value="apple">Apple</IonSelectOption>
+          <IonSelectOption value="banana">Banana</IonSelectOption>
+          <IonSelectOption value="orange">Orange</IonSelectOption>
         </IonSelect>
 
         <br />
 
         <IonButton type="submit" size="small">
-          提交
+          Submit
         </IonButton>
       </form>
     </>

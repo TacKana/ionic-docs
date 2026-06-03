@@ -5,18 +5,18 @@ title: 'ion-tab-bar'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v6/tab-bar/props.md';
-import Events from '@ionic-internal/component-api/v6/tab-bar/events.md';
-import Methods from '@ionic-internal/component-api/v6/tab-bar/methods.md';
-import Parts from '@ionic-internal/component-api/v6/tab-bar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/tab-bar/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v6/tab-bar/slots.md';
+import Props from '@ionic-internal/component-api/v7/tab-bar/props.md';
+import Events from '@ionic-internal/component-api/v7/tab-bar/events.md';
+import Methods from '@ionic-internal/component-api/v7/tab-bar/methods.md';
+import Parts from '@ionic-internal/component-api/v7/tab-bar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/tab-bar/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v7/tab-bar/slots.md';
 
 <head>
-  <title>ion-tab-bar：标签栏组件的 CSS 自定义属性</title>
+  <title>ion-tab-bar：具有 CSS 自定义属性的标签栏组件</title>
   <meta
     name="description"
-    content="标签栏组件包含一组标签按钮，必须在标签页内部提供标签栏以实现通信。阅读更多关于使用方式和 CSS 自定义属性的信息。"
+    content="标签栏组件包含一组标签按钮，必须在 tabs 内部提供标签栏以进行通信。阅读更多关于使用和 CSS 自定义属性的信息。"
   />
 </head>
 
@@ -24,9 +24,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-标签栏是一个包含一组[标签按钮](tab-button.md)的 UI 组件。必须在[标签页](tabs.md)内部提供标签栏，以便与每个[标签页](tab.md)进行通信。
+标签栏（Tab bar）是一个 UI 组件，包含一组[标签按钮（tab button）](tab-button.md)。标签栏必须在[tabs（标签页）](tabs.md)内部提供，以便与每个[标签（tab）](tab.md)进行通信。
 
-## 使用方式
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -55,7 +55,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ```html
 <ion-tabs>
-  <!-- 标签页视图 -->
+  <!-- 标签视图 -->
   <ion-tab tab="account"></ion-tab>
   <ion-tab tab="contact"></ion-tab>
   <ion-tab tab="settings"></ion-tab>
@@ -126,17 +126,9 @@ export const TabBarExample: React.FC = () => (
   </ion-tabs>
 </template>
 
-<script>
+<script setup lang="ts">
   import { IonIcon, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
   import { call, person, settings } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonIcon, IonTabBar, IonTabButton, IonTabs },
-    setup() {
-      return { call, person, settings };
-    },
-  });
 </script>
 ```
 
@@ -156,7 +148,7 @@ export const TabBarExample: React.FC = () => (
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

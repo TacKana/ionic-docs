@@ -1,6 +1,6 @@
 ```css
-/* 此样式仅用于演示目的。 */
-/* 标签页功能无需此样式。 */
+/* This style is for demonstration purposes only. */
+/* It's not required for the tabs to function. */
 .example-content {
   display: flex;
   align-items: center;

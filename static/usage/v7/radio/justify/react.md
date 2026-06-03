@@ -8,7 +8,7 @@ function Example() {
       <IonRadioGroup value="start">
         <IonItem>
           <IonRadio value="start" justify="start">
-            标签靠行首对齐
+            Packed at the Start of Line
           </IonRadio>
         </IonItem>
       </IonRadioGroup>
@@ -16,7 +16,7 @@ function Example() {
       <IonRadioGroup value="end">
         <IonItem>
           <IonRadio value="end" justify="end">
-            标签靠行尾对齐
+            Packed at the End of Line
           </IonRadio>
         </IonItem>
       </IonRadioGroup>
@@ -24,7 +24,7 @@ function Example() {
       <IonRadioGroup value="space-between">
         <IonItem>
           <IonRadio value="space-between" justify="space-between">
-            标签与控件两端对齐
+            Space Between Label and Control
           </IonRadio>
         </IonItem>
       </IonRadioGroup>

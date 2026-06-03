@@ -1,20 +1,20 @@
 ```html
-<ion-button id="present-alert">点击我</ion-button>
-<ion-alert trigger="present-alert" header="警告！"></ion-alert>
+<ion-button id="present-alert">Click Me</ion-button>
+<ion-alert trigger="present-alert" header="Alert!"></ion-alert>
 
 <script>
   const alert = document.querySelector('ion-alert');
 
   alert.buttons = [
     {
-      text: '取消',
+      text: 'Cancel',
       role: 'cancel',
       handler: () => {
         console.log('Alert canceled');
       },
     },
     {
-      text: '确认',
+      text: 'OK',
       role: 'confirm',
       handler: () => {
         console.log('Alert confirmed');

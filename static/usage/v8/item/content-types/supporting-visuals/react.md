@@ -9,7 +9,7 @@ function Example() {
       <IonList>
         <IonItem>
           <IonIcon aria-hidden="true" icon={airplane} slot="start"></IonIcon>
-          <IonLabel>飞行模式</IonLabel>
+          <IonLabel>Airplane Mode</IonLabel>
         </IonItem>
         <IonItem>
           <IonIcon aria-hidden="true" icon={wifi} slot="start"></IonIcon>
@@ -17,11 +17,11 @@ function Example() {
         </IonItem>
         <IonItem>
           <IonIcon aria-hidden="true" icon={bluetooth} slot="start"></IonIcon>
-          <IonLabel>蓝牙</IonLabel>
+          <IonLabel>Bluetooth</IonLabel>
         </IonItem>
         <IonItem>
           <IonIcon aria-hidden="true" icon={call} slot="start"></IonIcon>
-          <IonLabel>蜂窝网络</IonLabel>
+          <IonLabel>Cellular</IonLabel>
         </IonItem>
       </IonList>
 

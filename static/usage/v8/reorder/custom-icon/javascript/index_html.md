@@ -1,6 +1,6 @@
 ```html
 <ion-list>
-  <!-- 默认情况下重新排序手势是禁用的，启用后即可拖拽项目 -->
+  <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
   <ion-reorder-group disabled="false">
     <ion-item>
       <ion-label> Item 1 </ion-label>
@@ -43,11 +43,13 @@
   const reorderGroup = document.querySelector('ion-reorder-group');
 
   reorderGroup.addEventListener('ionReorderEnd', ({ detail }) => {
-    // `from` 和 `to` 属性分别包含拖拽开始和结束时项目的索引
+    // The `from` and `to` properties contain the index of the item
+    // when the drag started and ended, respectively
     console.log('Dragged from index', detail.from, 'to', detail.to);
 
-    // 完成重新排序，并根据手势结束位置将项目定位在DOM中。
-    // 此方法也可以由重新排序组直接调用。
+    // Finish the reorder and position the item in the DOM based on
+    // where the gesture ended. This method can also be called directly
+    // by the reorder group.
     detail.complete();
   });
 </script>

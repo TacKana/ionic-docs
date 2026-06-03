@@ -9,7 +9,7 @@
   var input = document.querySelector('ion-input');
   input.addEventListener('ionInput', (event) => {
     const value = event.target.value;
-    // 移除所有非字母数字字符
+    // Removes non alphanumeric characters
     input.value = value.replace(/[^a-zA-Z0-9]+/g, '');
   });
 </script>

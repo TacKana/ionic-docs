@@ -1,15 +1,15 @@
 ---
-title: Structure
+title: 结构
 ---
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-# 结构体系
+# 结构
 
-Ionic Framework 提供了多种不同的布局方式，可用于构建应用程序。从单页布局，到分屏视图和模态框。
+Ionic Framework 提供了几种不同的布局，可用于构建应用。从单页面布局，到分屏视图和模态框。
 
-## 页眉与页脚布局
+## 页眉和页脚布局
 
 ### 页眉
 
@@ -19,18 +19,18 @@ Ionic Framework 提供了多种不同的布局方式，可用于构建应用程�
   </DocsCard>
 </aside>
 
-最简单的一种布局由 [页眉](../api/header.md) 和 [内容区域](../api/content.md) 组成。应用程序中的大多数页面通常都包含这两部分，但使用内容区域时并不强制要求必须有页眉。
+最简单的可用布局由[页眉](../api/header.md)和[内容](../api/content.md)组成。应用中的大多数页面通常都有这两者，但使用内容并不需要页眉。
 
 ```html
 <ion-app>
   <ion-header>
     <ion-toolbar>
-      <ion-title>Header</ion-title>
+      <ion-title>页眉</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content class="ion-padding">
-    <h1>Main Content</h1>
+    <h1>主要内容</h1>
   </ion-content>
 </ion-app>
 ```
@@ -43,71 +43,71 @@ Ionic Framework 提供了多种不同的布局方式，可用于构建应用程�
   </DocsCard>
 </aside>
 
-如你所见，位于页眉中的工具栏会显示在内容区域的上方。有时应用程序需要在内容区域下方显示工具栏，这时就需要使用页脚。
+如您所见，页眉中的工具栏显示在内容之上。有时应用需要在内容下方放置工具栏，这时就会使用页脚。
 
 ```html
 <ion-app>
   <ion-content class="ion-padding">
-    <h1>Main Content</h1>
+    <h1>主要内容</h1>
   </ion-content>
 
   <ion-footer>
     <ion-toolbar>
-      <ion-title>Footer</ion-title>
+      <ion-title>页脚</ion-title>
     </ion-toolbar>
   </ion-footer>
 </ion-app>
 ```
 
-### 页眉与页脚结合
+### 页眉和页脚
 
-这两种布局也可以在同一页面中结合使用，从而在内容区域的上方 *和* 下方都显示工具栏。
+这些也可以组合在一个页面上，在内容的_上方_和_下方_都有工具栏。
 
 ```html
 <ion-app>
   <ion-header>
     <ion-toolbar>
-      <ion-title>Header</ion-title>
+      <ion-title>页眉</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content class="ion-padding">
-    <h1>Main Content</h1>
+    <h1>主要内容</h1>
   </ion-content>
 
   <ion-footer>
     <ion-toolbar>
-      <ion-title>Footer</ion-title>
+      <ion-title>页脚</ion-title>
     </ion-toolbar>
   </ion-footer>
 </ion-app>
 ```
 
-### 实时示例
+### 在线示例
 
-你可以在此查看 Angular 版本的 [实时示例](https://stackblitz.com/edit/ionic-ng-header-footer)，以及 React 版本的 [实时示例](https://stackblitz.com/edit/ionic-react-head-foot)。
+您可以在 Angular [此处](https://stackblitz.com/edit/ionic-ng-header-footer)和 React [此处](https://stackblitz.com/edit/ionic-react-head-foot)查看此设置的在线示例。
 
 ## 标签页布局
 
-一种包含水平 [标签页](../api/tabs.md) 的布局，可用于让用户快速在不同内容视图之间切换。每个标签页都可以包含静态内容，或者通过使用 `ion-router-outlet` 或 `ion-nav` 来包含一个导航栈。
+由水平[标签页](../api/tabs.md)组成的布局可用于让用户快速切换内容视图。每个标签页可以包含静态内容，或通过使用 `ion-router-outlet` 或 `ion-nav` 包含导航堆栈。
 
 ```html
 <ion-app>
   <ion-tabs>
     <ion-tab tab="home">
-      <h1>Home Content</h1>
+      <h1>首页内容</h1>
     </ion-tab>
     <ion-tab tab="settings">
-      <h1>Settings Content</h1>
+      <h1>设置内容</h1>
     </ion-tab>
 
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="home">
-        <ion-label>Home</ion-label>
+        <ion-label>首页</ion-label>
         <ion-icon name="home"></ion-icon>
       </ion-tab-button>
       <ion-tab-button tab="settings">
-        <ion-label>Settings</ion-label>
+        <ion-label>设置</ion-label>
         <ion-icon name="settings"></ion-icon>
       </ion-tab-button>
     </ion-tab-bar>
@@ -115,30 +115,30 @@ Ionic Framework 提供了多种不同的布局方式，可用于构建应用程�
 </ion-app>
 ```
 
-### 实时示例
+### 在线示例
 
-你可以在此查看 Angular 版本的 [实时示例](https://stackblitz.com/edit/ionic-ng-tabs)，以及 React 版本的 [实时示例](https://stackblitz.com/edit/ionic-react-tab-layout)。
+您可以在 Angular [此处](https://stackblitz.com/edit/ionic-ng-tabs)和 React [此处](https://stackblitz.com/edit/ionic-react-tab-layout)查看此设置的在线示例。
 
-## 侧边菜单布局
+## 菜单布局
 
-移动应用程序中一种常见的标准布局，包含通过点击按钮或从侧面滑动来切换 [侧边菜单](../api/menu.md) 的功能。侧边菜单通常用于导航，但它们也可以包含任何内容。
+移动应用中的标准布局包括能够通过点击按钮或从侧边滑动打开来切换侧边[菜单](../api/menu.md)。侧边菜单通常用于导航，但也可以包含任何内容。
 
 ```html
 <ion-app>
   <ion-menu content-id="main-content">
     <ion-header>
       <ion-toolbar color="primary">
-        <ion-title>Menu</ion-title>
+        <ion-title>菜单</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
       <ion-list>
-        <ion-list-header> Navigate </ion-list-header>
+        <ion-list-header> 导航 </ion-list-header>
         <ion-menu-toggle auto-hide="false">
           <ion-item button>
             <ion-icon slot="start" name="home"></ion-icon>
-            <ion-label> Home </ion-label>
+            <ion-label> 首页 </ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
@@ -155,12 +155,12 @@ Ionic Framework 提供了多种不同的布局方式，可用于构建应用程�
             </ion-button>
           </ion-menu-toggle>
         </ion-buttons>
-        <ion-title>Header</ion-title>
+        <ion-title>页眉</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <h1>Main Content</h1>
-      <p>点击左上角的图标可切换菜单。</p>
+      <h1>主要内容</h1>
+      <p>点击左上角的图标切换菜单。</p>
     </ion-content>
   </ion-page>
 </ion-app>
@@ -168,15 +168,15 @@ Ionic Framework 提供了多种不同的布局方式，可用于构建应用程�
 <ion-menu-controller></ion-menu-controller>
 ```
 
-### 实时示例
+### 在线示例
 
-你可以在此查看 Angular 版本的 [实时示例](https://stackblitz.com/edit/ionic-ng-menu-layout)，以及 React 版本的 [实时示例](https://stackblitz.com/edit/ionic-react-menu)。
+您可以在 Angular [此处](https://stackblitz.com/edit/ionic-ng-menu-layout)和 React [此处](https://stackblitz.com/edit/ionic-react-menu)查看此设置的在线示例。
 
 ## 分屏布局
 
-[分屏](../api/split-pane.md) 布局的结构更为复杂，因为它可以组合前述的各种布局。它允许在视口超过指定断点时显示多个视图。如果设备的屏幕尺寸小于特定大小，分屏视图将会被隐藏。
+[分屏](../api/split-pane.md)布局具有更复杂的结构，因为它可以组合前面的布局。当视口超过指定的断点时，它允许同时显示多个视图。如果设备的屏幕尺寸小于某个尺寸，分屏视图将被隐藏。
 
-默认情况下，当屏幕大于 `768px`（即 `md` 断点）时，分屏视图将显示。但可以通过设置 `when` 属性来自定义使用不同的断点。下面是一个示例，其中分屏包含一个菜单，该菜单在 `sm` 及以上的屏幕尺寸（即视口大于 `576px`）时可见。通过水平调整浏览器大小，使应用程序小于此尺寸，分屏视图将会消失。
+默认情况下，当屏幕大于 `768px`（即 `md` 断点）时，分屏视图会显示，但这可以通过设置 `when` 属性来自定义使用不同的断点。以下是一个示例，其中分屏包含一个菜单，该菜单在 `sm` 屏幕及以上（即视口大于 `576px`）可见。通过水平调整浏览器大小使应用小于此值，分屏视图将消失。
 
 ```html
 <ion-app>
@@ -184,17 +184,17 @@ Ionic Framework 提供了多种不同的布局方式，可用于构建应用程�
     <ion-menu content-id="main-content">
       <ion-header>
         <ion-toolbar color="primary">
-          <ion-title>Menu</ion-title>
+          <ion-title>菜单</ion-title>
         </ion-toolbar>
       </ion-header>
 
       <ion-content>
         <ion-list>
-          <ion-list-header> Navigate </ion-list-header>
+          <ion-list-header> 导航 </ion-list-header>
           <ion-menu-toggle auto-hide="false">
             <ion-item button>
               <ion-icon slot="start" name="home"></ion-icon>
-              <ion-label> Home </ion-label>
+              <ion-label> 首页 </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
@@ -211,19 +211,19 @@ Ionic Framework 提供了多种不同的布局方式，可用于构建应用程�
               </ion-button>
             </ion-menu-toggle>
           </ion-buttons>
-          <ion-title>Header</ion-title>
+          <ion-title>页眉</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
-        <h1>Main Content</h1>
+        <h1>主要内容</h1>
       </ion-content>
     </div>
   </ion-split-pane>
 </ion-app>
 ```
 
-需要注意的是，具有与分屏指定的 `content-id` 匹配的 `id` 的元素，将始终作为主内容区域可见。这可以是任何元素，包括 [ion-nav](../api/nav.md)、[ion-router-outlet](../api/router-outlet.md) 或 [ion-tabs](../api/tabs.md)。
+需要注意的是，`id` 与分屏指定的 `content-id` 匹配的元素将是始终可见的主要内容。这可以是任何元素，包括 [ion-nav](../api/nav.md)、[ion-router-outlet](../api/router-outlet.md) 或 [ion-tabs](../api/tabs.md)。
 
-### 实时示例
+### 在线示例
 
-你可以在此查看 Angular 版本的 [实时示例](https://stackblitz.com/edit/ionic-ng-split-pane)，以及 React 版本的 [实时示例](https://stackblitz.com/edit/ionic-react-split-pane)。
+您可以在 Angular [此处](https://stackblitz.com/edit/ionic-ng-split-pane)和 React [此处](https://stackblitz.com/edit/ionic-react-split-pane)查看此设置的在线示例。

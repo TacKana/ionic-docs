@@ -1,30 +1,30 @@
 ```html
-<ion-button id="present-alert">点击我</ion-button>
-<ion-alert trigger="present-alert" header="请输入您的信息"></ion-alert>
+<ion-button id="present-alert">Click Me</ion-button>
+<ion-alert trigger="present-alert" header="Please enter your info"></ion-alert>
 
 <script>
   const alert = document.querySelector('ion-alert');
 
-  alert.buttons = ['确定'];
+  alert.buttons = ['OK'];
   alert.inputs = [
     {
-      placeholder: '姓名',
+      placeholder: 'Name',
     },
     {
-      placeholder: '昵称（最多8个字符）',
+      placeholder: 'Nickname (max 8 characters)',
       attributes: {
         maxlength: 8,
       },
     },
     {
       type: 'number',
-      placeholder: '年龄',
+      placeholder: 'Age',
       min: 1,
       max: 100,
     },
     {
       type: 'textarea',
-      placeholder: '简单介绍一下自己',
+      placeholder: 'A little about yourself',
     },
   ];
 </script>

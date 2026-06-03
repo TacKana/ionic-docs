@@ -8,13 +8,13 @@ function Example() {
       <IonList>
         <IonItem>
           <IonCheckbox labelPlacement="stacked" alignment="start">
-            起始对齐
+            Aligned to the Start
           </IonCheckbox>
         </IonItem>
 
         <IonItem>
           <IonCheckbox labelPlacement="stacked" alignment="center">
-            居中对齐
+            Aligned to the Center
           </IonCheckbox>
         </IonItem>
       </IonList>

@@ -8,11 +8,11 @@ function Example() {
   return (
     <IonCard>
       <IonCardHeader>
-        <IonCardTitle>卡片标题</IonCardTitle>
-        <IonCardSubtitle>卡片副标题</IonCardSubtitle>
+        <IonCardTitle>Card Title</IonCardTitle>
+        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
       </IonCardHeader>
 
-      <IonCardContent>这里是卡片内容的一小段文字描述。不多不少，恰到好处。</IonCardContent>
+      <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
     </IonCard>
   );
 }

@@ -1,5 +1,5 @@
 ---
-title: 悬浮操作按钮列表组件
+title: "ion-fab-list"
 ---
 import Props from '@ionic-internal/component-api/v8/fab-list/props.md';
 import Events from '@ionic-internal/component-api/v8/fab-list/events.md';
@@ -10,26 +10,31 @@ import Slots from '@ionic-internal/component-api/v8/fab-list/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
+<head>
+  <title>ion-fab-list：FAB 按钮列表组件</title>
+  <meta name="description" content="ion-fab-list 是多个 fab 按钮的容器，包含与主 fab 按钮相关的操作并在点击时弹出。" />
+</head>
+
 <EncapsulationPill type="shadow" />
 
-浮动操作按钮列表组件是多个[浮动操作按钮](./fab-button)的容器。它包含与主浮动操作按钮相关的操作，点击时会展开显示。要指定按钮应出现在哪一侧，请将 `side` 属性设置为 `"start"`、`"end"`、`"top"` 或 `"bottom"`。
+fab 列表组件是多个 [fab 按钮](./fab-button)的容器。它包含与主 fab 按钮相关的操作，并在点击时弹出。要指定按钮应出现在哪一侧，请将 `side` 属性设置为 `"start"`、`"end"`、`"top"` 或 `"bottom"`。
 
-使用示例请参阅[浮动操作按钮文档](./fab)。
+使用示例请参阅 [fab 文档](./fab)。
 
-## 属性
+## Properties
 <Props />
 
-## 事件
+## Events
 <Events />
 
-## 方法
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 <CustomProps />
 
-## 插槽
+## Slots
 <Slots />

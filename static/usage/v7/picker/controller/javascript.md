@@ -1,5 +1,5 @@
 ```html
-<ion-button onclick="openPicker()">打开</ion-button>
+<ion-button onclick="openPicker()">Open</ion-button>
 
 <script>
   async function openPicker() {
@@ -29,13 +29,13 @@
       ],
       buttons: [
         {
-          text: '取消',
+          text: 'Cancel',
           role: 'cancel',
         },
         {
-          text: '确认',
+          text: 'Confirm',
           handler: (value) => {
-            console.log(`您选择了：${value.languages.value}`);
+            console.log(`You selected: ${value.languages.value}`);
           },
         },
       ],

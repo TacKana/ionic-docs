@@ -17,12 +17,12 @@ export class ExampleComponent {
   onInput(ev) {
     const value = ev.target!.value;
 
-    // 移除非字母数字字符
+    // Removes non alphanumeric characters
     const filteredValue = value.replace(/[^a-zA-Z0-9]+/g, '');
 
     /**
-     * 同时更新状态变量和组件，
-     * 以确保它们保持同步。
+     * Update both the state variable and
+     * the component to keep them in sync.
      */
     this.ionInputEl.value = this.inputModel = filteredValue;
   }

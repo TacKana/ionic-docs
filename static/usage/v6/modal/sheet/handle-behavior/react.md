@@ -7,12 +7,12 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>应用</IonTitle>
+          <IonTitle>App</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          打开底部模态框
+          Open Sheet Modal
         </IonButton>
         <IonModal
           trigger="open-modal"
@@ -22,7 +22,7 @@ function Example() {
         >
           <IonContent className="ion-padding">
             <div className="ion-margin-top">
-              <IonLabel>点击上方的把手切换到下一个断点。</IonLabel>
+              <IonLabel>Click the handle above to advance to the next breakpoint.</IonLabel>
             </div>
           </IonContent>
         </IonModal>

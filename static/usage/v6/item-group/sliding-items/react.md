@@ -15,66 +15,66 @@ function Example() {
     <>
       <IonItemGroup>
         <IonItemDivider>
-          <IonLabel>水果</IonLabel>
+          <IonLabel>Fruits</IonLabel>
         </IonItemDivider>
 
         <IonItemSliding>
           <IonItem>
-            <IonLabel>葡萄</IonLabel>
+            <IonLabel>Grapes</IonLabel>
           </IonItem>
           <IonItemOptions>
-            <IonItemOption>收藏</IonItemOption>
+            <IonItemOption>Favorite</IonItemOption>
           </IonItemOptions>
         </IonItemSliding>
 
         <IonItemSliding>
           <IonItem>
-            <IonLabel>苹果</IonLabel>
+            <IonLabel>Apples</IonLabel>
           </IonItem>
           <IonItemOptions>
-            <IonItemOption>收藏</IonItemOption>
+            <IonItemOption>Favorite</IonItemOption>
           </IonItemOptions>
         </IonItemSliding>
 
         <IonItemSliding>
           <IonItem lines="none">
-            <IonLabel>香蕉</IonLabel>
+            <IonLabel>Bananas</IonLabel>
           </IonItem>
           <IonItemOptions>
-            <IonItemOption>收藏</IonItemOption>
+            <IonItemOption>Favorite</IonItemOption>
           </IonItemOptions>
         </IonItemSliding>
       </IonItemGroup>
 
       <IonItemGroup>
         <IonItemDivider>
-          <IonLabel>蔬菜</IonLabel>
+          <IonLabel>Vegetables</IonLabel>
         </IonItemDivider>
 
         <IonItemSliding>
           <IonItem>
-            <IonLabel>胡萝卜</IonLabel>
+            <IonLabel>Carrots</IonLabel>
           </IonItem>
           <IonItemOptions>
-            <IonItemOption>收藏</IonItemOption>
+            <IonItemOption>Favorite</IonItemOption>
           </IonItemOptions>
         </IonItemSliding>
 
         <IonItemSliding>
           <IonItem>
-            <IonLabel>西兰花</IonLabel>
+            <IonLabel>Broccoli</IonLabel>
           </IonItem>
           <IonItemOptions>
-            <IonItemOption>收藏</IonItemOption>
+            <IonItemOption>Favorite</IonItemOption>
           </IonItemOptions>
         </IonItemSliding>
 
         <IonItemSliding>
           <IonItem lines="none">
-            <IonLabel>芹菜</IonLabel>
+            <IonLabel>Celery</IonLabel>
           </IonItem>
           <IonItemOptions>
-            <IonItemOption>收藏</IonItemOption>
+            <IonItemOption>Favorite</IonItemOption>
           </IonItemOptions>
         </IonItemSliding>
       </IonItemGroup>

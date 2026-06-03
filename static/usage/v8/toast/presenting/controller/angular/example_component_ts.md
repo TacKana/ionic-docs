@@ -13,7 +13,7 @@ export class ExampleComponent {
 
   async presentToast(position: 'top' | 'middle' | 'bottom') {
     const toast = await this.toastController.create({
-      message: '你好，世界！',
+      message: 'Hello World!',
       duration: 1500,
       position: position,
     });

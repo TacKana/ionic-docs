@@ -16,51 +16,51 @@ import Slots from '@ionic-internal/component-api/v5/button/slots.md';
 
 # ion-button
 
-按钮（Button）提供了一个可点击的元素，可用于表单或任何需要简单、标准按钮功能的场景。它们可以显示文本、图标或两者兼具。按钮可以通过多个属性设置样式，以呈现特定的外观。
+Buttons provide a clickable element, which can be used in forms, or anywhere that needs simple, standard button functionality. They may display text, icons, or both. Buttons can be styled with several attributes to look a specific way.
 
-## Expand 扩展
+## Expand
 
-此属性允许您指定按钮的宽度。默认情况下，按钮是内联块元素，但设置此属性会将按钮更改为全宽度的块级元素。
+This attribute lets you specify how wide the button should be. By default, buttons are inline blocks, but setting this attribute will change the button to a full-width block element.
 
-| 值      | 说明                                                                 |
-| ------- | -------------------------------------------------------------------- |
-| `block` | 全角按钮，具有圆角。                                                 |
-| `full`  | 全角按钮，具有直角，并且左侧和右侧没有边框。                         |
+| Value   | Details                                                                   |
+| ------- | ------------------------------------------------------------------------- |
+| `block` | Full-width button with rounded corners.                                   |
+| `full`  | Full-width button with square corners and no border on the left or right. |
 
-## Fill 填充
+## Fill
 
-此属性决定按钮的背景和边框颜色。默认情况下，按钮具有实心背景，除非按钮位于工具栏内，此时它拥有透明背景。
+This attributes determines the background and border color of the button. By default, buttons have a solid background unless the button is inside of a toolbar, in which case it has a transparent background.
 
-| 值        | 说明                                                               |
+| Value     | Details                                                            |
 | --------- | ------------------------------------------------------------------ |
-| `clear`   | 背景透明的按钮，类似于扁平按钮。                                   |
-| `outline` | 背景透明且具有可见边框的按钮。                                     |
-| `solid`   | 具有填充背景的按钮。适用于工具栏中的按钮。                         |
+| `clear`   | Button with a transparent background that resembles a flat button. |
+| `outline` | Button with a transparent background and a visible border.         |
+| `solid`   | Button with a filled background. Useful for buttons in a toolbar.  |
 
-## Size 尺寸
+## Size
 
-此属性指定按钮的大小。设置此属性将改变按钮的高度和内边距。
+This attribute specifies the size of the button. Setting this attribute will change the height and padding of a button.
 
-| 值        | 说明                                                                 |
-| --------- | -------------------------------------------------------------------- |
-| `small`   | 高度和内边距较小的按钮。Item 中按钮的默认尺寸。                      |
-| `default` | 具有默认高度和内边距的按钮。适用于 Item 中的按钮。                   |
-| `large`   | 高度和内边距较大的按钮。                                             |
+| Value     | Details                                                                    |
+| --------- | -------------------------------------------------------------------------- |
+| `small`   | Button with less height and padding. Default for buttons in an item.       |
+| `default` | Button with the default height and padding. Useful for buttons in an item. |
+| `large`   | Button with more height and padding.                                       |
 
-## 用法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- 默认 -->
+<!-- Default -->
 <ion-button>Default</ion-button>
 
-<!-- 锚点 -->
+<!-- Anchor -->
 <ion-button href="#">Anchor</ion-button>
 
-<!-- 颜色 -->
+<!-- Colors -->
 <ion-button color="primary">Primary</ion-button>
 <ion-button color="secondary">Secondary</ion-button>
 <ion-button color="tertiary">Tertiary</ion-button>
@@ -71,19 +71,19 @@ import Slots from '@ionic-internal/component-api/v5/button/slots.md';
 <ion-button color="medium">Medium</ion-button>
 <ion-button color="dark">Dark</ion-button>
 
-<!-- 扩展 -->
+<!-- Expand -->
 <ion-button expand="full">Full Button</ion-button>
 <ion-button expand="block">Block Button</ion-button>
 
-<!-- 圆角 -->
+<!-- Round -->
 <ion-button shape="round">Round Button</ion-button>
 
-<!-- 填充 -->
+<!-- Fill -->
 <ion-button expand="full" fill="outline">Outline + Full</ion-button>
 <ion-button expand="block" fill="outline">Outline + Block</ion-button>
 <ion-button shape="round" fill="outline">Outline + Round</ion-button>
 
-<!-- 图标 -->
+<!-- Icons -->
 <ion-button>
   <ion-icon slot="start" name="star"></ion-icon>
   Left Icon
@@ -98,7 +98,7 @@ import Slots from '@ionic-internal/component-api/v5/button/slots.md';
   <ion-icon slot="icon-only" name="star"></ion-icon>
 </ion-button>
 
-<!-- 尺寸 -->
+<!-- Sizes -->
 <ion-button size="large">Large</ion-button>
 <ion-button>Default</ion-button>
 <ion-button size="small">Small</ion-button>
@@ -109,13 +109,13 @@ import Slots from '@ionic-internal/component-api/v5/button/slots.md';
 <TabItem value="javascript">
 
 ```html
-<!-- 默认 -->
+<!-- Default -->
 <ion-button>Default</ion-button>
 
-<!-- 锚点 -->
+<!-- Anchor -->
 <ion-button href="#">Anchor</ion-button>
 
-<!-- 颜色 -->
+<!-- Colors -->
 <ion-button color="primary">Primary</ion-button>
 <ion-button color="secondary">Secondary</ion-button>
 <ion-button color="tertiary">Tertiary</ion-button>
@@ -126,19 +126,19 @@ import Slots from '@ionic-internal/component-api/v5/button/slots.md';
 <ion-button color="medium">Medium</ion-button>
 <ion-button color="dark">Dark</ion-button>
 
-<!-- 扩展 -->
+<!-- Expand -->
 <ion-button expand="full">Full Button</ion-button>
 <ion-button expand="block">Block Button</ion-button>
 
-<!-- 圆角 -->
+<!-- Round -->
 <ion-button shape="round">Round Button</ion-button>
 
-<!-- 填充 -->
+<!-- Fill -->
 <ion-button expand="full" fill="outline">Outline + Full</ion-button>
 <ion-button expand="block" fill="outline">Outline + Block</ion-button>
 <ion-button shape="round" fill="outline">Outline + Round</ion-button>
 
-<!-- 图标 -->
+<!-- Icons -->
 <ion-button>
   <ion-icon slot="start" name="star"></ion-icon>
   Left Icon
@@ -153,7 +153,7 @@ import Slots from '@ionic-internal/component-api/v5/button/slots.md';
   <ion-icon slot="icon-only" name="star"></ion-icon>
 </ion-button>
 
-<!-- 尺寸 -->
+<!-- Sizes -->
 <ion-button size="large">Large</ion-button>
 <ion-button>Default</ion-button>
 <ion-button size="small">Small</ion-button>
@@ -171,13 +171,13 @@ import { star } from 'ionicons/icons';
 
 export const ButtonExample: React.FC = () => (
   <IonContent>
-    {/*-- 默认 --*/}
+    {/*-- Default --*/}
     <IonButton>Default</IonButton>
 
-    {/*-- 锚点 --*/}
+    {/*-- Anchor --*/}
     <IonButton href="#">Anchor</IonButton>
 
-    {/*-- 颜色 --*/}
+    {/*-- Colors --*/}
     <IonButton color="primary">Primary</IonButton>
     <IonButton color="secondary">Secondary</IonButton>
     <IonButton color="tertiary">Tertiary</IonButton>
@@ -188,14 +188,14 @@ export const ButtonExample: React.FC = () => (
     <IonButton color="medium">Medium</IonButton>
     <IonButton color="dark">Dark</IonButton>
 
-    {/*-- 扩展 --*/}
+    {/*-- Expand --*/}
     <IonButton expand="full">Full Button</IonButton>
     <IonButton expand="block">Block Button</IonButton>
 
-    {/*-- 圆角 --*/}
+    {/*-- Round --*/}
     <IonButton shape="round">Round Button</IonButton>
 
-    {/*-- 填充 --*/}
+    {/*-- Fill --*/}
     <IonButton expand="full" fill="outline">
       Outline + Full
     </IonButton>
@@ -206,7 +206,7 @@ export const ButtonExample: React.FC = () => (
       Outline + Round
     </IonButton>
 
-    {/*-- 图标 --*/}
+    {/*-- Icons --*/}
     <IonButton>
       <IonIcon slot="start" icon={star} />
       Left Icon
@@ -221,7 +221,7 @@ export const ButtonExample: React.FC = () => (
       <IonIcon slot="icon-only" icon={star} />
     </IonButton>
 
-    {/*-- 尺寸 --*/}
+    {/*-- Sizes --*/}
     <IonButton size="large">Large</IonButton>
     <IonButton>Default</IonButton>
     <IonButton size="small">Small</IonButton>
@@ -243,13 +243,13 @@ import { Component, h } from '@stencil/core';
 export class ButtonExample {
   render() {
     return [
-      // 默认
+      // Default
       <ion-button>Default</ion-button>,
 
-      // 锚点
+      // Anchor
       <ion-button href="#">Anchor</ion-button>,
 
-      // 颜色
+      // Colors
       <ion-button color="primary">Primary</ion-button>,
       <ion-button color="secondary">Secondary</ion-button>,
       <ion-button color="tertiary">Tertiary</ion-button>,
@@ -260,14 +260,14 @@ export class ButtonExample {
       <ion-button color="medium">Medium</ion-button>,
       <ion-button color="dark">Dark</ion-button>,
 
-      // 扩展
+      // Expand
       <ion-button expand="full">Full Button</ion-button>,
       <ion-button expand="block">Block Button</ion-button>,
 
-      // 圆角
+      // Round
       <ion-button shape="round">Round Button</ion-button>,
 
-      // 填充
+      // Fill
       <ion-button expand="full" fill="outline">
         Outline + Full
       </ion-button>,
@@ -278,7 +278,7 @@ export class ButtonExample {
         Outline + Round
       </ion-button>,
 
-      // 图标
+      // Icons
       <ion-button>
         <ion-icon slot="start" name="star"></ion-icon>
         Left Icon
@@ -293,7 +293,7 @@ export class ButtonExample {
         <ion-icon slot="icon-only" name="star"></ion-icon>
       </ion-button>,
 
-      // 尺寸
+      // Sizes
       <ion-button size="large">Large</ion-button>,
       <ion-button>Default</ion-button>,
       <ion-button size="small">Small</ion-button>,
@@ -308,13 +308,13 @@ export class ButtonExample {
 
 ```html
 <template>
-  <!-- 默认 -->
+  <!-- Default -->
   <ion-button>Default</ion-button>
 
-  <!-- 锚点 -->
+  <!-- Anchor -->
   <ion-button href="#">Anchor</ion-button>
 
-  <!-- 颜色 -->
+  <!-- Colors -->
   <ion-button color="primary">Primary</ion-button>
   <ion-button color="secondary">Secondary</ion-button>
   <ion-button color="tertiary">Tertiary</ion-button>
@@ -325,19 +325,19 @@ export class ButtonExample {
   <ion-button color="medium">Medium</ion-button>
   <ion-button color="dark">Dark</ion-button>
 
-  <!-- 扩展 -->
+  <!-- Expand -->
   <ion-button expand="full">Full Button</ion-button>
   <ion-button expand="block">Block Button</ion-button>
 
-  <!-- 圆角 -->
+  <!-- Round -->
   <ion-button shape="round">Round Button</ion-button>
 
-  <!-- 填充 -->
+  <!-- Fill -->
   <ion-button expand="full" fill="outline">Outline + Full</ion-button>
   <ion-button expand="block" fill="outline">Outline + Block</ion-button>
   <ion-button shape="round" fill="outline">Outline + Round</ion-button>
 
-  <!-- 图标 -->
+  <!-- Icons -->
   <ion-button>
     <ion-icon slot="start" name="star"></ion-icon>
     Left Icon
@@ -352,7 +352,7 @@ export class ButtonExample {
     <ion-icon slot="icon-only" name="star"></ion-icon>
   </ion-button>
 
-  <!-- 尺寸 -->
+  <!-- Sizes -->
   <ion-button size="large">Large</ion-button>
   <ion-button>Default</ion-button>
   <ion-button size="small">Small</ion-button>
@@ -372,26 +372,26 @@ export class ButtonExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

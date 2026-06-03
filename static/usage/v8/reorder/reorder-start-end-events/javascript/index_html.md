@@ -1,6 +1,6 @@
 ```html
 <ion-list>
-  <!-- 默认禁用了重新排序手势，启用它即可拖放项目 -->
+  <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
   <ion-reorder-group disabled="false">
     <ion-item>
       <ion-label>Buy groceries</ion-label>
@@ -34,23 +34,23 @@
   const reorderGroup = document.querySelector('ion-reorder-group');
   const icons = document.querySelectorAll('ion-icon');
   reorderGroup.addEventListener('ionReorderStart', ({ detail }) => {
-    console.log('开始重新排序');
+    console.log('Reorder started');
 
-    // 当重新排序开始时隐藏图标
+    // Hide the icons when the reorder starts
     icons.forEach((icon) => {
       icon.style.opacity = 0;
     });
   });
 
   reorderGroup.addEventListener('ionReorderEnd', ({ detail }) => {
-    console.log('从索引', detail.from, '拖动到', detail.to);
+    console.log('Dragged from index', detail.from, 'to', detail.to);
 
-    // 再次显示图标
+    // Show the icons again
     icons.forEach((icon) => {
       icon.style.opacity = 1;
     });
 
-    // 完成重新排序
+    // Finish the reorder
     detail.complete();
   });
 </script>

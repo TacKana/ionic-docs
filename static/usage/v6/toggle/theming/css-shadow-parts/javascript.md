@@ -14,7 +14,7 @@
     --handle-max-height: auto;
     --handle-spacing: 6px;
 
-    /* iOS 系统手柄需要超出轨道高度时，此设置是必需的 */
+    /* Required for iOS handle to overflow the height of the track */
     overflow: visible;
     contain: none;
   }

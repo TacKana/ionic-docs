@@ -1,8 +1,13 @@
-# 平台检测
+---
+title: 平台
+sidebar_label: 平台
+---
 
-## isPlatform 方法
+# 平台
 
-`isPlatform` 方法可用于测试应用是否运行在特定平台上：
+## isPlatform
+
+`isPlatform` 方法可用于测试您的应用是否在某个特定平台上运行：
 
 ```tsx
 import { isPlatform } from '@ionic/react';
@@ -10,11 +15,11 @@ import { isPlatform } from '@ionic/react';
 isPlatform('ios'); // 在 iOS 设备上运行时返回 true
 ```
 
-根据用户所在的平台，`isPlatform(platformName)` 将返回 `true` 或 `false`。请注意，同一个应用可能对多个平台名称返回 `true`。例如，在 iPad 上运行的应用会对以下平台名称返回 `true`：`mobile`、`ios`、`ipad` 和 `tablet`。此外，如果应用在 Cordova 环境中运行，那么 `cordova` 也将为 `true`。
+根据用户所在的平台，isPlatform(platformName) 将返回 true 或 false。请注意，同一应用可能对多个平台名称返回 true。例如，在 iPad 上运行的应用会为以下平台名称返回 true：mobile、ios、ipad 和 tablet。此外，如果应用是从 Cordova 运行的，则 cordova 将为 true。
 
-## getPlatforms 方法
+## getPlatforms
 
-`getPlatforms` 方法可用于确定应用当前运行在哪些平台上。
+`getPlatforms` 方法可用于确定您的应用当前正在哪些平台上运行。
 
 ```tsx
 import { getPlatforms } from '@ionic/react';
@@ -22,38 +27,38 @@ import { getPlatforms } from '@ionic/react';
 getPlatforms(); // 在 iPhone 上返回 ["iphone", "ios", "mobile", "mobileweb"]
 ```
 
-根据您所在的设备，`getPlatforms` 可能返回多个值。每个可能的值都代表一个平台层级。例如，在 iPhone 上，它将返回 `mobile`、`ios` 和 `iphone`。
+根据您所使用的设备，`getPlatforms` 可以返回多个值。每个可能的值都是平台的分层结构。例如，在 iPhone 上，它将返回 mobile、ios 和 iphone。
 
-## 平台列表
+## 平台
 
 下表列出了所有可能的平台值及其对应的描述。
 
-| 平台名称    | 描述                                      |
-| ----------- | ----------------------------------------- |
-| android     | 运行 Android 的设备                       |
-| capacitor   | 运行 Capacitor 的设备                     |
-| cordova     | 运行 Cordova 的设备                       |
-| desktop     | 桌面设备                                  |
-| electron    | 运行 Electron 的桌面设备                  |
-| hybrid      | 运行 Capacitor 或 Cordova 的设备          |
-| ios         | 运行 iOS 的设备                           |
-| ipad        | iPad 设备                                 |
-| iphone      | iPhone 设备                               |
-| mobile      | 移动设备                                  |
-| mobileweb   | 在移动设备中运行的网页浏览器              |
-| phablet     | 平板手机设备                              |
-| pwa         | 渐进式 Web 应用                           |
-| tablet      | 平板设备                                  |
+| 平台名称    | 描述                         |
+| ----------- | ---------------------------- |
+| android     | 运行 Android 的设备          |
+| capacitor   | 运行 Capacitor 的设备         |
+| cordova     | 运行 Cordova 的设备          |
+| desktop     | 桌面设备                     |
+| electron    | 运行 Electron 的桌面设备     |
+| hybrid      | 运行 Capacitor 或 Cordova 的设备 |
+| ios         | 运行 iOS 的设备              |
+| ipad        | iPad 设备                    |
+| iphone      | iPhone 设备                  |
+| mobile      | 移动设备                     |
+| mobileweb   | 在移动设备中运行的 Web 浏览器 |
+| phablet     | 平板手机设备                 |
+| pwa         | PWA 应用                     |
+| tablet      | 平板设备                     |
 
 ## 自定义平台检测函数
 
-用于检测特定平台的函数可以通过在全局 [Ionic 配置](../developing/config) 中提供替代函数来覆盖。每个函数都以 `window` 作为参数并返回布尔值。
+可以通过在全局 [Ionic 配置](../developing/config) 中提供替代函数来覆盖检测特定平台的函数。每个函数以 `window` 作为参数并返回一个布尔值。
 
 ```tsx
 setupIonicReact({
   platform: {
     /** 默认的 `desktop` 函数对有触摸屏的设备返回 false。
-     * 这并不总是我们想要的，因此这个函数改为测试用户代理。
+     * 这并不总是想要的，所以这个函数改为测试 User Agent。
      **/
     desktop: (win) => {
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(win.navigator.userAgent);

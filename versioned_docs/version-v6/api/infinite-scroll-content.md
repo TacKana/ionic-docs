@@ -2,18 +2,18 @@
 title: 'ion-infinite-scroll-content'
 ---
 
-import Props from '@ionic-internal/component-api/v6/infinite-scroll-content/props.md';
-import Events from '@ionic-internal/component-api/v6/infinite-scroll-content/events.md';
-import Methods from '@ionic-internal/component-api/v6/infinite-scroll-content/methods.md';
-import Parts from '@ionic-internal/component-api/v6/infinite-scroll-content/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/infinite-scroll-content/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v6/infinite-scroll-content/slots.md';
+import Props from '@ionic-internal/component-api/v7/infinite-scroll-content/props.md';
+import Events from '@ionic-internal/component-api/v7/infinite-scroll-content/events.md';
+import Methods from '@ionic-internal/component-api/v7/infinite-scroll-content/methods.md';
+import Parts from '@ionic-internal/component-api/v7/infinite-scroll-content/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/infinite-scroll-content/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v7/infinite-scroll-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-`ion-infinite-scroll-content` 组件是 `ion-infinite-scroll` 默认使用的子组件。它根据平台显示一个外观最优化的无限滚动加载指示器，并会根据无限滚动状态的变化动态调整显示效果。默认的加载指示器可以通过设置 `loadingSpinner` 和 `loadingText` 属性来更改样式或添加文本。
+`ion-infinite-scroll-content` 组件是 `ion-infinite-scroll` 使用的默认子组件。它显示一个无限滚动旋转器，根据平台显示最佳外观，并根据无限滚动的状态更改外观。可以通过设置 `loadingSpinner` 和 `loadingText` 属性来更改默认旋转器和添加文本。
 
-更多信息及使用示例，请参阅 [无限滚动文档](./infinite-scroll.md#infinite-scroll-content)。
+更多信息及用法请参阅[无限滚动文档](./infinite-scroll.md)。
 
 ## 属性
 
@@ -27,7 +27,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

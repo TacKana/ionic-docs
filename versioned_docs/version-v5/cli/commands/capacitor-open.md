@@ -4,17 +4,17 @@ sidebar_label: 'capacitor open'
 
 # ionic capacitor open
 
-打开指定原生平台项目的集成开发环境（IDE）
+Open the IDE for a given native platform project
 
 ```shell
 ionic capacitor open [options]
 ```
 
-`ionic capacitor open` 将执行以下操作：
+`ionic capacitor open` will do the following:
 
-- 为你的原生项目打开对应的 IDE（iOS 使用 Xcode，Android 使用 Android Studio）
+- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)
 
-## 参数说明
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -26,10 +26,10 @@ ionic capacitor open [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <p>
-          需要打开的平台（例如 <code>android</code>, <code>ios</code>）
+          The platform to open (e.g. <code>android</code>, <code>ios</code>)
         </p>
       </td>
     </tr>

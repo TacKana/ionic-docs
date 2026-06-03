@@ -4,15 +4,15 @@ import { defineCustomElements } from '@ionic/core/loader';
 import { addIcons } from 'ionicons';
 import { pizza } from 'ionicons/icons';
 
-/* 核心 CSS 是 Ionic 组件正常工作所必需的 */
+/* Core CSS required for Ionic components to work properly */
 import '@ionic/core/css/core.css';
 
-/* Ionic 应用的基础 CSS */
+/* Basic CSS for apps built with Ionic */
 import '@ionic/core/css/normalize.css';
 import '@ionic/core/css/structure.css';
 import '@ionic/core/css/typography.css';
 
-/* 可选的 CSS 工具，可以注释掉不使用 */
+/* Optional CSS utils that can be commented out */
 import '@ionic/core/css/padding.css';
 import '@ionic/core/css/float-elements.css';
 import '@ionic/core/css/text-alignment.css';
@@ -20,7 +20,7 @@ import '@ionic/core/css/text-transformation.css';
 import '@ionic/core/css/flex-utils.css';
 import '@ionic/core/css/display.css';
 
-/* 主题变量 */
+/* Theme variables */
 import './theme/variables.css';
 
 addIcons({ pizza });

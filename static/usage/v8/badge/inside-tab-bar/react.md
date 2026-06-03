@@ -9,16 +9,16 @@ function Example() {
       <IonTabBar color="light">
         <IonTabButton tab="tab1">
           <IonIcon icon={heart} />
-          <IonLabel>收藏</IonLabel>
+          <IonLabel>Favorites</IonLabel>
           <IonBadge color="danger"></IonBadge>
         </IonTabButton>
         <IonTabButton tab="tab2">
           <IonIcon icon={musicalNote} />
-          <IonLabel>音乐</IonLabel>
+          <IonLabel>Music</IonLabel>
         </IonTabButton>
         <IonTabButton tab="tab3">
           <IonIcon icon={calendar} />
-          <IonLabel>日历</IonLabel>
+          <IonLabel>Calendar</IonLabel>
           <IonBadge color="danger">47</IonBadge>
         </IonTabButton>
       </IonTabBar>

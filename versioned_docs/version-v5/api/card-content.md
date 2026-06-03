@@ -14,29 +14,29 @@ import Slots from '@ionic-internal/component-api/v5/card-content/slots.md';
 
 # ion-card-content
 
-`ion-card-content` 是 `ion-card` 的子组件，用于添加内容的内边距。
-建议卡片中的任何文本内容都应放置在 `ion-card-content` 中。
+`ion-card-content` is child component of `ion-card` that adds some content padding.
+It is recommended that any text content for a card should be placed in an `ion-card-content`.
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

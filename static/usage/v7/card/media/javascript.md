@@ -7,7 +7,7 @@
   </ion-card-header>
 
   <ion-card-content>
-    这里是一段用于卡片内容的小文本描述。不多不少，刚刚好。
+    Here's a small text description for the card content. Nothing more, nothing less.
   </ion-card-content>
 </ion-card>
 ```

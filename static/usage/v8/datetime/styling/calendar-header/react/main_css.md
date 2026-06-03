@@ -1,6 +1,6 @@
 ```css
 /*
- * 自定义日期时间组件日历标题的CSS Shadow Parts
+ * Custom Datetime Calendar Header Parts
  * -------------------------------------------
  */
 ion-datetime::part(calendar-header) {

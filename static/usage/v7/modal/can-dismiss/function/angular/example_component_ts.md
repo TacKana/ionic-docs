@@ -28,14 +28,14 @@ export class ExampleComponent {
 
   canDismiss = async () => {
     const actionSheet = await this.actionSheetCtrl.create({
-      header: '确定吗？',
+      header: 'Are you sure?',
       buttons: [
         {
-          text: '是',
+          text: 'Yes',
           role: 'confirm',
         },
         {
-          text: '否',
+          text: 'No',
           role: 'cancel',
         },
       ],

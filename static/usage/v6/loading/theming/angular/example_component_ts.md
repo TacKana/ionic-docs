@@ -14,7 +14,7 @@ export class ExampleComponent {
 
   async showLoading() {
     const loading = await this.loadingCtrl.create({
-      message: '正在加载...',
+      message: 'Loading...',
       duration: 3000,
       cssClass: 'custom-loading',
     });

@@ -16,28 +16,28 @@ import Slots from '@ionic-internal/component-api/v5/backdrop/slots.md';
 
 # ion-backdrop
 
-背景幕（Backdrop）是全屏组件，用于覆盖在其他组件之上。它们通常位于从其他内容上方滑入的组件后方，可用于关闭该组件。
+Backdrops are full screen components that overlay other components. They are useful behind components that transition in on top of other content and can be used to dismiss that component.
 
-## 使用方法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- 默认背景幕 -->
+<!-- Default backdrop -->
 <ion-backdrop></ion-backdrop>
 
-<!-- 不可点击的背景幕 -->
+<!-- Backdrop that is not tappable -->
 <ion-backdrop tappable="false"></ion-backdrop>
 
-<!-- 不可见的背景幕 -->
+<!-- Backdrop that is not visible -->
 <ion-backdrop visible="false"></ion-backdrop>
 
-<!-- 允许事件传播的背景幕 -->
+<!-- Backdrop with propagation -->
 <ion-backdrop stopPropagation="false"></ion-backdrop>
 
-<!-- 动态设置属性的背景幕 -->
+<!-- Backdrop that sets dynamic properties -->
 <ion-backdrop [tappable]="enableBackdropDismiss" [visible]="showBackdrop" [stopPropagation]="shouldPropagate">
 </ion-backdrop>
 ```
@@ -62,19 +62,19 @@ export class BackdropExample {
 <TabItem value="javascript">
 
 ```html
-<!-- 默认背景幕 -->
+<!-- Default backdrop -->
 <ion-backdrop></ion-backdrop>
 
-<!-- 不可点击的背景幕 -->
+<!-- Backdrop that is not tappable -->
 <ion-backdrop tappable="false"></ion-backdrop>
 
-<!-- 不可见的背景幕 -->
+<!-- Backdrop that is not visible -->
 <ion-backdrop visible="false"></ion-backdrop>
 
-<!-- 允许事件传播的背景幕 -->
+<!-- Backdrop with propagation -->
 <ion-backdrop stop-propagation="false"></ion-backdrop>
 
-<!-- 动态设置属性的背景幕 -->
+<!-- Backdrop that sets dynamic properties -->
 <ion-backdrop id="customBackdrop"></ion-backdrop>
 ```
 
@@ -95,16 +95,16 @@ import { IonBackdrop, IonContent } from '@ionic/react';
 
 export const BackdropExample: React.FC = () => (
   <IonContent>
-    {/*-- 默认背景幕 --*/}
+    {/*-- Default backdrop --*/}
     <IonBackdrop />
 
-    {/*-- 不可点击的背景幕 --*/}
+    {/*-- Backdrop that is not tappable --*/}
     <IonBackdrop tappable={false} />
 
-    {/*-- 不可见的背景幕 --*/}
+    {/*-- Backdrop that is not visible --*/}
     <IonBackdrop visible={false} />
 
-    {/*-- 允许事件传播的背景幕 --*/}
+    {/*-- Backdrop with propagation --*/}
     <IonBackdrop stopPropagation={false} />
 
     <IonBackdrop tappable={true} visible={true} stopPropagation={true} />
@@ -130,19 +130,19 @@ export class BackdropExample {
     const shouldPropagate = false;
 
     return [
-      // 默认背景幕
+      // Default backdrop
       <ion-backdrop></ion-backdrop>,
 
-      // 不可点击的背景幕
+      // Backdrop that is not tappable
       <ion-backdrop tappable={false}></ion-backdrop>,
 
-      // 不可见的背景幕
+      // Backdrop that is not visible
       <ion-backdrop visible={false}></ion-backdrop>,
 
-      // 允许事件传播的背景幕
+      // Backdrop with propagation
       <ion-backdrop stopPropagation={false}></ion-backdrop>,
 
-      // 动态设置属性的背景幕
+      // Backdrop that sets dynamic properties
       <ion-backdrop
         tappable={enableBackdropDismiss}
         visible={showBackdrop}
@@ -159,19 +159,19 @@ export class BackdropExample {
 
 ```html
 <template>
-  <!-- 默认背景幕 -->
+  <!-- Default backdrop -->
   <ion-backdrop></ion-backdrop>
 
-  <!-- 不可点击的背景幕 -->
+  <!-- Backdrop that is not tappable -->
   <ion-backdrop tappable="false"></ion-backdrop>
 
-  <!-- 不可见的背景幕 -->
+  <!-- Backdrop that is not visible -->
   <ion-backdrop visible="false"></ion-backdrop>
 
-  <!-- 允许事件传播的背景幕 -->
+  <!-- Backdrop with propagation -->
   <ion-backdrop stop-propagation="false"></ion-backdrop>
 
-  <!-- 动态设置属性的背景幕 -->
+  <!-- Backdrop that sets dynamic properties -->
   <ion-backdrop :tappable="enableBackdropDismiss" :visible="showBackdrop" :stop-propagation="shouldPropagate">
   </ion-backdrop>
 </template>
@@ -197,26 +197,26 @@ export class BackdropExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

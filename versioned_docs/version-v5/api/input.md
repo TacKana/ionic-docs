@@ -16,56 +16,56 @@ import Slots from '@ionic-internal/component-api/v5/input/slots.md';
 
 # ion-input
 
-输入组件是对 HTML 原生输入元素的封装，具有自定义样式和增强功能。它兼容 HTML 输入元素的大多数属性，在桌面设备上表现优秀，并能与移动设备的键盘无缝集成。
+The input component is a wrapper to the HTML input element with custom styling and additional functionality. It accepts most of the same properties as the HTML input, but works great on desktop devices and integrates with the keyboard on mobile devices.
 
-该组件仅适用于文本类型的输入，例如 `"text"`、`"password"`、`"email"`、`"number"`、`"search"`、`"tel"` 和 `"url"`。它支持所有标准的文本输入事件，包括 `keyup`、`keydown`、`keypress` 等。
+It is meant for text `type` inputs only, such as `"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, and `"url"`. It supports all standard text input events including `keyup`, `keydown`, `keypress`, and more.
 
-## 使用方法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- 默认输入框 -->
+<!-- Default Input -->
 <ion-input></ion-input>
 
-<!-- 带初始值的输入框 -->
+<!-- Input with value -->
 <ion-input value="custom"></ion-input>
 
-<!-- 带占位符的输入框 -->
-<ion-input placeholder="请输入内容"></ion-input>
+<!-- Input with placeholder -->
+<ion-input placeholder="Enter Input"></ion-input>
 
-<!-- 有值时显示清除按钮的输入框 -->
+<!-- Input with clear button when there is a value -->
 <ion-input clearInput value="clear me"></ion-input>
 
-<!-- 数字类型输入框 -->
+<!-- Number type input -->
 <ion-input type="number" value="333"></ion-input>
 
-<!-- 禁用状态的输入框 -->
+<!-- Disabled input -->
 <ion-input value="Disabled" disabled></ion-input>
 
-<!-- 只读状态的输入框 -->
+<!-- Readonly input -->
 <ion-input value="Readonly" readonly></ion-input>
 
-<!-- 带标签的输入框 -->
+<!-- Inputs with labels -->
 <ion-item>
-  <ion-label>默认标签</ion-label>
+  <ion-label>Default Label</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label position="floating">浮动标签</ion-label>
+  <ion-label position="floating">Floating Label</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label position="fixed">固定标签</ion-label>
+  <ion-label position="fixed">Fixed Label</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label position="stacked">堆叠标签</ion-label>
+  <ion-label position="stacked">Stacked Label</ion-label>
   <ion-input></ion-input>
 </ion-item>
 ```
@@ -75,45 +75,45 @@ import Slots from '@ionic-internal/component-api/v5/input/slots.md';
 <TabItem value="javascript">
 
 ```html
-<!-- 默认输入框 -->
+<!-- Default Input -->
 <ion-input></ion-input>
 
-<!-- 带初始值的输入框 -->
+<!-- Input with value -->
 <ion-input value="custom"></ion-input>
 
-<!-- 带占位符的输入框 -->
-<ion-input placeholder="请输入内容"></ion-input>
+<!-- Input with placeholder -->
+<ion-input placeholder="Enter Input"></ion-input>
 
-<!-- 有值时显示清除按钮的输入框 -->
+<!-- Input with clear button when there is a value -->
 <ion-input clear-input value="clear me"></ion-input>
 
-<!-- 数字类型输入框 -->
+<!-- Number type input -->
 <ion-input type="number" value="333"></ion-input>
 
-<!-- 禁用状态的输入框 -->
+<!-- Disabled input -->
 <ion-input value="Disabled" disabled></ion-input>
 
-<!-- 只读状态的输入框 -->
+<!-- Readonly input -->
 <ion-input value="Readonly" readonly></ion-input>
 
-<!-- 带标签的输入框 -->
+<!-- Inputs with labels -->
 <ion-item>
-  <ion-label>默认标签</ion-label>
+  <ion-label>Default Label</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label position="floating">浮动标签</ion-label>
+  <ion-label position="floating">Floating Label</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label position="fixed">固定标签</ion-label>
+  <ion-label position="fixed">Fixed Label</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
 <ion-item>
-  <ion-label position="stacked">堆叠标签</ion-label>
+  <ion-label position="stacked">Stacked Label</ion-label>
   <ion-input></ion-input>
 </ion-item>
 ```
@@ -145,65 +145,65 @@ export const InputExamples: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>IonInput 示例</IonTitle>
+          <IonTitle>IonInput Examples</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItemDivider>带占位符的默认输入框</IonItemDivider>
+          <IonItemDivider>Default Input with Placeholder</IonItemDivider>
           <IonItem>
-            <IonInput value={text} placeholder="请输入内容" onIonChange={(e) => setText(e.detail.value!)}></IonInput>
+            <IonInput value={text} placeholder="Enter Input" onIonChange={(e) => setText(e.detail.value!)}></IonInput>
           </IonItem>
 
-          <IonItemDivider>有值时显示清除按钮的输入框</IonItemDivider>
+          <IonItemDivider>Input with clear button when there is a value</IonItemDivider>
           <IonItem>
             <IonInput
               value={text}
-              placeholder="请输入内容"
+              placeholder="Enter Input"
               onIonChange={(e) => setText(e.detail.value!)}
               clearInput
             ></IonInput>
           </IonItem>
 
-          <IonItemDivider>数字类型输入框</IonItemDivider>
+          <IonItemDivider>Number type input</IonItemDivider>
           <IonItem>
             <IonInput
               type="number"
               value={number}
-              placeholder="请输入数字"
+              placeholder="Enter Number"
               onIonChange={(e) => setNumber(parseInt(e.detail.value!, 10))}
             ></IonInput>
           </IonItem>
 
-          <IonItemDivider>禁用状态的输入框</IonItemDivider>
+          <IonItemDivider>Disabled input</IonItemDivider>
           <IonItem>
             <IonInput value={text} disabled></IonInput>
           </IonItem>
 
-          <IonItemDivider>只读状态的输入框</IonItemDivider>
+          <IonItemDivider>Readonly input</IonItemDivider>
           <IonItem>
             <IonInput value={text} readonly></IonInput>
           </IonItem>
 
-          <IonItemDivider>带标签的输入框</IonItemDivider>
+          <IonItemDivider>Inputs with labels</IonItemDivider>
 
           <IonItem>
-            <IonLabel>默认标签</IonLabel>
+            <IonLabel>Default Label</IonLabel>
             <IonInput></IonInput>
           </IonItem>
 
           <IonItem>
-            <IonLabel position="floating">浮动标签</IonLabel>
+            <IonLabel position="floating">Floating Label</IonLabel>
             <IonInput value={text}></IonInput>
           </IonItem>
 
           <IonItem>
-            <IonLabel position="fixed">固定标签</IonLabel>
+            <IonLabel position="fixed">Fixed Label</IonLabel>
             <IonInput value={text}></IonInput>
           </IonItem>
 
           <IonItem>
-            <IonLabel position="stacked">堆叠标签</IonLabel>
+            <IonLabel position="stacked">Stacked Label</IonLabel>
             <IonInput value={text}> </IonInput>
           </IonItem>
         </IonList>
@@ -227,45 +227,45 @@ import { Component, h } from '@stencil/core';
 export class InputExample {
   render() {
     return [
-      // 默认输入框
+      // Default Input
       <ion-input></ion-input>,
 
-      // 带初始值的输入框
+      // Input with value
       <ion-input value="custom"></ion-input>,
 
-      // 带占位符的输入框
-      <ion-input placeholder="请输入内容"></ion-input>,
+      // Input with placeholder
+      <ion-input placeholder="Enter Input"></ion-input>,
 
-      // 有值时显示清除按钮的输入框
+      // Input with clear button when there is a value
       <ion-input clearInput value="clear me"></ion-input>,
 
-      // 数字类型输入框
+      // Number type input
       <ion-input type="number" value="333"></ion-input>,
 
-      // 禁用状态的输入框
+      // Disabled input
       <ion-input value="Disabled" disabled></ion-input>,
 
-      // 只读状态的输入框
+      // Readonly input
       <ion-input value="Readonly" readonly></ion-input>,
 
-      // 带标签的输入框
+      // Inputs with labels
       <ion-item>
-        <ion-label>默认标签</ion-label>
+        <ion-label>Default Label</ion-label>
         <ion-input></ion-input>
       </ion-item>,
 
       <ion-item>
-        <ion-label position="floating">浮动标签</ion-label>
+        <ion-label position="floating">Floating Label</ion-label>
         <ion-input></ion-input>
       </ion-item>,
 
       <ion-item>
-        <ion-label position="fixed">固定标签</ion-label>
+        <ion-label position="fixed">Fixed Label</ion-label>
         <ion-input></ion-input>
       </ion-item>,
 
       <ion-item>
-        <ion-label position="stacked">堆叠标签</ion-label>
+        <ion-label position="stacked">Stacked Label</ion-label>
         <ion-input></ion-input>
       </ion-item>,
     ];
@@ -279,45 +279,45 @@ export class InputExample {
 
 ```html
 <template>
-  <!-- 默认输入框 -->
+  <!-- Default Input -->
   <ion-input></ion-input>
 
-  <!-- 带初始值的输入框 -->
+  <!-- Input with value -->
   <ion-input value="custom"></ion-input>
 
-  <!-- 带占位符的输入框 -->
-  <ion-input placeholder="请输入内容"></ion-input>
+  <!-- Input with placeholder -->
+  <ion-input placeholder="Enter Input"></ion-input>
 
-  <!-- 有值时显示清除按钮的输入框 -->
+  <!-- Input with clear button when there is a value -->
   <ion-input clear-input value="clear me"></ion-input>
 
-  <!-- 数字类型输入框 -->
+  <!-- Number type input -->
   <ion-input type="number" value="333"></ion-input>
 
-  <!-- 禁用状态的输入框 -->
+  <!-- Disabled input -->
   <ion-input value="Disabled" disabled></ion-input>
 
-  <!-- 只读状态的输入框 -->
+  <!-- Readonly input -->
   <ion-input value="Readonly" readonly></ion-input>
 
-  <!-- 带标签的输入框 -->
+  <!-- Inputs with labels -->
   <ion-item>
-    <ion-label>默认标签</ion-label>
+    <ion-label>Default Label</ion-label>
     <ion-input></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">浮动标签</ion-label>
+    <ion-label position="floating">Floating Label</ion-label>
     <ion-input></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="fixed">固定标签</ion-label>
+    <ion-label position="fixed">Fixed Label</ion-label>
     <ion-input></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="stacked">堆叠标签</ion-label>
+    <ion-label position="stacked">Stacked Label</ion-label>
     <ion-input></ion-input>
   </ion-item>
 </template>
@@ -336,27 +336,26 @@ export class InputExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />
-```

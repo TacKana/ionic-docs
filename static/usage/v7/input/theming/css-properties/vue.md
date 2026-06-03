@@ -1,10 +1,10 @@
 ```html
 <template>
   <ion-input
-    aria-label="自定义输入框"
-    placeholder="自定义输入框"
+    aria-label="Custom input"
+    placeholder="Custom input"
     class="custom"
-    helper-text="辅助文本"
+    helper-text="Helper text"
     :counter="true"
     :maxlength="20"
   ></ion-input>

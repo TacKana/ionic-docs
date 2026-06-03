@@ -16,11 +16,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-选项卡按钮是一个放置在[选项卡栏](tab-bar.md)内的用户界面组件。它可以指定图标和标签的布局，并连接到[选项卡视图](tab.md)。
+标签按钮（Tab button）是放置在[标签栏（tab bar）](tab-bar.md)内的 UI 组件。标签按钮可以指定图标和标签的布局，并连接到[标签视图（tab view）](tab.md)。
 
-有关配置选项卡的更多详细信息，请参阅[选项卡文档](tabs.md)。
+请参阅[tabs 文档](tabs.md)了解更多关于配置标签的详细信息。
 
-## 使用方法
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -28,7 +28,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ```html
 <ion-tabs>
-  <!-- 选项卡栏 -->
+  <!-- 标签栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="schedule">
       <ion-icon name="calendar" aria-hidden="true"></ion-icon>
@@ -59,7 +59,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ```html
 <ion-tabs>
-  <!-- 选项卡视图 -->
+  <!-- 标签视图 -->
   <ion-tab tab="schedule">
     <ion-router-outlet name="schedule"></ion-router-outlet>
   </ion-tab>
@@ -76,7 +76,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
     <ion-router-outlet name="about"></ion-router-outlet>
   </ion-tab>
 
-  <!-- 选项卡栏 -->
+  <!-- 标签栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="schedule" href="/app/tabs/(schedule:schedule)">
       <ion-icon name="calendar" aria-hidden="true"></ion-icon>
@@ -113,7 +113,7 @@ import { calendar, personCircle, map, informationCircle } from 'ionicons/icons';
 export const TabButtonExample: React.FC = () => (
   <IonContent>
     <IonTabs>
-      {/*-- 选项卡栏 --*/}
+      {/*-- 标签栏 --*/}
       <IonTabBar slot="bottom">
         <IonTabButton tab="schedule">
           <IonIcon icon={calendar} aria-hidden="true" />
@@ -147,7 +147,7 @@ export const TabButtonExample: React.FC = () => (
 ```html
 <template>
   <ion-tabs>
-    <!-- 选项卡栏 -->
+    <!-- 标签栏 -->
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="schedule" href="/tabs/schedule">
         <ion-icon :icon="calendar" aria-hidden="true"></ion-icon>
@@ -194,7 +194,7 @@ export const TabButtonExample: React.FC = () => (
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

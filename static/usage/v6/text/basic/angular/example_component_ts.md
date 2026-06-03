@@ -13,9 +13,9 @@ import { warning } from 'ionicons/icons';
 export class ExampleComponent {
   constructor() {
     /**
-     * 任何你想在应用中使用的图标
-     * 都可以在 app.component.ts 中注册，
-     * 然后就可以在整个应用中通过名称来引用。
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
      */
     addIcons({ warning });
   }

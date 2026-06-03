@@ -5,11 +5,11 @@
       <ion-buttons slot="start">
         <ion-back-button></ion-back-button>
       </ion-buttons>
-      <ion-title>页面三</ion-title>
+      <ion-title>Page Three</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <h1>页面三</h1>
+    <h1>Page Three</h1>
   </ion-content>
 </template>
 

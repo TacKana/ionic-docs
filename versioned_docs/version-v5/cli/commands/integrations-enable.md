@@ -4,17 +4,17 @@ sidebar_label: 'integrations enable'
 
 # ionic integrations enable
 
-为您的应用添加并启用集成功能
+Add & enable integrations to your app
 
 ```shell
 ionic integrations enable [options]
 ```
 
-通过此命令可以启用 Cordova 等集成功能。如果项目中从未添加过该集成，`ionic integrations enable` 将下载并添加该集成。
+Integrations, such as Cordova, can be enabled with this command. If the integration has never been added to the project, `ionic integrations enable` will download and add the integration.
 
-可以通过 `--add` 选项重新添加集成。
+Integrations can be re-added with the `--add` option.
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -26,17 +26,17 @@ ionic integrations enable [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <p>
-          要启用的集成名称（例如 <code>capacitor</code>、<code>cordova</code>、<code>enterprise</code>）
+          The integration to enable (e.g. <code>capacitor</code>, <code>cordova</code>, <code>enterprise</code>)
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 选项
+## Options
 
 <table className="reference-table">
   <thead>
@@ -52,9 +52,9 @@ ionic integrations enable [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
-        <p>即使已启用也重新下载并添加集成</p>
+        <p>Download and add the integration even if enabled</p>
       </td>
     </tr>
   </tbody>
@@ -72,9 +72,9 @@ ionic integrations enable [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
-        <p>指定添加集成时的备用下载目标路径</p>
+        <p>Specify an alternative destination to download into when adding</p>
       </td>
     </tr>
   </tbody>
@@ -91,9 +91,9 @@ ionic integrations enable [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
-        <p>减少输出信息，忽略集成错误</p>
+        <p>Less verbose output, ignore integration errors</p>
       </td>
     </tr>
   </tbody>

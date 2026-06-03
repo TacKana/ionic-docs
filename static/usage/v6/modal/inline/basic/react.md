@@ -20,7 +20,7 @@ function Example() {
   const input = useRef<HTMLIonInputElement>(null);
 
   const [message, setMessage] = useState(
-    '此模态框示例使用触发器在按钮被点击时自动打开模态框。'
+    'This modal example uses triggers to automatically open a modal when the button is clicked.'
   );
 
   function confirm() {
@@ -29,7 +29,7 @@ function Example() {
 
   function onWillDismiss(ev: CustomEvent<OverlayEventDetail>) {
     if (ev.detail.role === 'confirm') {
-      setMessage(`你好，${ev.detail.data}！`);
+      setMessage(`Hello, ${ev.detail.data}!`);
     }
   }
 
@@ -37,32 +37,32 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>内联模态框</IonTitle>
+          <IonTitle>Inline Modal</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          打开
+          Open
         </IonButton>
         <p>{message}</p>
         <IonModal ref={modal} trigger="open-modal" onWillDismiss={(ev) => onWillDismiss(ev)}>
           <IonHeader>
             <IonToolbar>
               <IonButtons slot="start">
-                <IonButton onClick={() => modal.current?.dismiss()}>取消</IonButton>
+                <IonButton onClick={() => modal.current?.dismiss()}>Cancel</IonButton>
               </IonButtons>
-              <IonTitle>欢迎</IonTitle>
+              <IonTitle>Welcome</IonTitle>
               <IonButtons slot="end">
                 <IonButton strong={true} onClick={() => confirm()}>
-                  确认
+                  Confirm
                 </IonButton>
               </IonButtons>
             </IonToolbar>
           </IonHeader>
           <IonContent className="ion-padding">
             <IonItem>
-              <IonLabel position="stacked">请输入你的名字</IonLabel>
-              <IonInput ref={input} type="text" placeholder="你的名字" />
+              <IonLabel position="stacked">Enter your name</IonLabel>
+              <IonInput ref={input} type="text" placeholder="Your name" />
             </IonItem>
           </IonContent>
         </IonModal>

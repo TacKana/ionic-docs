@@ -12,6 +12,6 @@
 </style>
 
 <ion-item-divider>
-  <ion-label>项目分隔线</ion-label>
+  <ion-label> Item Divider </ion-label>
 </ion-item-divider>
 ```

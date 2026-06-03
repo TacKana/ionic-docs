@@ -12,11 +12,11 @@ function Example() {
           toggleIcon={add}
           expandedIcon={remove}
           aria-label="fruit"
-          placeholder="选择水果"
+          placeholder="Select fruit"
         >
-          <IonSelectOption value="apples">苹果</IonSelectOption>
-          <IonSelectOption value="oranges">橙子</IonSelectOption>
-          <IonSelectOption value="bananas">香蕉</IonSelectOption>
+          <IonSelectOption value="apples">Apples</IonSelectOption>
+          <IonSelectOption value="oranges">Oranges</IonSelectOption>
+          <IonSelectOption value="bananas">Bananas</IonSelectOption>
         </IonSelect>
       </IonItem>
     </IonList>

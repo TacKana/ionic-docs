@@ -8,13 +8,13 @@ function Example() {
   return (
     <IonSegment value="custom">
       <IonSegmentButton value="custom">
-        <IonLabel>自定义</IonLabel>
+        <IonLabel>Custom</IonLabel>
       </IonSegmentButton>
       <IonSegmentButton value="segment">
-        <IonLabel>分段</IonLabel>
+        <IonLabel>Segment</IonLabel>
       </IonSegmentButton>
       <IonSegmentButton value="buttons">
-        <IonLabel>按钮</IonLabel>
+        <IonLabel>Buttons</IonLabel>
       </IonSegmentButton>
     </IonSegment>
   );

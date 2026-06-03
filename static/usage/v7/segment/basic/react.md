@@ -7,19 +7,19 @@ function Example() {
     <>
       <IonSegment value="default">
         <IonSegmentButton value="default">
-          <IonLabel>默认</IonLabel>
+          <IonLabel>Default</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>分段</IonLabel>
+          <IonLabel>Segment</IonLabel>
         </IonSegmentButton>
       </IonSegment>
 
       <IonSegment disabled={true} value="disabled">
         <IonSegmentButton value="disabled">
-          <IonLabel>已禁用</IonLabel>
+          <IonLabel>Disabled</IonLabel>
         </IonSegmentButton>
         <IonSegmentButton value="segment">
-          <IonLabel>分段</IonLabel>
+          <IonLabel>Segment</IonLabel>
         </IonSegmentButton>
       </IonSegment>
     </>

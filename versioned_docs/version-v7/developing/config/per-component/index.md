@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 ```ts
 window.Ionic = {
   config: {
-    // 当应用需要响应式值时，不推荐使用此方式
+    // Not recommended when your app requires reactive values
     backButtonText: 'Go Back',
   },
 };
@@ -34,7 +34,7 @@ window.Ionic = {
   const backButton = document.querySelector('ion-back-button');
 
   /**
-   * 返回按钮的文本可以在语言环境改变时随时更新。
+   * 返回按钮文本可以在语言环境变化时随时更新。
    */
   backButton.text = 'Go Back';
 </script>
@@ -52,7 +52,7 @@ import { IonicModule } from '@ionic/angular';
   ...
   imports: [
     IonicModule.forRoot({
-      // 当应用需要响应式值时，不推荐使用此方式
+      // 当您的应用需要响应式值时，不推荐这样做
       backButtonText: 'Go Back'
     })
   ],
@@ -70,7 +70,7 @@ import { IonicModule } from '@ionic/angular';
 @Component(...)
 class MyComponent {
   /**
-   * 返回按钮的文本可以在语言环境改变时随时更新。
+   * 返回按钮文本可以在语言环境变化时随时更新。
    */
   backButtonText = 'Go Back';
 }
@@ -88,7 +88,7 @@ bootstrapApplication(AppComponent, {
   providers: [
     ...,
     provideIonicAngular({
-      // 当应用需要响应式值时，不推荐使用此方式
+      // 当您的应用需要响应式值时，不推荐这样做
       backButtonText: 'Go Back'
     })
   ]
@@ -105,7 +105,7 @@ bootstrapApplication(AppComponent, {
 @Component(...)
 class MyComponent {
   /**
-   * 返回按钮的文本可以在语言环境改变时随时更新。
+   * 返回按钮文本可以在语言环境变化时随时更新。
    */
   backButtonText = 'Go Back';
 }
@@ -120,7 +120,7 @@ class MyComponent {
 import { setupIonicReact } from '@ionic/react';
 
 setupIonicReact({
-  // 当应用需要响应式值时，不推荐使用此方式
+  // Not recommended when your app requires reactive values
   backButtonText: 'Go Back',
 });
 ```
@@ -135,7 +135,7 @@ const ExampleComponent = () => {
   const [backButtonText, setBackButtonText] = useState('Go Back');
   return (
     {/*
-     * 返回按钮的文本可以在语言环境改变时随时更新。
+     * 返回按钮文本可以在语言环境变化时随时更新。
      */}
     <IonBackButton text={backButtonText}></IonBackButton>
   )
@@ -151,7 +151,7 @@ const ExampleComponent = () => {
 import { IonicVue } from '@ionic/vue';
 import { createApp } from 'vue';
 
-// 当应用需要响应式值时，不推荐使用此方式
+// Not recommended when your app requires reactive values
 createApp(App).use(IonicVue, {
   backButtonText: 'Go Back',
 });
@@ -169,7 +169,7 @@ createApp(App).use(IonicVue, {
   import { ref } from 'vue';
 
   /**
-   * 返回按钮的文本可以在语言环境改变时随时更新。
+   * 返回按钮文本可以在语言环境变化时随时更新。
    */
   const backButtonText = ref('Go Back');
 </script>

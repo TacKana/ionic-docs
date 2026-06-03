@@ -13,9 +13,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-手风琴组（accordion group）是手风琴（accordion）实例的容器。它负责管理手风琴的状态，并提供键盘导航功能。
+手风琴组（Accordion Group）是手风琴实例的容器。它管理手风琴的状态并提供键盘导航。
 
-更多信息请参阅[手风琴（Accordion）](./accordion)文档。
+更多信息请参阅[手风琴](./accordion)文档。
 
 ## 接口
 
@@ -29,7 +29,7 @@ interface AccordionGroupChangeEventDetail<T = any> {
 
 ### AccordionGroupCustomEvent
 
-虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便在使用此组件发出的 Ionic 事件时获得更强的类型支持。
+虽然不是必需的，但此接口可以替代 `CustomEvent` 接口，为此组件发出的 Ionic 事件提供更强的类型支持。
 
 ```typescript
 interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
@@ -50,7 +50,7 @@ interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

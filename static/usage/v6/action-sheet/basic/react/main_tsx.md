@@ -14,24 +14,24 @@ function Example() {
       <IonButton
         onClick={() =>
           present({
-            header: '示例标题',
-            subHeader: '示例副标题',
+            header: 'Example header',
+            subHeader: 'Example subheader',
             buttons: [
               {
-                text: '删除',
+                text: 'Delete',
                 role: 'destructive',
                 data: {
                   action: 'delete',
                 },
               },
               {
-                text: '分享',
+                text: 'Share',
                 data: {
                   action: 'share',
                 },
               },
               {
-                text: '取消',
+                text: 'Cancel',
                 role: 'cancel',
                 data: {
                   action: 'cancel',
@@ -42,7 +42,7 @@ function Example() {
           })
         }
       >
-        打开
+        Open
       </IonButton>
       {result && <code>{JSON.stringify(result, null, 2)}</code>}
     </div>

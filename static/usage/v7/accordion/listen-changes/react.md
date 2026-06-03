@@ -8,7 +8,7 @@ function Example() {
     const selectedValue = event.detail.value;
 
     console.log(
-      `展开的面板: ${selectedValue === undefined ? '无' : event.detail.value} | 折叠的面板: ${collapsedItems.join(', ')}`
+      `Expanded: ${selectedValue === undefined ? 'None' : event.detail.value} | Collapsed: ${collapsedItems.join(', ')}`
     );
   };
 
@@ -16,26 +16,26 @@ function Example() {
     <IonAccordionGroup onIonChange={accordionGroupChange}>
       <IonAccordion value="first">
         <IonItem slot="header" color="light">
-          <IonLabel>第一个折叠面板</IonLabel>
+          <IonLabel>First Accordion</IonLabel>
         </IonItem>
         <div className="ion-padding" slot="content">
-          第一个内容
+          First Content
         </div>
       </IonAccordion>
       <IonAccordion value="second">
         <IonItem slot="header" color="light">
-          <IonLabel>第二个折叠面板</IonLabel>
+          <IonLabel>Second Accordion</IonLabel>
         </IonItem>
         <div className="ion-padding" slot="content">
-          第二个内容
+          Second Content
         </div>
       </IonAccordion>
       <IonAccordion value="third">
         <IonItem slot="header" color="light">
-          <IonLabel>第三个折叠面板</IonLabel>
+          <IonLabel>Third Accordion</IonLabel>
         </IonItem>
         <div className="ion-padding" slot="content">
-          第三个内容
+          Third Content
         </div>
       </IonAccordion>
     </IonAccordionGroup>

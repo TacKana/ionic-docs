@@ -12,11 +12,11 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>现在收听</ion-title>
+        <ion-title>Listen now</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <div class="example-content">现在收听的内容</div>
+      <div class="example-content">Listen now content</div>
     </ion-content>
   </ion-page>
 </template>

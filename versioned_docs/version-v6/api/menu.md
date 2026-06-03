@@ -2,18 +2,18 @@
 title: 'ion-menu'
 ---
 
-import Props from '@ionic-internal/component-api/v6/menu/props.md';
-import Events from '@ionic-internal/component-api/v6/menu/events.md';
-import Methods from '@ionic-internal/component-api/v6/menu/methods.md';
-import Parts from '@ionic-internal/component-api/v6/menu/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/menu/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v6/menu/slots.md';
+import Props from '@ionic-internal/component-api/v7/menu/props.md';
+import Events from '@ionic-internal/component-api/v7/menu/events.md';
+import Methods from '@ionic-internal/component-api/v7/menu/methods.md';
+import Parts from '@ionic-internal/component-api/v7/menu/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/menu/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v7/menu/slots.md';
 
 <head>
-  <title>ion-menu：Ionic API 中各类菜单组件的框架文档</title>
+  <title>ion-menu：API 框架文档中菜单组件的类型</title>
   <meta
     name="description"
-    content="ion-menu 组件是从当前视图侧面滑入的导航抽屉。请阅读我们的框架文档，了解 Ionic API 中可用的菜单类型。"
+    content="ion-menu 组件是从当前视图侧面滑入的导航抽屉。阅读我们的框架文档，了解 Ionic API 上可用的菜单类型。"
   />
 </head>
 
@@ -21,24 +21,21 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-菜单组件是一个从当前视图侧面滑入的导航抽屉。
-默认情况下，它从左侧滑入，但可以覆盖此设置以从其他侧滑入。
-菜单将根据当前模式以不同方式显示，但显示类型可以更改为任何可用的菜单类型。
-菜单元素应是根内容元素的同级元素。
-可以附加任意数量的菜单到内容上。
-这些菜单可以通过模板控制，也可以使用 MenuController 进行编程控制。
+菜单组件是一个从当前视图侧面滑入的导航抽屉。默认情况下，它使用起始侧，使其在 LTR 中从左侧滑入，在 RTL 中从右侧滑入，但可以覆盖侧边设置。菜单将根据模式以不同方式显示，但显示类型可以更改为任何可用的菜单类型。
+
+菜单元素应与根内容元素同级。可以有任何数量的菜单附加到内容。这些可以从模板中控制，或使用 `MenuController` 以编程方式控制。
 
 ## 基本用法
 
-import BasicUsage from '@site/static/usage/v6/menu/basic/index.md';
+import Basic from '@site/static/usage/v7/menu/basic/index.md';
 
-<BasicUsage />
+<Basic />
 
-## 菜单开关
+## 菜单切换
 
-[ion-menu-toggle](./menu-toggle) 组件可用于创建可打开或关闭菜单的自定义按钮。
+[菜单切换（menu toggle）](./menu-toggle)组件可用于创建可以打开或关闭菜单的自定义按钮。
 
-import MenuToggle from '@site/static/usage/v6/menu/toggle/index.md';
+import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
 
 <MenuToggle />
 
@@ -46,15 +43,33 @@ import MenuToggle from '@site/static/usage/v6/menu/toggle/index.md';
 
 `type` 属性可用于自定义菜单在应用中的显示方式。
 
-import MenuType from '@site/static/usage/v6/menu/type/index.md';
+import MenuType from '@site/static/usage/v7/menu/type/index.md';
 
 <MenuType />
 
-## 主题定制
+## 菜单侧边
 
-### CSS Shadow Parts
+菜单默认显示在 `"start"` 侧。在使用从左到右方向的应用中，这是左侧；在从右到左的应用中，这是右侧。菜单也可以设置为显示在 `"end"` 侧，这是 `"start"` 的相反侧。
 
-import Theming from '@site/static/usage/v6/menu/theming/index.md';
+如果应用需要两侧都有菜单，可以通过将 `side` 值传递给 `MenuController` 的 `open` 方法来打开菜单。如果未提供侧边，将打开 `"start"` 侧的菜单。有关使用 `MenuController` 的示例，请参阅下面的[多个菜单](#多个菜单)部分。
+
+import Sides from '@site/static/usage/v7/menu/sides/index.md';
+
+<Sides />
+
+## 多个菜单
+
+当同一侧存在多个菜单时，我们需要通过 ID 而不是侧边来引用它们。否则，可能会激活错误的菜单。
+
+import Multiple from '@site/static/usage/v7/menu/multiple/index.md';
+
+<Multiple />
+
+## 主题
+
+### CSS 阴影部分
+
+import Theming from '@site/static/usage/v7/menu/theming/index.md';
 
 <Theming />
 
@@ -62,7 +77,7 @@ import Theming from '@site/static/usage/v6/menu/theming/index.md';
 
 ### MenuCustomEvent
 
-虽然不是必需的，但可以使用此接口替代 `CustomEvent` 接口，以便在从此组件发出的 Ionic 事件中获得更强的类型提示。
+虽然不是必需的，但此接口可以替代 `CustomEvent` 接口，为此组件发出的 Ionic 事件提供更强的类型支持。
 
 ```typescript
 interface MenuCustomEvent<T = any> extends CustomEvent {
@@ -83,7 +98,7 @@ interface MenuCustomEvent<T = any> extends CustomEvent {
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

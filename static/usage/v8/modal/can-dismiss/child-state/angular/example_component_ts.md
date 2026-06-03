@@ -31,30 +31,30 @@ export class ExampleComponent {
   }
 
   onDismissChange(canDismiss: boolean) {
-    // 允许根据复选框的状态来决定是否关闭模态框
+    // Allows the modal to be dismissed based on the state of the checkbox
     this.canDismissOverride = canDismiss;
   }
 
   onWillPresent() {
-    // 当模态框显示时，重置覆盖标志
+    // Resets the override when the modal is presented
     this.canDismissOverride = false;
   }
 
   canDismiss = async () => {
     if (this.canDismissOverride) {
-      // 检查覆盖标志，如果允许立即关闭覆盖层则提前返回
+      // Checks for the override flag to return early if we can dismiss the overlay immediately
       return true;
     }
 
     const actionSheet = await this.actionSheetCtrl.create({
-      header: '确认离开吗？',
+      header: 'Are you sure?',
       buttons: [
         {
-          text: '确认',
+          text: 'Yes',
           role: 'confirm',
         },
         {
-          text: '取消',
+          text: 'No',
           role: 'cancel',
         },
       ],

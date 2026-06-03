@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-toggle :enable-on-off-labels="true">启用通知</ion-toggle>
+  <ion-toggle :enable-on-off-labels="true">Enable Notifications</ion-toggle>
 </template>
 
 <script setup lang="ts">

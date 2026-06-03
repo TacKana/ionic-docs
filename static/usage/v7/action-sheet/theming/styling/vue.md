@@ -29,12 +29,12 @@
 </style>
 
 <template>
-  <ion-button id="open-action-sheet">打开</ion-button>
+  <ion-button id="open-action-sheet">Open</ion-button>
   <ion-action-sheet
     trigger="open-action-sheet"
     class="my-custom-class"
-    header="示例标题"
-    sub-header="示例副标题"
+    header="Example header"
+    sub-header="Example subheader"
     :buttons="actionSheetButtons"
   ></ion-action-sheet>
 </template>
@@ -44,20 +44,20 @@
 
   const actionSheetButtons = [
     {
-      text: '删除',
+      text: 'Delete',
       role: 'destructive',
       data: {
         action: 'delete',
       },
     },
     {
-      text: '分享',
+      text: 'Share',
       data: {
         action: 'share',
       },
     },
     {
-      text: '取消',
+      text: 'Cancel',
       role: 'cancel',
       data: {
         action: 'cancel',

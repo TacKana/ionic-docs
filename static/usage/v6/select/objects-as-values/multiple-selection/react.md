@@ -45,7 +45,7 @@ function Example() {
     <IonList>
       <IonItem>
         <IonSelect
-          placeholder="选择食物"
+          placeholder="Select food"
           compareWith={compareWith}
           onIonChange={(ev) => setCurrentFood(JSON.stringify(ev.detail.value))}
           multiple={true}
@@ -58,7 +58,7 @@ function Example() {
         </IonSelect>
       </IonItem>
       <IonItem lines="none">
-        <IonLabel>当前值: {currentFood}</IonLabel>
+        <IonLabel>Current value: {currentFood}</IonLabel>
       </IonItem>
     </IonList>
   );

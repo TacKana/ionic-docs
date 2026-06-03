@@ -6,27 +6,27 @@ import { menuController } from '@ionic/core/components';
 function Example() {
   async function openFirstMenu() {
     /**
-     * 通过菜单 ID 打开菜单
-     * 这里我们使用 ID 来引用菜单，
-     * 因为存在多个“起始”侧菜单。
+     * Open the menu by menu-id
+     * We refer to the menu using an ID
+     * because multiple "start" menus exist.
      */
     await menuController.open('first-menu');
   }
 
   async function openSecondMenu() {
     /**
-     * 通过菜单 ID 打开菜单
-     * 这里我们使用 ID 来引用菜单，
-     * 因为存在多个“起始”侧菜单。
+     * Open the menu by menu-id
+     * We refer to the menu using an ID
+     * because multiple "start" menus exist.
      */
     await menuController.open('second-menu');
   }
 
   async function openEndMenu() {
     /**
-     * 通过侧边位置打开菜单
-     * 这里我们可以通过侧边位置来引用菜单，
-     * 因为只存在一个“结束”侧菜单。
+     * Open the menu by side
+     * We can refer to the menu by side
+     * here because only one "end" menu exists
      */
     await menuController.open('end');
   }
@@ -36,47 +36,47 @@ function Example() {
       <IonMenu menuId="first-menu" contentId="main-content">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>第一个菜单</IonTitle>
+            <IonTitle>First Menu</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent className="ion-padding">这是第一个菜单的内容。</IonContent>
+        <IonContent className="ion-padding">This is the first menu content.</IonContent>
       </IonMenu>
 
       <IonMenu menuId="second-menu" contentId="main-content">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>第二个菜单</IonTitle>
+            <IonTitle>Second Menu</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent className="ion-padding">这是第二个菜单的内容。</IonContent>
+        <IonContent className="ion-padding">This is the second menu content.</IonContent>
       </IonMenu>
 
       <IonMenu side="end" contentId="main-content">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>结束侧菜单</IonTitle>
+            <IonTitle>End Menu</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent className="ion-padding">这是结束侧菜单的内容。</IonContent>
+        <IonContent className="ion-padding">This is the end menu content.</IonContent>
       </IonMenu>
 
       <IonPage id="main-content">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>菜单</IonTitle>
+            <IonTitle>Menu</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
-          <p>点击下面的按钮打开特定的菜单。</p>
+          <p>Tap a button below to open a specific menu.</p>
 
           <IonButton expand="block" onClick={openFirstMenu}>
-            打开第一个菜单
+            Open First Menu
           </IonButton>
           <IonButton expand="block" onClick={openSecondMenu}>
-            打开第二个菜单
+            Open Second Menu
           </IonButton>
           <IonButton expand="block" onClick={openEndMenu}>
-            打开结束侧菜单
+            Open End Menu
           </IonButton>
         </IonContent>
       </IonPage>

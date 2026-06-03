@@ -1,5 +1,5 @@
 ---
-title: 芯片组件
+title: "ion-chip"
 ---
 import Props from '@ionic-internal/component-api/v8/chip/props.md';
 import Events from '@ionic-internal/component-api/v8/chip/events.md';
@@ -9,15 +9,15 @@ import CustomProps from '@ionic-internal/component-api/v8/chip/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v8/chip/slots.md';
 
 <head>
-  <title>ion-chip: Ionic 框架应用中的文本、图标和头像组件</title>
-  <meta name="description" content="ion-chips 以小方块形式呈现复杂实体，例如联系人。一个芯片可以包含多种不同元素，例如姓名、头像、文本和图标。" />
+  <title>ion-chip：Ionic Framework 应用的文本、图标和头像组件</title>
+  <meta name="description" content="ion-chip 以小块形式表示复杂实体，例如联系人。一个 chip 可以包含多种不同元素，如名称、头像、文本和图标。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-芯片（Chips）以小方块形式呈现复杂实体，例如联系人。一个芯片可以包含多种不同元素，例如头像、文本和图标。
+Chip 以小块形式表示复杂实体，例如联系人。一个 chip 可以包含多种不同元素，如头像、文本和图标。
 
 ## 基本用法
 
@@ -45,20 +45,20 @@ import CSSProps from '@site/static/usage/v8/chip/theming/css-properties/index.md
 
 <CSSProps />
 
-## 属性
+## Properties
 <Props />
 
-## 事件
+## Events
 <Events />
 
-## 方法
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 <CustomProps />
 
-## 插槽
+## Slots
 <Slots />

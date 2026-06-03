@@ -1,7 +1,8 @@
 ---
 title: "File Transfer | Cordova Docs File Transfer Download Plugin"
-description: "Cordova 文件传输插件支持文档文件的上传与下载。该插件兼容 iOS、Android、Windows 等多个平台。"
-sidebar_label: "File Transfer"
+description: "The Cordova File Transfer plug in allows you to upload and download docs files. This plugin is supported on iOS, Android, Windows, and more platforms."
+sidebar_label: "File Transfer
+"
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -12,27 +13,27 @@ import CodeBlock from '@theme/CodeBlock';
 
 # File Transfer
 
-该插件允许你上传和下载文件。
+This plugin allows you to upload and download files.
 
 <p>
   <a href="https://github.com/apache/cordova-plugin-file-transfer" target="_blank" rel="noopener" className="git-link">github.com/apache/cordova-plugin-file-transfer</a>
 </p>
 
-<h2>遇到 Cordova 问题卡住了？</h2>
+<h2>Stuck on a Cordova issue?</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="不要在插件问题上浪费宝贵时间。"
+  header="Don't waste precious time on plugin issues."
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>如果你正在开发一个重要的项目，就无法承受花费数小时进行故障排除。Ionic 的专家为社区插件和企业级插件提供高级咨询服务。</p>
-    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer premium advisory services for both community plugins and premier plugins.</p>
+    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">安装</a>
+  <a href="#installation">Installation</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -57,13 +58,13 @@ import CodeBlock from '@theme/CodeBlock';
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise 提供 Ionic 团队全面支持与维护的插件。&nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，或如果你对该插件的企业版感兴趣，请<a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>。
+      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## 支持的平台
+## Supported Platforms
 
 - Amazon Fire OS
 - Android
@@ -73,11 +74,11 @@ import CodeBlock from '@theme/CodeBlock';
 - Windows
 - Windows Phone
 
-## 使用方法
+## Usage
 
 ### React
 
-[进一步了解在 React 中使用 Ionic Native 组件](../native-community.md#react)
+[Learn more about using Ionic Native components in React](../native-community.md#react)
 
 ### Angular
 
@@ -91,16 +92,16 @@ constructor(private transfer: FileTransfer, private file: File) { }
 
 const fileTransfer: FileTransferObject = this.transfer.create();
 
-// 上传文件：
+// Upload a file:
 fileTransfer.upload(..).then(..).catch(..);
 
-// 下载文件：
+// Download a file:
 fileTransfer.download(..).then(..).catch(..);
 
-// 中止当前传输：
+// Abort active transfer:
 fileTransfer.abort();
 
-// 完整示例
+// full example
 upload() {
   let options: FileUploadOptions = {
      fileKey: 'file',
@@ -111,22 +112,22 @@ upload() {
 
   fileTransfer.upload('&lt;file path>', '&lt;api endpoint>', options)
    .then((data) => {
-     // 成功
+     // success
    }, (err) => {
-     // 错误
+     // error
    })
 }
 
 download() {
   const url = 'http://www.example.com/file.pdf';
   fileTransfer.download(url, this.file.dataDirectory + 'file.pdf').then((entry) => {
-    console.log('下载完成：' + entry.toURL());
+    console.log('download complete: ' + entry.toURL());
   }, (error) => {
-    // 处理错误
+    // handle error
   });
 }
 
 ```
 
-若要将文件存储在不同的或公开可访问的目录中，请参考以下链接
+To store files in a different/publicly accessible directory, please refer to the following link
 https://github.com/apache/cordova-plugin-file#where-to-store-files

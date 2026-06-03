@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="presentAlert">点击我</ion-button>
+  <ion-button @click="presentAlert">Click Me</ion-button>
   <p>{{ handlerMessage }}</p>
   <p>{{ roleMessage }}</p>
 </template>
@@ -17,20 +17,20 @@
 
       const presentAlert = async () => {
         const alert = await alertController.create({
-          header: '警告！',
+          header: 'Alert!',
           buttons: [
             {
-              text: '取消',
+              text: 'Cancel',
               role: 'cancel',
               handler: () => {
-                handlerMessage.value = '警告已取消';
+                handlerMessage.value = 'Alert canceled';
               },
             },
             {
-              text: '确定',
+              text: 'OK',
               role: 'confirm',
               handler: () => {
-                handlerMessage.value = '警告已确认';
+                handlerMessage.value = 'Alert confirmed';
               },
             },
           ],
@@ -39,7 +39,7 @@
         await alert.present();
 
         const { role } = await alert.onDidDismiss();
-        roleMessage.value = `已关闭，角色：${role}`;
+        roleMessage.value = `Dismissed with role: ${role}`;
       };
 
       return {

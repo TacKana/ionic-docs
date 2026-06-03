@@ -23,7 +23,7 @@
     --handle-border-radius: 4px;
     --handle-box-shadow: none;
 
-    /* 为iOS手柄溢出轨道高度所必需 */
+    /* Required for iOS handle to overflow the height of the track */
     overflow: visible;
     contain: none;
   }

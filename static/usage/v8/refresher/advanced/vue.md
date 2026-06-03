@@ -2,7 +2,7 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title>下拉刷新</ion-title>
+      <ion-title>Pull to Refresh</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -16,7 +16,7 @@
         <ion-icon slot="start" color="primary" :icon="item.unread ? ellipse : ''"></ion-icon>
         <ion-label>
           <h2>{{ item.name }}</h2>
-          <p>收到来自 {{ item.name }} 的新消息</p>
+          <p>New message from {{ item.name }}</p>
         </ion-label>
       </ion-item>
     </ion-list>

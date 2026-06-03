@@ -5,8 +5,8 @@ import { IonButton } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton>默认</IonButton>
-      <IonButton disabled={true}>禁用</IonButton>
+      <IonButton>Default</IonButton>
+      <IonButton disabled={true}>Disabled</IonButton>
     </>
   );
 }

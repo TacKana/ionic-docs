@@ -8,7 +8,7 @@ function Example() {
   return (
     <IonItem>
       <IonCheckbox slot="start"></IonCheckbox>
-      <IonLabel>主题化复选框</IonLabel>
+      <IonLabel>Themed checkbox</IonLabel>
     </IonItem>
   );
 }

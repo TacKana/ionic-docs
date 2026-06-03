@@ -4,17 +4,17 @@ sidebar_label: 'repair'
 
 # ionic repair
 
-移除并重新创建依赖项和生成的文件
+Remove and recreate dependencies and generated files
 
 ```shell
 ionic repair [options]
 ```
 
-当遇到难以排查的错误或问题时，这个命令可能会很有用。它能够移除并重新创建项目的依赖项。
+This command may be useful when obscure errors or issues are encountered. It removes and recreates dependencies of your project.
 
-对于 Cordova 应用，它会移除并重新创建生成的原生项目以及项目的原生依赖项。
+For Cordova apps, it removes and recreates the generated native project and the native dependencies of your project.
 
-## 选项
+## Options
 
 <table className="reference-table">
   <thead>
@@ -30,9 +30,9 @@ ionic repair [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
-        <p>仅对 Cordova 平台和插件执行修复步骤。</p>
+        <p>Only perform the repair steps for Cordova platforms and plugins.</p>
       </td>
     </tr>
   </tbody>

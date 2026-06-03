@@ -8,15 +8,15 @@ function Example() {
     <>
       <IonChip>
         <IonAvatar>
-          <img alt="人物头像的剪影" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </IonAvatar>
-        <IonLabel>头像芯片</IonLabel>
+        <IonLabel>Avatar Chip</IonLabel>
         <IonIcon icon={closeCircle}></IonIcon>
       </IonChip>
 
       <IonChip>
         <IonIcon icon={pin} color="primary"></IonIcon>
-        <IonLabel>图标芯片</IonLabel>
+        <IonLabel>Icon Chip</IonLabel>
         <IonIcon icon={close}></IonIcon>
       </IonChip>
     </>

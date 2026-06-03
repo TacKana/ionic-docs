@@ -1,6 +1,7 @@
 ---
-title: 文本组件
+title: "ion-text"
 ---
+
 import Props from '@ionic-internal/component-api/v8/text/props.md';
 import Events from '@ionic-internal/component-api/v8/text/events.md';
 import Methods from '@ionic-internal/component-api/v8/text/methods.md';
@@ -9,15 +10,15 @@ import CustomProps from '@ionic-internal/component-api/v8/text/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v8/text/slots.md';
 
 <head>
-  <title>ion-text：用于样式化或更改文本颜色的 Ionic 应用组件</title>
-  <meta name="description" content="ion-text 是一个简单的应用组件，可用于设置任何元素的文本颜色。了解 ion-text 如何包装元素以更改文本颜色。" />
+  <title>ion-text: 用于样式化或更改文本颜色的 Ionic 应用组件</title>
+  <meta name="description" content="ion-text 是一个简单的应用组件，可用于样式化任何元素的文本颜色。了解 ion-text 如何包裹元素以更改文本颜色。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-文本组件是一个简单的组件，可用于设置任何元素的文本颜色。`ion-text` 元素应包裹目标元素，以更改该元素的文本颜色。
+文本组件是一个简单的组件，可用于样式化任何元素的文本颜色。`ion-text` 元素应包裹目标元素以更改该元素的文本颜色。
 
 ## 基本用法
 
@@ -25,10 +26,9 @@ import Basic from '@site/static/usage/v8/text/basic/index.md';
 
 <Basic />
 
+## 主题
 
-## 主题定制
-
-通过更改 Ionic 提供的任何默认 [颜色](/theming/colors)，可以自定义文本组件。
+文本组件可以通过更改 Ionic 提供的任何默认[颜色](../theming/colors)来定制。
 
 ## 属性
 <Props />

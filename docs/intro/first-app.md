@@ -7,7 +7,7 @@ import DocsCards from '@components/global/DocsCards';
 
 # 构建你的第一个应用教程
 
-选择你在构建 Ionic 应用时计划使用的 JavaScript 框架：
+选择你计划用于构建 Ionic 应用的 JavaScript 框架：
 
 <DocsCards>
   <DocsCard header="从 Angular 开始" href="../angular/your-first-app" icon="/icons/logo-angular-icon.png">

@@ -27,7 +27,7 @@ function Example() {
   };
   const phoneMask = useMaskito({ options: phoneMaskOptions });
 
-  // 如果你需要设置一个初始值，可以使用 maskitoTransform 来确保该值是有效的
+  //If you need to set an initial value, you can use maskitoTransform to ensure the value is valid
   const [myPhoneNumber, setMyPhoneNumber] = useState(maskitoTransform('5555551212', phoneMaskOptions));
 
   return (
@@ -40,7 +40,7 @@ function Example() {
               cardMask(input);
             }
           }}
-          label="卡号"
+          label="Card number"
           placeholder="0000 0000 0000 0000"
         ></IonInput>
       </IonItem>
@@ -54,7 +54,7 @@ function Example() {
           }}
           value={myPhoneNumber}
           onIonInput={(e) => setMyPhoneNumber(e.detail.value || '')}
-          label="美国电话号码"
+          label="US phone number"
           placeholder="+1 (xxx) xxx-xxxx"
         ></IonInput>
       </IonItem>

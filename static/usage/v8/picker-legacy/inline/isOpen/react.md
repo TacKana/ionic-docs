@@ -7,7 +7,7 @@ function Example() {
 
   return (
     <>
-      <IonButton onClick={() => setIsOpen(true)}>打开</IonButton>
+      <IonButton onClick={() => setIsOpen(true)}>Open</IonButton>
       <IonPickerLegacy
         isOpen={isOpen}
         onDidDismiss={() => setIsOpen(false)}
@@ -36,13 +36,13 @@ function Example() {
         ]}
         buttons={[
           {
-            text: '取消',
+            text: 'Cancel',
             role: 'cancel',
           },
           {
-            text: '确认',
+            text: 'Confirm',
             handler: (value) => {
-              console.log(`您选择了：${value.languages.value}`);
+              console.log(`You selected: ${value.languages.value}`);
             },
           },
         ]}

@@ -1,29 +1,29 @@
 ```html
-<ion-button id="present-alert">点击我</ion-button>
-<ion-alert trigger="present-alert" header="警告！"></ion-alert>
+<ion-button id="present-alert">Click Me</ion-button>
+<ion-alert trigger="present-alert" header="Alert!"></ion-alert>
 
 <script>
   const alert = document.querySelector('ion-alert');
 
   alert.buttons = [
     {
-      text: '取消',
+      text: 'Cancel',
       role: 'cancel',
       handler: () => {
-        console.log('警报已取消');
+        console.log('Alert canceled');
       },
     },
     {
-      text: '确定',
+      text: 'OK',
       role: 'confirm',
       handler: () => {
-        console.log('警报已确认');
+        console.log('Alert confirmed');
       },
     },
   ];
 
   alert.addEventListener('ionAlertDidDismiss', (event) => {
-    console.log(`关闭角色：${event.detail.role}`);
+    console.log(`Dismissed with role: ${event.detail.role}`);
   });
 </script>
 ```

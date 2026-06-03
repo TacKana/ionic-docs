@@ -11,19 +11,21 @@ function Example() {
       <div className="ion-page">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>遮罩层</IonTitle>
+            <IonTitle>Backdrop</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
           <p>
-            这是一段占位文本，用于展示当遮罩层显示时，页面内容的视觉效果。您可以在此处放置任何想展示的信息或组件。
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, cum aspernatur cupiditate nesciunt totam
+            perspiciatis delectus soluta laboriosam, ullam impedit porro eaque laborum optio natus sed nostrum,
+            provident expedita vero!
           </p>
         </IonContent>
       </div>
       <div id="box">
         <IonCheckbox color="light"></IonCheckbox>
         <IonButton class="ion-margin-start" color="light">
-          可点击按钮
+          Clickable
         </IonButton>
       </div>
     </>

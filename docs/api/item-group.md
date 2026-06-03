@@ -1,5 +1,5 @@
 ---
-title: 项目组组件
+title: "ion-item-group"
 ---
 import Props from '@ionic-internal/component-api/v8/item-group/props.md';
 import Events from '@ionic-internal/component-api/v8/item-group/events.md';
@@ -9,13 +9,14 @@ import CustomProps from '@ionic-internal/component-api/v8/item-group/custom-prop
 import Slots from '@ionic-internal/component-api/v8/item-group/slots.md';
 
 <head>
-  <title>ion-item-group：将项目分组以划分为多个部分</title>
-  <meta name="description" content="项目组是用于将相似项目组织在一起的容器。ion-item-group 可以包含项目分隔符，将项目划分为多个部分。" />
+  <title>ion-item-group: 将项目分组为多个部分</title>
+  <meta name="description" content="Item groups 是将相似项目组织在一起的容器。ion-item-groups 可以包含 item dividers 将项目分成多个部分。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-项目组是用于将相似的 [项目](./item) 组织在一起的容器。它们可以包含 [项目分隔符](./item-divider) 以将项目划分为多个部分。它们也可用于对 [滑动项目](./item-sliding) 进行分组。
+
+Item groups 是将相似 [items](./item) 组织在一起的容器。它们可以包含 [item dividers](./item-divider) 将项目分成多个部分。它们也可以用于分组[滑动项目](./item-sliding)。
 
 ## 基本用法
 
@@ -30,20 +31,20 @@ import SlidingItems from '@site/static/usage/v8/item-group/sliding-items/index.m
 <SlidingItems />
 
 
-## 属性
+## Properties
 <Props />
 
-## 事件
+## Events
 <Events />
 
-## 方法
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 <CustomProps />
 
-## 插槽
+## Slots
 <Slots />

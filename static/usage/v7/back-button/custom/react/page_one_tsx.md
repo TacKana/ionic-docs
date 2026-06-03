@@ -9,14 +9,14 @@ function PageOne() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>返回按钮</IonTitle>
+          <IonTitle>Back Button</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <h1>页面一</h1>
-        <p>导航到下一页查看返回按钮。</p>
+        <h1>Page One</h1>
+        <p>Navigate to the next page to see the back button.</p>
         <IonNavLink routerDirection="forward" component={() => <PageTwo />}>
-          <IonButton>导航</IonButton>
+          <IonButton>Navigate</IonButton>
         </IonNavLink>
       </IonContent>
     </>

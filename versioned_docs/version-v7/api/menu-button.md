@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/menu-button/custom-pro
 import Slots from '@ionic-internal/component-api/v7/menu-button/slots.md';
 
 <head>
-  <title>ion-menu-button：在页面中打开应用菜单的菜单按钮</title>
+  <title>ion-menu-button：在页面上打开应用菜单的菜单按钮</title>
   <meta
     name="description"
-    content="菜单按钮组件包含一个图标，点击时可自动打开应用页面上的菜单。了解更多关于 ion-menu-button 的信息。"
+    content="菜单按钮（Menu Button）是自动创建图标和功能以在应用页面上打开菜单的组件。阅读了解更多关于 ion-menu-button 的信息。"
   />
 </head>
 
@@ -21,9 +21,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-菜单按钮组件包含一个图标，点击时会自动添加打开菜单的功能。
+菜单按钮（Menu Button）组件包含一个图标，并自动添加点击时打开菜单的功能。
 
-更多信息请参阅 [menu](./menu) 文档。
+更多信息请参阅[菜单（menu）](./menu)文档。
 
 ## 属性
 
@@ -37,7 +37,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <Methods />
 
-## CSS Shadow 部件
+## CSS 阴影部分
 
 <Parts />
 

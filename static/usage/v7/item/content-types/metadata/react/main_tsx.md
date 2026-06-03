@@ -21,29 +21,29 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>示例</IonTitle>
+          <IonTitle>Example</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent color="light">
         <IonList inset={true}>
           <IonItem button={true}>
             <IonIcon color="danger" slot="start" icon={listCircle} size="large"></IonIcon>
-            <IonLabel>一般</IonLabel>
+            <IonLabel>General</IonLabel>
             <IonNote slot="end">6</IonNote>
           </IonItem>
           <IonItem button={true}>
             <IonIcon color="tertiary" slot="start" icon={listCircle} size="large"></IonIcon>
-            <IonLabel>购物</IonLabel>
+            <IonLabel>Shopping</IonLabel>
             <IonNote slot="end">15</IonNote>
           </IonItem>
           <IonItem button={true}>
             <IonIcon color="success" slot="start" icon={listCircle} size="large"></IonIcon>
-            <IonLabel>清洁</IonLabel>
+            <IonLabel>Cleaning</IonLabel>
             <IonNote slot="end">3</IonNote>
           </IonItem>
           <IonItem button={true}>
             <IonIcon color="warning" slot="start" icon={listCircle} size="large"></IonIcon>
-            <IonLabel>提醒事项</IonLabel>
+            <IonLabel>Reminders</IonLabel>
             <IonNote slot="end">8</IonNote>
           </IonItem>
         </IonList>
@@ -55,10 +55,10 @@ function Example() {
             </div>
             <IonLabel>
               <strong>Rick Astley</strong>
-              <IonText>永不放弃你</IonText>
+              <IonText>Never Gonna Give You Up</IonText>
               <br />
               <IonNote color="medium" className="ion-text-wrap">
-                永不放弃你，永不让你失望，永不转身离去...
+                Never gonna give you up Never gonna let you down Never gonna run...
               </IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
@@ -70,10 +70,10 @@ function Example() {
             <div className="unread-indicator-wrapper" slot="start"></div>
             <IonLabel>
               <strong>Ionitron</strong>
-              <IonText>我已经有了自我意识</IonText>
+              <IonText>I have become sentient</IonText>
               <br />
               <IonNote color="medium" className="ion-text-wrap">
-                就是这样。
+                That is all.
               </IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
@@ -87,14 +87,14 @@ function Example() {
             </div>
             <IonLabel>
               <strong>Steam</strong>
-              <IonText>游戏商店促销</IonText>
+              <IonText>Game Store Sale</IonText>
               <br />
               <IonNote color="medium" className="ion-text-wrap">
-                你两年前加入愿望清单的那个游戏现在正在促销！
+                That game you added to your wish list 2 years ago is now on sale!
               </IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
-              <IonNote color="medium">昨天</IonNote>
+              <IonNote color="medium">Yesterday</IonNote>
               <IonIcon color="medium" icon={chevronForward}></IonIcon>
             </div>
           </IonItem>
@@ -102,14 +102,14 @@ function Example() {
             <div className="unread-indicator-wrapper" slot="start"></div>
             <IonLabel>
               <strong>Ionic</strong>
-              <IonText>宣布 Ionic 7.0</IonText>
+              <IonText>Announcing Ionic 7.0</IonText>
               <br />
               <IonNote color="medium" className="ion-text-wrap">
-                这个版本比 Ionic 6 又前进了一步！
+                This version is one more than Ionic 6!
               </IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
-              <IonNote color="medium">昨天</IonNote>
+              <IonNote color="medium">Yesterday</IonNote>
               <IonIcon color="medium" icon={chevronForward}></IonIcon>
             </div>
           </IonItem>

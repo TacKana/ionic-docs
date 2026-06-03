@@ -1,6 +1,6 @@
 ```html
 <ion-range
-  aria-label="带旋钮事件的范围控制器"
+  aria-label="Range with knob events"
   (ionKnobMoveStart)="onIonKnobMoveStart($event)"
   (ionKnobMoveEnd)="onIonKnobMoveEnd($event)"
 ></ion-range>

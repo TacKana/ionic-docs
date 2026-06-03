@@ -1,6 +1,6 @@
 ```css
 /*
- * 自定义日期时间组件的日历头部样式
+ * Custom Datetime Calendar Header Part
  * -------------------------------------------
  */
 ion-datetime::part(month-year-button) {

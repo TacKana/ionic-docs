@@ -21,27 +21,27 @@ export class ExampleComponent {
 
   openFirstMenu() {
     /**
-     * 通过菜单 ID 打开菜单
-     * 我们使用 ID 来引用菜单，
-     * 因为存在多个 "start" 菜单。
+     * Open the menu by menu-id
+     * We refer to the menu using an ID
+     * because multiple "start" menus exist.
      */
     this.menuCtrl.open('first-menu');
   }
 
   openSecondMenu() {
     /**
-     * 通过菜单 ID 打开菜单
-     * 我们使用 ID 来引用菜单，
-     * 因为存在多个 "start" 菜单。
+     * Open the menu by menu-id
+     * We refer to the menu using an ID
+     * because multiple "start" menus exist.
      */
     this.menuCtrl.open('second-menu');
   }
 
   openEndMenu() {
     /**
-     * 通过侧边位置打开菜单
-     * 这里我们可以通过侧边位置来引用菜单，
-     * 因为只有一个 "end" 菜单存在。
+     * Open the menu by side
+     * We can refer to the menu by side
+     * here because only one "end" menu exists
      */
     this.menuCtrl.open('end');
   }

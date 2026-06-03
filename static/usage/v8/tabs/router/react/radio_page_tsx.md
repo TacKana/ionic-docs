@@ -18,7 +18,7 @@ const RadioPage = () => (
           height: '100%',
         }}
       >
-        单选按钮内容
+        Radio content
       </div>
     </IonContent>
   </IonPage>

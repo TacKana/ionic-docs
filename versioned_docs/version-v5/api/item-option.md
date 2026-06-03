@@ -14,29 +14,30 @@ import Slots from '@ionic-internal/component-api/v5/item-option/slots.md';
 
 # ion-item-option
 
-`ion-item-sliding` 的选项按钮。必须放置在 `<ion-item-options>` 内部。
-你可以结合 `ionSwipe` 事件和 `expandable` 指令，为列表项创建完整的滑动操作功能。
+The option button for an `ion-item-sliding`. Must be placed inside of an `<ion-item-options>`.
+You can combine the `ionSwipe` event and the `expandable` directive to create a full swipe
+action for the item.
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

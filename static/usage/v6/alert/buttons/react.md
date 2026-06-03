@@ -12,28 +12,28 @@ function Example() {
       <IonButton
         onClick={() =>
           presentAlert({
-            header: '警告！', // Alert!
+            header: 'Alert!',
             buttons: [
               {
-                text: '取消', // Cancel
+                text: 'Cancel',
                 role: 'cancel',
                 handler: () => {
-                  setHandlerMessage('警报已取消'); // Alert canceled
+                  setHandlerMessage('Alert canceled');
                 },
               },
               {
-                text: '确定', // OK
+                text: 'OK',
                 role: 'confirm',
                 handler: () => {
-                  setHandlerMessage('警报已确认'); // Alert confirmed
+                  setHandlerMessage('Alert confirmed');
                 },
               },
             ],
-            onDidDismiss: (e: CustomEvent) => setRoleMessage(`已关闭，角色: ${e.detail.role}`), // Dismissed with role: 
+            onDidDismiss: (e: CustomEvent) => setRoleMessage(`Dismissed with role: ${e.detail.role}`),
           })
         }
       >
-        点击我 // Click Me
+        Click Me
       </IonButton>
       <p>{handlerMessage}</p>
       <p>{roleMessage}</p>

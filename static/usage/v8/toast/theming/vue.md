@@ -1,10 +1,10 @@
 ```html
 <template>
-  <ion-button id="open-toast">打开 Toast</ion-button>
+  <ion-button id="open-toast">Open Toast</ion-button>
   <ion-toast
     trigger="open-toast"
     :duration="3000"
-    message="你好，多彩的世界！"
+    message="Hello Styled World!"
     class="custom-toast"
     :buttons="toastButtons"
   ></ion-toast>
@@ -15,7 +15,7 @@
 
   const toastButtons = [
     {
-      text: '关闭',
+      text: 'Dismiss',
       role: 'cancel',
     },
   ];

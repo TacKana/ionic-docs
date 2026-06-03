@@ -8,7 +8,7 @@ function Example() {
     <>
       <IonItem>
         <IonButton slot="start">Start</IonButton>
-        <IonLabel>默认按钮</IonLabel>
+        <IonLabel>Default Buttons</IonLabel>
         <IonButton slot="end">End</IonButton>
       </IonItem>
 
@@ -17,7 +17,7 @@ function Example() {
           Start
           <IonIcon icon={home} slot="end"></IonIcon>
         </IonButton>
-        <IonLabel>带图标按钮</IonLabel>
+        <IonLabel>Buttons with Icons</IonLabel>
         <IonButton slot="end">
           <IonIcon icon={star} slot="end"></IonIcon>
           End
@@ -28,14 +28,14 @@ function Example() {
         <IonButton slot="start">
           <IonIcon slot="icon-only" icon={navigate}></IonIcon>
         </IonButton>
-        <IonLabel>纯图标按钮</IonLabel>
+        <IonLabel>Icon only Buttons</IonLabel>
         <IonButton slot="end">
           <IonIcon slot="icon-only" icon={star}></IonIcon>
         </IonButton>
       </IonItem>
 
       <IonItem>
-        <IonLabel>按钮尺寸</IonLabel>
+        <IonLabel>Button Sizes</IonLabel>
         <IonButton slot="end" size="small">
           Small
         </IonButton>

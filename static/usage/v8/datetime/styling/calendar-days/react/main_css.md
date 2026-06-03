@@ -1,6 +1,6 @@
 ```css
 /*
-* 自定义日期时间组件日期部分样式
+* Custom Datetime Day Parts
 * -------------------------------------------
 */
 
@@ -18,7 +18,7 @@ ion-datetime::part(calendar-day):focus {
 }
 
 /*
-* 自定义 Material Design 风格日期时间组件日期部分样式
+* Custom Material Design Datetime Day Parts
 * -------------------------------------------
 */
 
@@ -34,7 +34,7 @@ ion-datetime.md::part(calendar-day today) {
 }
 
 /*
-* 自定义 iOS 风格日期时间组件日期部分样式
+* Custom iOS Datetime Day Parts
 * -------------------------------------------
 */
 

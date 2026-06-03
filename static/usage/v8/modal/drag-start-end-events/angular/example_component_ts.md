@@ -14,7 +14,7 @@ export class ExampleComponent {
   header!: ElementRef<HTMLIonHeaderElement>;
 
   onDragStart() {
-    console.log('拖拽开始');
+    console.log('Drag started');
 
     const headerEl = this.header.nativeElement;
 
@@ -22,7 +22,7 @@ export class ExampleComponent {
   }
 
   onDragEnd(event: CustomEvent<ModalDragEventDetail>) {
-    console.log('拖拽结束');
+    console.log('Drag ended');
 
     const headerEl = this.header.nativeElement;
 

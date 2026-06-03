@@ -6,7 +6,7 @@ function Example() {
   return (
     <IonHeader>
       <IonToolbar>
-        <IonTitle>标题</IonTitle>
+        <IonTitle>Title</IonTitle>
       </IonToolbar>
     </IonHeader>
   );

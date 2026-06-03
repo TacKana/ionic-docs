@@ -3,8 +3,9 @@ import React from 'react';
 import { IonButton, useIonLoading } from '@ionic/react';
 function Example() {
   /**
-   * 这个示例没有使用 `useIonLoading` 返回的 dismiss 方法，
-   * 但在更复杂的场景中可以使用它。
+   * This example does not make use of the dismiss
+   * method returned from `useIonLoading`, but it can
+   * be used for more complex scenarios.
    */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [present, dismiss] = useIonLoading();
@@ -12,13 +13,13 @@ function Example() {
     <IonButton
       onClick={() => {
         present({
-          message: '加载中...',
+          message: 'Loading...',
           duration: 3000,
           spinner: 'circles',
         });
       }}
     >
-      显示加载状态
+      Show Loading
     </IonButton>
   );
 }

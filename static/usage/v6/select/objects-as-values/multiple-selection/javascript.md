@@ -1,11 +1,11 @@
 ```html
 <ion-list>
   <ion-item>
-    <ion-select placeholder="选择食物" multiple="true"></ion-select>
+    <ion-select placeholder="Select food" multiple="true"></ion-select>
   </ion-item>
   <ion-item lines="none">
     <ion-label>
-      当前值：
+      Current value:
       <ion-text></ion-text>
     </ion-label>
   </ion-item>

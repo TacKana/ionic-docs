@@ -4,20 +4,20 @@ sidebar_label: 'capacitor sync'
 
 # ionic capacitor sync
 
-同步（复制 + 更新）Ionic 项目
+Sync (copy + update) an Ionic project
 
 ```shell
 ionic capacitor sync [options]
 ```
 
-`ionic capacitor sync` 命令将执行以下操作：
+`ionic capacitor sync` will do the following:
 
-- 执行 Ionic 构建，编译 Web 资源
-- 将 Web 资源复制到 Capacitor 原生平台
-- 更新 Capacitor 原生平台和依赖项
-- 安装所有发现的 Capacitor 或 Cordova 插件
+- Perform an Ionic build, which compiles web assets
+- Copy web assets to Capacitor native platform(s)
+- Update Capacitor native platform(s) and dependencies
+- Install any discovered Capacitor or Cordova plugins
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -29,17 +29,17 @@ ionic capacitor sync [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          要同步的平台（例如 <code>android</code>, <code>ios</code>, <code>electron</code>）
+          The platform to sync (e.g. <code>android</code>, <code>ios</code>, <code>electron</code>)
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 选项
+## Options
 
 <table className="reference-table">
   <thead>
@@ -55,9 +55,9 @@ ionic capacitor sync [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>不执行 Ionic 构建</p>
+        <p>Do not invoke an Ionic build</p>
       </td>
     </tr>
   </tbody>
@@ -74,17 +74,17 @@ ionic capacitor sync [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          使用 <code>production</code> 配置的标志
+          Flag to use the <code>production</code> configuration
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 高级选项
+## Advanced Options
 
 <table className="reference-table">
   <thead>
@@ -101,15 +101,15 @@ ionic capacitor sync [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>指定要使用的配置。</p>
+          <p>Specify the configuration to use.</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-c</code>
       </td>
@@ -128,10 +128,10 @@ ionic capacitor sync [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>输出源映射</p>
+          <p>Output source maps</p>
         </div>
       </td>
     </tr>
@@ -149,10 +149,10 @@ ionic capacitor sync [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>文件更改时重新构建</p>
+          <p>Rebuild when files change</p>
         </div>
       </td>
     </tr>

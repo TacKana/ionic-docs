@@ -7,7 +7,7 @@ import './main.css';
 function Example() {
   return (
     <>
-      <b>列在顶部对齐</b>
+      <b>Columns aligned at the top</b>
       <IonGrid>
         <IonRow class="ion-align-items-start">
           <IonCol>1</IonCol>
@@ -22,7 +22,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>列在垂直居中</b>
+      <b>Columns aligned at the center</b>
       <IonGrid>
         <IonRow class="ion-align-items-center">
           <IonCol>1</IonCol>
@@ -37,7 +37,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>列在底部对齐</b>
+      <b>Columns aligned at the bottom</b>
       <IonGrid>
         <IonRow class="ion-align-items-end">
           <IonCol>1</IonCol>

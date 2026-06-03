@@ -10,11 +10,11 @@ function PageThree() {
           <IonButtons slot="start">
             <IonBackButton></IonBackButton>
           </IonButtons>
-          <IonTitle>第三页</IonTitle>
+          <IonTitle>Page Three</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent class="ion-padding">
-        <h1>第三页</h1>
+        <h1>Page Three</h1>
       </IonContent>
     </>
   );

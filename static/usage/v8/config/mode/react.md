@@ -16,7 +16,7 @@ function Example() {
 
   return (
     <IonButton color={color} fill={fill}>
-      当前模式：{mode}
+      Current mode: {mode}
     </IonButton>
   );
 }

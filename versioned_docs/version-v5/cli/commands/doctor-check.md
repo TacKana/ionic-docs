@@ -4,26 +4,26 @@ sidebar_label: 'doctor check'
 
 # ionic doctor check
 
-检查您的 Ionic 项目健康状况
+Check the health of your Ionic project
 
 ```shell
 ionic doctor check [options]
 ```
 
-此命令会检测并打印常见问题及建议的修复步骤。
+This command detects and prints common issues and suggested steps to fix them.
 
-部分问题可以自动修复，详情请参阅 `ionic doctor treat --help`。
+Some issues can be fixed automatically. See `ionic doctor treat --help`.
 
-您可以选择性地提供 `id` 参数来检查单个问题。使用 `ionic doctor list` 可列出所有已知问题。
+Optionally supply the `id` argument to check a single issue. Use `ionic doctor list` to list all known issues.
 
-## 示例
+## Examples
 
 ```shell
 $ ionic doctor check
 $ ionic doctor check git-not-used
 ```
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -35,9 +35,9 @@ $ ionic doctor check git-not-used
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
-        <p>问题标识符</p>
+        <p>The issue identifier</p>
       </td>
     </tr>
   </tbody>

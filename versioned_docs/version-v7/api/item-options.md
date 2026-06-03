@@ -10,27 +10,25 @@ import CustomProps from '@ionic-internal/component-api/v7/item-options/custom-pr
 import Slots from '@ionic-internal/component-api/v7/item-options/slots.md';
 
 <head>
-  <title>ion-item-options: Ionic 应用中的滑动项选项按钮组件</title>
+  <title>ion-item-options：Ionic 应用的选项按钮组件</title>
   <meta
     name="description"
-    content="ion-item-options 用于 ion-item-sliding 组件。这些选项按钮可以放置在起始侧或结束侧。阅读本文以了解更多在 Ionic 应用中的使用方法。"
+    content="ion-item-options 用于 ion-item-sliding。这些选项按钮可以放置在开始或结束侧。阅读了解更多关于在 Ionic 应用中的使用。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-item-options 组件是滑动项中 [item option](./item-option) 按钮的容器。这些按钮可以放置在[起始侧或结束侧](#side-description)。
+项目选项组件是滑动项目中[项目选项（item option）](./item-option)按钮的容器。这些按钮可以放置在[开始侧或结束侧](#方向说明)。
 
-有关更多信息，请参阅 [item sliding](./item-sliding) 文档。
+更多信息请参阅[项目滑动（item sliding）](./item-sliding)文档。
 
-<LegacyAnchor id="side-description" />
+## 方向说明
 
-## 侧边说明
-
-| 侧边    | 位置                                                          | 滑动方向                                                     |
-| ------- | ------------------------------------------------------------- | ------------------------------------------------------------ |
-| `start` | 在 LTR 布局中位于内容`左侧`，在 RTL 布局中位于内容`右侧`。     | 在 LTR 布局中从`左`向`右`滑动，在 RTL 布局中从`右`向`左`滑动。 |
-| `end`   | 在 LTR 布局中位于内容`右侧`，在 RTL 布局中位于内容`左侧`。     | 在 LTR 布局中从`右`向`左`滑动，在 RTL 布局中从`左`向`右`滑动。 |
+| 方向    | 位置                                                              | 滑动方向                                                               |
+| ------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `start` | 在 LTR 中位于内容的`左侧`，在 RTL 中位于内容的`右侧`。            | 在 LTR 中从`左到右`滑动，在 RTL 中从`右到左`滑动。                     |
+| `end`   | 在 LTR 中位于内容的`右侧`，在 RTL 中位于内容的`左侧`。            | 在 LTR 中从`右到左`滑动，在 RTL 中从`左到右`滑动。                     |
 
 ## 属性
 
@@ -44,7 +42,7 @@ item-options 组件是滑动项中 [item option](./item-option) 按钮的容器�
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

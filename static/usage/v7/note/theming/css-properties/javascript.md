@@ -5,5 +5,5 @@
   }
 </style>
 
-<ion-note>默认注释</ion-note>
+<ion-note>Default Note</ion-note>
 ```

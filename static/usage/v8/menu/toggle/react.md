@@ -7,24 +7,24 @@ function Example() {
       <IonMenu contentId="main-content">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>菜单内容</IonTitle>
+            <IonTitle>Menu Content</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
           <IonMenuToggle>
-            <IonButton>点击关闭菜单</IonButton>
+            <IonButton>Click to close the menu</IonButton>
           </IonMenuToggle>
         </IonContent>
       </IonMenu>
       <IonPage id="main-content">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>菜单</IonTitle>
+            <IonTitle>Menu</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
           <IonMenuToggle>
-            <IonButton>点击打开菜单</IonButton>
+            <IonButton>Click to open the menu</IonButton>
           </IonMenuToggle>
         </IonContent>
       </IonPage>

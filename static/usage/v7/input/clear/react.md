@@ -7,29 +7,29 @@ function Example() {
     <IonList>
       <IonItem>
         <IonInput
-          label="带清除按钮的输入框"
+          label="Input with clear button"
           labelPlacement="stacked"
           clearInput={true}
-          placeholder="输入文本以查看清除按钮"
-          value="默认值"
+          placeholder="Enter text to see clear button"
+          value="Default value"
         ></IonInput>
       </IonItem>
 
       <IonItem>
         <IonInput
-          label="编辑时自动清除的输入框"
+          label="Input with clear on edit"
           labelPlacement="stacked"
           clearOnEdit={true}
-          placeholder="输入文本，离开输入框，返回并输入以清除内容"
+          placeholder="Enter text, leave the input, come back and type to clear"
         ></IonInput>
       </IonItem>
 
       <IonItem>
         <IonInput
-          label="密码输入框"
+          label="Password input"
           labelPlacement="stacked"
           type="password"
-          placeholder="输入文本，离开输入框，返回并输入以清除内容"
+          placeholder="Enter text, leave the input, come back and type to clear"
         ></IonInput>
       </IonItem>
     </IonList>

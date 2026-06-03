@@ -1,7 +1,7 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>下拉刷新</ion-title>
+    <ion-title>Pull to Refresh</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
   </ion-refresher>
 
   <div class="ion-content-scroll-host ion-padding">
-    <p>向下拉动此内容即可触发刷新。</p>
+    <p>Pull this content down to trigger the refresh.</p>
   </div>
 </ion-content>
 ```

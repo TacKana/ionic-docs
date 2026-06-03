@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-label>标签</ion-label>
+  <ion-label>Label</ion-label>
 </template>
 
 <script setup lang="ts">

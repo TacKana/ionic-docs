@@ -8,9 +8,9 @@ function Example() {
   return (
     <IonTextarea
       aria-label="Custom textarea"
-      placeholder="在此输入内容"
+      placeholder="Type something here"
       class="custom"
-      helperText="辅助说明文本"
+      helperText="Helper text"
       counter={true}
       maxlength={100}
     ></IonTextarea>

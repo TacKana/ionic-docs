@@ -1,14 +1,14 @@
 ```html
 <div class="wrapper">
-  <b>点击图形查看涟漪效果</b>
+  <b>Click on a shape to see the ripple</b>
 
   <div class="ion-activatable ripple-parent rounded-rectangle">
-    有界涟漪
+    Bounded
     <ion-ripple-effect></ion-ripple-effect>
   </div>
 
   <div class="ion-activatable ripple-parent circle">
-    无界涟漪
+    Unbounded
     <ion-ripple-effect type="unbounded"></ion-ripple-effect>
   </div>
 </div>

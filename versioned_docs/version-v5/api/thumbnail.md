@@ -16,11 +16,11 @@ import Slots from '@ionic-internal/component-api/v5/thumbnail/slots.md';
 
 # ion-thumbnail
 
-缩略图（thumbnail）是一种方形组件，通常用于包裹图片或图标。它们可以方便地展示一组较大的图片，或提供全尺寸图片的预览。
+Thumbnails are square components that usually wrap an image or icon. They can be used to make it easier to display a group of larger images or provide a preview of the full-size image.
 
-缩略图可以单独使用，也可以放在任何元素内部。如果放置在 `ion-item` 内，缩略图会调整尺寸以适应父组件。若要将缩略图定位在项目的左侧或右侧，请分别将 `slot` 属性设置为 `start` 或 `end`。
+Thumbnails can be used by themselves or inside of any element. If placed inside of an `ion-item`, the thumbnail will resize to fit the parent component. To position a thumbnail on the left or right side of an item, set the slot to `start` or `end`, respectively.
 
-## 使用方法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -35,7 +35,7 @@ import Slots from '@ionic-internal/component-api/v5/thumbnail/slots.md';
   <ion-thumbnail slot="start">
     <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
   </ion-thumbnail>
-  <ion-label>项目缩略图</ion-label>
+  <ion-label>Item Thumbnail</ion-label>
 </ion-item>
 ```
 
@@ -52,7 +52,7 @@ import Slots from '@ionic-internal/component-api/v5/thumbnail/slots.md';
   <ion-thumbnail slot="start">
     <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
   </ion-thumbnail>
-  <ion-label>项目缩略图</ion-label>
+  <ion-label>Item Thumbnail</ion-label>
 </ion-item>
 ```
 
@@ -74,7 +74,7 @@ export const ThumbnailExample: React.FC = () => (
       <IonThumbnail slot="start">
         <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
       </IonThumbnail>
-      <IonLabel>项目缩略图</IonLabel>
+      <IonLabel>Item Thumbnail</IonLabel>
     </IonItem>
   </IonContent>
 );
@@ -102,7 +102,7 @@ export class ThumbnailExample {
         <ion-thumbnail slot="start">
           <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
         </ion-thumbnail>
-        <ion-label>项目缩略图</ion-label>
+        <ion-label>Item Thumbnail</ion-label>
       </ion-item>,
     ];
   }
@@ -123,7 +123,7 @@ export class ThumbnailExample {
     <ion-thumbnail slot="start">
       <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
     </ion-thumbnail>
-    <ion-label>项目缩略图</ion-label>
+    <ion-label>Item Thumbnail</ion-label>
   </ion-item>
 </template>
 
@@ -141,26 +141,26 @@ export class ThumbnailExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

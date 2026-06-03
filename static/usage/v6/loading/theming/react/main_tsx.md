@@ -6,8 +6,9 @@ import './main.css';
 
 function Example() {
   /**
-   * 本示例未使用 `useIonLoading` 返回的 dismiss 方法，
-   * 但它可用于更复杂的场景。
+   * This example does not make use of the dismiss
+   * method returned from `useIonLoading`, but it can
+   * be used for more complex scenarios.
    */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [present, dismiss] = useIonLoading();
@@ -15,13 +16,13 @@ function Example() {
     <IonButton
       onClick={() => {
         present({
-          message: '加载中...',
+          message: 'Loading...',
           duration: 3000,
           cssClass: 'custom-loading',
         });
       }}
     >
-      显示加载指示器
+      Show Loading
     </IonButton>
   );
 }

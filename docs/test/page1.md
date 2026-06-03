@@ -1,3 +1,3 @@
-# 测试页面 1
+# Testing Page 1
 
-这是测试页面 1，前往[测试页面 2](page2.md)请点击此处。
+This is Testing page 1, Get to Testing Page 2 [here](page2.md).

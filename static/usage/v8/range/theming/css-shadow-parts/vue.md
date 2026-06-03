@@ -1,16 +1,17 @@
 ```html
 <style>
-  /* 所有范围控件的通用样式 */
+  /* Shared styles for all ranges */
   ion-range {
     --knob-size: 34px;
   }
 
   ion-range::part(knob) {
     background: #fff;
+
     box-sizing: border-box;
   }
 
-  /* 隐藏 Material Design 指示器 */
+  /* Hide the Material Design indicator */
   ion-range::part(knob)::before {
     display: none;
   }
@@ -26,7 +27,7 @@
     top: 17px;
   }
 
-  /* 单滑块范围控件 */
+  /* Single Knob Range */
   #range-single::part(bar),
   #range-single::part(tick) {
     background: #bed4ff;
@@ -50,7 +51,7 @@
     background: #40a2fd;
   }
 
-  /* 双滑块（A/B）范围控件 */
+  /* Dual Knobs (A/B) Range */
   #range-a-b::part(bar-active) {
     background: #1ea9ca;
   }
@@ -81,7 +82,7 @@
     background: #2dc2bd;
   }
 
-  /* 双滑块（下限/上限）范围控件 */
+  /* Dual Knobs (Lower/Upper) Range */
   #range-lower-upper::part(bar-active) {
     background: linear-gradient(to right, #0059ff 0%, #b77bff 100%);
   }
@@ -114,10 +115,10 @@
 </style>
 
 <template>
-  <h2>单滑块</h2>
+  <h2>Single Knob</h2>
   <ion-range
     id="range-single"
-    aria-label="自定义范围控件"
+    aria-label="Custom range"
     :min="0"
     :max="10"
     :value="5"
@@ -126,10 +127,10 @@
     :snaps="true"
   ></ion-range>
 
-  <h2>双滑块（A/B）</h2>
+  <h2>Dual Knobs (A/B)</h2>
   <ion-range
     id="range-a-b"
-    aria-label="带 A/B 样式的自定义双滑块范围控件"
+    aria-label="Custom dual knob range with A/B styling"
     :min="0"
     :max="10"
     :value="{lower: 3, upper: 7}"
@@ -137,10 +138,10 @@
     :pin="true"
   ></ion-range>
 
-  <h2>双滑块（下限/上限）</h2>
+  <h2>Dual Knobs (Lower/Upper)</h2>
   <ion-range
     id="range-lower-upper"
-    aria-label="带下限/上限样式的自定义双滑块范围控件"
+    aria-label="Custom dual knob range with lower/upper styling"
     :min="0"
     :max="10"
     :value="{lower: 3, upper: 7}"

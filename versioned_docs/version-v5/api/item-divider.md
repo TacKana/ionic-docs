@@ -1,6 +1,6 @@
 ---
-title: 'Item Divider | Ionic 应用中的列表项分隔块元素'
-description: '项目分隔符（Item Dividers）是块级元素，可用于分隔列表中的项目。它们类似于列表头部，但不同之处在于它们位于项目组之间。'
+title: 'Item Divider | List Item Divider Block Element for Ionic Apps'
+description: 'Item Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead, go in between groups of items.'
 sidebar_label: 'ion-item-divider'
 ---
 
@@ -16,9 +16,9 @@ import Slots from '@ionic-internal/component-api/v5/item-divider/slots.md';
 
 # ion-item-divider
 
-项目分隔符（Item Dividers）是块级元素，可用于分隔列表中的项目。它们类似于列表头部，但与列表头部位于列表顶部不同，它们应该放在项目组之间。
+Item Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead of being placed at the top of a list, they should go in between groups of items.
 
-## 用法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -26,17 +26,17 @@ import Slots from '@ionic-internal/component-api/v5/item-divider/slots.md';
 
 ```html
 <ion-item-divider>
-  <ion-label> 基础项目分隔符 </ion-label>
+  <ion-label> Basic Item Divider </ion-label>
 </ion-item-divider>
 
 <ion-item-divider color="secondary">
-  <ion-label> 次要项目分隔符 </ion-label>
+  <ion-label> Secondary Item Divider </ion-label>
 </ion-item-divider>
 
-<!-- 列表中的项目分隔符 -->
+<!-- Item Dividers in a List -->
 <ion-list>
   <ion-item-divider>
-    <ion-label> 分区 A </ion-label>
+    <ion-label> Section A </ion-label>
   </ion-item-divider>
 
   <ion-item><ion-label>A1</ion-label></ion-item>
@@ -46,7 +46,7 @@ import Slots from '@ionic-internal/component-api/v5/item-divider/slots.md';
   <ion-item><ion-label>A5</ion-label></ion-item>
 
   <ion-item-divider>
-    <ion-label> 分区 B </ion-label>
+    <ion-label> Section B </ion-label>
   </ion-item-divider>
 
   <ion-item><ion-label>B1</ion-label></ion-item>
@@ -63,17 +63,17 @@ import Slots from '@ionic-internal/component-api/v5/item-divider/slots.md';
 
 ```html
 <ion-item-divider>
-  <ion-label> 基础项目分隔符 </ion-label>
+  <ion-label> Basic Item Divider </ion-label>
 </ion-item-divider>
 
 <ion-item-divider color="secondary">
-  <ion-label> 次要项目分隔符 </ion-label>
+  <ion-label> Secondary Item Divider </ion-label>
 </ion-item-divider>
 
-<!-- 列表中的项目分隔符 -->
+<!-- Item Dividers in a List -->
 <ion-list>
   <ion-item-divider>
-    <ion-label> 分区 A </ion-label>
+    <ion-label> Section A </ion-label>
   </ion-item-divider>
 
   <ion-item><ion-label>A1</ion-label></ion-item>
@@ -83,7 +83,7 @@ import Slots from '@ionic-internal/component-api/v5/item-divider/slots.md';
   <ion-item><ion-label>A5</ion-label></ion-item>
 
   <ion-item-divider>
-    <ion-label> 分区 B </ion-label>
+    <ion-label> Section B </ion-label>
   </ion-item-divider>
 
   <ion-item><ion-label>B1</ion-label></ion-item>
@@ -105,17 +105,17 @@ import { IonItemDivider, IonLabel, IonList, IonItem, IonContent } from '@ionic/r
 export const ItemDividerExample: React.FC = () => (
   <IonContent>
     <IonItemDivider>
-      <IonLabel>基础项目分隔符</IonLabel>
+      <IonLabel>Basic Item Divider</IonLabel>
     </IonItemDivider>
 
     <IonItemDivider color="secondary">
-      <IonLabel>次要项目分隔符</IonLabel>
+      <IonLabel>Secondary Item Divider</IonLabel>
     </IonItemDivider>
 
-    {/*-- 列表中的项目分隔符 --*/}
+    {/*-- Item Dividers in a List --*/}
     <IonList>
       <IonItemDivider>
-        <IonLabel>分区 A</IonLabel>
+        <IonLabel>Section A</IonLabel>
       </IonItemDivider>
 
       <IonItem>
@@ -135,7 +135,7 @@ export const ItemDividerExample: React.FC = () => (
       </IonItem>
 
       <IonItemDivider>
-        <IonLabel>分区 B</IonLabel>
+        <IonLabel>Section B</IonLabel>
       </IonItemDivider>
 
       <IonItem>
@@ -173,17 +173,17 @@ export class ItemDividerExample {
   render() {
     return [
       <ion-item-divider>
-        <ion-label>基础项目分隔符</ion-label>
+        <ion-label>Basic Item Divider</ion-label>
       </ion-item-divider>,
 
       <ion-item-divider color="secondary">
-        <ion-label>次要项目分隔符</ion-label>
+        <ion-label>Secondary Item Divider</ion-label>
       </ion-item-divider>,
 
-      //  列表中的项目分隔符
+      //  Item Dividers in a List
       <ion-list>
         <ion-item-divider>
-          <ion-label>分区 A</ion-label>
+          <ion-label>Section A</ion-label>
         </ion-item-divider>
 
         <ion-item>
@@ -203,7 +203,7 @@ export class ItemDividerExample {
         </ion-item>
 
         <ion-item-divider>
-          <ion-label>分区 B</ion-label>
+          <ion-label>Section B</ion-label>
         </ion-item-divider>
 
         <ion-item>
@@ -234,17 +234,17 @@ export class ItemDividerExample {
 ```html
 <template>
   <ion-item-divider>
-    <ion-label> 基础项目分隔符 </ion-label>
+    <ion-label> Basic Item Divider </ion-label>
   </ion-item-divider>
 
   <ion-item-divider color="secondary">
-    <ion-label> 次要项目分隔符 </ion-label>
+    <ion-label> Secondary Item Divider </ion-label>
   </ion-item-divider>
 
-  <!-- 列表中的项目分隔符 -->
+  <!-- Item Dividers in a List -->
   <ion-list>
     <ion-item-divider>
-      <ion-label> 分区 A </ion-label>
+      <ion-label> Section A </ion-label>
     </ion-item-divider>
 
     <ion-item><ion-label>A1</ion-label></ion-item>
@@ -254,7 +254,7 @@ export class ItemDividerExample {
     <ion-item><ion-label>A5</ion-label></ion-item>
 
     <ion-item-divider>
-      <ion-label> 分区 B </ion-label>
+      <ion-label> Section B </ion-label>
     </ion-item-divider>
 
     <ion-item><ion-label>B1</ion-label></ion-item>
@@ -279,26 +279,26 @@ export class ItemDividerExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

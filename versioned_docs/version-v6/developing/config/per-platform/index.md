@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 <TabItem value="angular">
 
 :::note
-由于配置在运行时设置，你将无法访问平台依赖注入。不过，你可以直接使用提供者所依赖的底层函数。
+由于配置是在运行时设置的，您将无法使用 Platform 依赖注入。相反，您可以直接使用 provider 使用的底层函数。
 
-有关可检测的平台类型，请参阅 [Angular 平台文档](../angular/platform)。
+有关您可以检测的平台类型，请参阅 [Angular 平台文档](../../../angular/platform)。
 :::
 
 ```ts title="app.module.ts"
@@ -36,7 +36,7 @@ import { isPlatform, IonicModule } from '@ionic/angular';
 <TabItem value="react">
 
 :::note
-有关可检测的平台类型，请参阅 [React 平台文档](../react/platform)。
+有关您可以检测的平台类型，请参阅 [React 平台文档](../../../react/platform)。
 :::
 
 ```tsx title="App.tsx"
@@ -51,7 +51,7 @@ setupIonicReact({
 <TabItem value="vue">
 
 :::note
-有关可检测的平台类型，请参阅 [Vue 平台文档](../vue/platform)。
+有关您可以检测的平台类型，请参阅 [Vue 平台文档](../../../vue/platform)。
 :::
 
 ```ts title="main.ts"

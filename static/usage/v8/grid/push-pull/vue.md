@@ -1,7 +1,7 @@
 ```html
 <template>
   <b
-    >第一列设置了 <code>push</code> 为 <code>"4"</code>，第二列设置了 <code>pull</code> 为
+    >Column 1 has <code>push</code> set to <code>"4"</code> and column 2 has <code>pull</code> set to
     <code>"4"</code></b
   >
   <ion-grid>
@@ -13,7 +13,7 @@
   </ion-grid>
 
   <b
-    >第二列设置了 <code>push</code> 为 <code>"4"</code>，第三列和第四列设置了 <code>pull</code> 为
+    >Column 2 has <code>push</code> set to <code>"4"</code> and column 3 & 4 have <code>pull</code> set to
     <code>"2"</code></b
   >
   <ion-grid>
@@ -28,7 +28,7 @@
   </ion-grid>
 
   <b
-    >第一列设置了 <code>push</code> 为 <code>"3"</code>，第二列设置了 <code>pull</code> 为
+    >Column 1 has <code>push</code> set to <code>"3"</code> and column 2 has <code>pull</code> set to
     <code>"9"</code></b
   >
   <ion-grid>

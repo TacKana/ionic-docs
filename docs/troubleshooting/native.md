@@ -1,12 +1,12 @@
 ---
-title: 原生应用错误
+title: 原生错误
 ---
 
 <head>
   <title>原生应用错误：如何解决 Ionic 应用中的原生错误</title>
   <meta
     name="description"
-    content="查看原生应用错误，包括代码签名、Xcode 构建错误 65 以及冲突的 Google Play Services 版本。学习解决 Ionic 应用中的原生错误。"
+    content="查看原生应用错误，包括代码签名、Xcode 构建错误 65 和 Google Play Services 版本冲突。了解如何解决 Ionic 应用中的原生错误。"
   />
 </head>
 
@@ -16,13 +16,13 @@ title: 原生应用错误
 Code Signing Error: Failed to create provisioning profile. The app ID "com.csform.ionic.yellow" cannot be registered to your development team. Change your bundle identifier to a unique string to try again. Code Signing Error: No profiles for 'com.csform.ionic.yellow' were found: Xcode couldn't find any iOS App Development provisioning profiles matching 'com.csform.ionic.yellow'. Code Signing Error: Code signing is required for product type 'Application' in SDK 'iOS 11.1'
 ```
 
-在 iOS 设备上运行应用需要一个配置文件（provisioning profile）。如果尚未创建配置文件，请按照以下步骤操作：
+在 iOS 设备上运行应用需要 provisioning profile。如果尚未创建 provisioning profile，请按照以下步骤操作：
 
-1. <strong>设置 [Package ID（包 ID）](../reference/glossary.md#package-id)。</strong>
+1. <strong>设置[包 ID](../reference/glossary.md#package-id)。</strong>
 
-   对于 Capacitor，请打开 `capacitor.config.json` 文件并修改 `appId` 属性。
+   对于 Capacitor，打开 `capacitor.config.json` 文件并修改 `appId` 属性。
 
-   对于 Cordova，请打开 `config.xml` 文件并修改根元素 `<widget>` 的 `id` 属性。更多信息请参阅 [Cordova 文档](https://cordova.apache.org/docs/en/latest/config_ref/#widget)。
+   对于 Cordova，打开 `config.xml` 文件并修改根元素 `<widget>` 的 `id` 属性。有关更多信息，请参阅 [Cordova 文档](https://cordova.apache.org/docs/en/latest/config_ref/#widget)。
 
 <!-- prettier-ignore -->
 2. <strong>在 <b>Xcode</b> 中打开项目。</strong>
@@ -33,17 +33,17 @@ Code Signing Error: Failed to create provisioning profile. The app ID "com.csfor
    $ ionic capacitor open ios
    ```
 
-   对于 Cordova，打开 Xcode，使用 **文件** &raquo; **打开** 并找到应用。打开应用的 `platforms/ios` 目录。
+   对于 Cordova，打开 Xcode。使用**文件** &raquo; **打开**并找到应用。打开应用的 `platforms/ios` 目录。
 
 <!-- prettier-ignore -->
-3. <strong>在 <b>项目导航器</b> 中，选择项目根目录以打开项目编辑器。在 **Identity（身份）** 部分，验证设置的包 ID 是否与 Bundle Identifier（包标识符）匹配。</strong>
+3. <strong>在<b>项目导航器</b>中，选择项目根节点以打开项目编辑器。在**身份**部分下，验证设置的包 ID 与 Bundle Identifier 匹配。</strong>
 
    ![Xcode 显示 iOS 应用的 Identity 部分，包含 Display Name、Bundle Identifier、Version 和 Build 字段。](/img/running/ios-xcode-identity-setup.png "Xcode Identity 部分")
 
 <!-- prettier-ignore -->
-4. <strong>在同一项目编辑器中，<b>Signing（签名）</b> 部分下，确保启用 <b>Automatically manage signing（自动管理签名）</b>。</strong> 然后，选择一个 Development Team（开发团队）。指定开发团队后，Xcode 将尝试自动准备配置文件和签名。
+4. <strong>在同一项目编辑器中，<b>签名</b>部分下，确保已启用<b>自动管理签名</b>。</strong> 然后，选择一个开发团队。指定开发团队后，Xcode 将尝试自动准备 provisioning 和签名。
 
-   ![Xcode 显示 Signing 部分，已启用 'Automatically manage signing' 并选择了 Development Team。](/img/running/ios-xcode-signing-setup.png "Xcode Signing 部分")
+   ![Xcode 显示 Signing 部分，已启用"自动管理签名"并选择了开发团队。](/img/running/ios-xcode-signing-setup.png "Xcode Signing 部分")
 
 ## Xcode 构建错误 65
 
@@ -51,9 +51,9 @@ Code Signing Error: Failed to create provisioning profile. The app ID "com.csfor
 Error: Error code 65 for command: xcodebuild with args: -xcconfig,/Users/ionitron/projects/my-project/platforms/ios/cordova/build-debug.xcconfig,-workspace,SC project.xcworkspace,-scheme,SC project,-configuration,Debug,-sdk,iphonesimulator,-destination,platform=iOS Simulator,name=iPhone X,build,CONFIGURATION_BUILD_DIR=/Users/ionitron/projects/my-project/platforms/ios/build/emulator,SHARED_PRECOMPS_DIR=/Users/ionitron/projects/my-project/platforms/ios/build/sharedpch
 ```
 
-此错误是 Xcode 返回的错误代码，可能由配置问题或过时的 Cordova 依赖引起。要修复此错误，首先确保已使用上述说明生成了配置文件，然后尝试 [从 Xcode 运行应用](../developing/ios.md#running-with-xcode)。
+此错误是来自 Xcode 的错误代码，可能由 provisioning 问题或过时的 cordova 依赖项引起。要修复此错误，首先确保已按照上述说明生成 provisioning profile，然后尝试[从 Xcode 运行应用](https://capacitorjs.com/docs/ios)。
 
-如果这未能修复错误，请运行以下命令：
+如果这不能修复错误，则运行以下命令：
 
 ```shell
 rm -rf node_modules
@@ -64,7 +64,7 @@ ionic cordova prepare ios
 ionic cordova build ios --prod
 ```
 
-运行这些命令后，即可进行全新的构建。
+运行这些命令后，可以进行全新的构建。
 
 ## Google Play Services 版本冲突
 
@@ -72,19 +72,19 @@ ionic cordova build ios --prod
 Error: more than one library with package name com.google.android.gms
 ```
 
-此错误是由于两个不同的插件尝试使用不同版本的 `Google Play Services` 引起的。要解决此问题，请确保运行 `cordova` 版本 `7.1.0` 或更高版本，以及 `cordova-android` `6.3.0` 或更高版本。要安装最新的 `cordova`，请运行：
+此错误是由两个不同的插件尝试使用不同版本的 `Google Play Services` 引起的。要修复此问题，请确保你运行的是 `cordova` 版本 `7.1.0` 或更高版本，以及 `cordova-android` `6.3.0` 或更高版本。要安装最新的 `cordova`，运行：
 
 ```shell
 npm install cordova@latest
 ```
 
-要更新 `cordova-android`，请运行：
+要更新 `cordova-android`，运行：
 
 ```shell
 cordova platform update android
 ```
 
-依赖 `Google Play Services` 的插件现在可以更新为使用相同版本。例如，如果 `pluginA` 使用版本 11.0 而 `pluginB` 使用版本 15.0，可以通过在 `config.xml` 文件中添加以下代码片段将它们更新为使用相同版本：
+依赖 `Google Play Services` 的插件现在可以更新到使用相同的版本。例如，如果 `pluginA` 使用版本 11.0，`pluginB` 使用版本 15.0，可以通过在 `config.xml` 文件中使用以下片段将它们更新到使用相同版本：
 
 ```xml
 <plugin name="pluginA" spec="npm">

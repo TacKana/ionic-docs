@@ -10,7 +10,7 @@ ion-toggle {
   --handle-max-height: auto;
   --handle-spacing: 6px;
 
-  /* 在 iOS 上使手柄能够溢出轨道的高度 */
+  /* Required for iOS handle to overflow the height of the track */
   overflow: visible;
   contain: none;
 }

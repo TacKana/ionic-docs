@@ -1,6 +1,6 @@
 ---
-title: 'ion-split-pane：用于菜单和多视图布局的拆分面板'
-description: 'ion-split-pane 在创建多视图应用布局时非常有用。它允许在视口宽度增加时显示诸如菜单等界面元素。'
+title: 'ion-split-pane: Split Plane View for Menus and Multi-View Layouts'
+description: 'ion-split-pane is useful when creating multi-view app layouts. It allows UI elements, like menus, to be displayed as the viewport width increases.'
 sidebar_label: 'ion-split-pane'
 ---
 
@@ -16,31 +16,32 @@ import Slots from '@ionic-internal/component-api/v5/split-pane/slots.md';
 
 # ion-split-pane
 
-拆分面板（split pane）在创建多视图布局时非常有用。它允许在视口宽度增加时显示诸如菜单等界面元素。
+A split pane is useful when creating multi-view layouts. It allows UI elements, like menus, to be
+displayed as the viewport width increases.
 
-如果设备屏幕宽度低于特定尺寸，拆分面板会收起，菜单将被隐藏。这对于创建既能在浏览器中访问，又能通过应用商店部署到手机和平板的应用来说非常理想。
+If the device's screen width is below a certain size, the split pane will collapse and the menu will be hidden. This is ideal for creating an app that will be served in a browser and deployed through the app store to phones and tablets.
 
-## 设置断点
+## Setting Breakpoints
 
-默认情况下，当屏幕宽度大于 992px 时，拆分面板会展开。要自定义此行为，可以在 `when` 属性中传入一个断点。`when` 属性可以接受布尔值、任何有效的媒体查询或 Ionic 预定义的尺寸之一。
+By default, the split pane will expand when the screen is larger than 992px. To customize this, pass a breakpoint in the `when` property. The `when` property can accept a boolean value, any valid media query, or one of Ionic's predefined sizes.
 
 ```html
-<!-- 可以是 "xs"、"sm"、"md"、"lg" 或 "xl" -->
+<!-- can be "xs", "sm", "md", "lg", or "xl" -->
 <ion-split-pane when="md"></ion-split-pane>
 
-<!-- 可以是任何有效的媒体查询 https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries -->
+<!-- can be any valid media query https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries -->
 <ion-split-pane when="(min-width: 40px)"></ion-split-pane>
 ```
 
-| 尺寸   | 值                     | 描述                                                       |
-| ------ | ---------------------- | ---------------------------------------------------------- |
-| `xs`   | `(min-width: 0px)`     | 当最小宽度为 0px 时显示拆分面板（意味着始终显示）           |
-| `sm`   | `(min-width: 576px)`   | 当最小宽度为 576px 时显示拆分面板                           |
-| `md`   | `(min-width: 768px)`   | 当最小宽度为 768px 时显示拆分面板                           |
-| `lg`   | `(min-width: 992px)`   | 当最小宽度为 992px 时显示拆分面板（默认断点）               |
-| `xl`   | `(min-width: 1200px)`  | 当最小宽度为 1200px 时显示拆分面板                          |
+| Size | Value                 | Description                                                           |
+| ---- | --------------------- | --------------------------------------------------------------------- |
+| `xs` | `(min-width: 0px)`    | Show the split-pane when the min-width is 0px (meaning, always)       |
+| `sm` | `(min-width: 576px)`  | Show the split-pane when the min-width is 576px                       |
+| `md` | `(min-width: 768px)`  | Show the split-pane when the min-width is 768px                       |
+| `lg` | `(min-width: 992px)`  | Show the split-pane when the min-width is 992px (default break point) |
+| `xl` | `(min-width: 1200px)` | Show the split-pane when the min-width is 1200px                      |
 
-## 使用方式
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -48,16 +49,16 @@ import Slots from '@ionic-internal/component-api/v5/split-pane/slots.md';
 
 ```html
 <ion-split-pane contentId="main">
-  <!--  侧边菜单  -->
+  <!--  the side menu  -->
   <ion-menu contentId="main">
     <ion-header>
       <ion-toolbar>
-        <ion-title>菜单</ion-title>
+        <ion-title>Menu</ion-title>
       </ion-toolbar>
     </ion-header>
   </ion-menu>
 
-  <!-- 主要内容区 -->
+  <!-- the main content -->
   <ion-router-outlet id="main"></ion-router-outlet>
 </ion-split-pane>
 ```
@@ -68,18 +69,18 @@ import Slots from '@ionic-internal/component-api/v5/split-pane/slots.md';
 
 ```html
 <ion-split-pane content-id="main">
-  <!--  侧边菜单  -->
+  <!--  the side menu  -->
   <ion-menu content-id="main">
     <ion-header>
       <ion-toolbar>
-        <ion-title>菜单</ion-title>
+        <ion-title>Menu</ion-title>
       </ion-toolbar>
     </ion-header>
   </ion-menu>
 
-  <!-- 主要内容区 -->
+  <!-- the main content -->
   <ion-content id="main">
-    <h1>你好</h1>
+    <h1>Hello</h1>
   </ion-content>
 </ion-split-pane>
 ```
@@ -104,16 +105,16 @@ import {
 export const SplitPlaneExample: React.SFC<{}> = () => (
   <IonContent>
     <IonSplitPane contentId="main">
-      {/*--  侧边菜单  --*/}
+      {/*--  the side menu  --*/}
       <IonMenu contentId="main">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>菜单</IonTitle>
+            <IonTitle>Menu</IonTitle>
           </IonToolbar>
         </IonHeader>
       </IonMenu>
 
-      {/*-- 主要内容区 --*/}
+      {/*-- the main content --*/}
       <IonPage id="main" />
     </IonSplitPane>
   </IonContent>
@@ -135,16 +136,16 @@ export class SplitPaneExample {
   render() {
     return [
       <ion-split-pane content-id="main">
-        {/*  侧边菜单 */}
+        {/*  the side menu */}
         <ion-menu content-id="main">
           <ion-header>
             <ion-toolbar>
-              <ion-title>菜单</ion-title>
+              <ion-title>Menu</ion-title>
             </ion-toolbar>
           </ion-header>
         </ion-menu>
 
-        {/* 主要内容区 */}
+        {/* the main content */}
         <ion-router-outlet id="main"></ion-router-outlet>
       </ion-split-pane>,
     ];
@@ -159,16 +160,16 @@ export class SplitPaneExample {
 ```html
 <template>
   <ion-split-pane content-id="main">
-    <!--  侧边菜单  -->
+    <!--  the side menu  -->
     <ion-menu content-id="main">
       <ion-header>
         <ion-toolbar>
-          <ion-title>菜单</ion-title>
+          <ion-title>Menu</ion-title>
         </ion-toolbar>
       </ion-header>
     </ion-menu>
 
-    <!-- 主要内容区 -->
+    <!-- the main content -->
     <ion-router-outlet id="main"></ion-router-outlet>
   </ion-split-pane>
 </template>
@@ -194,26 +195,26 @@ export class SplitPaneExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

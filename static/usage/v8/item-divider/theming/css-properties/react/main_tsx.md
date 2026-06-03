@@ -7,7 +7,7 @@ import './main.css';
 function Example() {
   return (
     <IonItemDivider>
-      <IonLabel>项目分割线</IonLabel>
+      <IonLabel>Item Divider</IonLabel>
     </IonItemDivider>
   );
 }

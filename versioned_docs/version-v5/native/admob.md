@@ -10,35 +10,35 @@ import CodeBlock from '@theme/CodeBlock';
 
 # AdMob
 
-最完整的 AdMob 插件，支持 [Tappx](http://www.tappx.com/?h=dec334d63287772de859bdb4e977fce6) 广告。
-使用最新的 Google AdMob SDK 通过广告来变现您的应用和游戏。通过此插件，您可以轻松展示 AdMob 广告！
+Most complete Admob plugin with support for [Tappx](http://www.tappx.com/?h=dec334d63287772de859bdb4e977fce6) ads.
+Monetize your apps and games with AdMob ads, using latest Google AdMob SDK. With this plugin you can show AdMob ads easily!
 
-**支持功能：**
+**Supports:**
 
-- 横幅广告（顶部和底部）
-- 插页式广告
-- 激励视频广告
-- [Tappx](http://www.tappx.com/?h=dec334d63287772de859bdb4e977fce6) 广告
+- Banner ads (top and bottom)
+- Interstitial ads
+- Rewarded ads
+- [Tappx](http://www.tappx.com/?h=dec334d63287772de859bdb4e977fce6) ads
 
 <p>
   <a href="https://github.com/appfeel/admob-google-cordova" target="_blank" rel="noopener" className="git-link">github.com/appfeel/admob-google-cordova</a>
 </p>
 
-<h2>遇到 Cordova 问题卡住了？</h2>
+<h2>Stuck on a Cordova issue?</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="不要在插件问题上浪费宝贵时间。"
+  header="Don't waste precious time on plugin issues."
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>如果您正在构建一个严肃的项目，您无法承担数小时排查问题的时间。Ionic 专家为社区插件和高级插件提供优质咨询服务。</p>
-    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer premium advisory services for both community plugins and premier plugins.</p>
+    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">安装</a>
+  <a href="#installation">Installation</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -46,7 +46,7 @@ import CodeBlock from '@theme/CodeBlock';
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: '企业版' },
+    { value: 'Enterprise', label: 'Enterprise' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -61,34 +61,34 @@ import CodeBlock from '@theme/CodeBlock';
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic 企业版包含由 Ionic 团队完全支持并维护的插件。 &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，如果您对此插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
+      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## 支持的平台
+## Supported Platforms
 
 - Android
 - iOS
-- 浏览器
+- Browser
 
-## 使用方式
+## Usage
 
 ### React
 
-[了解如何在 React 中使用 Ionic Native 组件](../native-community.md#react)
+[Learn more about using Ionic Native components in React](../native-community.md#react)
 
 ### Angular
 
-**注意：** 包名为 `io.ionic.starter` 的应用不会展示任何广告。这是新建 `ionic` 应用的默认包名。请确保重命名包名以便广告能够显示。
+**Note:** No ads will be served on apps with package name `io.ionic.starter`. This is the default package name for new `ionic` apps. Make sure to rename the package name so ads can be displayed.
 
 ```tsx
 import { Admob, AdmobOptions } from '@awesome-cordova-plugins/admob';
 
 
 constructor(private admob: Admob) {
-    // AdMob 选项配置
+    // Admob options config
     const admobOptions: AdmobOptions = {
       bannerAdId: 'XXX-XXXX-XXXX',
       interstitialAdId: 'XXX-XXXX-XXXX',
@@ -100,125 +100,125 @@ constructor(private admob: Admob) {
       adSize: this.admob.AD_SIZE.BANNER
     };
 
-    // 设置 AdMob 选项
+    // Set admob options
     this.admob.setOptions(admobOptions)
-      .then(() => console.log('AdMob 选项已成功设置'))
-      .catch(err => console.error('设置 AdMob 选项时出错:', err));
+      .then(() => console.log('Admob options have been successfully set'))
+      .catch(err => console.error('Error setting admob options:', err));
 }
 
 
 
-// （可选）预加载横幅广告，使其准备好随时展示
+// (Optionally) Load banner ad, in order to have it ready to show
 this.admob.createBannerView()
-  .then(() => console.log('横幅广告已加载'))
-  .catch(err => console.error('加载横幅广告时出错:', err));
+  .then(() => console.log('Banner ad loaded'))
+  .catch(err => console.error('Error loading banner ad:', err));
 
 
-// 展示横幅广告（必须先调用 createBannerView 且 onAdLoaded() 事件已触发）
+// Show banner ad (createBannerView must be called before and onAdLoaded() event raised)
 this.admob.onAdLoaded().subscribe((ad) => {
   if (ad.adType === this.admob.AD_TYPE.BANNER) {
     this.admob.showBannerAd()
-      .then(() => console.log('横幅广告已展示'))
-      .catch(err => console.error('展示横幅广告时出错:', err));
+      .then(() => console.log('Banner ad shown'))
+      .catch(err => console.error('Error showing banner ad:', err));
   }
 });
 
 
-// 隐藏横幅广告，但不销毁，以便后续再次展示
-// 如需隐藏并销毁横幅广告，请参见 destroyBannerView
+// Hide banner ad, but do not destroy it, so it can be shown later on
+// See destroyBannerView in order to hide and destroy banner ad
 this.admob.showBannerAd(false)
-  .then(() => console.log('横幅广告已隐藏'))
-  .catch(err => console.error('隐藏横幅广告时出错:', err));
+  .then(() => console.log('Banner ad hidden'))
+  .catch(err => console.error('Error hiding banner ad:', err));
 
 
 
-// 请求插页式广告，以便稍后展示
-// 可通过选项参数自动展示，详见文档
+// Request an interstitial ad, in order to be shown later on
+// It is possible to autoshow it via options parameter, see docs
 this.admob.requestInterstitialAd()
-  .then(() => console.log('插页式广告已加载'))
-  .catch(err => console.error('加载插页式广告时出错:', err));
+  .then(() => console.log('Interstitial ad loaded'))
+  .catch(err => console.error('Error loading interstitial ad:', err));
 
 
-// 展示插页式广告（必须先调用 requestInterstitialAd）
+// Show an interstitial ad (requestInterstitialAd must be called before)
 this.admob.onAdLoaded().subscribe((ad) => {
   if (ad.adType === this.admob.AD_TYPE.INTERSTITIAL) {
     this.admob.showInterstitialAd()
-      .then(() => console.log('插页式广告已展示'))
-      .catch(err => console.error('展示插页式广告时出错:', err));
+      .then(() => console.log('Interstitial ad shown'))
+      .catch(err => console.error('Error showing interstitial ad:', err));
   }
 });
 
 
-// 请求激励视频广告
+// Request a rewarded ad
 this.admob.requestRewardedAd()
-  .then(() => console.log('激励视频广告已加载'))
-  .catch(err => console.error('加载激励视频广告时出错:', err));
+  .then(() => console.log('Rewarded ad loaded'))
+  .catch(err => console.error('Error loading rewarded ad:', err));
 
 
-// 展示激励视频广告（必须先调用 requestRewardedAd）
+// Show rewarded ad (requestRewardedAd must be called before)
 this.admob.onAdLoaded().subscribe((ad) => {
   if (ad.adType === this.admob.AD_TYPE.REWARDED) {
     this.admob.showRewardedAd()
-      .then(() => console.log('激励视频广告已展示'))
-      .catch(err => console.error('展示激励视频广告时出错:', err));
+      .then(() => console.log('Rewarded ad shown'))
+      .catch(err => console.error('Error showing rewarded ad:', err));
   }
 });
 
 
-// 隐藏并销毁横幅或插页式广告
+// Hide and destroy banner or interstitial ad
 this.admob.destroyBannerView()
-  .then(() => console.log('横幅或插页式广告已销毁'))
-  .catch(err => console.error('销毁横幅或插页式广告时出错:', err));
+  .then(() => console.log('Banner or interstitial ad destroyed'))
+  .catch(err => console.error('Error destroying banner or interstitial ad:', err));
 
 
 
-// 广告加载完成事件
+// On Ad loaded event
 this.admob.onAdLoaded().subscribe((ad) => {
   if (ad.adType === this.admob.AD_TYPE.BANNER) {
-    console.log('横幅广告已加载');
+    console.log('Banner ad is loaded');
     this.admob.showBannerAd();
   } else if (ad.adType === this.admob.AD_TYPE.INTERSTITIAL) {
-    console.log('插页式广告已加载');
+    console.log('Interstitial ad is loaded');
     this.admob.showInterstitialAd();
   } else if (ad.adType === this.admob.AD_TYPE.REWARDED) {
-    console.log('激励视频广告已加载');
+    console.log('Rewarded ad is loaded');
     this.admob.showRewardedAd();
   }
 });
 
 
 
-// 广告加载失败事件
-this.admob.onAdFailedToLoad().subscribe(err => console.log('加载广告时出错:', err));
+// On ad failed to load
+this.admob.onAdFailedToLoad().subscribe(err => console.log('Error loading ad:', err));
 
 
 
-// 插页式广告打开事件
-this.admob.onAdOpened().subscribe(() => console.log('插页式广告已打开'));
+// On interstitial ad opened
+this.admob.onAdOpened().subscribe(() => console.log('Interstitial ad opened'));
 
 
 
-// 插页式广告关闭事件
-this.admob.onAdClosed().subscribe(() => console.log('插页式广告已关闭'));
+// On interstitial ad closed
+this.admob.onAdClosed().subscribe(() => console.log('Interstitial ad closed'));
 
 
 
-// 广告被点击并离开应用事件
-this.admob.onAdLeftApplication().subscribe(() => console.log('广告已离开应用'));
+// On ad clicked and left application
+this.admob.onAdLeftApplication().subscribe(() => console.log('Ad lefted application'));
 
 
 
-// 用户获得奖励事件
-this.admob.onRewardedAd().subscribe(() => console.log('用户已获得奖励'));
+// On user ad rewarded
+this.admob.onRewardedAd().subscribe(() => console.log('The user has been rewarded'));
 
 
 
-// 激励视频广告开始播放事件
-this.admob.onRewardedAdVideoStarted().subscribe(() => console.log('激励视频广告开始播放'));
+// On rewarded ad video started
+this.admob.onRewardedAdVideoStarted().subscribe(() => console.log('Rewarded ad vieo started'));
 
 
 
-// 激励视频广告播放完成事件
-this.admob.onRewardedAdVideoCompleted().subscribe(() => console.log('激励视频广告播放完成'));
+// On rewarded ad video completed
+this.admob.onRewardedAdVideoCompleted().subscribe(() => console.log('Rewarded ad video completed'));
 
 ```

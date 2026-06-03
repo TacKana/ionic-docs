@@ -21,13 +21,13 @@ function PageTwo() {
           <IonButtons slot="start">
             <IonBackButton></IonBackButton>
           </IonButtons>
-          <IonTitle>页面二</IonTitle>
+          <IonTitle>Page Two</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent class="ion-padding">
-        <h1>页面二</h1>
+        <h1>Page Two</h1>
         <IonNavLink routerDirection="forward" component={() => <PageThree />}>
-          <IonButton>前往页面三</IonButton>
+          <IonButton>Go to Page Three</IonButton>
         </IonNavLink>
       </IonContent>
     </>

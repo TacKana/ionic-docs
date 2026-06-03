@@ -8,7 +8,7 @@ function Example() {
   return (
     <>
       <b>
-        第 2 列设置了 <code>offset</code> 为 <code>"3"</code>
+        Column 2 has <code>offset</code> set to <code>"3"</code>
       </b>
       <IonGrid>
         <IonRow>
@@ -19,7 +19,7 @@ function Example() {
       </IonGrid>
 
       <b>
-        第 5 列设置了 <code>offset</code> 为 <code>"2"</code>
+        Column 5 has <code>offset</code> set to <code>"2"</code>
       </b>
       <IonGrid>
         <IonRow>
@@ -32,7 +32,7 @@ function Example() {
       </IonGrid>
 
       <b>
-        第 1 列设置了 <code>offset</code> 为 <code>"4"</code>
+        Column 1 has <code>offset</code> set to <code>"4"</code>
       </b>
       <IonGrid>
         <IonRow>

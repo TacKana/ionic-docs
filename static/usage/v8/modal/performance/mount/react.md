@@ -9,23 +9,23 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>示例</IonTitle>
+          <IonTitle>Example</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          打开模态框
+          Open Modal
         </IonButton>
         <IonModal ref={modal} keepContentsMounted={true} trigger="open-modal">
           <IonHeader>
             <IonToolbar>
               <IonButtons slot="start">
-                <IonButton onClick={() => modal.current?.dismiss()}>关闭</IonButton>
+                <IonButton onClick={() => modal.current?.dismiss()}>Close</IonButton>
               </IonButtons>
-              <IonTitle>模态框</IonTitle>
+              <IonTitle>Modal</IonTitle>
             </IonToolbar>
           </IonHeader>
-          <IonContent className="ion-padding">这段内容在模态框创建时就已经被加载了。</IonContent>
+          <IonContent className="ion-padding">This content was mounted as soon as the modal was created.</IonContent>
         </IonModal>
       </IonContent>
     </IonPage>

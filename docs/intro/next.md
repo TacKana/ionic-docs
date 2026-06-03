@@ -6,7 +6,7 @@ title: 后续步骤
   <title>启动应用的后续步骤：选择您的 JavaScript 框架</title>
   <meta
     name="description"
-    content="要构建 Ionic 应用，您首先需要选择计划使用的 JavaScript 框架。了解使用 Ionic 启动应用的后续步骤。"
+    content="要构建 Ionic 应用，您首先需要选择计划使用的 JavaScript 框架。了解更多关于使用 Ionic 启动应用的后续步骤。"
   />
 </head>
 
@@ -14,8 +14,6 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 import DeveloperExperts from '@components/page/intro/next/DeveloperExperts';
-
-<LegacyAnchor id="build-your-first-app" />
 
 ## 构建您的第一个应用
 

@@ -4,23 +4,23 @@ sidebar_label: 'cordova prepare'
 
 # ionic cordova prepare
 
-将资源复制到 Cordova 平台，为原生构建做好准备
+Copies assets to Cordova platforms, preparing them for native builds
 
 ```shell
 ionic cordova prepare [options]
 ```
 
-`ionic cordova prepare` 会执行以下操作：
+`ionic cordova prepare` will do the following:
 
-- 执行 Ionic 构建，将 Web 资源编译到 **www/** 目录。
-- 将 **www/** 目录复制到您的 Cordova 平台中。
-- 将 **config.xml** 转换为平台特定的清单文件。
-- 将图标和启动画面从 **resources/** 复制到您的 Cordova 平台中。
-- 将插件文件复制到指定的平台。
+- Perform an Ionic build, which compiles web assets to **www/**.
+- Copy the **www/** directory into your Cordova platforms.
+- Transform **config.xml** into platform-specific manifest files.
+- Copy icons and splash screens from **resources/** to into your Cordova platforms.
+- Copy plugin files into specified platforms.
 
-如果您使用 Android Studio 或 Xcode 运行项目，可能会用到 `ionic cordova prepare`。
+You may wish to use `ionic cordova prepare` if you run your project with Android Studio or Xcode.
 
-## 示例
+## Examples
 
 ```shell
 $ ionic cordova prepare
@@ -28,7 +28,7 @@ $ ionic cordova prepare ios
 $ ionic cordova prepare android
 ```
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -40,17 +40,17 @@ $ ionic cordova prepare android
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <p>
-          您想要准备的平台（例如 <code>android</code>、<code>ios</code>）
+          The platform you would like to prepare (e.g. <code>android</code>, <code>ios</code>)
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 选项
+## Options
 
 <table className="reference-table">
   <thead>
@@ -66,9 +66,9 @@ $ ionic cordova prepare android
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
-        <p>不调用 Ionic 构建</p>
+        <p>Do not invoke an Ionic build</p>
       </td>
     </tr>
   </tbody>
@@ -85,17 +85,17 @@ $ ionic cordova prepare android
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <p>
-          使用 <code>production</code> 配置的标志
+          Flag to use the <code>production</code> configuration
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 高级选项
+## Advanced Options
 
 <table className="reference-table">
   <thead>
@@ -112,15 +112,15 @@ $ ionic cordova prepare android
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>指定要使用的配置。</p>
+          <p>Specify the configuration to use.</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-c</code>
       </td>
@@ -139,10 +139,10 @@ $ ionic cordova prepare android
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>输出源映射</p>
+          <p>Output source maps</p>
         </div>
       </td>
     </tr>
@@ -160,10 +160,10 @@ $ ionic cordova prepare android
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>文件更改时重新构建</p>
+          <p>Rebuild when files change</p>
         </div>
       </td>
     </tr>

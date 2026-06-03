@@ -3,58 +3,58 @@ title: 测试
 ---
 
 <head>
-  <title>Ionic应用组件的Angular单元测试与端到端测试</title>
+  <title>Ionic 应用组件的 Angular 单元测试和端到端测试</title>
   <meta
     name="description"
-    content="使用Ionic CLI创建的Angular应用会自动配置好单元测试和端到端测试环境。阅读本文以了解更多关于Ionic组件测试工具的信息。"
+    content="使用 Ionic 创建的 Angular 应用会自动设置为进行单元测试和端到端测试。阅读以了解更多关于 Ionic 组件测试工具的信息。"
   />
 </head>
 
-当使用 Ionic CLI 生成 `@ionic/angular` 应用时，该应用会自动配置好单元测试和端到端测试环境。其配置与 Angular CLI 使用的配置相同。有关测试 Angular 应用的详细信息，请参阅 <a href="https://angular.io/guide/testing" target="_blank">Angular 测试指南</a>。
+当使用 Ionic CLI 生成 `@ionic/angular` 应用时，它会自动设置为进行应用的单元测试和端到端测试。这与 Angular CLI 使用的设置相同。有关测试 Angular 应用的详细信息，请参阅 <a href="https://angular.io/guide/testing" target="_blank">Angular 测试指南</a>。
 
 ## 测试原则
 
-测试应用时，最好牢记：测试可以揭示系统中是否存在缺陷。然而，要证明任何非平凡的系统完全不存在缺陷是不可能的。因此，测试的目的不是为了验证代码的正确性，而是为了发现代码中的问题。这是一个微妙但重要的区别。
+测试应用时，最好记住测试可以显示系统中是否存在缺陷。然而，不可能证明任何非平凡系统完全无缺陷。因此，测试的目标不是验证代码是否正确，而是发现代码中的问题。这是一个微妙但重要的区别。
 
-如果我们旨在证明代码是正确的，我们更可能只走代码中的“快乐路径”。如果我们旨在发现问题，我们则更可能全面地执行代码，并找出其中潜藏的缺陷。
+如果我们试图证明代码是正确的，我们更可能只遵循代码的快乐路径。如果我们试图发现问题，我们更可能更全面地执行代码，并找到隐藏在其中的 bug。
 
-同样，最好从一开始就对应用进行测试。这使得缺陷能够在开发早期被发现，此时修复缺陷也更为容易。同时，这也使得在系统添加新功能时，能够有信心地进行代码重构。
+最好从项目一开始就进行测试。这样可以尽早发现缺陷，此时修复起来更容易。这也允许在向系统添加新功能时自信地进行代码重构。
 
 ## 单元测试
 
-单元测试在隔离环境中执行代码的单一单元（组件、页面、服务、管道等）。隔离是通过注入模拟对象来替代代码的依赖项实现的。模拟对象允许测试对依赖项的输出进行精细控制。模拟对象还允许测试确定哪些依赖项已被调用以及向它们传递了什么。
+单元测试在隔离环境中执行单个代码单元（组件、页面、服务、管道等），与系统其他部分隔离。通过注入模拟对象代替代码的依赖关系来实现隔离。模拟对象允许测试对依赖关系的输出进行精细控制。模拟还允许测试确定哪些依赖关系已被调用以及向它们传递了什么。
 
-编写良好的单元测试结构清晰，通过 `describe()` 回调函数来描述代码单元及其包含的功能。代码单元及其功能的需求通过 `it()` 回调函数进行测试。当阅读 `describe()` 和 `it()` 回调函数的描述时，它们应该能组成一个有意义的短语。当嵌套的 `describe()` 和最终的 `it()` 的描述连接在一起时，它们就形成了一个完整描述测试用例的句子。
+编写良好的单元测试的结构是通过 `describe()` 回调来描述代码单元及其包含的功能。通过 `it()` 回调来测试代码单元及其功能的需求。当阅读 `describe()` 和 `it()` 回调的描述时，它们应该像一个短语一样有意义。当嵌套的 `describe()` 和最终的 `it()` 的描述连接在一起时，它们形成一个完整描述测试用例的句子。
 
-由于单元测试在隔离环境中执行代码，因此它们快速、健壮，并且可以实现高度的代码覆盖率。
+由于单元测试在隔离环境中执行代码，因此它们快速、健壮，并允许实现高代码覆盖率。
 
 ### 使用模拟对象
 
-单元测试在隔离环境中测试代码模块。为此，我们建议使用 Jasmine (https://jasmine.github.io/)。Jasmine 创建模拟对象（Jasmine 称之为 "spies"）来在测试时替代依赖项。当使用模拟对象时，测试可以控制对该依赖项调用的返回值，使当前测试不受对依赖项所做的更改的影响。这也使得测试设置更容易，允许测试只关注被测模块内部的代码。
+单元测试在隔离环境中执行代码模块。为方便起见，我们建议使用 Jasmine（https://jasmine.github.io/）。Jasmine 创建模拟对象（Jasmine 称之为"spies"）来在测试时替代依赖关系。使用模拟对象时，测试可以控制对该依赖关系调用的返回值，使当前测试独立于对依赖关系所做的更改。这也使测试设置更简单，使测试只需关注被测试模块中的代码。
 
-使用模拟对象还允许测试查询模拟对象，通过 `toHaveBeenCalled*` 函数集来确定它是否被调用以及如何被调用。在使用这些函数时，测试应尽可能具体，在测试方法已被调用时，优先使用 `toHaveBeenCalledTimes` 而不是 `toHaveBeenCalled`。即 `expect(mock.foo).toHaveBeenCalledTimes(1)` 优于 `expect(mock.foo).toHaveBeenCalled()`。在测试某物未被调用时，则应遵循相反的建议（`expect(mock.foo).not.toHaveBeenCalled()`）。
+使用模拟还允许测试通过 `toHaveBeenCalled*` 系列函数查询模拟对象，以确定它是否被调用以及如何被调用。测试应尽可能具体地使用这些函数，在测试方法已被调用时，优先使用 `toHaveBeenCalledTimes` 而非 `toHaveBeenCalled`。也就是说 `expect(mock.foo).toHaveBeenCalledTimes(1)` 优于 `expect(mock.foo).toHaveBeenCalled()`。在测试某些内容未被调用时，应遵循相反的建议（`expect(mock.foo).not.toHaveBeenCalled()`）。
 
-在 Jasmine 中有两种常见的方法来创建模拟对象。可以从头开始使用 `jasmine.createSpy` 和 `jasmine.createSpyObj` 构建模拟对象，也可以使用 `spyOn()` 和 `spyOnProperty()` 在现有对象上安装 spies。
+在 Jasmine 中有两种常见的方法来创建模拟对象。可以使用 `jasmine.createSpy` 和 `jasmine.createSpyObj` 从头构建模拟对象，也可以使用 `spyOn()` 和 `spyOnProperty()` 将 spies 安装到现有对象上。
 
 #### 使用 `jasmine.createSpy` 和 `jasmine.createSpyObj`
 
-`jasmine.createSpyObj` 从头开始创建一个完整的模拟对象，并在创建时定义一组模拟方法。这样做的好处是非常简单。无需在测试中构建或注入任何东西。使用此函数的缺点是它允许创建可能与真实对象不匹配的对象。
+`jasmine.createSpyObj` 从头创建一个完整的模拟对象，并在创建时定义一组模拟方法。这很有用，因为它非常简单。无需构建或注入任何内容到测试中。使用此函数的缺点是它允许创建可能与真实对象不匹配的对象。
 
 `jasmine.createSpy` 类似，但它创建一个独立的模拟函数。
 
 #### 使用 `spyOn()` 和 `spyOnProperty()`
 
-`spyOn()` 将 spy 安装到现有对象上。使用此技术的优点是，如果试图监视对象上不存在的方法，则会引发异常。这可以防止测试模拟不存在的方法。缺点是测试需要从一个完全形成的对象开始，这可能会增加所需的测试设置量。
+`spyOn()` 将 spy 安装在现有对象上。使用此技术的优点是，如果尝试监视对象上不存在的方法，则会引发异常。这可以防止测试模拟不存在的方法。缺点是该测试需要从开始时有一个完整的对象，这可能会增加所需的测试设置量。
 
-`spyOnProperty()` 类似，区别在于它监视的是属性而非方法。
+`spyOnProperty()` 类似，区别在于它监视的是属性而不是方法。
 
-### 通用测试结构
+### 一般测试结构
 
-单元测试包含在 `spec` 文件中，每个实体（组件、页面、服务、管道等）对应一个 `spec` 文件。`spec` 文件与其测试的源代码位于同一目录下，并以源代码的名称命名。例如，如果项目有一个名为 WeatherService 的服务，其代码位于 `weather.service.ts` 文件中，而测试代码位于 `weather.service.spec.ts` 文件中。这两个文件位于同一个文件夹中。
+单元测试包含在 `spec` 文件中，每个实体（组件、页面、服务、管道等）对应一个 `spec` 文件。`spec` 文件与它们所测试的源代码并排放置，并以源代码命名。例如，如果项目有一个名为 `WeatherService` 的服务，其代码位于 `weather.service.ts` 文件中，测试则位于 `weather.service.spec.ts` 文件中。这两个文件位于同一个文件夹中。
 
-`spec` 文件本身包含一个 `describe` 调用来定义整体测试。在其内部嵌套了其他 `describe` 调用来定义主要的功能区域。每个 `describe` 调用可以包含设置和清理代码（通常通过 `beforeEach` 和 `afterEach` 调用处理）、更多的 `describe` 调用以形成功能的层次分解，以及定义各个测试用例的 `it` 调用。
+`spec` 文件本身包含一个定义整体测试的 `describe` 调用。在它内部是定义主要功能区域的其他 `describe` 调用。每个 `describe` 调用可以包含设置和拆卸代码（通常通过 `beforeEach` 和 `afterEach` 调用处理）、更多构成功能层次分解的 `describe` 调用，以及定义单个测试用例的 `it` 调用。
 
-`describe` 和 `it` 调用还包含一个描述性的文本标签。在结构良好的测试中，`describe` 和 `it` 调用与其标签组合起来形成恰当的短语，而每个测试用例的完整标签（由 `describe` 和 `it` 标签组合而成）则形成一个完整的句子。
+`describe` 和 `it` 调用还包含描述性文本标签。在编写良好的测试中，`describe` 和 `it` 调用与其标签组合成恰当的短语，每个测试用例的完整标签（由 `describe` 和 `it` 标签组合而成）构成一个完整的句子。
 
 例如：
 
@@ -72,13 +72,13 @@ describe('Calculation', () => {
 });
 ```
 
-外层的 `describe` 调用表明正在测试 `Calculation` 服务，内层的 `describe` 调用确切地说明了正在测试什么功能，而 `it` 调用则说明了测试用例是什么。运行时，每个测试用例的完整标签是一个有意义的句子（Calculation divide cowardly refuses to divide by zero）。
+外层的 `describe` 调用表明正在测试的是 `Calculation` 服务，内层的 `describe` 调用表明正在测试的具体功能，而 `it` 调用则说明测试用例是什么。运行时，每个测试用例的完整标签是一个有意义的句子（Calculation divide cowardly refuses to divide by zero）。
 
 ### 页面和组件
 
 页面就是 Angular 组件。因此，页面和组件都使用 <a href="https://angular.io/guide/testing#component-test-basics">Angular 的组件测试</a>指南进行测试。
 
-由于页面和组件同时包含 TypeScript 代码和 HTML 模板标记，因此可以执行组件类测试和组件 DOM 测试。创建页面时，生成的模板测试如下所示：
+由于页面和组件同时包含 TypeScript 代码和 HTML 模板标记，因此既可以进行组件类测试，也可以进行组件 DOM 测试。当创建页面时，生成的模板测试如下所示：
 
 ```tsx
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -107,17 +107,17 @@ describe('TabsPage', () => {
 });
 ```
 
-在进行组件类测试时，通过 `component = fixture.componentInstance;` 定义的组件对象来访问组件。这是组件类的一个实例。在进行 DOM 测试时，使用 `fixture.nativeElement` 属性。这是组件的实际 `HTMLElement`，允许测试使用标准的 HTML API 方法，如 `HTMLElement.querySelector` 来检查 DOM。
+在进行组件类测试时，通过 `component = fixture.componentInstance;` 定义的组件对象来访问组件。这是组件类的一个实例。在进行 DOM 测试时，使用 `fixture.nativeElement` 属性。这是组件的实际 `HTMLElement`，允许测试使用标准 HTML API 方法（如 `HTMLElement.querySelector`）来检查 DOM。
 
 ## 服务
 
-服务通常可分为两大类：执行计算和其他操作的实用服务，以及主要执行 HTTP 操作和数据操作的数据服务。
+服务通常属于两大类：执行计算和其他操作的实用程序服务，以及主要执行 HTTP 操作和数据操作的数据服务。
 
-### 基础服务测试
+### 基本服务测试
 
-测试大多数服务的建议方法是实例化服务，并手动为服务所依赖的任何依赖项注入模拟对象。这样，代码就可以在隔离环境中进行测试。
+测试大多数服务的建议方式是实例化服务并手动为其任何依赖关系注入模拟对象。这样，代码可以在隔离环境中进行测试。
 
-假设有一个服务，其方法接受一个工时记录数组并计算净工资。再假设税务计算由当前服务所依赖的另一个服务处理。这个工资单服务可以这样测试：
+假设有一个服务，其方法接收一个工时卡数组并计算净工资。还假设税务计算是通过当前服务依赖的另一个服务处理的。这个工资服务可以这样测试：
 
 ```tsx
 import { PayrollService } from './payroll.service';
@@ -142,9 +142,9 @@ describe('PayrollService', () => {
 });
 ```
 
-这允许测试通过模拟设置（例如 `taxServiceSpy.federalIncomeTax.and.returnValue(73.24)`）来控制各种税务计算返回的值。这使得“净工资”测试独立于税务计算逻辑。当税法发生变化时，只需要更改与税务服务相关的代码和测试。净工资的测试可以继续按原样运行，因为这些测试不关心税款是如何计算的，只关心数值是否被正确应用。
+这允许测试通过模拟设置（如 `taxServiceSpy.federalIncomeTax.and.returnValue(73.24)`）来控制各种税务计算返回的值。这使得"净工资"测试独立于税务计算逻辑。当税法变更时，只需要更改与税务服务相关的代码和测试。净工资的测试可以继续按原样运行，因为这些测试不关心税务是如何计算的，只关心其值是否正确应用。
 
-通过 `ionic g service name` 生成服务时使用的脚手架会使用 Angular 的测试工具并设置一个测试模块。这样做并非严格必要。然而，可以保留这些代码，以便手动构建服务或像这样注入服务：
+通过 `ionic g service name` 生成服务时使用的脚手架使用了 Angular 的测试实用程序并设置了一个测试模块。这样做并不是严格必需的。但是，可以保留这些代码，允许手动构建服务或像这样注入：
 
 ```tsx
 import { TestBed, inject } from '@angular/core/testing';
@@ -180,9 +180,9 @@ describe('PayrolService', () => {
 
 #### 测试 HTTP 数据服务
 
-大多数执行 HTTP 操作的服务会使用 Angular 的 HttpClient 服务来执行这些操作。对于此类测试，建议使用 Angular 的 `HttpClientTestingModule`。有关此模块的详细文档，请参阅 Angular 的 <a href="https://angular.io/guide/http#testing-http-requests" target="_blank">测试 HTTP 请求</a>指南。
+大多数执行 HTTP 操作的服务会使用 Angular 的 HttpClient 服务来执行这些操作。对于此类测试，建议使用 Angular 的 `HttpClientTestingModule`。有关此模块的详细文档，请参阅 Angular 的 <a href="https://angular.io/guide/http#testing-http-requests" target="_blank">Angular 测试 HTTP 请求</a>指南。
 
-此类测试的基本设置如下所示：
+此类测试的基本设置如下：
 
 ```tsx
 import { HttpBackend, HttpClient } from '@angular/common/http';
@@ -231,9 +231,9 @@ describe('IssTrackingDataService', () => {
 
 ### 管道
 
-管道类似于具有特定接口的服务。它是一个包含一个公共方法 `transform` 的类，该方法处理输入值（以及其他可选参数），以创建在页面上渲染的输出。测试管道：实例化管道，调用 transform 方法，并验证结果。
+管道就像一个具有特定定义接口的服务。它是一个包含一个公共方法 `transform` 的类，该方法处理输入值（和其他可选参数）以创建在页面上渲染的输出。要测试管道：实例化管道，调用 transform 方法，并验证结果。
 
-举个简单的例子，我们来看一个接受 `Person` 对象并格式化名称的管道。为简单起见，假设一个 `Person` 包含 `id`、`firstName`、`lastName` 和 `middleInitial`。管道的要求是将姓名打印为"Last, First M."，并处理名字、姓氏或中间名缩写不存在的情况。这样的测试可能如下所示：
+作为简单示例，让我们看一个接收 `Person` 对象并格式化姓名的管道。为简单起见，假设一个 `Person` 包含 `id`、`firstName`、`lastName` 和 `middleInitial`。管道的要求是将姓名打印为"Last, First M."，并处理名字、姓氏或中间名首字母不存在的情况。这样的测试可能如下所示：
 
 ```tsx
 import { NamePipe } from './name.pipe';
@@ -279,34 +279,34 @@ describe('NamePipe', () => {
 });
 ```
 
-在使用了该管道的组件和页面中通过 DOM 测试来检验管道也是有益的。
+通过在使用管道的组件和页面中进行 DOM 测试来测试管道也是有益的。
 
 ## 端到端测试
 
-端到端测试用于验证应用程序作为一个整体是否工作，通常包含与实时数据的连接。单元测试侧重于隔离的代码单元，从而允许对应用逻辑进行低级别测试，而端到端测试则侧重于各种用户故事或使用场景，提供对数据在整个应用中流动流程的高级测试。单元测试试图发现应用逻辑中的问题，而端到端测试试图发现这些独立单元一起使用时出现的问题。端到端测试能够揭示应用整体架构中的问题。
+端到端测试用于验证应用作为一个整体是否正常工作，并且通常包括与实时数据的连接。单元测试侧重于隔离环境中的代码单元，从而允许对应用逻辑进行低级别测试，而端到端测试侧重于各种用户故事或使用场景，提供对数据在应用中整体流程的高级测试。单元测试试图发现应用逻辑的问题，而端到端测试试图发现当这些独立单元一起使用时出现的问题。端到端测试发现应用整体架构的问题。
 
-由于端到端测试执行用户故事并覆盖整个应用而非单个代码模块，因此端到端测试存在于项目中独立于主应用代码的自己的应用程序中。大多数端到端测试通过自动化常见的用户与应用交互、检查 DOM 来确定这些交互的结果来进行操作。
+由于端到端测试执行用户故事并覆盖整个应用而不是单个代码模块，因此端到端测试存在于项目中与主应用代码分开的独立应用中。大多数端到端测试通过自动化常见的用户与应用交互并检查 DOM 来确定这些交互的结果。
 
 ### 测试结构
 
-当生成一个 `@ionic/angular` 应用时，会在 `e2e` 文件夹中生成一个默认的端到端测试应用。此应用使用 <a href="">Protractor</a> 来控制浏览器，并使用 <a href="">Jasmine</a> 来构建和执行测试。该应用最初由四个文件组成：
+当生成 `@ionic/angular` 应用时，会在 `e2e` 文件夹中生成一个默认的端到端测试应用。该应用使用 <a href="">Protractor</a> 来控制浏览器，并使用 <a href="">Jasmine</a> 来组织和执行测试。应用最初由四个文件组成：
 
 - `protractor.conf.js` - Protractor 配置文件
-- `tsconfig.e2e.json` - 针对测试应用的特定 TypeScript 配置
-- `src/app.po.ts` - 一个页面对象，包含导航应用、查询 DOM 元素以及操作页面上元素的方法
-- `src/app.e2e-spec.ts` - 一个测试脚本
+- `tsconfig.e2e.json` - 测试应用的特定 TypeScript 配置
+- `src/app.po.ts` - 包含导航应用、查询 DOM 元素和操作页面上元素的方法的页面对象
+- `src/app.e2e-spec.ts` - 测试脚本
 
 #### 页面对象
 
-端到端测试通过自动化常见的用户与应用交互、等待应用响应以及检查 DOM 以确定交互结果来操作。这涉及到大量的 DOM 操作和检查。如果所有这些都手动完成，测试将非常脆弱且难以阅读和维护。
+端到端测试通过自动化常见的用户与应用交互、等待应用响应以及检查 DOM 来确定交互结果来执行。这涉及大量的 DOM 操作和检查。如果所有这些都手动完成，测试将非常脆弱，难以阅读和维护。
 
-页面对象将单个页面的 HTML 封装在一个 TypeScript 类中，为测试脚本提供了一个与应用交互的 API。将 DOM 操作逻辑封装在页面对象中使得测试更具可读性，更容易理解，从而降低了测试的维护成本。创建精心设计的页面对象是创建高质量和可维护的端到端测试的关键。
+页面对象将单个页面的 HTML 封装在一个 TypeScript 类中，提供测试脚本用于与应用交互的 API。将 DOM 操作逻辑封装在页面对象中使测试更具可读性，更易于推理，降低了测试的维护成本。创建精心设计的页面对象是创建高质量和可维护的端到端测试的关键。
 
 ##### 基础页面对象
 
-许多测试依赖于诸如等待页面可见、在输入框中输入文本以及点击按钮等操作。执行这些操作的方法保持一致，只有用于获取相应 DOM 元素的 CSS 选择器会发生变化。因此，将此逻辑抽象到一个可以被其他页面对象使用的基础类中是有意义的。
+许多测试依赖于等待页面可见、在输入框中输入文本和点击按钮等操作。用于执行这些操作的方法保持一致，只有获取相应 DOM 元素所用的 CSS 选择器会改变。因此，将此逻辑抽象到一个基础类中是合理的，其他页面对象可以使用该类。
 
-以下是一个示例，实现了一些所有页面对象都需要支持的基本方法。
+以下是一个实现所有页面对象都需要支持的一些基本方法的示例。
 
 ```tsx
 import { browser, by, element, ExpectedConditions } from 'protractor';
@@ -368,11 +368,11 @@ export class PageObjectBase {
 }
 ```
 
-##### 每页抽象
+##### 逐页面抽象
 
-应用中的每个页面都会有自己的页面对象类，用于抽象该页面上的元素。如果使用了基础页面对象类，创建页面对象主要涉及为该页面特有的元素创建自定义方法。通常，这些自定义元素会利用基类中的方法来执行所需的工作。
+应用中的每个页面都有自己的页面对象类，用于抽象该页面上的元素。如果使用了基础页面对象类，创建页面对象主要涉及为特定于该页面的元素创建自定义方法。通常，这些自定义元素利用基础类中的方法来执行所需的工作。
 
-以下是一个简单但典型的登录页面的页面对象示例。注意，许多方法（如 `enterEMail()`）都调用了基类中执行大部分工作的方法。
+以下是一个简单但典型的登录页面的页面对象示例。注意许多方法（如 `enterEMail()`）调用了基础类中执行大部分工作的方法。
 
 ```tsx
 import { browser, by, element, ExpectedConditions } from 'protractor';
@@ -407,11 +407,11 @@ export class LoginPage extends PageObjectBase {
 
 #### 测试脚本
 
-与单元测试类似，端到端测试脚本由嵌套的 `describe()` 和 `it()` 函数组成。在端到端测试中，`describe()` 函数通常表示特定的场景，而 `it()` 函数表示在该场景中执行操作时应用应展现的特定行为。
+与单元测试类似，端到端测试脚本由嵌套的 `describe()` 和 `it()` 函数组成。在端到端测试中，`describe()` 函数通常表示特定场景，而 `it()` 函数表示在该场景中执行操作时应用应展现的特定行为。
 
-与单元测试类似，`describe()` 和 `it()` 函数中使用的标签应分别与 "describe" 或 "it" 结合后有明确意义，并且当连接在一起形成完整测试用例时也应如此。
+与单元测试类似，`describe()` 和 `it()` 函数中使用的标签应与"describe"或"it"搭配有意义，并且在连接在一起形成完整测试用例时也有意义。
 
-以下是一个示例端到端测试脚本，它执行了一些典型的登录场景。
+以下是一个示例端到端测试脚本，它执行一些典型的登录场景。
 
 ```tsx
 import { AppPage } from '../page-objects/pages/app.po';
@@ -501,15 +501,15 @@ describe('Login', () => {
 
 ### 配置
 
-默认配置使用与开发相同的 `environment.ts` 文件。为了更好地控制端到端测试使用的数据，通常可以为测试创建一个特定的环境并在测试中使用该环境。本节展示了创建此配置的一种可能方法。
+默认配置使用与开发相同的 `environment.ts` 文件。为了更好地控制端到端测试使用的数据，通常可以创建一个专门的测试环境并在测试中使用该环境。本节展示了创建此配置的一种可能方法。
 
 #### 测试环境
 
-设置测试环境包括创建一个新的环境文件，该文件使用专用的测试后端，更新 `angular.json` 文件以使用该环境，并修改 `package.json` 中的 `e2e` 脚本以指定 `test` 环境。
+设置测试环境涉及创建一个使用专用测试后端的新环境文件，更新 `angular.json` 文件以使用该环境，以及修改 `package.json` 中的 `e2e` 脚本以指定 `test` 环境。
 
 ##### 创建 `environment.e2e.ts` 文件
 
-Angular 的 `environment.ts` 和 `environment.prod.ts` 文件通常用于存储信息，例如应用后端数据服务的基础 URL。创建一个 `environment.e2e.ts` 文件，提供相同的信息，但连接到专用于测试的后端服务，而不是开发或生产后端服务。以下是一个示例：
+Angular 的 `environment.ts` 和 `environment.prod.ts` 文件通常用于存储信息，例如应用后端数据服务的基础 URL。创建一个 `environment.e2e.ts`，提供相同的信息，但连接到专用于测试的后端服务，而不是开发或生产后端服务。以下是一个示例：
 
 ```tsx
 export const environment = {
@@ -521,9 +521,9 @@ export const environment = {
 
 ##### 修改 `angular.json` 文件
 
-需要修改 `angular.json` 文件以使用此文件。这是一个分层过程。按照下面列出的 XPath 添加所需的配置。
+需要修改 `angular.json` 文件以使用此文件。这是一个分层过程。按照下面列出的 XPaths 添加所需的配置。
 
-在 `/projects/app/architect/build/configurations` 下添加一个名为 `test` 的配置，用于执行文件替换：
+在 `/projects/app/architect/build/configurations` 添加一个名为 `test` 的配置，用于执行文件替换：
 
 ```json
 "test": {
@@ -536,7 +536,7 @@ export const environment = {
 }
 ```
 
-在 `/projects/app/architect/serve/configurations` 下添加一个名为 `test` 的配置，将其 browser target 指向上面定义的 `test` 构建配置。
+在 `/projects/app/architect/serve/configurations` 添加一个名为 `test` 的配置，将浏览器目标指向上面定义的 `test` 构建配置。
 
 ```json
 "test": {
@@ -544,7 +544,7 @@ export const environment = {
 }
 ```
 
-在 `/projects/app-e2e/architect/e2e/configurations` 下添加一个名为 `test` 的配置，将其 dev server target 指向上面定义的 `test` serve 配置。
+在 `/projects/app-e2e/architect/e2e/configurations` 添加一个名为 `test` 的配置，将开发服务器目标指向上面定义的 `test` 服务配置。
 
 ```json
 "test": {
@@ -554,7 +554,7 @@ export const environment = {
 
 ##### 修改 `package.json` 文件
 
-修改 `package.json` 文件，以便 `npm run e2e` 使用 `test` 配置。
+修改 `package.json` 文件，使 `npm run e2e` 使用 `test` 配置。
 
 ```json
 "scripts": {
@@ -570,7 +570,7 @@ export const environment = {
 
 #### 测试清理
 
-如果端到端测试以任何方式修改了数据，那么在测试完成后将数据重置为已知状态会很有帮助。一种方法是：
+如果端到端测试以任何方式修改了数据，最好在测试完成后将数据重置为已知状态。一种方法是：
 
 1. 创建一个执行清理的端点。
 2. 在 `protractor.conf.js` 文件导出的 `config` 对象中添加一个 `onCleanUp()` 函数。

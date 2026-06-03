@@ -1,3 +1,3 @@
 ```html
-<ion-label>标签</ion-label>
+<ion-label>Label</ion-label>
 ```

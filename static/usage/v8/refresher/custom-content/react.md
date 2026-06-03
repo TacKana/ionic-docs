@@ -14,7 +14,7 @@ import { chevronDownCircleOutline } from 'ionicons/icons';
 function Example() {
   function handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
-      // 加载数据的调用放在这里
+      // Any calls to load data go here
       event.detail.complete();
     }, 2000);
   }
@@ -23,7 +23,7 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>下拉刷新</IonTitle>
+          <IonTitle>Pull to Refresh</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -31,13 +31,13 @@ function Example() {
         <IonRefresher slot="fixed" onIonRefresh={handleRefresh}>
           <IonRefresherContent
             pullingIcon={chevronDownCircleOutline}
-            pullingText="下拉刷新"
+            pullingText="Pull to refresh"
             refreshingSpinner="circles"
-            refreshingText="刷新中..."
+            refreshingText="Refreshing..."
           ></IonRefresherContent>
         </IonRefresher>
 
-        <p>向下拉动此内容以触发刷新。</p>
+        <p>Pull this content down to trigger the refresh.</p>
       </IonContent>
     </>
   );

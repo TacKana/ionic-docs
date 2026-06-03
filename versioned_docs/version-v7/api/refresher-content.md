@@ -11,9 +11,9 @@ import Slots from '@ionic-internal/component-api/v7/refresher-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-刷新器内容包含在下拉刷新期间显示的文本、图标和旋转器。Ionic 会根据平台显示拉动图标和刷新旋转器。不过，默认的图标、旋转器和文本可以根据刷新器的状态进行自定义。
+刷新器内容包含下拉刷新期间显示的文本、图标和旋转器。Ionic 根据平台显示拉动图标和刷新旋转器。但是，默认的图标、旋转器和文本可以根据刷新器的状态进行自定义。
 
-有关使用示例，请参阅 [Refresher](/v7/api/refresher) 文档。
+有关用法示例，请参阅[刷新器（Refresher）](/api/refresher)文档。
 
 ## 属性
 
@@ -27,7 +27,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

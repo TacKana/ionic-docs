@@ -2,14 +2,14 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
   <ion-checkbox
     formControlName="agree"
-    helperText="请先同意条款以继续"
-    errorText="您必须同意条款才能继续"
+    helperText="Agree to the terms before continuing"
+    errorText="You must agree to the terms to continue"
   >
-    我同意相关条款与条件
+    I agree to the terms and conditions
   </ion-checkbox>
 
   <br />
 
-  <ion-button type="submit" size="small">提交</ion-button>
+  <ion-button type="submit" size="small">Submit</ion-button>
 </form>
 ```

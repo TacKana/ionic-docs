@@ -16,14 +16,14 @@ import Slots from '@ionic-internal/component-api/v5/menu/slots.md';
 
 # ion-menu
 
-菜单（Menu）组件是一种从当前视图侧面滑入的导航抽屉。
-默认情况下，它从左侧滑入，但这个方向可以被覆盖。
-菜单在不同模式下的显示方式不同，但其显示类型可以更改为任何可用的菜单类型。
-菜单元素应该是根内容元素的同级元素。
-可以有任意数量的菜单附加到内容上。
-这些菜单可以通过模板控制，也可以通过 `MenuController` 以编程方式控制。
+The Menu component is a navigation drawer that slides in from the side of the current view.
+By default, it slides in from the left, but the side can be overridden.
+The menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.
+The menu element should be a sibling to the root content element.
+There can be any number of menus attached to the content.
+These can be controlled from the templates, or programmatically using the MenuController.
 
-## 使用方式
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -33,16 +33,16 @@ import Slots from '@ionic-internal/component-api/v5/menu/slots.md';
 <ion-menu side="start" menuId="first" contentId="main">
   <ion-header>
     <ion-toolbar color="primary">
-      <ion-title>起始菜单</ion-title>
+      <ion-title>Start Menu</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item>菜单项</ion-item>
-      <ion-item>菜单项</ion-item>
-      <ion-item>菜单项</ion-item>
-      <ion-item>菜单项</ion-item>
-      <ion-item>菜单项</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
@@ -50,16 +50,16 @@ import Slots from '@ionic-internal/component-api/v5/menu/slots.md';
 <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
   <ion-header>
     <ion-toolbar color="tertiary">
-      <ion-title>自定义菜单</ion-title>
+      <ion-title>Custom Menu</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item>菜单项</ion-item>
-      <ion-item>菜单项</ion-item>
-      <ion-item>菜单项</ion-item>
-      <ion-item>菜单项</ion-item>
-      <ion-item>菜单项</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
@@ -67,16 +67,16 @@ import Slots from '@ionic-internal/component-api/v5/menu/slots.md';
 <ion-menu side="end" type="push" contentId="main">
   <ion-header>
     <ion-toolbar color="danger">
-      <ion-title>结束菜单</ion-title>
+      <ion-title>End Menu</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item>菜单项</ion-item>
-      <ion-item>菜单项</ion-item>
-      <ion-item>菜单项</ion-item>
-      <ion-item>菜单项</ion-item>
-      <ion-item>菜单项</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
@@ -127,16 +127,16 @@ export class MenuExample {
   <ion-menu side="start" menu-id="first" content-id="main">
     <ion-header>
       <ion-toolbar color="primary">
-        <ion-title>起始菜单</ion-title>
+        <ion-title>Start Menu</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -144,16 +144,16 @@ export class MenuExample {
   <ion-menu side="start" menu-id="custom" class="my-custom-menu" content-id="main">
     <ion-header>
       <ion-toolbar color="tertiary">
-        <ion-title>自定义菜单</ion-title>
+        <ion-title>Custom Menu</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -161,16 +161,16 @@ export class MenuExample {
   <ion-menu side="end" type="push" content-id="main">
     <ion-header>
       <ion-toolbar color="danger">
-        <ion-title>结束菜单</ion-title>
+        <ion-title>End Menu</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -178,13 +178,13 @@ export class MenuExample {
   <div class="ion-page" id="main">
     <ion-header>
       <ion-toolbar>
-        <ion-title>菜单 - 基础</ion-title>
+        <ion-title>Menu - Basic</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-button expand="block" onclick="openFirst()">打开起始菜单</ion-button>
-      <ion-button expand="block" onclick="openEnd()">打开结束菜单</ion-button>
-      <ion-button expand="block" onclick="openCustom()">打开自定义菜单</ion-button>
+      <ion-button expand="block" onclick="openFirst()">Open Start Menu</ion-button>
+      <ion-button expand="block" onclick="openEnd()">Open End Menu</ion-button>
+      <ion-button expand="block" onclick="openCustom()">Open Custom Menu</ion-button>
     </ion-content>
   </div>
 </ion-app>
@@ -232,16 +232,16 @@ export const MenuExample: React.FC = () => (
     <IonMenu side="start" menuId="first">
       <IonHeader>
         <IonToolbar color="primary">
-          <IonTitle>起始菜单</IonTitle>
+          <IonTitle>Start Menu</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItem>菜单项</IonItem>
-          <IonItem>菜单项</ion-item>
-          <IonItem>菜单项</ion-item>
-          <IonItem>菜单项</ion-item>
-          <IonItem>菜单项</ion-item>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
         </IonList>
       </IonContent>
     </IonMenu>
@@ -249,16 +249,16 @@ export const MenuExample: React.FC = () => (
     <IonMenu side="start" menuId="custom" className="my-custom-menu">
       <IonHeader>
         <IonToolbar color="tertiary">
-          <IonTitle>自定义菜单</IonTitle>
+          <IonTitle>Custom Menu</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItem>菜单项</IonItem>
-          <IonItem>菜单项</IonItem>
-          <IonItem>菜单项</IonItem>
-          <IonItem>菜单项</IonItem>
-          <IonItem>菜单项</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
         </IonList>
       </IonContent>
     </IonMenu>
@@ -266,16 +266,16 @@ export const MenuExample: React.FC = () => (
     <IonMenu side="end" type="push">
       <IonHeader>
         <IonToolbar color="danger">
-          <IonTitle>结束菜单</IonTitle>
+          <IonTitle>End Menu</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItem>菜单项</IonItem>
-          <IonItem>菜单项</IonItem>
-          <IonItem>菜单项</IonItem>
-          <IonItem>菜单项</IonItem>
-          <IonItem>菜单项</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
+          <IonItem>Menu Item</IonItem>
         </IonList>
       </IonContent>
     </IonMenu>
@@ -317,16 +317,16 @@ export class MenuExample {
       <ion-menu side="start" menuId="first" contentId="main">
         <ion-header>
           <ion-toolbar color="primary">
-            <ion-title>起始菜单</ion-title>
+            <ion-title>Start Menu</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content>
           <ion-list>
-            <ion-item>菜单项</ion-item>
-            <ion-item>菜单项</ion-item>
-            <ion-item>菜单项</ion-item>
-            <ion-item>菜单项</ion-item>
-            <ion-item>菜单项</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
           </ion-list>
         </ion-content>
       </ion-menu>,
@@ -334,16 +334,16 @@ export class MenuExample {
       <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
         <ion-header>
           <ion-toolbar color="tertiary">
-            <ion-title>自定义菜单</ion-title>
+            <ion-title>Custom Menu</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content>
           <ion-list>
-            <ion-item>菜单项</ion-item>
-            <ion-item>菜单项</ion-item>
-            <ion-item>菜单项</ion-item>
-            <ion-item>菜单项</ion-item>
-            <ion-item>菜单项</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
           </ion-list>
         </ion-content>
       </ion-menu>,
@@ -351,30 +351,30 @@ export class MenuExample {
       <ion-menu side="end" type="push" contentId="main">
         <ion-header>
           <ion-toolbar color="danger">
-            <ion-title>结束菜单</ion-title>
+            <ion-title>End Menu</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content>
           <ion-list>
-            <ion-item>菜单项</ion-item>
-            <ion-item>菜单项</ion-item>
-            <ion-item>菜单项</ion-item>
-            <ion-item>菜单项</ion-item>
-            <ion-item>菜单项</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
           </ion-list>
         </ion-content>
       </ion-menu>,
 
-      // 这里也可以放置一个路由出口
+      // A router outlet can be placed here instead
       <ion-content id="main">
         <ion-button expand="block" onClick={() => this.openFirst()}>
-          打开起始菜单
+          Open Start Menu
         </ion-button>
         <ion-button expand="block" onClick={() => this.openEnd()}>
-          打开结束菜单
+          Open End Menu
         </ion-button>
         <ion-button expand="block" onClick={() => this.openCustom()}>
-          打开自定义菜单
+          Open Custom Menu
         </ion-button>
       </ion-content>,
     ];
@@ -397,16 +397,16 @@ export class MenuExample {
   <ion-menu side="start" menu-id="first" content-id="main">
     <ion-header>
       <ion-toolbar color="primary">
-        <ion-title>起始菜单</ion-title>
+        <ion-title>Start Menu</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -414,16 +414,16 @@ export class MenuExample {
   <ion-menu side="start" menu-id="custom" class="my-custom-menu" content-id="main">
     <ion-header>
       <ion-toolbar color="tertiary">
-        <ion-title>自定义菜单</ion-title>
+        <ion-title>Custom Menu</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -431,16 +431,16 @@ export class MenuExample {
   <ion-menu side="end" type="push" content-id="main">
     <ion-header>
       <ion-toolbar color="danger">
-        <ion-title>结束菜单</ion-title>
+        <ion-title>End Menu</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
-        <ion-item>菜单项</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -499,26 +499,26 @@ export class MenuExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS 影子部件
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

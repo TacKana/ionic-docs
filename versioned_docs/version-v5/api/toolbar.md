@@ -1,6 +1,6 @@
 ---
-title: '工具栏 | 自定义应用菜单工具栏按钮和图标'
-description: 'Ion-toolbar 组件允许您自定义应用菜单上的工具栏按钮。在内容上方或下方添加固定工具栏，或使用全屏模式使其随内容滚动。'
+title: 'Toolbar | Customize App Menu Toolbar Buttons and Icons'
+description: 'Ion-toolbar component lets you customize toolbar buttons on your app menu. Add fixed toolbars above or below content or use full screen to scroll with content.'
 sidebar_label: 'ion-toolbar'
 demoUrl: '/docs/demos/api/toolbar/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/toolbar/index.html'
@@ -18,24 +18,24 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
 
 # ion-toolbar
 
-工具栏位于内容的上方或下方。当工具栏放置在 `<ion-header>` 中时，它将固定在内容的顶部；当放置在 `<ion-footer>` 中时，它将固定在内容的底部。全屏内容滚动时，会从位于头部或尾部的工具栏下方穿过。当放置在 `<ion-content>` 内部时，工具栏将随内容一起滚动。
+Toolbars are positioned above or below content. When a toolbar is placed in an `<ion-header>` it will appear fixed at the top of the content, and when it is in an `<ion-footer>` it will appear fixed at the bottom. Fullscreen content will scroll behind a toolbar in a header or footer. When placed within an `<ion-content>`, toolbars will scroll with the content.
 
-## 按钮
+## Buttons
 
-放置在工具栏中的按钮应位于 `<ion-buttons>` 元素内部。`<ion-buttons>` 元素可以使用具名插槽放置在工具栏内。下表描述了各个插槽。
+Buttons placed in a toolbar should be placed inside of the `<ion-buttons>` element. The `<ion-buttons>` element can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
 
-| 插槽名      | 描述                                                                                   |
-| ----------- | -------------------------------------------------------------------------------------- |
-| `secondary` | 在 `ios` 模式下，将元素定位到内容的 `左侧`；在 `md` 模式下，直接定位到内容的 `右侧`。     |
-| `primary`   | 在 `ios` 模式下，将元素定位到内容的 `右侧`；在 `md` 模式下，定位到内容的 `最右侧`。       |
-| `start`     | 在 LTR 布局中定位到内容的 `左侧`，在 RTL 布局中定位到内容的 `右侧`。                     |
-| `end`       | 在 LTR 布局中定位到内容的 `右侧`，在 RTL 布局中定位到内容的 `左侧`。                     |
+| Slot        | Description                                                                                             |
+| ----------- | ------------------------------------------------------------------------------------------------------- |
+| `secondary` | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode. |
+| `primary`   | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.     |
+| `start`     | Positions to the `left` of the content in LTR, and to the `right` in RTL.                               |
+| `end`       | Positions to the `right` of the content in LTR, and to the `left` in RTL.                               |
 
-## 边框
+## Borders
 
-在 `md` 模式下，`<ion-header>` 底部会显示一个盒阴影，`<ion-footer>` 顶部会显示一个盒阴影。在 `ios` 模式下，`<ion-header>` 底部会显示一个边框，`<ion-footer>` 顶部会显示一个边框。
+In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and the `<ion-footer>` will receive a box-shadow on the top. In `ios` mode, the `<ion-header>` will receive a border on the bottom, and the `<ion-footer>` will receive a border on the top.
 
-## 用法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -43,21 +43,21 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
 
 ```html
 <ion-toolbar>
-  <ion-title>仅标题</ion-title>
+  <ion-title>Title Only</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
   <ion-buttons slot="start">
     <ion-back-button></ion-back-button>
   </ion-buttons>
-  <ion-title>返回按钮</ion-title>
+  <ion-title>Back Button</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
-  <ion-title size="small">默认标题上方的小标题</ion-title>
+  <ion-title size="small">Small Title above a Default Title</ion-title>
 </ion-toolbar>
 <ion-toolbar>
-  <ion-title>默认标题</ion-title>
+  <ion-title>Default Title</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
@@ -74,20 +74,20 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
       <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>默认按钮</ion-title>
+  <ion-title>Default Buttons</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
   <ion-buttons slot="secondary">
     <ion-button fill="solid">
       <ion-icon slot="start" name="person-circle"></ion-icon>
-      联系人
+      Contact
     </ion-button>
   </ion-buttons>
-  <ion-title>实体按钮</ion-title>
+  <ion-title>Solid Buttons</ion-title>
   <ion-buttons slot="primary">
     <ion-button fill="solid" color="secondary">
-      帮助
+      Help
       <ion-icon slot="end" name="help-circle"></ion-icon>
     </ion-button>
   </ion-buttons>
@@ -97,13 +97,13 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
   <ion-buttons slot="secondary">
     <ion-button fill="outline">
       <ion-icon slot="start" name="star"></ion-icon>
-      收藏
+      Star
     </ion-button>
   </ion-buttons>
-  <ion-title>轮廓按钮</ion-title>
+  <ion-title>Outline Buttons</ion-title>
   <ion-buttons slot="primary">
     <ion-button color="danger" fill="outline">
-      编辑
+      Edit
       <ion-icon slot="end" name="create"></ion-icon>
     </ion-button>
   </ion-buttons>
@@ -111,12 +111,12 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
 
 <ion-toolbar>
   <ion-buttons slot="secondary">
-    <ion-button> 账户 </ion-button>
+    <ion-button> Account </ion-button>
   </ion-buttons>
   <ion-buttons slot="primary">
-    <ion-button color="danger"> 编辑 </ion-button>
+    <ion-button color="danger"> Edit </ion-button>
   </ion-buttons>
-  <ion-title>纯文本按钮</ion-title>
+  <ion-title>Text Only Buttons</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
@@ -128,7 +128,7 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
       <ion-icon slot="icon-only" name="star"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>左侧菜单切换</ion-title>
+  <ion-title>Left side menu toggle</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
@@ -137,7 +137,7 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
       <ion-icon slot="icon-only" name="star"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>右侧菜单切换</ion-title>
+  <ion-title>Right side menu toggle</ion-title>
   <ion-buttons slot="end">
     <ion-menu-button autoHide="false"></ion-menu-button>
   </ion-buttons>
@@ -149,13 +149,13 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
       <ion-icon slot="icon-only" name="search"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-searchbar placeholder="搜索收藏"></ion-searchbar>
+  <ion-searchbar placeholder="Search Favorites"></ion-searchbar>
 </ion-toolbar>
 
 <ion-toolbar>
   <ion-segment value="all">
-    <ion-segment-button value="all"> 全部 </ion-segment-button>
-    <ion-segment-button value="favorites"> 收藏 </ion-segment-button>
+    <ion-segment-button value="all"> All </ion-segment-button>
+    <ion-segment-button value="favorites"> Favorites </ion-segment-button>
   </ion-segment>
 </ion-toolbar>
 
@@ -173,7 +173,7 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
       <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>次要工具栏</ion-title>
+  <ion-title>Secondary Toolbar</ion-title>
 </ion-toolbar>
 
 <ion-toolbar color="dark">
@@ -190,7 +190,7 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
       <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>深色工具栏</ion-title>
+  <ion-title>Dark Toolbar</ion-title>
 </ion-toolbar>
 ```
 
@@ -200,21 +200,21 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
 
 ```html
 <ion-toolbar>
-  <ion-title>仅标题</ion-title>
+  <ion-title>Title Only</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
   <ion-buttons slot="start">
     <ion-back-button></ion-back-button>
   </ion-buttons>
-  <ion-title>返回按钮</ion-title>
+  <ion-title>Back Button</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
-  <ion-title size="small">默认标题上方的小标题</ion-title>
+  <ion-title size="small">Small Title above a Default Title</ion-title>
 </ion-toolbar>
 <ion-toolbar>
-  <ion-title>默认标题</ion-title>
+  <ion-title>Default Title</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
@@ -231,20 +231,20 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
       <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>默认按钮</ion-title>
+  <ion-title>Default Buttons</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
   <ion-buttons slot="secondary">
     <ion-button fill="solid">
       <ion-icon slot="start" name="person-circle"></ion-icon>
-      联系人
+      Contact
     </ion-button>
   </ion-buttons>
-  <ion-title>实体按钮</ion-title>
+  <ion-title>Solid Buttons</ion-title>
   <ion-buttons slot="primary">
     <ion-button fill="solid" color="secondary">
-      帮助
+      Help
       <ion-icon slot="end" name="help-circle"></ion-icon>
     </ion-button>
   </ion-buttons>
@@ -254,13 +254,13 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
   <ion-buttons slot="secondary">
     <ion-button fill="outline">
       <ion-icon slot="start" name="star"></ion-icon>
-      收藏
+      Star
     </ion-button>
   </ion-buttons>
-  <ion-title>轮廓按钮</ion-title>
+  <ion-title>Outline Buttons</ion-title>
   <ion-buttons slot="primary">
     <ion-button color="danger" fill="outline">
-      编辑
+      Edit
       <ion-icon slot="end" name="create"></ion-icon>
     </ion-button>
   </ion-buttons>
@@ -268,12 +268,12 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
 
 <ion-toolbar>
   <ion-buttons slot="secondary">
-    <ion-button> 账户 </ion-button>
+    <ion-button> Account </ion-button>
   </ion-buttons>
   <ion-buttons slot="primary">
-    <ion-button color="danger"> 编辑 </ion-button>
+    <ion-button color="danger"> Edit </ion-button>
   </ion-buttons>
-  <ion-title>纯文本按钮</ion-title>
+  <ion-title>Text Only Buttons</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
@@ -285,7 +285,7 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
       <ion-icon slot="icon-only" name="star"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>左侧菜单切换</ion-title>
+  <ion-title>Left side menu toggle</ion-title>
 </ion-toolbar>
 
 <ion-toolbar>
@@ -294,7 +294,7 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
       <ion-icon slot="icon-only" name="star"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>右侧菜单切换</ion-title>
+  <ion-title>Right side menu toggle</ion-title>
   <ion-buttons slot="end">
     <ion-menu-button auto-hide="false"></ion-menu-button>
   </ion-buttons>
@@ -306,13 +306,13 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
       <ion-icon slot="icon-only" name="search"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-searchbar placeholder="搜索收藏"></ion-searchbar>
+  <ion-searchbar placeholder="Search Favorites"></ion-searchbar>
 </ion-toolbar>
 
 <ion-toolbar>
   <ion-segment value="all">
-    <ion-segment-button value="all"> 全部 </ion-segment-button>
-    <ion-segment-button value="favorites"> 收藏 </ion-segment-button>
+    <ion-segment-button value="all"> All </ion-segment-button>
+    <ion-segment-button value="favorites"> Favorites </ion-segment-button>
   </ion-segment>
 </ion-toolbar>
 
@@ -330,7 +330,7 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
       <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>次要工具栏</ion-title>
+  <ion-title>Secondary Toolbar</ion-title>
 </ion-toolbar>
 
 <ion-toolbar color="dark">
@@ -347,7 +347,7 @@ import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
       <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
     </ion-button>
   </ion-buttons>
-  <ion-title>深色工具栏</ion-title>
+  <ion-title>Dark Toolbar</ion-title>
 </ion-toolbar>
 ```
 
@@ -362,21 +362,21 @@ import { personCircle, search, helpCircle, star, create, ellipsisHorizontal, ell
 
 export const ToolbarExample: React.FC = () => (
   <IonToolbar>
-    <IonTitle>仅标题</IonTitle>
+    <IonTitle>Title Only</IonTitle>
   </IonToolbar>
 
   <IonToolbar>
     <IonButtons slot="start">
       <IonBackButton defaultHref="/" />
     </IonButtons>
-    <IonTitle>返回按钮</IonTitle>
+    <IonTitle>Back Button</IonTitle>
   </IonToolbar>
 
   <IonToolbar>
-    <IonTitle size="small">默认标题上方的小标题</IonTitle>
+    <IonTitle size="small">Small Title above a Default Title</IonTitle>
   </IonToolbar>
   <IonToolbar>
-    <IonTitle>默认标题</IonTitle>
+    <IonTitle>Default Title</IonTitle>
   </IonToolbar>
 
   <IonToolbar>
@@ -393,20 +393,20 @@ export const ToolbarExample: React.FC = () => (
         <IonIcon slot="icon-only" ios={ellipsisHorizontal} md={ellipsisVertical} />
       </IonButton>
     </IonButtons>
-    <IonTitle>默认按钮</IonTitle>
+    <IonTitle>Default Buttons</IonTitle>
   </IonToolbar>
 
   <IonToolbar>
     <IonButtons slot="secondary">
       <IonButton fill="solid">
         <IonIcon slot="start" icon={personCircle} />
-        联系人
+        Contact
       </IonButton>
     </IonButtons>
-    <IonTitle>实体按钮</IonTitle>
+    <IonTitle>Solid Buttons</IonTitle>
     <IonButtons slot="primary">
       <IonButton fill="solid" color="secondary">
-        帮助
+        Help
         <IonIcon slot="end" icon={helpCircle} />
       </IonButton>
     </IonButtons>
@@ -416,13 +416,13 @@ export const ToolbarExample: React.FC = () => (
     <IonButtons slot="secondary">
       <IonButton fill="outline">
         <IonIcon slot="start" icon={star} />
-        收藏
+        Star
       </IonButton>
     </IonButtons>
-    <IonTitle>轮廓按钮</IonTitle>
+    <IonTitle>Outline Buttons</IonTitle>
     <IonButtons slot="primary">
       <IonButton color="danger" fill="outline">
-        编辑
+        Edit
         <IonIcon slot="end" icon={create} />
       </IonButton>
     </IonButtons>
@@ -430,12 +430,12 @@ export const ToolbarExample: React.FC = () => (
 
   <IonToolbar>
     <IonButtons slot="secondary">
-      <IonButton>账户</IonButton>
+      <IonButton>Account</IonButton>
     </IonButtons>
     <IonButtons slot="primary">
-      <IonButton color="danger">编辑</IonButton>
+      <IonButton color="danger">Edit</IonButton>
     </IonButtons>
-    <IonTitle>纯文本按钮</IonTitle>
+    <IonTitle>Text Only Buttons</IonTitle>
   </IonToolbar>
 
   <IonToolbar>
@@ -447,7 +447,7 @@ export const ToolbarExample: React.FC = () => (
         <IonIcon slot="icon-only" icon={star} />
       </IonButton>
     </IonButtons>
-    <IonTitle>左侧菜单切换</IonTitle>
+    <IonTitle>Left side menu toggle</IonTitle>
   </IonToolbar>
 
   <IonToolbar>
@@ -456,7 +456,7 @@ export const ToolbarExample: React.FC = () => (
         <IonIcon slot="icon-only" icon={star} />
       </IonButton>
     </IonButtons>
-    <IonTitle>右侧菜单切换</IonTitle>
+    <IonTitle>Right side menu toggle</IonTitle>
     <IonButtons slot="end">
       <IonMenuButton autoHide={false} />
     </IonButtons>
@@ -468,15 +468,15 @@ export const ToolbarExample: React.FC = () => (
         <IonIcon slot="icon-only" icon={search} />
       </IonButton>
     </IonButtons>
-    <IonSearchbar placeholder="搜索收藏" />
+    <IonSearchbar placeholder="Search Favorites" />
   </IonToolbar>
 
   <IonToolbar>
     <IonSegment value="all">
       <IonSegmentButton value="all">
-        全部
+        All
       </IonSegmentButton>
-      <IonSegmentButton value="favorites">收藏</IonSegmentButton>
+      <IonSegmentButton value="favorites">Favorites</IonSegmentButton>
     </IonSegment>
   </IonToolbar>
 
@@ -494,7 +494,7 @@ export const ToolbarExample: React.FC = () => (
         <IonIcon slot="icon-only" ios={ellipsisHorizontal} md={ellipsisVertical} />
       </IonButton>
     </IonButtons>
-    <IonTitle>次要工具栏</IonTitle>
+    <IonTitle>Secondary Toolbar</IonTitle>
   </IonToolbar>
 
   <IonToolbar color="dark">
@@ -511,7 +511,7 @@ export const ToolbarExample: React.FC = () => (
         <IonIcon slot="icon-only" ios={ellipsisHorizontal} md={ellipsisVertical} />
       </IonButton>
     </IonButtons>
-    <IonTitle>深色工具栏</IonTitle>
+    <IonTitle>Dark Toolbar</IonTitle>
   </IonToolbar>
 );
 ```
@@ -529,31 +529,31 @@ import { Component, h } from '@stencil/core';
 })
 export class ToolbarExample {
   clickedStar() {
-    console.log('点击了收藏按钮');
+    console.log('Clicked star button');
   }
 
   clickedSearch() {
-    console.log('点击了搜索按钮');
+    console.log('Clicked search button');
   }
 
   render() {
     return [
       <ion-toolbar>
-        <ion-title>仅标题</ion-title>
+        <ion-title>Title Only</ion-title>
       </ion-toolbar>,
 
       <ion-toolbar>
         <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>返回按钮</ion-title>
+        <ion-title>Back Button</ion-title>
       </ion-toolbar>,
 
       <ion-toolbar>
-        <ion-title size="small">默认标题上方的小标题</ion-title>
+        <ion-title size="small">Small Title above a Default Title</ion-title>
       </ion-toolbar>,
       <ion-toolbar>
-        <ion-title>默认标题</ion-title>
+        <ion-title>Default Title</ion-title>
       </ion-toolbar>,
 
       <ion-toolbar>
@@ -570,20 +570,20 @@ export class ToolbarExample {
             <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-title>默认按钮</ion-title>
+        <ion-title>Default Buttons</ion-title>
       </ion-toolbar>,
 
       <ion-toolbar>
         <ion-buttons slot="secondary">
           <ion-button fill="solid">
             <ion-icon slot="start" name="person-circle"></ion-icon>
-            联系人
+            Contact
           </ion-button>
         </ion-buttons>
-        <ion-title>实体按钮</ion-title>
+        <ion-title>Solid Buttons</ion-title>
         <ion-buttons slot="primary">
           <ion-button fill="solid" color="secondary">
-            帮助
+            Help
             <ion-icon slot="end" name="help-circle"></ion-icon>
           </ion-button>
         </ion-buttons>
@@ -593,13 +593,13 @@ export class ToolbarExample {
         <ion-buttons slot="secondary">
           <ion-button fill="outline">
             <ion-icon slot="start" name="star"></ion-icon>
-            收藏
+            Star
           </ion-button>
         </ion-buttons>
-        <ion-title>轮廓按钮</ion-title>
+        <ion-title>Outline Buttons</ion-title>
         <ion-buttons slot="primary">
           <ion-button color="danger" fill="outline">
-            编辑
+            Edit
             <ion-icon slot="end" name="create"></ion-icon>
           </ion-button>
         </ion-buttons>
@@ -607,12 +607,12 @@ export class ToolbarExample {
 
       <ion-toolbar>
         <ion-buttons slot="secondary">
-          <ion-button>账户</ion-button>
+          <ion-button>Account</ion-button>
         </ion-buttons>
         <ion-buttons slot="primary">
-          <ion-button color="danger">编辑</ion-button>
+          <ion-button color="danger">Edit</ion-button>
         </ion-buttons>
-        <ion-title>纯文本按钮</ion-title>
+        <ion-title>Text Only Buttons</ion-title>
       </ion-toolbar>,
 
       <ion-toolbar>
@@ -624,7 +624,7 @@ export class ToolbarExample {
             <ion-icon slot="icon-only" name="star"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-title>左侧菜单切换</ion-title>
+        <ion-title>Left side menu toggle</ion-title>
       </ion-toolbar>,
 
       <ion-toolbar>
@@ -633,7 +633,7 @@ export class ToolbarExample {
             <ion-icon slot="icon-only" name="star"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-title>右侧菜单切换</ion-title>
+        <ion-title>Right side menu toggle</ion-title>
         <ion-buttons slot="end">
           <ion-menu-button autoHide={false}></ion-menu-button>
         </ion-buttons>
@@ -645,13 +645,13 @@ export class ToolbarExample {
             <ion-icon slot="icon-only" name="search"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-searchbar placeholder="搜索收藏"></ion-searchbar>
+        <ion-searchbar placeholder="Search Favorites"></ion-searchbar>
       </ion-toolbar>,
 
       <ion-toolbar>
         <ion-segment value="all">
-          <ion-segment-button value="all">全部</ion-segment-button>
-          <ion-segment-button value="favorites">收藏</ion-segment-button>
+          <ion-segment-button value="all">All</ion-segment-button>
+          <ion-segment-button value="favorites">Favorites</ion-segment-button>
         </ion-segment>
       </ion-toolbar>,
 
@@ -669,7 +669,7 @@ export class ToolbarExample {
             <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-title>次要工具栏</ion-title>
+        <ion-title>Secondary Toolbar</ion-title>
       </ion-toolbar>,
 
       <ion-toolbar color="dark">
@@ -686,7 +686,7 @@ export class ToolbarExample {
             <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-title>深色工具栏</ion-title>
+        <ion-title>Dark Toolbar</ion-title>
       </ion-toolbar>,
     ];
   }
@@ -700,21 +700,21 @@ export class ToolbarExample {
 ```html
 <template>
   <ion-toolbar>
-    <ion-title>仅标题</ion-title>
+    <ion-title>Title Only</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>返回按钮</ion-title>
+    <ion-title>Back Button</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
-    <ion-title size="small">默认标题上方的小标题</ion-title>
+    <ion-title size="small">Small Title above a Default Title</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-title>默认标题</ion-title>
+    <ion-title>Default Title</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
@@ -731,20 +731,20 @@ export class ToolbarExample {
         <ion-icon slot="icon-only" :ios="ellipsisHorizontal" :md="ellipsisVertical"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>默认按钮</ion-title>
+    <ion-title>Default Buttons</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
     <ion-buttons slot="secondary">
       <ion-button fill="solid">
         <ion-icon slot="start" :icon="person-circle"></ion-icon>
-        联系人
+        Contact
       </ion-button>
     </ion-buttons>
-    <ion-title>实体按钮</ion-title>
+    <ion-title>Solid Buttons</ion-title>
     <ion-buttons slot="primary">
       <ion-button fill="solid" color="secondary">
-        帮助
+        Help
         <ion-icon slot="end" :icon="help-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -754,13 +754,13 @@ export class ToolbarExample {
     <ion-buttons slot="secondary">
       <ion-button fill="outline">
         <ion-icon slot="start" :icon="star"></ion-icon>
-        收藏
+        Star
       </ion-button>
     </ion-buttons>
-    <ion-title>轮廓按钮</ion-title>
+    <ion-title>Outline Buttons</ion-title>
     <ion-buttons slot="primary">
       <ion-button color="danger" fill="outline">
-        编辑
+        Edit
         <ion-icon slot="end" :icon="create"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -768,12 +768,12 @@ export class ToolbarExample {
 
   <ion-toolbar>
     <ion-buttons slot="secondary">
-      <ion-button> 账户 </ion-button>
+      <ion-button> Account </ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
-      <ion-button color="danger"> 编辑 </ion-button>
+      <ion-button color="danger"> Edit </ion-button>
     </ion-buttons>
-    <ion-title>纯文本按钮</ion-title>
+    <ion-title>Text Only Buttons</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
@@ -785,7 +785,7 @@ export class ToolbarExample {
         <ion-icon slot="icon-only" :icon="star"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>左侧菜单切换</ion-title>
+    <ion-title>Left side menu toggle</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
@@ -794,7 +794,7 @@ export class ToolbarExample {
         <ion-icon slot="icon-only" :icon="star"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>右侧菜单切换</ion-title>
+    <ion-title>Right side menu toggle</ion-title>
     <ion-buttons slot="end">
       <ion-menu-button auto-hide="false"></ion-menu-button>
     </ion-buttons>
@@ -806,13 +806,13 @@ export class ToolbarExample {
         <ion-icon slot="icon-only" :icon="search"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-searchbar placeholder="搜索收藏"></ion-searchbar>
+    <ion-searchbar placeholder="Search Favorites"></ion-searchbar>
   </ion-toolbar>
 
   <ion-toolbar>
     <ion-segment value="all">
-      <ion-segment-button value="all"> 全部 </ion-segment-button>
-      <ion-segment-button value="favorites"> 收藏 </ion-segment-button>
+      <ion-segment-button value="all"> All </ion-segment-button>
+      <ion-segment-button value="favorites"> Favorites </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 
@@ -830,7 +830,7 @@ export class ToolbarExample {
         <ion-icon slot="icon-only" :ios="ellipsisHorizontal" :md="ellipsisVertical"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>次要工具栏</ion-title>
+    <ion-title>Secondary Toolbar</ion-title>
   </ion-toolbar>
 
   <ion-toolbar color="dark">
@@ -847,7 +847,7 @@ export class ToolbarExample {
         <ion-icon slot="icon-only" :ios="ellipsisHorizontal" :md="ellipsisVertical"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>深色工具栏</ion-title>
+    <ion-title>Dark Toolbar</ion-title>
   </ion-toolbar>
 </template>
 
@@ -882,15 +882,15 @@ export class ToolbarExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
@@ -898,10 +898,10 @@ export class ToolbarExample {
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

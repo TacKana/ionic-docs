@@ -1,24 +1,24 @@
 ```css
 /*
- * 可选 CSS 样式
+ * Optional CSS
  * -----------------------------------
  */
 
-/* 在 iOS 设备的浅色模式下设置不同的背景和项目背景 */
+/* This sets a different background and item background in light mode on ios */
 .ios body {
   --ion-background-color: #f2f2f6;
   --ion-toolbar-background: var(--ion-background-color);
   --ion-item-background: #fff;
 }
 
-/* 在 Material Design 设备的浅色模式下设置不同的背景和项目背景 */
+/* This sets a different background and item background in light mode on md */
 .md body {
   --ion-background-color: #f9f9f9;
   --ion-toolbar-background: var(--ion-background-color);
   --ion-item-background: #fff;
 }
 
-/* 此样式用于解决切换主题时出现的闪烁问题 */
+/* This is added for the flashing that happens when toggling between themes */
 ion-item {
   --transition: none;
 }

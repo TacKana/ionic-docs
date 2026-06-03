@@ -4,13 +4,13 @@ sidebar_label: 'ssh delete'
 
 # ionic ssh delete
 
-从 Ionic 中删除 SSH 公钥
+Delete an SSH public key from Ionic
 
 ```shell
 ionic ssh delete [options]
 ```
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -22,9 +22,9 @@ ionic ssh delete [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
-        <p>要删除的公钥 ID</p>
+        <p>The ID of the public key to delete</p>
       </td>
     </tr>
   </tbody>

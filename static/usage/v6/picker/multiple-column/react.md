@@ -62,20 +62,20 @@ function Example() {
       ],
       buttons: [
         {
-          text: '取消',
+          text: 'Cancel',
           role: 'cancel',
         },
         {
-          text: '确认',
+          text: 'Confirm',
           handler: (value) => {
-            window.alert(`你选择了一个${value.crust.text}披萨，配料有${value.meat.text}和${value.veggies.text}`);
+            window.alert(`You selected a ${value.crust.text} pizza with ${value.meat.text} and ${value.veggies.text}`);
           },
         },
       ],
     });
   };
 
-  return <IonButton onClick={openPicker}>打开</IonButton>;
+  return <IonButton onClick={openPicker}>Open</IonButton>;
 }
 
 export default Example;

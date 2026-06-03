@@ -13,7 +13,7 @@ import Slots from '@ionic-internal/component-api/v7/avatar/slots.md';
   <title>ion-avatar：圆形应用头像图标组件</title>
   <meta
     name="description"
-    content="ion-avatars 是包装图像或图标的圆形应用组件。它们可以单独或在任何元素内部，用于表示一个人或对象。"
+    content="ion-avatar 是用于包裹图像或图标的圆形应用组件。它们可以单独使用或在任何元素内部使用，代表一个人或一个对象。"
   />
 </head>
 
@@ -21,9 +21,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-头像（Avatars）是通常包装图像或图标的圆形组件。它们可用于表示一个人或对象。
+头像（Avatar）是通常包裹图像或图标的圆形组件。它们可用于代表一个人或一个对象。
 
-头像可以单独使用，也可以放在任何元素内部。如果放置在 `ion-chip` 或 `ion-item` 内，头像将调整大小以适应父组件。若要将头像定位在项目的左侧或右侧，请将插槽（slot）分别设置为 `start` 或 `end`。
+头像可以单独使用或放在任何元素内部使用。如果放在 `ion-chip` 或 `ion-item` 内部，头像将调整大小以适应父组件。要将头像定位在项目的左侧或右侧，请将 slot 分别设置为 `start` 或 `end`。
 
 ## 基本用法
 
@@ -31,19 +31,19 @@ import Basic from '@site/static/usage/v7/avatar/basic/index.md';
 
 <Basic />
 
-## 芯片（Chip）头像
+## Chip 头像
 
 import Chip from '@site/static/usage/v7/avatar/chip/index.md';
 
 <Chip />
 
-## 项目（Item）头像
+## Item 头像
 
 import Item from '@site/static/usage/v7/avatar/item/index.md';
 
 <Item />
 
-## 主题定制
+## 主题
 
 ### CSS 自定义属性
 
@@ -63,7 +63,7 @@ import CSSProps from '@site/static/usage/v7/avatar/theming/css-properties/index.
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

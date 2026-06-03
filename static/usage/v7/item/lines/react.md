@@ -7,42 +7,42 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonLabel>默认项目线条</IonLabel>
+        <IonLabel>Default Item Lines</IonLabel>
       </IonItem>
 
       <IonItem lines="inset">
-        <IonLabel>项目线条内嵌</IonLabel>
+        <IonLabel>Item Lines Inset</IonLabel>
       </IonItem>
 
       <IonItem lines="full">
-        <IonLabel>项目线条全宽</IonLabel>
+        <IonLabel>Item Lines Full</IonLabel>
       </IonItem>
 
       <IonItem lines="none">
-        <IonLabel>项目线条隐藏</IonLabel>
+        <IonLabel>Item Lines None</IonLabel>
       </IonItem>
 
       <IonItem>
         <IonIcon icon={star} slot="start"></IonIcon>
-        <IonLabel>默认项目线条</IonLabel>
+        <IonLabel>Default Item Lines</IonLabel>
         <IonIcon icon={informationCircle} slot="end"></IonIcon>
       </IonItem>
 
       <IonItem lines="inset">
         <IonIcon icon={star} slot="start"></IonIcon>
-        <IonLabel>项目线条内嵌</IonLabel>
+        <IonLabel>Item Lines Inset</IonLabel>
         <IonIcon icon={informationCircle} slot="end"></IonIcon>
       </IonItem>
 
       <IonItem lines="full">
         <IonIcon icon={star} slot="start"></IonIcon>
-        <IonLabel>项目线条全宽</IonLabel>
+        <IonLabel>Item Lines Full</IonLabel>
         <IonIcon icon={informationCircle} slot="end"></IonIcon>
       </IonItem>
 
       <IonItem lines="none">
         <IonIcon icon={star} slot="start"></IonIcon>
-        <IonLabel>项目线条隐藏</IonLabel>
+        <IonLabel>Item Lines None</IonLabel>
         <IonIcon icon={informationCircle} slot="end"></IonIcon>
       </IonItem>
     </>

@@ -42,17 +42,17 @@ function Example() {
   return (
     <>
       <IonCard ref={cardEl}>
-        <IonCardContent>卡片</IonCardContent>
+        <IonCardContent>Card</IonCardContent>
       </IonCard>
 
       <IonButton id="play" onClick={play}>
-        播放
+        Play
       </IonButton>
       <IonButton id="pause" onClick={pause}>
-        暂停
+        Pause
       </IonButton>
       <IonButton id="stop" onClick={stop}>
-        停止
+        Stop
       </IonButton>
     </>
   );

@@ -31,17 +31,17 @@ function Example() {
           className={`${isValid ? 'ion-valid' : ''} ${isValid === false ? 'ion-invalid' : ''} ${
             isTouched ? 'ion-touched' : ''
           }`}
-          helperText="请在继续前同意相关条款"
-          errorText="您必须同意条款才能继续"
+          helperText="Agree to the terms before continuing"
+          errorText="You must agree to the terms to continue"
           onIonChange={(event) => validateCheckbox(event)}
         >
-          我同意相关条款和条件
+          I agree to the terms and conditions
         </IonCheckbox>
 
         <br />
 
         <IonButton type="submit" size="small">
-          提交
+          Submit
         </IonButton>
       </form>
     </>

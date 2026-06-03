@@ -4,18 +4,18 @@ sidebar_label: 'capacitor update'
 
 # ionic capacitor update
 
-更新 Capacitor 原生平台，安装 Capacitor/Cordova 插件
+Update Capacitor native platforms, install Capacitor/Cordova plugins
 
 ```shell
 ionic capacitor update [options]
 ```
 
-`ionic capacitor update` 将执行以下操作：
+`ionic capacitor update` will do the following:
 
-- 更新 Capacitor 原生平台及依赖项
-- 安装所有发现的 Capacitor 或 Cordova 插件
+- Update Capacitor native platform(s) and dependencies
+- Install any discovered Capacitor or Cordova plugins
 
-## 参数说明
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -27,10 +27,10 @@ ionic capacitor update [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <p>
-          要更新的平台（例如 <code>android</code>、<code>ios</code>、<code>electron</code>）
+          The platform to update (e.g. <code>android</code>, <code>ios</code>, <code>electron</code>)
         </p>
       </td>
     </tr>

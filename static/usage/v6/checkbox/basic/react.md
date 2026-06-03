@@ -6,7 +6,7 @@ function Example() {
   return (
     <IonItem>
       <IonCheckbox slot="start"></IonCheckbox>
-      <IonLabel>我同意条款与条件</IonLabel>
+      <IonLabel>I agree to the terms and conditions</IonLabel>
     </IonItem>
   );
 }

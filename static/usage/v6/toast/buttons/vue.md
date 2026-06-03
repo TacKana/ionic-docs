@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="presentToast">点击我</ion-button>
+  <ion-button @click="presentToast">Click Me</ion-button>
   <p>{{ handlerMessage }}</p>
   <p>{{ roleMessage }}</p>
 </template>
@@ -19,21 +19,21 @@
     methods: {
       async presentToast() {
         const toast = await toastController.create({
-          message: '你好，世界！',
+          message: 'Hello World!',
           duration: 3000,
           buttons: [
             {
-              text: '更多信息',
+              text: 'More Info',
               role: 'info',
               handler: () => {
-                this.handlerMessage = '点击了“更多信息”';
+                this.handlerMessage = 'More Info clicked';
               },
             },
             {
-              text: '关闭',
+              text: 'Dismiss',
               role: 'cancel',
               handler: () => {
-                this.handlerMessage = '点击了“关闭”';
+                this.handlerMessage = 'Dismiss clicked';
               },
             },
           ],
@@ -42,7 +42,7 @@
         await toast.present();
 
         const { role } = await toast.onDidDismiss();
-        this.roleMessage = `以角色 ${role} 关闭`;
+        this.roleMessage = `Dismissed with role: ${role}`;
       },
     },
   };

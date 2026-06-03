@@ -1,10 +1,10 @@
 ```html
 <ion-card [class.active]="isCardActive">
   <ion-card-header>
-    <ion-card-subtitle>平移屏幕</ion-card-subtitle>
+    <ion-card-subtitle>Pan the Screen</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
-    <p #debug>交互后将会显示手势信息。</p>
+    <p #debug>Gesture information will display after interaction.</p>
   </ion-card-content>
 </ion-card>
 ```

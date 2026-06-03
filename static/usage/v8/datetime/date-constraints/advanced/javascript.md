@@ -8,8 +8,8 @@
     const utcDay = date.getUTCDay();
 
     /**
-     * 如果日期不是周日或周六
-     * 则启用该日期
+     * Date will be enabled if it is not
+     * Sunday or Saturday
      */
     return utcDay !== 0 && utcDay !== 6;
   };

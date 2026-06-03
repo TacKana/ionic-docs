@@ -36,7 +36,7 @@ import { Item } from './types';
 export class TypeaheadComponent implements OnInit {
   @Input() items: Item[] = [];
   @Input() selectedItems: string[] = [];
-  @Input() title = '选择项目';
+  @Input() title = 'Select Items';
 
   @Output() selectionCancel = new EventEmitter<void>();
   @Output() selectionChange = new EventEmitter<string[]>();
@@ -63,20 +63,23 @@ export class TypeaheadComponent implements OnInit {
   }
 
   /**
-   * 根据提供的搜索查询更新渲染视图。
-   * 如果未提供查询，将渲染所有数据。
+   * Update the rendered view with
+   * the provided search query. If no
+   * query is provided, all data
+   * will be rendered.
    */
   filterList(searchQuery: string | undefined) {
     /**
-     * 如果未定义搜索查询，
-     * 返回所有选项。
+     * If no search query is defined,
+     * return all options.
      */
     if (searchQuery === undefined || searchQuery.trim() === '') {
       this.filteredItems = [...this.items];
     } else {
       /**
-       * 否则，将搜索查询规范化，
-       * 并检查哪些项目包含该搜索查询作为子字符串。
+       * Otherwise, normalize the search
+       * query and check to see which items
+       * contain the search query as a substring.
        */
       const normalizedQuery = searchQuery.toLowerCase();
       this.filteredItems = this.items.filter((item) => item.text.toLowerCase().includes(normalizedQuery));

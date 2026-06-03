@@ -14,32 +14,32 @@ import Slots from '@ionic-internal/component-api/v5/menu-toggle/slots.md';
 
 # ion-menu-toggle
 
-MenuToggle 组件可用于打开或关闭菜单。
+The MenuToggle component can be used to toggle a menu open or closed.
 
-默认情况下，它仅在选中的菜单处于活动状态时才可见。当菜单可以打开/关闭时，它被视为活动状态。如果菜单被禁用或正以分割窗格（split-pane）形式呈现，菜单会被标记为非活动状态，并且 ion-menu-toggle 会自行隐藏。
+By default, it's only visible when the selected menu is active. A menu is active when it can be opened/closed. If the menu is disabled or it's being presented as a split-pane, the menu is marked as non-active and ion-menu-toggle hides itself.
 
-如果需要保持 `ion-menu-toggle` 始终可见，可以将 `autoHide` 属性设置为 `false`。
+In case it's desired to keep `ion-menu-toggle` always visible, the `autoHide` property can be set to `false`.
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-note>默认备注</ion-note>
+  <ion-note>Default Note</ion-note>
 </template>
 
 <script setup lang="ts">

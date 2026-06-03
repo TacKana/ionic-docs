@@ -1,9 +1,9 @@
 ```html
 <template>
-  <ion-button id="present-alert">点击我</ion-button>
+  <ion-button id="present-alert">Click Me</ion-button>
   <ion-alert
     trigger="present-alert"
-    header="警告！"
+    header="Alert!"
     :buttons="alertButtons"
     @didDismiss="logResult($event)"
   ></ion-alert>
@@ -14,23 +14,23 @@
 
   const alertButtons = [
     {
-      text: '取消',
+      text: 'Cancel',
       role: 'cancel',
       handler: () => {
-        console.log('警告已取消');
+        console.log('Alert canceled');
       },
     },
     {
-      text: '确定',
+      text: 'OK',
       role: 'confirm',
       handler: () => {
-        console.log('警告已确认');
+        console.log('Alert confirmed');
       },
     },
   ];
 
   const logResult = (event: CustomEvent) => {
-    console.log(`以角色关闭：${event.detail.role}`);
+    console.log(`Dismissed with role: ${event.detail.role}`);
   };
 </script>
 ```

@@ -7,9 +7,9 @@ import './main.css';
 function Example() {
   return (
     <>
-      <IonButton id="trigger-button">点击我</IonButton>
+      <IonButton id="trigger-button">Click Me</IonButton>
       <IonPopover trigger="trigger-button">
-        <IonContent className="ion-padding">你好，风格化的世界！</IonContent>
+        <IonContent className="ion-padding">Hello Styled World!</IonContent>
       </IonPopover>
     </>
   );

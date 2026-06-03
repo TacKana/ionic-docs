@@ -3,7 +3,7 @@
   <ion-list>
     <ion-item>
       <ion-select
-        placeholder="选择食物"
+        placeholder="Select food"
         :compareWith="compareWith"
         @ionChange="currentFood = JSON.stringify($event.detail.value)"
         :multiple="true"
@@ -12,7 +12,7 @@
       </ion-select>
     </ion-item>
     <ion-item lines="none">
-      <ion-label>当前选中值: {{ currentFood }}</ion-label>
+      <ion-label>Current value: {{ currentFood }}</ion-label>
     </ion-item>
   </ion-list>
 </template>

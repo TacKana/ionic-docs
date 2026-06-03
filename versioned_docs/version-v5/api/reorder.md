@@ -16,66 +16,66 @@ import Slots from '@ionic-internal/component-api/v5/reorder/slots.md';
 
 # ion-reorder
 
-Reorder（重排）是一个组件，允许拖拽项目组中的某一项来改变其在组内的顺序。它必须在 `ion-reorder-group` 组件内使用，以提供可视化的拖放界面。
+Reorder is a component that allows an item in a group of items to be dragged to change its order within that group. It must be used within an `ion-reorder-group` to provide a visual drag and drop interface.
 
-`ion-reorder` 是用于在 `ion-reorder-group` 内部拖放项目的锚点。关于如何完成重排操作，请参阅 [Reorder Group](reorder-group.md) 获取更多信息。
+`ion-reorder` is the anchor used to drag and drop the items inside of the `ion-reorder-group`. See the [Reorder Group](reorder-group.md) for more information on how to complete the reorder operation.
 
-## 使用方法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- 默认情况下，重排手势是禁用的，需要启用它才能拖放项目 -->
+<!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
 <ion-reorder-group disabled="false">
-  <!-- 默认的重排图标，项目右对齐 -->
+  <!-- Default reorder icon, end aligned items -->
   <ion-item>
-    <ion-label> 项目 1 </ion-label>
+    <ion-label> Item 1 </ion-label>
     <ion-reorder slot="end"></ion-reorder>
   </ion-item>
 
   <ion-item>
-    <ion-label> 项目 2 </ion-label>
+    <ion-label> Item 2 </ion-label>
     <ion-reorder slot="end"></ion-reorder>
   </ion-item>
 
-  <!-- 默认的重排图标，项目左对齐 -->
+  <!-- Default reorder icon, start aligned items -->
   <ion-item>
     <ion-reorder slot="start"></ion-reorder>
-    <ion-label> 项目 3 </ion-label>
+    <ion-label> Item 3 </ion-label>
   </ion-item>
 
   <ion-item>
     <ion-reorder slot="start"></ion-reorder>
-    <ion-label> 项目 4 </ion-label>
+    <ion-label> Item 4 </ion-label>
   </ion-item>
 
-  <!-- 自定义重排图标，项目右对齐 -->
+  <!-- Custom reorder icon end items -->
   <ion-item>
-    <ion-label> 项目 5 </ion-label>
+    <ion-label> Item 5 </ion-label>
     <ion-reorder slot="end">
       <ion-icon name="pizza"></ion-icon>
     </ion-reorder>
   </ion-item>
 
   <ion-item>
-    <ion-label> 项目 6 </ion-label>
+    <ion-label> Item 6 </ion-label>
     <ion-reorder slot="end">
       <ion-icon name="pizza"></ion-icon>
     </ion-reorder>
   </ion-item>
 
-  <!-- 项目包裹在 reorder 内，整个项目都可以被拖拽 -->
+  <!-- Items wrapped in a reorder, entire item can be dragged -->
   <ion-reorder>
     <ion-item>
-      <ion-label> 项目 7 </ion-label>
+      <ion-label> Item 7 </ion-label>
     </ion-item>
   </ion-reorder>
 
   <ion-reorder>
     <ion-item>
-      <ion-label> 项目 8 </ion-label>
+      <ion-label> Item 8 </ion-label>
     </ion-item>
   </ion-reorder>
 </ion-reorder-group>
@@ -86,55 +86,55 @@ Reorder（重排）是一个组件，允许拖拽项目组中的某一项来改�
 <TabItem value="javascript">
 
 ```html
-<!-- 默认情况下，重排手势是禁用的，需要启用它才能拖放项目 -->
+<!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
 <ion-reorder-group disabled="false">
-  <!-- 默认的重排图标，项目右对齐 -->
+  <!-- Default reorder icon, end aligned items -->
   <ion-item>
-    <ion-label> 项目 1 </ion-label>
+    <ion-label> Item 1 </ion-label>
     <ion-reorder slot="end"></ion-reorder>
   </ion-item>
 
   <ion-item>
-    <ion-label> 项目 2 </ion-label>
+    <ion-label> Item 2 </ion-label>
     <ion-reorder slot="end"></ion-reorder>
   </ion-item>
 
-  <!-- 默认的重排图标，项目左对齐 -->
+  <!-- Default reorder icon, start aligned items -->
   <ion-item>
     <ion-reorder slot="start"></ion-reorder>
-    <ion-label> 项目 3 </ion-label>
+    <ion-label> Item 3 </ion-label>
   </ion-item>
 
   <ion-item>
     <ion-reorder slot="start"></ion-reorder>
-    <ion-label> 项目 4 </ion-label>
+    <ion-label> Item 4 </ion-label>
   </ion-item>
 
-  <!-- 自定义重排图标，项目右对齐 -->
+  <!-- Custom reorder icon end items -->
   <ion-item>
-    <ion-label> 项目 5 </ion-label>
+    <ion-label> Item 5 </ion-label>
     <ion-reorder slot="end">
       <ion-icon name="pizza"></ion-icon>
     </ion-reorder>
   </ion-item>
 
   <ion-item>
-    <ion-label> 项目 6 </ion-label>
+    <ion-label> Item 6 </ion-label>
     <ion-reorder slot="end">
       <ion-icon name="pizza"></ion-icon>
     </ion-reorder>
   </ion-item>
 
-  <!-- 项目包裹在 reorder 内，整个项目都可以被拖拽 -->
+  <!-- Items wrapped in a reorder, entire item can be dragged -->
   <ion-reorder>
     <ion-item>
-      <ion-label> 项目 7 </ion-label>
+      <ion-label> Item 7 </ion-label>
     </ion-item>
   </ion-reorder>
 
   <ion-reorder>
     <ion-item>
-      <ion-label> 项目 8 </ion-label>
+      <ion-label> Item 8 </ion-label>
     </ion-item>
   </ion-reorder>
 </ion-reorder-group>
@@ -151,55 +151,55 @@ import { pizza } from 'ionicons/icons';
 
 export const ReorderExample: React.FC = () => (
   <IonContent>
-    {/*-- 默认情况下，重排手势是禁用的，需要启用它才能拖放项目 --*/}
+    {/*-- The reorder gesture is disabled by default, enable it to drag and drop items --*/}
     <IonReorderGroup disabled={false}>
-      {/*-- 默认的重排图标，项目右对齐 --*/}
+      {/*-- Default reorder icon, end aligned items --*/}
       <IonItem>
-        <IonLabel>项目 1</IonLabel>
+        <IonLabel>Item 1</IonLabel>
         <IonReorder slot="end" />
       </IonItem>
 
       <IonItem>
-        <IonLabel>项目 2</IonLabel>
+        <IonLabel>Item 2</IonLabel>
         <IonReorder slot="end" />
       </IonItem>
 
-      {/*-- 默认的重排图标，项目左对齐 --*/}
+      {/*-- Default reorder icon, start aligned items --*/}
       <IonItem>
         <IonReorder slot="start" />
-        <IonLabel>项目 3</IonLabel>
+        <IonLabel>Item 3</IonLabel>
       </IonItem>
 
       <IonItem>
         <IonReorder slot="start" />
-        <IonLabel>项目 4</IonLabel>
+        <IonLabel>Item 4</IonLabel>
       </IonItem>
 
-      {/*-- 自定义重排图标，项目右对齐 --*/}
+      {/*-- Custom reorder icon end items --*/}
       <IonItem>
-        <IonLabel>项目 5</IonLabel>
+        <IonLabel>Item 5</IonLabel>
         <IonReorder slot="end">
           <IonIcon icon={pizza} />
         </IonReorder>
       </IonItem>
 
       <IonItem>
-        <IonLabel>项目 6</IonLabel>
+        <IonLabel>Item 6</IonLabel>
         <IonReorder slot="end">
           <IonIcon icon={pizza} />
         </IonReorder>
       </IonItem>
 
-      {/*-- 项目包裹在 reorder 内，整个项目都可以被拖拽 --*/}
+      {/*-- Items wrapped in a reorder, entire item can be dragged --*/}
       <IonReorder>
         <IonItem>
-          <IonLabel>项目 7</IonLabel>
+          <IonLabel>Item 7</IonLabel>
         </IonItem>
       </IonReorder>
 
       <IonReorder>
         <IonItem>
-          <IonLabel>项目 8</IonLabel>
+          <IonLabel>Item 8</IonLabel>
         </IonItem>
       </IonReorder>
     </IonReorderGroup>
@@ -221,55 +221,55 @@ import { Component, h } from '@stencil/core';
 export class ReorderExample {
   render() {
     return [
-      // 默认情况下，重排手势是禁用的，需要启用它才能拖放项目
+      // The reorder gesture is disabled by default, enable it to drag and drop items
       <ion-reorder-group disabled={false}>
-        {/* 默认的重排图标，项目右对齐 */}
+        {/* Default reorder icon, end aligned items */}
         <ion-item>
-          <ion-label>项目 1</ion-label>
+          <ion-label>Item 1</ion-label>
           <ion-reorder slot="end"></ion-reorder>
         </ion-item>
 
         <ion-item>
-          <ion-label>项目 2</ion-label>
+          <ion-label>Item 2</ion-label>
           <ion-reorder slot="end"></ion-reorder>
         </ion-item>
 
-        {/* 默认的重排图标，项目左对齐 */}
+        {/* Default reorder icon, start aligned items */}
         <ion-item>
           <ion-reorder slot="start"></ion-reorder>
-          <ion-label>项目 3</ion-label>
+          <ion-label>Item 3</ion-label>
         </ion-item>
 
         <ion-item>
           <ion-reorder slot="start"></ion-reorder>
-          <ion-label>项目 4</ion-label>
+          <ion-label>Item 4</ion-label>
         </ion-item>
 
-        {/* 自定义重排图标，项目右对齐 */}
+        {/* Custom reorder icon end items */}
         <ion-item>
-          <ion-label>项目 5</ion-label>
+          <ion-label>Item 5</ion-label>
           <ion-reorder slot="end">
             <ion-icon name="pizza"></ion-icon>
           </ion-reorder>
         </ion-item>
 
         <ion-item>
-          <ion-label>项目 6</ion-label>
+          <ion-label>Item 6</ion-label>
           <ion-reorder slot="end">
             <ion-icon name="pizza"></ion-icon>
           </ion-reorder>
         </ion-item>
 
-        {/* 项目包裹在 reorder 内，整个项目都可以被拖拽 */}
+        {/* Items wrapped in a reorder, entire item can be dragged */}
         <ion-reorder>
           <ion-item>
-            <ion-label>项目 7</ion-label>
+            <ion-label>Item 7</ion-label>
           </ion-item>
         </ion-reorder>
 
         <ion-reorder>
           <ion-item>
-            <ion-label>项目 8</ion-label>
+            <ion-label>Item 8</ion-label>
           </ion-item>
         </ion-reorder>
       </ion-reorder-group>,
@@ -284,55 +284,55 @@ export class ReorderExample {
 
 ```html
 <template>
-  <!-- 默认情况下，重排手势是禁用的，需要启用它才能拖放项目 -->
+  <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
   <ion-reorder-group :disabled="false">
-    <!-- 默认的重排图标，项目右对齐 -->
+    <!-- Default reorder icon, end aligned items -->
     <ion-item>
-      <ion-label> 项目 1 </ion-label>
+      <ion-label> Item 1 </ion-label>
       <ion-reorder slot="end"></ion-reorder>
     </ion-item>
 
     <ion-item>
-      <ion-label> 项目 2 </ion-label>
+      <ion-label> Item 2 </ion-label>
       <ion-reorder slot="end"></ion-reorder>
     </ion-item>
 
-    <!-- 默认的重排图标，项目左对齐 -->
+    <!-- Default reorder icon, start aligned items -->
     <ion-item>
       <ion-reorder slot="start"></ion-reorder>
-      <ion-label> 项目 3 </ion-label>
+      <ion-label> Item 3 </ion-label>
     </ion-item>
 
     <ion-item>
       <ion-reorder slot="start"></ion-reorder>
-      <ion-label> 项目 4 </ion-label>
+      <ion-label> Item 4 </ion-label>
     </ion-item>
 
-    <!-- 自定义重排图标，项目右对齐 -->
+    <!-- Custom reorder icon end items -->
     <ion-item>
-      <ion-label> 项目 5 </ion-label>
+      <ion-label> Item 5 </ion-label>
       <ion-reorder slot="end">
         <ion-icon name="pizza"></ion-icon>
       </ion-reorder>
     </ion-item>
 
     <ion-item>
-      <ion-label> 项目 6 </ion-label>
+      <ion-label> Item 6 </ion-label>
       <ion-reorder slot="end">
         <ion-icon name="pizza"></ion-icon>
       </ion-reorder>
     </ion-item>
 
-    <!-- 项目包裹在 reorder 内，整个项目都可以被拖拽 -->
+    <!-- Items wrapped in a reorder, entire item can be dragged -->
     <ion-reorder>
       <ion-item>
-        <ion-label> 项目 7 </ion-label>
+        <ion-label> Item 7 </ion-label>
       </ion-item>
     </ion-reorder>
 
     <ion-reorder>
       <ion-item>
-        <ion-label> 项目 8 </ion-label>
+        <ion-label> Item 8 </ion-label>
       </ion-item>
     </ion-reorder>
   </ion-reorder-group>
@@ -362,26 +362,26 @@ export class ReorderExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

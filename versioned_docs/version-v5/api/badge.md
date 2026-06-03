@@ -1,6 +1,6 @@
 ---
-title: 'Badges | ion-badge: iOS 和 Android 应用通知徽章图标'
-description: '徽章是 iOS 和 Android 应用中靠近其他元素的内联块元素——使用 ion-badges 作为通知来指示有多少个项目。'
+title: 'Badges | ion-badge: iOS & Android App Notification Badge Icons'
+description: 'Badges are inline block elements that appear near other elements on iOS & Android apps—use ion-badges as notifications that indicate how many items there are.'
 sidebar_label: 'ion-badge'
 demoUrl: '/docs/demos/api/badge/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/badge/index.html'
@@ -18,19 +18,19 @@ import Slots from '@ionic-internal/component-api/v5/badge/slots.md';
 
 # ion-badge
 
-徽章通常是靠近另一个元素显示的内联块元素。它们通常包含数字或其他字符。徽章可以作为通知，指示某个元素关联了额外的项目数量。
+Badges are inline block elements that usually appear near another element. Typically they contain a number or other characters. They can be used as a notification that there are additional items associated with an element and indicate how many items there are.
 
-## 使用方式
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- 默认 -->
+<!-- Default -->
 <ion-badge>99</ion-badge>
 
-<!-- 颜色 -->
+<!-- Colors -->
 <ion-badge color="primary">11</ion-badge>
 <ion-badge color="secondary">22</ion-badge>
 <ion-badge color="tertiary">33</ion-badge>
@@ -41,10 +41,10 @@ import Slots from '@ionic-internal/component-api/v5/badge/slots.md';
 <ion-badge color="medium">88</ion-badge>
 <ion-badge color="dark">99</ion-badge>
 
-<!-- 左侧和右侧带有徽章的项目 -->
+<!-- Item with badge on left and right -->
 <ion-item>
   <ion-badge slot="start">11</ion-badge>
-  <ion-label>我的项目</ion-label>
+  <ion-label>My Item</ion-label>
   <ion-badge slot="end">22</ion-badge>
 </ion-item>
 ```
@@ -54,10 +54,10 @@ import Slots from '@ionic-internal/component-api/v5/badge/slots.md';
 <TabItem value="javascript">
 
 ```html
-<!-- 默认 -->
+<!-- Default -->
 <ion-badge>99</ion-badge>
 
-<!-- 颜色 -->
+<!-- Colors -->
 <ion-badge color="primary">11</ion-badge>
 <ion-badge color="secondary">22</ion-badge>
 <ion-badge color="tertiary">33</ion-badge>
@@ -68,10 +68,10 @@ import Slots from '@ionic-internal/component-api/v5/badge/slots.md';
 <ion-badge color="medium">88</ion-badge>
 <ion-badge color="dark">99</ion-badge>
 
-<!-- 左侧和右侧带有徽章的项目 -->
+<!-- Item with badge on left and right -->
 <ion-item>
   <ion-badge slot="start">11</ion-badge>
-  <ion-label>我的项目</ion-label>
+  <ion-label>My Item</ion-label>
   <ion-badge slot="end">22</ion-badge>
 </ion-item>
 ```
@@ -86,10 +86,10 @@ import { IonBadge, IonItem, IonLabel, IonContent } from '@ionic/react';
 
 export const BadgeExample: React.FC = () => (
   <IonContent>
-    {/*-- 默认 --*/}
+    {/*-- Default --*/}
     <IonBadge>99</IonBadge>
 
-    {/*-- 颜色 --*/}
+    {/*-- Colors --*/}
     <IonBadge color="primary">11</IonBadge>
     <IonBadge color="secondary">22</IonBadge>
     <IonBadge color="tertiary">33</IonBadge>
@@ -100,10 +100,10 @@ export const BadgeExample: React.FC = () => (
     <IonBadge color="medium">88</IonBadge>
     <IonBadge color="dark">99</IonBadge>
 
-    {/*-- 左侧和右侧带有徽章的项目 --*/}
+    {/*-- Item with badge on left and right --*/}
     <IonItem>
       <IonBadge slot="start">11</IonBadge>
-      <IonLabel>我的项目</IonLabel>
+      <IonLabel>My Item</IonLabel>
       <IonBadge slot="end">22</IonBadge>
     </IonItem>
   </IonContent>
@@ -124,10 +124,10 @@ import { Component, h } from '@stencil/core';
 export class BadgeExample {
   render() {
     return [
-      // 默认
+      // Default
       <ion-badge>99</ion-badge>,
 
-      // 颜色
+      // Colors
       <ion-badge color="primary">11</ion-badge>,
       <ion-badge color="secondary">22</ion-badge>,
       <ion-badge color="tertiary">33</ion-badge>,
@@ -138,10 +138,10 @@ export class BadgeExample {
       <ion-badge color="medium">88</ion-badge>,
       <ion-badge color="dark">99</ion-badge>,
 
-      // 左侧和右侧带有徽章的项目
+      // Item with badge on left and right
       <ion-item>
         <ion-badge slot="start">11</ion-badge>
-        <ion-label>我的项目</ion-label>
+        <ion-label>My Item</ion-label>
         <ion-badge slot="end">22</ion-badge>
       </ion-item>,
     ];
@@ -155,10 +155,10 @@ export class BadgeExample {
 
 ```html
 <template>
-  <!-- 默认 -->
+  <!-- Default -->
   <ion-badge>99</ion-badge>
 
-  <!-- 颜色 -->
+  <!-- Colors -->
   <ion-badge color="primary">11</ion-badge>
   <ion-badge color="secondary">22</ion-badge>
   <ion-badge color="tertiary">33</ion-badge>
@@ -169,10 +169,10 @@ export class BadgeExample {
   <ion-badge color="medium">88</ion-badge>
   <ion-badge color="dark">99</ion-badge>
 
-  <!-- 左侧和右侧带有徽章的项目 -->
+  <!-- Item with badge on left and right -->
   <ion-item>
     <ion-badge slot="start">11</ion-badge>
-    <ion-label>我的项目</ion-label>
+    <ion-label>My Item</ion-label>
     <ion-badge slot="end">22</ion-badge>
   </ion-item>
 </template>
@@ -191,26 +191,26 @@ export class BadgeExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS 影子部件
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

@@ -1,6 +1,6 @@
 ---
-title: '骨架文本 | 文本的骨架加载占位符与框架'
-description: 'ion-skeleton-text 是一个用于渲染占位符内容的组件。该元素将以指定的宽度渲染一个灰色区块，作为文本的加载框架。'
+title: 'Skeleton Text | Skeleton Loading Placeholder & Framework for Text'
+description: 'ion-skeleton-text is a component for rendering placeholder content. The element will render a gray block at the specified width as a loading text framework.'
 sidebar_label: 'ion-skeleton-text'
 demoUrl: '/docs/demos/api/skeleton-text/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/skeleton-text/index.html'
@@ -18,16 +18,16 @@ import Slots from '@ionic-internal/component-api/v5/skeleton-text/slots.md';
 
 # ion-skeleton-text
 
-骨架文本是一个用于渲染占位符内容的组件。该元素将以指定的宽度渲染一个灰色区块。
+Skeleton Text is a component for rendering placeholder content. The element will render a gray block at the specified width.
 
-## 使用方法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- 骨架屏加载完成后显示的数据 -->
+<!-- Data to display after skeleton screen -->
 <div *ngIf="data">
   <div class="ion-padding">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros est. Cras iaculis pulvinar arcu non vehicula.
@@ -36,7 +36,7 @@ import Slots from '@ionic-internal/component-api/v5/skeleton-text/slots.md';
 
   <ion-list>
     <ion-list-header>
-      <ion-label> 数据 </ion-label>
+      <ion-label> Data </ion-label>
     </ion-list-header>
     <ion-item>
       <ion-avatar slot="start">
@@ -69,7 +69,7 @@ import Slots from '@ionic-internal/component-api/v5/skeleton-text/slots.md';
   </ion-list>
 </div>
 
-<!-- 骨架屏 -->
+<!-- Skeleton screen -->
 <div *ngIf="!data">
   <div class="ion-padding custom-skeleton">
     <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
@@ -136,7 +136,7 @@ import Slots from '@ionic-internal/component-api/v5/skeleton-text/slots.md';
 ```
 
 ```css
-/* 自定义骨架文本的行高和外边距 */
+/* Custom Skeleton Line Height and Margin */
 .custom-skeleton ion-skeleton-text {
   line-height: 13px;
 }
@@ -162,7 +162,7 @@ export class SkeletonTextExample {
   ionViewWillEnter() {
     setTimeout(() => {
       this.data = {
-        heading: '正常文本',
+        heading: 'Normal text',
         para1: 'Lorem ipsum dolor sit amet, consectetur',
         para2: 'adipiscing elit.',
       };
@@ -176,7 +176,7 @@ export class SkeletonTextExample {
 <TabItem value="javascript">
 
 ```html
-<!-- 骨架屏加载完成后显示的数据 -->
+<!-- Data to display after skeleton screen -->
 <div id="data">
   <div class="ion-padding">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros est. Cras iaculis pulvinar arcu non vehicula.
@@ -185,14 +185,14 @@ export class SkeletonTextExample {
 
   <ion-list>
     <ion-list-header>
-      <ion-label> 数据 </ion-label>
+      <ion-label> Data </ion-label>
     </ion-list-header>
     <ion-item>
       <ion-avatar slot="start">
         <img src="./avatar.svg" />
       </ion-avatar>
       <ion-label>
-        <h3>正常文本</h3>
+        <h3>Normal text</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <p>adipiscing elit.</p>
       </ion-label>
@@ -202,7 +202,7 @@ export class SkeletonTextExample {
         <img src="./thumbnail.svg" />
       </ion-thumbnail>
       <ion-label>
-        <h3>正常文本</h3>
+        <h3>Normal text</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <p>adipiscing elit.</p>
       </ion-label>
@@ -210,7 +210,7 @@ export class SkeletonTextExample {
     <ion-item>
       <ion-icon name="call" slot="start"></ion-icon>
       <ion-label>
-        <h3>正常文本</h3>
+        <h3>Normal text</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <p>adipiscing elit.</p>
       </ion-label>
@@ -218,7 +218,7 @@ export class SkeletonTextExample {
   </ion-list>
 </div>
 
-<!-- 骨架屏 -->
+<!-- Skeleton screen -->
 <div id="skeleton">
   <div class="ion-padding custom-skeleton">
     <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
@@ -289,7 +289,7 @@ export class SkeletonTextExample {
   display: none;
 }
 
-/* 自定义骨架文本的行高和外边距 */
+/* Custom Skeleton Line Height and Margin */
 .custom-skeleton ion-skeleton-text {
   line-height: 13px;
 }
@@ -337,7 +337,7 @@ export const SkeletonTextExample: React.FC = () => {
 
   setTimeout(() => {
     setData({
-      heading: '正常文本',
+      heading: 'Normal text',
       para1: 'Lorem ipsum dolor sit amet, consectetur',
       para2: 'adipiscing elit.',
     });
@@ -354,7 +354,7 @@ export const SkeletonTextExample: React.FC = () => {
 
           <IonList>
             <IonListHeader>
-              <IonLabel>数据</IonLabel>
+              <IonLabel>Data</IonLabel>
             </IonListHeader>
             <IonItem>
               <IonAvatar slot="start">
@@ -457,7 +457,7 @@ export const SkeletonTextExample: React.FC = () => {
 ```
 
 ```css
-/* 自定义骨架文本的行高和外边距 */
+/* Custom Skeleton Line Height and Margin */
 .custom-skeleton ion-skeleton-text {
   line-height: 13px;
 }
@@ -482,17 +482,17 @@ export class SkeletonTextExample {
   @State() data: any;
 
   componentWillLoad() {
-    // 数据将在5秒后显示
+    // Data will show after 5 seconds
     setTimeout(() => {
       this.data = {
-        heading: '正常文本',
+        heading: 'Normal text',
         para1: 'Lorem ipsum dolor sit amet, consectetur',
         para2: 'adipiscing elit.',
       };
     }, 5000);
   }
 
-  // 当没有数据时渲染骨架屏
+  // Render skeleton screen when there is no data
   renderSkeletonScreen() {
     return [
       <ion-content>
@@ -543,7 +543,7 @@ export class SkeletonTextExample {
             </ion-label>
           </ion-item>
           <ion-item>
-            <ion-skeleton-text animated style={{ width: '27px', height: '27px' }} slot="start"></ion-skeleton-text>
+            <ion-skeleton-text animated style={{ width: '27p', height: '27px' }} slot="start"></ion-skeleton-text>
             <ion-label>
               <h3>
                 <ion-skeleton-text animated style={{ width: '50%' }}></ion-skeleton-text>
@@ -561,7 +561,7 @@ export class SkeletonTextExample {
     ];
   }
 
-  // 渲染带有数据的元素
+  // Render the elements with data
   renderDataScreen() {
     return [
       <ion-content>
@@ -572,7 +572,7 @@ export class SkeletonTextExample {
 
         <ion-list>
           <ion-list-header>
-            <ion-label>数据</ion-label>
+            <ion-label>Data</ion-label>
           </ion-list-header>
           <ion-item>
             <ion-avatar slot="start">
@@ -618,7 +618,7 @@ export class SkeletonTextExample {
 ```
 
 ```css
-/* 自定义骨架文本的行高和外边距 */
+/* Custom Skeleton Line Height and Margin */
 .custom-skeleton ion-skeleton-text {
   line-height: 13px;
 }
@@ -634,7 +634,7 @@ export class SkeletonTextExample {
 
 ```html
 <template>
-  <!-- 骨架屏加载完成后显示的数据 -->
+  <!-- Data to display after skeleton screen -->
   <div v-if="data">
     <div class="ion-padding">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros est. Cras iaculis pulvinar arcu non
@@ -643,7 +643,7 @@ export class SkeletonTextExample {
 
     <ion-list>
       <ion-list-header>
-        <ion-label> 数据 </ion-label>
+        <ion-label> Data </ion-label>
       </ion-list-header>
       <ion-item>
         <ion-avatar slot="start">
@@ -676,7 +676,7 @@ export class SkeletonTextExample {
     </ion-list>
   </div>
 
-  <!-- 骨架屏 -->
+  <!-- Skeleton screen -->
   <div v-if="!data">
     <div class="ion-padding custom-skeleton">
       <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
@@ -743,7 +743,7 @@ export class SkeletonTextExample {
 </template>
 
 <style>
-  /* 自定义骨架文本的行高和外边距 */
+  /* Custom Skeleton Line Height and Margin */
   .custom-skeleton ion-skeleton-text {
     line-height: 13px;
   }
@@ -783,7 +783,7 @@ export class SkeletonTextExample {
 
       setTimeout(() => {
         data.value = {
-          heading: '正常文本',
+          heading: 'Normal text',
           para1: 'Lorem ipsum dolor sit amet, consectetur',
           para2: 'adipiscing elit.',
         };
@@ -799,15 +799,15 @@ export class SkeletonTextExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
@@ -815,10 +815,10 @@ export class SkeletonTextExample {
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

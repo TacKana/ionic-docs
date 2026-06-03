@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/chip/custom-props.mdx'
 import Slots from '@ionic-internal/component-api/v7/chip/slots.md';
 
 <head>
-  <title>ion-chip：适用于 Ionic 框架应用的文本、图标和头像组件</title>
+  <title>ion-chip：Ionic 框架应用的文本、图标和头像组件</title>
   <meta
     name="description"
-    content="ion-chip 能以紧凑区块的形式呈现复杂实体，例如联系人。一个芯片可以包含多种元素，例如姓名、头像、文本和图标。"
+    content="ion-chip 以小块形式表示复杂实体，例如联系人。一个 chip 可以包含多种不同元素，如名称、头像、文本和图标。"
   />
 </head>
 
@@ -21,21 +21,21 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-芯片（Chip）能以紧凑区块的形式呈现复杂实体，例如联系人。一个芯片可以包含多种元素，例如头像、文本和图标。
+Chip（纸片）以小块形式表示复杂实体，例如联系人。一个 chip 可以包含多种不同元素，如头像、文本和图标。
 
-## 基础用法
+## 基本用法
 
 import Basic from '@site/static/usage/v7/chip/basic/index.md';
 
 <Basic />
 
-## 插槽组件与图标
+## 插槽组件和图标
 
 import SlotExample from '@site/static/usage/v7/chip/slots/index.md';
 
 <SlotExample />
 
-## 主题定制
+## 主题
 
 ### 颜色
 
@@ -61,7 +61,7 @@ import CSSProps from '@site/static/usage/v7/chip/theming/css-properties/index.md
 
 <Methods />
 
-## CSS Shadow 部件
+## CSS 阴影部分
 
 <Parts />
 

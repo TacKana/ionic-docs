@@ -46,7 +46,7 @@ const DocDemo = (props) => {
           className={clsx({
             'is-selected': mode === ionicMode,
           })}
-          title={`Toggle ${mode === 'ios' ? 'iOS' : 'Android'} mode`}
+          title={`切换至 ${mode === 'ios' ? 'iOS' : 'Android'} 模式`}
           onClick={() => setIonicMode(mode)}
           key={mode}
         >
@@ -58,7 +58,7 @@ const DocDemo = (props) => {
 
   const sourceLink = (
     <a href={props.source} className="docs-demo-source" target="_blank" title="Demo Source">
-      {/* <ion-icon name="open" /> */} View Source
+      {/* <ion-icon name="open" /> */} 查看源代码
     </a>
   );
 

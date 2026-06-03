@@ -6,9 +6,9 @@ function Example() {
   return (
     <>
       <IonContent className="ion-padding">
-        <IonButton id="open-toast">打开 Toast</IonButton>
+        <IonButton id="open-toast">Open Toast</IonButton>
         <IonToast
-          message="此 Toast 可通过滑动来关闭"
+          message="This toast can be swiped to dismiss"
           trigger="open-toast"
           swipeGesture="vertical"
           position="bottom"
@@ -17,7 +17,7 @@ function Example() {
       </IonContent>
       <IonFooter id="footer">
         <IonToolbar>
-          <IonTitle>页脚</IonTitle>
+          <IonTitle>Footer</IonTitle>
         </IonToolbar>
       </IonFooter>
     </>

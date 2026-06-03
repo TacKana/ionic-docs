@@ -23,7 +23,7 @@ function Example() {
 
   useEffect(() => {
     generateItems();
-    // 禁用 react-hooks/exhaustive-deps 规则检查
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

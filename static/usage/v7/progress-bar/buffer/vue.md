@@ -15,8 +15,8 @@
       buffer.value += 0.06;
       progress.value += 0.06;
 
-      // 当进度条达到 100% 时重置
-      // 以便持续展示演示效果
+      // Reset the progress bar when it reaches 100%
+      // to continuously show the demo
       if (progress.value > 1) {
         setTimeout(() => {
           buffer.value = 0.06;

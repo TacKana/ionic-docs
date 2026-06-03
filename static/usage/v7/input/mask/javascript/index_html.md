@@ -17,7 +17,7 @@
     };
     new window.Maskito(nativeEl, phoneMaskOptions);
 
-    // 如果需要设置初始值，可以使用 maskitoTransform 确保值有效
+    //If you need to set an initial value, you can use maskitoTransform to ensure the value is valid
     ionInput.value = window.maskitoTransform('5555551212', phoneMaskOptions);
   }
 

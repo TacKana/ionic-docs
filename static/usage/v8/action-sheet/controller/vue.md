@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="presentActionSheet">打开</ion-button>
+  <ion-button @click="presentActionSheet">Open</ion-button>
 </template>
 
 <script setup lang="ts">
@@ -8,23 +8,23 @@
 
   const presentActionSheet = async () => {
     const actionSheet = await actionSheetController.create({
-      header: '操作',
+      header: 'Actions',
       buttons: [
         {
-          text: '删除',
+          text: 'Delete',
           role: 'destructive',
           data: {
             action: 'delete',
           },
         },
         {
-          text: '分享',
+          text: 'Share',
           data: {
             action: 'share',
           },
         },
         {
-          text: '取消',
+          text: 'Cancel',
           role: 'cancel',
           data: {
             action: 'cancel',

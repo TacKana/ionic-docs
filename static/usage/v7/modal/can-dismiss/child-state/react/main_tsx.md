@@ -30,25 +30,25 @@ function Example() {
   }
 
   function onWillPresent() {
-    // 当模态框显示时重置覆盖标志
+    // Resets the override when the modal is presented
     setCanDismissOverride(false);
   }
 
   async function canDismiss() {
     if (canDismissOverride) {
-      // 检查覆盖标志，如果可以直接关闭覆盖层则提前返回
+      // Checks for the override flag to return early if we can dismiss the overlay immediately
       return true;
     }
     return new Promise<boolean>((resolve, reject) => {
       present({
-        header: '确认关闭吗？',
+        header: 'Are you sure?',
         buttons: [
           {
-            text: '是',
+            text: 'Yes',
             role: 'confirm',
           },
           {
-            text: '否',
+            text: 'No',
             role: 'cancel',
           },
         ],
@@ -67,12 +67,12 @@ function Example() {
     <IonPage ref={page}>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>应用</IonTitle>
+          <IonTitle>App</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          打开
+          Open
         </IonButton>
         <IonModal
           ref={modal}

@@ -28,29 +28,29 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>应用</IonTitle>
+          <IonTitle>App</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent class="ion-padding">
         <IonButton id="open-custom-dialog" expand="block">
-          打开自定义对话框
+          Open Custom Dialog
         </IonButton>
         <IonModal id="example-modal" ref={modal} trigger="open-custom-dialog">
           <div className="wrapper">
-            <h1>对话框标题</h1>
+            <h1>Dialog header</h1>
 
             <IonList lines="none">
               <IonItem button={true} detail={false} onClick={dismiss}>
                 <IonIcon icon={personCircle}></IonIcon>
-                <IonLabel>项目 1</IonLabel>
+                <IonLabel>Item 1</IonLabel>
               </IonItem>
               <IonItem button={true} detail={false} onClick={dismiss}>
                 <IonIcon icon={personCircle}></IonIcon>
-                <IonLabel>项目 2</IonLabel>
+                <IonLabel>Item 2</IonLabel>
               </IonItem>
               <IonItem button={true} detail={false} onClick={dismiss}>
                 <IonIcon icon={personCircle}></IonIcon>
-                <IonLabel>项目 3</IonLabel>
+                <IonLabel>Item 3</IonLabel>
               </IonItem>
             </IonList>
           </div>

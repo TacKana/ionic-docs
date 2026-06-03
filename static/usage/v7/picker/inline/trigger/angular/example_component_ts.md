@@ -16,7 +16,6 @@ interface PickerValue {
   imports: [IonButton, IonPicker],
 })
 export class ExampleComponent {
-  // 定义选择器的列配置
   public pickerColumns = [
     {
       name: 'languages',
@@ -41,16 +40,15 @@ export class ExampleComponent {
     },
   ];
 
-  // 定义选择器的按钮配置
   public pickerButtons = [
     {
-      text: '取消',
+      text: 'Cancel',
       role: 'cancel',
     },
     {
-      text: '确认',
+      text: 'Confirm',
       handler: (value: PickerValue) => {
-        console.log(`你选择了: ${value.languages.value}`);
+        console.log(`You selected: ${value.languages.value}`);
       },
     },
   ];

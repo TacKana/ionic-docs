@@ -1,5 +1,5 @@
 ```css
-/* iOS 系统将副标题显示在主标题上方 */
+/* iOS places the subtitle above the title */
 ion-card-header.ios {
   display: flex;
   flex-flow: column-reverse;

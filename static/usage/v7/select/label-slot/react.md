@@ -6,13 +6,13 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonSelect placeholder="选择水果">
+        <IonSelect placeholder="Select a Fruit">
           <div slot="label">
-            最喜欢的水果 <IonText color="danger">(必填)</IonText>
+            Favorite Fruit <IonText color="danger">(Required)</IonText>
           </div>
-          <IonSelectOption value="apple">苹果</IonSelectOption>
-          <IonSelectOption value="banana">香蕉</IonSelectOption>
-          <IonSelectOption value="orange">橙子</IonSelectOption>
+          <IonSelectOption value="apple">Apple</IonSelectOption>
+          <IonSelectOption value="banana">Banana</IonSelectOption>
+          <IonSelectOption value="orange">Orange</IonSelectOption>
         </IonSelect>
       </IonItem>
     </IonList>

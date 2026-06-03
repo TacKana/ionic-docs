@@ -1,5 +1,5 @@
 ```css
-/* 所有范围控件的共享样式 */
+/* Shared styles for all ranges */
 ion-range {
   --knob-size: 34px;
 }
@@ -10,7 +10,7 @@ ion-range::part(knob) {
   box-sizing: border-box;
 }
 
-/* 隐藏 Material Design 指示器 */
+/* Hide the Material Design indicator */
 ion-range::part(knob)::before {
   display: none;
 }
@@ -26,7 +26,7 @@ ion-range::part(tick-active) {
   top: 17px;
 }
 
-/* 单旋钮范围控件 */
+/* Single Knob Range */
 #range-single::part(bar),
 #range-single::part(tick) {
   background: #bed4ff;
@@ -50,7 +50,7 @@ ion-range::part(tick-active) {
   background: #40a2fd;
 }
 
-/* 双旋钮（A/B）范围控件 */
+/* Dual Knobs (A/B) Range */
 #range-a-b::part(bar-active) {
   background: #1ea9ca;
 }
@@ -81,7 +81,7 @@ ion-range::part(tick-active) {
   background: #2dc2bd;
 }
 
-/* 双旋钮（下限/上限）范围控件 */
+/* Dual Knobs (Lower/Upper) Range */
 #range-lower-upper::part(bar-active) {
   background: linear-gradient(to right, #0059ff 0%, #b77bff 100%);
 }

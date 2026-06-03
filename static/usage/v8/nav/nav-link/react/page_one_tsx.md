@@ -9,13 +9,13 @@ function PageOne() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>页面一</IonTitle>
+          <IonTitle>Page One</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent class="ion-padding">
-        <h1>页面一</h1>
+        <h1>Page One</h1>
         <IonNavLink routerDirection="forward" component={() => <PageTwo />}>
-          <IonButton>前往页面二</IonButton>
+          <IonButton>Go to Page Two</IonButton>
         </IonNavLink>
       </IonContent>
     </>

@@ -13,7 +13,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-面包屑（Breadcrumbs）是一种导航组件，用于指示用户在应用或网站中的当前位置。它们适用于具有层级结构页面的大型网站和应用。面包屑可以根据最大显示数量进行折叠，点击折叠指示器可以弹出一个包含更多信息的浮层或展开被折叠的面包屑。
+面包屑（Breadcrumbs）是用于指示用户在应用或网站中当前位置的导航项。它们应使用于具有分层页面的大型网站和应用中。面包屑可以根据可显示的最大数量进行折叠，点击折叠指示器可以显示包含更多信息的弹出框或展开折叠的面包屑。
 
 ## 基本用法
 
@@ -23,7 +23,7 @@ import Basic from '@site/static/usage/v7/breadcrumbs/basic/index.md';
 
 ## 使用图标
 
-### 在项目上使用图标
+### 项目上的图标
 
 import IconsOnItems from '@site/static/usage/v7/breadcrumbs/icons/icons-on-items/index.md';
 
@@ -39,37 +39,37 @@ import CustomSeparators from '@site/static/usage/v7/breadcrumbs/icons/custom-sep
 
 ### 最大项目数
 
-如果项目数量超过 `maxItems` 的值，面包屑将被折叠。默认情况下，只会显示第一个和最后一个项目。
+如果项目数超过 `maxItems` 的值，面包屑将被折叠。默认情况下，只显示第一个和最后一个项目。
 
 import MaxItems from '@site/static/usage/v7/breadcrumbs/collapsing-items/max-items/index.md';
 
 <MaxItems />
 
-### 折叠前后显示的项目
+### 折叠前后显示项目数
 
-项目折叠后，可以通过 `itemsBeforeCollapse` 和 `itemsAfterCollapse` 属性控制显示的项目数量。
+一旦项目被折叠，可以通过 `itemsBeforeCollapse` 和 `itemsAfterCollapse` 属性控制显示的项目数量。
 
 import ItemsBeforeAfter from '@site/static/usage/v7/breadcrumbs/collapsing-items/items-before-after/index.md';
 
 <ItemsBeforeAfter />
 
-### 点击折叠指示器 —— 展开面包屑
+### 点击折叠指示器 -- 展开面包屑
 
-点击折叠指示器会触发 `ionCollapsedClick` 事件。例如，可以用它来展开面包屑。
+点击折叠指示器将触发 `ionCollapsedClick` 事件。这可用于例如展开面包屑。
 
 import ExpandOnClick from '@site/static/usage/v7/breadcrumbs/collapsing-items/expand-on-click/index.md';
 
 <ExpandOnClick />
 
-### 点击折叠指示器 —— 弹出浮层
+### 点击折叠指示器 -- 显示弹出框
 
-`ionCollapsedClick` 事件也可用于弹出一个浮层（例如 `ion-popover`），显示隐藏的面包屑。
+`ionCollapsedClick` 事件也可用于显示覆盖层（在此例中为 `ion-popover`），显示隐藏的面包屑。
 
 import PopoverOnClick from '@site/static/usage/v7/breadcrumbs/collapsing-items/popover-on-click/index.md';
 
 <PopoverOnClick />
 
-## 主题定制
+## 主题
 
 ### 颜色
 
@@ -95,7 +95,7 @@ import CSSProps from '@site/static/usage/v7/breadcrumbs/theming/css-properties/i
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

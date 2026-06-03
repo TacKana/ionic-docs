@@ -2,16 +2,16 @@
 sidebar_label: 'logout'
 ---
 
-# ionic 登出
+# ionic logout
 
-退出 Ionic 账户
+Log out of Ionic
 
 ```shell
 ionic logout [options]
 ```
 
-从 CLI 配置中移除 Ionic 用户令牌。
+Remove the Ionic user token from the CLI config.
 
-如需重新登录，请使用 `ionic login`。
+Log in again with `ionic login`.
 
-如果需要创建 Ionic 账户，请使用 `ionic signup`。
+If you need to create an Ionic account, use `ionic signup`.

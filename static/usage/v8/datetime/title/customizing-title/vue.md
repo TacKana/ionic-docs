@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-datetime>
-    <span slot="title">选择预订日期</span>
+    <span slot="title">Select a Reservation Date</span>
   </ion-datetime>
 </template>
 

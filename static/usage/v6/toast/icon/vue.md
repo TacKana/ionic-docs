@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="presentToast">点击我</ion-button>
+  <ion-button @click="presentToast">Click Me</ion-button>
 </template>
 
 <script lang="ts">
@@ -12,7 +12,7 @@
     methods: {
       async presentToast() {
         const toast = await toastController.create({
-          message: '你好，世界！',
+          message: 'Hello World!',
           duration: 1500,
           icon: globe,
         });
@@ -20,7 +20,7 @@
         await toast.present();
 
         const { role } = await toast.onDidDismiss();
-        this.roleMessage = `以角色关闭：${role}`;
+        this.roleMessage = `Dismissed with role: ${role}`;
       },
     },
   };

@@ -4,7 +4,7 @@
     <ion-toolbar>
       <ion-title>Modal</ion-title>
       <ion-buttons slot="end">
-        <ion-button @click="dismiss()">关闭</ion-button>
+        <ion-button @click="dismiss()">Close</ion-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
@@ -12,9 +12,9 @@
     <ion-list>
       <ion-item>
         <ion-checkbox @ionChange="checkboxChanged">
-          覆盖关闭确认<br />
+          Override Dismiss<br />
           <ion-note class="ion-text-wrap"
-            >切换此复选框以允许直接关闭模态框，无需确认提示。</ion-note
+            >Toggle the checkbox to allow immediately dismissing the modal without a prompt.</ion-note
           >
         </ion-checkbox>
       </ion-item>

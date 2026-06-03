@@ -1,7 +1,7 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>标题</ion-title>
+    <ion-title>Title</ion-title>
   </ion-toolbar>
 </ion-header>
 ```

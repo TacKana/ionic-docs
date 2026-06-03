@@ -7,7 +7,7 @@ function Example() {
     <IonList>
       <IonItemGroup>
         <IonItemDivider>
-          <IonLabel>分组 A</IonLabel>
+          <IonLabel>Section A</IonLabel>
         </IonItemDivider>
 
         <IonItem>
@@ -23,7 +23,7 @@ function Example() {
 
       <IonItemGroup>
         <IonItemDivider>
-          <IonLabel>分组 B</IonLabel>
+          <IonLabel>Section B</IonLabel>
         </IonItemDivider>
 
         <IonItem>

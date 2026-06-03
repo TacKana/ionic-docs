@@ -2,18 +2,18 @@
 title: 'ion-button'
 ---
 
-import Props from '@ionic-internal/component-api/v6/button/props.md';
-import Events from '@ionic-internal/component-api/v6/button/events.md';
-import Methods from '@ionic-internal/component-api/v6/button/methods.md';
-import Parts from '@ionic-internal/component-api/v6/button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v6/button/slots.md';
+import Props from '@ionic-internal/component-api/v7/button/props.md';
+import Events from '@ionic-internal/component-api/v7/button/events.md';
+import Methods from '@ionic-internal/component-api/v7/button/methods.md';
+import Parts from '@ionic-internal/component-api/v7/button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/button/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v7/button/slots.md';
 
 <head>
-  <title>ion-button：使用自定义 CSS 属性设计和样式化按钮</title>
+  <title>ion-button：使用自定义 CSS 属性设置按钮样式</title>
   <meta
     name="description"
-    content="ion-button 提供了一个可点击元素，适用于任何需要标准按钮功能的场景。使用自定义 CSS 属性设计和样式化按钮元素。"
+    content="ion-button 提供可点击元素，适用于任何需要标准按钮功能的地方。使用自定义 CSS 属性设计和设置按钮元素样式。"
   />
 </head>
 
@@ -21,65 +21,83 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-按钮提供了可点击元素，可用于表单中或任何需要简单标准按钮功能的场合。它们可以显示文本、图标或同时显示两者。按钮可以通过多种属性进行样式化，以呈现特定的外观。
+按钮（Button）提供可点击元素，可用于表单或任何需要简单标准按钮功能的地方。它们可以显示文本、图标或两者兼有。按钮可以通过多种属性设置样式以获得特定的外观。
 
 ## 基本用法
 
-import Basic from '@site/static/usage/v6/button/basic/index.md';
+import Basic from '@site/static/usage/v7/button/basic/index.md';
 
 <Basic />
 
-## Expand
+## 扩展（Expand）
 
-此属性允许您指定按钮的宽度。默认情况下，按钮是内联块元素，但设置此属性会将按钮更改为全宽块元素。
+此属性让你指定按钮的宽度。默认情况下，按钮具有 `display: inline-block`，但设置此属性会将按钮更改为具有 `display: block` 的全宽元素。
 
-import Expand from '@site/static/usage/v6/button/expand/index.md';
+import Expand from '@site/static/usage/v7/button/expand/index.md';
 
 <Expand />
 
-## Shape
+## 形状（Shape）
 
-此属性允许您指定按钮的形状。默认情况下，按钮是带有小圆角的矩形，但将其设置为 `"round"` 会将按钮更改为圆形元素。
+此属性让你指定按钮的形状。默认情况下，按钮是带有小边框半径的矩形，但将其设置为 `"round"` 会将按钮更改为圆形元素。
 
-import Shape from '@site/static/usage/v6/button/shape/index.md';
+import Shape from '@site/static/usage/v7/button/shape/index.md';
 
 <Shape />
 
-## Fill
+## 填充（Fill）
 
-此属性决定按钮的背景和边框颜色。默认情况下，按钮具有实心背景，除非该按钮位于工具栏内，此时它具有透明背景。
+此属性决定按钮的背景和边框颜色。默认情况下，按钮具有实色背景，除非按钮位于工具栏内，此时它具有透明背景。
 
-import Fill from '@site/static/usage/v6/button/fill/index.md';
+import Fill from '@site/static/usage/v7/button/fill/index.md';
 
 <Fill />
 
-## Size
+## 尺寸（Size）
 
-此属性指定按钮的大小。设置此属性将改变按钮的高度和内边距。
+此属性指定按钮的尺寸。设置此属性将更改按钮的高度和内边距。
 
-import Size from '@site/static/usage/v6/button/size/index.md';
+import Size from '@site/static/usage/v7/button/size/index.md';
 
 <Size />
 
-## Icons
+## 图标
 
-import Icons from '@site/static/usage/v6/button/icons/index.md';
+import Icons from '@site/static/usage/v7/button/icons/index.md';
 
 <Icons />
 
-## 主题化
+## 主题
 
-### Colors
+### 颜色
 
-import Colors from '@site/static/usage/v6/button/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/button/theming/colors/index.md';
 
 <Colors />
 
 ### CSS 自定义属性
 
-import CSSProps from '@site/static/usage/v6/button/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/button/theming/css-properties/index.md';
 
 <CSSProps />
+
+## 无障碍访问
+
+按钮的设计考虑了无障碍性，但可能需要根据其内容进行一些调整。按钮组件渲染原生的 [button 元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/button)，使其能够利用原生按钮提供的功能。
+
+### 溢出文本内容
+
+在许多情况下，按钮的文本内容可能会溢出容器。建议在这种情况下让按钮内部的文本换行，以便所有文本仍然可读。按钮组件会自动调整其高度以适应额外的文本行。
+
+当文本过长无法容纳时，按钮文本不会自动换行到下一行。为了使文本换行，可以添加 `ion-text-wrap` 类，这将把 `white-space` 属性设置为 `"normal"`。这将在未来的主要版本中成为默认行为。
+
+:::info
+下面按钮上的 `max-width` 样式仅用于演示目的。文本换行在动态按钮宽度下也能正常工作。
+:::
+
+import TextWrapping from '@site/static/usage/v7/button/text-wrapping/index.md';
+
+<TextWrapping />
 
 ## 属性
 
@@ -93,7 +111,7 @@ import CSSProps from '@site/static/usage/v6/button/theming/css-properties/index.
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
@@ -101,6 +119,6 @@ import CSSProps from '@site/static/usage/v6/button/theming/css-properties/index.
 
 <CustomProps />
 
-## Slots
+## 插槽
 
 <Slots />

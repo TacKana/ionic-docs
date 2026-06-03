@@ -8,7 +8,7 @@ function Example() {
       <IonButtons slot="start">
         <IonButton>Button</IonButton>
       </IonButtons>
-      <IonTitle>默认按钮</IonTitle>
+      <IonTitle>Default Buttons</IonTitle>
     </IonToolbar>
   );
 }

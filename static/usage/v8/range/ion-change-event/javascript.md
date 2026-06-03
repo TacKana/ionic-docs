@@ -5,7 +5,7 @@
   const range = document.querySelector('ion-range');
 
   range.addEventListener('ionChange', ({ detail }) => {
-    console.log('ionChange 事件触发，值为: ' + detail.value);
+    console.log('ionChange emitted value: ' + detail.value);
   });
 </script>
 ```

@@ -12,17 +12,17 @@ export class ExampleComponent {
   public alertButtons = ['OK'];
   public alertInputs = [
     {
-      label: '红色',
+      label: 'Red',
       type: 'radio',
       value: 'red',
     },
     {
-      label: '蓝色',
+      label: 'Blue',
       type: 'radio',
       value: 'blue',
     },
     {
-      label: '绿色',
+      label: 'Green',
       type: 'radio',
       value: 'green',
     },

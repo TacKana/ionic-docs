@@ -15,19 +15,19 @@ function Example() {
   return (
     <>
       <IonButton id="buttonToFocus" fill="outline">
-        按钮
+        Button
       </IonButton>
 
       <IonRadioGroup value="a">
         <IonRadio id="radioToFocus" value="a">
-          单选按钮
+          Radio
         </IonRadio>
       </IonRadioGroup>
 
       <br />
 
-      <IonButton onClick={() => focusElement('#buttonToFocus')}>聚焦按钮</IonButton>
-      <IonButton onClick={() => focusElement('#radioToFocus')}>聚焦单选按钮</IonButton>
+      <IonButton onClick={() => focusElement('#buttonToFocus')}>Focus Button</IonButton>
+      <IonButton onClick={() => focusElement('#radioToFocus')}>Focus Radio</IonButton>
     </>
   );
 }

@@ -1,5 +1,5 @@
 ---
-title: 手风琴组组件
+title: "ion-accordion-group"
 ---
 import Props from '@ionic-internal/component-api/v8/accordion-group/props.md';
 import Events from '@ionic-internal/component-api/v8/accordion-group/events.md';
@@ -10,13 +10,19 @@ import Slots from '@ionic-internal/component-api/v8/accordion-group/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
+<head>
+  <title>ion-accordion-group：手风琴组容器</title>
+  <meta name="description" content="ion-accordion-group 是手风琴实例的容器，管理手风琴的状态并提供键盘导航。了解更多信息。" />
+</head>
+
 <EncapsulationPill type="shadow" />
 
-手风琴组（accordion group）是手风琴（accordion）实例的容器。它负责管理手风琴的状态，并提供键盘导航功能。
+手风琴组是手风琴实例的容器。它管理手风琴的状态并提供键盘导航。
 
-更多信息请参阅[手风琴（Accordion）](./accordion)文档。
+更多信息请参见[手风琴](./accordion)文档。
 
-## 接口
+
+## Interfaces
 
 ### AccordionGroupChangeEventDetail
 
@@ -28,7 +34,7 @@ interface AccordionGroupChangeEventDetail<T = any> {
 
 ### AccordionGroupCustomEvent
 
-虽然这不是必需的，但该接口可用于替代 `CustomEvent` 接口，以便对此组件发出的 Ionic 事件进行更严格的类型检查。
+虽然不是必须的，但可以使用此接口替代 `CustomEvent` 接口，以对此组件发出的 Ionic 事件提供更强的类型支持。
 
 ```typescript
 interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
@@ -37,20 +43,22 @@ interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## 属性
+
+
+## Properties
 <Props />
 
-## 事件
+## Events
 <Events />
 
-## 方法
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 <CustomProps />
 
-## 插槽
+## Slots
 <Slots />

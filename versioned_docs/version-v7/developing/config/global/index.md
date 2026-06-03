@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
   values={[
     { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
-    { value: 'angular-standalone', label: 'Angular (独立模式)' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]}
@@ -61,7 +61,7 @@ bootstrapApplication(AppComponent, {
 </TabItem>
 <TabItem value="react">
 
-`setupIonicReact` 函数必须在渲染任何 Ionic 组件（包括 `IonApp`）之前调用。
+The `setupIonicReact` function must be called before rendering any Ionic components (including `IonApp`).
 
 ```tsx title="App.tsx"
 import { setupIonicReact } from '@ionic/react';

@@ -27,7 +27,7 @@ function Example() {
           <IonButtons slot="start">
             <IonBackButton default-href="#"></IonBackButton>
           </IonButtons>
-          <IonTitle>显示设置</IonTitle>
+          <IonTitle>Display</IonTitle>
           <IonButtons slot="end">
             <IonButton color="dark">
               <IonIcon slot="icon-only" ios={personCircleOutline} md={personCircle}></IonIcon>
@@ -37,15 +37,15 @@ function Example() {
       </IonHeader>
 
       <IonContent color="light">
-        <IonListHeader>外观</IonListHeader>
+        <IonListHeader>Appearance</IonListHeader>
         <IonList inset={true}>
-          <IonItem button={true}>文本大小</IonItem>
+          <IonItem button={true}>Text Size</IonItem>
           <IonItem>
-            <IonToggle justify="space-between">粗体文本</IonToggle>
+            <IonToggle justify="space-between">Bold Text</IonToggle>
           </IonItem>
         </IonList>
 
-        <IonListHeader>亮度</IonListHeader>
+        <IonListHeader>Brightness</IonListHeader>
         <IonList inset={true}>
           <IonItem>
             <IonRange value={40}>
@@ -55,16 +55,16 @@ function Example() {
           </IonItem>
           <IonItem>
             <IonToggle justify="space-between" checked>
-              原彩显示
+              True Tone
             </IonToggle>
           </IonItem>
         </IonList>
 
         <IonList inset={true}>
           <IonItem button={true}>
-            <IonLabel>夜览</IonLabel>
+            <IonLabel>Night Shift</IonLabel>
             <IonText slot="end" color="medium">
-              晚上 9:00 至早上 8:00
+              9:00 PM to 8:00 AM
             </IonText>
           </IonItem>
         </IonList>

@@ -1,20 +1,20 @@
 ---
-sidebar_label: Live Reload
+sidebar_label: 实时重载
 ---
 
-# 通过实时重载实现快速应用开发
+# 使用实时重载快速开发应用
 
-到目前为止，我们已经体验了开发跨平台应用的便捷性。开发过程已经相当迅速，但如果我告诉你还有办法能更快呢？
+到目前为止，我们已经看到开发一个在任何地方都能运行的跨平台应用是多么容易。开发体验已经相当快速了，但如果我告诉您还有一种方法可以更快呢？
 
-我们可以利用 Ionic CLI 的[实时重载功能](https://ionicframework.com/docs/cli/livereload)来提升构建 Ionic 应用时的开发效率。启用后，当检测到应用中的变更时，实时重载将自动刷新浏览器和/或 WebView。
+我们可以使用 Ionic CLI 的[实时重载功能](https://ionicframework.com/docs/cli/livereload)来提高构建 Ionic 应用时的生产力。激活后，实时重载会在检测到应用中的更改时重新加载浏览器和/或 WebView。
 
 ## 实时重载
 
 还记得 `ionic serve` 吗？那就是实时重载在浏览器中工作，让我们能够快速迭代。
 
-我们也可以在 iOS 和 Android 设备上进行开发时使用它。这在编写需要与原生插件交互的代码时特别有用。由于我们需要在设备上运行原生插件代码来验证其功能，因此能够快速编写代码、构建部署并测试，对于保持开发速度至关重要。
+我们还可以在 iOS 和 Android 设备上进行开发时使用它。这在编写与原生插件交互的代码时特别有用。由于我们需要在设备上运行原生插件代码来验证其是否工作，因此能够快速编写代码、构建和部署、然后测试对于保持开发速度至关重要。
 
-让我们使用实时重载来实现照片删除功能，这是我们的照片库功能中缺失的部分。选择你偏好的平台（iOS 或 Android），并将设备连接到计算机。然后，根据所选平台在终端中运行相应命令：
+让我们使用实时重载来实现照片删除功能——这是我们相册功能缺失的部分。选择您喜欢的平台（iOS 或 Android）并将设备连接到计算机。接下来，根据您选择的平台在终端中运行以下任一命令：
 
 ```shell
 $ ionic cap run ios -l --external
@@ -22,11 +22,11 @@ $ ionic cap run ios -l --external
 $ ionic cap run android -l --external
 ```
 
-实时重载服务器将启动，如果尚未打开，对应的原生集成开发环境也会自动打开。在集成开发环境中，点击播放按钮，将应用部署到你的设备上。
+实时重载服务器将启动，如果尚未打开，所选的原生 IDE 将打开。在 IDE 中，点击播放按钮将应用启动到您的设备上。
 
 ## 删除照片
 
-在实时重载运行且应用已在设备上打开的状态下，让我们来实现照片删除功能。在你的代码编辑器中（不是 Android Studio 或 Xcode），打开 `Tab2.tsx`，然后从 React 导入 `useState`，并从 `usePhotoGallery` 钩子中导入 `UserPhoto`：
+在实时重载运行且应用在设备上打开的情况下，让我们实现照片删除功能。在您的代码编辑器中（不是 Android Studio 或 Xcode），打开 `Tab2.tsx`，然后从 React 导入 `useState`，从 `usePhotoGallery` hook 导入 `UserPhoto`：
 
 ```tsx
 import React, { useState } from 'react';
@@ -34,7 +34,7 @@ import { usePhotoGallery, UserPhoto } from '../hooks/usePhotoGallery';
 // 其他导入
 ```
 
-接下来，引用我们即将创建的 `deletePhoto` 函数：
+接下来，引用 `deletePhoto` 函数，我们很快就会创建它：
 
 ```tsx
 const { photos, takePhoto, deletePhoto } = usePhotoGallery();
@@ -46,7 +46,7 @@ const { photos, takePhoto, deletePhoto } = usePhotoGallery();
 const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
 ```
 
-当用户点击图片时，我们将通过将状态值设置为该照片来显示操作表。更新 `<IonImg>` 元素为：
+当用户点击图像时，我们将通过将状态值设置为该照片来显示操作菜单。将 `<IonImg>` 元素更新为：
 
 ```tsx
 <IonImg onClick={() => setPhotoToDelete(photo)} src={photo.webviewPath} />
@@ -81,16 +81,16 @@ const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
 />
 ```
 
-上面我们添加了两个选项：`删除` 会调用 `deletePhoto` 函数（接下来会添加），而 `取消` 被赋予 "cancel" 角色时会自动关闭操作表。同时，重要的是设置 `onDidDismiss` 函数，并在模态框关闭时将 `photoToDelete` 设置回 `undefined`。这样，当点击另一张图片时，操作表会注意到 `photoToDelete` 值的变化。
+上面，我们添加了两个选项：`删除`，调用 `deletePhoto` 函数（接下来添加）；以及 `取消`，当角色为 "cancel" 时，它将自动关闭操作菜单。同样重要的是设置 `onDidDismiss` 函数，并在模态框消失时将 `photoToDelete` 重置为 `undefined`。这样，当点击另一张图像时，操作菜单会注意到 `photoToDelete` 值的变化。
 
-接下来，我们需要实现将从 `usePhotoGallery` 钩子中导出的 `deletePhoto` 方法。打开该文件，并在钩子中粘贴以下函数：
+接下来，我们需要实现来自 `usePhotoGallery` hook 的 `deletePhoto` 方法。打开该文件并将以下函数粘贴到 hook 中：
 
 ```tsx
 const deletePhoto = async (photo: UserPhoto) => {
-  // 从 Photos 引用数据数组中移除这张照片
+  // 从照片引用数据数组中移除该照片
   const newPhotos = photos.filter((p) => p.filepath !== photo.filepath);
 
-  // 通过覆盖现有照片数组来更新缓存中的 photos 数组
+  // 通过覆盖现有照片数组来更新照片数组缓存
   Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
 
   // 从文件系统中删除照片文件
@@ -103,9 +103,9 @@ const deletePhoto = async (photo: UserPhoto) => {
 };
 ```
 
-首先从 Photos 数组中移除选中的照片。然后，我们使用 Capacitor Preferences API 来更新缓存的 Photos 数组版本。最后，我们使用 Filesystem API 删除实际的物理照片文件。
+选中的照片首先从照片数组中移除。然后，我们使用 Capacitor Preferences API 更新照片数组的缓存版本。最后，我们使用 Filesystem API 删除实际的照片文件本身。
 
-确保返回 `deletePhoto` 函数，使其成为我们暴露的钩子 API 的一部分：
+确保返回 `deletePhoto` 函数，使其成为我们暴露的 hook API 的一部分：
 
 ```tsx
 return {
@@ -115,6 +115,6 @@ return {
 };
 ```
 
-保存此文件，然后再次点击一张照片并选择“删除”选项。这次，照片被成功删除了！使用实时重载实现起来快多了。💪
+保存此文件，然后再次点击照片并选择"删除"选项。这次，照片被删除了！使用实时重载功能实现得更快。
 
-在本教程的最后一部分，我们将为你介绍 Appflow 产品的基础知识，该产品用于构建应用并将其部署到用户的设备上。
+在本教程的最后一部分，我们将向您介绍 Appflow 产品的基础知识，用于构建应用并将其部署到用户的设备上。

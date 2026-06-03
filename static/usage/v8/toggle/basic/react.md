@@ -5,17 +5,17 @@ import { IonToggle } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonToggle>默认开关</IonToggle>
+      <IonToggle>Default Toggle</IonToggle>
       <br />
       <br />
-      <IonToggle checked={true}>已选中开关</IonToggle>
+      <IonToggle checked={true}>Checked Toggle</IonToggle>
       <br />
       <br />
-      <IonToggle disabled={true}>禁用开关</IonToggle>
+      <IonToggle disabled={true}>Disabled Toggle</IonToggle>
       <br />
       <br />
       <IonToggle checked={true} disabled={true}>
-        禁用且已选中开关
+        Disabled Checked Toggle
       </IonToggle>
     </>
   );

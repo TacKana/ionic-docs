@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import fetch from 'node-fetch';
 
 // replace with latest once it's relased
@@ -34,12 +34,92 @@ const pluginApis = [
 async function buildPluginApiDocs(pluginId) {
   const [readme, pkgJson] = await Promise.all([getReadme(pluginId), getPkgJsonData(pluginId)]);
 
-  const apiContent = createApiPage(pluginId, readme, pkgJson);
   const fileName = `${pluginId}.md`;
+  const filePath = `docs/native/${fileName}`;
 
-  writeFileSync(`docs/native/${fileName}`, apiContent);
+  // 检查文件是否已被翻译
+  const existing = getExistingTranslation(filePath);
+  const newHash = hashContent(readme);
+
+  if (existing) {
+    if (existing.sourceHash === newHash) {
+      console.log(`跳过 ${fileName}（已被翻译，上游无变更）`);
+    } else if (!existing.sourceHash) {
+      const updated = updateSourceHash(existing.content, newHash);
+      writeFileSync(filePath, updated);
+      console.log(`更新 ${fileName}（补充 source_hash）`);
+    } else {
+      console.warn(`⚠️  ${fileName}：上游文档已更新，翻译需要同步！`);
+      console.warn(`   存储哈希: ${existing.sourceHash}`);
+      console.warn(`   最新哈希: ${newHash}`);
+      const updated = updateSourceHash(existing.content, newHash);
+      writeFileSync(filePath, updated);
+    }
+    return;
+  }
+
+  // 新文件，正常生成
+  const apiContent = createApiPage(pluginId, readme, pkgJson);
+  writeFileSync(filePath, apiContent);
   writeFileSync(`versioned_docs/version-v6/native/${fileName}`, apiContent);
   writeFileSync(`versioned_docs/version-v7/native/${fileName}`, apiContent);
+}
+
+/**
+ * 获取已存在文件的翻译信息和源哈希
+ * @param {string} filePath
+ * @returns {{ content: string, sourceHash: string } | null}
+ */
+function getExistingTranslation(filePath) {
+  try {
+    const content = readFileSync(filePath, 'utf-8');
+    const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+    if (frontmatterMatch && /translated:\s*true/.test(frontmatterMatch[1])) {
+      const hashMatch = frontmatterMatch[1].match(/source_hash:\s*(\S+)/);
+      return {
+        content,
+        sourceHash: hashMatch ? hashMatch[1] : '',
+      };
+    }
+  } catch (e) {
+    // 文件不存在
+  }
+  return null;
+}
+
+/**
+ * 简单的内容哈希
+ * @param {string} content
+ * @returns {string}
+ */
+function hashContent(content) {
+  let hash = 0;
+  for (let i = 0; i < content.length; i++) {
+    const chr = content.charCodeAt(i);
+    hash = ((hash << 5) - hash) + chr;
+    hash |= 0;
+  }
+  return Math.abs(hash).toString(16);
+}
+
+/**
+ * 更新文件 frontmatter 中的 source_hash
+ * @param {string} content
+ * @param {string} newHash
+ * @returns {string}
+ */
+function updateSourceHash(content, newHash) {
+  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!frontmatterMatch) return content;
+
+  const oldFm = frontmatterMatch[1];
+  let newFm;
+  if (/source_hash:/.test(oldFm)) {
+    newFm = oldFm.replace(/source_hash:\s*\S+/, `source_hash: ${newHash}`);
+  } else {
+    newFm = oldFm + `\nsource_hash: ${newHash}`;
+  }
+  return content.replace(oldFm, newFm);
 }
 
 function createApiPage(pluginId, readme, pkgJson) {

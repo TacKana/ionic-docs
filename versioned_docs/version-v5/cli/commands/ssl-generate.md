@@ -4,19 +4,19 @@ sidebar_label: 'ssl generate'
 
 # ionic ssl generate
 
-生成 SSL 密钥和证书
+Generates an SSL key & certificate
 
 ```shell
 ionic ssl generate [options]
 ```
 
-使用 OpenSSL 为 **localhost**（默认）创建自签名证书。
+Uses OpenSSL to create a self-signed certificate for **localhost** (by default).
 
-生成证书后，您仍然需要将其添加到系统或浏览器中作为受信任证书。
+After the certificate is generated, you will still need to add it to your system or browser as a trusted certificate.
 
-`--key-path` 和 `--cert-path` 的默认目录是 `.ionic/ssl/`。
+The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
 
-## 选项
+## Options
 
 <table className="reference-table">
   <thead>
@@ -33,13 +33,13 @@ ionic ssl generate [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>私钥文件的目标路径</p>
+        <p>Destination of private key file</p>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>./.ionic/ssl/key.pem</td>
     </tr>
   </tbody>
@@ -57,19 +57,19 @@ ionic ssl generate [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>证书文件的目标路径</p>
+        <p>Destination of certificate file</p>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>./.ionic/ssl/cert.pem</td>
     </tr>
   </tbody>
 </table>
 
-## 高级选项
+## Advanced Options
 
 <table className="reference-table">
   <thead>
@@ -86,15 +86,15 @@ ionic ssl generate [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>SSL 证书的国家名称 (C)</p>
+          <p>The country name (C) of the SSL certificate</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>US</td>
     </tr>
   </tbody>
@@ -112,15 +112,15 @@ ionic ssl generate [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>SSL 证书的州或省名称 (ST)</p>
+          <p>The state or province name (ST) of the SSL certificate</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>Wisconsin</td>
     </tr>
   </tbody>
@@ -138,15 +138,15 @@ ionic ssl generate [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>SSL 证书的城市名称 (L)</p>
+          <p>The locality name (L) of the SSL certificate</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>Madison</td>
     </tr>
   </tbody>
@@ -164,15 +164,15 @@ ionic ssl generate [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>SSL 证书的组织名称 (O)</p>
+          <p>The organization name (O) of the SSL certificate</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>Ionic</td>
     </tr>
   </tbody>
@@ -190,15 +190,15 @@ ionic ssl generate [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>SSL 证书的通用名称 (CN)</p>
+          <p>The common name (CN) of the SSL certificate</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>localhost</td>
     </tr>
   </tbody>
@@ -216,21 +216,21 @@ ionic ssl generate [options]
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>密钥的位数</p>
+          <p>Number of bits in the key</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-b</code>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>2048</td>
     </tr>
   </tbody>

@@ -14,9 +14,12 @@ import Slots from '@ionic-internal/component-api/v5/radio-group/slots.md';
 
 # ion-radio-group
 
-单选按钮组（radio group）是一组[单选按钮](radio.md)的集合。它允许用户从一组选项中最多选择一个。当选中属于同一个单选按钮组中的某个按钮时，之前在该组内被选中的按钮会自动取消选中。
+A radio group is a group of [radio buttons](radio.md). It allows
+a user to select at most one radio button from a set. Checking one radio
+button that belongs to a radio group unchecks any previous checked
+radio button within the same group.
 
-## 用法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -26,7 +29,7 @@ import Slots from '@ionic-internal/component-api/v5/radio-group/slots.md';
 <ion-list>
   <ion-radio-group>
     <ion-list-header>
-      <ion-label> 汽车制造商 </ion-label>
+      <ion-label> Auto Manufacturers </ion-label>
     </ion-list-header>
 
     <ion-item>
@@ -65,7 +68,7 @@ import Slots from '@ionic-internal/component-api/v5/radio-group/slots.md';
 <ion-list>
   <ion-radio-group>
     <ion-list-header>
-      <ion-label> 汽车制造商 </ion-label>
+      <ion-label> Auto Manufacturers </ion-label>
     </ion-list-header>
 
     <ion-item>
@@ -109,7 +112,7 @@ export const RadioGroupExample: React.FC = () => (
     <IonList>
       <IonRadioGroup>
         <IonListHeader>
-          <IonLabel>汽车制造商</IonLabel>
+          <IonLabel>Auto Manufacturers</IonLabel>
         </IonListHeader>
 
         <IonItem>
@@ -159,7 +162,7 @@ export class RadioGroupExample {
       <ion-list>
         <ion-radio-group>
           <ion-list-header>
-            <ion-label>汽车制造商</ion-label>
+            <ion-label>Auto Manufacturers</ion-label>
           </ion-list-header>
 
           <ion-item>
@@ -202,7 +205,7 @@ export class RadioGroupExample {
   <ion-list>
     <ion-radio-group>
       <ion-list-header>
-        <ion-label> 汽车制造商 </ion-label>
+        <ion-label> Auto Manufacturers </ion-label>
       </ion-list-header>
 
       <ion-item>
@@ -254,26 +257,26 @@ export class RadioGroupExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

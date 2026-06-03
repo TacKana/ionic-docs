@@ -1,5 +1,5 @@
 ---
-title: 支持 CSS 自定义属性的标签栏组件
+title: "ion-tab-bar"
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -12,8 +12,8 @@ import CustomProps from '@ionic-internal/component-api/v8/tab-bar/custom-props.m
 import Slots from '@ionic-internal/component-api/v8/tab-bar/slots.md';
 
 <head>
-  <title>ion-tab-bar：支持 CSS 自定义属性的标签栏组件</title>
-  <meta name="description" content="标签栏组件包含一组标签按钮，必须放置在标签组件内部以实现通信。了解更多关于其用法和 CSS 自定义属性的信息。" />
+  <title>ion-tab-bar：具有 CSS 自定义属性的选项卡栏组件</title>
+  <meta name="description" content="选项卡栏组件包含一组选项卡按钮，并且必须在 tabs 内部提供选项卡栏以进行通信。阅读更多关于用法和 CSS 自定义属性的信息。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -21,12 +21,12 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-标签栏是一个包含一组[标签按钮](tab-button.md)的 UI 组件。必须将其放置在[标签组件](tabs.md)内部，以便与各个[标签页](tab.md)进行通信。
+选项卡栏是一个 UI 组件，包含一组[选项卡按钮](tab-button.md)。必须在 [tabs](tabs.md) 内部提供选项卡栏，以便与每个[选项卡](tab.md)进行通信。
 
 
 
 
-## 使用方法
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -34,7 +34,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ```html
 <ion-tabs>
-  <!-- 标签栏 -->
+  <!-- 选项卡栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="account">
       <ion-icon name="person"></ion-icon>
@@ -56,12 +56,12 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ```html
 <ion-tabs>
-  <!-- 标签视图 -->
+  <!-- 选项卡视图 -->
   <ion-tab tab="account"></ion-tab>
   <ion-tab tab="contact"></ion-tab>
   <ion-tab tab="settings"></ion-tab>
 
-  <!-- 标签栏 -->
+  <!-- 选项卡栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="account">
       <ion-icon name="person"></ion-icon>
@@ -89,7 +89,7 @@ import { call, person, settings } from 'ionicons/icons';
 export const TabBarExample: React.FC = () => (
   <IonContent>
     <IonTabs>
-      {/*-- 标签栏 --*/}
+      {/*-- 选项卡栏 --*/}
       <IonTabBar slot="bottom">
         <IonTabButton tab="account">
           <IonIcon icon={person} />
@@ -115,7 +115,7 @@ export const TabBarExample: React.FC = () => (
 ```html
 <template>
   <ion-tabs>
-    <!-- 标签栏 -->
+    <!-- 选项卡栏 -->
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="account">
         <ion-icon :icon="person"></ion-icon>
@@ -140,9 +140,9 @@ import { call, person, settings } from 'ionicons/icons';
 
 </Tabs>
 
-## 标签按钮中的徽章
+## 选项卡按钮中的徽章
 
-可以在标签按钮内添加徽章，通常用于指示通知或高亮显示与该元素相关的附加项目。
+可以在选项卡按钮内添加徽章，通常用于指示通知或突出显示与元素关联的其他项目。
 
 :::info
 空徽章仅适用于 `md` 模式。

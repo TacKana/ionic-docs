@@ -14,28 +14,28 @@ import Slots from '@ionic-internal/component-api/v5/card-header/slots.md';
 
 # ion-card-header
 
-`ion-card-header` 是 `ion-card` 的头部组件。
+`ion-card-header` is a header component for `ion-card`.
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

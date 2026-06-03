@@ -7,22 +7,22 @@ function Example() {
     <IonList>
       <IonRadioGroup allowEmptySelection={true} value="turtles">
         <IonItem>
-          <IonLabel>狗狗</IonLabel>
+          <IonLabel>Dogs</IonLabel>
           <IonRadio slot="end" value="dogs"></IonRadio>
         </IonItem>
 
         <IonItem>
-          <IonLabel>猫咪</IonLabel>
+          <IonLabel>Cats</IonLabel>
           <IonRadio slot="end" value="cats"></IonRadio>
         </IonItem>
 
         <IonItem>
-          <IonLabel>乌龟</IonLabel>
+          <IonLabel>Turtles</IonLabel>
           <IonRadio slot="end" value="turtles"></IonRadio>
         </IonItem>
 
         <IonItem>
-          <IonLabel>鱼</IonLabel>
+          <IonLabel>Fish</IonLabel>
           <IonRadio slot="end" value="fish"></IonRadio>
         </IonItem>
       </IonRadioGroup>

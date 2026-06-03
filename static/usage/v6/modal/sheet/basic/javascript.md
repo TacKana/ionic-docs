@@ -5,11 +5,11 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-button id="open-modal" expand="block">打开底部模态窗</ion-button>
+  <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button>
 
   <ion-modal trigger="open-modal" initial-breakpoint="0.25">
     <ion-content>
-      <ion-searchbar placeholder="搜索"></ion-searchbar>
+      <ion-searchbar placeholder="Search"></ion-searchbar>
       <ion-list>
         <ion-item>
           <ion-avatar slot="start">
@@ -17,7 +17,7 @@
           </ion-avatar>
           <ion-label>
             <h2>Connor Smith</h2>
-            <p>销售代表</p>
+            <p>Sales Rep</p>
           </ion-label>
         </ion-item>
         <ion-item>
@@ -26,7 +26,7 @@
           </ion-avatar>
           <ion-label>
             <h2>Daniel Smith</h2>
-            <p>产品设计师</p>
+            <p>Product Designer</p>
           </ion-label>
         </ion-item>
         <ion-item>
@@ -35,7 +35,7 @@
           </ion-avatar>
           <ion-label>
             <h2>Greg Smith</h2>
-            <p>运营总监</p>
+            <p>Director of Operations</p>
           </ion-label>
         </ion-item>
         <ion-item>
@@ -44,7 +44,7 @@
           </ion-avatar>
           <ion-label>
             <h2>Zoey Smith</h2>
-            <p>首席执行官</p>
+            <p>CEO</p>
           </ion-label>
         </ion-item>
       </ion-list>

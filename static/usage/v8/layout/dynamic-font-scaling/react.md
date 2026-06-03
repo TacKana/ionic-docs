@@ -29,7 +29,7 @@ function Example() {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/"></IonBackButton>
           </IonButtons>
-          <IonTitle>标题</IonTitle>
+          <IonTitle>Title</IonTitle>
           <IonButtons slot="end">
             <IonButton>
               <IonIcon icon={create} slot="icon-only"></IonIcon>
@@ -40,31 +40,31 @@ function Example() {
       <IonContent color="light">
         <IonList inset={true}>
           <IonItem>
-            <IonInput label="姓名"></IonInput>
+            <IonInput label="Name"></IonInput>
           </IonItem>
           <IonItem>
-            <IonCheckbox>免费领取小狗</IonCheckbox>
+            <IonCheckbox>Check for a free puppy</IonCheckbox>
           </IonItem>
           <IonItem>
-            <IonToggle>启用通知</IonToggle>
+            <IonToggle>Enable Notifications</IonToggle>
           </IonItem>
         </IonList>
 
         <IonList inset={true}>
           <IonItem>
-            <IonLabel>项目 1</IonLabel>
+            <IonLabel>Item 1</IonLabel>
           </IonItem>
           <IonItem>
-            <IonLabel>项目 2</IonLabel>
+            <IonLabel>Item 2</IonLabel>
           </IonItem>
           <IonItem>
-            <IonLabel>项目 3</IonLabel>
+            <IonLabel>Item 3</IonLabel>
           </IonItem>
         </IonList>
       </IonContent>
       <IonFooter>
         <IonToolbar>
-          <IonTitle>页脚</IonTitle>
+          <IonTitle>Footer</IonTitle>
         </IonToolbar>
       </IonFooter>
     </>

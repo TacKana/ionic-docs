@@ -14,32 +14,32 @@ import Slots from '@ionic-internal/component-api/v5/tab/slots.md';
 
 # ion-tab
 
-选项卡组件是 [tabs](tabs.md) 的子组件。每个选项卡可以包含应用的一个顶级导航栈或单个视图。一个应用可以拥有多个选项卡，每个选项卡都有自己独立的导航。
+The tab component is a child component of [tabs](tabs.md). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.
 
-> 注意：此组件仅适用于原生 JavaScript 项目。对于 Angular、React 和 Vue 应用，您无需使用 `ion-tab` 来声明选项卡组件。
+> Note: This component should only be used with vanilla JavaScript projects. For Angular, React, and Vue apps you do not need to use `ion-tab` to declare your tab components.
 
-有关配置选项卡的更多详细信息，请参阅 [tabs 文档](tabs.md)。
+See the [tabs documentation](tabs.md) for more details on configuring tabs.
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

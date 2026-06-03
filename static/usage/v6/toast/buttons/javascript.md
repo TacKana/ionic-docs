@@ -1,5 +1,5 @@
 ```html
-<ion-button onclick="presentToast()">点击我</ion-button>
+<ion-button onclick="presentToast()">Click Me</ion-button>
 <p id="handlerResult"></p>
 <p id="roleResult"></p>
 
@@ -9,21 +9,21 @@
 
   async function presentToast() {
     const toast = await toastController.create({
-      message: '你好，世界！',
+      message: 'Hello World!',
       duration: 3000,
       buttons: [
         {
-          text: '更多信息',
+          text: 'More Info',
           role: 'info',
           handler: () => {
-            handlerOutput.innerText = '点击了更多信息';
+            handlerOutput.innerText = 'More Info clicked';
           },
         },
         {
-          text: '关闭',
+          text: 'Dismiss',
           role: 'cancel',
           handler: () => {
-            handlerOutput.innerText = '点击了关闭';
+            handlerOutput.innerText = 'Dismiss clicked';
           },
         },
       ],
@@ -32,7 +32,7 @@
     await toast.present();
 
     const { role } = await toast.onDidDismiss();
-    roleOutput.innerText = `以角色 ${role} 关闭`;
+    roleOutput.innerText = `Dismissed with role: ${role}`;
   }
 </script>
 ```

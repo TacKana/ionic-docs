@@ -1,5 +1,5 @@
 ---
-title: '你的第一个 Ionic 应用：Angular 版'
+title: '你的第一个 Ionic 应用：Angular'
 sidebar_label: 构建你的第一个应用
 ---
 
@@ -7,13 +7,13 @@ sidebar_label: 构建你的第一个应用
   <title>使用 Angular 构建你的第一个 Ionic 移动应用 | Ionic Capacitor 相机</title>
   <meta
     name="description"
-    content="本 Angular 教程通过逐步创建一个真实应用来教授 Ionic 应用开发的基础知识。学习如何使用 Angular 运行你的第一个 Ionic 应用。"
+    content="本 Angular 教程通过逐步创建一个真实的应用程序，教你 Ionic 应用开发的基础知识。了解如何使用 Angular 运行你的第一个 Ionic 应用。"
   />
 </head>
 
-Ionic 的强大之处在于，只需一套代码库，你就能使用 HTML、CSS 和 JavaScript 为任何平台构建应用。跟随我们的步骤，通过逐步创建一个真实应用来学习 Ionic 应用开发的基础知识。
+Ionic 的伟大之处在于，只需一套代码库，你就可以使用 HTML、CSS 和 JavaScript 为任何平台构建应用。跟随我们一起通过逐步创建真实的应用程序来学习 Ionic 应用开发的基础知识。
 
-以下是最终应用在三大平台上的运行效果：
+以下是完成后的应用在三个平台上运行的效果：
 
 <iframe
   width="560"
@@ -25,37 +25,37 @@ Ionic 的强大之处在于，只需一套代码库，你就能使用 HTML、CSS
 ></iframe>
 
 :::note
-寻找涵盖 Ionic 4 和 Cordova 的旧版指南？[请查看这里](../developer-resources/guides/first-app-v4/intro.md)
+正在寻找本指南涵盖 Ionic 4 和 Cordova 的先前版本？[请参见这里。](../developer-resources/guides/first-app-v4/intro.md)
 :::
 
 ## 我们将构建什么
 
-我们将创建一个照片墙应用，能够使用设备相机拍照、在网格中显示照片，并将照片永久存储在设备上。
+我们将创建一个相册应用，能够使用设备相机拍摄照片，以网格形式显示，并永久存储在设备上。
 
 亮点包括：
 
-- 基于 Angular 的单一代码库，使用 Ionic Framework [UI 组件](../components.md)在网页、iOS 和 Android 上运行。
-- 使用 Ionic 官方原生应用运行时 [Capacitor](https://capacitorjs.com) 部署为原生 iOS 和 Android 移动应用。
-- 照片墙功能由 Capacitor [相机](../native/camera.md)、[文件系统](../native/filesystem.md)和[偏好设置](../native/preferences.md) API 提供支持。
+- 一个基于 Angular 的代码库，使用 Ionic Framework [UI 组件](../components.md)在 Web、iOS 和 Android 上运行。
+- 使用 Ionic 官方的原生应用运行时 [Capacitor](https://capacitorjs.com) 部署为原生 iOS 和 Android 移动应用。
+- 由 Capacitor [Camera](../native/camera.md)、[Filesystem](../native/filesystem.md) 和 [Preferences](../native/preferences.md) API 驱动的相册功能。
 
-在本指南中引用的[完整应用代码](https://github.com/ionic-team/tutorial-photo-gallery-angular)可在 GitHub 上找到。
+在 GitHub 上找到本指南中引用的[完整应用代码](https://github.com/ionic-team/tutorial-photo-gallery-angular)。
 
-## 下载必备工具
+## 下载所需工具
 
-立即下载并安装这些工具，以确保获得最佳的 Ionic 开发体验：
+立即下载并安装这些工具，以确保最佳的 Ionic 开发体验：
 
 - **Node.js** 用于与 Ionic 生态系统交互。[在此下载 LTS 版本](https://nodejs.org/en/)。
-- **代码编辑器** 用于……编写代码！我们推荐 [Visual Studio Code](https://code.visualstudio.com/)。
+- **代码编辑器**用于...编写代码！我们是 [Visual Studio Code](https://code.visualstudio.com/) 的粉丝。
 - **命令行界面/终端 (CLI)**：
-  - **Windows** 用户：为获得最佳 Ionic 体验，我们推荐使用内置命令行 (cmd) 或 Powershell CLI，并以管理员模式运行。
-  - **Mac/Linux** 用户：几乎任何终端都可以使用。
+  - **Windows** 用户：为获得最佳 Ionic 体验，我们建议使用内置的命令行 (cmd) 或 Powershell CLI，以管理员模式运行。
+  - **Mac/Linux** 用户：几乎任何终端都可以工作。
 
 ## 安装 Ionic 工具
 
-在命令行终端中运行以下命令，安装 Ionic CLI (`ionic`)、用于在设备和模拟器/仿真器上运行原生二进制文件的 `native-run`，以及用于生成原生应用图标和启动画面的 `cordova-res`：
+在命令行终端中运行以下命令安装 Ionic CLI (`ionic`)、`native-run`（用于在设备和模拟器上运行原生二进制文件）以及 `cordova-res`（用于生成原生应用图标和启动画面）：
 
 :::note
-要在 Visual Studio Code 中打开终端，请转到终端 -> 新建终端。
+要在 Visual Studio Code 中打开终端，请转到 Terminal -> New Terminal。
 :::
 
 ```shell
@@ -63,14 +63,14 @@ npm install -g @ionic/cli native-run cordova-res
 ```
 
 :::note
-`-g` 选项表示_全局安装_。当包全局安装时，可能会出现 `EACCES` 权限错误。
+`-g` 选项表示*全局安装*。当全局安装包时，可能会发生 `EACCES` 权限错误。
 
-考虑设置 npm 在不提升权限的情况下全局运行。更多信息请参见[解决权限错误](../developing/tips.md#resolving-permission-errors)。
+考虑设置 npm 以无提升权限的方式全局运行。更多信息请参见[解决权限错误](../developing/tips.md#解决权限错误)。
 :::
 
 ## 创建应用
 
-接下来，创建一个使用“标签页”起始模板并添加 Capacitor 以实现原生功能的 Ionic Angular 应用：
+接下来，创建一个使用"Tabs"启动模板并添加 Capacitor 以实现原生功能的 Ionic Angular 应用：
 
 ```shell
 ionic start photo-gallery tabs --type=angular
@@ -78,29 +78,29 @@ ionic start photo-gallery tabs --type=angular
 
 :::note
 
-当提示在 `NgModules` 和 `Standalone` 之间选择时，请选择 `NgModules`，因为本教程遵循 `NgModules` 方法。
+当提示在 `NgModules` 和 `Standalone` 之间选择时，选择 `NgModules`，因为本教程遵循 `NgModules` 方法。
 
 :::
 
-这个起始项目包含三个预构建页面和 Ionic 开发的最佳实践。有了现成的通用构建模块，我们可以轻松添加更多功能！
+这个启动项目包含了三个预构建页面和 Ionic 开发的最佳实践。有了现成的通用构建块，我们可以轻松添加更多功能！
 
-接下来，切换到应用文件夹：
+接下来，进入应用文件夹：
 
 ```shell
 cd photo-gallery
 ```
 
-接下来，我们需要安装必要的 Capacitor 插件以使应用的原生功能正常工作：
+接下来我们需要安装必要的 Capacitor 插件以使应用的原生功能工作：
 
 ```shell
 npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 ```
 
-### PWA 元素
+### PWA Elements
 
-一些 Capacitor 插件，包括[相机 API](../native/camera.md)，通过 Ionic [PWA 元素库](https://github.com/ionic-team/pwa-elements)提供基于 Web 的功能和 UI。
+某些 Capacitor 插件，包括 [Camera API](../native/camera.md)，通过 Ionic [PWA Elements 库](https://github.com/ionic-team/pwa-elements)提供基于 Web 的功能和 UI。
 
-它是一个单独的依赖项，因此接下来安装它：
+这是一个独立的依赖项，接下来安装它：
 
 ```shell
 npm install @ionic/pwa-elements
@@ -111,10 +111,10 @@ npm install @ionic/pwa-elements
 ```ts
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
-// 更改：添加以下导入
+// CHANGE: Add the following import
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
-// 更改：在 `bootstrapModule` 调用之前调用元素加载器
+// CHANGE: Call the element loader before the `bootstrapModule` call
 defineCustomElements(window);
 
 platformBrowserDynamic()
@@ -122,7 +122,7 @@ platformBrowserDynamic()
   .catch((err) => console.log(err));
 ```
 
-就这样！现在进入有趣的部分——让我们看看应用的实际运行效果。
+就是这样！现在是时候看看应用的效果了。
 
 ## 运行应用
 
@@ -132,13 +132,13 @@ platformBrowserDynamic()
 ionic serve
 ```
 
-看！你的 Ionic 应用现在正在 Web 浏览器中运行。你的大部分应用都可以直接在浏览器中构建和测试，从而大大提高了开发和测试速度。
+瞧！你的 Ionic 应用现在在 Web 浏览器中运行。你可以在浏览器中构建和测试大部分应用，大大提高了开发和测试速度。
 
-## 照片墙
+## 相册
 
-有三个标签页。点击“Tab2”标签页。这是一块空白画布，也是将其转变为照片墙的完美场所。Ionic CLI 具有实时重新加载功能，因此当你进行更改并保存时，应用会立即更新！
+这里有三个标签。点击"Tab2"标签。它是一个空白的面板，是将它变成相册的完美位置。Ionic CLI 具有 Live Reload 功能，因此当你进行更改并保存时，应用会立即更新！
 
-![动画 GIF，展示 Ionic 应用中的实时重新加载功能，代码更改会立即更新 Web 浏览器中的应用](/img/guides/first-app-cap-ng/email-photogallery.gif 'Ionic 应用中的实时重新加载功能')
+![显示 Ionic 应用中 Live Reload 功能的动画 GIF，代码更改立即反映在 Web 浏览器中。](/img/guides/first-app-cap-ng/email-photogallery.gif 'Ionic 应用中的 Live Reload 功能')
 
 打开 `/src/app/tab2/tab2.page.html`。我们看到：
 
@@ -160,21 +160,21 @@ ionic serve
 </ion-content>
 ```
 
-`ion-header` 代表顶部导航和工具栏，标题为“Tab 2”（由于支持 iOS [可折叠大标题](../api/title.md#collapsible-large-titles)，所以有两个）。将两个 `ion-title` 元素重命名为：
+`ion-header` 表示顶部导航和工具栏，标题为"Tab 2"（由于 iOS [可折叠大标题](../api/title.md#可折叠大标题) 支持，有两个标题）。将两个 `ion-title` 元素重命名为：
 
 ```html
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <!-- 更改：更新标题 -->
-    <ion-title> 照片墙 </ion-title>
+    <!-- CHANGE: Update title -->
+    <ion-title> Photo Gallery </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <!-- 更改：更新标题 -->
-      <ion-title size="large">照片墙</ion-title>
+      <!-- CHANGE: Update title -->
+      <ion-title size="large">Photo Gallery</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -182,35 +182,35 @@ ionic serve
 </ion-content>
 ```
 
-我们将应用的视觉元素放在 `<ion-content>` 中。在这里，我们将添加一个打开设备相机并显示相机捕获图像的按钮。首先在页面底部添加一个[浮动操作按钮](../api/fab.md) (FAB)，并将相机图像设置为图标。
+我们将应用的视觉部分放在 `<ion-content>` 中。在这种情况下，我们将在此处添加一个按钮，用于打开设备相机并显示相机拍摄的图像。首先在页面底部添加一个[浮动操作按钮](../api/fab.md) (FAB)，并将相机图像设置为图标。
 
 ```html
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>照片墙</ion-title>
+    <ion-title>Photo Gallery</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">照片墙</ion-title>
+      <ion-title size="large">Photo Gallery</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <!-- 更改：添加浮动操作按钮 -->
+  <!-- CHANGE: Add the floating action button -->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <!-- 更改：移除或注释掉 `app-explore-container` -->
+  <!-- CHANGE: Remove or comment out `app-explore-container` -->
   <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
 </ion-content>
 ```
 
-接下来，打开 `src/app/tabs/tabs.page.html`。将中间标签页按钮的标签更改为“照片”，并将 `ellipse` 图标更改为 `images`。
+接下来，打开 `src/app/tabs/tabs.page.html`。将中间标签按钮的标签改为"Photos"，并将 `ellipse` 图标改为 `images`。
 
 ```html
 <ion-tabs>
@@ -221,10 +221,10 @@ ionic serve
     </ion-tab-button>
 
     <ion-tab-button tab="tab2" href="/tabs/tab2">
-      <!-- 更改：更新图标 -->
+      <!-- CHANGE: Update icon -->
       <ion-icon aria-hidden="true" name="images"></ion-icon>
-      <!-- 更改：更新标签 -->
-      <ion-label>照片</ion-label>
+      <!-- CHANGE: Update label -->
+      <ion-label>Photos</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab3" href="/tabs/tab3">
@@ -235,4 +235,4 @@ ionic serve
 </ion-tabs>
 ```
 
-这只是我们使用 Ionic 可以做的所有酷炫功能的开始。接下来，在 Web 上实现拍照功能，然后为 iOS 和 Android 构建。
+这只是我们使用 Ionic 可以做的一系列酷炫事情的开端。接下来，在 Web 上实现相机拍照功能，然后为 iOS 和 Android 构建。

@@ -2,7 +2,7 @@
   "docs": [
     {
       "type": "category",
-      "label": "Getting Started",
+      "label": "入门",
       "collapsed": false,
       "items": [
         {
@@ -38,7 +38,7 @@
     },
     {
       "type": "category",
-      "label": "Developing",
+      "label": "开发",
       "collapsed": false,
       "items": [
         {
@@ -82,7 +82,7 @@
     },
     {
       "type": "category",
-      "label": "Layout",
+      "label": "布局",
       "collapsed": false,
       "items": [
         {
@@ -91,8 +91,8 @@
         },
         {
           "type": "link",
-          "label": "Responsive Grid",
-          "href": "/docs/api/grid"
+          "label": "响应式网格",
+          "href": "/api/grid"
         },
         {
           "type": "doc",
@@ -107,7 +107,7 @@
     },
     {
       "type": "category",
-      "label": "Theming",
+      "label": "主题",
       "collapsed": false,
       "items": [
         {
@@ -160,7 +160,7 @@
         },
         {
           "type": "category",
-          "label": "Build Your First App",
+          "label": "构建你的第一个应用",
           "items": [
             {
               "type": "doc",
@@ -252,7 +252,7 @@
         },
         {
           "type": "category",
-          "label": "Build Your First App",
+          "label": "构建你的第一个应用",
           "items": [
             {
               "type": "doc",
@@ -348,7 +348,7 @@
         },
         {
           "type": "category",
-          "label": "Build Your First App",
+          "label": "构建你的第一个应用",
           "items": [
             {
               "type": "doc",
@@ -439,7 +439,7 @@
     },
     {
       "type": "category",
-      "label": "Utilities",
+      "label": "工具",
       "collapsed": false,
       "items": [
         {
@@ -455,7 +455,7 @@
     },
     {
       "type": "category",
-      "label": "Deployment",
+      "label": "部署",
       "collapsed": false,
       "items": [
         {
@@ -479,7 +479,7 @@
     },
     {
       "type": "category",
-      "label": "Techniques",
+      "label": "技术",
       "collapsed": false,
       "items": [
         {
@@ -491,7 +491,7 @@
     },
     {
       "type": "category",
-      "label": "Troubleshooting",
+      "label": "故障排除",
       "collapsed": false,
       "items": [
         {
@@ -519,7 +519,7 @@
     },
     {
       "type": "category",
-      "label": "核心概念 - 基础",
+      "label": "核心概念",
       "collapsed": false,
       "items": [
         {
@@ -543,7 +543,7 @@
     },
     {
       "type": "category",
-      "label": "Contributing",
+      "label": "贡献",
       "collapsed": false,
       "items": [
         {
@@ -559,7 +559,7 @@
     },
     {
       "type": "category",
-      "label": "Reference",
+      "label": "参考",
       "collapsed": false,
       "items": [
         {
@@ -576,7 +576,7 @@
         },
         {
           "type": "link",
-          "label": "GitHub Changelog",
+          "label": "GitHub 更新日志",
           "href": "https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md"
         },
         {
@@ -598,7 +598,7 @@
   "api": [
     {
       "type": "category",
-      "label": "Getting Started",
+      "label": "入门",
       "collapsed": false,
       "items": [
         {
@@ -610,7 +610,7 @@
     },
     {
       "type": "category",
-      "label": "Action Sheet",
+      "label": "操作面板",
       "collapsed": false,
       "items": [
         {
@@ -622,7 +622,7 @@
     },
     {
       "type": "category",
-      "label": "Accordion",
+      "label": "折叠面板",
       "collapsed": false,
       "items": [
         {
@@ -638,7 +638,7 @@
     },
     {
       "type": "category",
-      "label": "Alert",
+      "label": "警告框",
       "collapsed": false,
       "items": [
         {
@@ -650,7 +650,7 @@
     },
     {
       "type": "category",
-      "label": "Badge",
+      "label": "徽章",
       "collapsed": false,
       "items": [
         {
@@ -662,7 +662,7 @@
     },
     {
       "type": "category",
-      "label": "Breadcrumb",
+      "label": "面包屑",
       "collapsed": false,
       "items": [
         {
@@ -678,7 +678,7 @@
     },
     {
       "type": "category",
-      "label": "Button",
+      "label": "按钮",
       "collapsed": false,
       "items": [
         {
@@ -694,7 +694,7 @@
     },
     {
       "type": "category",
-      "label": "Card",
+      "label": "卡片",
       "collapsed": false,
       "items": [
         {
@@ -722,7 +722,7 @@
     },
     {
       "type": "category",
-      "label": "Checkbox",
+      "label": "复选框",
       "collapsed": false,
       "items": [
         {
@@ -734,7 +734,7 @@
     },
     {
       "type": "category",
-      "label": "Chip",
+      "label": "标签",
       "collapsed": false,
       "items": [
         {
@@ -746,7 +746,7 @@
     },
     {
       "type": "category",
-      "label": "Content",
+      "label": "内容",
       "collapsed": false,
       "items": [
         {
@@ -762,7 +762,7 @@
     },
     {
       "type": "category",
-      "label": "Date & Time Pickers",
+      "label": "日期和时间选择器",
       "collapsed": false,
       "items": [
         {
@@ -782,7 +782,7 @@
     },
     {
       "type": "category",
-      "label": "Floating Action Button",
+      "label": "浮动操作按钮",
       "collapsed": false,
       "items": [
         {
@@ -802,7 +802,7 @@
     },
     {
       "type": "category",
-      "label": "Grid",
+      "label": "网格",
       "collapsed": false,
       "items": [
         {
@@ -822,7 +822,7 @@
     },
     {
       "type": "category",
-      "label": "Infinite Scroll",
+      "label": "无限滚动",
       "collapsed": false,
       "items": [
         {
@@ -838,7 +838,7 @@
     },
     {
       "type": "category",
-      "label": "Icons",
+      "label": "图标",
       "collapsed": false,
       "items": [
         {
@@ -850,7 +850,7 @@
     },
     {
       "type": "category",
-      "label": "Input",
+      "label": "输入框",
       "collapsed": false,
       "items": [
         {
@@ -866,7 +866,7 @@
     },
     {
       "type": "category",
-      "label": "Item",
+      "label": "项目",
       "collapsed": false,
       "items": [
         {
@@ -906,7 +906,7 @@
     },
     {
       "type": "category",
-      "label": "List",
+      "label": "列表",
       "collapsed": false,
       "items": [
         {
@@ -926,7 +926,7 @@
     },
     {
       "type": "category",
-      "label": "Media",
+      "label": "媒体",
       "collapsed": false,
       "items": [
         {
@@ -950,7 +950,7 @@
     },
     {
       "type": "category",
-      "label": "Menu",
+      "label": "菜单",
       "collapsed": false,
       "items": [
         {
@@ -974,7 +974,7 @@
     },
     {
       "type": "category",
-      "label": "Modal",
+      "label": "模态框",
       "collapsed": false,
       "items": [
         {
@@ -990,7 +990,7 @@
     },
     {
       "type": "category",
-      "label": "Navigation",
+      "label": "导航",
       "collapsed": false,
       "items": [
         {
@@ -1006,7 +1006,7 @@
     },
     {
       "type": "category",
-      "label": "Popover",
+      "label": "弹出框",
       "collapsed": false,
       "items": [
         {
@@ -1018,7 +1018,7 @@
     },
     {
       "type": "category",
-      "label": "Progress Indicators",
+      "label": "进度指示器",
       "collapsed": false,
       "items": [
         {
@@ -1042,7 +1042,7 @@
     },
     {
       "type": "category",
-      "label": "Radio",
+      "label": "单选按钮",
       "collapsed": false,
       "items": [
         {
@@ -1058,7 +1058,7 @@
     },
     {
       "type": "category",
-      "label": "Range",
+      "label": "范围",
       "collapsed": false,
       "items": [
         {
@@ -1070,7 +1070,7 @@
     },
     {
       "type": "category",
-      "label": "Refresher",
+      "label": "刷新器",
       "collapsed": false,
       "items": [
         {
@@ -1086,7 +1086,7 @@
     },
     {
       "type": "category",
-      "label": "Reorder",
+      "label": "重新排序",
       "collapsed": false,
       "items": [
         {
@@ -1102,7 +1102,7 @@
     },
     {
       "type": "category",
-      "label": "Routing",
+      "label": "路由",
       "collapsed": false,
       "items": [
         {
@@ -1130,7 +1130,7 @@
     },
     {
       "type": "category",
-      "label": "Searchbar",
+      "label": "搜索栏",
       "collapsed": false,
       "items": [
         {
@@ -1142,7 +1142,7 @@
     },
     {
       "type": "category",
-      "label": "Segment",
+      "label": "分段",
       "collapsed": false,
       "items": [
         {
@@ -1158,7 +1158,7 @@
     },
     {
       "type": "category",
-      "label": "Select",
+      "label": "选择器",
       "collapsed": false,
       "items": [
         {
@@ -1174,7 +1174,7 @@
     },
     {
       "type": "category",
-      "label": "Slides",
+      "label": "幻灯片",
       "collapsed": false,
       "items": [
         {
@@ -1190,7 +1190,7 @@
     },
     {
       "type": "category",
-      "label": "Tabs",
+      "label": "标签页",
       "collapsed": false,
       "items": [
         {
@@ -1214,7 +1214,7 @@
     },
     {
       "type": "category",
-      "label": "Toast",
+      "label": "提示框",
       "collapsed": false,
       "items": [
         {
@@ -1226,7 +1226,7 @@
     },
     {
       "type": "category",
-      "label": "Toggle",
+      "label": "开关",
       "collapsed": false,
       "items": [
         {
@@ -1238,7 +1238,7 @@
     },
     {
       "type": "category",
-      "label": "Toolbar",
+      "label": "工具栏",
       "collapsed": false,
       "items": [
         {
@@ -1270,7 +1270,7 @@
     },
     {
       "type": "category",
-      "label": "Typography",
+      "label": "排版",
       "collapsed": false,
       "items": [
         {
@@ -1282,7 +1282,7 @@
     },
     {
       "type": "category",
-      "label": "Resources",
+      "label": "资源",
       "collapsed": false,
       "items": [
         {
@@ -1296,7 +1296,7 @@
   "cli": [
     {
       "type": "category",
-      "label": "CLI Documentation",
+      "label": "CLI 文档",
       "collapsed": false,
       "items": [
         {
@@ -1317,7 +1317,7 @@
         },
         {
           "type": "link",
-          "label": "Changelog",
+          "label": "更新日志",
           "href": "https://github.com/ionic-team/ionic-cli/blob/develop/packages/@ionic/cli/CHANGELOG.md"
         }
       ],
@@ -1325,7 +1325,7 @@
     },
     {
       "type": "category",
-      "label": "Command Reference",
+      "label": "命令参考",
       "collapsed": false,
       "items": [
         {
@@ -1339,7 +1339,7 @@
   "native": [
     {
       "type": "category",
-      "label": "Getting Started",
+      "label": "入门",
       "collapsed": false,
       "items": [
         {
@@ -1359,7 +1359,7 @@
     },
     {
       "type": "category",
-      "label": "Plugins",
+      "label": "插件",
       "collapsed": false,
       "items": [
         {

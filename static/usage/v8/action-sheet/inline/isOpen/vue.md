@@ -1,9 +1,9 @@
 ```html
 <template>
-  <ion-button @click="setOpen(true)">打开</ion-button>
+  <ion-button @click="setOpen(true)">Open</ion-button>
   <ion-action-sheet
     :is-open="isOpen"
-    header="操作选项"
+    header="Actions"
     :buttons="actionSheetButtons"
     @didDismiss="setOpen(false)"
   ></ion-action-sheet>
@@ -16,20 +16,20 @@
   const isOpen = ref(false);
   const actionSheetButtons = [
     {
-      text: '删除',
+      text: 'Delete',
       role: 'destructive',
       data: {
         action: 'delete',
       },
     },
     {
-      text: '分享',
+      text: 'Share',
       data: {
         action: 'share',
       },
     },
     {
-      text: '取消',
+      text: 'Cancel',
       role: 'cancel',
       data: {
         action: 'cancel',

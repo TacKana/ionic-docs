@@ -2,13 +2,13 @@
 <template>
   <ion-segment value="custom">
     <ion-segment-button value="custom">
-      <ion-label>自定义</ion-label>
+      <ion-label>Custom</ion-label>
     </ion-segment-button>
     <ion-segment-button value="segment">
-      <ion-label>分段</ion-label>
+      <ion-label>Segment</ion-label>
     </ion-segment-button>
     <ion-segment-button value="buttons">
-      <ion-label>按钮</ion-label>
+      <ion-label>Buttons</ion-label>
     </ion-segment-button>
   </ion-segment>
 </template>
@@ -22,7 +22,7 @@
     background: #08a391;
   }
 
-  /* Material Design 样式 */
+  /* Material Design styles */
   ion-segment-button.md::part(native) {
     color: #000;
   }
@@ -35,7 +35,7 @@
     height: 4px;
   }
 
-  /* iOS 样式 */
+  /* iOS styles */
   ion-segment-button.ios::part(native) {
     color: #08a391;
   }

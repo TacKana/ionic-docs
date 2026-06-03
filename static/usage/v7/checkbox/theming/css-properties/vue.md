@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-checkbox>主题化复选框</ion-checkbox>
+  <ion-checkbox>Themed checkbox</ion-checkbox>
 </template>
 
 <script setup lang="ts">

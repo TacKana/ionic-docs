@@ -50,10 +50,10 @@ function Example() {
   return (
     <IonCard ref={card}>
       <IonCardHeader>
-        <IonCardSubtitle>拖拽屏幕</IonCardSubtitle>
+        <IonCardSubtitle>Pan the Screen</IonCardSubtitle>
       </IonCardHeader>
       <IonCardContent>
-        <p ref={debug}>交互后，手势信息将在此显示。</p>
+        <p ref={debug}>Gesture information will display after interaction.</p>
       </IonCardContent>
     </IonCard>
   );

@@ -7,7 +7,7 @@ function Example() {
 
   const getValidationState = (value: string) => ({
     class: value.length === 4 ? 'ion-valid' : 'ion-invalid',
-    text: value.length === 4 ? '有效' : '无效',
+    text: value.length === 4 ? 'Valid' : 'Invalid',
   });
 
   const handleInput = (index: number, value: string) => {
@@ -17,10 +17,10 @@ function Example() {
   return (
     <>
       <IonInputOtp disabled value="1234">
-        禁用
+        Disabled
       </IonInputOtp>
       <IonInputOtp readonly value="1234">
-        只读
+        Readonly
       </IonInputOtp>
 
       {inputs.map((input, index) => (

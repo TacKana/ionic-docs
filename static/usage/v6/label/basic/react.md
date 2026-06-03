@@ -5,7 +5,7 @@ import { IonLabel } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonLabel>标签</IonLabel>
+      <IonLabel>Label</IonLabel>
     </>
   );
 }

@@ -5,9 +5,9 @@ export default function DeveloperExperts() {
   return (
     <div className={styles.developerExperts}>
       <header>
-        <h3 className={styles.developerExpertsTitle}>Featured Ionic Developer Expert Projects</h3>
+        <h3 className={styles.developerExpertsTitle}>精选 Ionic 开发者专家项目</h3>
         <p className={styles.developerExpertsDescription}>
-          Extend your knowledge of Ionic from premium educational materials made by community members.
+          通过社区成员制作的优质教育资源，扩展你的 Ionic 知识。
         </p>
       </header>
       <div className={styles.developerExpertsLinks}>

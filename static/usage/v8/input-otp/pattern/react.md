@@ -6,22 +6,22 @@ function Example() {
   return (
     <>
       <IonInputOtp pattern="[1-4]" value="123">
-        仅允许数字 1-4
+        Numbers 1-4 only
       </IonInputOtp>
       <IonInputOtp type="text" pattern="." value="!@#">
-        允许所有字符
+        All characters allowed
       </IonInputOtp>
       <IonInputOtp type="text" pattern="[A-Z]" autocapitalize="on" value="ABC">
-        仅允许大写拉丁字母
+        Capital Latin letters only
       </IonInputOtp>
       <IonInputOtp type="text" pattern="[\p{Script=Greek}]" value="αβγ">
-        仅允许希腊字符
+        Greek characters only
       </IonInputOtp>
       <IonInputOtp type="text" pattern="[\p{Script=Arabic}]" value="ابت">
-        仅允许阿拉伯字符
+        Arabic characters only
       </IonInputOtp>
       <IonInputOtp type="text" pattern="[\p{Script=Han}]" value="甲乙丙">
-        仅允许中文字符
+        Chinese characters only
       </IonInputOtp>
     </>
   );

@@ -6,34 +6,34 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonLabel>默认项目</IonLabel>
+        <IonLabel>Default Item</IonLabel>
       </IonItem>
       <IonItem color="primary">
-        <IonLabel>主色项目</IonLabel>
+        <IonLabel>Primary Item</IonLabel>
       </IonItem>
       <IonItem color="secondary">
-        <IonLabel>次要项目</IonLabel>
+        <IonLabel>Secondary Item</IonLabel>
       </IonItem>
       <IonItem color="tertiary">
-        <IonLabel>第三色项目</IonLabel>
+        <IonLabel>Tertiary Item</IonLabel>
       </IonItem>
       <IonItem color="success">
-        <IonLabel>成功项目</IonLabel>
+        <IonLabel>Success Item</IonLabel>
       </IonItem>
       <IonItem color="warning">
-        <IonLabel>警告项目</IonLabel>
+        <IonLabel>Warning Item</IonLabel>
       </IonItem>
       <IonItem color="danger">
-        <IonLabel>危险项目</IonLabel>
+        <IonLabel>Danger Item</IonLabel>
       </IonItem>
       <IonItem color="light">
-        <IonLabel>浅色项目</IonLabel>
+        <IonLabel>Light Item</IonLabel>
       </IonItem>
       <IonItem color="medium">
-        <IonLabel>中等色项目</IonLabel>
+        <IonLabel>Medium Item</IonLabel>
       </IonItem>
       <IonItem color="dark">
-        <IonLabel>深色项目</IonLabel>
+        <IonLabel>Dark Item</IonLabel>
       </IonItem>
     </>
   );

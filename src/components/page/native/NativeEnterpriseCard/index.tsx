@@ -16,10 +16,9 @@ export default function NativeEnterpriseCard(props) {
       </div>
 
       <div className="heading-group">
-        <header>Ionic Enterprise SDK</header>
+        <header>Ionic 企业版 SDK</header>
         <p>
-          Premium, supported plugins, third-party integrations, and pre-built native solutions for building
-          enterprise-grade apps.
+          提供高级支持插件、第三方集成和预构建原生解决方案，助力构建企业级应用。
         </p>
       </div>
     </a>

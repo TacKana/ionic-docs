@@ -1,8 +1,8 @@
 ```html
 <ion-content class="ion-padding">
-  <ion-button id="open-toast">打开 Toast</ion-button>
+  <ion-button id="open-toast">Open Toast</ion-button>
   <ion-toast
-    message="此 Toast 可通过滑动操作关闭"
+    message="This toast can be swiped to dismiss"
     trigger="open-toast"
     swipeGesture="vertical"
     position="bottom"
@@ -11,7 +11,7 @@
 </ion-content>
 <ion-footer id="footer">
   <ion-toolbar>
-    <ion-title>页脚</ion-title>
+    <ion-title>Footer</ion-title>
   </ion-toolbar>
 </ion-footer>
 ```

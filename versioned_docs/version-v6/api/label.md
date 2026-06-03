@@ -2,18 +2,18 @@
 title: 'ion-label'
 ---
 
-import Props from '@ionic-internal/component-api/v6/label/props.md';
-import Events from '@ionic-internal/component-api/v6/label/events.md';
-import Methods from '@ionic-internal/component-api/v6/label/methods.md';
-import Parts from '@ionic-internal/component-api/v6/label/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/label/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v6/label/slots.md';
+import Props from '@ionic-internal/component-api/v7/label/props.md';
+import Events from '@ionic-internal/component-api/v7/label/events.md';
+import Methods from '@ionic-internal/component-api/v7/label/methods.md';
+import Parts from '@ionic-internal/component-api/v7/label/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/label/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v7/label/slots.md';
 
 <head>
-  <title>项目标签颜色与应用属性 | ion-label</title>
+  <title>ion-label：应用的项标签颜色和属性</title>
   <meta
     name="description"
-    content="Label 是一个包装元素，可与其他 Ionic 组件结合使用。通过 ion-label 轻松设计项目标签颜色和其他属性。"
+    content="标签是一个包装元素，可与其他 Ionic 组件结合使用。使用 ion-label 轻松设计项目标签颜色和其他属性。"
   />
 </head>
 
@@ -21,31 +21,27 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-Label 是一个包装元素，可与 `ion-item`、`ion-input`、`ion-toggle` 等组件结合使用。标签在项目内的位置可以是内联（inline）、固定（fixed）、堆叠（stacked）或浮动（floating）。
+标签（Label）是主要用于向[项目（Item）](./item.md)组件添加文本内容的元素。在指定可见标签时，标签也可以在表单控件组件（如[输入（Input）](./input.md)或[单选按钮（Radio）](./radio.md)）内部使用，但这不是必需的。
+
+项目内部标签的位置可以是内联、固定、堆叠或浮动。
 
 ## 基本用法
 
-import Basic from '@site/static/usage/v6/label/basic/index.md';
+import Basic from '@site/static/usage/v7/label/basic/index.md';
 
 <Basic />
 
 ## 项目标签
 
-import Item from '@site/static/usage/v6/label/item/index.md';
+import Item from '@site/static/usage/v7/label/item/index.md';
 
 <Item />
 
-## 输入框标签
-
-import Input from '@site/static/usage/v6/label/input/index.md';
-
-<Input />
-
-## 主题定制
+## 主题
 
 ### 颜色
 
-import Colors from '@site/static/usage/v6/label/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/label/theming/colors/index.md';
 
 <Colors />
 
@@ -61,7 +57,7 @@ import Colors from '@site/static/usage/v6/label/theming/colors/index.md';
 
 <Methods />
 
-## CSS 影子部件
+## CSS 阴影部分
 
 <Parts />
 

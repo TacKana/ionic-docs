@@ -13,10 +13,10 @@ import CustomProps from '@ionic-internal/component-api/v7/tab-bar/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/tab-bar/slots.md';
 
 <head>
-  <title>ion-tab-bar：支持 CSS 自定义属性的标签栏组件</title>
+  <title>ion-tab-bar：具有 CSS 自定义属性的标签栏组件</title>
   <meta
     name="description"
-    content="标签栏组件包含一组标签按钮，必须在标签页组件内部提供标签栏以实现通信。了解更多关于使用方法和 CSS 自定义属性的信息。"
+    content="标签栏组件包含一组标签按钮，必须在 tabs 内部提供标签栏以进行通信。阅读更多关于使用和 CSS 自定义属性的信息。"
   />
 </head>
 
@@ -24,9 +24,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-标签栏是一个包含一组[标签按钮](tab-button.md)的用户界面组件。必须在[标签页](tabs.md)组件内部提供标签栏，以便与各个[标签页](tab.md)进行通信。
+标签栏（Tab bar）是一个 UI 组件，包含一组[标签按钮（tab button）](tab-button.md)。标签栏必须在[tabs（标签页）](tabs.md)内部提供，以便与每个[标签（tab）](tab.md)进行通信。
 
-## 使用方法
+## 用法
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -148,7 +148,7 @@ export const TabBarExample: React.FC = () => (
 
 <Methods />
 
-## CSS 阴影部件
+## CSS 阴影部分
 
 <Parts />
 

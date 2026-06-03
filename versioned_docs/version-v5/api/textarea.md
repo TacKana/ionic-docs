@@ -14,50 +14,50 @@ import Slots from '@ionic-internal/component-api/v5/textarea/slots.md';
 
 # ion-textarea
 
-文本域组件用于多行文本输入。该组件内部渲染一个原生的 textarea 元素。通过控制原生 textarea，文本域组件的用户体验和交互性得到了提升。
+The textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.
 
-与原生的 textarea 元素不同，Ionic 文本域不支持从内部内容加载其值。文本域的值应通过 `value` 属性设置。
+Unlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.
 
-除了 Ionic 属性外，文本域组件还接受[原生 textarea 属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)。
+The textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.
 
-## 使用方法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- 默认文本域 -->
+<!-- Default textarea -->
 <ion-textarea></ion-textarea>
 
-<!-- 带有占位符的项目中的文本域 -->
+<!-- Textarea in an item with a placeholder -->
 <ion-item>
-  <ion-textarea placeholder="在此输入更多信息..."></ion-textarea>
+  <ion-textarea placeholder="Enter more information here..."></ion-textarea>
 </ion-item>
 
-<!-- 带有浮动标签的项目中的文本域 -->
+<!-- Textarea in an item with a floating label -->
 <ion-item>
-  <ion-label position="floating">描述</ion-label>
+  <ion-label position="floating">Description</ion-label>
   <ion-textarea></ion-textarea>
 </ion-item>
 
-<!-- 带有堆叠标签的项目中的禁用和只读文本域 -->
+<!-- Disabled and readonly textarea in an item with a stacked label -->
 <ion-item>
-  <ion-label position="stacked">摘要</ion-label>
-  <ion-textarea disabled readonly value="Ionic 使开发者能够构建高性能、高质量的移动应用。">
+  <ion-label position="stacked">Summary</ion-label>
+  <ion-textarea disabled readonly value="Ionic enables developers to build performant, high-quality mobile apps.">
   </ion-textarea>
 </ion-item>
 
-<!-- 编辑时清除值的文本域 -->
+<!-- Textarea that clears the value on edit -->
 <ion-item>
-  <ion-label>评论</ion-label>
+  <ion-label>Comment</ion-label>
   <ion-textarea clearOnEdit="true"></ion-textarea>
 </ion-item>
 
-<!-- 自定义行数和列数的文本域 -->
+<!-- Textarea with custom number of rows and cols -->
 <ion-item>
-  <ion-label>备注</ion-label>
-  <ion-textarea rows="6" cols="20" placeholder="在此输入任何备注..."></ion-textarea>
+  <ion-label>Notes</ion-label>
+  <ion-textarea rows="6" cols="20" placeholder="Enter any notes here..."></ion-textarea>
 </ion-item>
 ```
 
@@ -66,37 +66,37 @@ import Slots from '@ionic-internal/component-api/v5/textarea/slots.md';
 <TabItem value="javascript">
 
 ```html
-<!-- 默认文本域 -->
+<!-- Default textarea -->
 <ion-textarea></ion-textarea>
 
-<!-- 带有占位符的项目中的文本域 -->
+<!-- Textarea in an item with a placeholder -->
 <ion-item>
-  <ion-textarea placeholder="在此输入更多信息..."></ion-textarea>
+  <ion-textarea placeholder="Enter more information here..."></ion-textarea>
 </ion-item>
 
-<!-- 带有浮动标签的项目中的文本域 -->
+<!-- Textarea in an item with a floating label -->
 <ion-item>
-  <ion-label position="floating">描述</ion-label>
+  <ion-label position="floating">Description</ion-label>
   <ion-textarea></ion-textarea>
 </ion-item>
 
-<!-- 带有堆叠标签的项目中的禁用和只读文本域 -->
+<!-- Disabled and readonly textarea in an item with a stacked label -->
 <ion-item>
-  <ion-label position="stacked">摘要</ion-label>
-  <ion-textarea disabled readonly value="Ionic 使开发者能够构建高性能、高质量的移动应用。">
+  <ion-label position="stacked">Summary</ion-label>
+  <ion-textarea disabled readonly value="Ionic enables developers to build performant, high-quality mobile apps.">
   </ion-textarea>
 </ion-item>
 
-<!-- 编辑时清除值的文本域 -->
+<!-- Textarea that clears the value on edit -->
 <ion-item>
-  <ion-label>评论</ion-label>
+  <ion-label>Comment</ion-label>
   <ion-textarea clear-on-edit="true"></ion-textarea>
 </ion-item>
 
-<!-- 自定义行数和列数的文本域 -->
+<!-- Textarea with custom number of rows and cols -->
 <ion-item>
-  <ion-label>备注</ion-label>
-  <ion-textarea rows="6" cols="20" placeholder="在此输入任何备注..."></ion-textarea>
+  <ion-label>Notes</ion-label>
+  <ion-textarea rows="6" cols="20" placeholder="Enter any notes here..."></ion-textarea>
 </ion-item>
 ```
 
@@ -126,50 +126,50 @@ export const TextAreaExamples: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>文本域示例</IonTitle>
+          <IonTitle>TextArea Examples</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItemDivider>默认文本域</IonItemDivider>
+          <IonItemDivider>Default textarea</IonItemDivider>
           <IonItem>
             <IonTextarea value={text} onIonChange={(e) => setText(e.detail.value!)}></IonTextarea>
           </IonItem>
 
-          <IonItemDivider>带有占位符的项目中的文本域</IonItemDivider>
+          <IonItemDivider>Textarea in an item with a placeholder</IonItemDivider>
           <IonItem>
             <IonTextarea
-              placeholder="在此输入更多信息..."
+              placeholder="Enter more information here..."
               value={text}
               onIonChange={(e) => setText(e.detail.value!)}
             ></IonTextarea>
           </IonItem>
 
-          <IonItemDivider>带有浮动标签的项目中的文本域</IonItemDivider>
+          <IonItemDivider>Textarea in an item with a floating label</IonItemDivider>
           <IonItem>
-            <IonLabel position="floating">描述</IonLabel>
+            <IonLabel position="floating">Description</IonLabel>
             <IonTextarea value={text} onIonChange={(e) => setText(e.detail.value!)}></IonTextarea>
           </IonItem>
 
-          <IonItemDivider>带有堆叠标签的项目中的禁用和只读文本域</IonItemDivider>
+          <IonItemDivider>Disabled and readonly textarea in an item with a stacked label</IonItemDivider>
           <IonItem>
-            <IonLabel position="stacked">摘要</IonLabel>
+            <IonLabel position="stacked">Summary</IonLabel>
             <IonTextarea disabled readonly value={text} onIonChange={(e) => setText(e.detail.value!)}></IonTextarea>
           </IonItem>
 
-          <IonItemDivider>编辑时清除值的文本域</IonItemDivider>
+          <IonItemDivider>Textarea that clears the value on edit</IonItemDivider>
           <IonItem>
-            <IonLabel>评论</IonLabel>
+            <IonLabel>Comment</IonLabel>
             <IonTextarea clearOnEdit={true} value={text} onIonChange={(e) => setText(e.detail.value!)}></IonTextarea>
           </IonItem>
 
-          <IonItemDivider>自定义行数和列数的文本域</IonItemDivider>
+          <IonItemDivider>Textarea with custom number of rows and cols</IonItemDivider>
           <IonItem>
-            <IonLabel>备注</IonLabel>
+            <IonLabel>Notes</IonLabel>
             <IonTextarea
               rows={6}
               cols={20}
-              placeholder="在此输入任何备注..."
+              placeholder="Enter any notes here..."
               value={text}
               onIonChange={(e) => setText(e.detail.value!)}
             ></IonTextarea>
@@ -195,40 +195,40 @@ import { Component, h } from '@stencil/core';
 export class TextareaExample {
   render() {
     return [
-      // 默认文本域
+      // Default textarea
       <ion-textarea></ion-textarea>,
 
-      // 带有占位符的项目中的文本域
+      // Textarea in an item with a placeholder
       <ion-item>
-        <ion-textarea placeholder="在此输入更多信息..."></ion-textarea>
+        <ion-textarea placeholder="Enter more information here..."></ion-textarea>
       </ion-item>,
 
-      // 带有浮动标签的项目中的文本域
+      // Textarea in an item with a floating label
       <ion-item>
-        <ion-label position="floating">描述</ion-label>
+        <ion-label position="floating">Description</ion-label>
         <ion-textarea></ion-textarea>
       </ion-item>,
 
-      // 带有堆叠标签的项目中的禁用和只读文本域
+      // Disabled and readonly textarea in an item with a stacked label
       <ion-item>
-        <ion-label position="stacked">摘要</ion-label>
+        <ion-label position="stacked">Summary</ion-label>
         <ion-textarea
           disabled
           readonly
-          value="Ionic 使开发者能够构建高性能、高质量的移动应用。"
+          value="Ionic enables developers to build performant, high-quality mobile apps."
         ></ion-textarea>
       </ion-item>,
 
-      // 编辑时清除值的文本域
+      // Textarea that clears the value on edit
       <ion-item>
-        <ion-label>评论</ion-label>
+        <ion-label>Comment</ion-label>
         <ion-textarea clearOnEdit={true}></ion-textarea>
       </ion-item>,
 
-      // 自定义行数和列数的文本域
+      // Textarea with custom number of rows and cols
       <ion-item>
-        <ion-label>备注</ion-label>
-        <ion-textarea rows={6} cols={20} placeholder="在此输入任何备注..."></ion-textarea>
+        <ion-label>Notes</ion-label>
+        <ion-textarea rows={6} cols={20} placeholder="Enter any notes here..."></ion-textarea>
       </ion-item>,
     ];
   }
@@ -241,37 +241,37 @@ export class TextareaExample {
 
 ```html
 <template>
-  <!-- 默认文本域 -->
+  <!-- Default textarea -->
   <ion-textarea></ion-textarea>
 
-  <!-- 带有占位符的项目中的文本域 -->
+  <!-- Textarea in an item with a placeholder -->
   <ion-item>
-    <ion-textarea placeholder="在此输入更多信息..."></ion-textarea>
+    <ion-textarea placeholder="Enter more information here..."></ion-textarea>
   </ion-item>
 
-  <!-- 带有浮动标签的项目中的文本域 -->
+  <!-- Textarea in an item with a floating label -->
   <ion-item>
-    <ion-label position="floating">描述</ion-label>
+    <ion-label position="floating">Description</ion-label>
     <ion-textarea></ion-textarea>
   </ion-item>
 
-  <!-- 带有堆叠标签的项目中的禁用和只读文本域 -->
+  <!-- Disabled and readonly textarea in an item with a stacked label -->
   <ion-item>
-    <ion-label position="stacked">摘要</ion-label>
-    <ion-textarea disabled readonly value="Ionic 使开发者能够构建高性能、高质量的移动应用。">
+    <ion-label position="stacked">Summary</ion-label>
+    <ion-textarea disabled readonly value="Ionic enables developers to build performant, high-quality mobile apps.">
     </ion-textarea>
   </ion-item>
 
-  <!-- 编辑时清除值的文本域 -->
+  <!-- Textarea that clears the value on edit -->
   <ion-item>
-    <ion-label>评论</ion-label>
+    <ion-label>Comment</ion-label>
     <ion-textarea clear-on-edit="true"></ion-textarea>
   </ion-item>
 
-  <!-- 自定义行数和列数的文本域 -->
+  <!-- Textarea with custom number of rows and cols -->
   <ion-item>
-    <ion-label>备注</ion-label>
-    <ion-textarea rows="6" cols="20" placeholder="在此输入任何备注..."></ion-textarea>
+    <ion-label>Notes</ion-label>
+    <ion-textarea rows="6" cols="20" placeholder="Enter any notes here..."></ion-textarea>
   </ion-item>
 </template>
 
@@ -289,26 +289,26 @@ export class TextareaExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

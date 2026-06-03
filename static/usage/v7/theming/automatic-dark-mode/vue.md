@@ -5,7 +5,7 @@
       <ion-buttons slot="start">
         <ion-back-button default-href="#"></ion-back-button>
       </ion-buttons>
-      <ion-title>显示设置</ion-title>
+      <ion-title>Display</ion-title>
       <ion-buttons slot="end">
         <ion-button color="dark">
           <ion-icon slot="icon-only" :ios="personCircleOutline" :md="personCircle"></ion-icon>
@@ -15,15 +15,15 @@
   </ion-header>
 
   <ion-content>
-    <ion-list-header>外观</ion-list-header>
+    <ion-list-header>Appearance</ion-list-header>
     <ion-list :inset="true">
-      <ion-item :button="true">文字大小</ion-item>
+      <ion-item :button="true">Text Size</ion-item>
       <ion-item>
-        <ion-toggle justify="space-between">粗体文本</ion-toggle>
+        <ion-toggle justify="space-between">Bold Text</ion-toggle>
       </ion-item>
     </ion-list>
 
-    <ion-list-header>亮度</ion-list-header>
+    <ion-list-header>Brightness</ion-list-header>
     <ion-list :inset="true">
       <ion-item>
         <ion-range value="40">
@@ -32,14 +32,14 @@
         </ion-range>
       </ion-item>
       <ion-item>
-        <ion-toggle justify="space-between" checked>原彩显示</ion-toggle>
+        <ion-toggle justify="space-between" checked>True Tone</ion-toggle>
       </ion-item>
     </ion-list>
 
     <ion-list :inset="true">
       <ion-item :button="true">
-        <ion-label>夜览</ion-label>
-        <ion-text slot="end" color="medium">晚上 9:00 至 早上 8:00</ion-text>
+        <ion-label>Night Shift</ion-label>
+        <ion-text slot="end" color="medium">9:00 PM to 8:00 AM</ion-text>
       </ion-item>
     </ion-list>
   </ion-content>
@@ -64,41 +64,41 @@
   } from '@ionic/vue';
   import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
 
-  // 使用 matchMedia 检查用户偏好
+  // Use matchMedia to check the user preference
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-  // 在 document.body 上添加或移除 "dark" 类
+  // Add or remove the "dark" class on the document body
   const toggleDarkTheme = (shouldAdd) => {
     document.body.classList.toggle('dark', shouldAdd);
   };
 
   toggleDarkTheme(prefersDark.matches);
 
-  // 监听 prefers-color-scheme 媒体查询的变化
+  // Listen for changes to the prefers-color-scheme media query
   prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
 </script>
 
 <style>
   /*
-  * 可选 CSS
+  * Optional CSS
   * -----------------------------------
   */
 
-  /* 在 iOS 浅色模式下设置不同的背景和项目背景 */
+  /* This sets a different background and item background in light mode on ios */
   .ios body {
     --ion-background-color: #f2f2f6;
     --ion-toolbar-background: var(--ion-background-color);
     --ion-item-background: #fff;
   }
 
-  /* 在 Material Design 浅色模式下设置不同的背景和项目背景 */
+  /* This sets a different background and item background in light mode on md */
   .md body {
     --ion-background-color: #f9f9f9;
     --ion-toolbar-background: var(--ion-background-color);
     --ion-item-background: #fff;
   }
 
-  /* 为切换主题时发生的闪烁效果添加此样式 */
+  /* This is added for the flashing that happens when toggling between themes */
   ion-item {
     --transition: none;
   }

@@ -47,7 +47,7 @@ const ControlButton = forwardRef(
     );
     if (disabled) {
       return (
-        <Tippy theme="playground" arrow={false} placement="bottom" content={`Unavailable for ${label}`}>
+        <Tippy theme="playground" arrow={false} placement="bottom" content={`${label} 不可用`}>
           {/* Tippy requires a wrapper element for disabled elements: https://atomiks.github.io/tippyjs/v5/creating-tooltips/#disabled-elements */}
           <div>{controlButton}</div>
         </Tippy>
@@ -67,7 +67,7 @@ const CodeBlockButton = ({ language, usageTarget, setAndSaveUsageTarget, disable
       handleClick={() => {
         setAndSaveUsageTarget(langValue, buttonRef.current);
       }}
-      title={`Show ${language} code`}
+      title={`显示 ${language} 代码`}
       label={language}
       disabled={disabled}
       ref={buttonRef}
@@ -678,12 +678,12 @@ export default function Playground({
     return (
       <div className="playground__console">
         <div className="playground__console-header">
-          <code>Console</code>
+          <code>控制台</code>
         </div>
         <div className="playground__console-body" ref={consoleBodyRef}>
           {consoleItems.length === 0 ? (
             <div className="playground__console-item playground__console-item--placeholder">
-              <code>Console messages will appear here when logged from the example above.</code>
+              <code>控制台消息将在上方示例中调用 console.log 时显示在此处。</code>
             </div>
           ) : (
             consoleItems.map((consoleItem, i) => (
@@ -730,19 +730,19 @@ export default function Playground({
               disabled={mode && mode === 'md'}
               isSelected={isIOS}
               handleClick={() => setAndSaveMode(Mode.iOS)}
-              title="iOS mode"
+              title="iOS 模式"
               label="iOS"
             />
             <ControlButton
               disabled={mode && mode === 'ios'}
               isSelected={isMD}
               handleClick={() => setAndSaveMode(Mode.MD)}
-              title="MD mode"
+              title="MD 模式"
               label="MD"
             />
           </div>
           <div className="playground__control-group playground__control-group--end">
-            <Tippy theme="playground" arrow={false} placement="bottom" content="Open in StackBlitz">
+            <Tippy theme="playground" arrow={false} placement="bottom" content="在 StackBlitz 中打开">
               <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
                 <svg
                   aria-hidden="true"
@@ -766,8 +766,8 @@ export default function Playground({
               placement="bottom"
               content={
                 hasUsageTargetOptions
-                  ? 'For multi-file examples, use the copy buttons on the code blocks'
-                  : 'Copy source code'
+                  ? '多文件示例请使用代码块上的复制按钮'
+                  : '复制源代码'
               }
             >
               <button
@@ -793,7 +793,7 @@ export default function Playground({
                 </svg>
               </button>
             </Tippy>
-            <Tippy theme="playground" arrow={false} placement="bottom" content="Reset demo">
+            <Tippy theme="playground" arrow={false} placement="bottom" content="重置演示">
               <button className="playground__icon-button" onClick={resetDemo}>
                 <svg
                   aria-hidden="true"
@@ -818,11 +818,11 @@ export default function Playground({
                 </svg>
               </button>
             </Tippy>
-            <Tippy theme="playground" arrow={false} placement="bottom" content="Report an issue">
+            <Tippy theme="playground" arrow={false} placement="bottom" content="报告问题">
               <a
                 className="playground__icon-button"
                 href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
-                aria-label="Report an issue"
+                aria-label="报告问题"
                 target="_blank"
                 rel="noreferrer"
               >

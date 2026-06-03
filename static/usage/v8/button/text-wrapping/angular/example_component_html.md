@@ -1,6 +1,7 @@
 ```html
-<ion-button>默认</ion-button>
+<ion-button>Default</ion-button>
 <ion-button class="ion-text-wrap" style="max-width: 400px"
-  >这是一个永无止境的按钮，它一直延续、延续、延续、延续、延续、延续、延续、延续下去，我的朋友</ion-button
+  >This is the button that never ends it just goes on and on and on and on and on and on and on and on my
+  friends</ion-button
 >
 ```

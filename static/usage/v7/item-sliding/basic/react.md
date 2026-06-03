@@ -7,37 +7,37 @@ function Example() {
     <IonList>
       <IonItemSliding>
         <IonItem>
-          <IonLabel>带右侧选项的滑动项目</IonLabel>
+          <IonLabel>Sliding Item with End Options</IonLabel>
         </IonItem>
 
         <IonItemOptions>
-          <IonItemOption>收藏</IonItemOption>
-          <IonItemOption color="danger">删除</IonItemOption>
+          <IonItemOption>Favorite</IonItemOption>
+          <IonItemOption color="danger">Delete</IonItemOption>
         </IonItemOptions>
       </IonItemSliding>
 
       <IonItemSliding>
         <IonItemOptions side="start">
-          <IonItemOption color="success">归档</IonItemOption>
+          <IonItemOption color="success">Archive</IonItemOption>
         </IonItemOptions>
 
         <IonItem>
-          <IonLabel>带左侧选项的滑动项目</IonLabel>
+          <IonLabel>Sliding Item with Start Options</IonLabel>
         </IonItem>
       </IonItemSliding>
 
       <IonItemSliding>
         <IonItemOptions side="start">
-          <IonItemOption color="success">归档</IonItemOption>
+          <IonItemOption color="success">Archive</IonItemOption>
         </IonItemOptions>
 
         <IonItem>
-          <IonLabel>两侧都有选项的滑动项目</IonLabel>
+          <IonLabel>Sliding Item with Options on Both Sides</IonLabel>
         </IonItem>
 
         <IonItemOptions side="end">
-          <IonItemOption>收藏</IonItemOption>
-          <IonItemOption color="danger">删除</IonItemOption>
+          <IonItemOption>Favorite</IonItemOption>
+          <IonItemOption color="danger">Delete</IonItemOption>
         </IonItemOptions>
       </IonItemSliding>
     </IonList>

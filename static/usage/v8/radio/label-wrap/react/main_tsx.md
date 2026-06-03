@@ -9,16 +9,16 @@ function Example() {
     <IonList>
       <IonRadioGroup value="truncated">
         <IonItem>
-          <IonRadio value="truncated">默认使用省略号截断</IonRadio>
+          <IonRadio value="truncated">Truncated with ellipsis by default</IonRadio>
         </IonItem>
         <IonItem>
           <IonRadio value="wrapped-part" className="wrapped">
-            应用文本换行样式到标签阴影部分的换行方式
+            Wrapping with text-wrap applied to label shadow part
           </IonRadio>
         </IonItem>
         <IonItem>
           <IonRadio value="wrapped-div">
-            <div className="ion-text-wrap">在包装元素上应用 ion-text-wrap 类的换行方式</div>
+            <div className="ion-text-wrap">Wrapping with ion-text-wrap class applied wrapper element</div>
           </IonRadio>
         </IonItem>
       </IonRadioGroup>

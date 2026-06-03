@@ -3,7 +3,7 @@ ion-segment-button::part(indicator-background) {
   background: #08a391;
 }
 
-/* Material Design 样式 */
+/* Material Design styles */
 ion-segment-button.md::part(native) {
   color: #000;
 }
@@ -16,7 +16,7 @@ ion-segment-button.md::part(indicator-background) {
   height: 4px;
 }
 
-/* iOS 样式 */
+/* iOS styles */
 ion-segment-button.ios::part(native) {
   color: #08a391;
 }

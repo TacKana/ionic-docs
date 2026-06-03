@@ -1,7 +1,7 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>下拉刷新</ion-title>
+    <ion-title>Pull to Refresh</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +16,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <p>向下拉动此处内容以触发刷新。</p>
+  <p>Pull this content down to trigger the refresh.</p>
 
   <ion-list lines="full">
     @for (item of items; track item; let i = $index) {

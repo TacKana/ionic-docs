@@ -7,21 +7,21 @@ function Example() {
     <>
       <IonToolbar>
         <IonButtons slot="start">
-          <IonButton>起始</IonButton>
+          <IonButton>Start</IonButton>
         </IonButtons>
-        <IonTitle>按钮</IonTitle>
+        <IonTitle>Buttons</IonTitle>
         <IonButtons slot="end">
-          <IonButton>结束</IonButton>
+          <IonButton>End</IonButton>
         </IonButtons>
       </IonToolbar>
 
       <IonToolbar>
         <IonButtons slot="secondary">
-          <IonButton>次要</IonButton>
+          <IonButton>Secondary</IonButton>
         </IonButtons>
-        <IonTitle>按钮</IonTitle>
+        <IonTitle>Buttons</IonTitle>
         <IonButtons slot="primary">
-          <IonButton>主要</IonButton>
+          <IonButton>Primary</IonButton>
         </IonButtons>
       </IonToolbar>
     </>

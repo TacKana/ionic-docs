@@ -18,7 +18,7 @@ const LibraryPage = () => (
           height: '100%',
         }}
       >
-        内容库
+        Library content
       </div>
     </IonContent>
   </IonPage>

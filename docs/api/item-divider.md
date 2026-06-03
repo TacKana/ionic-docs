@@ -1,5 +1,5 @@
 ---
-title: 项目分隔组件
+title: "ion-item-divider"
 ---
 import Props from '@ionic-internal/component-api/v8/item-divider/props.md';
 import Events from '@ionic-internal/component-api/v8/item-divider/events.md';
@@ -9,8 +9,8 @@ import CustomProps from '@ionic-internal/component-api/v8/item-divider/custom-pr
 import Slots from '@ionic-internal/component-api/v8/item-divider/slots.md';
 
 <head>
-  <title>ion-item-divider：Ionic 应用中的项目分隔块元素</title>
-  <meta name="description" content="项目分隔符是块元素，可用于分隔列表中的项目。它们类似于列表标题，但位于项目组之间。" />
+  <title>ion-item-divider: Ionic 应用的项目分隔块元素</title>
+  <meta name="description" content="Item Dividers 是可用于分隔列表中项目的块元素。它们类似于列表标题，但位于项目组之间。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-项目分隔符是块元素，可用于分隔列表中的[项目](./item)。它们类似于列表标题，但并非仅置于列表顶部，而是应位于项目组之间。
+Item dividers 是可用于分隔列表中 [items](./item) 的块元素。它们类似于列表标题，但应放在项目组之间，而不是仅放在列表顶部。
 
 
 ## 基本用法
@@ -28,7 +28,7 @@ import Basic from '@site/static/usage/v8/item-divider/basic/index.md';
 <Basic />
 
 
-## 主题定制
+## 主题
 
 ### 颜色
 

@@ -13,7 +13,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <p>在面板完全展开之前，您可以一直使用 +/- 按钮进行交互。</p>
+  <p>You can interact with the +/- buttons until the sheet is fully expanded.</p>
 
   <div class="counter__section">
     <ion-button id="decrement" onclick="decrement()">-</ion-button>
@@ -23,15 +23,15 @@
 
   <ion-modal is-open="true" initial-breakpoint="0.25" backdrop-dismiss="false" backdrop-breakpoint="0.5">
     <ion-content>
-      <ion-searchbar placeholder="搜索"></ion-searchbar>
+      <ion-searchbar placeholder="Search"></ion-searchbar>
       <ion-list>
         <ion-item>
           <ion-avatar slot="start">
             <ion-img src="https://i.pravatar.cc/300?u=b" />
           </ion-avatar>
           <ion-label>
-            <h2>康纳·史密斯</h2>
-            <p>销售代表</p>
+            <h2>Connor Smith</h2>
+            <p>Sales Rep</p>
           </ion-label>
         </ion-item>
         <ion-item>
@@ -39,8 +39,8 @@
             <ion-img src="https://i.pravatar.cc/300?u=a" />
           </ion-avatar>
           <ion-label>
-            <h2>丹尼尔·史密斯</h2>
-            <p>产品设计师</p>
+            <h2>Daniel Smith</h2>
+            <p>Product Designer</p>
           </ion-label>
         </ion-item>
         <ion-item>
@@ -48,8 +48,8 @@
             <ion-img src="https://i.pravatar.cc/300?u=d" />
           </ion-avatar>
           <ion-label>
-            <h2>格雷格·史密斯</h2>
-            <p>运营总监</p>
+            <h2>Greg Smith</h2>
+            <p>Director of Operations</p>
           </ion-label>
         </ion-item>
         <ion-item>
@@ -57,8 +57,8 @@
             <ion-img src="https://i.pravatar.cc/300?u=e" />
           </ion-avatar>
           <ion-label>
-            <h2>佐伊·史密斯</h2>
-            <p>首席执行官</p>
+            <h2>Zoey Smith</h2>
+            <p>CEO</p>
           </ion-label>
         </ion-item>
       </ion-list>

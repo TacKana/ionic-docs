@@ -2,62 +2,66 @@
 title: 'ion-card'
 ---
 
-import Props from '@ionic-internal/component-api/v6/card/props.md';
-import Events from '@ionic-internal/component-api/v6/card/events.md';
-import Methods from '@ionic-internal/component-api/v6/card/methods.md';
-import Parts from '@ionic-internal/component-api/v6/card/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/card/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v6/card/slots.md';
+import Props from '@ionic-internal/component-api/v7/card/props.md';
+import Events from '@ionic-internal/component-api/v7/card/events.md';
+import Methods from '@ionic-internal/component-api/v7/card/methods.md';
+import Parts from '@ionic-internal/component-api/v7/card/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/card/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v7/card/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <head>
-  <title>ion-card: Ionic 框架卡片用户界面组件 API</title>
+  <title>ion-card：Ionic 框架卡片 UI 组件 API</title>
   <meta
     name="description"
-    content="ion-card 用户界面组件是进入更详细信息的入口。卡片可以是单个组件，也可以由页眉、标题、副标题和内容组成。"
+    content="ion-card UI 组件是进入更详细信息的入口点。卡片可以是单个组件，也可以由头部、标题、副标题和内容组成。"
   />
 </head>
 
 <EncapsulationPill type="shadow" />
 
-卡片是用于显示文本、图像、按钮和列表等内容的容器。一个卡片可以是一个单独的组件，但通常由页眉、标题、副标题和内容组成。为了适应这种结构，卡片被分解为几个组件：[卡片页眉](./card-header)、[卡片标题](./card-title)、[卡片副标题](./card-subtitle) 和 [卡片内容](./card-content)。
+卡片（Card）是显示文本、图像、按钮和列表等内容的容器。
+卡片可以是单个组件，但通常由头部、标题、副标题和内容组成。
+卡片被分解为多个组件以适应这种结构：
+[card header](./card-header)、[card title](./card-title)、[card subtitle](./card-subtitle)
+和 [card content](./card-content)。
 
-## 基础用法
+## 基本用法
 
-import Basic from '@site/static/usage/v6/card/basic/index.md';
+import Basic from '@site/static/usage/v7/card/basic/index.md';
 
 <Basic />
 
 ## 媒体卡片
 
-import Media from '@site/static/usage/v6/card/media/index.md';
+import Media from '@site/static/usage/v7/card/media/index.md';
 
 <Media />
 
 ## 卡片按钮
 
-import Buttons from '@site/static/usage/v6/card/buttons/index.md';
+import Buttons from '@site/static/usage/v7/card/buttons/index.md';
 
 <Buttons />
 
 ## 列表卡片
 
-import List from '@site/static/usage/v6/card/list/index.md';
+import List from '@site/static/usage/v7/card/list/index.md';
 
 <List />
 
-## 主题定制
+## 主题
 
 ### 颜色
 
-import Colors from '@site/static/usage/v6/card/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/card/theming/colors/index.md';
 
 <Colors />
 
 ### CSS 自定义属性
 
-import CSSProps from '@site/static/usage/v6/card/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/card/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -73,7 +77,7 @@ import CSSProps from '@site/static/usage/v6/card/theming/css-properties/index.md
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

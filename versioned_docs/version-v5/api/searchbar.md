@@ -1,6 +1,6 @@
 ---
-title: '搜索栏图标在键盘文本显示中的应用 | Ion-Search Bar'
-description: '搜索栏是一种用于在集合中进行搜索的文本字段。了解如何在 Android 和 iOS 键盘显示中将 Ion-Search Bar 作为图标使用。'
+title: 'Search Bar Icon for Keyboard Text Display | Ion-Search Bar'
+description: 'Search bars represent a text field that can be used to search through a collection. Learn to input Ion-Search Bar as an icon on Android & iOS keyboard displays.'
 sidebar_label: 'ion-searchbar'
 demoUrl: '/docs/demos/api/searchbar/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/searchbar/index.html'
@@ -18,67 +18,67 @@ import Slots from '@ionic-internal/component-api/v5/searchbar/slots.md';
 
 # ion-searchbar
 
-搜索栏是一种文本字段，可用于在集合中进行搜索。它可以显示在工具栏或主要内容区域内。
+Searchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.
 
-在需要搜索列表时，应使用搜索栏替代普通输入框。在搜索栏的文本字段中输入内容后，会显示一个清除按钮。点击清除按钮将清空文本字段，但输入焦点会保持。还可以启用取消按钮，点击该按钮将清空输入内容并失去焦点。
+A Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. A cancel button can be enabled which will clear the input and lose the focus upon click.
 
-## 键盘显示
+## Keyboard Display
 
-### Android 平台
+### Android
 
-默认情况下，点击输入框会使键盘出现，提交按钮上显示一个放大镜图标。您可以选择将 `inputmode` 属性设置为 `"search"`，这会将图标从放大镜更改为回车符号。
+By default, tapping the input will cause the keyboard to appear with a magnifying glass icon on the submit button. You can optionally set the `inputmode` property to `"search"`, which will change the icon from a magnifying glass to a carriage return.
 
-### iOS 平台
+### iOS
 
-默认情况下，点击输入框会使键盘出现，灰色提交按钮上显示文本“return”。您可以选择将 `inputmode` 属性设置为 `"search"`，这会将文本从“return”更改为“go”，并将按钮颜色从灰色更改为蓝色。或者，您也可以将 `ion-searchbar` 包裹在带有 `action` 属性的 `form` 元素中。这将使键盘出现一个蓝色的提交按钮，上面写着“search”。
+By default, tapping the input will cause the keyboard to appear with the text "return" on a gray submit button. You can optionally set the `inputmode` property to `"search"`, which will change the text from "return" to "go", and change the button color from gray to blue. Alternatively, you can wrap the `ion-searchbar` in a `form` element with an `action` property. This will cause the keyboard to appear with a blue submit button that says "search".
 
-## 使用方法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- 默认搜索栏 -->
+<!-- Default Searchbar -->
 <ion-searchbar></ion-searchbar>
 
-<!-- 始终显示取消按钮的搜索栏 -->
+<!-- Searchbar with cancel button always shown -->
 <ion-searchbar showCancelButton="always"></ion-searchbar>
 
-<!-- 从不显示取消按钮的搜索栏 -->
+<!-- Searchbar with cancel button never shown -->
 <ion-searchbar showCancelButton="never"></ion-searchbar>
 
-<!-- 聚焦时显示取消按钮的搜索栏 -->
+<!-- Searchbar with cancel button shown on focus -->
 <ion-searchbar showCancelButton="focus"></ion-searchbar>
 
-<!-- 危险色搜索栏 -->
+<!-- Searchbar with danger color -->
 <ion-searchbar color="danger"></ion-searchbar>
 
-<!-- 带初始值的搜索栏 -->
+<!-- Searchbar with value -->
 <ion-searchbar value="Ionic"></ion-searchbar>
 
-<!-- 电话类型的搜索栏 -->
+<!-- Searchbar with telephone type -->
 <ion-searchbar type="tel"></ion-searchbar>
 
-<!-- 数字输入模式的搜索栏 -->
+<!-- Searchbar with numeric inputmode -->
 <ion-searchbar inputmode="numeric"></ion-searchbar>
 
-<!-- 禁用状态的搜索栏 -->
+<!-- Searchbar disabled -->
 <ion-searchbar disabled="true"></ion-searchbar>
 
-<!-- 带取消按钮且自定义取消按钮文本的搜索栏 -->
-<ion-searchbar showCancelButton="focus" cancelButtonText="自定义取消"></ion-searchbar>
+<!-- Searchbar with a cancel button and custom cancel button text -->
+<ion-searchbar showCancelButton="focus" cancelButtonText="Custom Cancel"></ion-searchbar>
 
-<!-- 自定义防抖时间的搜索栏 -->
+<!-- Searchbar with a custom debounce -->
 <ion-searchbar debounce="500"></ion-searchbar>
 
-<!-- 带动画效果的搜索栏 -->
+<!-- Animated Searchbar -->
 <ion-searchbar animated></ion-searchbar>
 
-<!-- 带占位符的搜索栏 -->
-<ion-searchbar placeholder="筛选日程"></ion-searchbar>
+<!-- Searchbar with a placeholder -->
+<ion-searchbar placeholder="Filter Schedules"></ion-searchbar>
 
-<!-- 工具栏内的搜索栏 -->
+<!-- Searchbar in a Toolbar -->
 <ion-toolbar>
   <ion-searchbar></ion-searchbar>
 </ion-toolbar>
@@ -89,46 +89,46 @@ import Slots from '@ionic-internal/component-api/v5/searchbar/slots.md';
 <TabItem value="javascript">
 
 ```html
-<!-- 默认搜索栏 -->
+<!-- Default Searchbar -->
 <ion-searchbar></ion-searchbar>
 
-<!-- 始终显示取消按钮的搜索栏 -->
+<!-- Searchbar with cancel button always shown -->
 <ion-searchbar show-cancel-button="always"></ion-searchbar>
 
-<!-- 从不显示取消按钮的搜索栏 -->
+<!-- Searchbar with cancel button never shown -->
 <ion-searchbar show-cancel-button="never"></ion-searchbar>
 
-<!-- 聚焦时显示取消按钮的搜索栏 -->
+<!-- Searchbar with cancel button shown on focus -->
 <ion-searchbar show-cancel-button="focus"></ion-searchbar>
 
-<!-- 危险色搜索栏 -->
+<!-- Searchbar with danger color -->
 <ion-searchbar color="danger"></ion-searchbar>
 
-<!-- 带初始值的搜索栏 -->
+<!-- Searchbar with value -->
 <ion-searchbar value="Ionic"></ion-searchbar>
 
-<!-- 电话类型的搜索栏 -->
+<!-- Searchbar with telephone type -->
 <ion-searchbar type="tel"></ion-searchbar>
 
-<!-- 数字输入模式的搜索栏 -->
+<!-- Searchbar with numeric inputmode -->
 <ion-searchbar inputmode="numeric"></ion-searchbar>
 
-<!-- 禁用状态的搜索栏 -->
+<!-- Searchbar disabled -->
 <ion-searchbar disabled="true"></ion-searchbar>
 
-<!-- 带取消按钮且自定义取消按钮文本的搜索栏 -->
-<ion-searchbar show-cancel-button="focus" cancel-button-text="自定义取消"></ion-searchbar>
+<!-- Searchbar with a cancel button and custom cancel button text -->
+<ion-searchbar show-cancel-button="focus" cancel-button-text="Custom Cancel"></ion-searchbar>
 
-<!-- 自定义防抖时间的搜索栏 -->
+<!-- Searchbar with a custom debounce -->
 <ion-searchbar debounce="500"></ion-searchbar>
 
-<!-- 带动画效果的搜索栏 -->
+<!-- Animated Searchbar -->
 <ion-searchbar animated></ion-searchbar>
 
-<!-- 带占位符的搜索栏 -->
-<ion-searchbar placeholder="筛选日程"></ion-searchbar>
+<!-- Searchbar with a placeholder -->
+<ion-searchbar placeholder="Filter Schedules"></ion-searchbar>
 
-<!-- 工具栏内的搜索栏 -->
+<!-- Searchbar in a Toolbar -->
 <ion-toolbar>
   <ion-searchbar></ion-searchbar>
 </ion-toolbar>
@@ -148,90 +148,90 @@ export const SearchBarExamples: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>IonSearchBar 示例</IonTitle>
+          <IonTitle>IonSearchBar Examples</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <p>默认搜索栏</p>
+        <p>Default Searchbar</p>
         <IonSearchbar value={searchText} onIonChange={(e) => setSearchText(e.detail.value!)}></IonSearchbar>
 
-        <p>始终显示取消按钮的搜索栏</p>
+        <p>Searchbar with cancel button always shown</p>
         <IonSearchbar
           value={searchText}
           onIonChange={(e) => setSearchText(e.detail.value!)}
           showCancelButton="always"
         ></IonSearchbar>
 
-        <p>从不显示取消按钮的搜索栏</p>
+        <p>Searchbar with cancel button never shown</p>
         <IonSearchbar
           value={searchText}
           onIonChange={(e) => setSearchText(e.detail.value!)}
           showCancelButton="never"
         ></IonSearchbar>
 
-        <p>聚焦时显示取消按钮的搜索栏</p>
+        <p>Searchbar with cancel button shown on focus</p>
         <IonSearchbar
           value={searchText}
           onIonChange={(e) => setSearchText(e.detail.value!)}
           showCancelButton="focus"
         ></IonSearchbar>
 
-        <p>危险色搜索栏</p>
+        <p>Searchbar with danger color</p>
         <IonSearchbar
           value={searchText}
           onIonChange={(e) => setSearchText(e.detail.value!)}
           color="danger"
         ></IonSearchbar>
 
-        <p>电话类型的搜索栏</p>
+        <p>Searchbar with telephone type</p>
         <IonSearchbar value={searchText} onIonChange={(e) => setSearchText(e.detail.value!)} type="tel"></IonSearchbar>
 
-        <p>数字输入模式的搜索栏</p>
+        <p>Searchbar with numeric inputmode</p>
         <IonSearchbar
           value={searchText}
           onIonChange={(e) => setSearchText(e.detail.value!)}
           inputmode="numeric"
         ></IonSearchbar>
 
-        <p>禁用状态的搜索栏</p>
+        <p>Searchbar disabled </p>
         <IonSearchbar
           value={searchText}
           onIonChange={(e) => setSearchText(e.detail.value!)}
           disabled={true}
         ></IonSearchbar>
 
-        <p>带取消按钮且自定义取消按钮文本的搜索栏</p>
+        <p>Searchbar with a cancel button and custom cancel button text</p>
         <IonSearchbar
           value={searchText}
           onIonChange={(e) => setSearchText(e.detail.value!)}
           showCancelButton="focus"
-          cancelButtonText="自定义取消"
+          cancelButtonText="Custom Cancel"
         ></IonSearchbar>
 
-        <p>自定义防抖时间的搜索栏 - 注意：防抖仅在 onIonChange 事件中有效</p>
+        <p>Searchbar with a custom debounce - Note: debounce only works on onIonChange event</p>
         <IonSearchbar
           value={searchText}
           onIonChange={(e) => setSearchText(e.detail.value!)}
           debounce={1000}
         ></IonSearchbar>
 
-        <p>带动画效果的搜索栏</p>
+        <p>Animated Searchbar</p>
         <IonSearchbar value={searchText} onIonChange={(e) => setSearchText(e.detail.value!)} animated></IonSearchbar>
 
-        <p>带占位符的搜索栏</p>
+        <p>Searchbar with a placeholder</p>
         <IonSearchbar
           value={searchText}
           onIonChange={(e) => setSearchText(e.detail.value!)}
-          placeholder="筛选日程"
+          placeholder="Filter Schedules"
         ></IonSearchbar>
 
-        <p>工具栏内的搜索栏</p>
+        <p>Searchbar in a Toolbar</p>
         <IonToolbar>
           <IonSearchbar value={searchText} onIonChange={(e) => setSearchText(e.detail.value!)}></IonSearchbar>
         </IonToolbar>
       </IonContent>
       <IonFooter>
-        <IonToolbar>搜索文本：{searchText ?? '(无)'}</IonToolbar>
+        <IonToolbar>Search Text: {searchText ?? '(none)'}</IonToolbar>
       </IonFooter>
     </IonPage>
   );
@@ -252,46 +252,46 @@ import { Component, h } from '@stencil/core';
 export class SearchbarExample {
   render() {
     return [
-      // 默认搜索栏
+      // Default Searchbar
       <ion-searchbar></ion-searchbar>,
 
-      // 始终显示取消按钮的搜索栏
+      // Searchbar with cancel button always shown
       <ion-searchbar showCancelButton="always"></ion-searchbar>,
 
-      // 从不显示取消按钮的搜索栏
+      // Searchbar with cancel button never shown
       <ion-searchbar showCancelButton="never"></ion-searchbar>,
 
-      // 聚焦时显示取消按钮的搜索栏
+      // Searchbar with cancel button shown on focus
       <ion-searchbar showCancelButton="focus"></ion-searchbar>,
 
-      // 危险色搜索栏
+      // Searchbar with danger color
       <ion-searchbar color="danger"></ion-searchbar>,
 
-      // 带初始值的搜索栏
+      // Searchbar with value
       <ion-searchbar value="Ionic"></ion-searchbar>,
 
-      // 电话类型的搜索栏
+      // Searchbar with telephone type
       <ion-searchbar type="tel"></ion-searchbar>,
 
-      // 数字输入模式的搜索栏
+      // Searchbar with numeric inputmode
       <ion-searchbar inputmode="numeric"></ion-searchbar>,
 
-      // 禁用状态的搜索栏
+      // Searchbar disabled
       <ion-searchbar disabled={true}></ion-searchbar>,
 
-      // 带取消按钮且自定义取消按钮文本的搜索栏
-      <ion-searchbar showCancelButton="focus" cancelButtonText="自定义取消"></ion-searchbar>,
+      // Searchbar with a cancel button and custom cancel button text
+      <ion-searchbar showCancelButton="focus" cancelButtonText="Custom Cancel"></ion-searchbar>,
 
-      // 自定义防抖时间的搜索栏
+      // Searchbar with a custom debounce
       <ion-searchbar debounce={500}></ion-searchbar>,
 
-      // 带动画效果的搜索栏
+      // Animated Searchbar
       <ion-searchbar animated={true}></ion-searchbar>,
 
-      // 带占位符的搜索栏
-      <ion-searchbar placeholder="筛选日程"></ion-searchbar>,
+      // Searchbar with a placeholder
+      <ion-searchbar placeholder="Filter Schedules"></ion-searchbar>,
 
-      // 工具栏内的搜索栏
+      // Searchbar in a Toolbar
       <ion-toolbar>
         <ion-searchbar></ion-searchbar>
       </ion-toolbar>,
@@ -306,46 +306,46 @@ export class SearchbarExample {
 
 ```html
 <template>
-  <!-- 默认搜索栏 -->
+  <!-- Default Searchbar -->
   <ion-searchbar></ion-searchbar>
 
-  <!-- 始终显示取消按钮的搜索栏 -->
+  <!-- Searchbar with cancel button always shown -->
   <ion-searchbar show-cancel-button="always"></ion-searchbar>
 
-  <!-- 从不显示取消按钮的搜索栏 -->
+  <!-- Searchbar with cancel button never shown -->
   <ion-searchbar show-cancel-button="never"></ion-searchbar>
 
-  <!-- 聚焦时显示取消按钮的搜索栏 -->
+  <!-- Searchbar with cancel button shown on focus -->
   <ion-searchbar show-cancel-button="focus"></ion-searchbar>
 
-  <!-- 危险色搜索栏 -->
+  <!-- Searchbar with danger color -->
   <ion-searchbar color="danger"></ion-searchbar>
 
-  <!-- 带初始值的搜索栏 -->
+  <!-- Searchbar with value -->
   <ion-searchbar value="Ionic"></ion-searchbar>
 
-  <!-- 电话类型的搜索栏 -->
+  <!-- Searchbar with telephone type -->
   <ion-searchbar type="tel"></ion-searchbar>
 
-  <!-- 数字输入模式的搜索栏 -->
+  <!-- Searchbar with numeric inputmode -->
   <ion-searchbar inputmode="numeric"></ion-searchbar>
 
-  <!-- 禁用状态的搜索栏 -->
+  <!-- Searchbar disabled -->
   <ion-searchbar disabled="true"></ion-searchbar>
 
-  <!-- 带取消按钮且自定义取消按钮文本的搜索栏 -->
-  <ion-searchbar show-cancel-button="focus" cancel-button-text="自定义取消"></ion-searchbar>
+  <!-- Searchbar with a cancel button and custom cancel button text -->
+  <ion-searchbar show-cancel-button="focus" cancel-button-text="Custom Cancel"></ion-searchbar>
 
-  <!-- 自定义防抖时间的搜索栏 -->
+  <!-- Searchbar with a custom debounce -->
   <ion-searchbar debounce="500"></ion-searchbar>
 
-  <!-- 带动画效果的搜索栏 -->
+  <!-- Animated Searchbar -->
   <ion-searchbar animated></ion-searchbar>
 
-  <!-- 带占位符的搜索栏 -->
-  <ion-searchbar placeholder="筛选日程"></ion-searchbar>
+  <!-- Searchbar with a placeholder -->
+  <ion-searchbar placeholder="Filter Schedules"></ion-searchbar>
 
-  <!-- 工具栏内的搜索栏 -->
+  <!-- Searchbar in a Toolbar -->
   <ion-toolbar>
     <ion-searchbar></ion-searchbar>
   </ion-toolbar>
@@ -365,26 +365,26 @@ export class SearchbarExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS 阴影部件
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

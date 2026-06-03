@@ -10,29 +10,29 @@ import CodeBlock from '@theme/CodeBlock';
 
 # 3D Touch
 
-3D Touch 插件为你的 Cordova 应用添加 3D Touch 功能。
+The 3D Touch plugin adds 3D Touch capabilities to your Cordova app.
 
-需要 Cordova 插件：`cordova-plugin-3dtouch`。更多信息请查看 [3D Touch 插件文档](https://github.com/EddyVerbruggen/cordova-plugin-3dtouch)。
+Requires Cordova plugin: `cordova-plugin-3dtouch`. For more info, please see the [3D Touch plugin docs](https://github.com/EddyVerbruggen/cordova-plugin-3dtouch).
 
 <p>
   <a href="https://github.com/EddyVerbruggen/cordova-plugin-3dtouch" target="_blank" rel="noopener" className="git-link">github.com/EddyVerbruggen/cordova-plugin-3dtouch</a>
 </p>
 
-<h2>被 Cordova 问题困扰？</h2>
+<h2>Stuck on a Cordova issue?</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="不要在插件问题上浪费宝贵时间。"
+  header="Don't waste precious time on plugin issues."
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>如果你正在开发一个重要的项目，你无法承受花费数小时进行故障排查。Ionic 专家为社区插件和高级插件提供优质咨询服务。</p>
-    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer premium advisory services for both community plugins and premier plugins.</p>
+    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">安装</a>
+  <a href="#installation">Installation</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -40,7 +40,7 @@ import CodeBlock from '@theme/CodeBlock';
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: '企业版' },
+    { value: 'Enterprise', label: 'Enterprise' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -57,25 +57,25 @@ import CodeBlock from '@theme/CodeBlock';
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic 企业版提供由 Ionic 团队全面支持和维护的插件。&nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，如果你对该插件的企业版感兴趣，请<a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
+      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## 支持的平台
+## Supported Platforms
 
 - iOS
 
-## 使用方式
+## Usage
 
 ### React
 
-[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
+[Learn more about using Ionic Native components in React](../native-community.md#react)
 
 ### Angular
 
-请务必参考原始插件仓库以获取详细用法。这里的示例可能不够充分。
+Please do refer to the original plugin's repo for detailed usage. The usage example here might not be sufficient.
 
 ```tsx
 import { ThreeDeeTouch, ThreeDeeTouchQuickAction, ThreeDeeTouchForceTouch } from '@awesome-cordova-plugins/three-dee-touch/ngx';
@@ -84,15 +84,15 @@ constructor(private threeDeeTouch: ThreeDeeTouch) { }
 
 ...
 
-this.threeDeeTouch.isAvailable().then(isAvailable => console.log('3D Touch 可用吗？ ' + isAvailable));
+this.threeDeeTouch.isAvailable().then(isAvailable => console.log('3D Touch available? ' + isAvailable));
 
 this.threeDeeTouch.watchForceTouches()
   .subscribe(
     (data: ThreeDeeTouchForceTouch) => {
-      console.log('压力触控力度：%' + data.force);
-      console.log('压力触控时间戳：' + data.timestamp);
-      console.log('压力触控 x 坐标：' + data.x);
-      console.log('压力触控 y 坐标：' + data.y);
+      console.log('Force touch %' + data.force);
+      console.log('Force touch timestamp: ' + data.timestamp);
+      console.log('Force touch x: ' + data.x);
+      console.log('Force touch y: ' + data.y);
     }
   );
 
@@ -100,23 +100,23 @@ this.threeDeeTouch.watchForceTouches()
 let actions: ThreeDeeTouchQuickAction[] = [
   {
     type: 'checkin',
-    title: '签到',
-    subtitle: '快速签到',
+    title: 'Check in',
+    subtitle: 'Quickly check in',
     iconType: 'Compose'
   },
   {
     type: 'share',
-    title: '分享',
-    subtitle: '用心分享',
+    title: 'Share',
+    subtitle: 'Share like you care',
     iconType: 'Share'
   },
   {
     type: 'search',
-    title: '搜索',
+    title: 'Search',
     iconType: 'Search'
   },
   {
-    title: '显示收藏',
+    title: 'Show favorites',
     iconTemplate: 'HeartTemplate'
   }
 ];
@@ -125,8 +125,8 @@ this.threeDeeTouch.configureQuickActions(actions);
 
 this.threeDeeTouch.onHomeIconPressed().subscribe(
  (payload) => {
-   // 返回一个对象，代表你按下的按钮
-   console.log('按下了 ${payload.title} 按钮')
+   // returns an object that is the button you presed
+   console.log('Pressed the ${payload.title} button')
    console.log(payload.type)
 
  }

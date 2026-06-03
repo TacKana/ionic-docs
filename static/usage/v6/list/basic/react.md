@@ -6,19 +6,19 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonLabel>宝可梦·黄</IonLabel>
+        <IonLabel>Pokémon Yellow</IonLabel>
       </IonItem>
       <IonItem>
-        <IonLabel>洛克人X</IonLabel>
+        <IonLabel>Mega Man X</IonLabel>
       </IonItem>
       <IonItem>
-        <IonLabel>塞尔达传说</IonLabel>
+        <IonLabel>The Legend of Zelda</IonLabel>
       </IonItem>
       <IonItem>
-        <IonLabel>吃豆人</IonLabel>
+        <IonLabel>Pac-Man</IonLabel>
       </IonItem>
       <IonItem>
-        <IonLabel>超级马里奥世界</IonLabel>
+        <IonLabel>Super Mario World</IonLabel>
       </IonItem>
     </IonList>
   );

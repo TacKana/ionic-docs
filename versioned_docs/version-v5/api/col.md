@@ -14,35 +14,35 @@ import Slots from '@ionic-internal/component-api/v5/col/slots.md';
 
 # ion-col
 
-列（column）是 [网格](grid.md) 系统的单元格组件，应放置在 [行](row.md) 内。
-列会扩展以填满其所在的行。网格中的所有内容都应放置在列内。
+Columns are cellular components of the [grid](grid.md) system and go inside of a [row](row.md).
+They will expand to fill their row. All content within a grid should go inside of a column.
 
-更多信息请参阅 [网格布局](../layout/grid.md)。
+See [Grid Layout](../layout/grid.md) for more information.
 
-## 列对齐
+## Column Alignment
 
-默认情况下，列会拉伸以填满行的整个高度。列是 [弹性项目（flex items）](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item)，因此有多个 [CSS 类](../layout/css-utilities.md#flex-item-properties) 可以应用于列以自定义此行为。
+By default, columns will stretch to fill the entire height of the row. Columns are [flex items](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item), so there are several [CSS classes](../layout/css-utilities.md#flex-item-properties) that can be applied to a column to customize this behavior.
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

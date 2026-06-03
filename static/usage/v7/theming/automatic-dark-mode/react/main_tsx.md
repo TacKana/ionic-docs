@@ -22,13 +22,13 @@ import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons
 import './main.css';
 
 function Example() {
-  // 在文档 body 上添加或移除 "dark" 类
+  // Add or remove the "dark" class on the document body
   const toggleDarkTheme = (shouldAdd: boolean) => {
     document.body.classList.toggle('dark', shouldAdd);
   };
 
   useEffect(() => {
-    // 使用 matchMedia 检查用户偏好设置
+    // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
     toggleDarkTheme(prefersDark.matches);
@@ -37,7 +37,7 @@ function Example() {
       toggleDarkTheme(mediaQuery.matches);
     };
 
-    // 监听 prefers-color-scheme 媒体查询的变化
+    // Listen for changes to the prefers-color-scheme media query
     prefersDark.addEventListener('change', setDarkThemeFromMediaQuery);
 
     return () => {
@@ -52,7 +52,7 @@ function Example() {
           <IonButtons slot="start">
             <IonBackButton default-href="#"></IonBackButton>
           </IonButtons>
-          <IonTitle>显示设置</IonTitle>
+          <IonTitle>Display</IonTitle>
           <IonButtons slot="end">
             <IonButton color="dark">
               <IonIcon slot="icon-only" ios={personCircleOutline} md={personCircle}></IonIcon>
@@ -62,15 +62,15 @@ function Example() {
       </IonHeader>
 
       <IonContent>
-        <IonListHeader>外观</IonListHeader>
+        <IonListHeader>Appearance</IonListHeader>
         <IonList inset={true}>
-          <IonItem button={true}>文字大小</IonItem>
+          <IonItem button={true}>Text Size</IonItem>
           <IonItem>
-            <IonToggle justify="space-between">粗体文本</IonToggle>
+            <IonToggle justify="space-between">Bold Text</IonToggle>
           </IonItem>
         </IonList>
 
-        <IonListHeader>亮度</IonListHeader>
+        <IonListHeader>Brightness</IonListHeader>
         <IonList inset={true}>
           <IonItem>
             <IonRange value={40}>
@@ -80,16 +80,16 @@ function Example() {
           </IonItem>
           <IonItem>
             <IonToggle justify="space-between" checked>
-              原彩显示
+              True Tone
             </IonToggle>
           </IonItem>
         </IonList>
 
         <IonList inset={true}>
           <IonItem button={true}>
-            <IonLabel>夜览</IonLabel>
+            <IonLabel>Night Shift</IonLabel>
             <IonText slot="end" color="medium">
-              晚上 9:00 至早上 8:00
+              9:00 PM to 8:00 AM
             </IonText>
           </IonItem>
         </IonList>

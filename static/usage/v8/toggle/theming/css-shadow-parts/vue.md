@@ -27,7 +27,7 @@
 
     background: #ddd;
 
-    /* iOS 手柄需要溢出轨道高度，因此需要此设置 */
+    /* Required for iOS handle to overflow the height of the track */
     overflow: visible;
   }
 

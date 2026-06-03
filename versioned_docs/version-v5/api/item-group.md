@@ -14,9 +14,9 @@ import Slots from '@ionic-internal/component-api/v5/item-group/slots.md';
 
 # ion-item-group
 
-项目组（Item groups）是用于将相似项目组织在一起的容器。它们可以包含项目分隔符（item dividers），将项目划分为多个部分。此外，项目组也可用于对滑动项目（sliding items）进行分组。
+Item groups are containers that organize similar items together. They can contain item dividers to divide the items into multiple sections. They can also be used to group sliding items.
 
-## 使用方法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -55,7 +55,7 @@ import Slots from '@ionic-internal/component-api/v5/item-group/slots.md';
   </ion-item>
 </ion-item-group>
 
-<!-- 它们也可用于对滑动项目进行分组 -->
+<!-- They can also be used to group sliding items -->
 <ion-item-group>
   <ion-item-divider>
     <ion-label> Fruits </ion-label>
@@ -150,7 +150,7 @@ import Slots from '@ionic-internal/component-api/v5/item-group/slots.md';
   </ion-item>
 </ion-item-group>
 
-<!-- 它们也可用于对滑动项目进行分组 -->
+<!-- They can also be used to group sliding items -->
 <ion-item-group>
   <ion-item-divider>
     <ion-label> Fruits </ion-label>
@@ -259,7 +259,7 @@ const Example: React.FC<{}> = () => (
       </IonItem>
     </IonItemGroup>
 
-    {/*-- 它们也可用于对滑动项目进行分组 --*/}
+    {/*-- They can also be used to group sliding items --*/}
     <IonItemGroup>
       <IonItemDivider>
         <IonLabel>Fruits</IonLabel>
@@ -368,7 +368,7 @@ export class ItemGroupExample {
       </ion-item-group>
 
 
-      // 它们也可用于对滑动项目进行分组
+      // They can also be used to group sliding items
       <ion-item-group>
         <ion-item-divider>
           <ion-label>
@@ -479,7 +479,7 @@ export class ItemGroupExample {
     </ion-item>
   </ion-item-group>
 
-  <!-- 它们也可用于对滑动项目进行分组 -->
+  <!-- They can also be used to group sliding items -->
   <ion-item-group>
     <ion-item-divider>
       <ion-label> Fruits </ion-label>
@@ -566,26 +566,26 @@ export class ItemGroupExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow 部件
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

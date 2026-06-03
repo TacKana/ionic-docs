@@ -4,23 +4,23 @@ sidebar_label: 'capacitor build'
 
 # ionic capacitor build
 
-为指定平台构建 Ionic 项目
+Build an Ionic project for a given platform
 
 ```shell
 ionic capacitor build [options]
 ```
 
-`ionic capacitor build` 将执行以下操作：
+`ionic capacitor build` will do the following:
 
-- 执行 `ionic build`
-- 将 Web 资源复制到指定的原生平台
-- 打开原生项目的 IDE（iOS 使用 Xcode，Android 使用 Android Studio）
+- Perform `ionic build`
+- Copy web assets into the specified native platform
+- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)
 
-一旦 Web 资源和配置被复制到您的原生项目中，您就可以使用原生 IDE 来构建您的应用。目前尚不支持以编程方式构建原生项目。
+Once the web assets and configuration are copied into your native project, you can build your app using the native IDE. Unfortunately, programmatically building the native project is not yet supported.
 
-要配置您的原生项目，请参阅通用配置 [文档](https://capacitorjs.com/docs/basics/configuring-your-app) 以及 [iOS](https://capacitorjs.com/docs/ios/configuration) 和 [Android](https://capacitorjs.com/docs/android/configuration) 的底层配置。
+To configure your native project, see the common configuration [docs](https://capacitorjs.com/docs/basics/configuring-your-app) as well as low-level configuration for [iOS](https://capacitorjs.com/docs/ios/configuration) and [Android](https://capacitorjs.com/docs/android/configuration).
 
-## 示例
+## Examples
 
 ```shell
 $ ionic capacitor build
@@ -28,7 +28,7 @@ $ ionic capacitor build android
 $ ionic capacitor build ios
 ```
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -40,17 +40,17 @@ $ ionic capacitor build ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          要构建的目标平台（例如 <code>android</code>, <code>ios</code>）
+          The platform to build for (e.g. <code>android</code>, <code>ios</code>)
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 选项
+## Options
 
 <table className="reference-table">
   <thead>
@@ -66,9 +66,9 @@ $ ionic capacitor build ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>不执行 Ionic build</p>
+        <p>Do not invoke Ionic build</p>
       </td>
     </tr>
   </tbody>
@@ -85,9 +85,9 @@ $ ionic capacitor build ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>不执行 Capacitor open</p>
+        <p>Do not invoke Capacitor open</p>
       </td>
     </tr>
   </tbody>
@@ -104,17 +104,17 @@ $ ionic capacitor build ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          使用 <code>production</code> 配置的标志
+          Flag to use the <code>production</code> configuration
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 高级选项
+## Advanced Options
 
 <table className="reference-table">
   <thead>
@@ -131,15 +131,15 @@ $ ionic capacitor build ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>指定要使用的配置。</p>
+          <p>Specify the configuration to use.</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-c</code>
       </td>
@@ -159,10 +159,10 @@ $ ionic capacitor build ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>输出 source maps</p>
+          <p>Output source maps</p>
         </div>
       </td>
     </tr>
@@ -180,10 +180,10 @@ $ ionic capacitor build ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>当文件更改时重新构建</p>
+          <p>Rebuild when files change</p>
         </div>
       </td>
     </tr>

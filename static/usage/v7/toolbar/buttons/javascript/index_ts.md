@@ -4,15 +4,15 @@ import { defineCustomElements } from '@ionic/core/loader';
 import { addIcons } from 'ionicons';
 import { create, ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle, search, star } from 'ionicons/icons';
 
-/* Ionic 组件正常工作所需的核心 CSS */
+/* Core CSS required for Ionic components to work properly */
 import '@ionic/core/css/core.css';
 
-/* 使用 Ionic 构建应用所需的基础 CSS */
+/* Basic CSS for apps built with Ionic */
 import '@ionic/core/css/normalize.css';
 import '@ionic/core/css/structure.css';
 import '@ionic/core/css/typography.css';
 
-/* 可选的 CSS 工具类，可以注释掉 */
+/* Optional CSS utils that can be commented out */
 import '@ionic/core/css/padding.css';
 import '@ionic/core/css/float-elements.css';
 import '@ionic/core/css/text-alignment.css';
@@ -20,13 +20,13 @@ import '@ionic/core/css/text-transformation.css';
 import '@ionic/core/css/flex-utils.css';
 import '@ionic/core/css/display.css';
 
-/* 主题变量 */
+/* Theme variables */
 import './theme/variables.css';
 
 /**
- * 在 Ionicons 7.2+ 版本中，这些图标
- * 会映射到短横线命名（kebab-case）的键。
- * 或者，开发者也可以这样做：
+ * On Ionicons 7.2+ these icons
+ * get mapped to a kebab-case key.
+ * Alternatively, developers can do:
  * addIcons({ 'create': create, 'ellipsis-horizontal': ellipsisHorizontal, 'ellipsis-vertical': ellipsisVertical,
  * 'help-circle': helpCircle, 'person-circle': personCircle, 'search': search, 'star': star });
  */

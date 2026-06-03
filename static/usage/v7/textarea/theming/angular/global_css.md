@@ -1,9 +1,9 @@
 ```css
 /**
- * 由于我们要在 ion-textarea 内部设置元素样式，
- * 需要将这段 CSS 移到全局样式表中。否则，
- * 启用了封装功能的 Angular 组件会为这些选择器
- * 添加作用域样式属性。
+ * Since we are styling elements inside of ion-textarea
+ * we need to move this CSS to a global stylesheet. Otherwise,
+ * Angular components with encapsulation enabled will add
+ * scoped style attributes to these selectors.
  */
 ion-textarea.custom.ios .textarea-bottom .helper-text,
 ion-textarea.custom.ios .textarea-bottom .counter,

@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/split-pane/custom-prop
 import Slots from '@ionic-internal/component-api/v7/split-pane/slots.md';
 
 <head>
-  <title>ion-split-pane: 用于菜单和多视图布局的拆分面板</title>
+  <title>ion-split-pane：用于菜单和多视图布局的拆分窗格</title>
   <meta
     name="description"
-    content="ion-split-pane 在创建多视图应用布局时非常有用。它允许在视口宽度增加时显示UI元素，例如菜单。"
+    content="ion-split-pane 在创建多视图应用布局时很有用。它允许 UI 元素（如菜单）随着视口宽度的增加而显示。"
   />
 </head>
 
@@ -21,14 +21,14 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-拆分面板在创建多视图布局时非常有用。它允许在视口宽度增加时显示UI元素，例如菜单。
+拆分窗格（Split pane）在创建多视图布局时很有用。它允许 UI 元素（如菜单）随着视口宽度的增加而显示。
 
-如果设备屏幕宽度低于特定尺寸，拆分面板将会折叠，菜单将被隐藏。这对于创建既可以通过浏览器访问，又能通过应用商店部署到手机和平板的应用程序来说非常理想。
+如果设备的屏幕宽度低于一定大小，拆分窗格将折叠，菜单将被隐藏。这对于创建将在浏览器中提供并通过应用商店部署到手机和平板电脑的应用来说是理想的。
 
 ## 基本用法
 
 :::note
-此演示将 `when` 属性设置为 `'xs'`，因此拆分面板始终显示。如果您希望拆分面板在较小的视口上折叠，您的 Ionic 应用则不需要此设置。详细信息请参见 [设置断点](#设置断点)。
+此演示将 `when` 属性设置为 `'xs'`，以使拆分窗格始终显示。如果你希望拆分窗格在较小的视口上折叠，则你的 Ionic 应用不需要这样做。更多信息请参阅[设置断点](#设置断点)。
 :::
 
 import Basic from '@site/static/usage/v7/split-pane/basic/index.md';
@@ -37,25 +37,25 @@ import Basic from '@site/static/usage/v7/split-pane/basic/index.md';
 
 ## 设置断点
 
-默认情况下，当屏幕宽度大于 992px 时，拆分面板会展开。要自定义此行为，可以在 `when` 属性中传递一个断点。`when` 属性可以接受布尔值、任何有效的媒体查询或 Ionic 预定义的尺寸之一。
+默认情况下，屏幕大于 992px 时拆分窗格将展开。要自定义此设置，请在 `when` 属性中传递断点。`when` 属性可以接受布尔值、任何有效的媒体查询或 Ionic 的预定义尺寸之一。
 
 ```html
 <!-- 可以是 "xs"、"sm"、"md"、"lg" 或 "xl" -->
 <ion-split-pane when="md"></ion-split-pane>
 
-<!-- 可以是任何有效的媒体查询 https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries -->
+<!-- 可以是任何有效的媒体查询 https://developer.mozilla.org/zh-CN/docs/Web/CSS/Media_Queries/Using_media_queries -->
 <ion-split-pane when="(min-width: 40px)"></ion-split-pane>
 ```
 
-| 尺寸 | 值                   | 描述                                                                   |
-| ---- | -------------------- | ---------------------------------------------------------------------- |
-| `xs` | `(min-width: 0px)`   | 当最小宽度为 0px 时显示拆分面板（即始终显示）                           |
-| `sm` | `(min-width: 576px)` | 当最小宽度为 576px 时显示拆分面板                                       |
-| `md` | `(min-width: 768px)` | 当最小宽度为 768px 时显示拆分面板                                       |
-| `lg` | `(min-width: 992px)` | 当最小宽度为 992px 时显示拆分面板（默认断点）                           |
-| `xl` | `(min-width: 1200px)`| 当最小宽度为 1200px 时显示拆分面板                                      |
+| 尺寸 | 值                    | 描述                                                        |
+| ---- | --------------------- | ----------------------------------------------------------- |
+| `xs` | `(min-width: 0px)`    | 当最小宽度为 0px 时显示拆分窗格（意味着始终）               |
+| `sm` | `(min-width: 576px)`  | 当最小宽度为 576px 时显示拆分窗格                           |
+| `md` | `(min-width: 768px)`  | 当最小宽度为 768px 时显示拆分窗格                           |
+| `lg` | `(min-width: 992px)`  | 当最小宽度为 992px 时显示拆分窗格（默认断点）               |
+| `xl` | `(min-width: 1200px)` | 当最小宽度为 1200px 时显示拆分窗格                          |
 
-## 主题定制
+## 主题
 
 ### CSS 自定义属性
 
@@ -75,7 +75,7 @@ import CSSProperties from '@site/static/usage/v7/split-pane/theming/css-properti
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

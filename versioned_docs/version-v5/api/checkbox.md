@@ -16,32 +16,32 @@ import Slots from '@ionic-internal/component-api/v5/checkbox/slots.md';
 
 # ion-checkbox
 
-复选框允许用户从一组选项中选择多个选项。当被激活时，它们会显示为已选中（打勾）状态。点击复选框将切换 `checked` 属性。也可以通过设置 `checked` 属性以编程方式选中它们。
+Checkboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.
 
-## 使用方法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- 默认复选框 -->
+<!-- Default Checkbox -->
 <ion-checkbox></ion-checkbox>
 
-<!-- 禁用复选框 -->
+<!-- Disabled Checkbox -->
 <ion-checkbox disabled="true"></ion-checkbox>
 
-<!-- 已选中复选框 -->
+<!-- Checked Checkbox -->
 <ion-checkbox checked="true"></ion-checkbox>
 
-<!-- 复选框颜色 -->
+<!-- Checkbox Colors -->
 <ion-checkbox color="primary"></ion-checkbox>
 <ion-checkbox color="secondary"></ion-checkbox>
 <ion-checkbox color="danger"></ion-checkbox>
 <ion-checkbox color="light"></ion-checkbox>
 <ion-checkbox color="dark"></ion-checkbox>
 
-<!-- 列表中的复选框 -->
+<!-- Checkboxes in a List -->
 <ion-list>
   <ion-item *ngFor="let entry of form">
     <ion-label>{{entry.val}}</ion-label>
@@ -72,23 +72,23 @@ export class HomePage {
 <TabItem value="javascript">
 
 ```html
-<!-- 默认复选框 -->
+<!-- Default Checkbox -->
 <ion-checkbox></ion-checkbox>
 
-<!-- 禁用复选框 -->
+<!-- Disabled Checkbox -->
 <ion-checkbox disabled></ion-checkbox>
 
-<!-- 已选中复选框 -->
+<!-- Checked Checkbox -->
 <ion-checkbox checked></ion-checkbox>
 
-<!-- 复选框颜色 -->
+<!-- Checkbox Colors -->
 <ion-checkbox color="primary"></ion-checkbox>
 <ion-checkbox color="secondary"></ion-checkbox>
 <ion-checkbox color="danger"></ion-checkbox>
 <ion-checkbox color="light"></ion-checkbox>
 <ion-checkbox color="dark"></ion-checkbox>
 
-<!-- 列表中的复选框 -->
+<!-- Checkboxes in a List -->
 <ion-list>
   <ion-item>
     <ion-label>Pepperoni</ion-label>
@@ -144,18 +144,18 @@ export const CheckboxExamples: React.FC = () => {
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItemDivider>默认复选框</IonItemDivider>
+          <IonItemDivider>Default Checkbox</IonItemDivider>
           <IonItem>
-            <IonLabel>是否选中: {JSON.stringify(checked)}</IonLabel>
+            <IonLabel>Checked: {JSON.stringify(checked)}</IonLabel>
             <IonCheckbox checked={checked} onIonChange={(e) => setChecked(e.detail.checked)} />
           </IonItem>
 
-          <IonItemDivider>禁用复选框</IonItemDivider>
+          <IonItemDivider>Disabled Checkbox</IonItemDivider>
           <IonItem>
             <IonCheckbox slot="end" disabled={true} />
           </IonItem>
 
-          <IonItemDivider>复选框颜色</IonItemDivider>
+          <IonItemDivider>Checkbox Colors</IonItemDivider>
           <IonItem>
             <IonCheckbox slot="end" color="primary" />
             <IonCheckbox slot="end" color="secondary" />
@@ -163,7 +163,7 @@ export const CheckboxExamples: React.FC = () => {
             <IonCheckbox slot="end" color="light" />
             <IonCheckbox slot="end" color="dark" />
           </IonItem>
-          <IonItemDivider>列表中的复选框</IonItemDivider>
+          <IonItemDivider>Checkboxes in a List</IonItemDivider>
 
           {checkboxList.map(({ val, isChecked }, i) => (
             <IonItem key={i}>
@@ -198,23 +198,23 @@ export class CheckboxExample {
 
   render() {
     return [
-      // 默认复选框
+      // Default Checkbox
       <ion-checkbox></ion-checkbox>,
 
-      // 禁用复选框
+      // Disabled Checkbox
       <ion-checkbox disabled={true}></ion-checkbox>,
 
-      // 已选中复选框
+      // Checked Checkbox
       <ion-checkbox checked={true}></ion-checkbox>,
 
-      // 复选框颜色
+      // Checkbox Colors
       <ion-checkbox color="primary"></ion-checkbox>,
       <ion-checkbox color="secondary"></ion-checkbox>,
       <ion-checkbox color="danger"></ion-checkbox>,
       <ion-checkbox color="light"></ion-checkbox>,
       <ion-checkbox color="dark"></ion-checkbox>,
 
-      // 列表中的复选框
+      // Checkboxes in a List
       <ion-list>
         {this.form.map((entry) => (
           <ion-item>
@@ -234,23 +234,23 @@ export class CheckboxExample {
 
 ```html
 <template>
-  <!-- 默认复选框 -->
+  <!-- Default Checkbox -->
   <ion-checkbox></ion-checkbox>
 
-  <!-- 禁用复选框 -->
+  <!-- Disabled Checkbox -->
   <ion-checkbox disabled="true"></ion-checkbox>
 
-  <!-- 已选中复选框 -->
+  <!-- Checked Checkbox -->
   <ion-checkbox checked="true"></ion-checkbox>
 
-  <!-- 复选框颜色 -->
+  <!-- Checkbox Colors -->
   <ion-checkbox color="primary"></ion-checkbox>
   <ion-checkbox color="secondary"></ion-checkbox>
   <ion-checkbox color="danger"></ion-checkbox>
   <ion-checkbox color="light"></ion-checkbox>
   <ion-checkbox color="dark"></ion-checkbox>
 
-  <!-- 列表中的复选框 -->
+  <!-- Checkboxes in a List -->
   <ion-list>
     <ion-item v-for="entry in form">
       <ion-label>{{entry.val}}</ion-label>
@@ -283,26 +283,26 @@ export class CheckboxExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS 阴影部件
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

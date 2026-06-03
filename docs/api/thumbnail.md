@@ -1,5 +1,5 @@
 ---
-title: 缩略图组件
+title: "ion-thumbnail"
 ---
 
 import Props from '@ionic-internal/component-api/v8/thumbnail/props.md';
@@ -10,17 +10,17 @@ import CustomProps from '@ionic-internal/component-api/v8/thumbnail/custom-props
 import Slots from '@ionic-internal/component-api/v8/thumbnail/slots.md';
 
 <head>
-  <title>ion-thumbnail：用于图像或图标的缩略图应用组件</title>
-  <meta name="description" content="什么是缩略图？缩略图应用组件包含图像或图标，可用于显示图像布局或全尺寸图像的预览。" />
+  <title>ion-thumbnail: 用于图片或图标的缩略图应用组件</title>
+  <meta name="description" content="什么是缩略图？缩略图应用组件包裹图片或图标，可用于展示图片布局或作为全尺寸图片的预览。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-缩略图是方形组件，通常包含图像或图标。它们可用于更轻松地显示一组较大的图像，或提供全尺寸图像的预览。
+缩略图是方形组件，通常包裹图片或图标。它们可用于更轻松地显示一组较大图片或提供全尺寸图片的预览。
 
-缩略图可以单独使用，也可以在任何元素内部使用。如果放置在 `ion-item` 内，缩略图将调整大小以适应父组件。要将缩略图定位在项目的左侧或右侧，请将 slot 分别设置为 `start` 或 `end`。
+缩略图可以单独使用，也可以放在任何元素内部。如果放在 `ion-item` 内部，缩略图将调整大小以适应父组件。要将缩略图放置在项目的左侧或右侧，分别将插槽设置为 `start` 或 `end`。
 
 ## 基本用法
 
@@ -28,13 +28,13 @@ import Basic from '@site/static/usage/v8/thumbnail/basic/index.md';
 
 <Basic />
 
-## 项目缩略图
+## 项目中的缩略图
 
 import Item from '@site/static/usage/v8/thumbnail/item/index.md';
 
 <Item />
 
-## 主题定制
+## 主题
 
 ### CSS 自定义属性
 

@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-datetime value="2023-11-02T01:22:00" :format-options="formatOptions">
-    <span slot="title">选择日期</span>
+    <span slot="title">Select Date</span>
   </ion-datetime>
 </template>
 

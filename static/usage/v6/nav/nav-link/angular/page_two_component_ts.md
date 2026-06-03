@@ -11,14 +11,14 @@ import { PageThreeComponent } from './page-three.component';
         <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
         </ion-buttons>
-        <ion-title>第二页</ion-title>
+        <ion-title>Page Two</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <h1>第二页</h1>
+      <h1>Page Two</h1>
       <div>
         <ion-nav-link router-direction="forward" [component]="component">
-          <ion-button>前往第三页</ion-button>
+          <ion-button>Go to Page Three</ion-button>
         </ion-nav-link>
       </div>
     </ion-content>

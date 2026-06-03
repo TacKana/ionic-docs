@@ -1,30 +1,73 @@
 ---
-title: iOS App Store Deployment
+title: iOS App Store 部署
 sidebar_label: iOS App Store
 ---
 
 <head>
-  <title>发布到 iOS App Store: Ionic 应用的苹果应用商店部署指南</title>
+  <title>发布到 iOS App Store：Ionic 的 Apple App Store 部署</title>
   <meta
     name="description"
-    content="了解将 Ionic 应用发布到苹果 iOS App Store 的要求。学习如何生成发布版本构建以及其他必要的部署步骤。"
+    content="查看将 Ionic 应用发布到 Apple iOS App Store 的要求。了解如何生成发布构建以及部署所需的其他必要步骤。"
   />
 </head>
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 要求
 
-向 iOS App Store 提交应用需要满足以下几个条件：
+将应用提交到 iOS App Store 需要以下几项：
 
 - Xcode
-- 付费的苹果开发者账号
-- 有效的配置文件（provisioning profile）
+- 付费的 Apple 开发者账号
+- 有效的 provisioning profile
 - 应用开发和分发证书
 
-要加入苹果开发者计划，请按照 [此处列出](https://developer.apple.com/programs/) 的说明操作。
+要加入 Apple Developer Program，请按照[此处列出的说明](https://developer.apple.com/programs/)操作。
 
-## 生成发布版本构建
+## 生成发布版本
 
-如果尚未添加 iOS 平台，请务必先添加：
+<Tabs groupId="runtime">
+<TabItem value="capacitor" label="Capacitor" default>
+
+如果尚未添加 iOS 平台，请确保添加：
+
+```shell
+ionic cap add ios
+```
+
+添加平台后，使用 `--prod` 标志运行构建命令：
+
+```shell
+ionic build --prod
+```
+
+这将生成应用 Web 部分的压缩代码。
+
+对于首次构建，以及在添加插件等任何二进制更改之后，请使用同步命令：
+
+```shell
+npx cap sync ios
+```
+
+这也会复制压缩的 Web 代码。但是，如果构建仅涉及源代码更改，则只需使用以下命令复制压缩的 Web 文件：
+
+```shell
+npx cap copy ios
+```
+
+至此，项目现在被当作原生 Xcode 应用来管理（因为它就是）。
+
+在 `./ios/` 中打开项目以启动 Xcode：
+
+```shell
+npx cap open ios
+```
+
+</TabItem>
+<TabItem value="cordova" label="Cordova">
+
+如果尚未添加 iOS 平台，请确保添加：
 
 ```shell
 ionic cordova platform add ios
@@ -36,40 +79,45 @@ ionic cordova platform add ios
 ionic cordova build ios --prod
 ```
 
-这将生成应用 Web 部分的压缩代码，并将其复制到 iOS 代码库中。
+这将为应用的 Web 部分生成压缩代码，并将其复制到 iOS 代码库。
 
-完成后，打开 `./platforms/ios/` 目录下的 `.xcworkspace` 文件以启动 Xcode。
+然后，打开 `./platforms/ios/` 中的 `.xcworkspace` 文件以启动 Xcode。
 
 :::tip
-你也可以使用 `--release` 标志自动生成发布版本构建。
+您也可以使用 `--release` 标志自动生成发布版本。
 :::
+
+</TabItem>
+</Tabs>
 
 ## 生成签名证书
 
-为 iOS 生成证书是一个相对复杂的过程，请务必查阅 [苹果官方文档](https://help.apple.com/xcode/mac/current/#/dev3a05256b8) 了解证书的概念及其生成方法。
+为 iOS 生成证书是一个比较繁琐的过程，因此请务必查看 [Apple 的官方文档](https://help.apple.com/xcode/mac/current/#/dev3a05256b8)，了解什么是证书以及如何生成它们。
 
-要创建所需的证书和配置文件，请访问 [苹果会员中心](https://developer.apple.com/membercenter) 并按照苹果文档中描述的链接进行操作。
+要创建所需的证书和配置文件，请访问 [Apple 的成员中心](https://developer.apple.com/membercenter) 并按照 Apple 文档中描述的链接操作。
 
-这里涉及两种重要的证书类型：开发证书和分发证书。开发证书正如其名，专为开发阶段设计。它们用于对应用进行签名，并将其部署到证书有权访问的设备上。
+这里有两种重要的证书类型：开发和分发。开发证书顾名思义，用于开发阶段。它们用于签署应用并将其部署到证书有权访问的设备上。
 
-分发证书则用于将应用分发到应用商店。使用分发证书签名的应用可以安装在任何设备上。
+分发证书用于将应用分发到应用商店。使用分发证书签署的应用可以在任何设备上安装。
 
-## 在 Xcode 中为应用签名
+## 在 Xcode 中签署应用
 
-生成正确的证书后，可以选择让 Xcode 自动管理证书或手动管理。建议让 Xcode 自动管理证书，这将确保根据所选构建类型使用正确的开发和分发证书。
+生成正确的证书后，可以选择让 Xcode 自动管理证书或手动管理证书。建议让 Xcode 自动管理证书。这将确保根据所选构建类型使用正确的开发和分发证书。
 
-选择此选项后，从 `Product > Archive` 菜单中选择 `Archive`。这将构建一个准备在应用商店分发的应用版本。归档创建完成后，Xcode Organizer 会自动打开。
+选择此选项后，从 `Product > Archive` 菜单中选择 `Archive`。这将构建一个准备好在应用商店中分发版本的应用。创建归档后，将打开 Xcode Organizer。
 
-Xcode Organizer 会显示当前应用的构建列表。选择最新的构建并点击"Upload to App Store"。随后会出现选择团队的选项，接着是关于应用的更多信息，最后点击"Upload"按钮即可。
+Xcode Organizer 显示当前应用的构建列表。选择最后一个构建，点击 'Upload to App Store'。
+应该会有一个选择团队的位置，随后是有关应用的更多信息，以及一个可点击的 'Upload' 按钮。
 
-如果上传成功，该应用将出现在 [iTunes Connect](https://itunesconnect.apple.com) 的"Activities"下，或 [App Store Connect](https://appstoreconnect.apple.com/) 的"Apps"中。从那里，你可以将应用发布到 TestFlight，或提交给苹果审核以进入 App Store。
+如果上传成功，应用应列在 [iTunes Connect](https://itunesconnect.apple.com) 的 'Activities' 下，或 [App Store Connect](https://appstoreconnect.apple.com/) 的 'Apps' 下。然后，可以将应用发布到 TestFlight，或发送给 Apple 审批以在 App Store 上架。
 
 ## 更新应用
 
-随着应用的发展，需要不断更新以添加新功能和修复问题。你可以通过向苹果提交新版本，或使用像 Appflow 的 <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">实时更新功能</a> 这样的动态更新服务来更新应用。
+随着应用的发展，需要通过新功能和修复进行更新。
+应用可以通过向 Apple 提交新版本，或使用实时更新服务（如 Appflow 的 <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">live update 功能</a>）来更新。
 
-通过<strong>实时更新</strong>，你可以从 Appflow 控制面板直接将应用更改实时推送给用户，无需等待 App Store 的审核。
+使用<strong>Live Updates</strong>，可以直接从 Appflow 仪表板实时向用户推送应用更改，无需等待 App Store 审批。
 
 :::note
-为了让 iOS App Store 接受更新后的构建，你需要编辑 config.xml 文件以增加版本号，然后按照上述相同步骤重新构建发布版本。
+为了让 iOS App Store 接受更新的构建，需要编辑 config.xml 文件以增加版本值，然后按照相同的说明重新构建应用以进行发布。
 :::

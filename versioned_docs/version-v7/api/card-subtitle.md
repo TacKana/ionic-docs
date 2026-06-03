@@ -13,9 +13,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-卡片副标题是卡片组件的子组件，应放置在 [卡片头部](./card-header) 内。
+卡片副标题（Card subtitle）是卡片的子组件，应放置在[卡片头部](./card-header)内部。
 
-更多信息请参阅 [卡片](./card) 文档。
+更多信息请参阅[卡片](./card)文档。
 
 ## 属性
 
@@ -29,7 +29,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

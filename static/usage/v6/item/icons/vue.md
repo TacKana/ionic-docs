@@ -1,23 +1,23 @@
 ```html
 <template>
   <ion-item>
-    <ion-label>默认图标</ion-label>
+    <ion-label> Default Icon </ion-label>
     <ion-icon :icon="informationCircle" slot="end"></ion-icon>
   </ion-item>
 
   <ion-item>
-    <ion-label>大号图标</ion-label>
+    <ion-label> Large Icon </ion-label>
     <ion-icon :icon="informationCircle" size="large" slot="end"></ion-icon>
   </ion-item>
 
   <ion-item>
-    <ion-label>小号图标</ion-label>
+    <ion-label> Small Icon </ion-label>
     <ion-icon :icon="informationCircle" size="small" slot="end"></ion-icon>
   </ion-item>
 
   <ion-item>
     <ion-icon :icon="star" slot="start"></ion-icon>
-    <ion-label>默认图标</ion-label>
+    <ion-label> Default Icon </ion-label>
   </ion-item>
 </template>
 

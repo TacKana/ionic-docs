@@ -5,11 +5,11 @@ import { IonButton, IonToast } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton id="open-stacked-toast">打开堆叠布局提示框</IonButton>
-      <IonButton id="open-inline-toast">打开基线布局提示框</IonButton>
+      <IonButton id="open-stacked-toast">Open Stacked Layout Toast</IonButton>
+      <IonButton id="open-inline-toast">Open Baseline Layout Toast</IonButton>
       <IonToast
         trigger="open-inline-toast"
-        message="这是一个包含长消息和按钮的提示框，按钮与消息显示在同一行。"
+        message="This is a toast with a long message and a button that appears on the same line."
         duration={3000}
         buttons={[
           {
@@ -19,7 +19,7 @@ function Example() {
       ></IonToast>
       <IonToast
         trigger="open-stacked-toast"
-        message="这是一个包含长消息和按钮的提示框，按钮显示在下一行。"
+        message="This is a toast with a long message and a button that appears on the next line."
         duration={3000}
         buttons={[
           {

@@ -1,9 +1,9 @@
 ```css
-/* Ionic 变量与主题定制。更多信息请参阅：
+/* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
 /*
- * 深色主题颜色
+ * Dark Colors
  * -------------------------------------------
  */
 
@@ -73,7 +73,7 @@ body.dark {
 }
 
 /*
- * iOS 深色主题
+ * iOS Dark Theme
  * -------------------------------------------
  */
 
@@ -116,7 +116,7 @@ body.dark {
 }
 
 /*
- * Material Design 深色主题
+ * Material Design Dark Theme
  * -------------------------------------------
  */
 

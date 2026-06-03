@@ -2,7 +2,7 @@
 <template>
   <ion-item>
     <ion-checkbox slot="start"></ion-checkbox>
-    <ion-label>我同意条款和条件</ion-label>
+    <ion-label>I agree to the terms and conditions</ion-label>
   </ion-item>
 </template>
 

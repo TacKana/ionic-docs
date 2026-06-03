@@ -25,34 +25,35 @@ import './main.css';
 function Example() {
   const [paletteToggle, setPaletteToggle] = useState(false);
 
-  // 监听开关的选中/取消选中状态，以切换深色调色板
+  // Listen for the toggle check/uncheck to toggle the dark palette
   const toggleChange = (event: ToggleCustomEvent) => {
     toggleDarkPalette(event.detail.checked);
   };
 
-  // 在 html 元素上添加或移除 "ion-palette-dark" 类
+  // Add or remove the "ion-palette-dark" class on the html element
   const toggleDarkPalette = (shouldAdd: boolean) => {
     document.documentElement.classList.toggle('ion-palette-dark', shouldAdd);
   };
 
-  // 根据是否为深色模式，设置开关状态并更新调色板
+  // Check/uncheck the toggle and update the palette based on isDark
   const initializeDarkPalette = (isDark: boolean) => {
     setPaletteToggle(isDark);
     toggleDarkPalette(isDark);
   };
 
   useEffect(() => {
-    // 使用 matchMedia 检查用户偏好
+    // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // 根据 prefers-color-scheme 媒体查询的初始值，初始化深色调色板
+    // Initialize the dark palette based on the initial
+    // value of the prefers-color-scheme media query
     initializeDarkPalette(prefersDark.matches);
 
     const setDarkPaletteFromMediaQuery = (mediaQuery: MediaQueryListEvent) => {
       initializeDarkPalette(mediaQuery.matches);
     };
 
-    // 监听 prefers-color-scheme 媒体查询的变化
+    // Listen for changes to the prefers-color-scheme media query
     prefersDark.addEventListener('change', setDarkPaletteFromMediaQuery);
 
     return () => {
@@ -67,7 +68,7 @@ function Example() {
           <IonButtons slot="start">
             <IonBackButton default-href="#"></IonBackButton>
           </IonButtons>
-          <IonTitle>显示设置</IonTitle>
+          <IonTitle>Display</IonTitle>
           <IonButtons slot="end">
             <IonButton color="dark">
               <IonIcon slot="icon-only" ios={personCircleOutline} md={personCircle}></IonIcon>
@@ -77,23 +78,23 @@ function Example() {
       </IonHeader>
 
       <IonContent>
-        <IonListHeader>外观</IonListHeader>
+        <IonListHeader>Appearance</IonListHeader>
         <IonList inset={true}>
           <IonItem>
             <IonToggle checked={paletteToggle} onIonChange={toggleChange} justify="space-between">
-              深色模式
+              Dark Mode
             </IonToggle>
           </IonItem>
         </IonList>
 
         <IonList inset={true}>
-          <IonItem button={true}>文字大小</IonItem>
+          <IonItem button={true}>Text Size</IonItem>
           <IonItem>
-            <IonToggle justify="space-between">粗体文字</IonToggle>
+            <IonToggle justify="space-between">Bold Text</IonToggle>
           </IonItem>
         </IonList>
 
-        <IonListHeader>亮度</IonListHeader>
+        <IonListHeader>Brightness</IonListHeader>
         <IonList inset={true}>
           <IonItem>
             <IonRange value={40}>
@@ -103,16 +104,16 @@ function Example() {
           </IonItem>
           <IonItem>
             <IonToggle justify="space-between" checked>
-              原彩显示
+              True Tone
             </IonToggle>
           </IonItem>
         </IonList>
 
         <IonList inset={true}>
           <IonItem button={true}>
-            <IonLabel>夜览</IonLabel>
+            <IonLabel>Night Shift</IonLabel>
             <IonText slot="end" color="medium">
-              晚9:00至早8:00
+              9:00 PM to 8:00 AM
             </IonText>
           </IonItem>
         </IonList>

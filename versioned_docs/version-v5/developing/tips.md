@@ -2,19 +2,19 @@
 
 ## 解决权限错误
 
-当全局安装软件包时，可能会出现 `EACCES` 权限错误。这种情况下，可能需要配置 npm 使其无需提升权限即可运行。
+当全局安装包时，可能会发生 `EACCES` 权限错误。如果是这种情况，可能需要设置 npm 以无需提升权限即可运行。
 
 :::note
-**不推荐** 与 npm 一起使用 `sudo`，因为这可能导致进一步的问题。
+不**推荐**在 npm 中使用 `sudo`，因为它可能导致进一步的复杂问题。
 :::
 
-本指南提供两种解决权限问题的方案。完整文档和其他选项请参阅 [npm 文档](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)。
+本指南提供了两个解决权限问题的选项。有关完整文档和其他选项，请参见 [npm 文档](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)。
 
-### 方案一
+### 选项 1
 
-避免权限问题的最佳方法是使用 Node 版本管理器重新安装 NodeJS 和 npm。
+避免权限问题的最佳方法是使用 node 版本管理器重新安装 NodeJS 和 npm。
 
-本指南将介绍 [nvm](https://github.com/nvm-sh/nvm) 的安装和使用。完整文档请参阅 [nvm 文档](https://github.com/nvm-sh/nvm#installation-and-update)。其他选项和 Windows 操作说明请参阅 [npm 文档](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm)。
+本指南将记录 [nvm](https://github.com/nvm-sh/nvm) 的安装和使用。有关完整文档，请参见 [nvm 文档](https://github.com/nvm-sh/nvm#installation-and-update)。有关其他选项和 Windows 说明，请参见 [npm 文档](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#using-a-node-version-manager-to-install-nodejs-and-npm)。
 
 1. 安装 nvm。
 
@@ -22,13 +22,13 @@
    $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
    ```
 
-1. 新终端现在将使用 nvm。要验证安装是否成功，请打开新终端并运行以下命令。如果打印出内容，则表示安装成功。
+1. 新的终端现在将使用 nvm。要验证，请打开一个新终端并运行以下命令。如果有输出，则安装成功。
 
    ```shell
    $ command -v nvm
    ```
 
-1. 要下载并安装最新的 NodeJS LTS 版本，请运行：
+1. 要下载并安装 NodeJS 的最新 LTS 版本，请运行：
 
    ```shell
    $ nvm install --lts
@@ -40,16 +40,16 @@
    $ nvm alias default lts/*
    ```
 
-1. 新终端现在将使用 nvm 控制的 NodeJS。验证方法：
+1. 新的终端现在将使用 nvm 控制的 NodeJS。要验证：
 
    ```shell
    $ node -v  # 将打印上面安装的版本
-   $ which npm  # 将打印位于 ~/.nvm 文件夹内的路径
+   $ which npm  # 将打印 ~/.nvm 文件夹中的某个路径
    ```
 
-现在全局软件包将安装在 `~/.nvm` 目录中，因此只要 **不** 与 `sudo` 一起使用 `npm`，就不应再出现权限错误。
+全局包现在将安装在 `~/.nvm` 目录中，因此只要在 _没有_ `sudo` 的情况下使用 `npm`，权限错误就不会再发生。
 
-### 方案二
+### 选项 2
 
 <small>
   <em>不适用于 Windows</em>
@@ -63,81 +63,81 @@ $ sudo chown -R $(whoami) /usr/lib/node_modules
 $ sudo chown -R $(whoami) ~/.npm ~/.npmrc
 ```
 
-由于这些全局目录不再由 `root` 拥有，因此可以在 **不** 使用 `sudo` 的情况下全局安装软件包。
+由于这些全局目录不再由 `root` 拥有，因此可以_在没有_ `sudo` 的情况下全局安装包。
 
-## 更新依赖项
+## 更新依赖
 
-要更新 [npm](https://www.npmjs.com/) 依赖项，请运行以下命令，其中 `<package-name>` 是要更新的软件包：
+要更新 [npm](https://www.npmjs.com/) 依赖，请运行以下命令，其中 `<package-name>` 是要更新的包：
 
 ```shell
 npm install <package-name>@<version|latest> --save
 ```
 
-例如，要将 `@ionic/angular` 软件包更新到标记为 `latest` 的版本，请运行：
+例如，要将 `@ionic/angular` 包更新到标记为 `latest` 的版本，请运行：
 
 ```shell
 npm install @ionic/angular@latest --save
 ```
 
-建议通过 CLI 更新软件包，因为 npm 现在会首先从 `package-lock.json` 读取软件包版本。
+建议通过 CLI 更新包，因为 npm 现在会首先从 `package-lock.json` 中读取包版本。
 
 ## 代码编辑器
 
-有许多代码编辑器可供选择。以下是我们最喜欢的一些：
+有很多代码编辑器可供选择。以下是我们最推荐的一些：
 
-- [Visual Studio Code](https://code.visualstudio.com)：由 Microsoft 开发的流行免费文本编辑器
-- [Atom](https://atom.io)：由 GitHub 开发的可定制文本编辑器
-- [WebStorm](https://www.jetbrains.com/webstorm/)：由 JetBrains 开发的功能强大的付费编辑器
+- [Visual Studio Code](https://code.visualstudio.com)：微软出品的热门免费文本编辑器
+- [Atom](https://atom.io)：GitHub 出品的可定制文本编辑器
+- [WebStorm](https://www.jetbrains.com/webstorm/)：JetBrains 出品的强大的付费编辑器
 
 ## 使用调试器
 
-`debugger` 关键字可用于调试应用程序。当大多数浏览器遇到 `debugger` 语句时，JavaScript 的运行会停止，浏览器将加载其调试器。这可用于在应用程序中设置“断点”。
+`debugger` 关键字可用于调试应用。当大多数浏览器遇到 `debugger` 语句时，JavaScript 的执行会停止，浏览器会加载其调试器。这可用于在应用中设置"断点"。
 
-例如，如果函数未返回正确的值，可以使用调试器逐步执行代码并检查变量。
+例如，如果函数没有返回正确的值，可以使用调试器逐步执行代码并检查变量。
 
 ```javascript
 function myBrokenFunction() {
   debugger;
-  // 其他操作
+  // 做其他事情
 }
 ```
 
-当应用程序运行时，它将在该函数处暂停。然后，可以使用开发者工具逐行运行 JavaScript 代码片段，并精确检查函数在哪里出现问题。
+当应用运行时，它将在此函数处暂停。然后，可以使用开发者工具逐行执行 JavaScript 代码，并检查函数具体在哪个位置出现问题。
 
-## 切换模式
+## 改变模式
 
-默认情况下，在浏览器中查看应用程序时，Ionic 将应用 `md` 模式。但是，由于 Ionic 组件会根据其平台进行调整，因此能够查看应用程序在 iOS 上的外观非常有帮助。为此，请将 `?ionic:mode=ios` 添加到提供应用程序服务的 URL 中。例如，如果应用程序在端口 `8100` 上提供服务，则 URL 应为：`http://localhost:8100/?ionic:mode=ios`。
+默认情况下，在浏览器中查看应用时，Ionic 会应用 `md` 模式。但是，由于 Ionic 组件会根据平台自适应，能够查看应用在 iOS 上的外观会很有帮助。为此，请在提供应用的 URL 中添加 `?ionic:mode=ios`。例如，如果应用在端口 `8100` 上提供，则 URL 为：`http://localhost:8100/?ionic:mode=ios`。
 
 :::note
-这不会改变浏览器检测到的平台。平台由设备检测和用户代理检查决定。要更改平台，必须更改用户代理。为此，请使用 <kbd>Ctrl+Shift+I</kbd>（Mac 上为 <kbd>Cmd+Option+I</kbd>）打开 Chrome DevTools，然后使用 <kbd>Ctrl+Shift+M</kbd>（Mac 上为 <kbd>Cmd+Option+M</kbd>）打开设备模式。
+这不会改变浏览器检测到的平台。平台由设备检测和检查 user-agent 决定。要更改平台，必须更改 user-agent。为此，请使用 <kbd>Ctrl+Shift+I</kbd>（Mac 上为 <kbd>Cmd+Option+I</kbd>）打开 Chrome DevTools，然后使用 <kbd>Ctrl+Shift+M</kbd>（Mac 上为 <kbd>Cmd+Option+M</kbd>）切换设备模式。
 :::
 
-![Chrome DevTools 显示设备模式，已选择 iPhone X](/img/faq/tips/change-device-platform.png 'Chrome DevTools 设备模式')
+![Chrome DevTools 显示设备模式，并选择了 iPhone X。](/img/faq/tips/change-device-platform.png 'Chrome DevTools 设备模式')
 
-从设备下拉菜单中选择设备将更改用户代理以及视口尺寸。
+从设备下拉菜单中选择设备将更改 user-agent 以及视口的尺寸。
 
 ## 使用 iOS 模拟器
 
-iOS 模拟器能够在应用程序实际部署到设备之前进行测试和调试。
+iOS 模拟器可以在应用到达实际设备之前进行测试和调试。
 
-在使用之前，必须先安装 [Xcode](https://developer.apple.com/xcode/download/)（Apple 的集成开发环境）。
+在使用之前，必须先安装 Apple 的 IDE [Xcode](https://developer.apple.com/xcode/download/)。
 
-然后，可以使用 [Ionic CLI](../cli.md) 在当前目录的模拟器上运行应用程序：
+然后可以使用 [Ionic CLI](../cli.md) 在当前目录下将应用运行到模拟器上：
 
 ```shell
 ionic cordova emulate ios -lc
 ```
 
-传入 `-lc` 标志将启用实时重新加载并将控制台输出记录到终端。
+传入 `-lc` 标志将启用实时重载并将控制台输出记录到终端。
 
-Xcode 也可用于启动模拟器和调试应用程序。
+Xcode 也可以用于启动模拟器和调试应用。
 
 打开 Xcode 并打开 `../path-to-app/platforms/ios/myApp.xcodeproj`。
 
-应用程序加载后，控制台输出和设备日志将打印在 Xcode 的输出窗口中。
+应用加载后，控制台输出和设备日志将打印在 Xcode 的输出窗口中。
 
 ## 使用 Genymotion Android 模拟器
 
-虽然 Android SDK 附带了标准模拟器，但它有时可能运行缓慢且响应迟钝。
+虽然 Android SDK 附带了一个标准模拟器，但它有时可能很慢且响应不及时。
 
-[Genymotion](https://www.genymotion.com) 是一个替代模拟器，速度更快，并且仍然允许访问 GPS 和摄像头等原生功能。
+[Genymotion](https://www.genymotion.com) 是一个替代模拟器，速度更快，并且仍然允许访问 GPS 和相机等原生功能。

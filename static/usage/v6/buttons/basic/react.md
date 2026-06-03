@@ -6,9 +6,9 @@ function Example() {
   return (
     <IonToolbar>
       <IonButtons slot="start">
-        <IonButton>按钮</IonButton>
+        <IonButton>Button</IonButton>
       </IonButtons>
-      <IonTitle>默认按钮</IonTitle>
+      <IonTitle>Default Buttons</IonTitle>
     </IonToolbar>
   );
 }

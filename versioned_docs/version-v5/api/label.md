@@ -1,6 +1,6 @@
 ---
-title: '应用程序的标签颜色和属性 | ion-label'
-description: 'Label 是一个包装元素，可与其他 Ionic 组件结合使用。通过 ion-label 轻松设计项目标签颜色及其他属性。'
+title: 'Item Label Color and Properties for Applications | ion-label'
+description: 'Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label.'
 sidebar_label: 'ion-label'
 ---
 
@@ -16,37 +16,37 @@ import Slots from '@ionic-internal/component-api/v5/label/slots.md';
 
 # ion-label
 
-Label 是一个包装元素，可与 `ion-item`、`ion-input`、`ion-toggle` 等组件结合使用。标签在项目内部的位置可以是内联、固定、堆叠或浮动。
+Label is a wrapper element that can be used in combination with `ion-item`, `ion-input`, `ion-toggle`, and more. The position of the label inside of an item can be inline, fixed, stacked, or floating.
 
-## 使用方式
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- 默认标签 -->
+<!-- Default Label -->
 <ion-label>Label</ion-label>
 
-<!-- 标签颜色 -->
+<!-- Label Colors -->
 <ion-label color="primary">Primary Label</ion-label>
 <ion-label color="secondary">Secondary Label</ion-label>
 <ion-label color="danger">Danger Label</ion-label>
 <ion-label color="light">Light Label</ion-label>
 <ion-label color="dark">Dark Label</ion-label>
 
-<!-- 项目标签 -->
+<!-- Item Labels -->
 <ion-item>
   <ion-label>Default Item</ion-label>
 </ion-item>
 
 <ion-item>
   <ion-label class="ion-text-wrap">
-    多行文本，当内容过长无法在项目的一行内显示时，应自动换行。
+    Multi-line text that should wrap when it is too long to fit on one line in the item.
   </ion-label>
 </ion-item>
 
-<!-- 输入框标签 -->
+<!-- Input Labels -->
 <ion-item>
   <ion-label>Default Input</ion-label>
   <ion-input></ion-input>
@@ -83,28 +83,28 @@ Label 是一个包装元素，可与 `ion-item`、`ion-input`、`ion-toggle` 等
 <TabItem value="javascript">
 
 ```html
-<!-- 默认标签 -->
+<!-- Default Label -->
 <ion-label>Label</ion-label>
 
-<!-- 标签颜色 -->
+<!-- Label Colors -->
 <ion-label color="primary">Primary Label</ion-label>
 <ion-label color="secondary">Secondary Label</ion-label>
 <ion-label color="danger">Danger Label</ion-label>
 <ion-label color="light">Light Label</ion-label>
 <ion-label color="dark">Dark Label</ion-label>
 
-<!-- 项目标签 -->
+<!-- Item Labels -->
 <ion-item>
   <ion-label>Default Item</ion-label>
 </ion-item>
 
 <ion-item>
   <ion-label class="ion-text-wrap">
-    多行文本，当内容过长无法在项目的一行内显示时，应自动换行。
+    Multi-line text that should wrap when it is too long to fit on one line in the item.
   </ion-label>
 </ion-item>
 
-<!-- 输入框标签 -->
+<!-- Input Labels -->
 <ion-item>
   <ion-label>Default Input</ion-label>
   <ion-input></ion-input>
@@ -146,11 +146,11 @@ import { IonLabel, IonItem, IonInput, IonToggle, IonCheckbox, IonContent } from 
 
 export const LabelExample: React.FC = () => (
   <IonContent>
-    {/*-- 默认标签 --*/}
+    {/*-- Default Label --*/}
     <IonLabel>Label</IonLabel>
     <br />
 
-    {/*-- 标签颜色 --*/}
+    {/*-- Label Colors --*/}
     <IonLabel color="primary">Primary Label</IonLabel>
     <br />
     <IonLabel color="secondary">Secondary Label</IonLabel>
@@ -162,18 +162,18 @@ export const LabelExample: React.FC = () => (
     <IonLabel color="dark">Dark Label</IonLabel>
     <br />
 
-    {/*-- 项目标签 --*/}
+    {/*-- Item Labels --*/}
     <IonItem>
       <IonLabel>Default Item</IonLabel>
     </IonItem>
 
     <IonItem>
       <IonLabel className="ion-text-wrap">
-        多行文本，当内容过长无法在项目的一行内显示时，应自动换行。
+        Multi-line text that should wrap when it is too long to fit on one line in the item.
       </IonLabel>
     </IonItem>
 
-    {/*-- 输入框标签 --*/}
+    {/*-- Input Labels --*/}
     <IonItem>
       <IonLabel>Default Input</IonLabel>
       <IonInput></IonInput>
@@ -221,28 +221,28 @@ import { Component, h } from '@stencil/core';
 export class LabelExample {
   render() {
     return [
-      // 默认标签
+      // Default Label
       <ion-label>Label</ion-label>,
 
-      // 标签颜色
+      // Label Colors
       <ion-label color="primary">Primary Label</ion-label>,
       <ion-label color="secondary">Secondary Label</ion-label>,
       <ion-label color="danger">Danger Label</ion-label>,
       <ion-label color="light">Light Label</ion-label>,
       <ion-label color="dark">Dark Label</ion-label>,
 
-      // 项目标签
+      // Item Labels
       <ion-item>
         <ion-label>Default Item</ion-label>
       </ion-item>,
 
       <ion-item>
         <ion-label class="ion-text-wrap">
-          多行文本，当内容过长无法在项目的一行内显示时，应自动换行。
+          Multi-line text that should wrap when it is too long to fit on one line in the item.
         </ion-label>
       </ion-item>,
 
-      // 输入框标签
+      // Input Labels
       <ion-item>
         <ion-label>Default Input</ion-label>
         <ion-input></ion-input>
@@ -283,28 +283,28 @@ export class LabelExample {
 
 ```html
 <template>
-  <!-- 默认标签 -->
+  <!-- Default Label -->
   <ion-label>Label</ion-label>
 
-  <!-- 标签颜色 -->
+  <!-- Label Colors -->
   <ion-label color="primary">Primary Label</ion-label>
   <ion-label color="secondary">Secondary Label</ion-label>
   <ion-label color="danger">Danger Label</ion-label>
   <ion-label color="light">Light Label</ion-label>
   <ion-label color="dark">Dark Label</ion-label>
 
-  <!-- 项目标签 -->
+  <!-- Item Labels -->
   <ion-item>
     <ion-label>Default Item</ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label class="ion-text-wrap">
-      多行文本，当内容过长无法在项目的一行内显示时，应自动换行。
+      Multi-line text that should wrap when it is too long to fit on one line in the item.
     </ion-label>
   </ion-item>
 
-  <!-- 输入框标签 -->
+  <!-- Input Labels -->
   <ion-item>
     <ion-label>Default Input</ion-label>
     <ion-input></ion-input>
@@ -356,26 +356,26 @@ export class LabelExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS 阴影部件
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

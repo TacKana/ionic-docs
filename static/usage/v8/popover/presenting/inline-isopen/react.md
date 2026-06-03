@@ -13,9 +13,9 @@ function Example() {
 
   return (
     <>
-      <IonButton onClick={openPopover}>点击我</IonButton>
+      <IonButton onClick={openPopover}>Click Me</IonButton>
       <IonPopover ref={popover} isOpen={popoverOpen} onDidDismiss={() => setPopoverOpen(false)}>
-        <IonContent class="ion-padding">你好，世界！</IonContent>
+        <IonContent class="ion-padding">Hello World!</IonContent>
       </IonPopover>
     </>
   );

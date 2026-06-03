@@ -1,5 +1,5 @@
 ---
-sidebar_label: '深度链接'
+sidebar_label: 'Deeplinks'
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -8,32 +8,33 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-# 深度链接
+# Deeplinks
 
-该插件用于在 iOS 和 Android 平台上处理自定义 URL 方案链接以及通用应用链接（Universal App Links）的深度链接。
+This plugin handles deeplinks on iOS and Android for both custom URL scheme links
+and Universal App Links.
 
-请阅读 [ionic 插件深度链接文档](https://github.com/ionic-team/ionic-plugin-deeplinks) 了解 iOS 和 Android 的集成配置。
-您需要在 `config.xml` 中添加 `universal-links`，并为 iOS 设置 Apple App Site Association (AASA)，为 Android 设置 Asset Links。
+Please read the [ionic plugin deeplinks docs](https://github.com/ionic-team/ionic-plugin-deeplinks) for iOS and Android integration.
+You must add `universal-links` to your `config.xml` and set up Apple App Site Association (AASA) for iOS and Asset Links for Android.
 
 <p>
   <a href="https://github.com/ionic-team/ionic-plugin-deeplinks" target="_blank" rel="noopener" className="git-link">github.com/ionic-team/ionic-plugin-deeplinks</a>
 </p>
 
-<h2>卡在 Cordova 问题上了？</h2>
+<h2>Stuck on a Cordova issue?</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="别在插件问题上浪费宝贵时间。"
+  header="Don't waste precious time on plugin issues."
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>如果您正在构建一个严肃的项目，您不能承受花费数小时来排查问题。Ionic 专家为社区插件和高级插件提供专业的咨询服务。</p>
-    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer premium advisory services for both community plugins and premier plugins.</p>
+    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">安装</a>
+  <a href="#installation">Installation</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -41,7 +42,7 @@ import CodeBlock from '@theme/CodeBlock';
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: '企业版' },
+    { value: 'Enterprise', label: 'Enterprise' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -56,23 +57,23 @@ import CodeBlock from '@theme/CodeBlock';
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic 企业版提供 Ionic 团队全面支持与维护的插件。&nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，如果您对该插件的企业版感兴趣，<a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">请联系我们</a>
+      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## 支持的平台
+## Supported Platforms
 
 - Android
 - Browser
 - iOS
 
-## 使用方法
+## Usage
 
 ### React
 
-[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
+[Learn more about using Ionic Native components in React](../native-community.md#react)
 
 ### Angular
 
@@ -86,17 +87,18 @@ this.deeplinks.route({
      '/universal-links-test': AboutPage,
      '/products/:productId': ProductPage
    }).subscribe(match => {
-     // match.$route - 匹配到的路由，即 route() 参数中匹配成功的条目
-     // match.$args - 链接中传递的参数
-     // match.$link - 完整的链接数据
-     console.log('成功匹配路由', match);
+     // match.$route - the route we matched, which is the matched entry from the arguments to route()
+     // match.$args - the args passed in the link
+     // match.$link - the full link data
+     console.log('Successfully matched route', match);
    }, nomatch => {
-     // nomatch.$link - 完整的链接数据
-     console.error('收到一个未匹配的深度链接', nomatch);
+     // nomatch.$link - the full link data
+     console.error('Got a deeplink that didn\'t match', nomatch);
    });
 ```
 
-另外，如果您使用 Ionic，有一个便利方法可以接收 `NavController` 的引用，并为您处理实际的导航操作：
+Alternatively, if you're using Ionic, there's a convenience method that takes a reference to a `NavController` and handles
+the actual navigation for you:
 
 ```tsx
 this.deeplinks
@@ -106,16 +108,17 @@ this.deeplinks
   })
   .subscribe(
     (match) => {
-      // match.$route - 匹配到的路由，即 route() 参数中匹配成功的条目
-      // match.$args - 链接中传递的参数
-      // match.$link - 完整的链接数据
-      console.log('成功匹配路由', match);
+      // match.$route - the route we matched, which is the matched entry from the arguments to route()
+      // match.$args - the args passed in the link
+      // match.$link - the full link data
+      console.log('Successfully matched route', match);
     },
     (nomatch) => {
-      // nomatch.$link - 完整的链接数据
-      console.error("收到一个未匹配的深度链接", nomatch);
+      // nomatch.$link - the full link data
+      console.error("Got a deeplink that didn't match", nomatch);
     }
   );
 ```
 
-请参考 [Ionic 深度链接演示](https://github.com/ionic-team/ionic2-deeplinks-demo/blob/master/app/app.ts) 了解如何在运行时获取 `NavController` 引用。
+See the [Ionic Deeplinks Demo](https://github.com/ionic-team/ionic2-deeplinks-demo/blob/master/app/app.ts) for an example of how to
+retrieve the `NavController` reference at runtime.

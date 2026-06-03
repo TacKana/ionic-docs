@@ -2,48 +2,53 @@
 title: 'ion-datetime'
 ---
 
-import Props from '@ionic-internal/component-api/v6/datetime/props.md';
-import Events from '@ionic-internal/component-api/v6/datetime/events.md';
-import Methods from '@ionic-internal/component-api/v6/datetime/methods.md';
-import Parts from '@ionic-internal/component-api/v6/datetime/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/datetime/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v6/datetime/slots.md';
+import Props from '@ionic-internal/component-api/v7/datetime/props.md';
+import Events from '@ionic-internal/component-api/v7/datetime/events.md';
+import Methods from '@ionic-internal/component-api/v7/datetime/methods.md';
+import Parts from '@ionic-internal/component-api/v7/datetime/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/datetime/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v7/datetime/slots.md';
 
-import Basic from '@site/static/usage/v6/datetime/basic/index.md';
+import Basic from '@site/static/usage/v7/datetime/basic/index.md';
 
-import MaxMin from '@site/static/usage/v6/datetime/date-constraints/max-min/index.md';
-import Values from '@site/static/usage/v6/datetime/date-constraints/values/index.md';
-import Advanced from '@site/static/usage/v6/datetime/date-constraints/advanced/index.md';
+import MaxMin from '@site/static/usage/v7/datetime/date-constraints/max-min/index.md';
+import Values from '@site/static/usage/v7/datetime/date-constraints/values/index.md';
+import Advanced from '@site/static/usage/v7/datetime/date-constraints/advanced/index.md';
 
-import CustomLocale from '@site/static/usage/v6/datetime/localization/custom-locale/index.md';
-import HourCycle from '@site/static/usage/v6/datetime/localization/hour-cycle/index.md';
-import FirstDayOfWeek from '@site/static/usage/v6/datetime/localization/first-day-of-week/index.md';
-import LocaleExtensionTags from '@site/static/usage/v6/datetime/localization/locale-extension-tags/index.md';
-import TimeLabel from '@site/static/usage/v6/datetime/localization/time-label/index.md';
+import FormatOptions from '@site/static/usage/v7/datetime/format-options/index.md';
 
-import MonthAndYear from '@site/static/usage/v6/datetime/presentation/month-and-year/index.md';
-import Time from '@site/static/usage/v6/datetime/presentation/time/index.md';
-import Date from '@site/static/usage/v6/datetime/presentation/date/index.md';
+import CustomLocale from '@site/static/usage/v7/datetime/localization/custom-locale/index.md';
+import HourCycle from '@site/static/usage/v7/datetime/localization/hour-cycle/index.md';
+import FirstDayOfWeek from '@site/static/usage/v7/datetime/localization/first-day-of-week/index.md';
+import LocaleExtensionTags from '@site/static/usage/v7/datetime/localization/locale-extension-tags/index.md';
+import TimeLabel from '@site/static/usage/v7/datetime/localization/time-label/index.md';
 
-import ShowingDefaultTitle from '@site/static/usage/v6/datetime/title/showing-default-title/index.md';
-import CustomizingTitle from '@site/static/usage/v6/datetime/title/customizing-title/index.md';
+import MonthAndYear from '@site/static/usage/v7/datetime/presentation/month-and-year/index.md';
+import Time from '@site/static/usage/v7/datetime/presentation/time/index.md';
+import Date from '@site/static/usage/v7/datetime/presentation/date/index.md';
 
-import ShowingConfirmationButtons from '@site/static/usage/v6/datetime/buttons/showing-confirmation-buttons/index.md';
-import CustomizingButtons from '@site/static/usage/v6/datetime/buttons/customizing-buttons/index.md';
-import CustomizingButtonTexts from '@site/static/usage/v6/datetime/buttons/customizing-button-texts/index.md';
+import ShowingDefaultTitle from '@site/static/usage/v7/datetime/title/showing-default-title/index.md';
+import CustomizingTitle from '@site/static/usage/v7/datetime/title/customizing-title/index.md';
 
-import HighlightedDatesArray from '@site/static/usage/v6/datetime/highlightedDates/array/index.md';
-import HighlightedDatesCallback from '@site/static/usage/v6/datetime/highlightedDates/callback/index.md';
+import ShowingConfirmationButtons from '@site/static/usage/v7/datetime/buttons/showing-confirmation-buttons/index.md';
+import CustomizingButtons from '@site/static/usage/v7/datetime/buttons/customizing-buttons/index.md';
+import CustomizingButtonTexts from '@site/static/usage/v7/datetime/buttons/customizing-button-texts/index.md';
 
-import MultipleDateSelection from '@site/static/usage/v6/datetime/multiple/index.md';
+import HighlightedDatesArray from '@site/static/usage/v7/datetime/highlightedDates/array/index.md';
+import HighlightedDatesCallback from '@site/static/usage/v7/datetime/highlightedDates/callback/index.md';
 
-import Theming from '@site/static/usage/v6/datetime/theming/index.md';
+import MultipleDateSelection from '@site/static/usage/v7/datetime/multiple/index.md';
+
+import GlobalTheming from '@site/static/usage/v7/datetime/styling/global-theming/index.md';
+import CalendarHeaderStyling from '@site/static/usage/v7/datetime/styling/calendar-header/index.md';
+import CalendarDaysStyling from '@site/static/usage/v7/datetime/styling/calendar-days/index.md';
+import WheelStyling from '@site/static/usage/v7/datetime/styling/wheel-styling/index.md';
 
 <head>
-  <title>ion-datetime: 用于日期时间格式选择器的 Ionic API 输入组件</title>
+  <title>ion-datetime：Ionic API 日期时间格式选择器输入</title>
   <meta
     name="description"
-    content="日期时间组件提供一个选择器界面，用于选择日期和时间。Ionic 的 API 日期时间输入组件可以轻松显示首选格式，并管理值。"
+    content="日期时间组件提供选择日期和时间的选择器界面。Ionic 的 API Datetime 输入组件轻松显示首选格式并管理值。"
   />
 </head>
 
@@ -51,198 +56,202 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-日期时间组件提供了一个日历界面和时间滚轮，使用户可以轻松选择日期和时间。日期时间组件类似于原生的 `datetime-local` `input` 元素，但是，Ionic Framework 的日期时间组件可以轻松地以首选格式显示日期和时间，并管理日期时间值。
+日期时间组件提供日历界面和时间滚轮，使用户可以轻松选择日期和时间。日期时间组件类似于原生的 `datetime-local` 类型的 `input` 元素，但是 Ionic 框架的 Datetime 组件使显示首选格式的日期和时间以及管理日期时间值变得容易。
 
 ## 概述
 
-从历史上看，在 JavaScript 甚至 HTML 输入中处理日期时间值一直是一个挑战。具体来说，JavaScript 的 `Date` 对象以难以正确解析日期时间字符串或格式化日期时间值而闻名。更糟糕的是，不同的浏览器和 JavaScript 版本对各种日期时间字符串的解析方式不同，尤其是在不同语言环境下。
+历史上，在 JavaScript 中甚至 HTML 输入中处理日期时间值一直是一个挑战。具体来说，JavaScript 的 `Date` 对象以难以正确解析日期时间字符串或格式化日期时间值而闻名。更糟糕的是，不同的浏览器和 JavaScript 版本以不同的方式解析各种日期时间字符串，尤其是在不同地区。
 
-幸运的是，Ionic Framework 的日期时间输入组件被设计用来帮助开发者避免这些常见的陷阱，允许开发者轻松地操作日期时间值，并为用户提供一个简单的日期时间选择器，以获得出色的用户体验。
+幸运的是，Ionic 框架的日期时间输入被设计为让开发者避免常见的陷阱，使开发者能够轻松操作日期时间值，并为用户提供简单的日期时间选择器，以获得良好的用户体验。
 
-### ISO 8601 日期时间格式：YYYY-MM-DDTHH:mmZ
+### ISO 8601 日期时间格式：`YYYY-MM-DDTHH:mmZ`
 
-Ionic Framework 使用 [ISO 8601 日期时间格式](https://www.w3.org/TR/NOTE-datetime) 作为其值。该值只是一个字符串，而不是使用 JavaScript 的 `Date` 对象。使用 ISO 日期时间格式可以轻松地在 JSON 对象和数据库中进行序列化和解析。
+Ionic 框架使用 [ISO 8601 日期时间格式](https://www.w3.org/TR/NOTE-datetime)作为其值。该值只是一个字符串，而不是使用 JavaScript 的 `Date` 对象。使用 ISO 日期时间格式使得在 JSON 对象和数据库中序列化和解析变得容易。
 
-以下是一些可以与 `ion-datetime` 一起使用的 ISO 8601 格式示例：
+以下是可以与 `ion-datetime` 一起使用的一些 ISO 8601 格式示例：
 
-| 描述             | 格式                 | 日期时间值示例         |
-| --------------- | ---------------------- | ------------------------- |
-| 年份            | YYYY                   | 1994                      |
-| 年份和月份      | YYYY-MM                | 1994-12                   |
-| 完整日期        | YYYY-MM-DD             | 1994-12-15                |
-| 日期和时间      | YYYY-MM-DDTHH:mm       | 1994-12-15T13:47          |
-| UTC 时区        | YYYY-MM-DDTHH:mm:ssZ   | 1994-12-15T13:47:20Z      |
-| 时区偏移        | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20+05:00 |
-| 小时和分钟      | HH:mm                  | 13:47                      |
+| 描述           | 格式                     | 日期时间值示例              |
+| -------------- | ------------------------ | --------------------------- |
+| 年             | `YYYY`                   | `1994`                      |
+| 年和月         | `YYYY-MM`                | `1994-12`                   |
+| 完整日期       | `YYYY-MM-DD`             | `1994-12-15`                |
+| 日期和时间     | `YYYY-MM-DDTHH:mm`       | `1994-12-15T13:47`          |
+| UTC 时区       | `YYYY-MM-DDTHH:mm:ssZ`   | `1994-12-15T13:47:20Z`      |
+| 时区偏移       | `YYYY-MM-DDTHH:mm:ssTZD` | `1994-12-15T13:47:20+05:00` |
+| 小时和分钟     | `HH:mm`                  | `13:47`                     |
 
-请注意，年份始终是四位数字，毫秒（如果添加）始终是三位数字，所有其他字段始终是两位数字。因此，表示一月的数字总是有一个前导零，例如 `01`。此外，小时始终采用 24 小时制，因此 `00` 代表 12 小时制的 `12am`，`13` 代表 `1pm`，`23` 代表 `11pm`。
+请注意，年份始终为四位数，毫秒（如果添加）始终为三位数，其他所有内容始终为两位数。因此表示一月的数字始终带有前导零，例如 `01`。此外，小时始终采用 24 小时制，因此 `00` 是 12 小时制中的 `12am`，`13` 表示 `1pm`，`23` 表示 `11pm`。
 
 :::note
-虽然可以使用 ISO 8601 日期时间格式指定秒、毫秒和时区，但 `ion-datetime` 不提供用于选择秒、毫秒和时区的界面。任何提供的秒、毫秒或时区值都将被忽略。
+虽然可以使用 ISO 8601 日期时间格式指定秒、毫秒和时区，但 `ion-datetime` 不提供秒、毫秒和时区选择的界面。任何提供的秒、毫秒或时区值都将被忽略。
 :::
 
 ## 基本用法
 
 <Basic />
 
-## 与日期时间按钮一起使用
+## 与 Datetime Button 一起使用
 
-如果你需要在模态框或弹出框等覆盖层中呈现日期时间，我们建议使用 [ion-datetime-button](./datetime-button)。当空间受限时，应使用 `ion-datetime-button`。此组件显示显示当前日期和时间值的按钮。当点击按钮时，日期或时间选择器将在覆盖层中打开。
+如果需要在覆盖层（如模态框或弹出框）中显示日期时间，我们建议使用 [ion-datetime-button](./datetime-button)。当空间受限时，应使用 `ion-datetime-button`。此组件显示显示当前日期和时间值的按钮。当按钮被点击时，日期或时间选择器会在覆盖层中打开。
+
+## 异步设置值
+
+如果在日期时间组件已经创建后通过编程方式更新其 `value`，日期时间组件将自动跳转到新的日期。但是，建议在用户能够与日期时间组件交互时避免以这种方式更新 `value`，因为这可能会让当前正在尝试选择日期的用户感到困惑。例如，如果日期时间组件的 `value` 是通过异步过程加载的，建议使用 CSS 隐藏日期时间组件，直到值完成更新。
 
 ## 日期约束
 
 ### 最大和最小日期
 
-要自定义最小和最大日期时间值，可以提供 `min` 和 `max` 组件属性，这可能更适合应用程序的用例。遵循上表中列出的相同 IS0 8601 格式，每个组件可以限制用户可以选择哪些日期。
+要自定义最小和最大日期时间值，可以提供 `min` 和 `max` 组件属性，这对于应用的用例可能更有意义。遵循上面表格中列出的相同 ISO 8601 格式，每个组件可以限制用户可以选择哪些日期。
 
-以下示例将日期选择限制为仅限 2022 年 3 月到 2022 年 5 月。
+以下示例将日期选择限制为仅 2022 年 3 月到 2022 年 5 月。
 
 <MaxMin />
 
 ### 选择特定值
 
-`min` 和 `max` 属性允许你将日期选择限制在特定范围内，而 `monthValues`、`dayValues`、`yearValues`、`hourValues` 和 `minuteValues` 属性允许你选择用户可以选择的特定日期和时间。
+虽然 `min` 和 `max` 属性允许你将日期选择限制在一定范围内，但 `monthValues`、`dayValues`、`yearValues`、`hourValues` 和 `minuteValues` 属性允许你选择用户可以选择的特定日期和时间。
 
-以下示例允许以 15 分钟为增量选择分钟。它还允许以 5 天为增量选择日期。
+以下示例允许以 15 分钟为增量选择分钟。还允许以 5 天为增量选择日期。
 
 <Values />
 
 ### 高级日期约束
 
-使用 `isDateEnabled` 属性，开发者可以自定义 `ion-datetime`，以使用 ISO 8601 日期字符串禁用特定日期、日期范围、周末或任何自定义规则。`isDateEnabled` 属性接受一个返回布尔值的函数，指示是否启用某个日期。该函数为每个渲染的日历日（包括上个月、当前月和下个月的日期）调用。自定义实现应针对性能进行优化，以避免卡顿。
+使用 `isDateEnabled` 属性，开发者可以自定义 `ion-datetime`，使用 ISO 8601 日期字符串禁用特定日期、日期范围、周末或任何自定义规则。`isDateEnabled` 属性接受一个返回布尔值的函数，指示日期是否启用。该函数为每个渲染的日历天调用，包括前一个月、当前月和下一个月。自定义实现应优化性能以避免卡顿。
 
-以下示例展示如何禁用所有周末日期。对于更高级的日期操作，我们建议使用诸如 `date-fns` 之类的日期实用程序。
+以下示例显示如何禁用所有周末日期。对于更高级的日期操作，我们建议使用日期工具库，如 `date-fns`。
 
 <Advanced />
 
 ## 本地化
 
-Ionic Framework 利用了 [Intl.DatetimeFormat](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat) Web API，它使我们能够根据用户设备上设置的语言和区域自动本地化月份和日期名称。
+Ionic 框架利用 [Intl.DatetimeFormat](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) Web API，使我们能够根据用户设备设置的语言和区域自动本地化月份和日期名称。
 
-### 自定义语言环境
+### 自定义区域设置
 
-对于需要特定语言环境的场景，你可以使用 `locale` 属性进行设置。语言环境控制显示的语言以及日期和时间格式。
+当需要特定区域时，可以使用 `locale` 属性进行设置。区域设置控制显示的语言以及日期和时间格式。
 
-以下示例展示如何将语言环境设置为西班牙语（西班牙）。
+以下示例显示如何将区域设置为西班牙语（西班牙）。
 
 <CustomLocale />
 
 :::note
-时间标签不会自动本地化。有关更多信息，请参阅[时间标签](#时间标签)。
+时间标签不会自动本地化。更多信息请参阅[时间标签](#时间标签)。
 :::
 
-### 小时周期
+### 小时制
 
-默认情况下，`ion-datetime` 将使用 `locale` 属性指定的小时周期。例如，如果 `locale` 设置为 `en-US`，那么 `ion-datetime` 将使用 12 小时制。
+`ion-datetime` 将默认使用 `locale` 属性指定的小时制。例如，如果将 `locale` 设置为 `en-US`，则 `ion-datetime` 将使用 12 小时制。
 
-有 4 种主要的小时周期类型：
+有 4 种主要小时制类型：
 
-| 小时周期类型 | 描述                                                                                                    |
-| --------------- | -------------------------------------------------------------------------------------------------------------- |
-| `'h12'`         | 使用 1–12 的小时系统；对应于模式中的 'h'。12 小时制，午夜从 12:00 am 开始。 |
-| `'h23'`         | 使用 0–23 的小时系统；对应于模式中的 'H'。24 小时制，午夜从 0:00 开始。     |
-| `'h11'`         | 使用 0–11 的小时系统；对应于模式中的 'K'。12 小时制，午夜从 0:00 am 开始。  |
-| `'h24'`         | 使用 1–24 的小时系统；对应于模式中的 'k'。24 小时制，午夜从 24:00 开始。     |
+| 小时制类型   | 描述                                                                                       |
+| ------------ | ------------------------------------------------------------------------------------------ |
+| `'h12'`      | 使用 1–12 的小时制；对应模式中的 'h'。12 小时制，午夜从 12:00 am 开始。                    |
+| `'h23'`      | 使用 0–23 的小时制；对应模式中的 'H'。24 小时制，午夜从 0:00 开始。                        |
+| `'h11'`      | 使用 0–11 的小时制；对应模式中的 'K'。12 小时制，午夜从 0:00 am 开始。                     |
+| `'h24'`      | 使用 1–24 的小时制；对应模式中的 'k'。24 小时制，午夜从 24:00 开始。                       |
 
 :::note
 来源：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/hourCycle
 :::
 
-在某些情况下，你可能需要对使用哪个小时周期进行更多控制。这时 `hourCycle` 属性就可以发挥作用。
+在某些情况下，你可能需要对使用哪种小时制有更多控制。这时 `hourCycle` 属性可以提供帮助。
 
-在以下示例中，我们可以使用 `hourCycle` 属性强制 `ion-datetime` 使用 12 小时制，即使语言环境是 `en-GB`（默认使用 24 小时制）：
+在以下示例中，我们可以使用 `hourCycle` 属性强制 `ion-datetime` 使用 12 小时制，即使区域设置为默认使用 24 小时制的 `en-GB`：
 
 <HourCycle />
 
-### 每周的第一天
+### 每周第一天
 
-对于 `ion-datetime`，默认的每周第一天是星期日。截至 2022 年，还没有浏览器 API 可以让 Ionic 根据设备语言环境自动确定每周的第一天，尽管这方面的工作正在进行中（请参阅：[TC39 GitHub](https://github.com/tc39/ecma402/issues/6)）。
+对于 `ion-datetime`，默认的每周第一天是星期日。截至 2022 年，没有浏览器 API 可以让 Ionic 根据设备的区域设置自动确定每周的第一天，尽管这方面的工作正在进行中（参见：[TC39 GitHub](https://github.com/tc39/ecma402/issues/6)）。
 
 <FirstDayOfWeek />
 
 ### 时间标签
 
-时间标签不会自动本地化。幸运的是，Ionic 通过 `time-label` 插槽使提供自定义本地化变得容易。
+时间标签不会自动本地化。幸运的是，Ionic 可以通过 `time-label` 插槽轻松提供自定义本地化。
 
 <TimeLabel />
 
-### 语言环境扩展标签
+### 区域扩展标签
 
-`ion-datetime` 还支持 [语言环境扩展标签](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) 作为 `Intl.Locale` API 的一部分。这些标签允许你将有关语言环境的信息编码到语言环境字符串本身中。如果开发者在他们的应用程序中使用 [Intl.Locale API](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale)，他们可能更愿意使用扩展标签方法。
+`ion-datetime` 还支持作为 `Intl.Locale` API 一部分的[区域扩展标签](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale)。这些标签让你可以在区域字符串本身中编码有关区域的信息。如果开发者在应用中使用 [Intl.Locale API](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale)，可能更倾向于使用扩展标签方法。
 
-例如，如果你想在 `en-GB` 语言环境中使用 12 小时制，你可以提供扩展标签，而不是同时使用 `locale` 和 `hourCycle` 属性：
+例如，如果你想对 `en-GB` 区域使用 12 小时制，可以提供扩展标签，而不是同时使用 `locale` 和 `hourCycle` 属性：
 
 <LocaleExtensionTags />
 
 :::note
-在应用程序中使用 `Intl.Locale` 之前，请务必查看[浏览器兼容性图表](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale#browser_compatibility)。
+在应用中使用 `Intl.Locale` 之前，请务必查看[浏览器兼容性表](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale#browser_compatibility)。
 :::
 
-## 呈现模式
+## 呈现方式
 
-默认情况下，`ion-datetime` 允许用户选择日期和时间。此外，用户可以访问选择特定的月份、年份、小时和分钟。
+默认情况下，`ion-datetime` 允许用户选择日期和时间。此外，用户还可以选择特定的月份、年份、小时和分钟。
 
-某些用例可能只需要日期选择或只需要时间选择。`presentation` 属性允许你指定显示哪些选择器以及它们的显示顺序。例如，设置为 `date-time` 将使日历选择器出现在时间选择器之前。设置为 `time-date` 将使日历选择器出现在时间选择器之后。
+某些用例可能只需要日期选择或时间选择。`presentation` 属性允许你指定要显示哪些选择器及其显示顺序。例如，设置 `date-time` 将使日历选择器出现在时间选择器之前。设置 `time-date` 将使日历选择器出现在时间选择器之后。
 
 ### 月份和年份选择
 
-通过向 `presentation` 属性传递 `month-year`、`year-month`、`month` 或 `year`，可以使用月份和年份选择。
+通过将 `month-year`、`month` 或 `year` 传递给 `presentation` 属性，可以进行月份和年份选择。
 
-此示例显示了一个具有 `month-year` 配置的日期时间组件。
+此示例显示了一个使用 `month-year` 配置的日期时间组件。
 
 <MonthAndYear />
 
 ### 时间选择
 
-通过向 `presentation` 属性传递 `date-time`、`time-date` 或 `time`，可以使用时间选择。
+通过将 `date-time`、`time-date` 或 `time` 传递给 `presentation` 属性，可以进行时间选择。
 
-此示例显示了一个具有 `time` 配置的日期时间组件。
+此示例显示了一个使用 `time` 配置的日期时间组件。
 
 <Time />
 
 ### 日期选择
 
-通过向 `presentation` 属性传递 `date-time`、`time-date` 或 `date`，可以使用日期选择。
+通过将 `date-time`、`time-date` 或 `date` 传递给 `presentation` 属性，可以进行日期选择。
 
-此示例显示了一个具有 `date` 配置的日期时间组件。
+此示例显示了一个使用 `date` 配置的日期时间组件。
 
 <Date />
 
 ### 滚轮样式选择器
 
-默认情况下，Ionic 在使用 `presentation` 时会优先显示网格样式布局。但是，可以使用 `preferWheel` 属性显示滚轮样式。当 `preferWheel` 为 `true` 时，Ionic 将尽可能优先显示滚轮样式布局。
+默认情况下，Ionic 在使用 `presentation` 时倾向于显示网格样式布局。但是，可以使用 `preferWheel` 属性显示滚轮样式。当 `preferWheel` 为 `true` 时，Ionic 将尽可能倾向于显示滚轮样式布局。
 
-某些 `presentation` 选项同时具有网格样式和滚轮样式，开发者可以通过 `preferWheel` 属性进行选择。其他 `presentation` 值只有滚轮样式，永远不会显示网格样式。下表显示了哪些 `presentation` 值具有网格样式或滚轮样式。
+某些 `presentation` 选项同时具有网格和滚轮样式，开发者可以使用 `preferWheel` 属性进行选择。其他 `presentation` 值只有滚轮样式，永远不会显示网格样式。下表显示了哪些 `presentation` 值具有网格或滚轮样式。
 
 | `presentation` | 有网格样式？ | 有滚轮样式？ |
-| -------------- | --------------- | ---------------- |
-| `date`         | 是             | 是              |
-| `date-time`    | 是             | 是              |
-| `month`        | 否              | 是              |
-| `month-year`   | 否              | 是              |
-| `time`         | 否              | 是              |
-| `time-date`    | 是             | 是              |
-| `year`         | 否              | 是              |
+| -------------- | ------------ | ------------ |
+| `date`         | 是           | 是           |
+| `date-time`    | 是           | 是           |
+| `month`        | 否           | 是           |
+| `month-year`   | 否           | 是           |
+| `time`         | 否           | 是           |
+| `time-date`    | 是           | 是           |
+| `year`         | 否           | 是           |
 
-下面的示例展示了带有 `presentation="date-time"` 的滚轮选择器。
+下面的示例展示了使用 `presentation="date-time"` 的滚轮选择器。
 
-import Wheel from '@site/static/usage/v6/datetime/presentation/wheel/index.md';
+import Wheel from '@site/static/usage/v7/datetime/presentation/wheel/index.md';
 
 <Wheel />
 
 ## 多日期选择
 
-如果 `multiple` 属性设置为 `true`，则可以从日历选择器中选择多个日期。点击已选择的日期将取消选择它。
+如果 `multiple` 属性设置为 `true`，则可以从日历选择器中选择多个日期。点击已选择的日期将取消选择。
 
 :::note
-此属性仅在 `presentation="date"` 且 `preferWheel="false"` 时受支持。
+此属性仅在使用 `presentation="date"` 和 `preferWheel="false"` 时受支持。
 :::
 
 <MultipleDateSelection />
 
 ## 标题
 
-默认情况下，`ion-datetime` 不显示与该组件关联的任何头部或标题。开发者可以使用 `showDefaultTitle` 属性来显示默认的标题/头部配置。他们还可以使用 `title` 插槽来自定义标题中呈现的内容。
+默认情况下，`ion-datetime` 不显示与组件关联的任何头部或标题。开发者可以使用 `showDefaultTitle` 属性显示默认的标题/头部配置。他们还可以使用 `title` 插槽自定义头部中渲染的内容。
 
 ### 显示默认标题
 
@@ -252,19 +261,29 @@ import Wheel from '@site/static/usage/v6/datetime/presentation/wheel/index.md';
 
 <CustomizingTitle />
 
+## 格式选项
+
+你可以通过提供 `formatOptions` 来自定义日期时间组件头部文本中的日期格式和时间按钮中的时间格式。`formatOptions` 属性中的 `date` 和 `time` 应分别是 [`Intl.DateTimeFormatOptions`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#options) 对象。如果未提供 `formatOptions`，将使用日期和时间的默认格式。
+
+日期时间组件[不会操作或设置](#时区)时区。如果提供了 `timeZone` 或 `timeZoneName`，它们将被忽略，时区将设置为 UTC。这确保显示的值与所选值匹配，而不是转换为用户当前的时区。
+
+请注意你提供的选项，因为它们可能与所选呈现方式不匹配。例如，为 `month` 呈现方式提供 `minute: 'numeric'` 可能导致意外行为，在可能只预期显示时间的地方显示月份。
+
+<FormatOptions />
+
 ## 按钮
 
-默认情况下，每当选择新日期时，`ionChange` 会使用新的日期时间值触发。要在触发 `ionChange` 之前要求用户确认，你可以将 `showDefaultButtons` 属性设置为 `true`，或者使用 `buttons` 插槽传入自定义确认按钮。当传入自定义按钮时，确认按钮必须调用 `ion-datetime` 的 `confirm` 方法，以便触发 `ionChange`。
+默认情况下，每当选择新日期时，`ionChange` 会随新日期时间值一起发出。要在发出 `ionChange` 之前要求用户确认，可以将 `showDefaultButtons` 属性设置为 `true`，或使用 `buttons` 插槽传入自定义确认按钮。传入自定义按钮时，确认按钮必须调用 `ion-datetime` 上的 `confirm` 方法，才能发出 `ionChange`。
 
 ### 显示确认按钮
 
-默认的“完成”和“取消”按钮已经预先配置好，分别用于调用 [`confirm`](#confirm) 和 [`cancel`](#cancel) 方法。
+默认的"完成"和"取消"按钮已预先配置好，分别调用 [`confirm`](#method-confirm) 和 [`cancel`](#method-cancel) 方法。
 
 <ShowingConfirmationButtons />
 
 ### 自定义按钮文本
 
-对于简单的用例，开发者可以通过 `doneText` 和 `cancelText` 属性为确认和取消值提供自定义按钮文本。当你只需要更改按钮文本而不需要任何自定义行为时，我们建议这样做。
+对于简单的用例，开发者可以通过 `doneText` 和 `cancelText` 属性为确认和取消值提供自定义按钮文本。我们建议在你只需要更改按钮文本而不需要任何自定义行为时使用此方法。
 
 <CustomizingButtonTexts />
 
@@ -272,49 +291,73 @@ import Wheel from '@site/static/usage/v6/datetime/presentation/wheel/index.md';
 
 开发者可以提供自己的按钮以实现高级自定义行为。
 
-`ion-datetime` 具有 `confirm`、`cancel` 和 `reset` 方法，开发者可以在点击自定义按钮时调用这些方法。`reset` 方法还允许开发者提供一个日期，将日期时间重置为该值。
+`ion-datetime` 具有 `confirm`、`cancel` 和 `reset` 方法，开发者可以在点击自定义按钮时调用。`reset` 方法还允许开发者提供要将日期时间重置为的日期。
 
 <CustomizingButtons />
 
 ## 高亮特定日期
 
-使用 `highlightedDates` 属性，开发者可以用自定义文本或背景颜色设置特定日期的样式。此属性可以定义为日期及其颜色的数组，也可以定义为接收 ISO 字符串并返回要使用的颜色的回调函数。
+使用 `highlightedDates` 属性，开发者可以通过自定义文本或背景颜色为特定日期设置样式。此属性可以定义为日期及其颜色的数组，也可以是接收 ISO 字符串并返回要使用的颜色的回调函数。
 
-指定颜色时，可以使用任何有效的 CSS 颜色格式。这包括十六进制代码、rgba、[颜色变量](../theming/colors)等。
+指定颜色时，可以使用任何有效的 CSS 颜色格式。这包括十六进制代码、`rgba`、[颜色变量](../theming/colors)等。
 
-为了保持一致的用户体验，所选日期的样式将始终覆盖自定义高亮样式。
+为了保持一致的用户体验，所选日期的样式将始终覆盖自定义高亮。
 
 :::note
-此属性仅在 `preferWheel="false"` 且 `presentation` 为 `"date"`、`"date-time"` 或 `"time-date"` 时受支持。
+此属性仅在 `preferWheel="false"` 且使用 `"date"`、`"date-time"` 或 `"time-date"` 的 `presentation` 时受支持。
 :::
 
 ### 使用数组
 
-当高亮应用于固定日期（例如截止日期）时，使用数组更好。
+当高亮应用于固定日期（如到期日）时，数组更合适。
 
 <HighlightedDatesArray />
 
-### 使用回调函数
+### 使用回调
 
-当高亮日期是重复性的（例如生日或定期会议）时，使用回调函数更好。
+当高亮日期是重复性的（如生日或定期会议）时，回调更合适。
 
 <HighlightedDatesCallback />
 
-## 主题化
+## 样式
 
-Ionic 强大的主题系统可用于轻松地将整个应用程序更改为匹配特定主题。在此示例中，我们使用了[颜色创建器](../theming/colors#new-color-creator)和[渐变颜色生成器](../theming/themes#stepped-color-generator)来创建一个玫瑰色调色板，可用于 `ion-datetime`。
+### 全局主题
 
-这种方法的好处是每个组件（不仅仅是 `ion-datetime`）都可以自动利用此主题。
+Ionic 强大的主题系统可用于轻松更改整个应用以匹配特定主题。在此示例中，我们使用[颜色创建器](../theming/colors#新颜色创建器)和[阶梯颜色生成器](../theming/themes#阶梯颜色生成器)创建了玫瑰色调色板，可用于 `ion-datetime`。
 
-<Theming />
+这种方法的好处是，不仅 `ion-datetime`，每个组件都可以自动利用此主题。
+
+<GlobalTheming />
+
+### 日历头部
+
+日历头部管理日期导航控件（月份/年份选择器和上一个/下一个按钮）以及使用网格样式布局时的星期几。
+
+<CalendarHeaderStyling />
+
+### 日历天
+
+网格样式 `ion-datetime` 中的日历天可以使用 CSS 阴影部分进行样式设置。
+
+:::note
+下面的示例选择了 2 天前的日期，除非该日期在上个月，则选择一个未来 2 天的日期。这是为了演示目的，展示如何对所有天、当前天和选定天应用自定义样式。
+:::
+
+<CalendarDaysStyling />
+
+### 滚轮选择器
+
+`ion-datetime` 中使用的滚轮可以通过阴影部分和 CSS 变量的组合进行样式设置。这适用于滚轮样式日期时间组件中的列以及网格样式日期时间组件中的月份/年份选择器。
+
+<WheelStyling />
 
 ## 时区
 
-Ionic 的 `ion-datetime` 遵循 [datetime-local](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/datetime-local) 的行为，不在日期时间控件内操作或设置时区。换句话说，时间值（如“07:00”）不会根据不同的时区进行调整。
+Ionic 的 `ion-datetime` 遵循 [datetime-local](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/datetime-local) 的行为，不会在日期时间控件内部操作或设置时区。换句话说，时间值 "07:00" 不会根据不同的时区进行调整。
 
-我们建议使用诸如 [date-fns-tz](https://github.com/marnusw/date-fns-tz) 之类的库将日期时间值转换为所需的时区。
+我们建议使用像 [date-fns-tz](https://github.com/marnusw/date-fns-tz) 这样的库将日期时间值转换为所需的时区。
 
-以下是格式化 ISO-8601 字符串以在用户设备设置的时区中显示的示例：
+以下是将 ISO-8601 字符串格式化为用户设备上设置的时区显示的示例：
 
 ```typescript
 import { format, utcToZonedTime } from 'date-fns-tz';
@@ -322,80 +365,80 @@ import { format, utcToZonedTime } from 'date-fns-tz';
 // 获取用户设备上设置的时区
 const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-// 从 UTC 日期字符串创建一个日期对象
+// 从 UTC 日期字符串创建日期对象
 const date = new Date('2014-10-25T10:46:20Z');
 
-// 使用 date-fns-tz 从 UTC 转换为特定时区时间
+// 使用 date-fns-tz 从 UTC 转换为带时区的时间
 const zonedTime = utcToZonedTime(date, userTimeZone);
 
-// 从特定时区时间创建格式化字符串
+// 从带时区的时间创建格式化字符串
 format(zonedTime, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: userTimeZone });
 ```
 
 ### 解析日期值
 
-`ionChange` 事件将在事件负载中发出 ISO-8601 字符串格式的日期值。开发者有责任根据其应用程序需求对其进行格式化。我们建议使用 [date-fns](https://date-fns.org) 来格式化日期值。
+`ionChange` 事件将日期值作为 ISO-8601 字符串在事件负载中发出。开发者有责任根据其应用需求对其进行格式化。我们建议使用 [date-fns](https://date-fns.org) 来格式化日期值。
 
-以下是格式化 ISO-8601 字符串以显示月、日和年的示例：
+以下是将 ISO-8601 字符串格式化为显示月份、日期和年份的示例：
 
 ```typescript
 import { format, parseISO } from 'date-fns';
 
 /**
- * 这是从 `ionChange` 事件的
+ * 这是在 `ionChange` 事件的
  * 事件负载中提供的。
  *
- * 该值是一个 ISO-8601 日期字符串。
+ * 该值是 ISO-8601 日期字符串。
  */
 const dateFromIonDatetime = '2021-06-04T14:23:00-04:00';
 const formattedString = format(parseISO(dateFromIonDatetime), 'MMM d, yyyy');
 
-console.log(formattedString); // 输出: Jun 4, 2021
+console.log(formattedString); // 2021 年 6 月 4 日
 ```
 
-有关所有有效格式令牌的列表，请参阅 https://date-fns.org/docs/format。
+请参阅 https://date-fns.org/docs/format 获取所有有效格式令牌的列表。
 
 ## 高级日期时间验证和操作
 
-日期时间选择器提供了选择精确格式的简便性，并使用标准化的 [ISO 8601 日期时间格式](https://www.w3.org/TR/NOTE-datetime)将日期时间值持久化为字符串。但是，需要注意的是，`ion-datetime` 并不试图解决验证和操作日期时间值时的所有情况。如果需要从特定格式解析日期时间值，或对其进行操作（例如，在日期上增加 5 天、减去 30 分钟等），甚至将数据格式化为特定语言环境，那么我们强烈建议使用 [date-fns](https://date-fns.org) 在 JavaScript 中处理日期。
+日期时间选择器提供了选择精确格式的简便性，并使用标准化的 [ISO 8601 日期时间格式](https://www.w3.org/TR/NOTE-datetime)将日期时间值持久化为字符串。但是，需要注意的是，`ion-datetime` 并不试图解决验证和操作日期时间值时的所有情况。如果日期时间值需要从特定格式解析，或进行操作（例如，在日期上加 5 天、减去 30 分钟等），甚至将数据格式化为特定区域，那么我们强烈建议使用 [date-fns](https://date-fns.org) 在 JavaScript 中处理日期。
 
-## 无障碍性
+## 无障碍访问
 
-### 键盘导航
+### 键盘交互
 
-`ion-datetime` 具有完整的键盘支持，可在组件内的可聚焦元素之间导航。下表详细说明了每个键的功能：
+`ion-datetime` 拥有完整的键盘支持，用于在组件内的可聚焦元素之间导航。下表详细说明了每个键的作用：
 
-| 键                | 功能                                       |
-| ------------------ | ---------------------------------------------- |
-| `Tab`              | 将焦点移动到下一个可聚焦元素。     |
-| `Shift` + `Tab`    | 将焦点移动到上一个可聚焦元素。 |
-| `Space` 或 `Enter` | 点击可聚焦元素。                  |
+| 键                                  | 描述                               |
+| ----------------------------------- | ---------------------------------- |
+| <kbd>Tab</kbd>                      | 将焦点移动到下一个可聚焦元素。     |
+| <kbd>Shift</kbd> + <kbd>Tab</kbd>   | 将焦点移动到上一个可聚焦元素。     |
+| <kbd>Space</kbd> 或 <kbd>Enter</kbd>| 点击可聚焦元素。                   |
 
 #### 日期网格
 
-| 键                  | 功能                                          |
-| -------------------- | ------------------------------------------------- |
-| `ArrowUp`            | 将焦点移动到前一周的同一天。 |
-| `ArrowDown`          | 将焦点移动到后一周的同一天。     |
-| `ArrowRight`         | 将焦点移动到下一天。                      |
-| `ArrowLeft`          | 将焦点移动到前一天。                  |
-| `Home`               | 将焦点移动到当前周的第一天。 |
-| `End`                | 将焦点移动到当前周的最后一天。  |
-| `PageUp`             | 将日期网格更改为上个月。  |
-| `PageDown`           | 将日期网格更改为下个月。      |
-| `Shift` + `PageUp`   | 将日期网格更改为上一年。   |
-| `Shift` + `PageDown` | 将日期网格更改为下一年。       |
+| 键                                      | 描述                                         |
+| --------------------------------------- | -------------------------------------------- |
+| <kbd>上箭头</kbd>                       | 将焦点移动到前一周的同一天。                 |
+| <kbd>下箭头</kbd>                       | 将焦点移动到后一周的同一天。                 |
+| <kbd>右箭头</kbd>                       | 将焦点移动到下一天。                         |
+| <kbd>左箭头</kbd>                       | 将焦点移动到前一天。                         |
+| <kbd>Home</kbd>                         | 将焦点移动到当前周的第一天。                 |
+| <kbd>End</kbd>                          | 将焦点移动到当前周的最后一天。               |
+| <kbd>PageUp</kbd>                       | 将日期网格更改为上一个月。                   |
+| <kbd>PageDown</kbd>                     | 将日期网格更改为下一个月。                   |
+| <kbd>Shift</kbd> + <kbd>PageUp</kbd>    | 将日期网格更改为上一年。                     |
+| <kbd>Shift</kbd> + <kbd>PageDown</kbd>  | 将日期网格更改为下一年。                     |
 
 #### 时间、月份和年份滚轮
 
-当使用时间滚轮选择器时，当列获得焦点时，你可以使用数字键选择小时和分钟值。
+使用时间滚轮选择器时，当列聚焦时，可以使用数字键选择小时和分钟值。
 
-| 键         | 功能                     |
-| ----------- | ---------------------------- |
-| `ArrowUp`   | 滚动到上一个项目。 |
-| `ArrowDown` | 滚动到下一个项目。     |
-| `Home`      | 滚动到第一个项目。    |
-| `End`       | 滚动到最后一个项目。     |
+| 键                  | 功能                   |
+| ------------------- | ---------------------- |
+| <kbd>上箭头</kbd>   | 滚动到上一个项目。     |
+| <kbd>下箭头</kbd>   | 滚动到下一个项目。     |
+| <kbd>Home</kbd>     | 滚动到第一个项目。     |
+| <kbd>End</kbd>      | 滚动到最后一个项目。   |
 
 ## 接口
 
@@ -409,7 +452,7 @@ interface DatetimeChangeEventDetail {
 
 ### DatetimeCustomEvent
 
-虽然不是必需的，但可以使用此接口代替 `CustomEvent` 接口，为此组件发出的 Ionic 事件提供更强的类型。
+虽然不是必需的，但此接口可以替代 `CustomEvent` 接口，为此组件发出的 Ionic 事件提供更强的类型支持。
 
 ```typescript
 interface DatetimeCustomEvent extends CustomEvent {

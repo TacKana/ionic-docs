@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-range
-    aria-label="启用旋钮事件的滑块"
+    aria-label="Range with knob events"
     @ionKnobMoveStart="onIonKnobMoveStart"
     @ionKnobMoveEnd="onIonKnobMoveEnd"
   ></ion-range>

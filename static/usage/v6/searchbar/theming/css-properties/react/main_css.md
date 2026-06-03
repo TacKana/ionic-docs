@@ -1,5 +1,5 @@
 ```css
-/* 定制作用域组件需要更高的选择器特异性 */
+/* Scoped components require higher specificity to customize */
 ion-searchbar.custom {
   --background: #19422d;
   --color: #fff;

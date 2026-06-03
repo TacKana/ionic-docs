@@ -11,7 +11,7 @@ import { IonicModule } from '@ionic/angular';
 export class ExampleComponent {
   handleRefresh(event) {
     setTimeout(() => {
-      // 所有加载数据的调用都放在这里
+      // Any calls to load data go here
       event.target.complete();
     }, 2000);
   }

@@ -21,33 +21,33 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>示例</IonTitle>
+          <IonTitle>Example</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent color="light">
         <IonList inset={true}>
           <IonItem>
-            <IonInput label="姓氏"></IonInput>
+            <IonInput label="First Name"></IonInput>
           </IonItem>
           <IonItem>
-            <IonInput label="名字"></IonInput>
+            <IonInput label="Last Name"></IonInput>
           </IonItem>
           <IonItem>
             <IonToggle>
-              <IonLabel>允许通知</IonLabel>
-              <IonNote color="medium">可随时取消订阅</IonNote>
+              <IonLabel>Allow Notifications</IonLabel>
+              <IonNote color="medium">Unsubscribe at any time</IonNote>
             </IonToggle>
           </IonItem>
         </IonList>
 
         <IonList inset={true}>
           <IonItem>
-            <IonTextarea label="评论" label-placement="floating" rows={5}></IonTextarea>
+            <IonTextarea label="Comments" label-placement="floating" rows={5}></IonTextarea>
           </IonItem>
         </IonList>
 
         <IonNote color="medium" class="ion-margin-horizontal">
-          您的评论将被匿名保存，仅用于提升我们产品的可靠性。
+          Your comments will be kept anonymous and will only be used to improve the reliability of our products.
         </IonNote>
       </IonContent>
     </>

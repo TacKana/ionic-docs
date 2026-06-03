@@ -15,14 +15,14 @@
 
 <ion-header>
   <ion-toolbar>
-    <ion-title>应用</ion-title>
+    <ion-title>App</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-button id="open-modal" expand="block">打开底部模态框</ion-button>
+  <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button>
 
   <ion-modal trigger="open-modal">
-    <div class="block">内容区块</div>
+    <div class="block">Block of Content</div>
   </ion-modal>
 </ion-content>
 

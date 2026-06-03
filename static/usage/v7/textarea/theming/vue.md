@@ -19,10 +19,10 @@
 
 <template>
   <ion-textarea
-    aria-label="自定义文本框"
-    placeholder="在此处输入内容"
+    aria-label="Custom textarea"
+    placeholder="Type something here"
     class="custom"
-    helper-text="辅助说明文字"
+    helper-text="Helper text"
     :counter="true"
     :maxlength="100"
   ></ion-textarea>

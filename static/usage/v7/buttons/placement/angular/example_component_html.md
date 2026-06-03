@@ -1,21 +1,21 @@
 ```html
 <ion-toolbar>
   <ion-buttons slot="start">
-    <ion-button>起始</ion-button>
+    <ion-button>Start</ion-button>
   </ion-buttons>
-  <ion-title>按钮</ion-title>
+  <ion-title>Buttons</ion-title>
   <ion-buttons slot="end">
-    <ion-button>结束</ion-button>
+    <ion-button>End</ion-button>
   </ion-buttons>
 </ion-toolbar>
 
 <ion-toolbar>
   <ion-buttons slot="secondary">
-    <ion-button>次要</ion-button>
+    <ion-button>Secondary</ion-button>
   </ion-buttons>
-  <ion-title>按钮</ion-title>
+  <ion-title>Buttons</ion-title>
   <ion-buttons slot="primary">
-    <ion-button>主要</ion-button>
+    <ion-button>Primary</ion-button>
   </ion-buttons>
 </ion-toolbar>
 ```

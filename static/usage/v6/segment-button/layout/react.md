@@ -20,60 +20,60 @@ function Example() {
 
       <IonSegment value="heart">
         <IonSegmentButton value="call">
-          <IonLabel>通话</IonLabel>
+          <IonLabel>Call</IonLabel>
           <IonIcon icon={call}></IonIcon>
         </IonSegmentButton>
         <IonSegmentButton value="heart">
-          <IonLabel>收藏</IonLabel>
+          <IonLabel>Heart</IonLabel>
           <IonIcon icon={heart}></IonIcon>
         </IonSegmentButton>
         <IonSegmentButton value="pin">
-          <IonLabel>定位</IonLabel>
+          <IonLabel>Pin</IonLabel>
           <IonIcon icon={pin}></IonIcon>
         </IonSegmentButton>
       </IonSegment>
 
       <IonSegment value="heart">
         <IonSegmentButton value="call" layout="icon-bottom">
-          <IonLabel>通话</IonLabel>
+          <IonLabel>Call</IonLabel>
           <IonIcon icon={call}></IonIcon>
         </IonSegmentButton>
         <IonSegmentButton value="heart" layout="icon-bottom">
-          <IonLabel>收藏</IonLabel>
+          <IonLabel>Heart</IonLabel>
           <IonIcon icon={heart}></IonIcon>
         </IonSegmentButton>
         <IonSegmentButton value="pin" layout="icon-bottom">
-          <IonLabel>定位</IonLabel>
+          <IonLabel>Pin</IonLabel>
           <IonIcon icon={pin}></IonIcon>
         </IonSegmentButton>
       </IonSegment>
 
       <IonSegment value="heart">
         <IonSegmentButton value="call" layout="icon-start">
-          <IonLabel>通话</IonLabel>
+          <IonLabel>Call</IonLabel>
           <IonIcon icon={call}></IonIcon>
         </IonSegmentButton>
         <IonSegmentButton value="heart" layout="icon-start">
-          <IonLabel>收藏</IonLabel>
+          <IonLabel>Heart</IonLabel>
           <IonIcon icon={heart}></IonIcon>
         </IonSegmentButton>
         <IonSegmentButton value="pin" layout="icon-start">
-          <IonLabel>定位</IonLabel>
+          <IonLabel>Pin</IonLabel>
           <IonIcon icon={pin}></IonIcon>
         </IonSegmentButton>
       </IonSegment>
 
       <IonSegment value="heart">
         <IonSegmentButton value="call" layout="icon-end">
-          <IonLabel>通话</IonLabel>
+          <IonLabel>Call</IonLabel>
           <IonIcon icon={call}></IonIcon>
         </IonSegmentButton>
         <IonSegmentButton value="heart" layout="icon-end">
-          <IonLabel>收藏</IonLabel>
+          <IonLabel>Heart</IonLabel>
           <IonIcon icon={heart}></IonIcon>
         </IonSegmentButton>
         <IonSegmentButton value="pin" layout="icon-end">
-          <IonLabel>定位</IonLabel>
+          <IonLabel>Pin</IonLabel>
           <IonIcon icon={pin}></IonIcon>
         </IonSegmentButton>
       </IonSegment>

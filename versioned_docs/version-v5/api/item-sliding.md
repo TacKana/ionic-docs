@@ -1,6 +1,6 @@
 ---
-title: '滑动按钮 | 使用 ion-item-sliding 实现从右向左滑动'
-description: 'ion-item-sliding 组件包含可通过拖拽显示按钮的项目。当滑动项从左向右滑动时，会显示操作选项。'
+title: 'Slide Buttons | Slide Right to Left with ion-item-sliding'
+description: 'ion-item-sliding component contains items that are dragged to reveal buttons. Options are revealed when the sliding item is swiped from left to right.'
 sidebar_label: 'ion-item-sliding'
 ---
 
@@ -16,29 +16,29 @@ import Slots from '@ionic-internal/component-api/v5/item-sliding/slots.md';
 
 # ion-item-sliding
 
-滑动项组件包含一个可以通过拖拽显示按钮的项目。它需要一个 [item](item.md) 组件作为子元素。所有要显示的操作选项都应放在 [item options](item-options.md) 元素中。
+A sliding item contains an item that can be dragged to reveal buttons. It requires an [item](item.md) component as a child. All options to reveal should be placed in the [item options](item-options.md) element.
 
-## 滑动方向
+## Swipe Direction
 
-默认情况下，按钮位于 `"end"` 侧。这意味着当滑动项从末尾向起始方向滑动时（即从左向右滑动？），操作选项会显示出来。具体来说，在 LTR（从左到右）布局下是从右向左滑动，在 RTL（从右到左）布局下是从左向右滑动。要将它们放在相反的一侧，使其在相反方向滑动时显示，可以在 [`ion-item-options`](item-options.md) 元素上设置 `side` 属性为 `"start"`。可以同时使用两个 `ion-item-options`，以便根据滑动方向显示两组不同的操作选项。
+By default, the buttons are placed on the `"end"` side. This means that options are revealed when the sliding item is swiped from end to start, i.e. from right to left in LTR, but from left to right in RTL. To place them on the opposite side, so that they are revealed when swiping in the opposite direction, set the `side` attribute to `"start"` on the [`ion-item-options`](item-options.md) element. Up to two `ion-item-options` can be used at the same time in order to reveal two different sets of options depending on the swiping direction.
 
-## 选项布局
+## Options Layout
 
-默认情况下，如果在 [item option](item-option.md) 中同时放置图标和文本，图标会显示在文本上方，但可以通过更改图标插槽（slot）来改变其在选项中的位置，可选值如下：
+By default if an icon is placed with text in the [item option](item-option.md), it will display the icon on top of the text, but the icon slot can be changed to any of the following to position it in the option.
 
-| 插槽        | 描述                                                              |
+| Slot        | Description                                                              |
 | ----------- | ------------------------------------------------------------------------ |
-| `start`     | 在 LTR 布局中，`start` 是按钮的左侧；在 RTL 布局中，是按钮的右侧 |
-| `top`       | 图标位于文本上方                                               |
-| `icon-only` | 图标是按钮的唯一内容                               |
-| `bottom`    | 图标位于文本下方                                               |
-| `end`       | 在 LTR 布局中，`end` 是按钮的右侧；在 RTL 布局中，是按钮的左侧   |
+| `start`     | In LTR, start is the left side of the button, and in RTL it is the right |
+| `top`       | The icon is above the text                                               |
+| `icon-only` | The icon is the only content of the button                               |
+| `bottom`    | The icon is below the text                                               |
+| `end`       | In LTR, end is the right side of the button, and in RTL it is the left   |
 
-## 可展开选项
+## Expandable Options
 
-如果你滑动超过特定阈值，选项可以展开以占据项目的整个宽度。这可以与 `ionSwipe` 事件结合使用，以调用类上的方法。
+Options can be expanded to take up the full width of the item if you swipe past a certain point. This can be combined with the `ionSwipe` event to call methods on the class.
 
-## 使用方法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -46,46 +46,46 @@ import Slots from '@ionic-internal/component-api/v5/item-sliding/slots.md';
 
 ```html
 <ion-list>
-  <!-- 两侧带有文本选项的滑动项 -->
+  <!-- Sliding item with text options on both sides -->
   <ion-item-sliding>
     <ion-item-options side="start">
-      <ion-item-option (click)="favorite(item)">收藏</ion-item-option>
-      <ion-item-option color="danger" (click)="share(item)">分享</ion-item-option>
+      <ion-item-option (click)="favorite(item)">Favorite</ion-item-option>
+      <ion-item-option color="danger" (click)="share(item)">Share</ion-item-option>
     </ion-item-options>
 
     <ion-item>
-      <ion-label>项目选项</ion-label>
+      <ion-label>Item Options</ion-label>
     </ion-item>
 
     <ion-item-options side="end">
-      <ion-item-option (click)="unread(item)">标为未读</ion-item-option>
+      <ion-item-option (click)="unread(item)">Unread</ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
-  <!-- 两侧带有可展开选项的滑动项 -->
+  <!-- Sliding item with expandable options on both sides -->
   <ion-item-sliding>
     <ion-item-options side="start">
-      <ion-item-option color="danger" expandable> 删除 </ion-item-option>
+      <ion-item-option color="danger" expandable> Delete </ion-item-option>
     </ion-item-options>
 
     <ion-item>
-      <ion-label>可展开选项</ion-label>
+      <ion-label>Expandable Options</ion-label>
     </ion-item>
 
     <ion-item-options side="end">
-      <ion-item-option color="tertiary" expandable> 归档 </ion-item-option>
+      <ion-item-option color="tertiary" expandable> Archive </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
-  <!-- 两侧带有图标选项的多行滑动项 -->
+  <!-- Multi-line sliding item with icon options on both sides -->
   <ion-item-sliding id="item100">
     <ion-item href="#">
       <ion-label>
-        <h2>HubStruck 通知</h2>
-        <p>您网络中的新消息</p>
-        <p>Oceanic Next 已加入您的网络</p>
+        <h2>HubStruck Notifications</h2>
+        <p>A new message in your network</p>
+        <p>Oceanic Next has joined your network</p>
       </ion-label>
-      <ion-note slot="end"> 上午 10:45 </ion-note>
+      <ion-note slot="end"> 10:45 AM </ion-note>
     </ion-item>
 
     <ion-item-options side="start">
@@ -104,70 +104,70 @@ import Slots from '@ionic-internal/component-api/v5/item-sliding/slots.md';
     </ion-item-options>
   </ion-item-sliding>
 
-  <!-- 结束侧带有图标位于开始位置的选项的滑动项 -->
+  <!-- Sliding item with icon start options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label> 滑动项，图标在开始位置 </ion-label>
+      <ion-label> Sliding Item, Icons Start </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
         <ion-icon slot="start" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-        更多
+        More
       </ion-item-option>
       <ion-item-option color="secondary">
         <ion-icon slot="start" name="archive"></ion-icon>
-        归档
+        Archive
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
-  <!-- 结束侧带有图标位于结束位置的选项的滑动项 -->
+  <!-- Sliding item with icon end options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label> 滑动项，图标在结束位置 </ion-label>
+      <ion-label> Sliding Item, Icons End </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
         <ion-icon slot="end" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-        更多
+        More
       </ion-item-option>
       <ion-item-option color="secondary">
         <ion-icon slot="end" name="archive"></ion-icon>
-        归档
+        Archive
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
-  <!-- 结束侧带有图标位于顶部位置的选项的滑动项 -->
+  <!-- Sliding item with icon top options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label> 滑动项，图标在顶部 </ion-label>
+      <ion-label> Sliding Item, Icons Top </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
         <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-        更多
+        More
       </ion-item-option>
       <ion-item-option color="secondary">
         <ion-icon slot="top" name="archive"></ion-icon>
-        归档
+        Archive
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
-  <!-- 结束侧带有图标位于底部位置的选项的滑动项 -->
+  <!-- Sliding item with icon bottom options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label> 滑动项，图标在底部 </ion-label>
+      <ion-label> Sliding Item, Icons Bottom </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
         <ion-icon slot="bottom" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-        更多
+        More
       </ion-item-option>
       <ion-item-option color="secondary">
         <ion-icon slot="bottom" name="archive"></ion-icon>
-        归档
+        Archive
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
@@ -180,46 +180,46 @@ import Slots from '@ionic-internal/component-api/v5/item-sliding/slots.md';
 
 ```html
 <ion-list>
-  <!-- 两侧带有文本选项的滑动项 -->
+  <!-- Sliding item with text options on both sides -->
   <ion-item-sliding>
     <ion-item-options side="start">
-      <ion-item-option onClick="favorite(item)">收藏</ion-item-option>
-      <ion-item-option color="danger" onClick="share(item)">分享</ion-item-option>
+      <ion-item-option onClick="favorite(item)">Favorite</ion-item-option>
+      <ion-item-option color="danger" onClick="share(item)">Share</ion-item-option>
     </ion-item-options>
 
     <ion-item>
-      <ion-label>项目选项</ion-label>
+      <ion-label>Item Options</ion-label>
     </ion-item>
 
     <ion-item-options side="end">
-      <ion-item-option onClick="unread(item)">标为未读</ion-item-option>
+      <ion-item-option onClick="unread(item)">Unread</ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
-  <!-- 两侧带有可展开选项的滑动项 -->
+  <!-- Sliding item with expandable options on both sides -->
   <ion-item-sliding>
     <ion-item-options side="start">
-      <ion-item-option color="danger" expandable> 删除 </ion-item-option>
+      <ion-item-option color="danger" expandable> Delete </ion-item-option>
     </ion-item-options>
 
     <ion-item>
-      <ion-label>可展开选项</ion-label>
+      <ion-label>Expandable Options</ion-label>
     </ion-item>
 
     <ion-item-options side="end">
-      <ion-item-option color="tertiary" expandable> 归档 </ion-item-option>
+      <ion-item-option color="tertiary" expandable> Archive </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
-  <!-- 两侧带有图标选项的多行滑动项 -->
+  <!-- Multi-line sliding item with icon options on both sides -->
   <ion-item-sliding id="item100">
     <ion-item href="#">
       <ion-label>
-        <h2>HubStruck 通知</h2>
-        <p>您网络中的新消息</p>
-        <p>Oceanic Next 已加入您的网络</p>
+        <h2>HubStruck Notifications</h2>
+        <p>A new message in your network</p>
+        <p>Oceanic Next has joined your network</p>
       </ion-label>
-      <ion-note slot="end"> 上午 10:45 </ion-note>
+      <ion-note slot="end"> 10:45 AM </ion-note>
     </ion-item>
 
     <ion-item-options side="start">
@@ -238,70 +238,70 @@ import Slots from '@ionic-internal/component-api/v5/item-sliding/slots.md';
     </ion-item-options>
   </ion-item-sliding>
 
-  <!-- 结束侧带有图标位于开始位置的选项的滑动项 -->
+  <!-- Sliding item with icon start options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label> 滑动项，图标在开始位置 </ion-label>
+      <ion-label> Sliding Item, Icons Start </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
         <ion-icon slot="start" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-        更多
+        More
       </ion-item-option>
       <ion-item-option color="secondary">
         <ion-icon slot="start" name="archive"></ion-icon>
-        归档
+        Archive
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
-  <!-- 结束侧带有图标位于结束位置的选项的滑动项 -->
+  <!-- Sliding item with icon end options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label> 滑动项，图标在结束位置 </ion-label>
+      <ion-label> Sliding Item, Icons End </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
         <ion-icon slot="end" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-        更多
+        More
       </ion-item-option>
       <ion-item-option color="secondary">
         <ion-icon slot="end" name="archive"></ion-icon>
-        归档
+        Archive
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
-  <!-- 结束侧带有图标位于顶部位置的选项的滑动项 -->
+  <!-- Sliding item with icon top options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label> 滑动项，图标在顶部 </ion-label>
+      <ion-label> Sliding Item, Icons Top </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
         <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-        更多
+        More
       </ion-item-option>
       <ion-item-option color="secondary">
         <ion-icon slot="top" name="archive"></ion-icon>
-        归档
+        Archive
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
-  <!-- 结束侧带有图标位于底部位置的选项的滑动项 -->
+  <!-- Sliding item with icon bottom options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label> 滑动项，图标在底部 </ion-label>
+      <ion-label> Sliding Item, Icons Bottom </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
         <ion-icon slot="bottom" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-        更多
+        More
       </ion-item-option>
       <ion-item-option color="secondary">
         <ion-icon slot="bottom" name="archive"></ion-icon>
-        归档
+        Archive
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
@@ -329,52 +329,52 @@ import { heart, trash, star, archive, ellipsisHorizontal, ellipsisVertical } fro
 
 export const ItemSlidingExample: React.FC = () => (
   <IonList>
-    {/* 两侧带有文本选项的滑动项 */}
+    {/* Sliding item with text options on both sides */}
     <IonItemSliding>
       <IonItemOptions side="start">
-        <IonItemOption onClick={() => console.log('收藏 clicked')}>收藏</IonItemOption>
-        <IonItemOption color="danger" onClick={() => console.log('分享 clicked')}>
-          分享
+        <IonItemOption onClick={() => console.log('favorite clicked')}>Favorite</IonItemOption>
+        <IonItemOption color="danger" onClick={() => console.log('share clicked')}>
+          Share
         </IonItemOption>
       </IonItemOptions>
 
       <IonItem>
-        <IonLabel>项目选项</IonLabel>
+        <IonLabel>Item Options</IonLabel>
       </IonItem>
 
       <IonItemOptions side="end">
-        <IonItemOption onClick={() => console.log('标为未读 clicked')}>标为未读</IonItemOption>
+        <IonItemOption onClick={() => console.log('unread clicked')}>Unread</IonItemOption>
       </IonItemOptions>
     </IonItemSliding>
 
-    {/* 两侧带有可展开选项的滑动项 */}
+    {/* Sliding item with expandable options on both sides */}
     <IonItemSliding>
       <IonItemOptions side="start">
         <IonItemOption color="danger" expandable>
-          删除
+          Delete
         </IonItemOption>
       </IonItemOptions>
 
       <IonItem>
-        <IonLabel>可展开选项</IonLabel>
+        <IonLabel>Expandable Options</IonLabel>
       </IonItem>
 
       <IonItemOptions side="end">
         <IonItemOption color="tertiary" expandable>
-          归档
+          Archive
         </IonItemOption>
       </IonItemOptions>
     </IonItemSliding>
 
-    {/* 两侧带有图标选项的多行滑动项 */}
+    {/* Multi-line sliding item with icon options on both sides */}
     <IonItemSliding id="item100">
       <IonItem href="#">
         <IonLabel>
-          <h2>HubStruck 通知</h2>
-          <p>您网络中的新消息</p>
-          <p>Oceanic Next 已加入您的网络</p>
+          <h2>HubStruck Notifications</h2>
+          <p>A new message in your network</p>
+          <p>Oceanic Next has joined your network</p>
         </IonLabel>
-        <IonNote slot="end">上午 10:45</IonNote>
+        <IonNote slot="end">10:45 AM</IonNote>
       </IonItem>
 
       <IonItemOptions side="start">
@@ -393,70 +393,70 @@ export const ItemSlidingExample: React.FC = () => (
       </IonItemOptions>
     </IonItemSliding>
 
-    {/* 结束侧带有图标位于开始位置的选项的滑动项 */}
+    {/* Sliding item with icon start options on end side */}
     <IonItemSliding>
       <IonItem>
-        <IonLabel>滑动项，图标在开始位置</IonLabel>
+        <IonLabel>Sliding Item, Icons Start</IonLabel>
       </IonItem>
       <IonItemOptions>
         <IonItemOption color="primary">
           <IonIcon slot="start" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
-          更多
+          More
         </IonItemOption>
         <IonItemOption color="secondary">
           <IonIcon slot="start" icon={archive} />
-          归档
+          Archive
         </IonItemOption>
       </IonItemOptions>
     </IonItemSliding>
 
-    {/* 结束侧带有图标位于结束位置的选项的滑动项 */}
+    {/* Sliding item with icon end options on end side */}
     <IonItemSliding>
       <IonItem>
-        <IonLabel>滑动项，图标在结束位置</IonLabel>
+        <IonLabel>Sliding Item, Icons End</IonLabel>
       </IonItem>
       <IonItemOptions>
         <IonItemOption color="primary">
           <IonIcon slot="end" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
-          更多
+          More
         </IonItemOption>
         <IonItemOption color="secondary">
           <IonIcon slot="end" icon={archive} />
-          归档
+          Archive
         </IonItemOption>
       </IonItemOptions>
     </IonItemSliding>
 
-    {/* 结束侧带有图标位于顶部位置的选项的滑动项 */}
+    {/* Sliding item with icon top options on end side */}
     <IonItemSliding>
       <IonItem>
-        <IonLabel>滑动项，图标在顶部</IonLabel>
+        <IonLabel>Sliding Item, Icons Top</IonLabel>
       </IonItem>
       <IonItemOptions>
         <IonItemOption color="primary">
           <IonIcon slot="top" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
-          更多
+          More
         </IonItemOption>
         <IonItemOption color="secondary">
           <IonIcon slot="top" icon={archive} />
-          归档
+          Archive
         </IonItemOption>
       </IonItemOptions>
     </IonItemSliding>
 
-    {/* 结束侧带有图标位于底部位置的选项的滑动项 */}
+    {/* Sliding item with icon bottom options on end side */}
     <IonItemSliding>
       <IonItem>
-        <IonLabel>滑动项，图标在底部</IonLabel>
+        <IonLabel>Sliding Item, Icons Bottom</IonLabel>
       </IonItem>
       <IonItemOptions>
         <IonItemOption color="primary">
           <IonIcon slot="bottom" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
-          更多
+          More
         </IonItemOption>
         <IonItemOption color="secondary">
           <IonIcon slot="bottom" icon={archive} />
-          归档
+          Archive
         </IonItemOption>
       </IonItemOptions>
     </IonItemSliding>
@@ -477,66 +477,66 @@ import { Component, h } from '@stencil/core';
 })
 export class ItemSlidingExample {
   favorite(ev: any) {
-    console.log('收藏 clicked', ev);
+    console.log('Favorite clicked', ev);
   }
 
   share(ev: any) {
-    console.log('收藏 clicked', ev);
+    console.log('Favorite clicked', ev);
   }
 
   unread(ev: any) {
-    console.log('收藏 clicked', ev);
+    console.log('Favorite clicked', ev);
   }
 
   render() {
     return [
       <ion-list>
-        {/* 两侧带有文本选项的滑动项 */}
+        {/* Sliding item with text options on both sides */}
         <ion-item-sliding>
           <ion-item-options side="start">
-            <ion-item-option onClick={(ev) => this.favorite(ev)}>收藏</ion-item-option>
+            <ion-item-option onClick={(ev) => this.favorite(ev)}>Favorite</ion-item-option>
             <ion-item-option color="danger" onClick={(ev) => this.share(ev)}>
-              分享
+              Share
             </ion-item-option>
           </ion-item-options>
 
           <ion-item>
-            <ion-label>项目选项</ion-label>
+            <ion-label>Item Options</ion-label>
           </ion-item>
 
           <ion-item-options side="end">
-            <ion-item-option onClick={(ev) => this.unread(ev)}>标为未读</ion-item-option>
+            <ion-item-option onClick={(ev) => this.unread(ev)}>Unread</ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
 
-        {/* 两侧带有可展开选项的滑动项 */}
+        {/* Sliding item with expandable options on both sides */}
         <ion-item-sliding>
           <ion-item-options side="start">
             <ion-item-option color="danger" expandable>
-              删除
+              Delete
             </ion-item-option>
           </ion-item-options>
 
           <ion-item>
-            <ion-label>可展开选项</ion-label>
+            <ion-label>Expandable Options</ion-label>
           </ion-item>
 
           <ion-item-options side="end">
             <ion-item-option color="tertiary" expandable>
-              归档
+              Archive
             </ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
 
-        {/* 两侧带有图标选项的多行滑动项 */}
+        {/* Multi-line sliding item with icon options on both sides */}
         <ion-item-sliding id="item100">
           <ion-item href="#">
             <ion-label>
-              <h2>HubStruck 通知</h2>
-              <p>您网络中的新消息</p>
-              <p>Oceanic Next 已加入您的网络</p>
+              <h2>HubStruck Notifications</h2>
+              <p>A new message in your network</p>
+              <p>Oceanic Next has joined your network</p>
             </ion-label>
-            <ion-note slot="end">上午 10:45</ion-note>
+            <ion-note slot="end">10:45 AM</ion-note>
           </ion-item>
 
           <ion-item-options side="start">
@@ -555,70 +555,70 @@ export class ItemSlidingExample {
           </ion-item-options>
         </ion-item-sliding>
 
-        {/* 结束侧带有图标位于开始位置的选项的滑动项 */}
+        {/* Sliding item with icon start options on end side */}
         <ion-item-sliding>
           <ion-item>
-            <ion-label>滑动项，图标在开始位置</ion-label>
+            <ion-label>Sliding Item, Icons Start</ion-label>
           </ion-item>
           <ion-item-options>
             <ion-item-option color="primary">
               <ion-icon slot="start" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-              更多
+              More
             </ion-item-option>
             <ion-item-option color="secondary">
               <ion-icon slot="start" name="archive"></ion-icon>
-              归档
+              Archive
             </ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
 
-        {/* 结束侧带有图标位于结束位置的选项的滑动项 */}
+        {/* Sliding item with icon end options on end side */}
         <ion-item-sliding>
           <ion-item>
-            <ion-label>滑动项，图标在结束位置</ion-label>
+            <ion-label>Sliding Item, Icons End</ion-label>
           </ion-item>
           <ion-item-options>
             <ion-item-option color="primary">
               <ion-icon slot="end" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-              更多
+              More
             </ion-item-option>
             <ion-item-option color="secondary">
               <ion-icon slot="end" name="archive"></ion-icon>
-              归档
+              Archive
             </ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
 
-        {/* 结束侧带有图标位于顶部位置的选项的滑动项 */}
+        {/* Sliding item with icon top options on end side */}
         <ion-item-sliding>
           <ion-item>
-            <ion-label>滑动项，图标在顶部</ion-label>
+            <ion-label>Sliding Item, Icons Top</ion-label>
           </ion-item>
           <ion-item-options>
             <ion-item-option color="primary">
               <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-              更多
+              More
             </ion-item-option>
             <ion-item-option color="secondary">
               <ion-icon slot="top" name="archive"></ion-icon>
-              归档
+              Archive
             </ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
 
-        {/* 结束侧带有图标位于底部位置的选项的滑动项 */}
+        {/* Sliding item with icon bottom options on end side */}
         <ion-item-sliding>
           <ion-item>
-            <ion-label>滑动项，图标在底部</ion-label>
+            <ion-label>Sliding Item, Icons Bottom</ion-label>
           </ion-item>
           <ion-item-options>
             <ion-item-option color="primary">
               <ion-icon slot="bottom" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-              更多
+              More
             </ion-item-option>
             <ion-item-option color="secondary">
               <ion-icon slot="bottom" name="archive"></ion-icon>
-              归档
+              Archive
             </ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
@@ -635,46 +635,46 @@ export class ItemSlidingExample {
 ```html
 <template>
   <ion-list>
-    <!-- 两侧带有文本选项的滑动项 -->
+    <!-- Sliding item with text options on both sides -->
     <ion-item-sliding>
       <ion-item-options side="start">
-        <ion-item-option @click="favorite(item)">收藏</ion-item-option>
-        <ion-item-option color="danger" @click="share(item)">分享</ion-item-option>
+        <ion-item-option @click="favorite(item)">Favorite</ion-item-option>
+        <ion-item-option color="danger" @click="share(item)">Share</ion-item-option>
       </ion-item-options>
 
       <ion-item>
-        <ion-label>项目选项</ion-label>
+        <ion-label>Item Options</ion-label>
       </ion-item>
 
       <ion-item-options side="end">
-        <ion-item-option @click="unread(item)">标为未读</ion-item-option>
+        <ion-item-option @click="unread(item)">Unread</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
 
-    <!-- 两侧带有可展开选项的滑动项 -->
+    <!-- Sliding item with expandable options on both sides -->
     <ion-item-sliding>
       <ion-item-options side="start">
-        <ion-item-option color="danger" expandable> 删除 </ion-item-option>
+        <ion-item-option color="danger" expandable> Delete </ion-item-option>
       </ion-item-options>
 
       <ion-item>
-        <ion-label>可展开选项</ion-label>
+        <ion-label>Expandable Options</ion-label>
       </ion-item>
 
       <ion-item-options side="end">
-        <ion-item-option color="tertiary" expandable> 归档 </ion-item-option>
+        <ion-item-option color="tertiary" expandable> Archive </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
 
-    <!-- 两侧带有图标选项的多行滑动项 -->
+    <!-- Multi-line sliding item with icon options on both sides -->
     <ion-item-sliding id="item100">
       <ion-item href="#">
         <ion-label>
-          <h2>HubStruck 通知</h2>
-          <p>您网络中的新消息</p>
-          <p>Oceanic Next 已加入您的网络</p>
+          <h2>HubStruck Notifications</h2>
+          <p>A new message in your network</p>
+          <p>Oceanic Next has joined your network</p>
         </ion-label>
-        <ion-note slot="end"> 上午 10:45 </ion-note>
+        <ion-note slot="end"> 10:45 AM </ion-note>
       </ion-item>
 
       <ion-item-options side="start">
@@ -693,70 +693,70 @@ export class ItemSlidingExample {
       </ion-item-options>
     </ion-item-sliding>
 
-    <!-- 结束侧带有图标位于开始位置的选项的滑动项 -->
+    <!-- Sliding item with icon start options on end side -->
     <ion-item-sliding>
       <ion-item>
-        <ion-label> 滑动项，图标在开始位置 </ion-label>
+        <ion-label> Sliding Item, Icons Start </ion-label>
       </ion-item>
       <ion-item-options>
         <ion-item-option color="primary">
           <ion-icon slot="start" :ios="ellipsisHorizontal" :md="ellipsisVertical"></ion-icon>
-          更多
+          More
         </ion-item-option>
         <ion-item-option color="secondary">
           <ion-icon slot="start" :icon="archive"></ion-icon>
-          归档
+          Archive
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
 
-    {/* 结束侧带有图标位于结束位置的选项的滑动项 */}
+    <!-- Sliding item with icon end options on end side -->
     <ion-item-sliding>
       <ion-item>
-        <ion-label> 滑动项，图标在结束位置 </ion-label>
+        <ion-label> Sliding Item, Icons End </ion-label>
       </ion-item>
       <ion-item-options>
         <ion-item-option color="primary">
           <ion-icon slot="end" :ios="ellipsisHorizontal" :md="ellipsisVertical"></ion-icon>
-          更多
+          More
         </ion-item-option>
         <ion-item-option color="secondary">
           <ion-icon slot="end" :icon="archive"></ion-icon>
-          归档
+          Archive
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
 
-    {/* 结束侧带有图标位于顶部位置的选项的滑动项 */}
+    <!-- Sliding item with icon top options on end side -->
     <ion-item-sliding>
       <ion-item>
-        <ion-label> 滑动项，图标在顶部 </ion-label>
+        <ion-label> Sliding Item, Icons Top </ion-label>
       </ion-item>
       <ion-item-options>
         <ion-item-option color="primary">
           <ion-icon slot="top" :ios="ellipsis-horizontal" :md="ellipsis-vertical"></ion-icon>
-          更多
+          More
         </ion-item-option>
         <ion-item-option color="secondary">
           <ion-icon slot="top" :icon="archive"></ion-icon>
-          归档
+          Archive
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
 
-    {/* 结束侧带有图标位于底部位置的选项的滑动项 */}
+    <!-- Sliding item with icon bottom options on end side -->
     <ion-item-sliding>
       <ion-item>
-        <ion-label> 滑动项，图标在底部 </ion-label>
+        <ion-label> Sliding Item, Icons Bottom </ion-label>
       </ion-item>
       <ion-item-options>
         <ion-item-option color="primary">
           <ion-icon slot="bottom" :ios="ellipsisHorizontal" :md="ellipsisVertical"></ion-icon>
-          更多
+          More
         </ion-item-option>
         <ion-item-option color="secondary">
           <ion-icon slot="bottom" :icon="archive"></ion-icon>
-          归档
+          Archive
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
@@ -796,15 +796,15 @@ export class ItemSlidingExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
@@ -812,10 +812,10 @@ export class ItemSlidingExample {
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

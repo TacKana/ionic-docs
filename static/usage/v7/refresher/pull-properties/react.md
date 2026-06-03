@@ -13,7 +13,7 @@ import {
 function Example() {
   function handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
-      // 这里放置加载数据的调用
+      // Any calls to load data go here
       event.detail.complete();
     }, 2000);
   }
@@ -22,7 +22,7 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>下拉刷新</IonTitle>
+          <IonTitle>Pull to Refresh</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -31,7 +31,7 @@ function Example() {
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
 
-        <p>向下拉动此内容以触发刷新。</p>
+        <p>Pull this content down to trigger the refresh.</p>
       </IonContent>
     </>
   );

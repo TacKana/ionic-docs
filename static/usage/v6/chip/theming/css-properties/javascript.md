@@ -6,5 +6,5 @@
   }
 </style>
 
-<ion-chip>默认</ion-chip>
+<ion-chip>Default</ion-chip>
 ```

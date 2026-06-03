@@ -1,6 +1,6 @@
 ---
-title: 'ion-spinner | 动画旋转图标组件与属性'
-description: 'ion-spinner 组件提供多种动画 SVG 旋转图标。这些图标用于指示应用正在加载或执行其他需要等待的操作。'
+title: 'ion-spinner | Animated Spinner Icon Components and Properties'
+description: 'The ion-spinner component provides a variety of animated SVG spinners. These icons indicate that the app is loading or performing another process to wait on.'
 sidebar_label: 'ion-spinner'
 demoUrl: '/docs/demos/api/spinner/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/spinner/index.html'
@@ -18,39 +18,39 @@ import Slots from '@ionic-internal/component-api/v5/spinner/slots.md';
 
 # ion-spinner
 
-Spinner 组件提供多种动画 SVG 旋转图标。旋转图标是视觉指示器，用于表明应用正在加载内容或执行其他需要用户等待的操作。
+The Spinner component provides a variety of animated SVG spinners. Spinners are visual indicators that the app is loading content or performing another process that the user needs to wait on.
 
-默认使用的旋转图标基于平台决定。`ios` 平台的默认图标是 `"lines"`，`android` 平台的默认图标是 `"crescent"`。如果平台不是 `ios` 或 `android`，旋转图标将默认使用 `crescent`。如果设置了 `name` 属性，则将使用该属性指定的旋转图标，而不是根据平台选择的图标。
+The default spinner to use is based on the platform. The default spinner for `ios` is `"lines"`, and the default for `android` is `"crescent"`. If the platform is not `ios` or `android`, the spinner will default to `crescent`. If the `name` property is set, then that spinner will be used instead of the platform specific spinner.
 
-## 使用方式
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
 ```html
-<!-- 默认旋转图标 -->
+<!-- Default Spinner -->
 <ion-spinner></ion-spinner>
 
-<!-- 线条样式 -->
+<!-- Lines -->
 <ion-spinner name="lines"></ion-spinner>
 
-<!-- 小线条样式 -->
+<!-- Lines Small -->
 <ion-spinner name="lines-small"></ion-spinner>
 
-<!-- 点状样式 -->
+<!-- Dots -->
 <ion-spinner name="dots"></ion-spinner>
 
-<!-- 气泡样式 -->
+<!-- Bubbles -->
 <ion-spinner name="bubbles"></ion-spinner>
 
-<!-- 圆形样式 -->
+<!-- Circles -->
 <ion-spinner name="circles"></ion-spinner>
 
-<!-- 新月样式 -->
+<!-- Crescent -->
 <ion-spinner name="crescent"></ion-spinner>
 
-<!-- 暂停的默认旋转图标 -->
+<!-- Paused Default Spinner -->
 <ion-spinner paused></ion-spinner>
 ```
 
@@ -59,28 +59,28 @@ Spinner 组件提供多种动画 SVG 旋转图标。旋转图标是视觉指示�
 <TabItem value="javascript">
 
 ```html
-<!-- 默认旋转图标 -->
+<!-- Default Spinner -->
 <ion-spinner></ion-spinner>
 
-<!-- 线条样式 -->
+<!-- Lines -->
 <ion-spinner name="lines"></ion-spinner>
 
-<!-- 小线条样式 -->
+<!-- Lines Small -->
 <ion-spinner name="lines-small"></ion-spinner>
 
-<!-- 点状样式 -->
+<!-- Dots -->
 <ion-spinner name="dots"></ion-spinner>
 
-<!-- 气泡样式 -->
+<!-- Bubbles -->
 <ion-spinner name="bubbles"></ion-spinner>
 
-<!-- 圆形样式 -->
+<!-- Circles -->
 <ion-spinner name="circles"></ion-spinner>
 
-<!-- 新月样式 -->
+<!-- Crescent -->
 <ion-spinner name="crescent"></ion-spinner>
 
-<!-- 暂停的默认旋转图标 -->
+<!-- Paused Default Spinner -->
 <ion-spinner paused></ion-spinner>
 ```
 
@@ -94,28 +94,28 @@ import { IonSpinner, IonContent } from '@ionic/react';
 
 export const SpinnerExample: React.FC = () => (
   <IonContent>
-    {/*-- 默认旋转图标 --*/}
+    {/*-- Default Spinner --*/}
     <IonSpinner />
 
-    {/*-- 线条样式 --*/}
+    {/*-- Lines --*/}
     <IonSpinner name="lines" />
 
-    {/*-- 小线条样式 --*/}
+    {/*-- Lines Small --*/}
     <IonSpinner name="lines-small" />
 
-    {/*-- 点状样式 --*/}
+    {/*-- Dots --*/}
     <IonSpinner name="dots" />
 
-    {/*-- 气泡样式 --*/}
+    {/*-- Bubbles --*/}
     <IonSpinner name="bubbles" />
 
-    {/*-- 圆形样式 --*/}
+    {/*-- Circles --*/}
     <IonSpinner name="circles" />
 
-    {/*-- 新月样式 --*/}
+    {/*-- Crescent --*/}
     <IonSpinner name="crescent" />
 
-    {/*-- 暂停的默认旋转图标 --*/}
+    {/*-- Paused Default Spinner --*/}
     <IonSpinner paused />
   </IonContent>
 );
@@ -135,28 +135,28 @@ import { Component, h } from '@stencil/core';
 export class SpinnerExample {
   render() {
     return [
-      // 默认旋转图标
+      // Default Spinner
       <ion-spinner></ion-spinner>,
 
-      // 线条样式
+      // Lines
       <ion-spinner name="lines"></ion-spinner>,
 
-      // 小线条样式
+      // Lines Small
       <ion-spinner name="lines-small"></ion-spinner>,
 
-      // 点状样式
+      // Dots
       <ion-spinner name="dots"></ion-spinner>,
 
-      // 气泡样式
+      // Bubbles
       <ion-spinner name="bubbles"></ion-spinner>,
 
-      // 圆形样式
+      // Circles
       <ion-spinner name="circles"></ion-spinner>,
 
-      // 新月样式
+      // Crescent
       <ion-spinner name="crescent"></ion-spinner>,
 
-      // 暂停的默认旋转图标
+      // Paused Default Spinner
       <ion-spinner paused={true}></ion-spinner>,
     ];
   }
@@ -169,28 +169,28 @@ export class SpinnerExample {
 
 ```html
 <template>
-  <!-- 默认旋转图标 -->
+  <!-- Default Spinner -->
   <ion-spinner></ion-spinner>
 
-  <!-- 线条样式 -->
+  <!-- Lines -->
   <ion-spinner name="lines"></ion-spinner>
 
-  <!-- 小线条样式 -->
+  <!-- Lines Small -->
   <ion-spinner name="lines-small"></ion-spinner>
 
-  <!-- 点状样式 -->
+  <!-- Dots -->
   <ion-spinner name="dots"></ion-spinner>
 
-  <!-- 气泡样式 -->
+  <!-- Bubbles -->
   <ion-spinner name="bubbles"></ion-spinner>
 
-  <!-- 圆形样式 -->
+  <!-- Circles -->
   <ion-spinner name="circles"></ion-spinner>
 
-  <!-- 新月样式 -->
+  <!-- Crescent -->
   <ion-spinner name="crescent"></ion-spinner>
 
-  <!-- 暂停的默认旋转图标 -->
+  <!-- Paused Default Spinner -->
   <ion-spinner paused></ion-spinner>
 </template>
 
@@ -208,26 +208,26 @@ export class SpinnerExample {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

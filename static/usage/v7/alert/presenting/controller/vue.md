@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="presentAlert">点击我</ion-button>
+  <ion-button @click="presentAlert">Click Me</ion-button>
 </template>
 
 <script setup lang="ts">
@@ -8,10 +8,10 @@
 
   const presentAlert = async () => {
     const alert = await alertController.create({
-      header: '短标题效果最佳',
-      subHeader: '副标题是可选的',
-      message: '消息应为简短、完整的句子。',
-      buttons: ['操作'],
+      header: 'A Short Title Is Best',
+      subHeader: 'A Sub Header Is Optional',
+      message: 'A message should be a short, complete sentence.',
+      buttons: ['Action'],
     });
 
     await alert.present();

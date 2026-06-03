@@ -2,8 +2,8 @@
 <template>
   <ion-toggle
     v-model="wifi"
-    helper-text="启用以连接到可用网络"
-    error-text="必须启用才能访问互联网"
+    helper-text="Enable to connect to available networks"
+    error-text="Must be enabled to access the internet"
     justify="space-between"
     @ionChange="validateToggle"
     :class="{

@@ -1,6 +1,6 @@
 ```css
 /*
- * 自定义日期时间组件的头部部件
+ * Custom Datetime Header Parts
  * -------------------------------------------
  */
 ion-datetime::part(datetime-header) {

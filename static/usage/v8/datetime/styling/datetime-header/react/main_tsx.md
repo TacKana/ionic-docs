@@ -8,7 +8,7 @@ function Example() {
   return (
     <>
       <IonDatetime presentation="date">
-        <span slot="title">选择日期</span>
+        <span slot="title">Select Date</span>
       </IonDatetime>
     </>
   );

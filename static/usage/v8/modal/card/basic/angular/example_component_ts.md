@@ -35,7 +35,7 @@ import {
   ],
 })
 export class ExampleComponent {
-  // 通常指向你的 ion-router-outlet
+  // Typically referenced to your ion-router-outlet
   presentingElement!: HTMLElement | null;
 
   ngOnInit() {

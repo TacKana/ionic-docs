@@ -6,10 +6,10 @@ function Example() {
   return (
     <>
       <IonInputOtp>
-        没有收到验证码？ <a href="#">重新发送验证码</a>
+        Didn't get a code? <a href="#">Resend the code</a>
       </IonInputOtp>
       <IonInputOtp length="6">
-        没有收到验证码？ <a href="#">重新发送验证码</a>
+        Didn't get a code? <a href="#">Resend the code</a>
       </IonInputOtp>
     </>
   );

@@ -1,11 +1,11 @@
 ```html
 <ion-datetime presentation="date">
-  <span slot="title">选择日期</span>
+  <span slot="title">Select Date</span>
 </ion-datetime>
 
 <style>
   /*
-   * 自定义日期时间头部组件样式
+   * Custom Datetime Header Parts
    * -------------------------------------------
    */
   ion-datetime::part(datetime-header) {

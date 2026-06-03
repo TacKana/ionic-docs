@@ -7,9 +7,9 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonTextarea labelPlacement="stacked" label="评论" placeholder="请输入您的评论">
+        <IonTextarea labelPlacement="stacked" label="Comments" placeholder="Enter your comments">
           <IonIcon slot="start" icon={lockClosed} aria-hidden="true"></IonIcon>
-          <IonButton fill="clear" slot="end" aria-label="显示/隐藏">
+          <IonButton fill="clear" slot="end" aria-label="Show/hide">
             <IonIcon slot="icon-only" icon={eye} aria-hidden="true"></IonIcon>
           </IonButton>
         </IonTextarea>

@@ -2,7 +2,7 @@
 <ion-searchbar show-cancel-button="focus" class="custom"></ion-searchbar>
 
 <style>
-  /* 作用域组件需要更高优先级来定制样式 */
+  /* Scoped components require higher specificity to customize */
   ion-searchbar.custom {
     --background: #19422d;
     --color: #fff;

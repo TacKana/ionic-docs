@@ -15,11 +15,10 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>浮动操作按钮</IonTitle>
+          <IonTitle>Fab Buttons</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        {/* 左上角的浮动操作按钮组 */}
         <IonFab slot="fixed" vertical="top" horizontal="start">
           <IonFabButton>
             <IonIcon icon={chevronForwardCircle}></IonIcon>
@@ -37,7 +36,6 @@ function Example() {
           </IonFabList>
         </IonFab>
 
-        {/* 右上角带边缘吸附的浮动操作按钮组 */}
         <IonFab slot="fixed" vertical="top" horizontal="end" edge={true}>
           <IonFabButton>
             <IonIcon icon={chevronDownCircle}></IonIcon>
@@ -55,7 +53,6 @@ function Example() {
           </IonFabList>
         </IonFab>
 
-        {/* 右下角的浮动操作按钮组 */}
         <IonFab slot="fixed" vertical="bottom" horizontal="end">
           <IonFabButton>
             <IonIcon icon={chevronUpCircle}></IonIcon>

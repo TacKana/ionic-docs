@@ -5,39 +5,39 @@ title: 'ion-route'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v6/route/props.md';
-import Events from '@ionic-internal/component-api/v6/route/events.md';
-import Methods from '@ionic-internal/component-api/v6/route/methods.md';
-import Parts from '@ionic-internal/component-api/v6/route/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/route/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v6/route/slots.md';
+import Props from '@ionic-internal/component-api/v7/route/props.md';
+import Events from '@ionic-internal/component-api/v7/route/events.md';
+import Methods from '@ionic-internal/component-api/v7/route/methods.md';
+import Parts from '@ionic-internal/component-api/v7/route/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/route/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v7/route/slots.md';
 
 <head>
-  <title>ion-route: Ionic 框架应用的路由组件 API</title>
+  <title>ion-route：Ionic 框架应用的路由组件 API</title>
   <meta
     name="description"
-    content="ion-route 组件接收一个组件，并在浏览器 URL 与 url 属性匹配时渲染该组件。了解更多关于 Ionic 应用 API 路由组件的信息。"
+    content="ion-route 组件接收一个组件，并在浏览器 URL 与 url 属性匹配时渲染它。了解更多关于 Ionic 应用的 API 路由组件的信息。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-路由组件接收一个组件，并在浏览器 URL 与 url 属性匹配时渲染该组件。
+路由（Route）组件接收一个组件，并在浏览器 URL 与 url 属性匹配时渲染它。
 
 :::note
-注意：该组件应仅用于原生 JavaScript 和 Stencil 项目。对于 Angular 项目，请使用 [`ion-router-outlet`](router-outlet.md) 和 Angular 路由器。
+注意：此组件仅应与 vanilla 和 Stencil JavaScript 项目一起使用。对于 Angular 项目，请使用 [`ion-router-outlet`](router-outlet.md) 和 Angular 路由。
 :::
 
 ## 导航钩子
 
-导航钩子可用于执行任务或作为导航守卫。通过为每个 `ion-route` 的 `beforeEnter` 和 `beforeLeave` 属性提供函数来使用钩子。返回 `true` 允许导航继续，而返回 `false` 则取消导航。返回 `NavigationHookOptions` 类型的对象允许你将导航重定向到另一个页面。
+导航钩子可用于执行任务或作为导航守卫。钩子通过为每个 `ion-route` 的 `beforeEnter` 和 `beforeLeave` 属性提供函数来使用。返回 `true` 允许导航继续，而返回 `false` 则取消导航。返回 `NavigationHookOptions` 类型的对象允许你将导航重定向到另一页面。
 
 ## 接口
 
 ```typescript
 interface NavigationHookOptions {
   /**
-   * 用于重定向导航的有效路径。
+   * 重定向导航的有效路径。
    */
   redirect: string;
 }
@@ -66,17 +66,17 @@ const newMessagePage = document.querySelector('ion-route[url="/dashboard"]');
 newMessagePage.beforeLeave = hasUnsavedDataGuard;
 
 const isLoggedInGuard = async () => {
-  const isLoggedIn = await UserData.isLoggedIn(); // 请替换为实际的登录验证
+  const isLoggedIn = await UserData.isLoggedIn(); // 用实际的登录验证替换
 
   if (isLoggedIn) {
     return true;
   } else {
-    return { redirect: '/login' }; // 如果用户未登录，将被重定向到 /login 页面
+    return { redirect: '/login' }; // 如果用户未登录，他们将被重定向到 /login 页面
   }
 };
 
 const hasUnsavedDataGuard = async () => {
-  const hasUnsavedData = await checkData(); // 请替换为实际的验证逻辑
+  const hasUnsavedData = await checkData(); // 用实际的验证替换
 
   if (hasUnsavedData) {
     return await confirmDiscardChanges();
@@ -88,7 +88,7 @@ const hasUnsavedDataGuard = async () => {
 const confirmDiscardChanges = async () => {
   const alert = document.createElement('ion-alert');
   alert.header = '放弃未保存的更改？';
-  alert.message = '确定要离开吗？所有未保存的更改将会丢失。';
+  alert.message = '你确定要离开吗？任何未保存的更改都将丢失。';
   alert.buttons = [
     {
       text: '取消',
@@ -136,17 +136,17 @@ export class RouterExample {
 }
 
 const isLoggedInGuard = async () => {
-  const isLoggedIn = await UserData.isLoggedIn(); // 请替换为实际的登录验证
+  const isLoggedIn = await UserData.isLoggedIn(); // 用实际的登录验证替换
 
   if (isLoggedIn) {
     return true;
   } else {
-    return { redirect: '/login' }; // 如果用户未登录，将被重定向到 /login 页面
+    return { redirect: '/login' }; // 如果用户未登录，他们将被重定向到 /login 页面
   }
 };
 
 const hasUnsavedDataGuard = async () => {
-  const hasUnsavedData = await checkData(); // 请替换为实际的验证逻辑
+  const hasUnsavedData = await checkData(); // 用实际的验证替换
 
   if (hasUnsavedData) {
     return await confirmDiscardChanges();
@@ -158,7 +158,7 @@ const hasUnsavedDataGuard = async () => {
 const confirmDiscardChanges = async () => {
   const alert = await alertController.create({
     header: '放弃未保存的更改？',
-    message: '确定要离开吗？所有未保存的更改将会丢失。',
+    message: '你确定要离开吗？任何未保存的更改都将丢失。',
     buttons: [
       {
         text: '取消',
@@ -197,17 +197,17 @@ const confirmDiscardChanges = async () => {
   import { alertController } from '@ionic/vue';
 
   const isLoggedInGuard = async () => {
-    const isLoggedIn = await UserData.isLoggedIn(); // 请替换为实际的登录验证
+    const isLoggedIn = await UserData.isLoggedIn(); // 用实际的登录验证替换
 
     if (isLoggedIn) {
       return true;
     } else {
-      return { redirect: '/login' }; // 如果用户未登录，将被重定向到 /login 页面
+      return { redirect: '/login' }; // 如果用户未登录，他们将被重定向到 /login 页面
     }
   };
 
   const hasUnsavedDataGuard = async () => {
-    const hasUnsavedData = await checkData(); // 请替换为实际的验证逻辑
+    const hasUnsavedData = await checkData(); // 用实际的验证替换
 
     if (hasUnsavedData) {
       return await confirmDiscardChanges();
@@ -219,7 +219,7 @@ const confirmDiscardChanges = async () => {
   const confirmDiscardChanges = async () => {
     const alert = await alertController.create({
       header: '放弃未保存的更改？',
-      message: '确定要离开吗？所有未保存的更改将会丢失。',
+      message: '你确定要离开吗？任何未保存的更改都将丢失。',
       buttons: [
         {
           text: '取消',
@@ -257,7 +257,7 @@ const confirmDiscardChanges = async () => {
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

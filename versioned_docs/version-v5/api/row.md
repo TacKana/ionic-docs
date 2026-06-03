@@ -14,34 +14,35 @@ import Slots from '@ionic-internal/component-api/v5/row/slots.md';
 
 # ion-row
 
-行（Row）是[网格（Grid）](grid.md)系统中的水平布局组件，其中包含数量不等的[列（Column）](col.md)。它们确保列能够被正确定位。
+Rows are horizontal components of the [grid](grid.md) system and contain varying numbers of
+[columns](col.md). They ensure the columns are positioned properly.
 
-更多信息请参阅 [Grid Layout](../layout/grid.md)。
+See [Grid Layout](../layout/grid.md) for more information.
 
-## 行对齐方式
+## Row Alignment
 
-默认情况下，列会拉伸以填满行的整个高度，并在必要时自动换行。行本身是[弹性容器（Flex Container）](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container)，因此可以通过应用特定的 [CSS 工具类](../layout/css-utilities.md#flex-container-properties)来自定义其行为。
+By default, columns will stretch to fill the entire height of the row and wrap when necessary. Rows are [flex containers](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container), so there are several [CSS classes](../layout/css-utilities.md#flex-container-properties) that can be applied to a row to customize this behavior.
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

@@ -10,12 +10,12 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Unvired Cordova SDK
 
-## 本插件可帮助您构建连接至 Unvired 移动平台 (UMP) 的应用程序。
+## This plugin lets you build apps which connect to Unvired Mobile Platform (UMP).
 
-## iOS 系统要求
+## iOS Requirements
 
-此插件使用 Cocoapods 安装依赖库。请确保您已正确安装 Cocoapods。
-安装就绪后，在安装本插件之前，请运行以下命令更新 CocoaPods 仓库。
+This plugin uses Cocoapods to install dependent libraries. Please make sure you have a valid Cocoapods installation.
+Once you have it ready, do update the cocoapods repo by running the following command before you install this plugin.
 
 ```
 pod repo update
@@ -25,21 +25,21 @@ pod repo update
   <a href="https://github.com/unvired/cordova-plugin-unvired-sdk/" target="_blank" rel="noopener" className="git-link">github.com/unvired/cordova-plugin-unvired-sdk/</a>
 </p>
 
-<h2>遇到 Cordova 问题卡住了？</h2>
+<h2>Stuck on a Cordova issue?</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="不要在插件问题上浪费宝贵时间。"
+  header="Don't waste precious time on plugin issues."
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>如果您正在开发一个严肃的项目，您负担不起数小时的问题排查时间。Ionic 的专家为社区插件和高级插件提供优质的咨询服务。</p>
-    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer premium advisory services for both community plugins and premier plugins.</p>
+    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">安装</a>
+  <a href="#installation">Installation</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -47,7 +47,7 @@ pod repo update
   values={[
     { value: 'Capacitor', label: 'Capacitor' },
     { value: 'Cordova', label: 'Cordova' },
-    { value: 'Enterprise', label: '企业版' },
+    { value: 'Enterprise', label: 'Enterprise' },
   ]}
 >
   <TabItem value="Capacitor">
@@ -64,24 +64,24 @@ pod repo update
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic 企业版提供 Ionic 团队全面支持与维护的插件。&nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或如果您对本插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
+      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## 支持的平台
+## Supported Platforms
 
 - iOS
 - Android
 - Windows
-- 浏览器
+- Browser
 
-## 使用方法
+## Usage
 
 ### React
 
-[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
+[Learn more about using Ionic Native components in React](../native-community.md#react)
 
 ### Angular
 
@@ -92,9 +92,9 @@ import { UnviredCordovaSDK } from '@awesome-cordova-plugins/unvired-cordova-sdk/
 constructor(private unviredSDK: UnviredCordovaSDK) { }
 
 ...
-// 这通常在您应用的 app.component.ts 中完成。
-// 在与 UMP 交互之前，您需要初始化 SDK 并向 UMP 进行身份验证。
-// SDK 初始化
+// This is usually done in app.component.ts of your app.
+// Before you can interact with UMP, you need to initialize the SDK and authenticate with UMP.
+// SDK Initialization
 let loginParameters = new LoginParameters()
 loginParameters.appName = 'UNVIRED_DIGITAL_FORMS'
 loginParameters.metadataPath = '../assets/metadata.json'
@@ -103,60 +103,60 @@ try {
   loginResult = await this.unviredSDK.login(loginParameters)
 }
 catch (error) {
-  this.unviredSDK.logError("AppComponent", "Initialize", "登录时发生错误: " + error)
+  this.unviredSDK.logError("AppComponent", "Initialize", "Error during login: " + error)
 }
 
 
 switch (loginResult.type) {
 case LoginListenerType.auth_activation_required:
-// 应用未激活。即，用户是第一次使用该应用。
-// 在与 UMP 交互之前，需要先激活应用。
-// 此时，您基本上需要导航到一个登录屏幕并接收用户的用户名和密码。
-// 将用户名和密码设置到 loginParameters 对象并调用 authenticateAndActivate
+// App is not activated. i.e, User is using the app for the very first time.
+// App needs to be activated before it can interact with UMP.
+// At this point of time, you basically navigate to a login screen & accept username / password from the user.
+// Set the username & password to loginParameters object and call authenticateAndActivate
 try {
- // 在登录屏幕中执行此代码块。
+ // Execute this block of code in a login screen.
 let loginParameters = new LoginParameters();
 loginParameters.url = '&lt;UMP_URL>';
-loginParameters.company = '&lt;公司>';
-loginParameters.username = '&lt;用户名>';
-loginParameters.password = '&lt;密码>';
+loginParameters.company = '&lt;Company>';
+loginParameters.username = '&lt;Username>';
+loginParameters.password = '&lt;Password>';
 loginParameters.loginType = LoginType.unvired;
 let authenticateActivateResult: AuthenticateActivateResult = await this.unviredSDK.authenticateAndActivate(loginParameters);
 if (authenticateActivateResult.type === AuthenticateAndActivateResultType.auth_activation_success) {
-// 应用已完全设置。导航到您应用的主屏幕。
+// App is fully setup. Navigate to your app's home screen.
 } else if (authenticateActivateResult.type === AuthenticateAndActivateResultType.auth_activation_error) {
-console.log("登录时发生错误: " + authenticateActivateResult.error)
+console.log("Error during login: " + authenticateActivateResult.error)
 } catch (error) {
-this.unviredSDK.logError('LoginPage', 'auth_activation_required', '错误: ' + error);
+this.unviredSDK.logError('LoginPage', 'auth_activation_required', 'ERROR: ' + error);
 }
 break;
 
 
 
 case LoginListenerType.app_requires_login:
-// 应用已激活。但用户需要输入凭据，因为在 Unvired Admin Cockpit 中将 LOCAL_PASSWORD 设置为了 YES。
-// 要为您的应用设置 LOCAL_PASSWORD 属性，请联系您的管理员。
+// App is already activated. But, the user needs to enter credentials because the setting LOCAL_PASSWORD is set to YES in Unvired Admin Cockpit.
+// To set LOCAL_PASSWORD property for your app, contact your administrator.
 try {
- // 在登录屏幕中执行此代码块。
+ // Execute this block of code in a login screen.
  let loginParameters = new LoginParameters()
- loginParameters.username = '&lt;用户名>';
- loginParameters.password = '&lt;密码>';
+ loginParameters.username = '&lt;Username>';
+ loginParameters.password = '&lt;Password>';
  let authenticateLocalResult: AuthenticateLocalResult = await this.unviredSDK.authenticateLocal(loginParameters);
  if (authenticateLocalResult.type === AuthenticateLocalResultType.login_success) {
- // 应用已完全设置。导航到您应用的主屏幕。
+ // App is fully setup. Navigate to your app's home screen.
  } else if (authenticateLocalResult.type === AuthenticateLocalResultType.login_error) {
-  console.log("本地登录时发生错误: " + authenticateActivateResult.error)
+  console.log("Error during local login: " + authenticateActivateResult.error)
  } catch (error) {
-  this.unviredSDK.logError('LoginPage', 'app_requires_login', '错误: ' + error);
+  this.unviredSDK.logError('LoginPage', 'app_requires_login', 'ERROR: ' + error);
 }
 break;
 
 
 
 case login_success:
-// LOCAL_PASSWORD 设置为 false。
-// 应用已完全初始化。用户可以开始与 UMP 交互。
-// 导航到主屏幕
+// The setting LOCAL_PASSWORD is set to false.
+// App is fully initialized. Users can interact with the UMP
+// Navigate to Home screen
 break;
 }
 
@@ -164,14 +164,14 @@ break;
 
 
 
-// 同步 API
-// 进行同步调用。
+// Synchronization APIs
+// Make sync call.
 let result = await this.unviredSDK.syncForeground(RequestType.QUERY, null, {"CUSTOMER_HEADER": {"field1" : "value1", "field2" : "value2"}}, 'UNVIRED_DIGITAL_FORMS_PA_MOBILE_GET_USERS', true)
 
-// 进行异步调用。
+// Make async call.
 let result = await this.unviredSDK.syncBackground(RequestType.QUERY, null, inputObj, 'UNVIRED_DIGITAL_FORMS_PA_MOBILE_GET_USERS', 'INPUT_GET_USERS', 'GUID', false)
-// 注意：订阅 NotificationListener 以获取后台数据处理进度的更新。
-// 不过，在任何时刻，只能有一个屏幕监听后台数据更新。
+// Note: Subscribe to NotificationListener to get updates on data processing in background
+// However, only one screen can listen to background data updates at any point of time.
 this.unviredSDK.registerNotifListener().subscribe( data => {
 switch (data.type) {
 case NotificationListenerType.dataSend:
@@ -189,17 +189,17 @@ break;
 
 
 
-// 数据库 API
-// 向数据库插入一条记录
+// Database APIs
+// Insert a record onto database
 this.unviredsdk.dbInsert("CUSTOMER_HEADER", {"NAME":"USER","NO":"0039"}, true);
 
-// 更新数据库中的一条记录
+// Update a record in database
 this.unviredSDK.dbUpdate('CUSTOMER_HEADER', {"NAME":"UPDATED_USER","NO":"UPDATED_NO"}, "FORM_ID = '5caed815892215034dacad56'")
 
-// 删除数据库中的一条记录
+// Delete a record in database
 this.unviredSDK.dbDelete('CUSTOMER_HEADER', "FORM_ID = '5caed815892215034dacad56'")
 
-// 执行一条 SQL 查询
+// Execute a SQL Query
 this.unviredSDK.dbExecuteStatement('SELECT * FROM CUSTOMER_HEADER WHERE CUSTOMER_ID = "0039"')
 
 ```

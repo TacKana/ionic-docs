@@ -1,5 +1,5 @@
 ```html
-<ion-button id="open-toast">打开 Toast</ion-button>
+<ion-button id="open-toast">Open Toast</ion-button>
 <ion-toast trigger="open-toast" duration="3000" message="Hello World!"></ion-toast>
 
 <script>
@@ -7,14 +7,14 @@
 
   toast.buttons = [
     {
-      text: '更多信息',
+      text: 'More Info',
       role: 'info',
       handler: () => {
         console.log('More Info clicked');
       },
     },
     {
-      text: '关闭',
+      text: 'Dismiss',
       role: 'cancel',
       handler: () => {
         console.log('Dismiss clicked');

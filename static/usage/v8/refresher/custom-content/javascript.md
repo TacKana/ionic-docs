@@ -1,7 +1,7 @@
 ```html
 <ion-header>
   <ion-toolbar>
-    <ion-title>下拉刷新</ion-title>
+    <ion-title>Pull to Refresh</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,14 +9,14 @@
   <ion-refresher id="refresher" slot="fixed">
     <ion-refresher-content
       pulling-icon="chevron-down-circle-outline"
-      pulling-text="下拉刷新"
+      pulling-text="Pull to refresh"
       refreshing-spinner="circles"
-      refreshing-text="刷新中..."
+      refreshing-text="Refreshing..."
     >
     </ion-refresher-content>
   </ion-refresher>
 
-  <p>向下拉动此内容以触发刷新。</p>
+  <p>Pull this content down to trigger the refresh.</p>
 </ion-content>
 
 <script>
@@ -24,7 +24,7 @@
 
   refresher.addEventListener('ionRefresh', () => {
     setTimeout(() => {
-      // 加载数据的操作放在这里
+      // Any calls to load data go here
       refresher.complete();
     }, 2000);
   });

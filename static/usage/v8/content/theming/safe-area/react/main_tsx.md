@@ -7,7 +7,7 @@ import './main.css';
 function Example() {
   return (
     <IonContent>
-      <span>这里是一小段关于内容的文字描述。仅此而已。</span>
+      <span>Here's a small text description for the content. Nothing more, nothing less.</span>
     </IonContent>
   );
 }

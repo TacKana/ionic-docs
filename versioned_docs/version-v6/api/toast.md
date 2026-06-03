@@ -5,18 +5,18 @@ title: 'ion-toast'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v6/toast/props.md';
-import Events from '@ionic-internal/component-api/v6/toast/events.md';
-import Methods from '@ionic-internal/component-api/v6/toast/methods.md';
-import Parts from '@ionic-internal/component-api/v6/toast/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/toast/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v6/toast/slots.md';
+import Props from '@ionic-internal/component-api/v7/toast/props.md';
+import Events from '@ionic-internal/component-api/v7/toast/events.md';
+import Methods from '@ionic-internal/component-api/v7/toast/methods.md';
+import Parts from '@ionic-internal/component-api/v7/toast/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/toast/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v7/toast/slots.md';
 
 <head>
-  <title>ion-toast 组件：可关闭的应用通知提示</title>
+  <title>ion-toast：可关闭的应用通知提醒组件</title>
   <meta
     name="description"
-    content="ion-toast 组件是一种应用通知，用于显示系统消息或反馈。Toast 提示信息会出现在内容上方，关闭后可继续与应用交互。"
+    content="ion-toast 组件是显示系统消息或反馈的应用通知。Toast 提醒显示在内容上方，关闭后可继续交互。"
   />
 </head>
 
@@ -24,106 +24,185 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Toast 是现代应用中常用的轻量通知。它可用于提供操作反馈或显示系统消息。Toast 会显示在应用内容的上方，可由应用关闭以恢复用户与应用间的交互。
+Toast（消息提示）是一种现代应用中常用的小型通知。它可以用于提供有关操作的反馈或显示系统消息。Toast 显示在应用内容的上方，应用可以将其关闭以恢复用户与应用的交互。
 
-## 展示方式
+## 内联 Toast（推荐）
 
-### 定位
+`ion-toast` 可以直接在模板中编写组件来使用。这减少了你需要连接以呈现 toast 的处理程序数量。
 
-Toast 可以定位在视口的顶部、底部或中间。创建时可以通过参数指定位置。可选值包括 `top`、`bottom` 和 `middle`。若未指定位置，Toast 将默认显示在视口底部。
+import InlineToastTriggerExample from '@site/static/usage/v7/toast/inline/basic/index.md';
 
-### 控制器
+<InlineToastTriggerExample />
 
-import ControllerExample from '@site/static/usage/v6/toast/presenting/controller/index.md';
+### 使用 `isOpen​`
+
+`ion-toast` 上的 `isOpen` 属性允许开发者从应用状态控制 toast 的呈现状态。这意味着当 `isOpen` 设置为 `true` 时，toast 将显示；当 `isOpen` 设置为 `false` 时，toast 将关闭。
+
+`isOpen` 使用单向数据绑定，这意味着当 toast 关闭时，它不会自动设置为 `false`。开发者应监听 `ionToastDidDismiss` 或 `didDismiss` 事件，并将 `isOpen` 设置为 `false`。这样做的原因是防止 `ion-toast` 的内部实现与应用状态紧密耦合。使用单向数据绑定时，toast 只需要关心响应式变量提供的布尔值。而使用双向数据绑定时，toast 需要同时关心布尔值和响应式变量本身的存在性，这可能导致不确定的行为并使应用更难调试。
+
+import InlineToastIsOpenExample from '@site/static/usage/v7/toast/inline/is-open/index.md';
+
+<InlineToastIsOpenExample />
+
+## 控制器 Toast
+
+import ControllerExample from '@site/static/usage/v7/toast/presenting/controller/index.md';
 
 <ControllerExample />
 
-### 内联方式
+## 关闭
 
-在 Ionic 与 React 或 Vue 结合使用时，也可通过 `isOpen` 属性将 `ion-toast` 直接放置在模板中。请注意，当 Toast 关闭时，需要手动将 `isOpen` 设置为 `false`；它不会自动更新。
+Toast 旨在作为小型的通知，不应中断用户。因此，关闭 toast 不应需要用户交互。
 
-<Tabs defaultValue="react" values={[{ value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
-<TabItem value="react">
+可以通过在 toast 选项的 `duration` 中传递要显示的毫秒数，使 toast 在特定时间后自动关闭。如果添加了带有 `"cancel"` 角色的按钮，则该按钮将关闭 toast。要在创建后关闭 toast，请调用实例上的 `dismiss()` 方法。
 
-```tsx
-import React, { useState } from 'react';
-import { IonButton, IonToast } from '@ionic/react';
+按下硬件返回按钮不会关闭 toast，因为它们不应中断用户。
 
-function Example() {
-  const [showToast, setShowToast] = useState(false);
+以下示例演示如何使用 `buttons` 属性添加一个在点击时自动关闭 toast 的按钮，以及如何收集关闭事件的 `role`。
 
-  return (
-    <>
-      <IonButton onClick={() => setShowToast(true)}>显示 Toast</IonButton>
-      <IonToast isOpen={showToast} onDidDismiss={() => setShowToast(false)} message="你好世界！" duration={1500} />
-    </>
-  );
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-button @click="setOpen(true)">显示 Toast</ion-button>
-  <ion-toast :is-open="isOpenRef" @didDismiss="setOpen(false)" message="你好世界！" :duration="1500"></ion-toast>
-</template>
-
-<script lang="ts">
-  import { IonButton, IonToast } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
-
-  export default defineComponent({
-    components: { IonButton, IonToast },
-    setup() {
-      const isOpenRef = ref(false);
-      const setOpen = (state: boolean) => (isOpenRef.value = state);
-
-      return { isOpenRef, setOpen };
-    },
-  });
-</script>
-```
-
-</TabItem>
-</Tabs>
-
-## 关闭方式
-
-Toast 旨在提供轻量通知，不应打断用户操作。因此，关闭 Toast 不应要求用户交互。
-
-可通过在 Toast 选项的 `duration` 参数中传递显示的毫秒数，使 Toast 在特定时间后自动关闭。如果添加了 `role` 为 `"cancel"` 的按钮，则该按钮将关闭 Toast。若要在创建后关闭 Toast，可调用实例上的 `dismiss()` 方法。
-
-由于 Toast 不应打断用户，按下硬件返回键不会关闭 Toast。
-
-以下示例演示了如何使用 `buttons` 属性添加一个点击后自动关闭 Toast 的按钮，以及如何收集关闭事件的 `role`。
-
-import ButtonsPlayground from '@site/static/usage/v6/toast/buttons/index.md';
+import ButtonsPlayground from '@site/static/usage/v7/toast/buttons/index.md';
 
 <ButtonsPlayground />
 
+## 定位
+
+Toast 可以定位在视口的顶部、底部或中间。位置可以在创建时传递。可能的值是 `top`、`bottom` 和 `middle`。如果未指定位置，toast 将显示在视口底部。
+
+### 相对定位
+
+如果 toast 与导航元素（如头部、底部或 [FAB](./fab.md)）一起呈现，则默认情况下 toast 可能会与这些元素重叠。这可以使用 `positionAnchor` 属性来修复，该属性接受元素引用或 ID。toast 将相对于所选元素定位，在使用 `position="top"` 时出现在其下方，在使用 `position="bottom"` 时出现在其上方。使用 `position="middle"` 时，`positionAnchor` 属性将被忽略。
+
+import PositionAnchor from '@site/static/usage/v7/toast/position-anchor/index.md';
+
+<PositionAnchor />
+
 ## 布局
 
-Toast 内的按钮容器可以使用 `layout` 属性选择与消息显示在同一行，或分别显示在多行（堆叠布局）。当按钮文本较长时，应使用堆叠布局。此外，堆叠布局中的按钮可以使用 `side` 值为 `start` 或 `end`，但不能同时使用两者。
+Toast 中的按钮容器可以显示在与消息相同的行上，也可以使用 `layout` 属性堆叠在不同的行上。堆叠布局应与具有长文本值的按钮一起使用。此外，堆叠 toast 布局中的按钮可以使用 `start` 或 `end` 的 `side` 值，但不能同时使用两者。
 
-import StackedPlayground from '@site/static/usage/v6/toast/layout/index.md';
+import StackedPlayground from '@site/static/usage/v7/toast/layout/index.md';
 
 <StackedPlayground />
 
 ## 图标
 
-可以在 Toast 内容旁添加图标。通常，Toast 中的图标应用于增加样式或提供额外上下文，而非用于吸引用户注意或提升 Toast 的优先级。若需向用户传达更高优先级的消息或确保获得响应，建议改用 [Alert](alert.md)。
+可以在 toast 内部的内容旁边添加图标。通常情况下，toast 中的图标应用于添加额外的样式或上下文，而不是吸引用户注意或提升 toast 的优先级。如果你希望向用户传达更高优先级的消息或保证回复，我们建议使用[警告框（Alert）](alert.md)。
 
-import IconPlayground from '@site/static/usage/v6/toast/icon/index.md';
+import IconPlayground from '@site/static/usage/v7/toast/icon/index.md';
 
 <IconPlayground />
 
-## 主题定制
+## 主题
 
-import ThemingPlayground from '@site/static/usage/v6/toast/theming/index.md';
+import ThemingPlayground from '@site/static/usage/v7/toast/theming/index.md';
 
 <ThemingPlayground />
+
+## 无障碍访问
+
+### 焦点管理
+
+Toast 旨在作为小型的通知，不打算中断用户。关闭 toast 不应需要用户交互。因此，焦点在 toast 呈现时不会自动移动到 toast。
+
+### 屏幕阅读器
+
+Toast 设置了 aria 属性以确保[屏幕阅读器](../reference/glossary#a11y)的[无障碍访问](../reference/glossary#a11y)，但如果这些属性描述不够充分或与应用中 toast 的使用方式不一致，可以覆盖它们。
+
+#### 角色
+
+`ion-toast` 在内部的 `.toast-content` 元素上设置了 `role="status"` 和 `aria-live="polite"`。这导致屏幕阅读器只宣布 toast 消息和头部。按钮和图标在 toast 呈现时不会被宣布。
+
+`aria-live` 使屏幕阅读器在内容更新时宣布 toast 的内容。但是，由于该属性设置为 `'polite'`，屏幕阅读器不应中断当前任务。
+
+由于 toast 旨在作为小型通知，`aria-live` 绝不应设置为 `"assertive"`。如果开发者需要用重要消息中断用户，我们建议使用[警告框（alert）](./alert)。
+
+#### Toast 按钮描述
+
+包含文本的按钮在与用户交互时将被屏幕阅读器读取。如果按钮只包含图标，或希望提供现有文本之外的其他描述，可以通过在按钮的 `htmlAttributes` 属性中传递 `aria-label` 来为按钮分配标签。
+
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+
+<TabItem value="angular">
+
+```javascript
+const toast = await this.toastController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript
+const toast = await this.toastController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="react">
+
+```javascript
+useIonToast({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="vue">
+
+```javascript
+const toast = await toastController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+</Tabs>
+
+### 提示
+
+虽然这不是完整的列表，但以下是一些使用 toast 时应遵循的指南。
+
+- 不要要求用户交互才能关闭 toast。例如，在 toast 中包含"关闭"按钮是可以的，但 toast 也应在一段时间后自动关闭。如果你需要用户对通知进行操作，请考虑使用[警告框（alert）](./alert)。
+
+- 对于消息较长的 toast，请考虑调整 `duration` 属性，让用户有足够的时间阅读 toast 的内容。
 
 ## 接口
 
@@ -136,6 +215,7 @@ interface ToastButton {
   side?: 'start' | 'end';
   role?: 'cancel' | string;
   cssClass?: string | string[];
+  htmlAttributes?: { [key: string]: any };
   handler?: () => boolean | void | Promise<boolean | void>;
 }
 ```
@@ -165,30 +245,6 @@ interface ToastOptions {
 }
 ```
 
-## 无障碍访问
-
-### 焦点管理
-
-Toast 旨在提供轻量通知，不应打断用户操作。关闭 Toast 不应要求用户交互。因此，当 Toast 显示时，焦点不会自动移至 Toast。
-
-### 屏幕阅读器
-
-`ion-toast` 默认设置了 `aria-live="polite"` 和 `aria-atomic="true"`。
-
-`aria-live` 属性使屏幕阅读器在 Toast 内容更新时播报其内容。但由于该属性设置为 `'polite'`，屏幕阅读器通常不会打断当前任务。开发者可以通过 `htmlAttributes` 属性将 `aria-live` 设置为 `'assertive'` 来自定义此行为。这将导致屏幕阅读器在 Toast 更新时立即通知用户，可能中断之前的播报。
-
-设置 `aria-atomic="true"` 可确保整个 Toast 作为一个完整单元播报。这在动态更新 Toast 内容时很有用，因为它可以防止屏幕阅读器仅播报已更改的部分内容。
-
-### 使用建议
-
-以下是一些使用 Toast 时应遵循的准则（非完整列表）：
-
-- 不要要求用户交互来关闭 Toast。例如，Toast 中包含“关闭”按钮是可以的，但 Toast 也应在超时后自动关闭。如果通知需要用户交互，请考虑改用 [ion-alert](./alert)。
-
-- 避免快速连续打开多个 Toast。如果 `aria-live` 设置为 `'assertive'`，屏幕阅读器可能会中断当前任务的播报来宣告新的 Toast，导致前一个 Toast 的上下文丢失。
-
-- 对于包含较长消息的 Toast，请考虑调整 `duration` 属性，为用户留出足够的阅读时间。
-
 ## 属性
 
 <Props />
@@ -201,7 +257,7 @@ Toast 旨在提供轻量通知，不应打断用户操作。关闭 Toast 不应�
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

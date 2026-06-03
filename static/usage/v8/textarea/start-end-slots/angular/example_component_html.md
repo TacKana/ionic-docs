@@ -1,9 +1,9 @@
 ```html
 <ion-list>
   <ion-item>
-    <ion-textarea labelPlacement="stacked" label="Comments" placeholder="请输入您的评论">
+    <ion-textarea labelPlacement="stacked" label="Comments" placeholder="Enter your comments">
       <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
-      <ion-button fill="clear" slot="end" aria-label="显示/隐藏">
+      <ion-button fill="clear" slot="end" aria-label="Show/hide">
         <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
       </ion-button>
     </ion-textarea>

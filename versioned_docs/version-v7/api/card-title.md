@@ -12,18 +12,18 @@ import Slots from '@ionic-internal/component-api/v7/card-title/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <head>
-  <title>ion-card-title: Ionic 应用卡片标题组件</title>
+  <title>ion-card-title：Ionic 应用卡片标题组件</title>
   <meta
     name="description"
-    content="ion-card-title 是 ion-card 的子组件。阅读本文以了解更多关于卡片标题属性以及如何在 Ionic 框架应用中使用该组件的信息。"
+    content="ion-card-title 是 ion-card 的子组件。阅读了解更多关于卡片标题属性以及该组件在 Ionic 框架应用中的使用方式。"
   />
 </head>
 
 <EncapsulationPill type="shadow" />
 
-卡片标题是卡片的子组件，应放置在[卡片头部（card header）](./card-header)内部。
+卡片标题（Card title）是卡片的子组件，应放置在[卡片头部](./card-header)内部。
 
-有关更多信息，请参阅[卡片（Card）](./card)文档。
+更多信息请参阅[卡片](./card)文档。
 
 ## 属性
 
@@ -37,7 +37,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

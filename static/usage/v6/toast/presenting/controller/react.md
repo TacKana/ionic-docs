@@ -16,13 +16,13 @@ function Example() {
   return (
     <>
       <IonButton expand="block" onClick={() => presentToast('top')}>
-        顶部显示 Toast
+        Present Toast At the Top
       </IonButton>
       <IonButton expand="block" onClick={() => presentToast('middle')}>
-        中间显示 Toast
+        Present Toast At the Middle
       </IonButton>
       <IonButton expand="block" onClick={() => presentToast('bottom')}>
-        底部显示 Toast
+        Present Toast At the Bottom
       </IonButton>
     </>
   );

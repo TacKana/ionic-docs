@@ -7,13 +7,13 @@ function Example() {
 
   return (
     <>
-      <IonButton onClick={() => setIsOpen(true)}>点击我</IonButton>
+      <IonButton onClick={() => setIsOpen(true)}>Click Me</IonButton>
       <IonAlert
         isOpen={isOpen}
-        header="标题宜简短"
-        subHeader="副标题可选"
-        message="提示信息应为一句简短、完整的句子。"
-        buttons={['操作']}
+        header="A Short Title Is Best"
+        subHeader="A Sub Header Is Optional"
+        message="A message should be a short, complete sentence."
+        buttons={['Action']}
         onDidDismiss={() => setIsOpen(false)}
       ></IonAlert>
     </>

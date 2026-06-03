@@ -20,11 +20,13 @@ export class ExampleComponent {
   public isDisabled = true;
 
   handleReorder(event: CustomEvent<ItemReorderEventDetail>) {
-    // `from` 和 `to` 属性分别包含拖动开始和结束时项目的索引
-    console.log('从索引', event.detail.from, '拖动到', event.detail.to);
+    // The `from` and `to` properties contain the index of the item
+    // when the drag started and ended, respectively
+    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
 
-    // 完成重新排序并根据手势结束位置在 DOM 中定位项目。
-    // 此方法也可以由重新排序组直接调用
+    // Finish the reorder and position the item in the DOM based on
+    // where the gesture ended. This method can also be called directly
+    // by the reorder group
     event.detail.complete();
   }
 

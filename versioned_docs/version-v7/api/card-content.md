@@ -11,9 +11,9 @@ import Slots from '@ionic-internal/component-api/v7/card-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-卡片内容（Card Content）是卡片组件的一个子组件，用于在其内容周围添加内边距。建议将卡片中的任何文本内容都放置在卡片内容组件内部。
+卡片内容（Card content）是卡片的子组件，为其内容添加内边距。建议卡片的任何文本内容都应放在卡片内容内部。
 
-更多信息请参阅 [Card](./card) 文档。
+更多信息请参阅[卡片](./card)文档。
 
 ## 属性
 
@@ -27,7 +27,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <Methods />
 
-## CSS 影子部件
+## CSS 阴影部分
 
 <Parts />
 

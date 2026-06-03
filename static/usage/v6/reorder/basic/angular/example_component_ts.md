@@ -11,11 +11,13 @@ import { IonicModule, ItemReorderEventDetail } from '@ionic/angular';
 })
 export class ExampleComponent {
   handleReorder(ev: CustomEvent<ItemReorderEventDetail>) {
-    // `from` 和 `to` 属性分别表示拖拽开始和结束时项目的索引
-    console.log('从索引', ev.detail.from, '拖拽到', ev.detail.to);
+    // The `from` and `to` properties contain the index of the item
+    // when the drag started and ended, respectively
+    console.log('Dragged from index', ev.detail.from, 'to', ev.detail.to);
 
-    // 完成重新排序并根据手势结束位置在DOM中定位项目
-    // 此方法也可以由重新排序组直接调用
+    // Finish the reorder and position the item in the DOM based on
+    // where the gesture ended. This method can also be called directly
+    // by the reorder group
     ev.detail.complete();
   }
 }

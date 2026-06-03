@@ -3,7 +3,7 @@
 
 <style>
   /*
-   * 自定义日期时间组件日历标题部分
+   * Custom Datetime Calendar Header Part
    * -------------------------------------------
    */
   ion-datetime::part(month-year-button) {

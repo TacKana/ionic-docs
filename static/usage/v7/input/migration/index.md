@@ -15,224 +15,232 @@ import TabItem from '@theme/TabItem';
 <TabItem value="javascript">
 
 ```html
-<!-- 标签 (Label) 及其位置 (Label Position) -->
+<!-- Label and Label Position -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item>
-  <ion-label position="floating">邮箱:</ion-label>
+  <ion-label position="floating">Email:</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 <ion-item>
-  <ion-input label="邮箱:" label-placement="floating"></ion-input>
+  <ion-input label="Email:" label-placement="floating"></ion-input>
 </ion-item>
 
 
-<!-- 填充样式 (Fill) -->
+<!-- Fill -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item fill="outline" shape="round">
-  <ion-label position="floating">邮箱:</ion-label>
+  <ion-label position="floating">Email:</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 
-<!-- 使用 `fill` 属性的输入框不应放置在 ion-item 中 -->
-<ion-input fill="outline" shape="round" label="邮箱:" label-placement="floating"></ion-input>
+<!-- Inputs using `fill` should not be placed in ion-item -->
+<ion-input fill="outline" shape="round" label="Email:" label-placement="floating"></ion-input>
 
-<!-- ion-item 上特定于输入框的功能 -->
+<!-- Input-specific features on ion-item -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item counter="true">
-  <ion-label position="floating">邮箱:</ion-label>
+  <ion-label position="floating">Email:</ion-label>
   <ion-input maxlength="100"></ion-input>
-  <div slot="helper">请输入邮箱</div>
-  <div slot="error">请输入有效的邮箱地址</div>
+  <div slot="helper">Enter an email</div>
+  <div slot="error">Please enter a valid email</div>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 
 <!--
-  当输入框位于 item/list 中时，不应使用计数器 (counter) 和帮助文本 (helper text) 等元数据。
-  如果你需要为输入框提供更多上下文，请考虑在 ion-list 下方使用 ion-note。
+  Metadata such as counters and helper text should not
+  be used when an input is in an item/list. If you need to
+  provide more context on a input, consider using an ion-note
+  underneath the ion-list.
 -->
 
 <ion-input
-  label="邮箱:"
+  label="Email:"
   counter="true"
   maxlength="100"
-  helper-text="请输入邮箱"
-  error-text="请输入有效的邮箱地址"
+  helper-text="Enter an email"
+  error-text="Please enter a valid email"
 ></ion-input>
 ```
 </TabItem>
 <TabItem value="angular">
 
 ```html
-<!-- 标签 (Label) 及其位置 (Label Position) -->
+<!-- Label and Label Position -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item>
-  <ion-label position="floating">邮箱:</ion-label>
+  <ion-label position="floating">Email:</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 <ion-item>
-  <ion-input label="邮箱:" labelPlacement="floating"></ion-input>
+  <ion-input label="Email:" labelPlacement="floating"></ion-input>
 </ion-item>
 
 
-<!-- 填充样式 (Fill) -->
+<!-- Fill -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item fill="outline" shape="round">
-  <ion-label position="floating">邮箱:</ion-label>
+  <ion-label position="floating">Email:</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 
-<!-- 使用 `fill` 属性的输入框不应放置在 ion-item 中 -->
-<ion-input fill="outline" shape="round" label="邮箱:" labelPlacement="floating"></ion-input>
+<!-- Inputs using `fill` should not be placed in ion-item -->
+<ion-input fill="outline" shape="round" label="Email:" labelPlacement="floating"></ion-input>
 
-<!-- ion-item 上特定于输入框的功能 -->
+<!-- Input-specific features on ion-item -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item [counter]="true">
-  <ion-label position="floating">邮箱:</ion-label>
+  <ion-label position="floating">Email:</ion-label>
   <ion-input maxlength="100"></ion-input>
-  <div slot="helper">请输入邮箱</div>
-  <div slot="error">请输入有效的邮箱地址</div>
+  <div slot="helper">Enter an email</div>
+  <div slot="error">Please enter a valid email</div>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 
 <!--
-  当输入框位于 item/list 中时，不应使用计数器 (counter) 和帮助文本 (helper text) 等元数据。
-  如果你需要为输入框提供更多上下文，请考虑在 ion-list 下方使用 ion-note。
+  Metadata such as counters and helper text should not
+  be used when an input is in an item/list. If you need to
+  provide more context on a input, consider using an ion-note
+  underneath the ion-list.
 -->
 
 <ion-input
-  label="邮箱:"
+  label="Email:"
   [counter]="true"
   maxlength="100"
-  helperText="请输入邮箱"
-  errorText="请输入有效的邮箱地址"
+  helperText="Enter an email"
+  errorText="Please enter a valid email"
 ></ion-input>
 ```
 </TabItem>
 <TabItem value="react">
 
 ```tsx
-{/* 标签 (Label) 及其位置 (Label Position) */}
+{/* Label and Label Position */}
 
-{/* 之前 */}
+{/* Before */}
 <IonItem>
-  <IonLabel position="floating">邮箱:</IonLabel>
+  <IonLabel position="floating">Email:</IonLabel>
   <IonInput></IonInput>
 </IonItem>
 
-{/* 之后 */}
+{/* After */}
 <IonItem>
-  <IonInput label="邮箱:" labelPlacement="floating"></IonInput>
+  <IonInput label="Email:" labelPlacement="floating"></IonInput>
 </IonItem>
 
 
-{/* 填充样式 (Fill) */}
+{/* Fill */}
 
-{/* 之前 */}
+{/* Before */}
 <IonItem fill="outline" shape="round">
-  <IonLabel position="floating">邮箱:</IonLabel>
+  <IonLabel position="floating">Email:</IonLabel>
   <IonInput></IonInput>
 </IonItem>
 
-{/* 之后 */}
+{/* After */}
 
-{/* 使用 `fill` 属性的输入框不应放置在 IonItem 中 */}
-<IonInput fill="outline" shape="round" label="邮箱:" labelPlacement="floating"></IonInput>
+{/* Inputs using `fill` should not be placed in IonItem */}
+<IonInput fill="outline" shape="round" label="Email:" labelPlacement="floating"></IonInput>
 
-{/* IonItem 上特定于输入框的功能 */}
+{/* Input-specific features on IonItem */}
 
-{/* 之前 */}
+{/* Before */}
 <IonItem counter={true}>
-  <IonLabel position="floating">邮箱:</IonLabel>
+  <IonLabel position="floating">Email:</IonLabel>
   <IonInput maxlength="100"></IonInput>
-  <div slot="helper">请输入邮箱</div>
-  <div slot="error">请输入有效的邮箱地址</div>
+  <div slot="helper">Enter an email</div>
+  <div slot="error">Please enter a valid email</div>
 </IonItem>
 
-{/* 之后 */}
+{/* After */}
 
 {/*
-  当输入框位于 item/list 中时，不应使用计数器 (counter) 和帮助文本 (helper text) 等元数据。
-  如果你需要为输入框提供更多上下文，请考虑在 IonList 下方使用 IonNote。
+  Metadata such as counters and helper text should not
+  be used when an input is in an item/list. If you need to
+  provide more context on a input, consider using an IonNote
+  underneath the IonList.
 */}
 
 <IonInput
-  label="邮箱:"
+  label="Email:"
   counter={true}
-  maxlength="100}
-  helperText="请输入邮箱"
-  errorText="请输入有效的邮箱地址"
+  maxlength="100"
+  helperText="Enter an email"
+  errorText="Please enter a valid email"
 ></IonInput>
 ```
 </TabItem>
 <TabItem value="vue">
 
 ```html
-<!-- 标签 (Label) 及其位置 (Label Position) -->
+<!-- Label and Label Position -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item>
-  <ion-label position="floating">邮箱:</ion-label>
+  <ion-label position="floating">Email:</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 <ion-item>
-  <ion-input label="邮箱:" label-placement="floating"></ion-input>
+  <ion-input label="Email:" label-placement="floating"></ion-input>
 </ion-item>
 
 
-<!-- 填充样式 (Fill) -->
+<!-- Fill -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item fill="outline" shape="round">
-  <ion-label position="floating">邮箱:</ion-label>
+  <ion-label position="floating">Email:</ion-label>
   <ion-input></ion-input>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 
-<!-- 使用 `fill` 属性的输入框不应放置在 ion-item 中 -->
-<ion-input fill="outline" shape="round" label="邮箱:" label-placement="floating"></ion-input>
+<!-- Inputs using `fill` should not be placed in ion-item -->
+<ion-input fill="outline" shape="round" label="Email:" label-placement="floating"></ion-input>
 
-<!-- ion-item 上特定于输入框的功能 -->
+<!-- Input-specific features on ion-item -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item :counter="true">
-  <ion-label position="floating">邮箱:</ion-label>
+  <ion-label position="floating">Email:</ion-label>
   <ion-input maxlength="100"></ion-input>
-  <div slot="helper">请输入邮箱</div>
-  <div slot="error">请输入有效的邮箱地址</div>
+  <div slot="helper">Enter an email</div>
+  <div slot="error">Please enter a valid email</div>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 
 <!--
-  当输入框位于 item/list 中时，不应使用计数器 (counter) 和帮助文本 (helper text) 等元数据。
-  如果你需要为输入框提供更多上下文，请考虑在 ion-list 下方使用 ion-note。
+  Metadata such as counters and helper text should not
+  be used when an input is in an item/list. If you need to
+  provide more context on a input, consider using an ion-note
+  underneath the ion-list.
 -->
 
 <ion-input
-  label="邮箱:"
+  label="Email:"
   :counter="true"
   maxlength="100"
-  helper-text="请输入邮箱"
-  error-text="请输入有效的邮箱地址"
+  helper-text="Enter an email"
+  error-text="Please enter a valid email"
 ></ion-input>
 ```
 </TabItem>

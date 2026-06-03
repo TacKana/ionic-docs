@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button id="open-picker">打开</ion-button>
+  <ion-button id="open-picker">Open</ion-button>
   <ion-picker-legacy trigger="open-picker" :columns="pickerColumns" :buttons="pickerButtons"></ion-picker-legacy>
 </template>
 
@@ -63,13 +63,13 @@
 
   const pickerButtons = [
     {
-      text: '取消',
+      text: 'Cancel',
       role: 'cancel',
     },
     {
-      text: '确认',
+      text: 'Confirm',
       handler: (value) => {
-        console.log(`您选择了 ${value.crust.text} 饼底披萨，配料为 ${value.meat.text} 和 ${value.veggies.text}`);
+        console.log(`You selected a ${value.crust.text} pizza with ${value.meat.text} and ${value.veggies.text}`);
       },
     },
   ];

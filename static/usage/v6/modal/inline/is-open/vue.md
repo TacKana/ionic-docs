@@ -2,24 +2,26 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title>内联模态框</ion-title>
+      <ion-title>Inline Modal</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <ion-button expand="block" @click="setOpen(true)">打开</ion-button>
+    <ion-button expand="block" @click="setOpen(true)">Open</ion-button>
 
     <ion-modal :is-open="isOpen">
       <ion-header>
         <ion-toolbar>
-          <ion-title>模态框</ion-title>
+          <ion-title>Modal</ion-title>
           <ion-buttons slot="end">
-            <ion-button @click="setOpen(false)">关闭</ion-button>
+            <ion-button @click="setOpen(false)">Close</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
         <p>
-          这是一个示例文本，用于展示模态框中的内容。您可以根据需要替换这里的文字，展示任何想要呈现给用户的信息。
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
+          reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
+          dicta.
         </p>
       </ion-content>
     </ion-modal>

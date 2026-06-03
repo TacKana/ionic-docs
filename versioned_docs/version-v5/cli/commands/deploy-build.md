@@ -4,31 +4,31 @@ sidebar_label: 'deploy build'
 
 # ionic deploy build
 
-在 Appflow 上创建部署构建
+Create a deploy build on Appflow
 
 ```shell
 ionic deploy build [options]
 ```
 
-此命令会在 Appflow 上创建部署构建。当构建运行时，它会将远程构建日志输出到终端。
+This command creates a deploy build on Appflow. While the build is running, it prints the remote build log to the terminal.
 
-自定义构建：
+Customizing the build:
 
-- 可以使用 `--environment` 和 `--channel` 选项来定制暴露给构建的变量组。
+- The `--environment` and `--channel` options can be used to customize the groups of values exposed to the build.
 
-除了 `--commit` 之外，所有选项都可以使用在 Appflow [仪表板](https://dashboard.ionicframework.com) 中设置的完整名称来指定。
+Apart from `--commit`, every option can be specified using the full name setup within the Appflow [Dashboard](https://dashboard.ionicframework.com).
 
-## 示例
+## Examples
 
 ```shell
 $ ionic deploy build
-$ ionic deploy build --environment="我的自定义环境名称"
+$ ionic deploy build --environment="My Custom Environment Name"
 $ ionic deploy build --commit=2345cd3305a1cf94de34e93b73a932f25baac77c
 $ ionic deploy build --channel="Master"
-$ ionic deploy build --channel="Master" --channel="我的自定义频道"
+$ ionic deploy build --channel="Master" --channel="My Custom Channel"
 ```
 
-## 选项
+## Options
 
 <table className="reference-table">
   <thead>
@@ -45,9 +45,9 @@ $ ionic deploy build --channel="Master" --channel="我的自定义频道"
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>暴露给你的构建的环境变量组</p>
+        <p>The group of environment variables exposed to your build</p>
       </td>
     </tr>
   </tbody>
@@ -65,17 +65,18 @@ $ ionic deploy build --channel="Master" --channel="我的自定义频道"
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          你想要自动部署构建的频道。如果需要指定多个频道，此选项可以重复多次。
+          The channel you want to auto deploy the build to. This can be repeated multiple times if multiple channels
+          need to be specified.
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 高级选项
+## Advanced Options
 
 <table className="reference-table">
   <thead>
@@ -92,10 +93,10 @@ $ ionic deploy build --channel="Master" --channel="我的自定义频道"
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>提交（默认为 HEAD）</p>
+          <p>Commit (defaults to HEAD)</p>
         </div>
       </td>
     </tr>

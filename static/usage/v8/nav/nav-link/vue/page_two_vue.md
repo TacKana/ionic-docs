@@ -5,13 +5,13 @@
       <ion-buttons slot="start">
         <ion-back-button></ion-back-button>
       </ion-buttons>
-      <ion-title>页面二</ion-title>
+      <ion-title>Page Two</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <h1>页面二</h1>
+    <h1>Page Two</h1>
     <ion-nav-link router-direction="forward" :component="component">
-      <ion-button>前往页面三</ion-button>
+      <ion-button>Go to Page Three</ion-button>
     </ion-nav-link>
   </ion-content>
 </template>

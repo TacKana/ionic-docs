@@ -10,21 +10,21 @@ import { IonicModule } from '@ionic/angular';
 })
 export class ExampleComponent {
   customAlertOptions = {
-    header: '披萨配料',
-    subHeader: '选择您最喜爱的配料',
-    message: '仅限选择一种',
+    header: 'Pizza Toppings',
+    subHeader: 'Select your favorite topping',
+    message: 'Choose only one',
     translucent: true,
   };
 
   customPopoverOptions = {
-    header: '发色',
-    subHeader: '选择您的发色',
-    message: '仅选择您的主要发色',
+    header: 'Hair Color',
+    subHeader: 'Select your hair color',
+    message: 'Only select your dominant hair color',
   };
 
   customActionSheetOptions = {
-    header: '颜色',
-    subHeader: '选择您最喜爱的颜色',
+    header: 'Colors',
+    subHeader: 'Select your favorite color',
   };
 }
 ```

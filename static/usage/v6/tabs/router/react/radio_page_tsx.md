@@ -6,7 +6,7 @@ const RadioPage = () => (
   <IonPage>
     <IonHeader>
       <IonToolbar>
-        <IonTitle>单选按钮</IonTitle>
+        <IonTitle>Radio</IonTitle>
       </IonToolbar>
     </IonHeader>
     <IonContent>
@@ -18,7 +18,7 @@ const RadioPage = () => (
           height: '100%',
         }}
       >
-        单选按钮内容
+        Radio content
       </div>
     </IonContent>
   </IonPage>

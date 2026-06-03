@@ -34,7 +34,7 @@ import { OverlayEventDetail } from '@ionic/core/components';
 export class ExampleComponent {
   @ViewChild(IonModal) modal!: IonModal;
 
-  message = '此模态框示例使用触发器，在按钮被点击时自动打开模态框。';
+  message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
   name!: string;
 
   cancel() {
@@ -47,7 +47,7 @@ export class ExampleComponent {
 
   onWillDismiss(event: CustomEvent<OverlayEventDetail>) {
     if (event.detail.role === 'confirm') {
-      this.message = `你好，${event.detail.data}!`;
+      this.message = `Hello, ${event.detail.data}!`;
     }
   }
 }

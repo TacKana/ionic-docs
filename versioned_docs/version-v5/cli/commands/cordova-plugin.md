@@ -4,15 +4,15 @@ sidebar_label: 'cordova plugin'
 
 # ionic cordova plugin
 
-管理 Cordova 插件
+Manage Cordova plugins
 
 ```shell
 ionic cordova plugin [options]
 ```
 
-类似于直接运行 `cordova plugin` 命令，但提供了更友好的检查机制。
+Like running `cordova plugin` directly, but provides friendly checks.
 
-## 示例
+## Examples
 
 ```shell
 $ ionic cordova plugin
@@ -21,7 +21,7 @@ $ ionic cordova plugin add phonegap-plugin-push --variable SENDER_ID=XXXXX
 $ ionic cordova plugin rm cordova-plugin-camera
 ```
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -33,10 +33,10 @@ $ ionic cordova plugin rm cordova-plugin-camera
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          <code>add</code> 或 <code>remove</code> 插件；<code>ls</code> 或 <code>save</code> 所有项目插件
+          <code>add</code> or <code>remove</code> a plugin; <code>ls</code> or <code>save</code> all project plugins
         </p>
       </td>
     </tr>
@@ -50,17 +50,17 @@ $ ionic cordova plugin rm cordova-plugin-camera
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          插件名称（对应 <code>add</code> 和 <code>remove</code> 操作）
+          The name of the plugin (corresponds to <code>add</code> and <code>remove</code>)
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 选项
+## Options
 
 <table className="reference-table">
   <thead>
@@ -77,15 +77,15 @@ $ ionic cordova plugin rm cordova-plugin-camera
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>指定插件变量</p>
+        <p>Specify plugin variables</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 高级选项
+## Advanced Options
 
 <table className="reference-table">
   <thead>
@@ -101,11 +101,11 @@ $ ionic cordova plugin rm cordova-plugin-camera
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
           <p>
-            强制覆盖已存在的插件（对应 <code>add</code> 操作）
+            Force overwrite the plugin if it exists (corresponds to <code>add</code>)
           </p>
         </div>
       </td>

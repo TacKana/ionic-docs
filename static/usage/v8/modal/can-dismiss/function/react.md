@@ -30,14 +30,14 @@ function Example() {
   function canDismiss() {
     return new Promise<boolean>((resolve, reject) => {
       present({
-        header: '确定要关闭吗？',
+        header: 'Are you sure?',
         buttons: [
           {
-            text: '是',
+            text: 'Yes',
             role: 'confirm',
           },
           {
-            text: '否',
+            text: 'No',
             role: 'cancel',
           },
         ],
@@ -56,24 +56,24 @@ function Example() {
     <IonPage ref={page}>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>应用</IonTitle>
+          <IonTitle>App</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
-          打开
+          Open
         </IonButton>
         <IonModal ref={modal} trigger="open-modal" canDismiss={canDismiss} presentingElement={presentingElement!}>
           <IonHeader>
             <IonToolbar>
-              <IonTitle>模态框</IonTitle>
+              <IonTitle>Modal</IonTitle>
               <IonButtons slot="end">
-                <IonButton onClick={() => dismiss()}>关闭</IonButton>
+                <IonButton onClick={() => dismiss()}>Close</IonButton>
               </IonButtons>
             </IonToolbar>
           </IonHeader>
           <IonContent className="ion-padding">
-            <p>关闭此模态框时，系统会提示您确认操作。</p>
+            <p>You will be prompted when closing this modal.</p>
           </IonContent>
         </IonModal>
       </IonContent>

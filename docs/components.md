@@ -7,10 +7,10 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
-  <title>UI 组件 | 用于构建用户界面应用的高级组件</title>
+  <title>UI 组件 | 用户界面应用构建组件</title>
   <meta
     name="description"
-    content="Ionic Framework 内置了一系列高级 UI 组件，包括卡片、列表和标签页，可以快速轻松地构建应用的用户界面。"
+    content="Ionic Framework 内置了多种高级 UI 组件，包括卡片、列表和标签页，帮助您快速轻松地构建应用程序的用户界面。"
   />
   <style>{`
     :root {
@@ -19,156 +19,163 @@ import DocsCards from '@components/global/DocsCards';
   `}</style>
 </head>
 
-Ionic 应用由称为组件的高级构建块组成，它们能帮助你快速构建应用的用户界面。Ionic 内置了多种组件，包括卡片、列表和标签页。熟悉基础知识后，可以参考 [API 索引](api.md) 查看所有组件和子组件的完整列表。
+Ionic 应用由称为组件的高层构建块构成，可让您快速构建应用的 UI。Ionic 内置了多种组件，包括卡片、列表和标签页。熟悉基础知识后，请参阅[API 索引](api.md)以获取每个组件及子组件的完整列表。
 
 <intro-end />
 
 <DocsCards>
-<DocsCard header="手风琴" href="api/accordion" img="/icons/feature-component-accordion-icon.png">
-  <p>手风琴组件提供了可折叠的内容区域，可以在组织和分组信息的同时减少纵向空间占用。</p>
+<DocsCard header="Accordion" href="api/accordion" img="/icons/feature-component-accordion-icon.png">
+  <p>手风琴组件可在内容中提供可折叠的区域，以减少垂直空间占用，同时提供组织和分组信息的方式。</p>
 </DocsCard>
 
-<DocsCard header="操作表" href="api/action-sheet" icon="/icons/component-action-sheet-icon.png">
-  <p>操作表用于显示一组选项，并提供确认或取消操作的能力。</p>
+<DocsCard header="Action Sheet" href="api/action-sheet" icon="/icons/component-action-sheet-icon.png">
+  <p>操作菜单显示一组选项，具备确认或取消操作的能力。</p>
 </DocsCard>
 
-<DocsCard header="警告框" href="api/alert" icon="/icons/component-alert-icon.png">
-  <p>警告框是让用户选择特定操作或操作列表的理想方式。</p>
+<DocsCard header="Alert" href="api/alert" icon="/icons/component-alert-icon.png">
+  <p>警告框是让用户选择特定操作或操作列表的绝佳方式。</p>
 </DocsCard>
 
-<DocsCard header="徽章" href="api/badge" icon="/icons/component-badge-icon.png">
-  <p>徽章是一种小型组件，通常用于向用户传达数值信息。</p>
+<DocsCard header="Badge" href="api/badge" icon="/icons/component-badge-icon.png">
+  <p>徽章是一种小组件，通常用于向用户传达数值信息。</p>
 </DocsCard>
 
-<DocsCard header="面包屑" href="api/breadcrumbs" icon="/icons/component-breadcrumbs-icon.png">
-  <p>面包屑是用于指示用户在应用中位置的导航项。</p>
+<DocsCard header="Breadcrumbs" href="api/breadcrumbs" icon="/icons/component-breadcrumbs-icon.png">
+  <p>面包屑导航是用于指示用户在应用中当前位置的导航项。</p>
 </DocsCard>
 
-<DocsCard header="按钮" href="api/button" icon="/icons/component-button-icon.png">
-  <p>按钮让用户能够执行操作，是与应用交互和导航的重要方式。</p>
+<DocsCard header="Button" href="api/button" icon="/icons/component-button-icon.png">
+  <p>按钮让您的用户执行操作，是与应用交互和导航的重要方式。</p>
 </DocsCard>
 
-<DocsCard header="卡片" href="api/card" icon="/icons/component-card-icon.png">
-  <p>卡片是展示重要内容的绝佳方式，可以包含图像、按钮、文本等元素。</p>
+<DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
+  <p>
+    卡片是展示重要内容的绝佳方式，可包含图片、按钮、文本等更多元素。
+  </p>
 </DocsCard>
 
-<DocsCard header="复选框" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
-  <p>复选框可用于提示用户做出二元决策。</p>
+<DocsCard header="Checkbox" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
+  <p>复选框可用于让用户知晓他们需要做出二元选择。</p>
 </DocsCard>
 
-<DocsCard header="标签" href="api/chip" icon="/icons/component-chip-icon.png">
-  <p>标签是一种紧凑的数据或操作展示方式。</p>
+<DocsCard header="Chip" href="api/chip" icon="/icons/component-chip-icon.png">
+  <p>纸片是一种以紧凑方式显示数据或操作的方式。</p>
 </DocsCard>
 
-<DocsCard header="内容区域" href="api/content" icon="/icons/component-content-icon.png">
-  <p>内容区域是与应用交互和导航的核心方式。</p>
+<DocsCard header="Content" href="api/content" icon="/icons/component-content-icon.png">
+  <p>内容区域是与应用交互和导航的基本方式。</p>
 </DocsCard>
 
-<DocsCard header="日期时间选择器" href="api/datetime" img="/icons/feature-component-datetime-icon.png">
-  <p>日期时间选择器用于呈现直观的界面，让用户轻松选择日期和时间。</p>
+<DocsCard header="Date & Time Pickers" href="api/datetime" img="/icons/feature-component-datetime-icon.png">
+  <p>日期和时间选择器用于提供一个让用户轻松选择日期和时间的界面。</p>
 </DocsCard>
 
-<DocsCard header="浮动操作按钮" href="api/fab" icon="/icons/component-fab-icon.png">
+<DocsCard header="Floating Action Button" href="api/fab" icon="/icons/component-fab-icon.png">
   <p>浮动操作按钮是执行屏幕主要操作的圆形按钮。</p>
 </DocsCard>
 
-<DocsCard header="网格布局" href="api/grid" icon="/icons/component-grid-icon.png">
+<DocsCard header="Grid" href="api/grid" icon="/icons/component-grid-icon.png">
   <p>网格是一个强大的移动优先系统，用于构建自定义布局。</p>
 </DocsCard>
 
-<DocsCard header="图标" href="api/icon" icon="/icons/component-icons-icon.png">
-  <p>专为网页、iOS 和 Android 应用设计的精美图标。</p>
+<DocsCard header="Icons" href="api/icon" icon="/icons/component-icons-icon.png">
+  <p>设计精美的图标，适用于 Web、iOS 和 Android 应用。</p>
 </DocsCard>
 
-<DocsCard header="无限滚动" href="api/infinite-scroll" icon="/icons/component-infinitescroll-icon.png">
-  <p>无限滚动允许在用户滚动应用时加载新数据。</p>
+<DocsCard header="Infinite Scroll" href="api/infinite-scroll" icon="/icons/component-infinitescroll-icon.png">
+  <p>无限滚动允许您在用户滚动应用时加载新数据。</p>
 </DocsCard>
 
-<DocsCard header="输入框" href="api/input" icon="/icons/component-input-icon.png">
-  <p>输入框为用户在应用中输入数据提供了途径。</p>
+<DocsCard header="Inputs" href="api/input" icon="/icons/component-input-icon.png">
+  <p>输入框为用户提供了在应用中输入数据的方式。</p>
 </DocsCard>
 
-<DocsCard header="列表项" href="api/item" img="/icons/feature-component-item-icon.png">
-  <p>列表项是可以包含文本、图标、头像、图像、输入框以及其他原生或自定义元素的组件。列表项支持滑动、删除、重新排序、编辑等操作。</p>
+<DocsCard header="Item" href="api/item" img="/icons/feature-component-item-icon.png">
+  <p>
+    列表项是可包含文本、图标、头像、图片、输入框以及任何其他原生或自定义元素的组件。
+    列表项可以被滑动、删除、排序、编辑等。
+  </p>
 </DocsCard>
 
-<DocsCard header="列表" href="api/list" icon="/icons/component-lists-icon.png">
-  <p>列表可以显示多行信息，例如联系人列表、播放列表或菜单。</p>
+<DocsCard header="List" href="api/list" icon="/icons/component-lists-icon.png">
+  <p>列表可以显示信息行，例如联系人列表、播放列表或菜单。</p>
 </DocsCard>
 
-<DocsCard header="媒体组件" href="api/avatar" icon="/icons/component-media-icon.png">
-  <p>一系列媒体组件集合，包括头像、图标、图像和缩略图，旨在增强视觉内容呈现。</p>
+<DocsCard header="Media" href="api/avatar" icon="/icons/component-media-icon.png">
+  <p>
+    一组媒体组件，包括头像、图标、图片和缩略图，旨在增强视觉内容的展示。
+  </p>
 </DocsCard>
 
-<DocsCard header="菜单" href="api/menu" icon="/icons/component-menu-icon.png">
-  <p>菜单是常见的导航模式，可以常驻屏幕，也可以在需要时显示。</p>
+<DocsCard header="Menu" href="api/menu" icon="/icons/component-menu-icon.png">
+  <p>菜单是一种常见的导航模式，可以常驻在屏幕上，也可以在需要时显示。</p>
 </DocsCard>
 
-<DocsCard header="模态框" href="api/modal" icon="/icons/component-modal-icon.png">
-  <p>模态框从屏幕侧边滑入滑出，用于显示临时界面，常用于登录或注册页面。</p>
+<DocsCard header="Modal" href="api/modal" icon="/icons/component-modal-icon.png">
+  <p>模态框滑入和滑出屏幕以显示临时 UI，通常用于登录或注册页面。</p>
 </DocsCard>
 
-<DocsCard header="导航" href="api/nav" icon="/icons/component-navigation-icon.png">
-  <p>导航是用户在不同页面间移动的方式。</p>
+<DocsCard header="Navigation" href="api/nav" icon="/icons/component-navigation-icon.png">
+  <p>导航是用户在应用的不同页面之间移动的方式。</p>
 </DocsCard>
 
-<DocsCard header="弹出框" href="api/popover" icon="/icons/component-popover-icon.png">
-  <p>弹出框提供了一种无需切换上下文即可展示信息或选项的便捷方式。</p>
+<DocsCard header="Popover" href="api/popover" icon="/icons/component-popover-icon.png">
+  <p>Popover 提供了一种在不切换上下文的情况下呈现信息或选项的简便方式。</p>
 </DocsCard>
 
-<DocsCard header="进度指示器" href="api/progress-bar" icon="/icons/component-progress-icon.png">
-  <p>进度指示器用于可视化操作或活动的进度。</p>
+<DocsCard header="Progress Indicators" href="api/progress-bar" icon="/icons/component-progress-icon.png">
+  <p>进度指示器可视化展示操作或活动的进度。</p>
 </DocsCard>
 
-<DocsCard header="单选框" href="api/radio" icon="/icons/component-radio-icon.png">
-  <p>单选框允许你呈现一组互斥的选项。</p>
+<DocsCard header="Radio" href="api/radio" icon="/icons/component-radio-icon.png">
+  <p>单选输入允许您呈现一组互斥的选项。</p>
 </DocsCard>
 
-<DocsCard header="滑动条" href="api/range" icon="/icons/component-range-icon.png">
-  <p>滑动条让用户可以通过在轨道上拖动旋钮来选择数值。</p>
+<DocsCard header="Range" href="api/range" icon="/icons/component-range-icon.png">
+  <p>范围滑块让用户通过沿轨道拖动旋钮来选择值。</p>
 </DocsCard>
 
-<DocsCard header="下拉刷新" href="api/refresher" img="/icons/feature-component-refresher-icon.png">
-  <p>下拉刷新为内容组件提供了拉动刷新功能。</p>
+<DocsCard header="Refresher" href="api/refresher" img="/icons/feature-component-refresher-icon.png">
+  <p>Refresher 为内容组件提供下拉刷新功能。</p>
 </DocsCard>
 
-<DocsCard header="重新排序" href="api/reorder" icon="/icons/component-reorder-icon.png">
-  <p>重新排序功能允许用户通过拖放来调整列表项的顺序。</p>
+<DocsCard header="Reorder" href="api/reorder" icon="/icons/component-reorder-icon.png">
+  <p>Reorder 让用户通过拖放来重新排序列表项。</p>
 </DocsCard>
 
-<DocsCard header="路由" href="api/router" icon="/icons/component-routing-icon.png">
+<DocsCard header="Routing" href="api/router" icon="/icons/component-routing-icon.png">
   <p>路由允许基于当前路径进行导航。</p>
 </DocsCard>
 
-<DocsCard header="搜索栏" href="api/searchbar" icon="/icons/component-searchbar-icon.png">
-  <p>搜索栏用于搜索或筛选项目，通常位于工具栏中。</p>
+<DocsCard header="Searchbar" href="api/searchbar" icon="/icons/component-searchbar-icon.png">
+  <p>搜索栏用于搜索或过滤项目，通常位于工具栏中。</p>
 </DocsCard>
 
-<DocsCard header="分段器" href="api/segment" icon="/icons/component-segment-icon.png">
-  <p>分段器提供了一组互斥的按钮，可用作筛选器或视图切换器。</p>
+<DocsCard header="Segment" href="api/segment" icon="/icons/component-segment-icon.png">
+  <p>分段提供一组互斥的按钮，可用作过滤器或视图切换器。</p>
 </DocsCard>
 
-<DocsCard header="选择器" href="api/select" icon="/icons/component-select-icon.png">
-  <p>选择器类似于原生 HTML 的 select 元素，但在排序和选择方面有所改进。</p>
+<DocsCard header="Select" href="api/select" icon="/icons/component-select-icon.png">
+  <p>Select 类似于原生 HTML 的选择框，在排序和选择方面进行了一些改进。</p>
 </DocsCard>
 
-<DocsCard header="标签页" href="api/tabs" img="/icons/feature-component-tabs-icon.png">
-  <p>标签页实现了标签式导航，是现代应用中的标准导航模式。</p>
+<DocsCard header="Tabs" href="api/tabs" img="/icons/feature-component-tabs-icon.png">
+  <p>标签页支持标签式导航，这是现代应用中标准的导航模式。</p>
 </DocsCard>
 
-<DocsCard header="轻提示" href="api/toast" icon="/icons/component-toast-icon.png">
-  <p>轻提示是在应用内容上方显示的微妙通知，不会中断用户交互。</p>
+<DocsCard header="Toast" href="api/toast" icon="/icons/component-toast-icon.png">
+  <p>Toast 是一种微妙的通知，出现在应用内容上方，不会中断用户交互。</p>
 </DocsCard>
 
-<DocsCard header="开关" href="api/toggle" icon="/icons/component-toggle-icon.png">
-  <p>开关是用于二元选择的输入控件，常用于选项和切换功能。</p>
+<DocsCard header="Toggle" href="api/toggle" icon="/icons/component-toggle-icon.png">
+  <p>开关是用于二元选项的输入组件，常用于设置和开关选项。</p>
 </DocsCard>
 
-<DocsCard header="工具栏" href="api/toolbar" icon="/icons/component-toolbar-icon.png">
-  <p>工具栏用于承载与应用相关的信息和操作。</p>
+<DocsCard header="Toolbar" href="api/toolbar" icon="/icons/component-toolbar-icon.png">
+  <p>工具栏用于放置与您的应用相关的信息和操作。</p>
 </DocsCard>
 
-<DocsCard header="文字排版" href="api/text" icon="/icons/component-typography-icon.png">
-  <p>文字组件用于在应用内设置文本样式或更改文本颜色。</p>
+<DocsCard header="Typography" href="api/text" icon="/icons/component-typography-icon.png">
+  <p>文本用于设置应用内文本的样式或更改颜色。</p>
 </DocsCard>
 </DocsCards>

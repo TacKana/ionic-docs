@@ -33,18 +33,17 @@ module.exports = function (context, options) {
         components.forEach((comp) => {
           const compTag = comp.tag.slice(4);
           const outDir = getDirectoryPath(compTag, version, isCurrentVersion);
-          const docsBasePath = isCurrentVersion ? '/' : `/${version}/`;
 
           data.push({
             outDir,
             componentTag: compTag,
             version,
-            props: normalizeGeneratedLinks(renderProperties(comp), docsBasePath),
-            events: normalizeGeneratedLinks(renderEvents(comp), docsBasePath),
-            methods: normalizeGeneratedLinks(renderMethods(comp), docsBasePath),
-            parts: normalizeGeneratedLinks(renderParts(comp), docsBasePath),
-            customProps: normalizeGeneratedLinks(renderCustomProps(comp), docsBasePath),
-            slots: normalizeGeneratedLinks(renderSlots(comp), docsBasePath),
+            props: renderProperties(comp),
+            events: renderEvents(comp),
+            methods: renderMethods(comp),
+            parts: renderParts(comp),
+            customProps: renderCustomProps(comp),
+            slots: renderSlots(comp),
           });
         });
       };
@@ -82,12 +81,12 @@ module.exports = function (context, options) {
          * directory within the plugin directory.
          */
         promises.push(
-          createData(`${basePath}/props.md`, data.props),
-          createData(`${basePath}/events.md`, data.events),
-          createData(`${basePath}/methods.md`, data.methods),
-          createData(`${basePath}/parts.md`, data.parts),
-          createData(`${basePath}/custom-props.mdx`, data.customProps),
-          createData(`${basePath}/slots.md`, data.slots)
+          createData(`${basePath}/props.md`, stripDocsPrefix(data.props)),
+          createData(`${basePath}/events.md`, stripDocsPrefix(data.events)),
+          createData(`${basePath}/methods.md`, stripDocsPrefix(data.methods)),
+          createData(`${basePath}/parts.md`, stripDocsPrefix(data.parts)),
+          createData(`${basePath}/custom-props.mdx`, stripDocsPrefix(data.customProps)),
+          createData(`${basePath}/slots.md`, stripDocsPrefix(data.slots))
         );
       }
 
@@ -133,8 +132,40 @@ function formatMultiline(str) {
   return str.split('\n\n').join('<br /><br />').split('\n').join(' ');
 }
 
-function normalizeGeneratedLinks(markdown, docsBasePath) {
-  return markdown.replace(/(?<=[("'\s=])\/docs\//g, docsBasePath);
+function stripDocsPrefix(str) {
+  return str.replace(/\]\(\/docs\//g, '](/');
+}
+
+/**
+ * Kebab-case slug for API identifiers (camelCase props, method names).
+ */
+function apiIdentifierSlug(name) {
+  return name
+    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+    .replace(/_/g, '-')
+    .toLowerCase();
+}
+
+/**
+ * Heading id for Properties subheadings.
+ * Prefixes IDs with `prop-` so they never collide with narrative sections on the same
+ * doc page that use headings like "Shape", "Fill", or "Size".
+ *
+ * Anchors become `#prop-${slug}` rather than `#${slug}`.
+ */
+function propertyHeadingId(propName) {
+  return `prop-${apiIdentifierSlug(propName)}`;
+}
+
+/**
+ * Heading id for Methods subheadings.
+ * Prefixes IDs with `method-` so they never collide with narrative sections on the same
+ * doc page that use headings like "Dismiss", "Present", or "Close".
+ *
+ * Anchors become `#method-${slug}` rather than `#${slug}`.
+ */
+function methodHeadingId(methodName) {
+  return `method-${apiIdentifierSlug(methodName)}`;
 }
 
 function formatType(attr, type) {
@@ -179,14 +210,14 @@ ${properties
 
     let docs = prop.docs;
     if (isVirtual) {
-      docs = `${docs}\n\nThis is a [virtual property](/docs/core-concepts/fundamentals#virtual-properties) that is set once during initialization and will not update if you change its value after the initial render.`;
+      docs = `${docs}\n\n这是一个[虚拟属性](/core-concepts/fundamentals#虚拟属性)，在初始化时设置一次，初始化后更改其值将不会更新组件。`;
     }
     if (isDeprecated) {
       docs = `${docs}\n\n**_Deprecated_** — ${prop.deprecation}`;
     }
 
     return `
-### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
+### ${prop.name} ${isDeprecated ? '(deprecated)' : ''} {#${propertyHeadingId(prop.name)}}
 
 | | |
 | --- | --- |
@@ -248,7 +279,7 @@ function renderMethods({ methods }) {
 ${methods
   .map(
     (method) => `
-### ${method.name}
+### ${method.name} {#${methodHeadingId(method.name)}}
 
 | | |
 | --- | --- |
@@ -336,7 +367,12 @@ function renderSlots({ slots }) {
   return `
 | Name | Description |
 | --- | --- |
-${slots.map((slot) => `| \`${slot.name}\` | ${formatMultiline(slot.docs)} |`).join('\n')}
-
+${slots
+  .map((slot) => {
+    const slotName = slot.name?.trim();
+    const displayedSlotName = slotName ? `\`${slotName}\`` : '';
+    return `| ${displayedSlotName} | ${formatMultiline(slot.docs)} |`;
+  })
+  .join('\n')}
 `;
 }

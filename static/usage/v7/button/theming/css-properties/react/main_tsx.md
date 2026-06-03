@@ -5,7 +5,7 @@ import { IonButton } from '@ionic/react';
 import './main.css';
 
 function Example() {
-  return <IonButton>自定义按钮</IonButton>;
+  return <IonButton>Custom Button</IonButton>;
 }
 export default Example;
 ```

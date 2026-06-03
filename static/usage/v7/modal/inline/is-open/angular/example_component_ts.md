@@ -17,10 +17,10 @@ import {
   imports: [IonButton, IonButtons, IonContent, IonHeader, IonModal, IonTitle, IonToolbar],
 })
 export class ExampleComponent {
-  isModalOpen = false; // 控制模态框是否打开
+  isModalOpen = false;
 
   setOpen(isOpen: boolean) {
-    this.isModalOpen = isOpen; // 设置模态框状态
+    this.isModalOpen = isOpen;
   }
 }
 ```

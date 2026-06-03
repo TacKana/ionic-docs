@@ -4,15 +4,15 @@ sidebar_label: 'integrations disable'
 
 # ionic integrations disable
 
-禁用集成功能
+Disable an integration
 
 ```shell
 ionic integrations disable [options]
 ```
 
-使用此命令可禁用集成功能，例如 Cordova。
+Integrations, such as Cordova, can be disabled with this command.
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -24,10 +24,10 @@ ionic integrations disable [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <p>
-          需要禁用的集成功能名称（例如：<code>capacitor</code>、<code>cordova</code>、<code>enterprise</code>）
+          The integration to disable (e.g. <code>capacitor</code>, <code>cordova</code>, <code>enterprise</code>)
         </p>
       </td>
     </tr>

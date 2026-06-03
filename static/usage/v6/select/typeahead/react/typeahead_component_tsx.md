@@ -51,20 +51,23 @@ function AppTypeahead(props: TypeaheadProps) {
   };
 
   /**
-   * 根据提供的搜索查询更新渲染的视图。
-   * 如果未提供查询，将渲染所有数据。
+   * Update the rendered view with
+   * the provided search query. If no
+   * query is provided, all data
+   * will be rendered.
    */
   const filterList = (searchQuery: string | null | undefined) => {
     /**
-     * 如果未定义搜索查询，
-     * 则返回所有选项。
+     * If no search query is defined,
+     * return all options.
      */
     if (searchQuery === undefined || searchQuery === null) {
       setFilteredItems([...props.items]);
     } else {
       /**
-       * 否则，将搜索查询标准化，
-       * 并检查哪些项目包含该搜索查询作为子字符串。
+       * Otherwise, normalize the search
+       * query and check to see which items
+       * contain the search query as a substring.
        */
       const normalizedQuery = searchQuery.toLowerCase();
       setFilteredItems(
@@ -90,11 +93,11 @@ function AppTypeahead(props: TypeaheadProps) {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonButton onClick={cancelChanges}>取消</IonButton>
+            <IonButton onClick={cancelChanges}>Cancel</IonButton>
           </IonButtons>
           <IonTitle>{props.title}</IonTitle>
           <IonButtons slot="end">
-            <IonButton onClick={confirmChanges}>完成</IonButton>
+            <IonButton onClick={confirmChanges}>Done</IonButton>
           </IonButtons>
         </IonToolbar>
         <IonToolbar>

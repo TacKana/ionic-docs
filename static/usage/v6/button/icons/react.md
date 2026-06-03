@@ -6,19 +6,16 @@ import { star } from 'ionicons/icons';
 function Example() {
   return (
     <>
-      {/* 左侧图标按钮 */}
       <IonButton>
         <IonIcon slot="start" icon={star}></IonIcon>
-        左侧图标
+        Left Icon
       </IonButton>
 
-      {/* 右侧图标按钮 */}
       <IonButton>
-        右侧图标
+        Right Icon
         <IonIcon slot="end" icon={star}></IonIcon>
       </IonButton>
 
-      {/* 仅图标按钮 */}
       <IonButton>
         <IonIcon slot="icon-only" icon={star}></IonIcon>
       </IonButton>

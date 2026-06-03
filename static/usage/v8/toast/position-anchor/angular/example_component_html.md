@@ -6,21 +6,21 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-button id="headerAnchor">定位到页眉</ion-button>
-  <ion-button id="footerAnchor">定位到页脚</ion-button>
+  <ion-button id="headerAnchor">Anchor to Header</ion-button>
+  <ion-button id="footerAnchor">Anchor to Footer</ion-button>
 
   <ion-toast
     trigger="headerAnchor"
     position="top"
     positionAnchor="header"
-    message="你好世界！"
+    message="Hello World!"
     duration="2000"
   ></ion-toast>
   <ion-toast
     trigger="footerAnchor"
     position="bottom"
     positionAnchor="footer"
-    message="你好世界！"
+    message="Hello World!"
     duration="2000"
   ></ion-toast>
 </ion-content>

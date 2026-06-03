@@ -2,37 +2,37 @@
 <template>
   <ion-list>
     <ion-list-header>
-      <ion-label>默认</ion-label>
+      <ion-label>Default</ion-label>
     </ion-list-header>
     <ion-item>
-      <ion-label>项目</ion-label>
+      <ion-label>Item</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>项目</ion-label>
+      <ion-label>Item</ion-label>
     </ion-item>
   </ion-list>
 
   <ion-list>
     <ion-list-header lines="inset">
-      <ion-label>内嵌式</ion-label>
+      <ion-label>Inset</ion-label>
     </ion-list-header>
     <ion-item>
-      <ion-label>项目</ion-label>
+      <ion-label>Item</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>项目</ion-label>
+      <ion-label>Item</ion-label>
     </ion-item>
   </ion-list>
 
   <ion-list>
     <ion-list-header lines="full">
-      <ion-label>全宽式</ion-label>
+      <ion-label>Full</ion-label>
     </ion-list-header>
     <ion-item>
-      <ion-label>项目</ion-label>
+      <ion-label>Item</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>项目</ion-label>
+      <ion-label>Item</ion-label>
     </ion-item>
   </ion-list>
 </template>

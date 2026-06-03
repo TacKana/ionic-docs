@@ -14,8 +14,8 @@ export class ExampleComponent {
     const utcDay = date.getUTCDay();
 
     /**
-     * 只有当日期不是
-     * 周日或周六时才启用
+     * Date will be enabled if it is not
+     * Sunday or Saturday
      */
     return utcDay !== 0 && utcDay !== 6;
   };

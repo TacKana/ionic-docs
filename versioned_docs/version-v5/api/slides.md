@@ -1,6 +1,6 @@
 ---
-title: 'Ion-Slides: 带内置与自定义动画的移动触摸滑块'
-description: 'Ion-Slides 是一个多节容器，提供自定义和内置的移动触摸滑块动画效果。查看 Ion-Slides 如何在 iOS 和 Android 上运行。'
+title: 'Ion-Slides: Mobile Touch Slider with Built-In & Custom Animation'
+description: 'Ion-Slides is a multi-section container which offers custom and built-in mobile touch slider animation effects. See how Ion-Slides works with iOS and Android.'
 sidebar_label: 'ion-slides'
 demoUrl: '/docs/demos/api/slides/index.html'
 demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/slides/index.html'
@@ -18,24 +18,25 @@ import Slots from '@ionic-internal/component-api/v5/slides/slots.md';
 
 # ion-slides
 
-幻灯片组件是一个多节容器。每个部分都可以滑动或拖动切换。它包含任意数量的 [Slide](slide.md) 组件。
+The Slides component is a multi-section container. Each section can be swiped
+or dragged between. It contains any number of [Slide](slide.md) components.
 
-源自 Swiper.js：
-最现代的移动触摸滑块框架，具有硬件加速的过渡效果。
+Adopted from Swiper.js:
+The most modern mobile touch slider and framework with hardware accelerated transitions.
 
 http://www.idangero.us/swiper/
 
-版权 2016, Vladimir Kharlampidi
+Copyright 2016, Vladimir Kharlampidi
 The iDangero.us
 http://www.idangero.us/
 
-根据 MIT 许可证授权
+Licensed under MIT
 
-## 自定义动画
+## Custom Animations
 
-默认情况下，Ionic 幻灯片使用内置的 `slide` 动画效果。可以通过 `options` 属性提供自定义动画。其他动画的示例如下所示。
+By default, Ionic slides use the built-in `slide` animation effect. Custom animations can be provided via the `options` property. Examples of other animations can be found below.
 
-### Coverflow 效果
+### Coverflow
 
 ```tsx
 const slideOpts = {
@@ -66,7 +67,7 @@ const slideOpts = {
       const center = isHorizontal ? -transform$$1 + swiperWidth / 2 : -transform$$1 + swiperHeight / 2;
       const rotate = isHorizontal ? params.rotate : -params.rotate;
       const translate = params.depth;
-      // 计算每个幻灯片相对于中心的偏移量
+      // Each slide offset from center
       for (let i = 0, length = slides.length; i < length; i += 1) {
         const $slideEl = slides.eq(i);
         const slideSize = slidesSizesGrid[i];
@@ -81,7 +82,7 @@ const slideOpts = {
         let translateY = isHorizontal ? 0 : params.stretch * offsetMultiplier;
         let translateX = isHorizontal ? params.stretch * offsetMultiplier : 0;
 
-        // 修复极小值问题
+        // Fix for ultra small values
         if (Math.abs(translateX) < 0.001) translateX = 0;
         if (Math.abs(translateY) < 0.001) translateY = 0;
         if (Math.abs(translateZ) < 0.001) translateZ = 0;
@@ -93,7 +94,7 @@ const slideOpts = {
         $slideEl.transform(slideTransform);
         $slideEl[0].style.zIndex = -Math.abs(Math.round(offsetMultiplier)) + 1;
         if (params.slideShadows) {
-          // 设置阴影
+          // Set shadows
           let $shadowBeforeEl = isHorizontal
             ? $slideEl.find('.swiper-slide-shadow-left')
             : $slideEl.find('.swiper-slide-shadow-top');
@@ -113,7 +114,7 @@ const slideOpts = {
         }
       }
 
-      // 为 IE10 设置正确的透视
+      // Set correct perspective for IE10
       if (swiper.support.pointerEvents || swiper.support.prefixedPointerEvents) {
         const ws = $wrapperEl[0].style;
         ws.perspectiveOrigin = `${center}px 50%`;
@@ -132,7 +133,7 @@ const slideOpts = {
 };
 ```
 
-### Cube 效果
+### Cube
 
 ```tsx
 const slideOpts = {
@@ -243,7 +244,7 @@ const slideOpts = {
         }
         $slideEl.transform(transform$$1);
         if (params.slideShadows) {
-          // 设置阴影
+          // Set shadows
           let shadowBefore = isHorizontal
             ? $slideEl.find('.swiper-slide-shadow-left')
             : $slideEl.find('.swiper-slide-shadow-top');
@@ -315,7 +316,7 @@ const slideOpts = {
 };
 ```
 
-### Fade 效果
+### Fade
 
 ```tsx
 const slideOpts = {
@@ -379,7 +380,7 @@ const slideOpts = {
 };
 ```
 
-### Flip 效果
+### Flip
 
 ```tsx
 const slideOpts = {
@@ -426,7 +427,7 @@ const slideOpts = {
         $slideEl[0].style.zIndex = -Math.abs(Math.round(progress)) + slides.length;
 
         if (swiper.params.flipEffect.slideShadows) {
-          // 设置阴影
+          // Set shadows
           let shadowBefore = swiper.isHorizontal()
             ? $slideEl.find('.swiper-slide-shadow-left')
             : $slideEl.find('.swiper-slide-shadow-top');
@@ -480,7 +481,7 @@ const slideOpts = {
 };
 ```
 
-## 用法
+## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -495,21 +496,21 @@ import { Component } from '@angular/core';
     <ion-content>
       <ion-slides pager="true" [options]="slideOpts">
         <ion-slide>
-          <h1>幻灯片 1</h1>
+          <h1>Slide 1</h1>
         </ion-slide>
         <ion-slide>
-          <h1>幻灯片 2</h1>
+          <h1>Slide 2</h1>
         </ion-slide>
         <ion-slide>
-          <h1>幻灯片 3</h1>
+          <h1>Slide 3</h1>
         </ion-slide>
       </ion-slides>
     </ion-content>
   `,
 })
 export class SlideExample {
-  // 传递给 swiper 实例的可选参数。
-  // 查看 http://idangero.us/swiper/api/ 获取有效选项。
+  // Optional parameters to pass to the swiper instance.
+  // See http://idangero.us/swiper/api/ for valid options.
   slideOpts = {
     initialSlide: 1,
     speed: 400,
@@ -519,7 +520,7 @@ export class SlideExample {
 ```
 
 ```css
-/* 如果不设置高度，幻灯片将占据其内容的高度 */
+/* Without setting height the slides will take up the height of the slide's content */
 ion-slides {
   height: 100%;
 }
@@ -533,15 +534,15 @@ ion-slides {
 <ion-content>
   <ion-slides pager="true">
     <ion-slide>
-      <h1>幻灯片 1</h1>
+      <h1>Slide 1</h1>
     </ion-slide>
 
     <ion-slide>
-      <h1>幻灯片 2</h1>
+      <h1>Slide 2</h1>
     </ion-slide>
 
     <ion-slide>
-      <h1>幻灯片 3</h1>
+      <h1>Slide 3</h1>
     </ion-slide>
   </ion-slides>
 </ion-content>
@@ -550,8 +551,8 @@ ion-slides {
 ```javascript
 var slides = document.querySelector('ion-slides');
 
-// 传递给 swiper 实例的可选参数。
-// 查看 http://idangero.us/swiper/api/ 获取有效选项。
+// Optional parameters to pass to the swiper instance.
+// See http://idangero.us/swiper/api/ for valid options.
 slides.options = {
   initialSlide: 1,
   speed: 400,
@@ -559,7 +560,7 @@ slides.options = {
 ```
 
 ```css
-/* 如果不设置高度，幻灯片将占据其内容的高度 */
+/* Without setting height the slides will take up the height of the slide's content */
 ion-slides {
   height: 100%;
 }
@@ -573,8 +574,8 @@ ion-slides {
 import React from 'react';
 import { IonSlides, IonSlide, IonContent } from '@ionic/react';
 
-// 传递给 swiper 实例的可选参数。
-// 查看 http://idangero.us/swiper/api/ 获取有效选项。
+// Optional parameters to pass to the swiper instance.
+// See http://idangero.us/swiper/api/ for valid options.
 const slideOpts = {
   initialSlide: 1,
   speed: 400,
@@ -584,13 +585,13 @@ export const SlidesExample: React.FC = () => (
   <IonContent>
     <IonSlides pager={true} options={slideOpts}>
       <IonSlide>
-        <h1>幻灯片 1</h1>
+        <h1>Slide 1</h1>
       </IonSlide>
       <IonSlide>
-        <h1>幻灯片 2</h1>
+        <h1>Slide 2</h1>
       </IonSlide>
       <IonSlide>
-        <h1>幻灯片 3</h1>
+        <h1>Slide 3</h1>
       </IonSlide>
     </IonSlides>
   </IonContent>
@@ -598,7 +599,7 @@ export const SlidesExample: React.FC = () => (
 ```
 
 ```css
-/* 如果不设置高度，幻灯片将占据其内容的高度 */
+/* Without setting height the slides will take up the height of the slide's content */
 ion-slides {
   height: 100%;
 }
@@ -616,8 +617,8 @@ import { Component, h } from '@stencil/core';
   styleUrl: 'slides-example.css',
 })
 export class SlidesExample {
-  // 传递给 swiper 实例的可选参数。
-  // 查看 http://idangero.us/swiper/api/ 获取有效选项。
+  // Optional parameters to pass to the swiper instance.
+  // See http://idangero.us/swiper/api/ for valid options.
   private slideOpts = {
     initialSlide: 1,
     speed: 400,
@@ -628,15 +629,15 @@ export class SlidesExample {
       <ion-content>
         <ion-slides pager={true} options={this.slideOpts}>
           <ion-slide>
-            <h1>幻灯片 1</h1>
+            <h1>Slide 1</h1>
           </ion-slide>
 
           <ion-slide>
-            <h1>幻灯片 2</h1>
+            <h1>Slide 2</h1>
           </ion-slide>
 
           <ion-slide>
-            <h1>幻灯片 3</h1>
+            <h1>Slide 3</h1>
           </ion-slide>
         </ion-slides>
       </ion-content>,
@@ -646,7 +647,7 @@ export class SlidesExample {
 ```
 
 ```css
-/* 如果不设置高度，幻灯片将占据其内容的高度 */
+/* Without setting height the slides will take up the height of the slide's content */
 ion-slides {
   height: 100%;
 }
@@ -660,13 +661,13 @@ ion-slides {
 <template>
   <ion-slides pager="true" :options="slideOpts">
     <ion-slide>
-      <h1>幻灯片 1</h1>
+      <h1>Slide 1</h1>
     </ion-slide>
     <ion-slide>
-      <h1>幻灯片 2</h1>
+      <h1>Slide 2</h1>
     </ion-slide>
     <ion-slide>
-      <h1>幻灯片 3</h1>
+      <h1>Slide 3</h1>
     </ion-slide>
   </ion-slides>
 </template>
@@ -678,7 +679,7 @@ ion-slides {
   export default defineComponent({
     components: { IonSlides, IonSlide },
     setup() {
-      // 传递给 swiper 实例的可选参数。查看 http://idangero.us/swiper/api/ 获取有效选项。
+      // Optional parameters to pass to the swiper instance. See http://idangero.us/swiper/api/ for valid options.
       const slideOpts = {
         initialSlide: 1,
         speed: 400,
@@ -693,15 +694,15 @@ ion-slides {
 
 </Tabs>
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
@@ -709,10 +710,10 @@ ion-slides {
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

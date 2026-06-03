@@ -7,13 +7,13 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>标题栏</IonTitle>
+          <IonTitle>Header Toolbar</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonFooter>
         <IonToolbar>
-          <IonTitle>底部工具栏</IonTitle>
+          <IonTitle>Footer Toolbar</IonTitle>
         </IonToolbar>
       </IonFooter>
     </>

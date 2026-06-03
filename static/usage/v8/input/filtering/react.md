@@ -9,12 +9,12 @@ function Example() {
   const onInput = (event: Event) => {
     const value = (event.target as HTMLIonInputElement).value as string;
 
-    // 移除非字母数字字符
+    // Removes non alphanumeric characters
     const filteredValue = value.replace(/[^a-zA-Z0-9]+/g, '');
 
     /**
-     * 同时更新状态变量和组件，
-     * 以保持它们同步。
+     * Update both the state variable and
+     * the component to keep them in sync.
      */
     setInputModel(filteredValue);
 
@@ -27,7 +27,7 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonInput label="字母数字字符" value={inputModel} onIonInput={onInput} ref={ionInputEl}></IonInput>
+        <IonInput label="Alphanumeric Characters" value={inputModel} onIonInput={onInput} ref={ionInputEl}></IonInput>
       </IonItem>
     </IonList>
   );

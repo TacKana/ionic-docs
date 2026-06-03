@@ -1,5 +1,5 @@
 ---
-title: 单选按钮组组件
+title: "ion-radio-group"
 ---
 import Props from '@ionic-internal/component-api/v8/radio-group/props.md';
 import Events from '@ionic-internal/component-api/v8/radio-group/events.md';
@@ -9,13 +9,15 @@ import CustomProps from '@ionic-internal/component-api/v8/radio-group/custom-pro
 import Slots from '@ionic-internal/component-api/v8/radio-group/slots.md';
 
 <head>
-  <title>ion-radio-group：Ionic 应用的单选按钮组使用指南</title>
-  <meta name="description" content="单选按钮组是包含一组单选按钮的容器。它允许用户从一组选项中选择最多一个。详细了解 ion-radio-group 的使用方法。" />
+  <title>ion-radio-group：Ionic 应用的单选按钮组用法</title>
+  <meta name="description" content="单选按钮组是一组单选按钮。单选按钮组允许用户从一组中最多选择一个单选按钮。了解更多关于 ion-radio-group 用法的信息。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-单选按钮组是用于容纳一组[单选按钮](./radio)的容器。它允许用户从一组选项中选择最多一个。选中属于同一单选按钮组中的某个按钮时，之前在该组内选中的任何其他按钮都会自动取消选中。关于单选按钮组的具体用法示例，请参阅[单选按钮](./radio)文档。
+
+单选按钮组是一组[单选按钮](./radio)的容器。它允许用户从一组中最多选择一个单选按钮。选中属于某个单选按钮组的一个单选按钮会取消选中同一组中先前选中的任何单选按钮。有关单选按钮组的示例用法，请参阅 [radio](./radio) 文档。
+
 
 ## 接口
 
@@ -29,7 +31,7 @@ interface RadioGroupChangeEventDetail<T = any> {
 
 ### RadioGroupCustomEvent
 
-虽然不强制使用，但可以用此接口替代 `CustomEvent` 接口，以便在使用该组件发出的 Ionic 事件时获得更强的类型支持。
+虽然不是必需的，但此接口可以替代 `CustomEvent` 接口，为此组件发出的 Ionic 事件提供更强的类型支持。
 
 ```typescript
 interface RadioGroupCustomEvent<T = any> extends CustomEvent {
@@ -37,6 +39,7 @@ interface RadioGroupCustomEvent<T = any> extends CustomEvent {
   target: HTMLIonRadioGroupElement;
 }
 ```
+
 
 ## 属性
 <Props />

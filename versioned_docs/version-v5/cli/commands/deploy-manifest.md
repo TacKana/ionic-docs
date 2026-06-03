@@ -1,10 +1,10 @@
 ---
-sidebar_label: '部署清单'
+sidebar_label: 'deploy manifest'
 ---
 
 # ionic deploy manifest
 
-从已构建的应用目录生成部署服务所需的清单文件
+Generates a manifest file for the deploy service from a built app directory
 
 ```shell
 ionic deploy manifest [options]

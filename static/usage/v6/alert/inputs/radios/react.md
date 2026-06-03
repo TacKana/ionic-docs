@@ -9,21 +9,21 @@ function Example() {
     <IonButton
       onClick={() =>
         presentAlert({
-          header: '选择你喜欢的颜色',
-          buttons: ['确定'],
+          header: 'Select your favorite color',
+          buttons: ['OK'],
           inputs: [
             {
-              label: '红色',
+              label: 'Red',
               type: 'radio',
               value: 'red',
             },
             {
-              label: '蓝色',
+              label: 'Blue',
               type: 'radio',
               value: 'blue',
             },
             {
-              label: '绿色',
+              label: 'Green',
               type: 'radio',
               value: 'green',
             },
@@ -31,7 +31,7 @@ function Example() {
         })
       }
     >
-      点击我
+      Click Me
     </IonButton>
   );
 }

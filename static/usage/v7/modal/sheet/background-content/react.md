@@ -28,7 +28,7 @@ function Example() {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <p>在底部操作表完全展开之前，您可以与 +/- 按钮进行交互。</p>
+        <p>You can interact with the +/- buttons until the sheet is fully expanded.</p>
         <div
           style={{
             display: 'flex',
@@ -58,7 +58,7 @@ function Example() {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Connor Smith</h2>
-                  <p>销售代表</p>
+                  <p>Sales Rep</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -67,7 +67,7 @@ function Example() {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Daniel Smith</h2>
-                  <p>产品设计师</p>
+                  <p>Product Designer</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -76,7 +76,7 @@ function Example() {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Greg Smith</h2>
-                  <p>运营总监</p>
+                  <p>Director of Operations</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -85,7 +85,7 @@ function Example() {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Zoey Smith</h2>
-                  <p>首席执行官</p>
+                  <p>CEO</p>
                 </IonLabel>
               </IonItem>
             </IonList>

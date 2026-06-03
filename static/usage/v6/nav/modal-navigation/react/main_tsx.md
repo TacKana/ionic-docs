@@ -34,17 +34,17 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>模态框导航</IonTitle>
+          <IonTitle>Modal Navigation</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <IonButton id="openModal">打开模态框</IonButton>
+        <IonButton id="openModal">Open Modal</IonButton>
         <IonModal ref={modal} trigger="openModal" onDidPresent={didPresent}>
           <IonHeader>
             <IonToolbar>
-              <IonTitle>模态框</IonTitle>
+              <IonTitle>Modal</IonTitle>
               <IonButtons slot="end">
-                <IonButton onClick={dismiss}>关闭</IonButton>
+                <IonButton onClick={dismiss}>Close</IonButton>
               </IonButtons>
             </IonToolbar>
           </IonHeader>

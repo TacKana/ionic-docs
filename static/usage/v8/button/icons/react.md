@@ -20,31 +20,31 @@ function Example() {
 
       <IonButton size="small">
         <IonIcon slot="start" icon={star}></IonIcon>
-        左侧图标
+        Left Icon
       </IonButton>
 
       <IonButton>
         <IonIcon slot="start" icon={star}></IonIcon>
-        左侧图标
+        Left Icon
       </IonButton>
 
       <IonButton size="large">
         <IonIcon slot="start" icon={star}></IonIcon>
-        左侧图标
+        Left Icon
       </IonButton>
 
       <IonButton size="small">
-        右侧图标
+        Right Icon
         <IonIcon slot="end" icon={heart}></IonIcon>
       </IonButton>
 
       <IonButton>
-        右侧图标
+        Right Icon
         <IonIcon slot="end" icon={heart}></IonIcon>
       </IonButton>
 
       <IonButton size="large">
-        右侧图标
+        Right Icon
         <IonIcon slot="end" icon={heart}></IonIcon>
       </IonButton>
     </>

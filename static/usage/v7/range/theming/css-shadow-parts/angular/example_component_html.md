@@ -1,6 +1,6 @@
 ```html
 <ion-range
-  aria-label="自定义范围"
+  aria-label="Custom range"
   [min]="0"
   [max]="10"
   [value]="5"

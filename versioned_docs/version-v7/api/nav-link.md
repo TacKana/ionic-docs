@@ -10,18 +10,18 @@ import CustomProps from '@ionic-internal/component-api/v7/nav-link/custom-props.
 import Slots from '@ionic-internal/component-api/v7/nav-link/slots.md';
 
 <head>
-  <title>ion-nav-link：导航到指定组件的链接</title>
+  <title>ion-nav-link：导航到指定组件的导航链接</title>
   <meta
     name="description"
-    content="导航链接用于跳转到指定组件，可通过前进、后退或设置为根组件的方式进行导航。它是调用导航控制器push()、pop()和setRoot()方法的元素形式。"
+    content="导航链接导航到指定组件。它是调用 push()、pop() 和 setRoot() 方法的元素形式。阅读更多关于 ion-nav-link 的信息。"
   />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-导航链接用于跳转到指定的组件。可以通过`前进`、`后退`或设置为`根`组件的方式进行导航。
+导航链接用于导航到指定组件。可以通过 `forward`（前进）、`back`（返回）或作为 `root`（根）组件来导航到该组件。
 
-它是调用导航控制器上 `push()`、`pop()` 和 `setRoot()` 方法的元素形式。
+它是在导航控制器上调用 `push()`、`pop()` 和 `setRoot()` 方法的元素形式。
 
 更多信息请参阅 [nav](./nav#使用-navlink) 文档。
 
@@ -37,7 +37,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

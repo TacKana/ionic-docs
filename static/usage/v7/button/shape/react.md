@@ -5,8 +5,8 @@ import { IonButton } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton>默认</IonButton>
-      <IonButton shape="round">圆角</IonButton>
+      <IonButton>Default</IonButton>
+      <IonButton shape="round">Round</IonButton>
     </>
   );
 }

@@ -3,17 +3,17 @@
   <form @submit.prevent="submit">
     <ion-checkbox
       v-model="agree"
-      helper-text="请先同意相关条款再继续"
-      error-text="您必须同意条款才能继续"
+      helper-text="Agree to the terms before continuing"
+      error-text="You must agree to the terms to continue"
       @ionChange="validateCheckbox"
       :class="{ 'ion-valid': isValid, 'ion-invalid': isValid === false, 'ion-touched': isTouched }"
     >
-      我同意条款和条件
+      I agree to the terms and conditions
     </ion-checkbox>
 
     <br />
 
-    <ion-button type="submit" size="small">提交</ion-button>
+    <ion-button type="submit" size="small">Submit</ion-button>
   </form>
 </template>
 

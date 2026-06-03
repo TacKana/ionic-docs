@@ -35,11 +35,11 @@ function Example() {
   return (
     <>
       <IonCard ref={cardEl} style={{ width: '80px', '--width': '160px' } as React.CSSProperties}>
-        <IonCardContent>卡片</IonCardContent>
+        <IonCardContent>Card</IonCardContent>
       </IonCard>
-      <IonButton onClick={play}>播放</IonButton>
-      <IonButton onClick={pause}>暂停</IonButton>
-      <IonButton onClick={stop}>停止</IonButton>
+      <IonButton onClick={play}>Play</IonButton>
+      <IonButton onClick={pause}>Pause</IonButton>
+      <IonButton onClick={stop}>Stop</IonButton>
     </>
   );
 }

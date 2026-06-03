@@ -15,224 +15,232 @@ import TabItem from '@theme/TabItem';
 <TabItem value="javascript">
 
 ```html
-<!-- 标签与标签位置 -->
+<!-- Label and Label Position -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item>
-  <ion-label position="floating">标签：</ion-label>
+  <ion-label position="floating">Label:</ion-label>
   <ion-textarea></ion-textarea>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 <ion-item>
-  <ion-textarea label="标签：" label-placement="floating"></ion-textarea>
+  <ion-textarea label="Label:" label-placement="floating"></ion-textarea>
 </ion-item>
 
 
-<!-- 填充模式 -->
+<!-- Fill -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item fill="outline" shape="round">
-  <ion-label position="floating">标签：</ion-label>
+  <ion-label position="floating">Label:</ion-label>
   <ion-textarea></ion-textarea>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 
-<!-- 使用 `fill` 属性的 Textarea 不应放在 ion-item 中 -->
-<ion-textarea fill="outline" shape="round" label="标签：" label-placement="floating"></ion-textarea>
+<!-- Textareas using `fill` should not be placed in ion-item -->
+<ion-textarea fill="outline" shape="round" label="Label:" label-placement="floating"></ion-textarea>
 
-<!-- ion-item 上的 Textarea 特有功能 -->
+<!-- Textarea-specific features on ion-item -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item counter="true">
-  <ion-label position="floating">标签：</ion-label>
+  <ion-label position="floating">Label:</ion-label>
   <ion-textarea maxlength="100"></ion-textarea>
-  <div slot="helper">输入文本</div>
-  <div slot="error">请输入文本</div>
+  <div slot="helper">Enter text</div>
+  <div slot="error">Please enter text</div>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 
 <!--
-  当 textarea 位于 item/list 中时，不应使用计数器、帮助文本等元数据。
-  如需为 textarea 提供更多上下文，可考虑在 ion-list 下方使用 ion-note。
+  Metadata such as counters and helper text should not
+  be used when a textarea is in an item/list. If you need to
+  provide more context on a textarea, consider using an ion-note
+  underneath the ion-list.
 -->
 
 <ion-textarea
-  label="标签："
+  label="Label:"
   counter="true"
   maxlength="100"
-  helper-text="输入文本"
-  error-text="请输入文本"
+  helper-text="Enter text"
+  error-text="Please enter text"
 ></ion-textarea>
 ```
 </TabItem>
 <TabItem value="angular">
 
 ```html
-<!-- 标签与标签位置 -->
+<!-- Label and Label Position -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item>
-  <ion-label position="floating">标签：</ion-label>
+  <ion-label position="floating">Label:</ion-label>
   <ion-textarea></ion-textarea>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 <ion-item>
-  <ion-textarea label="标签：" labelPlacement="floating"></ion-textarea>
+  <ion-textarea label="Label:" labelPlacement="floating"></ion-textarea>
 </ion-item>
 
 
-<!-- 填充模式 -->
+<!-- Fill -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item fill="outline" shape="round">
-  <ion-label position="floating">标签：</ion-label>
+  <ion-label position="floating">Label:</ion-label>
   <ion-textarea></ion-textarea>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 
-<!-- 使用 `fill` 属性的 Textarea 不应放在 ion-item 中 -->
-<ion-textarea fill="outline" shape="round" label="标签：" labelPlacement="floating"></ion-textarea>
+<!-- Textareas using `fill` should not be placed in ion-item -->
+<ion-textarea fill="outline" shape="round" label="Label:" labelPlacement="floating"></ion-textarea>
 
-<!-- ion-item 上的 Textarea 特有功能 -->
+<!-- Textarea-specific features on ion-item -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item [counter]="true">
-  <ion-label position="floating">标签：</ion-label>
+  <ion-label position="floating">Label:</ion-label>
   <ion-textarea maxlength="100"></ion-textarea>
-  <div slot="helper">输入文本</div>
-  <div slot="error">请输入文本</div>
+  <div slot="helper">Enter text</div>
+  <div slot="error">Please enter text</div>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 
 <!--
-  当 textarea 位于 item/list 中时，不应使用计数器、帮助文本等元数据。
-  如需为 textarea 提供更多上下文，可考虑在 ion-list 下方使用 ion-note。
+  Metadata such as counters and helper text should not
+  be used when a textarea is in an item/list. If you need to
+  provide more context on a textarea, consider using an ion-note
+  underneath the ion-list.
 -->
 
 <ion-textarea
-  label="标签："
+  label="Label:"
   [counter]="true"
   maxlength="100"
-  helperText="输入文本"
-  errorText="请输入文本"
+  helperText="Enter text"
+  errorText="Please enter text"
 ></ion-textarea>
 ```
 </TabItem>
 <TabItem value="react">
 
 ```tsx
-{/* 标签与标签位置 */}
+{/* Label and Label Position */}
 
-{/* 之前 */}
+{/* Before */}
 <IonItem>
-  <IonLabel position="floating">标签：</IonLabel>
+  <IonLabel position="floating">Label:</IonLabel>
   <IonTextarea></IonTextarea>
 </IonItem>
 
-{/* 之后 */}
+{/* After */}
 <IonItem>
-  <IonTextarea label="标签：" labelPlacement="floating"></IonTextarea>
+  <IonTextarea label="Label:" labelPlacement="floating"></IonTextarea>
 </IonItem>
 
 
-{/* 填充模式 */}
+{/* Fill */}
 
-{/* 之前 */}
+{/* Before */}
 <IonItem fill="outline" shape="round">
-  <IonLabel position="floating">标签：</IonLabel>
+  <IonLabel position="floating">Label:</IonLabel>
   <IonTextarea></IonTextarea>
 </IonItem>
 
-{/* 之后 */}
+{/* After */}
 
-{/* 使用 `fill` 属性的 Textarea 不应放在 IonItem 中 */}
-<IonTextarea fill="outline" shape="round" label="标签：" labelPlacement="floating"></IonTextarea>
+{/* Textareas using `fill` should not be placed in IonItem */}
+<IonTextarea fill="outline" shape="round" label="Label:" labelPlacement="floating"></IonTextarea>
 
-{/* IonItem 上的 Textarea 特有功能 */}
+{/* Textarea-specific features on IonItem */}
 
-{/* 之前 */}
+{/* Before */}
 <IonItem counter={true}>
-  <IonLabel position="floating">标签：</IonLabel>
+  <IonLabel position="floating">Label:</IonLabel>
   <IonTextarea maxlength="100"></IonTextarea>
-  <div slot="helper">输入文本</div>
-  <div slot="error">请输入文本</div>
+  <div slot="helper">Enter text</div>
+  <div slot="error">Please enter text</div>
 </IonItem>
 
-{/* 之后 */}
+{/* After */}
 
 {/*
-  当 textarea 位于 item/list 中时，不应使用计数器、帮助文本等元数据。
-  如需为 textarea 提供更多上下文，可考虑在 IonList 下方使用 IonNote。
+  Metadata such as counters and helper text should not
+  be used when a textarea is in an item/list. If you need to
+  provide more context on a textarea, consider using an IonNote
+  underneath the IonList.
 */}
 
 <IonTextarea
-  label="标签："
+  label="Label:"
   counter={true}
   maxlength="100"
-  helperText="输入文本"
-  errorText="请输入文本"
+  helperText="Enter text"
+  errorText="Please enter text"
 ></IonTextarea>
 ```
 </TabItem>
 <TabItem value="vue">
 
 ```html
-<!-- 标签与标签位置 -->
+<!-- Label and Label Position -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item>
-  <ion-label position="floating">标签：</ion-label>
+  <ion-label position="floating">Label:</ion-label>
   <ion-textarea></ion-textarea>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 <ion-item>
-  <ion-textarea label="标签：" label-placement="floating"></ion-textarea>
+  <ion-textarea label="Label:" label-placement="floating"></ion-textarea>
 </ion-item>
 
 
-<!-- 填充模式 -->
+<!-- Fill -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item fill="outline" shape="round">
-  <ion-label position="floating">标签：</ion-label>
+  <ion-label position="floating">Label:</ion-label>
   <ion-textarea></ion-textarea>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 
-<!-- 使用 `fill` 属性的 Textarea 不应放在 ion-item 中 -->
-<ion-textarea fill="outline" shape="round" label="标签：" label-placement="floating"></ion-textarea>
+<!-- Textareas using `fill` should not be placed in ion-item -->
+<ion-textarea fill="outline" shape="round" label="Label:" label-placement="floating"></ion-textarea>
 
-<!-- ion-item 上的 Textarea 特有功能 -->
+<!-- Textarea-specific features on ion-item -->
 
-<!-- 之前 -->
+<!-- Before -->
 <ion-item :counter="true">
-  <ion-label position="floating">标签：</ion-label>
+  <ion-label position="floating">Label:</ion-label>
   <ion-textarea maxlength="100"></ion-textarea>
-  <div slot="helper">输入文本</div>
-  <div slot="error">请输入文本</div>
+  <div slot="helper">Enter text</div>
+  <div slot="error">Please enter text</div>
 </ion-item>
 
-<!-- 之后 -->
+<!-- After -->
 
 <!--
-  当 textarea 位于 item/list 中时，不应使用计数器、帮助文本等元数据。
-  如需为 textarea 提供更多上下文，可考虑在 ion-list 下方使用 ion-note。
+  Metadata such as counters and helper text should not
+  be used when a textarea is in an item/list. If you need to
+  provide more context on a textarea, consider using an ion-note
+  underneath the ion-list.
 -->
 
 <ion-textarea
-  label="标签："
+  label="Label:"
   :counter="true"
   maxlength="100"
-  helper-text="输入文本"
-  error-text="请输入文本"
+  helper-text="Enter text"
+  error-text="Please enter text"
 ></ion-textarea>
 ```
 </TabItem>

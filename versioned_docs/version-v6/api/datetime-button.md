@@ -2,18 +2,18 @@
 title: 'ion-datetime-button'
 ---
 
-import Props from '@ionic-internal/component-api/v6/datetime-button/props.md';
-import Events from '@ionic-internal/component-api/v6/datetime-button/events.md';
-import Methods from '@ionic-internal/component-api/v6/datetime-button/methods.md';
-import Parts from '@ionic-internal/component-api/v6/datetime-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/datetime-button/custom-props.mdx';
-import Slots from '@ionic-internal/component-api/v6/datetime-button/slots.md';
+import Props from '@ionic-internal/component-api/v7/datetime-button/props.md';
+import Events from '@ionic-internal/component-api/v7/datetime-button/events.md';
+import Methods from '@ionic-internal/component-api/v7/datetime-button/methods.md';
+import Parts from '@ionic-internal/component-api/v7/datetime-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/datetime-button/custom-props.mdx';
+import Slots from '@ionic-internal/component-api/v7/datetime-button/slots.md';
 
 <head>
-  <title>ion-datetime-button: 用于与日期时间选择器交互的 Ionic API 输入组件</title>
+  <title>ion-datetime-button：Ionic 日期时间选择器输入按钮</title>
   <meta
     name="description"
-    content="日期时间按钮与日期时间实例关联，可轻松在弹出框、模态框等场景中使用日期时间选择器。"
+    content="日期时间按钮与日期时间实例关联，方便在弹出框、模态框等中显示日期时间。"
   />
 </head>
 
@@ -21,27 +21,35 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-日期时间按钮与 [Datetime](./datetime) 组件关联，用于显示格式化后的日期和时间。它同时提供按钮，可在模态框、弹出框等场景中展示日期时间选择器。
+日期时间按钮（Datetime Button）与[日期时间](./datetime)组件关联，用于显示格式化的日期和时间。它还提供按钮，用于在模态框、弹出框等中显示日期时间。
 
-## 概览
+## 概述
 
-当空间受限时，应使用日期时间按钮组件。该组件显示展示当前日期和时间值的按钮。点击按钮时，日期或时间选择器将在叠加层中打开。
+当空间受限时，应使用日期时间按钮。此组件显示显示当前日期和时间值的按钮。当按钮被点击时，日期或时间选择器会在覆盖层中打开。
 
-当在 Angular、React 或 Vue 等 JavaScript 框架中使用日期时间按钮时，请确保使用 [ion-modal 上的 keepContentsMounted 属性](./modal#keepcontentsmounted) 或 [ion-popover 上的 keepContentsMounted 属性](./popover#keepcontentsmounted)。这样即使叠加层尚未呈现，也能挂载关联的日期时间实例。
+在使用 Angular、React 或 Vue 等 JavaScript 框架的 Datetime Button 时，请务必使用 [ion-modal 的 keepContentsMounted 属性](./modal#挂载内部内容) 或 [ion-popover 的 keepContentsMounted 属性](./popover#挂载内部内容)。这允许关联的日期时间实例即使在覆盖层尚未显示时也能挂载。
 
 ## 基本用法
 
-import Basic from '@site/static/usage/v6/datetime-button/basic/index.md';
+import Basic from '@site/static/usage/v7/datetime-button/basic/index.md';
 
 <Basic />
 
 ## 本地化
 
-`ion-datetime-button` 上的本地化文本由关联的 `ion-datetime` 实例的 `locale` 属性决定。更多详情请参阅 [Datetime 本地化](./datetime#localization)。
+`ion-datetime-button` 上的本地化文本由关联的 `ion-datetime` 实例上的 `locale` 属性决定。更多详细信息请参阅[日期时间本地化](./datetime#本地化)。
 
-## 与模态框和弹出框配合使用
+## 格式选项
 
-`ion-datetime-button` 必须与已挂载的 `ion-datetime` 实例关联。因此，必须使用 [内联模态框](./modal#inline-modals-recommended) 和 [内联弹出框](./popover#inline-popovers)，并将 `keepContentsMounted` 属性设置为 `true`。
+你可以通过为关联的 Datetime 实例提供 `formatOptions` 来自定义 Datetime Button 中日期和时间的格式。更多详细信息请参阅[日期时间格式选项](./datetime#格式选项)。
+
+import FormatOptions from '@site/static/usage/v7/datetime-button/format-options/index.md';
+
+<FormatOptions />
+
+## 与模态框和弹出框一起使用
+
+`ion-datetime-button` 必须与已挂载的 `ion-datetime` 实例关联。因此，必须使用设置了 `keepContentsMounted` 属性为 `true` 的[内联模态框](./modal#内联模态框推荐)和[内联弹出框](./popover#内联弹出框)。
 
 <!--
 ## 自定义
@@ -52,7 +60,7 @@ TODO
 
 TODO
 
-### 主题定制
+### 主题
 
 TODO
 -->
@@ -69,7 +77,7 @@ TODO
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

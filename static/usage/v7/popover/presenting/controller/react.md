@@ -18,7 +18,7 @@ function Example() {
         })
       }
     >
-      点击我
+      Click Me
     </IonButton>
   );
 }

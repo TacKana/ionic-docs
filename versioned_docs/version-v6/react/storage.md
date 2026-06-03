@@ -1,25 +1,25 @@
 ---
-sidebar_label: Storage
+sidebar_label: 存储
 ---
 
 # 数据存储
 
-在 Ionic 应用中存储数据有多种可选方案。
+在 Ionic 应用中存储数据有多种选择。
 
-以下是两种 Ionic 官方提供的方案：
+以下是两个官方的 Ionic 选项：
 
-## Ionic 安全存储
+## Ionic Secure Storage
 
-对于构建关键任务型应用或需要加密支持的团队，[Ionic Secure Storage](https://ionic.io/docs/secure-storage) 是 Ionic 团队提供的官方高级解决方案，它提供了一个跨平台的数据存储系统，可在 iOS 和 Android 上运行。
+对于构建关键任务应用或需要加密支持的团队，[Ionic Secure Storage](https://ionic.io/docs/secure-storage) 是 Ionic 团队提供的官方高级解决方案，提供适用于 iOS 和 Android 的跨平台数据存储系统。
 
-它使得构建跨 iOS、Android 和 Web 的高性能、支持离线使用的 Ionic 应用变得轻而易举。
+它使您可以轻松地在 iOS、Android 和 Web 上构建高性能、支持离线使用的 Ionic 应用。
 
 [了解更多](https://ionic.io/products/secure-storage)
 
 ## @ionic/storage
 
-对于不需要加密或关系型数据支持的开发者，[@ionic/storage](https://github.com/ionic-team/ionic-storage) 是一个开源的键/值 API，用于构建在多个平台上兼容不同存储引擎的应用。
+对于不需要加密或关系数据支持的开发者，[@ionic/storage](https://github.com/ionic-team/ionic-storage) 是一个开源键/值 API，用于构建可在多个平台上的不同存储引擎之间工作的应用。
 
-此外，Ionic 安全存储提供了一个驱动程序，可与 `@ionic/storage` 中的键/值 API 协同工作，同时提供加密和 SQLite 支持。
+此外，Ionic Secure Storage 有一个与 `@ionic/storage` 中的键/值 API 配合使用的驱动程序，同时提供加密和 SQLite 支持。
 
 了解更多关于 [@ionic/storage](https://github.com/ionic-team/ionic-storage) 的信息

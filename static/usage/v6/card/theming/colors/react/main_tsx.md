@@ -9,83 +9,83 @@ function Example() {
     <>
       <IonCard color="primary">
         <IonCardHeader>
-          <IonCardTitle>卡片标题</IonCardTitle>
-          <IonCardSubtitle>卡片副标题</IonCardSubtitle>
+          <IonCardTitle>Card Title</IonCardTitle>
+          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>卡片内容</IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="secondary">
         <IonCardHeader>
-          <IonCardTitle>卡片标题</IonCardTitle>
-          <IonCardSubtitle>卡片副标题</IonCardSubtitle>
+          <IonCardTitle>Card Title</IonCardTitle>
+          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>卡片内容</IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="tertiary">
         <IonCardHeader>
-          <IonCardTitle>卡片标题</IonCardTitle>
-          <IonCardSubtitle>卡片副标题</IonCardSubtitle>
+          <IonCardTitle>Card Title</IonCardTitle>
+          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>卡片内容</IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="success">
         <IonCardHeader>
-          <IonCardTitle>卡片标题</IonCardTitle>
-          <IonCardSubtitle>卡片副标题</IonCardSubtitle>
+          <IonCardTitle>Card Title</IonCardTitle>
+          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>卡片内容</IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="warning">
         <IonCardHeader>
-          <IonCardTitle>卡片标题</IonCardTitle>
-          <IonCardSubtitle>卡片副标题</IonCardSubtitle>
+          <IonCardTitle>Card Title</IonCardTitle>
+          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>卡片内容</IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="danger">
         <IonCardHeader>
-          <IonCardTitle>卡片标题</IonCardTitle>
-          <IonCardSubtitle>卡片副标题</IonCardSubtitle>
+          <IonCardTitle>Card Title</IonCardTitle>
+          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>卡片内容</IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="light">
         <IonCardHeader>
-          <IonCardTitle>卡片标题</IonCardTitle>
-          <IonCardSubtitle>卡片副标题</IonCardSubtitle>
+          <IonCardTitle>Card Title</IonCardTitle>
+          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>卡片内容</IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="medium">
         <IonCardHeader>
-          <IonCardTitle>卡片标题</IonCardTitle>
-          <IonCardSubtitle>卡片副标题</IonCardSubtitle>
+          <IonCardTitle>Card Title</IonCardTitle>
+          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>卡片内容</IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="dark">
         <IonCardHeader>
-          <IonCardTitle>卡片标题</IonCardTitle>
-          <IonCardSubtitle>卡片副标题</IonCardSubtitle>
+          <IonCardTitle>Card Title</IonCardTitle>
+          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>卡片内容</IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
     </>
   );

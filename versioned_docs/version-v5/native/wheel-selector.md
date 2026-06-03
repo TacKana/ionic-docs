@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'WheelSelector 插件'
+sidebar_label: 'WheelSelector Plugin'
 ---
 
 import DocsCard from '@components/global/DocsCard';
@@ -8,29 +8,29 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-# WheelSelector 插件
+# WheelSelector Plugin
 
-用于 Cordova（Android/iOS）的原生滚轮选择器。
+Native wheel selector for Cordova (Android/iOS).
 
 <p>
   <a href="https://github.com/jasonmamy/cordova-wheel-selector-plugin" target="_blank" rel="noopener" className="git-link">github.com/jasonmamy/cordova-wheel-selector-plugin</a>
 </p>
 
-<h2>在 Cordova 问题上卡住了？</h2>
+<h2>Stuck on a Cordova issue?</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="不要在插件问题上浪费宝贵时间。"
+  header="Don't waste precious time on plugin issues."
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>如果您正在构建一个严肃的项目，您无法承担花费数小时进行故障排除的代价。Ionic 的专家为社区插件和高级插件提供高级咨询服务。</p>
-    <DocsButton className="native-ee-detail">立即联系我们！</DocsButton>
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer premium advisory services for both community plugins and premier plugins.</p>
+    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">安装</a>
+  <a href="#installation">Installation</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -55,22 +55,22 @@ import CodeBlock from '@theme/CodeBlock';
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise 附带 Ionic 团队提供全面支持和维护的插件。 &nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a> 或者如果您对此插件的企业版感兴趣 <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">联系我们</a>
+      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## 支持的平台
+## Supported Platforms
 
 - Android
 - iOS
 
-## 用法
+## Usage
 
 ### React
 
-[了解更多关于在 React 中使用 Ionic Native 组件的信息](../native-community.md#react)
+[Learn more about using Ionic Native components in React](../native-community.md#react)
 
 ### Angular
 
@@ -111,32 +111,32 @@ const jsonData = {
 
 ...
 
-// 基础数字选择，结果中始终返回索引
+// basic number selection, index is always returned in the result
  selectANumber() {
    this.selector.show({
-     title: "选择多少？",
+     title: "How Many?",
      items: [
        this.jsonData.numbers
      ],
    }).then(
      result => {
-       console.log(result[0].description + ' 索引: ' + result[0].index);
+       console.log(result[0].description + ' at index: ' + result[0].index);
      },
-     err => console.log('错误: ', err)
+     err => console.log('Error: ', err)
      );
  }
 
  ...
 
- // 基础选择，设置初始显示的默认值: '3' 'Banana'
+ // basic selection, setting initial displayed default values: '3' 'Banana'
  selectFruit() {
    this.selector.show({
-     title: "选择多少？",
+     title: "How Much?",
      items: [
        this.jsonData.numbers, this.jsonData.fruits
      ],
-     positiveButtonText: "确定",
-     negativeButtonText: "取消",
+     positiveButtonText: "Ok",
+     negativeButtonText: "Nope",
      defaultItems: [
  	  {index:0, value: this.jsonData.numbers[2].description},
  	  {index: 1, value: this.jsonData.fruits[3].description}
@@ -145,16 +145,17 @@ const jsonData = {
      result => {
        console.log(result[0].description + ' ' + result[1].description);
      },
-     err => console.log('错误: ' + JSON.stringify(err))
+     err => console.log('Error: ' + JSON.stringify(err))
      );
  }
 
  ...
 
- // 更复杂的用法，覆盖显示的键，然后从原始数据中检索属性
+ // more complex as overrides which key to display
+ // then retrieve properties from original data
  selectNamesUsingDisplayKey() {
    this.selector.show({
-     title: "选择谁？",
+     title: "Who?",
      items: [
        this.jsonData.firstNames, this.jsonData.lastNames
      ],
@@ -168,7 +169,7 @@ const jsonData = {
        console.log(result[0].name + ' (id= ' + this.jsonData.firstNames[result[0].index].id + '), ' +
          result[1].name + ' (id=' + this.jsonData.lastNames[result[1].index].id + ')');
      },
-     err => console.log('错误: ' + JSON.stringify(err))
+     err => console.log('Error: ' + JSON.stringify(err))
      );
  }
 

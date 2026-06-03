@@ -4,22 +4,22 @@ strip_number_prefixes: false
 ---
 
 <head>
-  <title>使用 Angular 添加移动端支持 | Ionic Capacitor 相机</title>
+  <title>使用 Angular 添加移动端支持 | Ionic Capacitor Camera</title>
   <meta
     name="description"
-    content="学习如何为你的 Ionic Capacitor 照片库应用添加移动端支持，使其能够使用同一套代码在 iOS、Android 和 Web 平台上运行。"
+    content="了解如何为您的 Ionic Capacitor 照片库应用添加移动端支持，使其能够使用一套代码库在 iOS、Android 和 Web 上运行。"
   />
 </head>
 
-我们的照片库应用要能在 iOS、Android 和 Web 平台上运行——全部使用同一套代码——才算真正完成。只需要做一些逻辑调整来支持移动平台，安装一些原生工具，然后在设备上运行应用。让我们开始吧！
+我们的照片库应用在同时运行在 iOS、Android 和 Web 上（全部使用一套代码库）之前还不算完成。只需要一些小的逻辑更改来支持移动平台，安装一些原生工具，然后在设备上运行应用。让我们开始吧！
 
-## 导入平台 API
+## 导入 Platform API
 
-首先进行一些小的代码调整——这样当我们把应用部署到设备上时，它就能“正常工作”了。
+让我们先做一些小的代码更改 - 然后我们的应用在部署到设备时会"直接可用"。
 
-将 Ionic [平台 API](../platform.md) 导入到 `photo.service.ts` 中，这个 API 用于获取当前设备的信息。在这里，它对于根据应用运行的平台（Web 或移动端）选择执行哪部分代码非常有用。
+将 Ionic [Platform API](../platform.md) 导入 `photo.service.ts`，它用于获取当前设备的信息。在这种情况下，它有助于根据应用运行的平台（Web 或移动端）选择要执行的代码。
 
-在文件顶部添加 `Platform` 导入，并在 `PhotoService` 类中添加新属性 `platform`。我们还需要更新构造函数来设置用户的平台信息。
+将 `Platform` 添加到文件顶部的导入中，并在 `PhotoService` 类中添加一个新的 `platform` 属性。我们还需要更新构造函数以设置用户的平台。
 
 ```ts
 import { Injectable } from '@angular/core';
@@ -27,7 +27,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
-// 变更：添加导入
+// CHANGE: Add import
 import { Platform } from '@ionic/angular';
 
 @Injectable({
@@ -38,45 +38,45 @@ export class PhotoService {
 
   private PHOTO_STORAGE: string = 'photos';
 
-  // 变更：添加属性来追踪应用的运行平台
+  // CHANGE: Add a property to track the app's running platform
   private platform: Platform;
 
-  // 变更：更新构造函数来设置 `platform`
+  // CHANGE: Update constructor to set `platform`
   constructor(platform: Platform) {
     this.platform = platform;
   }
 
-  // ...现有代码...
+  // ...existing code...
 }
 ```
 
 ## 平台特定逻辑
 
-首先，我们将更新照片保存功能以支持移动端。在 `savePicture()` 方法中，检查应用运行的平台。如果是“混合”平台（Capacitor 原生运行时），则使用 `Filesystem.readFile()` 方法将照片文件读取为 base64 格式。否则，在 Web 上运行时使用与之前相同的逻辑。
+首先，我们将更新照片保存功能以支持移动端。在 `savePicture()` 方法中，检查应用运行的平台。如果是"hybrid"（Capacitor，原生运行时），则使用 `Filesystem.readFile()` 方法将照片文件读取为 base64 格式。否则，使用与之前在 Web 上运行应用时相同的逻辑。
 
-将 `savePicture()` 更新如下：
+更新 `savePicture()` 如下所示：
 
 ```ts
-// 变更：更新 `savePicture()` 方法
+// CHANGE: Update the `savePicture()` method
 private async savePicture(photo: Photo) {
   let base64Data: string | Blob;
 
-  // 变更：添加平台检查
-  // "hybrid" 将检测 Cordova 或 Capacitor
+  // CHANGE: Add platform check
+  // "hybrid" will detect Cordova or Capacitor
   if (this.platform.is('hybrid')) {
-    // 将文件读取为 base64 格式
+    // Read the file into base64 format
     const file = await Filesystem.readFile({
       path: photo.path!
     });
     base64Data = file.data;
   } else {
-    // 获取照片，读取为 blob，然后转换为 base64 格式
+    // Fetch the photo, read as a blob, then convert to base64 format
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
     base64Data = await this.convertBlobToBase64(blob) as string;
   }
 
-  // 将文件写入数据目录
+  // Write the file to the data directory
   const fileName = Date.now() + '.jpeg';
   const savedFile = await Filesystem.writeFile({
     path: fileName,
@@ -84,7 +84,8 @@ private async savePicture(photo: Photo) {
     directory: Directory.Data
   });
 
-  // 使用 webPath 显示新图片而不是 base64，因为它已经加载到内存中
+  // Use webPath to display the new image instead of base64 since it's
+  // already loaded into memory
   return {
     filepath: fileName,
     webviewPath: photo.webPath,
@@ -92,7 +93,7 @@ private async savePicture(photo: Photo) {
 }
 ```
 
-在移动端运行时，将 `filepath` 设置为 `writeFile()` 操作的结果——`savedFile.uri`。设置 `webviewPath` 时，使用特殊的 `Capacitor.convertFileSrc()` 方法（[文件协议详情](../../core-concepts/webview.md#file-protocol)）。要使用此方法，我们需要将 Capacitor 导入到 `photo.service.ts` 中。
+在移动端运行时，将 `filepath` 设置为 `writeFile()` 操作的结果 - `savedFile.uri`。在设置 `webviewPath` 时，使用特殊的 `Capacitor.convertFileSrc()` 方法（[文件协议详细信息](../../core-concepts/webview.md#file-协议)）。要使用此方法，我们需要将 Capacitor 导入 `photo.service.ts`。
 
 ```ts
 import { Injectable } from '@angular/core';
@@ -101,32 +102,32 @@ import type { Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { Platform } from '@ionic/angular';
-// 变更：添加导入
+// Change: Add import
 import { Capacitor } from '@capacitor/core';
 
-// ...现有代码...
+// ...existing code...
 ```
 
-然后将 `savePicture()` 更新如下：
+然后更新 `savePicture()` 如下所示：
 
 ```ts
-// 变更：更新 `savePicture()` 方法
+// CHANGE: Update `savePicture()` method
 private async savePicture(photo: Photo) {
   let base64Data: string | Blob;
-  // "hybrid" 将检测移动端 - iOS 或 Android
+  // "hybrid" will detect mobile - iOS or Android
   if (this.platform.is('hybrid')) {
     const file = await Filesystem.readFile({
       path: photo.path!,
     });
     base64Data = file.data;
   } else {
-    // 获取照片，读取为 blob，然后转换为 base64 格式
+    // Fetch the photo, read as a blob, then convert to base64 format
     const response = await fetch(photo.webPath!);
     const blob = await response.blob();
     base64Data = await this.convertBlobToBase64(blob) as string;
   }
 
-  // 将文件写入数据目录
+  // Write the file to the data directory
   const fileName = Date.now() + '.jpeg';
   const savedFile = await Filesystem.writeFile({
     path: fileName,
@@ -134,15 +135,16 @@ private async savePicture(photo: Photo) {
     directory: Directory.Data,
   });
 
-  // 变更：添加平台检查
+  // CHANGE: Add platform check
   if (this.platform.is('hybrid')) {
-    // 通过将 'file://' 路径重写为 HTTP 来显示新图片
+    // Display the new image by rewriting the 'file://' path to HTTP
     return {
       filepath: savedFile.uri,
       webviewPath: Capacitor.convertFileSrc(savedFile.uri),
     };
   } else {
-    // 使用 webPath 显示新图片而不是 base64，因为它已经加载到内存中
+    // Use webPath to display the new image instead of base64 since it's
+    // already loaded into memory
     return {
       filepath: fileName,
       webviewPath: photo.webPath,
@@ -151,16 +153,16 @@ private async savePicture(photo: Photo) {
 }
 ```
 
-接下来，在 `loadSaved()` 方法中添加一些新逻辑。在移动端，我们可以直接指向文件系统中的每个照片文件并自动显示它们。然而在 Web 上，我们必须将每个图像从文件系统读取为 base64 格式。这是因为文件系统 API 在底层使用了 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)。更新 `loadSaved()` 方法：
+接下来，在 `loadSaved()` 方法中添加一些新逻辑。在移动端，我们可以直接指向 Filesystem 上的每个照片文件并自动显示它们。然而，在 Web 上，我们必须将每个图像从 Filesystem 读取为 base64 格式。这是因为 Filesystem API 底层使用了 [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)。更新 `loadSaved()` 方法：
 
 ```ts
-// 变更：更新 `loadSaved()` 方法
+// CHANGE: Update `loadSaved()` method
 public async loadSaved() {
   const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
   this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
-  // 变更：添加平台检查
-  // 如果在 Web 上运行...
+  // CHANGE: Add platform check
+  // If running on the web...
   if (!this.platform.is('hybrid')) {
     for (let photo of this.photos) {
       const readFile = await Filesystem.readFile({
@@ -168,16 +170,16 @@ public async loadSaved() {
           directory: Directory.Data
       });
 
-      // 仅限 Web 平台：将照片加载为 base64 数据
+      // Web platform only: Load the photo as base64 data
       photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
     }
   }
 }
 ```
 
-现在我们的照片库应用包含了一套可以在 Web、Android 和 iOS 上运行的代码。
+我们的照片库现在由一套代码库组成，可在 Web、Android 和 iOS 上运行。
 
-`photos.service.ts` 现在应该如下所示：
+`photos.service.ts` 现在应如下所示：
 
 ```ts
 import { Injectable } from '@angular/core';
@@ -203,7 +205,7 @@ export class PhotoService {
   }
 
   public async addNewToGallery() {
-    // 拍摄照片
+    // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
@@ -223,23 +225,23 @@ export class PhotoService {
   private async savePicture(photo: Photo) {
     let base64Data: string | Blob;
 
-    // "hybrid" 将检测 Cordova 或 Capacitor
+    // "hybrid" will detect Cordova or Capacitor
     if (this.platform.is('hybrid')) {
-      // 将文件读取为 base64 格式
+      // Read the file into base64 format
       const file = await Filesystem.readFile({
         path: photo.path!,
       });
 
       base64Data = file.data;
     } else {
-      // 获取照片，读取为 blob，然后转换为 base64 格式
+      // Fetch the photo, read as a blob, then convert to base64 format
       const response = await fetch(photo.webPath!);
       const blob = await response.blob();
 
       base64Data = (await this.convertBlobToBase64(blob)) as string;
     }
 
-    // 将文件写入数据目录
+    // Write the file to the data directory
     const fileName = Date.now() + '.jpeg';
     const savedFile = await Filesystem.writeFile({
       path: fileName,
@@ -248,13 +250,14 @@ export class PhotoService {
     });
 
     if (this.platform.is('hybrid')) {
-      // 通过将 'file://' 路径重写为 HTTP 来显示新图片
+      // Display the new image by rewriting the 'file://' path to HTTP
       return {
         filepath: savedFile.uri,
         webviewPath: Capacitor.convertFileSrc(savedFile.uri),
       };
     } else {
-      // 使用 webPath 显示新图片而不是 base64，因为它已经加载到内存中
+      // Use webPath to display the new image instead of base64 since it's
+      // already loaded into memory
       return {
         filepath: fileName,
         webviewPath: photo.webPath,
@@ -274,18 +277,18 @@ export class PhotoService {
   }
 
   public async loadSaved() {
-    // 检索缓存的照片数组数据
+    // Retrieve cached photo array data
     const { value: photoList } = await Preferences.get({ key: this.PHOTO_STORAGE });
     this.photos = (photoList ? JSON.parse(photoList) : []) as UserPhoto[];
 
-    // 如果在 Web 上运行...
+    // If running on the web...
     if (!this.platform.is('hybrid')) {
       for (let photo of this.photos) {
         const readFile = await Filesystem.readFile({
           path: photo.filepath,
           directory: Directory.Data,
         });
-        // 仅限 Web 平台：将照片加载为 base64 数据
+        // Web platform only: Load the photo as base64 data
         photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
       }
     }
@@ -298,4 +301,4 @@ export interface UserPhoto {
 }
 ```
 
-接下来，就是你期待已久的部分——将应用部署到设备上。
+接下来是您一直在等待的部分 - 将应用部署到设备上。

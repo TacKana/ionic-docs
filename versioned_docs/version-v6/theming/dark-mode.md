@@ -1,69 +1,69 @@
 ---
-title: Dark Mode
+title: 深色模式
 ---
 
 import Codepen from '@components/global/Codepen';
 
 <head>
-  <title>深色模式：切换配色方案与CSS属性</title>
+  <title>深色模式更改配色方案和 CSS 属性</title>
   <meta
     name="description"
-    content="开发者正在原生应用中添加深色模式CSS以支持用户偏好。阅读本文了解有关Ionic应用深色配色方案的更多信息。"
+    content="开发者正在原生应用中添加深色模式 CSS 以支持用户偏好。阅读以了解更多关于 Ionic 应用深色配色方案的信息。"
   />
 </head>
 
-Ionic 让更改应用主题变得简单，包括支持深色配色方案。随着原生应用对深色模式的支持日益增长，开发者现在也希望将其添加到自己的应用中，以适应用户偏好。
+Ionic 使得更改应用的主题变得容易，包括支持深色配色方案。随着原生应用对深色模式的支持日益增长，开发者现在希望将其添加到自己的应用中以支持用户偏好。
 
 ## 使用媒体查询
 
-启用深色模式的第一种方式是使用 [CSS媒体查询来检测用户偏好的配色方案](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)。此媒体查询将根据用户设备的系统设置，在启用深色模式时应用相应主题。
+启用深色模式的第一种方法是使用 [CSS 媒体查询检测用户偏好的配色方案](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)。此媒体查询将挂钩用户设备的系统设置，并在启用深色模式时应用主题。
 
 ```css
 @media (prefers-color-scheme: dark) {
   :root {
-    /* 深色模式变量放在这里 */
+    /* 深色模式变量在此处 */
   }
 }
 ```
 
-目前，`prefers-color-scheme` 媒体查询的 [浏览器支持有限](https://caniuse.com/#feat=prefers-color-scheme)，因此某些浏览器的用户无法通过此媒体查询享受到深色模式。不过，仍可通过 [CSS类回退方案](#css-class-fallback) 来应用深色模式。
+目前，`prefers-color-scheme` 媒体查询的[浏览器支持有限](https://caniuse.com/#feat=prefers-color-scheme)，因此用户在某些浏览器中无法通过此媒体查询受益于深色模式。但是，仍然可以通过使用 [CSS 类回退](#css-class-fallback)来应用深色模式。
 
-## CSS类回退方案
+## CSS 类回退
 
-对于不支持媒体查询的设备，作为一种回退方法，可以通过设置CSS选择器样式，并将类应用到文档的 `body` 元素上来实现深色模式。
+作为不支持媒体查询的设备的回退方法，可以通过样式化 CSS 选择器并将类应用于文档 body 来应用深色模式。
 
 ```css
 @media (prefers-color-scheme: dark) {
   :root {
-    /* 深色模式变量放在这里 */
+    /* 深色模式变量在此处 */
   }
 }
 
-/* 针对旧版浏览器或手动模式的回退方案 */
+/* 旧版浏览器或手动模式的回退 */
 body.dark {
-  /* 深色模式变量放在这里 */
+  /* 深色模式变量在此处 */
 }
 ```
 
-由于变量是针对 `body.dark` 选择器设置的，现在只需在应用的 `<body>` 元素上添加相应的类即可。具体实现方式取决于应用所使用的框架。
+通过针对 `body.dark` 选择器的变量，现在只需要将类添加到应用中的 `<body>` 即可。这可以通过多种方式实现，具体取决于您的应用所使用的框架。
 
-请注意，在此示例中，变量应同时出现在两个位置。我们可以 [结合使用JavaScript](#combining-with-javascript) 来避免在多个位置重复设置变量。
+请注意，在此示例中，变量应同时存在于两个位置。我们可以[使用 JavaScript](#combining-with-javascript) 来避免在两个地方设置变量。
 
-## 结合JavaScript使用
+## 与 JavaScript 结合使用
 
-为了保持CSS变量只编写一次，并避免在多个位置更新它们，可以将回退方案和类结合起来，通过JavaScript检查 `prefers-color-scheme` 媒体查询的值，并在偏好为深色时添加 `dark` 类。以下是CSS的写法：
+为了保持 CSS 变量只编写一次并避免在多个地方更新，可以通过使用 JavaScript 检查 `prefers-color-scheme` 媒体查询的值，并在偏好为 `dark` 时添加 `dark` 类，从而将回退和类结合起来。CSS 如下所示：
 
 ```css
 body.dark {
-  /* 深色模式变量放在这里 */
+  /* 深色模式变量在此处 */
 }
 ```
 
-注意，上面的变量现在只存在于 `body.dark` 选择器中，并且已经移除了 `prefers-color-scheme` 媒体查询。
+请注意，上面的变量现在只在 `body.dark` 选择器中，而 `prefers-color-scheme` 媒体查询已被移除。
 
 ### 自动启用深色模式
 
-在JavaScript中，可以通过使用 [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) 检查文档是否匹配媒体查询，将 `dark` 类添加到 `<body>` 元素上。这样，深色模式仍可根据用户偏好自动启用。
+在 JavaScript 中，可以通过使用 [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) 检查文档是否匹配媒体查询，将 `dark` 类添加到 `<body>`。这将使深色模式仍然基于用户偏好工作。
 
 ```javascript
 // 使用 matchMedia 检查用户偏好
@@ -81,7 +81,7 @@ function toggleDarkTheme(shouldAdd) {
 ```
 
 :::note
-提示：请确保在 [支持的浏览器](https://caniuse.com/#feat=prefers-color-scheme) 中查看下方的CodePen示例，然后尝试在设备上切换系统偏好设置（浅色与深色模式）。以下是如何在 [Windows 10上启用深色模式](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/) 以及 [如何在Mac上启用](https://support.apple.com/en-us/HT208976) 的指南。
+提示：请确保在[支持的浏览器](https://caniuse.com/#feat=prefers-color-scheme)中查看下面的 Codepen，然后尝试在您的设备上更改系统偏好，在浅色和深色模式之间切换。这里是[如何在 Windows 10 上启用深色模式](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/)以及[如何在 Mac 上启用深色模式](https://support.apple.com/en-us/HT208976)。
 :::
 
 <!-- Codepen https://codepen.io/ionic/pen/jONzJpG -->
@@ -90,13 +90,13 @@ function toggleDarkTheme(shouldAdd) {
 
 ### 手动切换深色模式
 
-除了在应用加载时和媒体查询变化时调用 `toggleDarkTheme()` 函数外，还可以通过应用（例如当用户切换开关时）调用 `toggleDarkTheme()` 函数来在浅色和深色主题之间切换：
+除了在应用加载时和媒体查询更改时调用 `toggleDarkTheme()`，应用还可以调用 `toggleDarkTheme()` 函数，例如当用户更改切换开关时，以在浅色和深色主题之间切换：
 
 ```javascript
-// 查询用于切换主题的开关
+// 查询用于在主题之间切换的 toggle 元素
 const toggle = document.querySelector('#themeToggle');
 
-// 监听开关的选中/取消选中状态，以在 <body> 上切换 dark 类
+// 监听 toggle 的选中/取消选中以在 <body> 上切换 dark 类
 toggle.addEventListener('ionChange', (ev) => {
   document.body.classList.toggle('dark', ev.detail.checked);
 });
@@ -106,12 +106,12 @@ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 // 监听 prefers-color-scheme 媒体查询的变化
 prefersDark.addEventListener('change', (e) => checkToggle(e.matches));
 
-// 在应用加载时调用
+// 应用加载时调用
 function loadApp() {
   checkToggle(prefersDark.matches);
 }
 
-// 由媒体查询调用，以选中或取消选中开关
+// 由媒体查询调用以选中/取消选中 toggle
 function checkToggle(shouldCheck) {
   toggle.checked = shouldCheck;
 }
@@ -121,53 +121,53 @@ function checkToggle(shouldCheck) {
 
 <Codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result" />
 
-## 调整系统UI组件
+## 调整系统 UI 组件
 
-在开发深色主题时，你可能会注意到某些系统UI组件没有正确适应深色模式。为了解决这个问题，你需要指定 `color-scheme`。有关跨浏览器支持的详细信息，请参阅 <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">color-scheme的浏览器兼容性</a>。
+在开发深色主题时，您可能会注意到某些系统 UI 组件没有正确调整为深色模式。要解决这个问题，您需要指定 `color-scheme`。请参阅 <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name-color-scheme" target="_blank">color-scheme 的浏览器兼容性</a>以了解跨浏览器支持的详细信息。
 
-虽然你可能主要使用Ionic组件而非原生组件，但 `color-scheme` 也会影响应用的某些方面，例如滚动条。要使用 `color-scheme`，你需要在应用的 `head` 部分添加以下HTML代码：
+虽然您可能主要使用 Ionic 组件而不是仅使用原生组件，但 `color-scheme` 也会影响应用程序的某些方面，例如滚动条。要使用 `color-scheme`，您需要在应用的 `head` 中添加以下 HTML：
 
 ```html
 <meta name="color-scheme" content="light dark" />
 ```
 
-这允许页面指示它适合以哪种配色方案进行渲染。或者，你也可以在每个元素的基础上添加以下CSS来实现：
+这允许页面指示它适合以哪种配色方案进行渲染。或者，您可以添加以下 CSS 以在每个元素的基础上执行此操作：
 
 ```css
 color-scheme: light dark;
 ```
 
-| 默认滚动条                                                                                                                                           | 使用 `color-scheme` 后的滚动条                                                                                                                                                                                   |
-| --------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![应用界面中默认的浅色主题滚动条。](/img/theming/color-scheme-light.png '未应用深色模式的默认滚动条外观')                                            | ![应用界面中的深色主题滚动条，展示了'color-scheme'属性的效果。](/img/theming/color-scheme-dark.png "应用深色模式'color-scheme'后的滚动条外观")                                                                  |
+| 默认滚动条                                                                                                                                  | 使用 `color-scheme` 的滚动条                                                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![应用界面中的默认浅色主题滚动条。](/img/theming/color-scheme-light.png '没有深色模式的默认滚动条外观')                                     | ![应用界面中的深色主题滚动条，展示了 'color-scheme' 属性的效果。](/img/theming/color-scheme-dark.png "应用了深色模式 'color-scheme' 的滚动条外观")                                                                  |
 
 有关 `color-scheme` 的更多信息，请参阅 https://web.dev/color-scheme/。
 
 :::note
-`color-scheme` 不适用于键盘。有关深色模式与键盘配合使用的详细信息，请参阅 [键盘文档](../developing/keyboard.md#dark-mode)。
+`color-scheme` 不适用于键盘。有关深色模式如何与键盘配合使用的详细信息，请参阅[键盘文档](../developing/keyboard.md#dark-mode)。
 :::
 
 :::note
-对于希望在 iOS 15 的 Safari 中自定义状态栏下的主题颜色或在 macOS 的 Safari 中自定义工具栏的开发者，请参阅 [`theme-color` 元标签](./advanced.md#theme-color-meta)。
+对于希望在 Safari on iOS 15 的状态栏下方或 Safari on macOS 的工具栏中自定义主题颜色的开发者，请参阅 [`theme-color` Meta](./advanced.md#theme-color-meta)。
 :::
 
-## Ionic深色主题
+## Ionic 深色主题
 
-Ionic 提供了一个推荐的变量主题，以根据运行应用的设备实现深色模式。它可以分解为以下几个部分：
+Ionic 有一个推荐的变量主题，用于根据运行应用的设备获取深色模式。它可以分为以下几个部分：
 
-1. 在 `body.dark` 选择器中更改所有 [模式](platform-styles.md#ionic-modes) 的默认 [Ionic颜色](colors.md)，以适应深色背景。
+1. 更改所有[模式](platform-styles.md#ionic-modes)的默认 [Ionic 颜色](colors.md)，以在 `body.dark` 选择器中补充深色背景。
 2. 为 `ios` 设备设置深色主题的变量。
 3. 为 `md` 设备设置深色主题的变量。
 
-以下代码可以复制并粘贴到应用中，以获得 Ionic 的深色主题。我们使用JavaScript将 `dark` 类添加到文档的 `body` 元素上，如 [结合JavaScript使用](#combining-with-javascript) 部分所述。只有在将 `dark` 类添加到文档的 `body` 元素上之后，深色模式才会启用。
+以下代码可以复制粘贴到应用中，以获得 Ionic 的深色主题。我们使用 JavaScript 将 `dark` 类添加到文档 body，如[与 JavaScript 结合使用](#combining-with-javascript)部分所述。在将 `dark` 类添加到文档 body 之前，深色模式不会启用。
 
 :::note
-有关正在更改的变量的更多信息，包括可以添加的其他变量以进一步自定义，请参阅 [主题](themes.md)。
+有关正在更改的变量的更多信息，包括可以添加以进一步自定义的其他变量，请参阅[主题](themes.md)。
 :::
 
 ```css
 /*
- * 深色配色
+ * 深色颜色
  * -------------------------------------------
  */
 
@@ -237,7 +237,7 @@ body.dark {
 }
 
 /*
- * iOS深色主题
+ * iOS 深色主题
  * -------------------------------------------
  */
 
@@ -281,7 +281,7 @@ body.dark {
 }
 
 /*
- * Material Design深色主题
+ * Material Design 深色主题
  * -------------------------------------------
  */
 

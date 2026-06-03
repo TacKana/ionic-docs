@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="openPicker()">打开</ion-button>
+  <ion-button @click="openPicker()">Open</ion-button>
 </template>
 
 <script>
@@ -42,13 +42,13 @@
           ],
           buttons: [
             {
-              text: '取消',
+              text: 'Cancel',
               role: 'cancel',
             },
             {
-              text: '确认',
+              text: 'Confirm',
               handler: (value) => {
-                window.alert(`您选择了：${value.languages.value}`);
+                window.alert(`You selected: ${value.languages.value}`);
               },
             },
           ],

@@ -10,28 +10,28 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Is Debug
 
-检测应用程序是否在调试模式下运行。
-调试模式通常是指通过 Xcode/Eclipse/Cordova 命令行工具等本地构建并安装应用的情况，而发布模式则是指最终用户从应用商店（如 App Store 或 Play Store）下载应用的情况。
+Detect if the app is running in debug mode or not.
+Debug mode is when the app is built and installed locally via xcode / eclipse / the cordova cli etc, compared to release mode when the app was downloaded from the app / play store via an end user.
 
 <p>
   <a href="https://github.com/mattlewis92/cordova-plugin-is-debug" target="_blank" rel="noopener" className="git-link">github.com/mattlewis92/cordova-plugin-is-debug</a>
 </p>
 
-<h2>遇到 Cordova 问题卡住了？</h2>
+<h2>Stuck on a Cordova issue?</h2>
 <DocsCard
   className="cordova-ee-card"
-  header="不要在插件问题上浪费宝贵的时间。"
+  header="Don't waste precious time on plugin issues."
   href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native"
 >
   <div>
     <img src="/docs/icons/native-cordova-bot.png" className="cordova-ee-img" />
-    <p>如果您正在开发一个严肃的项目，您无法承担花费数小时进行故障排除的代价。Ionic 专家为社区插件和高级插件提供优质的咨询服务。</p>
-    <DocsButton className="native-ee-detail">立即联系我们</DocsButton>
+    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer premium advisory services for both community plugins and premier plugins.</p>
+    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
 
 <h2 id="installation">
-  <a href="#installation">安装</a>
+  <a href="#installation">Installation</a>
 </h2>
 <Tabs
   groupId="runtime"
@@ -54,22 +54,22 @@ import CodeBlock from '@theme/CodeBlock';
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
-      Ionic Enterprise 提供 Ionic 团队完全支持并维护的插件。&nbsp;
-      <a className="btn" href="https://ionic.io/docs/premier-plugins">了解更多</a>，如果您对该插件的企业版感兴趣，<a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">请联系我们</a>
+      Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+      <a className="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a className="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a>
     </blockquote>
   </TabItem>
 </Tabs>
 
-## 支持的平台
+## Supported Platforms
 
 - Android
 - iOS
 
-## 使用方法
+## Usage
 
 ### React
 
-[了解如何在 React 中使用 Ionic Native 组件](../native-community.md#react)
+[Learn more about using Ionic Native components in React](../native-community.md#react)
 
 ### Angular
 
@@ -81,7 +81,7 @@ constructor(private isDebug: IsDebug) { }
 ...
 
 this.isDebug.getIsDebug()
-  .then(isDebug => console.log('是否为调试模式:', isDebug))
+  .then(isDebug => console.log('Is debug:', isDebug))
   .catch(err => console.error(err));
 
 ```

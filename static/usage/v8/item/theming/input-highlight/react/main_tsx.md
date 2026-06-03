@@ -8,17 +8,17 @@ function Example() {
   return (
     <>
       <IonItem lines="full" class="item-has-focus ion-touched">
-        <IonLabel position="stacked">自定义输入高亮：获得焦点时</IonLabel>
+        <IonLabel position="stacked">Custom Input Highlight: Focused</IonLabel>
         <IonInput></IonInput>
       </IonItem>
 
       <IonItem lines="full" class="item-has-focus ion-touched ion-valid">
-        <IonLabel position="stacked">自定义输入高亮：获得焦点且验证通过</IonLabel>
+        <IonLabel position="stacked">Custom Input Highlight: Focused & Valid</IonLabel>
         <IonInput></IonInput>
       </IonItem>
 
       <IonItem lines="full" class="item-has-focus ion-touched ion-invalid">
-        <IonLabel position="stacked">自定义输入高亮：获得焦点且验证失败</IonLabel>
+        <IonLabel position="stacked">Custom Input Highlight: Focused & Invalid</IonLabel>
         <IonInput></IonInput>
       </IonItem>
     </>

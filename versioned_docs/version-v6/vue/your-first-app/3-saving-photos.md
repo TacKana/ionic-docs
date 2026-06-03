@@ -4,13 +4,13 @@ sidebar_label: 保存照片
 
 # 将照片保存到文件系统
 
-目前我们已经能够拍摄多张照片，并在应用的第二个标签页的相册中展示它们。然而，这些照片目前并未被永久保存，因此当应用关闭时，照片就会丢失。
+我们现在能够拍摄多张照片并在应用第二个标签的相册中显示它们。然而，这些照片目前并未永久存储，因此当应用关闭时，它们将会丢失。
 
-## 文件系统 API
+## Filesystem API
 
-幸运的是，将它们保存到文件系统只需要几个步骤。首先打开 `usePhotoGallery` 函数（位于 `src/composables/usePhotoGallery.ts`），并从 `Filesystem` 类中获取 `writeFile` 方法的访问权限：
+幸运的是，将它们保存到文件系统只需要几个步骤。首先打开 `usePhotoGallery` 函数（`src/composables/usePhotoGallery.ts`），并获取 `Filesystem` 类中 `writeFile` 方法的访问权限：
 
-接下来，创建几个新函数。文件系统 API 要求写入磁盘的文件必须以 base64 数据格式传递，所以这个辅助函数稍后会用来协助完成这个转换：
+接下来，创建几个新函数。Filesystem API 要求写入磁盘的文件必须以 base64 数据形式传递，因此这个辅助函数将用于协助处理：
 
 ```tsx
 const convertBlobToBase64 = (blob: Blob) =>
@@ -24,15 +24,15 @@ const convertBlobToBase64 = (blob: Blob) =>
   });
 ```
 
-接下来，添加一个将照片保存到文件系统的函数。我们传入 `photo` 对象（代表新拍摄的设备照片）以及 `fileName`（为文件存储提供路径）。
+接下来，添加一个将照片保存到文件系统的函数。我们传入 `photo` 对象（代表新拍摄的设备照片）以及 fileName，它将提供文件存储的路径。
 
-然后我们使用 Capacitor 的 [Filesystem API](https://capacitorjs.com/docs/apis/filesystem) 将照片保存到文件系统。首先将照片转换为 base64 格式，然后将数据传递给 Filesystem 的 `writeFile` 函数：
+然后，我们使用 Capacitor [Filesystem API](https://capacitorjs.com/docs/apis/filesystem) 将照片保存到文件系统。我们首先将照片转换为 base64 格式，然后将数据提供给 Filesystem 的 `writeFile` 函数：
 
 ```tsx
 const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
   let base64Data: string;
 
-  // 获取照片，读取为 blob，然后转换为 base64 格式
+  // 获取照片，以 blob 形式读取，然后转换为 base64 格式
   const response = await fetch(photo.webPath!);
   const blob = await response.blob();
   base64Data = (await convertBlobToBase64(blob)) as string;
@@ -43,7 +43,7 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
     directory: Directory.Data,
   });
 
-  // 使用 webPath 来显示新图片而非 base64 数据，因为它已加载到内存中
+  // 使用 webPath 显示新图像而不是 base64，因为它已经加载到内存中
   return {
     filepath: fileName,
     webviewPath: photo.webPath,
@@ -51,7 +51,7 @@ const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> =
 };
 ```
 
-最后，更新 `takePhoto` 函数以调用 `savePicture`。照片保存后，将其插入到响应式 `photos` 数组的前端：
+最后，更新 `takePhoto` 函数以调用 `savePicture`。照片保存后，将其插入到响应式 `photos` 数组的前面：
 
 ```tsx
 const takePhoto = async () => {
@@ -68,4 +68,4 @@ const takePhoto = async () => {
 };
 ```
 
-搞定！现在每次拍摄新照片时，它都会自动保存到文件系统中。
+搞定了！每次拍摄新照片时，它现在会自动保存到文件系统。

@@ -1,20 +1,20 @@
 ---
-title: 'ionic cordova platform：移除、添加与管理 Cordova 平台'
-description: '使用 ionic cordova platform 管理、添加和移除 Cordova 平台。类似于直接运行 cordova，但会添加默认的 Ionic 图标和启动画面资源，并提供友好的检查。'
+title: 'ionic cordova platform: Remove, Add, & Manage Cordova Platforms'
+description: 'Manage, add, and remove Cordova platforms with ionic cordova platform. Like running cordova directly, with added resources and providing friendly checks.'
 sidebar_label: 'cordova platform'
 ---
 
 # ionic cordova platform
 
-管理 Cordova 平台目标
+Manage Cordova platform targets
 
 ```shell
 ionic cordova platform [options]
 ```
 
-类似于直接运行 `cordova platform`，但会添加默认的 Ionic 图标和启动画面资源（在 `add` 操作期间），并提供友好的检查。
+Like running `cordova platform` directly, but adds default Ionic icons and splash screen resources (during `add`) and provides friendly checks.
 
-## 示例
+## Examples
 
 ```shell
 $ ionic cordova platform
@@ -23,7 +23,7 @@ $ ionic cordova platform add android
 $ ionic cordova platform rm ios
 ```
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -35,10 +35,11 @@ $ ionic cordova platform rm ios
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <p>
-          对平台执行 <code>add</code>（添加）、<code>remove</code>（移除）或 <code>update</code>（更新）操作；或 <code>ls</code>（列出）、<code>check</code>（检查）、<code>save</code>（保存）所有项目平台
+          <code>add</code>, <code>remove</code>, or <code>update</code> a platform; <code>ls</code>, <code>check</code>,
+          or <code>save</code> all project platforms
         </p>
       </td>
     </tr>
@@ -52,17 +53,17 @@ $ ionic cordova platform rm ios
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <p>
-          要添加的平台（例如 <code>android</code>、<code>ios</code>）
+          The platform that you would like to add (<code>android</code>, <code>ios</code>)
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 选项
+## Options
 
 <table className="reference-table">
   <thead>
@@ -78,10 +79,10 @@ $ ionic cordova platform rm ios
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <p>
-          不预生成图标和启动画面资源（对应于 <code>add</code> 操作）
+          Do not pregenerate icons and splash screen resources (corresponds to <code>add</code>)
         </p>
       </td>
     </tr>

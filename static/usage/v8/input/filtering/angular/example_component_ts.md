@@ -16,12 +16,12 @@ export class ExampleComponent {
   onInput(event: CustomEvent) {
     const value = (event.target as HTMLIonInputElement).value ?? '';
 
-    // 移除非字母数字字符
+    // Removes non alphanumeric characters
     const filteredValue = (value as string).replace(/[^a-zA-Z0-9]+/g, '');
 
     /**
-     * 更新状态变量和组件值
-     * 以保持两者同步
+     * Update both the state variable and
+     * the component to keep them in sync.
      */
     this.ionInputEl.value = this.inputModel = filteredValue;
   }

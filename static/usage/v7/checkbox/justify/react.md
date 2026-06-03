@@ -6,15 +6,15 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonCheckbox justify="start">对齐行首</IonCheckbox>
+        <IonCheckbox justify="start">Packed at the Start of Line</IonCheckbox>
       </IonItem>
 
       <IonItem>
-        <IonCheckbox justify="end">对齐行尾</IonCheckbox>
+        <IonCheckbox justify="end">Packed at the End of Line</IonCheckbox>
       </IonItem>
 
       <IonItem>
-        <IonCheckbox justify="space-between">标签与控件之间留出空间</IonCheckbox>
+        <IonCheckbox justify="space-between">Space Between Label and Control</IonCheckbox>
       </IonItem>
     </IonList>
   );

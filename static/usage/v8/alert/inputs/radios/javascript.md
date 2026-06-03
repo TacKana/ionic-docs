@@ -1,24 +1,24 @@
 ```html
-<ion-button id="present-alert">点击我</ion-button>
-<ion-alert trigger="present-alert" header="选择你最喜欢的颜色"></ion-alert>
+<ion-button id="present-alert">Click Me</ion-button>
+<ion-alert trigger="present-alert" header="Select your favorite color"></ion-alert>
 
 <script>
   const alert = document.querySelector('ion-alert');
 
-  alert.buttons = ['确定'];
+  alert.buttons = ['OK'];
   alert.inputs = [
     {
-      label: '红色',
+      label: 'Red',
       type: 'radio',
       value: 'red',
     },
     {
-      label: '蓝色',
+      label: 'Blue',
       type: 'radio',
       value: 'blue',
     },
     {
-      label: '绿色',
+      label: 'Green',
       type: 'radio',
       value: 'green',
     },

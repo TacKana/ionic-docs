@@ -3,8 +3,8 @@
   fill="solid"
   label="Email"
   label-placement="floating"
-  helper-text="请输入有效的邮箱地址"
-  error-text="邮箱格式无效"
+  helper-text="Enter a valid email"
+  error-text="Invalid email"
 ></ion-textarea>
 
 <script>

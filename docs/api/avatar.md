@@ -1,5 +1,5 @@
 ---
-title: 头像组件
+title: "ion-avatar"
 ---
 
 import Props from '@ionic-internal/component-api/v8/avatar/props.md';
@@ -11,16 +11,16 @@ import Slots from '@ionic-internal/component-api/v8/avatar/slots.md';
 
 <head>
   <title>ion-avatar：圆形应用头像图标组件</title>
-  <meta name="description" content="ion-avatar 是包裹图像或图标的圆形应用组件，可单独使用或置于任何元素内，用于表示人物或对象。" />
+  <meta name="description" content="ion-avatar 是圆形的应用组件，用于包裹图像或图标。它们可以单独使用或在任何元素内部使用，用于表示人物或对象。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-头像（Avatars）是通常包裹图像或图标的圆形组件，可用于表示人物或对象。
+头像（Avatar）是圆形组件，通常包裹图像或图标。它们可用于表示人物或对象。
 
-头像可以单独使用，也可以置于任何元素内部。如果放置在 `ion-chip` 或 `ion-item` 内，头像将自动调整大小以适应父组件。要将头像定位在项目的左侧或右侧，请分别将 slot 设置为 `start` 或 `end`。
+头像可以单独使用或放在任何元素内部使用。如果放在 `ion-chip` 或 `ion-item` 内部，头像将自动调整大小以适应父组件。要将头像定位在项目的左侧或右侧，分别将插槽设置为 `start` 或 `end`。
 
 ## 基本用法
 
@@ -48,20 +48,20 @@ import CSSProps from '@site/static/usage/v8/avatar/theming/css-properties/index.
 
 <CSSProps />
 
-## 属性
+## Properties
 <Props />
 
-## 事件
+## Events
 <Events />
 
-## 方法
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 <CustomProps />
 
-## 插槽
+## Slots
 <Slots />

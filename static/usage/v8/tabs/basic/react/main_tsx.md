@@ -24,11 +24,11 @@ function Example() {
         <IonPage id="home-page">
           <IonHeader>
             <IonToolbar>
-              <IonTitle>现在收听</IonTitle>
+              <IonTitle>Listen now</IonTitle>
             </IonToolbar>
           </IonHeader>
           <IonContent>
-            <div className="example-content">现在收听内容</div>
+            <div className="example-content">Listen now content</div>
           </IonContent>
         </IonPage>
       </IonTab>
@@ -36,11 +36,11 @@ function Example() {
         <IonPage id="radio-page">
           <IonHeader>
             <IonToolbar>
-              <IonTitle>电台</IonTitle>
+              <IonTitle>Radio</IonTitle>
             </IonToolbar>
           </IonHeader>
           <IonContent>
-            <div className="example-content">电台内容</div>
+            <div className="example-content">Radio content</div>
           </IonContent>
         </IonPage>
       </IonTab>
@@ -48,11 +48,11 @@ function Example() {
         <IonPage id="library-page">
           <IonHeader>
             <IonToolbar>
-              <IonTitle>音乐库</IonTitle>
+              <IonTitle>Library</IonTitle>
             </IonToolbar>
           </IonHeader>
           <IonContent>
-            <div className="example-content">音乐库内容</div>
+            <div className="example-content">Library content</div>
           </IonContent>
         </IonPage>
       </IonTab>
@@ -60,11 +60,11 @@ function Example() {
         <IonPage id="search-page">
           <IonHeader>
             <IonToolbar>
-              <IonTitle>搜索</IonTitle>
+              <IonTitle>Search</IonTitle>
             </IonToolbar>
           </IonHeader>
           <IonContent>
-            <div className="example-content">搜索内容</div>
+            <div className="example-content">Search content</div>
           </IonContent>
         </IonPage>
       </IonTab>
@@ -72,19 +72,19 @@ function Example() {
       <IonTabBar slot="bottom">
         <IonTabButton tab="home">
           <IonIcon icon={playCircle} />
-          现在收听
+          Listen Now
         </IonTabButton>
         <IonTabButton tab="radio">
           <IonIcon icon={radio} />
-          电台
+          Radio
         </IonTabButton>
         <IonTabButton tab="library">
           <IonIcon icon={library} />
-          音乐库
+          Library
         </IonTabButton>
         <IonTabButton tab="search">
           <IonIcon icon={search} />
-          搜索
+          Search
         </IonTabButton>
       </IonTabBar>
     </IonTabs>

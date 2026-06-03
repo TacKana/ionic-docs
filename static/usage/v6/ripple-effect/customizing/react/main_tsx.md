@@ -7,15 +7,15 @@ import './main.css';
 function Example() {
   return (
     <div className="wrapper">
-      <b>点击任意形状查看涟漪效果</b>
+      <b>Click on a shape to see the ripple</b>
 
       <div className="ion-activatable ripple-parent custom-parent">
-        自定义父元素颜色
+        Custom Parent Color
         <IonRippleEffect></IonRippleEffect>
       </div>
 
       <div className="ion-activatable ripple-parent">
-        自定义涟漪颜色
+        Custom Ripple Color
         <IonRippleEffect className="custom-ripple"></IonRippleEffect>
       </div>
     </div>

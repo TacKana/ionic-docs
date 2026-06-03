@@ -7,7 +7,7 @@ import './main.css';
 function Example() {
   return (
     <IonListHeader>
-      <IonLabel>自定义列表头部</IonLabel>
+      <IonLabel>Custom List Header</IonLabel>
     </IonListHeader>
   );
 }

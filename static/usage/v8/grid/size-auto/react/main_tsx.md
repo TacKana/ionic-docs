@@ -8,7 +8,7 @@ function Example() {
   return (
     <>
       <b>
-        第一列的 <code>size</code> 设置为 <code>"auto"</code>
+        Column 1 has <code>size</code> set to <code>"auto"</code>
       </b>
       <IonGrid>
         <IonRow>
@@ -19,7 +19,7 @@ function Example() {
       </IonGrid>
 
       <b>
-        第三列包含一个输入框，其 <code>size</code> 设置为 <code>"auto"</code>
+        Column 3 contains an input and has <code>size</code> set to <code>"auto"</code>
       </b>
       <IonGrid>
         <IonRow>
@@ -35,7 +35,7 @@ function Example() {
       </IonGrid>
 
       <b>
-        第二列的 <code>size</code> 设置为 <code>"auto"</code> 并定义了宽度
+        Column 2 has <code>size</code> set to <code>"auto"</code> and a defined width
       </b>
       <IonGrid>
         <IonRow>

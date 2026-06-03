@@ -5,10 +5,10 @@ import { IonButton, IonContent } from '@ionic/react';
 function Example() {
   return (
     <IonContent className="ion-padding">
-      <h1>滚动内容时，注意固定按钮不会随之滚动。</h1>
+      <h1>Scroll the content and notice that the fixed button does not scroll.</h1>
 
-      <IonButton>普通按钮</IonButton>
-      <IonButton slot="fixed">固定按钮</IonButton>
+      <IonButton>Normal Button</IonButton>
+      <IonButton slot="fixed">Fixed Button</IonButton>
 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed tellus nec mauris auctor dignissim fermentum

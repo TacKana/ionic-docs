@@ -4,7 +4,7 @@
     <ion-select
       aria-label="Food"
       [compareWith]="compareWith"
-      placeholder="选择食物"
+      placeholder="Select food"
       (ionChange)="handleChange($event)"
       [multiple]="true"
     >

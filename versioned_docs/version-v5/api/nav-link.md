@@ -14,30 +14,30 @@ import Slots from '@ionic-internal/component-api/v5/nav-link/slots.md';
 
 # ion-nav-link
 
-导航链接用于导航到指定的组件。可以通过`前进`、`后退`或设置为`根`组件的方式进行导航。
+A navigation link is used to navigate to a specified component. The component can be navigated to by going `forward`, `back` or as a `root` component.
 
-它是在导航控制器上调用`push()`、`pop()`和`setRoot()`方法的元素形式。
+It is the element form of calling the `push()`, `pop()`, and `setRoot()` methods on the navigation controller.
 
-## 属性
+## Properties
 
 <Props />
 
-## 事件
+## Events
 
 <Events />
 
-## 方法
+## Methods
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 
 <CustomProps />
 
-## 插槽
+## Slots
 
 <Slots />

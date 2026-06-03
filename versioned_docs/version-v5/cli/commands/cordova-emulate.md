@@ -1,30 +1,30 @@
 ---
-title: '使用 Ionic Cordova 模拟器运行 Android 和 iOS 应用'
-description: '在模拟器上运行 Ionic 项目，适用于 Android 和 iOS 应用。通过 Ionic Cordova Emulator 构建您的应用并部署到设备和模拟器。'
+title: 'Emulate Android and iOS Apps with Ionic Cordova Emulator'
+description: 'Emulate an Ionic project on a simulator/emulator for Android and iOS apps. Build your app and deploy it to devices and emulators using Ionic Cordova Emulator.'
 sidebar_label: 'cordova emulate'
 ---
 
 # ionic cordova emulate
 
-在模拟器上运行 Ionic 项目
+Emulate an Ionic project on a simulator/emulator
 
 ```shell
 ionic cordova emulate [options]
 ```
 
-使用此命令构建您的应用并将其部署到设备和模拟器。可选地指定 `--livereload` 选项以使用 `ionic serve` 中的开发服务器实现热重载功能。
+Build your app and deploy it to devices and emulators using this command. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.
 
-此命令首先会使用 `ionic build` 构建 Web 资源（或使用 `--livereload` 选项的 `ionic serve`）。然后，使用 `cordova build` 编译和准备您的应用。最后，使用 `native-run` [工具](https://github.com/ionic-team/native-run) 在设备上运行您的应用。要在此过程中使用 Cordova 替代，请使用 `--no-native-run` 选项。
+This command will first use `ionic build` to build web assets (or `ionic serve` with the `--livereload` option). Then, `cordova build` is used to compile and prepare your app. Finally, the `native-run` [utility](https://github.com/ionic-team/native-run) is used to run your app on a device. To use Cordova for this process instead, use the `--no-native-run` option.
 
-如果您有多个设备和模拟器，可以使用 `--target` 选项指定目标设备。您可以使用 `--list` 列出所有目标设备。
+If you have multiple devices and emulators, you can target a specific one with the `--target` option. You can list targets with `--list`.
 
-对于 Android 和 iOS，您可以使用这些[文档](https://ionicframework.com/docs/developer-resources/developer-tips)在设备上设置远程调试，以便使用浏览器开发工具。
+For Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).
 
-当在硬件设备上使用 `--livereload` 时，请记住热重载需要设备与计算机之间的活动连接。在某些情况下，您可能需要使用 `--external` 选项在外部地址上托管开发服务器。有关更多信息，请参阅这些[文档](https://ionicframework.com/docs/cli/livereload)。
+When using `--livereload` with hardware devices, remember that livereload needs an active connection between device and computer. In some scenarios, you may need to host the dev server on an external address using the `--external` option. See these [docs](https://ionicframework.com/docs/cli/livereload) for more information.
 
-就像 `ionic cordova build` 一样，您可以使用 `--` 分隔符将其他选项传递给 Cordova CLI。要将其他选项传递给开发服务器，请考虑单独使用 `ionic serve` 并使用 `--livereload-url` 选项。
+Just like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` separately and using the `--livereload-url` option.
 
-## 示例
+## Examples
 
 ```shell
 $ ionic cordova emulate android
@@ -44,7 +44,7 @@ $ ionic cordova emulate ios --prod --release -- --developmentTeam="ABCD" --codeS
 $ ionic cordova emulate ios --prod --release --buildConfig=build.json
 ```
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -56,17 +56,17 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          要运行的平台（例如 <code>android</code>、<code>ios</code>）
+          The platform to run (e.g. <code>android</code>, <code>ios</code>)
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 选项
+## Options
 
 <table className="reference-table">
   <thead>
@@ -82,9 +82,9 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>为开发服务器使用 HTTPS</p>
+        <p>Use HTTPS for the dev server</p>
       </td>
     </tr>
   </tbody>
@@ -101,9 +101,9 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>列出所有可用的目标设备</p>
+        <p>List all available targets</p>
       </td>
     </tr>
   </tbody>
@@ -120,9 +120,9 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>不调用 Ionic 构建</p>
+        <p>Do not invoke Ionic build</p>
       </td>
     </tr>
   </tbody>
@@ -139,10 +139,10 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          在所有网络接口上托管开发服务器（即 <code>--host=0.0.0.0</code>）
+          Host dev server on all network interfaces (i.e. <code>--host=0.0.0.0</code>)
         </p>
       </td>
     </tr>
@@ -160,13 +160,13 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>启动开发服务器以热重载 www 文件</p>
+        <p>Spin up dev server to live-reload www files</p>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-l</code>
       </td>
@@ -186,9 +186,9 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>提供开发服务器的自定义 URL</p>
+        <p>Provide a custom URL to the dev server</p>
       </td>
     </tr>
   </tbody>
@@ -205,10 +205,10 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          使用 <code>production</code> 配置的标志
+          Flag to use the <code>production</code> configuration
         </p>
       </td>
     </tr>
@@ -226,9 +226,9 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>标记为调试构建</p>
+        <p>Mark as a debug build</p>
       </td>
     </tr>
   </tbody>
@@ -245,9 +245,9 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>标记为发布构建</p>
+        <p>Mark as a release build</p>
       </td>
     </tr>
   </tbody>
@@ -264,9 +264,9 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>将构建部署到设备</p>
+        <p>Deploy build to a device</p>
       </td>
     </tr>
   </tbody>
@@ -283,9 +283,9 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>将构建部署到模拟器</p>
+        <p>Deploy build to an emulator</p>
       </td>
     </tr>
   </tbody>
@@ -302,10 +302,10 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          不使用 <code>native-run</code> 运行应用；改用 Cordova
+          Do not use <code>native-run</code> to run the app; use Cordova instead
         </p>
       </td>
     </tr>
@@ -323,15 +323,15 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>将运行中的应用与进程绑定</p>
+        <p>Tie the running app to the process</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 高级选项
+## Advanced Options
 
 <table className="reference-table">
   <thead>
@@ -347,10 +347,10 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>将应用控制台日志输出到终端</p>
+          <p>Print app console logs to the terminal</p>
         </div>
       </td>
     </tr>
@@ -369,10 +369,10 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>为控制台日志服务器使用特定端口</p>
+          <p>Use specific port for console logs server</p>
         </div>
       </td>
     </tr>
@@ -391,15 +391,15 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>为开发服务器使用特定主机</p>
+          <p>Use specific host for the dev server</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>localhost</td>
     </tr>
   </tbody>
@@ -417,21 +417,21 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>为开发服务器使用特定端口</p>
+          <p>Use specific port for the dev server</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-p</code>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>8100</td>
     </tr>
   </tbody>
@@ -449,10 +449,10 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>浏览器或 Web 视图使用的主机</p>
+          <p>The host used for the browser or web view</p>
         </div>
       </td>
     </tr>
@@ -471,15 +471,15 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>指定要使用的配置。</p>
+          <p>Specify the configuration to use.</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-c</code>
       </td>
@@ -498,10 +498,10 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>输出源映射</p>
+          <p>Output source maps</p>
         </div>
       </td>
     </tr>
@@ -520,10 +520,10 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>使用指定的构建配置</p>
+          <p>Use the specified build configuration</p>
         </div>
       </td>
     </tr>
@@ -542,11 +542,11 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
           <p>
-            将构建部署到特定设备（使用 <code>--list</code> 查看所有设备）
+            Deploy build to a device (use <code>--list</code> to see all)
           </p>
         </div>
       </td>
@@ -565,10 +565,10 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>以 JSON 格式输出目标设备</p>
+          <p>Output targets in JSON</p>
         </div>
       </td>
     </tr>

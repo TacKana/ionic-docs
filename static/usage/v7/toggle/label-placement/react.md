@@ -5,16 +5,16 @@ import { IonToggle } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonToggle labelPlacement="start">标签置于起始位置</IonToggle>
+      <IonToggle labelPlacement="start">Label at the Start</IonToggle>
       <br />
       <br />
-      <IonToggle labelPlacement="end">标签置于末尾</IonToggle>
+      <IonToggle labelPlacement="end">Label at the End</IonToggle>
       <br />
       <br />
-      <IonToggle labelPlacement="fixed">固定宽度的标签</IonToggle>
+      <IonToggle labelPlacement="fixed">Fixed Width Label</IonToggle>
       <br />
       <br />
-      <IonToggle labelPlacement="stacked">堆叠式标签</IonToggle>
+      <IonToggle labelPlacement="stacked">Stacked Label</IonToggle>
     </>
   );
 }

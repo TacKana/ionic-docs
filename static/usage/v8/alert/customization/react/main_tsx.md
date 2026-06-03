@@ -7,18 +7,18 @@ import './main.css';
 function Example() {
   return (
     <>
-      <IonButton id="present-alert">点击我</IonButton>
+      <IonButton id="present-alert">Click Me</IonButton>
       <IonAlert
         trigger="present-alert"
-        header="您确定吗？"
+        header="Are you sure?"
         className="custom-alert"
         buttons={[
           {
-            text: '否',
+            text: 'No',
             cssClass: 'alert-button-cancel',
           },
           {
-            text: '是',
+            text: 'Yes',
             cssClass: 'alert-button-confirm',
           },
         ]}

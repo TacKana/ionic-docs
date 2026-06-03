@@ -1,5 +1,5 @@
 ---
-title: 卡片内容组件
+title: "ion-card-content"
 ---
 import Props from '@ionic-internal/component-api/v8/card-content/props.md';
 import Events from '@ionic-internal/component-api/v8/card-content/events.md';
@@ -10,25 +10,31 @@ import Slots from '@ionic-internal/component-api/v8/card-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
+<head>
+  <title>ion-card-content：卡片内容组件</title>
+  <meta name="description" content="ion-card-content 是 ion-card 的子组件，在其内容周围添加内边距。建议卡片的所有文本内容都应放置在卡片内容内部。" />
+</head>
 
-卡片内容区域是 Card 组件的子组件，用于在其内容周围添加内边距。建议将卡片的所有文本内容都放置在卡片内容区域内。
 
-更多信息请参阅 [Card](./card) 文档。
+卡片内容是卡片的子组件，在其内容周围添加内边距。建议卡片的所有文本内容都应放置在卡片内容内部。
 
-## 属性
+更多信息请参见[卡片](./card)文档。
+
+
+## Properties
 <Props />
 
-## 事件
+## Events
 <Events />
 
-## 方法
+## Methods
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS 自定义属性
+## CSS Custom Properties
 <CustomProps />
 
-## 插槽
+## Slots
 <Slots />

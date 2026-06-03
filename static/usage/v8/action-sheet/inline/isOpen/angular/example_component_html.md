@@ -1,8 +1,8 @@
 ```html
-<ion-button (click)="setOpen(true)">打开</ion-button>
+<ion-button (click)="setOpen(true)">Open</ion-button>
 <ion-action-sheet
   [isOpen]="isActionSheetOpen"
-  header="操作"
+  header="Actions"
   [buttons]="actionSheetButtons"
   (didDismiss)="setOpen(false)"
 ></ion-action-sheet>

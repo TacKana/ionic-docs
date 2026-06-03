@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/fab-button/custom-prop
 import Slots from '@ionic-internal/component-api/v7/fab-button/slots.md';
 
 <head>
-  <title>ion-fab-button: Ionic 浮动操作按钮图标，用于主要操作</title>
+  <title>ion-fab-button：Ionic 主操作 FAB 按钮图标</title>
   <meta
     name="description"
-    content="浮动操作按钮（FAB）代表应用程序中的主要操作。图标为圆形，按下按钮时，可能会展开更多相关操作。"
+    content="浮动操作按钮（FAB）代表应用中的主要操作。图标为圆形，按下时按钮可能会打开更多相关操作。"
   />
 </head>
 
@@ -21,11 +21,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-浮动操作按钮（FAB）代表应用程序中的主要操作。默认情况下，它们呈圆形。按下按钮时，可能会展开更多相关操作。
+浮动操作按钮（FAB）代表应用中的主要操作。默认情况下，它们具有圆形形状。按下时，按钮可能会打开更多相关操作。
 
-顾名思义，FAB 通常以固定位置悬浮在内容上方。这可以通过将 fab 按钮包裹在 [fab](./fab) 组件中来实现。如果按钮没有被 fab 包裹，它将随内容滚动。
+顾名思义，FAB 通常以固定位置浮动在内容之上。这是通过将 fab 按钮包裹在 [fab](./fab) 组件中实现的。如果按钮没有用 fab 包裹，它将随内容滚动。
 
-有关使用示例，请参阅 [fab 文档](./fab)。
+用法示例请参阅 [fab 文档](./fab)。
 
 ## 属性
 
@@ -39,7 +39,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

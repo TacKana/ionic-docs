@@ -1,5 +1,5 @@
 ---
-title: 列表标题组件
+title: "ion-list-header"
 ---
 import Props from '@ionic-internal/component-api/v8/list-header/props.md';
 import Events from '@ionic-internal/component-api/v8/list-header/events.md';
@@ -13,7 +13,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-列表标题是一种块级元素，用于描述[列表](./list)的内容。与[项目分隔线](./item-divider)不同，列表标题应仅在一组[项目](./item)的顶部使用一次。
+列表标题是用于描述[列表](./list)内容的块级元素。与[项目分隔线](./item-divider)不同，列表标题应仅在列表的顶部使用一次（在[项目](./item)列表的上方）。
 
 ## 基本用法
 
@@ -24,22 +24,22 @@ import Basic from '@site/static/usage/v8/list-header/basic/index.md';
 
 ## 列表标题中的按钮
 
-在列表标题中放置一个[按钮](./button)有助于显示列表的部分内容，并通过按钮跳转到完整列表。
+放置在列表标题中的[按钮](./button)可用于显示列表的一部分，并通过按钮重定向到完整列表。
 
 import Buttons from '@site/static/usage/v8/list-header/buttons/index.md';
 
 <Buttons />
 
 
-## 列表标题分隔线
+## 列表标题边框线
 
-默认情况下，列表标题不显示底部边框。可以将 `lines` 属性修改为 `"full"` 或 `"inset"`，分别显示全宽度边框或带有左侧内边距的嵌入边框。
+列表标题默认不显示底部边框。`lines` 属性可以修改为 `"full"` 或 `"inset"`，分别显示全宽边框或带左内边距的内嵌边框。
 
 import Lines from '@site/static/usage/v8/list-header/lines/index.md';
 
 <Lines />
 
-## 主题定制
+## 主题
 
 ### 颜色
 

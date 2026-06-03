@@ -4,19 +4,19 @@ sidebar_label: 'deploy configure'
 
 # ionic deploy configure
 
-覆盖 Appflow Deploy 配置
+Overrides Appflow Deploy configuration
 
 ```shell
 ionic deploy configure [options]
 ```
 
-此命令用于覆盖 Capacitor 项目中 Appflow Deploy 插件 (`cordova-plugin-ionic`) 的配置。
+This command overrides configuration for the Appflow Deploy plugin (`cordova-plugin-ionic`) in Capacitor projects.
 
-对于 Capacitor 项目，如果插件已安装，此命令会覆盖原生项目中的配置变量。
+For Capacitor projects, if the plugin is already installed, it overrides the configuration variables in the native projects.
 
-对于 Cordova 项目，此功能尚未实现，因为更好的做法是重新安装带有不同参数的插件，并让 Cordova 处理这些更改。
+For Cordova projects this is not implemented because it is better to reinstall the plugin with the different parameters and let Cordova deal with the changes.
 
-## 示例
+## Examples
 
 ```shell
 $ ionic deploy configure
@@ -27,7 +27,7 @@ $ ionic deploy configure android
 $ ionic deploy configure ios
 ```
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -39,17 +39,17 @@ $ ionic deploy configure ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <p>
-          原生平台 (例如 <code>ios</code>, <code>android</code>)
+          The native platform (e.g. <code>ios</code>, <code>android</code>)
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 选项
+## Options
 
 <table className="reference-table">
   <thead>
@@ -66,9 +66,9 @@ $ ionic deploy configure ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>您的 Appflow 应用 ID</p>
+        <p>Your Appflow app ID</p>
       </td>
     </tr>
   </tbody>
@@ -86,9 +86,9 @@ $ ionic deploy configure ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>检查更新的频道名称</p>
+        <p>The channel to check for updates from</p>
       </td>
     </tr>
   </tbody>
@@ -106,15 +106,15 @@ $ ionic deploy configure ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
-        <p>决定插件行为的更新方法</p>
+        <p>The update method that dictates the behavior of the plugin</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 高级选项
+## Advanced Options
 
 <table className="reference-table">
   <thead>
@@ -131,10 +131,10 @@ $ ionic deploy configure ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>设备上存储的已下载版本的最大数量</p>
+          <p>The maximum number of downloaded versions to store on the device</p>
         </div>
       </td>
     </tr>
@@ -153,10 +153,10 @@ $ ionic deploy configure ios
   </thead>
   <tbody>
     <tr>
-      <th>描述</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>应用在后台检查更新的最短时间间隔（秒）</p>
+          <p>The minimum duration after which the app checks for an update in the background</p>
         </div>
       </td>
     </tr>

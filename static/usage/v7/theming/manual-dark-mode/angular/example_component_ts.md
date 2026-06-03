@@ -50,37 +50,37 @@ export class ExampleComponent implements OnInit {
 
   constructor() {
     /**
-     * 应用中需要使用的任何图标
-     * 都可以在这里注册，然后
-     * 在应用的任何地方通过名称引用。
+     * Any icons you want to use in your application
+     * can be registered in app.component.ts and then
+     * referenced by name anywhere in your application.
      */
     addIcons({ personCircle, personCircleOutline, sunny, sunnyOutline });
   }
 
   ngOnInit() {
-    // 使用 matchMedia 检查用户偏好
+    // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // 根据 prefers-color-scheme 媒体查询的初始值
-    // 初始化深色主题
+    // Initialize the dark theme based on the initial
+    // value of the prefers-color-scheme media query
     this.initializeDarkTheme(prefersDark.matches);
 
-    // 监听 prefers-color-scheme 媒体查询的变化
+    // Listen for changes to the prefers-color-scheme media query
     prefersDark.addEventListener('change', (mediaQuery) => this.initializeDarkTheme(mediaQuery.matches));
   }
 
-  // 根据 isDark 参数设置切换状态并更新主题
+  // Check/uncheck the toggle and update the theme based on isDark
   initializeDarkTheme(isDark: boolean) {
     this.themeToggle = isDark;
     this.toggleDarkTheme(isDark);
   }
 
-  // 监听切换开关的选中/取消选中状态以切换深色主题
+  // Listen for the toggle check/uncheck to toggle the dark theme
   toggleChange(event: CustomEvent) {
     this.toggleDarkTheme(event.detail.checked);
   }
 
-  // 在文档 body 上添加或移除 "dark" 类
+  // Add or remove the "dark" class on the document body
   toggleDarkTheme(shouldAdd: boolean) {
     document.body.classList.toggle('dark', shouldAdd);
   }

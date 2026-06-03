@@ -1,18 +1,16 @@
 # 工具函数
 
-Ionic Vue 提供了几个工具函数，可以在您的应用程序中使用，以简化某些任务，例如管理屏幕键盘和硬件返回按钮。
+Ionic Vue 提供了几个工具函数，您可以在应用中使用它们来简化某些任务，例如管理屏幕键盘和硬件返回按钮。
 
-## 路由
+## 路由器
 
 ### 函数
-
-<LegacyAnchor id="router" />
 
 #### useIonRouter
 
 ▸ **useIonRouter**(): [`UseIonRouterResult`](#useionrouterresult)
 
-返回 Ionic 路由实例，包含用于导航、自定义页面过渡以及原生功能路由上下文的 API 方法。此函数可以与 Vue 的 [`useRouter`](https://router.vuejs.org/api/index.html#userouter) 结合使用。
+返回 Ionic 路由器实例，包含用于导航、自定义页面过渡和原生功能路由上下文的 API 方法。此函数可以与 Vue 的 [`useRouter`](https://router.vuejs.org/api/index.html#userouter) 结合使用。
 
 **自定义页面过渡**
 
@@ -31,18 +29,18 @@ const back = () => {
 
 **Android 硬件返回按钮**
 
-您可能想知道当用户在 Android 上按下硬件返回按钮时，是否处于应用程序的根页面。
+当用户在 Android 上按下硬件返回按钮时，您可能想知道是否处于应用的根页面。
 
 ```tsx
 import { useIonRouter } from '@ionic/vue';
 
 const ionRouter = useIonRouter();
 if (ionRouter.canGoBack()) {
-  // 在此处执行某些操作
+  // 在此执行某些操作
 }
 ```
 
-有关 Vue 路由的其他 API，请参阅 [Vue Router 文档](https://router.vuejs.org/api/index.html)。
+关于 Vue 路由的更多 API，请参考 [Vue Router 文档](https://router.vuejs.org/api/index.html)。
 
 ### 接口
 
@@ -69,15 +67,15 @@ interface UseIonRouterResult {
 useIonRouter(): UseIonRouterResult;
 ```
 
-- `push` 方法等效于调用 `ionRouter.navigate(location, 'forward', 'push', animation)`。
+- `push` 方法等同于调用 `ionRouter.navigate(location, 'forward', 'push', animation)`。
 
-- `replace` 方法等效于调用 `ionRouter.navigate(location, 'root', 'replace', animation)`。
+- `replace` 方法等同于调用 `ionRouter.navigate(location, 'root', 'replace', animation)`。
 
-更多使用示例请参阅 [Vue 导航文档](./navigation#navigating-using-useionrouter)。
+更多使用示例请参阅 [Vue 导航文档](./navigation#使用-useionrouter-导航)。
 
 ## 硬件返回按钮
 
-`useBackButton` 函数可用于注册一个回调函数，当 Android 上的硬件返回按钮被按下时触发。此外，它接受一个优先级参数，允许开发者在注册多个处理函数时自定义哪个处理函数首先触发。
+`useBackButton` 函数可用于注册一个回调函数，当 Android 上的硬件返回按钮被按下时触发。此外，它接受一个优先级参数，允许开发者自定义当多个处理程序注册时哪个处理程序先触发。
 
 ```js
 import { useBackButton } from '@ionic/vue';
@@ -85,7 +83,7 @@ import { useBackButton } from '@ionic/vue';
 ...
 
 useBackButton(10, () => {
-  console.log('硬件返回按钮被调用！');
+  console.log('硬件返回按钮被调用了！');
 });
 ```
 
@@ -100,15 +98,15 @@ interface UseBackButtonResult {
 useBackButton(priority: number, handler: Handler): UseBackButtonResult;
 ```
 
-更多信息和用例请参阅 [硬件返回按钮文档](../developing/hardware-back-button)。
+更多信息和用法示例请参阅[硬件返回按钮文档](../developing/hardware-back-button)。
 
 :::note
-只有当您的应用在 Capacitor 或 Cordova 中运行时，`useBackButton` 回调才会触发。更多信息请参阅 [Capacitor 和 Cordova 中的硬件返回按钮](../developing/hardware-back-button#hardware-back-button-in-capacitor-and-cordova)。
+`useBackButton` 回调只有在您的应用运行在 Capacitor 或 Cordova 中时才会触发。更多信息请参阅 [Capacitor 和 Cordova 中的硬件返回按钮](../developing/hardware-back-button#支持情况)。
 :::
 
 ## 键盘
 
-`useKeyboard` 函数返回一个包含屏幕键盘状态的对象。该对象提供诸如屏幕键盘是否显示以及键盘高度（以像素为单位）等信息。这些信息以 Vue `ref` 的形式提供，因此在您的应用程序中是响应式的。
+`useKeyboard` 函数返回一个包含屏幕键盘状态的对象。该对象提供的信息包括屏幕键盘是否已显示以及键盘的高度（像素）。这些信息以 Vue `ref` 的形式提供，因此在您的应用中将是响应式的。
 
 ```js
 import { watch } from 'vue';
@@ -133,11 +131,11 @@ interface UseKeyboardResult {
 useKeyboard(): UseKeyboardResult;
 ```
 
-更多信息和用例请参阅 [键盘文档](../developing/keyboard)。
+更多信息和用法示例请参阅[键盘文档](../developing/keyboard)。
 
 ## Ionic 生命周期
 
-Ionic Vue 为 `setup()` 函数提供了几个生命周期钩子，以便接入 Ionic Framework 页面生命周期。
+Ionic Vue 提供了几个生命周期钩子供 `setup()` 函数使用，以接入 Ionic 框架的页面生命周期。
 
 ```vue
 <script setup lang="ts">
@@ -162,7 +160,7 @@ onIonViewWillLeave(() => {
 ```
 
 :::note
-为了使生命周期方法和钩子正确触发，应用程序中的页面需要使用 `IonPage` 组件。
+应用中的页面需要使用 `IonPage` 组件，生命周期方法和钩子才能正确触发。
 :::
 
-更多信息和用例请参阅 [Vue 生命周期文档](./lifecycle)。
+更多信息和用法示例请参阅 [Vue 生命周期文档](./lifecycle)。

@@ -31,24 +31,24 @@ function Example() {
   ]);
 
   function handlePullStart() {
-    console.log('下拉刷新开始');
+    console.log('Pull started');
 
-    // 下拉开始时禁用所有复选框
+    // Disable the checkboxes when the pull starts
     setItems((prev) => prev.map((item) => ({ ...item, disabled: true })));
   }
 
   function handlePullEnd(event: RefresherPullEndCustomEvent) {
-    console.log('下拉结束，原因: "' + event.detail.reason + '"');
+    console.log('Pull ended with reason: "' + event.detail.reason + '"');
 
-    // 下拉结束时重新启用所有复选框
+    // Enable the checkboxes when the pull ends
     setItems((prev) => prev.map((item) => ({ ...item, disabled: false })));
   }
 
   function handleRefresh(event: RefresherCustomEvent) {
     setTimeout(() => {
-      // 在此处添加加载数据的调用
+      // Any calls to load data go here
       event.target.complete();
-      console.log('刷新完成');
+      console.log('Refresh completed');
     }, 2000);
   }
 
@@ -56,7 +56,7 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>下拉刷新</IonTitle>
+          <IonTitle>Pull to Refresh</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -71,7 +71,7 @@ function Example() {
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
 
-        <p>向下拉动此内容以触发刷新。</p>
+        <p>Pull this content down to trigger the refresh.</p>
 
         <IonList lines="full">
           {items.map((item: TodoItem) => (

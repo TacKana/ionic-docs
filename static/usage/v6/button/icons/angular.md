@@ -1,11 +1,11 @@
 ```html
 <ion-button>
   <ion-icon slot="start" name="star"></ion-icon>
-  左侧图标
+  Left Icon
 </ion-button>
 
 <ion-button>
-  右侧图标
+  Right Icon
   <ion-icon slot="end" name="star"></ion-icon>
 </ion-button>
 

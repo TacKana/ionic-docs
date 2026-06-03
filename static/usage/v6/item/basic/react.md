@@ -6,41 +6,41 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonLabel>基础项目</IonLabel>
+        <IonLabel>Basic Item</IonLabel>
       </IonItem>
 
       <IonItem>
         <IonLabel>
-          当文本过长超出单行显示时，会自动截断并显示省略号。Lorem ipsum dolor sit amet,
+          Multi-line text that should ellipsis when it is too long to fit on one line. Lorem ipsum dolor sit amet,
           consectetur adipiscing elit.
         </IonLabel>
       </IonItem>
 
       <IonItem>
         <IonLabel class="ion-text-wrap">
-          当文本过长超出单行显示时，会自动换行。Lorem ipsum dolor sit amet,
+          Multi-line text that should wrap when it is too long to fit on one line. Lorem ipsum dolor sit amet,
           consectetur adipiscing elit.
         </IonLabel>
       </IonItem>
 
       <IonItem>
         <IonLabel>
-          <h1>H1 标题</h1>
-          <p>段落</p>
+          <h1>H1 Heading</h1>
+          <p>Paragraph</p>
         </IonLabel>
       </IonItem>
 
       <IonItem>
         <IonLabel>
-          <h2>H2 标题</h2>
-          <p>段落</p>
+          <h2>H2 Heading</h2>
+          <p>Paragraph</p>
         </IonLabel>
       </IonItem>
 
       <IonItem>
         <IonLabel>
-          <h3>H3 标题</h3>
-          <p>段落</p>
+          <h3>H3 Heading</h3>
+          <p>Paragraph</p>
         </IonLabel>
       </IonItem>
     </>

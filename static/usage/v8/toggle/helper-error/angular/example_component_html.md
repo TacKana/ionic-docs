@@ -2,8 +2,8 @@
 <form [formGroup]="myForm">
   <ion-toggle
     formControlName="wifi"
-    helperText="启用后连接到可用网络"
-    errorText="必须启用才能访问互联网"
+    helperText="Enable to connect to available networks"
+    errorText="Must be enabled to access the internet"
     justify="space-between"
     (ionChange)="onChange()"
   >

@@ -1,12 +1,12 @@
 ```css
-/* Ionic 变量与主题定制
+/* Ionic Variables and Theming
  * ---------------------------------------------------------------
- * 任何对主题变量的覆盖都应放在此文件中。
- * 更多信息请参考：
+ * Any overrides to theme variables should be placed in this file.
+ * For more information, please see:
  * http://ionicframework.com/docs/theming/
  */
 
-/* 为玫瑰色设置 CSS 变量 */
+/* This sets the CSS variables for the rose color */
 :root {
   --ion-color-rose: #831843;
   --ion-color-rose-rgb: 131, 24, 67;
@@ -16,7 +16,7 @@
   --ion-color-rose-tint: #8f2f56;
 }
 
-/* 覆盖两种模式的全局 CSS 变量 */
+/* This overrides the global CSS variables for both modes */
 :root.ios,
 :root.md {
   --ion-background-color: #ffffff;
@@ -66,7 +66,7 @@
   --ion-background-color-step-950: #8e1e40;
 }
 
-/* 添加玫瑰色 */
+/* This adds the rose color */
 .ion-color-rose {
   --ion-color-base: var(--ion-color-rose);
   --ion-color-base-rgb: var(--ion-color-rose-rgb);

@@ -1,42 +1,42 @@
 ```html
 <template>
   <ion-item>
-    <ion-label>默认项目分隔线</ion-label>
+    <ion-label> Default Item Lines </ion-label>
   </ion-item>
 
   <ion-item lines="inset">
-    <ion-label>内嵌式分隔线</ion-label>
+    <ion-label>Item Lines Inset</ion-label>
   </ion-item>
 
   <ion-item lines="full">
-    <ion-label>完整分隔线</ion-label>
+    <ion-label>Item Lines Full</ion-label>
   </ion-item>
 
   <ion-item lines="none">
-    <ion-label>无分隔线</ion-label>
+    <ion-label>Item Lines None</ion-label>
   </ion-item>
 
   <ion-item>
     <ion-icon :icon="star" slot="start"></ion-icon>
-    <ion-label>默认项目分隔线</ion-label>
+    <ion-label>Default Item Lines</ion-label>
     <ion-icon :icon="informationCircle" slot="end"></ion-icon>
   </ion-item>
 
   <ion-item lines="inset">
     <ion-icon :icon="star" slot="start"></ion-icon>
-    <ion-label>内嵌式分隔线</ion-label>
+    <ion-label>Item Lines Inset</ion-label>
     <ion-icon :icon="informationCircle" slot="end"></ion-icon>
   </ion-item>
 
   <ion-item lines="full">
     <ion-icon :icon="star" slot="start"></ion-icon>
-    <ion-label>完整分隔线</ion-label>
+    <ion-label>Item Lines Full</ion-label>
     <ion-icon :icon="informationCircle" slot="end"></ion-icon>
   </ion-item>
 
   <ion-item lines="none">
     <ion-icon :icon="star" slot="start"></ion-icon>
-    <ion-label>无分隔线</ion-label>
+    <ion-label>Item Lines None</ion-label>
     <ion-icon :icon="informationCircle" slot="end"></ion-icon>
   </ion-item>
 </template>

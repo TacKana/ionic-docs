@@ -15,172 +15,172 @@ import TabItem from '@theme/TabItem';
 <TabItem value="javascript">
 
 ```html
-<!-- 基础用法 -->
+<!-- Basic -->
 
-<!-- 旧写法 -->
+<!-- Before -->
 <ion-item>
-  <ion-label>通知</ion-label>
+  <ion-label>Notifications</ion-label>
   <ion-toggle></ion-toggle>
 </ion-item>
 
-<!-- 新写法 -->
+<!-- After -->
 <ion-item>
-  <ion-toggle>通知</ion-toggle>
+  <ion-toggle>Notifications</ion-toggle>
 </ion-item>
 
-<!-- 固定标签 -->
+<!-- Fixed Labels -->
 
-<!-- 旧写法 -->
+<!-- Before -->
 <ion-item>
-  <ion-label position="fixed">通知</ion-label>
+  <ion-label position="fixed">Notifications</ion-label>
   <ion-toggle></ion-toggle>
 </ion-item>
 
-<!-- 新写法 -->
+<!-- After -->
 <ion-item>
-  <ion-toggle label-placement="fixed">通知</ion-toggle>
+  <ion-toggle label-placement="fixed">Notifications</ion-toggle>
 </ion-item>
 
-<!-- 开关在前，标签在后 -->
+<!-- Toggle at the start of line, Label at the end of line -->
 
-<!-- 旧写法 -->
+<!-- Before -->
 <ion-item>
-  <ion-label slot="end">通知</ion-label>
+  <ion-label slot="end">Notifications</ion-label>
   <ion-toggle></ion-toggle>
 </ion-item>
 
-<!-- 新写法 -->
+<!-- After -->
 <ion-item>
-  <ion-toggle label-placement="end">通知</ion-toggle>
+  <ion-toggle label-placement="end">Notifications</ion-toggle>
 </ion-item>
 ```
 </TabItem>
 <TabItem value="angular">
 
 ```html
-<!-- 基础用法 -->
+<!-- Basic -->
 
-<!-- 旧写法 -->
+<!-- Before -->
 <ion-item>
-  <ion-label>通知</ion-label>
+  <ion-label>Notifications</ion-label>
   <ion-toggle></ion-toggle>
 </ion-item>
 
-<!-- 新写法 -->
+<!-- After -->
 <ion-item>
-  <ion-toggle>通知</ion-toggle>
+  <ion-toggle>Notifications</ion-toggle>
 </ion-item>
 
-<!-- 固定标签 -->
+<!-- Fixed Labels -->
 
-<!-- 旧写法 -->
+<!-- Before -->
 <ion-item>
-  <ion-label position="fixed">通知</ion-label>
+  <ion-label position="fixed">Notifications</ion-label>
   <ion-toggle></ion-toggle>
 </ion-item>
 
-<!-- 新写法 -->
+<!-- After -->
 <ion-item>
-  <ion-toggle label-placement="fixed">通知</ion-toggle>
+  <ion-toggle label-placement="fixed">Notifications</ion-toggle>
 </ion-item>
 
-<!-- 开关在前，标签在后 -->
+<!-- Toggle at the start of line, Label at the end of line -->
 
-<!-- 旧写法 -->
+<!-- Before -->
 <ion-item>
-  <ion-label slot="end">通知</ion-label>
+  <ion-label slot="end">Notifications</ion-label>
   <ion-toggle></ion-toggle>
 </ion-item>
 
-<!-- 新写法 -->
+<!-- After -->
 <ion-item>
-  <ion-toggle label-placement="end">通知</ion-toggle>
+  <ion-toggle label-placement="end">Notifications</ion-toggle>
 </ion-item>
 ```
 </TabItem>
 <TabItem value="react">
 
 ```tsx
-{/* 基础用法 */}
+{/* Basic */}
 
-{/* 旧写法 */}
+{/* Before */}
 <IonItem>
-  <IonLabel>通知</IonLabel>
+  <IonLabel>Notifications</IonLabel>
   <IonToggle></IonToggle>
 </IonItem>
 
-{/* 新写法 */}
+{/* After */}
 <IonItem>
-  <IonToggle>通知</IonToggle>
+  <IonToggle>Notifications</IonToggle>
 </IonItem>
 
-{/* 固定标签 */}
+{/* Fixed Labels */}
 
-{/* 旧写法 */}
+{/* Before */}
 <IonItem>
-  <IonLabel position="fixed">通知</IonLabel>
+  <IonLabel position="fixed">Notifications</IonLabel>
   <IonToggle></IonToggle>
 </IonItem>
 
-{/* 新写法 */}
+{/* After */}
 <IonItem>
-  <IonToggle labelPlacement="fixed">通知</IonToggle>
+  <IonToggle labelPlacement="fixed">Notifications</IonToggle>
 </IonItem>
 
-{/* 开关在前，标签在后 */}
+{/* Toggle at the start of line, Label at the end of line */}
 
-{/* 旧写法 */}
+{/* Before */}
 <IonItem>
-  <IonLabel slot="end">通知</IonLabel>
+  <IonLabel slot="end">Notifications</IonLabel>
   <IonToggle></IonToggle>
 </IonItem>
 
-{/* 新写法 */}
+{/* After */}
 <IonItem>
-  <IonToggle labelPlacement="end">通知</IonToggle>
+  <IonToggle labelPlacement="end">Notifications</IonToggle>
 </IonItem>
 ```
 </TabItem>
 <TabItem value="vue">
 
 ```html
-<!-- 基础用法 -->
+<!-- Basic -->
 
-<!-- 旧写法 -->
+<!-- Before -->
 <ion-item>
-  <ion-label>通知</ion-label>
+  <ion-label>Notifications</ion-label>
   <ion-toggle></ion-toggle>
 </ion-item>
 
-<!-- 新写法 -->
+<!-- After -->
 <ion-item>
-  <ion-toggle>通知</ion-toggle>
+  <ion-toggle>Notifications</ion-toggle>
 </ion-item>
 
-<!-- 固定标签 -->
+<!-- Fixed Labels -->
 
-<!-- 旧写法 -->
+<!-- Before -->
 <ion-item>
-  <ion-label position="fixed">通知</ion-label>
+  <ion-label position="fixed">Notifications</ion-label>
   <ion-toggle></ion-toggle>
 </ion-item>
 
-<!-- 新写法 -->
+<!-- After -->
 <ion-item>
-  <ion-toggle label-placement="fixed">通知</ion-toggle>
+  <ion-toggle label-placement="fixed">Notifications</ion-toggle>
 </ion-item>
 
-<!-- 开关在前，标签在后 -->
+<!-- Toggle at the start of line, Label at the end of line -->
 
-<!-- 旧写法 -->
+<!-- Before -->
 <ion-item>
-  <ion-label slot="end">通知</ion-label>
+  <ion-label slot="end">Notifications</ion-label>
   <ion-toggle></ion-toggle>
 </ion-item>
 
-<!-- 新写法 -->
+<!-- After -->
 <ion-item>
-  <ion-toggle label-placement="end">通知</ion-toggle>
+  <ion-toggle label-placement="end">Notifications</ion-toggle>
 </ion-item>
 ```
 </TabItem>

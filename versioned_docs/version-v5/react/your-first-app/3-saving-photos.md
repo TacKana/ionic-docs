@@ -4,14 +4,14 @@ sidebar_label: 保存照片
 
 # 将照片保存到文件系统
 
-我们现在已经能够拍摄多张照片，并在应用第二个标签页的照片库中显示它们。然而，这些照片目前并未永久存储，因此当应用关闭时，它们将会丢失。
+我们现在可以拍摄多张照片并在应用的第二个标签页的相册中显示它们。然而，这些照片目前尚未永久存储，因此当应用关闭时，它们将会丢失。
 
-## 文件系统 API
+## Filesystem API
 
-幸运的是，将照片保存到文件系统只需几个步骤。首先打开 `usePhotoGallery` 钩子 (`src/hooks/usePhotoGallery.ts`)，并从 `Filesystem` 类获取 `writeFile` 方法的访问权限：
+幸运的是，将它们保存到文件系统只需要几个步骤。首先打开 `usePhotoGallery` hook（`src/hooks/usePhotoGallery.ts`），并从 `Filesystem` 类中获取 `writeFile` 方法：
 
 :::note
-我们最初会使用 `writeFile` 方法，但很快也会用到其他方法，所以我们现在就提前导入它们。
+我们将首先使用 `writeFile` 方法，但稍后也会用到其他方法，所以我们现在就把它们导入。
 :::
 
 接下来，在 `usePhotoGallery` 中创建几个新函数：
@@ -26,8 +26,7 @@ export function usePhotoGallery() {
       directory: Directory.Data,
     });
 
-    // 使用 webPath 来显示新图像，而不是 base64 格式，
-    // 因为它已经加载到内存中了
+    // 使用 webPath 来显示新图像而不是 base64，因为它已经加载到内存中
     return {
       filepath: fileName,
       webviewPath: photo.webPath,
@@ -54,14 +53,14 @@ export async function base64FromPath(path: string): Promise<string> {
 ```
 
 :::note
-base64FromPath 方法是一个辅助工具，它会从提供的路径下载文件，并返回该文件的 base64 表示形式。
+base64FromPath 方法是一个辅助工具，它从提供的路径下载文件并返回该文件的 base64 表示形式。
 :::
 
-我们传入 `photo` 对象（代表新拍摄的设备照片）以及 `fileName`（为文件存储提供路径）。
+我们传入 `photo` 对象，它代表新拍摄的设备照片，以及 fileName，它将为文件提供存储路径。
 
-接下来，我们使用 Capacitor 的 [文件系统 API](https://capacitorjs.com/docs/apis/filesystem) 将照片保存到文件系统。我们首先将照片转换为 base64 格式，然后将数据传递给文件系统的 `writeFile` 函数。
+接下来，我们使用 Capacitor [Filesystem API](https://capacitorjs.com/docs/apis/filesystem) 将照片保存到文件系统。我们首先将照片转换为 base64 格式，然后将数据提供给 Filesystem 的 `writeFile` 函数。
 
-最后，在 `takePhoto` 方法中调用 `setPhotos` 之后，直接调用 `savePicture` 并传入照片对象和文件名。以下是完整方法：
+最后，在 `takePhoto` 方法中，在调用 `setPhotos` 之后直接调用 `savePicture` 并传入 photo 对象和文件名。以下是完整的方法：
 
 ```tsx
 const takePhoto = async () => {
@@ -78,4 +77,4 @@ const takePhoto = async () => {
 };
 ```
 
-完成！现在每次拍摄新照片时，它都会自动保存到文件系统。
+完成了！每次拍摄新照片时，它现在会自动保存到文件系统。

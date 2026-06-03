@@ -4,15 +4,15 @@ sidebar_label: 'cordova requirements'
 
 # ionic cordova requirements
 
-检查并列出所有平台所需的环境要求
+Checks and print out all the requirements for platforms
 
 ```shell
 ionic cordova requirements [options]
 ```
 
-与直接运行 `cordova requirements` 类似，但提供了更友好的检查方式。
+Like running `cordova requirements` directly, but provides friendly checks.
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -24,10 +24,10 @@ ionic cordova requirements [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <p>
-          需要检查环境要求的平台 (<code>android</code>, <code>ios</code>)
+          The platform for which you would like to gather requirements (<code>android</code>, <code>ios</code>)
         </p>
       </td>
     </tr>

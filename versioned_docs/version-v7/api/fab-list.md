@@ -13,9 +13,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-浮动操作按钮列表组件是用于容纳多个[浮动操作按钮](./fab-button)的容器。它包含与主浮动操作按钮相关的操作，点击时会展开显示。要指定按钮出现在哪一侧，请将 `side` 属性设置为 `"start"`、`"end"`、`"top"` 或 `"bottom"`。
+fab 列表组件是多个[fab 按钮](./fab-button)的容器。它包含与主 fab 按钮相关的操作，并在点击时飞散显示。要指定按钮应出现的方向，请将 `side` 属性设置为 `"start"`、`"end"`、`"top"` 或 `"bottom"`。
 
-关于使用示例，请参阅[浮动操作按钮文档](./fab)。
+用法示例请参阅 [fab 文档](./fab)。
 
 ## 属性
 
@@ -29,7 +29,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

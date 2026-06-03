@@ -4,13 +4,13 @@ sidebar_label: 'ssh generate'
 
 # ionic ssh generate
 
-生成一对私钥和公钥 SSH 密钥
+Generates a private and public SSH key pair
 
 ```shell
 ionic ssh generate [options]
 ```
 
-## 输入参数
+## Inputs
 
 <table className="reference-table">
   <thead>
@@ -22,15 +22,15 @@ ionic ssh generate [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
-        <p>私钥文件的保存路径</p>
+        <p>Destination of private key file</p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## 高级选项
+## Advanced Options
 
 <table className="reference-table">
   <thead>
@@ -47,23 +47,23 @@ ionic ssh generate [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <div>
           <p>
-            要生成的密钥类型：<code>ecdsa</code>、<code>ed25519</code>、<code>rsa</code>
+            The type of key to generate: <code>ecdsa</code>, <code>ed25519</code>, <code>rsa</code>
           </p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-t</code>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>rsa</td>
     </tr>
   </tbody>
@@ -81,21 +81,21 @@ ionic ssh generate [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>密钥的位数</p>
+          <p>Number of bits in the key</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-b</code>
       </td>
     </tr>
     <tr>
-      <th>默认值</th>
+      <th>Default</th>
       <td>2048</td>
     </tr>
   </tbody>
@@ -113,15 +113,15 @@ ionic ssh generate [options]
   </thead>
   <tbody>
     <tr>
-      <th>说明</th>
+      <th>Description</th>
       <td>
         <div>
-          <p>公钥中的注释信息。默认会使用您的 Ionic 邮箱地址</p>
+          <p>Annotation (comment) in public key. Your Ionic email address will be used</p>
         </div>
       </td>
     </tr>
     <tr>
-      <th>别名</th>
+      <th>Aliases</th>
       <td>
         <code>-C</code>
       </td>

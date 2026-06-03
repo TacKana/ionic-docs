@@ -4,15 +4,15 @@ import { IonTextarea } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonTextarea label="实心文本域" labelPlacement="floating" fill="solid" placeholder="请输入文本"></IonTextarea>
+      <IonTextarea label="Solid textarea" labelPlacement="floating" fill="solid" placeholder="Enter text"></IonTextarea>
 
       <br />
 
       <IonTextarea
-        label="轮廓文本域"
+        label="Outline textarea"
         labelPlacement="floating"
         fill="outline"
-        placeholder="请输入文本"
+        placeholder="Enter text"
       ></IonTextarea>
     </>
   );

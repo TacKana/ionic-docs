@@ -3,7 +3,7 @@
   <ion-list>
     <ion-item>
       <ion-icon aria-hidden="true" :icon="airplane" slot="start"></ion-icon>
-      <ion-label>飞行模式</ion-label>
+      <ion-label>Airplane Mode</ion-label>
     </ion-item>
     <ion-item>
       <ion-icon aria-hidden="true" :icon="wifi" slot="start"></ion-icon>
@@ -11,11 +11,11 @@
     </ion-item>
     <ion-item>
       <ion-icon aria-hidden="true" :icon="bluetooth" slot="start"></ion-icon>
-      <ion-label>蓝牙</ion-label>
+      <ion-label>Bluetooth</ion-label>
     </ion-item>
     <ion-item>
       <ion-icon aria-hidden="true" :icon="call" slot="start"></ion-icon>
-      <ion-label>蜂窝网络</ion-label>
+      <ion-label>Cellular</ion-label>
     </ion-item>
   </ion-list>
 

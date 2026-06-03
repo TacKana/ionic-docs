@@ -3,8 +3,8 @@
   <ion-list>
     <ion-item>
       <ion-select
-        aria-label="食物"
-        placeholder="选择食物"
+        aria-label="Food"
+        placeholder="Select food"
         :compareWith="compareWith"
         @ionChange="handleChange($event)"
         :multiple="true"
@@ -49,7 +49,7 @@
   };
 
   const handleChange = (event) => {
-    console.log('当前值:', JSON.stringify(event.detail.value));
+    console.log('Current value:', JSON.stringify(event.detail.value));
   };
 </script>
 ```

@@ -103,5 +103,8 @@
       "destination": "/:version/react/add-to-existing"
     }
   ],
-  "rewrites": [{ "source": "/:match*", "destination": "/:match*" }]
+  "rewrites": [
+    { "source": "/docs", "destination": "/" },
+    { "source": "/docs/:match*", "destination": "/:match*" }
+  ]
 }

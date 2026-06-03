@@ -4,7 +4,7 @@ import { IonRange } from '@ionic/react';
 function Example() {
   return (
     <IonRange
-      aria-label="双旋钮范围"
+      aria-label="Dual Knobs Range"
       dualKnobs={true}
       value={{
         lower: 20,

@@ -13,9 +13,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-面包屑（Breadcrumb）是面包屑导航组件中的单个导航项。它可以作为应用内部链接，也可以显示为纯文本。每个面包屑与下一个面包屑之间都有一个分隔符，并且可以选择性地包含图标。
+面包屑（Breadcrumb）是作为面包屑组件子元素的单个导航项。面包屑可以链接到应用中的其他位置，也可以是纯文本。每个面包屑与其下一个面包屑之间有一个分隔符，并且可以选择性地包含图标。
 
-更多信息请查阅 [Breadcrumbs](./breadcrumbs) 文档。
+更多信息请参阅[面包屑](./breadcrumbs)文档。
 
 ## 接口
 
@@ -29,7 +29,7 @@ interface BreadcrumbCollapsedClickEventDetail {
 
 ### BreadcrumbCustomEvent
 
-虽然不是必须的，但可以使用此接口替代 `CustomEvent` 接口以获得更强的类型约束。
+虽然不是必需的，但此接口可以替代 `CustomEvent` 接口以提供更强的类型支持。
 
 ```typescript
 interface BreadcrumbCustomEvent extends CustomEvent {
@@ -50,7 +50,7 @@ interface BreadcrumbCustomEvent extends CustomEvent {
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

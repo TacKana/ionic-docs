@@ -1,5 +1,5 @@
 ```html
-<ion-checkbox>主题化复选框</ion-checkbox>
+<ion-checkbox>Themed checkbox</ion-checkbox>
 
 <style>
   ion-checkbox {

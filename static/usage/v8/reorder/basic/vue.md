@@ -1,30 +1,30 @@
 ```html
 <template>
   <ion-list>
-    <!-- 默认情况下重排序手势被禁用，启用后即可拖放项目 -->
+    <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
     <ion-reorder-group :disabled="false" @ionReorderEnd="handleReorderEnd($event)">
       <ion-item>
-        <ion-label> 项目 1 </ion-label>
+        <ion-label> Item 1 </ion-label>
         <ion-reorder slot="end"></ion-reorder>
       </ion-item>
 
       <ion-item>
-        <ion-label> 项目 2 </ion-label>
+        <ion-label> Item 2 </ion-label>
         <ion-reorder slot="end"></ion-reorder>
       </ion-item>
 
       <ion-item>
-        <ion-label> 项目 3 </ion-label>
+        <ion-label> Item 3 </ion-label>
         <ion-reorder slot="end"></ion-reorder>
       </ion-item>
 
       <ion-item>
-        <ion-label> 项目 4 </ion-label>
+        <ion-label> Item 4 </ion-label>
         <ion-reorder slot="end"></ion-reorder>
       </ion-item>
 
       <ion-item>
-        <ion-label> 项目 5 </ion-label>
+        <ion-label> Item 5 </ion-label>
         <ion-reorder slot="end"></ion-reorder>
       </ion-item>
     </ion-reorder-group>
@@ -35,11 +35,13 @@
   import { IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, ReorderEndCustomEvent } from '@ionic/vue';
 
   const handleReorderEnd = (event: ReorderEndCustomEvent) => {
-    // `from` 和 `to` 属性分别包含拖拽开始和结束时项目的索引位置
-    console.log('从索引', event.detail.from, '拖拽到', event.detail.to);
+    // The `from` and `to` properties contain the index of the item
+    // when the drag started and ended, respectively
+    console.log('Dragged from index', event.detail.from, 'to', event.detail.to);
 
-    // 完成重排序，并根据手势结束位置在DOM中定位项目。
-    // 此方法也可由重排序组直接调用。
+    // Finish the reorder and position the item in the DOM based on
+    // where the gesture ended. This method can also be called directly
+    // by the reorder group.
     event.detail.complete();
   };
 </script>

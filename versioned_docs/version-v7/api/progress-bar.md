@@ -10,10 +10,10 @@ import CustomProps from '@ionic-internal/component-api/v7/progress-bar/custom-pr
 import Slots from '@ionic-internal/component-api/v7/progress-bar/slots.md';
 
 <head>
-  <title>ion-progress-bar：应用进度条加载指示器</title>
+  <title>ion-progress-bar：用于加载指示器的应用进度条</title>
   <meta
     name="description"
-    content="ion-progress-bar 是水平加载指示器，用于告知用户应用内进行中任务的状态——例如提交表单或保存更新。"
+    content="ion-progress-bar 是水平加载指示器，通知用户正在进行的应用进程的状态——例如提交表单或保存更新。"
   />
 </head>
 
@@ -21,27 +21,27 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-进度条用于告知用户进行中任务的状态，例如应用加载、表单提交或保存更新。进度条有两种类型：`determinate`（确定型）和 `indeterminate`（不确定型）。
+进度条（Progress bar）通知用户正在进行的进程的状态，例如加载应用、提交表单或保存更新。有两种类型的进度条：`determinate`（确定）和 `indeterminate`（不确定）。
 
-## 确定型进度条
+## 确定模式
 
-确定型是默认类型。当操作进度百分比已知时应使用此类型。通过设置 `value` 属性来显示进度，可用于展示从轨道 0% 到 100% 的进度增长过程。
+确定是默认类型。当知道操作的百分比时应使用此模式。进度通过设置 `value` 属性来表示。这可用于显示进度从 0 增加到轨道的 100%。
 
 import Determinate from '@site/static/usage/v7/progress-bar/determinate/index.md';
 
 <Determinate />
 
-### 缓冲状态
+### 缓冲
 
-若设置了 `buffer` 属性，将显示带有动画圆点的缓冲流以指示活动状态。`buffer` 属性的值也会通过可见轨道的长度来体现。如果 `buffer` 的值小于 `value` 属性，则不会显示可见轨道。若 `buffer` 等于 `1`，缓冲流将被隐藏。
+如果设置了 `buffer` 属性，将显示一个带有动画圆圈的缓冲流以指示活动。`buffer` 属性的值也将通过可见轨道的多少来表示。如果 `buffer` 的值小于 `value` 属性，则不会有可见轨道。如果 `buffer` 等于 `1`，则缓冲流将被隐藏。
 
 import Buffer from '@site/static/usage/v7/progress-bar/buffer/index.md';
 
 <Buffer />
 
-## 不确定型进度条
+## 不确定模式
 
-不确定型应用于无法预估任务所需时间的情况。该进度条不与 `value` 值绑定，而是在任务完成前持续在轨道上滑动。
+当不知道进程需要多长时间时，应使用不确定类型。进度条不依赖于 `value`，而是沿着轨道持续滑动，直到进程完成。
 
 import Indeterminate from '@site/static/usage/v7/progress-bar/indeterminate/index.md';
 
@@ -49,13 +49,13 @@ import Indeterminate from '@site/static/usage/v7/progress-bar/indeterminate/inde
 
 ## 工具栏中的进度条
 
-<!-- 复用 Toolbar 目录中的示例 -->
+<!-- 复用 Toolbar 目录下的 playground -->
 
 import Toolbar from '@site/static/usage/v7/toolbar/progress-bars/index.md';
 
 <Toolbar />
 
-## 主题定制
+## 主题
 
 ### 颜色
 
@@ -69,7 +69,7 @@ import CSSProps from '@site/static/usage/v7/progress-bar/theming/css-properties/
 
 <CSSProps />
 
-### CSS Shadow Parts
+### CSS 阴影部分
 
 import CSSParts from '@site/static/usage/v7/progress-bar/theming/css-shadow-parts/index.md';
 
@@ -87,7 +87,7 @@ import CSSParts from '@site/static/usage/v7/progress-bar/theming/css-shadow-part
 
 <Methods />
 
-## CSS Shadow Parts
+## CSS 阴影部分
 
 <Parts />
 

@@ -4,25 +4,25 @@ import { IonButton, IonContent, IonItem, IonList, IonPopover } from '@ionic/reac
 function Example() {
   return (
     <>
-      <IonButton id="popover-button">打开菜单</IonButton>
+      <IonButton id="popover-button">Open Menu</IonButton>
       <IonPopover trigger="popover-button" dismissOnSelect={true}>
         <IonContent>
           <IonList>
             <IonItem button={true} detail={false}>
-              选项 1
+              Option 1
             </IonItem>
             <IonItem button={true} detail={false}>
-              选项 2
+              Option 2
             </IonItem>
             <IonItem button={true} id="nested-trigger">
-              更多选项...
+              More options...
             </IonItem>
 
             <IonPopover trigger="nested-trigger" dismissOnSelect={true} side="end">
               <IonContent>
                 <IonList>
                   <IonItem button={true} detail={false}>
-                    嵌套选项
+                    Nested option
                   </IonItem>
                 </IonList>
               </IonContent>
