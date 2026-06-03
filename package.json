@@ -8,7 +8,9 @@
   "scripts": {
     "prebuild": "npm run generate-markdown; scripts/i18n.sh; if [ -n \"$CROWDIN_PERSONAL_TOKEN\" ]; then npm run crowdin:sync; fi",
     "build": "npm run build:${VERCEL_ENV:-preview}",
+    "prebuild:preview": "npm run generate-markdown",
     "build:preview": "docusaurus build --locale zh",
+    "prebuild:production": "npm run generate-markdown; scripts/i18n.sh; if [ -n \"$CROWDIN_PERSONAL_TOKEN\" ]; then npm run crowdin:sync; fi",
     "build:production": "docusaurus build",
     "clear": "docusaurus clear",
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
