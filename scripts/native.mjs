@@ -1,159 +1,109 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import fetch from 'node-fetch';
 
-// replace with latest once it's relased
 const tag = 'latest';
+const HASH_FILE = 'scripts/api-hashes-native.json';
+const OUTPUT_DIR = 'docs/native';
+const VERSIONED_DIRS = ['versioned_docs/version-v6/native', 'versioned_docs/version-v7/native'];
 
 const pluginApis = [
-  'action-sheet',
-  'app',
-  'app-launcher',
-  'browser',
-  'camera',
-  'clipboard',
-  'device',
-  'dialog',
-  'filesystem',
-  'geolocation',
-  'google-maps',
-  'haptics',
-  'keyboard',
-  'local-notifications',
-  'motion',
-  'network',
-  'preferences',
-  'push-notifications',
-  'screen-reader',
-  'share',
-  'splash-screen',
-  'status-bar',
-  'text-zoom',
-  'toast',
+  'action-sheet', 'app', 'app-launcher', 'browser', 'camera', 'clipboard',
+  'device', 'dialog', 'filesystem', 'geolocation', 'google-maps', 'haptics',
+  'keyboard', 'local-notifications', 'motion', 'network', 'preferences',
+  'push-notifications', 'screen-reader', 'share', 'splash-screen',
+  'status-bar', 'text-zoom', 'toast',
 ];
 
-async function buildPluginApiDocs(pluginId) {
-  const [readme, pkgJson] = await Promise.all([getReadme(pluginId), getPkgJsonData(pluginId)]);
+// ====== 哈希清单管理 ======
 
-  const fileName = `${pluginId}.md`;
-  const filePath = `docs/native/${fileName}`;
-
-  // 检查文件是否已被翻译
-  const existing = getExistingTranslation(filePath);
-  const newHash = hashContent(readme);
-
-  if (existing) {
-    if (existing.sourceHash === newHash) {
-      console.log(`跳过 ${fileName}（已被翻译，上游无变更）`);
-    } else if (!existing.sourceHash) {
-      const updated = updateSourceHash(existing.content, newHash);
-      writeFileSync(filePath, updated);
-      console.log(`更新 ${fileName}（补充 source_hash）`);
-    } else {
-      console.warn(`⚠️  ${fileName}：上游文档已更新，翻译需要同步！`);
-      console.warn(`   存储哈希: ${existing.sourceHash}`);
-      console.warn(`   最新哈希: ${newHash}`);
-      const updated = updateSourceHash(existing.content, newHash);
-      writeFileSync(filePath, updated);
-    }
-    return;
-  }
-
-  // 新文件，正常生成
-  const apiContent = createApiPage(pluginId, readme, pkgJson);
-  writeFileSync(filePath, apiContent);
-  writeFileSync(`versioned_docs/version-v6/native/${fileName}`, apiContent);
-  writeFileSync(`versioned_docs/version-v7/native/${fileName}`, apiContent);
+function loadManifest() {
+  try { return JSON.parse(readFileSync(HASH_FILE, 'utf-8')); }
+  catch { return {}; }
 }
 
-/**
- * 获取已存在文件的翻译信息和源哈希
- * @param {string} filePath
- * @returns {{ content: string, sourceHash: string } | null}
- */
-function getExistingTranslation(filePath) {
-  try {
-    const content = readFileSync(filePath, 'utf-8');
-    const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
-    if (frontmatterMatch && /translated:\s*true/.test(frontmatterMatch[1])) {
-      const hashMatch = frontmatterMatch[1].match(/source_hash:\s*(\S+)/);
-      return {
-        content,
-        sourceHash: hashMatch ? hashMatch[1] : '',
-      };
-    }
-  } catch (e) {
-    // 文件不存在
-  }
-  return null;
+function saveManifest(manifest) {
+  const sorted = {};
+  Object.keys(manifest).sort().forEach(k => sorted[k] = manifest[k]);
+  writeFileSync(HASH_FILE, JSON.stringify(sorted, null, 2) + '\n');
 }
 
-/**
- * 简单的内容哈希
- * @param {string} content
- * @returns {string}
- */
 function hashContent(content) {
   let hash = 0;
   for (let i = 0; i < content.length; i++) {
-    const chr = content.charCodeAt(i);
-    hash = ((hash << 5) - hash) + chr;
+    hash = ((hash << 5) - hash) + content.charCodeAt(i);
     hash |= 0;
   }
   return Math.abs(hash).toString(16);
 }
 
-/**
- * 更新文件 frontmatter 中的 source_hash
- * @param {string} content
- * @param {string} newHash
- * @returns {string}
- */
-function updateSourceHash(content, newHash) {
-  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
-  if (!frontmatterMatch) return content;
-
-  const oldFm = frontmatterMatch[1];
-  let newFm;
-  if (/source_hash:/.test(oldFm)) {
-    newFm = oldFm.replace(/source_hash:\s*\S+/, `source_hash: ${newHash}`);
-  } else {
-    newFm = oldFm + `\nsource_hash: ${newHash}`;
-  }
-  return content.replace(oldFm, newFm);
+function isFileTranslated(filePath) {
+  try {
+    const content = readFileSync(filePath, 'utf-8');
+    const fm = content.match(/^---\n([\s\S]*?)\n---/);
+    return fm && /translated:\s*true/.test(fm[1]);
+  } catch { return false; }
 }
+
+// ====== 核心逻辑 ======
+
+async function buildPluginApiDocs(pluginId, manifest) {
+  const fileName = `${pluginId}.md`;
+  const filePath = `${OUTPUT_DIR}/${fileName}`;
+
+  const readme = await getReadme(pluginId);
+  const newHash = hashContent(readme);
+  const storedHash = manifest[pluginId];
+
+  if (!storedHash) {
+    // 首次运行：记录哈希，不覆盖已翻译文件
+    manifest[pluginId] = newHash;
+    if (existsSync(filePath)) {
+      console.log(`  \x1b[36m📝 ${fileName}：首次记录哈希 (${newHash})\x1b[0m`);
+    } else {
+      const pkgJson = await getPkgJsonData(pluginId);
+      const content = createApiPage(pluginId, readme, pkgJson);
+      writeFileSync(filePath, content);
+      for (const dir of VERSIONED_DIRS) writeFileSync(`${dir}/${fileName}`, content);
+      console.log(`  \x1b[90m📄 ${fileName}：新插件，已生成\x1b[0m`);
+    }
+    return;
+  }
+
+  if (newHash === storedHash) {
+    console.log(`  \x1b[32m✅ ${fileName}：上游无变更\x1b[0m`);
+    return;
+  }
+
+  // 上游有更新
+  manifest[pluginId] = newHash;
+  if (isFileTranslated(filePath)) {
+    console.log(`  \x1b[33m⚠️  ${fileName}：上游已更新，翻译需同步！\x1b[0m`);
+    console.log(`  \x1b[33m   旧哈希: ${storedHash} → 新哈希: ${newHash}\x1b[0m`);
+  } else {
+    const pkgJson = await getPkgJsonData(pluginId);
+    const content = createApiPage(pluginId, readme, pkgJson);
+    writeFileSync(filePath, content);
+    for (const dir of VERSIONED_DIRS) writeFileSync(`${dir}/${fileName}`, content);
+    console.log(`  \x1b[90m📄 ${fileName}：上游更新，已重新生成\x1b[0m`);
+  }
+}
+
+// ====== 辅助函数 ======
 
 function createApiPage(pluginId, readme, pkgJson) {
   const title = `${toTitleCase(pluginId)} Capacitor Plugin API`;
   const desc = pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
+  const sidebarLabel = toTitleCase(pluginId);
   const editUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/README.md`;
   const editApiUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/src/definitions.ts`;
-  const sidebarLabel = toTitleCase(pluginId);
 
-  /**
-   * Cleanup and transform JSDoc content for compatibility with MDX/Docusaurus:
-   * 
-   * - Remove HTML comments (`<!-- ... -->`) which are not valid in MDX and will cause parsing errors.
-   * - Escape `{` characters inside <code> blocks because MDX treats `{}` as JavaScript expressions. Unescaped `{` inside code blocks can cause parsing errors.
-   * - Convert JSDoc-style {@link URL|Text} and {@link URL} to proper Markdown links:
-   *   - {@link URL|Text} → [Text](URL)
-   *   - {@link URL} → [URL](URL)
-   *   This is necessary because MDX does not understand the JSDoc `@link` syntax, and leaving it unconverted will cause parsing errors.
-   */
   readme = readme
-    // Remove HTML comments
     .replaceAll(/<!--.*-->/g, '')
-    // Escape `{` characters inside <code> blocks to avoid Markdown parsing issues
-    .replace(/<code>(.*?)<\/code>/g, (_match, p1) => {
-      // Replace { with \{
-      return `<code>${p1.replace(/{/g, '\\{')}</code>`;
-    })
-    // Convert {@link URL|Text} to [Text](URL)
+    .replace(/<code>(.*?)<\/code>/g, (_match, p1) => `<code>${p1.replace(/{/g, '\\{')}</code>`)
     .replace(/\{@link\s+([^\s|}]+)\|([^}]+)\}/g, '[$2]($1)')
-    // Convert {@link URL} to [URL](URL)
     .replace(/\{@link\s+([^}]+)\}/g, '[$1]($1)');
 
-  return `
----
+  return `---
 title: ${title}
 description: ${desc}
 editUrl: ${editUrl}
@@ -175,25 +125,28 @@ async function getPkgJsonData(pluginId) {
   return rsp.json();
 }
 
-async function main() {
-  await Promise.all(pluginApis.map(buildPluginApiDocs));
-  console.log(`Plugin API Files Updated 🎸`);
+function toTitleCase(str) {
+  return str.replace(/(^\w|-\w)/g, s => s.replace(/-/, ' ').toUpperCase());
 }
 
-function toTitleCase(str) {
-  return str.replace(/(^\w|-\w)/g, (s) => {
-    return s.replace(/-/, ' ').toUpperCase();
-  });
+// ====== 入口 ======
+
+async function main() {
+  const manifest = loadManifest();
+  for (const pluginId of pluginApis) {
+    try {
+      await buildPluginApiDocs(pluginId, manifest);
+    } catch (e) {
+      console.log(`  \x1b[31m❌ ${pluginId}.md：${e.message}\x1b[0m`);
+    }
+  }
+  saveManifest(manifest);
+  console.log('📋 哈希清单已更新: scripts/api-hashes-native.json');
 }
 
 if (!String.prototype.replaceAll) {
   String.prototype.replaceAll = function (str, newStr) {
-    // If a regex pattern
-    if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
-      return this.replace(str, newStr);
-    }
-
-    // If a string
+    if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') return this.replace(str, newStr);
     return this.replace(new RegExp(str, 'g'), newStr);
   };
 }
