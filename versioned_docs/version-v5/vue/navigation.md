@@ -125,7 +125,7 @@ const routes: Array<RouteRecordRaw> = [
 
 两种选项提供相同的导航机制，只是适用于不同的用例。
 
-## 懒加载路由
+## 延迟加载路由
 
 我们目前设置路由的方式使得它们在加载应用时被包含在同一个初始 chunk 中，这并不总是理想的。相反，我们可以设置路由，使组件在需要时才加载：
 
@@ -206,7 +206,7 @@ const routes: Array<RouteRecordRaw> = [
 
 在移动应用中，嵌套路由有意义的用例非常少。如有疑问，请使用共享 URL 路由配置。我们强烈建议不要在选项卡以外的上下文中使用嵌套路由，因为它可能会使应用导航变得混乱。
 
-## 使用选项卡
+## 使用标签
 
 使用选项卡时，Ionic Vue 需要知道哪个视图属于哪个选项卡。`IonTabs` 组件在这里就派上用场了，但让我们看看路由设置是什么样的：
 
@@ -310,7 +310,7 @@ const routes: Array<RouteRecordRaw> = [
 
 如果您之前使用过 Ionic Framework，这应该感觉很熟悉。我们创建一个 `ion-tabs` 组件并提供一个 `ion-tab-bar`。`ion-tab-bar` 提供 `ion-tab-button` 组件，每个组件都有一个 `tab` 属性，该属性与路由器配置中对应的选项卡相关联。我们还提供一个 `ion-router-outlet`，让 `ion-tabs` 有一个出口来渲染不同的选项卡视图。
 
-### 选项卡内的子路由
+### 标签内的子路由
 
 向选项卡添加额外路由时，应将它们编写为兄弟路由，以父选项卡作为路径前缀。下面的示例将 `/tabs/tab1/view` 路由定义为 `/tabs/tab1` 路由的兄弟路由。由于这个新路由具有 `tab1` 前缀，它将在 `Tabs` 组件内部渲染，并且 Tab 1 在 `ion-tab-bar` 中仍将处于选中状态。
 
@@ -349,13 +349,13 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-## IonRouterOutlet
+## IonRouterOutlet 组件 {#ionrouteroutlet}
 
 `IonRouterOutlet` 组件提供了一个容器来渲染您的视图。它类似于其他 Vue 应用中的 `RouterView` 组件，但 `IonRouterOutlet` 可以在同一个出口中渲染多个页面到 DOM 中。当一个组件在 `IonRouterOutlet` 中渲染时，我们认为这是 Ionic Framework 的"页面"。路由器出口容器控制页面之间的过渡动画，以及控制页面何时创建和销毁。这有助于在视图之间来回切换时保持它们之间的状态。
 
 在模板中设置 `IonRouterOutlet` 时，不应在其内部提供任何内容。虽然可以在子组件中嵌套 `IonRouterOutlet`，但我们不建议这样做，因为它通常会使应用导航变得混乱。更多信息请参见[共享 URL 与嵌套路由](#共享-url-与嵌套路由)。
 
-## IonPage
+## IonPage 组件 {#ionpage}
 
 `IonPage` 组件包裹 Ionic Vue 应用中的每个视图，并确保页面过渡和堆栈导航正常工作。通过路由器导航到的每个视图都必须包含一个 `IonPage` 组件。
 
@@ -473,7 +473,7 @@ const routes: Array<RouteRecordRaw> = [
 
 我们的 `route` 变量包含当前路由的实例。它还包含我们传入的任何参数。我们可以从这里获取 `id` 参数并显示在屏幕上。
 
-## 路由器历史模式
+## 路由历史
 
 Vue Router 提供了可配置的历史记录模式。让我们看看不同的选项以及为什么要使用每一种。
 

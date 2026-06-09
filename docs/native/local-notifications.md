@@ -1,9 +1,9 @@
 ---
-title: Local Notifications Capacitor 插件 API
+title: 本地通知 - Capacitor 插件 API
 description: Local Notifications API 提供在本地安排设备通知的方式（即无需服务器发送推送通知）。
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/local-notifications/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/local-notifications/src/definitions.ts
-sidebar_label: Local Notifications
+sidebar_label: 本地通知
 translated: true
 source_hash: 3ac6719e
 ---
@@ -18,7 +18,7 @@ npm install @capacitor/local-notifications
 npx cap sync
 ```
 
-## Android
+## Android 平台
 
 Android 13 需要权限检查才能发送通知。您需要相应调用 `checkPermissions()` 和 `requestPermissions()`。
 
@@ -93,11 +93,11 @@ export default config;
 
 </docgen-config>
 
-## Doze
+## Doze 模式
 
 如果设备已进入 [Doze](https://developer.android.com/training/monitoring-device-state/doze-standby) 模式，您的应用可能具有受限的能力。如果您需要通知即使在 Doze 期间也触发，请使用 `allowWhileIdle: true` 安排通知。请谨慎使用 `allowWhileIdle`，因为此类通知[每个应用每 9 分钟只能触发一次](https://developer.android.com/training/monitoring-device-state/doze-standby#assessing_your_app)。
 
-## API
+## API 参考
 
 <docgen-index>
 

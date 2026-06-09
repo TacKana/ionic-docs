@@ -5,18 +5,18 @@ module.exports = function (context, options) {
     name: 'docusaurus-plugin-ionic-component-api',
     async loadContent() {
       const classicPreset = context.siteConfig.presets.find((preset) => preset[0] === '@docusaurus/preset-classic');
-      // Finds the plugin options for @docusaurus/plugin-content-docs
+      // 查找 @docusaurus/preset-classic 的插件选项
       const docsPluginOptions = classicPreset[1].docs;
 
       const data = [];
       const currentVersion = docsPluginOptions.versions.current;
 
       /**
-       * Generates the markdown files for all components in a given version.
-       * @param {*} version The version, e.g.: v6
-       * @param {*} npmTag The npm tag, e.g.: 6 or next
-       * @param {*} lang The language, e.g.: en or ja
-       * @param {*} isCurrentVersion Whether or not this is the current version of the docs
+       * 为指定版本的所有组件生成 Markdown 文件。
+       * @param {*} version 版本号，例如：v6
+       * @param {*} npmTag npm 标签，例如：6 或 next
+       * @param {*} lang 语言，例如：en 或 ja
+       * @param {*} isCurrentVersion 是否是文档的当前版本
        */
       const generateMarkdownForVersion = async (version, npmTag, lang, isCurrentVersion) => {
         let COMPONENT_LINK_REGEXP;
@@ -27,7 +27,7 @@ module.exports = function (context, options) {
         const { components } = await response.json();
 
         const names = components.map((component) => component.tag.slice(4));
-        // matches all relative markdown links to a component, e.g. (../button)
+        // 匹配所有指向组件的相对 Markdown 链接，例如 (../button)
         COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
 
         components.forEach((comp) => {
@@ -60,7 +60,7 @@ module.exports = function (context, options) {
       } else if (currentVersion.path !== undefined) {
         npmTag = currentVersion.path.slice(1);
       }
-      // Latest version
+      // 最新版本
       await generateMarkdownForVersion(
         currentVersion.path || currentVersion.label,
         npmTag,
@@ -77,8 +77,7 @@ module.exports = function (context, options) {
       for (const data of content) {
         const basePath = `${data.version}/${data.componentTag}`;
         /**
-         * createData will create a file within the generated ./docusaurus
-         * directory within the plugin directory.
+         * createData 会在插件目录下的 ./docusaurus 生成目录中创建文件。
          */
         promises.push(
           createData(`${basePath}/props.md`, stripDocsPrefix(data.props)),
@@ -95,8 +94,8 @@ module.exports = function (context, options) {
 
     configureWebpack(config, isServer, utils) {
       /**
-       * Adds a custom import alias to the webpack configuration, so that the markdown files
-       * can import the auto-generated markdown files from: @ionic-internal/component-api/{version}/{componentTag}
+       * 添加自定义 import 别名到 webpack 配置，使 Markdown 文件
+       * 可以通过 @ionic-internal/component-api/{version}/{componentTag} 导入自动生成的 Markdown 文件。
        */
       return {
         resolve: {
@@ -110,11 +109,11 @@ module.exports = function (context, options) {
 };
 
 /**
- * Calculates the path to the directory where the auto-generated markdown files are stored.
- * @param {*} componentTag The tag name of the component, e.g.: ion-button
- * @param {*} version The version of Ionic that the file pertains to, e.g.: v6
- * @param {*} isCurrentVersion Whether the version is the current version of the docs
- * @returns The path to the directory where the auto-generated markdown files are stored.
+ * 计算存储自动生成的 Markdown 文件的目录路径。
+ * @param {*} componentTag 组件标签名，例如：ion-button
+ * @param {*} version 文件所属的 Ionic 版本，例如：v6
+ * @param {*} isCurrentVersion 是否是文档的当前版本
+ * @returns 存储自动生成的 Markdown 文件的目录路径
  */
 function getDirectoryPath(componentTag, version, isCurrentVersion) {
   if (isCurrentVersion) {
@@ -124,9 +123,9 @@ function getDirectoryPath(componentTag, version, isCurrentVersion) {
 }
 
 /**
- * Formats line breaks in a multiline string to be displayed in a table.
- * @param {*} str The string to format
- * @returns The formatted string
+ * 格式化多行字符串中的换行，以在表格中显示。
+ * @param {*} str 要格式化的字符串
+ * @returns 格式化后的字符串
  */
 function formatMultiline(str) {
   return str.split('\n\n').join('<br /><br />').split('\n').join(' ');
@@ -137,7 +136,7 @@ function stripDocsPrefix(str) {
 }
 
 /**
- * Kebab-case slug for API identifiers (camelCase props, method names).
+ * 为 API 标识符（camelCase 属性、方法名）生成 kebab-case 格式的 slug。
  */
 function apiIdentifierSlug(name) {
   return name
@@ -147,22 +146,20 @@ function apiIdentifierSlug(name) {
 }
 
 /**
- * Heading id for Properties subheadings.
- * Prefixes IDs with `prop-` so they never collide with narrative sections on the same
- * doc page that use headings like "Shape", "Fill", or "Size".
+ * Property 子标题的标题 id。
+ * 使用 `prop-` 前缀，使其永远不会与同一文档页面上使用 "Shape"、"Fill" 或 "Size" 等标题的叙述性章节冲突。
  *
- * Anchors become `#prop-${slug}` rather than `#${slug}`.
+ * 锚点变为 `#prop-${slug}` 而非 `#${slug}`。
  */
 function propertyHeadingId(propName) {
   return `prop-${apiIdentifierSlug(propName)}`;
 }
 
 /**
- * Heading id for Methods subheadings.
- * Prefixes IDs with `method-` so they never collide with narrative sections on the same
- * doc page that use headings like "Dismiss", "Present", or "Close".
+ * Methods 子标题的标题 id。
+ * 使用 `method-` 前缀，使其永远不会与同一文档页面上使用 "Dismiss"、"Present" 或 "Close" 等标题的叙述性章节冲突。
  *
- * Anchors become `#method-${slug}` rather than `#${slug}`.
+ * 锚点变为 `#method-${slug}` 而非 `#${slug}`。
  */
 function methodHeadingId(methodName) {
   return `method-${apiIdentifierSlug(methodName)}`;
@@ -171,9 +168,8 @@ function methodHeadingId(methodName) {
 function formatType(attr, type) {
   if (attr === 'color') {
     /**
-     * The `color` attribute has an additional type that we don't want to display.
-     * The union type is used to allow intellisense to recommend the color names,
-     * while still accepting any string value.
+     * `color` 属性有一个额外类型，我们不想显示它。
+     * 联合类型用于允许智能提示推荐颜色名称，同时仍然接受任何字符串值。
      */
     type = type.replace('string & Record<never, never>', 'string');
   }
@@ -182,16 +178,16 @@ function formatType(attr, type) {
 
 function renderProperties({ props: properties, docsTags }) {
   if (properties.length === 0) {
-    return 'No properties available for this component.';
+    return '该组件没有可用的属性。';
   }
 
-  // Extract virtual property names from component-level docsTags
+  // 从组件级别的 docsTags 中提取虚拟属性名称
   const virtualPropNames = [];
   if (docsTags) {
     docsTags.forEach((tag) => {
       if (tag.name === 'virtualProp') {
-        // Check if any property name exists in the virtualProp tag text
-        // and add it to the virtualPropNames array
+        // 检查 virtualProp 标签文本中是否包含任何属性名称
+        // 并将其添加到 virtualPropNames 数组中
         properties.forEach((prop) => {
           if (tag.text.includes(prop.name)) {
             virtualPropNames.push(prop.name);
@@ -201,7 +197,7 @@ function renderProperties({ props: properties, docsTags }) {
     });
   }
 
-  // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
+  // 注意：将 | 替换为 U+FF5C，因为 MDX 在表格中渲染 \| 不正确
   return `
 ${properties
   .map((prop) => {
@@ -210,21 +206,21 @@ ${properties
 
     let docs = prop.docs;
     if (isVirtual) {
-      docs = `${docs}\n\n这是一个[虚拟属性](/core-concepts/fundamentals#虚拟属性)，在初始化时设置一次，初始化后更改其值将不会更新组件。`;
+      docs = `${docs}\n\n这是一个[虚拟属性](/core-concepts/fundamentals#虚拟属性)，在初始化时设置一次，之后更改其值不会更新组件。`;
     }
     if (isDeprecated) {
-      docs = `${docs}\n\n**_Deprecated_** — ${prop.deprecation}`;
+      docs = `${docs}\n\n**_已弃用_** — ${prop.deprecation}`;
     }
 
     return `
-### ${prop.name} ${isDeprecated ? '(deprecated)' : ''} {#${propertyHeadingId(prop.name)}}
+### ${prop.name} ${isDeprecated ? '(已弃用)' : ''} {#${propertyHeadingId(prop.name)}}
 
 | | |
 | --- | --- |
-| **Description** | ${formatMultiline(docs)} |
-| **Attribute** | \`${prop.attr}\` |
-| **Type** | \`${formatType(prop.attr, prop.type)}\` |
-| **Default** | \`${prop.default}\` |
+| **说明** | ${formatMultiline(docs)} |
+| **属性** | \`${prop.attr}\` |
+| **类型** | \`${formatType(prop.attr, prop.type)}\` |
+| **默认值** | \`${prop.default}\` |
 
 `;
   })
@@ -233,17 +229,17 @@ ${properties
 
 function renderEvents({ events }) {
   if (events.length === 0) {
-    return 'No events available for this component.';
+    return '该组件没有可用的事件。';
   }
 
   return `
-| Name | Description | Bubbles |
+| Name | 说明 | 冒泡 |
 | --- | --- | --- |
 ${events
   .map((event) => {
     const isDeprecated = event.deprecation !== undefined;
-    const docs = isDeprecated ? `${event.docs}\n\n**_Deprecated_** — ${event.deprecation}` : event.docs;
-    return `| \`${event.event}\` ${isDeprecated ? '**(deprecated)**' : ''} | ${formatMultiline(docs)} | \`${
+    const docs = isDeprecated ? `${event.docs}\n\n**_已弃用_** — ${event.deprecation}` : event.docs;
+    return `| \`${event.event}\` ${isDeprecated ? '**(已弃用)**' : ''} | ${formatMultiline(docs)} | \`${
       event.bubbles
     }\` |`;
   })
@@ -251,9 +247,9 @@ ${events
 }
 
 /**
- * Formats method parameters for the optional Parameters row of each method table
- * @param {*} paramsArr Array of method parameters
- * @returns formatted parameters for methods table
+ * 格式化方法参数，用于每个方法表的可选 Parameters 行
+ * @param {*} paramsArr 方法参数数组
+ * @returns 格式化后的方法表格参数
  */
 function renderParameters(paramsArr) {
   if (!paramsArr.some((param) => param.docs)) {
@@ -266,15 +262,15 @@ function renderParameters(paramsArr) {
       return `**${param.name}**: ${formatMultiline(param.docs)}`;
     })
     .join('<br/>');
-  return `| **Parameters** | ${formattedParams} |`;
+  return `| **参数** | ${formattedParams} |`;
 }
 
 function renderMethods({ methods }) {
   if (methods.length === 0) {
-    return 'No public methods available for this component.';
+    return '该组件没有可用的公共方法。';
   }
 
-  // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
+  // 注意：将 | 替换为 U+FF5C，因为 MDX 在表格中渲染 \| 不正确
   return `
 ${methods
   .map(
@@ -283,8 +279,8 @@ ${methods
 
 | | |
 | --- | --- |
-| **Description** | ${formatMultiline(method.docs)} |
-| **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
+| **\u8bf4\u660e** | ${formatMultiline(method.docs)} |
+| **\u7b7e\u540d** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
 ${method.parameters.length !== 0 ? renderParameters(method.parameters) : ''}
 `
   )
@@ -295,11 +291,11 @@ ${method.parameters.length !== 0 ? renderParameters(method.parameters) : ''}
 
 function renderParts({ parts }) {
   if (parts.length === 0) {
-    return 'No CSS shadow parts available for this component.';
+    return '该组件没有可用的 CSS 阴影部分。';
   }
 
   return `
-| Name | Description |
+| Name | 说明 |
 | --- | --- |
 ${parts.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
 
@@ -312,18 +308,18 @@ function renderCustomProps({ styles: customProps }) {
 
   const renderTable = (props) => {
     if (props.length === 0) {
-      return 'No CSS custom properties available for this component.';
+      return '该组件没有可用的 CSS 自定义属性。';
     }
 
     return `
-    | Name | Description |
+    | Name | 说明 |
   | --- | --- |
   ${props.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
   `;
   };
 
   if (iosProps.length > 0 || mdProps.length > 0) {
-    // If the component has mode-specific custom props, render them in tabs for iOS and MD
+    // 如果组件有特定模式的自定义属性，则为 iOS 和 MD 渲染标签页
     return `
 import Tabs from '@theme/Tabs';
 
@@ -355,17 +351,17 @@ ${renderTable(mdProps)}
 
 `;
   }
-  // Otherwise render the custom props without the tabs for iOS and MD
+  // 否则直接渲染自定义属性，不显示 iOS/MD 标签页
   return renderTable(customProps);
 }
 
 function renderSlots({ slots }) {
   if (slots.length === 0) {
-    return 'No slots available for this component.';
+    return '该组件没有可用的插槽。';
   }
 
   return `
-| Name | Description |
+| Name | 说明 |
 | --- | --- |
 ${slots
   .map((slot) => {

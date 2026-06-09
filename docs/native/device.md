@@ -1,9 +1,9 @@
 ---
-title: Device Capacitor 插件 API
+title: 设备 - Capacitor 插件 API
 description: Device API 公开设备的内部信息，例如型号和操作系统版本，以及用户信息（如唯一 ID）。
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/device/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/device/src/definitions.ts
-sidebar_label: Device
+sidebar_label: 设备
 translated: true
 source_hash: 364cefaa
 ---
@@ -36,7 +36,7 @@ const logBatteryInfo = async () => {
 };
 ```
 
-## API
+## API 参考
 
 <docgen-index>
 

@@ -397,7 +397,7 @@ import { ellipse, square, triangle } from 'ionicons/icons';
 
 如果您以前使用过 Ionic 框架，这应该很熟悉。我们创建一个 `ion-tabs` 组件并提供一个 `ion-tab-bar`。`ion-tab-bar` 提供了 `ion-tab-button` 组件，每个组件都有一个 `tab` 属性，与路由配置中对应的标签相关联。我们还提供了一个 `ion-router-outlet`，让 `ion-tabs` 有一个出口来渲染不同的标签视图。
 
-### Ionic 中标签的工作原理
+### Ionic 中标签的工作方式
 
 Ionic 中的每个标签都被视为独立的导航堆栈。这意味着如果您的应用程序中有三个标签，每个标签都有自己的导航堆栈。在每个堆栈中，您可以向前导航（推入视图）和向后导航（弹出视图）。
 
@@ -484,13 +484,13 @@ const routes: Array<RouteRecordRaw> = [
 
 ## 组件
 
-### IonRouterOutlet
+### IonRouterOutlet 组件 {#ionrouteroutlet}
 
 `IonRouterOutlet` 组件提供了一个容器来渲染您的视图。它类似于其他 Vue 应用中的 `RouterView` 组件，但 `IonRouterOutlet` 可以在同一个出口中在 DOM 中渲染多个页面。当一个组件在 `IonRouterOutlet` 中渲染时，我们将其视为 Ionic 框架的"页面"。路由出口容器控制页面之间的过渡动画，以及控制页面何时被创建和销毁。这有助于在视图之间来回切换时保持状态。
 
 在模板中设置 `IonRouterOutlet` 时，不应在其内部提供任何内容。虽然 `IonRouterOutlet` 可以嵌套在子组件中，但我们不建议这样做，因为它通常会使应用中的导航变得混乱。更多信息请参阅[共享 URL 与嵌套路由](#共享-url-与嵌套路由)。
 
-### IonPage
+### IonPage 组件 {#ionpage}
 
 `IonPage` 组件包裹 Ionic Vue 应用中的每个视图，使页面过渡和堆栈导航能够正常工作。每个通过路由导航到的视图都必须包含一个 `IonPage` 组件。
 
@@ -517,7 +517,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 
 ## 函数
 
-### useIonRouter
+### useIonRouter 函数 {#useionrouter}
 
 ▸ **useIonRouter**(): [`UseIonRouterResult`](utility-functions#useionrouterresult)
 
@@ -575,7 +575,7 @@ defineProps<{ id: string }>();
 
 URL 中的 `id` 参数作为 prop 接收并渲染在屏幕上。组件本身不依赖于路由器。
 
-## 路由器历史模式
+## 路由历史
 
 Vue Router 带有可配置的历史模式。让我们看看不同的选项以及为什么可能需要使用每种模式。
 

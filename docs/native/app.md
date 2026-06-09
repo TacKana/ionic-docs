@@ -1,9 +1,9 @@
 ---
-title: App Capacitor 插件 API
+title: 应用 - Capacitor 插件 API
 description: App API 处理高级应用状态和事件。例如，此 API 在应用进入和离开前台时发出事件、处理深层链接、打开其他应用以及管理持久化的插件状态。
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/app/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/app/src/definitions.ts
-sidebar_label: App
+sidebar_label: 应用
 translated: true
 source_hash: 1c23f457
 ---
@@ -18,7 +18,7 @@ npm install @capacitor/app
 npx cap sync
 ```
 
-## iOS
+## iOS 平台
 
 要能够通过自定义方案打开应用，您需要先注册该方案。您可以通过编辑 [`Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) 文件并添加以下内容来实现。
 
@@ -36,7 +36,7 @@ npx cap sync
 </array>
 ```
 
-## Android
+## Android 平台
 
 要能够通过自定义方案打开应用，您需要先注册该方案。您可以通过在 `AndroidManifest.xml` 的 `activity` 部分中添加以下内容来实现。
 
@@ -118,7 +118,7 @@ export default config;
 
 </docgen-config>
 
-## API
+## API 参考
 
 <docgen-index>
 

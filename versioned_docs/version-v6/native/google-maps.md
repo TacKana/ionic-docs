@@ -1,9 +1,9 @@
 ---
-title: Google Maps Capacitor 插件 API
+title: Google 地图 - Capacitor 插件 API
 description: Capacitor 上的 Google 地图
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/google-maps/src/definitions.ts
-sidebar_label: Google Maps
+sidebar_label: Google 地图
 translated: true
 source_hash: 43bb8b4c
 ---
@@ -22,7 +22,7 @@ npx cap sync
 
 要在任何平台上使用 Google Maps SDK，需要与 _已启用结算功能_ 的账户关联的 API 密钥。这些可以从 [Google Cloud Console](https://console.cloud.google.com) 获取。Android、iOS 和 Javascript 三个平台都需要。有关获取这些 API 密钥的更多信息，请参阅每个平台的 [Google Maps 文档](https://developers.google.com/maps/documentation/android-sdk/overview)。
 
-## iOS
+## iOS 平台
 
 Google Maps SDK 支持通过 `enableCurrentLocation(bool)` 显示用户的当前位置。要使用此功能，Apple 要求在 `Info.plist` 中指定隐私说明：
 
@@ -50,7 +50,7 @@ cd ios/App
 pod update Google-Maps-iOS-Utils
 ```
 
-## Android
+## Android 平台
 
 适用于 Android 的 Google Maps SDK 要求您将 API 密钥添加到项目中的 AndroidManifest.xml 文件。
 
@@ -360,7 +360,7 @@ Vue({
 </script>
 ```
 
-## API
+## API 参考
 
 <docgen-index>
 

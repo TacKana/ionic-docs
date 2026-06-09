@@ -206,7 +206,7 @@ Vue Router 有一个 [router.go](https://router.vuejs.org/api/#go) 方法，允�
 
 `router.go()` 的一个关键特性是它期望你的应用历史是线性的。这意味着 `router.go()` 不应在使用非线性路由的应用中使用。更多信息请参阅[线性路由与非线性路由](#线性路由与非线性路由)。
 
-## 懒加载路由
+## 延迟加载路由
 
 目前设置路由的方式使它们在加载应用时被包含在相同的初始代码块中，这并非总是理想的。相反，我们可以设置路由以在需要时加载组件：
 
@@ -285,7 +285,7 @@ const routes: Array<RouteRecordRaw> = [
 
 非线性路由允许实现线性路由无法处理的复杂用户流程。然而，某些线性路由 API（如 `router.go()`）不能在这种非线性环境中使用。这意味着在使用标签或嵌套出口时不应使用 `router.go()`。
 
-### 应该选择哪一个？
+### 应该选择哪种？
 
 我们建议在需要添加非线性路由之前，保持应用尽可能简单。非线性路由非常强大，但它也为移动应用增加了相当大的复杂性。
 
@@ -343,7 +343,7 @@ const routes: Array<RouteRecordRaw> = [
 
 上面的路由是嵌套的，因为它们位于父路由的 `children` 数组中。注意父路由渲染了 `DashboardRouterOutlet` 组件。当你嵌套路由时，你需要渲染另一个 `ion-router-outlet` 实例。
 
-### 应该选择哪一个？
+### 应该选择哪种？
 
 当你想从页面 A 过渡到页面 B，同时保持两个页面在 URL 中的关系时，共享 URL 非常有用。在我们之前的示例中，`/dashboard` 页面上的按钮可以过渡到 `/dashboard/stats` 页面。两个页面之间的关系通过 a) 页面过渡和 b) URL 来保持。
 
@@ -542,13 +542,13 @@ const routes: Array<RouteRecordRaw> = [
 
 ## 组件
 
-### IonRouterOutlet
+### IonRouterOutlet 组件 {#ionrouteroutlet}
 
 `IonRouterOutlet` 组件提供了一个容器来渲染你的视图。它类似于其他 Vue 应用中的 `RouterView` 组件，但 `IonRouterOutlet` 可以在同一个出口的 DOM 中渲染多个页面。当一个组件在 `IonRouterOutlet` 中渲染时，我们将其视为 Ionic Framework 的"页面"。路由出口容器控制页面之间的过渡动画，以及控制页面何时被创建和销毁。这有助于在页面之间切换时保持视图之间的状态。
 
 在模板中设置 `IonRouterOutlet` 时，不应在其内部提供任何内容。虽然 `IonRouterOutlet` 可以嵌套在子组件中，但我们建议不要这样做，因为它通常会使应用导航变得混乱。更多信息请参阅[共享 URL 与嵌套路由](#共享-url-与嵌套路由)。
 
-### IonPage
+### IonPage 组件 {#ionpage}
 
 `IonPage` 组件包裹 Ionic Vue 应用中的每个视图，使页面过渡和堆栈导航能正常工作。每个使用路由导航到的视图都必须包含一个 `IonPage` 组件。
 
@@ -586,7 +586,7 @@ const routes: Array<RouteRecordRaw> = [
 
 ## 函数
 
-### useIonRouter
+### useIonRouter 函数 {#useionrouter}
 
 ▸ **useIonRouter**(): [`UseIonRouterResult`](utility-functions#useionrouterresult)
 

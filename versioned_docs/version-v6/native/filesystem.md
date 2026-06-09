@@ -1,9 +1,9 @@
 ---
-title: Filesystem Capacitor 插件 API
+title: 文件系统 - Capacitor 插件 API
 description: Filesystem API 提供类似 NodeJS 的 API，用于在设备上处理文件。
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/filesystem/src/definitions.ts
-sidebar_label: Filesystem
+sidebar_label: 文件系统
 translated: true
 source_hash: 355644dc
 ---
@@ -109,7 +109,7 @@ FileTransfer.addListener('progress', (progress) => {
 
 File Transfer 插件提供更高的可靠性、更好的错误处理（带有特定错误代码），并且还添加了上传功能。
 
-## iOS
+## iOS 平台
 
 要使文件显示在"文件"应用中，您还必须在 `Info.plist` 中设置以下键为 `YES`：
 
@@ -118,7 +118,7 @@ File Transfer 插件提供更高的可靠性、更好的错误处理（带有特
 
 阅读 [配置 iOS](https://capacitorjs.com/docs/ios/configuration) 获取帮助。
 
-## Android
+## Android 平台
 
 如果使用 <a href="#directory">`Directory.Documents`</a> 或 <a href="#directory">`Directory.ExternalStorage`</a>，在 Android 10 及更早版本上，此 API 需要向 `AndroidManifest.xml` 添加以下权限：
 
@@ -191,7 +191,7 @@ const appendBinaryData = async () => {
 };
 ```
 
-## API
+## API 参考
 
 <docgen-index>
 

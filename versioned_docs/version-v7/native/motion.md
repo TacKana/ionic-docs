@@ -1,9 +1,9 @@
 ---
-title: Motion Capacitor 插件 API
+title: 运动传感器 - Capacitor 插件 API
 description: Motion API 跟踪加速度计和设备方向（指南针方向等）
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/motion/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/motion/src/definitions.ts
-sidebar_label: Motion
+sidebar_label: 运动传感器
 translated: true
 source_hash: 63b810e0
 ---
@@ -58,7 +58,7 @@ const removeListeners = () => {
 
 请参阅 [`DeviceMotionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent) API 来了解 'accel' 事件中提供的数据。
 
-## API
+## API 参考
 
 <docgen-index>
 

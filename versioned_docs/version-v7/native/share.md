@@ -1,9 +1,9 @@
 ---
-title: Share Capacitor 插件 API
+title: 分享 - Capacitor 插件 API
 description: Share API 提供在任何支持分享的应用中分享内容的方法。
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/share/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/share/src/definitions.ts
-sidebar_label: Share
+sidebar_label: 分享
 translated: true
 source_hash: 39ddab3e
 ---
@@ -20,7 +20,7 @@ npm install @capacitor/share
 npx cap sync
 ```
 
-## Android
+## Android 平台
 
 默认情况下，Capacitor 应用只允许从缓存文件夹分享文件。要使其他 Android 文件夹可分享，必须将它们添加到 `android/app/src/main/res/xml/file_paths.xml` 文件中。请参阅 [FileProvider 文档](https://developer.android.com/reference/androidx/core/content/FileProvider) 中的"指定可用文件"部分了解可用位置。
 
@@ -61,7 +61,7 @@ await Share.share({
 
 每个平台使用不同的字段集，但您应提供所有字段。
 
-## API
+## API 参考
 
 <docgen-index>
 

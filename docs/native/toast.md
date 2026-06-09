@@ -1,9 +1,9 @@
 ---
-title: Toast Capacitor 插件 API
+title: Toast 提示 - Capacitor 插件 API
 description: Toast API 提供一个用于向用户显示重要信息的通知弹出窗口。就像真正的吐司一样！
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/toast/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/toast/src/definitions.ts
-sidebar_label: Toast
+sidebar_label: Toast 提示
 translated: true
 source_hash: 49ba71ad
 ---
@@ -34,7 +34,7 @@ const showHelloToast = async () => {
 };
 ```
 
-## API
+## API 参考
 
 <docgen-index>
 

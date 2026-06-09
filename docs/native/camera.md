@@ -1,5 +1,5 @@
 ---
-title: Camera Capacitor 插件 API
+title: 相机 - Capacitor 插件 API
 description: Camera API 提供使用相机拍照或从相册中选择已有照片的功能。
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/camera/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/camera/src/definitions.ts
@@ -18,7 +18,7 @@ npm install @capacitor/camera
 npx cap sync
 ```
 
-## iOS
+## iOS 平台
 
 iOS 需要在 `Info.plist` 中添加并填写以下使用说明：
 
@@ -28,7 +28,7 @@ iOS 需要在 `Info.plist` 中添加并填写以下使用说明：
 
 阅读 [iOS 指南](https://capacitorjs.com/docs/ios) 中的 [配置 `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) 了解有关在 Xcode 中设置 iOS 权限的更多信息。
 
-## Android
+## Android 平台
 
 从设备相册选取现有图片时，现在使用 Android Photo Picker 组件。Photo Picker 可在满足以下条件的设备上使用：
 
@@ -426,7 +426,7 @@ for (const result of results) {
 
 **(1)** `width`/`height` 各自独立工作，在保持宽高比的同时设置最大尺寸。`targetWidth`/`targetHeight` 必须一起使用——仅设置一个无效。
 
-## API
+## API 参考
 
 <docgen-index>
 

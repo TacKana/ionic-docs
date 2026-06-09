@@ -484,13 +484,13 @@ const routes: Array<RouteRecordRaw> = [
 
 ## 组件
 
-### IonRouterOutlet
+### IonRouterOutlet 组件 {#ionrouteroutlet}
 
 `IonRouterOutlet` 组件提供了一个容器来渲染您的视图。它类似于其他 Vue 应用中的 `RouterView` 组件，不同之处在于 `IonRouterOutlet` 可以在同一个出口中以 DOM 方式渲染多个页面。当一个组件在 `IonRouterOutlet` 中渲染时，我们认为这是 Ionic 框架的"页面"。路由出口容器控制页面之间的过渡动画，以及控制页面何时被创建和销毁。这有助于在视图之间来回切换时保持状态。
 
 在模板中设置 `IonRouterOutlet` 时，不应在其内部提供任何内容。虽然 `IonRouterOutlet` 可以嵌套在子组件中，但我们不建议这样做，因为它通常会使应用导航变得混乱。有关更多信息，请参阅[共享 URL 与嵌套路由](#共享-url-与嵌套路由)。
 
-### IonPage
+### IonPage 组件 {#ionpage}
 
 `IonPage` 组件包裹 Ionic Vue 应用中的每个视图，使页面过渡和堆栈导航正常工作。使用路由导航到的每个视图都必须包含一个 `IonPage` 组件。
 
@@ -517,7 +517,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue
 
 ## 函数
 
-### useIonRouter
+### useIonRouter 函数 {#useionrouter}
 
 ▸ **useIonRouter**(): [`UseIonRouterResult`](utility-functions#useionrouterresult)
 

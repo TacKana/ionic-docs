@@ -1,9 +1,9 @@
 ---
-title: Geolocation Capacitor 插件 API
+title: 地理位置 - Capacitor 插件 API
 description: Geolocation API 提供获取和跟踪设备当前位置的简单方法，使用 GPS 以及可用的海拔、方向和速度信息。
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/geolocation/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/geolocation/src/definitions.ts
-sidebar_label: Geolocation
+sidebar_label: 地理位置
 translated: true
 source_hash: 6f27580e
 ---
@@ -18,7 +18,7 @@ npm install @capacitor/geolocation
 npx cap sync
 ```
 
-## iOS
+## iOS 平台
 
 Apple 要求在 `Info.plist` 中为位置信息指定隐私说明：
 
@@ -35,7 +35,7 @@ Apple 要求在 `Info.plist` 中为位置信息指定隐私说明：
 
 阅读 [iOS 指南](https://capacitorjs.com/docs/ios) 中的 [配置 `Info.plist`](https://capacitorjs.com/docs/ios/configuration#configuring-infoplist) 了解有关在 Xcode 中设置 iOS 权限的更多信息。
 
-## Android
+## Android 平台
 
 此插件需要向 `AndroidManifest.xml` 添加以下权限：
 
@@ -50,7 +50,7 @@ Apple 要求在 `Info.plist` 中为位置信息指定隐私说明：
 
 阅读 [Android 指南](https://capacitorjs.com/docs/android) 中的 [设置权限](https://capacitorjs.com/docs/android/configuration#setting-permissions) 了解有关设置 Android 权限的更多信息。
 
-## API
+## API 参考
 
 <docgen-index>
 

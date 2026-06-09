@@ -1,9 +1,9 @@
 ---
-title: Push Notifications Capacitor 插件 API
+title: 推送通知 - Capacitor 插件 API
 description: Push Notifications API 提供对原生推送通知的访问。
 editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/push-notifications/README.md
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/push-notifications/src/definitions.ts
-sidebar_label: Push Notifications
+sidebar_label: 推送通知
 translated: true
 source_hash: 705e5518
 ---
@@ -18,7 +18,7 @@ npm install @capacitor/push-notifications
 npx cap sync
 ```
 
-## iOS
+## iOS 平台
 
 在 iOS 上，您必须启用 Push Notifications 功能。请参阅 [设置功能](https://capacitorjs.com/docs/ios/configuration#setting-capabilities) 了解如何启用该功能。
 
@@ -34,7 +34,7 @@ func application(_ application: UIApplication, didFailToRegisterForRemoteNotific
 }
 ```
 
-## Android
+## Android 平台
 
 Push Notification API 使用 [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) SDK 处理通知。请参阅 [在 Android 上设置 Firebase Cloud Messaging 客户端应用](https://firebase.google.com/docs/cloud-messaging/android/client) 并按照说明创建 Firebase 项目和注册您的应用程序。
 
@@ -191,7 +191,7 @@ const getDeliveredNotifications = async () => {
 }
 ```
 
-## API
+## API 参考
 
 <docgen-index>
 
