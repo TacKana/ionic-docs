@@ -5,7 +5,7 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/READ
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/keyboard/src/definitions.ts
 sidebar_label: 键盘
 translated: true
-source_hash: 7a6e5179
+source_hash: 74f1abfb
 ---
 # @capacitor/keyboard
 
@@ -49,6 +49,7 @@ Keyboard.addListener('keyboardDidHide', () => {
 | **`resize`**             | <code><a href="#keyboardresize">KeyboardResize</a></code> | 配置键盘出现时应用调整大小的方式。仅适用于 iOS。                                                                                                                                                                                                                            | <code>native</code> | 1.0.0 |
 | **`style`**              | <code><a href="#keyboardstyle">KeyboardStyle</a></code>   | 如果您的应用不支持深色/浅色主题更改，则覆盖键盘样式。如果未设置，键盘样式将取决于设备外观。仅适用于 iOS。                                                                                                                                     |                     | 1.0.0 |
 | **`resizeOnFullScreen`** | <code>boolean</code>                                      | 存在一个 Android 错误，当应用处于全屏状态时（即如果使用 StatusBar 插件覆盖状态栏），会阻止键盘调整 WebView 大小。如果设置为 true，此设置添加了一个解决方法，即使用户处于全屏状态也能调整 WebView 大小。仅适用于 Android。 |                     | 1.1.0 |
+| **`autoBackdropColor`**  | <code>'off' \| 'auto' \| 'dom'</code>                     | 控制每次键盘即将显示时如何设置键盘背景色（键盘后方可见的区域）。`'off'` — 不设置背景色。`'auto'` — 使用 Capacitor 配置中设置的 `backgroundColor`；否则从 Web 应用的 DOM body 背景中提取颜色。`'dom'` — 始终从 Web 应用的 DOM body 背景中提取颜色，忽略 `backgroundColor` 配置。如果 DOM 没有可解析的背景，则背景色保持不变。仅适用于 iOS。 | <code>"off"</code>  | 8.0.4 |
 
 ### 示例
 
@@ -60,7 +61,8 @@ Keyboard.addListener('keyboardDidHide', () => {
     "Keyboard": {
       "resize": "body",
       "style": "DARK",
-      "resizeOnFullScreen": true
+      "resizeOnFullScreen": true,
+      "autoBackdropColor": "auto"
     }
   }
 }
@@ -80,6 +82,7 @@ const config: CapacitorConfig = {
       resize: KeyboardResize.Body,
       style: KeyboardStyle.Dark,
       resizeOnFullScreen: true,
+      autoBackdropColor: 'auto'
     },
   },
 };

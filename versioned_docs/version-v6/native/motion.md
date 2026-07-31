@@ -5,7 +5,7 @@ editUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/motion/README
 editApiUrl: https://github.com/ionic-team/capacitor-plugins/blob/main/motion/src/definitions.ts
 sidebar_label: 运动传感器
 translated: true
-source_hash: 63b810e0
+source_hash: 25c97932
 ---
 # @capacitor/motion
 
@@ -20,7 +20,7 @@ npx cap sync
 
 ## 权限
 
-此插件目前使用 Web API 实现。大多数浏览器需要在使用此 API 前获得权限。要请求权限，在用户发起的任何操作（如按钮点击）上提示用户授予权限：
+此插件目前使用 Web API 实现。在 iOS 设备上，访问设备运动或方向事件前必须请求权限。要请求权限，在用户发起的任何操作（如按钮点击）上提示用户授予权限：
 
 ```typescript
 import { PluginListenerHandle } from '@capacitor/core';
@@ -28,18 +28,39 @@ import { Motion } from '@capacitor/motion';
 
 
 let accelHandler: PluginListenerHandle;
+let orientationHandler: PluginListenerHandle;
 
-myButton.addEventListener('click', async () => {
-  try {
-    await DeviceMotionEvent.requestPermission();
-  } catch (e) {
-    // 处理错误
-    return;
+myAccelerationButton.addEventListener('click', async () => {
+  if (typeof DeviceMotionEvent.requestPermission === 'function') {
+    try {
+      const permission = await DeviceMotionEvent.requestPermission();
+      if (permission !== 'granted') return;
+    } catch (e) {
+      // 处理错误
+      return;
+    }
   }
 
   // 用户批准后，可以开始监听：
   accelHandler = await Motion.addListener('accel', event => {
     console.log('Device motion event:', event);
+  });
+});
+
+myOrientationButton.addEventListener('click', async () => {
+  if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+    try {
+      const permission = await DeviceOrientationEvent.requestPermission();
+      if (permission !== 'granted') return;
+    } catch (e) {
+      // 处理错误
+      return;
+    }
+  }
+
+  // 用户批准后，可以开始监听：
+  orientationHandler = await Motion.addListener('orientation', event => {
+    console.log('Device orientation event:', event);
   });
 });
 
@@ -50,13 +71,20 @@ const stopAcceleration = () => {
   }
 };
 
+// 停止方向监听器
+const stopOrientation = () => {
+  if (orientationHandler) {
+    orientationHandler.remove();
+  }
+};
+
 // 移除所有监听器
 const removeListeners = () => {
   Motion.removeAllListeners();
 };
 ```
 
-请参阅 [`DeviceMotionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent) API 来了解 'accel' 事件中提供的数据。
+请参阅 [`DeviceMotionEvent`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent) 和 [`DeviceOrientationEvent`](https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent) API 来了解 'accel' 和 'orientation' 事件中分别提供的数据。
 
 ## API 参考
 
