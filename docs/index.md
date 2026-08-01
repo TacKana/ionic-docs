@@ -22,6 +22,14 @@ import DocsCards from '@components/global/DocsCards';
   <meta property="og:url" content="https://ionicframework.com/docs" />
 </head>
 
+> 这是 IonIc 官方文档的中文翻译版本。文档源码托管在 **_[GitHub](https://github.com/TacKana/ionic-docs)_**，欢迎 Star、Fork 和贡献翻译！如发现翻译问题或需要改进，请提交 Issue 或 Pull Request。
+> 加入我们的 QQ 群，与其他 IonIc 开发者交流、分享经验、解决问题。
+> 点击链接加入群聊 **_[IonIc 中文交流群](https://qm.qq.com/q/GdCI7N5nSa)_**
+
+---
+
+> 当前文档站点的翻译已经交由 CICD 自动处理，追踪上游文档更新 AI 实时同步本文档站点的翻译，内容翻译滞后性为一天。
+
 Ionic 是一个开源 UI 工具包，用于使用 Web 技术（HTML、CSS 和 JavaScript）构建高性能、高质量的移动应用，并支持与 [Angular](angular/overview.md)、[React](react/overview.md) 和 [Vue](vue/overview.md) 等流行框架集成。
 
 开始构建吧，可以[安装 Ionic](intro/cli.md) 或按照我们的[首个应用教程](intro/next.md#构建您的第一个应用)来学习主要概念。
