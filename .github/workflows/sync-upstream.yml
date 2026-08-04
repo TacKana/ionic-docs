@@ -128,7 +128,7 @@ jobs:
               `请检查同步结果与翻译质量，如有问题请在 Actions 日志中反馈。`,
             ].join('\n');
 
-            core.summary.addMarkdown(body);
+            core.summary.addRaw(body);
             await core.summary.write();
 
             try {
