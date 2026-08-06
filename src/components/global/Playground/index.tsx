@@ -6,10 +6,9 @@ import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, open
 import { useColorMode } from '@docusaurus/theme-common';
 import { ConsoleItem, Mode, UsageTarget } from './playground.types';
 
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
+import Tooltip from '../Tooltip';
 import PlaygroundTabs from '../PlaygroundTabs';
-import TabItem from '@theme/TabItem';
+import TabItem from '../PlaygroundTabs/TabItem';
 
 import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
@@ -47,10 +46,10 @@ const ControlButton = forwardRef(
     );
     if (disabled) {
       return (
-        <Tippy theme="playground" arrow={false} placement="bottom" content={`${label} 不可用`}>
-          {/* Tippy requires a wrapper element for disabled elements: https://atomiks.github.io/tippyjs/v5/creating-tooltips/#disabled-elements */}
+        <Tooltip content={`${label} 不可用`}>
+          {/* Disabled elements do not emit pointer events, so the wrapper is what triggers the tooltip. */}
           <div>{controlButton}</div>
-        </Tippy>
+        </Tooltip>
       );
     }
     return controlButton;
@@ -67,7 +66,7 @@ const CodeBlockButton = ({ language, usageTarget, setAndSaveUsageTarget, disable
       handleClick={() => {
         setAndSaveUsageTarget(langValue, buttonRef.current);
       }}
-      title={`显示 ${language} 代码`}
+      title={`Show ${language} code`}
       label={language}
       disabled={disabled}
       ref={buttonRef}
@@ -652,9 +651,7 @@ export default function Playground({
               value={fileName}
               label={fileName}
               key={fileName}
-              {...{
-                icon: getFileIcon(fileName),
-              }}
+              icon={getFileIcon(fileName)}
             >
               <div id={getCodeSnippetId(usageTarget, fileName)}>{codeSnippets[usageTarget][fileName]}</div>
             </TabItem>
@@ -678,12 +675,12 @@ export default function Playground({
     return (
       <div className="playground__console">
         <div className="playground__console-header">
-          <code>控制台</code>
+          <code>Console</code>
         </div>
         <div className="playground__console-body" ref={consoleBodyRef}>
           {consoleItems.length === 0 ? (
             <div className="playground__console-item playground__console-item--placeholder">
-              <code>控制台消息将在上方示例中调用 console.log 时显示在此处。</code>
+              <code>Console messages will appear here when logged from the example above.</code>
             </div>
           ) : (
             consoleItems.map((consoleItem, i) => (
@@ -730,19 +727,19 @@ export default function Playground({
               disabled={mode && mode === 'md'}
               isSelected={isIOS}
               handleClick={() => setAndSaveMode(Mode.iOS)}
-              title="iOS 模式"
+              title="iOS mode"
               label="iOS"
             />
             <ControlButton
               disabled={mode && mode === 'ios'}
               isSelected={isMD}
               handleClick={() => setAndSaveMode(Mode.MD)}
-              title="MD 模式"
+              title="MD mode"
               label="MD"
             />
           </div>
           <div className="playground__control-group playground__control-group--end">
-            <Tippy theme="playground" arrow={false} placement="bottom" content="在 StackBlitz 中打开">
+            <Tooltip content="在 StackBlitz 中打开">
               <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
                 <svg
                   aria-hidden="true"
@@ -759,11 +756,8 @@ export default function Playground({
                   />
                 </svg>
               </button>
-            </Tippy>
-            <Tippy
-              theme="playground"
-              arrow={false}
-              placement="bottom"
+            </Tooltip>
+            <Tooltip
               content={
                 hasUsageTargetOptions
                   ? '多文件示例请使用代码块上的复制按钮'
@@ -792,8 +786,8 @@ export default function Playground({
                   <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="current" />
                 </svg>
               </button>
-            </Tippy>
-            <Tippy theme="playground" arrow={false} placement="bottom" content="重置演示">
+            </Tooltip>
+            <Tooltip content="重置演示">
               <button className="playground__icon-button" onClick={resetDemo}>
                 <svg
                   aria-hidden="true"
@@ -817,8 +811,8 @@ export default function Playground({
                   />
                 </svg>
               </button>
-            </Tippy>
-            <Tippy theme="playground" arrow={false} placement="bottom" content="报告问题">
+            </Tooltip>
+            <Tooltip content="报告问题">
               <a
                 className="playground__icon-button"
                 href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
@@ -833,7 +827,7 @@ export default function Playground({
                   />
                 </svg>
               </a>
-            </Tippy>
+            </Tooltip>
           </div>
         </div>
         {renderIframes
