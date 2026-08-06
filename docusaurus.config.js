@@ -1,6 +1,6 @@
 const path = require('path');
 const prismic = require('@prismicio/client');
-const fetch = require('node-fetch');
+const fetch = require('node-fetch').default;
 
 const VERSIONS_JSON = require('./versions.json');
 
@@ -42,7 +42,11 @@ module.exports = {
     },
   },
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   favicon: 'img/meta/favicon-96x96.png',
   organizationName: 'TacKana',
   projectName: 'ionic-docs',
@@ -347,7 +351,7 @@ module.exports = {
         name: 'ionic-docs-ads',
         async loadContent() {
           const repoName = 'ionicframeworkcom';
-          const endpoint = prismic.getEndpoint(repoName);
+          const endpoint = prismic.getRepositoryEndpoint(repoName);
           const client = prismic.createClient(endpoint, {
             fetch,
           });
