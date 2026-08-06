@@ -42,11 +42,7 @@ module.exports = {
     },
   },
   onBrokenLinks: 'warn',
-  markdown: {
-    hooks: {
-      onBrokenMarkdownLinks: 'warn',
-    },
-  },
+  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/meta/favicon-96x96.png',
   organizationName: 'TacKana',
   projectName: 'ionic-docs',
@@ -351,7 +347,7 @@ module.exports = {
         name: 'ionic-docs-ads',
         async loadContent() {
           const repoName = 'ionicframeworkcom';
-          const endpoint = prismic.getRepositoryEndpoint(repoName);
+          const endpoint = prismic.getEndpoint(repoName);
           const client = prismic.createClient(endpoint, {
             fetch,
           });

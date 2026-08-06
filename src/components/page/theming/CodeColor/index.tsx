@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import React, { type ReactNode } from 'react';
+import React from 'react';
 
 import styles from './index.module.scss';
 
-function CodeColor({ color, ...props }): ReactNode {
+function CodeColor({ color, ...props }): JSX.Element {
   return (
     <span className={clsx(styles.codeColor, props.className, 'code-color')}>
       <span

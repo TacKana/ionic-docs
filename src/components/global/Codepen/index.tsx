@@ -1,8 +1,8 @@
-import React, { type ReactNode } from 'react';
+import React from 'react';
 
 import { useScript } from '@site/src/utils/hooks';
 
-function CodePen(props): ReactNode {
+function CodePen(props): JSX.Element {
   const status = useScript('https://static.codepen.io/assets/embed/ei.js');
   // console.log('test',status, props)
   return (

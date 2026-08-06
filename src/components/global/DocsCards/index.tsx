@@ -1,8 +1,8 @@
-import React, { type ReactNode } from 'react';
+import React from 'react';
 
 import './cards.css';
 
-function DocsCards(props): ReactNode {
+function DocsCards(props): JSX.Element {
   return <docs-cards class={props.className}>{props.children}</docs-cards>;
 }
 
