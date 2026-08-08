@@ -109,6 +109,34 @@ describe('TabsPage', () => {
 
 在执行组件类测试时，通过 `component = fixture.componentInstance;` 定义的组件对象访问组件。这是组件类的一个实例。在执行 DOM 测试时，使用 `fixture.nativeElement` 属性。这是组件的实际 `HTMLElement`，允许测试使用标准 HTML API 方法（如 `HTMLElement.querySelector`）来检查 DOM。
 
+### 等待组件
+
+测试 Ionic 组件时，请使用从 `@ionic/core` 导出的 `componentOnReady` 辅助函数，而不是直接调用 `el.componentOnReady()`。`el.componentOnReady()` 方法只存在于懒加载（lazy-loaded）的元素上，在自定义元素构建中直接调用它会抛出错误，而独立项目（standalone projects）使用的正是自定义元素构建。该辅助函数对两种情况都适用。当元素自身存在 `componentOnReady()` promise 时，它会等待该 promise；否则它会等待一个动画帧，让组件的内部内容有机会完成渲染。在对渲染后的 DOM 进行断言或运行无障碍（accessibility）测试之前，请先等待回调执行完成。
+
+```tsx
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { componentOnReady } from '@ionic/core';
+import { HomePage } from './home.page';
+
+describe('HomePage', () => {
+  let fixture: ComponentFixture<HomePage>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HomePage],
+    }).compileComponents();
+    fixture = TestBed.createComponent(HomePage);
+    fixture.detectChanges();
+  });
+
+  it('renders the submit button', async () => {
+    const button = fixture.nativeElement.querySelector('ion-button');
+    await new Promise<void>((resolve) => componentOnReady(button, () => resolve()));
+    expect(button.textContent).toContain('Submit');
+  });
+});
+```
+
 ## 服务
 
 服务通常分为两大类：执行计算和其他操作的实用程序服务，以及主要执行 HTTP 操作和数据操作的数据服务。

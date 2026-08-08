@@ -72,6 +72,7 @@ module.exports = {
         {
           type: 'category',
           label: '构建你的第一个应用',
+          key: 'angular-your-first-app',
           items: [
             'angular/your-first-app',
             'angular/your-first-app/taking-photos',
@@ -114,6 +115,7 @@ module.exports = {
         {
           type: 'category',
           label: '构建你的第一个应用',
+          key: 'react-your-first-app',
           items: [
             'react/your-first-app',
             'react/your-first-app/taking-photos',
@@ -164,6 +166,7 @@ module.exports = {
         {
           type: 'category',
           label: '构建你的第一个应用',
+          key: 'vue-your-first-app',
           items: [
             'vue/your-first-app',
             'vue/your-first-app/taking-photos',
@@ -183,6 +186,7 @@ module.exports = {
         'vue/slides',
         'vue/utility-functions',
         'vue/platform',
+        'vue/testing',
         'vue/pwa',
         'vue/storage',
         'vue/troubleshooting',
