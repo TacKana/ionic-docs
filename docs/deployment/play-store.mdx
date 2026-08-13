@@ -67,7 +67,7 @@ Ionic 应用在此文件中将有预设的默认值，但可以更改以自定�
 #### 新应用
 
 首先，在 Google Play 控制台中创建一个新应用。为了启用应用签名，您需要导航到新版本页面，在 Production、Open testing、Closed testing 或 Internal testing 页面之一上。
-选择"Create new release"按钮，如下所示（选择哪种版本类型无关紧要，因为您现在不必真正完成创建新版本的操作）：
+选择"Create new release"按钮（选择哪种版本类型无关紧要，因为您现在不必真正完成创建新版本的操作）：
 
 ![Google Play Console 的 Production 标签页，箭头指向"Create new release"按钮。](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-release-1024x561.png "Google Play Console 新版本创建")
 
@@ -79,14 +79,14 @@ Ionic 应用在此文件中将有预设的默认值，但可以更改以自定�
 
 ![Google Play Console 显示"Export and upload a key from Java Keystore"选项。](https://blog.ionicframework.com/wp-content/uploads/2021/12/newapps-export-1024x564.png "Google Play Console 导出和上传密钥选项")
 
-按照屏幕上的说明生成密钥库，您也可以在 Appflow 仪表板中使用相同的密钥库文件来签名您的应用。如果您需要生成密钥库文件的帮助，可以参考我们的文档[此处](https://ionic.io/docs/appflow/package/credentials#android-certificates)。
+按照屏幕上的说明生成密钥库，您也可以在 Appflow 仪表板中使用相同的密钥库文件来签名您的应用。如果您需要生成密钥库文件的帮助，请参阅我们的 [Android 证书文档](https://ionic.io/docs/appflow/package/credentials#android-certificates)。
 上传生成的 zip 文件后，您就准备好了！使用密钥库文件签名构建 AAB 二进制文件，然后将其上传到 Google Play。
 
 #### 现有应用
 
 截至目前，现有应用不需要使用 AAB 格式，但您仍然可以使用 Play 应用签名来注册它们。
 
-要选择加入应用签名，您需要上传用于签名以前版本应用的应用签名密钥。导航到 Setup -> App integrity，然后选择下面截图中看到的两种方法之一。上传密钥后，您就可以注册 Play 应用签名。
+要选择加入应用签名，您需要上传用于签名以前版本应用的应用签名密钥。导航到 Setup -> App integrity，然后选择下面两种选择加入方法之一：**Export and upload a key from Android Studio** 或 **Export and upload a key from Java keystore**。上传密钥后，您就可以注册 Play 应用签名。
 
 ![Google Play Console 中选择 Play 应用签名的选项。](https://blog.ionicframework.com/wp-content/uploads/2021/12/existingapps-optin.png "Google Play Console 选择加入 Play 应用签名")
 
@@ -147,7 +147,7 @@ zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk
 
 ## 更新应用
 
-随着应用的发展，需要更新新功能和修复。可以通过向 Google Play Store 提交新版本，或使用实时更新服务（如 Appflow 的 Live Update 功能）来更新应用。使用 Live Updates，更改可以从 Appflow 仪表板直接推送给用户，无需提交更改到 Play Store。在此了解有关 Live Updates 的更多信息 <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">here</a>.
+随着应用的发展，需要更新新功能和修复。可以通过向 Google Play Store 提交新版本，或使用实时更新服务（如 Appflow 的 Live Update 功能）来更新应用。使用 Live Updates，更改可以从 Appflow 仪表板直接推送给用户，无需提交更改到 Play Store。了解有关 <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">Live Updates</a> 的更多信息。
 
 <Tabs groupId="runtime">
 <TabItem value="capacitor" label="Capacitor" default>

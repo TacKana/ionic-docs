@@ -175,7 +175,7 @@ import { LoginComponent } from './login.component';
 
 ## 独立组件（Standalone Components）
 
-:::caution 实验性 API
+:::caution[实验性 API]
 
 独立组件是 Angular 14.x 中引入的实验性 API，在 Ionic 6.3 及更高版本中可用。此功能在稳定之前可能会发生变化。
 

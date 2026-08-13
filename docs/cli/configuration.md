@@ -126,7 +126,7 @@ Ionic CLI 支持多应用配置设置，涉及在单个仓库（或称[monorepo]
 :::note
 这些文档概述了 Ionic CLI 的多应用功能，但并未深入介绍每个框架的细节。
 
-如果您使用 Angular，请参阅[这篇文章](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo)获取示例。
+如果您使用 Angular，请参阅[Angular monorepo 指南](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo)获取示例。
 :::
 
 ### 设置步骤

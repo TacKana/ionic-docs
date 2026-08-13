@@ -28,7 +28,7 @@ node -v
 npm -v
 ```
 
-如果您还没有安装 Node.js 和 npm，[请在此下载 Node.js](https://nodejs.org/en/download)（其中包含 npm）。
+如果您还没有安装 Node.js 和 npm，[请下载 Node.js](https://nodejs.org/en/download)（其中包含 npm）。
 
 ## 使用 Vite 创建项目
 
@@ -67,7 +67,7 @@ npm run dev
     └── style.css
 ```
 
-:::warning 删除文件
+:::warning[删除文件]
 `counter.js` 和 `style.css` 文件可以删除。我们不会使用它们。
 :::
 
@@ -226,7 +226,7 @@ customElements.define('home-page', HomePage);
 
 这创建了一个名为 `home-page` 的自定义元素，其中包含首页的布局。该页面使用 Ionic 的布局组件创建了一个带有工具栏和可滚动内容区域的标题。
 
-:::tip 了解更多
+:::tip[了解更多]
 有关 Ionic 布局组件的详细信息，请参阅 [Header](/api/header.md)、[Toolbar](/api/toolbar.md)、[Title](/api/title.md) 和 [Content](/api/content.md) 文档。
 :::
 

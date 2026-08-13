@@ -37,7 +37,7 @@ $ ionic <command> <subcommand> --help
 对于某些命令，例如 `ionic serve`，帮助文档会根据项目类型提供上下文相关的信息，例如 React 与 Angular 的区别。
 :::
 
-<!-- TODO：图片？ -->
+{/* TODO：图片？ */}
 
 ## 架构
 

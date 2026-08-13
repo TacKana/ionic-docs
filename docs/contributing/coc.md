@@ -15,4 +15,4 @@ sidebar_label: 行为准则
 
 如果您遭受或目睹了不可接受的行为，或有任何其他问题，请发送电子邮件至 <a href="mailto:devrel@ionic.io">devrel@ionic.io</a>。
 
-请点击 <a href="https://ionic.io/code-of-conduct" target="_blank" rel="noopener">此处</a> 查看 Ionic 的完整行为准则。
+请查看 <a href="https://ionic.io/code-of-conduct" target="_blank" rel="noopener">Ionic 的完整行为准则</a>。

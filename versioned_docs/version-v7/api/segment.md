@@ -43,7 +43,7 @@ import Scrollable from '@site/static/usage/v7/segment/scrollable/index.md';
 
 ## 工具栏中的分段控件
 
-<!-- 复用 Toolbar 目录下的 playground -->
+{/* 复用 Toolbar 目录下的 playground */}
 
 import Toolbar from '@site/static/usage/v7/toolbar/segments/index.md';
 

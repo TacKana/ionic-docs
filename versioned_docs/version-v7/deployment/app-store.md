@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
 - 有效的 provisioning profile
 - 应用开发和分发证书
 
-要加入 Apple Developer Program，请按照[此处列出的说明](https://developer.apple.com/programs/)操作。
+请按照 [Apple Developer Program 注册说明](https://developer.apple.com/programs/)开始操作。
 
 ## 生成发布版本
 

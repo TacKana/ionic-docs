@@ -25,7 +25,7 @@ Ionic 的伟大之处在于，只需一套代码库，您就可以使用 HTML、
 ></iframe>
 
 :::note
-正在寻找本指南覆盖 Ionic 4 和 Cordova 的先前版本？[请点击此处](../developer-resources/guides/first-app-v4/intro.md)。
+正在寻找本指南覆盖 Ionic 4 和 Cordova 的先前版本？请参阅 [Ionic 4 和 Cordova 指南](../developer-resources/guides/first-app-v4/intro.md)。
 :::
 
 ## 我们将构建什么
@@ -44,7 +44,7 @@ Ionic 的伟大之处在于，只需一套代码库，您就可以使用 HTML、
 
 立即下载并安装这些工具，以确保最佳的 Ionic 开发体验：
 
-- **Node.js** 用于与 Ionic 生态系统交互。[在此下载 LTS 版本](https://nodejs.org/en/)。
+- **Node.js** 用于与 Ionic 生态系统交互。[下载 LTS 版本](https://nodejs.org/en/)。
 - **代码编辑器** 用于...编写代码！我们是 [Visual Studio Code](https://code.visualstudio.com/) 的粉丝。
 - **命令行界面/终端 (CLI)**：
   - **Windows** 用户：为获得最佳 Ionic 体验，我们建议使用内置命令行 (cmd) 或 PowerShell CLI，以管理员模式运行。

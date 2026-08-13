@@ -42,7 +42,7 @@ trackItems(index: number, itemObject: any) {
 
 在此示例中，我们有一个名为 `items` 的对象数组。每个对象包含一个 `value` 和一个 `id`。使用 `trackBy`，我们传递一个 `trackItems` 函数，该函数返回每个对象的 `id`。此 `id` 用于为每个循环元素提供稳定的身份标识。
 
-有关 Angular 如何使用 `ngFor` 管理变更传播的更多信息，请访问 https://angular.io/api/common/NgForOf#change-propagation。
+有关 Angular 如何使用 `ngFor` 管理变更传播的更多信息，请参阅 [Angular NgForOf 变更传播文档](https://angular.io/api/common/NgForOf#change-propagation)。
 
 ## 来自 Ionic 团队
 
@@ -56,7 +56,7 @@ trackItems(index: number, itemObject: any) {
 
 ## 来自社区
 
-<!-- cspell:disable -->
+{/* cspell:disable */}
 
 [High Performance Animations in Ionic](https://www.joshmorony.com/high-performance-animations-in-ionic/) - Josh Morony
 
@@ -66,7 +66,7 @@ trackItems(index: number, itemObject: any) {
 
 [Ionic Framework is Fast (But Your Code Might Not Be)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
 
-<!-- cspell:enable -->
+{/* cspell:enable */}
 
 :::note
 你有想要分享的指南吗？点击下面的 _Edit this page_ 按钮。

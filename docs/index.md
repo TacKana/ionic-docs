@@ -146,7 +146,9 @@ Ionic 由核心团队全职积极开发和维护，其生态系统由一个国�
 
 全球有超过 200 个国家的数百万 Ionic 开发者。以下是一些加入方式：
 
-<!-- prettier-ignore -->
+{/* 保留下面的 prettier-ignore。如果没有它，Prettier 会重新格式化这些列表项，导致页面无法构建。这些链接保持为 HTML，因为 target="_blank" 会在新标签页中打开它们，而 Markdown 链接无法做到这一点。 */}
+
+{/* prettier-ignore */}
 - <a href="https://forum.ionicframework.com/" target="_blank">论坛：</a>提问和分享想法的好地方。
 - <a href="https://twitter.com/ionicframework" target="_blank">Twitter：</a>我们在此发布更新并分享 Ionic 社区的内容。
 - <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub：</a>用于报告错误或请求新功能，请在此创建 issue。欢迎 PR！

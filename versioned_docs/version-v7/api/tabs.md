@@ -29,7 +29,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 `ion-tab-bar` 需要定义一个插槽，以便投影到 `ion-tabs` 组件的正确位置。
 
-:::note 框架支持
+:::note[框架支持]
 
 在 Angular、React 或 Vue 中使用 `ion-tabs` 需要使用 `ion-router-outlet` 或 `ion-nav` 组件。
 
@@ -43,7 +43,7 @@ import Router from '@site/static/usage/v7/tabs/router/index.md';
 
 <Router />
 
-:::tip 最佳实践
+:::tip[最佳实践]
 
 Ionic 提供了关于标签路由模式最佳实践的指南。请查看 [Angular](/v7/angular/navigation#使用选项卡)、[React](/v7/react/navigation#使用标签) 和 [Vue](/v7/vue/navigation#使用标签) 的指南以获取更多信息。
 

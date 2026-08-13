@@ -165,7 +165,7 @@ export class Tab2Page {
 再次点击照片并选择"Delete"选项。照片被删除了！使用 Live Reload 实现得更快。
 
 :::note
-请记住，你可以[在此处](https://github.com/ionic-team/photo-gallery-capacitor-ng)找到此应用的完整源代码。
+请记住，你可以在 GitHub 上找到此应用的[完整源代码](https://github.com/ionic-team/photo-gallery-capacitor-ng)。
 :::
 
 在本教程的最后部分，我们将向你介绍 Appflow 产品的基础知识，该产品用于构建和部署你的应用到用户的设备上。

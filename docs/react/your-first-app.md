@@ -40,7 +40,7 @@ Ionic 的伟大之处在于，只需一个代码库，你就可以仅使用 HTML
 
 立即下载并安装这些工具，以确保最佳的 Ionic 开发体验：
 
-- **Node.js** 用于与 Ionic 生态系统交互。[在此下载 LTS 版本](https://nodejs.org/en/)。
+- **Node.js** 用于与 Ionic 生态系统交互。[下载 LTS 版本](https://nodejs.org/en/)。
 - **代码编辑器**用于...编写代码！我们喜欢 [Visual Studio Code](https://code.visualstudio.com/)。
 - **命令行界面/终端 (CLI)**：
   - **Windows 用户**：为了获得最佳的 Ionic 体验，我们建议使用内置命令行 (cmd) 或 PowerShell CLI，并以管理员模式运行。

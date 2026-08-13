@@ -14,7 +14,7 @@ sidebar_label: 为 Android 开发
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-:::info 在找旧的 Android 开发指南？
+:::info[在找旧的 Android 开发指南？]
 
 "为 Android 开发"指南已正式迁移至 [Capacitor Android 文档](https://capacitorjs.com/docs/android)。如果您需要访问旧版文档，可以在[旧的 Android 开发指南](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/android)中找到。
 

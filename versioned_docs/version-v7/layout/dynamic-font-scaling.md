@@ -93,7 +93,6 @@ html {
     <div class="child">子元素，字体 80px</div>
   </div>
 </div>
-```
 
 <div style={{ fontSize: '20px' }}>
   父元素，字体 20px
@@ -102,6 +101,7 @@ html {
     <div style={{ fontSize: '2em' }}>子元素，字体 80px</div>
   </div>
 </div>
+```
 
 由于这种复合效应，我们强烈建议在使用动态字体缩放时使用 `rem` 单位而不是 `em` 单位。`rem` 单位设置元素的字体大小相对于根元素（通常是 `<html>`）的字体大小。根元素的默认字体大小通常为 `16px`。
 

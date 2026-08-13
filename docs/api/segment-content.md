@@ -27,7 +27,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 每个 `ion-segment-content` 需要一个唯一的 `id` 属性。这将用于通过按钮的
 [contentId 属性](./segment-button.md#属性)将分段内容链接到分段按钮。
 
-<!-- 复用可滑动分段控件 playground -->
+{/* 复用可滑动分段控件 playground */}
 
 import Swipeable from '@site/static/usage/v8/segment/swipeable/index.md';
 

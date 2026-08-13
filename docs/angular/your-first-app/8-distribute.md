@@ -11,7 +11,7 @@ sidebar_label: 分发
   />
 </head>
 
-现在你已经构建了第一个应用，你肯定希望将其分发出去，让所有人都能开始使用它。构建和部署应用的机制可能相当繁琐，这时 [Appflow](https://ionic.io/docs/appflow/) 就派上用场了。Appflow 使你能够高效地生成 Web 和原生构建、推送实时应用更新、将应用发布到应用商店，并实现整个流程的自动化。完整的快速入门指南可以在[这里](https://ionic.io/docs/appflow/quickstart)找到。
+现在你已经构建了第一个应用，你肯定希望将其分发出去，让所有人都能开始使用它。构建和部署应用的机制可能相当繁琐，这时 [Appflow](https://ionic.io/docs/appflow/) 就派上用场了。Appflow 使你能够高效地生成 Web 和原生构建、推送实时应用更新、将应用发布到应用商店，并实现整个流程的自动化。请参阅 [Appflow 快速入门指南](https://ionic.io/docs/appflow/quickstart)。
 
 下面我们将概述各个步骤。
 

@@ -188,9 +188,9 @@ class MyApp {
 }
 ```
 
-<!-- 这在 Ionic Framework 组件文档中有引用，所以我们显式定义锚点以保持一致。 -->
+{/* 这在 Ionic Framework 组件文档中有引用，所以我们显式定义锚点以保持一致。 */}
 
-## 在函数回调中访问 `this` 返回 `undefined` {#accessing-this}
+## 在函数回调中访问 `this` 返回 `undefined` {/* #accessing-this */}
 
 某些组件，例如 [ion-input 上的 counterFormatter](../api/input#prop-counter-formatter) 和 [ion-range 上的 pinFormatter](../api/range#prop-pin-formatter)，允许开发者传递回调。如果您计划在回调的上下文中访问 `this`，那么绑定正确的 `this` 值非常重要。在使用 Angular 组件或 React 中的类组件时，您可能需要访问 `this`。有两种方法可以绑定 `this`：
 

@@ -62,7 +62,7 @@ import Types from '@site/static/usage/v7/buttons/types/index.md';
 
 :::
 
-<!-- 复用 Title 目录下的 playground -->
+{/* 复用 Title 目录下的 playground */}
 
 import CollapsibleLargeTitleButtons from '@site/static/usage/v7/title/collapsible-large-title/buttons/index.md';
 

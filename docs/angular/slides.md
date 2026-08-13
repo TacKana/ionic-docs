@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-:::warning 正在寻找 `ion-slides`？
+:::warning[正在寻找 `ion-slides`？]
 `ion-slides` 已在 v6.0.0 中弃用，并在 v7.0.0 中移除。我们建议直接使用 Swiper.js 库。迁移过程如下所述。
 :::
 

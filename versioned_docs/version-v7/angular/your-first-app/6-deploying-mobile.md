@@ -15,7 +15,7 @@ sidebar_label: 部署移动端
 
 ## Capacitor 设置
 
-Capacitor 是 Ionic 的官方应用运行时，使得将 Web 应用部署到 iOS、Android 等原生平台变得简单。如果您过去使用过 Cordova，请考虑在此处阅读更多关于差异的信息（https://capacitorjs.com/docs/cordova#differences-between-capacitor-and-cordova）。
+Capacitor 是 Ionic 的官方应用运行时，使得将 Web 应用部署到 iOS、Android 等原生平台变得简单。如果您过去使用过 Cordova，请考虑阅读更多关于 [Capacitor 与 Cordova 之间的差异](https://capacitorjs.com/docs/cordova#differences-between-capacitor-and-cordova)的内容。
 
 如果您仍在终端中运行 `ionic serve`，请取消它。完成 Ionic 项目的新构建，修复它报告的任何错误：
 
@@ -58,7 +58,7 @@ Capacitor iOS 应用通过 Xcode（Apple 的 iOS/Mac IDE）进行配置和管理
 ionic cap open ios
 ```
 
-为了使某些原生插件正常工作，必须配置用户权限。在我们的照片库应用中，这包括 Camera 插件：iOS 在第一次调用 `Camera.getPhoto()` 后会自动显示一个模态对话框，提示用户允许应用使用摄像头。驱动此功能的权限标记为"Privacy - Camera Usage"。要设置它，必须修改 `Info.plist` 文件（[更多细节在这里](https://capacitorjs.com/docs/ios/configuration)）。要访问它，点击"Info"，然后展开"Custom iOS Target Properties"。
+为了使某些原生插件正常工作，必须配置用户权限。在我们的照片库应用中，这包括 Camera 插件：iOS 在第一次调用 `Camera.getPhoto()` 后会自动显示一个模态对话框，提示用户允许应用使用摄像头。驱动此功能的权限标记为"Privacy - Camera Usage"。要设置它，必须修改 `Info.plist` 文件（[更多关于 iOS 配置的详细信息](https://capacitorjs.com/docs/ios/configuration)）。要访问它，点击"Info"，然后展开"Custom iOS Target Properties"。
 
 ![Xcode 中的 Info.plist 文件，显示为摄像头访问添加的 NSCameraUsageDescription 键。](/img/guides/first-app-cap-ng/xcode-info-plist.png 'Xcode Info.plist 配置')
 

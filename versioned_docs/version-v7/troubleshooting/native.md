@@ -24,7 +24,7 @@ Code Signing Error: Failed to create provisioning profile. The app ID "com.csfor
 
    对于 Cordova，打开 `config.xml` 文件并修改根元素 `<widget>` 的 `id` 属性。有关更多信息，请参阅 [Cordova 文档](https://cordova.apache.org/docs/en/latest/config_ref/#widget)。
 
-<!-- prettier-ignore -->
+{/* prettier-ignore */}
 2. <strong>在 <b>Xcode</b> 中打开项目。</strong>
 
    对于 Capacitor，运行以下命令在 Xcode 中打开应用：
@@ -35,12 +35,12 @@ Code Signing Error: Failed to create provisioning profile. The app ID "com.csfor
 
    对于 Cordova，打开 Xcode。使用 **文件** &raquo; **打开** 并找到应用。打开应用的 `platforms/ios` 目录。
 
-<!-- prettier-ignore -->
+{/* prettier-ignore */}
 3. <strong>在<b>项目导航器</b>中，选择项目根以打开项目编辑器。在**标识**部分，验证设置的 Package ID 是否与 Bundle Identifier 匹配。</strong>
 
    ![Xcode 显示 iOS 应用的标识部分，包含显示名称、Bundle Identifier、版本和构建字段。](/img/running/ios-xcode-identity-setup.png "Xcode 标识部分")
 
-<!-- prettier-ignore -->
+{/* prettier-ignore */}
 4. <strong>在同一个项目编辑器的**签名**部分，确保启用了**自动管理签名**。</strong>然后，选择一个开发团队。给定一个开发团队，Xcode 将尝试自动准备配置文件和签名。
 
    ![Xcode 显示签名部分，启用了'自动管理签名'并选择了开发团队。](/img/running/ios-xcode-signing-setup.png "Xcode 签名部分")

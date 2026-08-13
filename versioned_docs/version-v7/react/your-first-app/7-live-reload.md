@@ -199,7 +199,7 @@ export default Tab2;
 再次点击一张照片，然后选择"Delete"选项。照片就被删除了！使用 Live Reload 实现得更快。💪
 
 :::note
-请记住，您可以[在此处找到此应用的完整源代码](https://github.com/ionic-team/tutorial-photo-gallery-react)。
+请记住，您可以在 GitHub 上找到此应用的[完整源代码](https://github.com/ionic-team/tutorial-photo-gallery-react)。
 :::
 
 在本教程的最后部分，我们将向您介绍 Appflow 产品的基础知识，该产品用于构建应用并将其部署到用户的设备上。

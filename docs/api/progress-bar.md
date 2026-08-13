@@ -48,7 +48,7 @@ import Indeterminate from '@site/static/usage/v8/progress-bar/indeterminate/inde
 
 ## 工具栏中的进度条
 
-<!-- 复用工具栏目录中的 playground -->
+{/* 复用工具栏目录中的 playground */}
 import Toolbar from '@site/static/usage/v8/toolbar/progress-bars/index.md';
 
 <Toolbar />

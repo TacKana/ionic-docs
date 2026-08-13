@@ -62,7 +62,7 @@ import Types from '@site/static/usage/v8/buttons/types/index.md';
 
 :::
 
-<!-- Reuse the playground from the Title directory -->
+{/* Reuse the playground from the Title directory */}
 import CollapsibleLargeTitleButtons from '@site/static/usage/v8/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />

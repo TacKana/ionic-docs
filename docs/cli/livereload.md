@@ -75,4 +75,4 @@ ionic cordova run ios -l --external
 ionic capacitor run android --livereload --external --ssl -- --ssl-cert='server.crt' --ssl-key='server.key'
 ```
 
-使用自签名证书并确保设备信任它是一个复杂的话题，在[这篇文章](https://ionic.zendesk.com/hc/en-us/articles/11384425513623)中有所介绍。
+使用自签名证书并确保设备信任它是一个复杂的话题，在[Ionic 关于自签名证书的支持文章](https://ionic.zendesk.com/hc/en-us/articles/11384425513623)中有所介绍。

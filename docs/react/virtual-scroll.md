@@ -1,6 +1,6 @@
 # 虚拟滚动
 
-:::warning 寻找 `ion-virtual-scroll`？
+:::warning[寻找 `ion-virtual-scroll`？]
 
 `ion-virtual-scroll` 已在 v6.0.0 中弃用，并在 v7.0.0 中移除。我们建议使用下面详述的 Virtuoso 包。
 

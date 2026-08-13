@@ -59,7 +59,7 @@ $ ionic serve
 
 在这里，您可以从下拉菜单中选择不同的设备类型，更改设备方向以及限制网络速度。
 
-有关更多功能和信息，请访问：https://developer.chrome.com/docs/devtools/device-mode/。
+有关更多功能和信息，请参阅 [Chrome DevTools 设备模式文档](https://developer.chrome.com/docs/devtools/device-mode/)。
 
 ### Safari
 
@@ -75,7 +75,7 @@ $ ionic serve
 
 在这里，您可以选择要模拟的不同设备类型以及更改设备方向。
 
-有关更多功能和信息，请访问：https://developer.apple.com/safari/tools/。
+有关更多功能和信息，请参阅 [Safari 开发者工具文档](https://developer.apple.com/safari/tools/)。
 
 ### Firefox
 
@@ -85,4 +85,4 @@ $ ionic serve
 
 在这里，您可以从下拉菜单中选择不同的设备类型，更改设备方向以及限制网络速度。
 
-有关更多功能和信息，请访问：https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/。
+有关更多功能和信息，请参阅 [Firefox 响应式设计模式文档](https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/)。

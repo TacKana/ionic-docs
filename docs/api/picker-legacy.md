@@ -17,7 +17,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-:::warning 弃用说明
+:::warning[弃用说明]
 
 `ion-picker-legacy` 已弃用，将在下一个主要版本中移除。请尽快迁移到 [`ion-picker`](./picker.md)。
 

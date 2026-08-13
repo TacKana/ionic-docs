@@ -587,4 +587,4 @@ Vue Router 带有可配置的历史模式。让我们看看不同的选项以及
 
 ## 更多信息
 
-有关使用 Vue Router 进行 Vue 路由的更多信息，请查看 http://router.vuejs.org/ 上的文档。
+有关使用 Vue Router 进行 Vue 路由的更多信息，请查看 [Vue Router 文档](https://router.vuejs.org/)。

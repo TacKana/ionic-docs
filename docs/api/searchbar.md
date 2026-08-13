@@ -58,7 +58,7 @@ import CancelButton from '@site/static/usage/v8/searchbar/cancel-button/index.md
 
 搜索栏放置在工具栏内时，样式会呈现原生风格。在 iOS 中，搜索栏应放置在自己的工具栏中，位于包含页面标题的工具栏下方。在 Material Design 中，搜索栏要么持续显示在自己的工具栏中，要么展开覆盖包含页面标题的工具栏。
 
-<!-- 复用 Toolbar 目录下的 playground -->
+{/* 复用 Toolbar 目录下的 playground */}
 import Toolbar from '@site/static/usage/v8/toolbar/searchbars/index.md';
 
 <Toolbar />

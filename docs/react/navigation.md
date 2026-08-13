@@ -645,12 +645,12 @@ const MyComponent: React.FC = () => {
 
 ## 更多信息
 
-有关 Ionic 在底层使用的 React Router 实现的更多信息，请查看他们的文档：https://v5.reactrouter.com/web
+有关 Ionic 在底层使用的 React Router 实现的更多信息，请查看 [React Router v5 文档](https://v5.reactrouter.com/web)。
 
 ## 来自社区
 
-<!-- cspell:disable -->
+{/* cspell:disable */}
 
 [Ionic 4 和 React：导航](https://alligator.io/ionic/ionic-4-react-navigation) - Paul Halliday
 
-<!-- cspell:enable -->
+{/* cspell:enable */}

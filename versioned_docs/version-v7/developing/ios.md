@@ -15,7 +15,7 @@ skipIntros: true
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-:::info 在寻找旧版 iOS 指南？
+:::info[在寻找旧版 iOS 指南？]
 
 开发 iOS 应用指南已正式迁移至 [Capacitor iOS 文档](https://capacitorjs.com/docs/ios)。如果您需要访问旧版文档，可以在[旧版开发 iOS 应用指南](https://ionic-docs-fo03f34h5-ionic1.vercel.app/docs/v6/developing/ios)中找到。
 

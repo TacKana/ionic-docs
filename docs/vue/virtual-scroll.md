@@ -5,7 +5,7 @@ sidebar_label: 虚拟滚动
 
 # 虚拟滚动
 
-:::warning 正在寻找 `ion-virtual-scroll`？
+:::warning[正在寻找 `ion-virtual-scroll`？]
 
 `ion-virtual-scroll` 已在 v6.0.0 中弃用，并在 v7.0.0 中移除。我们建议使用 Vue 库来实现此功能。下面我们概述了一种使用 `vue-virtual-scroller` 的方法。
 

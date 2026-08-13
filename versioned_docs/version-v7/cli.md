@@ -37,7 +37,7 @@ $ ionic <command> <subcommand> --help
 对于某些命令，如 `ionic serve`，帮助文档与你的项目类型相关，例如 React 与 Angular。
 :::
 
-<!-- TODO：添加图片？ -->
+{/* TODO：添加图片？ */}
 
 ## 架构
 

@@ -10,7 +10,7 @@ title: 从 IonSlides 迁移到 Swiper.js
   />
 </head>
 
-:::warning 寻找 `IonSlides`？
+:::warning[寻找 `IonSlides`？]
 
 `IonSlides` 已在 v6.0.0 中弃用，并在 v7.0.0 中移除。我们建议直接使用 Swiper.js 库。迁移过程如下详述。
 

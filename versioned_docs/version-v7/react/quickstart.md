@@ -28,7 +28,7 @@ node -v
 npm -v
 ```
 
-如果您还没有安装 Node.js 和 npm，请[在此下载 Node.js](https://nodejs.org/en/download)（包含 npm）。
+如果您还没有安装 Node.js 和 npm，请[下载 Node.js](https://nodejs.org/en/download)（包含 npm）。
 
 ## 使用 Ionic CLI 创建项目
 
@@ -158,7 +158,7 @@ export default Home;
 
 这将创建一个包含头部和可滚动内容区域的页面。`IonPage` 组件提供了基本的页面结构，每个页面上都必须使用。第二个头部展示了[可折叠大标题](/api/title.md#可折叠大标题)，当内容滚动到顶部时显示，向下滚动时会折叠为第一个头部中的较小标题。
 
-:::tip 了解更多
+:::tip[了解更多]
 有关 Ionic 布局组件的详细信息，请参阅 [Header](/api/header.md)、[Toolbar](/api/toolbar.md)、[Title](/api/title.md) 和 [Content](/api/content.md) 文档。
 :::
 

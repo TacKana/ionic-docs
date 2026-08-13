@@ -2,7 +2,7 @@
 
 ### [Elite Ionic](https://www.joshmorony.com/elite/)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 作者：Josh Morony
 
@@ -10,7 +10,7 @@ Elite Ionic 是一门面向 Ionic 开发者的在线课程，旨在帮助开发�
 
 ### [Ionic Academy](https://ionicacademy.com/)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 作者：Simon Grimm
 
@@ -18,7 +18,7 @@ Elite Ionic 是一门面向 Ionic 开发者的在线课程，旨在帮助开发�
 
 ### [Ionic Framework: Tips, Tricks & Techniques](https://www.packtpub.com/mobile/ionic-framework-tips-tricks-and-techniques-video)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 作者：Charles Muzonzini
 
@@ -26,7 +26,7 @@ Elite Ionic 是一门面向 Ionic 开发者的在线课程，旨在帮助开发�
 
 ### [Building Desktop Apps with Ionic and Electron](https://pluralsight.pxf.io/VeMXO)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 作者：Michael Callaghan（Pluralsight）
 
@@ -34,7 +34,7 @@ Elite Ionic 是一门面向 Ionic 开发者的在线课程，旨在帮助开发�
 
 ### [Building Progressive Web Apps with Ionic](https://pluralsight.pxf.io/Ly2EY)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 作者：Michael Callaghan（Pluralsight）
 
@@ -42,7 +42,7 @@ Elite Ionic 是一门面向 Ionic 开发者的在线课程，旨在帮助开发�
 
 ### [Ionic CLI](https://pluralsight.pxf.io/ionic-cli)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 作者：Michael Callaghan（Pluralsight）
 
@@ -50,36 +50,36 @@ Elite Ionic 是一门面向 Ionic 开发者的在线课程，旨在帮助开发�
 
 ### [Wordpress Rest API and Ionic 4 (Angular) App With Auth](https://www.udemy.com/course/wordpress-rest-api-and-ionic-3-crud/)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 作者：Baljeet Singh（Udemy）
 
 ### [Building Mobile Apps with Ionic 2, Angular 2, and TypeScript](https://app.pluralsight.com/library/courses/ionic2-angular2-typescript-mobile-apps/table-of-contents)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 作者：Pluralsight
 
 ### [Introducing Ionic 2](http://shop.oreilly.com/product/0636920050353.do)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 作者：Mathieu Chauvinc
 
 ### [Ionic 2 Master Course](https://www.udemy.com/ionic-2-tutorial/)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 作者：Udemy
 
 ### [Introducing Ionic 2](https://www.udemy.com/introducing-ionic-2/)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 作者：Udemy
 
 ### [Ionic 2 Solutions](https://www.packtpub.com/web-development/ionic-2-solutions-video)
 
-<!-- cspell:disable-next-line -->
+{/* cspell:disable-next-line */}
 
 作者：Hoc Phan

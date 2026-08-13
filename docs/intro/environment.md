@@ -17,7 +17,7 @@ title: 环境设置
 ## 终端
 
 :::note
-Ionic 开发的大部分工作都需要熟悉命令行。如果您是命令行新手，请参阅[这篇博文](https://ionicframework.com/blog/new-to-the-command-line/)进行快速入门。
+Ionic 开发的大部分工作都需要熟悉命令行。如果您是命令行新手，请参阅[New to the Command Line 博文](https://ionicframework.com/blog/new-to-the-command-line/)进行快速入门。
 :::
 
 通常，我们推荐使用内置终端。许多第三方终端也能与 Ionic 良好配合，但可能不受官方支持。

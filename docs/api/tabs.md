@@ -42,7 +42,7 @@ import Router from '@site/static/usage/v8/tabs/router/index.md';
 
 <Router />
 
-:::tip 最佳实践
+:::tip[最佳实践]
 
 Ionic 提供了关于选项卡路由模式最佳实践的指南。请查看 [Angular](/angular/navigation#使用标签)、[React](/react/navigation#使用标签页) 和 [Vue](/vue/navigation#使用标签) 的指南以获取更多信息。
 

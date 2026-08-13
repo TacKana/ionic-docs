@@ -282,19 +282,12 @@ import DetailArrows from '@site/static/usage/v7/item/detail-arrows/index.md';
 
 <DetailArrows />
 
-<!--
-
-TODO 将此功能恢复为 CSS 变量
-
-此功能在 `md` 模式下默认未在可点击项目上启用，但可以通过设置以下 CSS 变量来启用：
-
-```css
---item-detail-push-show: true;
-```
-
-更多信息请参阅[主题文档](/theming/css-variables)。
-
--->
+{/* TODO 将此功能恢复为 CSS 变量 */}
+{/* 此功能在 `md` 模式下默认未在可点击项目上启用，但可以通过设置以下 CSS 变量来启用： */}
+{/* ```css */}
+{/* --item-detail-push-show: true; */}
+{/* ``` */}
+{/* 更多信息请参阅[主题文档](/theming/css-variables)。 */}
 
 ## 项目线条
 

@@ -5,7 +5,7 @@ sidebar_label: 虚拟滚动
 
 # 虚拟滚动
 
-:::caution 在找 `ion-virtual-scroll`？
+:::caution[在找 `ion-virtual-scroll`？]
 
 `ion-virtual-scroll` 在 v6.0.0 中已被弃用，并在 v7.0.0 中移除。我们推荐使用下面详述的 `@angular/cdk` 包。
 

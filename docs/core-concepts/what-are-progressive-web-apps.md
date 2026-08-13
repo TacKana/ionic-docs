@@ -11,7 +11,7 @@ title: 渐进式 Web 应用
   />
 </head>
 
-<!-- TOC goes here -->
+{/* TOC goes here */}
 
 ### Web 进化，但更出色
 
@@ -47,7 +47,7 @@ Ionic 允许你不仅将应用发布到应用商店，还可以作为 PWA 部署
 
 - **可链接** —— 通过 URL 轻松分享，无需复杂的安装。
 
-<!-- cspell:disable -->
+{/* cspell:disable */}
 
 <em>
   <a href="https://addyosmani.com/blog/getting-started-with-progressive-web-apps/" target="_blank">
@@ -55,7 +55,7 @@ Ionic 允许你不仅将应用发布到应用商店，还可以作为 PWA 部署
   </a>
 </em>
 
-<!-- cspell:enable -->
+{/* cspell:enable */}
 
 内容很多，但对于 Ionic 应用来说，可以归结为以下几个要点。
 

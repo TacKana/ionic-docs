@@ -176,7 +176,7 @@ const showActionSheet = async (photo: UserPhoto) => {
 再次点击一张照片并选择"Delete"选项。照片被删除了！使用 Live Reload 实现得更快。
 
 :::note
-请记住，你可以在[此处](https://github.com/ionic-team/tutorial-photo-gallery-vue)找到此应用的完整源代码。
+请记住，你可以在 GitHub 上找到此应用的[完整源代码](https://github.com/ionic-team/tutorial-photo-gallery-vue)。
 :::
 
 在本教程的最后部分，我们将向你介绍用于构建应用并将其部署到用户设备的 Appflow 产品的基础知识。

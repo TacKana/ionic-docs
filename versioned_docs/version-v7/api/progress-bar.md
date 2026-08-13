@@ -49,7 +49,7 @@ import Indeterminate from '@site/static/usage/v7/progress-bar/indeterminate/inde
 
 ## 工具栏中的进度条
 
-<!-- 复用 Toolbar 目录下的 playground -->
+{/* 复用 Toolbar 目录下的 playground */}
 
 import Toolbar from '@site/static/usage/v7/toolbar/progress-bars/index.md';
 

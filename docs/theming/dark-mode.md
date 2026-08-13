@@ -64,7 +64,7 @@ import AlwaysDarkMode from '@site/static/usage/v8/theming/always-dark-mode/index
 
 <AlwaysDarkMode />
 
-:::caution 重要
+:::caution[重要]
 避免针对 `.ios` 或 `.md` 选择器来覆盖 Ionic 深色调色板，因为这些类会添加到每个组件中，并且优先级高于全局定义的变量。相反，我们应该在 `:root` 元素上定位特定模式的类。
 :::
 
@@ -117,7 +117,7 @@ import SystemDarkMode from '@site/static/usage/v8/theming/system-dark-mode/index
 
 <SystemDarkMode />
 
-:::caution 重要
+:::caution[重要]
 避免针对 `.ios` 或 `.md` 选择器来覆盖 Ionic 深色调色板，因为这些类会添加到每个组件中，并且优先级高于全局定义的变量。相反，我们应该在 `:root` 元素上定位特定模式的类。
 :::
 
@@ -170,7 +170,7 @@ import ClassDarkMode from '@site/static/usage/v8/theming/class-dark-mode/index.m
 
 <ClassDarkMode />
 
-:::caution 重要
+:::caution[重要]
 `.ion-palette-dark` 类**必须**添加到 `html` 元素上，以便与导入的深色调色板一起使用。
 :::
 
