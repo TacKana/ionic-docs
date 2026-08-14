@@ -178,15 +178,6 @@ import DetailArrows from '@site/static/usage/v8/item/detail-arrows/index.md';
 
 <DetailArrows />
 
-
-{/* TODO 将此功能作为 CSS 变量添加回来 */}
-{/* 此功能在 `md` 模式下默认不启用，但可以通过设置以下 CSS 变量来启用： */}
-{/* ```css */}
-{/* --item-detail-push-show: true; */}
-{/* ``` */}
-{/* 更多信息请参阅[主题文档](/theming/css-variables)。 */}
-
-
 ## 项目线条
 
 Items 默认显示嵌入的下边框。边框左侧有内边距，不会出现在 `"start"` 插槽中的任何内容下方。`lines` 属性可以修改为 `"full"` 或 `"none"`，分别显示全宽边框或不显示边框。

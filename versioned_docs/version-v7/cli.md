@@ -37,8 +37,6 @@ $ ionic <command> <subcommand> --help
 对于某些命令，如 `ionic serve`，帮助文档与你的项目类型相关，例如 React 与 Angular。
 :::
 
-{/* TODO：添加图片？ */}
-
 ## 架构
 
 Ionic CLI 使用 [TypeScript](/reference/glossary#typescript) 和 [Node.js](/reference/glossary#node) 构建。它支持 Node 10.3+，但始终建议使用最新的 Node LTS。在开源 <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub 仓库</a>上关注开发进度。

@@ -51,13 +51,6 @@ import FormatOptions from '@site/static/usage/v7/datetime-button/format-options/
 
 `ion-datetime-button` 必须与已挂载的 `ion-datetime` 实例关联。因此，必须使用设置了 `keepContentsMounted` 属性为 `true` 的[内联模态框](./modal#内联模态框推荐)和[内联弹出框](./popover#内联弹出框)。
 
-{/* ## 自定义 */}
-{/* TODO */}
-{/* ### 按钮 */}
-{/* TODO */}
-{/* ### 主题 */}
-{/* TODO */}
-
 ## 属性
 
 <Props />

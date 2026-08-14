@@ -11,8 +11,6 @@ title: 渐进式 Web 应用
   />
 </head>
 
-{/* TOC goes here */}
-
 ### Web 进化，但更出色
 
 渐进式 Web 应用（PWA）是一种利用现代 Web 能力为用户提供类似应用体验的 Web 应用。

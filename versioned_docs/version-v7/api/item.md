@@ -282,13 +282,6 @@ import DetailArrows from '@site/static/usage/v7/item/detail-arrows/index.md';
 
 <DetailArrows />
 
-{/* TODO 将此功能恢复为 CSS 变量 */}
-{/* 此功能在 `md` 模式下默认未在可点击项目上启用，但可以通过设置以下 CSS 变量来启用： */}
-{/* ```css */}
-{/* --item-detail-push-show: true; */}
-{/* ``` */}
-{/* 更多信息请参阅[主题文档](/theming/css-variables)。 */}
-
 ## 项目线条
 
 默认情况下，项目显示带有缩进的底部边框。边框在左侧有内边距，并且不会出现在任何 slot 为 `"start"` 的内容下方。`lines` 属性可以修改为 `"full"` 或 `"none"`，这将分别显示全宽边框或无边框。

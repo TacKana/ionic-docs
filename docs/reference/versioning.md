@@ -1,7 +1,5 @@
 # 版本控制
 
-{/* TOC goes here */}
-
 Ionic Framework 遵循 <a href="https://semver.org/" target="_blank">语义化版本控制（SemVer）</a>规范：<code>major.minor.patch.</code> 不兼容的 API 变更会增加 <code>major</code>（主）版本号，向后兼容的功能添加会增加 <code>minor</code>（次）版本号，向后兼容的 bug 修复会增加 <code>patch</code>（补丁）版本号。
 
 ## 发布计划

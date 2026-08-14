@@ -117,7 +117,7 @@ constructor(private gestureCtrl: GestureController) {
 </TabItem>
 <TabItem value="react">
 
-使用 React 的开发者应安装最新版本的 `@ionic/react`。完整的 React 封装器即将推出！
+使用 React 的开发者应安装最新版本的 `@ionic/react`。
 
 ```tsx
 import { createGesture, Gesture } from '@ionic/react';
